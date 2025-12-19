@@ -1,0 +1,362 @@
+// ===== DOM ELEMENTS =====
+const userTextElement = document.getElementById('userText');
+const keywordInputElement = document.getElementById('keywordInput');
+const analyzeBtn = document.getElementById('analyzeBtn');
+const clearBtn = document.getElementById('clearBtn');
+const resultsContainer = document.getElementById('resultsContainer');
+const statsContainer = document.getElementById('statsContainer');
+const aiSuggestions = document.getElementById('aiSuggestions');
+const aiTips = document.getElementById('aiTips');
+const showMoreTipsBtn = document.getElementById('showMoreTips');
+const langHiBtn = document.getElementById('langHi');
+const langEnBtn = document.getElementById('langEn');
+
+// ===== APP STATE =====
+let currentLanguage = 'hi';
+let analysisResults = null;
+
+// ===== LANGUAGE DATA =====
+const translations = {
+hi: {
+heroTitle: "मुफ्त कीवर्ड डेंसिटी चेकर & एआई ऑप्टिमाइज़र",
+heroSubtitle: "अपने हिंदी या अंग्रेजी कंटेंट का विश्लेषण करें। सही कीवर्ड बैलेंस पाएं और एआई से स्मार्ट सुझाव लें।",
+useToolBtn: "टूल इस्तेमाल करें",
+inputTitle: "अपना कंटेंट पेस्ट करें",
+textAreaLabel: "कंटेंट (हिंदी या अंग्रेजी):",
+textAreaPlaceholder: "यहाँ अपना आर्टिकल, ब्लॉग पोस्ट, या वेबपेज कंटेंट पेस्ट करें... उदाहरण के लिए: 'एसईओ कीवर्ड डेंसिटी आपकी सामग्री में मुख्य शब्दों के उपयोग का प्रतिशत है। यह खोज इंजन को यह समझने में मदद करती है कि आपका पृष्ठ किस बारे में है।'",
+keywordLabel: "मुख्य कीवर्ड (अलग करने के लिए कॉमा दबाएं):",
+keywordPlaceholder: "जैसे: एसईओ, कीवर्ड डेंसिटी, ऑप्टिमाइज़ेशन",
+keywordHint: "आप एक से ज्यादा कीवर्ड भी डाल सकते हैं। जैसे: एसईओ, ब्लॉगिंग, गूगल रैंकिंग",
+analyzeBtn: "कंटेंट का विश्लेषण करें",
+clearBtn: "साफ करें",
+resultsTitle: "विश्लेषण परिणाम",
+placeholderTitle: "विश्लेषण के परिणाम यहाँ दिखेंगे",
+placeholderText: "कंटेंट पेस्ट करने और 'विश्लेषण करें' बटन दबाने के बाद, आपके कीवर्ड्स का विस्तृत विश्लेषण यहाँ दिखाई देगा।",
+aiSuggestionsTitle: "एआई ऑप्टिमाइज़ेशन सुझाव",
+showMoreTips: "और टिप्स दिखाएं",
+moreToolsTitle: "हमारे अन्य मुफ्त टूल्स",
+moreToolsSubtitle: "हम जल्द ही ये शक्तिशाली टूल्स लॉन्च कर रहे हैं। अपडेट के लिए बने रहें!",
+quickLinks: "त्वरित लिंक",
+home: "होम",
+allTools: "सभी टूल्स",
+aboutUs: "हमारे बारे में",
+contact: "संपर्क करें",
+stayUpdated: "अपडेट रहें",
+newsletterText: "नए टूल्स और अपडेट्स की सूचना सबसे पहले पाएं।",
+subscribeBtn: "ईमेल करें"
+},
+en: {
+heroTitle: "Free Keyword Density Checker & AI Optimizer",
+heroSubtitle: "Analyze your Hindi or English content. Get the right keyword balance and smart AI suggestions.",
+useToolBtn: "Use Tool",
+inputTitle: "Paste Your Content",
+textAreaLabel: "Content (Hindi or English):",
+textAreaPlaceholder: "Paste your article, blog post, or webpage content here... For example: 'SEO keyword density is the percentage of times your main keywords appear in your content. It helps search engines understand what your page is about.'",
+keywordLabel: "Main Keywords (separate by comma):",
+keywordPlaceholder: "e.g., SEO, keyword density, optimization",
+keywordHint: "You can enter multiple keywords. e.g., SEO, blogging, Google ranking",
+analyzeBtn: "Analyze Content",
+clearBtn: "Clear",
+resultsTitle: "Analysis Results",
+placeholderTitle: "Analysis results will appear here",
+placeholderText: "After pasting content and clicking 'Analyze', detailed analysis of your keywords will appear here.",
+aiSuggestionsTitle: "AI Optimization Suggestions",
+showMoreTips: "Show More Tips",
+moreToolsTitle: "Our Other Free Tools",
+moreToolsSubtitle: "We're launching these powerful tools soon. Stay tuned for updates!",
+quickLinks: "Quick Links",
+home: "Home",
+allTools: "All Tools",
+aboutUs: "About Us",
+contact: "Contact",
+stayUpdated: "Stay Updated",
+newsletterText: "Be the first to know about new tools and updates.",
+subscribeBtn: "Send Email"
+}
+};
+
+// ===== LANGUAGE SWITCHER =====
+function switchLanguage(lang) {
+currentLanguage = lang;
+
+// Update button states
+langHiBtn.classList.toggle('active', lang === 'hi');
+langEnBtn.classList.toggle('active', lang === 'en');
+
+// Update all elements with data-i18n attribute
+document.querySelectorAll('[data-i18n]').forEach(element => {
+const key = element.getAttribute('data-i18n');
+if (translations[lang][key]) {
+if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+element.placeholder = translations[lang][key];
+} else {
+element.textContent = translations[lang][key];
+}
+}
+});
+
+// Update body class for font
+document.body.classList.toggle('hindi', lang === 'hi');
+document.body.classList.toggle('english', lang === 'en');
+}
+
+// ===== ANALYSIS FUNCTIONS =====
+function analyzeContent() {
+const content = userTextElement.value.trim();
+const keywords = keywordInputElement.value
+.split(',')
+.map(k => k.trim())
+.filter(k => k.length > 0);
+
+if (!content) {
+alert(currentLanguage === 'hi' ? 'कृपया कुछ कंटेंट पेस्ट करें।' : 'Please paste some content.');
+return;
+}
+
+if (keywords.length === 0) {
+alert(currentLanguage === 'hi' ? 'कृपया कम से कम एक कीवर्ड डालें।' : 'Please enter at least one keyword.');
+return;
+}
+
+// Show loading state
+analyzeBtn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> ${currentLanguage === 'hi' ? 'विश्लेषण हो रहा है...' : 'Analyzing...'}`;
+analyzeBtn.disabled = true;
+
+// Simulate API call with timeout
+setTimeout(() => {
+performAnalysis(content, keywords);
+analyzeBtn.innerHTML = `<i class="fas fa-chart-bar"></i> ${currentLanguage === 'hi' ? 'कंटेंट का विश्लेषण करें' : 'Analyze Content'}`;
+analyzeBtn.disabled = false;
+}, 800);
+}
+
+function performAnalysis(content, keywords) {
+const words = content.split(/\s+/).filter(w => w.length > 0);
+const totalWords = words.length;
+
+analysisResults = keywords.map(keyword => {
+const regex = new RegExp(`\\b${keyword}\\b`, 'gi');
+const matches = content.match(regex);
+const count = matches ? matches.length : 0;
+const density = totalWords > 0 ? (count / totalWords) * 100 : 0;
+
+return { keyword, count, density, totalWords };
+});
+
+displayResults();
+displayStats(totalWords, content);
+generateAITips();
+}
+
+function displayResults() {
+let resultsHTML = '<div class="results-grid">';
+
+analysisResults.forEach(result => {
+const status = getDensityStatus(result.density);
+const statusText = currentLanguage === 'hi' ?
+{ optimal: 'आदर्श', low: 'कम', high: 'ज्यादा' }[status] :
+{ optimal: 'Optimal', low: 'Low', high: 'High' }[status];
+
+const barWidth = Math.min(result.density * 10, 100);
+
+resultsHTML += `
+<div class="keyword-result">
+<div class="keyword-name"><i class="fas fa-key"></i> ${result.keyword}</div>
+<div class="keyword-stats">
+<div>
+<div class="stat-label">${currentLanguage === 'hi' ? 'बार आया' : 'Count'}</div>
+<div class="stat-value">${result.count}</div>
+</div>
+<div>
+<div class="stat-label">${currentLanguage === 'hi' ? 'घनत्व' : 'Density'}</div>
+<div class="keyword-density">${result.density.toFixed(2)}%</div>
+</div>
+</div>
+<div class="density-status ${status}">
+<i class="fas fa-${status === 'optimal' ? 'check-circle' : status === 'low' ? 'exclamation-triangle' : 'exclamation-circle'}"></i>
+${currentLanguage === 'hi' ? 'स्थिति:' : 'Status:'} <strong>${statusText}</strong>
+${currentLanguage === 'hi' ?
+` (${status === 'optimal' ? 'बढ़िया!' : status === 'low' ? 'बढ़ाने की जरूरत' : 'कम करने की जरूरत'})` :
+` (${status === 'optimal' ? 'Great!' : status === 'low' ? 'Needs more' : 'Needs less'})`
+}
+</div>
+<div class="density-bar">
+<div class="density-fill" style="width: ${barWidth}%;"></div>
+</div>
+<small>${currentLanguage === 'hi' ? 'सुझाया गया रेंज: 0.5% - 2.5%' : 'Suggested range: 0.5% - 2.5%'}</small>
+</div>
+`;
+});
+
+resultsHTML += '</div>';
+resultsContainer.innerHTML = resultsHTML;
+
+// Animate the bars
+setTimeout(() => {
+document.querySelectorAll('.density-fill').forEach(bar => {
+bar.style.transition = 'width 1.5s ease';
+});
+}, 100);
+}
+
+function getDensityStatus(density) {
+if (density >= 0.5 && density <= 2.5) return 'optimal';
+if (density < 0.5) return 'low';
+return 'high';
+}
+
+function displayStats(totalWords, content) {
+const sentences = content.split(/[.!?]+/).filter(s => s.trim().length > 0).length;
+const paragraphs = content.split(/\n\s*\n/).filter(p => p.trim().length > 0).length;
+const chars = content.length;
+const readingTime = Math.ceil(totalWords / 200);
+
+const statsHTML = `
+<div class="stat-card">
+<div class="stat-icon"><i class="fas fa-font"></i></div>
+<div class="stat-value">${totalWords}</div>
+<div class="stat-label">${currentLanguage === 'hi' ? 'कुल शब्द' : 'Total Words'}</div>
+</div>
+<div class="stat-card">
+<div class="stat-icon"><i class="fas fa-clock"></i></div>
+<div class="stat-value">${readingTime} min</div>
+<div class="stat-label">${currentLanguage === 'hi' ? 'पढ़ने का समय' : 'Reading Time'}</div>
+</div>
+<div class="stat-card">
+<div class="stat-icon"><i class="fas fa-sentence"></i></div>
+<div class="stat-value">${sentences}</div>
+<div class="stat-label">${currentLanguage === 'hi' ? 'वाक्य' : 'Sentences'}</div>
+</div>
+<div class="stat-card">
+<div class="stat-icon"><i class="fas fa-paragraph"></i></div>
+<div class="stat-value">${paragraphs}</div>
+<div class="stat-label">${currentLanguage === 'hi' ? 'पैराग्राफ' : 'Paragraphs'}</div>
+</div>
+`;
+
+statsContainer.innerHTML = statsHTML;
+}
+
+function generateAITips() {
+aiSuggestions.classList.remove('hidden');
+
+const tips = [];
+
+analysisResults.forEach(result => {
+const status = getDensityStatus(result.density);
+
+if (status === 'low') {
+tips.push({
+type: 'warning',
+title: currentLanguage === 'hi' ? 'कीवर्ड बढ़ाएँ' : 'Increase Keyword',
+text: currentLanguage === 'hi' ?
+`"${result.keyword}" की डेंसिटी (${result.density.toFixed(2)}%) बहुत कम है। इसे प्राकृतिक तरीके से 2-3 और बार इस्तेमाल करने की कोशिश करें।` :
+`"${result.keyword}" density (${result.density.toFixed(2)}%) is too low. Try using it 2-3 more times naturally.`
+});
+} else if (status === 'high') {
+tips.push({
+type: 'bad',
+title: currentLanguage === 'hi' ? 'कीवर्ड स्टफिंग से बचें' : 'Avoid Keyword Stuffing',
+text: currentLanguage === 'hi' ?
+`"${result.keyword}" की डेंसिटी (${result.density.toFixed(2)}%) ज्यादा है। कीवर्ड स्टफिंग से बचें, वरना गूगल पेनलाइज कर सकता है।` :
+`"${result.keyword}" density (${result.density.toFixed(2)}%) is too high. Avoid keyword stuffing or Google may penalize you.`
+});
+} else {
+tips.push({
+type: 'good',
+title: currentLanguage === 'hi' ? 'बढ़िया बैलेंस' : 'Great Balance',
+text: currentLanguage === 'hi' ?
+`"${result.keyword}" की डेंसिटी (${result.density.toFixed(2)}%) एकदम सही है! इसे ऐसे ही रखें।` :
+`"${result.keyword}" density (${result.density.toFixed(2)}%) is perfect! Keep it as is.`
+});
+}
+});
+
+// Add general tips
+tips.push({
+type: 'good',
+title: currentLanguage === 'hi' ? 'LSI कीवर्ड्स का प्रयोग करें' : 'Use LSI Keywords',
+text: currentLanguage === 'hi' ?
+'मुख्य कीवर्ड के साथ-साथ उससे संबंधित शब्द (LSI कीवर्ड्स) भी इस्तेमाल करें। जैसे "एसईओ" के साथ "खोज इंजन अनुकूलन", "रैंकिंग", "बैकलिंक"।' :
+'Use related terms (LSI keywords) along with your main keyword. For "SEO", use "search engine optimization", "ranking", "backlink".'
+});
+
+tips.push({
+type: 'warning',
+title: currentLanguage === 'hi' ? 'कंटेंट की लंबाई चेक करें' : 'Check Content Length',
+text: currentLanguage === 'hi' ?
+`आपके कंटेंट में ${analysisResults[0].totalWords} शब्द हैं। गूगल विस्तृत कंटेंट (1000+ शब्द) को पसंद करता है।` :
+`Your content has ${analysisResults[0].totalWords} words. Google prefers comprehensive content (1000+ words).`
+});
+
+// Display first 3 tips
+displayTips(tips.slice(0, 3));
+
+// Store all tips for "Show More" button
+showMoreTipsBtn.dataset.allTips = JSON.stringify(tips);
+showMoreTipsBtn.style.display = tips.length > 3 ? 'block' : 'none';
+}
+
+function displayTips(tipsArray) {
+aiTips.innerHTML = '';
+
+tipsArray.forEach(tip => {
+const tipHTML = `
+<div class="ai-tip ${tip.type}">
+<h4><i class="fas fa-${tip.type === 'good' ? 'check-circle' : tip.type === 'warning' ? 'exclamation-triangle' : 'exclamation-circle'}"></i> ${tip.title}</h4>
+<p>${tip.text}</p>
+</div>
+`;
+aiTips.innerHTML += tipHTML;
+});
+}
+
+function showAllTips() {
+const allTips = JSON.parse(showMoreTipsBtn.dataset.allTips || '[]');
+displayTips(allTips);
+showMoreTipsBtn.style.display = 'none';
+}
+
+function clearAll() {
+userTextElement.value = '';
+keywordInputElement.value = '';
+resultsContainer.innerHTML = `
+<div class="placeholder-results">
+<div class="placeholder-icon">
+<i class="fas fa-search"></i>
+</div>
+<h3>${currentLanguage === 'hi' ? 'विश्लेषण के परिणाम यहाँ दिखेंगे' : 'Analysis results will appear here'}</h3>
+<p>${currentLanguage === 'hi' ? 'कंटेंट पेस्ट करने और "विश्लेषण करें" बटन दबाने के बाद, आपके कीवर्ड्स का विस्तृत विश्लेषण यहाँ दिखाई देगा।' : 'After pasting content and clicking "Analyze", detailed analysis of your keywords will appear here.'}</p>
+</div>
+`;
+statsContainer.innerHTML = '';
+aiSuggestions.classList.add('hidden');
+analysisResults = null;
+}
+
+// ===== EVENT LISTENERS =====
+analyzeBtn.addEventListener('click', analyzeContent);
+clearBtn.addEventListener('click', clearAll);
+showMoreTipsBtn.addEventListener('click', showAllTips);
+langHiBtn.addEventListener('click', () => switchLanguage('hi'));
+langEnBtn.addEventListener('click', () => switchLanguage('en'));
+
+// Auto-focus on textarea
+userTextElement.focus();
+
+// Set current year in footer
+document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+// Initialize with Hindi
+switchLanguage('hi');
+
+// Add example content on first visit (optional)
+if (!localStorage.getItem('exampleShown')) {
+setTimeout(() => {
+if (!userTextElement.value) {
+userTextElement.value = translations[currentLanguage].textAreaPlaceholder;
+keywordInputElement.value = currentLanguage === 'hi' ? 'एसईओ, कीवर्ड डेंसिटी, ऑप्टिमाइज़ेशन' : 'SEO, keyword density, optimization';
+localStorage.setItem('exampleShown', 'true');
+}
+}, 1000);
+}

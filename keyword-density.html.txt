@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>मुफ्त कीवर्ड डेंसिटी चेकर - FreeSEOToolHub.com</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/x-icon" href="https://img.icons8.com/color/96/000000/search--v1.png">
+</head>
+<body>
+<!-- नेविगेशन बार -->
+<nav class="navbar">
+<div class="nav-container">
+<a href="/" class="logo">
+<i class="fas fa-tools"></i> <span>FreeSEOToolHub</span>.com
+</a>
+<div class="nav-links">
+<a href="/" class="nav-link active"><i class="fas fa-home"></i> होम</a>
+<a href="#tools" class="nav-link"><i class="fas fa-th"></i> सभी टूल्स</a>
+<a href="#about" class="nav-link"><i class="fas fa-info-circle"></i> जानकारी</a>
+<a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> संपर्क</a>
+</div>
+<div class="language-switcher">
+<button class="lang-btn active" id="langHi">हिंदी</button>
+<button class="lang-btn" id="langEn">English</button>
+</div>
+</div>
+</nav>
+
+<!-- हीरो सेक्शन -->
+<header class="hero">
+<div class="hero-container">
+<h1 class="hero-title" data-i18n="heroTitle">मुफ्त कीवर्ड डेंसिटी चेकर & एआई ऑप्टिमाइज़र</h1>
+<p class="hero-subtitle" data-i18n="heroSubtitle">अपने हिंदी या अंग्रेजी कंटेंट का विश्लेषण करें। सही कीवर्ड बैलेंस पाएं और एआई से स्मार्ट सुझाव लें।</p>
+<div class="cta-buttons">
+<a href="#tool" class="btn-primary" data-i18n="useToolBtn"><i class="fas fa-play-circle"></i> टूल इस्तेमाल करें</a>
+<a href="#video-guide" class="btn-secondary"><i class="fas fa-video"></i> वीडियो गाइड देखें</a>
+</div>
+</div>
+</header>
+
+<!-- मुख्य टूल सेक्शन -->
+<main class="container" id="tool">
+<div class="tool-grid">
+<!-- इनपुट पैनल -->
+<div class="input-panel card">
+<h2><i class="fas fa-keyboard"></i> <span data-i18n="inputTitle">अपना कंटेंट पेस्ट करें</span></h2>
+<div class="form-group">
+<label for="userText" data-i18n="textAreaLabel">कंटेंट (हिंदी या अंग्रेजी):</label>
+<textarea id="userText" rows="12" placeholder="यहाँ अपना आर्टिकल, ब्लॉग पोस्ट, या वेबपेज कंटेंट पेस्ट करें... उदाहरण के लिए: 'एसईओ कीवर्ड डेंसिटी आपकी सामग्री में मुख्य शब्दों के उपयोग का प्रतिशत है। यह खोज इंजन को यह समझने में मदद करती है कि आपका पृष्ठ किस बारे में है।'" data-i18n="textAreaPlaceholder"></textarea>
+</div>
+<div class="form-group">
+<label for="keywordInput" data-i18n="keywordLabel">मुख्य कीवर्ड (अलग करने के लिए कॉमा दबाएं):</label>
+<input type="text" id="keywordInput" placeholder="जैसे: एसईओ, कीवर्ड डेंसिटी, ऑप्टिमाइज़ेशन" data-i18n="keywordPlaceholder">
+<small class="hint" data-i18n="keywordHint">आप एक से ज्यादा कीवर्ड भी डाल सकते हैं। जैसे: एसईओ, ब्लॉगिंग, गूगल रैंकिंग</small>
+</div>
+<button id="analyzeBtn" class="btn-analyze">
+<i class="fas fa-chart-bar"></i> <span data-i18n="analyzeBtn">कंटेंट का विश्लेषण करें</span>
+</button>
+<button id="clearBtn" class="btn-clear">
+<i class="fas fa-eraser"></i> <span data-i18n="clearBtn">साफ करें</span>
+</button>
+</div>
+
+<!-- रिजल्ट पैनल -->
+<div class="result-panel card">
+<h2><i class="fas fa-chart-pie"></i> <span data-i18n="resultsTitle">विश्लेषण परिणाम</span></h2>
+<div id="resultsContainer">
+<div class="placeholder-results">
+<div class="placeholder-icon">
+<i class="fas fa-search"></i>
+</div>
+<h3 data-i18n="placeholderTitle">विश्लेषण के परिणाम यहाँ दिखेंगे</h3>
+<p data-i18n="placeholderText">कंटेंट पेस्ट करने और "विश्लेषण करें" बटन दबाने के बाद, आपके कीवर्ड्स का विस्तृत विश्लेषण यहाँ दिखाई देगा।</p>
+</div>
+</div>
+<!-- AI सुझाव सेक्शन (शुरू में छिपा हुआ) -->
+<div id="aiSuggestions" class="ai-suggestions hidden">
+<h3><i class="fas fa-robot"></i> <span data-i18n="aiSuggestionsTitle">एआई ऑप्टिमाइज़ेशन सुझाव</span></h3>
+<div id="aiTips"></div>
+<button id="showMoreTips" class="btn-tips" data-i18n="showMoreTips">और टिप्स दिखाएं</button>
+</div>
+</div>
+</div>
+
+<!-- स्टेट्स कार्ड्स -->
+<div class="stats-grid" id="statsContainer">
+<!-- यहाँ JavaScript से स्टेट्स कार्ड्स जोड़े जाएंगे -->
+</div>
+</main>
+
+<!-- टूल्स हब सेक्शन -->
+<section class="section-dark" id="tools">
+<div class="container">
+<h2 class="section-title"><i class="fas fa-th"></i> <span data-i18n="moreToolsTitle">हमारे अन्य मुफ्त टूल्स</span></h2>
+<p class="section-subtitle" data-i18n="moreToolsSubtitle">हम जल्द ही ये शक्तिशाली टूल्स लॉन्च कर रहे हैं। अपडेट के लिए बने रहें!</p>
+<div class="tools-grid">
+<div class="tool-card">
+<div class="tool-icon coming-soon">
+<i class="fas fa-video"></i>
+</div>
+<h3>यूट्यूब SEO ऑप्टिमाइज़र</h3>
+<p>अपने YouTube वीडियो के टाइटल, डिस्क्रिप्शन और टैग्स को बेहतर बनाएं।</p>
+<span class="badge">जल्द आ रहा है</span>
+</div>
+<div class="tool-card">
+<div class="tool-icon coming-soon">
+<i class="fas fa-file-alt"></i>
+</div>
+<h3>प्लेजियरिज्म चेकर</h3>
+<p>अपने कंटेंट की मौलिकता जांचें और डुप्लीकेट कंटेंट से बचें।</p>
+<span class="badge">जल्द आ रहा है</span>
+</div>
+<div class="tool-card">
+<div class="tool-icon coming-soon">
+<i class="fas fa-search"></i>
+</div>
+<h3>मेटा टैग जनरेटर</h3>
+<p>एक क्लिक में परफेक्ट मेटा टाइटल और डिस्क्रिप्शन बनाएं।</p>
+<span class="badge">जल्द आ रहा है</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- फुटर -->
+<footer class="footer" id="contact">
+<div class="container">
+<div class="footer-content">
+<div class="footer-brand">
+<h3><i class="fas fa-tools"></i> FreeSEOToolHub.com</h3>
+<p>भारत में बना, पूरी दुनिया के लिए। शक्तिशाली, मुफ्त SEO टूल्स जो वाकई काम करते हैं।</p>
+</div>
+<div class="footer-links">
+<h4 data-i18n="quickLinks">त्वरित लिंक</h4>
+<a href="#tool" data-i18n="home">होम</a>
+<a href="#tools" data-i18n="allTools">सभी टूल्स</a>
+<a href="#about" data-i18n="aboutUs">हमारे बारे में</a>
+<a href="#contact" data-i18n="contact">संपर्क करें</a>
+</div>
+<div class="footer-newsletter">
+<h4 data-i18n="stayUpdated">अपडेट रहें</h4>
+<p data-i18n="newsletterText">नए टूल्स और अपडेट्स की सूचना सबसे पहले पाएं।</p>
+<!-- सरल ईमेल लिंक (बाद में फॉर्म बनेगा) -->
+<a href="mailto:contact@freeseotoolhub.com?subject=Subscribe%20to%20Updates" class="btn-newsletter">
+<i class="fas fa-envelope"></i> <span data-i18n="subscribeBtn">ईमेल करें</span>
+</a>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© <span id="currentYear">2023</span> FreeSEOToolHub.com | सभी अधिकार सुरक्षित।</p>
+<p class="footer-note"><i class="fas fa-heart"></i> गर्व से भारत में निर्मित | Made with ❤️ in India</p>
+</div>
+</div>
+</footer>
+
+<!-- जावास्क्रिप्ट फाइलें -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
