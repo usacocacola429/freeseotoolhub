@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>गोपनीयता नीति - FreeSEOToolHub.com</title>
+<meta name="description" content="FreeSEOToolHub.com की गोपनीयता नीति। हम आपके डेटा को कैसे संरक्षित करते हैं और किस प्रकार का डेटा एकत्र करते हैं।">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===== REUSABLE STYLES ===== */
+:root {
+--primary: #4361ee;
+--primary-dark: #3a56d4;
+--secondary: #7209b7;
+--success: #06d6a0;
+--warning: #ffd166;
+--danger: #ef476f;
+--light: #f8f9fa;
+--dark: #212529;
+--gray: #6c757d;
+--gray-light: #e9ecef;
+--shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+--radius: 12px;
+--transition: all 0.3s ease;
+}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: 'Inter', 'Hind Siliguri', sans-serif;
+background-color: #f5f7ff;
+color: var(--dark);
+line-height: 1.6;
+}
+
+.container {
+width: 100%;
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 20px;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+background: white;
+box-shadow: var(--shadow);
+position: sticky;
+top: 0;
+z-index: 1000;
+padding: 15px 0;
+}
+
+.nav-container {
+display: flex;
+justify-content: space-between;
+align-items: center;
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 20px;
+}
+
+.logo {
+font-size: 1.8rem;
+font-weight: 700;
+color: var(--primary);
+text-decoration: none;
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.logo span { color: var(--secondary); }
+
+.nav-links {
+display: flex;
+gap: 25px;
+}
+
+@media (max-width: 768px) {
+.nav-links { display: none; }
+.mobile-menu-btn { display: block; }
+}
+
+.nav-link {
+text-decoration: none;
+color: var(--gray);
+font-weight: 600;
+transition: var(--transition);
+display: flex;
+align-items: center;
+gap: 6px;
+}
+
+.nav-link:hover, .nav-link.active {
+color: var(--primary);
+}
+
+.mobile-menu-btn {
+display: none;
+background: none;
+border: none;
+color: var(--primary);
+font-size: 1.5rem;
+cursor: pointer;
+}
+
+/* ===== PAGE HEADER ===== */
+.page-header {
+background: linear-gradient(135deg, #2c3e50 0%, #4a6491 100%);
+color: white;
+padding: 100px 20px 70px;
+text-align: center;
+margin-bottom: 60px;
+border-radius: 0 0 40px 40px;
+}
+
+.page-title {
+font-size: 3.2rem;
+margin-bottom: 20px;
+font-weight: 800;
+}
+
+@media (max-width: 768px) {
+.page-title { font-size: 2.5rem; }
+}
+
+.page-subtitle {
+font-size: 1.2rem;
+max-width: 700px;
+margin: 0 auto;
+opacity: 0.9;
+}
+
+/* ===== PRIVACY CONTENT ===== */
+.privacy-container {
+background: white;
+border-radius: var(--radius);
+box-shadow: var(--shadow);
+padding: 60px 50px;
+margin-bottom: 80px;
+}
+
+@media (max-width: 768px) {
+.privacy-container { padding: 40px 25px; }
+}
+
+.privacy-section {
+margin-bottom: 50px;
+}
+
+.privacy-section:last-child {
+margin-bottom: 0;
+}
+
+.section-title {
+font-size: 1.8rem;
+margin-bottom: 25px;
+color: var(--primary);
+padding-bottom: 15px;
+border-bottom: 2px solid var(--gray-light);
+display: flex;
+align-items: center;
+gap: 15px;
+}
+
+.privacy-content {
+font-size: 1.05rem;
+line-height: 1.8;
+}
+
+.privacy-content p {
+margin-bottom: 20px;
+}
+
+.privacy-content ul, .privacy-content ol {
+margin: 20px 0 20px 30px;
+}
+
+.privacy-content li {
+margin-bottom: 15px;
+}
+
+.highlight-box {
+background: var(--light);
+border-left: 4px solid var(--primary);
+padding: 25px;
+border-radius: 0 var(--radius) var(--radius) 0;
+margin: 30px 0;
+}
+
+.highlight-box.important {
+background: #fff3cd;
+border-left-color: var(--warning);
+}
+
+.highlight-box.success {
+background: #d4edda;
+border-left-color: var(--success);
+}
+
+.info-table {
+width: 100%;
+border-collapse: collapse;
+margin: 30px 0;
+background: white;
+border-radius: var(--radius);
+overflow: hidden;
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.info-table th {
+background: var(--primary);
+color: white;
+padding: 20px;
+text-align: left;
+font-weight: 600;
+}
+
+.info-table td {
+padding: 18px 20px;
+border-bottom: 1px solid var(--gray-light);
+}
+
+.info-table tr:last-child td {
+border-bottom: none;
+}
+
+.info-table tr:hover {
+background: var(--light);
+}
+
+.language-switcher {
+display: flex;
+justify-content: flex-end;
+gap: 15px;
+margin-bottom: 40px;
+}
+
+.lang-btn {
+padding: 10px 25px;
+background: var(--gray-light);
+border: none;
+border-radius: 50px;
+font-weight: 600;
+cursor: pointer;
+transition: var(--transition);
+}
+
+.lang-btn.active {
+background: var(--primary);
+color: white;
+}
+
+.lang-content {
+display: none;
+}
+
+.lang-content.active {
+display: block;
+}
+
+/* ===== CTA SECTION ===== */
+.cta-section {
+background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+color: white;
+padding: 80px 20px;
+text-align: center;
+border-radius: 40px;
+margin: 80px 0;
+}
+
+.cta-buttons {
+display: flex;
+gap: 20px;
+justify-content: center;
+flex-wrap: wrap;
+margin-top: 40px;
+}
+
+.btn-primary, .btn-secondary {
+padding: 18px 40px;
+border-radius: 50px;
+font-weight: 700;
+text-decoration: none;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+gap: 12px;
+transition: var(--transition);
+border: none;
+cursor: pointer;
+font-size: 1.1rem;
+}
+
+.btn-primary {
+background: white;
+color: var(--primary);
+box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:hover {
+transform: translateY(-5px);
+box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.btn-secondary {
+background: rgba(255, 255, 255, 0.2);
+color: white;
+backdrop-filter: blur(10px);
+border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-secondary:hover {
+background: rgba(255, 255, 255, 0.3);
+transform: translateY(-3px);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+background: #1a1a2e;
+color: white;
+padding: 60px 20px 30px;
+margin-top: 80px;
+}
+
+.footer-content {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 40px;
+margin-bottom: 50px;
+}
+
+.footer-brand h3 {
+font-size: 1.8rem;
+margin-bottom: 20px;
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.footer-links h4, .footer-newsletter h4 {
+margin-bottom: 20px;
+font-size: 1.3rem;
+}
+
+.footer-links a {
+display: block;
+color: #b0b7c3;
+text-decoration: none;
+margin-bottom: 10px;
+transition: var(--transition);
+}
+
+.footer-links a:hover {
+color: white;
+padding-left: 5px;
+}
+
+.footer-bottom {
+text-align: center;
+padding-top: 30px;
+border-top: 1px solid rgba(255, 255, 255, 0.1);
+color: #b0b7c3;
+font-size: 0.9rem;
+}
+
+.footer-note {
+margin-top: 10px;
+color: var(--warning);
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 8px;
+}
+</style>
+</head>
+<body>
+<!-- नेविगेशन बार -->
+<nav class="navbar">
+<div class="nav-container">
+<a href="/" class="logo">
+<i class="fas fa-tools"></i> <span>FreeSEOToolHub</span>.com
+</a>
+
+<div class="nav-links">
+<a href="/" class="nav-link"><i class="fas fa-home"></i> होम</a>
+<a href="tools.html" class="nav-link"><i class="fas fa-th"></i> सभी टूल्स</a>
+<a href="about.html" class="nav-link"><i class="fas fa-info-circle"></i> हमारे बारे में</a>
+<a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> संपर्क करें</a>
+</div>
+
+<button class="mobile-menu-btn">
+<i class="fas fa-bars"></i>
+</button>
+</div>
+</nav>
+
+<!-- पेज हेडर -->
+<header class="page-header">
+<div class="container">
+<h1 class="page-title hindi">गोपनीयता नीति</h1>
+<p class="page-subtitle">हम आपकी गोपनीयता को गंभीरता से लेते हैं। यहाँ जानें कि हम आपके डेटा को कैसे संरक्षित करते हैं।</p>
+<div class="language-switcher">
+<button class="lang-btn active" onclick="switchLanguage('hi')">हिंदी</button>
+<button class="lang-btn" onclick="switchLanguage('en')">English</button>
+</div>
+</div>
+</header>
+
+<!-- गोपनीयता सामग्री -->
+<main class="container">
+<div class="privacy-container">
+<!-- हिंदी संस्करण -->
+<div class="lang-content active" id="content-hi">
+<!-- परिचय -->
+<div class="privacy-section">
+<h2 class="section-title"><i class="fas fa-info-circle"></i> परिचय</h2>
+<div class="privacy-content">
+<p><strong>FreeSEOToolHub.com</strong> ("हम", "हमारा", "हमें") आपकी गोपनीयता की रक्षा के प्रति प्रतिबद्ध है। यह गोपनीयता नीति बताती है कि जब आप हमारी वेबसाइट (<a href="https://freeseotoolhub.com">https://freeseotoolhub.com</a>) का उपयोग करते हैं तो हम आपकी व्यक्तिगत जानकारी कैसे एकत्र, उपयोग और संरक्षित करते हैं।</p>
+<p>हमारे SEO टूल्स का उपयोग करके, आप इस गोपनीयता नीति की शर्तों के लिए सहमति देते हैं। यदि आप हमारी नीतियों से सहमत नहीं हैं, तो कृपया हमारी वेबसाइट का उपयोग न करें।</p>
+
+<div class="highlight-box success">
+<h4><i class="fas fa-shield-alt"></i> महत्वपूर्ण सूचना:</h4>
+<p>हमारे अधिकांश टूल्स <strong>क्लाइंट-साइड प्रोसेसिंग</strong> का उपयोग करते हैं। इसका मतलब है कि आपका डेटा (जैसे टेक्स्ट, कीवर्ड्स) हमारे सर्वर पर कभी भेजा नहीं जाता और आपके अपने ब्राउज़र/डिवाइस पर ही प्रोसेस होता है।</p>
+</div>
+</div>
+</div>
+
+<!-- एकत्र की गई जानकारी -->
+<div class="privacy-section">
+<h2 class="section-title"><i class="fas fa-database"></i> हम कौन सी जानकारी एकत्र करते हैं?</h2>
+<div class="privacy-content">
+<h3>1. स्वचालित रूप से एकत्र जानकारी:</h3>
+<ul>
+<li><strong>लॉग डेटा:</strong> जब आप हमारी वेबसाइट देखते हैं, तो आपका ब्राउज़र स्वचालित रूप से कुछ जानकारी भेजता है ("लॉग डेटा")। इसमें आपके कंप्यूटर का इंटरनेट प्रोटोकॉल (IP) पता, ब्राउज़र प्रकार और संस्करण, आपके द्वारा देखे गए पृष्ठ, विज़िट का समय और तारीख, उन पृष्ठों पर बिताया गया समय और अन्य आँकड़े शामिल हो सकते हैं।</li>
+<li><strong>कुकीज़:</strong> हम कुकीज़ और समान ट्रैकिंग टेक्नोलॉजी का उपयोग करते हैं। कुकीज़ छोटी फ़ाइलें होती हैं जो आपके डिवाइस पर सहेजी जाती हैं। आप अपने ब्राउज़र सेटिंग्स से कुकीज़ को अस्वीकार कर सकते हैं, लेकिन इससे हमारी वेबसाइट की कुछ सुविधाएँ ठीक से काम नहीं कर सकती हैं।</li>
+</ul>
+
+<h3>2. स्वैच्छिक रूप से प्रदान की गई जानकारी:</h3>
+<ul>
+<li><strong>टूल उपयोग डेटा:</strong> जब आप हमारे SEO टूल्स का उपयोग करते हैं, तो आप टेक्स्ट, कीवर्ड्स, या URLs जैसी जानकारी इनपुट कर सकते हैं। यह डेटा आमतौर पर आपके डिवाइस पर ही प्रोसेस होता है और हमारे सर्वर पर स्टोर नहीं किया जाता।</li>
+<li><strong>संपर्क जानकारी:</strong> यदि आप हमसे संपर्क फॉर्म के माध्यम से संपर्क करते हैं, तो हम आपका नाम, ईमेल पता और संदेश सहेज सकते हैं।</li>
+</ul>
+
+<table class="info-table">
+<thead>
+<tr>
+<th>डेटा प्रकार</th>
+<th>एकत्र क्यों किया जाता है</th>
+<th>कैसे संरक्षित है</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IP पता और ब्राउज़र डेटा</td>
+<td>वेबसाइट एनालिटिक्स और सुरक्षा</td>
+<td>एन्क्रिप्टेड लॉग्स, 30 दिनों के बाद डिलीट</td>
+</tr>
+<tr>
+<td>टूल इनपुट डेटा (टेक्स्ट, कीवर्ड्स)</td>
+<td>टूल्स को काम करने के लिए</td>
+<td>क्लाइंट-साइड प्रोसेसिंग, सर्वर पर नहीं सहेजा जाता</td>
+</tr>
+<tr>
+<td>संपर्क जानकारी (यदि प्रदान की गई)</td>
+<td>उपयोगकर्ता सपोर्ट और प्रतिक्रिया</td>
+<td>एन्क्रिप्टेड डेटाबेस, सीमित एक्सेस</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<!-- तृतीय-पक्ष सेवाएँ -->
+<div class="privacy-section">
+<h2 class="section-title"><i class="fas fa-external-link-alt"></i> तृतीय-पक्ष सेवाएँ</h2>
+<div class="privacy-content">
+<p>हम अपनी वेबसाइट को बेहतर बनाने और विश्लेषण करने के लिए तृतीय-पक्ष सेवाओं का उपयोग कर सकते हैं:</p>
+
+<div class="highlight-box">
+<h4><i class="fas fa-chart-line"></i> Google Analytics</h4>
+<p>हम ट्रैफिक पैटर्न को समझने और वेबसाइट सुधारने के लिए Google Analytics का उपयोग करते हैं। Google Analytics कुकीज़ के माध्यम से डेटा एकत्र करता है। यह डेटा अनाम रूप से एकत्र किया जाता है।</p>
+</div>
+
+<div class="highlight-box">
+<h4><i class="fas fa-ad"></i> Google AdSense</h4>
+<p>हम वेबसाइट को मुफ्त बनाए रखने के लिए Google AdSense का उपयोग करते हैं। AdSense विज्ञापन प्रदर्शित करने के लिए कुकीज़ का उपयोग कर सकता है।</p>
+</div>
+
+<p><strong>नोट:</strong> इन तृतीय-पक्ष सेवाओं की अपनी गोपनीयता नीतियाँ हैं। हम आपको उनकी गोपनीयता प्रथाओं की समीक्षा करने की सलाह देते हैं।</p>
+</div>
+</div>
+
+<!-- डेटा सुरक्षा -->
+<div class="privacy-section">
+<h2 class="section-title"><i class="fas fa-lock"></i> डेटा सुरक्षा</h2>
+<div class="privacy-content">
+<p>हम आपकी व्यक्तिगत जानकारी की सुरक्षा सुनिश्चित करने के लिए उचित सुरक्षा उपाय अपनाते हैं। हालाँकि, कृपया ध्यान दें कि इंटरनेट पर कोई भी डेटा संचरण पूरी तरह से सुरक्षित नहीं है।</p>
+
+<h3>हमारे सुरक्षा उपाय:</h3>
+<ul>
+<li><strong>HTTPS एन्क्रिप्शन:</strong> हमारी पूरी वेबसाइट SSL/TLS एन्क्रिप्शन के माध्यम से सुरक्षित है।</li>
+<li><strong>सीमित डेटा एकत्रण:</strong> हम केवल वही डेटा एकत्र करते हैं जो आवश्यक है।</li>
+<li><strong>नियमित सुरक्षा जाँच:</strong> हम नियमित रूप से सुरक्षा जाँच और अपडेट करते हैं।</li>
+<li><strong>क्लाइंट-साइड प्रोसेसिंग:</strong> अधिकांश टूल डेटा आपके डिवाइस पर ही प्रोसेस होता है।</li>
+</ul>
+</div>
+</div>
+
+<!-- आपके अधिकार -->
+<div class="privacy-section">
+<h2 class="section-title"><i class="fas fa-user-check"></i> आपके गोपनीयता अधिकार</h2>
+<div class="privacy-content">
+<p>आपके पास अपने व्यक्तिगत डेटा के संबंध में निम्नलिखित अधिकार हैं:</p>
+
+<ul>
+<li><strong>पहुँच का अधिकार:</strong> आप हमसे यह पूछ सकते हैं कि हमने आपके बारे में कौन सी व्यक्तिगत जानकारी संग्रहीत की है।</li>
+<li><strong>सुधार का अधिकार:</strong> आप हमसे किसी भी गलत व्यक्तिगत जानकारी को सही करने का अनुरोध कर सकते हैं।</li>
+<li><strong>मिटाने का अधिकार:</strong> आप हमसे अपनी व्यक्तिगत जानकारी को मिटाने का अनुरोध कर सकते हैं (कुछ विशेष परिस्थितियों को छोड़कर)।</li>
+<li><strong>विरोध का अधिकार:</strong> आप हमारे द्वारा आपकी व्यक्तिगत जानकारी के प्रसंस्करण का विरोध कर सकते हैं।</li>
+<li><strong>डेटा पोर्टेबिलिटी:</strong> आप हमसे आपके द्वारा प्रदान किए गए व्यक्तिगत डेटा की एक प्रति प्राप्त कर सकते हैं।</li>
+</ul>
+
+<p>इन अधिकारों का प्रयोग करने के लिए, कृपया <a href="contact.html">संपर्क करें पृष्ठ</a> के माध्यम से हमसे संपर्क करें।</p>
+</div>
+</div>
+
+<!-- नीति परिवर्तन -->
+<div class="privacy-section">
+<h2 class="section-title"><i class="fas fa-sync-alt"></i> इस गोपनीयता नीति में परिवर्तन</h2>
+<div class="privacy-content">
+<p>हम समय-समय पर इस गोपनीयता नीति को अपडेट कर सकते हैं। हम नई गोपनीयता नीति इस पृष्ठ पर पोस्ट करके आपको सूचित करेंगे। आपको नई नीति पोस्ट किए जाने के बाद इस पृष्ठ की समय-समय पर समीक्षा करने की सलाह दी जाती है।</p>
+
+<div class="highlight-box important">
+<h4><i class="fas fa-bell"></i> प्रभावी तिथि:</h4>
+<p>यह गोपनीयता नीति <strong>1 नवंबर 2023</strong> से प्रभावी है।</p>
+<p><strong>अंतिम अपडेट:</strong> 1 नवंबर 2023</p>
+</div>
+</div>
+</div>
+
+<!-- हमसे संपर्क करें -->
+<div class="privacy-section">
+<h2 class="section-title"><i class="fas fa-envelope"></i> हमसे संपर्क करें</h2>
+<div class="privacy-content">
+<p>यदि आपके पास इस गोपनीयता नीति के बारे में कोई प्रश्न हैं, तो कृपया हमसे संपर्क करें:</p>
+
+<ul>
+<li><strong>वेबसाइट:</strong> <a href="https://freeseotoolhub.com">https://freeseotoolhub.com</a></li>
+<li><strong>संपर्क पृष्ठ:</strong> <a href="contact.html">FreeSEOToolHub.com/contact.html</a></li>
+<li><strong>ईमेल:</strong> privacy@freeseotoolhub.com (नोट: यह एक उदाहरण ईमेल है, आप अपना ईमेल बाद में सेट कर सकते हैं)</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- English Version -->
+<div class="lang-content" id="content-en">
+<!-- Introduction -->
+<div class="privacy-section">
+<h2 class="section-title"><i class="fas fa-info-circle"></i> Introduction</h2>
+<div class="privacy-content">
+<p><strong>FreeSEOToolHub.com</strong> ("we", "our", "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and protect your personal information when you use our website (<a href="https://freeseotoolhub.com">https://freeseotoolhub.com</a>).</p>
+<p>By using our SEO tools, you agree to the terms of this Privacy Policy. If you do not agree with our policies, please do not use our website.</p>
+
+<div class="highlight-box success">
+<h4><i class="fas fa-shield-alt"></i> Important Information:</h4>
+<p>Most of our tools use <strong>client-side processing</strong>. This means your data (such as text, keywords) is never sent to our servers and is processed only in your own browser/device.</p>
+</div>
+</div>
+</div>
+
+<!-- Information We Collect -->
+<div class="privacy-section">
+<h2 class="section-title"><i class="fas fa-database"></i> Information We Collect</h2>
+<div class="privacy-content">
+<h3>1. Automatically Collected Information:</h3>
+<ul>
+<li><strong>Log Data:</strong> When you visit our website, your browser automatically sends certain information ("Log Data"). This may include your computer's Internet Protocol (IP) address, browser type and version, pages you visit, time and date of your visit, time spent on those pages, and other statistics.</li>
+<li><strong>Cookies:</strong> We use cookies and similar tracking technologies. Cookies are small files saved on your device. You can refuse cookies through your browser settings, but this may affect some website features.</li>
+</ul>
+
+<h3>2. Voluntarily Provided Information:</h3>
+<ul>
+<li><strong>Tool Usage Data:</strong> When you use our SEO tools, you may input information such as text, keywords, or URLs. This data is typically processed on your device and not stored on our servers.</li>
+<li><strong>Contact Information:</strong> If you contact us through a contact form, we may save your name, email address, and message.</li>
+</ul>
+
+<table class="info-table">
+<thead>
+<tr>
+<th>Data Type</th>
+<th>Why Collected</th>
+<th>How Protected</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IP Address & Browser Data</td>
+<td>Website analytics and security</td>
+<td>Encrypted logs, deleted after 30 days</td>
+</tr>
+<tr>
+<td>Tool Input Data (Text, Keywords)</td>
+<td>For tools to function</td>
+<td>Client-side processing, not saved on server</td>
+</tr>
+<tr>
+<td>Contact Information (if provided)</td>
+<td>User support and feedback</td>
+<td>Encrypted database, limited access</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<!-- Third-Party Services -->
+<div class="privacy-section">
+<h2 class="section-title"><i class="fas fa-external-link-alt"></i> Third-Party Services</h2>
+<div class="privacy-content">
+<p>We may use third-party services to improve and analyze our website:</p>
+
+<div class="highlight-box">
+<h4><i class="fas fa-chart-line"></i> Google Analytics</h4>
+<p>We use Google Analytics to understand traffic patterns and improve the website. Google Analytics collects data through cookies. This data is collected anonymously.</p>
+</div>
+
+<div class="highlight-box">
+<h4><i class="fas fa-ad"></i> Google AdSense</h4>
+<p>We use Google AdSense to keep the website free. AdSense may use cookies to display ads.</p>
+</div>
+
+<p><strong>Note:</strong> These third-party services have their own privacy policies. We advise you to review their privacy practices.</p>
+</div>
+</div>
+
+<!-- Data Security -->
+<div class="privacy-section">
+<h2 class="section-title"><i class="fas fa-lock"></i> Data Security</h2>
+<div class="privacy-content">
+<p>We implement reasonable security measures to protect your personal information. However, please note that no data transmission over the internet is completely secure.</p>
+
+<h3>Our Security Measures:</h3>
+<ul>
+<li><strong>HTTPS Encryption:</strong> Our entire website is secured through SSL/TLS encryption.</li>
+<li><strong>Limited Data Collection:</strong> We only collect data that is necessary.</li>
+<li><strong>Regular Security Checks:</strong> We perform regular security checks and updates.</li>
+<li><strong>Client-side Processing:</strong> Most tool data is processed on your device.</li>
+</ul>
+</div>
+</div>
+
+<!-- Your Rights -->
+<div class="privacy-section">
+<h2 class="section-title"><i class="fas fa-user-check"></i> Your Privacy Rights</h2>
+<div class="privacy-content">
+<p>You have the following rights regarding your personal data:</p>
+
+<ul>
+<li><strong>Right to Access:</strong> You can ask us what personal information we have stored about you.</li>
+<li><strong>Right to Correction:</strong> You can request us to correct any inaccurate personal information.</li>
+<li><strong>Right to Deletion:</strong> You can request us to delete your personal information (subject to certain conditions).</li>
+<li><strong>Right to Object:</strong> You can object to our processing of your personal information.</li>
+<li><strong>Data Portability:</strong> You can request a copy of personal data you provided to us.</li>
+</ul>
+
+<p>To exercise these rights, please contact us through our <a href="contact.html">Contact page</a>.</p>
+</div>
+</div>
+
+<!-- Policy Changes -->
+<div class="privacy-section">
+<h2 class="section-title"><i class="fas fa-sync-alt"></i> Changes to This Privacy Policy</h2>
+<div class="privacy-content">
+<p>We may update this Privacy Policy from time to time. We will notify you by posting the new Privacy Policy on this page. You are advised to review this page periodically for any changes.</p>
+
+<div class="highlight-box important">
+<h4><i class="fas fa-bell"></i> Effective Date:</h4>
+<p>This Privacy Policy is effective from <strong>November 1, 2023</strong>.</p>
+<p><strong>Last Updated:</strong> November 1, 2023</p>
+</div>
+</div>
+</div>
+
+<!-- Contact Us -->
+<div class="privacy-section">
+<h2 class="section-title"><i class="fas fa-envelope"></i> Contact Us</h2>
+<div class="privacy-content">
+<p>If you have any questions about this Privacy Policy, please contact us:</p>
+
+<ul>
+<li><strong>Website:</strong> <a href="https://freeseotoolhub.com">https://freeseotoolhub.com</a></li>
+<li><strong>Contact Page:</strong> <a href="contact.html">FreeSEOToolHub.com/contact.html</a></li>
+<li><strong>Email:</strong> privacy@freeseotoolhub.com (Note: This is an example email, you can set your own email later)</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<!-- CTA सेक्शन -->
+<section class="cta-section">
+<h2 style="font-size: 2.5rem; margin-bottom: 20px;">क्या आपके पास प्रश्न हैं?</h2>
+<p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto; opacity: 0.9;">
+यदि आपकी गोपनीयता नीति या हमारी सेवाओं के बारे में कोई प्रश्न हैं, तो बेझिझक हमसे संपर्क करें।
+</p>
+
+<div class="cta-buttons">
+<a href="contact.html" class="btn-primary">
+<i class="fas fa-envelope"></i> हमसे संपर्क करें
+</a>
+<a href="/" class="btn-secondary">
+<i class="fas fa-home"></i> होमपेज पर जाएं
+</a>
+</div>
+</section>
+</main>
+
+<!-- फुटर -->
+<footer class="footer">
+<div class="container">
+<div class="footer-content">
+<div class="footer-brand">
+<h3><i class="fas fa-tools"></i> FreeSEOToolHub.com</h3>
+<p>भारत में बना, पूरी दुनिया के लिए। शक्तिशाली, मुफ्त SEO टूल्स जो वाकई काम करते हैं।</p>
+<div style="margin-top: 20px; display: flex; gap: 15px;">
+<a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-twitter"></i></a>
+<a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-facebook"></i></a>
+<a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-linkedin"></i></a>
+<a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-youtube"></i></a>
+</div>
+</div>
+
+<div class="footer-links">
+<h4>त्वरित लिंक</h4>
+<a href="/">होम</a>
+<a href="tools.html">सभी टूल्स</a>
+<a href="about.html">हमारे बारे में</a>
+<a href="contact.html">संपर्क करें</a>
+<a href="privacy.html">गोपनीयता नीति</a>
+</div>
+
+<div class="footer-newsletter">
+<h4>अपडेट रहें</h4>
+<p>नए टूल्स और अपडेट्स की सूचना सबसे पहले पाएं।</p>
+<a href="contact.html" class="btn-secondary" style="margin-top: 15px; display: inline-flex;">
+<i class="fas fa-envelope"></i> हमें ईमेल करें
+</a>
+</div>
+</div>
+
+<div class="footer-bottom">
+<p>© <span id="currentYear">2023</span> FreeSEOToolHub.com | सभी अधिकार सुरक्षित।</p>
+<p class="footer-note"><i class="fas fa-heart"></i> गर्व से भारत में निर्मित | Made with ❤️ in India</p>
+</div>
+</div>
+</footer>
+
+<!-- जावास्क्रिप्ट -->
+<script>
+// Set current year in footer
+document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+// Mobile menu toggle
+document.querySelector('.mobile-menu-btn')?.addEventListener('click', function() {
+const navLinks = document.querySelector('.nav-links');
+navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+});
+
+// Language switcher
+function switchLanguage(lang) {
+// Update button states
+document.querySelectorAll('.lang-btn').forEach(btn => {
+btn.classList.remove('active');
+});
+event.target.classList.add('active');
+
+// Show selected language content
+document.querySelectorAll('.lang-content').forEach(content => {
+content.classList.remove('active');
+});
+document.getElementById(`content-${lang}`).classList.add('active');
+}
+
+// Update nav links for mobile on resize
+window.addEventListener('resize', function() {
+if (window.innerWidth > 768) {
+document.querySelector('.nav-links').style.display = 'flex';
+}
+});
+</script>
+</body>
+</html>
