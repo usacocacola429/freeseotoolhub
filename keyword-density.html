@@ -1,163 +1,602 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>मुफ्त कीवर्ड डेंसिटी चेकर - FreeSEOToolHub.com</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<link rel="icon" type="image/x-icon" href="https://img.icons8.com/color/96/000000/search--v1.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>मुफ्त कीवर्ड डेंसिटी चेकर - FreeSEOToolHub.com</title>
+    <meta name="description" content="हिंदी या अंग्रेजी कंटेंट की कीवर्ड डेंसिटी चेक करें। एआई से स्मार्ट सुझाव पाएं और अपना SEO बेहतर करें।">
+    <!-- फोंट और आइकॉन -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- मुख्य CSS स्टाइल्स -->
+    <style>
+        /* ===== बेसिक सेटअप ===== */
+        :root {
+            --primary: #4361ee;
+            --primary-dark: #3a56d4;
+            --secondary: #7209b7;
+            --success: #06d6a0;
+            --warning: #ffd166;
+            --danger: #ef476f;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --gray-light: #e9ecef;
+            --shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            --radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', 'Hind Siliguri', sans-serif;
+            background-color: #f5f7ff;
+            color: var(--dark);
+            line-height: 1.6;
+            padding-bottom: 40px;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* ===== नेविगेशन बार ===== */
+        .navbar {
+            background: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span { color: var(--secondary); }
+
+        .nav-links { display: flex; gap: 25px; }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--gray);
+            font-weight: 600;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-link:hover, .nav-link.active { color: var(--primary); }
+
+        /* ===== टूल का हीरो सेक्शन ===== */
+        .tool-hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 70px 20px;
+            text-align: center;
+            border-radius: 0 0 30px 30px;
+            margin-bottom: 40px;
+        }
+
+        .tool-hero h1 { font-size: 2.8rem; margin-bottom: 15px; font-weight: 800; }
+        .tool-hero p { font-size: 1.2rem; opacity: 0.9; max-width: 700px; margin: 0 auto 25px; }
+
+        /* ===== मुख्य टूल लेआउट ===== */
+        .tool-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 900px) {
+            .tool-layout { grid-template-columns: 1fr; }
+        }
+
+        .panel {
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 30px;
+        }
+
+        .panel h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--gray-light);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* ===== इनपुट सेक्शन ===== */
+        .form-group { margin-bottom: 25px; }
+        label { display: block; margin-bottom: 8px; font-weight: 600; }
+
+        textarea, input[type="text"] {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid var(--gray-light);
+            border-radius: var(--radius);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        textarea:focus, input[type="text"]:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+        }
+
+        textarea { resize: vertical; min-height: 200px; }
+
+        /* ===== बटन ===== */
+        .btn {
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: var(--transition);
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover { background: var(--primary-dark); transform: translateY(-3px); }
+
+        .btn-secondary {
+            background: var(--gray-light);
+            color: var(--dark);
+        }
+
+        .btn-secondary:hover { background: #d8d9da; }
+
+        /* ===== रिजल्ट्स सेक्शन ===== */
+        .results-container { min-height: 300px; }
+
+        .placeholder-results {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--gray);
+        }
+
+        .placeholder-icon { font-size: 4rem; color: var(--gray-light); margin-bottom: 20px; }
+
+        /* कीवर्ड रिजल्ट कार्ड */
+        .keyword-result {
+            background: var(--light);
+            border-radius: var(--radius);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--primary);
+        }
+
+        .keyword-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+        .keyword-name { font-weight: 700; color: var(--primary); font-size: 1.2rem; }
+
+        .keyword-stats { display: flex; justify-content: space-between; margin-bottom: 15px; }
+        .stat-box { text-align: center; }
+        .stat-value { font-size: 2rem; font-weight: 800; }
+        .stat-label { color: var(--gray); font-size: 0.9rem; }
+
+        .density-bar {
+            height: 10px;
+            background: var(--gray-light);
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 15px 0;
+        }
+
+        .density-fill {
+            height: 100%;
+            background: linear-gradient(to right, var(--warning), var(--danger));
+            border-radius: 5px;
+            width: 0%;
+            transition: width 1s ease;
+        }
+
+        .status-optimal { color: var(--success); font-weight: 700; }
+        .status-low { color: var(--warning); font-weight: 700; }
+        .status-high { color: var(--danger); font-weight: 700; }
+
+        /* ===== स्टेट्स ग्रिड ===== */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 25px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .stat-card:hover { transform: translateY(-5px); }
+
+        .stat-icon { font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; }
+        .stat-card .stat-value { font-size: 2.5rem; font-weight: 800; color: var(--dark); margin-bottom: 5px; }
+        .stat-card .stat-label { color: var(--gray); font-weight: 600; }
+
+        /* ===== AI सुझाव ===== */
+        .ai-suggestions { margin-top: 40px; padding-top: 30px; border-top: 2px dashed var(--gray-light); }
+        .ai-tip {
+            background: #f0f7ff;
+            border-radius: var(--radius);
+            padding: 20px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .ai-tip.good { border-left-color: var(--success); }
+        .ai-tip.warning { border-left-color: var(--warning); }
+        .ai-tip.bad { border-left-color: var(--danger); }
+
+        /* ===== फुटर ===== */
+        .tool-footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid var(--gray-light);
+            color: var(--gray);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-<!-- नेविगेशन बार -->
-<nav class="navbar">
-<div class="nav-container">
-<a href="/" class="logo">
-<i class="fas fa-tools"></i> <span>FreeSEOToolHub</span>.com
-</a>
-<div class="nav-links">
-<a href="/" class="nav-link active"><i class="fas fa-home"></i> होम</a>
-<a href="#tools" class="nav-link"><i class="fas fa-th"></i> सभी टूल्स</a>
-<a href="#about" class="nav-link"><i class="fas fa-info-circle"></i> जानकारी</a>
-<a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> संपर्क</a>
-</div>
-<div class="language-switcher">
-<button class="lang-btn active" id="langHi">हिंदी</button>
-<button class="lang-btn" id="langEn">English</button>
-</div>
-</div>
-</nav>
+    <!-- नेविगेशन बार -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-tools"></i> <span>FreeSEOToolHub</span>.com
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link"><i class="fas fa-home"></i> होम</a>
+                <a href="tools.html" class="nav-link"><i class="fas fa-th"></i> टूल्स</a>
+                <a href="keyword-density.html" class="nav-link active"><i class="fas fa-chart-pie"></i> कीवर्ड चेकर</a>
+                <a href="about.html" class="nav-link"><i class="fas fa-info-circle"></i> जानकारी</a>
+            </div>
+        </div>
+    </nav>
 
-<!-- हीरो सेक्शन -->
-<header class="hero">
-<div class="hero-container">
-<h1 class="hero-title" data-i18n="heroTitle">मुफ्त कीवर्ड डेंसिटी चेकर & एआई ऑप्टिमाइज़र</h1>
-<p class="hero-subtitle" data-i18n="heroSubtitle">अपने हिंदी या अंग्रेजी कंटेंट का विश्लेषण करें। सही कीवर्ड बैलेंस पाएं और एआई से स्मार्ट सुझाव लें।</p>
-<div class="cta-buttons">
-<a href="#tool" class="btn-primary" data-i18n="useToolBtn"><i class="fas fa-play-circle"></i> टूल इस्तेमाल करें</a>
-<a href="#video-guide" class="btn-secondary"><i class="fas fa-video"></i> वीडियो गाइड देखें</a>
-</div>
-</div>
-</header>
+    <!-- टूल का परिचय -->
+    <header class="tool-hero">
+        <div class="container">
+            <h1 class="hindi">हिंदी कीवर्ड डेंसिटी चेकर</h1>
+            <p>अपने हिंदी या अंग्रेजी कंटेंट का विश्लेषण करें। कीवर्ड्स की सही संख्या पता करें और एआई से स्मार्ट सुझाव पाएं।</p>
+        </div>
+    </header>
 
-<!-- मुख्य टूल सेक्शन -->
-<main class="container" id="tool">
-<div class="tool-grid">
-<!-- इनपुट पैनल -->
-<div class="input-panel card">
-<h2><i class="fas fa-keyboard"></i> <span data-i18n="inputTitle">अपना कंटेंट पेस्ट करें</span></h2>
-<div class="form-group">
-<label for="userText" data-i18n="textAreaLabel">कंटेंट (हिंदी या अंग्रेजी):</label>
-<textarea id="userText" rows="12" placeholder="यहाँ अपना आर्टिकल, ब्लॉग पोस्ट, या वेबपेज कंटेंट पेस्ट करें... उदाहरण के लिए: 'एसईओ कीवर्ड डेंसिटी आपकी सामग्री में मुख्य शब्दों के उपयोग का प्रतिशत है। यह खोज इंजन को यह समझने में मदद करती है कि आपका पृष्ठ किस बारे में है।'" data-i18n="textAreaPlaceholder"></textarea>
-</div>
-<div class="form-group">
-<label for="keywordInput" data-i18n="keywordLabel">मुख्य कीवर्ड (अलग करने के लिए कॉमा दबाएं):</label>
-<input type="text" id="keywordInput" placeholder="जैसे: एसईओ, कीवर्ड डेंसिटी, ऑप्टिमाइज़ेशन" data-i18n="keywordPlaceholder">
-<small class="hint" data-i18n="keywordHint">आप एक से ज्यादा कीवर्ड भी डाल सकते हैं। जैसे: एसईओ, ब्लॉगिंग, गूगल रैंकिंग</small>
-</div>
-<button id="analyzeBtn" class="btn-analyze">
-<i class="fas fa-chart-bar"></i> <span data-i18n="analyzeBtn">कंटेंट का विश्लेषण करें</span>
-</button>
-<button id="clearBtn" class="btn-clear">
-<i class="fas fa-eraser"></i> <span data-i18n="clearBtn">साफ करें</span>
-</button>
-</div>
+    <!-- मुख्य टूल एरिया -->
+    <main class="container">
+        <div class="tool-layout">
+            <!-- इनपुट पैनल -->
+            <div class="panel input-panel">
+                <h2><i class="fas fa-keyboard"></i> अपना कंटेंट डालें</h2>
+                <div class="form-group">
+                    <label for="userText">कंटेंट (हिंदी या अंग्रेजी):</label>
+                    <textarea id="userText" placeholder="यहाँ अपना आर्टिकल, ब्लॉग पोस्ट या वेबपेज कंटेंट पेस्ट करें... उदाहरण: 'एसईओ कीवर्ड डेंसिटी आपकी सामग्री में मुख्य शब्दों के उपयोग का प्रतिशत है। यह खोज इंजन को यह समझने में मदद करती है कि आपका पृष्ठ किस बारे में है।'"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="keywordInput">मुख्य कीवर्ड (कॉमा से अलग करें):</label>
+                    <input type="text" id="keywordInput" placeholder="जैसे: एसईओ, कीवर्ड डेंसिटी, ऑप्टिमाइज़ेशन">
+                    <small style="display:block; margin-top:5px; color:var(--gray);">आप एक से ज्यादा कीवर्ड डाल सकते हैं। जैसे: एसईओ, ब्लॉगिंग, गूगल रैंकिंग</small>
+                </div>
+                <button id="analyzeBtn" class="btn btn-primary"><i class="fas fa-chart-bar"></i> कंटेंट का विश्लेषण करें</button>
+                <button id="clearBtn" class="btn btn-secondary"><i class="fas fa-eraser"></i> साफ करें</button>
+            </div>
 
-<!-- रिजल्ट पैनल -->
-<div class="result-panel card">
-<h2><i class="fas fa-chart-pie"></i> <span data-i18n="resultsTitle">विश्लेषण परिणाम</span></h2>
-<div id="resultsContainer">
-<div class="placeholder-results">
-<div class="placeholder-icon">
-<i class="fas fa-search"></i>
-</div>
-<h3 data-i18n="placeholderTitle">विश्लेषण के परिणाम यहाँ दिखेंगे</h3>
-<p data-i18n="placeholderText">कंटेंट पेस्ट करने और "विश्लेषण करें" बटन दबाने के बाद, आपके कीवर्ड्स का विस्तृत विश्लेषण यहाँ दिखाई देगा।</p>
-</div>
-</div>
-<!-- AI सुझाव सेक्शन (शुरू में छिपा हुआ) -->
-<div id="aiSuggestions" class="ai-suggestions hidden">
-<h3><i class="fas fa-robot"></i> <span data-i18n="aiSuggestionsTitle">एआई ऑप्टिमाइज़ेशन सुझाव</span></h3>
-<div id="aiTips"></div>
-<button id="showMoreTips" class="btn-tips" data-i18n="showMoreTips">और टिप्स दिखाएं</button>
-</div>
-</div>
-</div>
+            <!-- रिजल्ट्स पैनल -->
+            <div class="panel results-panel">
+                <h2><i class="fas fa-chart-pie"></i> विश्लेषण परिणाम</h2>
+                <div id="resultsContainer" class="results-container">
+                    <div class="placeholder-results">
+                        <div class="placeholder-icon"><i class="fas fa-search"></i></div>
+                        <h3>विश्लेषण के परिणाम यहाँ दिखेंगे</h3>
+                        <p>कंटेंट पेस्ट करने और "विश्लेषण करें" बटन दबाने के बाद, आपके कीवर्ड्स का विस्तृत विश्लेषण यहाँ दिखाई देगा।</p>
+                    </div>
+                </div>
 
-<!-- स्टेट्स कार्ड्स -->
-<div class="stats-grid" id="statsContainer">
-<!-- यहाँ JavaScript से स्टेट्स कार्ड्स जोड़े जाएंगे -->
-</div>
-</main>
+                <!-- AI सुझाव (शुरू में छिपा हुआ) -->
+                <div id="aiSuggestions" class="ai-suggestions" style="display: none;">
+                    <h3><i class="fas fa-robot"></i> एआई ऑप्टिमाइज़ेशन सुझाव</h3>
+                    <div id="aiTips"></div>
+                </div>
+            </div>
+        </div>
 
-<!-- टूल्स हब सेक्शन -->
-<section class="section-dark" id="tools">
-<div class="container">
-<h2 class="section-title"><i class="fas fa-th"></i> <span data-i18n="moreToolsTitle">हमारे अन्य मुफ्त टूल्स</span></h2>
-<p class="section-subtitle" data-i18n="moreToolsSubtitle">हम जल्द ही ये शक्तिशाली टूल्स लॉन्च कर रहे हैं। अपडेट के लिए बने रहें!</p>
-<div class="tools-grid">
-<div class="tool-card">
-<div class="tool-icon coming-soon">
-<i class="fas fa-video"></i>
-</div>
-<h3>यूट्यूब SEO ऑप्टिमाइज़र</h3>
-<p>अपने YouTube वीडियो के टाइटल, डिस्क्रिप्शन और टैग्स को बेहतर बनाएं।</p>
-<span class="badge">जल्द आ रहा है</span>
-</div>
-<div class="tool-card">
-<div class="tool-icon coming-soon">
-<i class="fas fa-file-alt"></i>
-</div>
-<h3>प्लेजियरिज्म चेकर</h3>
-<p>अपने कंटेंट की मौलिकता जांचें और डुप्लीकेट कंटेंट से बचें।</p>
-<span class="badge">जल्द आ रहा है</span>
-</div>
-<div class="tool-card">
-<div class="tool-icon coming-soon">
-<i class="fas fa-search"></i>
-</div>
-<h3>मेटा टैग जनरेटर</h3>
-<p>एक क्लिक में परफेक्ट मेटा टाइटल और डिस्क्रिप्शन बनाएं।</p>
-<span class="badge">जल्द आ रहा है</span>
-</div>
-</div>
-</div>
-</section>
+        <!-- स्टेट्स कार्ड्स (यहाँ JavaScript से भरे जाएँगे) -->
+        <div id="statsContainer" class="stats-grid"></div>
 
-<!-- फुटर -->
-<footer class="footer" id="contact">
-<div class="container">
-<div class="footer-content">
-<div class="footer-brand">
-<h3><i class="fas fa-tools"></i> FreeSEOToolHub.com</h3>
-<p>भारत में बना, पूरी दुनिया के लिए। शक्तिशाली, मुफ्त SEO टूल्स जो वाकई काम करते हैं।</p>
-</div>
-<div class="footer-links">
-<h4 data-i18n="quickLinks">त्वरित लिंक</h4>
-<a href="#tool" data-i18n="home">होम</a>
-<a href="#tools" data-i18n="allTools">सभी टूल्स</a>
-<a href="#about" data-i18n="aboutUs">हमारे बारे में</a>
-<a href="#contact" data-i18n="contact">संपर्क करें</a>
-</div>
-<div class="footer-newsletter">
-<h4 data-i18n="stayUpdated">अपडेट रहें</h4>
-<p data-i18n="newsletterText">नए टूल्स और अपडेट्स की सूचना सबसे पहले पाएं।</p>
-<!-- सरल ईमेल लिंक (बाद में फॉर्म बनेगा) -->
-<a href="mailto:contact@freeseotoolhub.com?subject=Subscribe%20to%20Updates" class="btn-newsletter">
-<i class="fas fa-envelope"></i> <span data-i18n="subscribeBtn">ईमेल करें</span>
-</a>
-</div>
-</div>
-<div class="footer-bottom">
-<p>© <span id="currentYear">2023</span> FreeSEOToolHub.com | सभी अधिकार सुरक्षित।</p>
-<p class="footer-note"><i class="fas fa-heart"></i> गर्व से भारत में निर्मित | Made with ❤️ in India</p>
-</div>
-</div>
-</footer>
+        <!-- नोट और जानकारी -->
+        <div class="panel" style="margin-top: 30px;">
+            <h3><i class="fas fa-lightbulb"></i> कीवर्ड डेंसिटी के बारे में जानें</h3>
+            <p><strong>कीवर्ड डेंसिटी क्या है?</strong> यह आपके कंटेंट में मुख्य शब्दों के उपयोग का प्रतिशत है। यह SEO में इसलिए महत्वपूर्ण है क्योंकि यह खोज इंजनों को यह समझने में मदद करती है कि आपका पृष्ठ किस बारे में है।</p>
+            <p><strong>आदर्श कीवर्ड डेंसिटी:</strong> आमतौर पर 0.5% से 2.5% के बीच मानी जाती है। इससे कम होने पर खोज इंजन आपके कंटेंट का विषय ठीक से नहीं समझ पाते, और इससे ज्यादा होने पर "कीवर्ड स्टफिंग" माना जा सकता है जिससे आपकी साइट पेनलाइज भी हो सकती है।</p>
+            <p>यह टूल आपके कंटेंट का तुरंत विश्लेषण करके आपको सही दिशा देता है।</p>
+        </div>
+    </main>
 
-<!-- जावास्क्रिप्ट फाइलें -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
-<script src="script.js"></script>
+    <!-- फुटर -->
+    <footer class="tool-footer container">
+        <p>© 2023 FreeSEOToolHub.com | <strong>नोट:</strong> आपका सारा डेटा आपके ब्राउज़र में ही प्रोसेस होता है, हमारे सर्वर पर कभी नहीं भेजा जाता।</p>
+        <a href="tools.html" class="back-link"><i class="fas fa-arrow-left"></i> वापस सभी टूल्स पर जाएँ</a>
+    </footer>
+
+    <!-- ===== JavaScript कोड (टूल का दिमाग) ===== -->
+    <script>
+        // DOM Elements
+        const userTextElement = document.getElementById('userText');
+        const keywordInputElement = document.getElementById('keywordInput');
+        const analyzeBtn = document.getElementById('analyzeBtn');
+        const clearBtn = document.getElementById('clearBtn');
+        const resultsContainer = document.getElementById('resultsContainer');
+        const statsContainer = document.getElementById('statsContainer');
+        const aiSuggestions = document.getElementById('aiSuggestions');
+        const aiTips = document.getElementById('aiTips');
+
+        // उदाहरण कंटेंट (यूजर के पहले विजिट पर दिखेगा)
+        const exampleContent = "एसईओ कीवर्ड डेंसिटी आपकी सामग्री में मुख्य शब्दों के उपयोग का प्रतिशत है। यह खोज इंजन को यह समझने में मदद करती है कि आपका पृष्ठ किस बारे में है। सही कीवर्ड डेंसिटी आपकी वेबसाइट को गूगल और अन्य सर्च इंजन में बेहतर रैंक दिलाने में मदद कर सकती है। आदर्श कीवर्ड डेंसिटी आमतौर पर 0.5% से 2.5% के बीच मानी जाती है। बहुत कम डेंसिटी होने पर सर्च इंजन आपके कंटेंट का विषय नहीं समझ पाते, और बहुत ज्यादा होने पर इसे कीवर्ड स्टफिंग माना जा सकता है।";
+        const exampleKeywords = "एसईओ, कीवर्ड डेंसिटी, गूगल";
+
+        // पहली बार विज़िट पर उदाहरण डालें
+        if (!localStorage.getItem('exampleShown_freeseotoolhub')) {
+            userTextElement.value = exampleContent;
+            keywordInputElement.value = exampleKeywords;
+            localStorage.setItem('exampleShown_freeseotoolhub', 'true');
+        }
+
+        // विश्लेषण करें बटन का इवेंट
+        analyzeBtn.addEventListener('click', function() {
+            const content = userTextElement.value.trim();
+            const keywords = keywordInputElement.value
+                .split(',')
+                .map(k => k.trim())
+                .filter(k => k.length > 0);
+
+            // वैधता जाँच
+            if (!content) {
+                alert('कृपया कुछ कंटेंट पेस्ट करें।');
+                return;
+            }
+            if (keywords.length === 0) {
+                alert('कृपया कम से कम एक कीवर्ड डालें।');
+                return;
+            }
+
+            // लोडिंग स्टेट दिखाएँ
+            analyzeBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> विश्लेषण हो रहा है...';
+            analyzeBtn.disabled = true;
+
+            // विश्लेषण करें (सेट टाइमआउट से प्रोसेसिंग का अहसास कराएँ)
+            setTimeout(() => {
+                performAnalysis(content, keywords);
+                analyzeBtn.innerHTML = '<i class="fas fa-chart-bar"></i> कंटेंट का विश्लेषण करें';
+                analyzeBtn.disabled = false;
+            }, 800);
+        });
+
+        // साफ करें बटन का इवेंट
+        clearBtn.addEventListener('click', function() {
+            userTextElement.value = '';
+            keywordInputElement.value = '';
+            resultsContainer.innerHTML = `
+                <div class="placeholder-results">
+                    <div class="placeholder-icon"><i class="fas fa-search"></i></div>
+                    <h3>विश्लेषण के परिणाम यहाँ दिखेंगे</h3>
+                    <p>कंटेंट पेस्ट करने और "विश्लेषण करें" बटन दबाने के बाद, आपके कीवर्ड्स का विस्तृत विश्लेषण यहाँ दिखाई देगा।</p>
+                </div>
+            `;
+            statsContainer.innerHTML = '';
+            aiSuggestions.style.display = 'none';
+        });
+
+        // मुख्य विश्लेषण फंक्शन
+        function performAnalysis(content, keywords) {
+            const words = content.split(/\s+/).filter(w => w.length > 0);
+            const totalWords = words.length;
+
+            let resultsHTML = '';
+            const allResults = [];
+
+            // हर कीवर्ड का विश्लेषण
+            keywords.forEach(keyword => {
+                const regex = new RegExp(`\\b${keyword}\\b`, 'gi');
+                const matches = content.match(regex);
+                const count = matches ? matches.length : 0;
+                const density = totalWords > 0 ? (count / totalWords) * 100 : 0;
+
+                allResults.push({ keyword, count, density });
+
+                // डेंसिटी स्टेटस
+                let status = 'optimal';
+                let statusText = 'आदर्श';
+                if (density < 0.5) { status = 'low'; statusText = 'कम'; }
+                if (density > 2.5) { status = 'high'; statusText = 'ज्यादा'; }
+
+                // बार की चौड़ाई (ग्राफ के लिए)
+                const barWidth = Math.min(density * 20, 100); // स्केल फैक्टर
+
+                resultsHTML += `
+                    <div class="keyword-result">
+                        <div class="keyword-header">
+                            <div class="keyword-name"><i class="fas fa-key"></i> ${keyword}</div>
+                            <div class="status-${status}">${statusText}</div>
+                        </div>
+                        <div class="keyword-stats">
+                            <div class="stat-box">
+                                <div class="stat-value">${count}</div>
+                                <div class="stat-label">बार आया</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-value">${density.toFixed(2)}%</div>
+                                <div class="stat-label">डेंसिटी</div>
+                            </div>
+                        </div>
+                        <div class="density-bar">
+                            <div class="density-fill" style="width: ${barWidth}%;"></div>
+                        </div>
+                        <small><strong>सुझाव:</strong> ${getDensitySuggestion(density, keyword)}</small>
+                    </div>
+                `;
+            });
+
+            // रिजल्ट्स दिखाएँ
+            resultsContainer.innerHTML = resultsHTML;
+
+            // स्टेट्स कार्ड्स जनरेट करें
+            generateStatsCards(content, totalWords);
+
+            // AI सुझाव जनरेट करें
+            generateAITips(allResults, totalWords, content);
+
+            // ग्राफ एनिमेट करें
+            setTimeout(() => {
+                document.querySelectorAll('.density-fill').forEach(bar => {
+                    bar.style.transition = 'width 1.5s ease';
+                });
+            }, 100);
+        }
+
+        // डेंसिटी के आधार पर सुझाव
+        function getDensitySuggestion(density, keyword) {
+            if (density < 0.5) {
+                return `"${keyword}" की डेंसिटी कम है। इसे प्राकृतिक तरीके से 2-3 बार और इस्तेमाल करने की कोशिश करें।`;
+            } else if (density > 2.5) {
+                return `"${keyword}" की डेंसिटी ज्यादा है। कीवर्ड स्टफिंग से बचें, वरना गूगल पेनलाइज कर सकता है।`;
+            } else {
+                return `"${keyword}" की डेंसिटी बिल्कुल सही है! बढ़िया काम कर रहे हैं।`;
+            }
+        }
+
+        // स्टेट्स कार्ड्स बनाना
+        function generateStatsCards(content, totalWords) {
+            const sentences = content.split(/[.!?]+/).filter(s => s.trim().length > 0).length;
+            const paragraphs = content.split(/\n\s*\n/).filter(p => p.trim().length > 0).length;
+            const characters = content.length;
+            const readingTime = Math.ceil(totalWords / 200);
+
+            const statsHTML = `
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-font"></i></div>
+                    <div class="stat-value">${totalWords}</div>
+                    <div class="stat-label">कुल शब्द</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-clock"></i></div>
+                    <div class="stat-value">${readingTime}</div>
+                    <div class="stat-label">मिनट (पढ़ने का समय)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-sentence"></i></div>
+                    <div class="stat-value">${sentences}</div>
+                    <div class="stat-label">वाक्य</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-paragraph"></i></div>
+                    <div class="stat-value">${paragraphs}</div>
+                    <div class="stat-label">पैराग्राफ</div>
+                </div>
+            `;
+
+            statsContainer.innerHTML = statsHTML;
+        }
+
+        // AI टिप्स जनरेट करना
+        function generateAITips(results, totalWords, content) {
+            let tipsHTML = '';
+
+            results.forEach(result => {
+                if (result.density < 0.5) {
+                    tipsHTML += `
+                        <div class="ai-tip warning">
+                            <h4><i class="fas fa-exclamation-triangle"></i> "${result.keyword}" बढ़ाएँ</h4>
+                            <p>इस कीवर्ड की डेंसिटी (${result.density.toFixed(2)}%) बहुत कम है। इसे प्राकृतिक तरीके से 2-3 और बार इस्तेमाल करने की कोशिश करें। संबंधित शब्द (LSI कीवर्ड्स) भी जोड़ें।</p>
+                        </div>
+                    `;
+                } else if (result.density > 2.5) {
+                    tipsHTML += `
+                        <div class="ai-tip bad">
+                            <h4><i class="fas fa-exclamation-circle"></i> "${result.keyword}" कम करें</h4>
+                            <p>इस कीवर्ड की डेंसिटी (${result.density.toFixed(2)}%) ज्यादा है। कीवर्ड स्टफिंग से बचें। कुछ इंस्टेंसेज को हटाएं या समानार्थी शब्दों से बदलें।</p>
+                        </div>
+                    `;
+                } else {
+                    tipsHTML += `
+                        <div class="ai-tip good">
+                            <h4><i class="fas fa-check-circle"></i> "${result.keyword}" बढ़िया है</h4>
+                            <p>इस कीवर्ड की डेंसिटी (${result.density.toFixed(2)}%) एकदम सही रेंज में है। इसे ऐसे ही रखें।</p>
+                        </div>
+                    `;
+                }
+            });
+
+            // सामान्य टिप्स
+            if (totalWords < 300) {
+                tipsHTML += `
+                    <div class="ai-tip warning">
+                        <h4><i class="fas fa-exclamation-triangle"></i> कंटेंट की लंबाई बढ़ाएँ</h4>
+                        <p>आपके कंटेंट में केवल ${totalWords} शब्द हैं। गूगल विस्तृत कंटेंट (1000+ शब्द) को पसंद करता है। और जानकारी या उदाहरण जोड़ें।</p>
+                    </div>
+                `;
+            }
+
+            tipsHTML += `
+                <div class="ai-tip good">
+                    <h4><i class="fas fa-lightbulb"></i> LSI कीवर्ड्स का प्रयोग करें</h4>
+                    <p>मुख्य कीवर्ड के साथ-साथ उससे संबंधित शब्द (LSI कीवर्ड्स) भी इस्तेमाल करें। इससे कंटेंट की गुणवत्ता बढ़ती है और SEO में मदद मिलती है।</p>
+                </div>
+            `;
+
+            aiTips.innerHTML = tipsHTML;
+            aiSuggestions.style.display = 'block';
+        }
+
+        // पेज लोड होते ही टेक्स्ट एरिया पर फोकस
+        window.onload = function() {
+            userTextElement.focus();
+        };
+    </script>
 </body>
 </html>
