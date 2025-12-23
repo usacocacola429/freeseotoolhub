@@ -1,0 +1,21 @@
+// navbar.js - FreeSEOToolHub.com के सभी पेजों के लिए नेविगेशन बार
+document.write(`
+<nav class="navbar">
+<div class="nav-container">
+<a href="index.html" class="logo">
+<i class="fas fa-tools"></i> <span>FreeSEOToolHub</span>.com
+</a>
+<div class="nav-links">
+<a href="index.html" class="nav-link"><i class="fas fa-home"></i> होम</a>
+<a href="tools.html" class="nav-link"><i class="fas fa-th"></i> टूल्स</a>
+<a href="keyword-density.html" class="nav-link"><i class="fas fa-chart-pie"></i> कीवर्ड चेकर</a>
+<a href="meta-tag-generator.html" class="nav-link"><i class="fas fa-search"></i> मेटा टैग जनरेटर</a>
+<a href="backlink-checker.html" class="nav-link"><i class="fas fa-link"></i> बैकलिंक चेकर</a>
+<a href="website-speed-test.html" class="nav-link"><i class="fas fa-tachometer-alt"></i> स्पीड टेस्ट</a>
+<a href="ssl-checker.html" class="nav-link"><i class="fas fa-lock"></i> SSL चेकर</a>
+<a href="plagiarism-checker.html" class="nav-link"><i class="fas fa-search"></i> प्लेजियरिज्म चेकर</a>
+<a href="about.html" class="nav-link"><i class="fas fa-info-circle"></i> जानकारी</a>
+</div>
+</div>
+</nav>
+`);
