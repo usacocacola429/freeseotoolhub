@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Google Site Verification</title>
+<meta name="google-site-verification" content="PFPCTBFG3Y_tBqC8hPFPCTBFG3Y" />
+<style>
+body {
+font-family: Arial, sans-serif;
+text-align: center;
+padding: 50px;
+background: #f5f7ff;
+}
+.container {
+max-width: 600px;
+margin: 0 auto;
+background: white;
+padding: 40px;
+border-radius: 12px;
+box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+h1 {
+color: #4361ee;
+}
+.logo {
+font-size: 2.5rem;
+color: #4361ee;
+margin-bottom: 20px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="logo">
+<i class="fas fa-tools"></i> FreeSEOToolHub
+</div>
+<h1>Google Search Console Verification</h1>
+<p>This file is used to verify <strong>freeseotoolhub.com</strong> with Google Search Console.</p>
+<p>If you can see this page, verification should work successfully.</p>
+<hr>
+<p><strong>Site:</strong> freeseotoolhub.com</p>
+<p><strong>Purpose:</strong> Google Search Console ownership verification</p>
+<p><strong>Verification Method:</strong> HTML file upload</p>
+<div style="margin-top: 30px; padding: 20px; background: #f0f7ff; border-radius: 8px;">
+<p>📢 <strong>Note to Google Bot:</strong></p>
+<p>This site is verified for Google Search Console.</p>
+<p>Meta tag: <code>&lt;meta name="google-site-verification" content="PFPCTBFG3Y_tBqC8hPFPCTBFG3Y" /&gt;</code></p>
+</div>
+</div>
+</body>
+</html>
