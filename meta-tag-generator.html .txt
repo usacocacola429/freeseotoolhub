@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>मुफ्त मेटा टैग जनरेटर - FreeSEOToolHub.com</title>
+<meta name="description" content="मुफ्त मेटा टाइटल और डिस्क्रिप्शन जनरेटर। SERP प्रिव्यू देखें और अपनी वेबसाइट का SEO बेहतर करें।">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PFPCTBFG3Y"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-PFPCTBFG3Y');
+</script>
+<!-- फोंट और आइकॉन -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===== बेसिक सेटअप ===== */
+:root {
+--primary: #4361ee;
+--primary-dark: #3a56d4;
+--secondary: #7209b7;
+--success: #06d6a0;
+--warning: #ffd166;
+--danger: #ef476f;
+--light: #f8f9fa;
+--dark: #212529;
+--gray: #6c757d;
+--gray-light: #e9ecef;
+--shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+--radius: 12px;
+--transition: all 0.3s ease;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+font-family: 'Inter', 'Hind Siliguri', sans-serif;
+background-color: #f5f7ff;
+color: var(--dark);
+line-height: 1.6;
+padding-bottom: 40px;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* ===== नेविगेशन बार ===== */
+.navbar {
+background: white;
+box-shadow: var(--shadow);
+position: sticky;
+top: 0;
+z-index: 1000;
+padding: 15px 0;
+}
+
+.nav-container {
+display: flex;
+justify-content: space-between;
+align-items: center;
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 20px;
+}
+
+.logo {
+font-size: 1.6rem;
+font-weight: 700;
+color: var(--primary);
+text-decoration: none;
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.logo span { color: var(--secondary); }
+
+.nav-links { display: flex; gap: 25px; }
+
+.nav-link {
+text-decoration: none;
+color: var(--gray);
+font-weight: 600;
+transition: var(--transition);
+display: flex;
+align-items: center;
+gap: 6px;
+}
+
+.nav-link:hover, .nav-link.active { color: var(--primary); }
+
+/* ===== टूल का हीरो सेक्शन ===== */
+.tool-hero {
+background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+color: white;
+padding: 70px 20px;
+text-align: center;
+border-radius: 0 0 30px 30px;
+margin-bottom: 40px;
+}
+
+.tool-hero h1 { font-size: 2.8rem; margin-bottom: 15px; font-weight: 800; }
+.tool-hero p { font-size: 1.2rem; opacity: 0.9; max-width: 700px; margin: 0 auto 25px; }
+
+/* ===== मुख्य टूल लेआउट ===== */
+.tool-layout {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 30px;
+margin-bottom: 40px;
+}
+
+@media (max-width: 900px) {
+.tool-layout { grid-template-columns: 1fr; }
+}
+
+.panel {
+background: white;
+border-radius: var(--radius);
+box-shadow: var(--shadow);
+padding: 30px;
+}
+
+.panel h2 {
+color: var(--primary);
+margin-bottom: 20px;
+padding-bottom: 15px;
+border-bottom: 2px solid var(--gray-light);
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+/* ===== इनपुट सेक्शन ===== */
+.form-group { margin-bottom: 25px; }
+label { display: block; margin-bottom: 8px; font-weight: 600; }
+
+textarea, input[type="text"] {
+width: 100%;
+padding: 15px;
+border: 2px solid var(--gray-light);
+border-radius: var(--radius);
+font-family: inherit;
+font-size: 1rem;
+transition: var(--transition);
+}
+
+textarea:focus, input[type="text"]:focus {
+outline: none;
+border-color: var(--primary);
+box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+}
+
+textarea { resize: vertical; min-height: 120px; }
+
+.input-with-counter { position: relative; }
+.char-counter {
+position: absolute;
+right: 10px;
+bottom: 10px;
+background: rgba(0,0,0,0.7);
+color: white;
+padding: 3px 8px;
+border-radius: 4px;
+font-size: 0.8rem;
+}
+
+.char-counter.good { background: var(--success); }
+.char-counter.warning { background: var(--warning); color: var(--dark); }
+.char-counter.danger { background: var(--danger); }
+
+/* ===== बटन ===== */
+.btn {
+padding: 15px 30px;
+border-radius: 50px;
+font-weight: 700;
+border: none;
+cursor: pointer;
+font-size: 1rem;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+gap: 10px;
+transition: var(--transition);
+width: 100%;
+margin-top: 10px;
+}
+
+.btn-primary {
+background: var(--primary);
+color: white;
+}
+
+.btn-primary:hover { background: var(--primary-dark); transform: translateY(-3px); }
+
+.btn-secondary {
+background: var(--gray-light);
+color: var(--dark);
+}
+
+.btn-secondary:hover { background: #d8d9da; }
+
+.btn-small {
+padding: 10px 20px;
+width: auto;
+font-size: 0.9rem;
+}
+
+/* ===== SERP प्रिव्यू ===== */
+.serp-preview {
+background: white;
+border: 1px solid #dfe1e5;
+border-radius: 8px;
+padding: 20px;
+margin-top: 30px;
+font-family: Arial, sans-serif;
+}
+
+.serp-title {
+color: #1a0dab;
+font-size: 20px;
+line-height: 1.3;
+margin-bottom: 5px;
+cursor: pointer;
+}
+
+.serp-title:hover { text-decoration: underline; }
+
+.serp-url {
+color: #006621;
+font-size: 14px;
+line-height: 1.3;
+margin-bottom: 5px;
+}
+
+.serp-description {
+color: #545454;
+font-size: 14px;
+line-height: 1.57;
+}
+
+/* ===== जनरेटेड रिजल्ट्स ===== */
+.result-box {
+background: var(--light);
+border-radius: var(--radius);
+padding: 20px;
+margin-bottom: 20px;
+border-left: 4px solid var(--primary);
+position: relative;
+}
+
+.result-box h4 {
+margin-bottom: 10px;
+color: var(--primary);
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.copy-btn {
+position: absolute;
+top: 15px;
+right: 15px;
+background: var(--primary);
+color: white;
+border: none;
+border-radius: 4px;
+padding: 5px 10px;
+cursor: pointer;
+font-size: 0.8rem;
+}
+
+.copy-btn:hover { background: var(--primary-dark); }
+
+/* ===== टिप्स और सुझाव ===== */
+.tips-container {
+background: #f0f7ff;
+border-radius: var(--radius);
+padding: 25px;
+margin-top: 30px;
+border-left: 4px solid var(--primary);
+}
+
+.tip-item {
+margin-bottom: 15px;
+padding-left: 25px;
+position: relative;
+}
+
+.tip-item:before {
+content: "💡";
+position: absolute;
+left: 0;
+top: 0;
+}
+
+/* ===== फुटर ===== */
+.tool-footer {
+text-align: center;
+margin-top: 60px;
+padding-top: 30px;
+border-top: 1px solid var(--gray-light);
+color: var(--gray);
+}
+
+.back-link {
+display: inline-flex;
+align-items: center;
+gap: 10px;
+color: var(--primary);
+text-decoration: none;
+font-weight: 600;
+margin-top: 20px;
+}
+</style>
+</head>
+<body>
+<!-- नेविगेशन बार -->
+<nav class="navbar">
+<div class="nav-container">
+<a href="index.html" class="logo">
+<i class="fas fa-tools"></i> <span>FreeSEOToolHub</span>.com
+</a>
+<div class="nav-links">
+<a href="index.html" class="nav-link"><i class="fas fa-home"></i> होम</a>
+<a href="tools.html" class="nav-link"><i class="fas fa-th"></i> टूल्स</a>
+<a href="keyword-density.html" class="nav-link"><i class="fas fa-chart-pie"></i> कीवर्ड चेकर</a>
+<a href="meta-tag-generator.html" class="nav-link active"><i class="fas fa-search"></i> मेटा टैग जनरेटर</a>
+</div>
+</div>
+</nav>
+
+<!-- टूल का परिचय -->
+<header class="tool-hero">
+<div class="container">
+<h1 class="hindi">मुफ्त मेटा टैग जनरेटर</h1>
+<p>परफेक्ट मेटा टाइटल और डिस्क्रिप्शन बनाएं। गूगल SERP में कैसा दिखेगा, यह प्रिव्यू देखें और कॉपी करें।</p>
+</div>
+</header>
+
+<!-- मुख्य टूल एरिया -->
+<main class="container">
+<div class="tool-layout">
+<!-- इनपुट पैनल -->
+<div class="panel input-panel">
+<h2><i class="fas fa-edit"></i> डिटेल्स डालें</h2>
+<div class="form-group">
+<label for="pageTitle">पेज का मुख्य टॉपिक/कीवर्ड:</label>
+<input type="text" id="pageTitle" placeholder="जैसे: बेस्ट SEO टूल्स, हिंदी ब्लॉगिंग, ऑनलाइन मार्केटिंग">
+</div>
+
+<div class="form-group">
+<label for="pageDescription">पेज का संक्षिप्त विवरण:</label>
+<textarea id="pageDescription" placeholder="इस पेज के बारे में 2-3 लाइन में बताएं... जैसे: 'भारत के लिए बने मुफ्त SEO टूल्स की पूरी लिस्ट। कीवर्ड रिसर्च, कंटेंट ऑप्टिमाइज़ेशन और यूट्यूब SEO के लिए बेस्ट टूल्स।'"></textarea>
+</div>
+
+<div class="form-group">
+<label for="targetKeyword">मुख्य कीवर्ड (वैकल्पिक):</label>
+<input type="text" id="targetKeyword" placeholder="जैसे: SEO टूल्स, फ्री टूल्स, हिंदी SEO">
+</div>
+
+<button id="generateBtn" class="btn btn-primary"><i class="fas fa-magic"></i> मेटा टैग जनरेट करें</button>
+<button id="clearBtn" class="btn btn-secondary"><i class="fas fa-eraser"></i> साफ करें</button>
+</div>
+
+<!-- रिजल्ट्स पैनल -->
+<div class="panel results-panel">
+<h2><i class="fas fa-code"></i> जनरेटेड मेटा टैग</h2>
+<div id="resultsContainer" class="results-container">
+<div class="placeholder-results">
+<div class="placeholder-icon"><i class="fas fa-code"></i></div>
+<h3>मेटा टैग यहाँ दिखेंगे</h3>
+<p>डिटेल्स डालने और "जनरेट करें" बटन दबाने के बाद, आपके लिए ऑप्टिमाइज्ड मेटा टैग यहाँ दिखाई देंगे।</p>
+</div>
+</div>
+
+<!-- SERP प्रिव्यू -->
+<div id="serpPreview" class="serp-preview" style="display: none;">
+<h3><i class="fas fa-eye"></i> गूगल में कैसा दिखेगा:</h3>
+<div class="serp-title" id="previewTitle">मेटा टाइटल यहाँ दिखेगा...</div>
+<div class="serp-url">https://www.freeseotoolhub.com/example-page</div>
+<div class="serp-description" id="previewDescription">मेटा डिस्क्रिप्शन यहाँ दिखेगा...</div>
+</div>
+</div>
+</div>
+
+<!-- टिप्स और बेस्ट प्रैक्टिसेज -->
+<div class="tips-container">
+<h3><i class="fas fa-lightbulb"></i> मेटा टैग बेस्ट प्रैक्टिसेज</h3>
+<div class="tip-item"><strong>टाइटल लंबाई:</strong> 50-60 करैक्टर (गूगल 600 पिक्सल तक दिखाता है)</div>
+<div class="tip-item"><strong>डिस्क्रिप्शन लंबाई:</strong> 150-160 करैक्टर (गूगल 920 पिक्सल तक दिखाता है)</div>
+<div class="tip-item"><strong>कीवर्ड प्लेसमेंट:</strong> मुख्य कीवर्ड टाइटल की शुरुआत में रखें</div>
+<div class="tip-item"><strong>यूनिकनेस:</strong> हर पेज का अलग टाइटल और डिस्क्रिप्शन होना चाहिए</div>
+<div class="tip-item"><strong>कॉल टू एक्शन:</strong> डिस्क्रिप्शन में यूजर को एक्शन लेने के लिए प्रेरित करें</div>
+</div>
+</main>
+
+<!-- फुटर -->
+<footer class="tool-footer container">
+<p>© 2023 FreeSEOToolHub.com | <strong>नोट:</strong> सभी जनरेटेड मेटा टैग सजेशन हैं, फाइनल डिसीजन आपको लेना है।</p>
+<a href="tools.html" class="back-link"><i class="fas fa-arrow-left"></i> वापस सभी टूल्स पर जाएँ</a>
+</footer>
+
+<!-- ===== JavaScript कोड ===== -->
+<script>
+// DOM Elements
+const pageTitleInput = document.getElementById('pageTitle');
+const pageDescInput = document.getElementById('pageDescription');
+const targetKeywordInput = document.getElementById('targetKeyword');
+const generateBtn = document.getElementById('generateBtn');
+const clearBtn = document.getElementById('clearBtn');
+const resultsContainer = document.getElementById('resultsContainer');
+const serpPreview = document.getElementById('serpPreview');
+const previewTitle = document.getElementById('previewTitle');
+const previewDescription = document.getElementById('previewDescription');
+
+// उदाहरण कंटेंट
+const exampleTitle = "बेस्ट फ्री SEO टूल्स 2023";
+const exampleDescription = "भारतीय ब्लॉगर्स और व्यवसायों के लिए सबसे अच्छे मुफ्त SEO टूल्स की पूरी लिस्ट। कीवर्ड रिसर्च, कंटेंट ऑप्टिमाइज़ेशन और वेबसाइट ऑडिट टूल्स।";
+const exampleKeyword = "फ्री SEO टूल्स";
+
+// पहली बार विज़िट पर उदाहरण डालें
+if (!localStorage.getItem('metaToolExampleShown')) {
+pageTitleInput.value = exampleTitle;
+pageDescInput.value = exampleDescription;
+targetKeywordInput.value = exampleKeyword;
+localStorage.setItem('metaToolExampleShown', 'true');
+}
+
+// जनरेट बटन का इवेंट
+generateBtn.addEventListener('click', function() {
+const title = pageTitleInput.value.trim();
+const description = pageDescInput.value.trim();
+const keyword = targetKeywordInput.value.trim();
+
+// वैधता जाँच
+if (!title) {
+alert('कृपया पेज का मुख्य टॉपिक डालें।');
+return;
+}
+if (!description) {
+alert('कृपया पेज का विवरण डालें।');
+return;
+}
+
+// लोडिंग स्टेट दिखाएँ
+generateBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> जनरेट हो रहा है...';
+generateBtn.disabled = true;
+
+// मेटा टैग जनरेट करें
+setTimeout(() => {
+generateMetaTags(title, description, keyword);
+generateBtn.innerHTML = '<i class="fas fa-magic"></i> मेटा टैग जनरेट करें';
+generateBtn.disabled = false;
+}, 800);
+});
+
+// साफ करें बटन
+clearBtn.addEventListener('click', function() {
+pageTitleInput.value = '';
+pageDescInput.value = '';
+targetKeywordInput.value = '';
+resultsContainer.innerHTML = `
+<div class="placeholder-results">
+<div class="placeholder-icon"><i class="fas fa-code"></i></div>
+<h3>मेटा टैग यहाँ दिखेंगे</h3>
+<p>डिटेल्स डालने और "जनरेट करें" बटन दबाने के बाद, आपके लिए ऑप्टिमाइज्ड मेटा टैग यहाँ दिखाई देंगे।</p>
+</div>
+`;
+serpPreview.style.display = 'none';
+});
+
+// मेटा टैग जनरेट करने का मुख्य फंक्शन
+function generateMetaTags(title, description, keyword) {
+// ऑप्टिमाइज्ड टाइटल जनरेट करें
+let optimizedTitle = title;
+if (keyword && !title.includes(keyword)) {
+optimizedTitle = `${keyword} | ${title}`;
+}
+
+// टाइटल को 60 करैक्टर तक ट्रिम करें
+if (optimizedTitle.length > 60) {
+optimizedTitle = optimizedTitle.substring(0, 57) + '...';
+}
+
+// ऑप्टिमाइज्ड डिस्क्रिप्शन जनरेट करें
+let optimizedDescription = description;
+if (keyword && !description.includes(keyword)) {
+optimizedDescription = `${description} ${keyword} के बारे में जानें।`;
+}
+
+// डिस्क्रिप्शन को 160 करैक्टर तक ट्रिम करें
+if (optimizedDescription.length > 160) {
+optimizedDescription = optimizedDescription.substring(0, 157) + '...';
+}
+
+// HTML कोड जनरेट करें
+const titleHTML = `<title>${optimizedTitle}</title>`;
+const descriptionHTML = `<meta name="description" content="${optimizedDescription}">`;
+
+// ओपन ग्राफ टैग्स (सोशल मीडिया के लिए)
+const ogTags = `
+<meta property="og:title" content="${optimizedTitle}">
+<meta property="og:description" content="${optimizedDescription}">
+<meta property="og:type" content="website">
+`.trim();
+
+// रिजल्ट्स दिखाएँ
+resultsContainer.innerHTML = `
+<div class="result-box">
+<h4><i class="fas fa-heading"></i> मेटा टाइटल</h4>
+<p><strong>कोड:</strong> <code>${titleHTML}</code></p>
+<p><strong>लंबाई:</strong> ${optimizedTitle.length} करैक्टर (आदर्श: 50-60)</p>
+<button class="copy-btn" onclick="copyToClipboard('${titleHTML.replace(/'/g, "\\'")}')">
+<i class="fas fa-copy"></i> कॉपी करें
+</button>
+</div>
+
+<div class="result-box">
+<h4><i class="fas fa-align-left"></i> मेटा डिस्क्रिप्शन</h4>
+<p><strong>कोड:</strong> <code>${descriptionHTML}</code></p>
+<p><strong>लंबाई:</strong> ${optimizedDescription.length} करैक्टर (आदर्श: 150-160)</p>
+<button class="copy-btn" onclick="copyToClipboard('${descriptionHTML.replace(/'/g, "\\'")}')">
+<i class="fas fa-copy"></i> कॉपी करें
+</button>
+</div>
+
+<div class="result-box">
+<h4><i class="fab fa-facebook"></i> ओपन ग्राफ टैग्स (सोशल मीडिया)</h4>
+<pre style="background:#f8f9fa; padding:15px; border-radius:5px; overflow:auto; font-size:0.9rem;">${ogTags}</pre>
+<button class="copy-btn" onclick="copyToClipboard(\`${ogTags}\`)">
+<i class="fas fa-copy"></i> कॉपी करें
+</button>
+</div>
+`;
+
+// SERP प्रिव्यू अपडेट करें
+previewTitle.textContent = optimizedTitle;
+previewDescription.textContent = optimizedDescription;
+serpPreview.style.display = 'block';
+
+// सुझाव दिखाएँ
+showSuggestions(optimizedTitle.length, optimizedDescription.length);
+}
+
+// कॉपी टू क्लिपबोर्ड फंक्शन
+function copyToClipboard(text) {
+navigator.clipboard.writeText(text).then(() => {
+alert('कोड क्लिपबोर्ड में कॉपी हो गया!');
+});
+}
+
+// सुझाव दिखाने का फंक्शन
+function showSuggestions(titleLength, descLength) {
+let suggestions = [];
+
+if (titleLength < 50) {
+suggestions.push('टाइटल थोड़ा लंबा करें (आदर्श: 50-60 करैक्टर)');
+} else if (titleLength > 60) {
+suggestions.push('टाइटल थोड़ा छोटा करें (गूगल 60 करैक्टर के बाद काट देता है)');
+}
+
+if (descLength < 120) {
+suggestions.push('डिस्क्रिप्शन और विस्तार से लिखें (आदर्श: 150-160 करैक्टर)');
+} else if (descLength > 160) {
+suggestions.push('डिस्क्रिप्शन छोटा करें (गूगल 160 करैक्टर के बाद काट देता है)');
+}
+
+if (suggestions.length > 0) {
+const suggestionsHTML = suggestions.map(s => `<div class="tip-item">${s}</div>`).join('');
+resultsContainer.innerHTML += `
+<div class="tips-container" style="margin-top:20px;">
+<h4><i class="fas fa-bullseye"></i> सुधार के सुझाव</h4>
+${suggestionsHTML}
+</div>
+`;
+}
+}
+
+// पेज लोड होते ही टाइटल इनपुट पर फोकस
+window.onload = function() {
+pageTitleInput.focus();
+};
+</script>
+</body>
+</html>
