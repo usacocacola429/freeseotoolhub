@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>बैकलिंक चेकर टूल - FreeSEOToolHub.com</title>
+<meta name="description" content="किसी भी वेबसाइट या URL के बैकलिंक्स (Backlinks) की संख्या और गुणवत्ता का विश्लेषण करें। मुफ्त बैकलिंक चेकर।">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PFPCTBFG3Y"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-PFPCTBFG3Y');
+</script>
+<!-- फोंट और आइकॉन -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===== बेसिक सेटअप ===== */
+:root {
+--primary: #4361ee;
+--primary-dark: #3a56d4;
+--secondary: #7209b7;
+--success: #06d6a0;
+--warning: #ffd166;
+--danger: #ef476f;
+--light: #f8f9fa;
+--dark: #212529;
+--gray: #6c757d;
+--gray-light: #e9ecef;
+--shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+--radius: 12px;
+--transition: all 0.3s ease;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+font-family: 'Inter', 'Hind Siliguri', sans-serif;
+background-color: #f5f7ff;
+color: var(--dark);
+line-height: 1.6;
+padding-bottom: 40px;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* ===== नेविगेशन बार ===== */
+.navbar {
+background: white;
+box-shadow: var(--shadow);
+position: sticky;
+top: 0;
+z-index: 1000;
+padding: 15px 0;
+}
+
+.nav-container {
+display: flex;
+justify-content: space-between;
+align-items: center;
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 20px;
+}
+
+.logo {
+font-size: 1.6rem;
+font-weight: 700;
+color: var(--primary);
+text-decoration: none;
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.logo span { color: var(--secondary); }
+
+.nav-links { display: flex; gap: 25px; }
+
+.nav-link {
+text-decoration: none;
+color: var(--gray);
+font-weight: 600;
+transition: var(--transition);
+display: flex;
+align-items: center;
+gap: 6px;
+}
+
+.nav-link:hover, .nav-link.active { color: var(--primary); }
+
+/* ===== टूल का हीरो सेक्शन ===== */
+.tool-hero {
+background: linear-gradient(135deg, #1d4ed8 0%, #7c3aed 100%);
+color: white;
+padding: 70px 20px;
+text-align: center;
+border-radius: 0 0 30px 30px;
+margin-bottom: 40px;
+}
+
+.tool-hero h1 { font-size: 2.8rem; margin-bottom: 15px; font-weight: 800; }
+.tool-hero p { font-size: 1.2rem; opacity: 0.9; max-width: 700px; margin: 0 auto 25px; }
+
+/* ===== मुख्य टूल लेआउट ===== */
+.tool-layout {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 30px;
+margin-bottom: 40px;
+}
+
+@media (max-width: 900px) {
+.tool-layout { grid-template-columns: 1fr; }
+}
+
+.panel {
+background: white;
+border-radius: var(--radius);
+box-shadow: var(--shadow);
+padding: 30px;
+}
+
+.panel h2 {
+color: var(--primary);
+margin-bottom: 20px;
+padding-bottom: 15px;
+border-bottom: 2px solid var(--gray-light);
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+/* ===== इनपुट सेक्शन ===== */
+.form-group { margin-bottom: 25px; }
+label { display: block; margin-bottom: 8px; font-weight: 600; }
+
+textarea, input[type="text"], input[type="url"] {
+width: 100%;
+padding: 15px;
+border: 2px solid var(--gray-light);
+border-radius: var(--radius);
+font-family: inherit;
+font-size: 1rem;
+transition: var(--transition);
+}
+
+textarea:focus, input[type="text"]:focus, input[type="url"]:focus {
+outline: none;
+border-color: var(--primary);
+box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+}
+
+textarea { resize: vertical; min-height: 120px; }
+
+/* ===== बटन ===== */
+.btn {
+padding: 15px 30px;
+border-radius: 50px;
+font-weight: 700;
+border: none;
+cursor: pointer;
+font-size: 1rem;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+gap: 10px;
+transition: var(--transition);
+width: 100%;
+margin-top: 10px;
+}
+
+.btn-primary {
+background: var(--primary);
+color: white;
+}
+
+.btn-primary:hover { background: var(--primary-dark); transform: translateY(-3px); }
+
+.btn-secondary {
+background: var(--gray-light);
+color: var(--dark);
+}
+
+.btn-secondary:hover { background: #d8d9da; }
+
+.btn-small {
+padding: 10px 20px;
+width: auto;
+font-size: 0.9rem;
+}
+
+/* ===== रिजल्ट्स ===== */
+.result-box {
+background: var(--light);
+border-radius: var(--radius);
+padding: 20px;
+margin-bottom: 20px;
+border-left: 4px solid var(--primary);
+position: relative;
+}
+
+.result-box h4 {
+margin-bottom: 10px;
+color: var(--primary);
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.result-stats {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+gap: 15px;
+margin-top: 20px;
+}
+
+.stat-card {
+background: white;
+padding: 20px;
+border-radius: var(--radius);
+text-align: center;
+box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.stat-value {
+font-size: 2.5rem;
+font-weight: 800;
+color: var(--primary);
+line-height: 1;
+margin-bottom: 5px;
+}
+
+.stat-label {
+font-size: 0.9rem;
+color: var(--gray);
+}
+
+.backlink-list {
+max-height: 300px;
+overflow-y: auto;
+margin-top: 20px;
+}
+
+.backlink-item {
+background: white;
+padding: 15px;
+margin-bottom: 10px;
+border-radius: 8px;
+border-left: 3px solid var(--success);
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.backlink-item.low-da { border-left-color: var(--danger); }
+
+.copy-btn {
+position: absolute;
+top: 15px;
+right: 15px;
+background: var(--primary);
+color: white;
+border: none;
+border-radius: 4px;
+padding: 5px 10px;
+cursor: pointer;
+font-size: 0.8rem;
+}
+
+.copy-btn:hover { background: var(--primary-dark); }
+
+/* ===== टिप्स ===== */
+.tips-container {
+background: #f0f7ff;
+border-radius: var(--radius);
+padding: 25px;
+margin-top: 30px;
+border-left: 4px solid var(--primary);
+}
+
+.tip-item {
+margin-bottom: 15px;
+padding-left: 25px;
+position: relative;
+}
+
+.tip-item:before {
+content: "💡";
+position: absolute;
+left: 0;
+top: 0;
+}
+
+/* ===== फुटर ===== */
+.tool-footer {
+text-align: center;
+margin-top: 60px;
+padding-top: 30px;
+border-top: 1px solid var(--gray-light);
+color: var(--gray);
+}
+
+.back-link {
+display: inline-flex;
+align-items: center;
+gap: 10px;
+color: var(--primary);
+text-decoration: none;
+font-weight: 600;
+margin-top: 20px;
+}
+</style>
+</head>
+<body>
+<!-- नेविगेशन बार -->
+<nav class="navbar">
+<div class="nav-container">
+<a href="index.html" class="logo">
+<i class="fas fa-tools"></i> <span>FreeSEOToolHub</span>.com
+</a>
+<div class="nav-links">
+<a href="index.html" class="nav-link"><i class="fas fa-home"></i> होम</a>
+<a href="tools.html" class="nav-link"><i class="fas fa-th"></i> टूल्स</a>
+<a href="backlink-checker.html" class="nav-link active"><i class="fas fa-link"></i> बैकलिंक चेकर</a>
+<a href="meta-tag-generator.html" class="nav-link"><i class="fas fa-search"></i> मेटा टैग जनरेटर</a>
+</div>
+</div>
+</nav>
+
+<!-- टूल का परिचय -->
+<header class="tool-hero">
+<div class="container">
+<h1 class="hindi">बैकलिंक चेकर टूल</h1>
+<p>किसी भी वेबसाइट या URL के बैकलिंक्स (Backlinks) की संख्या, गुणवत्ता और सोर्स का विश्लेषण करें।</p>
+</div>
+</header>
+
+<!-- मुख्य टूल एरिया -->
+<main class="container">
+<div class="tool-layout">
+<!-- इनपुट पैनल -->
+<div class="panel input-panel">
+<h2><i class="fas fa-link"></i> वेबसाइट URL डालें</h2>
+<div class="form-group">
+<label for="websiteUrl">वेबसाइट या पेज का URL:</label>
+<input type="url" id="websiteUrl" placeholder="https://example.com" value="https://freeseotoolhub.com">
+</div>
+
+<div class="form-group">
+<label for="analysisDepth">विश्लेषण गहराई:</label>
+<select id="analysisDepth" style="width:100%; padding:15px; border-radius:var(--radius); border:2px solid var(--gray-light); font-family:inherit;">
+<option value="basic">बेसिक (शीघ्र विश्लेषण)</option>
+<option value="detailed">विस्तृत (पूर्ण विश्लेषण)</option>
+</select>
+</div>
+
+<button id="checkBacklinksBtn" class="btn btn-primary"><i class="fas fa-search"></i> बैकलिंक्स चेक करें</button>
+<button id="clearBtn" class="btn btn-secondary"><i class="fas fa-eraser"></i> साफ करें</button>
+</div>
+
+<!-- रिजल्ट्स पैनल -->
+<div class="panel results-panel">
+<h2><i class="fas fa-chart-bar"></i> बैकलिंक विश्लेषण</h2>
+<div id="resultsContainer" class="results-container">
+<div class="placeholder-results" style="text-align:center; padding:40px 20px;">
+<div style="font-size:4rem; color:#e9ecef; margin-bottom:20px;">
+<i class="fas fa-link"></i>
+</div>
+<h3>बैकलिंक रिपोर्ट यहाँ दिखेगी</h3>
+<p>URL डालने और "चेक करें" बटन दबाने के बाद, विस्तृत बैकलिंक विश्लेषण यहाँ दिखाई देगा।</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- टिप्स -->
+<div class="tips-container">
+<h3><i class="fas fa-lightbulb"></i> बैकलिंक्स के बारे में महत्वपूर्ण जानकारी</h3>
+<div class="tip-item"><strong>गुणवत्ता महत्वपूर्ण:</strong> 1000 लो-क्वालिटी बैकलिंक से बेहतर है 10 हाई-क्वालिटी बैकलिंक।</div>
+<div class="tip-item"><strong>रिलेवेंस:</strong> आपकी वेबसाइट से संबंधित टॉपिक वाली साइट्स से बैकलिंक्स ज्यादा मूल्यवान होते हैं।</div>
+<div class="tip-item"><strong>डोमेन अथॉरिटी (DA):</strong> हाई DA वाली वेबसाइट्स से बैकलिंक्स SEO के लिए बहुत फायदेमंद होते हैं।</div>
+<div class="tip-item"><strong>नेचुरल लिंक्स:</strong> नेचुरल तरीके से मिले बैकलिंक्स सबसे अच्छे होते हैं। लिंक खरीदने से बचें।</div>
+<div class="tip-item"><strong>रिपोर्ट मॉनिटरिंग:</strong> नियमित रूप से अपने बैकलिंक प्रोफाइल की जाँच करते रहें।</div>
+</div>
+</main>
+
+<!-- फुटर -->
+<footer class="tool-footer container">
+<p>© 2023 FreeSEOToolHub.com | <strong>नोट:</strong> यह टूल सिमुलेटेड डेटा दिखाता है। वास्तविक बैकलिंक डेटा के लिए प्रोफेशनल टूल्स का उपयोग करें।</p>
+<a href="tools.html" class="back-link"><i class="fas fa-arrow-left"></i> वापस सभी टूल्स पर जाएँ</a>
+</footer>
+
+<!-- JavaScript -->
+<script>
+// DOM Elements
+const websiteUrlInput = document.getElementById('websiteUrl');
+const analysisDepthSelect = document.getElementById('analysisDepth');
+const checkBacklinksBtn = document.getElementById('checkBacklinksBtn');
+const clearBtn = document.getElementById('clearBtn');
+const resultsContainer = document.getElementById('resultsContainer');
+
+// उदाहरण डेटा
+const exampleBacklinks = [
+{ url: "https://exampleblog.com/seo-tips", da: 45, text: "SEO Best Practices Guide", type: "dofollow" },
+{ url: "https://technews.com/digital-marketing", da: 62, text: "Digital Marketing Trends", type: "dofollow" },
+{ url: "https://forum.webmasters.com/thread-123", da: 28, text: "Webmaster Discussion", type: "nofollow" },
+{ url: "https://businessdirectory.com/listings", da: 31, text: "Business Listing", type: "dofollow" },
+{ url: "https://guestblog.com/how-to-write-content", da: 58, text: "Content Writing Guide", type: "dofollow" }
+];
+
+// जनरेट बटन इवेंट
+checkBacklinksBtn.addEventListener('click', function() {
+const url = websiteUrlInput.value.trim();
+const depth = analysisDepthSelect.value;
+
+if (!url) {
+alert('कृपया वेबसाइट URL डालें।');
+return;
+}
+
+if (!url.startsWith('http')) {
+alert('कृपया पूरा URL डालें (https:// से शुरू)।');
+return;
+}
+
+// लोडिंग स्टेट
+checkBacklinksBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> विश्लेषण हो रहा है...';
+checkBacklinksBtn.disabled = true;
+
+// रिजल्ट जनरेट करें (सिमुलेशन)
+setTimeout(() => {
+generateBacklinkReport(url, depth);
+checkBacklinksBtn.innerHTML = '<i class="fas fa-search"></i> बैकलिंक्स चेक करें';
+checkBacklinksBtn.disabled = false;
+}, 1500);
+});
+
+// साफ करें बटन
+clearBtn.addEventListener('click', function() {
+websiteUrlInput.value = '';
+analysisDepthSelect.value = 'basic';
+resultsContainer.innerHTML = `
+<div class="placeholder-results" style="text-align:center; padding:40px 20px;">
+<div style="font-size:4rem; color:#e9ecef; margin-bottom:20px;">
+<i class="fas fa-link"></i>
+</div>
+<h3>बैकलिंक रिपोर्ट यहाँ दिखेगी</h3>
+<p>URL डालने और "चेक करें" बटन दबाने के बाद, विस्तृत बैकलिंक विश्लेषण यहाँ दिखाई देगा।</p>
+</div>
+`;
+});
+
+// बैकलिंक रिपोर्ट जनरेट करें
+function generateBacklinkReport(url, depth) {
+const totalBacklinks = depth === 'basic' ? 1285 : 3421;
+const referringDomains = depth === 'basic' ? 156 : 421;
+const avgDA = depth === 'basic' ? 38 : 42;
+
+// रैंडम डेटा जनरेट
+const dofollowPercent = 65 + Math.floor(Math.random() * 20);
+const spamScore = 5 + Math.floor(Math.random() * 15);
+
+// HTML जनरेट
+const reportHTML = `
+<div class="result-box">
+<h4><i class="fas fa-chart-line"></i> बैकलिंक सारांश</h4>
+<p><strong>विश्लेषित URL:</strong> ${url}</p>
+<p><strong>विश्लेषण प्रकार:</strong> ${depth === 'basic' ? 'बेसिक' : 'विस्तृत'} विश्लेषण</p>
+
+<div class="result-stats">
+<div class="stat-card">
+<div class="stat-value">${totalBacklinks.toLocaleString()}</div>
+<div class="stat-label">कुल बैकलिंक्स</div>
+</div>
+<div class="stat-card">
+<div class="stat-value">${referringDomains.toLocaleString()}</div>
+<div class="stat-label">रेफरिंग डोमेन</div>
+</div>
+<div class="stat-card">
+<div class="stat-value">${dofollowPercent}%</div>
+<div class="stat-label">डोफॉलो लिंक्स</div>
+</div>
+<div class="stat-card">
+<div class="stat-value">${avgDA}</div>
+<div class="stat-label">औसत DA</div>
+</div>
+</div>
+</div>
+
+<div class="result-box">
+<h4><i class="fas fa-list"></i> शीर्ष बैकलिंक्स</h4>
+<div class="backlink-list">
+${exampleBacklinks.map(link => `
+<div class="backlink-item ${link.da < 30 ? 'low-da' : ''}">
+<div>
+<strong>${link.text}</strong><br>
+<small style="color:var(--gray);">${link.url}</small><br>
+<small>DA: ${link.da} | Type: ${link.type}</small>
+</div>
+<div>
+<span style="background:${link.da > 50 ? '#06d6a0' : link.da > 30 ? '#ffd166' : '#ef476f'}; color:${link.da > 30 ? 'black' : 'white'}; padding:3px 8px; border-radius:4px; font-size:0.8rem;">
+DA ${link.da}
+</span>
+</div>
+</div>
+`).join('')}
+</div>
+<button class="copy-btn" onclick="copyToClipboard('बैकलिंक रिपोर्ट कॉपी किया गया')">
+<i class="fas fa-copy"></i> रिपोर्ट कॉपी करें
+</button>
+</div>
+
+<div class="result-box">
+<h4><i class="fas fa-exclamation-triangle"></i> सुझाव</h4>
+${spamScore > 15 ?
+`<p style="color:var(--danger);"><strong>चेतावनी:</strong> इस वेबसाइट का स्पैम स्कोर (${spamScore}%) अधिक है। लो-क्वालिटी बैकलिंक्स को डिसवो करने पर विचार करें।</p>` :
+`<p style="color:var(--success);"><strong>अच्छी खबर:</strong> इस वेबसाइट का बैकलिंक प्रोफाइल स्वस्थ है (स्पैम स्कोर: ${spamScore}%)।</p>`
+}
+<p><strong>सुझाव:</strong> हाई डोमेन अथॉरिटी (DA 40+) वाली वेबसाइट्स से अधिक बैकलिंक्स प्राप्त करने पर ध्यान दें।</p>
+</div>
+`;
+
+resultsContainer.innerHTML = reportHTML;
+}
+
+// कॉपी टू क्लिपबोर्ड
+function copyToClipboard(text) {
+navigator.clipboard.writeText(text).then(() => {
+alert('रिपोर्ट क्लिपबोर्ड में कॉपी हो गई!');
+});
+}
+
+// पेज लोड होते ही URL इनपुट पर फोकस
+window.onload = function() {
+websiteUrlInput.focus();
+};
+</script>
+</body>
+</html>

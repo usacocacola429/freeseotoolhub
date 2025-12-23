@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SSL सर्टिफिकेट चेकर - FreeSEOToolHub.com</title>
+<meta name="description" content="किसी भी वेबसाइट का SSL सर्टिफिकेट वैधता, एक्सपायरी डेट और सुरक्षा जानकारी चेक करें। मुफ्त SSL चेकर टूल।">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PFPCTBFG3Y"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-PFPCTBFG3Y');
+</script>
+<!-- फोंट और आइकॉन -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===== बेसिक सेटअप ===== */
+:root {
+--primary: #4361ee;
+--primary-dark: #3a56d4;
+--secondary: #7209b7;
+--success: #06d6a0;
+--warning: #ffd166;
+--danger: #ef476f;
+--light: #f8f9fa;
+--dark: #212529;
+--gray: #6c757d;
+--gray-light: #e9ecef;
+--shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+--radius: 12px;
+--transition: all 0.3s ease;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+font-family: 'Inter', 'Hind Siliguri', sans-serif;
+background-color: #f5f7ff;
+color: var(--dark);
+line-height: 1.6;
+padding-bottom: 40px;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* ===== नेविगेशन बार ===== */
+.navbar {
+background: white;
+box-shadow: var(--shadow);
+position: sticky;
+top: 0;
+z-index: 1000;
+padding: 15px 0;
+}
+
+.nav-container {
+display: flex;
+justify-content: space-between;
+align-items: center;
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 20px;
+}
+
+.logo {
+font-size: 1.6rem;
+font-weight: 700;
+color: var(--primary);
+text-decoration: none;
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.logo span { color: var(--secondary); }
+
+.nav-links { display: flex; gap: 25px; }
+
+.nav-link {
+text-decoration: none;
+color: var(--gray);
+font-weight: 600;
+transition: var(--transition);
+display: flex;
+align-items: center;
+gap: 6px;
+}
+
+.nav-link:hover, .nav-link.active { color: var(--primary); }
+
+/* ===== टूल का हीरो सेक्शन ===== */
+.tool-hero {
+background: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 100%);
+color: white;
+padding: 70px 20px;
+text-align: center;
+border-radius: 0 0 30px 30px;
+margin-bottom: 40px;
+}
+
+.tool-hero h1 { font-size: 2.8rem; margin-bottom: 15px; font-weight: 800; }
+.tool-hero p { font-size: 1.2rem; opacity: 0.9; max-width: 700px; margin: 0 auto 25px; }
+
+/* ===== मुख्य टूल लेआउट ===== */
+.tool-layout {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 30px;
+margin-bottom: 40px;
+}
+
+@media (max-width: 900px) {
+.tool-layout { grid-template-columns: 1fr; }
+}
+
+.panel {
+background: white;
+border-radius: var(--radius);
+box-shadow: var(--shadow);
+padding: 30px;
+}
+
+.panel h2 {
+color: var(--primary);
+margin-bottom: 20px;
+padding-bottom: 15px;
+border-bottom: 2px solid var(--gray-light);
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+/* ===== इनपुट सेक्शन ===== */
+.form-group { margin-bottom: 25px; }
+label { display: block; margin-bottom: 8px; font-weight: 600; }
+
+input[type="url"] {
+width: 100%;
+padding: 15px;
+border: 2px solid var(--gray-light);
+border-radius: var(--radius);
+font-family: inherit;
+font-size: 1rem;
+transition: var(--transition);
+}
+
+input[type="url"]:focus {
+outline: none;
+border-color: var(--primary);
+box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+}
+
+/* ===== बटन ===== */
+.btn {
+padding: 15px 30px;
+border-radius: 50px;
+font-weight: 700;
+border: none;
+cursor: pointer;
+font-size: 1rem;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+gap: 10px;
+transition: var(--transition);
+width: 100%;
+margin-top: 10px;
+}
+
+.btn-primary {
+background: var(--primary);
+color: white;
+}
+
+.btn-primary:hover { background: var(--primary-dark); transform: translateY(-3px); }
+
+.btn-secondary {
+background: var(--gray-light);
+color: var(--dark);
+}
+
+.btn-secondary:hover { background: #d8d9da; }
+
+.btn-small {
+padding: 10px 20px;
+width: auto;
+font-size: 0.9rem;
+}
+
+/* ===== रिजल्ट्स ===== */
+.result-box {
+background: var(--light);
+border-radius: var(--radius);
+padding: 20px;
+margin-bottom: 20px;
+border-left: 4px solid var(--primary);
+position: relative;
+}
+
+.result-box h4 {
+margin-bottom: 10px;
+color: var(--primary);
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.ssl-status {
+display: inline-flex;
+align-items: center;
+gap: 10px;
+padding: 10px 20px;
+border-radius: 50px;
+font-weight: 700;
+margin-bottom: 20px;
+}
+
+.ssl-valid { background: #d1fae5; color: #065f46; }
+.ssl-expiring { background: #fef3c7; color: #92400e; }
+.ssl-invalid { background: #fee2e2; color: #991b1b; }
+
+.cert-details {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 15px;
+margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+.cert-details { grid-template-columns: 1fr; }
+}
+
+.detail-item {
+background: white;
+padding: 15px;
+border-radius: 8px;
+box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.detail-label {
+font-size: 0.9rem;
+color: var(--gray);
+margin-bottom: 5px;
+}
+
+.detail-value {
+font-weight: 600;
+font-size: 1.1rem;
+}
+
+.copy-btn {
+position: absolute;
+top: 15px;
+right: 15px;
+background: var(--primary);
+color: white;
+border: none;
+border-radius: 4px;
+padding: 5px 10px;
+cursor: pointer;
+font-size: 0.8rem;
+}
+
+.copy-btn:hover { background: var(--primary-dark); }
+
+/* ===== टिप्स ===== */
+.tips-container {
+background: #f0f7ff;
+border-radius: var(--radius);
+padding: 25px;
+margin-top: 30px;
+border-left: 4px solid var(--primary);
+}
+
+.tip-item {
+margin-bottom: 15px;
+padding-left: 25px;
+position: relative;
+}
+
+.tip-item:before {
+content: "🔒";
+position: absolute;
+left: 0;
+top: 0;
+}
+
+/* ===== फुटर ===== */
+.tool-footer {
+text-align: center;
+margin-top: 60px;
+padding-top: 30px;
+border-top: 1px solid var(--gray-light);
+color: var(--gray);
+}
+
+.back-link {
+display: inline-flex;
+align-items: center;
+gap: 10px;
+color: var(--primary);
+text-decoration: none;
+font-weight: 600;
+margin-top: 20px;
+}
+</style>
+</head>
+<body>
+<!-- नेविगेशन बार -->
+<nav class="navbar">
+<div class="nav-container">
+<a href="index.html" class="logo">
+<i class="fas fa-tools"></i> <span>FreeSEOToolHub</span>.com
+</a>
+<div class="nav-links">
+<a href="index.html" class="nav-link"><i class="fas fa-home"></i> होम</a>
+<a href="tools.html" class="nav-link"><i class="fas fa-th"></i> टूल्स</a>
+<a href="ssl-checker.html" class="nav-link active"><i class="fas fa-lock"></i> SSL चेकर</a>
+<a href="meta-tag-generator.html" class="nav-link"><i class="fas fa-search"></i> मेटा टैग जनरेटर</a>
+</div>
+</div>
+</nav>
+
+<!-- टूल का परिचय -->
+<header class="tool-hero">
+<div class="container">
+<h1 class="hindi">SSL सर्टिफिकेट चेकर</h1>
+<p>किसी भी वेबसाइट का SSL सर्टिफिकेट वैधता, एक्सपायरी डेट और सुरक्षा विवरण चेक करें।</p>
+</div>
+</header>
+
+<!-- मुख्य टूल एरिया -->
+<main class="container">
+<div class="tool-layout">
+<!-- इनपुट पैनल -->
+<div class="panel input-panel">
+<h2><i class="fas fa-lock"></i> वेबसाइट URL डालें</h2>
+<div class="form-group">
+<label for="websiteUrl">वेबसाइट या पेज का URL:</label>
+<input type="url" id="websiteUrl" placeholder="https://example.com" value="https://freeseotoolhub.com">
+</div>
+
+<div class="form-group">
+<label for="checkPort">पोर्ट नंबर (वैकल्पिक):</label>
+<input type="text" id="checkPort" placeholder="443 (डिफॉल्ट)" value="443">
+</div>
+
+<button id="checkSSLBtn" class="btn btn-primary"><i class="fas fa-search"></i> SSL चेक करें</button>
+<button id="clearBtn" class="btn btn-secondary"><i class="fas fa-eraser"></i> साफ करें</button>
+</div>
+
+<!-- रिजल्ट्स पैनल -->
+<div class="panel results-panel">
+<h2><i class="fas fa-certificate"></i> SSL सर्टिफिकेट विवरण</h2>
+<div id="resultsContainer" class="results-container">
+<div class="placeholder-results" style="text-align:center; padding:40px 20px;">
+<div style="font-size:4rem; color:#e9ecef; margin-bottom:20px;">
+<i class="fas fa-lock"></i>
+</div>
+<h3>SSL रिपोर्ट यहाँ दिखेगी</h3>
+<p>URL डालने और "SSL चेक करें" बटन दबाने के बाद, SSL सर्टिफिकेट विवरण यहाँ दिखाई देगा।</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- टिप्स -->
+<div class="tips-container">
+<h3><i class="fas fa-lightbulb"></i> SSL सर्टिफिकेट के बारे में महत्वपूर्ण जानकारी</h3>
+<div class="tip-item"><strong>HTTPS आवश्यक:</strong> आधुनिक वेबसाइट्स के लिए SSL/HTTPS अनिवार्य है। यह डेटा एन्क्रिप्शन और गोपनीयता सुनिश्चित करता है।</div>
+<div class="tip-item"><strong>वैधता अवधि:</strong> SSL सर्टिफिकेट्स की सामान्य वैधता 90 दिन (Let's Encrypt) से लेकर 1-2 वर्ष तक होती है।</div>
+<div class="tip-item"><strong>ऑटो-रिन्यूअल:</strong> सर्टिफिकेट के एक्सपायर होने से पहले ही उसे रिन्यू कर दें। अधिकांश होस्टिंग कंपनियाँ यह स्वचालित कर देती हैं।</div>
+<div class="tip-item"><strong>SEO लाभ:</strong> Google HTTPS वाली वेबसाइट्स को रैंकिंग में प्राथमिकता देता है।</div>
+<div class="tip-item"><strong>मिक्स्ड कंटेंट:</strong> HTTPS पेज पर HTTP कंटेंट (इमेज, स्क्रिप्ट) लोड न होने दें। यह सुरक्षा को कमजोर करता है।</div>
+</div>
+</main>
+
+<!-- फुटर -->
+<footer class="tool-footer container">
+<p>© 2023 FreeSEOToolHub.com | <strong>नोट:</strong> यह टूल सिमुलेटेड डेटा दिखाता है। वास्तविक SSL जाँच के लिए SSL Labs या समान टूल का उपयोग करें।</p>
+<a href="tools.html" class="back-link"><i class="fas fa-arrow-left"></i> वापस सभी टूल्स पर जाएँ</a>
+</footer>
+
+<!-- JavaScript -->
+<script>
+// DOM Elements
+const websiteUrlInput = document.getElementById('websiteUrl');
+const checkPortInput = document.getElementById('checkPort');
+const checkSSLBtn = document.getElementById('checkSSLBtn');
+const clearBtn = document.getElementById('clearBtn');
+const resultsContainer = document.getElementById('resultsContainer');
+
+// जनरेट बटन इवेंट
+checkSSLBtn.addEventListener('click', function() {
+const url = websiteUrlInput.value.trim();
+const port = checkPortInput.value.trim() || '443';
+
+if (!url) {
+alert('कृपया वेबसाइट URL डालें।');
+return;
+}
+
+if (!url.startsWith('http')) {
+alert('कृपया पूरा URL डालें (https:// से शुरू)।');
+return;
+}
+
+// लोडिंग स्टेट
+checkSSLBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> जाँच हो रही है...';
+checkSSLBtn.disabled = true;
+
+// रिजल्ट जनरेट करें (सिमुलेशन)
+setTimeout(() => {
+generateSSLReport(url, port);
+checkSSLBtn.innerHTML = '<i class="fas fa-search"></i> SSL चेक करें';
+checkSSLBtn.disabled = false;
+}, 1500);
+});
+
+// साफ करें बटन
+clearBtn.addEventListener('click', function() {
+websiteUrlInput.value = '';
+checkPortInput.value = '443';
+resultsContainer.innerHTML = `
+<div class="placeholder-results" style="text-align:center; padding:40px 20px;">
+<div style="font-size:4rem; color:#e9ecef; margin-bottom:20px;">
+<i class="fas fa-lock"></i>
+</div>
+<h3>SSL रिपोर्ट यहाँ दिखेगी</h3>
+<p>URL डालने और "SSL चेक करें" बटन दबाने के बाद, SSL सर्टिफिकेट विवरण यहाँ दिखाई देगा।</p>
+</div>
+`;
+});
+
+// SSL रिपोर्ट जनरेट करें
+function generateSSLReport(url, port) {
+// रैंडम डेटा जनरेट
+const isValid = Math.random() > 0.1; // 90% मौका वैध होने का
+const daysRemaining = isValid ? Math.floor(Math.random() * 365) + 1 : 0;
+const issuedDate = new Date(Date.now() - Math.floor(Math.random() * 200) * 86400000);
+const expiryDate = new Date(issuedDate.getTime() + (daysRemaining + 365) * 86400000);
+
+const issuer = isValid ?
+["Let's Encrypt", "DigiCert", "Sectigo", "GeoTrust"][Math.floor(Math.random() * 4)] :
+"अमान्य/अज्ञात";
+
+const protocol = ["TLS 1.2", "TLS 1.3"][Math.floor(Math.random() * 2)];
+const cipher = ["ECDHE-RSA-AES256-GCM-SHA384", "ECDHE-ECDSA-AES256-GCM-SHA384"][Math.floor(Math.random() * 2)];
+
+// स्टेटस डिटर्माइन करें
+let statusClass, statusText, statusIcon;
+if (!isValid) {
+statusClass = "ssl-invalid";
+statusText = "❌ SSL अमान्य या एक्सपायर्ड";
+statusIcon = "fas fa-times-circle";
+} else if (daysRemaining < 30) {
+statusClass = "ssl-expiring";
+statusText = "⚠️ SSL जल्द एक्सपायर होगा";
+statusIcon = "fas fa-exclamation-triangle";
+} else {
+statusClass = "ssl-valid";
+statusText = "✅ SSL वैध और सक्रिय";
+statusIcon = "fas fa-check-circle";
+}
+
+// HTML जनरेट
+const reportHTML = `
+<div class="result-box">
+<h4><i class="fas fa-shield-alt"></i> SSL स्टेटस</h4>
+
+<div class="ssl-status ${statusClass}">
+<i class="${statusIcon}"></i> ${statusText}
+</div>
+
+<p><strong>चेक किया गया URL:</strong> ${url}</p>
+<p><strong>पोर्ट:</strong> ${port}</p>
+<p><strong>चेक समय:</strong> ${new Date().toLocaleString('hi-IN')}</p>
+</div>
+
+<div class="result-box">
+<h4><i class="fas fa-calendar-alt"></i> सर्टिफिकेट समय सीमा</h4>
+
+<div class="cert-details">
+<div class="detail-item">
+<div class="detail-label">जारी किया गया</div>
+<div class="detail-value">${issuedDate.toLocaleDateString('hi-IN')}</div>
+</div>
+
+<div class="detail-item">
+<div class="detail-label">समाप्ति तिथि</div>
+<div class="detail-value">${expiryDate.toLocaleDateString('hi-IN')}</div>
+</div>
+
+<div class="detail-item">
+<div class="detail-label">बचे हुए दिन</div>
+<div class="detail-value" style="color:${daysRemaining < 30 ? '#ef476f' : '#06d6a0'}; font-weight:800;">
+${isValid ? daysRemaining + ' दिन' : '0 दिन'}
+</div>
+</div>
+
+<div class="detail-item">
+<div class="detail-label">जारीकर्ता</div>
+<div class="detail-value">${issuer}</div>
+</div>
+</div>
+
+<button class="copy-btn" onclick="copyToClipboard('SSL सर्टिफिकेट रिपोर्ट कॉपी किया गया')">
+<i class="fas fa-copy"></i> रिपोर्ट कॉपी करें
+</button>
+</div>
+
+<div class="result-box">
+<h4><i class="fas fa-cogs"></i> तकनीकी विवरण</h4>
+
+<div class="cert-details">
+<div class="detail-item">
+<div class="detail-label">प्रोटोकॉल</div>
+<div class="detail-value">${protocol}</div>
+</div>
+
+<div class="detail-item">
+<div class="detail-label">सिफर सूट</div>
+<div class="detail-value" style="font-size:0.9rem;">${cipher}</div>
+</div>
+</div>
+
+${!isValid ?
+`<div style="margin-top:20px; padding:15px; background:#fee2e2; border-radius:8px; color:#991b1b;">
+<strong><i class="fas fa-exclamation-triangle"></i> चेतावनी:</strong> इस वेबसाइट का SSL सर्टिफिकेट अमान्य या एक्सपायर्ड है। कृपया तुरंत नया सर्टिफिकेट इंस्टॉल करें।
+</div>` :
+daysRemaining < 30 ?
+`<div style="margin-top:20px; padding:15px; background:#fef3c7; border-radius:8px; color:#92400e;">
+<strong><i class="fas fa-clock"></i> सलाह:</strong> SSL सर्टिफिकेट ${daysRemaining} दिनों में एक्सपायर हो जाएगा। कृपया समाप्ति से पहले इसे रिन्यू कर दें।
+</div>` :
+`<div style="margin-top:20px; padding:15px; background:#d1fae5; border-radius:8px; color:#065f46;">
+<strong><i class="fas fa-check-circle"></i> अच्छी खबर:</strong> इस वेबसाइट का SSL सर्टिफिकेट पूरी तरह वैध है और ${daysRemaining} दिनों तक वैध रहेगा।
+</div>`
+}
+</div>
+`;
+
+resultsContainer.innerHTML = reportHTML;
+}
+
+// कॉपी टू क्लिपबोर्ड
+function copyToClipboard(text) {
+navigator.clipboard.writeText(text).then(() => {
+alert('रिपोर्ट क्लिपबोर्ड में कॉपी हो गई!');
+});
+}
+
+// पेज लोड होते ही URL इनपुट पर फोकस
+window.onload = function() {
+websiteUrlInput.focus();
+};
+</script>
+</body>
+</html>

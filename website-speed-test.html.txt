@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>वेबसाइट स्पीड टेस्ट टूल - FreeSEOToolHub.com</title>
+<meta name="description" content="किसी भी वेबसाइट का पेज लोड स्पीड, परफॉर्मेंस स्कोर और सुझावों का विश्लेषण करें। मुफ्त स्पीड टेस्ट टूल।">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PFPCTBFG3Y"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-PFPCTBFG3Y');
+</script>
+<!-- फोंट और आइकॉन -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===== बेसिक सेटअप ===== */
+:root {
+--primary: #4361ee;
+--primary-dark: #3a56d4;
+--secondary: #7209b7;
+--success: #06d6a0;
+--warning: #ffd166;
+--danger: #ef476f;
+--light: #f8f9fa;
+--dark: #212529;
+--gray: #6c757d;
+--gray-light: #e9ecef;
+--shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+--radius: 12px;
+--transition: all 0.3s ease;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+font-family: 'Inter', 'Hind Siliguri', sans-serif;
+background-color: #f5f7ff;
+color: var(--dark);
+line-height: 1.6;
+padding-bottom: 40px;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* ===== नेविगेशन बार ===== */
+.navbar {
+background: white;
+box-shadow: var(--shadow);
+position: sticky;
+top: 0;
+z-index: 1000;
+padding: 15px 0;
+}
+
+.nav-container {
+display: flex;
+justify-content: space-between;
+align-items: center;
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 20px;
+}
+
+.logo {
+font-size: 1.6rem;
+font-weight: 700;
+color: var(--primary);
+text-decoration: none;
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.logo span { color: var(--secondary); }
+
+.nav-links { display: flex; gap: 25px; }
+
+.nav-link {
+text-decoration: none;
+color: var(--gray);
+font-weight: 600;
+transition: var(--transition);
+display: flex;
+align-items: center;
+gap: 6px;
+}
+
+.nav-link:hover, .nav-link.active { color: var(--primary); }
+
+/* ===== टूल का हीरो सेक्शन ===== */
+.tool-hero {
+background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+color: white;
+padding: 70px 20px;
+text-align: center;
+border-radius: 0 0 30px 30px;
+margin-bottom: 40px;
+}
+
+.tool-hero h1 { font-size: 2.8rem; margin-bottom: 15px; font-weight: 800; }
+.tool-hero p { font-size: 1.2rem; opacity: 0.9; max-width: 700px; margin: 0 auto 25px; }
+
+/* ===== मुख्य टूल लेआउट ===== */
+.tool-layout {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 30px;
+margin-bottom: 40px;
+}
+
+@media (max-width: 900px) {
+.tool-layout { grid-template-columns: 1fr; }
+}
+
+.panel {
+background: white;
+border-radius: var(--radius);
+box-shadow: var(--shadow);
+padding: 30px;
+}
+
+.panel h2 {
+color: var(--primary);
+margin-bottom: 20px;
+padding-bottom: 15px;
+border-bottom: 2px solid var(--gray-light);
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+/* ===== इनपुट सेक्शन ===== */
+.form-group { margin-bottom: 25px; }
+label { display: block; margin-bottom: 8px; font-weight: 600; }
+
+input[type="url"] {
+width: 100%;
+padding: 15px;
+border: 2px solid var(--gray-light);
+border-radius: var(--radius);
+font-family: inherit;
+font-size: 1rem;
+transition: var(--transition);
+}
+
+input[type="url"]:focus {
+outline: none;
+border-color: var(--primary);
+box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+}
+
+/* ===== बटन ===== */
+.btn {
+padding: 15px 30px;
+border-radius: 50px;
+font-weight: 700;
+border: none;
+cursor: pointer;
+font-size: 1rem;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+gap: 10px;
+transition: var(--transition);
+width: 100%;
+margin-top: 10px;
+}
+
+.btn-primary {
+background: var(--primary);
+color: white;
+}
+
+.btn-primary:hover { background: var(--primary-dark); transform: translateY(-3px); }
+
+.btn-secondary {
+background: var(--gray-light);
+color: var(--dark);
+}
+
+.btn-secondary:hover { background: #d8d9da; }
+
+.btn-small {
+padding: 10px 20px;
+width: auto;
+font-size: 0.9rem;
+}
+
+/* ===== स्कोर मीटर ===== */
+.score-meter {
+width: 100%;
+height: 20px;
+background: var(--gray-light);
+border-radius: 10px;
+margin: 20px 0;
+overflow: hidden;
+}
+
+.score-fill {
+height: 100%;
+border-radius: 10px;
+transition: width 1s ease;
+}
+
+.score-excellent { background: #06d6a0; }
+.score-good { background: #ffd166; }
+.score-poor { background: #ef476f; }
+
+.score-labels {
+display: flex;
+justify-content: space-between;
+margin-top: 5px;
+font-size: 0.9rem;
+color: var(--gray);
+}
+
+/* ===== रिजल्ट्स ===== */
+.result-box {
+background: var(--light);
+border-radius: var(--radius);
+padding: 20px;
+margin-bottom: 20px;
+border-left: 4px solid var(--primary);
+position: relative;
+}
+
+.result-box h4 {
+margin-bottom: 10px;
+color: var(--primary);
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.result-stats {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+gap: 15px;
+margin-top: 20px;
+}
+
+.stat-card {
+background: white;
+padding: 20px;
+border-radius: var(--radius);
+text-align: center;
+box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.stat-value {
+font-size: 2rem;
+font-weight: 800;
+color: var(--primary);
+line-height: 1;
+margin-bottom: 5px;
+}
+
+.stat-label {
+font-size: 0.9rem;
+color: var(--gray);
+}
+
+.performance-metric {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 15px;
+background: white;
+border-radius: 8px;
+margin-bottom: 10px;
+border-left: 4px solid var(--success);
+}
+
+.performance-metric.poor { border-left-color: var(--danger); }
+.performance-metric.average { border-left-color: var(--warning); }
+
+.copy-btn {
+position: absolute;
+top: 15px;
+right: 15px;
+background: var(--primary);
+color: white;
+border: none;
+border-radius: 4px;
+padding: 5px 10px;
+cursor: pointer;
+font-size: 0.8rem;
+}
+
+.copy-btn:hover { background: var(--primary-dark); }
+
+/* ===== टिप्स ===== */
+.tips-container {
+background: #f0f7ff;
+border-radius: var(--radius);
+padding: 25px;
+margin-top: 30px;
+border-left: 4px solid var(--primary);
+}
+
+.tip-item {
+margin-bottom: 15px;
+padding-left: 25px;
+position: relative;
+}
+
+.tip-item:before {
+content: "⚡";
+position: absolute;
+left: 0;
+top: 0;
+}
+
+/* ===== फुटर ===== */
+.tool-footer {
+text-align: center;
+margin-top: 60px;
+padding-top: 30px;
+border-top: 1px solid var(--gray-light);
+color: var(--gray);
+}
+
+.back-link {
+display: inline-flex;
+align-items: center;
+gap: 10px;
+color: var(--primary);
+text-decoration: none;
+font-weight: 600;
+margin-top: 20px;
+}
+</style>
+</head>
+<body>
+<!-- नेविगेशन बार -->
+<nav class="navbar">
+<div class="nav-container">
+<a href="index.html" class="logo">
+<i class="fas fa-tools"></i> <span>FreeSEOToolHub</span>.com
+</a>
+<div class="nav-links">
+<a href="index.html" class="nav-link"><i class="fas fa-home"></i> होम</a>
+<a href="tools.html" class="nav-link"><i class="fas fa-th"></i> टूल्स</a>
+<a href="website-speed-test.html" class="nav-link active"><i class="fas fa-tachometer-alt"></i> स्पीड टेस्ट</a>
+<a href="meta-tag-generator.html" class="nav-link"><i class="fas fa-search"></i> मेटा टैग जनरेटर</a>
+</div>
+</div>
+</nav>
+
+<!-- टूल का परिचय -->
+<header class="tool-hero">
+<div class="container">
+<h1 class="hindi">वेबसाइट स्पीड टेस्ट</h1>
+<p>किसी भी वेबसाइट का पेज लोड स्पीड, परफॉर्मेंस स्कोर और सुधार के सुझाव प्राप्त करें।</p>
+</div>
+</header>
+
+<!-- मुख्य टूल एरिया -->
+<main class="container">
+<div class="tool-layout">
+<!-- इनपुट पैनल -->
+<div class="panel input-panel">
+<h2><i class="fas fa-tachometer-alt"></i> वेबसाइट URL डालें</h2>
+<div class="form-group">
+<label for="websiteUrl">वेबसाइट या पेज का URL:</label>
+<input type="url" id="websiteUrl" placeholder="https://example.com" value="https://freeseotoolhub.com">
+</div>
+
+<div class="form-group">
+<label for="testDevice">टेस्ट डिवाइस:</label>
+<select id="testDevice" style="width:100%; padding:15px; border-radius:var(--radius); border:2px solid var(--gray-light); font-family:inherit;">
+<option value="mobile">मोबाइल (स्मार्टफोन)</option>
+<option value="desktop">डेस्कटॉप (कंप्यूटर)</option>
+</select>
+</div>
+
+<button id="runSpeedTestBtn" class="btn btn-primary"><i class="fas fa-play"></i> स्पीड टेस्ट शुरू करें</button>
+<button id="clearBtn" class="btn btn-secondary"><i class="fas fa-eraser"></i> साफ करें</button>
+</div>
+
+<!-- रिजल्ट्स पैनल -->
+<div class="panel results-panel">
+<h2><i class="fas fa-chart-line"></i> स्पीड टेस्ट रिजल्ट्स</h2>
+<div id="resultsContainer" class="results-container">
+<div class="placeholder-results" style="text-align:center; padding:40px 20px;">
+<div style="font-size:4rem; color:#e9ecef; margin-bottom:20px;">
+<i class="fas fa-tachometer-alt"></i>
+</div>
+<h3>स्पीड टेस्ट रिजल्ट यहाँ दिखेगा</h3>
+<p>URL डालने और "टेस्ट शुरू करें" बटन दबाने के बाद, विस्तृत स्पीड रिपोर्ट यहाँ दिखाई देगी।</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- टिप्स -->
+<div class="tips-container">
+<h3><i class="fas fa-lightbulb"></i> वेबसाइट स्पीड बढ़ाने के टिप्स</h3>
+<div class="tip-item"><strong>इमेज ऑप्टिमाइजेशन:</strong> इमेज्स का साइज़ कम करें और WebP फॉर्मेट का उपयोग करें।</div>
+<div class="tip-item"><strong>कैशिंग:</strong> ब्राउज़र कैशिंग और सर्वर-साइड कैशिंग इनेबल करें।</div>
+<div class="tip-item"><strong>CSS/JS मिनिफिकेशन:</strong> CSS और JavaScript फाइल्स को मिनिफाई और कम्बाइन करें।</div>
+<div class="tip-item"><strong>CDN का उपयोग:</strong> कॉन्टेंट डिलीवरी नेटवर्क (CDN) का उपयोग करें।</div>
+<div class="tip-item"><strong>कोड कम्प्रेशन:</strong> Gzip या Brotli कम्प्रेशन इनेबल करें।</div>
+</div>
+</main>
+
+<!-- फुटर -->
+<footer class="tool-footer container">
+<p>© 2023 FreeSEOToolHub.com | <strong>नोट:</strong> यह टूल सिमुलेटेड डेटा दिखाता है। वास्तविक स्पीड टेस्ट के लिए PageSpeed Insights या GTmetrix का उपयोग करें।</p>
+<a href="tools.html" class="back-link"><i class="fas fa-arrow-left"></i> वापस सभी टूल्स पर जाएँ</a>
+</footer>
+
+<!-- JavaScript -->
+<script>
+// DOM Elements
+const websiteUrlInput = document.getElementById('websiteUrl');
+const testDeviceSelect = document.getElementById('testDevice');
+const runSpeedTestBtn = document.getElementById('runSpeedTestBtn');
+const clearBtn = document.getElementById('clearBtn');
+const resultsContainer = document.getElementById('resultsContainer');
+
+// जनरेट बटन इवेंट
+runSpeedTestBtn.addEventListener('click', function() {
+const url = websiteUrlInput.value.trim();
+const device = testDeviceSelect.value;
+
+if (!url) {
+alert('कृपया वेबसाइट URL डालें।');
+return;
+}
+
+if (!url.startsWith('http')) {
+alert('कृपया पूरा URL डालें (https:// से शुरू)।');
+return;
+}
+
+// लोडिंग स्टेट
+runSpeedTestBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> टेस्ट चल रहा है...';
+runSpeedTestBtn.disabled = true;
+
+// रिजल्ट जनरेट करें (सिमुलेशन)
+setTimeout(() => {
+generateSpeedReport(url, device);
+runSpeedTestBtn.innerHTML = '<i class="fas fa-play"></i> स्पीड टेस्ट शुरू करें';
+runSpeedTestBtn.disabled = false;
+}, 2000);
+});
+
+// साफ करें बटन
+clearBtn.addEventListener('click', function() {
+websiteUrlInput.value = '';
+testDeviceSelect.value = 'mobile';
+resultsContainer.innerHTML = `
+<div class="placeholder-results" style="text-align:center; padding:40px 20px;">
+<div style="font-size:4rem; color:#e9ecef; margin-bottom:20px;">
+<i class="fas fa-tachometer-alt"></i>
+</div>
+<h3>स्पीड टेस्ट रिजल्ट यहाँ दिखेगा</h3>
+<p>URL डालने और "टेस्ट शुरू करें" बटन दबाने के बाद, विस्तृत स्पीड रिपोर्ट यहाँ दिखाई देगी।</p>
+</div>
+`;
+});
+
+// स्पीड रिपोर्ट जनरेट करें
+function generateSpeedReport(url, device) {
+// रैंडम डेटा जनरेट (डिवाइस के आधार पर)
+const isMobile = device === 'mobile';
+const performanceScore = isMobile ? 72 + Math.floor(Math.random() * 20) : 85 + Math.floor(Math.random() * 10);
+const fcp = isMobile ? (1.8 + Math.random() * 1.5).toFixed(1) : (0.8 + Math.random() * 1.0).toFixed(1);
+const lcp = isMobile ? (3.5 + Math.random() * 2.0).toFixed(1) : (2.0 + Math.random() * 1.5).toFixed(1);
+const pageSize = (1.5 + Math.random() * 2.5).toFixed(1);
+const requests = 45 + Math.floor(Math.random() * 30);
+
+// स्कोर के आधार पर कलर और टेक्स्ट
+let scoreClass, scoreText;
+if (performanceScore >= 90) {
+scoreClass = 'score-excellent';
+scoreText = 'उत्कृष्ट';
+} else if (performanceScore >= 70) {
+scoreClass = 'score-good';
+scoreText = 'अच्छा';
+} else {
+scoreClass = 'score-poor';
+scoreText = 'सुधार की आवश्यकता';
+}
+
+// HTML जनरेट
+const reportHTML = `
+<div class="result-box">
+<h4><i class="fas fa-chart-bar"></i> परफॉर्मेंस स्कोर</h4>
+<p><strong>टेस्टेड URL:</strong> ${url}</p>
+<p><strong>डिवाइस:</strong> ${isMobile ? 'मोबाइल' : 'डेस्कटॉप'}</p>
+
+<div style="text-align:center; margin:30px 0;">
+<div style="font-size:4rem; font-weight:800; color:${performanceScore >= 90 ? '#06d6a0' : performanceScore >= 70 ? '#ffd166' : '#ef476f'};">
+${performanceScore}/100
+</div>
+<div style="font-size:1.2rem; color:var(--gray); margin-bottom:20px;">${scoreText}</div>
+
+<div class="score-meter">
+<div class="score-fill ${scoreClass}" id="scoreFill" style="width:${performanceScore}%"></div>
+</div>
+<div class="score-labels">
+<span>0</span>
+<span>50</span>
+<span>100</span>
+</div>
+</div>
+</div>
+
+<div class="result-box">
+<h4><i class="fas fa-chart-pie"></i> मुख्य मेट्रिक्स</h4>
+
+<div class="performance-metric ${parseFloat(fcp) < 1.8 ? '' : parseFloat(fcp) < 3.0 ? 'average' : 'poor'}">
+<div>
+<strong>First Contentful Paint (FCP)</strong><br>
+<small>पहला कंटेंट दिखने का समय</small>
+</div>
+<div style="font-weight:700; color:${parseFloat(fcp) < 1.8 ? '#06d6a0' : parseFloat(fcp) < 3.0 ? '#ffd166' : '#ef476f'}">
+${fcp} सेकंड
+</div>
+</div>
+
+<div class="performance-metric ${parseFloat(lcp) < 2.5 ? '' : parseFloat(lcp) < 4.0 ? 'average' : 'poor'}">
+<div>
+<strong>Largest Contentful Paint (LCP)</strong><br>
+<small>मुख्य कंटेंट लोड होने का समय</small>
+</div>
+<div style="font-weight:700; color:${parseFloat(lcp) < 2.5 ? '#06d6a0' : parseFloat(lcp) < 4.0 ? '#ffd166' : '#ef476f'}">
+${lcp} सेकंड
+</div>
+</div>
+
+<div class="result-stats" style="margin-top:30px;">
+<div class="stat-card">
+<div class="stat-value">${pageSize} MB</div>
+<div class="stat-label">पेज साइज़</div>
+</div>
+<div class="stat-card">
+<div class="stat-value">${requests}</div>
+<div class="stat-label">रिक्वेस्ट्स</div>
+</div>
+</div>
+
+<button class="copy-btn" onclick="copyToClipboard('स्पीड टेस्ट रिपोर्ट कॉपी किया गया')">
+<i class="fas fa-copy"></i> रिपोर्ट कॉपी करें
+</button>
+</div>
+
+<div class="result-box">
+<h4><i class="fas fa-tools"></i> सुधार के सुझाव</h4>
+<div style="margin-top:15px;">
+${parseFloat(pageSize) > 3 ?
+'<p><strong>🚀 इमेज ऑप्टिमाइज करें:</strong> पेज का साइज़ बड़ा है। इमेज्स को कम्प्रेस करें और WebP फॉर्मेट में कन्वर्ट करें।</p>' :
+'<p><strong>✅ इमेज ऑप्टिमाइजेशन:</strong> अच्छा है। इमेज साइज़ ठीक है।</p>'
+}
+${requests > 60 ?
+'<p><strong>🚀 रिक्वेस्ट्स कम करें:</strong> बहुत सारी रिक्वेस्ट्स हैं। CSS/JS फाइल्स को कम्बाइन करें और HTTP/2 का उपयोग करें।</p>' :
+'<p><strong>✅ रिक्वेस्ट काउंट:</strong> स्वीकार्य सीमा में है।</p>'
+}
+${parseFloat(fcp) > 2.5 ?
+`<p><strong>🚀 FCP सुधारें:</strong> FCP (${fcp} सेकंड) धीमा है। क्रिटिकल CSS इनलाइन करें और फॉन्ट लोडिंग ऑप्टिमाइज करें।</p>` :
+'<p><strong>✅ FCP समय:</strong> अच्छा है।</p>'
+}
+<p><strong>सामान्य सुझाव:</strong> ब्राउज़र कैशिंग इनेबल करें और एक CDN का उपयोग करें।</p>
+</div>
+</div>
+`;
+
+resultsContainer.innerHTML = reportHTML;
+
+// एनीमेशन के लिए
+setTimeout(() => {
+document.getElementById('scoreFill').style.width = performanceScore + '%';
+}, 100);
+}
+
+// कॉपी टू क्लिपबोर्ड
+function copyToClipboard(text) {
+navigator.clipboard.writeText(text).then(() => {
+alert('रिपोर्ट क्लिपबोर्ड में कॉपी हो गई!');
+});
+}
+
+// पेज लोड होते ही URL इनपुट पर फोकस
+window.onload = function() {
+websiteUrlInput.focus();
+};
+</script>
+</body>
+</html>
