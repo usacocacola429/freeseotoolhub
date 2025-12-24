@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>रेस्पॉन्सिव वेबसाइट टेस्टर - FreeSEOToolHub.com</title>
+<meta name="description" content="अपनी वेबसाइट को अलग-अलग डिवाइस स्क्रीन साइज पर टेस्ट करें। मोबाइल, टैबलेट, डेस्कटॉप प्रिव्यू देखें।">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PFPCTBFG3Y"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-PFPCTBFG3Y');
+</script>
+<!-- फोंट और आइकॉन -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<!-- नेविगेशन बार -->
+<script src="navbar.js"></script>
+<style>
+/* ===== बेसिक सेटअप ===== */
+:root {
+--primary: #4361ee;
+--primary-dark: #3a56d4;
+--secondary: #7209b7;
+--success: #06d6a0;
+--warning: #ffd166;
+--danger: #ef476f;
+--light: #f8f9fa;
+--dark: #212529;
+--gray: #6c757d;
+--gray-light: #e9ecef;
+--shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+--radius: 12px;
+--transition: all 0.3s ease;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+font-family: 'Inter', 'Hind Siliguri', sans-serif;
+background-color: #f5f7ff;
+color: var(--dark);
+line-height: 1.6;
+padding-bottom: 40px;
+}
+
+.container { max-width: 1400px; margin: 0 auto; padding: 0 20px; }
+
+/* ===== टूल का हीरो सेक्शन ===== */
+.tool-hero {
+background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%);
+color: white;
+padding: 70px 20px;
+text-align: center;
+border-radius: 0 0 30px 30px;
+margin-bottom: 40px;
+}
+
+.tool-hero h1 { font-size: 2.8rem; margin-bottom: 15px; font-weight: 800; }
+.tool-hero p { font-size: 1.2rem; opacity: 0.9; max-width: 700px; margin: 0 auto 25px; }
+
+/* ===== मुख्य टूल लेआउट ===== */
+.tool-layout {
+display: grid;
+grid-template-columns: 300px 1fr;
+gap: 30px;
+margin-bottom: 40px;
+height: calc(100vh - 250px);
+min-height: 600px;
+}
+
+@media (max-width: 1024px) {
+.tool-layout { grid-template-columns: 1fr; height: auto; }
+}
+
+.panel {
+background: white;
+border-radius: var(--radius);
+box-shadow: var(--shadow);
+padding: 25px;
+overflow-y: auto;
+}
+
+.panel h2 {
+color: var(--primary);
+margin-bottom: 20px;
+padding-bottom: 15px;
+border-bottom: 2px solid var(--gray-light);
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+/* ===== इनपुट सेक्शन ===== */
+.form-group { margin-bottom: 20px; }
+label { display: block; margin-bottom: 8px; font-weight: 600; }
+
+input[type="url"] {
+width: 100%;
+padding: 15px;
+border: 2px solid var(--gray-light);
+border-radius: var(--radius);
+font-family: inherit;
+font-size: 1rem;
+transition: var(--transition);
+}
+
+input[type="url"]:focus {
+outline: none;
+border-color: var(--primary);
+box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+}
+
+/* ===== डिवाइस प्रेसेट्स ===== */
+.device-presets {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 10px;
+margin-bottom: 20px;
+}
+
+.device-btn {
+padding: 12px;
+background: var(--light);
+border: 2px solid var(--gray-light);
+border-radius: var(--radius);
+font-weight: 600;
+cursor: pointer;
+transition: var(--transition);
+display: flex;
+align-items: center;
+gap: 8px;
+justify-content: center;
+text-align: center;
+}
+
+.device-btn:hover {
+border-color: var(--primary);
+background: #f0f5ff;
+}
+
+.device-btn.active {
+background: var(--primary);
+color: white;
+border-color: var(--primary);
+}
+
+/* ===== कस्टम साइज ===== */
+.custom-size-controls {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 15px;
+margin-bottom: 20px;
+}
+
+.size-input {
+display: flex;
+flex-direction: column;
+}
+
+.size-input input {
+padding: 12px;
+border: 2px solid var(--gray-light);
+border-radius: var(--radius);
+font-size: 1rem;
+text-align: center;
+}
+
+.size-label {
+font-size: 0.9rem;
+color: var(--gray);
+margin-bottom: 5px;
+}
+
+/* ===== बटन ===== */
+.btn {
+padding: 15px 25px;
+border-radius: var(--radius);
+font-weight: 700;
+border: none;
+cursor: pointer;
+font-size: 1rem;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+gap: 10px;
+transition: var(--transition);
+width: 100%;
+margin-top: 10px;
+}
+
+.btn-primary {
+background: var(--primary);
+color: white;
+}
+
+.btn-primary:hover {
+background: var(--primary-dark);
+transform: translateY(-3px);
+box-shadow: 0 10px 20px rgba(67, 97, 238, 0.3);
+}
+
+.btn-secondary {
+background: var(--gray-light);
+color: var(--dark);
+}
+
+.btn-secondary:hover { background: #d8d9da; }
+
+/* ===== प्रिव्यू कंटेनर ===== */
+.preview-container {
+background: #1a1a1a;
+border-radius: var(--radius);
+overflow: hidden;
+display: flex;
+flex-direction: column;
+height: 100%;
+position: relative;
+}
+
+.preview-toolbar {
+background: #2d2d2d;
+padding: 15px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-bottom: 1px solid #444;
+}
+
+.url-display {
+color: white;
+font-family: 'Courier New', monospace;
+font-size: 0.9rem;
+padding: 8px 15px;
+background: #3a3a3a;
+border-radius: 4px;
+flex-grow: 1;
+margin: 0 15px;
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+}
+
+.preview-controls {
+display: flex;
+gap: 10px;
+}
+
+.control-btn {
+background: #444;
+color: white;
+border: none;
+border-radius: 4px;
+padding: 8px 15px;
+cursor: pointer;
+display: flex;
+align-items: center;
+gap: 5px;
+font-size: 0.9rem;
+}
+
+.control-btn:hover {
+background: #555;
+}
+
+.preview-frame-container {
+flex-grow: 1;
+position: relative;
+overflow: hidden;
+background: white;
+}
+
+.preview-frame {
+width: 100%;
+height: 100%;
+border: none;
+background: white;
+transition: all 0.3s ease;
+}
+
+.device-frame {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+background: white;
+box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+border-radius: 20px;
+overflow: hidden;
+transition: all 0.3s ease;
+border: 12px solid #1a1a1a;
+}
+
+.device-frame.mobile {
+width: 375px;
+height: 667px;
+}
+
+.device-frame.tablet {
+width: 768px;
+height: 1024px;
+}
+
+.device-frame.laptop {
+width: 1024px;
+height: 768px;
+}
+
+.device-frame.desktop {
+width: 1280px;
+height: 800px;
+}
+
+.device-frame.custom {
+border: 1px solid #ddd;
+}
+
+.device-notch {
+position: absolute;
+top: 0;
+left: 50%;
+transform: translateX(-50%);
+width: 40%;
+height: 20px;
+background: #1a1a1a;
+border-bottom-left-radius: 10px;
+border-bottom-right-radius: 10px;
+}
+
+/* ===== स्क्रीन साइज डिस्प्ले ===== */
+.size-display {
+position: absolute;
+bottom: 20px;
+right: 20px;
+background: rgba(0,0,0,0.8);
+color: white;
+padding: 10px 15px;
+border-radius: var(--radius);
+font-family: 'Courier New', monospace;
+font-size: 0.9rem;
+}
+
+/* ===== टिप्स ===== */
+.tips-container {
+background: #f0f7ff;
+border-radius: var(--radius);
+padding: 25px;
+margin-top: 30px;
+border-left: 4px solid var(--primary);
+}
+
+.tip-item {
+margin-bottom: 15px;
+padding-left: 25px;
+position: relative;
+}
+
+.tip-item:before {
+content: "📱";
+position: absolute;
+left: 0;
+top: 0;
+}
+
+/* ===== रेस्पॉन्सिव इश्यू इंडिकेटर ===== */
+.issues-container {
+background: #fff3cd;
+border-radius: var(--radius);
+padding: 20px;
+margin-top: 20px;
+border-left: 4px solid var(--warning);
+}
+
+.issue-item {
+padding: 10px;
+background: white;
+border-radius: 8px;
+margin-bottom: 10px;
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.issue-item.error { border-left: 4px solid var(--danger); }
+.issue-item.warning { border-left: 4px solid var(--warning); }
+.issue-item.info { border-left: 4px solid var(--primary); }
+
+/* ===== फुटर ===== */
+.tool-footer {
+text-align: center;
+margin-top: 60px;
+padding-top: 30px;
+border-top: 1px solid var(--gray-light);
+color: var(--gray);
+}
+
+.back-link {
+display: inline-flex;
+align-items: center;
+gap: 10px;
+color: var(--primary);
+text-decoration: none;
+font-weight: 600;
+margin-top: 20px;
+}
+
+/* ===== लोडिंग ===== */
+.loading-overlay {
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: rgba(255,255,255,0.9);
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+z-index: 10;
+}
+
+.spinner {
+width: 50px;
+height: 50px;
+border: 5px solid var(--gray-light);
+border-top-color: var(--primary);
+border-radius: 50%;
+animation: spin 1s linear infinite;
+margin-bottom: 20px;
+}
+
+@keyframes spin {
+to { transform: rotate(360deg); }
+}
+
+/* ===== मोबाइल रेस्पॉन्सिव ===== */
+@media (max-width: 768px) {
+.device-presets { grid-template-columns: 1fr; }
+.custom-size-controls { grid-template-columns: 1fr; }
+.preview-toolbar { flex-direction: column; gap: 10px; }
+.url-display { margin: 10px 0; width: 100%; }
+}
+</style>
+</head>
+<body>
+<!-- टूल का परिचय -->
+<header class="tool-hero">
+<div class="container">
+<h1 class="hindi">रेस्पॉन्सिव वेबसाइट टेस्टर</h1>
+<p>अपनी वेबसाइट को अलग-अलग डिवाइस स्क्रीन साइज पर टेस्ट करें। मोबाइल, टैबलेट, डेस्कटॉप प्रिव्यू देखें।</p>
+</div>
+</header>
+
+<!-- मुख्य टूल एरिया -->
+<main class="container">
+<div class="tool-layout">
+<!-- कंट्रोल पैनल -->
+<div class="panel control-panel">
+<h2><i class="fas fa-sliders-h"></i> सेटिंग्स</h2>
+
+<div class="form-group">
+<label for="websiteUrl">वेबसाइट URL:</label>
+<input type="url" id="websiteUrl" placeholder="https://example.com" value="https://freeseotoolhub.com">
+</div>
+
+<div class="form-group">
+<label>डिवाइस प्रेसेट्स:</label>
+<div class="device-presets">
+<button class="device-btn active" data-device="mobile" data-width="375" data-height="667">
+<i class="fas fa-mobile-alt"></i> मोबाइल
+</button>
+<button class="device-btn" data-device="tablet" data-width="768" data-height="1024">
+<i class="fas fa-tablet-alt"></i> टैबलेट
+</button>
+<button class="device-btn" data-device="laptop" data-width="1024" data-height="768">
+<i class="fas fa-laptop"></i> लैपटॉप
+</button>
+<button class="device-btn" data-device="desktop" data-width="1280" data-height="800">
+<i class="fas fa-desktop"></i> डेस्कटॉप
+</button>
+</div>
+</div>
+
+<div class="form-group">
+<label>कस्टम साइज:</label>
+<div class="custom-size-controls">
+<div class="size-input">
+<span class="size-label">चौड़ाई (px)</span>
+<input type="number" id="customWidth" value="375" min="200" max="5000">
+</div>
+<div class="size-input">
+<span class="size-label">ऊंचाई (px)</span>
+<input type="number" id="customHeight" value="667" min="200" max="5000">
+</div>
+</div>
+<button id="applyCustomSize" class="btn btn-secondary">
+<i class="fas fa-check"></i> कस्टम साइज अप्लाई करें
+</button>
+</div>
+
+<div class="form-group">
+<label for="zoomLevel">ज़ूम लेवल:</label>
+<input type="range" id="zoomLevel" min="25" max="200" value="100" style="width:100%;">
+<div style="display:flex; justify-content:space-between; margin-top:5px;">
+<span>25%</span>
+<span id="zoomValue">100%</span>
+<span>200%</span>
+</div>
+</div>
+
+<button id="testWebsiteBtn" class="btn btn-primary">
+<i class="fas fa-play"></i> वेबसाइट टेस्ट करें
+</button>
+<button id="screenshotBtn" class="btn btn-secondary" style="margin-top:10px;">
+<i class="fas fa-camera"></i> स्क्रीनशॉट लें
+</button>
+</div>
+
+<!-- प्रिव्यू पैनल -->
+<div class="panel preview-panel">
+<div class="preview-container">
+<div class="preview-toolbar">
+<div class="control-btn" id="rotateBtn">
+<i class="fas fa-redo"></i> रोटेट
+</div>
+<div class="url-display" id="currentUrl">https://freeseotoolhub.com</div>
+<div class="preview-controls">
+<div class="control-btn" id="refreshBtn">
+<i class="fas fa-sync-alt"></i> रिफ्रेश
+</div>
+<div class="control-btn" id="fullscreenBtn">
+<i class="fas fa-expand"></i> फुलस्क्रीन
+</div>
+</div>
+</div>
+
+<div class="preview-frame-container">
+<!-- लोडिंग ओवरले -->
+<div class="loading-overlay" id="loadingOverlay">
+<div class="spinner"></div>
+<p>वेबसाइट लोड हो रही है...</p>
+</div>
+
+<!-- डिवाइस फ्रेम -->
+<div class="device-frame mobile" id="deviceFrame">
+<div class="device-notch"></div>
+<iframe class="preview-frame" id="previewFrame"
+src="https://freeseotoolhub.com"
+sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+referrerpolicy="no-referrer">
+</iframe>
+</div>
+
+<!-- साइज डिस्प्ले -->
+<div class="size-display" id="sizeDisplay">
+375 × 667 px
+</div>
+</div>
+</div>
+
+<!-- रेस्पॉन्सिव इश्यूज -->
+<div class="issues-container" id="issuesContainer" style="display:none;">
+<h4><i class="fas fa-exclamation-triangle"></i> संभावित रेस्पॉन्सिव इश्यूज</h4>
+<div id="issuesList"></div>
+</div>
+</div>
+</div>
+
+<!-- टिप्स -->
+<div class="tips-container">
+<h3><i class="fas fa-lightbulb"></i> रेस्पॉन्सिव डिज़ाइन टिप्स</h3>
+<div class="tip-item"><strong>मोबाइल-फर्स्ट:</strong> सबसे पहले मोबाइल डिवाइस के लिए डिज़ाइन करें, फिर बड़ी स्क्रीन के लिए एडजस्ट करें।</div>
+<div class="tip-item"><strong>फ्लेक्सिबल ग्रिड:</strong> पिक्सल की जगह परसेंटेज या em यूनिट्स का इस्तेमाल करें ताकि डिज़ाइन हर स्क्रीन साइज में फिट हो।</div>
+<div class="tip-item"><strong>मीडिया क्वेरीज:</strong> CSS मीडिया क्वेरीज का इस्तेमाल करके अलग-अलग स्क्रीन साइज के लिए अलग स्टाइल्स डिफाइन करें।</div>
+<div class="tip-item"><strong>टच फ्रेंडली:</strong> मोबाइल डिवाइस के लिए बटन्स और लिंक्स का साइज़ कम से कम 44×44 पिक्सल रखें।</div>
+<div class="tip-item"><strong>परफॉर्मेंस:</strong> मोबाइल पर इमेज्स को कम्प्रेस करें और अननिसेसरी स्क्रिप्ट्स को लोड न करें।</div>
+</div>
+</main>
+
+<!-- फुटर -->
+<footer class="tool-footer container">
+<p>© 2023 FreeSEOToolHub.com | <strong>नोट:</strong> यह टूल पूरी तरह मुफ़्त है और बिना किसी API के काम करता है।</p>
+<a href="tools.html" class="back-link"><i class="fas fa-arrow-left"></i> वापस सभी टूल्स पर जाएँ</a>
+</footer>
+
+<!-- JavaScript -->
+<script>
+// DOM Elements
+const websiteUrlInput = document.getElementById('websiteUrl');
+const deviceBtns = document.querySelectorAll('.device-btn');
+const customWidthInput = document.getElementById('customWidth');
+const customHeightInput = document.getElementById('customHeight');
+const applyCustomSizeBtn = document.getElementById('applyCustomSize');
+const zoomLevelInput = document.getElementById('zoomLevel');
+const zoomValueSpan = document.getElementById('zoomValue');
+const testWebsiteBtn = document.getElementById('testWebsiteBtn');
+const screenshotBtn = document.getElementById('screenshotBtn');
+const rotateBtn = document.getElementById('rotateBtn');
+const refreshBtn = document.getElementById('refreshBtn');
+const fullscreenBtn = document.getElementById('fullscreenBtn');
+const currentUrlSpan = document.getElementById('currentUrl');
+const deviceFrame = document.getElementById('deviceFrame');
+const previewFrame = document.getElementById('previewFrame');
+const sizeDisplay = document.getElementById('sizeDisplay');
+const loadingOverlay = document.getElementById('loadingOverlay');
+const issuesContainer = document.getElementById('issuesContainer');
+const issuesList = document.getElementById('issuesList');
+
+// वर्तमान सेटिंग्स
+let currentSettings = {
+width: 375,
+height: 667,
+device: 'mobile',
+zoom: 100,
+isPortrait: true,
+url: 'https://freeseotoolhub.com'
+};
+
+// डिवाइस प्रेसेट्स
+const devicePresets = {
+mobile: { width: 375, height: 667, class: 'mobile' },
+tablet: { width: 768, height: 1024, class: 'tablet' },
+laptop: { width: 1024, height: 768, class: 'laptop' },
+desktop: { width: 1280, height: 800, class: 'desktop' }
+};
+
+// उदाहरण वेबसाइट्स
+const exampleWebsites = [
+'https://freeseotoolhub.com',
+'https://google.com',
+'https://github.com',
+'https://wikipedia.org',
+'https://amazon.com'
+];
+
+// इनिशियलाइज़ेशन
+function init() {
+// डिवाइस बटन इवेंट्स
+deviceBtns.forEach(btn => {
+btn.addEventListener('click', () => {
+const device = btn.dataset.device;
+const width = parseInt(btn.dataset.width);
+const height = parseInt(btn.dataset.height);
+
+// एक्टिव बटन अपडेट
+deviceBtns.forEach(b => b.classList.remove('active'));
+btn.classList.add('active');
+
+// डिवाइस सेट करें
+setDevice(device, width, height);
+});
+});
+
+// कस्टम साइज अप्लाई
+applyCustomSizeBtn.addEventListener('click', () => {
+const width = parseInt(customWidthInput.value);
+const height = parseInt(customHeightInput.value);
+
+if (width >= 200 && width <= 5000 && height >= 200 && height <= 5000) {
+// सभी डिवाइस बटन्स इनएक्टिव करें
+deviceBtns.forEach(btn => btn.classList.remove('active'));
+
+// कस्टम साइज सेट करें
+setCustomSize(width, height);
+} else {
+alert('कृपया वैध साइज डालें (200-5000px)।');
+}
+});
+
+// ज़ूम लेवल अपडेट
+zoomLevelInput.addEventListener('input', (e) => {
+const zoom = parseInt(e.target.value);
+zoomValueSpan.textContent = zoom + '%';
+setZoom(zoom);
+});
+
+// वेबसाइट टेस्ट बटन
+testWebsiteBtn.addEventListener('click', testWebsite);
+
+// स्क्रीनशॉट बटन
+screenshotBtn.addEventListener('click', takeScreenshot);
+
+// रोटेट बटन
+rotateBtn.addEventListener('click', rotateDevice);
+
+// रिफ्रेश बटन
+refreshBtn.addEventListener('click', refreshWebsite);
+
+// फुलस्क्रीन बटन
+fullscreenBtn.addEventListener('click', toggleFullscreen);
+
+// इनपुट पर एंटर प्रेस
+websiteUrlInput.addEventListener('keypress', (e) => {
+if (e.key === 'Enter') {
+testWebsite();
+}
+});
+
+// डेफॉल्ट वेबसाइट लोड करें
+setTimeout(() => {
+testWebsite();
+}, 1000);
+}
+
+// डिवाइस सेट करें
+function setDevice(device, width, height) {
+currentSettings.device = device;
+currentSettings.width = width;
+currentSettings.height = height;
+
+// डिवाइस फ्रेम अपडेट
+deviceFrame.className = `device-frame ${devicePresets[device].class}`;
+
+// कस्टम इनपुट्स अपडेट
+customWidthInput.value = width;
+customHeightInput.value = height;
+
+// साइज अपडेट
+updateSize();
+
+// इश्यूज चेक करें
+checkResponsiveIssues();
+}
+
+// कस्टम साइज सेट करें
+function setCustomSize(width, height) {
+currentSettings.device = 'custom';
+currentSettings.width = width;
+currentSettings.height = height;
+
+// डिवाइस फ्रेम अपडेट
+deviceFrame.className = 'device-frame custom';
+deviceFrame.style.width = width + 'px';
+deviceFrame.style.height = height + 'px';
+
+// साइज अपडेट
+updateSize();
+
+// इश्यूज चेक करें
+checkResponsiveIssues();
+}
+
+// ज़ूम सेट करें
+function setZoom(zoom) {
+currentSettings.zoom = zoom;
+const scale = zoom / 100;
+
+deviceFrame.style.transform = `translate(-50%, -50%) scale(${scale})`;
+updateSize();
+}
+
+// साइज डिस्प्ले अपडेट
+function updateSize() {
+const displayWidth = currentSettings.width;
+const displayHeight = currentSettings.height;
+
+sizeDisplay.textContent = `${displayWidth} × ${displayHeight} px`;
+sizeDisplay.style.display = 'block';
+}
+
+// वेबसाइट टेस्ट करें
+function testWebsite() {
+let url = websiteUrlInput.value.trim();
+
+if (!url) {
+alert('कृपया वेबसाइट URL डालें।');
+return;
+}
+
+// URL वैलिडेशन
+if (!url.startsWith('http://') && !url.startsWith('https://')) {
+url = 'https://' + url;
+websiteUrlInput.value = url;
+}
+
+currentSettings.url = url;
+currentUrlSpan.textContent = url;
+
+// लोडिंग शो करें
+loadingOverlay.style.display = 'flex';
+
+// iframe में वेबसाइट लोड करें
+previewFrame.src = url;
+
+// वेबसाइट लोड होने के बाद
+previewFrame.onload = () => {
+loadingOverlay.style.display = 'none';
+checkResponsiveIssues();
+};
+
+previewFrame.onerror = () => {
+loadingOverlay.style.display = 'none';
+alert('वेबसाइट लोड नहीं हो पाई। कृपया URL चेक करें।');
+};
+}
+
+// स्क्रीनशॉट लें
+function takeScreenshot() {
+alert('स्क्रीनशॉट फीचर डेवलपमेंट में है। जल्द ही उपलब्ध होगा!');
+// भविष्य में html2canvas लाइब्रेरी इंटीग्रेट करें
+}
+
+// डिवाइस रोटेट करें
+function rotateDevice() {
+currentSettings.isPortrait = !currentSettings.isPortrait;
+
+if (currentSettings.device !== 'custom') {
+const device = currentSettings.device;
+const preset = devicePresets[device];
+
+if (currentSettings.isPortrait) {
+setDevice(device, preset.width, preset.height);
+} else {
+setDevice(device, preset.height, preset.width);
+}
+} else {
+// कस्टम साइज रोटेट
+const temp = currentSettings.width;
+currentSettings.width = currentSettings.height;
+currentSettings.height = temp;
+setCustomSize(currentSettings.width, currentSettings.height);
+}
+}
+
+// वेबसाइट रिफ्रेश करें
+function refreshWebsite() {
+previewFrame.contentWindow.location.reload();
+loadingOverlay.style.display = 'flex';
+
+previewFrame.onload = () => {
+loadingOverlay.style.display = 'none';
+};
+}
+
+// फुलस्क्रीन टॉगल
+function toggleFullscreen() {
+const container = document.querySelector('.preview-container');
+
+if (!document.fullscreenElement) {
+if (container.requestFullscreen) {
+container.requestFullscreen();
+} else if (container.webkitRequestFullscreen) {
+container.webkitRequestFullscreen();
+} else if (container.msRequestFullscreen) {
+container.msRequestFullscreen();
+}
+fullscreenBtn.innerHTML = '<i class="fas fa-compress"></i> एक्ज़िट फुलस्क्रीन';
+} else {
+if (document.exitFullscreen) {
+document.exitFullscreen();
+} else if (document.webkitExitFullscreen) {
+document.webkitExitFullscreen();
+} else if (document.msExitFullscreen) {
+document.msExitFullscreen();
+}
+fullscreenBtn.innerHTML = '<i class="fas fa-expand"></i> फुलस्क्रीन';
+}
+}
+
+// रेस्पॉन्सिव इश्यूज चेक करें
+function checkResponsiveIssues() {
+// सिमुलेटेड चेक (वास्तविक में iframe के कंटेंट को एक्सेस करेंगे)
+const issues = [];
+
+// मोबाइल पर चेक
+if (currentSettings.width <= 375) {
+// फिक्स्ड साइज चेक
+issues.push({
+type: 'warning',
+message: 'मोबाइल डिवाइस पर फिक्स्ड width वाले एलिमेंट्स से बचें।'
+});
+
+// टेक्स्ट साइज चेक
+issues.push({
+type: 'info',
+message: 'मोबाइल पर फॉन्ट साइज कम से कम 16px रखें।'
+});
+}
+
+// टैबलेट/डेस्कटॉप पर चेक
+if (currentSettings.width >= 768) {
+issues.push({
+type: 'info',
+message: 'बड़ी स्क्रीन के लिए कंटेंट को मैक्सिमम width में लिमिट करें।'
+});
+}
+
+// हॉरिजॉन्टल स्क्रॉल चेक
+issues.push({
+type: 'error',
+message: 'हॉरिजॉन्टल स्क्रॉल से बचने के लिए width: 100% का इस्तेमाल करें।'
+});
+
+// इश्यूज डिस्प्ले
+displayIssues(issues);
+}
+
+// इश्यूज डिस्प्ले
+function displayIssues(issues) {
+if (issues.length === 0) {
+issuesContainer.style.display = 'none';
+return;
+}
+
+issuesContainer.style.display = 'block';
+issuesList.innerHTML = '';
+
+issues.forEach(issue => {
+const issueEl = document.createElement('div');
+issueEl.className = `issue-item ${issue.type}`;
+issueEl.innerHTML = `
+<i class="fas fa-${issue.type === 'error' ? 'times-circle' : issue.type === 'warning' ? 'exclamation-triangle' : 'info-circle'}"></i>
+${issue.message}
+`;
+issuesList.appendChild(issueEl);
+});
+}
+
+// पेज लोड होने पर इनिशियलाइज़ करें
+document.addEventListener('DOMContentLoaded', init);
+
+// फुलस्क्रीन चेंज इवेंट
+document.addEventListener('fullscreenchange', () => {
+if (!document.fullscreenElement) {
+fullscreenBtn.innerHTML = '<i class="fas fa-expand"></i> फुलस्क्रीन';
+}
+});
+</script>
+</body>
+</html>
