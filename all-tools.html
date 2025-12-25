@@ -22,7 +22,7 @@ body { background: #f8fafc; color: #333; padding: 20px; }
 .tool-desc { color: #64748b; margin-bottom: 20px; line-height: 1.5; }
 .tool-status { display: inline-block; padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; margin-bottom: 15px; }
 .live { background: #d1fae5; color: #065f46; }
-.new { background: #dbeafe; color: #1e40af; }
+.new { background: #dbeafe; color: #1e40af; } /* NEW क्लास जोड़ी */
 .btn { display: inline-block; background: linear-gradient(to right, #4A00E0, #8E2DE2); color: white; padding: 10px 25px; text-decoration: none; border-radius: 8px; font-weight: bold; transition: all 0.3s; }
 .btn:hover { background: linear-gradient(to right, #3a00b3, #6a1dc9); }
 
@@ -206,8 +206,14 @@ body { background: #f8fafc; color: #333; padding: 20px; }
 </p>
 </div>
 </div>
+
+<!-- Footer लोड करने का script -->
+<script>
+fetch('footer.html')
+  .then(response => response.text())
+  .then(data => {
+    document.body.insertAdjacentHTML('beforeend', data);
+  });
 </script>
 </body>
 </html>
-
-
