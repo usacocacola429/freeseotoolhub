@@ -1,0 +1,56 @@
+<!-- footer.html -->
+<footer class="site-footer">
+<div class="footer-content">
+<p>&copy; 2025 <strong>FreeSEOToolHub.com</strong> | भारत में बना | 100% मुफ़्त टूल्स</p>
+
+<div class="footer-links">
+<a href="/">🏠 होम</a>
+<a href="all-tools.html">🔧 सभी टूल्स</a>
+<a href="about.html">ℹ️ हमारे बारे में</a>
+<a href="privacy.html">🔒 प्राइवेसी</a>
+<a href="contact.html">📞 संपर्क</a>
+</div>
+
+<p class="footer-tagline">
+<i class="fas fa-shield-alt"></i> सुरक्षित |
+<i class="fas fa-bolt"></i> तेज़ |
+<i class="fas fa-heart"></i> यूजर्स के लिए
+</p>
+</div>
+
+<style>
+.site-footer {
+margin-top: 60px;
+padding: 25px 20px;
+text-align: center;
+background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+color: #cbd5e1;
+border-radius: 10px;
+}
+.footer-content p {
+margin-bottom: 12px;
+font-size: 0.95rem;
+}
+.footer-links {
+display: flex;
+justify-content: center;
+gap: 20px;
+flex-wrap: wrap;
+margin: 15px 0;
+}
+.footer-links a {
+color: #93c5fd;
+text-decoration: none;
+transition: color 0.3s;
+}
+.footer-links a:hover {
+color: white;
+text-decoration: underline;
+}
+.footer-tagline {
+color: #94a3b8;
+font-size: 0.85rem;
+margin-top: 15px;
+}
+</style>
+</footer>
