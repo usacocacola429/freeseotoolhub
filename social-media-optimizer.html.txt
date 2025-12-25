@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>सोशल मीडिया पोस्ट ऑप्टिमाइज़र - FreeSEOToolHub</title>
+<meta name="description" content="फेसबुक, इंस्टाग्राम, ट्विटर और लिंक्डइन पोस्ट के लिए हैशटैग, टाइटल और डिस्क्रिप्शन ऑप्टिमाइज़ करें। मुफ्त सोशल मीडिया ऑप्टिमाइज़र टूल।">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+color: #333;
+min-height: 100vh;
+padding: 20px;
+}
+
+.container {
+max-width: 1200px;
+margin: 0 auto;
+background: white;
+border-radius: 15px;
+overflow: hidden;
+box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.header {
+background: linear-gradient(to right, #4f46e5, #7c3aed);
+color: white;
+padding: 40px 20px;
+text-align: center;
+}
+
+.header h1 {
+font-size: 2.5rem;
+margin-bottom: 10px;
+}
+
+.header p {
+font-size: 1.1rem;
+opacity: 0.9;
+max-width: 800px;
+margin: 0 auto;
+}
+
+.platform-icons {
+display: flex;
+justify-content: center;
+gap: 30px;
+margin-top: 20px;
+flex-wrap: wrap;
+}
+
+.platform {
+text-align: center;
+background: rgba(255,255,255,0.1);
+padding: 15px 25px;
+border-radius: 10px;
+transition: transform 0.3s;
+}
+
+.platform:hover {
+transform: translateY(-5px);
+}
+
+.platform i {
+font-size: 2rem;
+margin-bottom: 10px;
+}
+
+.facebook { color: #1877f2; }
+.instagram { color: #e4405f; }
+.twitter { color: #1da1f2; }
+.linkedin { color: #0a66c2; }
+.youtube { color: #ff0000; }
+.pinterest { color: #bd081c; }
+
+.content {
+padding: 40px;
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 40px;
+}
+
+@media (max-width: 900px) {
+.content {
+grid-template-columns: 1fr;
+}
+}
+
+.input-section, .output-section {
+background: #f8fafc;
+padding: 30px;
+border-radius: 10px;
+border: 1px solid #e2e8f0;
+}
+
+h2 {
+color: #1e293b;
+margin-bottom: 20px;
+padding-bottom: 10px;
+border-bottom: 2px solid #4f46e5;
+}
+
+.form-group {
+margin-bottom: 20px;
+}
+
+label {
+display: block;
+margin-bottom: 8px;
+color: #475569;
+font-weight: 500;
+}
+
+textarea, select, input {
+width: 100%;
+padding: 12px 15px;
+border: 1px solid #cbd5e1;
+border-radius: 8px;
+font-size: 1rem;
+transition: border 0.3s;
+}
+
+textarea:focus, select:focus, input:focus {
+outline: none;
+border-color: #4f46e5;
+box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+textarea {
+min-height: 120px;
+resize: vertical;
+}
+
+.btn {
+background: linear-gradient(to right, #4f46e5, #7c3aed);
+color: white;
+border: none;
+padding: 14px 30px;
+font-size: 1.1rem;
+border-radius: 8px;
+cursor: pointer;
+transition: all 0.3s;
+font-weight: bold;
+display: inline-flex;
+align-items: center;
+gap: 10px;
+}
+
+.btn:hover {
+background: linear-gradient(to right, #4338ca, #6d28d9);
+transform: translateY(-2px);
+box-shadow: 0 5px 15px rgba(79, 70, 229, 0.3);
+}
+
+.btn-full {
+width: 100%;
+justify-content: center;
+margin-top: 10px;
+}
+
+.output-box {
+background: white;
+padding: 20px;
+border-radius: 8px;
+border: 1px solid #e2e8f0;
+margin-top: 15px;
+min-height: 200px;
+white-space: pre-wrap;
+font-family: monospace;
+}
+
+.preview {
+background: white;
+padding: 25px;
+border-radius: 10px;
+border: 1px solid #e2e8f0;
+margin-top: 20px;
+}
+
+.preview-facebook {
+border-left: 5px solid #1877f2;
+}
+
+.preview-instagram {
+border-left: 5px solid #e4405f;
+}
+
+.preview-twitter {
+border-left: 5px solid #1da1f2;
+}
+
+.hashtag-suggestions {
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+margin-top: 15px;
+}
+
+.hashtag {
+background: #e0e7ff;
+color: #3730a3;
+padding: 6px 12px;
+border-radius: 20px;
+font-size: 0.9rem;
+cursor: pointer;
+transition: all 0.3s;
+}
+
+.hashtag:hover {
+background: #c7d2fe;
+}
+
+.stats {
+display: flex;
+justify-content: space-between;
+background: #f1f5f9;
+padding: 15px;
+border-radius: 8px;
+margin-top: 20px;
+}
+
+.stat-item {
+text-align: center;
+}
+
+.stat-number {
+font-size: 1.8rem;
+font-weight: bold;
+color: #4f46e5;
+}
+
+.stat-label {
+font-size: 0.9rem;
+color: #64748b;
+}
+
+.tips {
+background: #f0f9ff;
+border-left: 4px solid #0ea5e9;
+padding: 20px;
+border-radius: 0 8px 8px 0;
+margin-top: 30px;
+}
+
+.tips h3 {
+color: #0369a1;
+margin-bottom: 10px;
+}
+
+.tips ul {
+padding-left: 20px;
+color: #475569;
+}
+
+.tips li {
+margin-bottom: 8px;
+line-height: 1.5;
+}
+
+.back-link {
+text-align: center;
+margin-top: 40px;
+padding: 20px;
+}
+
+.back-link a {
+color: #4f46e5;
+text-decoration: none;
+font-weight: bold;
+display: inline-flex;
+align-items: center;
+gap: 8px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header class="header">
+<h1><i class="fas fa-hashtag"></i> सोशल मीडिया पोस्ट ऑप्टिमाइज़र</h1>
+<p>फेसबुक, इंस्टाग्राम, ट्विटर, लिंक्डइन, YouTube और Pinterest के लिए पोस्ट टाइटल, डिस्क्रिप्शन और हैशटैग ऑप्टिमाइज़ करें</p>
+
+<div class="platform-icons">
+<div class="platform">
+<i class="fab fa-facebook facebook"></i>
+<div>Facebook</div>
+</div>
+<div class="platform">
+<i class="fab fa-instagram instagram"></i>
+<div>Instagram</div>
+</div>
+<div class="platform">
+<i class="fab fa-twitter twitter"></i>
+<div>Twitter</div>
+</div>
+<div class="platform">
+<i class="fab fa-linkedin linkedin"></i>
+<div>LinkedIn</div>
+</div>
+<div class="platform">
+<i class="fab fa-youtube youtube"></i>
+<div>YouTube</div>
+</div>
+<div class="platform">
+<i class="fab fa-pinterest pinterest"></i>
+<div>Pinterest</div>
+</div>
+</div>
+</header>
+
+<main class="content">
+<div class="input-section">
+<h2><i class="fas fa-edit"></i> पोस्ट डिटेल्स दर्ज करें</h2>
+
+<div class="form-group">
+<label for="platform"><i class="fas fa-thumbtack"></i> सोशल मीडिया प्लेटफॉर्म</label>
+<select id="platform">
+<option value="all">सभी प्लेटफॉर्म</option>
+<option value="facebook">Facebook</option>
+<option value="instagram">Instagram</option>
+<option value="twitter">Twitter</option>
+<option value="linkedin">LinkedIn</option>
+<option value="youtube">YouTube</option>
+<option value="pinterest">Pinterest</option>
+</select>
+</div>
+
+<div class="form-group">
+<label for="postTitle"><i class="fas fa-heading"></i> पोस्ट टाइटल / विषय</label>
+<textarea id="postTitle" placeholder="अपने पोस्ट का मुख्य टाइटल यहाँ लिखें..."></textarea>
+<div style="text-align: right; font-size: 0.85rem; color: #64748b; margin-top: 5px;">
+<span id="titleCount">0</span>/60 करैक्टर
+</div>
+</div>
+
+<div class="form-group">
+<label for="postContent"><i class="fas fa-align-left"></i> पोस्ट कंटेंट / डिस्क्रिप्शन</label>
+<textarea id="postContent" placeholder="अपने पोस्ट का विस्तृत डिस्क्रिप्शन यहाँ लिखें..."></textarea>
+<div style="text-align: right; font-size: 0.85rem; color: #64748b; margin-top: 5px;">
+<span id="contentCount">0</span>/2200 करैक्टर
+</div>
+</div>
+
+<div class="form-group">
+<label for="keywords"><i class="fas fa-key"></i> कीवर्ड्स (कॉमा से अलग करें)</label>
+<input type="text" id="keywords" placeholder="SEO, मार्केटिंग, डिजिटल, ब्लॉगिंग, सोशल मीडिया">
+</div>
+
+<div class="form-group">
+<label><i class="fas fa-bullseye"></i> लक्ष्य</label>
+<div style="display: flex; gap: 15px; flex-wrap: wrap;">
+<label style="display: flex; align-items: center; gap: 5px;">
+<input type="checkbox" id="goalEngagement" checked> एंगेजमेंट
+</label>
+<label style="display: flex; align-items: center; gap: 5px;">
+<input type="checkbox" id="goalTraffic"> ट्रैफ़िक
+</label>
+<label style="display: flex; align-items: center; gap: 5px;">
+<input type="checkbox" id="goalLeads"> लीड्स
+</label>
+<label style="display: flex; align-items: center; gap: 5px;">
+<input type="checkbox" id="goalSales"> सेल्स
+</label>
+</div>
+</div>
+
+<button class="btn btn-full" onclick="optimizePost()">
+<i class="fas fa-magic"></i> पोस्ट ऑप्टिमाइज़ करें
+</button>
+
+<button class="btn btn-full" onclick="generateHashtags()" style="background: linear-gradient(to right, #0ea5e9, #3b82f6); margin-top: 15px;">
+<i class="fas fa-hashtag"></i> हैशटैग जनरेट करें
+</button>
+</div>
+
+<div class="output-section">
+<h2><i class="fas fa-chart-line"></i> ऑप्टिमाइज़ेशन रिजल्ट</h2>
+
+<div class="preview preview-facebook" id="facebookPreview">
+<h3><i class="fab fa-facebook facebook"></i> Facebook Preview</h3>
+<div id="facebookOutput" class="output-box">
+पोस्ट डिटेल्स दर्ज करने के बाद यहाँ ऑप्टिमाइज़्ड रिजल्ट दिखेगा...
+</div>
+</div>
+
+<div class="preview preview-instagram" id="instagramPreview">
+<h3><i class="fab fa-instagram instagram"></i> Instagram Preview</h3>
+<div id="instagramOutput" class="output-box">
+पोस्ट डिटेल्स दर्ज करने के बाद यहाँ ऑप्टिमाइज़्ड रिजल्ट दिखेगा...
+</div>
+</div>
+
+<div class="preview preview-twitter" id="twitterPreview">
+<h3><i class="fab fa-twitter twitter"></i> Twitter Preview</h3>
+<div id="twitterOutput" class="output-box">
+पोस्ट डिटेल्स दर्ज करने के बाद यहाँ ऑप्टिमाइज़्ड रिजल्ट दिखेगा...
+</div>
+</div>
+
+<div class="hashtag-suggestions" id="hashtagContainer">
+<!-- हैशटैग यहाँ जनरेट होंगे -->
+</div>
+
+<div class="stats">
+<div class="stat-item">
+<div class="stat-number" id="charCount">0</div>
+<div class="stat-label">करैक्टर</div>
+</div>
+<div class="stat-item">
+<div class="stat-number" id="wordCount">0</div>
+<div class="stat-label">शब्द</div>
+</div>
+<div class="stat-item">
+<div class="stat-number" id="hashtagCount">0</div>
+<div class="stat-label">हैशटैग</div>
+</div>
+<div class="stat-item">
+<div class="stat-number" id="readabilityScore">0</div>
+<div class="stat-label">रीडेबिलिटी</div>
+</div>
+</div>
+
+<div class="tips">
+<h3><i class="fas fa-lightbulb"></i> सोशल मीडिया ऑप्टिमाइज़ेशन टिप्स</h3>
+<ul>
+<li><strong>Facebook:</strong> टाइटल 40-50 करैक्टर, डिस्क्रिप्शन 150-200 शब्द</li>
+<li><strong>Instagram:</strong> 5-10 रेलेवेंट हैशटैग्स, विजुअल कंटेंट ज़रूरी</li>
+<li><strong>Twitter:</strong> 280 करैक्टर में फिट हो, 1-2 हैशटैग इस्तेमाल करें</li>
+<li><strong>LinkedIn:</strong> प्रोफेशनल टोन, 3-5 हैशटैग, लंबे फॉर्मेट के लिए 1500+ शब्द</li>
+<li><strong>YouTube:</strong> टाइटल 60 करैक्टर से कम, डिस्क्रिप्शन में टाइमस्टैम्प्स</li>
+<li>पोस्ट टाइमिंग: सुबह 9-11 AM और शाम 7-9 PM बेस्ट हैं</li>
+</ul>
+</div>
+</div>
+</main>
+
+<div class="back-link">
+<a href="all-tools.html"><i class="fas fa-arrow-left"></i> सभी टूल्स देखें</a> |
+<a href="/"><i class="fas fa-home"></i> होमपेज पर जाएं</a>
+</div>
+</div>
+
+<!-- JavaScript -->
+<script>
+// करैक्टर काउंट
+document.getElementById('postTitle').addEventListener('input', function() {
+document.getElementById('titleCount').textContent = this.value.length;
+});
+
+document.getElementById('postContent').addEventListener('input', function() {
+const count = this.value.length;
+document.getElementById('contentCount').textContent = count;
+updateStats();
+});
+
+function updateStats() {
+const content = document.getElementById('postContent').value;
+const words = content.trim() === '' ? 0 : content.trim().split(/\s+/).length;
+const chars = content.length;
+
+document.getElementById('charCount').textContent = chars;
+document.getElementById('wordCount').textContent = words;
+
+// साधारण रीडेबिलिटी स्कोर
+const readability = Math.min(100, Math.round((words / (chars / 100)) * 1.5));
+document.getElementById('readabilityScore').textContent = readability;
+}
+
+function optimizePost() {
+const platform = document.getElementById('platform').value;
+const title = document.getElementById('postTitle').value;
+const content = document.getElementById('postContent').value;
+const keywords = document.getElementById('keywords').value.split(',').map(k => k.trim()).filter(k => k);
+
+// हैशटैग काउंट
+const hashtagMatches = content.match(/#\w+/g) || [];
+document.getElementById('hashtagCount').textContent = hashtagMatches.length;
+
+// प्लेटफॉर्म के अनुसार ऑप्टिमाइज़ेशन
+const optimizations = {
+facebook: optimizeForFacebook(title, content, keywords),
+instagram: optimizeForInstagram(title, content, keywords),
+twitter: optimizeForTwitter(title, content, keywords),
+linkedin: optimizeForLinkedIn(title, content, keywords),
+youtube: optimizeForYouTube(title, content, keywords),
+pinterest: optimizeForPinterest(title, content, keywords)
+};
+
+// सभी प्लेटफॉर्म के लिए या चुने हुए प्लेटफॉर्म के लिए दिखाएं
+if (platform === 'all') {
+for (const [key, value] of Object.entries(optimizations)) {
+const element = document.getElementById(key + 'Output');
+const preview = document.getElementById(key + 'Preview');
+if (element) {
+element.textContent = value;
+preview.style.display = 'block';
+}
+}
+} else {
+// सिर्फ चुने हुए प्लेटफॉर्म को दिखाएं
+for (const [key, value] of Object.entries(optimizations)) {
+const element = document.getElementById(key + 'Output');
+const preview = document.getElementById(key + 'Preview');
+if (element) {
+if (key === platform) {
+element.textContent = value;
+preview.style.display = 'block';
+} else {
+preview.style.display = 'none';
+}
+}
+}
+}
+
+// हैशटैग जनरेट करें
+generateHashtags();
+}
+
+function optimizeForFacebook(title, content, keywords) {
+let optimized = "=== Facebook ऑप्टिमाइज़्ड पोस्ट ===\n\n";
+optimized += `📱 प्लेटफॉर्म: Facebook\n`;
+optimized += `⏱️ बेस्ट टाइमिंग: 9 AM - 11 AM, 7 PM - 9 PM\n\n`;
+
+// टाइटल ऑप्टिमाइज़ेशन
+if (title.length > 50) {
+optimized += `✅ टाइटल: ${title.substring(0, 47)}...\n`;
+optimized += `💡 सुझाव: टाइटल 50 करैक्टर से कम रखें\n\n`;
+} else {
+optimized += `✅ टाइटल: ${title}\n\n`;
+}
+
+// कंटेंट ऑप्टिमाइज़ेशन
+const sentences = content.split(/[.!?]+/).filter(s => s.trim().length > 0);
+if (sentences.length >= 2) {
+optimized += `📝 ऑप्टिमाइज़्ड डिस्क्रिप्शन:\n`;
+optimized += `${sentences[0].trim()}.\n`;
+optimized += `${sentences[1].trim()}.\n\n`;
+} else {
+optimized += `📝 ऑप्टिमाइज़्ड डिस्क्रिप्शन:\n${content.substring(0, 200)}...\n\n`;
+}
+
+// हैशटैग सुझाव
+optimized += `🏷️ हैशटैग्स: #SocialMedia #DigitalMarketing #FacebookTips`;
+if (keywords.length > 0) {
+optimized += ` #${keywords[0]}`;
+}
+
+return optimized;
+}
+
+function optimizeForInstagram(title, content, keywords) {
+let optimized = "=== Instagram ऑप्टिमाइज़्ड पोस्ट ===\n\n";
+optimized += `📱 प्लेटफॉर्म: Instagram\n`;
+optimized += `⏱️ बेस्ट टाइमिंग: 11 AM - 1 PM, 7 PM - 9 PM\n\n`;
+
+optimized += `✅ टाइटल/कैप्शन: ${title}\n\n`;
+
+// Instagram के लिए छोटा कंटेंट
+if (content.length > 150) {
+optimized += `📝 ऑप्टिमाइज़्ड कैप्शन:\n`;
+optimized += `${content.substring(0, 147)}...\n\n`;
+} else {
+optimized += `📝 ऑप्टिमाइज़्ड कैप्शन:\n${content}\n\n`;
+}
+
+// Instagram के लिए ज़्यादा हैशटैग
+optimized += `🏷️ हैशटैग्स (5-10 इस्तेमाल करें):\n`;
+optimized += `#Instagram #InstaGood #Photography #SocialMediaMarketing`;
+keywords.forEach(keyword => {
+if (keyword) optimized += ` #${keyword}`;
+});
+
+return optimized;
+}
+
+function optimizeForTwitter(title, content, keywords) {
+let optimized = "=== Twitter ऑप्टिमाइज़्ड पोस्ट ===\n\n";
+optimized += `🐦 प्लेटफॉर्म: Twitter\n`;
+optimized += `⏱️ बेस्ट टाइमिंग: 12 PM - 3 PM, 5 PM - 6 PM\n\n`;
+
+// Twitter के लिए बहुत छोटा
+const twitterContent = content.length > 250 ? content.substring(0, 247) + "..." : content;
+optimized += `✅ ट्वीट: ${twitterContent}\n\n`;
+
+// Twitter के लिए सीमित हैशटैग
+optimized += `🏷️ हैशटैग्स (1-2 इस्तेमाल करें):\n`;
+if (keywords.length > 0) {
+optimized += `#${keywords[0]}`;
+if (keywords.length > 1) optimized += ` #${keywords[1]}`;
+} else {
+optimized += `#Twitter #SocialMedia`;
+}
+
+optimized += `\n\n📊 कैरेक्टर काउंट: ${twitterContent.length}/280`;
+
+return optimized;
+}
+
+function optimizeForLinkedIn(title, content, keywords) {
+let optimized = "=== LinkedIn ऑप्टिमाइज़्ड पोस्ट ===\n\n";
+optimized += `💼 प्लेटफॉर्म: LinkedIn\n`;
+optimized += `⏱️ बेस्ट टाइमिंग: 9 AM - 11 AM, 5 PM - 6 PM\n\n`;
+
+optimized += `✅ टाइटल: ${title}\n\n`;
+
+// LinkedIn के लिए लंबा फॉर्मेट
+optimized += `📝 ऑप्टिमाइज़्ड कंटेंट:\n`;
+const sentences = content.split(/[.!?]+/).filter(s => s.trim().length > 0);
+if (sentences.length >= 3) {
+optimized += `${sentences[0].trim()}.\n\n`;
+optimized += `${sentences[1].trim()}.\n\n`;
+optimized += `${sentences[2].trim()}.\n\n`;
+} else {
+optimized += `${content}\n\n`;
+}
+
+optimized += `🏷️ प्रोफेशनल हैशटैग्स:\n`;
+optimized += `#LinkedIn #Professional #Business #Career`;
+if (keywords.length > 0) {
+optimized += ` #${keywords[0]}`;
+}
+
+return optimized;
+}
+
+function optimizeForYouTube(title, content, keywords) {
+let optimized = "=== YouTube ऑप्टिमाइज़्ड डिस्क्रिप्शन ===\n\n";
+optimized += `🎬 प्लेटफॉर्म: YouTube\n`;
+optimized += `⏱️ बेस्ट टाइमिंग: 2 PM - 4 PM, 8 PM - 11 PM\n\n`;
+
+// YouTube टाइटल
+if (title.length > 60) {
+optimized += `✅ टाइटल: ${title.substring(0, 57)}...\n`;
+optimized += `💡 सुझाव: YouTube टाइटल 60 करैक्टर से कम रखें\n\n`;
+} else {
+optimized += `✅ टाइटल: ${title}\n\n`;
+}
+
+// YouTube डिस्क्रिप्शन फॉर्मेट
+optimized += `📝 ऑप्टिमाइज़्ड डिस्क्रिप्शन:\n`;
+optimized += `${content.substring(0, 150)}...\n\n`;
+optimized += `🔗 लिंक्स: [आपकी वेबसाइट]\n`;
+optimized += `⏱️ टाइमस्टैम्प्स:\n`;
+optimized += `0:00 - Introduction\n`;
+optimized += `1:30 - Main Content\n`;
+optimized += `5:45 - Conclusion\n\n`;
+optimized += `🏷️ हैशटैग्स: #YouTube #Video #Tutorial #${keywords[0] || 'Content'}`;
+
+return optimized;
+}
+
+function optimizeForPinterest(title, content, keywords) {
+let optimized = "=== Pinterest ऑप्टिमाइज़्ड पिन ===\n\n";
+optimized += `📌 प्लेटफॉर्म: Pinterest\n`;
+optimized += `⏱️ बेस्ट टाइमिंग: 8 PM - 11 PM, Weekends\n\n`;
+
+optimized += `✅ पिन टाइटल: ${title}\n\n`;
+
+// Pinterest डिस्क्रिप्शन
+optimized += `📝 ऑप्टिमाइज़्ड डिस्क्रिप्शन:\n`;
+optimized += `${content.substring(0, 100)}...\n\n`;
+
+optimized += `🔗 लिंक: [आपकी वेबसाइट/ब्लॉग]\n\n`;
+optimized += `🏷️ हैशटैग्स: #Pinterest #DIY #Ideas #Inspiration`;
+keywords.forEach((keyword, index) => {
+if (index < 3 && keyword) optimized += ` #${keyword}`;
+});
+
+return optimized;
+}
+
+function generateHashtags() {
+const keywords = document.getElementById('keywords').value.split(',').map(k => k.trim()).filter(k => k);
+const content = document.getElementById('postContent').value.toLowerCase();
+const platform = document.getElementById('platform').value;
+
+let hashtags = [];
+const container = document.getElementById('hashtagContainer');
+container.innerHTML = '';
+
+// जेनरिक हैशटैग
+const genericHashtags = [
+'#SocialMedia', '#DigitalMarketing', '#ContentCreation',
+'#MarketingTips', '#OnlineMarketing', '#SocialMediaMarketing',
+'#GrowthHacking', '#SEO', '#ContentStrategy', '#BrandAwareness'
+];
+
+// प्लेटफॉर्म-स्पेसिफिक हैशटैग
+const platformHashtags = {
+facebook: ['#Facebook', '#FB', '#SocialMediaStrategy', '#Community'],
+instagram: ['#Instagram', '#InstaGood', '#Photography', '#InstaDaily', '#Love'],
+twitter: ['#Twitter', '#Tweet', '#Thread', '#TwitterChat', '#Trending'],
+linkedin: ['#LinkedIn', '#Professional', '#Networking', '#Career', '#Business'],
+youtube: ['#YouTube', '#Video', '#Tutorial', '#Vlog', '#Subscribe'],
+pinterest: ['#Pinterest', '#DIY', '#Inspiration', '#Ideas', '#Creative']
+};
+
+// कीवर्ड्स से हैशटैग
+keywords.forEach(keyword => {
+if (keyword && !hashtags.includes(`#${keyword}`)) {
+hashtags.push(`#${keyword}`);
+}
+});
+
+// प्लेटफॉर्म हैशटैग
+if (platform === 'all' || platformHashtags[platform]) {
+const platformTags = platform === 'all'
+? Object.values(platformHashtags).flat()
+: platformHashtags[platform];
+
+platformTags.forEach(tag => {
+if (!hashtags.includes(tag) && hashtags.length < 15) {
+hashtags.push(tag);
+}
+});
+}
+
+// जेनरिक हैशटैग
+genericHashtags.forEach(tag => {
+if (!hashtags.includes(tag) && hashtags.length < 20) {
+hashtags.push(tag);
+}
+});
+
+// कंटेंट से हैशटैग जनरेट (साधारण)
+const words = content.split(/\s+/);
+const commonWords = ['social', 'media', 'marketing', 'digital', 'content', 'tips', 'strategy', 'growth', 'online', 'business'];
+
+words.forEach(word => {
+if (word.length > 4 && commonWords.some(cw => word.includes(cw)) && hashtags.length < 25) {
+const hashtag = `#${word.charAt(0).toUpperCase() + word.slice(1)}`;
+if (!hashtags.includes(hashtag)) {
+hashtags.push(hashtag);
+}
+}
+});
+
+// हैशटैग्स डिस्प्ले करें
+hashtags.forEach(hashtag => {
+const span = document.createElement('span');
+span.className = 'hashtag';
+span.textContent = hashtag;
+span.onclick = function() {
+const content = document.getElementById('postContent');
+content.value += ' ' + hashtag;
+updateStats();
+};
+container.appendChild(span);
+});
+
+// हैशटैग काउंट अपडेट
+document.getElementById('hashtagCount').textContent = hashtags.length;
+}
+
+// पेज लोड होने पर स्टेट्स अपडेट
+document.addEventListener('DOMContentLoaded', function() {
+updateStats();
+});
+</script>
+
+<!-- Footer लोड करने का script -->
+<script>
+fetch('footer.html')
+.then(response => response.text())
+.then(data => {
+document.body.insertAdjacentHTML('beforeend', data);
+});
+</script>
+</body>
+</html>
