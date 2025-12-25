@@ -928,5 +928,13 @@ fullscreenBtn.innerHTML = '<i class="fas fa-expand"></i> फुलस्क्�
 }
 });
 </script>
+  <script>
+fetch('footer.html')
+  .then(response => response.text())
+  .then(data => {
+    document.body.insertAdjacentHTML('beforeend', data);
+  });
+</script>
 </body>
 </html>
+
