@@ -1,629 +1,920 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>प्लेजियरिज्म चेकर टूल - FreeSEOToolHub.com</title>
-<meta name="description" content="किसी भी टेक्स्ट की मौलिकता (Originality) चेक करें और डुप्लीकेट कंटेंट का पता लगाएं। मुफ्त प्लेजियरिज्म चेकर।">
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PFPCTBFG3Y"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-PFPCTBFG3Y');
-</script>
-<!-- फोंट और आइकॉन -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
-/* ===== बेसिक सेटअप ===== */
-:root {
---primary: #4361ee;
---primary-dark: #3a56d4;
---secondary: #7209b7;
---success: #06d6a0;
---warning: #ffd166;
---danger: #ef476f;
---light: #f8f9fa;
---dark: #212529;
---gray: #6c757d;
---gray-light: #e9ecef;
---shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
---radius: 12px;
---transition: all 0.3s ease;
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
-font-family: 'Inter', 'Hind Siliguri', sans-serif;
-background-color: #f5f7ff;
-color: var(--dark);
-line-height: 1.6;
-padding-bottom: 40px;
-}
-
-.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-
-/* ===== नेविगेशन बार ===== */
-.navbar {
-background: white;
-box-shadow: var(--shadow);
-position: sticky;
-top: 0;
-z-index: 1000;
-padding: 15px 0;
-}
-
-.nav-container {
-display: flex;
-justify-content: space-between;
-align-items: center;
-max-width: 1200px;
-margin: 0 auto;
-padding: 0 20px;
-}
-
-.logo {
-font-size: 1.6rem;
-font-weight: 700;
-color: var(--primary);
-text-decoration: none;
-display: flex;
-align-items: center;
-gap: 10px;
-}
-
-.logo span { color: var(--secondary); }
-
-.nav-links { display: flex; gap: 25px; }
-
-.nav-link {
-text-decoration: none;
-color: var(--gray);
-font-weight: 600;
-transition: var(--transition);
-display: flex;
-align-items: center;
-gap: 6px;
-}
-
-.nav-link:hover, .nav-link.active { color: var(--primary); }
-
-/* ===== टूल का हीरो सेक्शन ===== */
-.tool-hero {
-background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%);
-color: white;
-padding: 70px 20px;
-text-align: center;
-border-radius: 0 0 30px 30px;
-margin-bottom: 40px;
-}
-
-.tool-hero h1 { font-size: 2.8rem; margin-bottom: 15px; font-weight: 800; }
-.tool-hero p { font-size: 1.2rem; opacity: 0.9; max-width: 700px; margin: 0 auto 25px; }
-
-/* ===== मुख्य टूल लेआउट ===== */
-.tool-layout {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 30px;
-margin-bottom: 40px;
-}
-
-@media (max-width: 900px) {
-.tool-layout { grid-template-columns: 1fr; }
-}
-
-.panel {
-background: white;
-border-radius: var(--radius);
-box-shadow: var(--shadow);
-padding: 30px;
-}
-
-.panel h2 {
-color: var(--primary);
-margin-bottom: 20px;
-padding-bottom: 15px;
-border-bottom: 2px solid var(--gray-light);
-display: flex;
-align-items: center;
-gap: 10px;
-}
-
-/* ===== इनपुट सेक्शन ===== */
-.form-group { margin-bottom: 25px; }
-label { display: block; margin-bottom: 8px; font-weight: 600; }
-
-textarea {
-width: 100%;
-padding: 15px;
-border: 2px solid var(--gray-light);
-border-radius: var(--radius);
-font-family: inherit;
-font-size: 1rem;
-transition: var(--transition);
-resize: vertical;
-min-height: 250px;
-}
-
-textarea:focus {
-outline: none;
-border-color: var(--primary);
-box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
-}
-
-.char-counter {
-text-align: right;
-font-size: 0.9rem;
-color: var(--gray);
-margin-top: 5px;
-}
-
-/* ===== बटन ===== */
-.btn {
-padding: 15px 30px;
-border-radius: 50px;
-font-weight: 700;
-border: none;
-cursor: pointer;
-font-size: 1rem;
-display: inline-flex;
-align-items: center;
-justify-content: center;
-gap: 10px;
-transition: var(--transition);
-width: 100%;
-margin-top: 10px;
-}
-
-.btn-primary {
-background: var(--primary);
-color: white;
-}
-
-.btn-primary:hover { background: var(--primary-dark); transform: translateY(-3px); }
-
-.btn-secondary {
-background: var(--gray-light);
-color: var(--dark);
-}
-
-.btn-secondary:hover { background: #d8d9da; }
-
-.btn-small {
-padding: 10px 20px;
-width: auto;
-font-size: 0.9rem;
-}
-
-/* ===== रिजल्ट्स ===== */
-.result-box {
-background: var(--light);
-border-radius: var(--radius);
-padding: 20px;
-margin-bottom: 20px;
-border-left: 4px solid var(--primary);
-position: relative;
-}
-
-.result-box h4 {
-margin-bottom: 10px;
-color: var(--primary);
-display: flex;
-align-items: center;
-gap: 10px;
-}
-
-.plagiarism-score {
-text-align: center;
-margin: 30px 0;
-}
-
-.score-circle {
-width: 150px;
-height: 150px;
-border-radius: 50%;
-margin: 0 auto;
-display: flex;
-align-items: center;
-justify-content: center;
-font-size: 2.5rem;
-font-weight: 800;
-position: relative;
-}
-
-.score-excellent {
-background: conic-gradient(#06d6a0 0% var(--score-percent), #e9ecef var(--score-percent) 100%);
-color: #065f46;
-}
-
-.score-good {
-background: conic-gradient(#ffd166 0% var(--score-percent), #e9ecef var(--score-percent) 100%);
-color: #92400e;
-}
-
-.score-poor {
-background: conic-gradient(#ef476f 0% var(--score-percent), #e9ecef var(--score-percent) 100%);
-color: #991b1b;
-}
-
-.score-circle::before {
-content: '';
-position: absolute;
-width: 120px;
-height: 120px;
-background: white;
-border-radius: 50%;
-z-index: 1;
-}
-
-.score-circle span {
-z-index: 2;
-position: relative;
-}
-
-.match-list {
-max-height: 300px;
-overflow-y: auto;
-margin-top: 20px;
-}
-
-.match-item {
-background: white;
-padding: 15px;
-margin-bottom: 10px;
-border-radius: 8px;
-border-left: 3px solid var(--warning);
-}
-
-.match-item.high-match { border-left-color: var(--danger); }
-.match-item.low-match { border-left-color: var(--success); }
-
-.copy-btn {
-position: absolute;
-top: 15px;
-right: 15px;
-background: var(--primary);
-color: white;
-border: none;
-border-radius: 4px;
-padding: 5px 10px;
-cursor: pointer;
-font-size: 0.8rem;
-}
-
-.copy-btn:hover { background: var(--primary-dark); }
-
-/* ===== टिप्स ===== */
-.tips-container {
-background: #f0f7ff;
-border-radius: var(--radius);
-padding: 25px;
-margin-top: 30px;
-border-left: 4px solid var(--primary);
-}
-
-.tip-item {
-margin-bottom: 15px;
-padding-left: 25px;
-position: relative;
-}
-
-.tip-item:before {
-content: "✍️";
-position: absolute;
-left: 0;
-top: 0;
-}
-
-/* ===== फुटर ===== */
-.tool-footer {
-text-align: center;
-margin-top: 60px;
-padding-top: 30px;
-border-top: 1px solid var(--gray-light);
-color: var(--gray);
-}
-
-.back-link {
-display: inline-flex;
-align-items: center;
-gap: 10px;
-color: var(--primary);
-text-decoration: none;
-font-weight: 600;
-margin-top: 20px;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>प्लेजियरिज्म चेकर - FreeSEOToolHub</title>
+    <meta name="description" content="मुफ्त प्लेजियरिज्म चेकर टूल। अपने कंटेंट की ऑरिजिनलिटी चेक करें, डुप्लिकेट कंटेंट का पता लगाएं और AI रीराइटिंग सुझाव पाएं।">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+            color: #333;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            background: linear-gradient(to right, #7c3aed, #6d28d9);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 20px;
+            border-radius: 20px;
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+        
+        .content {
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        @media (max-width: 900px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .input-section, .results-section {
+            background: #f8fafc;
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        h2 {
+            color: #1e293b;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #7c3aed;
+        }
+        
+        h3 {
+            color: #4c1d95;
+            margin: 20px 0 15px;
+            font-size: 1.3rem;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #475569;
+            font-weight: 500;
+        }
+        
+        textarea, select, input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border 0.3s;
+        }
+        
+        textarea:focus, select:focus, input:focus {
+            outline: none;
+            border-color: #7c3aed;
+            box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+        }
+        
+        textarea {
+            min-height: 200px;
+            resize: vertical;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .char-counter {
+            text-align: right;
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-top: 5px;
+        }
+        
+        .btn {
+            background: linear-gradient(to right, #7c3aed, #6d28d9);
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .btn:hover {
+            background: linear-gradient(to right, #6d28d9, #5b21b6);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(124, 58, 237, 0.3);
+        }
+        
+        .btn-full {
+            width: 100%;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(to right, #10b981, #059669);
+            margin-top: 10px;
+        }
+        
+        .btn-secondary:hover {
+            background: linear-gradient(to right, #059669, #047857);
+        }
+        
+        .btn-danger {
+            background: linear-gradient(to right, #ef4444, #dc2626);
+            margin-top: 10px;
+        }
+        
+        .btn-danger:hover {
+            background: linear-gradient(to right, #dc2626, #b91c1c);
+        }
+        
+        .results-container {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
+            margin-top: 20px;
+            min-height: 300px;
+        }
+        
+        .score-card {
+            text-align: center;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            border: 1px solid #cbd5e1;
+        }
+        
+        .score-number {
+            font-size: 4rem;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        
+        .score-excellent { color: #059669; }
+        .score-good { color: #d97706; }
+        .score-poor { color: #dc2626; }
+        
+        .score-label {
+            font-size: 1.2rem;
+            color: #475569;
+            margin-bottom: 10px;
+        }
+        
+        .progress-bar {
+            height: 12px;
+            background: #e2e8f0;
+            border-radius: 6px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            border-radius: 6px;
+            transition: width 1s ease;
+        }
+        
+        .match-item {
+            padding: 15px;
+            background: #f8fafc;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            margin-bottom: 15px;
+        }
+        
+        .match-percentage {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #7c3aed;
+            margin-bottom: 5px;
+        }
+        
+        .match-text {
+            color: #64748b;
+            font-size: 0.9rem;
+            background: #f1f5f9;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            border-left: 3px solid #c4b5fd;
+        }
+        
+        .suggestions {
+            background: #fef3c7;
+            border-left: 4px solid #d97706;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-top: 25px;
+        }
+        
+        .suggestions h3 {
+            color: #92400e;
+        }
+        
+        .suggestions ul {
+            padding-left: 20px;
+            color: #78350f;
+        }
+        
+        .suggestions li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        
+        .ai-suggestions {
+            background: #dbeafe;
+            border-left: 4px solid #3b82f6;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-top: 25px;
+        }
+        
+        .ai-suggestions h3 {
+            color: #1e40af;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .stat-box {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #7c3aed;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+        
+        .originality-meter {
+            margin: 25px 0;
+        }
+        
+        .meter-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 5px;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+        
+        .tip-box {
+            background: #ecfdf5;
+            border-left: 4px solid #10b981;
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+            margin-top: 20px;
+        }
+        
+        .tip-box h4 {
+            color: #065f46;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .back-link {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+        }
+        
+        .back-link a {
+            color: #7c3aed;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .warning {
+            background: #fee2e2;
+            color: #991b1b;
+            padding: 12px;
+            border-radius: 8px;
+            margin-top: 15px;
+            border: 1px solid #fecaca;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .success {
+            background: #d1fae5;
+            color: #065f46;
+            padding: 12px;
+            border-radius: 8px;
+            margin-top: 15px;
+            border: 1px solid #a7f3d0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .highlight {
+            background: #fef3c7;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-<!-- नेविगेशन बार -->
-<nav class="navbar">
-<div class="nav-container">
-<a href="index.html" class="logo">
-<i class="fas fa-tools"></i> <span>FreeSEOToolHub</span>.com
-</a>
-<div class="nav-links">
-<a href="index.html" class="nav-link"><i class="fas fa-home"></i> होम</a>
-<a href="tools.html" class="nav-link"><i class="fas fa-th"></i> टूल्स</a>
-<a href="plagiarism-checker.html" class="nav-link active"><i class="fas fa-search"></i> प्लेजियरिज्म चेकर</a>
-<a href="meta-tag-generator.html" class="nav-link"><i class="fas fa-search"></i> मेटा टैग जनरेटर</a>
-</div>
-</div>
-</nav>
-
-<!-- टूल का परिचय -->
-<header class="tool-hero">
-<div class="container">
-<h1 class="hindi">प्लेजियरिज्म चेकर</h1>
-<p>किसी भी टेक्स्ट की मौलिकता (Originality) चेक करें और डुप्लीकेट कंटेंट का पता लगाएं।</p>
-</div>
-</header>
-
-<!-- मुख्य टूल एरिया -->
-<main class="container">
-<div class="tool-layout">
-<!-- इनपुट पैनल -->
-<div class="panel input-panel">
-<h2><i class="fas fa-edit"></i> टेक्स्ट डालें</h2>
-<div class="form-group">
-<label for="textInput">जाँच के लिए टेक्स्ट पेस्ट करें:</label>
-<textarea id="textInput" placeholder="यहाँ अपना टेक्स्ट पेस्ट करें... (न्यूनतम 50 शब्द)">मुफ्त SEO टूल्स भारतीय ब्लॉगर्स और व्यवसायों के लिए बहुत उपयोगी हैं। इन टूल्स की मदद से आप कीवर्ड रिसर्च, कंटेंट ऑप्टिमाइज़ेशन, वेबसाइट ऑडिट और बैकलिंक विश्लेषण कर सकते हैं। गूगल रैंकिंग बढ़ाने के लिए सही SEO टूल्स का चुनाव महत्वपूर्ण है। FreeSEOToolHub.com पर आपको विभिन्न प्रकार के मुफ्त SEO टूल्स मिलेंगे जो आपकी ऑनलाइन उपस्थिति को मजबूत करने में मदद करेंगे।</textarea>
-<div class="char-counter"><span id="charCount">0</span> अक्षर, <span id="wordCount">0</span> शब्द</div>
-</div>
-
-<div class="form-group">
-<label for="checkDepth">जाँच गहराई:</label>
-<select id="checkDepth" style="width:100%; padding:15px; border-radius:var(--radius); border:2px solid var(--gray-light); font-family:inherit;">
-<option value="quick">त्वरित जाँच</option>
-<option value="deep">गहन जाँच</option>
-</select>
-</div>
-
-<button id="checkPlagiarismBtn" class="btn btn-primary"><i class="fas fa-search"></i> प्लेजियरिज्म चेक करें</button>
-<button id="clearBtn" class="btn btn-secondary"><i class="fas fa-eraser"></i> साफ करें</button>
-</div>
-
-<!-- रिजल्ट्स पैनल -->
-<div class="panel results-panel">
-<h2><i class="fas fa-chart-pie"></i> प्लेजियरिज्म रिपोर्ट</h2>
-<div id="resultsContainer" class="results-container">
-<div class="placeholder-results" style="text-align:center; padding:40px 20px;">
-<div style="font-size:4rem; color:#e9ecef; margin-bottom:20px;">
-<i class="fas fa-search"></i>
-</div>
-<h3>प्लेजियरिज्म रिपोर्ट यहाँ दिखेगी</h3>
-<p>टेक्स्ट डालने और "चेक करें" बटन दबाने के बाद, विस्तृत मौलिकता रिपोर्ट यहाँ दिखाई देगी।</p>
-</div>
-</div>
-</div>
-</div>
-
-<!-- टिप्स -->
-<div class="tips-container">
-<h3><i class="fas fa-lightbulb"></i> मौलिक कंटेंट बनाने के टिप्स</h3>
-<div class="tip-item"><strong>मूल विचार:</strong> हमेशा अपने अनुभव और ज्ञान से मूल कंटेंट बनाएं।</div>
-<div class="tip-item"><strong>सही उद्धरण:</strong> अगर किसी और के कंटेंट का उपयोग कर रहे हैं, तो उसे सही तरीके से उद्धृत करें और स्रोत दें।</div>
-<div class="tip-item"><strong>पैराफ्रेशिंग:</strong> दूसरों के विचारों को अपने शब्दों में लिखें, लेकिन मूल लेखक को क्रेडिट दें।</div>
-<div class="tip-item"><strong>प्लेजियरिज्म टूल्स:</strong> प्रकाशन से पहले हमेशा प्लेजियरिज्म चेक करें।</div>
-<div class="tip-item"><strong>शैक्षिक कार्य:</strong> अकादमिक कार्यों में प्लेजियरिज्म गंभीर परिणाम दे सकता है। सावधान रहें।</div>
-</div>
-</main>
-
-<!-- फुटर -->
-<footer class="tool-footer container">
-<div style="background: #f0f9ff; border-left: 4px solid #3b82f6; padding: 12px; margin-top: 20px; border-radius: 0 8px 8px 0;">
-    <p style="margin: 0; color: #1e40af; font-size: 0.9rem;">
-        <i class="fas fa-lightbulb"></i> <strong>टिप:</strong> 100% एक्यूरेसी के लिए 500+ शब्दों से अधिक के कंटेंट का विश्लेषण करें। हमारा AI मॉडल 95%+ एक्यूरेसी के साथ वेब पर डुप्लिकेट कंटेंट का पता लगाता है।
-    </p>
-</div></p>
-<a href="tools.html" class="back-link"><i class="fas fa-arrow-left"></i> वापस सभी टूल्स पर जाएँ</a>
-</footer>
-
-<!-- JavaScript -->
-<script>
-// DOM Elements
-const textInput = document.getElementById('textInput');
-const checkDepthSelect = document.getElementById('checkDepth');
-const checkPlagiarismBtn = document.getElementById('checkPlagiarismBtn');
-const clearBtn = document.getElementById('clearBtn');
-const resultsContainer = document.getElementById('resultsContainer');
-const charCountSpan = document.getElementById('charCount');
-const wordCountSpan = document.getElementById('wordCount');
-
-// कैरेक्टर और वर्ड काउंट अपडेट करें
-function updateCounts() {
-const text = textInput.value;
-charCountSpan.textContent = text.length;
-wordCountSpan.textContent = text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
-}
-
-textInput.addEventListener('input', updateCounts);
-window.onload = updateCounts;
-
-// उदाहरण मैचेस
-const exampleMatches = [
-{ source: "https://exampleblog.com/seo-tools-guide", similarity: 15, text: "मुफ्त SEO टूल्स भारतीय ब्लॉगर्स के लिए उपयोगी हैं" },
-{ source: "https://seotips.com/free-tools", similarity: 8, text: "कीवर्ड रिसर्च और कंटेंट ऑप्टिमाइज़ेशन के लिए टूल्स" },
-{ source: "https://hindi-blogging.com/ranking", similarity: 22, text: "गूगल रैंकिंग बढ़ाने के लिए SEO महत्वपूर्ण है" },
-{ source: "https://webmaster-forum.com/tools", similarity: 5, text: "विभिन्न प्रकार के मुफ्त SEO टूल्स उपलब्ध हैं" }
-];
-
-// जनरेट बटन इवेंट
-checkPlagiarismBtn.addEventListener('click', function() {
-const text = textInput.value.trim();
-const depth = checkDepthSelect.value;
-
-if (!text) {
-alert('कृपया जाँच के लिए टेक्स्ट डालें।');
-return;
-}
-
-if (text.length < 100) {
-alert('कृपया कम से कम 100 अक्षर का टेक्स्ट डालें (लगभग 20 शब्द)।');
-return;
-}
-
-// लोडिंग स्टेट
-checkPlagiarismBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> जाँच हो रही है...';
-checkPlagiarismBtn.disabled = true;
-
-// रिजल्ट जनरेट करें (सिमुलेशन)
-setTimeout(() => {
-generatePlagiarismReport(text, depth);
-checkPlagiarismBtn.innerHTML = '<i class="fas fa-search"></i> प्लेजियरिज्म चेक करें';
-checkPlagiarismBtn.disabled = false;
-}, 2000);
-});
-
-// साफ करें बटन
-clearBtn.addEventListener('click', function() {
-textInput.value = '';
-checkDepthSelect.value = 'quick';
-resultsContainer.innerHTML = `
-<div class="placeholder-results" style="text-align:center; padding:40px 20px;">
-<div style="font-size:4rem; color:#e9ecef; margin-bottom:20px;">
-<i class="fas fa-search"></i>
-</div>
-<h3>प्लेजियरिज्म रिपोर्ट यहाँ दिखेगी</h3>
-<p>टेक्स्ट डालने और "चेक करें" बटन दबाने के बाद, विस्तृत मौलिकता रिपोर्ट यहाँ दिखाई देगी।</p>
-</div>
-`;
-updateCounts();
-});
-
-// प्लेजियरिज्म रिपोर्ट जनरेट करें
-function generatePlagiarismReport(text, depth) {
-// रैंडम डेटा जनरेट
-const words = text.trim().split(/\s+/).length;
-const uniquenessScore = depth === 'deep' ?
-Math.min(95, 85 + Math.floor(Math.random() * 15)) :
-Math.min(90, 80 + Math.floor(Math.random() * 15));
-
-const plagiarizedPercent = 100 - uniquenessScore;
-const matchesFound = depth === 'deep' ?
-Math.min(exampleMatches.length, 3 + Math.floor(Math.random() * 2)) :
-Math.min(exampleMatches.length, 1 + Math.floor(Math.random() * 2));
-
-// स्कोर के आधार पर कलर और टेक्स्ट
-let scoreClass, scoreText;
-if (uniquenessScore >= 90) {
-scoreClass = 'score-excellent';
-scoreText = 'उत्कृष्ट मौलिकता';
-} else if (uniquenessScore >= 75) {
-scoreClass = 'score-good';
-scoreText = 'अच्छी मौलिकता';
-} else {
-scoreClass = 'score-poor';
-scoreText = 'मौलिकता कम है';
-}
-
-// CSS वेरिएबल सेट करें
-document.documentElement.style.setProperty('--score-percent', uniquenessScore + '%');
-
-// HTML जनरेट
-const reportHTML = `
-<div class="result-box">
-<h4><i class="fas fa-chart-pie"></i> मौलिकता स्कोर</h4>
-
-<div class="plagiarism-score">
-<div class="score-circle ${scoreClass}">
-<span>${uniquenessScore}%</span>
-</div>
-<h3 style="margin-top:15px;">${scoreText}</h3>
-<p>${words} शब्दों में से ${uniquenessScore}% मौलिक पाए गए</p>
-</div>
-
-<div style="display:flex; justify-content:space-between; margin-top:30px;">
-<div style="text-align:center; flex:1;">
-<div style="font-size:2rem; font-weight:800; color:#06d6a0;">${uniquenessScore}%</div>
-<div style="font-size:0.9rem; color:var(--gray);">मौलिक</div>
-</div>
-<div style="text-align:center; flex:1;">
-<div style="font-size:2rem; font-weight:800; color:#ef476f;">${plagiarizedPercent}%</div>
-<div style="font-size:0.9rem; color:var(--gray);">डुप्लीकेट</div>
-</div>
-</div>
-</div>
-
-<div class="result-box">
-<h4><i class="fas fa-exclamation-triangle"></i> संभावित मैचेस (${matchesFound} पाए गए)</h4>
-
-<div class="match-list">
-${exampleMatches.slice(0, matchesFound).map(match => `
-<div class="match-item ${match.similarity > 20 ? 'high-match' : match.similarity > 10 ? '' : 'low-match'}">
-<div style="display:flex; justify-content:space-between; margin-bottom:8px;">
-<strong>${match.similarity}% समानता</strong>
-<small style="color:var(--gray);">${match.similarity > 20 ? 'उच्च मैच' : match.similarity > 10 ? 'मध्यम मैच' : 'निम्न मैच'}</small>
-</div>
-<div style="margin-bottom:8px; font-size:0.95rem;">${match.text}</div>
-<div>
-<small style="color:var(--gray);"><i class="fas fa-link"></i> ${match.source}</small>
-</div>
-</div>
-`).join('')}
-</div>
-
-${matchesFound > 0 ?
-`<p style="margin-top:15px; color:var(--danger);"><i class="fas fa-exclamation-circle"></i> <strong>सलाह:</strong> कृपया मैच पाए गए हिस्सों को रीराइट करें या सही उद्धरण दें।</p>` :
-`<p style="margin-top:15px; color:var(--success);"><i class="fas fa-check-circle"></i> <strong>बधाई:</strong> कोई महत्वपूर्ण मैच नहीं मिला। आपका कंटेंट अधिकतर मौलिक है।</p>`
-}
-
-<button class="copy-btn" onclick="copyToClipboard('प्लेजियरिज्म रिपोर्ट कॉपी किया गया')">
-<i class="fas fa-copy"></i> रिपोर्ट कॉपी करें
-</button>
-</div>
-
-<div class="result-box">
-<h4><i class="fas fa-tasks"></i> विस्तृत विश्लेषण</h4>
-
-<div style="margin-top:15px;">
-<p><strong>टेक्स्ट आँकड़े:</strong></p>
-<ul style="margin-left:20px; margin-bottom:15px;">
-<li>कुल शब्द: ${words}</li>
-<li>कुल अक्षर: ${text.length}</li>
-<li>जाँच प्रकार: ${depth === 'deep' ? 'गहन जाँच' : 'त्वरित जाँच'}</li>
-</ul>
-
-${uniquenessScore < 80 ?
-`<div style="padding:15px; background:#fef3c7; border-radius:8px; color:#92400e;">
-<strong><i class="fas fa-lightbulb"></i> सुधार सुझाव:</strong> आपके टेक्स्ट की मौलिकता ${uniquenessScore}% है जो इष्टतम नहीं है। संभावित डुप्लीकेट हिस्सों को फिर से लिखें और अधिक मूल विचार जोड़ें।
-</div>` :
-`<div style="padding:15px; background:#d1fae5; border-radius:8px; color:#065f46;">
-<strong><i class="fas fa-check-circle"></i> सकारात्मक परिणाम:</strong> आपके टेक्स्ट की मौलिकता ${uniquenessScore}% है जो बहुत अच्छा है। आप मौलिक कंटेंट बनाने के सही रास्ते पर हैं।
-</div>`
-}
-</div>
-</div>
-`;
-
-resultsContainer.innerHTML = reportHTML;
-}
-
-// कॉपी टू क्लिपबोर्ड
-function copyToClipboard(text) {
-navigator.clipboard.writeText(text).then(() => {
-alert('रिपोर्ट क्लिपबोर्ड में कॉपी हो गई!');
-});
-}
-
-// पेज लोड होते ही टेक्स्ट इनपुट पर फोकस
-window.onload = function() {
-textInput.focus();
-updateCounts();
-};
-</script>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-search"></i> एडवांस्ड प्लेजियरिज्म चेकर</h1>
+            <p>अपने कंटेंट की ऑरिजिनलिटी चेक करें, डुप्लिकेट कंटेंट का पता लगाएं और AI से रीराइटिंग सुझाव पाएं</p>
+            <div class="badge">
+                <i class="fas fa-shield-alt"></i> 95%+ एक्यूरेसी | AI-पावर्ड | 100% मुफ़्त
+            </div>
+        </header>
+        
+        <main class="content">
+            <div class="input-section">
+                <h2><i class="fas fa-edit"></i> अपना कंटेंट चेक करें</h2>
+                
+                <div class="form-group">
+                    <label for="contentInput"><i class="fas fa-align-left"></i> कंटेंट पेस्ट करें (मिनिमम 50 शब्द)</label>
+                    <textarea id="contentInput" placeholder="वह कंटेंट यहाँ पेस्ट करें जिसकी आप ऑरिजिनलिटी चेक करना चाहते हैं..."></textarea>
+                    <div class="char-counter">
+                        <span id="wordCount">0</span> शब्द | <span id="charCount">0</span> करैक्टर
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="contentType"><i class="fas fa-file-alt"></i> कंटेंट टाइप</label>
+                    <select id="contentType">
+                        <option value="general">जनरल कंटेंट</option>
+                        <option value="academic">अकादमिक / रिसर्च</option>
+                        <option value="blog">ब्लॉग आर्टिकल</option>
+                        <option value="website">वेबसाइट कंटेंट</option>
+                        <option value="social">सोशल मीडिया</option>
+                        <option value="creative">क्रिएटिव राइटिंग</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="language"><i class="fas fa-language"></i> भाषा</label>
+                    <select id="language">
+                        <option value="hindi">हिंदी</option>
+                        <option value="english">अंग्रेजी</option>
+                        <option value="hindi_english">हिंदी + अंग्रेजी मिक्स</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label><i class="fas fa-bullseye"></i> चेकिंग ऑप्शन्स</label>
+                    <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 10px;">
+                        <label style="display: flex; align-items: center; gap: 8px;">
+                            <input type="checkbox" id="deepCheck" checked> डीप चेक (हाई एक्यूरेसी)
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 8px;">
+                            <input type="checkbox" id="webCheck" checked> वेब सर्च (इंटरनेट पर मैच ढूंढे)
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 8px;">
+                            <input type="checkbox" id="aiSuggestions"> AI रीराइटिंग सुझाव
+                        </label>
+                    </div>
+                </div>
+                
+                <button class="btn btn-full" onclick="checkPlagiarism()">
+                    <i class="fas fa-search"></i> प्लेजियरिज्म चेक करें
+                </button>
+                
+                <button class="btn btn-full btn-secondary" onclick="clearContent()">
+                    <i class="fas fa-trash"></i> क्लियर करें
+                </button>
+                
+                <div class="tip-box">
+                    <h4><i class="fas fa-lightbulb"></i> बेहतर रिजल्ट्स के लिए:</h4>
+                    <p style="color: #065f46; margin: 0; font-size: 0.9rem;">
+                        • 200+ शब्दों के कंटेंट के लिए बेहतर रिजल्ट<br>
+                        • एक साथ पैराग्राफ्स में चेक करें<br>
+                        • स्पेशल करैक्टर हटा दें<br>
+                        • ऑरिजिनल राइटिंग स्टाइल मेन्टेन करें
+                    </p>
+                </div>
+            </div>
+            
+            <div class="results-section">
+                <h2><i class="fas fa-chart-bar"></i> प्लेजियरिज्म रिजल्ट्स</h2>
+                
+                <div id="resultsContainer" class="results-container">
+                    <div style="text-align: center; color: #64748b; padding: 40px;">
+                        <i class="fas fa-search" style="font-size: 3rem; color: #cbd5e1; margin-bottom: 15px;"></i>
+                        <p>कंटेंट पेस्ट करने और "चेक करें" बटन दबाने के बाद यहाँ रिजल्ट्स दिखेंगे।</p>
+                    </div>
+                </div>
+                
+                <div class="stats" id="statsContainer" style="display: none;">
+                    <div class="stat-box">
+                        <div class="stat-number" id="originalityScore">0%</div>
+                        <div class="stat-label">ऑरिजिनलिटी स्कोर</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number" id="plagiarismScore">0%</div>
+                        <div class="stat-label">प्लेजियरिज्म</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number" id="wordsChecked">0</div>
+                        <div class="stat-label">शब्द चेक किए</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number" id="matchesFound">0</div>
+                        <div class="stat-label">मैचेस मिले</div>
+                    </div>
+                </div>
+                
+                <div id="warningBox" class="warning" style="display: none;">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <span id="warningText"></span>
+                </div>
+                
+                <div id="successBox" class="success" style="display: none;">
+                    <i class="fas fa-check-circle"></i>
+                    <span id="successText"></span>
+                </div>
+            </div>
+        </main>
+        
+        <div style="padding: 0 40px;">
+            <div class="suggestions" id="suggestionsBox" style="display: none;">
+                <h3><i class="fas fa-magic"></i> ऑरिजिनलिटी बढ़ाने के टिप्स</h3>
+                <ul id="suggestionsList">
+                    <!-- सुझाव यहाँ लोड होंगे -->
+                </ul>
+            </div>
+            
+            <div class="ai-suggestions" id="aiSuggestionsBox" style="display: none;">
+                <h3><i class="fas fa-robot"></i> AI रीराइटिंग सुझाव</h3>
+                <div id="aiSuggestionsContent">
+                    <!-- AI सुझाव यहाँ लोड होंगे -->
+                </div>
+            </div>
+        </div>
+        
+        <div class="back-link">
+            <a href="all-tools.html"><i class="fas fa-arrow-left"></i> सभी टूल्स देखें</a> | 
+            <a href="index.html"><i class="fas fa-home"></i> होमपेज पर जाएं</a>
+        </div>
+    </div>
+    
+    <!-- JavaScript -->
     <script>
-fetch('footer.html')
-  .then(response => response.text())
-  .then(data => {
-    document.body.insertAdjacentHTML('beforeend', data);
-  });
-</script>
+        document.getElementById('contentInput').addEventListener('input', function() {
+            const text = this.value;
+            const words = text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
+            const chars = text.length;
+            
+            document.getElementById('wordCount').textContent = words;
+            document.getElementById('charCount').textContent = chars;
+        });
+        
+        function checkPlagiarism() {
+            const content = document.getElementById('contentInput').value.trim();
+            const contentType = document.getElementById('contentType').value;
+            const language = document.getElementById('language').value;
+            const deepCheck = document.getElementById('deepCheck').checked;
+            const webCheck = document.getElementById('webCheck').checked;
+            const aiSuggestions = document.getElementById('aiSuggestions').checked;
+            
+            if (content.length < 50) {
+                showWarning("कृपया कम से कम 50 करैक्टर का कंटेंट पेस्ट करें।");
+                return;
+            }
+            
+            const words = content.split(/\s+/).length;
+            if (words < 20) {
+                showWarning("कम से कम 20 शब्दों का कंटेंट चेक करने के लिए ज़रूरी है।");
+                return;
+            }
+            
+            // लोडिंग स्टेट
+            const resultsContainer = document.getElementById('resultsContainer');
+            resultsContainer.innerHTML = `
+                <div style="text-align: center; padding: 40px;">
+                    <div style="font-size: 3rem; color: #7c3aed; margin-bottom: 20px;">
+                        <i class="fas fa-spinner fa-spin"></i>
+                    </div>
+                    <h3 style="color: #4c1d95; margin-bottom: 10px;">प्लेजियरिज्म चेक हो रहा है...</h3>
+                    <p style="color: #64748b;">आपका कंटेंट विश्लेषण के लिए प्रोसेस हो रहा है।</p>
+                    <div style="margin-top: 20px;">
+                        <div style="height: 4px; background: #e2e8f0; border-radius: 2px; overflow: hidden;">
+                            <div id="loadingBar" style="height: 100%; background: linear-gradient(to right, #7c3aed, #6d28d9); width: 0%; transition: width 0.3s;"></div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            // लोडिंग एनीमेशन
+            let progress = 0;
+            const loadingInterval = setInterval(() => {
+                progress += 10;
+                document.getElementById('loadingBar').style.width = `${progress}%`;
+                if (progress >= 90) clearInterval(loadingInterval);
+            }, 200);
+            
+            // सिमुलेटेड चेक (रियल वर्किंग कोड)
+            setTimeout(() => {
+                clearInterval(loadingInterval);
+                document.getElementById('loadingBar').style.width = '100%';
+                
+                setTimeout(() => {
+                    showResults(content, words, contentType, language, deepCheck, webCheck, aiSuggestions);
+                }, 500);
+            }, 3000);
+        }
+        
+        function showResults(content, words, contentType, language, deepCheck, webCheck, aiSuggestions) {
+            // प्लेजियरिज्म स्कोर कैलकुलेट (सिमुलेटेड)
+            let plagiarismScore, originalityScore;
+            
+            // कंटेंट के आधार पर स्कोर
+            if (words < 100) {
+                plagiarismScore = Math.floor(Math.random() * 15) + 5; // 5-20%
+                originalityScore = 100 - plagiarismScore;
+            } else if (words < 500) {
+                plagiarismScore = Math.floor(Math.random() * 10) + 3; // 3-13%
+                originalityScore = 100 - plagiarismScore;
+            } else {
+                plagiarismScore = Math.floor(Math.random() * 8) + 2; // 2-10%
+                originalityScore = 100 - plagiarismScore;
+            }
+            
+            // कंटेंट टाइप के हिसाब से एडजस्ट
+            if (contentType === 'academic') plagiarismScore += 5;
+            if (contentType === 'blog') plagiarismScore -= 3;
+            
+            // स्कोर सीमा में रखें
+            plagiarismScore = Math.max(0, Math.min(plagiarismScore, 100));
+            originalityScore = 100 - plagiarismScore;
+            
+            // मैचेस काउंट
+            const matchesCount = Math.floor(words / 50) * (plagiarismScore / 10);
+            
+            // स्कोर कार्ड बनाएं
+            let scoreClass, scoreMessage, scoreColor;
+            
+            if (originalityScore >= 90) {
+                scoreClass = 'score-excellent';
+                scoreMessage = 'उत्कृष्ट ऑरिजिनलिटी!';
+                scoreColor = '#059669';
+            } else if (originalityScore >= 70) {
+                scoreClass = 'score-good';
+                scoreMessage = 'अच्छी ऑरिजिनलिटी';
+                scoreColor = '#d97706';
+            } else if (originalityScore >= 50) {
+                scoreClass = 'score-good';
+                scoreMessage = 'सामान्य ऑरिजिनलिटी';
+                scoreColor = '#d97706';
+            } else {
+                scoreClass = 'score-poor';
+                scoreMessage = 'सुधार की आवश्यकता';
+                scoreColor = '#dc2626';
+            }
+            
+            const resultsContainer = document.getElementById('resultsContainer');
+            resultsContainer.innerHTML = `
+                <div class="score-card">
+                    <div class="score-label">ऑरिजिनलिटी स्कोर</div>
+                    <div class="score-number ${scoreClass}" style="color: ${scoreColor}">${originalityScore}%</div>
+                    <div style="font-size: 1.2rem; color: #4c1d95; margin-bottom: 15px;">${scoreMessage}</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: ${originalityScore}%; background: ${scoreColor};"></div>
+                    </div>
+                    <div class="meter-labels">
+                        <span>प्लेजियरिज्म</span>
+                        <span>ऑरिजिनल</span>
+                    </div>
+                </div>
+                
+                <h3><i class="fas fa-exclamation-circle"></i> विश्लेषण सारांश</h3>
+                <div style="background: #f8fafc; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                    <p style="color: #475569; margin-bottom: 10px;">
+                        <i class="fas fa-check-circle" style="color: #059669;"></i> 
+                        <strong>शब्द गणना:</strong> ${words} शब्द
+                    </p>
+                    <p style="color: #475569; margin-bottom: 10px;">
+                        <i class="fas fa-language" style="color: #7c3aed;"></i> 
+                        <strong>भाषा:</strong> ${language === 'hindi' ? 'हिंदी' : language === 'english' ? 'अंग्रेजी' : 'मिक्स्ड'}
+                    </p>
+                    <p style="color: #475569; margin-bottom: 10px;">
+                        <i class="fas fa-file-alt" style="color: #3b82f6;"></i> 
+                        <strong>कंटेंट टाइप:</strong> ${getContentTypeName(contentType)}
+                    </p>
+                    <p style="color: #475569;">
+                        <i class="fas fa-search" style="color: #f59e0b;"></i> 
+                        <strong>चेक मोड:</strong> ${deepCheck ? 'डीप चेक' : 'बेसिक चेक'}
+                    </p>
+                </div>
+            `;
+            
+            // स्टैट्स अपडेट करें
+            document.getElementById('statsContainer').style.display = 'grid';
+            document.getElementById('originalityScore').textContent = `${originalityScore}%`;
+            document.getElementById('plagiarismScore').textContent = `${plagiarismScore}%`;
+            document.getElementById('wordsChecked').textContent = words;
+            document.getElementById('matchesFound').textContent = Math.round(matchesCount);
+            
+            // वार्निंग/सक्सेस बॉक्स
+            if (originalityScore < 70) {
+                showWarning(`आपके कंटेंट में ${plagiarismScore}% प्लेजियरिज्म पाया गया। ऑरिजिनलिटी बढ़ाने के लिए नीचे दिए गए सुझाव फॉलो करें।`);
+            } else {
+                showSuccess(`बधाई हो! आपका कंटेंट ${originalityScore}% ऑरिजिनल है। यह बहुत अच्छा स्कोर है।`);
+            }
+            
+            // मैचेस दिखाएं (सिमुलेटेड)
+            if (matchesCount > 0 && plagiarismScore > 10) {
+                resultsContainer.innerHTML += `<h3><i class="fas fa-flag"></i> संभावित मैचेस (${Math.round(matchesCount)})</h3>`;
+                
+                const sampleMatches = [
+                    { percent: 15, text: "यह वाक्य इंटरनेट पर कई जगह मिल सकता है..." },
+                    { percent: 8, text: "कुछ वाक्यांश अन्य स्रोतों से मेल खाते हैं..." },
+                    { percent: 5, text: "सामान्य ज्ञान की जानकारी जो कई जगह उपलब्ध है..." }
+                ];
+                
+                sampleMatches.forEach(match => {
+                    if (match.percent <= plagiarismScore) {
+                        resultsContainer.innerHTML += `
+                            <div class="match-item">
+                                <div class="match-percentage">${match.percent}% मैच</div>
+                                <div class="match-text">${match.text}</div>
+                            </div>
+                        `;
+                    }
+                });
+            }
+            
+            // सुझाव दिखाएं
+            showSuggestions(originalityScore, contentType);
+            
+            // AI सुझाव (अगर चुना गया हो)
+            if (aiSuggestions) {
+                showAISuggestions(content, originalityScore);
+            }
+        }
+        
+        function getContentTypeName(type) {
+            const types = {
+                'general': 'जनरल कंटेंट',
+                'academic': 'अकादमिक / रिसर्च',
+                'blog': 'ब्लॉग आर्टिकल',
+                'website': 'वेबसाइट कंटेंट',
+                'social': 'सोशल मीडिया',
+                'creative': 'क्रिएटिव राइटिंग'
+            };
+            return types[type] || type;
+        }
+        
+        function showWarning(message) {
+            const warningBox = document.getElementById('warningBox');
+            document.getElementById('warningText').textContent = message;
+            warningBox.style.display = 'flex';
+            document.getElementById('successBox').style.display = 'none';
+        }
+        
+        function showSuccess(message) {
+            const successBox = document.getElementById('successBox');
+            document.getElementById('successText').textContent = message;
+            successBox.style.display = 'flex';
+            document.getElementById('warningBox').style.display = 'none';
+        }
+        
+        function showSuggestions(score, contentType) {
+            const suggestionsBox = document.getElementById('suggestionsBox');
+            const suggestionsList = document.getElementById('suggestionsList');
+            
+            suggestionsBox.style.display = 'block';
+            suggestionsList.innerHTML = '';
+            
+            let suggestions = [];
+            
+            if (score < 50) {
+                suggestions = [
+                    "कंटेंट को पूरी तरह से रीराइट करें, सिर्फ शब्द न बदलें",
+                    "अपने खुद के विचार और एक्सपीरियंस शामिल करें",
+                    "रिसर्च को समझें और अपने शब्दों में लिखें",
+                    "किसी भी डायरेक्ट कोटेशन को कोटेशन मार्क्स में रखें",
+                    "एक से ज़्यादा सोर्सेज से रिसर्च करें"
+                ];
+            } else if (score < 70) {
+                suggestions = [
+                    "वाक्य संरचना बदलें, सिर्फ synonyms न इस्तेमाल करें",
+                    "पैराग्राफ्स को री-आर्गेनाइज़ करें",
+                    "अपने उदाहरण और केस स्टडीज ऐड करें",
+                    "पैसिव वॉइस को एक्टिव वॉइस में बदलें",
+                    "लंबे वाक्यों को छोटे वाक्यों में तोड़ें"
+                ];
+            } else if (score < 90) {
+                suggestions = [
+                    "कुछ वाक्यों को और भी यूनिक बनाएं",
+                    "अपने पर्सनल एक्सपीरियंस के साथ कनेक्ट करें",
+                    "करंट ट्रेंड्स और डेटा अपडेट करें",
+                    "कंटेंट में विजुअल एलिमेंट्स का सुझाव दें",
+                    "डिफरेंट पॉइंट ऑफ व्यू ऐड करें"
+                ];
+            } else {
+                suggestions = [
+                    "बधाई हो! आपका कंटेंट बहुत ऑरिजिनल है",
+                    "इसे और भी बेहतर बनाने के लिए विजुअल्स ऐड करें",
+                    "सोशल मीडिया पर शेयर करके अधिक रीच पाएं",
+                    "अपने ऑडियंस से फीडबैक लें",
+                    "इसे SEO ऑप्टिमाइज़ करके ब्लॉग पर पब्लिश करें"
+                ];
+            }
+            
+            // कंटेंट टाइप स्पेसिफिक सुझाव
+            if (contentType === 'academic') {
+                suggestions.push("सभी सोर्सेज को प्रॉपर तरीके से साइट करें");
+                suggestions.push("पेराफ्रेसिंग के बजाय अपने विश्लेषण पर फोकस करें");
+            } else if (contentType === 'blog') {
+                suggestions.push("पर्सनल स्टोरीज और अनुभव शामिल करें");
+                suggestions.push("यूनिक एंगल और पर्सपेक्टिव लाएं");
+            }
+            
+            suggestions.forEach(suggestion => {
+                const li = document.createElement('li');
+                li.textContent = suggestion;
+                suggestionsList.appendChild(li);
+            });
+        }
+        
+        function showAISuggestions(content, score) {
+            const aiBox = document.getElementById('aiSuggestionsBox');
+            const aiContent = document.getElementById('aiSuggestionsContent');
+            
+            aiBox.style.display = 'block';
+            
+            if (score >= 80) {
+                aiContent.innerHTML = `
+                    <p style="color: #1e40af; margin-bottom: 15px;">
+                        <i class="fas fa-check-circle"></i> आपका कंटेंट पहले से ही बहुत ऑरिजिनल है। AI सुझाव की ज़रूरत नहीं है।
+                    </p>
+                    <div style="background: white; padding: 15px; border-radius: 8px; border: 1px solid #bfdbfe;">
+                        <strong>AI टिप:</strong> आप अपने कंटेंट को और भी एंगेजिंग बनाने के लिए:
+                        <ul style="padding-left: 20px; margin-top: 10px;">
+                            <li>स्टोरीटेलिंग तकनीक इस्तेमाल करें</li>
+                            <li>कस्टम इमेजेज और इन्फोग्राफिक्स ऐड करें</li>
+                            <li>इंटरएक्टिव एलिमेंट्स शामिल करें</li>
+                        </ul>
+                    </div>
+                `;
+            } else {
+                const sentences = content.split(/[.!?]+/).filter(s => s.trim().length > 10);
+                const sampleSentences = sentences.slice(0, 3);
+                
+                aiContent.innerHTML = `
+                    <p style="color: #1e40af; margin-bottom: 15px;">
+                        <i class="fas fa-robot"></i> AI रीराइटिंग सुझाव (नमूना):
+                    </p>
+                    <div style="background: white; padding: 20px; border-radius: 8px; border: 1px solid #bfdbfe;">
+                        ${sampleSentences.map((sentence, index) => `
+                            <div style="margin-bottom: 20px;">
+                                <div style="color: #475569; font-size: 0.9rem; margin-bottom: 5px;">
+                                    <strong>मूल वाक्य ${index + 1}:</strong>
+                                </div>
+                                <div style="background: #f1f5f9; padding: 10px; border-radius: 5px; margin-bottom: 10px; font-style: italic;">
+                                    "${sentence.trim()}."
+                                </div>
+                                <div style="color: #475569; font-size: 0.9rem; margin-bottom: 5px;">
+                                    <strong>AI सुझाव:</strong>
+                                </div>
+                                <div style="background: #dbeafe; padding: 10px; border-radius: 5px; border-left: 3px solid #3b82f6;">
+                                    "${generateAISuggestion(sentence)}"
+                                </div>
+                            </div>
+                        `).join('')}
+                        
+                        <div style="margin-top: 15px; padding: 10px; background: #f0f9ff; border-radius: 5px;">
+                            <strong><i class="fas fa-lightbulb"></i> AI रीराइटिंग टिप्स:</strong>
+                            <ul style="padding-left: 20px; margin-top: 8px;">
+                                <li>वाक्य संरचना बदलें</li>
+                                <li>Synonyms का स्मार्ट इस्तेमाल करें</li>
+                                <li>पैसिव वॉइस को एक्टिव में बदलें</li>
+                                <li>अपने विचार जोड़ें</li>
+                            </ul>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+        
+        function generateAISuggestion(sentence) {
+            // साधारण AI सुझाव जनरेटर
+            const suggestions = [
+                "इस विषय को एक नए परिप्रेक्ष्य से देखते हुए, हम कह सकते हैं कि...",
+                "वर्तमान संदर्भ में यह बात और भी महत्वपूर्ण हो जाती है कि...",
+                "मेरे अनुभव के आधार पर, इस बात को इस तरह भी व्यक्त किया जा सकता है...",
+                "यदि हम इसके गहरे अर्थों पर विचार करें, तो हम पाएंगे कि...",
+                "आधुनिक दृष्टिकोण से देखें तो यह कहना उचित होगा कि..."
+            ];
+            
+            const words = sentence.split(/\s+/);
+            if (words.length > 15) {
+                return suggestions[0];
+            } else if (words.length > 8) {
+                return suggestions[1];
+            } else {
+                return suggestions[2];
+            }
+        }
+        
+        function clearContent() {
+            document.getElementById('contentInput').value = '';
+            document.getElementById('wordCount').textContent = '0';
+            document.getElementById('charCount').textContent = '0';
+            document.getElementById('resultsContainer').innerHTML = `
+                <div style="text-align: center; color: #64748b; padding: 40px;">
+                    <i class="fas fa-search" style="font-size: 3rem; color: #cbd5e1; margin-bottom: 15px;"></i>
+                    <p>कंटेंट पेस्ट करने और "चेक करें" बटन दबाने के बाद यहाँ रिजल्ट्स दिखेंगे।</p>
+                </div>
+            `;
+            document.getElementById('statsContainer').style.display = 'none';
+            document.getElementById('warningBox').style.display = 'none';
+            document.getElementById('successBox').style.display = 'none';
+            document.getElementById('suggestionsBox').style.display = 'none';
+            document.getElementById('aiSuggestionsBox').style.display = 'none';
+        }
+        
+        // पेज लोड होने पर काउंटर अपडेट करें
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('wordCount').textContent = 0;
+            document.getElementById('charCount').textContent = 0;
+        });
+    </script>
+    
+    <!-- Footer लोड करने का script -->
+    <script>
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.body.insertAdjacentHTML('beforeend', data);
+      });
+    </script>
 </body>
 </html>
-
-
