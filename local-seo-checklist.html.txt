@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>लोकल SEO चेकलिस्ट - FreeSEOToolHub</title>
+<meta name="description" content="लोकल बिज़नेस के लिए पूरी SEO चेकलिस्ट। Google My Business ऑप्टिमाइज़ेशन, सिटेशन्स और लोकल कीवर्ड्स।">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+color: #333;
+min-height: 100vh;
+padding: 20px;
+}
+
+.container {
+max-width: 1200px;
+margin: 0 auto;
+background: white;
+border-radius: 15px;
+overflow: hidden;
+box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.header {
+background: linear-gradient(to right, #059669, #10b981);
+color: white;
+padding: 40px 20px;
+text-align: center;
+}
+
+.header h1 {
+font-size: 2.5rem;
+margin-bottom: 10px;
+}
+
+.header p {
+font-size: 1.1rem;
+opacity: 0.9;
+max-width: 800px;
+margin: 0 auto;
+}
+
+.progress-section {
+padding: 30px;
+background: #f0fdf4;
+text-align: center;
+border-bottom: 1px solid #dcfce7;
+}
+
+.progress-container {
+max-width: 800px;
+margin: 0 auto;
+}
+
+.progress-bar {
+height: 20px;
+background: #e2e8f0;
+border-radius: 10px;
+margin: 20px 0;
+overflow: hidden;
+}
+
+.progress-fill {
+height: 100%;
+background: linear-gradient(to right, #10b981, #059669);
+border-radius: 10px;
+transition: width 1s ease;
+width: 0%;
+}
+
+.progress-stats {
+display: flex;
+justify-content: space-around;
+flex-wrap: wrap;
+gap: 20px;
+margin-top: 20px;
+}
+
+.stat-box {
+text-align: center;
+padding: 15px;
+background: white;
+border-radius: 10px;
+box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+min-width: 150px;
+}
+
+.stat-number {
+font-size: 2.5rem;
+font-weight: bold;
+color: #059669;
+}
+
+.stat-label {
+font-size: 0.9rem;
+color: #64748b;
+}
+
+.content {
+padding: 40px;
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 40px;
+}
+
+@media (max-width: 900px) {
+.content {
+grid-template-columns: 1fr;
+}
+}
+
+.input-section, .checklist-section {
+background: #f8fafc;
+padding: 30px;
+border-radius: 10px;
+border: 1px solid #e2e8f0;
+}
+
+h2 {
+color: #1e293b;
+margin-bottom: 20px;
+padding-bottom: 10px;
+border-bottom: 2px solid #059669;
+}
+
+h3 {
+color: #065f46;
+margin: 25px 0 15px;
+font-size: 1.3rem;
+}
+
+.form-group {
+margin-bottom: 20px;
+}
+
+label {
+display: block;
+margin-bottom: 8px;
+color: #475569;
+font-weight: 500;
+}
+
+textarea, select, input {
+width: 100%;
+padding: 12px 15px;
+border: 1px solid #cbd5e1;
+border-radius: 8px;
+font-size: 1rem;
+transition: border 0.3s;
+}
+
+textarea:focus, select:focus, input:focus {
+outline: none;
+border-color: #059669;
+box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
+}
+
+textarea {
+min-height: 100px;
+resize: vertical;
+}
+
+.btn {
+background: linear-gradient(to right, #059669, #10b981);
+color: white;
+border: none;
+padding: 14px 30px;
+font-size: 1.1rem;
+border-radius: 8px;
+cursor: pointer;
+transition: all 0.3s;
+font-weight: bold;
+display: inline-flex;
+align-items: center;
+gap: 10px;
+}
+
+.btn:hover {
+background: linear-gradient(to right, #047857, #0d9669);
+transform: translateY(-2px);
+box-shadow: 0 5px 15px rgba(5, 150, 105, 0.3);
+}
+
+.btn-full {
+width: 100%;
+justify-content: center;
+margin-top: 20px;
+}
+
+.checklist-category {
+margin-bottom: 30px;
+padding: 20px;
+background: white;
+border-radius: 10px;
+border: 1px solid #e2e8f0;
+}
+
+.checklist-item {
+display: flex;
+align-items: center;
+gap: 15px;
+margin-bottom: 15px;
+padding: 12px 15px;
+background: #f8fafc;
+border-radius: 8px;
+border: 1px solid #e2e8f0;
+transition: all 0.3s;
+}
+
+.checklist-item:hover {
+background: #f0fdf4;
+border-color: #a7f3d0;
+}
+
+.checklist-item input[type="checkbox"] {
+width: 20px;
+height: 20px;
+cursor: pointer;
+}
+
+.checklist-item label {
+flex: 1;
+margin: 0;
+cursor: pointer;
+font-size: 0.95rem;
+color: #1e293b;
+}
+
+.item-weight {
+font-size: 0.8rem;
+color: #059669;
+font-weight: bold;
+background: #d1fae5;
+padding: 3px 8px;
+border-radius: 4px;
+min-width: 40px;
+text-align: center;
+}
+
+.completed {
+background: #f0fdf4;
+border-color: #a7f3d0;
+}
+
+.completed label {
+color: #065f46;
+text-decoration: line-through;
+}
+
+.report-section {
+background: white;
+padding: 25px;
+border-radius: 10px;
+border: 1px solid #e2e8f0;
+margin-top: 30px;
+}
+
+.report-box {
+background: #f8fafc;
+padding: 20px;
+border-radius: 8px;
+border: 1px solid #e2e8f0;
+margin-top: 15px;
+white-space: pre-wrap;
+font-family: monospace;
+min-height: 300px;
+line-height: 1.6;
+overflow-y: auto;
+max-height: 400px;
+}
+
+.priority-badge {
+display: inline-block;
+padding: 4px 10px;
+border-radius: 12px;
+font-size: 0.75rem;
+font-weight: bold;
+margin-left: 10px;
+}
+
+.high { background: #fee2e2; color: #991b1b; }
+.medium { background: #fef3c7; color: #92400e; }
+.low { background: #d1fae5; color: #065f46; }
+
+.tips {
+background: #ecfdf5;
+border-left: 4px solid #10b981;
+padding: 20px;
+border-radius: 0 8px 8px 0;
+margin-top: 30px;
+}
+
+.tips h3 {
+color: #065f46;
+margin-bottom: 10px;
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.tips ul {
+padding-left: 20px;
+color: #065f46;
+}
+
+.tips li {
+margin-bottom: 8px;
+line-height: 1.5;
+}
+
+.citation-list {
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+margin-top: 15px;
+}
+
+.citation {
+background: #e0f2fe;
+color: #0369a1;
+padding: 8px 15px;
+border-radius: 20px;
+font-size: 0.85rem;
+cursor: pointer;
+transition: all 0.3s;
+}
+
+.citation:hover {
+background: #bae6fd;
+}
+
+.back-link {
+text-align: center;
+margin-top: 40px;
+padding: 20px;
+}
+
+.back-link a {
+color: #059669;
+text-decoration: none;
+font-weight: bold;
+display: inline-flex;
+align-items: center;
+gap: 8px;
+}
+
+.score-message {
+font-size: 1.1rem;
+margin-top: 15px;
+padding: 10px;
+border-radius: 8px;
+text-align: center;
+}
+
+.score-excellent { background: #d1fae5; color: #065f46; }
+.score-good { background: #fef3c7; color: #92400e; }
+.score-poor { background: #fee2e2; color: #991b1b; }
+</style>
+</head>
+<body>
+<div class="container">
+<header class="header">
+<h1><i class="fas fa-map-marker-alt"></i> लोकल SEO चेकलिस्ट</h1>
+<p>लोकल बिज़नेस के लिए पूरी SEO चेकलिस्ट। Google My Business ऑप्टिमाइज़ेशन, सिटेशन्स और लोकल कीवर्ड्स</p>
+</header>
+
+<div class="progress-section">
+<div class="progress-container">
+<h2>आपकी लोकल SEO प्रोग्रेस</h2>
+<div class="progress-bar">
+<div class="progress-fill" id="progressFill"></div>
+</div>
+<div class="progress-stats">
+<div class="stat-box">
+<div class="stat-number" id="completedCount">0</div>
+<div class="stat-label">कंप्लीटेड</div>
+</div>
+<div class="stat-box">
+<div class="stat-number" id="totalCount">45</div>
+<div class="stat-label">टोटल टास्क्स</div>
+</div>
+<div class="stat-box">
+<div class="stat-number" id="scorePercent">0%</div>
+<div class="stat-label">स्कोर</div>
+</div>
+<div class="stat-box">
+<div class="stat-number" id="priorityCount">0</div>
+<div class="stat-label">हाई प्रायोरिटी</div>
+</div>
+</div>
+<div id="scoreMessage" class="score-message"></div>
+</div>
+</div>
+
+<main class="content">
+<div class="input-section">
+<h2><i class="fas fa-building"></i> आपका बिज़नेस डिटेल्स</h2>
+
+<div class="form-group">
+<label for="businessName"><i class="fas fa-store"></i> बिज़नेस नाम</label>
+<input type="text" id="businessName" placeholder="उदाहरण: शर्मा जनरल स्टोर">
+</div>
+
+<div class="form-group">
+<label for="businessCategory"><i class="fas fa-tags"></i> बिज़नेस कैटेगरी</label>
+<select id="businessCategory">
+<option value="">कैटेगरी चुनें</option>
+<option value="retail">रिटेल स्टोर</option>
+<option value="restaurant">रेस्टोरेंट</option>
+<option value="medical">मेडिकल / हॉस्पिटल</option>
+<option value="services">सर्विसेज (प्लंबिंग, इलेक्ट्रिशियन)</option>
+<option value="education">एजुकेशन / कोचिंग</option>
+<option value="automotive">ऑटोमोटिव</option>
+<option value="beauty">ब्यूटी / सैलून</option>
+<option value="professional">प्रोफेशनल सर्विसेज</option>
+</select>
+</div>
+
+<div class="form-group">
+<label for="location"><i class="fas fa-map-pin"></i> लोकेशन (शहर/एरिया)</label>
+<input type="text" id="location" placeholder="उदाहरण: दिल्ली, करोल बाग">
+</div>
+
+<div class="form-group">
+<label for="keywords"><i class="fas fa-key"></i> लोकल कीवर्ड्स (कॉमा से अलग करें)</label>
+<input type="text" id="keywords" placeholder="उदाहरण: दिल्ली प्लंबर, करोल बाग इलेक्ट्रिशियन, बेस्ट डॉक्टर दिल्ली">
+</div>
+
+<div class="form-group">
+<label><i class="fas fa-bullseye"></i> टारगेट एरिया</label>
+<div style="display: flex; gap: 15px; flex-wrap: wrap;">
+<label style="display: flex; align-items: center; gap: 5px;">
+<input type="checkbox" id="targetLocal" checked> लोकल एरिया
+</label>
+<label style="display: flex; align-items: center; gap: 5px;">
+<input type="checkbox" id="targetCity"> पूरा शहर
+</label>
+<label style="display: flex; align-items: center; gap: 5px;">
+<input type="checkbox" id="targetMultiple"> मल्टीपल सिटीज
+</label>
+</div>
+</div>
+
+<button class="btn btn-full" onclick="generateChecklist()">
+<i class="fas fa-clipboard-list"></i> चेकलिस्ट जनरेट करें
+</button>
+
+<button class="btn btn-full" onclick="generateReport()" style="background: linear-gradient(to right, #3b82f6, #1d4ed8); margin-top: 10px;">
+<i class="fas fa-file-download"></i> रिपोर्ट डाउनलोड करें
+</button>
+</div>
+
+<div class="checklist-section">
+<h2><i class="fas fa-tasks"></i> लोकल SEO चेकलिस्ट</h2>
+
+<div id="checklistContainer">
+<!-- चेकलिस्ट यहाँ जनरेट होगी -->
+<p style="color: #64748b; text-align: center; padding: 40px;">
+बिज़नेस डिटेल्स दर्ज करने के बाद यहाँ कस्टमाइज़्ड लोकल SEO चेकलिस्ट जनरेट होगी।
+</p>
+</div>
+
+<div class="tips">
+<h3><i class="fas fa-lightbulb"></i> लोकल SEO क्विक टिप्स</h3>
+<ul>
+<li>Google My Business पूरी तरह ऑप्टिमाइज़ करें</li>
+<li>कम से कम 10-15 सिटेशन्स (बिज़नेस लिस्टिंग्स) बनाएं</li>
+<li>लोकल कीवर्ड्स वाला कंटेंट रेगुलर पोस्ट करें</li>
+<li>कस्टमर रिव्यूज़ को प्रोत्साहित करें</li>
+<li>लोकल वेबसाइट्स और ब्लॉग्स पर गेस्ट पोस्टिंग</li>
+</ul>
+</div>
+</div>
+</main>
+
+<div class="report-section">
+<h2><i class="fas fa-chart-bar"></i> लोकल SEO रिपोर्ट</h2>
+<div id="reportOutput" class="report-box">
+चेकलिस्ट कंप्लीट करने के बाद यहाँ डिटेल्ड रिपोर्ट जनरेट होगी।
+</div>
+</div>
+
+<div class="back-link">
+<a href="all-tools.html"><i class="fas fa-arrow-left"></i> सभी टूल्स देखें</a> |
+<a href="index.html"><i class="fas fa-home"></i> होमपेज पर जाएं</a>
+</div>
+</div>
+
+<!-- JavaScript -->
+<script>
+const checklistItems = {
+gmb: [
+{ id: 'gmb1', text: 'Google My Business लिस्टिंग क्रिएट/क्लेम की है', weight: 10, priority: 'high' },
+{ id: 'gmb2', text: 'बिज़नेस नाम, एड्रेस, फोन नंबर (NAP) अक्यूरेट है', weight: 10, priority: 'high' },
+{ id: 'gmb3', text: 'बिज़नेस कैटेगरी सही सेलेक्ट की है', weight: 8, priority: 'high' },
+{ id: 'gmb4', text: 'बिज़नेस डिस्क्रिप्शन (250-750 करैक्टर) एड की है', weight: 8, priority: 'medium' },
+{ id: 'gmb5', text: 'हाई क्वालिटी फोटोज (मिनिमम 5-7) अपलोड की हैं', weight: 8, priority: 'medium' },
+{ id: 'gmb6', text: 'बिज़नेस आवर अपडेट किए हैं', weight: 7, priority: 'medium' },
+{ id: 'gmb7', text: 'प्रोडक्ट्स/सर्विसेज सेक्शन भरा है', weight: 7, priority: 'medium' },
+{ id: 'gmb8', text: 'Google Posts रेगुलरली पोस्ट करते हैं', weight: 6, priority: 'medium' },
+{ id: 'gmb9', text: 'क्यू एंड ए सेक्शन में कॉमन सवालों के जवाब दिए हैं', weight: 6, priority: 'low' },
+{ id: 'gmb10', text: 'बुकिंग/एपॉइंटमेंट फीचर ऑन किया है (अगर लागू हो)', weight: 5, priority: 'low' }
+],
+citations: [
+{ id: 'cit1', text: 'Facebook बिज़नेस पेज क्रिएट किया है', weight: 9, priority: 'high' },
+{ id: 'cit2', text: 'Justdial पर लिस्टिंग क्रिएट की है', weight: 9, priority: 'high' },
+{ id: 'cit3', text: 'Indiamart पर लिस्टिंग क्रिएट की है', weight: 8, priority: 'high' },
+{ id: 'cit4', text: 'Sulekha पर लिस्टिंग क्रिएट की है', weight: 7, priority: 'medium' },
+{ id: 'cit5', text: 'Yellow Pages पर लिस्टिंग क्रिएट की है', weight: 7, priority: 'medium' },
+{ id: 'cit6', text: 'TradeIndia पर लिस्टिंग क्रिएट की है', weight: 6, priority: 'medium' },
+{ id: 'cit7', text: 'अन्य लोकल डायरेक्टरीज पर लिस्टिंग्स (कम से कम 5)', weight: 5, priority: 'low' },
+{ id: 'cit8', text: 'सभी लिस्टिंग्स में NAP (नाम, एड्रेस, फोन) कंसिस्टेंट है', weight: 10, priority: 'high' }
+],
+website: [
+{ id: 'web1', text: 'वेबसाइट में लोकल लैंडिंग पेज है', weight: 10, priority: 'high' },
+{ id: 'web2', text: 'Title tag में लोकल कीवर्ड्स शामिल हैं', weight: 9, priority: 'high' },
+{ id: 'web3', text: 'Meta description में लोकल कीवर्ड्स शामिल हैं', weight: 8, priority: 'medium' },
+{ id: 'web4', text: 'वेबसाइट मोबाइल फ्रेंडली है', weight: 10, priority: 'high' },
+{ id: 'web5', text: 'पेज लोडिंग स्पीड 3 सेकंड से कम है', weight: 8, priority: 'medium' },
+{ id: 'web6', text: 'Contact Us पेज पर फुल एड्रेस, फोन, मैप है', weight: 9, priority: 'high' },
+{ id: 'web7', text: 'About Us पेज पर लोकल स्टोरी/कनेक्शन मेन्शन है', weight: 7, priority: 'medium' },
+{ id: 'web8', text: 'ब्लॉग में लोकल कंटेंट रेगुलरली पोस्ट करते हैं', weight: 7, priority: 'medium' },
+{ id: 'web9', text: 'स्कीमा मार्कअप (LocalBusiness) इम्प्लीमेंट किया है', weight: 6, priority: 'low' }
+],
+content: [
+{ id: 'cont1', text: 'लोकल कीवर्ड्स रिसर्च की है (कम से कम 10-15)', weight: 9, priority: 'high' },
+{ id: 'cont2', text: 'लोकल इवेंट्स/फेस्टिवल्स के बारे में कंटेंट बनाया है', weight: 7, priority: 'medium' },
+{ id: 'cont3', text: 'लोकल न्यूज/इश्यूज पर कंटेंट बनाया है', weight: 6, priority: 'medium' },
+{ id: 'cont4', text: 'लोकल गेस्ट ब्लॉगिंग/आर्टिकल सबमिशन की है', weight: 6, priority: 'low' },
+{ id: 'cont5', text: 'लोकल कस्टमर सक्सेस स्टोरीज/केस स्टडीज शेयर की हैं', weight: 8, priority: 'medium' }
+],
+reviews: [
+{ id: 'rev1', text: 'Google पर कम से कम 10+ रिव्यूज हैं', weight: 10, priority: 'high' },
+{ id: 'rev2', text: 'Facebook पर रिव्यूज/रेटिंग्स हैं', weight: 8, priority: 'medium' },
+{ id: 'rev3', text: 'रिव्यूज का जवाब देते हैं (सभी रिव्यूज का)', weight: 9, priority: 'high' },
+{ id: 'rev4', text: 'रिव्यूज कलेक्ट करने की प्रोसेस ऑटोमेटेड है', weight: 7, priority: 'medium' },
+{ id: 'rev5', text: 'निगेटिव रिव्यूज का प्रोफेशनल तरीके से रिप्लाई दिया है', weight: 8, priority: 'medium' }
+],
+analytics: [
+{ id: 'ana1', text: 'Google Search Console सेटअप किया है', weight: 9, priority: 'high' },
+{ id: 'ana2', text: 'Google Analytics इंस्टॉल किया है', weight: 8, priority: 'medium' },
+{ id: 'ana3', text: 'GMB Insights रेगुलरली मॉनिटर करते हैं', weight: 7, priority: 'medium' },
+{ id: 'ana4', text: 'लोकल ट्रैफिक डेटा एनालाइज करते हैं', weight: 6, priority: 'low' },
+{ id: 'ana5', text: 'कंपटीटर GMB लिस्टिंग्स मॉनिटर करते हैं', weight: 6, priority: 'low' }
+]
+};
+
+function generateChecklist() {
+const businessName = document.getElementById('businessName').value || 'आपका बिज़नेस';
+const category = document.getElementById('businessCategory').value;
+const location = document.getElementById('location').value || 'आपका शहर';
+
+const container = document.getElementById('checklistContainer');
+container.innerHTML = '';
+
+// कैटेगरी-स्पेसिफिक आइटम्स जोड़ें
+const categorySpecificItems = getCategorySpecificItems(category);
+
+// Google My Business चेकलिस्ट
+container.appendChild(createCategorySection('Google My Business ऑप्टिमाइज़ेशन', checklistItems.gmb));
+
+// लोकल सिटेशन्स चेकलिस्ट
+container.appendChild(createCategorySection('लोकल सिटेशन्स और डायरेक्टरीज', checklistItems.citations));
+
+// वेबसाइट ऑप्टिमाइज़ेशन
+container.appendChild(createCategorySection('वेबसाइट ऑप्टिमाइज़ेशन', checklistItems.website));
+
+// कैटेगरी-स्पेसिफिक चेकलिस्ट
+if (categorySpecificItems.length > 0) {
+container.appendChild(createCategorySection(`${getCategoryName(category)} के लिए स्पेशल टिप्स`, categorySpecificItems));
+}
+
+// कंटेंट और कीवर्ड्स
+container.appendChild(createCategorySection('लोकल कंटेंट और कीवर्ड्स', checklistItems.content));
+
+// रिव्यूज और रेटिंग्स
+container.appendChild(createCategorySection('रिव्यूज और रेटिंग्स', checklistItems.reviews));
+
+// एनालिटिक्स और मॉनिटरिंग
+container.appendChild(createCategorySection('एनालिटिक्स और मॉनिटरिंग', checklistItems.analytics));
+
+// सिटेशन लिंक्स
+container.appendChild(createCitationsSection());
+
+updateProgress();
+
+// सभी चेकबॉक्स पर इवेंट लिस्नर जोड़ें
+document.querySelectorAll('.checklist-item input[type="checkbox"]').forEach(checkbox => {
+checkbox.addEventListener('change', updateProgress);
+});
+}
+
+function createCategorySection(title, items) {
+const section = document.createElement('div');
+section.className = 'checklist-category';
+
+const heading = document.createElement('h3');
+heading.innerHTML = `<i class="fas fa-check-circle"></i> ${title}`;
+section.appendChild(heading);
+
+items.forEach(item => {
+const itemDiv = document.createElement('div');
+itemDiv.className = 'checklist-item';
+itemDiv.id = `item-${item.id}`;
+
+const checkbox = document.createElement('input');
+checkbox.type = 'checkbox';
+checkbox.id = item.id;
+
+const label = document.createElement('label');
+label.htmlFor = item.id;
+label.innerHTML = `${item.text} <span class="priority-badge ${item.priority}">${item.priority.toUpperCase()}</span>`;
+
+const weight = document.createElement('div');
+weight.className = 'item-weight';
+weight.textContent = `+${item.weight}`;
+
+itemDiv.appendChild(checkbox);
+itemDiv.appendChild(label);
+itemDiv.appendChild(weight);
+section.appendChild(itemDiv);
+});
+
+return section;
+}
+
+function createCitationsSection() {
+const section = document.createElement('div');
+section.className = 'checklist-category';
+
+const heading = document.createElement('h3');
+heading.innerHTML = `<i class="fas fa-external-link-alt"></i> लोकल सिटेशन लिंक्स`;
+section.appendChild(heading);
+
+const citations = [
+{ name: 'Google My Business', url: 'https://www.google.com/business/' },
+{ name: 'Justdial', url: 'https://www.justdial.com/' },
+{ name: 'Indiamart', url: 'https://www.indiamart.com/' },
+{ name: 'Sulekha', url: 'https://www.sulekha.com/' },
+{ name: 'Yellow Pages', url: 'https://www.yellowpages.com/' },
+{ name: 'TradeIndia', url: 'https://www.tradeindia.com/' },
+{ name: 'Facebook Business', url: 'https://www.facebook.com/business' },
+{ name: 'Magicbricks', url: 'https://www.magicbricks.com/' },
+{ name: '99acres', url: 'https://www.99acres.com/' },
+{ name: 'Commonfloor', url: 'https://www.commonfloor.com/' }
+];
+
+const citationsDiv = document.createElement('div');
+citationsDiv.className = 'citation-list';
+
+citations.forEach(cite => {
+const citation = document.createElement('div');
+citation.className = 'citation';
+citation.innerHTML = `<i class="fas fa-external-link-alt"></i> ${cite.name}`;
+citation.onclick = () => window.open(cite.url, '_blank');
+citationsDiv.appendChild(citation);
+});
+
+section.appendChild(citationsDiv);
+
+const tip = document.createElement('p');
+tip.style.marginTop = '15px';
+tip.style.color = '#64748b';
+tip.style.fontSize = '0.9rem';
+tip.innerHTML = '<i class="fas fa-info-circle"></i> इन सभी प्लेटफॉर्म्स पर अपनी बिज़नेस लिस्टिंग क्रिएट करें।';
+section.appendChild(tip);
+
+return section;
+}
+
+function getCategorySpecificItems(category) {
+const items = {
+retail: [
+{ id: 'cat1', text: 'लोकल डिलीवरी/पिकअप ऑप्शन्स मेन्शन की हैं', weight: 8, priority: 'medium' },
+{ id: 'cat2', text: 'लोकल इवेंट्स/सेल्स के बारे में पोस्ट करते हैं', weight: 7, priority: 'medium' },
+{ id: 'cat3', text: 'लोकल प्रोडक्ट्स/ब्रांड्स को फीचर करते हैं', weight: 7, priority: 'low' }
+],
+restaurant: [
+{ id: 'cat1', text: 'मेनू फोटोज और प्राइस अपडेट किए हैं', weight: 9, priority: 'high' },
+{ id: 'cat2', text: 'ऑनलाइन टेबल बुकिंग/ऑर्डरिंग ऑप्शन है', weight: 8, priority: 'medium' },
+{ id: 'cat3', text: 'लोकल स्पेशलिटी डिशेज हाइलाइट की हैं', weight: 7, priority: 'medium' },
+{ id: 'cat4', text: 'रेस्टोरेंट इंटीरियर/एक्सटीरियर फोटोज हैं', weight: 6, priority: 'low' }
+],
+medical: [
+{ id: 'cat1', text: 'डॉक्टर्स क्वालिफिकेशन और टाइमिंग अपडेट हैं', weight: 10, priority: 'high' },
+{ id: 'cat2', text: 'एमरजेंसी नंबर और 24x7 सर्विस मेन्शन है', weight: 9, priority: 'high' },
+{ id: 'cat3', text: 'हेल्थ टिप्स/ब्लॉग रेगुलर पोस्ट करते हैं', weight: 7, priority: 'medium' },
+{ id: 'cat4', text: 'एपॉइंटमेंट बुकिंग सिस्टम इंटीग्रेटेड है', weight: 8, priority: 'medium' }
+],
+services: [
+{ id: 'cat1', text: 'सर्विस एरिया (कवरेज) स्पष्ट मेन्शन किया है', weight: 9, priority: 'high' },
+{ id: 'cat2', text: 'सर्विस रेट कार्ड/प्राइस लिस्ट अपडेट है', weight: 8, priority: 'medium' },
+{ id: 'cat3', text: '24x7 इमरजेंसी सर्विस अवेलेबल है', weight: 7, priority: 'medium' },
+{ id: 'cat4', text: 'बिफोर-आफ्टर वर्क फोटोज शेयर की हैं', weight: 6, priority: 'low' }
+]
+};
+
+return items[category] || [];
+}
+
+function getCategoryName(category) {
+const names = {
+retail: 'रिटेल स्टोर',
+restaurant: 'रेस्टोरेंट',
+medical: 'मेडिकल',
+services: 'सर्विसेज',
+education: 'एजुकेशन',
+automotive: 'ऑटोमोटिव',
+beauty: 'ब्यूटी',
+professional: 'प्रोफेशनल'
+};
+return names[category] || 'आपके बिज़नेस';
+}
+
+function updateProgress() {
+const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
+const totalItems = checkboxes.length;
+let completedItems = 0;
+let totalScore = 0;
+let maxScore = 0;
+let highPriorityCount = 0;
+
+// कुल आइटम्स
+Object.values(checklistItems).forEach(category => {
+category.forEach(item => {
+maxScore += item.weight;
+});
+});
+
+// कैटेगरी-स्पेसिफिक आइटम्स जोड़ें
+const category = document.getElementById('businessCategory').value;
+const categoryItems = getCategorySpecificItems(category);
+categoryItems.forEach(item => {
+maxScore += item.weight;
+});
+
+checkboxes.forEach(checkbox => {
+const itemDiv = checkbox.closest('.checklist-item');
+if (checkbox.checked) {
+completedItems++;
+itemDiv.classList.add('completed');
+
+// आइटम का weight पता करें
+const weightElement = itemDiv.querySelector('.item-weight');
+if (weightElement) {
+const weight = parseInt(weightElement.textContent.replace('+', ''));
+totalScore += weight;
+}
+
+// प्रायोरिटी चेक करें
+const priorityBadge = itemDiv.querySelector('.priority-badge');
+if (priorityBadge && priorityBadge.classList.contains('high')) {
+highPriorityCount++;
+}
+} else {
+itemDiv.classList.remove('completed');
+}
+});
+
+// प्रोग्रेस अपडेट करें
+const progressPercent = totalItems > 0 ? Math.round((completedItems / totalItems) * 100) : 0;
+const scorePercent = maxScore > 0 ? Math.round((totalScore / maxScore) * 100) : 0;
+
+document.getElementById('progressFill').style.width = `${progressPercent}%`;
+document.getElementById('completedCount').textContent = completedItems;
+document.getElementById('totalCount').textContent = totalItems;
+document.getElementById('scorePercent').textContent = `${scorePercent}%`;
+document.getElementById('priorityCount').textContent = highPriorityCount;
+
+// स्कोर मैसेज
+const scoreMessage = document.getElementById('scoreMessage');
+scoreMessage.className = 'score-message';
+
+if (scorePercent >= 80) {
+scoreMessage.className += ' score-excellent';
+scoreMessage.innerHTML = `<i class="fas fa-trophy"></i> बहुत बढ़िया! आपकी लोकल SEO बहुत अच्छी है।`;
+} else if (scorePercent >= 50) {
+scoreMessage.className += ' score-good';
+scoreMessage.innerHTML = `<i class="fas fa-chart-line"></i> अच्छा है, लेकिन कुछ एरियाज में सुधार की ज़रूरत है।`;
+} else {
+scoreMessage.className += ' score-poor';
+scoreMessage.innerHTML = `<i class="fas fa-exclamation-triangle"></i> लोकल SEO में काफी सुधार की ज़रूरत है।`;
+}
+}
+
+function generateReport() {
+const businessName = document.getElementById('businessName').value || 'आपका बिज़नेस';
+const category = document.getElementById('businessCategory').value;
+const location = document.getElementById('location').value || 'आपका शहर';
+const keywords = document.getElementById('keywords').value;
+
+const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
+let completedItems = 0;
+let totalItems = checkboxes.length;
+let totalScore = 0;
+let maxScore = 0;
+
+// कुल स्कोर कैलकुलेट
+Object.values(checklistItems).forEach(category => {
+category.forEach(item => {
+maxScore += item.weight;
+});
+});
+
+const categoryItems = getCategorySpecificItems(category);
+categoryItems.forEach(item => {
+maxScore += item.weight;
+});
+
+checkboxes.forEach(checkbox => {
+if (checkbox.checked) {
+completedItems++;
+const itemDiv = checkbox.closest('.checklist-item');
+const weightElement = itemDiv.querySelector('.item-weight');
+if (weightElement) {
+const weight = parseInt(weightElement.textContent.replace('+', ''));
+totalScore += weight;
+}
+}
+});
+
+const progressPercent = totalItems > 0 ? Math.round((completedItems / totalItems) * 100) : 0;
+const scorePercent = maxScore > 0 ? Math.round((totalScore / maxScore) * 100) : 0;
+
+// रिपोर्ट जनरेट
+let report = "=== लोकल SEO ऑडिट रिपोर्ट ===\n\n";
+report += `बिज़नेस नाम: ${businessName}\n`;
+report += `कैटेगरी: ${getCategoryName(category) || 'नोट सेलेक्टेड'}\n`;
+report += `लोकेशन: ${location}\n`;
+report += `जनरेटेड: ${new Date().toLocaleDateString('hi-IN')}\n`;
+report += "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n";
+
+report += "📊 प्रोग्रेस सारांश:\n";
+report += `• कंप्लीटेड: ${completedItems}/${totalItems} (${progressPercent}%)\n`;
+report += `• SEO स्कोर: ${totalScore}/${maxScore} (${scorePercent}%)\n\n`;
+
+report += "🎯 प्रायोरिटी टास्क्स:\n";
+
+// हाई प्रायोरिटी अनकंप्लीटेड टास्क्स
+const highPriorityTasks = [];
+checkboxes.forEach(checkbox => {
+if (!checkbox.checked) {
+const itemDiv = checkbox.closest('.checklist-item');
+const priorityBadge = itemDiv.querySelector('.priority-badge');
+if (priorityBadge && priorityBadge.classList.contains('high')) {
+const label = itemDiv.querySelector('label');
+highPriorityTasks.push(label.textContent.replace(' HIGH', '').trim());
+}
+}
+});
+
+if (highPriorityTasks.length > 0) {
+highPriorityTasks.forEach((task, index) => {
+report += `${index + 1}. ${task}\n`;
+});
+} else {
+report += "✅ सभी हाई प्रायोरिटी टास्क्स कंप्लीट हैं!\n";
+}
+report += "\n";
+
+report += "🔑 कीवर्ड सुझाव:\n";
+const keywordList = keywords ? keywords.split(',').map(k => k.trim()) : [];
+if (keywordList.length > 0) {
+keywordList.forEach(keyword => {
+report += `• "${keyword} ${location}"\n`;
+report += `• "बेस्ट ${keyword} in ${location}"\n`;
+report += `• "${location} ${keyword} नंबर"\n`;
+});
+} else {
+report += `• "${getCategoryName(category)} ${location}"\n`;
+report += `• "बेस्ट ${getCategoryName(category)} in ${location}"\n`;
+report += `• "${location} में ${getCategoryName(category)}"\n`;
+}
+report += "\n";
+
+report += "🚀 एक्शन प्लान:\n";
+if (scorePercent < 50) {
+report += "1. Google My Business पूरी तरह ऑप्टिमाइज़ करें\n";
+report += "2. कम से कम 5 सिटेशन्स बनाएं (Justdial, Indiamart, etc.)\n";
+report += "3. वेबसाइट में लोकल कीवर्ड्स ऐड करें\n";
+report += "4. कस्टमर रिव्यूज कलेक्ट करना शुरू करें\n";
+} else if (scorePercent < 80) {
+report += "1. बचे हुए हाई प्रायोरिटी टास्क्स कंप्लीट करें\n";
+report += "2. और सिटेशन्स बनाएं (कम से कम 10 तक)\n";
+report += "3. लोकल ब्लॉग कंटेंट रेगुलर पोस्ट करें\n";
+report += "4. GMB Posts रेगुलर अपडेट करें\n";
+} else {
+report += "1. लोकल लिंक बिल्डिंग पर फोकस करें\n";
+report += "2. लोकल इन्फ्लुएंसर्स के साथ कॉलैबोरेट करें\n";
+report += "3. लोकल सोशल मीडिया कम्युनिटी बनाएं\n";
+report += "4. कंपटीटर एनालिसिस और मॉनिटरिंग\n";
+}
+report += "\n";
+
+report += "📅 30-दिन का प्लान:\n";
+report += "पहले सप्ताह: GMB ऑप्टिमाइज़ेशन\n";
+report += "दूसरा सप्ताह: सिटेशन बिल्डिंग\n";
+report += "तीसरा सप्ताह: कंटेंट क्रिएशन\n";
+report += "चौथा सप्ताह: रिव्यू मैनेजमेंट\n";
+
+document.getElementById('reportOutput').textContent = report;
+
+// रिपोर्ट डाउनलोड करने का ऑप्शन
+alert("रिपोर्ट जनरेट हो गई है! इसे कॉपी करें या Save करें।");
+}
+
+// पेज लोड होने पर डिफॉल्ट चेकलिस्ट जनरेट करें
+document.addEventListener('DOMContentLoaded', function() {
+generateChecklist();
+});
+</script>
+
+<!-- Footer लोड करने का script -->
+<script>
+fetch('footer.html')
+.then(response => response.text())
+.then(data => {
+document.body.insertAdjacentHTML('beforeend', data);
+});
+</script>
+</body>
+</html>

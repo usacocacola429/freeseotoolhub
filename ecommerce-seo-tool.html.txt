@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ई-कॉमर्स SEO टूल - FreeSEOToolHub</title>
+<meta name="description" content="फ्लिपकार्ट और अमेज़न लिस्टिंग्स के लिए विशेष SEO ऑप्टिमाइज़ेशन। प्रोडक्ट टाइटल, डिस्क्रिप्शन और कीवर्ड्स ऑप्टिमाइज़ करें।">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+background: linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%);
+color: #333;
+min-height: 100vh;
+padding: 20px;
+}
+
+.container {
+max-width: 1200px;
+margin: 0 auto;
+background: white;
+border-radius: 15px;
+overflow: hidden;
+box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.header {
+background: linear-gradient(to right, #ff6b6b, #ff8e53);
+color: white;
+padding: 40px 20px;
+text-align: center;
+}
+
+.header h1 {
+font-size: 2.5rem;
+margin-bottom: 10px;
+}
+
+.header p {
+font-size: 1.1rem;
+opacity: 0.9;
+max-width: 800px;
+margin: 0 auto;
+}
+
+.platform-selector {
+display: flex;
+justify-content: center;
+gap: 20px;
+margin-top: 25px;
+flex-wrap: wrap;
+}
+
+.platform-btn {
+background: rgba(255,255,255,0.2);
+border: 2px solid transparent;
+padding: 15px 30px;
+border-radius: 10px;
+cursor: pointer;
+transition: all 0.3s;
+display: flex;
+align-items: center;
+gap: 10px;
+font-weight: bold;
+}
+
+.platform-btn.active {
+background: white;
+color: #ff6b6b;
+border-color: white;
+transform: translateY(-5px);
+}
+
+.amazon { color: #ff9900; }
+.flipkart { color: #047bd5; }
+
+.content {
+padding: 40px;
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 40px;
+}
+
+@media (max-width: 900px) {
+.content {
+grid-template-columns: 1fr;
+}
+}
+
+.input-section, .output-section {
+background: #f8fafc;
+padding: 30px;
+border-radius: 10px;
+border: 1px solid #e2e8f0;
+}
+
+h2 {
+color: #1e293b;
+margin-bottom: 20px;
+padding-bottom: 10px;
+border-bottom: 2px solid #ff6b6b;
+}
+
+.form-group {
+margin-bottom: 20px;
+}
+
+label {
+display: block;
+margin-bottom: 8px;
+color: #475569;
+font-weight: 500;
+}
+
+textarea, select, input {
+width: 100%;
+padding: 12px 15px;
+border: 1px solid #cbd5e1;
+border-radius: 8px;
+font-size: 1rem;
+transition: border 0.3s;
+}
+
+textarea:focus, select:focus, input:focus {
+outline: none;
+border-color: #ff6b6b;
+box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
+}
+
+textarea {
+min-height: 100px;
+resize: vertical;
+}
+
+.char-counter {
+text-align: right;
+font-size: 0.85rem;
+color: #64748b;
+margin-top: 5px;
+}
+
+.btn {
+background: linear-gradient(to right, #ff6b6b, #ff8e53);
+color: white;
+border: none;
+padding: 14px 30px;
+font-size: 1.1rem;
+border-radius: 8px;
+cursor: pointer;
+transition: all 0.3s;
+font-weight: bold;
+display: inline-flex;
+align-items: center;
+gap: 10px;
+}
+
+.btn:hover {
+background: linear-gradient(to right, #ff5252, #ff7b3a);
+transform: translateY(-2px);
+box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+}
+
+.btn-full {
+width: 100%;
+justify-content: center;
+margin-top: 10px;
+}
+
+.btn-secondary {
+background: linear-gradient(to right, #4A00E0, #8E2DE2);
+margin-top: 10px;
+}
+
+.btn-secondary:hover {
+background: linear-gradient(to right, #3a00b3, #6a1dc9);
+}
+
+.output-box {
+background: white;
+padding: 20px;
+border-radius: 8px;
+border: 1px solid #e2e8f0;
+margin-top: 15px;
+white-space: pre-wrap;
+font-family: monospace;
+min-height: 200px;
+line-height: 1.6;
+}
+
+.score-card {
+background: white;
+padding: 25px;
+border-radius: 10px;
+border: 1px solid #e2e8f0;
+margin-top: 20px;
+text-align: center;
+}
+
+.score-number {
+font-size: 3.5rem;
+font-weight: bold;
+color: #ff6b6b;
+margin: 10px 0;
+}
+
+.score-bar {
+height: 10px;
+background: #e2e8f0;
+border-radius: 5px;
+margin: 20px 0;
+overflow: hidden;
+}
+
+.score-fill {
+height: 100%;
+background: linear-gradient(to right, #4ade80, #22c55e);
+border-radius: 5px;
+transition: width 1s ease;
+}
+
+.score-label {
+font-size: 0.9rem;
+color: #64748b;
+display: flex;
+justify-content: space-between;
+margin-top: 5px;
+}
+
+.tips {
+background: #fff7ed;
+border-left: 4px solid #f97316;
+padding: 20px;
+border-radius: 0 8px 8px 0;
+margin-top: 30px;
+}
+
+.tips h3 {
+color: #c2410c;
+margin-bottom: 10px;
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.tips ul {
+padding-left: 20px;
+color: #7c2d12;
+}
+
+.tips li {
+margin-bottom: 8px;
+line-height: 1.5;
+}
+
+.keyword-suggestions {
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+margin-top: 15px;
+}
+
+.keyword {
+background: #ffe4e6;
+color: #be123c;
+padding: 6px 12px;
+border-radius: 20px;
+font-size: 0.9rem;
+cursor: pointer;
+transition: all 0.3s;
+}
+
+.keyword:hover {
+background: #fecdd3;
+}
+
+.platform-specific {
+background: #f0f9ff;
+border-left: 4px solid #0ea5e9;
+padding: 15px;
+border-radius: 0 8px 8px 0;
+margin-top: 20px;
+}
+
+.back-link {
+text-align: center;
+margin-top: 40px;
+padding: 20px;
+}
+
+.back-link a {
+color: #ff6b6b;
+text-decoration: none;
+font-weight: bold;
+display: inline-flex;
+align-items: center;
+gap: 8px;
+}
+
+.badge {
+display: inline-block;
+padding: 4px 10px;
+border-radius: 12px;
+font-size: 0.75rem;
+font-weight: bold;
+margin-left: 10px;
+}
+
+.badge-good { background: #d1fae5; color: #065f46; }
+.badge-average { background: #fef3c7; color: #92400e; }
+.badge-poor { background: #fee2e2; color: #991b1b; }
+</style>
+</head>
+<body>
+<div class="container">
+<header class="header">
+<h1><i class="fas fa-shopping-cart"></i> ई-कॉमर्स SEO टूल</h1>
+<p>फ्लिपकार्ट और अमेज़न लिस्टिंग्स के लिए विशेष SEO ऑप्टिमाइज़ेशन। प्रोडक्ट टाइटल, डिस्क्रिप्शन और कीवर्ड्स ऑप्टिमाइज़ करें</p>
+
+<div class="platform-selector">
+<div class="platform-btn active" onclick="selectPlatform('amazon')">
+<i class="fab fa-amazon amazon"></i>
+Amazon SEO
+</div>
+<div class="platform-btn" onclick="selectPlatform('flipkart')">
+<i class="fas fa-shopping-bag flipkart"></i>
+Flipkart SEO
+</div>
+<div class="platform-btn" onclick="selectPlatform('both')">
+<i class="fas fa-sync-alt"></i>
+दोनों के लिए
+</div>
+</div>
+</header>
+
+<main class="content">
+<div class="input-section">
+<h2><i class="fas fa-edit"></i> प्रोडक्ट डिटेल्स दर्ज करें</h2>
+
+<div class="form-group">
+<label for="productTitle"><i class="fas fa-heading"></i> प्रोडक्ट टाइटल</label>
+<textarea id="productTitle" placeholder="उदाहरण: सैमसंग गैलेक्सी M34 5G (मिडनाइट ब्लू, 6GB, 128GB) | 6000mAh बैटरी | 120Hz डिस्प्ले"></textarea>
+<div class="char-counter">
+<span id="titleCount">0</span>/200 करैक्टर
+</div>
+</div>
+
+<div class="form-group">
+<label for="productDesc"><i class="fas fa-align-left"></i> प्रोडक्ट डिस्क्रिप्शन</label>
+<textarea id="productDesc" placeholder="प्रोडक्ट की विस्तृत जानकारी यहाँ लिखें... फीचर्स, स्पेसिफिकेशन्स, यूएसपी आदि।"></textarea>
+<div class="char-counter">
+<span id="descCount">0</span>/2000 करैक्टर
+</div>
+</div>
+
+<div class="form-group">
+<label for="productCategory"><i class="fas fa-tags"></i> प्रोडक्ट कैटेगरी</label>
+<select id="productCategory">
+<option value="">कैटेगरी चुनें</option>
+<option value="electronics">इलेक्ट्रॉनिक्स</option>
+<option value="fashion">फैशन</option>
+<option value="home">होम एंड किचन</option>
+<option value="beauty">ब्यूटी</option>
+<option value="books">बुक्स</option>
+<option value="sports">स्पोर्ट्स</option>
+<option value="automotive">ऑटोमोटिव</option>
+<option value="groceries">ग्रोसरी</option>
+</select>
+</div>
+
+<div class="form-group">
+<label for="keywords"><i class="fas fa-key"></i> कीवर्ड्स (कॉमा से अलग करें)</label>
+<input type="text" id="keywords" placeholder="मोबाइल, स्मार्टफोन, 5G, गैलेक्सी, सैमसंग, बजट फोन">
+</div>
+
+<div class="form-group">
+<label for="price"><i class="fas fa-rupee-sign"></i> प्राइस (₹)</label>
+<input type="number" id="price" placeholder="19999">
+</div>
+
+<div class="form-group">
+<label><i class="fas fa-bullseye"></i> टारगेट कस्टमर</label>
+<div style="display: flex; gap: 15px; flex-wrap: wrap;">
+<label style="display: flex; align-items: center; gap: 5px;">
+<input type="checkbox" id="targetMen" checked> मेन
+</label>
+<label style="display: flex; align-items: center; gap: 5px;">
+<input type="checkbox" id="targetWomen"> वुमेन
+</label>
+<label style="display: flex; align-items: center; gap: 5px;">
+<input type="checkbox" id="targetYouth"> यूथ
+</label>
+<label style="display: flex; align-items: center; gap: 5px;">
+<input type="checkbox" id="targetFamily"> फैमिली
+</label>
+</div>
+</div>
+
+<button class="btn btn-full" onclick="optimizeListing()">
+<i class="fas fa-magic"></i> लिस्टिंग ऑप्टिमाइज़ करें
+</button>
+
+<button class="btn btn-full btn-secondary" onclick="generateKeywords()">
+<i class="fas fa-key"></i> कीवर्ड्स जनरेट करें
+</button>
+</div>
+
+<div class="output-section">
+<h2><i class="fas fa-chart-line"></i> ऑप्टिमाइज़ेशन रिजल्ट</h2>
+
+<div class="score-card">
+<h3>SEO स्कोर</h3>
+<div class="score-number" id="seoScore">0/100</div>
+<div class="score-bar">
+<div class="score-fill" id="scoreFill" style="width: 0%"></div>
+</div>
+<div class="score-label">
+<span>Poor</span>
+<span>Average</span>
+<span>Excellent</span>
+</div>
+</div>
+
+<h3><i class="fab fa-amazon amazon"></i> Amazon ऑप्टिमाइज़्ड लिस्टिंग</h3>
+<div id="amazonOutput" class="output-box">
+प्रोडक्ट डिटेल्स दर्ज करने के बाद यहाँ Amazon के लिए ऑप्टिमाइज़्ड लिस्टिंग दिखेगी...
+</div>
+
+<h3><i class="fas fa-shopping-bag flipkart"></i> Flipkart ऑप्टिमाइज़्ड लिस्टिंग</h3>
+<div id="flipkartOutput" class="output-box">
+प्रोडक्ट डिटेल्स दर्ज करने के बाद यहाँ Flipkart के लिए ऑप्टिमाइज़्ड लिस्टिंग दिखेगी...
+</div>
+
+<div class="keyword-suggestions" id="keywordContainer">
+<!-- कीवर्ड्स यहाँ जनरेट होंगे -->
+</div>
+
+<div class="platform-specific" id="amazonTips">
+<h3><i class="fab fa-amazon amazon"></i> Amazon SEO टिप्स</h3>
+<ul>
+<li>टाइटल में ब्रांड + मॉडल + मुख्य फीचर्स शामिल करें</li>
+<li>बुलेट पॉइंट्स में 5 मुख्य फीचर्स हाइलाइट करें</li>
+<li>A+ कंटेंट (Enhanced Brand Content) का उपयोग करें</li>
+<li>Backend keywords में 250 करैक्टर तक कीवर्ड्स डालें</li>
+</ul>
+</div>
+
+<div class="platform-specific" id="flipkartTips">
+<h3><i class="fas fa-shopping-bag flipkart"></i> Flipkart SEO टिप्स</h3>
+<ul>
+<li>टाइटल 60-80 करैक्टर तक रखें</li>
+<li>स्पेसिफिकेशन्स टेबल का उपयोग ज़रूर करें</li>
+<li>हाई क्वालिटी इमेजेज (360° व्यू बेहतर)</li>
+<li>वीडियो डेमो conversion rate बढ़ाता है</li>
+</ul>
+</div>
+
+<div class="tips">
+<h3><i class="fas fa-lightbulb"></i> ई-कॉमर्स SEO बेस्ट प्रैक्टिसेज</h3>
+<ul>
+<li><strong>टाइटल ऑप्टिमाइज़ेशन:</strong> ब्रांड + मॉडल + कलर + स्टोरेज + मुख्य फीचर (200 करैक्टर तक)</li>
+<li><strong>डिस्क्रिप्शन:</strong> शुरुआत में USP, फिर स्पेसिफिकेशन्स, अंत में वॉरंटी/डिलीवरी</li>
+<li><strong>इमेजेज:</strong> मिनिमम 5-7 इमेजेज (फ्रंट, बैक, साइड, फीचर्स, बॉक्स कंटेंट)</li>
+<li><strong>कीवर्ड्स:</strong> हाई वॉल्यूम कीवर्ड्स पहले, लॉन्ग-टेल कीवर्ड्स बाद में</li>
+<li><strong>प्राइस:</strong> MRP, सेलिंग प्राइस, डिस्काउंट % स्पष्ट दिखाएं</li>
+</ul>
+</div>
+</div>
+</main>
+
+<div class="back-link">
+<a href="all-tools.html"><i class="fas fa-arrow-left"></i> सभी टूल्स देखें</a> |
+<a href="index.html"><i class="fas fa-home"></i> होमपेज पर जाएं</a>
+</div>
+</div>
+
+<!-- JavaScript -->
+<script>
+let currentPlatform = 'amazon';
+
+function selectPlatform(platform) {
+currentPlatform = platform;
+
+// सभी बटन्स से active क्लास हटाएं
+document.querySelectorAll('.platform-btn').forEach(btn => {
+btn.classList.remove('active');
+});
+
+// सेलेक्टेड बटन को active करें
+if (platform === 'amazon') {
+document.querySelector('.platform-btn:nth-child(1)').classList.add('active');
+document.getElementById('amazonTips').style.display = 'block';
+document.getElementById('flipkartTips').style.display = 'none';
+} else if (platform === 'flipkart') {
+document.querySelector('.platform-btn:nth-child(2)').classList.add('active');
+document.getElementById('amazonTips').style.display = 'none';
+document.getElementById('flipkartTips').style.display = 'block';
+} else {
+document.querySelector('.platform-btn:nth-child(3)').classList.add('active');
+document.getElementById('amazonTips').style.display = 'block';
+document.getElementById('flipkartTips').style.display = 'block';
+}
+
+optimizeListing();
+}
+
+// करैक्टर काउंट
+document.getElementById('productTitle').addEventListener('input', function() {
+document.getElementById('titleCount').textContent = this.value.length;
+});
+
+document.getElementById('productDesc').addEventListener('input', function() {
+document.getElementById('descCount').textContent = this.value.length;
+});
+
+function calculateSEOScore(title, desc, keywords, category, price) {
+let score = 0;
+let improvements = [];
+
+// टाइटल स्कोर (30 अंक)
+if (title.length >= 50 && title.length <= 200) {
+score += 30;
+} else if (title.length > 0) {
+score += 15;
+improvements.push("टाइटल 50-200 करैक्टर के बीच होना चाहिए");
+}
+
+// डिस्क्रिप्शन स्कोर (30 अंक)
+if (desc.length >= 500 && desc.length <= 2000) {
+score += 30;
+} else if (desc.length > 0) {
+score += 15;
+improvements.push("डिस्क्रिप्शन 500-2000 करैक्टर के बीच होना चाहिए");
+}
+
+// कीवर्ड्स स्कोर (20 अंक)
+const keywordCount = keywords.split(',').filter(k => k.trim()).length;
+if (keywordCount >= 5 && keywordCount <= 15) {
+score += 20;
+} else if (keywordCount > 0) {
+score += 10;
+improvements.push("5-15 कीवर्ड्स इस्तेमाल करें");
+}
+
+// कैटेगरी स्कोर (10 अंक)
+if (category) {
+score += 10;
+} else {
+improvements.push("कैटेगरी सेलेक्ट करें");
+}
+
+// प्राइस स्कोर (10 अंक)
+if (price && price > 0) {
+score += 10;
+} else {
+improvements.push("प्राइस एंटर करें");
+}
+
+return { score, improvements };
+}
+
+function optimizeListing() {
+const title = document.getElementById('productTitle').value;
+const desc = document.getElementById('productDesc').value;
+const keywords = document.getElementById('keywords').value;
+const category = document.getElementById('productCategory').value;
+const price = document.getElementById('price').value;
+
+// SEO स्कोर कैलकुलेट
+const { score, improvements } = calculateSEOScore(title, desc, keywords, category, price);
+
+// स्कोर डिस्प्ले
+document.getElementById('seoScore').textContent = `${score}/100`;
+document.getElementById('scoreFill').style.width = `${score}%`;
+
+// स्कोर के अनुसार कलर
+const scoreFill = document.getElementById('scoreFill');
+if (score >= 80) {
+scoreFill.style.background = 'linear-gradient(to right, #4ade80, #22c55e)';
+} else if (score >= 50) {
+scoreFill.style.background = 'linear-gradient(to right, #fbbf24, #f59e0b)';
+} else {
+scoreFill.style.background = 'linear-gradient(to right, #f87171, #ef4444)';
+}
+
+// Amazon ऑप्टिमाइज़ेशन
+const amazonOutput = optimizeForAmazon(title, desc, keywords, category, price, improvements);
+document.getElementById('amazonOutput').textContent = amazonOutput;
+
+// Flipkart ऑप्टिमाइज़ेशन
+const flipkartOutput = optimizeForFlipkart(title, desc, keywords, category, price, improvements);
+document.getElementById('flipkartOutput').textContent = flipkartOutput;
+
+// कीवर्ड्स जनरेट
+generateKeywords();
+}
+
+function optimizeForAmazon(title, desc, keywords, category, price, improvements) {
+let optimized = "=== Amazon ऑप्टिमाइज़्ड लिस्टिंग ===\n\n";
+
+// SEO स्कोर
+const { score } = calculateSEOScore(title, desc, keywords, category, price);
+optimized += `📊 SEO स्कोर: ${score}/100 `;
+if (score >= 80) {
+optimized += `<span class="badge badge-good">EXCELLENT</span>\n\n`;
+} else if (score >= 50) {
+optimized += `<span class="badge badge-average">AVERAGE</span>\n\n`;
+} else {
+optimized += `<span class="badge badge-poor">NEEDS IMPROVEMENT</span>\n\n`;
+}
+
+// ऑप्टिमाइज़्ड टाइटल
+optimized += "🎯 ऑप्टिमाइज़्ड टाइटल:\n";
+const amazonTitle = title.length > 150 ? title.substring(0, 147) + "..." : title;
+optimized += `${amazonTitle}\n\n`;
+
+// बुलेट पॉइंट्स
+optimized += "📝 बुलेट पॉइंट्स (5 मुख्य फीचर्स):\n";
+const sentences = desc.split(/[.!?]+/).filter(s => s.trim().length > 0);
+for (let i = 0; i < Math.min(5, sentences.length); i++) {
+optimized += `• ${sentences[i].trim()}.\n`;
+}
+if (sentences.length < 5) {
+for (let i = sentences.length; i < 5; i++) {
+optimized += `• [फीचर ${i + 1} यहाँ डालें]\n`;
+}
+}
+optimized += "\n";
+
+// प्रोडक्ट डिस्क्रिप्शन
+optimized += "📄 प्रोडक्ट डिस्क्रिप्शन:\n";
+if (desc.length > 500) {
+optimized += `${desc.substring(0, 497)}...\n\n`;
+} else {
+optimized += `${desc}\n\n`;
+}
+
+// कीवर्ड्स
+const keywordList = keywords.split(',').map(k => k.trim()).filter(k => k);
+optimized += "🔑 बैकएंड कीवर्ड्स (250 करैक्टर तक):\n";
+optimized += keywordList.join(", ");
+if (keywordList.length < 10) {
+optimized += `, ${category}, online shopping, best price, discount`;
+}
+optimized += "\n\n";
+
+// स्पेसिफिकेशन्स
+optimized += "⚙️ स्पेसिफिकेशन्स टेबल:\n";
+optimized += "• ब्रांड: [ब्रांड नाम]\n";
+optimized += `• मॉडल: ${title.split(' ')[0] || '[मॉडल]'}\n`;
+optimized += `• कैटेगरी: ${category || '[कैटेगरी]'}\n`;
+optimized += `• प्राइस: ₹${price || '0'}\n`;
+optimized += "• वॉरंटी: 1 साल\n";
+optimized += "• डिलीवरी: 3-7 दिन\n\n";
+
+// इम्प्रूवमेंट्स
+if (improvements.length > 0) {
+optimized += "💡 सुधार के सुझाव:\n";
+improvements.forEach(imp => {
+optimized += `• ${imp}\n`;
+});
+}
+
+return optimized;
+}
+
+function optimizeForFlipkart(title, desc, keywords, category, price, improvements) {
+let optimized = "=== Flipkart ऑप्टिमाइज़्ड लिस्टिंग ===\n\n";
+
+// SEO स्कोर
+const { score } = calculateSEOScore(title, desc, keywords, category, price);
+optimized += `📊 SEO स्कोर: ${score}/100 `;
+if (score >= 80) {
+optimized += `<span class="badge badge-good">EXCELLENT</span>\n\n`;
+} else if (score >= 50) {
+optimized += `<span class="badge badge-average">AVERAGE</span>\n\n`;
+} else {
+optimized += `<span class="badge badge-poor">NEEDS IMPROVEMENT</span>\n\n`;
+}
+
+// ऑप्टिमाइज़्ड टाइटल (Flipkart के लिए छोटा)
+optimized += "🎯 ऑप्टिमाइज़्ड टाइटल (60-80 करैक्टर):\n";
+const flipkartTitle = title.length > 80 ? title.substring(0, 77) + "..." : title;
+optimized += `${flipkartTitle}\n\n`;
+
+// संक्षिप्त डिस्क्रिप्शन
+optimized += "📝 संक्षिप्त डिस्क्रिप्शन:\n";
+const briefDesc = desc.length > 150 ? desc.substring(0, 147) + "..." : desc;
+optimized += `${briefDesc}\n\n`;
+
+// की फीचर्स
+optimized += "⭐ की फीचर्स:\n";
+const features = desc.split(/[.!?]+/).filter(s => s.trim().length > 0);
+for (let i = 0; i < Math.min(3, features.length); i++) {
+optimized += `✓ ${features[i].trim()}.\n`;
+}
+optimized += "\n";
+
+// स्पेसिफिकेशन्स टेबल
+optimized += "📋 स्पेसिफिकेशन्स टेबल:\n";
+optimized += "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n";
+optimized += "पैरामीटर | विवरण\n";
+optimized += "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n";
+optimized += `ब्रांड | ${title.split(' ')[0] || '[ब्रांड]'}\n`;
+optimized += `मॉडल | ${title.split(' ')[1] || '[मॉडल]'}\n`;
+optimized += `कैटेगरी | ${category || '[कैटेगरी]'}\n`;
+optimized += `प्राइस | ₹${price || '0'} (MRP: ₹${price ? Math.round(price * 1.2) : '0'})\n`;
+optimized += `डिस्काउंट | ${price ? "20%" : "0%"} ऑफ\n`;
+optimized += `डिलीवरी | फ्री (3-7 दिन)\n`;
+optimized += "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n";
+
+// कीवर्ड्स
+const keywordList = keywords.split(',').map(k => k.trim()).filter(k => k);
+optimized += "🏷️ टैग्स और कीवर्ड्स:\n";
+keywordList.forEach((keyword, index) => {
+if (index < 8) {
+optimized += `#${keyword} `;
+}
+});
+optimized += `#${category || 'shopping'} #Flipkart #OnlineShopping\n\n`;
+
+// इम्प्रूवमेंट्स
+if (improvements.length > 0) {
+optimized += "💡 फ्लिपकार्ट के लिए विशेष सुझाव:\n";
+improvements.forEach(imp => {
+optimized += `• ${imp}\n`;
+});
+optimized += "• 5-7 हाई रेजोल्यूशन इमेजेज अपलोड करें\n";
+optimized += "• 360° व्यू इमेज या वीडियो डेमो जोड़ें\n";
+}
+
+return optimized;
+}
+
+function generateKeywords() {
+const title = document.getElementById('productTitle').value.toLowerCase();
+const category = document.getElementById('productCategory').value;
+const userKeywords = document.getElementById('keywords').value.split(',').map(k => k.trim()).filter(k => k);
+const price = document.getElementById('price').value;
+
+let keywords = [...userKeywords];
+const container = document.getElementById('keywordContainer');
+container.innerHTML = '';
+
+// कैटेगरी-बेस्ड कीवर्ड्स
+const categoryKeywords = {
+electronics: ['स्मार्टफोन', 'मोबाइल', 'लैपटॉप', 'टेबलेट', 'इलेक्ट्रॉनिक्स', 'गैजेट', 'टेक'],
+fashion: ['कपड़े', 'फैशन', 'शर्ट', 'जींस', 'ड्रेस', 'फुटवेयर', 'एक्सेसरीज'],
+home: ['होम डेकोर', 'किचन', 'फर्निचर', 'अप्लायंस', 'उपकरण', 'सजावट'],
+beauty: ['ब्यूटी', 'स्किनकेयर', 'मेकअप', 'कॉस्मेटिक्स', 'ग्रूमिंग', 'पर्सनल केयर'],
+books: ['बुक्स', 'किताबें', 'पढ़ाई', 'एजुकेशन', 'नॉलेज', 'लिटरेचर'],
+sports: ['स्पोर्ट्स', 'फिटनेस', 'आउटडोर', 'एक्टिविटी', 'एक्विपमेंट', 'गेम्स']
+};
+
+// प्राइस-बेस्ड कीवर्ड्स
+let priceKeywords = [];
+if (price) {
+const priceNum = parseInt(price);
+if (priceNum < 1000) priceKeywords = ['बजट', 'कीमती', 'सस्ता', 'अफोर्डेबल'];
+else if (priceNum < 10000) priceKeywords = ['मिड-रेंज', 'वैल्यू फॉर मनी', 'बेस्ट डील'];
+else priceKeywords = ['प्रीमियम', 'हाई-एंड', 'लक्जरी', 'बेस्ट क्वालिटी'];
+}
+
+// टाइटल से कीवर्ड्स एक्सट्रैक्ट
+const titleWords = title.split(/\s+/).filter(word => word.length > 3);
+titleWords.forEach(word => {
+if (!keywords.includes(word) && keywords.length < 20) {
+keywords.push(word);
+}
+});
+
+// कैटेगरी कीवर्ड्स जोड़ें
+if (category && categoryKeywords[category]) {
+categoryKeywords[category].forEach(keyword => {
+if (!keywords.includes(keyword) && keywords.length < 25) {
+keywords.push(keyword);
+}
+});
+}
+
+// प्राइस कीवर्ड्स जोड़ें
+priceKeywords.forEach(keyword => {
+if (!keywords.includes(keyword) && keywords.length < 30) {
+keywords.push(keyword);
+}
+});
+
+// जेनरिक ई-कॉमर्स कीवर्ड्स
+const genericKeywords = [
+'ऑनलाइन शॉपिंग', 'बेस्ट प्राइस', 'डिस्काउंट', 'ऑफर', 'सेल',
+'फ्री डिलीवरी', 'कैश ऑन डिलीवरी', 'ईजी रिटर्न', 'वॉरंटी',
+'गारंटी', 'टॉप ब्रांड', 'रिव्यू', 'रेटिंग', 'बेस्ट सेलर'
+];
+
+genericKeywords.forEach(keyword => {
+if (!keywords.includes(keyword) && keywords.length < 40) {
+keywords.push(keyword);
+}
+});
+
+// कीवर्ड्स डिस्प्ले करें
+keywords.forEach(keyword => {
+const span = document.createElement('span');
+span.className = 'keyword';
+span.textContent = keyword;
+span.onclick = function() {
+const keywordsInput = document.getElementById('keywords');
+const current = keywordsInput.value;
+keywordsInput.value = current ? `${current}, ${keyword}` : keyword;
+};
+container.appendChild(span);
+});
+}
+
+// पेज लोड होने पर Amazon को डिफॉल्ट सेट करें
+document.addEventListener('DOMContentLoaded', function() {
+selectPlatform('amazon');
+document.getElementById('titleCount').textContent = document.getElementById('productTitle').value.length;
+document.getElementById('descCount').textContent = document.getElementById('productDesc').value.length;
+});
+</script>
+
+<!-- Footer लोड करने का script -->
+<script>
+fetch('footer.html')
+.then(response => response.text())
+.then(data => {
+document.body.insertAdjacentHTML('beforeend', data);
+});
+</script>
+</body>
+</html>
