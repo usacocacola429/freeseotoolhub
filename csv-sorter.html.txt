@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSV सोर्टर और कन्वर्टर - FreeSEOToolHub</title>
+<meta name="description" content="CSV फाइल्स को सॉर्ट करें, फ़िल्टर करें और JSON, Excel, XML, PDF फॉर्मेट में कन्वर्ट करें। बिल्कुल मुफ़्त CSV टूल।">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+background: linear-gradient(135deg, #06b6d4 0%, #0ea5e9 100%);
+color: #333;
+min-height: 100vh;
+padding: 20px;
+}
+
+.container {
+max-width: 1400px;
+margin: 0 auto;
+background: white;
+border-radius: 15px;
+overflow: hidden;
+box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.header {
+background: linear-gradient(to right, #0ea5e9, #0284c7);
+color: white;
+padding: 40px 20px;
+text-align: center;
+}
+
+.header h1 {
+font-size: 2.5rem;
+margin-bottom: 10px;
+}
+
+.header p {
+font-size: 1.1rem;
+opacity: 0.9;
+max-width: 800px;
+margin: 0 auto;
+}
+
+.badge-container {
+display: flex;
+justify-content: center;
+gap: 15px;
+margin-top: 20px;
+flex-wrap: wrap;
+}
+
+.badge {
+background: rgba(255,255,255,0.2);
+padding: 8px 20px;
+border-radius: 20px;
+font-size: 0.9rem;
+display: flex;
+align-items: center;
+gap: 8px;
+}
+
+.content {
+padding: 40px;
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 40px;
+}
+
+@media (max-width: 1100px) {
+.content {
+grid-template-columns: 1fr;
+}
+}
+
+.input-section, .output-section {
+background: #f8fafc;
+padding: 30px;
+border-radius: 10px;
+border: 1px solid #e2e8f0;
+}
+
+h2 {
+color: #1e293b;
+margin-bottom: 20px;
+padding-bottom: 10px;
+border-bottom: 2px solid #0ea5e9;
+}
+
+h3 {
+color: #0369a1;
+margin: 20px 0 15px;
+font-size: 1.3rem;
+}
+
+.upload-area {
+border: 3px dashed #cbd5e1;
+border-radius: 10px;
+padding: 40px 20px;
+text-align: center;
+cursor: pointer;
+transition: all 0.3s;
+margin-bottom: 20px;
+}
+
+.upload-area:hover {
+border-color: #0ea5e9;
+background: #f0f9ff;
+}
+
+.upload-area.dragover {
+border-color: #0ea5e9;
+background: #e0f2fe;
+}
+
+.upload-icon {
+font-size: 3rem;
+color: #0ea5e9;
+margin-bottom: 15px;
+}
+
+.btn {
+background: linear-gradient(to right, #0ea5e9, #0284c7);
+color: white;
+border: none;
+padding: 14px 30px;
+font-size: 1.1rem;
+border-radius: 8px;
+cursor: pointer;
+transition: all 0.3s;
+font-weight: bold;
+display: inline-flex;
+align-items: center;
+gap: 10px;
+}
+
+.btn:hover {
+background: linear-gradient(to right, #0284c7, #0369a1);
+transform: translateY(-2px);
+box-shadow: 0 5px 15px rgba(14, 165, 233, 0.3);
+}
+
+.btn-full {
+width: 100%;
+justify-content: center;
+margin-top: 10px;
+}
+
+.btn-secondary {
+background: linear-gradient(to right, #10b981, #059669);
+margin-top: 10px;
+}
+
+.btn-secondary:hover {
+background: linear-gradient(to right, #059669, #047857);
+}
+
+.btn-danger {
+background: linear-gradient(to right, #ef4444, #dc2626);
+margin-top: 10px;
+}
+
+.btn-danger:hover {
+background: linear-gradient(to right, #dc2626, #b91c1c);
+}
+
+.form-group {
+margin-bottom: 20px;
+}
+
+label {
+display: block;
+margin-bottom: 8px;
+color: #475569;
+font-weight: 500;
+}
+
+textarea, select, input {
+width: 100%;
+padding: 12px 15px;
+border: 1px solid #cbd5e1;
+border-radius: 8px;
+font-size: 1rem;
+transition: border 0.3s;
+}
+
+textarea:focus, select:focus, input:focus {
+outline: none;
+border-color: #0ea5e9;
+box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+}
+
+textarea {
+min-height: 150px;
+resize: vertical;
+font-family: 'Courier New', monospace;
+font-size: 0.9rem;
+}
+
+.options-grid {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 20px;
+margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+.options-grid {
+grid-template-columns: 1fr;
+}
+}
+
+.option-card {
+background: white;
+padding: 20px;
+border-radius: 8px;
+border: 1px solid #e2e8f0;
+cursor: pointer;
+transition: all 0.3s;
+}
+
+.option-card:hover {
+border-color: #0ea5e9;
+box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+transform: translateY(-3px);
+}
+
+.option-card.selected {
+border-color: #0ea5e9;
+background: #f0f9ff;
+}
+
+.option-icon {
+font-size: 2rem;
+color: #0ea5e9;
+margin-bottom: 10px;
+}
+
+.option-title {
+font-weight: bold;
+color: #1e293b;
+margin-bottom: 5px;
+}
+
+.option-desc {
+font-size: 0.9rem;
+color: #64748b;
+}
+
+.preview-container {
+background: white;
+padding: 20px;
+border-radius: 8px;
+border: 1px solid #e2e8f0;
+margin-top: 20px;
+max-height: 400px;
+overflow: auto;
+}
+
+.csv-table {
+width: 100%;
+border-collapse: collapse;
+font-size: 0.9rem;
+}
+
+.csv-table th {
+background: #f1f5f9;
+padding: 10px;
+text-align: left;
+border: 1px solid #e2e8f0;
+font-weight: bold;
+color: #475569;
+}
+
+.csv-table td {
+padding: 8px 10px;
+border: 1px solid #e2e8f0;
+color: #334155;
+}
+
+.csv-table tr:hover {
+background: #f8fafc;
+}
+
+.stats {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 15px;
+margin-top: 20px;
+}
+
+.stat-box {
+background: white;
+padding: 15px;
+border-radius: 8px;
+border: 1px solid #e2e8f0;
+text-align: center;
+}
+
+.stat-number {
+font-size: 1.8rem;
+font-weight: bold;
+color: #0ea5e9;
+margin-bottom: 5px;
+}
+
+.stat-label {
+font-size: 0.9rem;
+color: #64748b;
+}
+
+.output-options {
+display: flex;
+gap: 15px;
+flex-wrap: wrap;
+margin-top: 20px;
+}
+
+.output-btn {
+flex: 1;
+min-width: 120px;
+text-align: center;
+}
+
+.format-badge {
+display: inline-block;
+padding: 4px 10px;
+border-radius: 12px;
+font-size: 0.75rem;
+font-weight: bold;
+margin-left: 10px;
+}
+
+.json { background: #dbeafe; color: #1e40af; }
+.excel { background: #dcfce7; color: #166534; }
+.xml { background: #fef3c7; color: #92400e; }
+.pdf { background: #fee2e2; color: #991b1b; }
+.csv { background: #f0f9ff; color: #0369a1; }
+
+.tip-box {
+background: #ecfdf5;
+border-left: 4px solid #10b981;
+padding: 15px;
+border-radius: 0 8px 8px 0;
+margin-top: 20px;
+}
+
+.tip-box h4 {
+color: #065f46;
+margin-bottom: 8px;
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.warning {
+background: #fee2e2;
+color: #991b1b;
+padding: 12px;
+border-radius: 8px;
+margin-top: 15px;
+border: 1px solid #fecaca;
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.success {
+background: #d1fae5;
+color: #065f46;
+padding: 12px;
+border-radius: 8px;
+margin-top: 15px;
+border: 1px solid #a7f3d0;
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.back-link {
+text-align: center;
+margin-top: 40px;
+padding: 20px;
+}
+
+.back-link a {
+color: #0ea5e9;
+text-decoration: none;
+font-weight: bold;
+display: inline-flex;
+align-items: center;
+gap: 8px;
+}
+
+.loading {
+display: inline-block;
+width: 20px;
+height: 20px;
+border: 3px solid #f3f3f3;
+border-top: 3px solid #0ea5e9;
+border-radius: 50%;
+animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+
+.sample-data {
+margin-top: 20px;
+background: #f8fafc;
+padding: 15px;
+border-radius: 8px;
+border: 1px solid #e2e8f0;
+}
+
+.sample-data h4 {
+color: #475569;
+margin-bottom: 10px;
+}
+
+.sample-btn {
+background: #e0f2fe;
+color: #0369a1;
+border: none;
+padding: 8px 15px;
+border-radius: 6px;
+cursor: pointer;
+margin-right: 10px;
+margin-bottom: 10px;
+display: inline-flex;
+align-items: center;
+gap: 5px;
+}
+
+.sample-btn:hover {
+background: #bae6fd;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header class="header">
+<h1><i class="fas fa-file-csv"></i> CSV सोर्टर और कन्वर्टर</h1>
+<p>CSV फाइल्स को सॉर्ट करें, फ़िल्टर करें और JSON, Excel, XML, PDF फॉर्मेट में कन्वर्ट करें</p>
+<div class="badge-container">
+<div class="badge">
+<i class="fas fa-sort-amount-up"></i> सॉर्टिंग
+</div>
+<div class="badge">
+<i class="fas fa-filter"></i> फ़िल्टरिंग
+</div>
+<div class="badge">
+<i class="fas fa-exchange-alt"></i> कन्वर्टिंग
+</div>
+<div class="badge">
+<i class="fas fa-download"></i> डाउनलोड
+</div>
+</div>
+</header>
+
+<main class="content">
+<div class="input-section">
+<h2><i class="fas fa-upload"></i> CSV फाइल अपलोड करें</h2>
+
+<div class="upload-area" id="uploadArea">
+<div class="upload-icon">
+<i class="fas fa-cloud-upload-alt"></i>
+</div>
+<h3>CSV फाइल ड्रॉप करें या क्लिक करें</h3>
+<p style="color: #64748b; margin-bottom: 15px;">
+अधिकतम साइज: 10MB | सपोर्टेड: .csv, .txt
+</p>
+<button class="btn" onclick="document.getElementById('fileInput').click()">
+<i class="fas fa-folder-open"></i> फाइल चुनें
+</button>
+<input type="file" id="fileInput" accept=".csv,.txt" style="display: none;" onchange="handleFileSelect(event)">
+</div>
+
+<div class="form-group">
+<label for="csvContent"><i class="fas fa-paste"></i> या CSV कंटेंट पेस्ट करें</label>
+<textarea id="csvContent" placeholder="नाम,उम्र,शहर
+राहुल,25,दिल्ली
+सीमा,30,मुंबई
+अमित,22,बेंगलुरु"></textarea>
+</div>
+
+<div class="sample-data">
+<h4><i class="fas fa-vial"></i> सैंपल डेटा ट्राई करें:</h4>
+<button class="sample-btn" onclick="loadSampleData('students')">
+<i class="fas fa-user-graduate"></i> स्टूडेंट्स
+</button>
+<button class="sample-btn" onclick="loadSampleData('products')">
+<i class="fas fa-shopping-cart"></i> प्रोडक्ट्स
+</button>
+<button class="sample-btn" onclick="loadSampleData('employees')">
+<i class="fas fa-users"></i> एम्प्लॉयीज
+</button>
+</div>
+
+<h3><i class="fas fa-sliders-h"></i> प्रोसेसिंग ऑप्शन्स</h3>
+<div class="options-grid">
+<div class="option-card" onclick="selectOption('sort')">
+<div class="option-icon">
+<i class="fas fa-sort-alpha-down"></i>
+</div>
+<div class="option-title">सॉर्टिंग</div>
+<div class="option-desc">कॉलम के हिसाब से सॉर्ट करें</div>
+</div>
+
+<div class="option-card" onclick="selectOption('filter')">
+<div class="option-icon">
+<i class="fas fa-filter"></i>
+</div>
+<div class="option-title">फ़िल्टरिंग</div>
+<div class="option-desc">डेटा को फ़िल्टर करें</div>
+</div>
+
+<div class="option-card" onclick="selectOption('clean')">
+<div class="option-icon">
+<i class="fas fa-broom"></i>
+</div>
+<div class="option-title">क्लीनिंग</div>
+<div class="option-desc">खाली रोज़/डुप्लिकेट हटाएं</div>
+</div>
+
+<div class="option-card" onclick="selectOption('convert')">
+<div class="option-icon">
+<i class="fas fa-exchange-alt"></i>
+</div>
+<div class="option-title">कन्वर्टिंग</div>
+<div class="option-desc">दूसरे फॉर्मेट में बदलें</div>
+</div>
+</div>
+
+<div id="sortOptions" class="form-group" style="display: none;">
+<label for="sortColumn"><i class="fas fa-sort"></i> सॉर्ट करने के लिए कॉलम</label>
+<select id="sortColumn">
+<option value="">कॉलम चुनें...</option>
+</select>
+<div style="display: flex; gap: 20px; margin-top: 15px;">
+<label style="display: flex; align-items: center; gap: 8px;">
+<input type="radio" name="sortOrder" value="asc" checked> आरोही (A-Z)
+</label>
+<label style="display: flex; align-items: center; gap: 8px;">
+<input type="radio" name="sortOrder" value="desc"> अवरोही (Z-A)
+</label>
+</div>
+</div>
+
+<div id="filterOptions" class="form-group" style="display: none;">
+<label for="filterColumn"><i class="fas fa-filter"></i> फ़िल्टर के लिए कॉलम</label>
+<select id="filterColumn">
+<option value="">कॉलम चुनें...</option>
+</select>
+<label for="filterValue" style="margin-top: 15px;">फ़िल्टर वैल्यू</label>
+<input type="text" id="filterValue" placeholder="वैल्यू दर्ज करें...">
+<div style="margin-top: 15px;">
+<label style="display: flex; align-items: center; gap: 8px;">
+<input type="checkbox" id="caseSensitive"> केस सेंसिटिव
+</label>
+</div>
+</div>
+
+<div id="cleanOptions" class="form-group" style="display: none;">
+<label><i class="fas fa-trash-alt"></i> क्लीनिंग ऑप्शन्स</label>
+<div style="margin-top: 10px;">
+<label style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+<input type="checkbox" id="removeEmpty" checked> खाली रोज़ हटाएं
+</label>
+<label style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+<input type="checkbox" id="removeDuplicates" checked> डुप्लिकेट रोज़ हटाएं
+</label>
+<label style="display: flex; align-items: center; gap: 8px;">
+<input type="checkbox" id="trimSpaces"> एक्स्ट्रा स्पेस ट्रिम करें
+</label>
+</div>
+</div>
+
+<div id="convertOptions" class="form-group" style="display: none;">
+<label><i class="fas fa-file-export"></i> आउटपुट फॉर्मेट</label>
+<div style="margin-top: 10px;">
+<label style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+<input type="radio" name="outputFormat" value="json" checked> JSON <span class="format-badge json">JSON</span>
+</label>
+<label style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+<input type="radio" name="outputFormat" value="excel"> Excel <span class="format-badge excel">XLSX</span>
+</label>
+<label style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+<input type="radio" name="outputFormat" value="xml"> XML <span class="format-badge xml">XML</span>
+</label>
+<label style="display: flex; align-items: center; gap: 8px;">
+<input type="radio" name="outputFormat" value="csv"> CSV (मॉडिफाइड) <span class="format-badge csv">CSV</span>
+</label>
+</div>
+</div>
+
+<button class="btn btn-full" onclick="processCSV()">
+<i class="fas fa-cogs"></i> CSV प्रोसेस करें
+</button>
+
+<div class="tip-box">
+<h4><i class="fas fa-lightbulb"></i> CSV फॉर्मेट टिप्स:</h4>
+<p style="color: #065f46; margin: 0; font-size: 0.9rem;">
+• कॉमा (,) या सेमीकोलन (;) से कॉलम्स अलग करें<br>
+• पहली लाइन में हेडर रखें (वैकल्पिक)<br>
+• स्पेशल करैक्टर के लिए डबल कोट्स (") इस्तेमाल करें<br>
+• UTF-8 एन्कोडिंग इस्तेमाल करें
+</p>
+</div>
+</div>
+
+<div class="output-section">
+<h2><i class="fas fa-download"></i> परिणाम और आउटपुट</h2>
+
+<div id="statsContainer" class="stats" style="display: none;">
+<div class="stat-box">
+<div class="stat-number" id="rowCount">0</div>
+<div class="stat-label">रोज़</div>
+</div>
+<div class="stat-box">
+<div class="stat-number" id="columnCount">0</div>
+<div class="stat-label">कॉलम्स</div>
+</div>
+<div class="stat-box">
+<div class="stat-number" id="fileSize">0 KB</div>
+<div class="stat-label">फाइल साइज</div>
+</div>
+<div class="stat-box">
+<div class="stat-number" id="processedTime">0s</div>
+<div class="stat-label">प्रोसेस टाइम</div>
+</div>
+</div>
+
+<div id="warningBox" class="warning" style="display: none;">
+<i class="fas fa-exclamation-triangle"></i>
+<span id="warningText"></span>
+</div>
+
+<div id="successBox" class="success" style="display: none;">
+<i class="fas fa-check-circle"></i>
+<span id="successText"></span>
+</div>
+
+<h3><i class="fas fa-table"></i> डेटा प्रिव्यू</h3>
+<div id="previewContainer" class="preview-container">
+<div style="text-align: center; color: #64748b; padding: 40px;">
+<i class="fas fa-table" style="font-size: 3rem; color: #cbd5e1; margin-bottom: 15px;"></i>
+<p>CSV डेटा अपलोड या पेस्ट करने के बाद यहाँ प्रिव्यू दिखेगा।</p>
+</div>
+</div>
+
+<h3 style="margin-top: 30px;"><i class="fas fa-file-export"></i> आउटपुट डाउनलोड</h3>
+<div class="output-options">
+<button class="btn output-btn" onclick="downloadOutput('json')" style="background: linear-gradient(to right, #3b82f6, #1d4ed8);">
+<i class="fas fa-code"></i> JSON
+</button>
+<button class="btn output-btn" onclick="downloadOutput('excel')" style="background: linear-gradient(to right, #10b981, #059669);">
+<i class="fas fa-file-excel"></i> Excel
+</button>
+<button class="btn output-btn" onclick="downloadOutput('xml')" style="background: linear-gradient(to right, #f59e0b, #d97706);">
+<i class="fas fa-file-code"></i> XML
+</button>
+<button class="btn output-btn" onclick="downloadOutput('csv')" style="background: linear-gradient(to right, #8b5cf6, #7c3aed);">
+<i class="fas fa-file-csv"></i> CSV
+</button>
+</div>
+
+<h3 style="margin-top: 30px;"><i class="fas fa-eye"></i> आउटपुट प्रिव्यू</h3>
+<div id="outputPreview" class="preview-container" style="min-height: 200px; max-height: 300px;">
+<div style="text-align: center; color: #64748b; padding: 40px;">
+<i class="fas fa-code" style="font-size: 2rem; color: #cbd5e1; margin-bottom: 15px;"></i>
+<p>प्रोसेस करने के बाद यहाँ कन्वर्टेड आउटपुट दिखेगा।</p>
+</div>
+</div>
+</div>
+</main>
+
+<div class="back-link">
+<a href="all-tools.html"><i class="fas fa-arrow-left"></i> सभी टूल्स देखें</a> |
+<a href="index.html"><i class="fas fa-home"></i> होमपेज पर जाएं</a>
+</div>
+</div>
+
+<!-- JavaScript -->
+<script>
+let csvData = [];
+let headers = [];
+let currentOption = '';
+
+// Drag and drop functionality
+const uploadArea = document.getElementById('uploadArea');
+uploadArea.addEventListener('dragover', (e) => {
+e.preventDefault();
+uploadArea.classList.add('dragover');
+});
+
+uploadArea.addEventListener('dragleave', () => {
+uploadArea.classList.remove('dragover');
+});
+
+uploadArea.addEventListener('drop', (e) => {
+e.preventDefault();
+uploadArea.classList.remove('dragover');
+
+const files = e.dataTransfer.files;
+if (files.length > 0) {
+handleFileSelect({ target: { files } });
+}
+});
+
+function handleFileSelect(event) {
+const file = event.target.files[0];
+if (!file) return;
+
+if (!file.name.toLowerCase().endsWith('.csv') && !file.name.toLowerCase().endsWith('.txt')) {
+showWarning('कृपया केवल CSV या TXT फाइल्स अपलोड करें।');
+return;
+}
+
+if (file.size > 10 * 1024 * 1024) { // 10MB
+showWarning('फाइल साइज 10MB से कम होनी चाहिए।');
+return;
+}
+
+const reader = new FileReader();
+reader.onload = function(e) {
+document.getElementById('csvContent').value = e.target.result;
+parseCSV(e.target.result);
+};
+reader.readAsText(file, 'UTF-8');
+
+showSuccess(`फाइल "${file.name}" सफलतापूर्वक अपलोड हुई।`);
+}
+
+function parseCSV(content) {
+if (!content || content.trim() === '') {
+showWarning('कृपया CSV डेटा दर्ज करें।');
+return;
+}
+
+try {
+// Detect delimiter
+const lines = content.split('\n').filter(line => line.trim() !== '');
+if (lines.length === 0) {
+showWarning('CSV डेटा खाली है।');
+return;
+}
+
+// Detect delimiter (comma, semicolon, tab)
+const firstLine = lines[0];
+let delimiter = ',';
+if (firstLine.includes(';') && !firstLine.includes(',')) delimiter = ';';
+else if (firstLine.includes('\t')) delimiter = '\t';
+
+// Parse headers
+headers = firstLine.split(delimiter).map(h => h.trim().replace(/"/g, ''));
+
+// Parse data
+csvData = [];
+for (let i = 1; i < lines.length; i++) {
+const line = lines[i];
+if (line.trim() === '') continue;
+
+// Simple CSV parsing (handles quoted values)
+const values = [];
+let currentValue = '';
+let insideQuotes = false;
+
+for (let j = 0; j < line.length; j++) {
+const char = line[j];
+
+if (char === '"') {
+insideQuotes = !insideQuotes;
+} else if (char === delimiter && !insideQuotes) {
+values.push(currentValue.trim().replace(/"/g, ''));
+currentValue = '';
+} else {
+currentValue += char;
+}
+}
+values.push(currentValue.trim().replace(/"/g, ''));
+
+// Make sure we have the right number of columns
+if (values.length === headers.length) {
+const row = {};
+headers.forEach((header, index) => {
+row[header] = values[index];
+});
+csvData.push(row);
+}
+}
+
+if (csvData.length === 0) {
+showWarning('CSV डेटा पार्स नहीं हो सका। फॉर्मेट चेक करें।');
+return;
+}
+
+updatePreview();
+updateColumnSelects();
+showSuccess(`${csvData.length} रोज़ सफलतापूर्वक पार्स हुए।`);
+
+} catch (error) {
+console.error('CSV parsing error:', error);
+showWarning('CSV पार्सिंग में त्रुटि: ' + error.message);
+}
+}
+
+function updatePreview() {
+const container = document.getElementById('previewContainer');
+const statsContainer = document.getElementById('statsContainer');
+
+if (csvData.length === 0) {
+container.innerHTML = `
+<div style="text-align: center; color: #64748b; padding: 40px;">
+<i class="fas fa-table" style="font-size: 3rem; color: #cbd5e1; margin-bottom: 15px;"></i>
+<p>CSV डेटा अपलोड या पेस्ट करने के बाद यहाँ प्रिव्यू दिखेगा।</p>
+</div>
+`;
+statsContainer.style.display = 'none';
+return;
+}
+
+// Create table HTML
+let tableHTML = '<table class="csv-table">';
+
+// Headers
+tableHTML += '<thead><tr>';
+headers.forEach(header => {
+tableHTML += `<th>${header}</th>`;
+});
+tableHTML += '</tr></thead>';
+
+// Data (first 10 rows for preview)
+tableHTML += '<tbody>';
+const previewRows = Math.min(10, csvData.length);
+for (let i = 0; i < previewRows; i++) {
+tableHTML += '<tr>';
+headers.forEach(header => {
+tableHTML += `<td>${csvData[i][header] || ''}</td>`;
+});
+tableHTML += '</tr>';
+}
+tableHTML += '</tbody></table>';
+
+if (csvData.length > 10) {
+tableHTML += `<div style="text-align: center; padding: 10px; color: #64748b; font-size: 0.9rem;">
+... और ${csvData.length - 10} रोज़
+</div>`;
+}
+
+container.innerHTML = tableHTML;
+
+// Update stats
+document.getElementById('rowCount').textContent = csvData.length;
+document.getElementById('columnCount').textContent = headers.length;
+document.getElementById('fileSize').textContent = `${Math.round(JSON.stringify(csvData).length / 1024)} KB`;
+statsContainer.style.display = 'grid';
+}
+
+function updateColumnSelects() {
+const sortColumn = document.getElementById('sortColumn');
+const filterColumn = document.getElementById('filterColumn');
+
+sortColumn.innerHTML = '<option value="">कॉलम चुनें...</option>';
+filterColumn.innerHTML = '<option value="">कॉलम चुनें...</option>';
+
+headers.forEach(header => {
+const option1 = document.createElement('option');
+option1.value = header;
+option1.textContent = header;
+sortColumn.appendChild(option1);
+
+const option2 = document.createElement('option');
+option2.value = header;
+option2.textContent = header;
+filterColumn.appendChild(option2);
+});
+}
+
+function selectOption(option) {
+currentOption = option;
+
+// Reset all option cards
+document.querySelectorAll('.option-card').forEach(card => {
+card.classList.remove('selected');
+});
+
+// Select current card
+event.currentTarget.classList.add('selected');
+
+// Hide all option sections
+document.getElementById('sortOptions').style.display = 'none';
+document.getElementById('filterOptions').style.display = 'none';
+document.getElementById('cleanOptions').style.display = 'none';
+document.getElementById('convertOptions').style.display = 'none';
+
+// Show selected option section
+if (option === 'sort') {
+document.getElementById('sortOptions').style.display = 'block';
+} else if (option === 'filter') {
+document.getElementById('filterOptions').style.display = 'block';
+} else if (option === 'clean') {
+document.getElementById('cleanOptions').style.display = 'block';
+} else if (option === 'convert') {
+document.getElementById('convertOptions').style.display = 'block';
+}
+}
+
+function processCSV() {
+const content = document.getElementById('csvContent').value.trim();
+if (!content) {
+showWarning('कृपया CSV डेटा दर्ज करें।');
+return;
+}
+
+// Parse CSV if not already parsed
+if (csvData.length === 0) {
+parseCSV(content);
+if (csvData.length === 0) return;
+}
+
+const startTime = Date.now();
+let processedData = [...csvData];
+
+// Apply selected operations
+if (currentOption === 'sort') {
+const sortColumn = document.getElementById('sortColumn').value;
+const sortOrder = document.querySelector('input[name="sortOrder"]:checked').value;
+
+if (sortColumn) {
+processedData.sort((a, b) => {
+const valA = a[sortColumn] || '';
+const valB = b[sortColumn] || '';
+
+if (sortOrder === 'asc') {
+return valA.toString().localeCompare(valB.toString());
+} else {
+return valB.toString().localeCompare(valA.toString());
+}
+});
+}
+} else if (currentOption === 'filter') {
+const filterColumn = document.getElementById('filterColumn').value;
+const filterValue = document.getElementById('filterValue').value.trim();
+const caseSensitive = document.getElementById('caseSensitive').checked;
+
+if (filterColumn && filterValue) {
+processedData = processedData.filter(row => {
+const cellValue = row[filterColumn] || '';
+const searchValue = caseSensitive ? filterValue : filterValue.toLowerCase();
+const rowValue = caseSensitive ? cellValue : cellValue.toLowerCase();
+
+return rowValue.includes(searchValue);
+});
+}
+} else if (currentOption === 'clean') {
+const removeEmpty = document.getElementById('removeEmpty').checked;
+const removeDuplicates = document.getElementById('removeDuplicates').checked;
+const trimSpaces = document.getElementById('trimSpaces').checked;
+
+// Remove empty rows
+if (removeEmpty) {
+processedData = processedData.filter(row => {
+return Object.values(row).some(value => value && value.trim() !== '');
+});
+}
+
+// Remove duplicates
+if (removeDuplicates) {
+const seen = new Set();
+processedData = processedData.filter(row => {
+const key = JSON.stringify(row);
+if (seen.has(key)) return false;
+seen.add(key);
+return true;
+});
+}
+
+// Trim spaces
+if (trimSpaces) {
+processedData = processedData.map(row => {
+const newRow = {};
+Object.keys(row).forEach(key => {
+newRow[key] = typeof row[key] === 'string' ? row[key].trim() : row[key];
+});
+return newRow;
+});
+}
+}
+
+// Convert to selected format
+const outputFormat = document.querySelector('input[name="outputFormat"]:checked').value;
+let outputContent = '';
+
+if (outputFormat === 'json') {
+outputContent = JSON.stringify(processedData, null, 2);
+} else if (outputFormat === 'xml') {
+outputContent = convertToXML(processedData);
+} else if (outputFormat === 'csv') {
+outputContent = convertToCSV(processedData);
+} else if (outputFormat === 'excel') {
+// For demo purposes, we'll create a CSV that can be opened in Excel
+outputContent = convertToCSV(processedData);
+}
+
+// Update output preview
+const outputPreview = document.getElementById('outputPreview');
+if (outputFormat === 'json') {
+outputPreview.innerHTML = `<pre style="margin: 0; white-space: pre-wrap;">${outputContent}</pre>`;
+} else if (outputFormat === 'xml') {
+outputPreview.innerHTML = `<pre style="margin: 0; white-space: pre-wrap;">${escapeHTML(outputContent)}</pre>`;
+} else {
+outputPreview.innerHTML = `<pre style="margin: 0; white-space: pre-wrap;">${outputContent}</pre>`;
+}
+
+// Update processed data
+csvData = processedData;
+updatePreview();
+
+// Update stats
+const endTime = Date.now();
+document.getElementById('processedTime').textContent = `${(endTime - startTime) / 1000}s`;
+document.getElementById('rowCount').textContent = processedData.length;
+
+showSuccess(`CSV सफलतापूर्वक प्रोसेस हुआ। ${processedData.length} रोज़ प्रोसेस किए गए।`);
+}
+
+function convertToXML(data) {
+if (data.length === 0) return '<?xml version="1.0" encoding="UTF-8"?>\n<empty></empty>';
+
+let xml = '<?xml version="1.0" encoding="UTF-8"?>\n<data>\n';
+
+data.forEach((row, index) => {
+xml += ` <row id="${index + 1}">\n`;
+Object.entries(row).forEach(([key, value]) => {
+const safeKey = key.replace(/[^a-zA-Z0-9_]/g, '_');
+xml += ` <${safeKey}>${escapeXML(value)}</${safeKey}>\n`;
+});
+xml += ' </row>\n';
+});
+
+xml += '</data>';
+return xml;
+}
+
+function convertToCSV(data) {
+if (data.length === 0) return '';
+
+const headers = Object.keys(data[0]);
+let csv = headers.join(',') + '\n';
+
+data.forEach(row => {
+const rowValues = headers.map(header => {
+const value = row[header] || '';
+// Escape commas and quotes
+if (value.includes(',') || value.includes('"') || value.includes('\n')) {
+return `"${value.replace(/"/g, '""')}"`;
+}
+return value;
+});
+csv += rowValues.join(',') + '\n';
+});
+
+return csv;
+}
+
+function escapeXML(str) {
+if (str === null || str === undefined) return '';
+return str.toString()
+.replace(/&/g, '&amp;')
+.replace(/</g, '&lt;')
+.replace(/>/g, '&gt;')
+.replace(/"/g, '&quot;')
+.replace(/'/g, '&apos;');
+}
+
+function escapeHTML(str) {
+if (str === null || str === undefined) return '';
+return str.toString()
+.replace(/&/g, '&amp;')
+.replace(/</g, '&lt;')
+.replace(/>/g, '&gt;');
+}
+
+function downloadOutput(format) {
+if (csvData.length === 0) {
+showWarning('डाउनलोड करने के लिए पहले CSV प्रोसेस करें।');
+return;
+}
+
+let content, filename, mimeType;
+
+if (format === 'json') {
+content = JSON.stringify(csvData, null, 2);
+filename = 'data.json';
+mimeType = 'application/json';
+} else if (format === 'xml') {
+content = convertToXML(csvData);
+filename = 'data.xml';
+mimeType = 'application/xml';
+} else if (format === 'csv') {
+content = convertToCSV(csvData);
+filename = 'data.csv';
+mimeType = 'text/csv';
+} else if (format === 'excel') {
+// For Excel, we'll create a CSV that Excel can open
+content = convertToCSV(csvData);
+filename = 'data.xlsx';
+mimeType = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
+}
+
+const blob = new Blob([content], { type: mimeType });
+const url = URL.createObjectURL(blob);
+const a = document.createElement('a');
+a.href = url;
+a.download = filename;
+document.body.appendChild(a);
+a.click();
+document.body.removeChild(a);
+URL.revokeObjectURL(url);
+
+showSuccess(`${format.toUpperCase()} फाइल सफलतापूर्वक डाउनलोड हुई।`);
+}
+
+function loadSampleData(type) {
+let sampleContent = '';
+
+if (type === 'students') {
+sampleContent = `नाम,उम्र,शहर,कोर्स,ग्रेड
+राहुल शर्मा,22,दिल्ली,बी.टेक कंप्यूटर,A
+प्रिया पटेल,21,मुंबई,एम.बी.ए.,B+
+अमित कुमार,23,बेंगलुरु,बी.सी.ए.,A-
+सीमा सिंह,20,हैदराबाद,बी.ए. अंग्रेजी,B
+राजेश वर्मा,24,चेन्नई,एम.टेक आईटी,A+`;
+} else if (type === 'products') {
+sampleContent = `प्रोडक्ट_आईडी,प्रोडक्ट_नाम,कैटेगरी,कीमत,स्टॉक
+P001,आईफोन 14,मोबाइल,79999,50
+P002,सैमसंग टीवी,इलेक्ट्रॉनिक्स,45999,30
+P003,नाइक शूज़,फुटवेयर,5999,100
+P004,लैपटॉप बैग,एक्सेसरी,2499,75
+P005,वायरलेस ईयरफोन,गैजेट,3999,120`;
+} else if (type === 'employees') {
+sampleContent = `आईडी,नाम,विभाग,पद,वेतन,जॉइनिंग_डेट
+E001,रवि कुमार,आईटी,सॉफ्टवेयर इंजीनियर,60000,2022-01-15
+E002,नीता सिंह,एचआर,एचआर मैनेजर,80000,2021-03-10
+E003,सुरेश पटेल,वित्त,अकाउंटेंट,45000,2022-06-22
+E004,मीना राजपूत,मार्केटिंग,मार्केटिंग एक्जीक्यूटिव,55000,2023-01-05
+E005,अजय वर्मा,बिक्री,सेल्स मैनेजर,75000,2020-11-30`;
+}
+
+document.getElementById('csvContent').value = sampleContent;
+parseCSV(sampleContent);
+showSuccess(`सैंपल डेटा "${type}" लोड हो गया।`);
+}
+
+function showWarning(message) {
+const warningBox = document.getElementById('warningBox');
+document.getElementById('warningText').textContent = message;
+warningBox.style.display = 'flex';
+document.getElementById('successBox').style.display = 'none';
+}
+
+function showSuccess(message) {
+const successBox = document.getElementById('successBox');
+document.getElementById('successText').textContent = message;
+successBox.style.display = 'flex';
+document.getElementById('warningBox').style.display = 'none';
+}
+
+// Initialize with sample data
+document.addEventListener('DOMContentLoaded', function() {
+loadSampleData('students');
+});
+</script>
+
+<!-- Footer लोड करने का script -->
+<script>
+fetch('footer.html')
+.then(response => response.text())
+.then(data => {
+document.body.insertAdjacentHTML('beforeend', data);
+});
+</script>
+</body>
+</html>
