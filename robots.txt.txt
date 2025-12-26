@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow:
+
+Sitemap: https://freeseotoolhub.com/sitemap.xml
+
+# Free SEO Tool Hub - All files allowed for indexing
+# Created for: https://freeseotoolhub.com/
+# Date: 2024-12-27
