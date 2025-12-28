@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Encoder/Decoder - Free SEO Tool Hub</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial; background: #667eea; padding: 20px; }
+        .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 10px; }
+        h1 { color: #333; margin-bottom: 20px; text-align: center; }
+        textarea { width: 100%; height: 150px; padding: 15px; border: 1px solid #ddd; border-radius: 5px; margin: 10px 0; }
+        button { background: #4CAF50; color: white; padding: 12px 25px; border: none; border-radius: 5px; cursor: pointer; margin: 5px; }
+        .result { background: #f9f9f9; padding: 15px; border-radius: 5px; margin-top: 20px; word-break: break-all; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔗 URL Encoder/Decoder Tool</h1>
+        <p>एक साथ कई URLs encode/decode करें। SEO-friendly URLs बनाएं।</p>
+        
+        <textarea id="input" placeholder="URLs डालें (एक लाइन में एक)">
+https://example.com/page with spaces.html
+https://example.com/search?q=query with spaces
+http://example.com/price=₹1000&currency=INR
+        </textarea>
+        
+        <div>
+            <button onclick="encodeURLs()">🔒 URLs Encode करें</button>
+            <button onclick="decodeURLs()">🔓 URLs Decode करें</button>
+            <button onclick="clearAll()">🗑️ साफ करें</button>
+            <button onclick="copyResult()">📋 कॉपी करें</button>
+        </div>
+        
+        <div class="result" id="result">
+            परिणाम यहाँ दिखेगा...
+        </div>
+        
+        <div style="margin-top: 30px; background: #e3f2fd; padding: 15px; border-radius: 5px;">
+            <h3>💡 SEO टिप्स:</h3>
+            <ul>
+                <li>URLs में spaces के बजाय hyphens (-) use करें</li>
+                <li>Special characters encode करें</li>
+                <li>URLs छोटे और descriptive रखें</li>
+                <li>Keywords URLs में include करें</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function encodeURLs() {
+            const input = document.getElementById('input').value;
+            const urls = input.split('\n').filter(url => url.trim() !== '');
+            const encoded = urls.map(url => encodeURIComponent(url)).join('\n');
+            document.getElementById('result').innerHTML = '<strong>✅ Encoded URLs:</strong><br><br>' + encoded;
+        }
+
+        function decodeURLs() {
+            const input = document.getElementById('input').value;
+            const urls = input.split('\n').filter(url => url.trim() !== '');
+            const decoded = urls.map(url => {
+                try {
+                    return decodeURIComponent(url);
+                } catch {
+                    return "❌ Error: Invalid URL";
+                }
+            }).join('\n');
+            document.getElementById('result').innerHTML = '<strong>✅ Decoded URLs:</strong><br><br>' + decoded;
+        }
+
+        function clearAll() {
+            document.getElementById('input').value = '';
+            document.getElementById('result').innerHTML = 'परिणाम यहाँ दिखेगा...';
+        }
+
+        function copyResult() {
+            const resultText = document.getElementById('result').innerText;
+            navigator.clipboard.writeText(resultText).then(() => {
+                alert('कॉपी हो गया! ✅');
+            });
+        }
+    </script>
+</body>
+</html>
