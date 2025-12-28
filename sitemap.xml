@@ -97,17 +97,19 @@
 <priority>0.7</priority>
 </url>
   <url>
-    <loc>https://freeseotoolhub.com/url-encoder-decoder.html</loc>
+    <url>
+    <loc>https://freeseotoolhub.com/url-encoder.html</loc>
     <lastmod>2024-12-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
 </url>
-  <url>
-    <loc>https://freeseotoolhub.com/ai-content-idea-generator.html</loc>
+<url>
+    <loc>https://freeseotoolhub.com/ai-ideas.html</loc>
     <lastmod>2024-12-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
 </url>
 </urlset>
+
 
 
