@@ -314,6 +314,31 @@ margin-left: 10px;
 .badge-good { background: #d1fae5; color: #065f46; }
 .badge-average { background: #fef3c7; color: #92400e; }
 .badge-poor { background: #fee2e2; color: #991b1b; }
+
+/* Copy Button Styles */
+.copy-btn {
+position: absolute;
+right: 15px;
+top: 15px;
+background: #4A00E0;
+color: white;
+border: none;
+padding: 8px 15px;
+border-radius: 6px;
+cursor: pointer;
+font-size: 0.9rem;
+display: flex;
+align-items: center;
+gap: 5px;
+}
+
+.copy-btn:hover {
+background: #3a00b3;
+}
+
+.output-wrapper {
+position: relative;
+}
 </style>
 </head>
 <body>
@@ -426,14 +451,24 @@ Flipkart SEO
 </div>
 </div>
 
+<div class="output-wrapper">
 <h3><i class="fab fa-amazon amazon"></i> Amazon ऑप्टिमाइज़्ड लिस्टिंग</h3>
+<button class="copy-btn" onclick="copyToClipboard('amazonOutput')">
+<i class="far fa-copy"></i> कॉपी
+</button>
 <div id="amazonOutput" class="output-box">
 प्रोडक्ट डिटेल्स दर्ज करने के बाद यहाँ Amazon के लिए ऑप्टिमाइज़्ड लिस्टिंग दिखेगी...
 </div>
+</div>
 
+<div class="output-wrapper">
 <h3><i class="fas fa-shopping-bag flipkart"></i> Flipkart ऑप्टिमाइज़्ड लिस्टिंग</h3>
+<button class="copy-btn" onclick="copyToClipboard('flipkartOutput')">
+<i class="far fa-copy"></i> कॉपी
+</button>
 <div id="flipkartOutput" class="output-box">
 प्रोडक्ट डिटेल्स दर्ज करने के बाद यहाँ Flipkart के लिए ऑप्टिमाइज़्ड लिस्टिंग दिखेगी...
+</div>
 </div>
 
 <div class="keyword-suggestions" id="keywordContainer">
@@ -607,11 +642,11 @@ let optimized = "=== Amazon ऑप्टिमाइज़्ड लिस्ट
 const { score } = calculateSEOScore(title, desc, keywords, category, price);
 optimized += `📊 SEO स्कोर: ${score}/100 `;
 if (score >= 80) {
-optimized += `<span class="badge badge-good">EXCELLENT</span>\n\n`;
+optimized += `[EXCELLENT]\n\n`;
 } else if (score >= 50) {
-optimized += `<span class="badge badge-average">AVERAGE</span>\n\n`;
+optimized += `[AVERAGE]\n\n`;
 } else {
-optimized += `<span class="badge badge-poor">NEEDS IMPROVEMENT</span>\n\n`;
+optimized += `[NEEDS IMPROVEMENT]\n\n`;
 }
 
 // ऑप्टिमाइज़्ड टाइटल
@@ -676,11 +711,11 @@ let optimized = "=== Flipkart ऑप्टिमाइज़्ड लिस्�
 const { score } = calculateSEOScore(title, desc, keywords, category, price);
 optimized += `📊 SEO स्कोर: ${score}/100 `;
 if (score >= 80) {
-optimized += `<span class="badge badge-good">EXCELLENT</span>\n\n`;
+optimized += `[EXCELLENT]\n\n`;
 } else if (score >= 50) {
-optimized += `<span class="badge badge-average">AVERAGE</span>\n\n`;
+optimized += `[AVERAGE]\n\n`;
 } else {
-optimized += `<span class="badge badge-poor">NEEDS IMPROVEMENT</span>\n\n`;
+optimized += `[NEEDS IMPROVEMENT]\n\n`;
 }
 
 // ऑप्टिमाइज़्ड टाइटल (Flipkart के लिए छोटा)
@@ -754,7 +789,9 @@ fashion: ['कपड़े', 'फैशन', 'शर्ट', 'जींस', '�
 home: ['होम डेकोर', 'किचन', 'फर्निचर', 'अप्लायंस', 'उपकरण', 'सजावट'],
 beauty: ['ब्यूटी', 'स्किनकेयर', 'मेकअप', 'कॉस्मेटिक्स', 'ग्रूमिंग', 'पर्सनल केयर'],
 books: ['बुक्स', 'किताबें', 'पढ़ाई', 'एजुकेशन', 'नॉलेज', 'लिटरेचर'],
-sports: ['स्पोर्ट्स', 'फिटनेस', 'आउटडोर', 'एक्टिविटी', 'एक्विपमेंट', 'गेम्स']
+sports: ['स्पोर्ट्स', 'फिटनेस', 'आउटडोर', 'एक्टिविटी', 'एक्विपमेंट', 'गेम्स'],
+automotive: ['कार', 'बाइक', 'ऑटो पार्ट्स', 'एक्सेसरीज', 'मेंटेनेंस', 'रिपेयर'],
+groceries: ['ग्रोसरी', 'खाना', 'पीना', 'किराना', 'फ्रेश', 'ऑर्गेनिक']
 };
 
 // प्राइस-बेस्ड कीवर्ड्स
@@ -817,20 +854,21 @@ container.appendChild(span);
 });
 }
 
+// कॉपी टू क्लिपबोर्ड
+function copyToClipboard(elementId) {
+const text = document.getElementById(elementId).innerText;
+navigator.clipboard.writeText(text).then(() => {
+alert('कॉपी हो गया! ✅');
+}).catch(err => {
+console.error('Copy failed:', err);
+});
+}
+
 // पेज लोड होने पर Amazon को डिफॉल्ट सेट करें
 document.addEventListener('DOMContentLoaded', function() {
 selectPlatform('amazon');
 document.getElementById('titleCount').textContent = document.getElementById('productTitle').value.length;
 document.getElementById('descCount').textContent = document.getElementById('productDesc').value.length;
-});
-</script>
-
-<!-- Footer लोड करने का script -->
-<script>
-fetch('footer.html')
-.then(response => response.text())
-.then(data => {
-document.body.insertAdjacentHTML('beforeend', data);
 });
 </script>
 </body>
