@@ -4,81 +4,734 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>URL Encoder/Decoder - Free SEO Tool Hub</title>
+    <meta name="description" content="एक साथ कई URLs encode/decode करें। SEO-friendly URLs बनाएं। 100% मुफ्त टूल।">
+    <meta name="keywords" content="URL encoder, URL decoder, bulk URL encode, SEO URLs, free URL tool">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="URL Encoder/Decoder - Free SEO Tool Hub">
+    <meta property="og:description" content="एक साथ कई URLs encode/decode करें। SEO-friendly URLs बनाएं।">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freeseotoolhub.com/url-encoder.html">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: Arial; background: #667eea; padding: 20px; }
-        .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 10px; }
-        h1 { color: #333; margin-bottom: 20px; text-align: center; }
-        textarea { width: 100%; height: 150px; padding: 15px; border: 1px solid #ddd; border-radius: 5px; margin: 10px 0; }
-        button { background: #4CAF50; color: white; padding: 12px 25px; border: none; border-radius: 5px; cursor: pointer; margin: 5px; }
-        .result { background: #f9f9f9; padding: 15px; border-radius: 5px; margin-top: 20px; word-break: break-all; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+        }
+        
+        .header {
+            background: linear-gradient(to right, #4A00E0, #8E2DE2);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .main-content {
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        @media (max-width: 900px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .input-section, .output-section {
+            background: #f8fafc;
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        h2 {
+            color: #2d3748;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #4A00E0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #4a5568;
+            font-weight: 600;
+        }
+        
+        textarea {
+            width: 100%;
+            min-height: 200px;
+            padding: 20px;
+            border: 2px solid #cbd5e1;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: 'Courier New', monospace;
+            resize: vertical;
+            transition: border-color 0.3s;
+        }
+        
+        textarea:focus {
+            outline: none;
+            border-color: #4A00E0;
+            box-shadow: 0 0 0 3px rgba(74, 0, 224, 0.1);
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            color: #718096;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+        
+        .action-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .btn {
+            padding: 14px 28px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(to right, #4A00E0, #8E2DE2);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(to right, #3a00b3, #6a1dc9);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(74, 0, 224, 0.3);
+        }
+        
+        .btn-secondary {
+            background: #edf2f7;
+            color: #4a5568;
+        }
+        
+        .btn-secondary:hover {
+            background: #e2e8f0;
+        }
+        
+        .btn-success {
+            background: #38b2ac;
+            color: white;
+        }
+        
+        .btn-success:hover {
+            background: #319795;
+        }
+        
+        .url-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border-left: 4px solid #4A00E0;
+            word-break: break-all;
+            font-family: 'Courier New', monospace;
+            position: relative;
+        }
+        
+        .url-item.original {
+            border-left-color: #48bb78;
+            background: #f0fff4;
+        }
+        
+        .url-item.encoded {
+            border-left-color: #4299e1;
+            background: #ebf8ff;
+        }
+        
+        .url-item.decoded {
+            border-left-color: #ed8936;
+            background: #fffaf0;
+        }
+        
+        .copy-btn {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            background: #4A00E0;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .copy-btn:hover {
+            background: #3a00b3;
+        }
+        
+        .seo-tips {
+            background: linear-gradient(to right, #c6f6d5, #9ae6b4);
+            padding: 25px;
+            border-radius: 12px;
+            margin-top: 30px;
+        }
+        
+        .seo-tips h3 {
+            color: #22543d;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .tips-list {
+            list-style: none;
+            color: #276749;
+        }
+        
+        .tips-list li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .tips-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            color: #38a169;
+        }
+        
+        .examples {
+            background: #e6f7ff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        .examples h4 {
+            color: #2b6cb0;
+            margin-bottom: 10px;
+        }
+        
+        .example-url {
+            background: white;
+            padding: 10px;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            margin: 5px 0;
+            color: #4a5568;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background: #f7fafc;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: #4a5568;
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .footer-links a:hover {
+            color: #4A00E0;
+        }
+        
+        .success-message {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #38a169;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(56, 161, 105, 0.3);
+            display: none;
+            align-items: center;
+            gap: 12px;
+            z-index: 1000;
+            animation: slideIn 0.3s ease;
+        }
+        
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+        
+        .badge-new {
+            background: #fbbf24;
+            color: #92400e;
+        }
+        
+        .badge-popular {
+            background: #10b981;
+            color: white;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>🔗 URL Encoder/Decoder Tool</h1>
-        <p>एक साथ कई URLs encode/decode करें। SEO-friendly URLs बनाएं।</p>
-        
-        <textarea id="input" placeholder="URLs डालें (एक लाइन में एक)">
-https://example.com/page with spaces.html
-https://example.com/search?q=query with spaces
-http://example.com/price=₹1000&currency=INR
-        </textarea>
-        
-        <div>
-            <button onclick="encodeURLs()">🔒 URLs Encode करें</button>
-            <button onclick="decodeURLs()">🔓 URLs Decode करें</button>
-            <button onclick="clearAll()">🗑️ साफ करें</button>
-            <button onclick="copyResult()">📋 कॉपी करें</button>
-        </div>
-        
-        <div class="result" id="result">
-            परिणाम यहाँ दिखेगा...
-        </div>
-        
-        <div style="margin-top: 30px; background: #e3f2fd; padding: 15px; border-radius: 5px;">
-            <h3>💡 SEO टिप्स:</h3>
-            <ul>
-                <li>URLs में spaces के बजाय hyphens (-) use करें</li>
-                <li>Special characters encode करें</li>
-                <li>URLs छोटे और descriptive रखें</li>
-                <li>Keywords URLs में include करें</li>
-            </ul>
-        </div>
+        <!-- Header -->
+        <header class="header">
+            <h1><i class="fas fa-link"></i> URL Encoder/Decoder Tool <span class="badge badge-popular">Popular</span></h1>
+            <p>एक साथ कई URLs encode/decode करें। SEO-friendly URLs बनाएं। बिल्कुल मुफ्त, कोई सीमा नहीं!</p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Input Section -->
+            <section class="input-section">
+                <h2><i class="fas fa-edit"></i> URLs डालें</h2>
+                
+                <div class="form-group">
+                    <label for="urlInput"><i class="fas fa-globe"></i> URLs (एक लाइन में एक):</label>
+                    <textarea id="urlInput" placeholder="यहाँ URLs पेस्ट करें... (प्रति लाइन एक URL)&#10;&#10;उदाहरण:&#10;https://example.com/page with spaces.html&#10;https://example.com/search?q=query with spaces&#10;http://example.com/price=₹1000&amp;currency=INR"></textarea>
+                    <div class="stats">
+                        <span id="urlCount">0 URLs</span>
+                        <span id="charCount">0 characters</span>
+                    </div>
+                </div>
+                
+                <div class="examples">
+                    <h4><i class="fas fa-lightbulb"></i> उदाहरण URLs:</h4>
+                    <div class="example-url">https://example.com/product name with spaces.html</div>
+                    <div class="example-url">https://example.com/search?q=हिंदी query&lang=hi</div>
+                    <div class="example-url">http://example.com/price=₹5000&discount=20%</div>
+                </div>
+                
+                <div class="action-buttons">
+                    <button class="btn btn-primary" onclick="encodeURLs()">
+                        <i class="fas fa-lock"></i> Encode URLs
+                    </button>
+                    <button class="btn btn-primary" onclick="decodeURLs()">
+                        <i class="fas fa-unlock"></i> Decode URLs
+                    </button>
+                    <button class="btn btn-secondary" onclick="clearAll()">
+                        <i class="fas fa-trash"></i> Clear All
+                    </button>
+                    <button class="btn btn-success" onclick="processForSEO()">
+                        <i class="fas fa-search"></i> SEO Optimize
+                    </button>
+                </div>
+            </section>
+
+            <!-- Output Section -->
+            <section class="output-section">
+                <h2><i class="fas fa-list"></i> परिणाम</h2>
+                <div class="stats">
+                    <span id="resultCount">0 results</span>
+                    <button class="btn btn-secondary btn-sm" onclick="copyAllResults()" style="padding: 8px 15px; font-size: 0.9rem;">
+                        <i class="fas fa-copy"></i> सभी कॉपी करें
+                    </button>
+                </div>
+                
+                <div id="resultsContainer" style="margin-top: 20px; max-height: 400px; overflow-y: auto; padding-right: 10px;">
+                    <!-- Results will appear here -->
+                    <div style="text-align: center; color: #a0aec0; padding: 40px;">
+                        <i class="fas fa-code" style="font-size: 3rem; margin-bottom: 20px;"></i>
+                        <p>Encoded/Decoded URLs यहाँ दिखेंगे</p>
+                    </div>
+                </div>
+                
+                <div class="seo-tips">
+                    <h3><i class="fas fa-chart-line"></i> SEO Tips for URLs</h3>
+                    <ul class="tips-list">
+                        <li>URLs में spaces के बजाय hyphens (-) use करें</li>
+                        <li>Special characters encode करें (&, ?, #, %, +)</li>
+                        <li>URLs छोटे और descriptive रखें</li>
+                        <li>Keywords URLs में include करें</li>
+                        <li>Lowercase letters use करें</li>
+                        <li>Stop words (and, the, or) avoid करें</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-links">
+                <a href="all-tools.html"><i class="fas fa-tools"></i> सभी टूल्स</a>
+                <a href="index.html"><i class="fas fa-home"></i> होमपेज</a>
+                <a href="about.html"><i class="fas fa-info-circle"></i> हमारे बारे में</a>
+                <a href="contact.html"><i class="fas fa-envelope"></i> संपर्क करें</a>
+            </div>
+            <p style="color: #718096;">© 2024 Free SEO Tool Hub | URL Encoder/Decoder Tool</p>
+        </footer>
     </div>
 
+    <!-- Success Message -->
+    <div class="success-message" id="successMessage">
+        <i class="fas fa-check-circle"></i>
+        <span id="successText">Operation successful!</span>
+    </div>
+
+    <!-- JavaScript -->
     <script>
+        // DOM Elements
+        const urlInput = document.getElementById('urlInput');
+        const resultsContainer = document.getElementById('resultsContainer');
+        const urlCount = document.getElementById('urlCount');
+        const charCount = document.getElementById('charCount');
+        const resultCount = document.getElementById('resultCount');
+        const successMessage = document.getElementById('successMessage');
+        const successText = document.getElementById('successText');
+
+        // Update counts
+        urlInput.addEventListener('input', updateCounts);
+        
+        function updateCounts() {
+            const urls = urlInput.value.trim().split('\n').filter(url => url.trim() !== '');
+            urlCount.textContent = `${urls.length} URLs`;
+            charCount.textContent = `${urlInput.value.length} characters`;
+        }
+
+        // Encode URLs
         function encodeURLs() {
-            const input = document.getElementById('input').value;
-            const urls = input.split('\n').filter(url => url.trim() !== '');
-            const encoded = urls.map(url => encodeURIComponent(url)).join('\n');
-            document.getElementById('result').innerHTML = '<strong>✅ Encoded URLs:</strong><br><br>' + encoded;
+            const urls = urlInput.value.trim().split('\n').filter(url => url.trim() !== '');
+            
+            if (urls.length === 0) {
+                showMessage('कृपया कुछ URLs डालें!', 'error');
+                return;
+            }
+            
+            let results = [];
+            urls.forEach((url, index) => {
+                const encoded = encodeURIComponent(url);
+                results.push({
+                    original: url,
+                    processed: encoded,
+                    type: 'encoded'
+                });
+            });
+            
+            displayResults(results);
+            showMessage(`${urls.length} URLs encoded successfully!`, 'success');
         }
 
+        // Decode URLs
         function decodeURLs() {
-            const input = document.getElementById('input').value;
-            const urls = input.split('\n').filter(url => url.trim() !== '');
-            const decoded = urls.map(url => {
+            const urls = urlInput.value.trim().split('\n').filter(url => url.trim() !== '');
+            
+            if (urls.length === 0) {
+                showMessage('कृपया कुछ URLs डालें!', 'error');
+                return;
+            }
+            
+            let results = [];
+            let errorCount = 0;
+            
+            urls.forEach((url, index) => {
                 try {
-                    return decodeURIComponent(url);
-                } catch {
-                    return "❌ Error: Invalid URL";
+                    const decoded = decodeURIComponent(url);
+                    results.push({
+                        original: url,
+                        processed: decoded,
+                        type: 'decoded'
+                    });
+                } catch (error) {
+                    results.push({
+                        original: url,
+                        processed: `❌ Error: Invalid encoded URL`,
+                        type: 'error'
+                    });
+                    errorCount++;
                 }
-            }).join('\n');
-            document.getElementById('result').innerHTML = '<strong>✅ Decoded URLs:</strong><br><br>' + decoded;
+            });
+            
+            displayResults(results);
+            
+            if (errorCount > 0) {
+                showMessage(`${urls.length - errorCount} URLs decoded, ${errorCount} errors`, 'warning');
+            } else {
+                showMessage(`${urls.length} URLs decoded successfully!`, 'success');
+            }
         }
 
-        function clearAll() {
-            document.getElementById('input').value = '';
-            document.getElementById('result').innerHTML = 'परिणाम यहाँ दिखेगा...';
+        // Process for SEO
+        function processForSEO() {
+            const urls = urlInput.value.trim().split('\n').filter(url => url.trim() !== '');
+            
+            if (urls.length === 0) {
+                showMessage('कृपया कुछ URLs डालें!', 'error');
+                return;
+            }
+            
+            let results = [];
+            urls.forEach((url, index) => {
+                // SEO optimizations
+                let seoUrl = url;
+                
+                // Replace spaces with hyphens
+                seoUrl = seoUrl.replace(/\s+/g, '-');
+                
+                // Remove special characters (keep hyphens)
+                seoUrl = seoUrl.replace(/[^\w\s-]/g, '');
+                
+                // Convert to lowercase
+                seoUrl = seoUrl.toLowerCase();
+                
+                // Remove multiple hyphens
+                seoUrl = seoUrl.replace(/-+/g, '-');
+                
+                // Trim hyphens from start/end
+                seoUrl = seoUrl.replace(/^-+|-+$/g, '');
+                
+                results.push({
+                    original: url,
+                    processed: seoUrl,
+                    type: 'seo'
+                });
+            });
+            
+            displayResults(results);
+            showMessage(`${urls.length} URLs SEO optimized!`, 'success');
         }
 
-        function copyResult() {
-            const resultText = document.getElementById('result').innerText;
-            navigator.clipboard.writeText(resultText).then(() => {
-                alert('कॉपी हो गया! ✅');
+        // Display results
+        function displayResults(results) {
+            resultsContainer.innerHTML = '';
+            resultCount.textContent = `${results.length} results`;
+            
+            if (results.length === 0) {
+                resultsContainer.innerHTML = `
+                    <div style="text-align: center; color: #a0aec0; padding: 40px;">
+                        <p>No results to display</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            results.forEach((result, index) => {
+                const item = document.createElement('div');
+                item.className = `url-item ${result.type}`;
+                
+                let typeLabel = '';
+                let typeIcon = '';
+                
+                switch(result.type) {
+                    case 'encoded':
+                        typeLabel = '🔒 Encoded';
+                        typeIcon = 'fas fa-lock';
+                        break;
+                    case 'decoded':
+                        typeLabel = '🔓 Decoded';
+                        typeIcon = 'fas fa-unlock';
+                        break;
+                    case 'seo':
+                        typeLabel = '🚀 SEO Optimized';
+                        typeIcon = 'fas fa-chart-line';
+                        break;
+                    case 'error':
+                        typeLabel = '❌ Error';
+                        typeIcon = 'fas fa-exclamation-triangle';
+                        break;
+                }
+                
+                item.innerHTML = `
+                    <div style="margin-bottom: 10px;">
+                        <strong>${typeLabel}:</strong>
+                        <span style="font-size: 0.9rem; color: #718096; margin-left: 10px;">#${index + 1}</span>
+                    </div>
+                    <div style="color: #4a5568; word-break: break-all; padding: 10px 0; background: rgba(255,255,255,0.5); border-radius: 6px; padding: 10px;">
+                        ${result.processed}
+                    </div>
+                    <div style="margin-top: 10px; font-size: 0.85rem; color: #a0aec0;">
+                        Original: ${result.original}
+                    </div>
+                    <button class="copy-btn" onclick="copyToClipboard('${result.processed.replace(/'/g, "\\'")}')">
+                        <i class="fas fa-copy"></i> Copy
+                    </button>
+                `;
+                
+                resultsContainer.appendChild(item);
             });
         }
+
+        // Copy to clipboard
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                showMessage('Copied to clipboard!', 'success');
+            }).catch(err => {
+                showMessage('Copy failed!', 'error');
+            });
+        }
+
+        // Copy all results
+        function copyAllResults() {
+            const results = document.querySelectorAll('.url-item');
+            if (results.length === 0) {
+                showMessage('No results to copy!', 'error');
+                return;
+            }
+            
+            let allText = '';
+            results.forEach(item => {
+                const text = item.querySelector('div:nth-child(2)').textContent;
+                allText += text + '\n\n';
+            });
+            
+            copyToClipboard(allText.trim());
+        }
+
+        // Clear all
+        function clearAll() {
+            urlInput.value = '';
+            resultsContainer.innerHTML = `
+                <div style="text-align: center; color: #a0aec0; padding: 40px;">
+                    <i class="fas fa-code" style="font-size: 3rem; margin-bottom: 20px;"></i>
+                    <p>Encoded/Decoded URLs यहाँ दिखेंगे</p>
+                </div>
+            `;
+            updateCounts();
+            resultCount.textContent = '0 results';
+            showMessage('All cleared!', 'info');
+        }
+
+        // Show message
+        function showMessage(message, type = 'success') {
+            successText.textContent = message;
+            
+            // Set color based on type
+            if (type === 'error') {
+                successMessage.style.background = '#e53e3e';
+            } else if (type === 'warning') {
+                successMessage.style.background = '#ed8936';
+            } else if (type === 'info') {
+                successMessage.style.background = '#4299e1';
+            } else {
+                successMessage.style.background = '#38a169';
+            }
+            
+            successMessage.style.display = 'flex';
+            
+            // Hide after 3 seconds
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+            }, 3000);
+        }
+
+        // Initialize
+        window.onload = function() {
+            updateCounts();
+            
+            // Set example URLs
+            const exampleUrls = `https://example.com/product name with spaces.html\nhttps://example.com/search?q=हिंदी query&lang=hi\nhttp://example.com/price=₹5000&discount=20%`;
+            urlInput.value = exampleUrls;
+            updateCounts();
+            
+            // Auto-encode for demo
+            setTimeout(() => encodeURLs(), 1000);
+        };
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            // Ctrl+E to encode
+            if (e.ctrlKey && e.key === 'e') {
+                e.preventDefault();
+                encodeURLs();
+            }
+            
+            // Ctrl+D to decode
+            if (e.ctrlKey && e.key === 'd') {
+                e.preventDefault();
+                decodeURLs();
+            }
+            
+            // Ctrl+S for SEO optimize
+            if (e.ctrlKey && e.key === 's') {
+                e.preventDefault();
+                processForSEO();
+            }
+            
+            // Ctrl+C to copy results
+            if (e.ctrlKey && e.key === 'c' && e.shiftKey) {
+                e.preventDefault();
+                copyAllResults();
+            }
+        });
     </script>
 </body>
 </html>
