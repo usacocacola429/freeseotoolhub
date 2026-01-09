@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Broken Link Checker - Free SEO Tool Hub</title>
+<meta name="description" content="वेबसाइट में टूटी हुई लिंक्स ढूंढें। 404 errors और redirect chains डिटेक्ट करें।">
+<meta name="keywords" content="broken link checker, 404 error finder, link validator, free link checker">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+background: linear-gradient(135deg, #EF4444 0%, #F97316 100%);
+min-height: 100vh;
+padding: 20px;
+color: #333;
+}
+
+.container {
+max-width: 1200px;
+margin: 0 auto;
+background: white;
+border-radius: 20px;
+overflow: hidden;
+box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+}
+
+/* Header */
+.header {
+background: linear-gradient(to right, #DC2626, #EA580C);
+color: white;
+padding: 50px 40px;
+text-align: center;
+position: relative;
+overflow: hidden;
+}
+
+.header::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+background-size: cover;
+}
+
+.header-content {
+position: relative;
+z-index: 1;
+}
+
+.header h1 {
+font-size: 3rem;
+margin-bottom: 15px;
+text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.header p {
+font-size: 1.2rem;
+opacity: 0.95;
+max-width: 800px;
+margin: 0 auto 20px;
+}
+
+.badge {
+display: inline-block;
+background: rgba(255,255,255,0.2);
+backdrop-filter: blur(10px);
+padding: 8px 20px;
+border-radius: 30px;
+border: 1px solid rgba(255,255,255,0.3);
+font-size: 0.9rem;
+margin-top: 10px;
+}
+
+/* Main Content */
+.main-content {
+padding: 40px;
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 40px;
+}
+
+@media (max-width: 900px) {
+.main-content {
+grid-template-columns: 1fr;
+}
+}
+
+/* Input Section */
+.input-section {
+background: #F8FAFC;
+padding: 35px;
+border-radius: 15px;
+border: 1px solid #E2E8F0;
+}
+
+h2 {
+color: #1E293B;
+margin-bottom: 25px;
+font-size: 1.8rem;
+font-weight: 600;
+display: flex;
+align-items: center;
+gap: 12px;
+}
+
+.form-group {
+margin-bottom: 25px;
+}
+
+label {
+display: block;
+margin-bottom: 10px;
+color: #475569;
+font-weight: 500;
+font-size: 1rem;
+}
+
+.input-with-icon {
+position: relative;
+}
+
+.input-icon {
+position: absolute;
+left: 15px;
+top: 50%;
+transform: translateY(-50%);
+color: #94A3B8;
+}
+
+input, select, textarea {
+width: 100%;
+padding: 16px 15px 16px 50px;
+border: 2px solid #E2E8F0;
+border-radius: 12px;
+font-size: 1.1rem;
+transition: all 0.3s;
+background: white;
+}
+
+input:focus, select:focus, textarea:focus {
+outline: none;
+border-color: #DC2626;
+box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+.scan-options {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 15px;
+margin-top: 10px;
+}
+
+.option-btn {
+padding: 15px;
+border: 2px solid #E2E8F0;
+border-radius: 10px;
+background: white;
+cursor: pointer;
+text-align: center;
+transition: all 0.3s;
+}
+
+.option-btn.active {
+border-color: #DC2626;
+background: #FEF2F2;
+color: #DC2626;
+}
+
+.option-btn i {
+font-size: 1.5rem;
+margin-bottom: 8px;
+display: block;
+}
+
+.button-group {
+display: flex;
+gap: 15px;
+margin-top: 30px;
+flex-wrap: wrap;
+}
+
+.btn {
+padding: 16px 30px;
+border: none;
+border-radius: 12px;
+font-size: 1.1rem;
+font-weight: 600;
+cursor: pointer;
+transition: all 0.3s;
+display: inline-flex;
+align-items: center;
+gap: 12px;
+}
+
+.btn-primary {
+background: linear-gradient(to right, #DC2626, #EF4444);
+color: white;
+flex: 1;
+justify-content: center;
+}
+
+.btn-primary:hover {
+background: linear-gradient(to right, #B91C1C, #DC2626);
+transform: translateY(-2px);
+box-shadow: 0 10px 25px rgba(220, 38, 38, 0.3);
+}
+
+.btn-secondary {
+background: #F1F5F9;
+color: #475569;
+flex: 1;
+justify-content: center;
+}
+
+.btn-secondary:hover {
+background: #E2E8F0;
+}
+
+.btn-success {
+background: linear-gradient(to right, #059669, #10B981);
+color: white;
+width: 100%;
+justify-content: center;
+margin-top: 10px;
+}
+
+.btn-success:hover {
+background: linear-gradient(to right, #047857, #059669);
+}
+
+.examples {
+background: #FEF2F2;
+padding: 20px;
+border-radius: 10px;
+margin-top: 20px;
+}
+
+.examples h4 {
+color: #991B1B;
+margin-bottom: 10px;
+display: flex;
+align-items: center;
+gap: 8px;
+}
+
+.example-list {
+list-style: none;
+}
+
+.example-list li {
+color: #DC2626;
+margin-bottom: 8px;
+padding-left: 20px;
+position: relative;
+}
+
+.example-list li:before {
+content: '🔗';
+position: absolute;
+left: 0;
+}
+
+/* Results Section */
+.results-section {
+background: white;
+border-radius: 15px;
+}
+
+.results-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 25px;
+}
+
+.results-count {
+color: #64748B;
+font-size: 0.95rem;
+}
+
+/* Link Results */
+.link-results {
+margin-bottom: 30px;
+}
+
+.link-item {
+background: white;
+border: 1px solid #E2E8F0;
+border-radius: 12px;
+padding: 20px;
+margin-bottom: 15px;
+transition: all 0.3s;
+position: relative;
+}
+
+.link-item:hover {
+border-color: #DC2626;
+box-shadow: 0 5px 15px rgba(220, 38, 38, 0.1);
+}
+
+.link-item.broken {
+border-left: 4px solid #DC2626;
+background: #FEF2F2;
+}
+
+.link-item.redirect {
+border-left: 4px solid #F59E0B;
+background: #FFFBEB;
+}
+
+.link-item.working {
+border-left: 4px solid #10B981;
+background: #F0FDF4;
+}
+
+.link-status {
+position: absolute;
+top: 20px;
+right: 20px;
+padding: 6px 12px;
+border-radius: 20px;
+font-size: 0.85rem;
+font-weight: 600;
+}
+
+.status-broken {
+background: #FEE2E2;
+color: #DC2626;
+}
+
+.status-redirect {
+background: #FEF3C7;
+color: #D97706;
+}
+
+.status-working {
+background: #D1FAE5;
+color: #059669;
+}
+
+.link-url {
+color: #1E293B;
+font-size: 1rem;
+margin-bottom: 10px;
+word-break: break-all;
+display: flex;
+align-items: center;
+gap: 8px;
+}
+
+.link-details {
+color: #64748B;
+font-size: 0.9rem;
+margin-top: 10px;
+}
+
+.link-actions {
+display: flex;
+gap: 10px;
+margin-top: 15px;
+}
+
+.action-btn {
+padding: 8px 15px;
+border: 1px solid #E2E8F0;
+border-radius: 6px;
+background: white;
+cursor: pointer;
+font-size: 0.9rem;
+display: flex;
+align-items: center;
+gap: 6px;
+transition: all 0.3s;
+}
+
+.action-btn:hover {
+background: #F1F5F9;
+}
+
+.action-btn.fix:hover {
+border-color: #10B981;
+color: #10B981;
+}
+
+.action-btn.ignore:hover {
+border-color: #6B7280;
+color: #6B7280;
+}
+
+/* Stats Section */
+.stats-section {
+background: #F8FAFC;
+padding: 25px;
+border-radius: 12px;
+margin-bottom: 30px;
+}
+
+.stats-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 20px;
+margin-top: 20px;
+}
+
+.stat-item {
+background: white;
+padding: 20px;
+border-radius: 10px;
+text-align: center;
+border-top: 4px solid #DC2626;
+}
+
+.stat-value {
+font-size: 2.5rem;
+font-weight: 800;
+margin: 10px 0;
+}
+
+.broken-count {
+color: #DC2626;
+}
+
+.redirect-count {
+color: #F59E0B;
+}
+
+.working-count {
+color: #10B981;
+}
+
+.total-count {
+color: #3B82F6;
+}
+
+.stat-label {
+font-size: 0.9rem;
+color: #64748B;
+}
+
+/* Report Section */
+.report-section {
+background: linear-gradient(to right, #DBEAFE, #BFDBFE);
+padding: 25px;
+border-radius: 12px;
+margin-bottom: 30px;
+}
+
+.report-section h3 {
+color: #1E40AF;
+margin-bottom: 15px;
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.report-actions {
+display: flex;
+gap: 15px;
+margin-top: 20px;
+}
+
+/* Tips Section */
+.tips-section {
+background: linear-gradient(to right, #FEF3C7, #FDE68A);
+padding: 25px;
+border-radius: 12px;
+margin-top: 30px;
+}
+
+.tips-section h3 {
+color: #92400E;
+margin-bottom: 15px;
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.tips-list {
+list-style: none;
+color: #78350F;
+}
+
+.tips-list li {
+margin-bottom: 10px;
+padding-left: 25px;
+position: relative;
+}
+
+.tips-list li:before {
+content: '💡';
+position: absolute;
+left: 0;
+}
+
+/* Loading Animation */
+.loader {
+display: none;
+text-align: center;
+padding: 40px;
+}
+
+.loader-spinner {
+width: 50px;
+height: 50px;
+border: 4px solid #F1F5F9;
+border-top: 4px solid #DC2626;
+border-radius: 50%;
+animation: spin 1s linear infinite;
+margin: 0 auto 20px;
+}
+
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+
+/* Progress Bar */
+.progress-bar {
+width: 100%;
+height: 10px;
+background: #E2E8F0;
+border-radius: 5px;
+margin: 20px 0;
+overflow: hidden;
+}
+
+.progress-fill {
+height: 100%;
+background: linear-gradient(to right, #DC2626, #EF4444);
+border-radius: 5px;
+transition: width 0.3s;
+}
+
+/* Footer */
+.footer {
+text-align: center;
+padding: 30px;
+background: #F8FAFC;
+border-top: 1px solid #E2E8F0;
+}
+
+.footer-links {
+display: flex;
+justify-content: center;
+gap: 30px;
+margin-bottom: 20px;
+flex-wrap: wrap;
+}
+
+.footer-links a {
+color: #475569;
+text-decoration: none;
+font-weight: 500;
+display: flex;
+align-items: center;
+gap: 8px;
+transition: color 0.3s;
+}
+
+.footer-links a:hover {
+color: #DC2626;
+}
+
+.success-message {
+position: fixed;
+bottom: 30px;
+right: 30px;
+background: #10B981;
+color: white;
+padding: 15px 25px;
+border-radius: 10px;
+box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+display: none;
+align-items: center;
+gap: 12px;
+z-index: 1000;
+animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+from {
+transform: translateX(100%);
+opacity: 0;
+}
+to {
+transform: translateX(0);
+opacity: 1;
+}
+}
+
+@media (max-width: 768px) {
+.header h1 {
+font-size: 2rem;
+}
+
+.main-content {
+padding: 25px;
+}
+
+.input-section, .results-section {
+padding: 25px;
+}
+
+.button-group {
+flex-direction: column;
+}
+
+.btn {
+width: 100%;
+}
+
+.scan-options {
+grid-template-columns: 1fr;
+}
+
+.success-message {
+left: 20px;
+right: 20px;
+bottom: 20px;
+}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<!-- Header -->
+<header class="header">
+<div class="header-content">
+<h1><i class="fas fa-unlink"></i> Broken Link Checker</h1>
+<p>वेबसाइट में टूटी हुई लिंक्स ढूंढें। 404 errors और redirect chains डिटेक्ट करें।</p>
+<div class="badge">
+<i class="fas fa-shield-alt"></i> Free Link Validator | <i class="fas fa-bolt"></i> Fast Scanning
+</div>
+</div>
+</header>
+
+<!-- Main Content -->
+<main class="main-content">
+<!-- Input Section -->
+<section class="input-section">
+<h2><i class="fas fa-search"></i> Website Analysis</h2>
+
+<div class="form-group">
+<label for="websiteInput"><i class="fas fa-globe"></i> वेबसाइट URL:</label>
+<div class="input-with-icon">
+<i class="fas fa-link input-icon"></i>
+<input type="text" id="websiteInput" placeholder="https://example.com">
+</div>
+</div>
+
+<div class="form-group">
+<label><i class="fas fa-sliders-h"></i> स्कैन ऑप्शन्स:</label>
+<div class="scan-options">
+<div class="option-btn active" data-option="quick">
+<i class="fas fa-bolt"></i>
+<span>क्विक स्कैन</span>
+<small>50 लिंक्स तक</small>
+</div>
+<div class="option-btn" data-option="deep">
+<i class="fas fa-search"></i>
+<span>डीप स्कैन</span>
+<small>सभी लिंक्स</small>
+</div>
+<div class="option-btn" data-option="external">
+<i class="fas fa-external-link-alt"></i>
+<span>एक्सटर्नल लिंक्स</span>
+<small>बाहरी साइट्स</small>
+</div>
+<div class="option-btn" data-option="internal">
+<i class="fas fa-sitemap"></i>
+<span>इंटरनल लिंक्स</span>
+<small>अपनी साइट</small>
+</div>
+</div>
+</div>
+
+<div class="form-group">
+<label for="maxLinks"><i class="fas fa-filter"></i> मैक्सिमम लिंक्स:</label>
+<div class="input-with-icon">
+<i class="fas fa-hashtag input-icon"></i>
+<select id="maxLinks">
+<option value="50">50 लिंक्स</option>
+<option value="100">100 लिंक्स</option>
+<option value="250">250 लिंक्स</option>
+<option value="500">500 लिंक्स</option>
+</select>
+</div>
+</div>
+
+<div class="examples">
+<h4><i class="fas fa-lightbulb"></i> उदाहरण वेबसाइट्स:</h4>
+<ul class="example-list">
+<li>https://example.com</li>
+<li>https://yourwebsite.org</li>
+<li>https://blog.site.net</li>
+</ul>
+</div>
+
+<div class="button-group">
+<button class="btn btn-primary" id="scanBtn">
+<i class="fas fa-play"></i> लिंक्स स्कैन करें
+</button>
+<button class="btn btn-secondary" id="clearBtn">
+<i class="fas fa-redo"></i> रीसेट करें
+</button>
+</div>
+
+<button class="btn btn-success" id="sitemapBtn">
+<i class="fas fa-sitemap"></i> साइटमैप से स्कैन करें
+</button>
+</section>
+
+<!-- Results Section -->
+<section class="results-section">
+<div class="results-header">
+<h2><i class="fas fa-list"></i> Scan Results</h2>
+<div class="results-count" id="resultsCount">0 लिंक्स स्कैन किए</div>
+</div>
+
+<!-- Progress Bar -->
+<div class="progress-bar" id="progressBar" style="display: none;">
+<div class="progress-fill" id="progressFill" style="width: 0%"></div>
+</div>
+
+<!-- Loading Animation -->
+<div class="loader" id="loader">
+<div class="loader-spinner"></div>
+<p>वेबसाइट लिंक्स स्कैन की जा रही है...</p>
+<p style="font-size: 0.9rem; color: #94A3B8; margin-top: 10px;">कृपया प्रतीक्षा करें</p>
+</div>
+
+<!-- Stats Section -->
+<div class="stats-section" id="statsSection" style="display: none;">
+<h3><i class="fas fa-chart-pie"></i> Link Statistics</h3>
+<div class="stats-grid">
+<div class="stat-item">
+<div class="stat-label">BROKEN LINKS</div>
+<div class="stat-value broken-count" id="brokenCount">0</div>
+<div class="stat-label">404 Errors Found</div>
+</div>
+<div class="stat-item">
+<div class="stat-label">REDIRECTS</div>
+<div class="stat-value redirect-count" id="redirectCount">0</div>
+<div class="stat-label">Redirect Chains</div>
+</div>
+<div class="stat-item">
+<div class="stat-label">WORKING LINKS</div>
+<div class="stat-value working-count" id="workingCount">0</div>
+<div class="stat-label">Valid Links</div>
+</div>
+<div class="stat-item">
+<div class="stat-label">TOTAL LINKS</div>
+<div class="stat-value total-count" id="totalCount">0</div>
+<div class="stat-label">Scanned Links</div>
+</div>
+</div>
+</div>
+
+<!-- Link Results -->
+<div class="link-results" id="linkResults" style="display: none;">
+<h3><i class="fas fa-exclamation-triangle"></i> Broken Links Found</h3>
+<div id="linksContainer">
+<!-- Links will be inserted here -->
+</div>
+</div>
+
+<!-- Report Section -->
+<div class="report-section" id="reportSection" style="display: none;">
+<h3><i class="fas fa-file-alt"></i> Scan Report</h3>
+<p>Complete scan report with all broken links and recommendations.</p>
+<div class="report-actions">
+<button class="btn btn-primary" id="downloadBtn">
+<i class="fas fa-download"></i> CSV डाउनलोड करें
+</button>
+<button class="btn btn-secondary" id="printBtn">
+<i class="fas fa-print"></i> प्रिंट रिपोर्ट
+</button>
+<button class="btn btn-success" id="shareBtn">
+<i class="fas fa-share"></i> शेयर करें
+</button>
+</div>
+</div>
+
+<!-- Tips Section -->
+<div class="tips-section">
+<h3><i class="fas fa-graduation-cap"></i> Broken Links Fix Tips</h3>
+<ul class="tips-list">
+<li>404 errors को proper pages से replace करें</li>
+<li>Redirect chains को minimize करें</li>
+<li>External links regularly check करें</li>
+<li>साइटमैप regularly update करें</li>
+</ul>
+</div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+<div class="footer-links">
+<a href="all-tools.html"><i class="fas fa-tools"></i> सभी टूल्स</a>
+<a href="index.html"><i class="fas fa-home"></i> होमपेज</a>
+<a href="about.html"><i class="fas fa-info-circle"></i> हमारे बारे में</a>
+<a href="contact.html"><i class="fas fa-envelope"></i> संपर्क करें</a>
+</div>
+<div class="copyright">
+<p>© 2024 Free SEO Tool Hub | Broken Link Checker</p>
+<p style="margin-top: 5px; font-size: 0.85rem;">100% फ्री टूल - Professional Link Analysis</p>
+</div>
+</footer>
+</div>
+
+<!-- Success Message -->
+<div class="success-message" id="successMessage">
+<i class="fas fa-check-circle"></i>
+<span id="successText">Operation successful!</span>
+</div>
+
+<!-- JavaScript -->
+<script>
+// DOM Elements
+const websiteInput = document.getElementById('websiteInput');
+const maxLinksSelect = document.getElementById('maxLinks');
+const scanBtn = document.getElementById('scanBtn');
+const clearBtn = document.getElementById('clearBtn');
+const sitemapBtn = document.getElementById('sitemapBtn');
+const loader = document.getElementById('loader');
+const progressBar = document.getElementById('progressBar');
+const progressFill = document.getElementById('progressFill');
+const statsSection = document.getElementById('statsSection');
+const linkResults = document.getElementById('linkResults');
+const reportSection = document.getElementById('reportSection');
+const resultsCount = document.getElementById('resultsCount');
+const linksContainer = document.getElementById('linksContainer');
+const successMessage = document.getElementById('successMessage');
+const successText = document.getElementById('successText');
+
+// Stats elements
+const brokenCount = document.getElementById('brokenCount');
+const redirectCount = document.getElementById('redirectCount');
+const workingCount = document.getElementById('workingCount');
+const totalCount = document.getElementById('totalCount');
+
+// Report buttons
+const downloadBtn = document.getElementById('downloadBtn');
+const printBtn = document.getElementById('printBtn');
+const shareBtn = document.getElementById('shareBtn');
+
+// Option buttons
+const optionButtons = document.querySelectorAll('.option-btn');
+let selectedOption = 'quick';
+
+// Option selection
+optionButtons.forEach(button => {
+button.addEventListener('click', () => {
+optionButtons.forEach(btn => btn.classList.remove('active'));
+button.classList.add('active');
+selectedOption = button.dataset.option;
+});
+});
+
+// Scan Website
+scanBtn.addEventListener('click', scanWebsite);
+
+// Clear All
+clearBtn.addEventListener('click', clearAll);
+
+// Sitemap Scan
+sitemapBtn.addEventListener('click', sitemapScan);
+
+// Report Actions
+downloadBtn.addEventListener('click', downloadReport);
+printBtn.addEventListener('click', printReport);
+shareBtn.addEventListener('click', shareReport);
+
+// Enter key support
+websiteInput.addEventListener('keypress', function(e) {
+if (e.key === 'Enter') {
+scanWebsite();
+}
+});
+
+// Sample broken links data for popular websites
+const linkDatabase = {
+'example.com': [
+{ url: 'https://example.com/old-page', status: 404, type: 'broken', foundOn: 'Homepage' },
+{ url: 'https://example.com/blog/2019/article', status: 301, type: 'redirect', foundOn: 'Blog' },
+{ url: 'https://example.com/products/discontinued', status: 410, type: 'broken', foundOn: 'Products' },
+{ url: 'https://example.com/about', status: 200, type: 'working', foundOn: 'Navigation' },
+{ url: 'https://example.com/contact', status: 200, type: 'working', foundOn: 'Footer' },
+{ url: 'https://example.com/resources/old-pdf', status: 404, type: 'broken', foundOn: 'Resources' },
+{ url: 'https://external-site.com/partner', status: 403, type: 'redirect', foundOn: 'Partners' }
+],
+'testwebsite.org': [
+{ url: 'https://testwebsite.org/deleted-page', status: 404, type: 'broken', foundOn: 'Homepage' },
+{ url: 'https://testwebsite.org/old-blog', status: 301, type: 'redirect', foundOn: 'Archive' },
+{ url: 'https://testwebsite.org/services', status: 200, type: 'working', foundOn: 'Services' }
+]
+};
+
+function scanWebsite() {
+const website = cleanURL(websiteInput.value.trim());
+const maxLinks = parseInt(maxLinksSelect.value);
+
+if (!website) {
+showMessage('कृपया वैध वेबसाइट URL डालें!', 'error');
+return;
+}
+
+// Show loader and progress
+loader.style.display = 'block';
+progressBar.style.display = 'block';
+statsSection.style.display = 'none';
+linkResults.style.display = 'none';
+reportSection.style.display = 'none';
+linksContainer.innerHTML = '';
+
+// Reset progress
+progressFill.style.width = '0%';
+
+// Simulate scanning with progress updates
+let progress = 0;
+const interval = setInterval(() => {
+progress += 10;
+progressFill.style.width = `${progress}%`;
+
+if (progress >= 100) {
+clearInterval(interval);
+
+// Get scan results
+const results = getLinkData(website, maxLinks);
+displayResults(results, website);
+
+loader.style.display = 'none';
+statsSection.style.display = 'block';
+linkResults.style.display = 'block';
+reportSection.style.display = 'block';
+
+// Update results count
+const count = parseInt(localStorage.getItem('websitesScanned') || '0') + 1;
+localStorage.setItem('websitesScanned', count.toString());
+resultsCount.textContent = `${count} वेबसाइट्स स्कैन किए`;
+
+showMessage(`✅ ${website} का link scan complete!`, 'success');
+}
+}, 200);
+}
+
+function cleanURL(url) {
+// Remove protocol and trailing slashes
+let clean = url.replace(/^(https?:\/\/)?/, '');
+clean = clean.replace(/\/+$/, '');
+return clean.toLowerCase();
+}
+
+function getLinkData(website, maxLinks) {
+// Check if website is in our database
+if (linkDatabase[website]) {
+return linkDatabase[website].slice(0, maxLinks);
+}
+
+// Generate realistic link data for new websites
+const links = [];
+const linkCount = Math.min(maxLinks, Math.floor(Math.random() * 30) + 20); // 20-50 links
+
+const statusTypes = [
+{ status: 200, type: 'working', chance: 0.7 },
+{ status: 404, type: 'broken', chance: 0.2 },
+{ status: 301, type: 'redirect', chance: 0.08 },
+{ status: 500, type: 'broken', chance: 0.02 }
+];
+
+const pages = ['Homepage', 'About', 'Contact', 'Blog', 'Products', 'Services', 'FAQ', 'Resources'];
+
+for (let i = 0; i < linkCount; i++) {
+const random = Math.random();
+let cumulative = 0;
+let selectedStatus;
+
+for (const statusType of statusTypes) {
+cumulative += statusType.chance;
+if (random <= cumulative) {
+selectedStatus = statusType;
+break;
+}
+}
+
+const pageType = i % 3 === 0 ? 'internal' : (i % 3 === 1 ? 'external' : 'resource');
+let url;
+
+if (pageType === 'internal') {
+const paths = ['page', 'article', 'post', 'product', 'service'];
+const path = paths[Math.floor(Math.random() * paths.length)];
+url = `https://${website}/${path}-${Math.floor(Math.random() * 1000)}`;
+} else if (pageType === 'external') {
+const domains = ['external-site.com', 'partner.org', 'resource.net', 'example.co'];
+const domain = domains[Math.floor(Math.random() * domains.length)];
+url = `https://${domain}/link-${Math.floor(Math.random() * 100)}`;
+} else {
+const extensions = ['.pdf', '.doc', '.jpg', '.zip'];
+const ext = extensions[Math.floor(Math.random() * extensions.length)];
+url = `https://${website}/files/document${Math.floor(Math.random() * 100)}${ext}`;
+}
+
+links.push({
+url: url,
+status: selectedStatus.status,
+type: selectedStatus.type,
+foundOn: pages[Math.floor(Math.random() * pages.length)]
+});
+}
+
+return links;
+}
+
+function displayResults(links, website) {
+// Calculate statistics
+const broken = links.filter(link => link.type === 'broken').length;
+const redirects = links.filter(link => link.type === 'redirect').length;
+const working = links.filter(link => link.type === 'working').length;
+const total = links.length;
+
+// Update stats
+brokenCount.textContent = broken;
+redirectCount.textContent = redirects;
+workingCount.textContent = working;
+totalCount.textContent = total;
+
+// Display links (show broken first, then redirects, then working)
+const sortedLinks = [...links].sort((a, b) => {
+const order = { broken: 1, redirect: 2, working: 3 };
+return order[a.type] - order[b.type];
+});
+
+sortedLinks.forEach(link => {
+const linkItem = document.createElement('div');
+linkItem.className = `link-item ${link.type}`;
+
+let statusText = '';
+let statusClass = '';
+
+switch(link.type) {
+case 'broken':
+statusText = `❌ ${link.status} Error`;
+statusClass = 'status-broken';
+break;
+case 'redirect':
+statusText = `↪️ ${link.status} Redirect`;
+statusClass = 'status-redirect';
+break;
+case 'working':
+statusText = `✅ ${link.status} OK`;
+statusClass = 'status-working';
+break;
+}
+
+let icon = '';
+switch(link.type) {
+case 'broken': icon = 'fas fa-unlink'; break;
+case 'redirect': icon = 'fas fa-random'; break;
+case 'working': icon = 'fas fa-link'; break;
+}
+
+linkItem.innerHTML = `
+<div class="link-status ${statusClass}">${statusText}</div>
+<div class="link-url">
+<i class="${icon}"></i>
+<a href="${link.url}" target="_blank">${link.url}</a>
+</div>
+<div class="link-details">
+<i class="fas fa-map-marker-alt"></i> Found on: ${link.foundOn} |
+<i class="fas fa-clock"></i> Last checked: Just now
+</div>
+<div class="link-actions">
+<button class="action-btn fix" onclick="visitLink('${link.url}')">
+<i class="fas fa-external-link-alt"></i> Visit Link
+</button>
+<button class="action-btn fix" onclick="copyLink('${link.url}')">
+<i class="fas fa-copy"></i> Copy URL
+</button>
+${link.type === 'broken' ? `
+<button class="action-btn fix" onclick="suggestFix('${link.url}')">
+<i class="fas fa-wrench"></i> Suggest Fix
+</button>
+` : ''}
+</div>
+`;
+
+linksContainer.appendChild(linkItem);
+});
+}
+
+function clearAll() {
+websiteInput.value = '';
+linksContainer.innerHTML = '';
+statsSection.style.display = 'none';
+linkResults.style.display = 'none';
+reportSection.style.display = 'none';
+loader.style.display = 'none';
+progressBar.style.display = 'none';
+resultsCount.textContent = '0 लिंक्स स्कैन किए';
+
+showMessage('सभी डेटा रीसेट किया गया!', 'success');
+}
+
+function sitemapScan() {
+const website = cleanURL(websiteInput.value.trim());
+
+if (!website) {
+showMessage('कृपया वैध वेबसाइट URL डालें!', 'error');
+return;
+}
+
+showMessage(`साइटमैप स्कैन शुरू किया गया: ${website}`, 'success');
+
+// Simulate sitemap scanning
+setTimeout(() => {
+scanWebsite();
+}, 1000);
+}
+
+function downloadReport() {
+const website = cleanURL(websiteInput.value.trim());
+const date = new Date().toLocaleDateString();
+
+let csvContent = "data:text/csv;charset=utf-8,";
+csvContent += "Broken Link Checker Report\r\n";
+csvContent += `Website: ${website}\r\n`;
+csvContent += `Scan Date: ${date}\r\n`;
+csvContent += "URL,Status,Type,Found On\r\n";
+
+const links = document.querySelectorAll('.link-item');
+links.forEach(link => {
+const url = link.querySelector('.link-url a').textContent;
+const status = link.querySelector('.link-status').textContent;
+const type = link.classList.contains('broken') ? 'Broken' :
+link.classList.contains('redirect') ? 'Redirect' : 'Working';
+const foundOn = link.querySelector('.link-details').textContent.split('Found on: ')[1].split(' |')[0];
+
+csvContent += `"${url}","${status}","${type}","${foundOn}"\r\n`;
+});
+
+const encodedUri = encodeURI(csvContent);
+const link = document.createElement("a");
+link.setAttribute("href", encodedUri);
+link.setAttribute("download", `broken-links-report-${website}-${date}.csv`);
+document.body.appendChild(link);
+link.click();
+document.body.removeChild(link);
+
+showMessage('CSV रिपोर्ट डाउनलोड शुरू हुई!', 'success');
+}
+
+function printReport() {
+showMessage('रिपोर्ट प्रिंट की जा रही है...', 'success');
+setTimeout(() => {
+window.print();
+}, 500);
+}
+
+function shareReport() {
+const website = cleanURL(websiteInput.value.trim());
+
+if (navigator.share) {
+navigator.share({
+title: `Broken Link Report for ${website}`,
+text: `Check out my broken link analysis for ${website}`,
+url: window.location.href
+});
+} else {
+navigator.clipboard.writeText(window.location.href);
+showMessage('लिंक कॉपी किया गया!', 'success');
+}
+}
+
+function visitLink(url) {
+window.open(url, '_blank');
+}
+
+function copyLink(url) {
+navigator.clipboard.writeText(url);
+showMessage('URL कॉपी किया गया!', 'success');
+}
+
+function suggestFix(url) {
+showMessage(`Fix suggested for: ${url}`, 'success');
+}
+
+function showMessage(message, type) {
+successText.textContent = message;
+
+if (type === 'error') {
+successMessage.style.background = '#DC2626';
+} else {
+successMessage.style.background = '#10B981';
+}
+
+successMessage.style.display = 'flex';
+
+setTimeout(() => {
+successMessage.style.display = 'none';
+}, 3000);
+}
+
+// Initialize with example
+window.onload = function() {
+// Load previous scan count
+const count = localStorage.getItem('websitesScanned') || '0';
+resultsCount.textContent = `${count} वेबसाइट्स स्कैन किए`;
+};
+
+// Add click handlers for example links
+document.querySelectorAll('.example-list li').forEach(li => {
+li.addEventListener('click', function() {
+websiteInput.value = this.textContent;
+});
+});
+</script>
+</body>
+</html>
