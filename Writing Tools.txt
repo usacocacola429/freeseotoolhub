@@ -1,0 +1,100 @@
+<!-- नया Writing Tools Section -->
+<section class="category-section">
+<div class="category-title">
+<i class="fas fa-pen-fancy"></i>
+<h3>Writing & Editing Tools</h3>
+</div>
+<div class="tools-grid">
+
+<!-- Grammar & Spell Checker -->
+<div class="tool-card">
+<div class="tool-header">
+<div class="tool-icon">
+<i class="fas fa-spell-check"></i>
+</div>
+<div class="tool-info">
+<h4>Grammar & Spell Checker</h4>
+<p>अंग्रेजी टेक्स्ट का grammar और spelling check</p>
+</div>
+</div>
+<div class="tool-body">
+<ul class="tool-features">
+<li>Spelling Mistakes Detection</li>
+<li>Grammar Error Checking</li>
+<li>Punctuation Suggestions</li>
+<li>Writing Style Improvement</li>
+</ul>
+</div>
+<div class="tool-footer">
+<div class="tool-tags">
+<span class="tag free">FREE</span>
+<span class="tag">AI-Powered</span>
+</div>
+<a href="grammar-spell-checker.html" class="tool-link">
+<i class="fas fa-external-link-alt"></i> Open Tool
+</a>
+</div>
+</div>
+
+<!-- Readability Checker -->
+<div class="tool-card">
+<div class="tool-header">
+<div class="tool-icon">
+<i class="fas fa-book-reader"></i>
+</div>
+<div class="tool-info">
+<h4>Readability Checker</h4>
+<p>Content readability score check</p>
+</div>
+</div>
+<div class="tool-body">
+<ul class="tool-features">
+<li>Flesch Reading Ease Score</li>
+<li>Sentence Length Analysis</li>
+<li>Word Complexity Check</li>
+<li>Improvement Suggestions</li>
+</ul>
+</div>
+<div class="tool-footer">
+<div class="tool-tags">
+<span class="tag free">FREE</span>
+<span class="tag">Content Writing</span>
+</div>
+<a href="readability-checker.html" class="tool-link">
+<i class="fas fa-external-link-alt"></i> Open Tool
+</a>
+</div>
+</div>
+
+<!-- Headline Analyzer -->
+<div class="tool-card">
+<div class="tool-header">
+<div class="tool-icon">
+<i class="fas fa-heading"></i>
+</div>
+<div class="tool-info">
+<h4>Headline Analyzer</h4>
+<p>Create click-worthy headlines</p>
+</div>
+</div>
+<div class="tool-body">
+<ul class="tool-features">
+<li>Headline Score Calculation</li>
+<li>Emotional Word Analysis</li>
+<li>Length Optimization</li>
+<li>Power Word Suggestions</li>
+</ul>
+</div>
+<div class="tool-footer">
+<div class="tool-tags">
+<span class="tag free">FREE</span>
+<span class="tag">Copywriting</span>
+</div>
+<a href="headline-analyzer.html" class="tool-link">
+<i class="fas fa-external-link-alt"></i> Open Tool
+</a>
+</div>
+</div>
+
+</div>
+</section>
