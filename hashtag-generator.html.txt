@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Hashtag Generator - Free SEO Tool Hub</title>
+<meta name="description" content="Instagram, Twitter, Facebook के लिए सर्वश्रेष्ठ हैशटैग जनरेट करें। Trendy hashtags और niche-specific hashtag suggestions।">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPG77KWVCP"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-ZPG77KWVCP');
+gtag('config', 'G-PFPCTBFG3Y');
+</script>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+min-height: 100vh;
+padding: 20px;
+color: #333;
+}
+
+.container {
+max-width: 1200px;
+margin: 0 auto;
+background: white;
+border-radius: 20px;
+overflow: hidden;
+box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+}
+
+/* Header */
+.header {
+background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
+color: white;
+padding: 50px 40px;
+text-align: center;
+position: relative;
+overflow: hidden;
+}
+
+.header::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+background-size: cover;
+}
+
+.header-content {
+position: relative;
+z-index: 1;
+}
+
+.header h1 {
+font-size: 3rem;
+margin-bottom: 15px;
+text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.header p {
+font-size: 1.2rem;
+opacity: 0.95;
+max-width: 800px;
+margin: 0 auto 20px;
+}
+
+.badge {
+display: inline-block;
+background: rgba(255,255,255,0.2);
+backdrop-filter: blur(10px);
+padding: 8px 20px;
+border-radius: 30px;
+border: 1px solid rgba(255,255,255,0.3);
+font-size: 0.9rem;
+margin-top: 10px;
+}
+
+/* Main Content */
+.main-content {
+padding: 40px;
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 40px;
+}
+
+@media (max-width: 900px) {
+.main-content {
+grid-template-columns: 1fr;
+}
+}
+
+/* Input Section */
+.input-section {
+background: #F8FAFC;
+padding: 35px;
+border-radius: 15px;
+border: 1px solid #E2E8F0;
+}
+
+h2 {
+color: #1E293B;
+margin-bottom: 25px;
+font-size: 1.8rem;
+font-weight: 600;
+display: flex;
+align-items: center;
+gap: 12px;
+}
+
+.form-group {
+margin-bottom: 25px;
+}
+
+label {
+display: block;
+margin-bottom: 10px;
+color: #475569;
+font-weight: 500;
+font-size: 1rem;
+}
+
+input, select, textarea {
+width: 100%;
+padding: 16px 15px;
+border: 2px solid #E2E8F0;
+border-radius: 12px;
+font-size: 1.1rem;
+transition: all 0.3s;
+background: white;
+}
+
+textarea {
+min-height: 120px;
+resize: vertical;
+}
+
+input:focus, select:focus, textarea:focus {
+outline: none;
+border-color: #833ab4;
+box-shadow: 0 0 0 3px rgba(131, 58, 180, 0.1);
+}
+
+.platform-options {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 15px;
+margin-top: 10px;
+}
+
+.platform-btn {
+padding: 15px;
+border: 2px solid #E2E8F0;
+border-radius: 10px;
+background: white;
+cursor: pointer;
+text-align: center;
+transition: all 0.3s;
+}
+
+.platform-btn.active {
+border-color: #833ab4;
+background: #f3e8ff;
+color: #833ab4;
+}
+
+.platform-btn i {
+font-size: 1.5rem;
+margin-bottom: 8px;
+display: block;
+}
+
+.btn {
+padding: 16px 30px;
+border: none;
+border-radius: 12px;
+font-size: 1.1rem;
+font-weight: 600;
+cursor: pointer;
+transition: all 0.3s;
+display: inline-flex;
+align-items: center;
+gap: 12px;
+}
+
+.btn-primary {
+background: linear-gradient(to right, #833ab4, #fd1d1d);
+color: white;
+width: 100%;
+justify-content: center;
+margin-top: 20px;
+}
+
+.btn-primary:hover {
+background: linear-gradient(to right, #6a2d94, #e11a1a);
+transform: translateY(-2px);
+box-shadow: 0 10px 25px rgba(131, 58, 180, 0.3);
+}
+
+/* Results Section */
+.results-section {
+background: white;
+border-radius: 15px;
+}
+
+.hashtag-results {
+margin-bottom: 30px;
+}
+
+.hashtag-group {
+background: white;
+border: 1px solid #E2E8F0;
+border-radius: 12px;
+padding: 25px;
+margin-bottom: 20px;
+}
+
+.hashtag-group h4 {
+color: #833ab4;
+margin-bottom: 15px;
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.hashtag-list {
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+}
+
+.hashtag-item {
+background: #f8fafc;
+padding: 10px 15px;
+border-radius: 20px;
+font-size: 0.9rem;
+cursor: pointer;
+transition: all 0.3s;
+border: 1px solid #e2e8f0;
+}
+
+.hashtag-item:hover {
+background: #833ab4;
+color: white;
+transform: scale(1.05);
+}
+
+.hashtag-item.copied {
+background: #10b981;
+color: white;
+border-color: #10b981;
+}
+
+/* Actions */
+.actions {
+display: flex;
+gap: 15px;
+margin-top: 30px;
+flex-wrap: wrap;
+}
+
+.action-btn {
+flex: 1;
+padding: 12px 20px;
+border-radius: 10px;
+background: #f8fafc;
+border: 2px solid #e2e8f0;
+cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 10px;
+font-weight: 500;
+}
+
+.action-btn:hover {
+background: #e2e8f0;
+}
+
+/* Stats */
+.stats {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 15px;
+margin-top: 30px;
+}
+
+.stat-box {
+background: #f8fafc;
+padding: 20px;
+border-radius: 10px;
+text-align: center;
+}
+
+.stat-value {
+font-size: 2rem;
+font-weight: 700;
+color: #833ab4;
+margin-bottom: 5px;
+}
+
+.stat-label {
+font-size: 0.9rem;
+color: #64748b;
+}
+
+/* Tips */
+.tips {
+background: linear-gradient(to right, #e0f2fe, #bae6fd);
+padding: 25px;
+border-radius: 12px;
+margin-top: 30px;
+}
+
+.tips h3 {
+color: #0369a1;
+margin-bottom: 15px;
+}
+
+/* Footer */
+.footer {
+text-align: center;
+padding: 30px;
+background: #F8FAFC;
+border-top: 1px solid #E2E8F0;
+}
+
+.footer-links {
+display: flex;
+justify-content: center;
+gap: 30px;
+margin-bottom: 20px;
+flex-wrap: wrap;
+}
+
+.footer-links a {
+color: #475569;
+text-decoration: none;
+font-weight: 500;
+display: flex;
+align-items: center;
+gap: 8px;
+transition: color 0.3s;
+}
+
+.footer-links a:hover {
+color: #833ab4;
+}
+
+/* Success Message */
+.success-message {
+position: fixed;
+bottom: 30px;
+right: 30px;
+background: #10B981;
+color: white;
+padding: 15px 25px;
+border-radius: 10px;
+box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+display: none;
+align-items: center;
+gap: 12px;
+z-index: 1000;
+}
+
+/* Loader */
+.loader {
+display: none;
+text-align: center;
+padding: 40px;
+}
+
+.loader-spinner {
+width: 50px;
+height: 50px;
+border: 4px solid #F1F5F9;
+border-top: 4px solid #833ab4;
+border-radius: 50%;
+animation: spin 1s linear infinite;
+margin: 0 auto 20px;
+}
+
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+.header h1 {
+font-size: 2rem;
+}
+
+.main-content {
+padding: 25px;
+}
+
+.platform-options {
+grid-template-columns: repeat(2, 1fr);
+}
+
+.actions {
+flex-direction: column;
+}
+
+.footer-links {
+flex-direction: column;
+gap: 15px;
+}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<!-- Header -->
+<header class="header">
+<div class="header-content">
+<h1><i class="fas fa-hashtag"></i> Hashtag Generator</h1>
+<p>Instagram, Twitter, Facebook के लिए सर्वश्रेष्ठ हैशटैग जनरेट करें। Trendy hashtags और niche-specific hashtag suggestions।</p>
+<div class="badge">
+<i class="fas fa-bolt"></i> AI-Powered | <i class="fas fa-chart-line"></i> Trend Analysis
+</div>
+</div>
+</header>
+
+<!-- Main Content -->
+<main class="main-content">
+<!-- Input Section -->
+<section class="input-section">
+<h2><i class="fas fa-edit"></i> हैशटैग जनरेट करें</h2>
+
+<div class="form-group">
+<label for="contentInput"><i class="fas fa-comment-alt"></i> आपका कंटेंट:</label>
+<textarea id="contentInput" placeholder="अपना कंटेंट, डिस्क्रिप्शन या आइडिया यहाँ डालें..."></textarea>
+</div>
+
+<div class="form-group">
+<label><i class="fas fa-palette"></i> कैटेगरी:</label>
+<select id="categorySelect">
+<option value="">-- कैटेगरी चुनें --</option>
+<option value="fashion">फैशन</option>
+<option value="food">फूड</option>
+<option value="travel">ट्रैवल</option>
+<option value="fitness">फिटनेस</option>
+<option value="technology">टेक्नोलॉजी</option>
+<option value="business">बिज़नेस</option>
+<option value="education">एजुकेशन</option>
+<option value="photography">फोटोग्राफी</option>
+<option value="art">आर्ट</option>
+<option value="music">म्यूज़िक</option>
+</select>
+</div>
+
+<div class="form-group">
+<label><i class="fas fa-share-alt"></i> प्लेटफॉर्म:</label>
+<div class="platform-options">
+<div class="platform-btn active" data-platform="instagram">
+<i class="fab fa-instagram"></i>
+<span>Instagram</span>
+<small>30 hashtags</small>
+</div>
+<div class="platform-btn" data-platform="twitter">
+<i class="fab fa-twitter"></i>
+<span>Twitter</span>
+<small>5-10 hashtags</small>
+</div>
+<div class="platform-btn" data-platform="facebook">
+<i class="fab fa-facebook"></i>
+<span>Facebook</span>
+<small>3-5 hashtags</small>
+</div>
+</div>
+</div>
+
+<button class="btn btn-primary" id="generateBtn">
+<i class="fas fa-magic"></i> हैशटैग जनरेट करें
+</button>
+
+<div class="loader" id="loader">
+<div class="loader-spinner"></div>
+<p>AI हैशटैग जनरेट कर रहा है...</p>
+</div>
+</section>
+
+<!-- Results Section -->
+<section class="results-section">
+<div class="hashtag-results">
+<h2><i class="fas fa-list"></i> जेनरेटेड हैशटैग्स</h2>
+
+<div id="hashtagContainer">
+<!-- Results will appear here -->
+<div style="text-align: center; padding: 50px 20px; color: #94a3b8;">
+<i class="fas fa-hashtag" style="font-size: 3rem; margin-bottom: 20px; opacity: 0.3;"></i>
+<h3>हैशटैग्स यहाँ दिखाई देंगे</h3>
+<p>ऊपर कंटेंट डालकर जेनरेट बटन दबाएं</p>
+</div>
+</div>
+</div>
+
+<!-- Actions -->
+<div class="actions">
+<button class="action-btn" id="copyAllBtn">
+<i class="fas fa-copy"></i> सभी कॉपी करें
+</button>
+<button class="action-btn" id="clearBtn">
+<i class="fas fa-redo"></i> रीसेट करें
+</button>
+<button class="action-btn" id="saveBtn">
+<i class="fas fa-save"></i> सेव करें
+</button>
+</div>
+
+<!-- Stats -->
+<div class="stats">
+<div class="stat-box">
+<div class="stat-value" id="totalHashtags">0</div>
+<div class="stat-label">कुल हैशटैग्स</div>
+</div>
+<div class="stat-box">
+<div class="stat-value" id="popularityScore">0%</div>
+<div class="stat-label">पॉपुलैरिटी स्कोर</div>
+</div>
+</div>
+
+<!-- Tips -->
+<div class="tips">
+<h3><i class="fas fa-lightbulb"></i> हैशटैग टिप्स</h3>
+<ul style="color: #0369a1; list-style: none; line-height: 1.8;">
+<li><i class="fas fa-check"></i> Instagram: 5-10 relevant hashtags सबसे अच्छे हैं</li>
+<li><i class="fas fa-check"></i मिक्स करें: Popular, niche और branded hashtags</li>
+<li><i class="fas fa-check"></i> ट्रेंडिंग हैशटैग्स का इस्तेमाल करें</li>
+<li><i class="fas fa-check"></i> हैशटैग्स को कैप्शन के अंत में डालें</li>
+</ul>
+</div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+<div class="footer-links">
+<a href="all-tools.html"><i class="fas fa-tools"></i> सभी टूल्स</a>
+<a href="index.html"><i class="fas fa-home"></i> होमपेज</a>
+<a href="about.html"><i class="fas fa-info-circle"></i> हमारे बारे में</a>
+<a href="contact.html"><i class="fas fa-envelope"></i> संपर्क करें</a>
+</div>
+<div class="copyright">
+<p>© 2024 Free SEO Tool Hub | Hashtag Generator</p>
+<p style="margin-top: 5px; font-size: 0.85rem;">AI-Powered Hashtag Generation Tool</p>
+</div>
+</footer>
+</div>
+
+<!-- Success Message -->
+<div class="success-message" id="successMessage">
+<i class="fas fa-check-circle"></i>
+<span id="successText">Operation successful!</span>
+</div>
+
+<script>
+// DOM Elements
+const contentInput = document.getElementById('contentInput');
+const categorySelect = document.getElementById('categorySelect');
+const platformButtons = document.querySelectorAll('.platform-btn');
+const generateBtn = document.getElementById('generateBtn');
+const loader = document.getElementById('loader');
+const hashtagContainer = document.getElementById('hashtagContainer');
+const totalHashtags = document.getElementById('totalHashtags');
+const popularityScore = document.getElementById('popularityScore');
+const copyAllBtn = document.getElementById('copyAllBtn');
+const clearBtn = document.getElementById('clearBtn');
+const saveBtn = document.getElementById('saveBtn');
+const successMessage = document.getElementById('successMessage');
+const successText = document.getElementById('successText');
+
+let currentPlatform = 'instagram';
+let generatedHashtags = [];
+
+// Platform selection
+platformButtons.forEach(btn => {
+btn.addEventListener('click', () => {
+platformButtons.forEach(b => b.classList.remove('active'));
+btn.classList.add('active');
+currentPlatform = btn.dataset.platform;
+});
+});
+
+// Generate Hashtags
+generateBtn.addEventListener('click', generateHashtags);
+
+// Copy All Hashtags
+copyAllBtn.addEventListener('click', copyAllHashtags);
+
+// Clear
+clearBtn.addEventListener('click', clearAll);
+
+// Save
+saveBtn.addEventListener('click', saveHashtags);
+
+function generateHashtags() {
+const content = contentInput.value.trim();
+const category = categorySelect.value;
+
+if (!content && !category) {
+showMessage('कृपया कंटेंट या कैटेगरी डालें!', 'error');
+return;
+}
+
+// Show loader
+loader.style.display = 'block';
+hashtagContainer.innerHTML = '';
+
+// Simulate AI processing
+setTimeout(() => {
+const hashtags = generateHashtagData(content, category, currentPlatform);
+displayHashtags(hashtags);
+loader.style.display = 'none';
+showMessage('हैशटैग्स सफलतापूर्वक जेनरेट हो गए!', 'success');
+}, 1500);
+}
+
+function generateHashtagData(content, category, platform) {
+const hashtagDatabase = {
+fashion: [
+'#fashion', '#style', '#ootd', '#fashionblogger', '#streetstyle',
+'#mensfashion', '#womensfashion', '#fashionista', '#trendy', '#luxury'
+],
+food: [
+'#food', '#foodie', '#foodporn', '#instafood', '#yummy',
+'#delicious', '#homemade', '#cooking', '#recipe', '#healthyfood'
+],
+travel: [
+'#travel', '#wanderlust', '#travelgram', '#vacation', '#adventure',
+'#explore', '#nature', '#photography', '#beautiful', '#landscape'
+],
+fitness: [
+'#fitness', '#workout', '#gym', '#fit', '#health',
+'#exercise', '#motivation', '#fitspo', '#bodybuilding', '#yoga'
+],
+technology: [
+'#technology', '#tech', '#innovation', '#gadgets', '#ai',
+'#programming', '#coding', '#software', '#digital', '#future'
+]
+};
+
+// Base hashtags
+let hashtags = [];
+
+// Add category specific hashtags
+if (category && hashtagDatabase[category]) {
+hashtags = hashtags.concat(hashtagDatabase[category]);
+}
+
+// Add content-based hashtags (simulated AI)
+const words = content.toLowerCase().split(' ').filter(word => word.length > 3);
+words.forEach(word => {
+hashtags.push(`#${word}`);
+});
+
+// Add platform-specific hashtags
+if (platform === 'instagram') {
+hashtags.push('#instagood', '#instagram', '#instadaily', '#instalike');
+} else if (platform === 'twitter') {
+hashtags.push('#twitter', '#tweet', '#trending', '#viral');
+} else if (platform === 'facebook') {
+hashtags.push('#facebook', '#fb', '#share', '#community');
+}
+
+// Add trending hashtags
+hashtags.push('#trending', '#viral', '#popular', '#hot');
+
+// Remove duplicates and limit
+hashtags = [...new Set(hashtags)];
+
+// Limit based on platform
+let limit = 30;
+if (platform === 'twitter') limit = 10;
+if (platform === 'facebook') limit = 5;
+
+return hashtags.slice(0, limit);
+}
+
+function displayHashtags(hashtags) {
+generatedHashtags = hashtags;
+
+// Update stats
+totalHashtags.textContent = hashtags.length;
+popularityScore.textContent = `${Math.min(hashtags.length * 3, 100)}%`;
+
+// Create hashtag groups
+hashtagContainer.innerHTML = '';
+
+const groups = [
+{ title: 'Popular Hashtags', hashtags: hashtags.slice(0, 10) },
+{ title: 'Niche Hashtags', hashtags: hashtags.slice(10, 20) },
+{ title: 'Branded Hashtags', hashtags: hashtags.slice(20) }
+];
+
+groups.forEach(group => {
+if (group.hashtags.length > 0) {
+const groupElement = document.createElement('div');
+groupElement.className = 'hashtag-group';
+
+let html = `<h4><i class="fas fa-tags"></i> ${group.title}</h4>`;
+html += '<div class="hashtag-list">';
+
+group.hashtags.forEach(tag => {
+html += `<div class="hashtag-item" data-hashtag="${tag}">${tag}</div>`;
+});
+
+html += '</div>';
+groupElement.innerHTML = html;
+hashtagContainer.appendChild(groupElement);
+}
+});
+
+// Add click event to each hashtag
+document.querySelectorAll('.hashtag-item').forEach(item => {
+item.addEventListener('click', function() {
+const hashtag = this.dataset.hashtag;
+copyToClipboard(hashtag);
+this.classList.add('copied');
+this.innerHTML = `<i class="fas fa-check"></i> ${hashtag}`;
+
+setTimeout(() => {
+this.classList.remove('copied');
+this.textContent = hashtag;
+}, 2000);
+});
+});
+}
+
+function copyAllHashtags() {
+if (generatedHashtags.length === 0) {
+showMessage('पहले हैशटैग्स जेनरेट करें!', 'error');
+return;
+}
+
+const allHashtags = generatedHashtags.join(' ');
+copyToClipboard(allHashtags);
+showMessage('सभी हैशटैग्स कॉपी हो गए!', 'success');
+}
+
+function clearAll() {
+contentInput.value = '';
+categorySelect.value = '';
+hashtagContainer.innerHTML = `
+<div style="text-align: center; padding: 50px 20px; color: #94a3b8;">
+<i class="fas fa-hashtag" style="font-size: 3rem; margin-bottom: 20px; opacity: 0.3;"></i>
+<h3>हैशटैग्स यहाँ दिखाई देंगे</h3>
+<p>ऊपर कंटेंट डालकर जेनरेट बटन दबाएं</p>
+</div>
+`;
+totalHashtags.textContent = '0';
+popularityScore.textContent = '0%';
+showMessage('सभी डेटा रीसेट किया गया!', 'success');
+}
+
+function saveHashtags() {
+if (generatedHashtags.length === 0) {
+showMessage('पहले हैशटैग्स जेनरेट करें!', 'error');
+return;
+}
+
+const data = {
+content: contentInput.value,
+category: categorySelect.value,
+platform: currentPlatform,
+hashtags: generatedHashtags,
+date: new Date().toLocaleString()
+};
+
+localStorage.setItem('savedHashtags', JSON.stringify(data));
+showMessage('हैशटैग्स सेव हो गए!', 'success');
+}
+
+function copyToClipboard(text) {
+navigator.clipboard.writeText(text).then(() => {
+console.log('Copied to clipboard:', text);
+});
+}
+
+function showMessage(message, type) {
+successText.textContent = message;
+
+if (type === 'error') {
+successMessage.style.background = '#dc2626';
+} else {
+successMessage.style.background = '#10b981';
+}
+
+successMessage.style.display = 'flex';
+
+setTimeout(() => {
+successMessage.style.display = 'none';
+}, 3000);
+}
+
+// Load saved hashtags if any
+window.addEventListener('load', () => {
+const saved = localStorage.getItem('savedHashtags');
+if (saved) {
+const data = JSON.parse(saved);
+contentInput.value = data.content;
+categorySelect.value = data.category;
+
+// Set platform
+platformButtons.forEach(btn => {
+btn.classList.remove('active');
+if (btn.dataset.platform === data.platform) {
+btn.classList.add('active');
+currentPlatform = data.platform;
+}
+});
+
+displayHashtags(data.hashtags);
+}
+});
+</script>
+</body>
+</html>
