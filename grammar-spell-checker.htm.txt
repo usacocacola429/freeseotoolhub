@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grammar & Spell Checker - Free SEO Tool Hub</title>
+<meta name="description" content="फ्री ग्रामर और स्पेल चेकर टूल। अंग्रेजी टेक्स्ट का grammar check, spelling mistakes ढूंढें और improvement suggestions पाएं।">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPG77KWVCP"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-ZPG77KWVCP');
+gtag('config', 'G-PFPCTBFG3Y');
+</script>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+min-height: 100vh;
+padding: 20px;
+color: #333;
+}
+
+.container {
+max-width: 1200px;
+margin: 0 auto;
+background: white;
+border-radius: 20px;
+overflow: hidden;
+box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+}
+
+/* Header */
+.header {
+background: linear-gradient(to right, #2c3e50, #4ca1af);
+color: white;
+padding: 50px 40px;
+text-align: center;
+position: relative;
+overflow: hidden;
+}
+
+.header::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+background-size: cover;
+}
+
+.header-content {
+position: relative;
+z-index: 1;
+}
+
+.header h1 {
+font-size: 3rem;
+margin-bottom: 15px;
+text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.header p {
+font-size: 1.2rem;
+opacity: 0.95;
+max-width: 800px;
+margin: 0 auto 20px;
+}
+
+.badge {
+display: inline-block;
+background: rgba(255,255,255,0.2);
+backdrop-filter: blur(10px);
+padding: 8px 20px;
+border-radius: 30px;
+border: 1px solid rgba(255,255,255,0.3);
+font-size: 0.9rem;
+margin-top: 10px;
+}
+
+/* Main Content */
+.main-content {
+padding: 40px;
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 40px;
+}
+
+@media (max-width: 900px) {
+.main-content {
+grid-template-columns: 1fr;
+}
+}
+
+/* Input Section */
+.input-section {
+background: #F8FAFC;
+padding: 35px;
+border-radius: 15px;
+border: 1px solid #E2E8F0;
+}
+
+h2 {
+color: #1E293B;
+margin-bottom: 25px;
+font-size: 1.8rem;
+font-weight: 600;
+display: flex;
+align-items: center;
+gap: 12px;
+}
+
+.form-group {
+margin-bottom: 25px;
+}
+
+label {
+display: block;
+margin-bottom: 10px;
+color: #475569;
+font-weight: 500;
+font-size: 1rem;
+}
+
+textarea {
+width: 100%;
+padding: 20px;
+border: 2px solid #E2E8F0;
+border-radius: 12px;
+font-size: 1.1rem;
+transition: all 0.3s;
+background: white;
+min-height: 200px;
+resize: vertical;
+line-height: 1.6;
+}
+
+textarea:focus {
+outline: none;
+border-color: #2c3e50;
+box-shadow: 0 0 0 3px rgba(44, 62, 80, 0.1);
+}
+
+.stats {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 15px;
+margin-top: 20px;
+}
+
+.stat-box {
+background: white;
+padding: 15px;
+border-radius: 10px;
+text-align: center;
+border: 1px solid #E2E8F0;
+}
+
+.stat-value {
+font-size: 1.8rem;
+font-weight: 700;
+color: #2c3e50;
+margin-bottom: 5px;
+}
+
+.stat-label {
+font-size: 0.85rem;
+color: #64748b;
+}
+
+.btn {
+padding: 16px 30px;
+border: none;
+border-radius: 12px;
+font-size: 1.1rem;
+font-weight: 600;
+cursor: pointer;
+transition: all 0.3s;
+display: inline-flex;
+align-items: center;
+gap: 12px;
+}
+
+.btn-primary {
+background: linear-gradient(to right, #2c3e50, #4ca1af);
+color: white;
+width: 100%;
+justify-content: center;
+margin-top: 20px;
+}
+
+.btn-primary:hover {
+background: linear-gradient(to right, #1a252f, #3a8997);
+transform: translateY(-2px);
+box-shadow: 0 10px 25px rgba(44, 62, 80, 0.3);
+}
+
+.btn-secondary {
+background: #F1F5F9;
+color: #475569;
+border: 2px solid #E2E8F0;
+flex: 1;
+}
+
+.btn-secondary:hover {
+background: #E2E8F0;
+}
+
+/* Results Section */
+.results-section {
+background: white;
+border-radius: 15px;
+}
+
+.results-container {
+max-height: 600px;
+overflow-y: auto;
+padding-right: 10px;
+}
+
+.result-item {
+background: white;
+border: 1px solid #E2E8F0;
+border-radius: 12px;
+padding: 20px;
+margin-bottom: 15px;
+transition: all 0.3s;
+}
+
+.result-item:hover {
+border-color: #2c3e50;
+box-shadow: 0 5px 15px rgba(44, 62, 80, 0.1);
+}
+
+.result-item.error {
+border-left: 4px solid #ef4444;
+background: #fef2f2;
+}
+
+.result-item.warning {
+border-left: 4px solid #f59e0b;
+background: #fffbeb;
+}
+
+.result-item.suggestion {
+border-left: 4px solid #10b981;
+background: #f0fdf4;
+}
+
+.error-type {
+display: inline-block;
+padding: 6px 12px;
+border-radius: 20px;
+font-size: 0.85rem;
+font-weight: 600;
+margin-bottom: 10px;
+}
+
+.error-spelling {
+background: #fee2e2;
+color: #dc2626;
+}
+
+.error-grammar {
+background: #fef3c7;
+color: #d97706;
+}
+
+.error-punctuation {
+background: #dbeafe;
+color: #2563eb;
+}
+
+.error-style {
+background: #f3e8ff;
+color: #7c3aed;
+}
+
+.error-text {
+font-size: 1.1rem;
+margin-bottom: 10px;
+line-height: 1.6;
+}
+
+.error-text .highlight {
+background: #fef3c7;
+padding: 2px 5px;
+border-radius: 4px;
+font-weight: 600;
+}
+
+.suggestion-text {
+color: #047857;
+font-weight: 500;
+margin-top: 10px;
+padding-left: 25px;
+position: relative;
+}
+
+.suggestion-text:before {
+content: '💡';
+position: absolute;
+left: 0;
+}
+
+.correction {
+color: #059669;
+font-weight: 600;
+}
+
+/* Summary Card */
+.summary-card {
+background: linear-gradient(to right, #e0f2fe, #bae6fd);
+padding: 25px;
+border-radius: 12px;
+margin-top: 30px;
+}
+
+.summary-card h3 {
+color: #0369a1;
+margin-bottom: 20px;
+}
+
+.score-circle {
+width: 120px;
+height: 120px;
+border-radius: 50%;
+background: white;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+margin: 0 auto 20px;
+box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.score-value {
+font-size: 2.5rem;
+font-weight: 800;
+color: #2c3e50;
+}
+
+.score-label {
+color: #64748b;
+font-size: 0.9rem;
+}
+
+/* Actions */
+.actions {
+display: flex;
+gap: 15px;
+margin-top: 30px;
+}
+
+/* Footer */
+.footer {
+text-align: center;
+padding: 30px;
+background: #F8FAFC;
+border-top: 1px solid #E2E8F0;
+}
+
+.footer-links {
+display: flex;
+justify-content: center;
+gap: 30px;
+margin-bottom: 20px;
+flex-wrap: wrap;
+}
+
+.footer-links a {
+color: #475569;
+text-decoration: none;
+font-weight: 500;
+display: flex;
+align-items: center;
+gap: 8px;
+transition: color 0.3s;
+}
+
+.footer-links a:hover {
+color: #2c3e50;
+}
+
+/* Success Message */
+.success-message {
+position: fixed;
+bottom: 30px;
+right: 30px;
+background: #10B981;
+color: white;
+padding: 15px 25px;
+border-radius: 10px;
+box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+display: none;
+align-items: center;
+gap: 12px;
+z-index: 1000;
+}
+
+/* Loader */
+.loader {
+display: none;
+text-align: center;
+padding: 40px;
+}
+
+.loader-spinner {
+width: 50px;
+height: 50px;
+border: 4px solid #F1F5F9;
+border-top: 4px solid #2c3e50;
+border-radius: 50%;
+animation: spin 1s linear infinite;
+margin: 0 auto 20px;
+}
+
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+
+/* Text Styles */
+.text-preview {
+background: white;
+border: 1px solid #E2E8F0;
+border-radius: 12px;
+padding: 20px;
+margin-top: 20px;
+line-height: 1.6;
+max-height: 300px;
+overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+.header h1 {
+font-size: 2rem;
+}
+
+.main-content {
+padding: 25px;
+}
+
+.stats {
+grid-template-columns: repeat(2, 1fr);
+}
+
+.actions {
+flex-direction: column;
+}
+
+.footer-links {
+flex-direction: column;
+gap: 15px;
+}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<!-- Header -->
+<header class="header">
+<div class="header-content">
+<h1><i class="fas fa-spell-check"></i> Grammar & Spell Checker</h1>
+<p>फ्री ग्रामर और स्पेल चेकर टूल। अंग्रेजी टेक्स्ट का grammar check, spelling mistakes ढूंढें और improvement suggestions पाएं।</p>
+<div class="badge">
+<i class="fas fa-robot"></i> AI-Powered | <i class="fas fa-bolt"></i> Instant Results
+</div>
+</div>
+</header>
+
+<!-- Main Content -->
+<main class="main-content">
+<!-- Input Section -->
+<section class="input-section">
+<h2><i class="fas fa-edit"></i> अपना टेक्स्ट चेक करें</h2>
+
+<div class="form-group">
+<label for="textInput"><i class="fas fa-font"></i> टेक्स्ट डालें:</label>
+<textarea id="textInput" placeholder="अपना अंग्रेजी टेक्स्ट यहाँ पेस्ट करें... (न्यूनतम 50 शब्द)"></textarea>
+</div>
+
+<div class="stats">
+<div class="stat-box">
+<div class="stat-value" id="wordCount">0</div>
+<div class="stat-label">शब्द</div>
+</div>
+<div class="stat-box">
+<div class="stat-value" id="charCount">0</div>
+<div class="stat-label">कैरेक्टर</div>
+</div>
+<div class="stat-box">
+<div class="stat-value" id="sentenceCount">0</div>
+<div class="stat-label">वाक्य</div>
+</div>
+<div class="stat-box">
+<div class="stat-value" id="readingTime">0</div>
+<div class="stat-label">मिनट</div>
+</div>
+</div>
+
+<div class="form-group">
+<label><i class="fas fa-sliders-h"></i> चेक टाइप:</label>
+<div style="display: flex; gap: 15px; margin-top: 10px;">
+<label style="display: flex; align-items: center; gap: 8px;">
+<input type="checkbox" id="spellCheck" checked> स्पेलिंग चेक
+</label>
+<label style="display: flex; align-items: center; gap: 8px;">
+<input type="checkbox" id="grammarCheck" checked> ग्रामर चेक
+</label>
+<label style="display: flex; align-items: center; gap: 8px;">
+<input type="checkbox" id="punctuationCheck" checked> पंक्चुएशन चेक
+</label>
+</div>
+</div>
+
+<button class="btn btn-primary" id="checkBtn">
+<i class="fas fa-search"></i> टेक्स्ट चेक करें
+</button>
+
+<div class="loader" id="loader">
+<div class="loader-spinner"></div>
+<p>आपका टेक्स्ट चेक किया जा रहा है...</p>
+</div>
+
+<div class="actions">
+<button class="btn btn-secondary" id="clearBtn">
+<i class="fas fa-redo"></i> रीसेट करें
+</button>
+<button class="btn btn-secondary" id="pasteBtn">
+<i class="fas fa-paste"></i> पेस्ट करें
+</button>
+<button class="btn btn-secondary" id="sampleBtn">
+<i class="fas fa-file-alt"></i> उदाहरण
+</button>
+</div>
+</section>
+
+<!-- Results Section -->
+<section class="results-section">
+<h2><i class="fas fa-chart-bar"></i> चेक रिजल्ट्स</h2>
+
+<div class="results-container" id="resultsContainer">
+<!-- Results will appear here -->
+<div style="text-align: center; padding: 50px 20px; color: #94a3b8;">
+<i class="fas fa-spell-check" style="font-size: 3rem; margin-bottom: 20px; opacity: 0.3;"></i>
+<h3>रिजल्ट्स यहाँ दिखाई देंगे</h3>
+<p>बाईं तरफ टेक्स्ट डालकर चेक बटन दबाएं</p>
+</div>
+</div>
+
+<!-- Summary Card -->
+<div class="summary-card" id="summaryCard" style="display: none;">
+<h3><i class="fas fa-trophy"></i> स्कोर सारांश</h3>
+<div class="score-circle">
+<div class="score-value" id="overallScore">0</div>
+<div class="score-label">Overall Score</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; text-align: center;">
+<div>
+<div class="stat-value" id="errorCount">0</div>
+<div class="stat-label">गलतियाँ</div>
+</div>
+<div>
+<div class="stat-value" id="suggestionsCount">0</div>
+<div class="stat-label">सुझाव</div>
+</div>
+<div>
+<div class="stat-value" id="accuracyScore">0%</div>
+<div class="stat-label">एक्यूरेसी</div>
+</div>
+</div>
+</div>
+
+<!-- Text Preview -->
+<div class="text-preview" id="textPreview" style="display: none;">
+<h4><i class="fas fa-eye"></i> करेक्टेड टेक्स्ट प्रिव्यू</h4>
+<div id="correctedText" style="margin-top: 15px;"></div>
+</div>
+
+<!-- Actions -->
+<div class="actions" id="resultActions" style="display: none;">
+<button class="btn btn-primary" id="copyBtn">
+<i class="fas fa-copy"></i> करेक्टेड टेक्स्ट कॉपी करें
+</button>
+<button class="btn btn-secondary" id="downloadBtn">
+<i class="fas fa-download"></i> रिपोर्ट डाउनलोड करें
+</button>
+</div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+<div class="footer-links">
+<a href="all-tools.html"><i class="fas fa-tools"></i> सभी टूल्स</a>
+<a href="index.html"><i class="fas fa-home"></i> होमपेज</a>
+<a href="readability-checker.html"><i class="fas fa-book-reader"></i> रीडेबिलिटी चेकर</a>
+<a href="headline-analyzer.html"><i class="fas fa-heading"></i> हैडलाइन एनालाइज़र</a>
+</div>
+<div class="copyright">
+<p>© 2024 Free SEO Tool Hub | Grammar & Spell Checker</p>
+<p style="margin-top: 5px; font-size: 0.85rem;">AI-Powered Grammar Checking Tool</p>
+</div>
+</footer>
+</div>
+
+<!-- Success Message -->
+<div class="success-message" id="successMessage">
+<i class="fas fa-check-circle"></i>
+<span id="successText">Operation successful!</span>
+</div>
+
+<script>
+// DOM Elements
+const textInput = document.getElementById('textInput');
+const checkBtn = document.getElementById('checkBtn');
+const clearBtn = document.getElementById('clearBtn');
+const pasteBtn = document.getElementById('pasteBtn');
+const sampleBtn = document.getElementById('sampleBtn');
+const copyBtn = document.getElementById('copyBtn');
+const downloadBtn = document.getElementById('downloadBtn');
+const loader = document.getElementById('loader');
+const resultsContainer = document.getElementById('resultsContainer');
+const summaryCard = document.getElementById('summaryCard');
+const textPreview = document.getElementById('textPreview');
+const resultActions = document.getElementById('resultActions');
+const successMessage = document.getElementById('successMessage');
+const successText = document.getElementById('successText');
+
+// Stats elements
+const wordCount = document.getElementById('wordCount');
+const charCount = document.getElementById('charCount');
+const sentenceCount = document.getElementById('sentenceCount');
+const readingTime = document.getElementById('readingTime');
+const overallScore = document.getElementById('overallScore');
+const errorCount = document.getElementById('errorCount');
+const suggestionsCount = document.getElementById('suggestionsCount');
+const accuracyScore = document.getElementById('accuracyScore');
+const correctedText = document.getElementById('correctedText');
+
+// Check options
+const spellCheck = document.getElementById('spellCheck');
+const grammarCheck = document.getElementById('grammarCheck');
+const punctuationCheck = document.getElementById('punctuationCheck');
+
+// Update stats in real-time
+textInput.addEventListener('input', updateStats);
+
+// Button events
+checkBtn.addEventListener('click', checkText);
+clearBtn.addEventListener('click', clearAll);
+pasteBtn.addEventListener('click', pasteText);
+sampleBtn.addEventListener('click', loadSampleText);
+copyBtn.addEventListener('click', copyCorrectedText);
+downloadBtn.addEventListener('click', downloadReport);
+
+function updateStats() {
+const text = textInput.value;
+
+// Word count
+const words = text.trim().split(/\s+/).filter(word => word.length > 0);
+wordCount.textContent = words.length;
+
+// Character count
+charCount.textContent = text.length;
+
+// Sentence count
+const sentences = text.split(/[.!?]+/).filter(s => s.trim().length > 0);
+sentenceCount.textContent = sentences.length;
+
+// Reading time (average 200 words per minute)
+readingTime.textContent = Math.ceil(words.length / 200);
+}
+
+function checkText() {
+const text = textInput.value.trim();
+
+if (text.length < 50) {
+showMessage('कृपया कम से कम 50 कैरेक्टर का टेक्स्ट डालें!', 'error');
+return;
+}
+
+// Show loader
+loader.style.display = 'block';
+resultsContainer.innerHTML = '';
+summaryCard.style.display = 'none';
+textPreview.style.display = 'none';
+resultActions.style.display = 'none';
+
+// Simulate AI processing
+setTimeout(() => {
+const results = analyzeText(text);
+displayResults(results);
+loader.style.display = 'none';
+showMessage('टेक्स्ट चेक सफलतापूर्वक पूरा हुआ!', 'success');
+}, 2000);
+}
+
+function analyzeText(text) {
+// Common spelling mistakes database
+const spellingMistakes = {
+'recieve': 'receive',
+'seperate': 'separate',
+'definately': 'definitely',
+'occured': 'occurred',
+'occurence': 'occurrence',
+'truely': 'truly',
+'arguement': 'argument',
+'judgement': 'judgment',
+'maintainance': 'maintenance',
+'neccessary': 'necessary',
+'occassion': 'occasion',
+'persistant': 'persistent',
+'refered': 'referred',
+'seperation': 'separation',
+'wierd': 'weird',
+'wich': 'which',
+'wether': 'whether',
+'thier': 'their',
+'your': 'you\'re',
+'its': 'it\'s',
+'there': 'their',
+'then': 'than',
+'effect': 'affect',
+'loose': 'lose',
+'choose': 'chose',
+'advice': 'advise'
+};
+
+// Grammar rules
+const grammarRules = [
+{
+pattern: /\b(I|we|you|they|he|she|it) (is|am|are)\b/gi,
+correction: 'Use appropriate verb form',
+type: 'subject-verb agreement'
+},
+{
+pattern: /\b(a|an) (apple|orange|umbrella|hour|honest)/gi,
+correction: 'Use "an" before vowel sounds, "a" before consonant sounds',
+type: 'article usage'
+},
+{
+pattern: /(?<!\.)\s+([A-Z])/g,
+correction: 'Start sentence with capital letter after period',
+type: 'capitalization'
+},
+{
+pattern: /\b(much|many) (people|books|water|information)/gi,
+correction: 'Use "many" for countable nouns, "much" for uncountable',
+type: 'countable/uncountable'
+}
+];
+
+// Punctuation rules
+const punctuationRules = [
+{
+pattern: /([a-z])([A-Z])/g,
+correction: 'Missing period or space between sentences',
+type: 'missing punctuation'
+},
+{
+pattern: /\s+([.,!?])/g,
+correction: 'Remove space before punctuation',
+type: 'spacing'
+},
+{
+pattern: /([.!?])([a-z])/g,
+correction: 'Add space after punctuation',
+type: 'spacing'
+}
+];
+
+const errors = [];
+const words = text.split(/\b/);
+let corrected = text;
+
+// Check spelling
+if (spellCheck.checked) {
+Object.keys(spellingMistakes).forEach(wrongWord => {
+const regex = new RegExp(`\\b${wrongWord}\\b`, 'gi');
+if (regex.test(text)) {
+errors.push({
+type: 'spelling',
+wrong: wrongWord,
+correct: spellingMistakes[wrongWord],
+message: `Spelling mistake: "${wrongWord}" should be "${spellingMistakes[wrongWord]}"`
+});
+corrected = corrected.replace(regex, spellingMistakes[wrongWord]);
+}
+});
+}
+
+// Check grammar
+if (grammarCheck.checked) {
+grammarRules.forEach(rule => {
+const matches = [...text.matchAll(rule.pattern)];
+matches.forEach(match => {
+errors.push({
+type: 'grammar',
+wrong: match[0],
+correct: rule.correction,
+message: `Grammar error: ${rule.type} - ${rule.correction}`
+});
+});
+});
+}
+
+// Check punctuation
+if (punctuationCheck.checked) {
+punctuationRules.forEach(rule => {
+const matches = [...text.matchAll(rule.pattern)];
+matches.forEach(match => {
+errors.push({
+type: 'punctuation',
+wrong: match[0],
+correct: rule.correction,
+message: `Punctuation: ${rule.type} - ${rule.correction}`
+});
+});
+});
+}
+
+// Add style suggestions
+const styleSuggestions = [
+{
+pattern: /\b(very|really|extremely)\s+(\w+)/gi,
+suggestion: 'Use stronger word instead of "very" + adjective',
+type: 'style'
+},
+{
+pattern: /\b(a lot of|lots of)\b/gi,
+suggestion: 'Consider using "many", "numerous", or "several"',
+type: 'word choice'
+},
+{
+pattern: /\.\s+But\b/gi,
+suggestion: 'Consider starting new sentence instead of using "But"',
+type: 'sentence structure'
+}
+];
+
+const suggestions = [];
+styleSuggestions.forEach(suggestion => {
+const matches = [...text.matchAll(suggestion.pattern)];
+matches.forEach(match => {
+suggestions.push({
+type: 'suggestion',
+text: match[0],
+suggestion: suggestion.suggestion,
+category: suggestion.type
+});
+});
+});
+
+// Calculate scores
+const totalWords = text.split(/\s+/).length;
+const errorRate = (errors.length / totalWords) * 100;
+const accuracy = Math.max(0, 100 - errorRate);
+const overall = Math.round(accuracy);
+
+return {
+errors,
+suggestions,
+correctedText: corrected,
+stats: {
+totalWords,
+errorCount: errors.length,
+suggestionCount: suggestions.length,
+accuracy,
+overallScore: overall
+}
+};
+}
+
+function displayResults(results) {
+const { errors, suggestions, correctedText: corrected, stats } = results;
+
+// Update summary
+overallScore.textContent = stats.overallScore;
+errorCount.textContent = stats.errorCount;
+suggestionsCount.textContent = stats.suggestionCount;
+accuracyScore.textContent = `${Math.round(stats.accuracy)}%`;
+
+// Display errors
+resultsContainer.innerHTML = '';
+
+if (errors.length === 0 && suggestions.length === 0) {
+resultsContainer.innerHTML = `
+<div style="text-align: center; padding: 40px 20px; color: #10b981;">
+<i class="fas fa-check-circle" style="font-size: 3rem; margin-bottom: 20px;"></i>
+<h3>बहुत बढ़िया! 🎉</h3>
+<p>कोई गलतियाँ नहीं मिलीं। आपका टेक्स्ट excellent है!</p>
+</div>
+`;
+} else {
+// Display errors
+errors.forEach((error, index) => {
+const resultItem = document.createElement('div');
+resultItem.className = `result-item error`;
+
+let typeClass = 'error-grammar';
+let typeText = 'Grammar';
+
+if (error.type === 'spelling') {
+typeClass = 'error-spelling';
+typeText = 'Spelling';
+} else if (error.type === 'punctuation') {
+typeClass = 'error-punctuation';
+typeText = 'Punctuation';
+} else if (error.type === 'style') {
+typeClass = 'error-style';
+typeText = 'Style';
+}
+
+resultItem.innerHTML = `
+<div class="error-type ${typeClass}">
+<i class="fas fa-${error.type === 'spelling' ? 'spell-check' : 'edit'}"></i>
+${typeText} Error
+</div>
+<div class="error-text">
+<span class="highlight">${error.wrong}</span>
+</div>
+<div class="suggestion-text">
+<strong>सुझाव:</strong> ${error.message}
+${error.correct ? `<br><span class="correction">सही: ${error.correct}</span>` : ''}
+</div>
+`;
+
+resultsContainer.appendChild(resultItem);
+});
+
+// Display suggestions
+suggestions.forEach((suggestion, index) => {
+const resultItem = document.createElement('div');
+resultItem.className = 'result-item suggestion';
+
+resultItem.innerHTML = `
+<div class="error-type error-style">
+<i class="fas fa-lightbulb"></i>
+Writing Tip
+</div>
+<div class="error-text">
+<span class="highlight">${suggestion.text}</span>
+</div>
+<div class="suggestion-text">
+<strong>बेहतर विकल्प:</strong> ${suggestion.suggestion}
+</div>
+`;
+
+resultsContainer.appendChild(resultItem);
+});
+}
+
+// Display corrected text preview
+textPreview.style.display = 'block';
+correctedText.innerHTML = corrected.replace(/\n/g, '<br>').replace(/\s{2,}/g, ' &nbsp;');
+
+// Show summary and actions
+summaryCard.style.display = 'block';
+resultActions.style.display = 'flex';
+}
+
+function clearAll() {
+textInput.value = '';
+updateStats();
+resultsContainer.innerHTML = `
+<div style="text-align: center; padding: 50px 20px; color: #94a3b8;">
+<i class="fas fa-spell-check" style="font-size: 3rem; margin-bottom: 20px; opacity: 0.3;"></i>
+<h3>रिजल्ट्स यहाँ दिखाई देंगे</h3>
+<p>बाईं तरफ टेक्स्ट डालकर चेक बटन दबाएं</p>
+</div>
+`;
+summaryCard.style.display = 'none';
+textPreview.style.display = 'none';
+resultActions.style.display = 'none';
+showMessage('सभी डेटा रीसेट किया गया!', 'success');
+}
+
+function pasteText() {
+navigator.clipboard.readText()
+.then(text => {
+textInput.value = text;
+updateStats();
+showMessage('टेक्स्ट पेस्ट हो गया!', 'success');
+})
+.catch(err => {
+showMessage('Clipboard access denied!', 'error');
+});
+}
+
+function loadSampleText() {
+const sampleText = `Hi there! I recieved your email and I definately want to work with you. Their are many oppertunities for collaboration. I think we can do alot of good work together.
+
+However, I need too know more about your requirements. Please send me the details so I can prepare a proposal. I'm looking forward too hearing from you soon!
+
+Best regards,
+John Doe`;
+
+textInput.value = sampleText;
+updateStats();
+showMessage('उदाहरण टेक्स्ट लोड हो गया!', 'success');
+}
+
+function copyCorrectedText() {
+const text = correctedText.textContent;
+navigator.clipboard.writeText(text)
+.then(() => {
+showMessage('करेक्टेड टेक्स्ट कॉपी हो गया!', 'success');
+});
+}
+
+function downloadReport() {
+const report = {
+originalText: textInput.value,
+correctedText: correctedText.textContent,
+errors: document.querySelectorAll('.result-item.error').length,
+suggestions: document.querySelectorAll('.result-item.suggestion').length,
+score: overallScore.textContent,
+date: new Date().toLocaleString()
+};
+
+const blob = new Blob([JSON.stringify(report, null, 2)], { type: 'application/json' });
+const url = URL.createObjectURL(blob);
+const a = document.createElement('a');
+a.href = url;
+a.download = `grammar-check-report-${Date.now()}.json`;
+document.body.appendChild(a);
+a.click();
+document.body.removeChild(a);
+URL.revokeObjectURL(url);
+
+showMessage('रिपोर्ट डाउनलोड हो गई!', 'success');
+}
+
+function showMessage(message, type) {
+successText.textContent = message;
+
+if (type === 'error') {
+successMessage.style.background = '#dc2626';
+} else {
+successMessage.style.background = '#10b981';
+}
+
+successMessage.style.display = 'flex';
+
+setTimeout(() => {
+successMessage.style.display = 'none';
+}, 3000);
+}
+
+// Initialize
+updateStats();
+</script>
+</body>
+</html>
