@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Price Comparison Tool - Free SEO Tool Hub</title>
+<meta name="description" content="फ्री प्राइस कंपेरिजन टूल। Amazon, Flipkart, Myntra, Ajio की कीमतों की तुलना करें। Best deals और lowest prices ढूंढें।">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPG77KWVCP"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-ZPG77KWVCP');
+gtag('config', 'G-PFPCTBFG3Y');
+</script>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+min-height: 100vh;
+padding: 20px;
+color: #333;
+}
+
+.container {
+max-width: 1200px;
+margin: 0 auto;
+background: white;
+border-radius: 20px;
+overflow: hidden;
+box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+}
+
+/* Header */
+.header {
+background: linear-gradient(to right, #ff7e5f, #feb47b);
+color: white;
+padding: 50px 40px;
+text-align: center;
+position: relative;
+overflow: hidden;
+}
+
+.header::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+background-size: cover;
+}
+
+.header-content {
+position: relative;
+z-index: 1;
+}
+
+.header h1 {
+font-size: 3rem;
+margin-bottom: 15px;
+text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.header p {
+font-size: 1.2rem;
+opacity: 0.95;
+max-width: 800px;
+margin: 0 auto 20px;
+}
+
+.badge {
+display: inline-block;
+background: rgba(255,255,255,0.2);
+backdrop-filter: blur(10px);
+padding: 8px 20px;
+border-radius: 30px;
+border: 1px solid rgba(255,255,255,0.3);
+font-size: 0.9rem;
+margin-top: 10px;
+}
+
+/* Main Content */
+.main-content {
+padding: 40px;
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 40px;
+}
+
+@media (max-width: 900px) {
+.main-content {
+grid-template-columns: 1fr;
+}
+}
+
+/* Input Section */
+.input-section {
+background: #F8FAFC;
+padding: 35px;
+border-radius: 15px;
+border: 1px solid #E2E8F0;
+}
+
+h2 {
+color: #1E293B;
+margin-bottom: 25px;
+font-size: 1.8rem;
+font-weight: 600;
+display: flex;
+align-items: center;
+gap: 12px;
+}
+
+.form-group {
+margin-bottom: 25px;
+}
+
+label {
+display: block;
+margin-bottom: 10px;
+color: #475569;
+font-weight: 500;
+font-size: 1rem;
+}
+
+input, select, textarea {
+width: 100%;
+padding: 16px 15px;
+border: 2px solid #E2E8F0;
+border-radius: 12px;
+font-size: 1.1rem;
+transition: all 0.3s;
+background: white;
+}
+
+input:focus, select:focus, textarea:focus {
+outline: none;
+border-color: #ff7e5f;
+box-shadow: 0 0 0 3px rgba(255, 126, 95, 0.1);
+}
+
+.ecommerce-grid {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 15px;
+margin-top: 10px;
+}
+
+.ecom-btn {
+padding: 15px;
+border: 2px solid #E2E8F0;
+border-radius: 10px;
+background: white;
+cursor: pointer;
+text-align: center;
+transition: all 0.3s;
+}
+
+.ecom-btn.active {
+border-color: #ff7e5f;
+background: #fff5f5;
+color: #ff7e5f;
+}
+
+.ecom-btn i {
+font-size: 1.5rem;
+margin-bottom: 8px;
+display: block;
+}
+
+.price-inputs {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 15px;
+}
+
+.price-input {
+position: relative;
+}
+
+.price-input span {
+position: absolute;
+left: 15px;
+top: 50%;
+transform: translateY(-50%);
+color: #94a3b8;
+font-weight: 500;
+}
+
+.price-input input {
+padding-left: 40px;
+}
+
+.btn {
+padding: 16px 30px;
+border: none;
+border-radius: 12px;
+font-size: 1.1rem;
+font-weight: 600;
+cursor: pointer;
+transition: all 0.3s;
+display: inline-flex;
+align-items: center;
+gap: 12px;
+}
+
+.btn-primary {
+background: linear-gradient(to right, #ff7e5f, #feb47b);
+color: white;
+width: 100%;
+justify-content: center;
+margin-top: 20px;
+}
+
+.btn-primary:hover {
+background: linear-gradient(to right, #ff6b4a, #fea869);
+transform: translateY(-2px);
+box-shadow: 0 10px 25px rgba(255, 126, 95, 0.3);
+}
+
+.btn-secondary {
+background: #F1F5F9;
+color: #475569;
+border: 2px solid #E2E8F0;
+flex: 1;
+}
+
+.btn-secondary:hover {
+background: #E2E8F0;
+}
+
+/* Results Section */
+.results-section {
+background: white;
+border-radius: 15px;
+}
+
+.comparison-results {
+margin-bottom: 30px;
+}
+
+/* Product Card */
+.product-card {
+background: white;
+border: 1px solid #E2E8F0;
+border-radius: 12px;
+padding: 25px;
+margin-bottom: 20px;
+transition: all 0.3s;
+position: relative;
+}
+
+.product-card:hover {
+border-color: #ff7e5f;
+box-shadow: 0 5px 15px rgba(255, 126, 95, 0.1);
+}
+
+.product-card.best {
+border: 2px solid #10b981;
+background: #f0fdf4;
+}
+
+.best-tag {
+position: absolute;
+top: -10px;
+right: 20px;
+background: #10b981;
+color: white;
+padding: 5px 15px;
+border-radius: 20px;
+font-size: 0.8rem;
+font-weight: 600;
+}
+
+.product-header {
+display: flex;
+align-items: center;
+gap: 15px;
+margin-bottom: 20px;
+}
+
+.product-icon {
+font-size: 2rem;
+color: #ff7e5f;
+background: #fff5f5;
+padding: 15px;
+border-radius: 10px;
+}
+
+.product-title {
+font-size: 1.4rem;
+color: #1e293b;
+font-weight: 600;
+}
+
+.product-price {
+font-size: 2rem;
+font-weight: 700;
+color: #1e293b;
+margin: 15px 0;
+}
+
+.price-old {
+text-decoration: line-through;
+color: #94a3b8;
+font-size: 1.2rem;
+margin-left: 10px;
+}
+
+.discount {
+background: #fef3c7;
+color: #92400e;
+padding: 5px 10px;
+border-radius: 6px;
+font-weight: 600;
+margin-left: 10px;
+}
+
+.product-features {
+list-style: none;
+margin: 20px 0;
+}
+
+.product-features li {
+color: #475569;
+margin-bottom: 8px;
+padding-left: 25px;
+position: relative;
+}
+
+.product-features li:before {
+content: '✓';
+position: absolute;
+left: 0;
+color: #10b981;
+font-weight: bold;
+}
+
+.product-actions {
+display: flex;
+gap: 10px;
+margin-top: 20px;
+}
+
+.product-btn {
+padding: 10px 20px;
+border-radius: 8px;
+text-decoration: none;
+font-weight: 500;
+display: flex;
+align-items: center;
+gap: 8px;
+flex: 1;
+justify-content: center;
+transition: all 0.3s;
+}
+
+.product-btn.buy {
+background: linear-gradient(to right, #ff7e5f, #feb47b);
+color: white;
+}
+
+.product-btn.buy:hover {
+background: linear-gradient(to right, #ff6b4a, #fea869);
+transform: translateY(-2px);
+}
+
+.product-btn.compare {
+background: #F1F5F9;
+color: #475569;
+border: 2px solid #E2E8F0;
+}
+
+.product-btn.compare:hover {
+background: #E2E8F0;
+}
+
+/* Comparison Table */
+.comparison-table {
+background: white;
+border: 1px solid #E2E8F0;
+border-radius: 12px;
+overflow: hidden;
+margin-top: 30px;
+}
+
+.table-row {
+display: grid;
+grid-template-columns: 2fr 1fr 1fr 1fr;
+padding: 15px 20px;
+border-bottom: 1px solid #E2E8F0;
+}
+
+.table-row.header {
+background: #F8FAFC;
+font-weight: 600;
+color: #1e293b;
+}
+
+.table-cell {
+padding: 10px;
+}
+
+.table-cell.highlight {
+background: #f0fdf4;
+font-weight: 600;
+color: #065f46;
+}
+
+/* Savings Calculator */
+.savings-card {
+background: linear-gradient(to right, #e0f2fe, #bae6fd);
+padding: 25px;
+border-radius: 12px;
+margin-top: 30px;
+}
+
+.savings-card h3 {
+color: #0369a1;
+margin-bottom: 20px;
+}
+
+.savings-amount {
+font-size: 2.5rem;
+font-weight: 800;
+color: #10b981;
+text-align: center;
+margin: 20px 0;
+}
+
+/* Actions */
+.actions {
+display: flex;
+gap: 15px;
+margin-top: 30px;
+}
+
+/* Footer */
+.footer {
+text-align: center;
+padding: 30px;
+background: #F8FAFC;
+border-top: 1px solid #E2E8F0;
+}
+
+.footer-links {
+display: flex;
+justify-content: center;
+gap: 30px;
+margin-bottom: 20px;
+flex-wrap: wrap;
+}
+
+.footer-links a {
+color: #475569;
+text-decoration: none;
+font-weight: 500;
+display: flex;
+align-items: center;
+gap: 8px;
+transition: color 0.3s;
+}
+
+.footer-links a:hover {
+color: #ff7e5f;
+}
+
+/* Success Message */
+.success-message {
+position: fixed;
+bottom: 30px;
+right: 30px;
+background: #10B981;
+color: white;
+padding: 15px 25px;
+border-radius: 10px;
+box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+display: none;
+align-items: center;
+gap: 12px;
+z-index: 1000;
+}
+
+/* Loader */
+.loader {
+display: none;
+text-align: center;
+padding: 40px;
+}
+
+.loader-spinner {
+width: 50px;
+height: 50px;
+border: 4px solid #F1F5F9;
+border-top: 4px solid #ff7e5f;
+border-radius: 50%;
+animation: spin 1s linear infinite;
+margin: 0 auto 20px;
+}
+
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+.header h1 {
+font-size: 2rem;
+}
+
+.main-content {
+padding: 25px;
+}
+
+.ecommerce-grid {
+grid-template-columns: 1fr;
+}
+
+.price-inputs {
+grid-template-columns: 1fr;
+}
+
+.actions {
+flex-direction: column;
+}
+
+.product-actions {
+flex-direction: column;
+}
+
+.table-row {
+grid-template-columns: 1fr;
+gap: 10px;
+}
+
+.footer-links {
+flex-direction: column;
+gap: 15px;
+}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<!-- Header -->
+<header class="header">
+<div class="header-content">
+<h1><i class="fas fa-balance-scale"></i> Price Comparison Tool</h1>
+<p>Amazon, Flipkart, Myntra, Ajio की कीमतों की तुलना करें। Best deals और lowest prices ढूंढें।</p>
+<div class="badge">
+<i class="fas fa-bolt"></i> Real-time Comparison | <i class="fas fa-percentage"></i> Best Price Finder
+</div>
+</div>
+</header>
+
+<!-- Main Content -->
+<main class="main-content">
+<!-- Input Section -->
+<section class="input-section">
+<h2><i class="fas fa-search"></i> प्राइस कंपेयर करें</h2>
+
+<div class="form-group">
+<label for="productName"><i class="fas fa-shopping-bag"></i> प्रोडक्ट नाम:</label>
+<input type="text" id="productName" placeholder="उदाहरण: iPhone 15, Nike Shoes, Samsung TV">
+</div>
+
+<div class="form-group">
+<label><i class="fas fa-store"></i> ई-कॉमर्स साइट्स:</label>
+<div class="ecommerce-grid">
+<div class="ecom-btn active" data-store="amazon">
+<i class="fab fa-amazon"></i>
+<span>Amazon</span>
+</div>
+<div class="ecom-btn" data-store="flipkart">
+<i class="fas fa-shopping-cart"></i>
+<span>Flipkart</span>
+</div>
+<div class="ecom-btn" data-store="myntra">
+<i class="fas fa-tshirt"></i>
+<span>Myntra</span>
+</div>
+<div class="ecom-btn" data-store="ajio">
+<i class="fas fa-shopping-bag"></i>
+<span>Ajio</span>
+</div>
+</div>
+</div>
+
+<div class="form-group">
+<label><i class="fas fa-rupee-sign"></i> प्राइस रेंज:</label>
+<div class="price-inputs">
+<div class="price-input">
+<span>₹</span>
+<input type="number" id="minPrice" placeholder="Min Price">
+</div>
+<div class="price-input">
+<span>₹</span>
+<input type="number" id="maxPrice" placeholder="Max Price">
+</div>
+</div>
+</div>
+
+<div class="form-group">
+<label for="category"><i class="fas fa-tags"></i> कैटेगरी:</label>
+<select id="category">
+<option value="">-- कैटेगरी चुनें --</option>
+<option value="electronics">इलेक्ट्रॉनिक्स</option>
+<option value="fashion">फैशन</option>
+<option value="home">होम एप्लायंसेस</option>
+<option value="beauty">ब्यूटी</option>
+<option value="books">बुक्स</option>
+<option value="sports">स्पोर्ट्स</option>
+</select>
+</div>
+
+<button class="btn btn-primary" id="compareBtn">
+<i class="fas fa-balance-scale"></i> प्राइस कंपेयर करें
+</button>
+
+<div class="loader" id="loader">
+<div class="loader-spinner"></div>
+<p>प्राइस कंपेरिजन लोड हो रहा है...</p>
+</div>
+
+<div class="actions">
+<button class="btn btn-secondary" id="clearBtn">
+<i class="fas fa-redo"></i> रीसेट करें
+</button>
+<button class="btn btn-secondary" id="trendingBtn">
+<i class="fas fa-fire"></i> ट्रेंडिंग डील्स
+</button>
+</div>
+</section>
+
+<!-- Results Section -->
+<section class="results-section">
+<h2><i class="fas fa-chart-line"></i> कंपेरिजन रिजल्ट्स</h2>
+
+<div id="resultsContainer">
+<!-- Results will appear here -->
+<div style="text-align: center; padding: 50px 20px; color: #94a3b8;">
+<i class="fas fa-balance-scale" style="font-size: 3rem; margin-bottom: 20px; opacity: 0.3;"></i>
+<h3>प्राइस कंपेरिजन यहाँ दिखेगा</h3>
+<p>बाईं तरफ प्रोडक्ट डिटेल्स डालकर कंपेयर बटन दबाएं</p>
+</div>
+</div>
+
+<!-- Comparison Table -->
+<div class="comparison-table" id="comparisonTable" style="display: none;">
+<div class="table-row header">
+<div class="table-cell">फीचर्स</div>
+<div class="table-cell">Amazon</div>
+<div class="table-cell">Flipkart</div>
+<div class="table-cell">Myntra</div>
+</div>
+<!-- Table rows will be added dynamically -->
+</div>
+
+<!-- Savings Calculator -->
+<div class="savings-card" id="savingsCard" style="display: none;">
+<h3><i class="fas fa-piggy-bank"></i> आपकी सेविंग्स</h3>
+<div class="savings-amount" id="savingsAmount">₹0</div>
+<p style="text-align: center; color: #0369a1;">
+यह राशि आप बचा सकते हैं सबसे सस्ते ऑप्शन को चुनकर!
+</p>
+</div>
+
+<!-- Tips -->
+<div style="background: linear-gradient(to right, #fef3c7, #fde68a); padding: 20px; border-radius: 12px; margin-top: 30px;">
+<h3><i class="fas fa-lightbulb"></i> शॉपिंग टिप्स</h3>
+<ul style="color: #92400e; list-style: none; line-height: 1.8;">
+<li><i class="fas fa-check"></i> फेस्टिवल सीजन में बड़े डिस्काउंट्स मिलते हैं</li>
+<li><i class="fas fa-check"></i> कूपन कोड्स का इस्तेमाल करें अतिरिक्त छूट के लिए</li>
+<li><i class="fas fa-check"></i> EMI ऑप्शन भी compare करें</li>
+<li><i class="fas fa-check"></i> Delivery charges और return policy check करें</li>
+</ul>
+</div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+<div class="footer-links">
+<a href="all-tools.html"><i class="fas fa-tools"></i> सभी टूल्स</a>
+<a href="index.html"><i class="fas fa-home"></i> होमपेज</a>
+<a href="profit-margin-calculator.html"><i class="fas fa-calculator"></i> प्रॉफिट कैलकुलेटर</a>
+<a href="hashtag-generator.html"><i class="fas fa-hashtag"></i> हैशटैग जनरेटर</a>
+</div>
+<div class="copyright">
+<p>© 2024 Free SEO Tool Hub | Price Comparison Tool</p>
+<p style="margin-top: 5px; font-size: 0.85rem;">Smart Shopping & Price Comparison Tool</p>
+</div>
+</footer>
+</div>
+
+<!-- Success Message -->
+<div class="success-message" id="successMessage">
+<i class="fas fa-check-circle"></i>
+<span id="successText">Operation successful!</span>
+</div>
+
+<script>
+// DOM Elements
+const productName = document.getElementById('productName');
+const ecomButtons = document.querySelectorAll('.ecom-btn');
+const minPrice = document.getElementById('minPrice');
+const maxPrice = document.getElementById('maxPrice');
+const category = document.getElementById('category');
+const compareBtn = document.getElementById('compareBtn');
+const clearBtn = document.getElementById('clearBtn');
+const trendingBtn = document.getElementById('trendingBtn');
+const loader = document.getElementById('loader');
+const resultsContainer = document.getElementById('resultsContainer');
+const comparisonTable = document.getElementById('comparisonTable');
+const savingsCard = document.getElementById('savingsCard');
+const savingsAmount = document.getElementById('savingsAmount');
+const successMessage = document.getElementById('successMessage');
+const successText = document.getElementById('successText');
+
+let selectedStores = ['amazon'];
+
+// Store selection
+ecomButtons.forEach(btn => {
+btn.addEventListener('click', () => {
+btn.classList.toggle('active');
+const store = btn.dataset.store;
+
+if (btn.classList.contains('active')) {
+if (!selectedStores.includes(store)) {
+selectedStores.push(store);
+}
+} else {
+selectedStores = selectedStores.filter(s => s !== store);
+}
+});
+});
+
+// Compare Prices
+compareBtn.addEventListener('click', comparePrices);
+
+// Clear
+clearBtn.addEventListener('click', clearAll);
+
+// Trending Deals
+trendingBtn.addEventListener('click', loadTrendingDeals);
+
+function comparePrices() {
+const product = productName.value.trim();
+
+if (!product) {
+showMessage('कृपया प्रोडक्ट नाम डालें!', 'error');
+return;
+}
+
+if (selectedStores.length === 0) {
+showMessage('कृपया कम से कम एक स्टोर चुनें!', 'error');
+return;
+}
+
+// Show loader
+loader.style.display = 'block';
+resultsContainer.innerHTML = '';
+comparisonTable.style.display = 'none';
+savingsCard.style.display = 'none';
+
+// Simulate API call
+setTimeout(() => {
+const products = generatePriceComparison(product, selectedStores);
+displayResults(products);
+loader.style.display = 'none';
+showMessage('प्राइस कंपेरिजन सफलतापूर्वक लोड हो गया!', 'success');
+}, 1500);
+}
+
+function generatePriceComparison(product, stores) {
+// Product database with realistic prices
+const productDatabase = {
+'iphone 15': {
+amazon: { price: 79990, original: 89990, rating: 4.5, delivery: '1 day', emi: true },
+flipkart: { price: 78999, original: 87999, rating: 4.4, delivery: '2 days', emi: true },
+myntra: { price: 81990, original: 89990, rating: 4.3, delivery: '3 days', emi: false },
+ajio: { price: 82990, original: 89990, rating: 4.2, delivery: '4 days', emi: true }
+},
+'nike shoes': {
+amazon: { price: 3499, original: 4999, rating: 4.3, delivery: '2 days', emi: false },
+flipkart: { price: 3299, original: 4599, rating: 4.2, delivery: '3 days', emi: false },
+myntra: { price: 2999, original: 4999, rating: 4.5, delivery: '1 day', emi: false },
+ajio: { price: 3199, original: 4499, rating: 4.1, delivery: '2 days', emi: false }
+},
+'samsung tv': {
+amazon: { price: 42999, original: 49999, rating: 4.4, delivery: '3 days', emi: true },
+flipkart: { price: 41999, original: 48999, rating: 4.3, delivery: '2 days', emi: true },
+myntra: { price: 43999, original: 49999, rating: 4.2, delivery: '4 days', emi: false },
+ajio: { price: 44999, original: 49999, rating: 4.1, delivery: '5 days', emi: true }
+}
+};
+
+// Check if product exists in database
+const searchTerm = product.toLowerCase();
+let matchedProduct = null;
+
+for (const [key, data] of Object.entries(productDatabase)) {
+if (searchTerm.includes(key)) {
+matchedProduct = data;
+break;
+}
+}
+
+// If not found, generate random prices
+if (!matchedProduct) {
+matchedProduct = {};
+stores.forEach(store => {
+const basePrice = Math.floor(Math.random() * 50000) + 1000;
+matchedProduct[store] = {
+price: basePrice,
+original: Math.floor(basePrice * 1.2),
+rating: (Math.random() * 1.5 + 3.5).toFixed(1),
+delivery: Math.floor(Math.random() * 4) + 1 + ' days',
+emi: Math.random() > 0.3
+};
+});
+}
+
+// Filter by selected stores
+const results = [];
+let lowestPrice = Infinity;
+let bestStore = '';
+
+stores.forEach(store => {
+if (matchedProduct[store]) {
+const data = matchedProduct[store];
+results.push({
+store: store,
+name: product,
+price: data.price,
+originalPrice: data.original,
+rating: data.rating,
+delivery: data.delivery,
+emi: data.emi,
+discount: Math.round((1 - data.price / data.original) * 100)
+});
+
+if (data.price < lowestPrice) {
+lowestPrice = data.price;
+bestStore = store;
+}
+}
+});
+
+// Mark best deal
+results.forEach(result => {
+result.isBest = result.store === bestStore;
+});
+
+return results;
+}
+
+function displayResults(products) {
+if (products.length === 0) {
+resultsContainer.innerHTML = `
+<div style="text-align: center; padding: 40px 20px; color: #ef4444;">
+<i class="fas fa-exclamation-triangle" style="font-size: 3rem; margin-bottom: 20px;"></i>
+<h3>कोई रिजल्ट्स नहीं मिले!</h3>
+<p>अलग प्रोडक्ट नाम के साथ ट्राई करें या अलग स्टोर्स चुनें।</p>
+</div>
+`;
+return;
+}
+
+resultsContainer.innerHTML = '';
+
+// Calculate savings
+const prices = products.map(p => p.price);
+const maxPrice = Math.max(...prices);
+const minPrice = Math.min(...prices);
+const savings = maxPrice - minPrice;
+
+savingsAmount.textContent = `₹${savings.toLocaleString()}`;
+
+// Display products
+products.forEach(product => {
+const productCard = document.createElement('div');
+productCard.className = `product-card ${product.isBest ? 'best' : ''}`;
+
+const storeIcon = getStoreIcon(product.store);
+const storeName = getStoreName(product.store);
+
+let html = '';
+
+if (product.isBest) {
+html += '<div class="best-tag"><i class="fas fa-crown"></i> BEST DEAL</div>';
+}
+
+html += `
+<div class="product-header">
+<div class="product-icon">
+${storeIcon}
+</div>
+<div>
+<div class="product-title">${storeName}</div>
+<div style="color: #64748b; font-size: 0.9rem;">
+<i class="fas fa-star" style="color: #f59e0b;"></i> ${product.rating}/5 •
+<i class="fas fa-truck"></i> ${product.delivery} Delivery
+</div>
+</div>
+</div>
+
+<div class="product-price">
+₹${product.price.toLocaleString()}
+<span class="price-old">₹${product.originalPrice.toLocaleString()}</span>
+<span class="discount">${product.discount}% OFF</span>
+</div>
+
+<ul class="product-features">
+<li>Free Delivery Available</li>
+${product.emi ? '<li>No Cost EMI Available</li>' : ''}
+<li>30 Days Return Policy</li>
+<li>Warranty: 1 Year</li>
+</ul>
+
+<div class="product-actions">
+<a href="#" class="product-btn buy" onclick="buyProduct('${product.store}', '${product.name}')">
+<i class="fas fa-shopping-cart"></i> Buy Now
+</a>
+<a href="#" class="product-btn compare" onclick="saveForLater('${product.store}', ${product.price})">
+<i class="fas fa-bookmark"></i> Save
+</a>
+</div>
+`;
+
+productCard.innerHTML = html;
+resultsContainer.appendChild(productCard);
+});
+
+// Show comparison table
+displayComparisonTable(products);
+
+// Show savings card
+savingsCard.style.display = 'block';
+comparisonTable.style.display = 'block';
+}
+
+function displayComparisonTable(products) {
+comparisonTable.innerHTML = '';
+
+// Header
+const headerRow = document.createElement('div');
+headerRow.className = 'table-row header';
+headerRow.innerHTML = `
+<div class="table-cell">फीचर्स</div>
+${products.map(p => `<div class="table-cell">${getStoreName(p.store)}</div>`).join('')}
+`;
+comparisonTable.appendChild(headerRow);
+
+// Price row
+const priceRow = document.createElement('div');
+priceRow.className = 'table-row';
+priceRow.innerHTML = `
+<div class="table-cell">प्राइस</div>
+${products.map(p => `<div class="table-cell ${p.isBest ? 'highlight' : ''}">₹${p.price.toLocaleString()}</div>`).join('')}
+`;
+comparisonTable.appendChild(priceRow);
+
+// Discount row
+const discountRow = document.createElement('div');
+discountRow.className = 'table-row';
+discountRow.innerHTML = `
+<div class="table-cell">डिस्काउंट</div>
+${products.map(p => `<div class="table-cell ${p.isBest ? 'highlight' : ''}">${p.discount}% OFF</div>`).join('')}
+`;
+comparisonTable.appendChild(discountRow);
+
+// Rating row
+const ratingRow = document.createElement('div');
+ratingRow.className = 'table-row';
+ratingRow.innerHTML = `
+<div class="table-cell">रेटिंग</div>
+${products.map(p => `<div class="table-cell">${p.rating}/5</div>`).join('')}
+`;
+comparisonTable.appendChild(ratingRow);
+
+// Delivery row
+const deliveryRow = document.createElement('div');
+deliveryRow.className = 'table-row';
+deliveryRow.innerHTML = `
+<div class="table-cell">डिलीवरी</div>
+${products.map(p => `<div class="table-cell">${p.delivery}</div>`).join('')}
+`;
+comparisonTable.appendChild(deliveryRow);
+}
+
+function getStoreIcon(store) {
+const icons = {
+'amazon': '<i class="fab fa-amazon"></i>',
+'flipkart': '<i class="fas fa-shopping-cart"></i>',
+'myntra': '<i class="fas fa-tshirt"></i>',
+'ajio': '<i class="fas fa-shopping-bag"></i>'
+};
+return icons[store] || '<i class="fas fa-store"></i>';
+}
+
+function getStoreName(store) {
+const names = {
+'amazon': 'Amazon',
+'flipkart': 'Flipkart',
+'myntra': 'Myntra',
+'ajio': 'Ajio'
+};
+return names[store] || store;
+}
+
+function clearAll() {
+productName.value = '';
+minPrice.value = '';
+maxPrice.value = '';
+category.value = '';
+
+ecomButtons.forEach(btn => {
+btn.classList.remove('active');
+if (btn.dataset.store === 'amazon') {
+btn.classList.add('active');
+}
+});
+selectedStores = ['amazon'];
+
+resultsContainer.innerHTML = `
+<div style="text-align: center; padding: 50px 20px; color: #94a3b8;">
+<i class="fas fa-balance-scale" style="font-size: 3rem; margin-bottom: 20px; opacity: 0.3;"></i>
+<h3>प्राइस कंपेरिजन यहाँ दिखेगा</h3>
+<p>बाईं तरफ प्रोडक्ट डिटेल्स डालकर कंपेयर बटन दबाएं</p>
+</div>
+`;
+
+comparisonTable.style.display = 'none';
+savingsCard.style.display = 'none';
+showMessage('सभी डेटा रीसेट किया गया!', 'success');
+}
+
+function loadTrendingDeals() {
+productName.value = 'iPhone 15';
+showMessage('ट्रेंडिंग डील्स लोड हो रहे हैं...', 'success');
+setTimeout(() => {
+comparePrices();
+}, 500);
+}
+
+function buyProduct(store, product) {
+showMessage(`${getStoreName(store)} पर ${product} खरीदने के लिए रीडायरेक्ट किया जा रहा है...`, 'success');
+// In real implementation, this would redirect to the product page
+}
+
+function saveForLater(store, price) {
+const savedItems = JSON.parse(localStorage.getItem('savedProducts') || '[]');
+savedItems.push({
+store: store,
+price: price,
+date: new Date().toLocaleString()
+});
+localStorage.setItem('savedProducts', JSON.stringify(savedItems));
+showMessage('प्रोडक्ट सेव हो गया!', 'success');
+}
+
+function showMessage(message, type) {
+successText.textContent = message;
+
+if (type === 'error') {
+successMessage.style.background = '#dc2626';
+} else {
+successMessage.style.background = '#10b981';
+}
+
+successMessage.style.display = 'flex';
+
+setTimeout(() => {
+successMessage.style.display = 'none';
+}, 3000);
+}
+
+// Initialize with sample if empty
+window.addEventListener('load', () => {
+const saved = localStorage.getItem('savedProducts');
+if (!saved) {
+// Initialize with some sample saved products
+localStorage.setItem('savedProducts', JSON.stringify([
+{ store: 'amazon', price: 34999, date: '2024-01-15' },
+{ store: 'flipkart', price: 32999, date: '2024-01-14' }
+]));
+}
+});
+</script>
+</body>
+</html>
