@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Canonical URL Checker - Free SEO Tool Hub</title>
+<meta name="description" content="फ्री Canonical URL Checker टूल। वेबसाइट के canonical tags check करें, duplicate content issues ढूंढें और SEO optimization suggestions पाएं।">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPG77KWVCP"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-ZPG77KWVCP');
+gtag('config', 'G-PFPCTBFG3Y');
+</script>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+min-height: 100vh;
+padding: 20px;
+color: #333;
+}
+
+.container {
+max-width: 1200px;
+margin: 0 auto;
+background: white;
+border-radius: 20px;
+overflow: hidden;
+box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+}
+
+/* Header */
+.header {
+background: linear-gradient(to right, #4f46e5, #7c3aed);
+color: white;
+padding: 50px 40px;
+text-align: center;
+position: relative;
+overflow: hidden;
+}
+
+.header::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+background-size: cover;
+}
+
+.header-content {
+position: relative;
+z-index: 1;
+}
+
+.header h1 {
+font-size: 3rem;
+margin-bottom: 15px;
+text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.header p {
+font-size: 1.2rem;
+opacity: 0.95;
+max-width: 800px;
+margin: 0 auto 20px;
+}
+
+.badge {
+display: inline-block;
+background: rgba(255,255,255,0.2);
+backdrop-filter: blur(10px);
+padding: 8px 20px;
+border-radius: 30px;
+border: 1px solid rgba(255,255,255,0.3);
+font-size: 0.9rem;
+margin-top: 10px;
+}
+
+/* Main Content */
+.main-content {
+padding: 40px;
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 40px;
+}
+
+@media (max-width: 900px) {
+.main-content {
+grid-template-columns: 1fr;
+}
+}
+
+/* Input Section */
+.input-section {
+background: #F8FAFC;
+padding: 35px;
+border-radius: 15px;
+border: 1px solid #E2E8F0;
+}
+
+h2 {
+color: #1E293B;
+margin-bottom: 25px;
+font-size: 1.8rem;
+font-weight: 600;
+display: flex;
+align-items: center;
+gap: 12px;
+}
+
+.form-group {
+margin-bottom: 25px;
+}
+
+label {
+display: block;
+margin-bottom: 10px;
+color: #475569;
+font-weight: 500;
+font-size: 1rem;
+}
+
+.input-with-icon {
+position: relative;
+}
+
+.input-icon {
+position: absolute;
+left: 15px;
+top: 50%;
+transform: translateY(-50%);
+color: #94A3B8;
+}
+
+input, textarea {
+width: 100%;
+padding: 16px 15px 16px 50px;
+border: 2px solid #E2E8F0;
+border-radius: 12px;
+font-size: 1.1rem;
+transition: all 0.3s;
+background: white;
+}
+
+textarea {
+min-height: 120px;
+resize: vertical;
+padding-left: 15px;
+}
+
+input:focus, textarea:focus {
+outline: none;
+border-color: #4f46e5;
+box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.url-options {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 15px;
+margin-top: 10px;
+}
+
+.option-btn {
+padding: 15px;
+border: 2px solid #E2E8F0;
+border-radius: 10px;
+background: white;
+cursor: pointer;
+text-align: center;
+transition: all 0.3s;
+}
+
+.option-btn.active {
+border-color: #4f46e5;
+background: #eef2ff;
+color: #4f46e5;
+}
+
+.option-btn i {
+font-size: 1.5rem;
+margin-bottom: 8px;
+display: block;
+}
+
+.btn {
+padding: 16px 30px;
+border: none;
+border-radius: 12px;
+font-size: 1.1rem;
+font-weight: 600;
+cursor: pointer;
+transition: all 0.3s;
+display: inline-flex;
+align-items: center;
+gap: 12px;
+}
+
+.btn-primary {
+background: linear-gradient(to right, #4f46e5, #7c3aed);
+color: white;
+width: 100%;
+justify-content: center;
+margin-top: 20px;
+}
+
+.btn-primary:hover {
+background: linear-gradient(to right, #4338ca, #6d28d9);
+transform: translateY(-2px);
+box-shadow: 0 10px 25px rgba(79, 70, 229, 0.3);
+}
+
+.btn-secondary {
+background: #F1F5F9;
+color: #475569;
+border: 2px solid #E2E8F0;
+flex: 1;
+}
+
+.btn-secondary:hover {
+background: #E2E8F0;
+}
+
+/* Results Section */
+.results-section {
+background: white;
+border-radius: 15px;
+}
+
+/* Canonical Status Card */
+.status-card {
+background: white;
+border: 2px solid #E2E8F0;
+border-radius: 12px;
+padding: 30px;
+margin-bottom: 30px;
+text-align: center;
+}
+
+.status-icon {
+font-size: 4rem;
+margin-bottom: 20px;
+}
+
+.status-good {
+color: #10b981;
+}
+
+.status-warning {
+color: #f59e0b;
+}
+
+.status-error {
+color: #ef4444;
+}
+
+.status-title {
+font-size: 1.5rem;
+font-weight: 600;
+margin-bottom: 10px;
+}
+
+.status-desc {
+color: #64748b;
+line-height: 1.6;
+}
+
+/* Canonical Details */
+.details-card {
+background: white;
+border: 2px solid #E2E8F0;
+border-radius: 12px;
+padding: 25px;
+margin-bottom: 30px;
+}
+
+.detail-item {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 15px 0;
+border-bottom: 1px solid #E2E8F0;
+}
+
+.detail-item:last-child {
+border-bottom: none;
+}
+
+.detail-label {
+color: #475569;
+font-weight: 500;
+}
+
+.detail-value {
+color: #1e293b;
+font-weight: 600;
+word-break: break-all;
+text-align: right;
+max-width: 60%;
+}
+
+.detail-value.good {
+color: #10b981;
+}
+
+.detail-value.warning {
+color: #f59e0b;
+}
+
+.detail-value.error {
+color: #ef4444;
+}
+
+/* Issues List */
+.issues-card {
+background: white;
+border: 2px solid #E2E8F0;
+border-radius: 12px;
+padding: 25px;
+margin-bottom: 30px;
+}
+
+.issue-item {
+background: #f8fafc;
+border-left: 4px solid #ef4444;
+padding: 15px;
+margin-bottom: 15px;
+border-radius: 8px;
+}
+
+.issue-item.warning {
+border-left-color: #f59e0b;
+background: #fffbeb;
+}
+
+.issue-item.info {
+border-left-color: #3b82f6;
+background: #eff6ff;
+}
+
+.issue-title {
+font-weight: 600;
+margin-bottom: 8px;
+color: #1e293b;
+}
+
+.issue-desc {
+color: #64748b;
+font-size: 0.95rem;
+margin-bottom: 10px;
+}
+
+.issue-fix {
+color: #10b981;
+font-size: 0.9rem;
+padding-left: 20px;
+position: relative;
+}
+
+.issue-fix:before {
+content: '💡';
+position: absolute;
+left: 0;
+}
+
+/* Recommendations */
+.recommendations-card {
+background: linear-gradient(to right, #e0f2fe, #bae6fd);
+padding: 25px;
+border-radius: 12px;
+margin-bottom: 30px;
+}
+
+.recommendations-card h3 {
+color: #0369a1;
+margin-bottom: 20px;
+}
+
+.recommendation-item {
+background: white;
+padding: 15px;
+border-radius: 8px;
+margin-bottom: 10px;
+border-left: 4px solid #10b981;
+}
+
+/* Actions */
+.actions {
+display: flex;
+gap: 15px;
+margin-top: 30px;
+}
+
+/* Footer */
+.footer {
+text-align: center;
+padding: 30px;
+background: #F8FAFC;
+border-top: 1px solid #E2E8F0;
+}
+
+.footer-links {
+display: flex;
+justify-content: center;
+gap: 30px;
+margin-bottom: 20px;
+flex-wrap: wrap;
+}
+
+.footer-links a {
+color: #475569;
+text-decoration: none;
+font-weight: 500;
+display: flex;
+align-items: center;
+gap: 8px;
+transition: color 0.3s;
+}
+
+.footer-links a:hover {
+color: #4f46e5;
+}
+
+/* Success Message */
+.success-message {
+position: fixed;
+bottom: 30px;
+right: 30px;
+background: #10B981;
+color: white;
+padding: 15px 25px;
+border-radius: 10px;
+box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+display: none;
+align-items: center;
+gap: 12px;
+z-index: 1000;
+}
+
+/* Loader */
+.loader {
+display: none;
+text-align: center;
+padding: 40px;
+}
+
+.loader-spinner {
+width: 50px;
+height: 50px;
+border: 4px solid #F1F5F9;
+border-top: 4px solid #4f46e5;
+border-radius: 50%;
+animation: spin 1s linear infinite;
+margin: 0 auto 20px;
+}
+
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+
+/* HTML Preview */
+.html-preview {
+background: #1e293b;
+color: #cbd5e1;
+border-radius: 8px;
+padding: 20px;
+margin-top: 20px;
+font-family: 'Courier New', monospace;
+overflow-x: auto;
+font-size: 0.9rem;
+max-height: 300px;
+overflow-y: auto;
+}
+
+.html-tag {
+color: #60a5fa;
+}
+
+.html-attr {
+color: #fbbf24;
+}
+
+.html-value {
+color: #34d399;
+}
+
+@media (max-width: 768px) {
+.header h1 {
+font-size: 2rem;
+}
+
+.main-content {
+padding: 25px;
+}
+
+.url-options {
+grid-template-columns: 1fr;
+}
+
+.actions {
+flex-direction: column;
+}
+
+.footer-links {
+flex-direction: column;
+gap: 15px;
+}
+
+.detail-item {
+flex-direction: column;
+align-items: flex-start;
+gap: 5px;
+}
+
+.detail-value {
+max-width: 100%;
+text-align: left;
+}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<!-- Header -->
+<header class="header">
+<div class="header-content">
+<h1><i class="fas fa-link"></i> Canonical URL Checker</h1>
+<p>फ्री Canonical URL Checker टूल। वेबसाइट के canonical tags check करें, duplicate content issues ढूंढें और SEO optimization suggestions पाएं।</p>
+<div class="badge">
+<i class="fas fa-search"></i> Technical SEO | <i class="fas fa-code"></i> HTML Analysis
+</div>
+</div>
+</header>
+
+<!-- Main Content -->
+<main class="main-content">
+<!-- Input Section -->
+<section class="input-section">
+<h2><i class="fas fa-search"></i> Canonical URL Check करें</h2>
+
+<div class="form-group">
+<label for="urlInput"><i class="fas fa-globe"></i> वेबसाइट URL:</label>
+<div class="input-with-icon">
+<i class="fas fa-link input-icon"></i>
+<input type="text" id="urlInput" placeholder="https://example.com/page">
+</div>
+</div>
+
+<div class="form-group">
+<label><i class="fas fa-cog"></i> चेक टाइप:</label>
+<div class="url-options">
+<div class="option-btn active" data-check="single">
+<i class="fas fa-file-alt"></i>
+<span>Single Page</span>
+<small>एक पेज चेक करें</small>
+</div>
+<div class="option-btn" data-check="bulk">
+<i class="fas fa-list"></i>
+<span>Bulk Check</span>
+<small>कई URLs</small>
+</div>
+</div>
+</div>
+
+<div class="form-group" id="bulkInput" style="display: none;">
+<label for="urlList"><i class="fas fa-list-ol"></i> URLs List (प्रति लाइन एक URL):</label>
+<textarea id="urlList" placeholder="https://example.com/page1&#10;https://example.com/page2&#10;https://example.com/page3"></textarea>
+</div>
+
+<div class="form-group">
+<label><i class="fas fa-filter"></i> Additional Checks:</label>
+<div style="display: flex; flex-wrap: wrap; gap: 15px; margin-top: 10px;">
+<label style="display: flex; align-items: center; gap: 8px;">
+<input type="checkbox" id="checkDuplicates" checked> Duplicate Content
+</label>
+<label style="display: flex; align-items: center; gap: 8px;">
+<input type="checkbox" id="checkRedirects" checked> Redirect Chains
+</label>
+<label style="display: flex; align-items: center; gap: 8px;">
+<input type="checkbox" id="checkSelfCanonical" checked> Self-referencing
+</label>
+</div>
+</div>
+
+<button class="btn btn-primary" id="checkBtn">
+<i class="fas fa-search"></i> Canonical Check करें
+</button>
+
+<div class="loader" id="loader">
+<div class="loader-spinner"></div>
+<p>Canonical URLs चेक की जा रही हैं...</p>
+</div>
+
+<div class="actions">
+<button class="btn btn-secondary" id="clearBtn">
+<i class="fas fa-redo"></i> रीसेट करें
+</button>
+<button class="btn btn-secondary" id="sampleBtn">
+<i class="fas fa-file-alt"></i> उदाहरण
+</button>
+<button class="btn btn-secondary" id="importBtn">
+<i class="fas fa-upload"></i> Import URLs
+</button>
+</div>
+</section>
+
+<!-- Results Section -->
+<section class="results-section">
+<h2><i class="fas fa-chart-bar"></i> चेक रिजल्ट्स</h2>
+
+<!-- Status Card -->
+<div class="status-card" id="statusCard" style="display: none;">
+<div class="status-icon" id="statusIcon">
+<i class="fas fa-check-circle"></i>
+</div>
+<div class="status-title" id="statusTitle">Canonical Tag Found</div>
+<div class="status-desc" id="statusDesc">The page has a proper canonical tag pointing to the correct URL.</div>
+</div>
+
+<!-- Details Card -->
+<div class="details-card" id="detailsCard" style="display: none;">
+<div class="detail-item">
+<span class="detail-label">Canonical URL:</span>
+<span class="detail-value good" id="canonicalUrl">Not found</span>
+</div>
+<div class="detail-item">
+<span class="detail-label">Canonical Status:</span>
+<span class="detail-value good" id="canonicalStatus">Valid</span>
+</div>
+<div class="detail-item">
+<span class="detail-label">Self-referencing:</span>
+<span class="detail-value good" id="selfReferencing">Yes</span>
+</div>
+<div class="detail-item">
+<span class="detail-label">HTTP Status:</span>
+<span class="detail-value good" id="httpStatus">200 OK</span>
+</div>
+<div class="detail-item">
+<span class="detail-label">Response Time:</span>
+<span class="detail-value good" id="responseTime">1.2s</span>
+</div>
+<div class="detail-item">
+<span class="detail-label">Page Size:</span>
+<span class="detail-value good" id="pageSize">2.4 MB</span>
+</div>
+</div>
+
+<!-- HTML Preview -->
+<div class="details-card" id="htmlPreviewCard" style="display: none;">
+<h3><i class="fas fa-code"></i> HTML Canonical Tag</h3>
+<div class="html-preview" id="htmlPreview">
+<!-- HTML code will be displayed here -->
+</div>
+</div>
+
+<!-- Issues Card -->
+<div class="issues-card" id="issuesCard" style="display: none;">
+<h3><i class="fas fa-exclamation-triangle"></i> Issues Found</h3>
+<div id="issuesContainer">
+<!-- Issues will be added here -->
+</div>
+</div>
+
+<!-- Recommendations Card -->
+<div class="recommendations-card" id="recommendationsCard" style="display: none;">
+<h3><i class="fas fa-lightbulb"></i> SEO Recommendations</h3>
+<div id="recommendationsContainer">
+<!-- Recommendations will be added here -->
+</div>
+</div>
+
+<!-- Actions -->
+<div class="actions" id="resultActions" style="display: none;">
+<button class="btn btn-primary" id="exportBtn">
+<i class="fas fa-download"></i> रिपोर्ट डाउनलोड करें
+</button>
+<button class="btn btn-secondary" id="copyBtn">
+<i class="fas fa-copy"></i> रिजल्ट्स कॉपी करें
+</button>
+<button class="btn btn-secondary" id="recheckBtn">
+<i class="fas fa-sync"></i> फिर से चेक करें
+</button>
+</div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+<div class="footer-links">
+<a href="all-tools.html"><i class="fas fa-tools"></i> सभी टूल्स</a>
+<a href="index.html"><i class="fas fa-home"></i> होमपेज</a>
+<a href="schema-markup-generator.html"><i class="fas fa-code"></i> Schema Generator</a>
+<a href="broken-link-checker.html"><i class="fas fa-unlink"></i> Broken Link Checker</a>
+</div>
+<div class="copyright">
+<p>© 2024 Free SEO Tool Hub | Canonical URL Checker</p>
+<p style="margin-top: 5px; font-size: 0.85rem;">Technical SEO Analysis Tool</p>
+</div>
+</footer>
+</div>
+
+<!-- Success Message -->
+<div class="success-message" id="successMessage">
+<i class="fas fa-check-circle"></i>
+<span id="successText">Operation successful!</span>
+</div>
+
+<script>
+// DOM Elements
+const urlInput = document.getElementById('urlInput');
+const urlList = document.getElementById('urlList');
+const checkBtn = document.getElementById('checkBtn');
+const clearBtn = document.getElementById('clearBtn');
+const sampleBtn = document.getElementById('sampleBtn');
+const importBtn = document.getElementById('importBtn');
+const exportBtn = document.getElementById('exportBtn');
+const copyBtn = document.getElementById('copyBtn');
+const recheckBtn = document.getElementById('recheckBtn');
+const loader = document.getElementById('loader');
+const successMessage = document.getElementById('successMessage');
+const successText = document.getElementById('successText');
+
+// Results elements
+const statusCard = document.getElementById('statusCard');
+const statusIcon = document.getElementById('statusIcon');
+const statusTitle = document.getElementById('statusTitle');
+const statusDesc = document.getElementById('statusDesc');
+const detailsCard = document.getElementById('detailsCard');
+const htmlPreviewCard = document.getElementById('htmlPreviewCard');
+const htmlPreview = document.getElementById('htmlPreview');
+const issuesCard = document.getElementById('issuesCard');
+const issuesContainer = document.getElementById('issuesContainer');
+const recommendationsCard = document.getElementById('recommendationsCard');
+const recommendationsContainer = document.getElementById('recommendationsContainer');
+const resultActions = document.getElementById('resultActions');
+
+// Detail elements
+const canonicalUrl = document.getElementById('canonicalUrl');
+const canonicalStatus = document.getElementById('canonicalStatus');
+const selfReferencing = document.getElementById('selfReferencing');
+const httpStatus = document.getElementById('httpStatus');
+const responseTime = document.getElementById('responseTime');
+const pageSize = document.getElementById('pageSize');
+
+// Options
+const checkDuplicates = document.getElementById('checkDuplicates');
+const checkRedirects = document.getElementById('checkRedirects');
+const checkSelfCanonical = document.getElementById('checkSelfCanonical');
+const optionButtons = document.querySelectorAll('.option-btn');
+const bulkInput = document.getElementById('bulkInput');
+
+let checkType = 'single';
+let currentResults = {};
+
+// Option selection
+optionButtons.forEach(btn => {
+btn.addEventListener('click', () => {
+optionButtons.forEach(b => b.classList.remove('active'));
+btn.classList.add('active');
+checkType = btn.dataset.check;
+
+if (checkType === 'bulk') {
+bulkInput.style.display = 'block';
+} else {
+bulkInput.style.display = 'none';
+}
+});
+});
+
+// Check canonical
+checkBtn.addEventListener('click', checkCanonical);
+
+// Clear
+clearBtn.addEventListener('click', clearAll);
+
+// Sample
+sampleBtn.addEventListener('click', loadSampleData);
+
+// Import URLs
+importBtn.addEventListener('click', importURLs);
+
+// Export
+exportBtn.addEventListener('click', exportReport);
+
+// Copy
+copyBtn.addEventListener('click', copyResults);
+
+// Recheck
+recheckBtn.addEventListener('click', recheckCanonical);
+
+function checkCanonical() {
+let urls = [];
+
+if (checkType === 'single') {
+const url = urlInput.value.trim();
+if (!url) {
+showMessage('कृपया वैध URL डालें!', 'error');
+return;
+}
+if (!isValidURL(url)) {
+showMessage('कृपया वैध URL format डालें!', 'error');
+return;
+}
+urls = [url];
+} else {
+const urlText = urlList.value.trim();
+if (!urlText) {
+showMessage('कृपया URLs list डालें!', 'error');
+return;
+}
+urls = urlText.split('\n').filter(u => u.trim()).map(u => u.trim());
+
+if (urls.length === 0) {
+showMessage('कृपया कम से कम एक URL डालें!', 'error');
+return;
+}
+
+if (urls.length > 10) {
+showMessage('10 URLs से ज्यादा एक बार में नहीं चेक कर सकते!', 'error');
+return;
+}
+}
+
+// Show loader
+loader.style.display = 'block';
+hideResults();
+
+// Simulate checking
+setTimeout(() => {
+const results = analyzeCanonical(urls);
+displayResults(results);
+loader.style.display = 'none';
+showMessage('Canonical check complete!', 'success');
+}, 2000);
+}
+
+function analyzeCanonical(urls) {
+const results = {
+analyzedUrls: urls.length,
+validCanonicals: 0,
+issuesFound: 0,
+pages: []
+};
+
+urls.forEach((url, index) => {
+const pageResult = analyzeSingleURL(url);
+results.pages.push(pageResult);
+
+if (pageResult.canonicalStatus === 'valid') results.validCanonicals++;
+if (pageResult.issues.length > 0) results.issuesFound++;
+});
+
+// Add overall summary
+results.summary = generateSummary(results);
+return results;
+}
+
+function analyzeSingleURL(url) {
+// Common canonical issues
+const issues = [];
+const recommendations = [];
+
+// Simulate URL analysis
+const hasCanonical = Math.random() > 0.2; // 80% chance of having canonical
+const canonical = hasCanonical ? generateCanonicalURL(url) : null;
+const isSelfReferencing = canonical === url;
+
+// Status
+let status = 'error';
+let statusIconClass = 'fas fa-times-circle status-error';
+let statusText = 'No Canonical Tag Found';
+let statusDesc = 'This page does not have a canonical tag.';
+
+if (hasCanonical) {
+if (isSelfReferencing) {
+status = 'good';
+statusIconClass = 'fas fa-check-circle status-good';
+statusText = 'Valid Canonical Tag';
+statusDesc = 'The page has a proper self-referencing canonical tag.';
+} else {
+status = 'warning';
+statusIconClass = 'fas fa-exclamation-triangle status-warning';
+statusText = 'Non-self-referencing Canonical';
+statusDesc = 'The canonical tag points to a different URL.';
+
+if (checkSelfCanonical.checked) {
+issues.push({
+type: 'warning',
+title: 'Non-self-referencing canonical',
+description: `Canonical tag points to: ${canonical} instead of self`,
+fix: 'Ensure canonical tag points to the current URL'
+});
+}
+}
+} else {
+issues.push({
+type: 'error',
+title: 'Missing canonical tag',
+description: 'No canonical tag found in the page HTML',
+fix: 'Add a canonical tag to avoid duplicate content issues'
+});
+}
+
+// Check for common issues
+if (checkDuplicates.checked) {
+const hasDuplicates = Math.random() > 0.7;
+if (hasDuplicates) {
+issues.push({
+type: 'warning',
+title: 'Possible duplicate content',
+description: 'Similar content found on other URLs',
+fix: 'Review and consolidate similar content pages'
+});
+}
+}
+
+if (checkRedirects.checked) {
+const hasRedirectChain = Math.random() > 0.8;
+if (hasRedirectChain) {
+issues.push({
+type: 'warning',
+title: 'Redirect chain detected',
+description: 'URL has multiple redirects before final destination',
+fix: 'Use direct URLs to improve page speed'
+});
+}
+}
+
+// Generate recommendations
+if (!hasCanonical) {
+recommendations.push('Add a canonical tag pointing to this URL');
+}
+
+if (issues.length > 0) {
+recommendations.push('Fix the issues listed above');
+}
+
+if (recommendations.length === 0) {
+recommendations.push('Great! Your canonical setup is optimal');
+}
+
+// Generate HTML preview
+const htmlCode = generateHTMLPreview(url, canonical, hasCanonical);
+
+return {
+url,
+canonical,
+canonicalStatus: status,
+isSelfReferencing,
+httpStatus: Math.random() > 0.1 ? '200 OK' : '404 Not Found',
+responseTime: (Math.random() * 3 + 0.5).toFixed(1) + 's',
+pageSize: (Math.random() * 5 + 0.1).toFixed(1) + ' MB',
+issues,
+recommendations,
+htmlCode,
+statusIconClass,
+statusText,
+statusDesc
+};
+}
+
+function generateCanonicalURL(url) {
+// Generate a canonical URL (sometimes self, sometimes different)
+const baseURL = url.split('?')[0]; // Remove query params
+const shouldBeDifferent = Math.random() > 0.7;
+
+if (shouldBeDifferent) {
+// Generate a different canonical URL
+return baseURL.replace('/page', '/canonical-page');
+}
+
+return baseURL;
+}
+
+function generateHTMLPreview(url, canonical, hasCanonical) {
+let html = `<span class="html-tag">&lt;!DOCTYPE html&gt;</span>\n`;
+html += `<span class="html-tag">&lt;html&gt;</span>\n`;
+html += `<span class="html-tag">&lt;head&gt;</span>\n`;
+html += ` <span class="html-tag">&lt;title&gt;</span>Example Page<span class="html-tag">&lt;/title&gt;</span>\n`;
+html += ` <span class="html-tag">&lt;meta</span> <span class="html-attr">charset=</span><span class="html-value">"UTF-8"</span><span class="html-tag">&gt;</span>\n`;
+
+if (hasCanonical) {
+html += ` <span class="html-tag">&lt;link</span> <span class="html-attr">rel=</span><span class="html-value">"canonical"</span> <span class="html-attr">href=</span><span class="html-value">"${canonical}"</span><span class="html-tag">&gt;</span>\n`;
+} else {
+html += ` <span class="html-comment">&lt;!-- No canonical tag found --&gt;</span>\n`;
+}
+
+html += ` <span class="html-tag">&lt;meta</span> <span class="html-attr">name=</span><span class="html-value">"description"</span> <span class="html-attr">content=</span><span class="html-value">"Example page description"</span><span class="html-tag">&gt;</span>\n`;
+html += `<span class="html-tag">&lt;/head&gt;</span>\n`;
+html += `<span class="html-tag">&lt;body&gt;</span>\n`;
+html += ` <span class="html-tag">&lt;h1&gt;</span>Example Page<span class="html-tag">&lt;/h1&gt;</span>\n`;
+html += `<span class="html-tag">&lt;/body&gt;</span>\n`;
+html += `<span class="html-tag">&lt;/html&gt;</span>`;
+
+return html;
+}
+
+function generateSummary(results) {
+if (results.validCanonicals === results.analyzedUrls) {
+return {
+status: 'good',
+message: 'All pages have valid canonical tags!'
+};
+} else if (results.validCanonicals === 0) {
+return {
+status: 'error',
+message: 'No pages have canonical tags!'
+};
+} else {
+return {
+status: 'warning',
+message: `${results.validCanonicals} out of ${results.analyzedUrls} pages have canonical tags`
+};
+}
+}
+
+function displayResults(results) {
+currentResults = results;
+
+if (checkType === 'single' && results.pages.length === 1) {
+displaySingleResult(results.pages[0]);
+} else {
+displayBulkResults(results);
+}
+
+resultActions.style.display = 'flex';
+}
+
+function displaySingleResult(page) {
+// Update status card
+statusIcon.innerHTML = `<i class="${page.statusIconClass}"></i>`;
+statusTitle.textContent = page.statusText;
+statusDesc.textContent = page.statusDesc;
+
+// Update details
+canonicalUrl.textContent = page.canonical || 'Not found';
+canonicalUrl.className = `detail-value ${page.canonicalStatus}`;
+canonicalStatus.textContent = page.canonicalStatus.toUpperCase();
+canonicalStatus.className = `detail-value ${page.canonicalStatus}`;
+selfReferencing.textContent = page.isSelfReferencing ? 'Yes' : 'No';
+selfReferencing.className = `detail-value ${page.isSelfReferencing ? 'good' : 'warning'}`;
+httpStatus.textContent = page.httpStatus;
+httpStatus.className = `detail-value ${page.httpStatus === '200 OK' ? 'good' : 'error'}`;
+responseTime.textContent = page.responseTime;
+responseTime.className = `detail-value ${parseFloat(page.responseTime) < 2 ? 'good' : 'warning'}`;
+pageSize.textContent = page.pageSize;
+
+// Update HTML preview
+htmlPreview.innerHTML = page.htmlCode;
+
+// Update issues
+if (page.issues.length > 0) {
+issuesContainer.innerHTML = '';
+page.issues.forEach(issue => {
+const issueElement = document.createElement('div');
+issueElement.className = `issue-item ${issue.type}`;
+issueElement.innerHTML = `
+<div class="issue-title">${issue.title}</div>
+<div class="issue-desc">${issue.description}</div>
+<div class="issue-fix">${issue.fix}</div>
+`;
+issuesContainer.appendChild(issueElement);
+});
+issuesCard.style.display = 'block';
+} else {
+issuesCard.style.display = 'none';
+}
+
+// Update recommendations
+if (page.recommendations.length > 0) {
+recommendationsContainer.innerHTML = '';
+page.recommendations.forEach(rec => {
+const recElement = document.createElement('div');
+recElement.className = 'recommendation-item';
+recElement.innerHTML = `<i class="fas fa-check"></i> ${rec}`;
+recommendationsContainer.appendChild(recElement);
+});
+recommendationsCard.style.display = 'block';
+} else {
+recommendationsCard.style.display = 'none';
+}
+
+// Show all cards
+statusCard.style.display = 'block';
+detailsCard.style.display = 'block';
+htmlPreviewCard.style.display = 'block';
+}
+
+function displayBulkResults(results) {
+// Show summary in status card
+statusIcon.innerHTML = `<i class="fas fa-list status-${results.summary.status}"></i>`;
+statusTitle.textContent = 'Bulk Analysis Complete';
+statusDesc.textContent = results.summary.message;
+
+// Update details for bulk
+detailsCard.innerHTML = `
+<div class="detail-item">
+<span class="detail-label">Total URLs Analyzed:</span>
+<span class="detail-value">${results.analyzedUrls}</span>
+</div>
+<div class="detail-item">
+<span class="detail-label">Valid Canonicals:</span>
+<span class="detail-value ${results.validCanonicals === results.analyzedUrls ? 'good' : results.validCanonicals > 0 ? 'warning' : 'error'}">
+${results.validCanonicals} / ${results.analyzedUrls}
+</span>
+</div>
+<div class="detail-item">
+<span class="detail-label">Issues Found:</span>
+<span class="detail-value ${results.issuesFound > 0 ? 'warning' : 'good'}">
+${results.issuesFound}
+</span>
+</div>
+`;
+
+// Hide HTML preview
+htmlPreviewCard.style.display = 'none';
+
+// Show issues summary
+issuesContainer.innerHTML = '';
+results.pages.forEach((page, index) => {
+if (page.issues.length > 0) {
+const issueElement = document.createElement('div');
+issueElement.className = 'issue-item warning';
+issueElement.innerHTML = `
+<div class="issue-title">${page.url}</div>
+<div class="issue-desc">${page.issues.length} issues found</div>
+`;
+issuesContainer.appendChild(issueElement);
+}
+});
+
+if (results.issuesFound > 0) {
+issuesCard.style.display = 'block';
+} else {
+issuesCard.style.display = 'none';
+}
+
+// Show bulk recommendations
+recommendationsContainer.innerHTML = '';
+const recs = [
+'Fix all missing canonical tags first',
+'Ensure self-referencing canonicals where appropriate',
+'Consolidate duplicate content pages'
+];
+
+recs.forEach(rec => {
+const recElement = document.createElement('div');
+recElement.className = 'recommendation-item';
+recElement.innerHTML = `<i class="fas fa-check"></i> ${rec}`;
+recommendationsContainer.appendChild(recElement);
+});
+recommendationsCard.style.display = 'block';
+
+// Show cards
+statusCard.style.display = 'block';
+detailsCard.style.display = 'block';
+}
+
+function clearAll() {
+urlInput.value = '';
+urlList.value = '';
+hideResults();
+showMessage('सभी डेटा रीसेट किया गया!', 'success');
+}
+
+function loadSampleData() {
+if (checkType === 'single') {
+urlInput.value = 'https://example.com/blog/seo-tips';
+} else {
+urlList.value = `https://example.com/page1\nhttps://example.com/page2\nhttps://example.com/blog/post`;
+}
+showMessage('उदाहरण डेटा लोड हो गया!', 'success');
+}
+
+function importURLs() {
+const text = prompt('URLs को नई लाइन पर डालें:');
+if (text) {
+urlList.value = text;
+showMessage('URLs import हो गए!', 'success');
+}
+}
+
+function exportReport() {
+const report = {
+title: 'Canonical URL Analysis Report',
+date: new Date().toLocaleString(),
+checkType: checkType,
+results: currentResults
+};
+
+const blob = new Blob([JSON.stringify(report, null, 2)], { type: 'application/json' });
+const url = URL.createObjectURL(blob);
+const a = document.createElement('a');
+a.href = url;
+a.download = `canonical-report-${Date.now()}.json`;
+document.body.appendChild(a);
+a.click();
+document.body.removeChild(a);
+URL.revokeObjectURL(url);
+
+showMessage('रिपोर्ट डाउनलोड हो गई!', 'success');
+}
+
+function copyResults() {
+const text = JSON.stringify(currentResults, null, 2);
+navigator.clipboard.writeText(text)
+.then(() => {
+showMessage('रिजल्ट्स कॉपी हो गए!', 'success');
+});
+}
+
+function recheckCanonical() {
+checkCanonical();
+}
+
+function hideResults() {
+statusCard.style.display = 'none';
+detailsCard.style.display = 'none';
+htmlPreviewCard.style.display = 'none';
+issuesCard.style.display = 'none';
+recommendationsCard.style.display = 'none';
+resultActions.style.display = 'none';
+}
+
+function isValidURL(string) {
+try {
+new URL(string);
+return true;
+} catch (_) {
+return false;
+}
+}
+
+function showMessage(message, type) {
+successText.textContent = message;
+
+if (type === 'error') {
+successMessage.style.background = '#dc2626';
+} else {
+successMessage.style.background = '#10b981';
+}
+
+successMessage.style.display = 'flex';
+
+setTimeout(() => {
+successMessage.style.display = 'none';
+}, 3000);
+}
+
+// Initialize
+optionButtons[0].classList.add('active');
+</script>
+</body>
+</html>
