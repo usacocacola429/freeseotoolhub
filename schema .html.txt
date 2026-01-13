@@ -1,0 +1,1646 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Schema Markup Generator - Free SEO Tool Hub</title>
+<meta name="description" content="फ्री Schema Markup Generator। Structured data JSON-LD code generate करें। Rich snippets के लिए schema.org markup बनाएं।">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPG77KWVCP"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-ZPG77KWVCP');
+gtag('config', 'G-PFPCTBFG3Y');
+</script>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+min-height: 100vh;
+padding: 20px;
+color: #333;
+}
+
+.container {
+max-width: 1200px;
+margin: 0 auto;
+background: white;
+border-radius: 20px;
+overflow: hidden;
+box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+}
+
+/* Header */
+.header {
+background: linear-gradient(to right, #ea580c, #dc2626);
+color: white;
+padding: 50px 40px;
+text-align: center;
+position: relative;
+overflow: hidden;
+}
+
+.header::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+background-size: cover;
+}
+
+.header-content {
+position: relative;
+z-index: 1;
+}
+
+.header h1 {
+font-size: 3rem;
+margin-bottom: 15px;
+text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.header p {
+font-size: 1.2rem;
+opacity: 0.95;
+max-width: 800px;
+margin: 0 auto 20px;
+}
+
+.badge {
+display: inline-block;
+background: rgba(255,255,255,0.2);
+backdrop-filter: blur(10px);
+padding: 8px 20px;
+border-radius: 30px;
+border: 1px solid rgba(255,255,255,0.3);
+font-size: 0.9rem;
+margin-top: 10px;
+}
+
+/* Main Content */
+.main-content {
+padding: 40px;
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 40px;
+}
+
+@media (max-width: 900px) {
+.main-content {
+grid-template-columns: 1fr;
+}
+}
+
+/* Input Section */
+.input-section {
+background: #F8FAFC;
+padding: 35px;
+border-radius: 15px;
+border: 1px solid #E2E8F0;
+}
+
+h2 {
+color: #1E293B;
+margin-bottom: 25px;
+font-size: 1.8rem;
+font-weight: 600;
+display: flex;
+align-items: center;
+gap: 12px;
+}
+
+.form-group {
+margin-bottom: 25px;
+}
+
+label {
+display: block;
+margin-bottom: 10px;
+color: #475569;
+font-weight: 500;
+font-size: 1rem;
+}
+
+input, select, textarea {
+width: 100%;
+padding: 16px 15px;
+border: 2px solid #E2E8F0;
+border-radius: 12px;
+font-size: 1.1rem;
+transition: all 0.3s;
+background: white;
+}
+
+textarea {
+min-height: 100px;
+resize: vertical;
+font-family: monospace;
+font-size: 0.9rem;
+}
+
+input:focus, select:focus, textarea:focus {
+outline: none;
+border-color: #ea580c;
+box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.1);
+}
+
+.schema-options {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 15px;
+margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+.schema-options {
+grid-template-columns: repeat(2, 1fr);
+}
+}
+
+.schema-btn {
+padding: 20px 10px;
+border: 2px solid #E2E8F0;
+border-radius: 10px;
+background: white;
+cursor: pointer;
+text-align: center;
+transition: all 0.3s;
+}
+
+.schema-btn.active {
+border-color: #ea580c;
+background: #fff7ed;
+color: #ea580c;
+}
+
+.schema-btn i {
+font-size: 2rem;
+margin-bottom: 10px;
+display: block;
+}
+
+.schema-btn span {
+display: block;
+font-weight: 600;
+margin-bottom: 5px;
+}
+
+.schema-btn small {
+font-size: 0.8rem;
+color: #64748b;
+}
+
+.input-row {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 15px;
+}
+
+.btn {
+padding: 16px 30px;
+border: none;
+border-radius: 12px;
+font-size: 1.1rem;
+font-weight: 600;
+cursor: pointer;
+transition: all 0.3s;
+display: inline-flex;
+align-items: center;
+gap: 12px;
+}
+
+.btn-primary {
+background: linear-gradient(to right, #ea580c, #dc2626);
+color: white;
+width: 100%;
+justify-content: center;
+margin-top: 20px;
+}
+
+.btn-primary:hover {
+background: linear-gradient(to right, #c2410c, #b91c1c);
+transform: translateY(-2px);
+box-shadow: 0 10px 25px rgba(234, 88, 12, 0.3);
+}
+
+.btn-secondary {
+background: #F1F5F9;
+color: #475569;
+border: 2px solid #E2E8F0;
+flex: 1;
+}
+
+.btn-secondary:hover {
+background: #E2E8F0;
+}
+
+/* Results Section */
+.results-section {
+background: white;
+border-radius: 15px;
+}
+
+/* Code Preview */
+.code-preview {
+background: #1e293b;
+color: #cbd5e1;
+border-radius: 12px;
+padding: 25px;
+margin-bottom: 30px;
+font-family: 'Courier New', monospace;
+font-size: 0.9rem;
+overflow-x: auto;
+max-height: 500px;
+overflow-y: auto;
+}
+
+.code-line {
+margin-bottom: 5px;
+line-height: 1.5;
+}
+
+.code-tag {
+color: #60a5fa;
+}
+
+.code-key {
+color: #fbbf24;
+margin-left: 20px;
+}
+
+.code-string {
+color: #34d399;
+}
+
+.code-number {
+color: #f87171;
+}
+
+.code-boolean {
+color: #a78bfa;
+}
+
+/* Preview Tabs */
+.preview-tabs {
+display: flex;
+border-bottom: 2px solid #E2E8F0;
+margin-bottom: 20px;
+}
+
+.preview-tab {
+padding: 15px 25px;
+cursor: pointer;
+font-weight: 500;
+color: #64748b;
+border-bottom: 2px solid transparent;
+transition: all 0.3s;
+}
+
+.preview-tab.active {
+color: #ea580c;
+border-bottom-color: #ea580c;
+}
+
+.preview-content {
+display: none;
+}
+
+.preview-content.active {
+display: block;
+}
+
+/* Rich Snippet Preview */
+.rich-snippet-preview {
+background: white;
+border: 2px solid #E2E8F0;
+border-radius: 12px;
+padding: 25px;
+margin-bottom: 30px;
+}
+
+.snippet-header {
+display: flex;
+align-items: center;
+gap: 10px;
+margin-bottom: 20px;
+padding-bottom: 15px;
+border-bottom: 1px solid #E2E8F0;
+}
+
+.snippet-title {
+font-size: 1.2rem;
+font-weight: 600;
+color: #1e293b;
+}
+
+.snippet-item {
+margin-bottom: 15px;
+}
+
+.snippet-label {
+font-size: 0.9rem;
+color: #64748b;
+margin-bottom: 5px;
+}
+
+.snippet-value {
+font-size: 1rem;
+color: #1e293b;
+font-weight: 500;
+}
+
+.snippet-rating {
+display: flex;
+align-items: center;
+gap: 10px;
+margin-top: 5px;
+}
+
+.stars {
+color: #fbbf24;
+}
+
+.rating-value {
+color: #1e293b;
+font-weight: 600;
+}
+
+/* Validation Results */
+.validation-card {
+background: white;
+border: 2px solid #E2E8F0;
+border-radius: 12px;
+padding: 25px;
+margin-bottom: 30px;
+}
+
+.validation-item {
+display: flex;
+align-items: center;
+gap: 15px;
+padding: 15px 0;
+border-bottom: 1px solid #E2E8F0;
+}
+
+.validation-item:last-child {
+border-bottom: none;
+}
+
+.validation-icon {
+font-size: 1.5rem;
+}
+
+.validation-good {
+color: #10b981;
+}
+
+.validation-warning {
+color: #f59e0b;
+}
+
+.validation-error {
+color: #ef4444;
+}
+
+.validation-text {
+flex: 1;
+}
+
+.validation-title {
+font-weight: 600;
+margin-bottom: 5px;
+}
+
+.validation-desc {
+color: #64748b;
+font-size: 0.9rem;
+}
+
+/* Implementation Guide */
+.guide-card {
+background: linear-gradient(to right, #fef3c7, #fde68a);
+padding: 25px;
+border-radius: 12px;
+margin-bottom: 30px;
+}
+
+.guide-card h3 {
+color: #92400e;
+margin-bottom: 20px;
+}
+
+.step-item {
+background: white;
+padding: 15px;
+border-radius: 8px;
+margin-bottom: 10px;
+border-left: 4px solid #ea580c;
+}
+
+.step-number {
+display: inline-block;
+background: #ea580c;
+color: white;
+width: 30px;
+height: 30px;
+border-radius: 50%;
+text-align: center;
+line-height: 30px;
+font-weight: 600;
+margin-right: 10px;
+}
+
+/* Actions */
+.actions {
+display: flex;
+gap: 15px;
+margin-top: 30px;
+}
+
+/* Footer */
+.footer {
+text-align: center;
+padding: 30px;
+background: #F8FAFC;
+border-top: 1px solid #E2E8F0;
+}
+
+.footer-links {
+display: flex;
+justify-content: center;
+gap: 30px;
+margin-bottom: 20px;
+flex-wrap: wrap;
+}
+
+.footer-links a {
+color: #475569;
+text-decoration: none;
+font-weight: 500;
+display: flex;
+align-items: center;
+gap: 8px;
+transition: color 0.3s;
+}
+
+.footer-links a:hover {
+color: #ea580c;
+}
+
+/* Success Message */
+.success-message {
+position: fixed;
+bottom: 30px;
+right: 30px;
+background: #10B981;
+color: white;
+padding: 15px 25px;
+border-radius: 10px;
+box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+display: none;
+align-items: center;
+gap: 12px;
+z-index: 1000;
+}
+
+/* Loader */
+.loader {
+display: none;
+text-align: center;
+padding: 40px;
+}
+
+.loader-spinner {
+width: 50px;
+height: 50px;
+border: 4px solid #F1F5F9;
+border-top: 4px solid #ea580c;
+border-radius: 50%;
+animation: spin 1s linear infinite;
+margin: 0 auto 20px;
+}
+
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+
+/* Copy Button */
+.copy-btn {
+position: absolute;
+top: 15px;
+right: 15px;
+background: #374151;
+color: white;
+border: none;
+padding: 8px 15px;
+border-radius: 6px;
+cursor: pointer;
+font-size: 0.9rem;
+display: flex;
+align-items: center;
+gap: 5px;
+}
+
+.copy-btn:hover {
+background: #4b5563;
+}
+
+@media (max-width: 768px) {
+.header h1 {
+font-size: 2rem;
+}
+
+.main-content {
+padding: 25px;
+}
+
+.input-row {
+grid-template-columns: 1fr;
+}
+
+.actions {
+flex-direction: column;
+}
+
+.preview-tabs {
+overflow-x: auto;
+flex-wrap: nowrap;
+}
+
+.preview-tab {
+white-space: nowrap;
+padding: 12px 15px;
+}
+
+.footer-links {
+flex-direction: column;
+gap: 15px;
+}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<!-- Header -->
+<header class="header">
+<div class="header-content">
+<h1><i class="fas fa-code"></i> Schema Markup Generator</h1>
+<p>फ्री Schema Markup Generator। Structured data JSON-LD code generate करें। Rich snippets के लिए schema.org markup बनाएं।</p>
+<div class="badge">
+<i class="fas fa-star"></i> JSON-LD Format | <i class="fas fa-check-circle"></i> Google Validated
+</div>
+</div>
+</header>
+
+<!-- Main Content -->
+<main class="main-content">
+<!-- Input Section -->
+<section class="input-section">
+<h2><i class="fas fa-edit"></i> Schema Markup बनाएं</h2>
+
+<div class="form-group">
+<label><i class="fas fa-tag"></i> Schema Type:</label>
+<div class="schema-options">
+<div class="schema-btn active" data-type="article">
+<i class="fas fa-newspaper"></i>
+<span>Article</span>
+<small>ब्लॉग/न्यूज़</small>
+</div>
+<div class="schema-btn" data-type="product">
+<i class="fas fa-shopping-bag"></i>
+<span>Product</span>
+<small>ई-कॉमर्स</small>
+</div>
+<div class="schema-btn" data-type="localbusiness">
+<i class="fas fa-store"></i>
+<span>Local Business</span>
+<small>दुकान/कंपनी</small>
+</div>
+<div class="schema-btn" data-type="recipe">
+<i class="fas fa-utensils"></i>
+<span>Recipe</span>
+<small>खाना रेसिपी</small>
+</div>
+<div class="schema-btn" data-type="faq">
+<i class="fas fa-question-circle"></i>
+<span>FAQ</span>
+<small>सवाल-जवाब</small>
+</div>
+<div class="schema-btn" data-type="event">
+<i class="fas fa-calendar-alt"></i>
+<span>Event</span>
+<small>इवेंट/कार्यक्रम</small>
+</div>
+</div>
+</div>
+
+<div id="articleFields">
+<div class="form-group">
+<label for="articleTitle"><i class="fas fa-heading"></i> आर्टिकल टाइटल:</label>
+<input type="text" id="articleTitle" placeholder="आर्टिकल का शीर्षक">
+</div>
+
+<div class="form-group">
+<label for="articleDesc"><i class="fas fa-align-left"></i> विवरण:</label>
+<textarea id="articleDesc" placeholder="आर्टिकल का संक्षिप्त विवरण"></textarea>
+</div>
+
+<div class="input-row">
+<div class="form-group">
+<label for="articleAuthor"><i class="fas fa-user"></i> लेखक:</label>
+<input type="text" id="articleAuthor" placeholder="लेखक का नाम">
+</div>
+<div class="form-group">
+<label for="articleDate"><i class="fas fa-calendar"></i> प्रकाशन तिथि:</label>
+<input type="date" id="articleDate">
+</div>
+</div>
+
+<div class="form-group">
+<label for="articleImage"><i class="fas fa-image"></i> छवि URL:</label>
+<input type="url" id="articleImage" placeholder="https://example.com/image.jpg">
+</div>
+</div>
+
+<div id="productFields" style="display: none;">
+<div class="form-group">
+<label for="productName"><i class="fas fa-tag"></i> प्रोडक्ट नाम:</label>
+<input type="text" id="productName" placeholder="प्रोडक्ट का नाम">
+</div>
+
+<div class="input-row">
+<div class="form-group">
+<label for="productPrice"><i class="fas fa-rupee-sign"></i> कीमत:</label>
+<input type="number" id="productPrice" placeholder="999.99">
+</div>
+<div class="form-group">
+<label for="productCurrency"><i class="fas fa-money-bill-wave"></i> करेंसी:</label>
+<select id="productCurrency">
+<option value="INR">INR (₹)</option>
+<option value="USD">USD ($)</option>
+<option value="EUR">EUR (€)</option>
+<option value="GBP">GBP (£)</option>
+</select>
+</div>
+</div>
+
+<div class="form-group">
+<label for="productRating"><i class="fas fa-star"></i> रेटिंग (0-5):</label>
+<input type="number" id="productRating" min="0" max="5" step="0.1" placeholder="4.5">
+</div>
+
+<div class="form-group">
+<label for="productImage"><i class="fas fa-image"></i> प्रोडक्ट इमेज:</label>
+<input type="url" id="productImage" placeholder="https://example.com/product.jpg">
+</div>
+</div>
+
+<div class="form-group">
+<label for="websiteUrl"><i class="fas fa-globe"></i> वेबसाइट URL:</label>
+<input type="url" id="websiteUrl" placeholder="https://example.com">
+</div>
+
+<button class="btn btn-primary" id="generateBtn">
+<i class="fas fa-magic"></i> Schema Generate करें
+</button>
+
+<div class="loader" id="loader">
+<div class="loader-spinner"></div>
+<p>Schema markup generate हो रहा है...</p>
+</div>
+
+<div class="actions">
+<button class="btn btn-secondary" id="clearBtn">
+<i class="fas fa-redo"></i> रीसेट करें
+</button>
+<button class="btn btn-secondary" id="sampleBtn">
+<i class="fas fa-file-code"></i> उदाहरण
+</button>
+<button class="btn btn-secondary" id="validateBtn">
+<i class="fas fa-check-double"></i> Validate
+</button>
+</div>
+</section>
+
+<!-- Results Section -->
+<section class="results-section">
+<div class="preview-tabs">
+<div class="preview-tab active" data-tab="code">JSON-LD Code</div>
+<div class="preview-tab" data-tab="preview">Rich Snippet Preview</div>
+<div class="preview-tab" data-tab="validation">Validation</div>
+<div class="preview-tab" data-tab="guide">Implementation Guide</div>
+</div>
+
+<!-- Code Preview -->
+<div class="preview-content active" id="codeTab">
+<div style="position: relative;">
+<button class="copy-btn" id="copyBtn">
+<i class="fas fa-copy"></i> Copy Code
+</button>
+<div class="code-preview" id="codePreview">
+<div style="color: #94a3b8; text-align: center; padding: 50px;">
+<i class="fas fa-code" style="font-size: 3rem; margin-bottom: 20px; opacity: 0.3;"></i>
+<h3>Schema Code यहाँ दिखेगा</h3>
+<p>बाईं तरफ डिटेल्स डालकर Generate बटन दबाएं</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Rich Snippet Preview -->
+<div class="preview-content" id="previewTab">
+<div class="rich-snippet-preview" id="snippetPreview">
+<div style="color: #94a3b8; text-align: center; padding: 50px;">
+<i class="fas fa-eye" style="font-size: 3rem; margin-bottom: 20px; opacity: 0.3;"></i>
+<h3>Rich Snippet Preview</h3>
+<p>Schema generate करने के बाद preview यहाँ दिखेगा</p>
+</div>
+</div>
+</div>
+
+<!-- Validation Results -->
+<div class="preview-content" id="validationTab">
+<div class="validation-card" id="validationResults">
+<div style="color: #94a3b8; text-align: center; padding: 50px;">
+<i class="fas fa-check-circle" style="font-size: 3rem; margin-bottom: 20px; opacity: 0.3;"></i>
+<h3>Validation Results</h3>
+<p>Schema generate करने के बाद validation results यहाँ दिखेंगे</p>
+</div>
+</div>
+</div>
+
+<!-- Implementation Guide -->
+<div class="preview-content" id="guideTab">
+<div class="guide-card">
+<h3><i class="fas fa-graduation-cap"></i> Schema Implementation Guide</h3>
+<div class="step-item">
+<span class="step-number">1</span>
+Generate your schema markup using this tool
+</div>
+<div class="step-item">
+<span class="step-number">2</span>
+Copy the JSON-LD code from the Code tab
+</div>
+<div class="step-item">
+<span class="step-number">3</span>
+Paste the code in the <code>&lt;head&gt;</code> section of your HTML
+</div>
+<div class="step-item">
+<span class="step-number">4</span>
+Test your implementation using Google's Rich Results Test
+</div>
+<div class="step-item">
+<span class="step-number">5</span>
+Monitor performance in Google Search Console
+</div>
+</div>
+</div>
+
+<!-- Actions -->
+<div class="actions" id="resultActions" style="display: none;">
+<button class="btn btn-primary" id="downloadBtn">
+<i class="fas fa-download"></i> Download JSON
+</button>
+<button class="btn btn-secondary" id="testBtn">
+<i class="fab fa-google"></i> Google Test
+</button>
+<button class="btn btn-secondary" id="saveBtn">
+<i class="fas fa-save"></i> Save Template
+</button>
+</div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+<div class="footer-links">
+<a href="all-tools.html"><i class="fas fa-tools"></i> सभी टूल्स</a>
+<a href="index.html"><i class="fas fa-home"></i> होमपेज</a>
+<a href="canonical-url-checker.html"><i class="fas fa-link"></i> Canonical Checker</a>
+<a href="meta-tag-generator.html"><i class="fas fa-code"></i> Meta Tag Generator</a>
+</div>
+<div class="copyright">
+<p>© 2024 Free SEO Tool Hub | Schema Markup Generator</p>
+<p style="margin-top: 5px; font-size: 0.85rem;">Structured Data & Rich Snippets Tool</p>
+</div>
+</footer>
+</div>
+
+<!-- Success Message -->
+<div class="success-message" id="successMessage">
+<i class="fas fa-check-circle"></i>
+<span id="successText">Operation successful!</span>
+</div>
+
+<script>
+// DOM Elements
+const schemaButtons = document.querySelectorAll('.schema-btn');
+const generateBtn = document.getElementById('generateBtn');
+const clearBtn = document.getElementById('clearBtn');
+const sampleBtn = document.getElementById('sampleBtn');
+const validateBtn = document.getElementById('validateBtn');
+const copyBtn = document.getElementById('copyBtn');
+const downloadBtn = document.getElementById('downloadBtn');
+const testBtn = document.getElementById('testBtn');
+const saveBtn = document.getElementById('saveBtn');
+const loader = document.getElementById('loader');
+const successMessage = document.getElementById('successMessage');
+const successText = document.getElementById('successText');
+
+// Form fields
+const articleFields = document.getElementById('articleFields');
+const productFields = document.getElementById('productFields');
+
+// Preview elements
+const previewTabs = document.querySelectorAll('.preview-tab');
+const previewContents = document.querySelectorAll('.preview-content');
+const codePreview = document.getElementById('codePreview');
+const snippetPreview = document.getElementById('snippetPreview');
+const validationResults = document.getElementById('validationResults');
+const resultActions = document.getElementById('resultActions');
+
+let currentSchemaType = 'article';
+let generatedSchema = null;
+
+// Schema type selection
+schemaButtons.forEach(btn => {
+btn.addEventListener('click', () => {
+schemaButtons.forEach(b => b.classList.remove('active'));
+btn.classList.add('active');
+currentSchemaType = btn.dataset.type;
+showSchemaFields(currentSchemaType);
+});
+});
+
+// Preview tabs
+previewTabs.forEach(tab => {
+tab.addEventListener('click', () => {
+const tabId = tab.dataset.tab;
+
+previewTabs.forEach(t => t.classList.remove('active'));
+previewContents.forEach(c => c.classList.remove('active'));
+
+tab.classList.add('active');
+document.getElementById(tabId + 'Tab').classList.add('active');
+});
+});
+
+// Generate schema
+generateBtn.addEventListener('click', generateSchema);
+
+// Clear
+clearBtn.addEventListener('click', clearAll);
+
+// Sample
+sampleBtn.addEventListener('click', loadSampleData);
+
+// Validate
+validateBtn.addEventListener('click', validateSchema);
+
+// Copy code
+copyBtn.addEventListener('click', copyCode);
+
+// Download
+downloadBtn.addEventListener('click', downloadSchema);
+
+// Test
+testBtn.addEventListener('click', testWithGoogle);
+
+// Save
+saveBtn.addEventListener('click', saveTemplate);
+
+function showSchemaFields(type) {
+// Hide all fields first
+articleFields.style.display = 'none';
+productFields.style.display = 'none';
+
+// Show selected fields
+if (type === 'article') {
+articleFields.style.display = 'block';
+} else if (type === 'product') {
+productFields.style.display = 'block';
+} else if (type === 'localbusiness') {
+// Show article fields for now (can be customized later)
+articleFields.style.display = 'block';
+} else {
+articleFields.style.display = 'block';
+}
+}
+
+function generateSchema() {
+const websiteUrl = document.getElementById('websiteUrl').value.trim();
+
+if (!websiteUrl || !isValidURL(websiteUrl)) {
+showMessage('कृपया वैध वेबसाइट URL डालें!', 'error');
+return;
+}
+
+// Show loader
+loader.style.display = 'block';
+hideResults();
+
+// Simulate generation
+setTimeout(() => {
+const schema = createSchemaMarkup(currentSchemaType, websiteUrl);
+displaySchema(schema);
+loader.style.display = 'none';
+showMessage('Schema markup successfully generated!', 'success');
+}, 1500);
+}
+
+function createSchemaMarkup(type, websiteUrl) {
+let schema = {
+"@context": "https://schema.org",
+"@type": getSchemaType(type)
+};
+
+switch(type) {
+case 'article':
+const articleTitle = document.getElementById('articleTitle').value || 'Example Article Title';
+const articleDesc = document.getElementById('articleDesc').value || 'Example article description';
+const articleAuthor = document.getElementById('articleAuthor').value || 'John Doe';
+const articleDate = document.getElementById('articleDate').value || new Date().toISOString().split('T')[0];
+const articleImage = document.getElementById('articleImage').value || `${websiteUrl}/default-image.jpg`;
+
+schema.headline = articleTitle;
+schema.description = articleDesc;
+schema.author = {
+"@type": "Person",
+"name": articleAuthor
+};
+schema.datePublished = articleDate;
+schema.dateModified = articleDate;
+schema.image = articleImage;
+schema.publisher = {
+"@type": "Organization",
+"name": getDomainName(websiteUrl),
+"logo": {
+"@type": "ImageObject",
+"url": `${websiteUrl}/logo.png`
+}
+};
+schema.mainEntityOfPage = {
+"@type": "WebPage",
+"@id": websiteUrl
+};
+break;
+
+case 'product':
+const productName = document.getElementById('productName').value || 'Example Product';
+const productPrice = document.getElementById('productPrice').value || '999.99';
+const productCurrency = document.getElementById('productCurrency').value;
+const productRating = document.getElementById('productRating').value || '4.5';
+const productImage = document.getElementById('productImage').value || `${websiteUrl}/product.jpg`;
+
+schema.name = productName;
+schema.description = `Best quality ${productName} at affordable price`;
+schema.image = productImage;
+schema.brand = {
+"@type": "Brand",
+"name": getDomainName(websiteUrl)
+};
+schema.offers = {
+"@type": "Offer",
+"url": websiteUrl,
+"priceCurrency": productCurrency,
+"price": productPrice,
+"priceValidUntil": new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
+"availability": "https://schema.org/InStock",
+"shippingDetails": {
+"@type": "OfferShippingDetails",
+"shippingRate": {
+"@type": "MonetaryAmount",
+"value": "0",
+"currency": productCurrency
+},
+"shippingDestination": {
+"@type": "DefinedRegion",
+"addressCountry": "IN"
+}
+}
+};
+schema.aggregateRating = {
+"@type": "AggregateRating",
+"ratingValue": productRating,
+"reviewCount": Math.floor(Math.random() * 100) + 50
+};
+break;
+
+case 'localbusiness':
+schema.name = "Local Business Name";
+schema.description = "Best local business in town";
+schema.address = {
+"@type": "PostalAddress",
+"streetAddress": "123 Main Street",
+"addressLocality": "City",
+"postalCode": "123456",
+"addressCountry": "IN"
+};
+schema.geo = {
+"@type": "GeoCoordinates",
+"latitude": "28.6139",
+"longitude": "77.2090"
+};
+schema.telephone = "+91-1234567890";
+schema.openingHours = "Mo,Tu,We,Th,Fr 09:00-18:00";
+break;
+
+case 'recipe':
+schema.name = "Delicious Recipe";
+schema.description = "Easy to make delicious recipe";
+schema.author = {
+"@type": "Person",
+"name": "Chef Name"
+};
+schema.cookTime = "PT30M";
+schema.prepTime = "PT15M";
+schema.totalTime = "PT45M";
+schema.recipeYield = "4 servings";
+schema.recipeIngredient = ["Ingredient 1", "Ingredient 2", "Ingredient 3"];
+schema.recipeInstructions = [
+{
+"@type": "HowToStep",
+"text": "Step 1: Mix ingredients"
+},
+{
+"@type": "HowToStep",
+"text": "Step 2: Cook for 30 minutes"
+}
+];
+schema.aggregateRating = {
+"@type": "AggregateRating",
+"ratingValue": "4.8",
+"reviewCount": "120"
+};
+break;
+
+case 'faq':
+schema.mainEntity = [
+{
+"@type": "Question",
+"name": "What is this tool?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "This is a free Schema Markup Generator tool."
+}
+},
+{
+"@type": "Question",
+"name": "Is it free to use?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Yes, this tool is completely free to use."
+}
+}
+];
+break;
+
+case 'event':
+schema.name = "Annual Conference";
+schema.description = "Join our annual conference";
+schema.startDate = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+schema.endDate = new Date(Date.now() + 8 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+schema.location = {
+"@type": "Place",
+"name": "Convention Center",
+"address": {
+"@type": "PostalAddress",
+"streetAddress": "456 Event Street",
+"addressLocality": "City",
+"postalCode": "123456",
+"addressCountry": "IN"
+}
+};
+schema.organizer = {
+"@type": "Organization",
+"name": getDomainName(websiteUrl),
+"url": websiteUrl
+};
+break;
+}
+
+schema.url = websiteUrl;
+generatedSchema = schema;
+return schema;
+}
+
+function getSchemaType(type) {
+const typeMap = {
+'article': 'Article',
+'product': 'Product',
+'localbusiness': 'LocalBusiness',
+'recipe': 'Recipe',
+'faq': 'FAQPage',
+'event': 'Event'
+};
+return typeMap[type] || 'Article';
+}
+
+function getDomainName(url) {
+try {
+return new URL(url).hostname.replace('www.', '');
+} catch {
+return 'ExampleDomain';
+}
+}
+
+function displaySchema(schema) {
+// Format and display JSON
+const jsonString = JSON.stringify(schema, null, 2);
+codePreview.innerHTML = formatJSONForDisplay(jsonString);
+
+// Show rich snippet preview
+displaySnippetPreview(schema);
+
+// Show validation results
+displayValidationResults(schema);
+
+// Show result actions
+resultActions.style.display = 'flex';
+
+// Switch to code tab
+previewTabs.forEach(t => t.classList.remove('active'));
+previewContents.forEach(c => c.classList.remove('active'));
+document.querySelector('.preview-tab[data-tab="code"]').classList.add('active');
+document.getElementById('codeTab').classList.add('active');
+}
+
+function formatJSONForDisplay(jsonString) {
+let html = '';
+const jsonObj = JSON.parse(jsonString);
+
+function parseObject(obj, indent = 0) {
+const indentStr = ' '.repeat(indent);
+
+html += `<div class="code-line">${indentStr}{</div>`;
+
+const keys = Object.keys(obj);
+keys.forEach((key, index) => {
+const value = obj[key];
+const isLast = index === keys.length - 1;
+
+html += `<div class="code-line">${indentStr} <span class="code-key">"${key}"</span>: `;
+
+if (typeof value === 'object' && value !== null) {
+if (Array.isArray(value)) {
+html += `[</div>`;
+value.forEach((item, i) => {
+if (typeof item === 'object') {
+parseObject(item, indent + 2);
+} else {
+html += `<div class="code-line">${indentStr} <span class="code-string">"${item}"</span>${i === value.length - 1 ? '' : ','}</div>`;
+}
+});
+html += `<div class="code-line">${indentStr} ]${isLast ? '' : ','}</div>`;
+} else {
+parseObject(value, indent + 1);
+html += `<div class="code-line">${indentStr} }${isLast ? '' : ','}</div>`;
+}
+} else {
+if (typeof value === 'string') {
+html += `<span class="code-string">"${value}"</span>`;
+} else if (typeof value === 'number') {
+html += `<span class="code-number">${value}</span>`;
+} else if (typeof value === 'boolean') {
+html += `<span class="code-boolean">${value}</span>`;
+} else {
+html += `<span class="code-string">"${value}"</span>`;
+}
+html += `${isLast ? '' : ','}</div>`;
+}
+});
+
+html += `<div class="code-line">${indentStr}}</div>`;
+}
+
+parseObject(jsonObj);
+return html;
+}
+
+function displaySnippetPreview(schema) {
+let snippetHTML = '';
+
+if (schema['@type'] === 'Article') {
+snippetHTML = `
+<div class="snippet-header">
+<i class="fas fa-newspaper" style="color: #ea580c;"></i>
+<div class="snippet-title">Article Rich Snippet Preview</div>
+</div>
+<div class="snippet-item">
+<div class="snippet-label">Headline</div>
+<div class="snippet-value">${schema.headline || 'Not specified'}</div>
+</div>
+<div class="snippet-item">
+<div class="snippet-label">Description</div>
+<div class="snippet-value">${(schema.description || 'Not specified').substring(0, 150)}...</div>
+</div>
+<div class="snippet-item">
+<div class="snippet-label">Author</div>
+<div class="snippet-value">${schema.author?.name || 'Not specified'}</div>
+</div>
+<div class="snippet-item">
+<div class="snippet-label">Published Date</div>
+<div class="snippet-value">${schema.datePublished || 'Not specified'}</div>
+</div>
+`;
+} else if (schema['@type'] === 'Product') {
+snippetHTML = `
+<div class="snippet-header">
+<i class="fas fa-shopping-bag" style="color: #ea580c;"></i>
+<div class="snippet-title">Product Rich Snippet Preview</div>
+</div>
+<div class="snippet-item">
+<div class="snippet-label">Product Name</div>
+<div class="snippet-value">${schema.name || 'Not specified'}</div>
+</div>
+<div class="snippet-item">
+<div class="snippet-label">Price</div>
+<div class="snippet-value">${schema.offers?.priceCurrency || 'INR'} ${schema.offers?.price || '0'}</div>
+</div>
+${schema.aggregateRating ? `
+<div class="snippet-item">
+<div class="snippet-label">Rating</div>
+<div class="snippet-rating">
+<div class="stars">
+${generateStars(schema.aggregateRating.ratingValue)}
+</div>
+<div class="rating-value">${schema.aggregateRating.ratingValue} (${schema.aggregateRating.reviewCount} reviews)</div>
+</div>
+</div>
+` : ''}
+<div class="snippet-item">
+<div class="snippet-label">Availability</div>
+<div class="snippet-value" style="color: #10b981;">In Stock</div>
+</div>
+`;
+} else {
+snippetHTML = `
+<div class="snippet-header">
+<i class="fas fa-code" style="color: #ea580c;"></i>
+<div class="snippet-title">${schema['@type']} Rich Snippet Preview</div>
+</div>
+<div class="snippet-item">
+<div class="snippet-label">Schema Type</div>
+<div class="snippet-value">${schema['@type']}</div>
+</div>
+<div class="snippet-item">
+<div class="snippet-label">Name</div>
+<div class="snippet-value">${schema.name || schema.headline || 'Not specified'}</div>
+</div>
+<div class="snippet-item">
+<div class="snippet-label">URL</div>
+<div class="snippet-value" style="color: #3b82f6;">${schema.url || 'Not specified'}</div>
+</div>
+`;
+}
+
+snippetPreview.innerHTML = snippetHTML;
+}
+
+function generateStars(rating) {
+let stars = '';
+const fullStars = Math.floor(rating);
+const hasHalfStar = rating % 1 >= 0.5;
+
+for (let i = 0; i < fullStars; i++) {
+stars += '<i class="fas fa-star"></i>';
+}
+
+if (hasHalfStar) {
+stars += '<i class="fas fa-star-half-alt"></i>';
+}
+
+const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+for (let i = 0; i < emptyStars; i++) {
+stars += '<i class="far fa-star"></i>';
+}
+
+return stars;
+}
+
+function displayValidationResults(schema) {
+const errors = [];
+const warnings = [];
+const successes = [];
+
+// Basic validation
+if (!schema.url || !isValidURL(schema.url)) {
+errors.push({
+title: "Invalid URL",
+description: "The website URL is not valid"
+});
+} else {
+successes.push({
+title: "Valid URL",
+description: "Website URL is properly formatted"
+});
+}
+
+if (!schema['@context'] || schema['@context'] !== 'https://schema.org') {
+errors.push({
+title: "Missing Context",
+description: "@context must be 'https://schema.org'"
+});
+} else {
+successes.push({
+title: "Correct Context",
+description: "@context is set to 'https://schema.org'"
+});
+}
+
+if (!schema['@type']) {
+errors.push({
+title: "Missing Type",
+description: "@type is required"
+});
+} else {
+successes.push({
+title: "Type Defined",
+description: `Schema type is '${schema['@type']}'`
+});
+}
+
+// Type-specific validation
+if (schema['@type'] === 'Article') {
+if (!schema.headline) {
+warnings.push({
+title: "Missing Headline",
+description: "Article should have a headline"
+});
+}
+if (!schema.author) {
+warnings.push({
+title: "Missing Author",
+description: "Article should specify an author"
+});
+}
+}
+
+if (schema['@type'] === 'Product') {
+if (!schema.offers?.price) {
+warnings.push({
+title: "Missing Price",
+description: "Product should have a price"
+});
+}
+}
+
+let validationHTML = '';
+
+if (errors.length === 0 && warnings.length === 0) {
+validationHTML = `
+<div class="validation-item">
+<i class="fas fa-check-circle validation-icon validation-good"></i>
+<div class="validation-text">
+<div class="validation-title">Perfect Schema!</div>
+<div class="validation-desc">All validation checks passed successfully</div>
+</div>
+</div>
+`;
+}
+
+errors.forEach(error => {
+validationHTML += `
+<div class="validation-item">
+<i class="fas fa-times-circle validation-icon validation-error"></i>
+<div class="validation-text">
+<div class="validation-title">${error.title}</div>
+<div class="validation-desc">${error.description}</div>
+</div>
+</div>
+`;
+});
+
+warnings.forEach(warning => {
+validationHTML += `
+<div class="validation-item">
+<i class="fas fa-exclamation-triangle validation-icon validation-warning"></i>
+<div class="validation-text">
+<div class="validation-title">${warning.title}</div>
+<div class="validation-desc">${warning.description}</div>
+</div>
+</div>
+`;
+});
+
+successes.forEach(success => {
+validationHTML += `
+<div class="validation-item">
+<i class="fas fa-check validation-icon validation-good"></i>
+<div class="validation-text">
+<div class="validation-title">${success.title}</div>
+<div class="validation-desc">${success.description}</div>
+</div>
+</div>
+`;
+});
+
+validationResults.innerHTML = validationHTML;
+}
+
+function clearAll() {
+// Clear all form fields
+document.querySelectorAll('input, textarea, select').forEach(element => {
+if (element.type === 'date') {
+element.value = '';
+} else if (element.tagName === 'SELECT') {
+element.value = element.options[0].value;
+} else {
+element.value = '';
+}
+});
+
+// Reset schema type
+schemaButtons.forEach(b => b.classList.remove('active'));
+document.querySelector('.schema-btn[data-type="article"]').classList.add('active');
+currentSchemaType = 'article';
+showSchemaFields('article');
+
+// Hide results
+hideResults();
+
+showMessage('Form reset successfully!', 'success');
+}
+
+function loadSampleData() {
+// Set sample data based on current schema type
+const websiteUrl = 'https://example.com';
+document.getElementById('websiteUrl').value = websiteUrl;
+
+if (currentSchemaType === 'article') {
+document.getElementById('articleTitle').value = 'स्कीमा मार्कअप क्या है और यह SEO के लिए क्यों जरूरी है?';
+document.getElementById('articleDesc').value = 'स्कीमा मार्कअप एक प्रकार का structured data है जो search engines को आपकी वेबसाइट की content को बेहतर तरीके से समझने में मदद करता है।';
+document.getElementById('articleAuthor').value = 'राहुल शर्मा';
+document.getElementById('articleDate').value = '2024-01-15';
+document.getElementById('articleImage').value = 'https://example.com/schema-article.jpg';
+} else if (currentSchemaType === 'product') {
+document.getElementById('productName').value = 'स्मार्टफोन XYZ मॉडल';
+document.getElementById('productPrice').value = '24999';
+document.getElementById('productCurrency').value = 'INR';
+document.getElementById('productRating').value = '4.5';
+document.getElementById('productImage').value = 'https://example.com/smartphone.jpg';
+}
+
+showMessage('Sample data loaded! Click Generate to see results.', 'success');
+}
+
+function validateSchema() {
+if (!generatedSchema) {
+showMessage('कृपया पहले schema generate करें!', 'error');
+return;
+}
+
+// Switch to validation tab
+previewTabs.forEach(t => t.classList.remove('active'));
+previewContents.forEach(c => c.classList.remove('active'));
+document.querySelector('.preview-tab[data-tab="validation"]').classList.add('active');
+document.getElementById('validationTab').classList.add('active');
+
+showMessage('Schema validation completed!', 'success');
+}
+
+function copyCode() {
+if (!generatedSchema) {
+showMessage('कृपया पहले schema generate करें!', 'error');
+return;
+}
+
+const jsonString = JSON.stringify(generatedSchema, null, 2);
+navigator.clipboard.writeText(jsonString)
+.then(() => {
+showMessage('Code copied to clipboard!', 'success');
+})
+.catch(err => {
+showMessage('Failed to copy code: ' + err, 'error');
+});
+}
+
+function downloadSchema() {
+if (!generatedSchema) {
+showMessage('कृपया पहले schema generate करें!', 'error');
+return;
+}
+
+const jsonString = JSON.stringify(generatedSchema, null, 2);
+const blob = new Blob([jsonString], { type: 'application/json' });
+const url = URL.createObjectURL(blob);
+
+const a = document.createElement('a');
+a.href = url;
+a.download = `schema-${generatedSchema['@type'].toLowerCase()}-${Date.now()}.json`;
+document.body.appendChild(a);
+a.click();
+document.body.removeChild(a);
+URL.revokeObjectURL(url);
+
+showMessage('Schema downloaded successfully!', 'success');
+}
+
+function testWithGoogle() {
+if (!generatedSchema) {
+showMessage('कृपया पहले schema generate करें!', 'error');
+return;
+}
+
+const jsonString = encodeURIComponent(JSON.stringify(generatedSchema));
+const url = `https://search.google.com/test/rich-results?url=${encodeURIComponent(generatedSchema.url)}&user_agent=DESKTOP&hl=en`;
+
+window.open(url, '_blank');
+showMessage('Opening Google Rich Results Test...', 'success');
+}
+
+function saveTemplate() {
+if (!generatedSchema) {
+showMessage('कृपया पहले schema generate करें!', 'error');
+return;
+}
+
+const templateName = prompt('Enter template name:', `${generatedSchema['@type']} Template`);
+if (!templateName) return;
+
+const templates = JSON.parse(localStorage.getItem('schemaTemplates') || '[]');
+templates.push({
+name: templateName,
+type: currentSchemaType,
+schema: generatedSchema,
+date: new Date().toISOString()
+});
+
+localStorage.setItem('schemaTemplates', JSON.stringify(templates));
+showMessage(`Template "${templateName}" saved successfully!`, 'success');
+}
+
+function hideResults() {
+codePreview.innerHTML = `
+<div style="color: #94a3b8; text-align: center; padding: 50px;">
+<i class="fas fa-code" style="font-size: 3rem; margin-bottom: 20px; opacity: 0.3;"></i>
+<h3>Schema Code यहाँ दिखेगा</h3>
+<p>बाईं तरफ डिटेल्स डालकर Generate बटन दबाएं</p>
+</div>
+`;
+
+snippetPreview.innerHTML = `
+<div style="color: #94a3b8; text-align: center; padding: 50px;">
+<i class="fas fa-eye" style="font-size: 3rem; margin-bottom: 20px; opacity: 0.3;"></i>
+<h3>Rich Snippet Preview</h3>
+<p>Schema generate करने के बाद preview यहाँ दिखेगा</p>
+</div>
+`;
+
+validationResults.innerHTML = `
+<div style="color: #94a3b8; text-align: center; padding: 50px;">
+<i class="fas fa-check-circle" style="font-size: 3rem; margin-bottom: 20px; opacity: 0.3;"></i>
+<h3>Validation Results</h3>
+<p>Schema generate करने के बाद validation results यहाँ दिखेंगे</p>
+</div>
+`;
+
+resultActions.style.display = 'none';
+generatedSchema = null;
+}
+
+function showMessage(text, type) {
+successText.textContent = text;
+successMessage.style.background = type === 'error' ? '#ef4444' : '#10b981';
+successMessage.style.display = 'flex';
+
+setTimeout(() => {
+successMessage.style.display = 'none';
+}, 3000);
+}
+
+function isValidURL(string) {
+try {
+new URL(string);
+return true;
+} catch (_) {
+return false;
+}
+}
+
+// Initialize
+document.addEventListener('DOMContentLoaded', () => {
+showSchemaFields('article');
+const today = new Date().toISOString().split('T')[0];
+document.getElementById('articleDate').value = today;
+});
+</script>
+</body>
+</html>
