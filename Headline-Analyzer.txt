@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>हेडलाइन एनालाइज़र - Free SEO Tool Hub</title>
+<meta name="description" content="फ्री हेडलाइन एनालाइज़र टूल। अपने ब्लॉग टाइटल, आर्टिकल हेडलाइन और SEO टाइटल का विश्लेषण करें।">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPG77KWVCP"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-ZPG77KWVCP');
+</script>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+min-height: 100vh;
+padding: 20px;
+color: #333;
+}
+
+.container {
+max-width: 1200px;
+margin: 0 auto;
+background: white;
+border-radius: 20px;
+overflow: hidden;
+box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+}
+
+/* Header */
+.header {
+background: linear-gradient(to right, #1e3c72, #2a5298);
+color: white;
+padding: 40px 30px;
+text-align: center;
+position: relative;
+overflow: hidden;
+}
+
+.header::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+background-size: cover;
+}
+
+.header-content {
+position: relative;
+z-index: 1;
+}
+
+.header h1 {
+font-size: 2.8rem;
+margin-bottom: 15px;
+text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 15px;
+}
+
+.header p {
+font-size: 1.1rem;
+opacity: 0.95;
+max-width: 800px;
+margin: 0 auto 20px;
+line-height: 1.6;
+}
+
+.badge {
+display: inline-block;
+background: rgba(255,255,255,0.2);
+backdrop-filter: blur(10px);
+padding: 8px 20px;
+border-radius: 30px;
+border: 1px solid rgba(255,255,255,0.3);
+font-size: 0.9rem;
+margin-top: 10px;
+}
+
+/* Main Content */
+.main-content {
+padding: 30px;
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 30px;
+}
+
+@media (max-width: 900px) {
+.main-content {
+grid-template-columns: 1fr;
+}
+}
+
+/* Input Section */
+.input-section {
+background: #F8FAFC;
+padding: 30px;
+border-radius: 15px;
+border: 1px solid #E2E8F0;
+}
+
+h2 {
+color: #1E293B;
+margin-bottom: 20px;
+font-size: 1.6rem;
+font-weight: 600;
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.form-group {
+margin-bottom: 20px;
+}
+
+label {
+display: block;
+margin-bottom: 8px;
+color: #475569;
+font-weight: 500;
+font-size: 1rem;
+}
+
+input, select, textarea {
+width: 100%;
+padding: 14px 15px;
+border: 2px solid #E2E8F0;
+border-radius: 10px;
+font-size: 1rem;
+transition: all 0.3s;
+background: white;
+}
+
+textarea {
+min-height: 120px;
+resize: vertical;
+font-size: 1rem;
+}
+
+input:focus, select:focus, textarea:focus {
+outline: none;
+border-color: #2a5298;
+box-shadow: 0 0 0 3px rgba(42, 82, 152, 0.1);
+}
+
+.btn {
+padding: 14px 25px;
+border: none;
+border-radius: 10px;
+font-size: 1rem;
+font-weight: 600;
+cursor: pointer;
+transition: all 0.3s;
+display: inline-flex;
+align-items: center;
+gap: 10px;
+}
+
+.btn-primary {
+background: linear-gradient(to right, #1e3c72, #2a5298);
+color: white;
+width: 100%;
+justify-content: center;
+margin-top: 10px;
+}
+
+.btn-primary:hover {
+background: linear-gradient(to right, #2a5298, #1e3c72);
+transform: translateY(-2px);
+box-shadow: 0 10px 25px rgba(42, 82, 152, 0.3);
+}
+
+.btn-secondary {
+background: #F1F5F9;
+color: #475569;
+border: 2px solid #E2E8F0;
+}
+
+.btn-secondary:hover {
+background: #E2E8F0;
+}
+
+/* Results Section */
+.results-section {
+background: white;
+border-radius: 15px;
+}
+
+/* Score Section */
+.score-section {
+text-align: center;
+padding: 25px;
+background: linear-gradient(to right, #f8fafc, #f1f5f9);
+border-radius: 15px;
+margin-bottom: 25px;
+border: 2px solid #E2E8F0;
+}
+
+.score-circle {
+width: 140px;
+height: 140px;
+border-radius: 50%;
+background: linear-gradient(135deg, #1e3c72, #2a5298);
+color: white;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+margin: 0 auto 20px;
+font-weight: bold;
+box-shadow: 0 10px 25px rgba(30, 60, 114, 0.2);
+}
+
+.score-value {
+font-size: 2.8rem;
+line-height: 1;
+font-weight: 700;
+}
+
+.score-label {
+font-size: 1rem;
+opacity: 0.9;
+}
+
+.score-grade {
+font-size: 1.5rem;
+font-weight: 700;
+margin-bottom: 10px;
+color: #1e3c72;
+}
+
+/* Analysis Results */
+.analysis-results {
+background: white;
+border: 2px solid #E2E8F0;
+border-radius: 12px;
+padding: 25px;
+margin-bottom: 25px;
+}
+
+.analysis-item {
+display: flex;
+align-items: center;
+padding: 15px 0;
+border-bottom: 1px solid #E2E8F0;
+}
+
+.analysis-item:last-child {
+border-bottom: none;
+}
+
+.analysis-icon {
+width: 40px;
+height: 40px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 1.2rem;
+margin-right: 15px;
+flex-shrink: 0;
+}
+
+.analysis-good {
+background: rgba(16, 185, 129, 0.1);
+color: #10b981;
+}
+
+.analysis-warning {
+background: rgba(245, 158, 11, 0.1);
+color: #f59e0b;
+}
+
+.analysis-bad {
+background: rgba(239, 68, 68, 0.1);
+color: #ef4444;
+}
+
+.analysis-text {
+flex: 1;
+}
+
+.analysis-title {
+font-weight: 600;
+margin-bottom: 5px;
+color: #1e293b;
+}
+
+.analysis-desc {
+color: #64748b;
+font-size: 0.9rem;
+line-height: 1.5;
+}
+
+.analysis-value {
+font-weight: 600;
+color: #1e293b;
+font-size: 1.1rem;
+margin-left: 10px;
+}
+
+/* Suggestions */
+.suggestions-box {
+background: linear-gradient(to right, #f0f9ff, #e0f2fe);
+padding: 25px;
+border-radius: 12px;
+border-left: 5px solid #1e3c72;
+margin-bottom: 25px;
+}
+
+.suggestions-box h3 {
+color: #1e3c72;
+margin-bottom: 15px;
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.suggestion-item {
+background: white;
+padding: 12px 15px;
+border-radius: 8px;
+margin-bottom: 10px;
+border-left: 3px solid #2a5298;
+}
+
+/* SERP Preview */
+.serp-preview {
+background: white;
+border: 2px solid #E2E8F0;
+border-radius: 12px;
+padding: 25px;
+margin-bottom: 25px;
+}
+
+.serp-result {
+border: 1px solid #dfe1e5;
+border-radius: 8px;
+padding: 15px;
+margin-top: 20px;
+font-family: Arial, sans-serif;
+max-width: 600px;
+}
+
+.serp-url {
+color: #202124;
+font-size: 0.85rem;
+margin-bottom: 5px;
+}
+
+.serp-title {
+color: #1a0dab;
+font-size: 1.2rem;
+font-weight: normal;
+margin-bottom: 5px;
+line-height: 1.3;
+}
+
+.serp-desc {
+color: #4d5156;
+font-size: 0.95rem;
+line-height: 1.5;
+}
+
+/* Actions */
+.actions {
+display: flex;
+gap: 12px;
+margin-top: 20px;
+flex-wrap: wrap;
+}
+
+/* Footer */
+.footer {
+text-align: center;
+padding: 25px;
+background: #F8FAFC;
+border-top: 1px solid #E2E8F0;
+}
+
+.footer-links {
+display: flex;
+justify-content: center;
+gap: 25px;
+margin-bottom: 20px;
+flex-wrap: wrap;
+}
+
+.footer-links a {
+color: #475569;
+text-decoration: none;
+font-weight: 500;
+display: flex;
+align-items: center;
+gap: 8px;
+transition: color 0.3s;
+}
+
+.footer-links a:hover {
+color: #2a5298;
+}
+
+/* Success Message */
+.success-message {
+position: fixed;
+bottom: 30px;
+right: 30px;
+background: #10B981;
+color: white;
+padding: 15px 25px;
+border-radius: 10px;
+box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+display: none;
+align-items: center;
+gap: 12px;
+z-index: 1000;
+}
+
+/* Loader */
+.loader {
+display: none;
+text-align: center;
+padding: 40px;
+}
+
+.loader-spinner {
+width: 50px;
+height: 50px;
+border: 4px solid #F1F5F9;
+border-top: 4px solid #2a5298;
+border-radius: 50%;
+animation: spin 1s linear infinite;
+margin: 0 auto 20px;
+}
+
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+.header h1 {
+font-size: 2rem;
+}
+
+.main-content {
+padding: 20px;
+}
+
+.actions {
+flex-direction: column;
+}
+
+.btn {
+width: 100%;
+justify-content: center;
+}
+
+.score-circle {
+width: 120px;
+height: 120px;
+}
+
+.score-value {
+font-size: 2.2rem;
+}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<!-- Header -->
+<header class="header">
+<div class="header-content">
+<h1><i class="fas fa-heading"></i> हेडलाइन एनालाइज़र</h1>
+<p>अपने ब्लॉग टाइटल, आर्टिकल हेडलाइन और SEO टाइटल का विश्लेषण करें। स्कोर, सुझाव और SERP प्रीव्यू पाएं।</p>
+<div class="badge">
+<i class="fas fa-chart-line"></i> SEO स्कोर | <i class="fas fa-lightbulb"></i> AI सुझाव | <i class="fas fa-eye"></i> SERP प्रीव्यू
+</div>
+</div>
+</header>
+
+<!-- Main Content -->
+<main class="main-content">
+<!-- Input Section -->
+<section class="input-section">
+<h2><i class="fas fa-edit"></i> अपनी हेडलाइन एनालाइज़ करें</h2>
+
+<div class="form-group">
+<label for="headlineInput"><i class="fas fa-heading"></i> हेडलाइन:</label>
+<textarea id="headlineInput" placeholder="अपना ब्लॉग टाइटल, आर्टिकल हेडलाइन या SEO टाइटल यहाँ डालें..."></textarea>
+</div>
+
+<div class="form-group">
+<label for="headlineType"><i class="fas fa-tag"></i> हेडलाइन प्रकार:</label>
+<select id="headlineType">
+<option value="blog">ब्लॉग पोस्ट</option>
+<option value="article">आर्टिकल</option>
+<option value="product">प्रोडक्ट पेज</option>
+<option value="video">यूट्यूब वीडियो</option>
+<option value="social">सोशल मीडिया पोस्ट</option>
+</select>
+</div>
+
+<div class="form-group">
+<label for="keywordInput"><i class="fas fa-key"></i> प्राथमिक कीवर्ड:</label>
+<input type="text" id="keywordInput" placeholder="मुख्य कीवर्ड (वैकल्पिक)">
+</div>
+
+<button class="btn btn-primary" id="analyzeBtn">
+<i class="fas fa-chart-bar"></i> हेडलाइन एनालाइज़ करें
+</button>
+
+<div class="loader" id="loader">
+<div class="loader-spinner"></div>
+<p>हेडलाइन का विश्लेषण हो रहा है...</p>
+</div>
+
+<div class="actions">
+<button class="btn btn-secondary" id="clearBtn">
+<i class="fas fa-redo"></i> रीसेट करें
+</button>
+<button class="btn btn-secondary" id="exampleBtn">
+<i class="fas fa-file-alt"></i> उदाहरण
+</button>
+<button class="btn btn-secondary" id="saveBtn">
+<i class="fas fa-save"></i> सेव करें
+</button>
+</div>
+</section>
+
+<!-- Results Section -->
+<section class="results-section">
+<!-- Score Section -->
+<div class="score-section" id="scoreSection" style="display: none;">
+<div class="score-circle" id="scoreCircle">
+<span class="score-value" id="scoreValue">0</span>
+<span class="score-label">SEO स्कोर</span>
+</div>
+<div class="score-grade" id="scoreGrade">ग्रेड लोड हो रहा है...</div>
+<p id="scoreDescription">विश्लेषण पूरा होने के बाद सुझाव यहाँ दिखेंगे</p>
+</div>
+
+<!-- Analysis Results -->
+<div class="analysis-results" id="analysisResults" style="display: none;">
+<h2><i class="fas fa-chart-pie"></i> विस्तृत विश्लेषण</h2>
+
+<div class="analysis-item">
+<div class="analysis-icon analysis-good" id="lengthIcon">
+<i class="fas fa-ruler"></i>
+</div>
+<div class="analysis-text">
+<div class="analysis-title">लंबाई विश्लेषण</div>
+<div class="analysis-desc" id="lengthDesc">हेडलाइन की लंबाई सही है</div>
+</div>
+<div class="analysis-value" id="lengthValue">0 अक्षर</div>
+</div>
+
+<div class="analysis-item">
+<div class="analysis-icon analysis-good" id="keywordIcon">
+<i class="fas fa-key"></i>
+</div>
+<div class="analysis-text">
+<div class="analysis-title">कीवर्ड प्लेसमेंट</div>
+<div class="analysis-desc" id="keywordDesc">कीवर्ड शुरुआत में है</div>
+</div>
+<div class="analysis-value" id="keywordValue">अच्छा</div>
+</div>
+
+<div class="analysis-item">
+<div class="analysis-icon analysis-good" id="powerIcon">
+<i class="fas fa-bolt"></i>
+</div>
+<div class="analysis-text">
+<div class="analysis-title">पावर वर्ड्स</div>
+<div class="analysis-desc" id="powerDesc">पावर वर्ड्स मौजूद हैं</div>
+</div>
+<div class="analysis-value" id="powerValue">0</div>
+</div>
+
+<div class="analysis-item">
+<div class="analysis-icon analysis-good" id="emotionalIcon">
+<i class="fas fa-heart"></i>
+</div>
+<div class="analysis-text">
+<div class="analysis-title">भावनात्मक अपील</div>
+<div class="analysis-desc" id="emotionalDesc">भावनात्मक शब्द मौजूद हैं</div>
+</div>
+<div class="analysis-value" id="emotionalValue">मध्यम</div>
+</div>
+
+<div class="analysis-item">
+<div class="analysis-icon analysis-good" id="readabilityIcon">
+<i class="fas fa-book-reader"></i>
+</div>
+<div class="analysis-text">
+<div class="analysis-title">पठनीयता</div>
+<div class="analysis-desc" id="readabilityDesc">आसानी से पढ़ा जा सकता है</div>
+</div>
+<div class="analysis-value" id="readabilityValue">अच्छा</div>
+</div>
+</div>
+
+<!-- Suggestions -->
+<div class="suggestions-box" id="suggestionsBox" style="display: none;">
+<h3><i class="fas fa-lightbulb"></i> सुधार के सुझाव</h3>
+<div id="suggestionsList">
+<!-- Suggestions will be added here dynamically -->
+</div>
+</div>
+
+<!-- SERP Preview -->
+<div class="serp-preview" id="serpPreview" style="display: none;">
+<h3><i class="fas fa-search"></i> SERP प्रीव्यू (Google Search Result)</h3>
+<p style="margin-bottom: 15px; color: #64748b;">आपकी हेडलाइन Google सर्च में कुछ इस तरह दिखेगी:</p>
+
+<div class="serp-result">
+<div class="serp-url" id="serpUrl">https://www.example.com › blog › post</div>
+<div class="serp-title" id="serpTitle">हेडलाइन यहाँ दिखेगी</div>
+<div class="serp-desc" id="serpDesc">यह विवरण Google द्वारा आपकी वेबसाइट से लिया जाएगा। अपने मेटा डिस्क्रिप्शन को ऑप्टिमाइज़ करना सुनिश्चित करें।</div>
+</div>
+</div>
+
+<!-- Actions -->
+<div class="actions" id="resultActions" style="display: none;">
+<button class="btn btn-primary" id="regenerateBtn">
+<i class="fas fa-sync-alt"></i> नया हेडलाइन जनरेट करें
+</button>
+<button class="btn btn-secondary" id="copyBtn">
+<i class="fas fa-copy"></i> हेडलाइन कॉपी करें
+</button>
+<button class="btn btn-secondary" id="shareBtn">
+<i class="fas fa-share-alt"></i> शेयर करें
+</button>
+</div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+<div class="footer-links">
+<a href="all-tools.html"><i class="fas fa-tools"></i> सभी टूल्स</a>
+<a href="index.html"><i class="fas fa-home"></i> होमपेज</a>
+<a href="meta-tag-generator.html"><i class="fas fa-code"></i> मेटा टैग जनरेटर</a>
+<a href="schema-generator.html"><i class="fas fa-project-diagram"></i> Schema Generator</a>
+</div>
+<div class="copyright">
+<p>© 2024 Free SEO Tool Hub | हेडलाइन एनालाइज़र</p>
+<p style="margin-top: 5px; font-size: 0.85rem;">SEO हेडलाइन विश्लेषण और ऑप्टिमाइज़ेशन टूल</p>
+</div>
+</footer>
+</div>
+
+<!-- Success Message -->
+<div class="success-message" id="successMessage">
+<i class="fas fa-check-circle"></i>
+<span id="successText">ऑपरेशन सफल!</span>
+</div>
+
+<script>
+// DOM Elements
+const analyzeBtn = document.getElementById('analyzeBtn');
+const clearBtn = document.getElementById('clearBtn');
+const exampleBtn = document.getElementById('exampleBtn');
+const saveBtn = document.getElementById('saveBtn');
+const regenerateBtn = document.getElementById('regenerateBtn');
+const copyBtn = document.getElementById('copyBtn');
+const shareBtn = document.getElementById('shareBtn');
+const loader = document.getElementById('loader');
+const successMessage = document.getElementById('successMessage');
+const successText = document.getElementById('successText');
+
+// Input fields
+const headlineInput = document.getElementById('headlineInput');
+const headlineType = document.getElementById('headlineType');
+const keywordInput = document.getElementById('keywordInput');
+
+// Results sections
+const scoreSection = document.getElementById('scoreSection');
+const analysisResults = document.getElementById('analysisResults');
+const suggestionsBox = document.getElementById('suggestionsBox');
+const serpPreview = document.getElementById('serpPreview');
+const resultActions = document.getElementById('resultActions');
+
+// Score elements
+const scoreCircle = document.getElementById('scoreCircle');
+const scoreValue = document.getElementById('scoreValue');
+const scoreGrade = document.getElementById('scoreGrade');
+const scoreDescription = document.getElementById('scoreDescription');
+
+// Analysis elements
+const lengthDesc = document.getElementById('lengthDesc');
+const lengthValue = document.getElementById('lengthValue');
+const lengthIcon = document.getElementById('lengthIcon');
+
+const keywordDesc = document.getElementById('keywordDesc');
+const keywordValue = document.getElementById('keywordValue');
+const keywordIcon = document.getElementById('keywordIcon');
+
+const powerDesc = document.getElementById('powerDesc');
+const powerValue = document.getElementById('powerValue');
+const powerIcon = document.getElementById('powerIcon');
+
+const emotionalDesc = document.getElementById('emotionalDesc');
+const emotionalValue = document.getElementById('emotionalValue');
+const emotionalIcon = document.getElementById('emotionalIcon');
+
+const readabilityDesc = document.getElementById('readabilityDesc');
+const readabilityValue = document.getElementById('readabilityValue');
+const readabilityIcon = document.getElementById('readabilityIcon');
+
+// Suggestions and SERP
+const suggestionsList = document.getElementById('suggestionsList');
+const serpUrl = document.getElementById('serpUrl');
+const serpTitle = document.getElementById('serpTitle');
+const serpDesc = document.getElementById('serpDesc');
+
+// Event Listeners
+analyzeBtn.addEventListener('click', analyzeHeadline);
+clearBtn.addEventListener('click', clearForm);
+exampleBtn.addEventListener('click', loadExample);
+saveBtn.addEventListener('click', saveHeadline);
+regenerateBtn.addEventListener('click', generateNewHeadline);
+copyBtn.addEventListener('click', copyHeadline);
+shareBtn.addEventListener('click', shareResults);
+
+// Power words database
+const powerWords = [
+"शीर्ष", "सर्वोत्तम", "आसान", "शक्तिशाली", "अद्भुत", "प्रभावी", "पूर्ण", "मुफ्त",
+"विशेष", "सीक्रेट", "प्रो", "अल्टीमेट", "एसेंशियल", "एक्सक्लूसिव", "लिमिटेड",
+"जबरदस्त", "अविश्वसनीय", "चौंकाने वाला", "आश्चर्यजनक", "साबित", "तुरंत",
+"सरल", "त्वरित", "गारंटीड", "लाभ", "सफल", "जीत", "बढ़िया", "उत्कृष्ट"
+];
+
+// Emotional words database
+const emotionalWords = [
+"प्यार", "खुश", "उत्साहित", "आश्चर्य", "डर", "क्रोध", "उदास", "गर्व",
+"आत्मविश्वास", "संतुष्ट", "कृतज्ञ", "आशा", "प्रेरणा", "साहस", "शांति",
+"उत्साह", "जुनून", "दृढ़ संकल्प", "सफलता", "विजय", "मदद", "समर्थन"
+];
+
+function analyzeHeadline() {
+const headline = headlineInput.value.trim();
+const keyword = keywordInput.value.trim();
+const type = headlineType.value;
+
+if (!headline) {
+showMessage("कृपया एक हेडलाइन डालें!", "error");
+return;
+}
+
+// Show loader
+loader.style.display = 'block';
+hideResults();
+
+// Simulate analysis (in real app, this would be server-side)
+setTimeout(() => {
+const analysis = performAnalysis(headline, keyword, type);
+displayResults(analysis);
+loader.style.display = 'none';
+showMessage("हेडलाइन विश्लेषण पूरा हुआ!", "success");
+}, 1500);
+}
+
+function performAnalysis(headline, keyword, type) {
+const charCount = headline.length;
+const wordCount = headline.split(/\s+/).length;
+
+// Calculate length score
+let lengthScore = 0;
+let lengthFeedback = "";
+let lengthStatus = "good";
+
+if (charCount < 40) {
+lengthScore = 4;
+lengthFeedback = "हेडलाइन बहुत छोटी है। 50-60 अक्षर आदर्श हैं।";
+lengthStatus = "bad";
+} else if (charCount >= 40 && charCount <= 60) {
+lengthScore = 10;
+lengthFeedback = "हेडलाइन लंबाई आदर्श है! (Google 50-60 अक्षर दिखाता है)";
+lengthStatus = "good";
+} else if (charCount > 60 && charCount <= 70) {
+lengthScore = 7;
+lengthFeedback = "हेडलाइन थोड़ी लंबी है। कुछ अक्षर कम करने की कोशिश करें।";
+lengthStatus = "warning";
+} else {
+lengthScore = 3;
+lengthFeedback = "हेडलाइन बहुत लंबी है। Google इसे काट देगा।";
+lengthStatus = "bad";
+}
+
+// Keyword analysis
+let keywordScore = 0;
+let keywordFeedback = "";
+let keywordStatus = "good";
+
+if (keyword) {
+const keywordLower = keyword.toLowerCase();
+const headlineLower = headline.toLowerCase();
+
+if (headlineLower.includes(keywordLower)) {
+// Check position
+if (headlineLower.indexOf(keywordLower) < 30) {
+keywordScore = 10;
+keywordFeedback = "कीवर्ड हेडलाइन की शुरुआत में है - बेहतरीन!";
+keywordStatus = "good";
+} else {
+keywordScore = 7;
+keywordFeedback = "कीवर्ड हेडलाइन में है, लेकिन शुरुआत में होना बेहतर है।";
+keywordStatus = "warning";
+}
+} else {
+keywordScore = 3;
+keywordFeedback = "कीवर्ड हेडलाइन में नहीं है। कीवर्ड जोड़ने की कोशिश करें।";
+keywordStatus = "bad";
+}
+} else {
+keywordScore = 6;
+keywordFeedback = "कीवर्ड निर्दिष्ट नहीं किया गया। कीवर्ड जोड़कर स्कोर बेहतर करें।";
+keywordStatus = "warning";
+}
+
+// Power words analysis
+let powerWordsCount = 0;
+const headlineWords = headline.toLowerCase().split(/\s+/);
+
+headlineWords.forEach(word => {
+if (powerWords.includes(word) || powerWords.some(pw => word.includes(pw))) {
+powerWordsCount++;
+}
+});
+
+let powerScore = 0;
+let powerFeedback = "";
+let powerStatus = "good";
+
+if (powerWordsCount >= 2) {
+powerScore = 10;
+powerFeedback = `हेडलाइन में ${powerWordsCount} पावर वर्ड्स हैं - बढ़िया!`;
+powerStatus = "good";
+} else if (powerWordsCount === 1) {
+powerScore = 7;
+powerFeedback = "हेडलाइन में 1 पावर वर्ड है। एक और जोड़ने की कोशिश करें।";
+powerStatus = "warning";
+} else {
+powerScore = 4;
+powerFeedback = "हेडलाइन में कोई पावर वर्ड नहीं है। क्लिक-थ्रू रेट बढ़ाने के लिए पावर वर्ड्स जोड़ें।";
+powerStatus = "bad";
+}
+
+// Emotional words analysis
+let emotionalWordsCount = 0;
+headlineWords.forEach(word => {
+if (emotionalWords.includes(word) || emotionalWords.some(ew => word.includes(ew))) {
+emotionalWordsCount++;
+}
+});
+
+let emotionalScore = 0;
+let emotionalFeedback = "";
+let emotionalStatus = "good";
+let emotionalLevel = "";
+
+if (emotionalWordsCount >= 2) {
+emotionalScore = 10;
+emotionalFeedback = `हेडलाइन में ${emotionalWordsCount} भावनात्मक शब्द हैं - उत्कृष्ट!`;
+emotionalStatus = "good";
+emotionalLevel = "उच्च";
+} else if (emotionalWordsCount === 1) {
+emotionalScore = 7;
+emotionalFeedback = "हेडलाइन में 1 भावनात्मक शब्द है।";
+emotionalStatus = "warning";
+emotionalLevel = "मध्यम";
+} else {
+emotionalScore = 5;
+emotionalFeedback = "हेडलाइन में भावनात्मक शब्द नहीं हैं। भावनात्मक अपील बढ़ाएं।";
+emotionalStatus = "bad";
+emotionalLevel = "कम";
+}
+
+// Readability analysis
+const avgWordLength = charCount / wordCount;
+const hasQuestion = headline.includes('?');
+const hasNumber = /\d/.test(headline);
+
+let readabilityScore = 0;
+let readabilityFeedback = "";
+let readabilityStatus = "good";
+
+if (avgWordLength < 6 && wordCount <= 12) {
+readabilityScore = 10;
+readabilityFeedback = "हेडलाइन आसानी से पढ़ी जा सकती है - बेहतरीन!";
+readabilityStatus = "good";
+} else if (avgWordLength < 7 && wordCount <= 15) {
+readabilityScore = 7;
+readabilityFeedback = "हेडलाइन पठनीय है, लेकिन थोड़ी और सरल बना सकते हैं।";
+readabilityStatus = "warning";
+} else {
+readabilityScore = 5;
+readabilityFeedback = "हेडलाइन जटिल लगती है। सरल शब्दों का प्रयोग करें।";
+readabilityStatus = "bad";
+}
+
+if (hasQuestion) {
+readabilityScore += 2;
+readabilityFeedback += " प्रश्नवाचक हेडलाइन जिज्ञासा बढ़ाती है।";
+}
+
+if (hasNumber) {
+readabilityScore += 1;
+readabilityFeedback += " संख्या होने से हेडलाइन अधिक विश्वसनीय लगती है।";
+}
+
+// Calculate total score
+const totalScore = Math.round(
+(lengthScore + keywordScore + powerScore + emotionalScore + readabilityScore) / 5
+);
+
+// Determine grade
+let grade = "";
+let gradeColor = "";
+let description = "";
+
+if (totalScore >= 90) {
+grade = "A+ (उत्कृष्ट)";
+gradeColor = "#10b981";
+description = "आपकी हेडलाइन बेहतरीन है! इसमें सभी SEO तत्व मौजूद हैं।";
+} else if (totalScore >= 80) {
+grade = "A (बहुत अच्छा)";
+gradeColor = "#10b981";
+description = "आपकी हेडलाइन अच्छी है, लेकिन कुछ छोटे सुधार संभव हैं।";
+} else if (totalScore >= 70) {
+grade = "B (अच्छा)";
+gradeColor = "#f59e0b";
+description = "आपकी हेडलाइन ठीक है, लेकिन सुधार की गुंजाइश है।";
+} else if (totalScore >= 60) {
+grade = "C (औसत)";
+gradeColor = "#f59e0b";
+description = "हेडलाइन में सुधार की आवश्यकता है। नीचे दिए सुझावों का पालन करें।";
+} else {
+grade = "D (सुधार आवश्यक)";
+gradeColor = "#ef4444";
+description = "हेडलाइन में महत्वपूर्ण सुधार की आवश्यकता है।";
+}
+
+// Generate suggestions
+const suggestions = generateSuggestions(
+headline, keyword, type,
+{ charCount, wordCount, lengthScore, keywordScore, powerScore, emotionalScore, readabilityScore }
+);
+
+// Generate SERP preview
+const serpTitleText = headline.length > 60 ? headline.substring(0, 57) + "..." : headline;
+const domain = "freeseotoolhub.com";
+const path = type === "blog" ? "blog" : type === "article" ? "articles" : "resources";
+const serpUrlText = `https://www.${domain} › ${path} › ${headline.substring(0, 20).toLowerCase().replace(/\s+/g, '-')}`;
+const serpDescText = generateSERPDescription(headline, type);
+
+return {
+headline,
+keyword,
+type,
+scores: {
+total: totalScore,
+length: lengthScore,
+keyword: keywordScore,
+power: powerScore,
+emotional: emotionalScore,
+readability: readabilityScore
+},
+feedback: {
+length: { text: lengthFeedback, status: lengthStatus },
+keyword: { text: keywordFeedback, status: keywordStatus },
+power: { text: powerFeedback, status: powerStatus },
+emotional: { text: emotionalFeedback, status: emotionalStatus, level: emotionalLevel },
+readability: { text: readabilityFeedback, status: readabilityStatus }
+},
+counts: {
+characters: charCount,
+words: wordCount,
+powerWords: powerWordsCount,
+emotionalWords: emotionalWordsCount
+},
+grade: {
+text: grade,
+color: gradeColor,
+description: description
+},
+suggestions: suggestions,
+serp: {
+title: serpTitleText,
+url: serpUrlText,
+description: serpDescText
+}
+};
+}
+
+function generateSuggestions(headline, keyword, type, metrics) {
+const suggestions = [];
+
+// Length suggestion
+if (metrics.charCount < 40) {
+suggestions.push("हेडलाइन लंबी करें। आदर्श लंबाई 50-60 अक्षर है।");
+} else if (metrics.charCount > 70) {
+suggestions.push("हेडलाइन छोटी करें। 60 अक्षर से कम रखने का प्रयास करें।");
+}
+
+// Keyword suggestion
+if (keyword && !headline.toLowerCase().includes(keyword.toLowerCase())) {
+suggestions.push(`कीवर्ड "${keyword}" हेडलाइन में जोड़ें। शुरुआत में रखने का प्रयास करें।`);
+} else if (keyword && headline.toLowerCase().indexOf(keyword.toLowerCase()) > 30) {
+suggestions.push(`कीवर्ड "${keyword}" हेडलाइन की शुरुआत में ले जाएँ।`);
+}
+
+// Power words suggestion
+if (metrics.powerWords < 2) {
+suggestions.push("क्लिक-थ्रू रेट बढ़ाने के लिए 1-2 पावर वर्ड्स जोड़ें। जैसे: 'शीर्ष', 'सर्वोत्तम', 'मुफ्त', 'शक्तिशाली'");
+}
+
+// Emotional words suggestion
+if (metrics.emotionalWords < 1) {
+suggestions.push("भावनात्मक शब्द जोड़कर पाठकों से जुड़ें। जैसे: 'आश्चर्यजनक', 'प्रेरणादायक', 'आसान'");
+}
+
+// Type-specific suggestions
+if (type === "blog") {
+suggestions.push("ब्लॉग हेडलाइन में प्रश्न या संख्या का उपयोग करने से जिज्ञासा बढ़ती है।");
+} else if (type === "product") {
+suggestions.push("प्रोडक्ट हेडलाइन में लाभ और विशेष विशेषताओं पर ध्यान दें।");
+} else if (type === "video") {
+suggestions.push("यूट्यूब हेडलाइन में ब्रैकेट में कीवर्ड जोड़ें, जैसे: [2024] या [हिंदी में]");
+}
+
+// Readability suggestion
+if (metrics.words > 15) {
+suggestions.push("हेडलाइन को सरल और संक्षिप्त रखें। 10-12 शब्द आदर्श हैं।");
+}
+
+// Add at least 3 suggestions
+if (suggestions.length < 3) {
+suggestions.push("हेडलाइन में संख्या जोड़ने से क्लिक-थ्रू रेट 15% तक बढ़ सकता है।");
+suggestions.push("नकारात्मक शब्दों से बचें। सकारात्मक और समाधान-उन्मुख भाषा का प्रयोग करें।");
+suggestions.push("SERP में बेहतर दिखने के लिए हेडलाइन की शुरुआत में सबसे महत्वपूर्ण जानकारी रखें।");
+}
+
+return suggestions;
+}
+
+function generateSERPDescription(headline, type) {
+const descriptions = {
+blog: `इस ब्लॉग पोस्ट में हम ${headline.split(' ').slice(0, 3).join(' ')} के बारे में विस्तार से चर्चा करेंगे। स्टेप बाई स्टेप गाइड, उपयोगी टिप्स और प्रैक्टिकल उदाहरण जानें।`,
+article: `यह आर्टिकल ${headline} पर एक संपूर्ण मार्गदर्शिका है। विशेषज्ञ सलाह, शोध आंकड़े और व्यावहारिक अनुप्रयोग यहाँ पाएं।`,
+product: `हमारा ${headline} सर्वोत्तम गुणवत्ता और कीमत में उपलब्ध है। विशेष विशेषताएं, तकनीकी विवरण और ग्राहक समीक्षाएं देखें।`,
+video: `इस वीडियो में हम ${headline} के बारे में बात करेंगे। पूरा ट्यूटोरियल, डेमो और व्यावहारिक उपयोग जानने के लिए देखें।`,
+social: `${headline} - पूरी जानकारी, नवीनतम अपडेट और विशेष ऑफ़र पाने के लिए हमारे सोशल मीडिया पेज को फॉलो करें।`
+};
+
+return descriptions[type] || `यह पेज ${headline} के बारे में विस्तृत जानकारी प्रदान करता है। संपूर्ण मार्गदर्शिका, उपयोगी संसाधन और नवीनतम अपडेट यहाँ पाएं।`;
+}
+
+function displayResults(analysis) {
+// Show all result sections
+scoreSection.style.display = 'block';
+analysisResults.style.display = 'block';
+suggestionsBox.style.display = 'block';
+serpPreview.style.display = 'block';
+resultActions.style.display = 'flex';
+
+// Update score
+scoreValue.textContent = analysis.scores.total;
+scoreGrade.textContent = analysis.grade.text;
+scoreGrade.style.color = analysis.grade.color;
+scoreDescription.textContent = analysis.grade.description;
+
+// Update score circle color based on score
+if (analysis.scores.total >= 80) {
+scoreCircle.style.background = "linear-gradient(135deg, #10b981, #059669)";
+} else if (analysis.scores.total >= 60) {
+scoreCircle.style.background = "linear-gradient(135deg, #f59e0b, #d97706)";
+} else {
+scoreCircle.style.background = "linear-gradient(135deg, #ef4444, #dc2626)";
+}
+
+// Update length analysis
+lengthDesc.textContent = analysis.feedback.length.text;
+lengthValue.textContent = `${analysis.counts.characters} अक्षर`;
+updateIcon(lengthIcon, analysis.feedback.length.status);
+
+// Update keyword analysis
+keywordDesc.textContent = analysis.feedback.keyword.text;
+keywordValue.textContent = analysis.keyword ? "मौजूद" : "नहीं";
+updateIcon(keywordIcon, analysis.feedback.keyword.status);
+
+// Update power words analysis
+powerDesc.textContent = analysis.feedback.power.text;
+powerValue.textContent = `${analysis.counts.powerWords}`;
+updateIcon(powerIcon, analysis.feedback.power.status);
+
+// Update emotional analysis
+emotionalDesc.textContent = analysis.feedback.emotional.text;
+emotionalValue.textContent = analysis.feedback.emotional.level;
+updateIcon(emotionalIcon, analysis.feedback.emotional.status);
+
+// Update readability analysis
+readabilityDesc.textContent = analysis.feedback.readability.text;
+readabilityValue.textContent = analysis.counts.words > 15 ? "मध्यम" : "अच्छा";
+updateIcon(readabilityIcon, analysis.feedback.readability.status);
+
+// Update suggestions
+suggestionsList.innerHTML = "";
+analysis.suggestions.forEach((suggestion, index) => {
+const suggestionItem = document.createElement('div');
+suggestionItem.className = 'suggestion-item';
+suggestionItem.innerHTML = `<strong>${index + 1}.</strong> ${suggestion}`;
+suggestionsList.appendChild(suggestionItem);
+});
+
+// Update SERP preview
+serpTitle.textContent = analysis.serp.title;
+serpUrl.textContent = analysis.serp.url;
+serpDesc.textContent = analysis.serp.description;
+}
+
+function updateIcon(iconElement, status) {
+iconElement.className = "analysis-icon";
+
+if (status === "good") {
+iconElement.classList.add("analysis-good");
+iconElement.innerHTML = '<i class="fas fa-check-circle"></i>';
+} else if (status === "warning") {
+iconElement.classList.add("analysis-warning");
+iconElement.innerHTML = '<i class="fas fa-exclamation-triangle"></i>';
+} else {
+iconElement.classList.add("analysis-bad");
+iconElement.innerHTML = '<i class="fas fa-times-circle"></i>';
+}
+}
+
+function clearForm() {
+headlineInput.value = "";
+keywordInput.value = "";
+headlineType.value = "blog";
+hideResults();
+showMessage("फॉर्म रीसेट हो गया!", "success");
+}
+
+function loadExample() {
+const examples = [
+"सर्च इंजन ऑप्टिमाइज़ेशन (SEO) की पूरी गाइड - 2024 में सफलता के 10 आसान तरीके",
+"यूट्यूब सब्सक्राइबर्स बढ़ाने के 7 शक्तिशाली तरीके जो वास्तव में काम करते हैं",
+"वेबसाइट स्पीड कैसे बढ़ाएं? 5 मिनट में 60% सुधार के प्रभावी उपाय",
+"ब्लॉग से पैसे कमाने का सही तरीका - शुरुआती के लिए स्टेप बाई स्टेप गाइड",
+"क्या AI से लिखा कंटेंट Google में रैंक कर सकता है? चौंकाने वाला सच"
+];
+
+const randomExample = examples[Math.floor(Math.random() * examples.length)];
+headlineInput.value = randomExample;
+keywordInput.value = "SEO";
+headlineType.value = "blog";
+
+showMessage("उदाहरण हेडलाइन लोड हो गया!", "success");
+}
+
+function saveHeadline() {
+const headline = headlineInput.value.trim();
+
+if (!headline) {
+showMessage("कृपया पहले एक हेडलाइन डालें!", "error");
+return;
+}
+
+// In a real app, this would save to server or localStorage
+const savedHeadlines = JSON.parse(localStorage.getItem('savedHeadlines') || '[]');
+savedHeadlines.push({
+headline: headline,
+type: headlineType.value,
+keyword: keywordInput.value,
+date: new Date().toISOString()
+});
+
+localStorage.setItem('savedHeadlines', JSON.stringify(savedHeadlines));
+showMessage("हेडलाइन सेव हो गई! (LocalStorage में)", "success");
+}
+
+function generateNewHeadline() {
+const originalHeadline = headlineInput.value.trim();
+const keyword = keywordInput.value.trim();
+const type = headlineType.value;
+
+if (!originalHeadline) {
+showMessage("कृपया पहले एक हेडलाइन डालें!", "error");
+return;
+}
+
+// Simple headline variations
+const variations = [
+`2024 का अंतिम गाइड: ${originalHeadline}`,
+`क्या आप जानते हैं? ${originalHeadline}`,
+`${originalHeadline} - पूरी जानकारी हिंदी में`,
+`शुरुआती के लिए ${originalHeadline}`,
+`${originalHeadline}: स्टेप बाई स्टेप ट्यूटोरियल`,
+`जानिए कैसे ${originalHeadline.toLowerCase()}`
+];
+
+const randomVariation = variations[Math.floor(Math.random() * variations.length)];
+headlineInput.value = randomVariation;
+
+// Re-analyze with new headline
+analyzeHeadline();
+showMessage("नया हेडलाइन जनरेट किया गया और विश्लेषण किया गया!", "success");
+}
+
+function copyHeadline() {
+const headline = headlineInput.value.trim();
+
+if (!headline) {
+showMessage("कॉपी करने के लिए कोई हेडलाइन नहीं!", "error");
+return;
+}
+
+navigator.clipboard.writeText(headline)
+.then(() => {
+showMessage("हेडलाइन कॉपी हो गई!", "success");
+})
+.catch(err => {
+showMessage("कॉपी करने में त्रुटि: " + err, "error");
+});
+}
+
+function shareResults() {
+const headline = headlineInput.value.trim();
+const score = scoreValue.textContent;
+const grade = scoreGrade.textContent;
+
+if (!headline || !score || score === "0") {
+showMessage("कृपया पहले हेडलाइन का विश्लेषण करें!", "error");
+return;
+}
+
+const shareText = `मेरी हेडलाइन "${headline}" ने ${score}/100 स्कोर किया! ग्रेड: ${grade}. Free SEO Tool Hub - Headline Analyzer का उपयोग करके अपनी हेडलाइन का विश्लेषण करें: ${window.location.href}`;
+
+if (navigator.share) {
+navigator.share({
+title: 'हेडलाइन एनालाइज़र रिजल्ट',
+text: shareText,
+url: window.location.href
+})
+.then(() => showMessage("रिजल्ट शेयर किया गया!", "success"))
+.catch(err => showMessage("शेयर करने में त्रुटि: " + err, "error"));
+} else {
+// Fallback: Copy to clipboard
+navigator.clipboard.writeText(shareText)
+.then(() => {
+showMessage("रिजल्ट कॉपी हो गया! आप इसे शेयर कर सकते हैं।", "success");
+})
+.catch(err => {
+showMessage("शेयर करने में त्रुटि: " + err, "error");
+});
+}
+}
+
+function hideResults() {
+scoreSection.style.display = 'none';
+analysisResults.style.display = 'none';
+suggestionsBox.style.display = 'none';
+serpPreview.style.display = 'none';
+resultActions.style.display = 'none';
+}
+
+function showMessage(message, type) {
+successText.textContent = message;
+
+if (type === "error") {
+successMessage.style.background = "#ef4444";
+} else if (type === "warning") {
+successMessage.style.background = "#f59e0b";
+} else {
+successMessage.style.background = "#10B981";
+}
+
+successMessage.style.display = 'flex';
+
+setTimeout(() => {
+successMessage.style.display = 'none';
+}, 3000);
+}
+
+// Initialize the tool
+document.addEventListener('DOMContentLoaded', function() {
+// Add some initial instructions
+console.log("हेडलाइन एनालाइज़र टूल तैयार है!");
+
+// Add enter key support for headline input
+headlineInput.addEventListener('keypress', function(e) {
+if (e.key === 'Enter' && e.ctrlKey) {
+analyzeHeadline();
+}
+});
+});
+</script>
+</body>
+</html>
