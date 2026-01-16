@@ -2,75 +2,550 @@
 <html lang="hi">
 <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPG77KWVCP"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  // Configure both Measurement IDs
-  gtag('config', 'G-ZPG77KWVCP');
-  gtag('config', 'G-PFPCTBFG3Y');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPG77KWVCP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ZPG77KWVCP');
+        gtag('config', 'G-PFPCTBFG3Y');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Meta Tags Improved for SEO -->
     <meta name="description" content="FreeSEOToolHub.com: ब्लॉगर्स, यूट्यूबर्स, ई-कॉमर्स और व्यवसायों के लिए बिल्कुल मुफ्त, हिंदी और अंग्रेजी में शक्तिशाली SEO टूल्स। कीवर्ड डेंसिटी चेकर, मेटा टैग जनरेटर, प्लेजियरिज्म चेकर, ई-कॉमर्स SEO और सोशल मीडिया ऑप्टिमाइज़र।">
     <meta name="keywords" content="मुफ्त SEO टूल्स, हिंदी SEO टूल, प्लेजियरिज्म चेकर, ई-कॉमर्स SEO, फ्लिपकार्ट SEO, अमेज़न SEO, सोशल मीडिया ऑप्टिमाइज़र, लोकल SEO">
     <meta name="author" content="FreeSEOToolHub">
-    <!-- Title Updated -->
     <title>FreeSEOToolHub - 15+ मुफ़्त SEO टूल्स ब्लॉगर्स, यूट्यूबर्स और व्यवसायों के लिए</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background: linear-gradient(135deg, #1a2980 0%, #26d0ce 100%); color: #333; min-height: 100vh; padding: 20px; text-align: center; }
-        .container { max-width: 1200px; margin: 20px auto; background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15); }
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #10b981;
+            --accent: #f59e0b;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --gradient-primary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            --gradient-success: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+            --gradient-warning: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+            --gradient-dark: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.07);
+            --shadow-lg: 0 10px 25px rgba(0,0,0,0.1);
+            --shadow-xl: 0 20px 40px rgba(0,0,0,0.15);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --radius-full: 9999px;
+        }
+        
+        body { 
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); 
+            color: var(--dark); 
+            min-height: 100vh; 
+            line-height: 1.6; 
+        }
+        
+        .container { 
+            max-width: 1280px; 
+            margin: 0 auto; 
+            padding: 0 20px; 
+        }
         
         /* Header / Hero Section */
-        .hero { background: linear-gradient(to right, #4A00E0, #8E2DE2); color: white; padding: 60px 20px; }
-        .hero h1 { font-size: 3.2rem; margin-bottom: 15px; }
-        .hero h1 span { color: #FFD700; }
-        .hero .tagline { font-size: 1.5rem; max-width: 800px; margin: 0 auto 30px; line-height: 1.6; }
+        .hero { 
+            background: var(--gradient-primary);
+            color: white; 
+            padding: 80px 0; 
+            position: relative;
+            overflow: hidden;
+            border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+            margin-bottom: 60px;
+            box-shadow: var(--shadow-xl);
+        }
         
-        /* Stats Bar - Updated with more tools count */
-        .stats { display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 15px; margin-top: 30px; }
-        .stat-box { text-align: center; }
-        .stat-box .number { font-size: 2.8rem; font-weight: bold; color: #4ade80; display: block; }
-        .stat-box .label { font-size: 1rem; opacity: 0.9; }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .hero h1 { 
+            font-size: 3.5rem; 
+            font-weight: 800;
+            margin-bottom: 20px; 
+            letter-spacing: -0.5px;
+        }
+        
+        .hero h1 span { 
+            background: linear-gradient(to right, #fbbf24, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero .tagline { 
+            font-size: 1.4rem; 
+            max-width: 800px; 
+            margin: 0 auto 40px; 
+            line-height: 1.6; 
+            font-weight: 400;
+            opacity: 0.95;
+        }
+        
+        /* Stats Bar */
+        .stats { 
+            display: flex; 
+            justify-content: center; 
+            flex-wrap: wrap; 
+            gap: 40px; 
+            background: rgba(255, 255, 255, 0.15); 
+            backdrop-filter: blur(10px);
+            padding: 30px 40px; 
+            border-radius: var(--radius-lg); 
+            margin-top: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .stat-box { 
+            text-align: center; 
+        }
+        
+        .stat-box .number { 
+            font-size: 3rem; 
+            font-weight: 800; 
+            color: white; 
+            display: block; 
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+        
+        .stat-box .label { 
+            font-size: 1rem; 
+            opacity: 0.9; 
+            font-weight: 500;
+        }
         
         /* Main Content Area */
-        .content { padding: 50px 30px; text-align: left; }
-        .section-title { font-size: 2.2rem; margin-bottom: 40px; text-align: center; color: #2d3748; border-bottom: 3px solid #4A00E0; display: inline-block; padding-bottom: 10px; }
+        .content { 
+            padding: 60px 0; 
+        }
         
-        /* Live Tools Grid - ALL TOOLS NOW LIVE */
-        .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
-        .tool-card { background: #f8fafc; border-radius: 15px; padding: 30px; transition: all 0.3s ease; border: 1px solid #e2e8f0; position: relative; overflow: hidden; }
-        .tool-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); border-color: #4A00E0; }
-        .tool-card.live::before { content: "LIVE"; position: absolute; top: 15px; right: -30px; background: #10b981; color: white; padding: 5px 35px; font-size: 0.8rem; font-weight: bold; transform: rotate(45deg); }
-        .tool-icon { font-size: 2.8rem; color: #4A00E0; margin-bottom: 20px; }
-        .tool-card h3 { font-size: 1.7rem; margin-bottom: 15px; color: #2d3748; }
-        .tool-card p { color: #64748b; line-height: 1.6; margin-bottom: 25px; font-size: 1.05rem; }
-        .tool-status { display: inline-block; padding: 8px 18px; border-radius: 50px; font-weight: bold; font-size: 0.9rem; margin-bottom: 20px; }
-        .status-live { background: #d1fae5; color: #065f46; }
-        .status-new { background: #dbeafe; color: #1e40af; } /* NEW लेबल के लिए */
-        .btn-tool { display: inline-block; background: linear-gradient(to right, #4A00E0, #8E2DE2); color: white; padding: 12px 28px; text-decoration: none; border-radius: 50px; font-weight: bold; transition: all 0.3s; }
-        .btn-tool:hover { background: linear-gradient(to right, #3a00b3, #6a1dc9); box-shadow: 0 5px 15px rgba(74, 0, 224, 0.3); }
-        .btn-coming { background: #94a3b8; cursor: not-allowed; }
+        .section-title { 
+            font-size: 2.5rem; 
+            margin-bottom: 50px; 
+            text-align: center; 
+            color: var(--dark); 
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
         
-        /* Coming Soon Section - REMOVED since all tools are now live */
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-primary);
+            border-radius: var(--radius-full);
+        }
         
-        /* CTA & Footer */
-        .cta { background: linear-gradient(to right, #00b09b, #96c93d); color: white; padding: 50px 20px; margin-top: 60px; text-align: center; }
-        .cta h2 { font-size: 2.5rem; margin-bottom: 20px; }
-        .btn-cta { background: white; color: #00b09b; padding: 16px 45px; font-size: 1.2rem; margin-top: 20px; }
-        .btn-cta:hover { background: #f0fdf4; }
-        .footer { background: #1e293b; color: #cbd5e1; padding: 30px; margin-top: 50px; }
-        .footer a { color: #60a5fa; text-decoration: none; }
+        /* Live Tools Grid */
+        .tools-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); 
+            gap: 30px; 
+            margin-top: 40px; 
+        }
+        
+        .tool-card { 
+            background: white; 
+            border-radius: var(--radius-lg); 
+            padding: 30px; 
+            transition: all 0.3s ease; 
+            border: 1px solid #e2e8f0; 
+            position: relative; 
+            overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .tool-card:hover { 
+            transform: translateY(-8px); 
+            box-shadow: var(--shadow-xl); 
+            border-color: var(--primary);
+        }
+        
+        .tool-card.live::before { 
+            content: "LIVE"; 
+            position: absolute; 
+            top: 15px; 
+            right: -35px; 
+            background: var(--gradient-success); 
+            color: white; 
+            padding: 6px 40px; 
+            font-size: 0.75rem; 
+            font-weight: 700; 
+            transform: rotate(45deg);
+            letter-spacing: 0.5px;
+            z-index: 1;
+        }
+        
+        .tool-icon { 
+            font-size: 2.5rem; 
+            color: var(--primary); 
+            margin-bottom: 20px; 
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .tool-card h3 { 
+            font-size: 1.5rem; 
+            margin-bottom: 15px; 
+            color: var(--dark); 
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        
+        .tool-card p { 
+            color: var(--gray); 
+            line-height: 1.6; 
+            margin-bottom: 25px; 
+            font-size: 1rem; 
+            flex-grow: 1;
+        }
+        
+        .tool-status { 
+            display: inline-block; 
+            padding: 6px 16px; 
+            border-radius: var(--radius-full); 
+            font-weight: 600; 
+            font-size: 0.8rem; 
+            margin-bottom: 15px;
+            letter-spacing: 0.3px;
+        }
+        
+        .status-live { 
+            background: rgba(16, 185, 129, 0.1); 
+            color: var(--success);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+        
+        .status-new { 
+            background: rgba(99, 102, 241, 0.1); 
+            color: var(--primary-dark);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+        }
+        
+        .btn-tool { 
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: var(--gradient-primary); 
+            color: white; 
+            padding: 12px 28px; 
+            text-decoration: none; 
+            border-radius: var(--radius-full); 
+            font-weight: 600; 
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            width: fit-content;
+            font-size: 0.95rem;
+        }
+        
+        .btn-tool:hover { 
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #7c3aed 100%); 
+            box-shadow: 0 5px 20px rgba(99, 102, 241, 0.4); 
+            transform: translateY(-2px);
+        }
+        
+        /* CTA Section */
+        .cta { 
+            background: var(--gradient-dark);
+            color: white; 
+            padding: 80px 0; 
+            margin-top: 80px; 
+            text-align: center;
+            border-radius: var(--radius-xl);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 30%, rgba(99, 102, 241, 0.2) 0%, transparent 50%);
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta h2 { 
+            font-size: 2.8rem; 
+            margin-bottom: 20px; 
+            font-weight: 700;
+        }
+        
+        .cta p { 
+            font-size: 1.2rem; 
+            max-width: 700px; 
+            margin: 0 auto 30px; 
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+        
+        .btn-cta { 
+            background: white; 
+            color: var(--primary-dark); 
+            padding: 16px 45px; 
+            font-size: 1.1rem; 
+            font-weight: 600;
+        }
+        
+        .btn-cta:hover { 
+            background: #f0f0ff; 
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+        }
+        
+        .highlight-badge {
+            background: rgba(245, 158, 11, 0.15);
+            color: #f59e0b;
+            padding: 10px 20px;
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(245, 158, 11, 0.3);
+        }
+        
+        /* Footer */
+        .footer { 
+            background: var(--dark); 
+            color: #cbd5e1; 
+            padding: 60px 0 30px; 
+            margin-top: 80px;
+        }
+        
+        .footer-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 60px;
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .footer-links a { 
+            color: #94a3b8; 
+            text-decoration: none; 
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .footer-links a:hover { 
+            color: var(--primary); 
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid #334155;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+        
+        .footer-bottom a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        /* Info Banner */
+        .info-banner {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            margin: 50px 0;
+            text-align: center;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .info-banner h3 {
+            color: var(--dark);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-weight: 600;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .tools-grid { 
+                grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
+            }
+        }
+        
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .tools-grid { grid-template-columns: 1fr; }
-            .stats { gap: 20px; }
-            .stat-box .number { font-size: 2.2rem; }
+            .hero h1 { 
+                font-size: 2.5rem; 
+            }
+            
+            .hero .tagline {
+                font-size: 1.2rem;
+            }
+            
+            .tools-grid { 
+                grid-template-columns: 1fr; 
+            }
+            
+            .stats { 
+                gap: 30px; 
+                padding: 20px;
+            }
+            
+            .stat-box .number { 
+                font-size: 2.5rem; 
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .cta h2 {
+                font-size: 2rem;
+            }
+            
+            .cta p {
+                font-size: 1.1rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero {
+                padding: 60px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero .tagline {
+                font-size: 1.1rem;
+            }
+            
+            .stats {
+                gap: 20px;
+            }
+            
+            .stat-box .number {
+                font-size: 2rem;
+            }
+            
+            .tool-card {
+                padding: 25px;
+            }
+            
+            .cta {
+                padding: 60px 20px;
+            }
+            
+            .cta h2 {
+                font-size: 1.8rem;
+            }
+        }
+        
+        /* Animation Classes */
+        .fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Floating Animation */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
         }
     </style>
 </head>
@@ -78,39 +553,44 @@
     <div class="container">
         <!-- Hero Section -->
         <header class="hero">
-            <h1><span>FreeSEOToolHub</span>.com</h1>
-            <p class="tagline"><i class="fas fa-bullhorn"></i> भारत और दुनिया के लिए बिल्कुल मुफ्त, शक्तिशाली SEO टूल्स का हब | ब्लॉगर्स, यूट्यूबर्स, ई-कॉमर्स और व्यवसायों के लिए</p>
-            
-            <!-- Updated Stats with 15+ Tools -->
-            <div class="stats">
-                <div class="stat-box">
-                    <span class="number">15+</span>
-                    <span class="label">मुफ्त टूल्स</span>
-                </div>
-                <div class="stat-box">
-                    <span class="number">100%</span>
-                    <span class="label">हमेशा फ्री</span>
-                </div>
-                <div class="stat-box">
-                    <span class="number">2</span>
-                    <span class="label">भाषाओं में</span>
-                </div>
-                <div class="stat-box">
-                    <span class="number">10K+</span>
-                    <span class="label">खुश यूजर्स</span>
+            <div class="hero-content">
+                <h1><span>FreeSEOToolHub</span>.com</h1>
+                <p class="tagline"><i class="fas fa-bullhorn"></i> भारत और दुनिया के लिए बिल्कुल मुफ्त, शक्तिशाली SEO टूल्स का हब | ब्लॉगर्स, यूट्यूबर्स, ई-कॉमर्स और व्यवसायों के लिए</p>
+                
+                <!-- Updated Stats with 15+ Tools -->
+                <div class="stats">
+                    <div class="stat-box">
+                        <span class="number">15+</span>
+                        <span class="label">मुफ्त टूल्स</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="number">100%</span>
+                        <span class="label">हमेशा फ्री</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="number">2</span>
+                        <span class="label">भाषाओं में</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="number">10K+</span>
+                        <span class="label">खुश यूजर्स</span>
+                    </div>
                 </div>
             </div>
         </header>
 
         <!-- Main Content Area -->
         <main class="content">
-            <h2 class="section-title"><i class="fas fa-tools"></i> हमारे सभी लाइव और काम कर रहे टूल्स</h2>
-            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 40px; color: #475569;">नीचे दिए गए सभी टूल पूरी तरह से कार्यात्मक हैं और अभी इस्तेमाल किए जा सकते हैं। <span style="background:#d1fae5; padding:5px 10px; border-radius:5px; color:#065f46;"><i class="fas fa-bolt"></i> नए टूल्स जोड़े गए!</span></p>
+            <h2 class="section-title fade-in"><i class="fas fa-tools"></i> हमारे सभी लाइव और काम कर रहे टूल्स</h2>
+            
+            <div class="highlight-badge fade-in">
+                <i class="fas fa-bolt"></i> सभी नए टूल्स जोड़े गए!
+            </div>
             
             <!-- ALL TOOLS GRID - ALL 15+ TOOLS NOW LIVE -->
             <div class="tools-grid">
                 <!-- Tool 1: Hindi Keyword Density Checker -->
-                <div class="tool-card live">
+                <div class="tool-card live fade-in">
                     <div class="tool-icon"><i class="fas fa-search"></i></div>
                     <span class="tool-status status-live"><i class="fas fa-circle"></i> LIVE</span>
                     <h3>हिंदी कीवर्ड डेंसिटी चेकर</h3>
@@ -119,7 +599,7 @@
                 </div>
                 
                 <!-- Tool 2: Meta Tag Generator -->
-                <div class="tool-card live">
+                <div class="tool-card live fade-in">
                     <div class="tool-icon"><i class="fas fa-code"></i></div>
                     <span class="tool-status status-live"><i class="fas fa-circle"></i> LIVE</span>
                     <h3>मेटा टैग जनरेटर</h3>
@@ -128,7 +608,7 @@
                 </div>
                 
                 <!-- Tool 3: Backlink Analyzer -->
-                <div class="tool-card live">
+                <div class="tool-card live fade-in">
                     <div class="tool-icon"><i class="fas fa-link"></i></div>
                     <span class="tool-status status-live"><i class="fas fa-circle"></i> LIVE</span>
                     <h3>बैकलिंक एनालाइज़र</h3>
@@ -137,7 +617,7 @@
                 </div>
                 
                 <!-- Tool 4: Website Speed Tester -->
-                <div class="tool-card live">
+                <div class="tool-card live fade-in">
                     <div class="tool-icon"><i class="fas fa-tachometer-alt"></i></div>
                     <span class="tool-status status-live"><i class="fas fa-circle"></i> LIVE</span>
                     <h3>वेबसाइट स्पीड टेस्टर</h3>
@@ -146,7 +626,7 @@
                 </div>
                 
                 <!-- Tool 5: NEW - E-commerce SEO Tool -->
-                <div class="tool-card live">
+                <div class="tool-card live fade-in">
                     <div class="tool-icon"><i class="fas fa-shopping-cart"></i></div>
                     <span class="tool-status status-new"><i class="fas fa-star"></i> NEW</span>
                     <h3>ई-कॉमर्स SEO टूल</h3>
@@ -155,7 +635,7 @@
                 </div>
                 
                 <!-- Tool 6: NEW - Plagiarism Checker -->
-                <div class="tool-card live">
+                <div class="tool-card live fade-in">
                     <div class="tool-icon"><i class="fas fa-copy"></i></div>
                     <span class="tool-status status-new"><i class="fas fa-star"></i> NEW</span>
                     <h3>प्लेजियरिज्म चेकर</h3>
@@ -164,7 +644,7 @@
                 </div>
                 
                 <!-- Tool 7: NEW - Social Media Post Optimizer -->
-                <div class="tool-card live">
+                <div class="tool-card live fade-in">
                     <div class="tool-icon"><i class="fas fa-hashtag"></i></div>
                     <span class="tool-status status-new"><i class="fas fa-star"></i> NEW</span>
                     <h3>सोशल मीडिया पोस्ट ऑप्टिमाइज़र</h3>
@@ -173,7 +653,7 @@
                 </div>
                 
                 <!-- Tool 8: NEW - Local SEO Checklist -->
-                <div class="tool-card live">
+                <div class="tool-card live fade-in">
                     <div class="tool-icon"><i class="fas fa-map-marker-alt"></i></div>
                     <span class="tool-status status-new"><i class="fas fa-star"></i> NEW</span>
                     <h3>लोकल SEO चेकलिस्ट</h3>
@@ -182,7 +662,7 @@
                 </div>
                 
                 <!-- Tool 9: YouTube SEO Optimizer -->
-                <div class="tool-card live">
+                <div class="tool-card live fade-in">
                     <div class="tool-icon"><i class="fab fa-youtube"></i></div>
                     <span class="tool-status status-live"><i class="fas fa-circle"></i> LIVE</span>
                     <h3>YouTube SEO ऑप्टिमाइज़र</h3>
@@ -191,7 +671,7 @@
                 </div>
                 
                 <!-- Tool 10: All Tools Page -->
-                <div class="tool-card">
+                <div class="tool-card fade-in">
                     <div class="tool-icon"><i class="fas fa-th-large"></i></div>
                     <h3>सभी टूल्स देखें</h3>
                     <p>हमारे सभी 15+ मुफ्त SEO टूल्स की पूरी सूची देखें। एक ही पेज से सभी टूल्स तक तेज पहुंच।</p>
@@ -199,40 +679,65 @@
                 </div>
             </div>
             
-            <!-- Note about more tools -->
-            <div style="margin-top: 50px; text-align: center; padding: 20px; background: #f0f9ff; border-radius: 10px;">
-                <h3 style="color: #0369a1; margin-bottom: 10px;"><i class="fas fa-lightbulb"></i> और भी टूल्स उपलब्ध हैं!</h3>
-                <p style="color: #475569;">हमारे पास और भी विशेष टूल्स हैं जैसे <strong>SSL चेकर, रिस्पॉन्सिव टेस्टर, XML साइटमैप जनरेटर</strong> आदि। <a href="all-tools.html" style="color: #4A00E0; font-weight: bold;">सभी टूल्स देखें →</a></p>
+            <!-- Info Banner -->
+            <div class="info-banner fade-in">
+                <h3><i class="fas fa-lightbulb"></i> और भी टूल्स उपलब्ध हैं!</h3>
+                <p style="color: var(--gray);">हमारे पास और भी विशेष टूल्स हैं जैसे <strong>SSL चेकर, रिस्पॉन्सिव टेस्टर, XML साइटमैप जनरेटर</strong> आदि। <a href="all-tools.html" style="color: var(--primary); font-weight: 600; text-decoration: none;">सभी टूल्स देखें →</a></p>
             </div>
         </main>
 
         <!-- Final CTA -->
-        <section class="cta">
-            <h2><i class="fas fa-gem"></i> अब तक का सबसे बड़ा मुफ्त SEO टूल्स कलेक्शन!</h2>
-            <p style="font-size: 1.3rem; max-width: 800px; margin: 0 auto 20px;">15+ पेशेवर टूल्स, जिनमें नए ई-कॉमर्स, प्लेजियरिज्म और सोशल मीडिया टूल्स शामिल हैं। सभी 100% मुफ्त!</p>
-            <p style="font-size: 1.1rem; margin-bottom: 20px; background: rgba(255,255,255,0.2); padding: 10px; border-radius: 8px; display: inline-block;">🎯 <strong>2-4 दिनों में नए टूल्स लाइव होंगे!</strong></p>
-            <a href="all-tools.html" class="btn-tool btn-cta" target="_blank"><i class="fas fa-external-link-alt"></i> सभी 15+ टूल्स एक्सेस करें</a>
+        <section class="cta fade-in">
+            <div class="cta-content">
+                <h2><i class="fas fa-gem"></i> अब तक का सबसे बड़ा मुफ्त SEO टूल्स कलेक्शन!</h2>
+                <p>15+ पेशेवर टूल्स, जिनमें नए ई-कॉमर्स, प्लेजियरिज्म और सोशल मीडिया टूल्स शामिल हैं। सभी 100% मुफ्त!</p>
+                <div class="highlight-badge" style="background: rgba(255,255,255,0.15); color: white; border-color: rgba(255,255,255,0.3);">
+                    <i class="fas fa-bolt"></i> <strong>2-4 दिनों में नए टूल्स लाइव होंगे!</strong>
+                </div>
+                <a href="all-tools.html" class="btn-tool btn-cta" target="_blank"><i class="fas fa-external-link-alt"></i> सभी 15+ टूल्स एक्सेस करें</a>
+            </div>
         </section>
 
         <!-- Footer -->
-        <footer class="footer">
-            <p>
-            <p style="margin-top: 15px;"><a href="about.html">हमारे बारे में</a> | <a href="contact.html">संपर्क करें</a> | <a href="privacy.html">प्राइवेसी पॉलिसी</a></p>
-            <p style="margin-top: 20px; font-size: 0.9rem; color: #94a3b8;"><i class="fas fa-info-circle"></i> सभी टूल्स 100% मुफ्त हैं और आपका डेटा कभी सेव नहीं किया जाता।</p>
-            <p style="margin-top: 10px; font-size: 0.9rem; color: #94a3b8;"><i class="fas fa-sync-alt"></i> सभी नए टूल्स लाइव</p>
+        <footer class="footer fade-in">
+            <div class="footer-content">
+                <div>
+                    <span class="footer-logo">FreeSEOToolHub</span>
+                    <p style="color: #94a3b8; margin-bottom: 20px;">भारत और दुनिया के लिए बिल्कुल मुफ्त, शक्तिशाली SEO टूल्स का हब</p>
+                    <div class="footer-links">
+                        <a href="about.html"><i class="fas fa-info-circle"></i> हमारे बारे में</a>
+                        <a href="contact.html"><i class="fas fa-envelope"></i> संपर्क करें</a>
+                        <a href="privacy.html"><i class="fas fa-shield-alt"></i> प्राइवेसी पॉलिसी</a>
+                        <a href="all-tools.html"><i class="fas fa-tools"></i> सभी टूल्स</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 style="color: white; margin-bottom: 20px; font-size: 1.2rem;">समर्थन</h4>
+                    <div class="footer-links">
+                        <a href="#"><i class="fas fa-question-circle"></i> FAQ</a>
+                        <a href="#"><i class="fas fa-book"></i> ट्यूटोरियल्स</a>
+                        <a href="#"><i class="fas fa-comments"></i> सपोर्ट</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p><i class="fas fa-info-circle"></i> सभी टूल्स 100% मुफ्त हैं और आपका डेटा कभी सेव नहीं किया जाता।</p>
+                <p style="margin-top: 10px;"><i class="fas fa-sync-alt"></i> सभी नए टूल्स लाइव</p>
+                <p style="margin-top: 20px;">© 2024 FreeSEOToolHub. सर्वाधिकार सुरक्षित।</p>
+            </div>
         </footer>
     </div>
 
     <script>
         // Simple animation for tool cards
         document.addEventListener('DOMContentLoaded', function() {
-            // Animate stats
+            // Animate stats with improved animation
             const statNumbers = document.querySelectorAll('.stat-box .number');
             statNumbers.forEach(stat => {
                 const finalNum = stat.textContent;
                 stat.textContent = '0';
                 let count = 0;
-                const increment = parseInt(finalNum) / 30;
+                const increment = parseInt(finalNum) / 25;
                 const timer = setInterval(() => {
                     count += increment;
                     if (finalNum.includes('+')) {
@@ -244,29 +749,58 @@
                         stat.textContent = finalNum;
                         clearInterval(timer);
                     }
-                }, 50);
+                }, 40);
             });
             
             // Add hover effect to NEW tool cards
             const newToolCards = document.querySelectorAll('.tool-card .status-new').forEach(card => {
-                card.parentElement.addEventListener('mouseenter', function() {
-                    this.style.boxShadow = '0 15px 30px rgba(30, 64, 175, 0.2)';
+                const parentCard = card.parentElement;
+                parentCard.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px) scale(1.02)';
+                    this.style.boxShadow = '0 25px 50px rgba(99, 102, 241, 0.2)';
                 });
-                card.parentElement.addEventListener('mouseleave', function() {
-                    this.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.1)';
+                parentCard.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(-8px) scale(1)';
+                    this.style.boxShadow = 'var(--shadow-xl)';
                 });
+            });
+            
+            // Add floating animation to some elements
+            const floatingElements = document.querySelectorAll('.tool-icon, .hero h1');
+            floatingElements.forEach(el => {
+                el.classList.add('floating');
+            });
+            
+            // Intersection Observer for fade-in animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe all fade-in elements
+            document.querySelectorAll('.fade-in').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
             });
         });
     </script>
     <script>
-fetch('footer.html')
-  .then(response => response.text())
-  .then(data => {
-    document.body.insertAdjacentHTML('beforeend', data);
-  });
-</script>
+        fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.body.insertAdjacentHTML('beforeend', data);
+        });
+    </script>
 </body>
 </html>
-
-
-
