@@ -1,115 +1,168 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url>
-<loc>https://freeseotoolhub.com/</loc>
-<lastmod>2024-12-27</lastmod>
-<changefreq>daily</changefreq>
-<priority>1.0</priority>
-</url>
-<url>
-<loc>https://freeseotoolhub.com/index.html</loc>
-<lastmod>2024-12-27</lastmod>
-<priority>0.9</priority>
-</url>
-<url>
-<loc>https://freeseotoolhub.com/about.html</loc>
-<lastmod>2024-12-27</lastmod>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://freeseotoolhub.com/contact.html</loc>
-<lastmod>2024-12-27</lastmod>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://freeseotoolhub.com/privacy.html</loc>
-<lastmod>2024-12-27</lastmod>
-<priority>0.7</priority>
-</url>
-<url>
-<loc>https://freeseotoolhub.com/tools.html</loc>
-<lastmod>2024-12-27</lastmod>
-<priority>0.9</priority>
-</url>
-<url>
-<loc>https://freeseotoolhub.com/all-tools.html</loc>
-<lastmod>2024-12-27</lastmod>
-<priority>0.9</priority>
-</url>
-<url>
-<loc>https://freeseotoolhub.com/backlink-checker.html</loc>
-<lastmod>2024-12-27</lastmod>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://freeseotoolhub.com/plagiarism-checker.html</loc>
-<lastmod>2024-12-27</lastmod>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://freeseotoolhub.com/keyword-density.html</loc>
-<lastmod>2024-12-27</lastmod>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://freeseotoolhub.com/meta-tag-generator.html</loc>
-<lastmod>2024-12-27</lastmod>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://freeseotoolhub.com/ssl-checker.html</loc>
-<lastmod>2024-12-27</lastmod>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://freeseotoolhub.com/website-speed-test.html</loc>
-<lastmod>2024-12-27</lastmod>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://freeseotoolhub.com/youtube-title-generator.html</loc>
-<lastmod>2024-12-27</lastmod>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://freeseotoolhub.com/csv-sorter.html</loc>
-<lastmod>2024-12-27</lastmod>
-<priority>0.7</priority>
-</url>
-<url>
-<loc>https://freeseotoolhub.com/ecommerce-seo-tool.html</loc>
-<lastmod>2024-12-27</lastmod>
-<priority>0.7</priority>
-</url>
-<url>
-<loc>https://freeseotoolhub.com/local-seo-checklist.html</loc>
-<lastmod>2024-12-27</lastmod>
-<priority>0.7</priority>
-</url>
-<url>
-<loc>https://freeseotoolhub.com/responsive-tester.html</loc>
-<lastmod>2024-12-27</lastmod>
-<priority>0.7</priority>
-</url>
-<url>
-<loc>https://freeseotoolhub.com/social-media-optimizer.html</loc>
-<lastmod>2024-12-27</lastmod>
-<priority>0.7</priority>
-</url>
-  <url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+    
+    <!-- मुख्य पेजेज -->
     <url>
-    <loc>https://freeseotoolhub.com/url-encoder.html</loc>
-    <lastmod>2024-12-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://freeseotoolhub.com/ai-ideas.html</loc>
-    <lastmod>2024-12-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-</url>
+        <loc>https://freeseotoolhub.com/</loc>
+        <lastmod>2024-01-15</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://freeseotoolhub.com/all-tools.html</loc>
+        <lastmod>2024-01-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://freeseotoolhub.com/about.html</loc>
+        <lastmod>2024-01-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://freeseotoolhub.com/contact.html</loc>
+        <lastmod>2024-01-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://freeseotoolhub.com/privacy-policy.html</loc>
+        <lastmod>2024-01-10</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <!-- SEO टूल्स (26+ टूल्स) -->
+    
+    <!-- नए टूल्स -->
+    <url>
+        <loc>https://freeseotoolhub.com/tools/headline-analyzer.html</loc>
+        <lastmod>2024-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://freeseotoolhub.com/tools/schema-generator.html</loc>
+        <lastmod>2024-01-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- मौजूदा टूल्स (आपकी साइट के अनुसार) -->
+    <url>
+        <loc>https://freeseotoolhub.com/tools/keyword-density-checker.html</loc>
+        <lastmod>2024-01-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://freeseotoolhub.com/tools/meta-tag-generator.html</loc>
+        <lastmod>2024-01-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://freeseotoolhub.com/tools/backlink-analyzer.html</loc>
+        <lastmod>2024-01-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://freeseotoolhub.com/tools/website-speed-tester.html</loc>
+        <lastmod>2024-01-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://freeseotoolhub.com/tools/ecommerce-seo-tool.html</loc>
+        <lastmod>2024-01-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://freeseotoolhub.com/tools/plagiarism-checker.html</loc>
+        <lastmod>2024-01-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://freeseotoolhub.com/tools/social-media-optimizer.html</loc>
+        <lastmod>2024-01-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://freeseotoolhub.com/tools/local-seo-checklist.html</loc>
+        <lastmod>2024-01-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://freeseotoolhub.com/tools/youtube-seo-optimizer.html</loc>
+        <lastmod>2024-01-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- अन्य टूल्स (आप जोड़ सकते हैं) -->
+    <url>
+        <loc>https://freeseotoolhub.com/tools/ssl-checker.html</loc>
+        <lastmod>2024-01-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://freeseotoolhub.com/tools/responsive-tester.html</loc>
+        <lastmod>2024-01-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://freeseotoolhub.com/tools/xml-sitemap-generator.html</loc>
+        <lastmod>2024-01-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- ब्लॉग सेक्शन (यदि है तो) -->
+    <url>
+        <loc>https://freeseotoolhub.com/blog/</loc>
+        <lastmod>2024-01-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://freeseotoolhub.com/blog/what-is-seo.html</loc>
+        <lastmod>2024-01-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://freeseotoolhub.com/blog/how-to-use-headline-analyzer.html</loc>
+        <lastmod>2024-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
 </urlset>
-
-
-
