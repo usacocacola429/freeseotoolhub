@@ -1,602 +1,1494 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPG77KWVCP"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  // Configure both Measurement IDs
-  gtag('config', 'G-ZPG77KWVCP');
-  gtag('config', 'G-PFPCTBFG3Y');
-</script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>मुफ्त मेटा टैग जनरेटर - FreeSEOToolHub.com</title>
-<meta name="description" content="मुफ्त मेटा टाइटल और डिस्क्रिप्शन जनरेटर। SERP प्रिव्यू देखें और अपनी वेबसाइट का SEO बेहतर करें।">
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PFPCTBFG3Y"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-PFPCTBFG3Y');
-</script>
-<!-- फोंट और आइकॉन -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
-/* ===== बेसिक सेटअप ===== */
-:root {
---primary: #4361ee;
---primary-dark: #3a56d4;
---secondary: #7209b7;
---success: #06d6a0;
---warning: #ffd166;
---danger: #ef476f;
---light: #f8f9fa;
---dark: #212529;
---gray: #6c757d;
---gray-light: #e9ecef;
---shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
---radius: 12px;
---transition: all 0.3s ease;
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
-font-family: 'Inter', 'Hind Siliguri', sans-serif;
-background-color: #f5f7ff;
-color: var(--dark);
-line-height: 1.6;
-padding-bottom: 40px;
-}
-
-.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-
-/* ===== नेविगेशन बार ===== */
-.navbar {
-background: white;
-box-shadow: var(--shadow);
-position: sticky;
-top: 0;
-z-index: 1000;
-padding: 15px 0;
-}
-
-.nav-container {
-display: flex;
-justify-content: space-between;
-align-items: center;
-max-width: 1200px;
-margin: 0 auto;
-padding: 0 20px;
-}
-
-.logo {
-font-size: 1.6rem;
-font-weight: 700;
-color: var(--primary);
-text-decoration: none;
-display: flex;
-align-items: center;
-gap: 10px;
-}
-
-.logo span { color: var(--secondary); }
-
-.nav-links { display: flex; gap: 25px; }
-
-.nav-link {
-text-decoration: none;
-color: var(--gray);
-font-weight: 600;
-transition: var(--transition);
-display: flex;
-align-items: center;
-gap: 6px;
-}
-
-.nav-link:hover, .nav-link.active { color: var(--primary); }
-
-/* ===== टूल का हीरो सेक्शन ===== */
-.tool-hero {
-background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-color: white;
-padding: 70px 20px;
-text-align: center;
-border-radius: 0 0 30px 30px;
-margin-bottom: 40px;
-}
-
-.tool-hero h1 { font-size: 2.8rem; margin-bottom: 15px; font-weight: 800; }
-.tool-hero p { font-size: 1.2rem; opacity: 0.9; max-width: 700px; margin: 0 auto 25px; }
-
-/* ===== मुख्य टूल लेआउट ===== */
-.tool-layout {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 30px;
-margin-bottom: 40px;
-}
-
-@media (max-width: 900px) {
-.tool-layout { grid-template-columns: 1fr; }
-}
-
-.panel {
-background: white;
-border-radius: var(--radius);
-box-shadow: var(--shadow);
-padding: 30px;
-}
-
-.panel h2 {
-color: var(--primary);
-margin-bottom: 20px;
-padding-bottom: 15px;
-border-bottom: 2px solid var(--gray-light);
-display: flex;
-align-items: center;
-gap: 10px;
-}
-
-/* ===== इनपुट सेक्शन ===== */
-.form-group { margin-bottom: 25px; }
-label { display: block; margin-bottom: 8px; font-weight: 600; }
-
-textarea, input[type="text"] {
-width: 100%;
-padding: 15px;
-border: 2px solid var(--gray-light);
-border-radius: var(--radius);
-font-family: inherit;
-font-size: 1rem;
-transition: var(--transition);
-}
-
-textarea:focus, input[type="text"]:focus {
-outline: none;
-border-color: var(--primary);
-box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
-}
-
-textarea { resize: vertical; min-height: 120px; }
-
-.input-with-counter { position: relative; }
-.char-counter {
-position: absolute;
-right: 10px;
-bottom: 10px;
-background: rgba(0,0,0,0.7);
-color: white;
-padding: 3px 8px;
-border-radius: 4px;
-font-size: 0.8rem;
-}
-
-.char-counter.good { background: var(--success); }
-.char-counter.warning { background: var(--warning); color: var(--dark); }
-.char-counter.danger { background: var(--danger); }
-
-/* ===== बटन ===== */
-.btn {
-padding: 15px 30px;
-border-radius: 50px;
-font-weight: 700;
-border: none;
-cursor: pointer;
-font-size: 1rem;
-display: inline-flex;
-align-items: center;
-justify-content: center;
-gap: 10px;
-transition: var(--transition);
-width: 100%;
-margin-top: 10px;
-}
-
-.btn-primary {
-background: var(--primary);
-color: white;
-}
-
-.btn-primary:hover { background: var(--primary-dark); transform: translateY(-3px); }
-
-.btn-secondary {
-background: var(--gray-light);
-color: var(--dark);
-}
-
-.btn-secondary:hover { background: #d8d9da; }
-
-.btn-small {
-padding: 10px 20px;
-width: auto;
-font-size: 0.9rem;
-}
-
-/* ===== SERP प्रिव्यू ===== */
-.serp-preview {
-background: white;
-border: 1px solid #dfe1e5;
-border-radius: 8px;
-padding: 20px;
-margin-top: 30px;
-font-family: Arial, sans-serif;
-}
-
-.serp-title {
-color: #1a0dab;
-font-size: 20px;
-line-height: 1.3;
-margin-bottom: 5px;
-cursor: pointer;
-}
-
-.serp-title:hover { text-decoration: underline; }
-
-.serp-url {
-color: #006621;
-font-size: 14px;
-line-height: 1.3;
-margin-bottom: 5px;
-}
-
-.serp-description {
-color: #545454;
-font-size: 14px;
-line-height: 1.57;
-}
-
-/* ===== जनरेटेड रिजल्ट्स ===== */
-.result-box {
-background: var(--light);
-border-radius: var(--radius);
-padding: 20px;
-margin-bottom: 20px;
-border-left: 4px solid var(--primary);
-position: relative;
-}
-
-.result-box h4 {
-margin-bottom: 10px;
-color: var(--primary);
-display: flex;
-align-items: center;
-gap: 10px;
-}
-
-.copy-btn {
-position: absolute;
-top: 15px;
-right: 15px;
-background: var(--primary);
-color: white;
-border: none;
-border-radius: 4px;
-padding: 5px 10px;
-cursor: pointer;
-font-size: 0.8rem;
-}
-
-.copy-btn:hover { background: var(--primary-dark); }
-
-/* ===== टिप्स और सुझाव ===== */
-.tips-container {
-background: #f0f7ff;
-border-radius: var(--radius);
-padding: 25px;
-margin-top: 30px;
-border-left: 4px solid var(--primary);
-}
-
-.tip-item {
-margin-bottom: 15px;
-padding-left: 25px;
-position: relative;
-}
-
-.tip-item:before {
-content: "💡";
-position: absolute;
-left: 0;
-top: 0;
-}
-
-/* ===== फुटर ===== */
-.tool-footer {
-text-align: center;
-margin-top: 60px;
-padding-top: 30px;
-border-top: 1px solid var(--gray-light);
-color: var(--gray);
-}
-
-.back-link {
-display: inline-flex;
-align-items: center;
-gap: 10px;
-color: var(--primary);
-text-decoration: none;
-font-weight: 600;
-margin-top: 20px;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta Tag Generator | Free SEO Tool Hub</title>
+    <meta name="description" content="Free Meta Tag Generator for SEO. Create perfect meta titles, descriptions, Open Graph, Twitter Cards, and structured data for your website.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #3a0ca3;
+            --success-color: #4cc9f0;
+            --warning-color: #f72585;
+            --light-bg: #f8f9fa;
+            --dark-bg: #212529;
+        }
+        
+        .meta-generator-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .tool-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .generator-form {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        
+        .results-section {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        
+        .tab-content {
+            padding: 20px;
+            border: 1px solid #dee2e6;
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+        }
+        
+        .nav-tabs .nav-link.active {
+            background-color: white;
+            border-bottom-color: white;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .preview-card {
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            overflow: hidden;
+            background: white;
+        }
+        
+        .google-preview {
+            max-width: 600px;
+            margin: 0 auto;
+            font-family: Arial, sans-serif;
+        }
+        
+        .google-title {
+            color: #1a0dab;
+            font-size: 20px;
+            line-height: 1.3;
+            margin-bottom: 3px;
+            font-weight: normal;
+        }
+        
+        .google-url {
+            color: #006621;
+            font-size: 14px;
+            line-height: 1.3;
+            margin-bottom: 2px;
+        }
+        
+        .google-description {
+            color: #545454;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        
+        .social-preview {
+            border: 1px solid #e1e8ed;
+            border-radius: 12px;
+            overflow: hidden;
+            max-width: 500px;
+            background: white;
+        }
+        
+        .social-image {
+            height: 250px;
+            background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+        }
+        
+        .social-content {
+            padding: 15px;
+        }
+        
+        .social-site {
+            color: #66757f;
+            font-size: 12px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        
+        .social-title {
+            color: #14171a;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            line-height: 1.3;
+        }
+        
+        .social-description {
+            color: #657786;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        
+        .code-output {
+            background-color: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .meta-tag-item {
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .character-count {
+            font-size: 12px;
+            font-weight: bold;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+        
+        .count-good { background-color: #d4edda; color: #155724; }
+        .count-warning { background-color: #fff3cd; color: #856404; }
+        .count-danger { background-color: #f8d7da; color: #721c24; }
+        
+        .seo-analysis {
+            background-color: #e7f5ff;
+            border-left: 5px solid #0d6efd;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        .loading-spinner {
+            display: none;
+            text-align: center;
+            padding: 40px;
+        }
+        
+        .copy-btn {
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .copy-btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .tool-tip {
+            cursor: help;
+            color: #6c757d;
+            margin-left: 5px;
+        }
+        
+        .ai-suggestion {
+            background-color: #f0f7ff;
+            border-left: 4px solid #4cc9f0;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .meta-generator-container {
+                padding: 10px;
+            }
+            
+            .tool-header {
+                padding: 20px 15px;
+            }
+            
+            .preview-card {
+                margin-bottom: 20px;
+            }
+        }
+        
+        .meta-tag-badge {
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            margin-right: 8px;
+        }
+        
+        .tag-type-seo { background-color: #dc3545; color: white; }
+        .tag-type-og { background-color: #198754; color: white; }
+        .tag-type-twitter { background-color: #1da1f2; color: white; }
+        .tag-type-other { background-color: #6f42c1; color: white; }
+    </style>
 </head>
 <body>
-<!-- नेविगेशन बार -->
-<script src="navbar.js"></script>
+    <!-- Navbar -->
+    <div id="navbar-container"></div>
 
-<!-- टूल का परिचय -->
-<header class="tool-hero">
-<div class="container">
-<h1 class="hindi">मुफ्त मेटा टैग जनरेटर</h1>
-<p>परफेक्ट मेटा टाइटल और डिस्क्रिप्शन बनाएं। गूगल SERP में कैसा दिखेगा, यह प्रिव्यू देखें और कॉपी करें।</p>
-</div>
-</header>
+    <div class="meta-generator-container">
+        <div class="tool-header">
+            <h1><i class="fas fa-code me-2"></i> Meta Tag Generator</h1>
+            <p class="mb-0">Create perfect meta tags for SEO, Open Graph, Twitter Cards, and structured data</p>
+        </div>
+        
+        <div class="generator-form">
+            <ul class="nav nav-tabs" id="metaTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="basic-tab" data-bs-toggle="tab" data-bs-target="#basic" type="button">
+                        <i class="fas fa-cog me-1"></i> Basic Meta Tags
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="social-tab" data-bs-toggle="tab" data-bs-target="#social" type="button">
+                        <i class="fas fa-share-alt me-1"></i> Social Media
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="advanced-tab" data-bs-toggle="tab" data-bs-target="#advanced" type="button">
+                        <i class="fas fa-sliders-h me-1"></i> Advanced
+                    </button>
+                </li>
+            </ul>
+            
+            <div class="tab-content" id="metaTabContent">
+                <!-- Basic Meta Tags Tab -->
+                <div class="tab-pane fade show active" id="basic" role="tabpanel">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="pageTitle" class="form-label fw-bold">
+                                    Page Title 
+                                    <span class="tool-tip" title="Appears in browser tab and search results">
+                                        <i class="fas fa-question-circle"></i>
+                                    </span>
+                                </label>
+                                <input type="text" class="form-control" id="pageTitle" 
+                                       placeholder="Best SEO Tools for Digital Marketing" 
+                                       value="Free SEO Tools Hub - 50+ Tools for Digital Marketing">
+                                <div class="d-flex justify-content-between mt-2">
+                                    <small class="text-muted">Ideal: 50-60 characters</small>
+                                    <small><span id="titleCount" class="character-count count-good">0</span>/60</small>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="metaDescription" class="form-label fw-bold">
+                                    Meta Description
+                                    <span class="tool-tip" title="Short summary shown in search results">
+                                        <i class="fas fa-question-circle"></i>
+                                    </span>
+                                </label>
+                                <textarea class="form-control" id="metaDescription" rows="4" 
+                                          placeholder="Discover free SEO tools for keyword research, backlink analysis, site audit, and content optimization. Improve your website ranking with our comprehensive toolkit."></textarea>
+                                <div class="d-flex justify-content-between mt-2">
+                                    <small class="text-muted">Ideal: 150-160 characters</small>
+                                    <small><span id="descCount" class="character-count count-good">0</span>/160</small>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="keywords" class="form-label fw-bold">
+                                    Keywords (Optional)
+                                    <span class="tool-tip" title="Comma separated keywords for the page">
+                                        <i class="fas fa-question-circle"></i>
+                                    </span>
+                                </label>
+                                <input type="text" class="form-control" id="keywords" 
+                                       placeholder="seo tools, free seo, keyword research, backlink checker">
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="pageUrl" class="form-label fw-bold">Page URL</label>
+                                <input type="url" class="form-control" id="pageUrl" 
+                                       placeholder="https://freeseotoolhub.com/seo-tools" 
+                                       value="https://freeseotoolhub.com">
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="canonicalUrl" class="form-label fw-bold">
+                                    Canonical URL
+                                    <span class="tool-tip" title="Preferred URL for duplicate content">
+                                        <i class="fas fa-question-circle"></i>
+                                    </span>
+                                </label>
+                                <input type="url" class="form-control" id="canonicalUrl" 
+                                       placeholder="https://freeseotoolhub.com/">
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="robotsDirective" class="form-label fw-bold">Robots Meta</label>
+                                        <select class="form-select" id="robotsDirective">
+                                            <option value="index, follow">index, follow</option>
+                                            <option value="noindex, follow">noindex, follow</option>
+                                            <option value="index, nofollow">index, nofollow</option>
+                                            <option value="noindex, nofollow">noindex, nofollow</option>
+                                            <option value="noarchive">noarchive</option>
+                                            <option value="nosnippet">nosnippet</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="viewport" class="form-label fw-bold">Viewport</label>
+                                        <select class="form-select" id="viewport">
+                                            <option value="width=device-width, initial-scale=1.0">Responsive</option>
+                                            <option value="width=1200">Fixed (1200px)</option>
+                                            <option value="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">No Zoom</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="author" class="form-label fw-bold">Author (Optional)</label>
+                                <input type="text" class="form-control" id="author" placeholder="John Doe">
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="charset" class="form-label fw-bold">Charset</label>
+                                <select class="form-select" id="charset">
+                                    <option value="UTF-8" selected>UTF-8 (Recommended)</option>
+                                    <option value="ISO-8859-1">ISO-8859-1</option>
+                                    <option value="UTF-16">UTF-16</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Social Media Tab -->
+                <div class="tab-pane fade" id="social" role="tabpanel">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5 class="mb-3"><i class="fab fa-facebook me-2"></i> Open Graph (Facebook)</h5>
+                            
+                            <div class="mb-3">
+                                <label for="ogTitle" class="form-label">OG Title</label>
+                                <input type="text" class="form-control" id="ogTitle" 
+                                       placeholder="Facebook share title (defaults to page title)">
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="ogDescription" class="form-label">OG Description</label>
+                                <textarea class="form-control" id="ogDescription" rows="3" 
+                                          placeholder="Facebook share description"></textarea>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="ogImage" class="form-label">OG Image URL</label>
+                                <input type="url" class="form-control" id="ogImage" 
+                                       placeholder="https://example.com/image.jpg">
+                                <small class="text-muted">Recommended: 1200×630px</small>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="ogUrl" class="form-label">OG URL</label>
+                                <input type="url" class="form-control" id="ogUrl" 
+                                       placeholder="URL to share on Facebook">
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <h5 class="mb-3"><i class="fab fa-twitter me-2"></i> Twitter Cards</h5>
+                            
+                            <div class="mb-3">
+                                <label for="twitterCard" class="form-label">Card Type</label>
+                                <select class="form-select" id="twitterCard">
+                                    <option value="summary">Summary</option>
+                                    <option value="summary_large_image">Summary with Large Image</option>
+                                    <option value="app">App</option>
+                                    <option value="player">Player</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="twitterTitle" class="form-label">Twitter Title</label>
+                                <input type="text" class="form-control" id="twitterTitle" 
+                                       placeholder="Twitter share title">
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="twitterDescription" class="form-label">Twitter Description</label>
+                                <textarea class="form-control" id="twitterDescription" rows="3" 
+                                          placeholder="Twitter share description"></textarea>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="twitterImage" class="form-label">Twitter Image URL</label>
+                                <input type="url" class="form-control" id="twitterImage" 
+                                       placeholder="https://example.com/twitter-image.jpg">
+                                <small class="text-muted">Recommended: 1200×600px</small>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="twitterSite" class="form-label">Twitter @Username</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">@</span>
+                                    <input type="text" class="form-control" id="twitterSite" 
+                                           placeholder="username">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Advanced Tab -->
+                <div class="tab-pane fade" id="advanced" role="tabpanel">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5 class="mb-3"><i class="fas fa-sitemap me-2"></i> Structured Data</h5>
+                            
+                            <div class="mb-3">
+                                <label for="pageType" class="form-label">Page Type</label>
+                                <select class="form-select" id="pageType">
+                                    <option value="Website">Website</option>
+                                    <option value="Article">Article/Blog Post</option>
+                                    <option value="Product">Product Page</option>
+                                    <option value="LocalBusiness">Local Business</option>
+                                    <option value="Event">Event</option>
+                                    <option value="Recipe">Recipe</option>
+                                    <option value="FAQ">FAQ Page</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="siteName" class="form-label">Site Name</label>
+                                <input type="text" class="form-control" id="siteName" 
+                                       placeholder="Free SEO Tool Hub" value="Free SEO Tool Hub">
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="locale" class="form-label">Locale</label>
+                                <input type="text" class="form-control" id="locale" 
+                                       placeholder="en_US" value="en_US">
+                            </div>
+                            
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="generateJsonLd" checked>
+                                <label class="form-check-label" for="generateJsonLd">Generate JSON-LD Structured Data</label>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <h5 class="mb-3"><i class="fas fa-cogs me-2"></i> Additional Meta Tags</h5>
+                            
+                            <div class="mb-3">
+                                <label for="refresh" class="form-label">Refresh Redirect (Seconds)</label>
+                                <input type="number" class="form-control" id="refresh" 
+                                       placeholder="0 for no redirect">
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="themeColor" class="form-label">Theme Color</label>
+                                <input type="color" class="form-control form-control-color" id="themeColor" 
+                                       value="#4361ee" title="Choose theme color">
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="additionalTags" class="form-label">Custom Meta Tags (One per line)</label>
+                                <textarea class="form-control" id="additionalTags" rows="4" 
+                                          placeholder="name=content
+property=og:type content=website"></textarea>
+                            </div>
+                            
+                            <div class="ai-suggestion">
+                                <h6><i class="fas fa-robot me-2"></i> AI Suggestions</h6>
+                                <p class="mb-2">Let AI generate optimized meta tags for you:</p>
+                                <button class="btn btn-sm btn-outline-primary" id="aiSuggestBtn">
+                                    <i class="fas fa-magic me-1"></i> Generate Suggestions
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-4">
+                <div class="col-md-8">
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-primary btn-lg" id="generateMetaBtn">
+                            <i class="fas fa-bolt me-2"></i> Generate Meta Tags
+                        </button>
+                        <button class="btn btn-outline-secondary btn-lg" id="resetFormBtn">
+                            <i class="fas fa-redo me-2"></i> Reset Form
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-4 text-end">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="livePreview" checked>
+                        <label class="form-check-label" for="livePreview">Live Preview</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="loading-spinner" id="loadingSpinner">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <p class="mt-3">Generating meta tags...</p>
+        </div>
+        
+        <div class="results-section" id="resultsSection" style="display: none;">
+            <div class="row mb-4">
+                <div class="col-md-8">
+                    <h3><i class="fas fa-code me-2"></i> Generated Meta Tags</h3>
+                </div>
+                <div class="col-md-4 text-end">
+                    <div class="btn-group">
+                        <button class="btn btn-outline-primary" id="copyAllBtn">
+                            <i class="fas fa-copy me-1"></i> Copy All
+                        </button>
+                        <button class="btn btn-outline-success" id="downloadHtmlBtn">
+                            <i class="fas fa-download me-1"></i> Download HTML
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="mb-4">
+                        <ul class="nav nav-tabs" id="outputTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="html-tab" data-bs-toggle="tab" data-bs-target="#html" type="button">HTML Output</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="json-tab" data-bs-toggle="tab" data-bs-target="#json" type="button">JSON-LD</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="list-tab" data-bs-toggle="tab" data-bs-target="#list" type="button">Tag List</button>
+                            </li>
+                        </ul>
+                        
+                        <div class="tab-content mt-3">
+                            <div class="tab-pane fade show active" id="html" role="tabpanel">
+                                <div class="code-output" id="htmlOutput">
+                                    <!-- HTML output will be inserted here -->
+                                </div>
+                            </div>
+                            
+                            <div class="tab-pane fade" id="json" role="tabpanel">
+                                <div class="code-output" id="jsonOutput">
+                                    <!-- JSON-LD output will be inserted here -->
+                                </div>
+                            </div>
+                            
+                            <div class="tab-pane fade" id="list" role="tabpanel">
+                                <div id="metaTagsList">
+                                    <!-- Meta tags list will be inserted here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="seo-analysis" id="seoAnalysis">
+                        <h5><i class="fas fa-chart-line me-2"></i> SEO Analysis</h5>
+                        <div id="analysisContent"></div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <h5 class="mb-3"><i class="fas fa-eye me-2"></i> Live Previews</h5>
+                    
+                    <div class="preview-card mb-4">
+                        <div class="card-header bg-light">
+                            <i class="fab fa-google me-2"></i> Google Search Preview
+                        </div>
+                        <div class="card-body">
+                            <div class="google-preview" id="googlePreview">
+                                <!-- Google preview will be inserted here -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="preview-card mb-4">
+                        <div class="card-header bg-light">
+                            <i class="fab fa-facebook me-2"></i> Facebook Preview
+                        </div>
+                        <div class="card-body">
+                            <div class="social-preview" id="facebookPreview">
+                                <!-- Facebook preview will be inserted here -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="preview-card">
+                        <div class="card-header bg-light">
+                            <i class="fab fa-twitter me-2"></i> Twitter Preview
+                        </div>
+                        <div class="card-body">
+                            <div class="social-preview" id="twitterPreview">
+                                <!-- Twitter preview will be inserted here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mt-5">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0"><i class="fas fa-graduation-cap me-2"></i> Meta Tags Best Practices</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <h6><i class="fas fa-heading me-2"></i> Title Tag</h6>
+                                    <ul class="small">
+                                        <li>Keep between 50-60 characters</li>
+                                        <li>Include primary keyword near the beginning</li>
+                                        <li>Make it compelling and click-worthy</li>
+                                        <li>Use pipe (|) or dash (-) as separators</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <h6><i class="fas fa-align-left me-2"></i> Meta Description</h6>
+                                    <ul class="small">
+                                        <li>Optimal length: 150-160 characters</li>
+                                        <li>Include primary and secondary keywords</li>
+                                        <li>Write a compelling call-to-action</li>
+                                        <li>Make it unique for each page</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <h6><i class="fab fa-facebook me-2"></i> Open Graph Tags</h6>
+                                    <ul class="small">
+                                        <li>og:title: 60-90 characters</li>
+                                        <li>og:description: 150-200 characters</li>
+                                        <li>og:image: 1200×630px (1.91:1 ratio)</li>
+                                        <li>Always include og:url and og:type</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <h6><i class="fab fa-twitter me-2"></i> Twitter Cards</h6>
+                                    <ul class="small">
+                                        <li>Choose between summary and summary_large_image</li>
+                                        <li>Image size: 1200×600px (2:1 ratio)</li>
+                                        <li>Include twitter:site for branding</li>
+                                        <li>Test with Twitter Card Validator</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header bg-success text-white">
+                        <h5 class="mb-0"><i class="fas fa-tools me-2"></i> Quick Tools</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-outline-primary" id="validateMetaBtn">
+                                <i class="fas fa-check-circle me-2"></i> Validate Meta Tags
+                            </button>
+                            <button class="btn btn-outline-info" id="testSocialBtn">
+                                <i class="fas fa-share-alt me-2"></i> Test Social Sharing
+                            </button>
+                            <button class="btn btn-outline-warning" id="analyzeCompetitorBtn">
+                                <i class="fas fa-search me-2"></i> Analyze Competitor
+                            </button>
+                            <a href="h1-h6-checker.html" class="btn btn-outline-dark">
+                                <i class="fas fa-heading me-2"></i> Heading Checker Tool
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card mt-4">
+                    <div class="card-header bg-info text-white">
+                        <h5 class="mb-0"><i class="fas fa-lightbulb me-2"></i> Pro Tips</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="alert alert-info mb-2 p-2">
+                            <small><i class="fas fa-bolt me-1"></i> <strong>Mobile-first:</strong> Always test on mobile devices</small>
+                        </div>
+                        <div class="alert alert-success mb-2 p-2">
+                            <small><i class="fas fa-sync-alt me-1"></i> <strong>Keep updated:</strong> Refresh meta tags periodically</small>
+                        </div>
+                        <div class="alert alert-warning mb-0 p-2">
+                            <small><i class="fas fa-exclamation-triangle me-1"></i> <strong>Avoid duplication:</strong> Each page should have unique meta tags</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<!-- मुख्य टूल एरिया -->
-<main class="container">
-<div class="tool-layout">
-<!-- इनपुट पैनल -->
-<div class="panel input-panel">
-<h2><i class="fas fa-edit"></i> डिटेल्स डालें</h2>
-<div class="form-group">
-<label for="pageTitle">पेज का मुख्य टॉपिक/कीवर्ड:</label>
-<input type="text" id="pageTitle" placeholder="जैसे: बेस्ट SEO टूल्स, हिंदी ब्लॉगिंग, ऑनलाइन मार्केटिंग">
-</div>
+    <!-- Footer -->
+    <div id="footer-container"></div>
 
-<div class="form-group">
-<label for="pageDescription">पेज का संक्षिप्त विवरण:</label>
-<textarea id="pageDescription" placeholder="इस पेज के बारे में 2-3 लाइन में बताएं... जैसे: 'भारत के लिए बने मुफ्त SEO टूल्स की पूरी लिस्ट। कीवर्ड रिसर्च, कंटेंट ऑप्टिमाइज़ेशन और यूट्यूब SEO के लिए बेस्ट टूल्स।'"></textarea>
-</div>
-
-<div class="form-group">
-<label for="targetKeyword">मुख्य कीवर्ड (वैकल्पिक):</label>
-<input type="text" id="targetKeyword" placeholder="जैसे: SEO टूल्स, फ्री टूल्स, हिंदी SEO">
-</div>
-
-<button id="generateBtn" class="btn btn-primary"><i class="fas fa-magic"></i> मेटा टैग जनरेट करें</button>
-<button id="clearBtn" class="btn btn-secondary"><i class="fas fa-eraser"></i> साफ करें</button>
-</div>
-
-<!-- रिजल्ट्स पैनल -->
-<div class="panel results-panel">
-<h2><i class="fas fa-code"></i> जनरेटेड मेटा टैग</h2>
-<div id="resultsContainer" class="results-container">
-<div class="placeholder-results">
-<div class="placeholder-icon"><i class="fas fa-code"></i></div>
-<h3>मेटा टैग यहाँ दिखेंगे</h3>
-<p>डिटेल्स डालने और "जनरेट करें" बटन दबाने के बाद, आपके लिए ऑप्टिमाइज्ड मेटा टैग यहाँ दिखाई देंगे।</p>
-</div>
-</div>
-
-<!-- SERP प्रिव्यू -->
-<div id="serpPreview" class="serp-preview" style="display: none;">
-<h3><i class="fas fa-eye"></i> गूगल में कैसा दिखेगा:</h3>
-<div class="serp-title" id="previewTitle">मेटा टाइटल यहाँ दिखेगा...</div>
-<div class="serp-url">https://www.freeseotoolhub.com/example-page</div>
-<div class="serp-description" id="previewDescription">मेटा डिस्क्रिप्शन यहाँ दिखेगा...</div>
-</div>
-</div>
-</div>
-
-<!-- टिप्स और बेस्ट प्रैक्टिसेज -->
-<div class="tips-container">
-<h3><i class="fas fa-lightbulb"></i> मेटा टैग बेस्ट प्रैक्टिसेज</h3>
-<div class="tip-item"><strong>टाइटल लंबाई:</strong> 50-60 करैक्टर (गूगल 600 पिक्सल तक दिखाता है)</div>
-<div class="tip-item"><strong>डिस्क्रिप्शन लंबाई:</strong> 150-160 करैक्टर (गूगल 920 पिक्सल तक दिखाता है)</div>
-<div class="tip-item"><strong>कीवर्ड प्लेसमेंट:</strong> मुख्य कीवर्ड टाइटल की शुरुआत में रखें</div>
-<div class="tip-item"><strong>यूनिकनेस:</strong> हर पेज का अलग टाइटल और डिस्क्रिप्शन होना चाहिए</div>
-<div class="tip-item"><strong>कॉल टू एक्शन:</strong> डिस्क्रिप्शन में यूजर को एक्शन लेने के लिए प्रेरित करें</div>
-</div>
-</main>
-
-<!-- फुटर -->
-<footer class="tool-footer container">
-<div style="background: #fef3c7; padding: 12px; border-radius: 8px; margin-top: 15px;">
-    <p style="margin: 0; color: #92400e; font-size: 0.9rem;">
-        <i class="fas fa-magic"></i> <strong>SEO टिप:</strong> मेटा डिस्क्रिप्शन 155-160 करैक्टर के बीच रखें और कीवर्ड को टाइटल में पहले 60 करैक्टर में शामिल करें।
-    </p>
-</div></p>
-<a href="tools.html" class="back-link"><i class="fas fa-arrow-left"></i> वापस सभी टूल्स पर जाएँ</a>
-</footer>
-
-<!-- ===== JavaScript कोड ===== -->
-<script>
-// DOM Elements
-const pageTitleInput = document.getElementById('pageTitle');
-const pageDescInput = document.getElementById('pageDescription');
-const targetKeywordInput = document.getElementById('targetKeyword');
-const generateBtn = document.getElementById('generateBtn');
-const clearBtn = document.getElementById('clearBtn');
-const resultsContainer = document.getElementById('resultsContainer');
-const serpPreview = document.getElementById('serpPreview');
-const previewTitle = document.getElementById('previewTitle');
-const previewDescription = document.getElementById('previewDescription');
-
-// उदाहरण कंटेंट
-const exampleTitle = "बेस्ट फ्री SEO टूल्स 2023";
-const exampleDescription = "भारतीय ब्लॉगर्स और व्यवसायों के लिए सबसे अच्छे मुफ्त SEO टूल्स की पूरी लिस्ट। कीवर्ड रिसर्च, कंटेंट ऑप्टिमाइज़ेशन और वेबसाइट ऑडिट टूल्स।";
-const exampleKeyword = "फ्री SEO टूल्स";
-
-// पहली बार विज़िट पर उदाहरण डालें
-if (!localStorage.getItem('metaToolExampleShown')) {
-pageTitleInput.value = exampleTitle;
-pageDescInput.value = exampleDescription;
-targetKeywordInput.value = exampleKeyword;
-localStorage.setItem('metaToolExampleShown', 'true');
-}
-
-// जनरेट बटन का इवेंट
-generateBtn.addEventListener('click', function() {
-const title = pageTitleInput.value.trim();
-const description = pageDescInput.value.trim();
-const keyword = targetKeywordInput.value.trim();
-
-// वैधता जाँच
-if (!title) {
-alert('कृपया पेज का मुख्य टॉपिक डालें।');
-return;
-}
-if (!description) {
-alert('कृपया पेज का विवरण डालें।');
-return;
-}
-
-// लोडिंग स्टेट दिखाएँ
-generateBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> जनरेट हो रहा है...';
-generateBtn.disabled = true;
-
-// मेटा टैग जनरेट करें
-setTimeout(() => {
-generateMetaTags(title, description, keyword);
-generateBtn.innerHTML = '<i class="fas fa-magic"></i> मेटा टैग जनरेट करें';
-generateBtn.disabled = false;
-}, 800);
-});
-
-// साफ करें बटन
-clearBtn.addEventListener('click', function() {
-pageTitleInput.value = '';
-pageDescInput.value = '';
-targetKeywordInput.value = '';
-resultsContainer.innerHTML = `
-<div class="placeholder-results">
-<div class="placeholder-icon"><i class="fas fa-code"></i></div>
-<h3>मेटा टैग यहाँ दिखेंगे</h3>
-<p>डिटेल्स डालने और "जनरेट करें" बटन दबाने के बाद, आपके लिए ऑप्टिमाइज्ड मेटा टैग यहाँ दिखाई देंगे।</p>
-</div>
-`;
-serpPreview.style.display = 'none';
-});
-
-// मेटा टैग जनरेट करने का मुख्य फंक्शन
-function generateMetaTags(title, description, keyword) {
-// ऑप्टिमाइज्ड टाइटल जनरेट करें
-let optimizedTitle = title;
-if (keyword && !title.includes(keyword)) {
-optimizedTitle = `${keyword} | ${title}`;
-}
-
-// टाइटल को 60 करैक्टर तक ट्रिम करें
-if (optimizedTitle.length > 60) {
-optimizedTitle = optimizedTitle.substring(0, 57) + '...';
-}
-
-// ऑप्टिमाइज्ड डिस्क्रिप्शन जनरेट करें
-let optimizedDescription = description;
-if (keyword && !description.includes(keyword)) {
-optimizedDescription = `${description} ${keyword} के बारे में जानें।`;
-}
-
-// डिस्क्रिप्शन को 160 करैक्टर तक ट्रिम करें
-if (optimizedDescription.length > 160) {
-optimizedDescription = optimizedDescription.substring(0, 157) + '...';
-}
-
-// HTML कोड जनरेट करें
-const titleHTML = `<title>${optimizedTitle}</title>`;
-const descriptionHTML = `<meta name="description" content="${optimizedDescription}">`;
-
-// ओपन ग्राफ टैग्स (सोशल मीडिया के लिए)
-const ogTags = `
-<meta property="og:title" content="${optimizedTitle}">
-<meta property="og:description" content="${optimizedDescription}">
-<meta property="og:type" content="website">
-`.trim();
-
-// रिजल्ट्स दिखाएँ
-resultsContainer.innerHTML = `
-<div class="result-box">
-<h4><i class="fas fa-heading"></i> मेटा टाइटल</h4>
-<p><strong>कोड:</strong> <code>${titleHTML}</code></p>
-<p><strong>लंबाई:</strong> ${optimizedTitle.length} करैक्टर (आदर्श: 50-60)</p>
-<button class="copy-btn" onclick="copyToClipboard('${titleHTML.replace(/'/g, "\\'")}')">
-<i class="fas fa-copy"></i> कॉपी करें
-</button>
-</div>
-
-<div class="result-box">
-<h4><i class="fas fa-align-left"></i> मेटा डिस्क्रिप्शन</h4>
-<p><strong>कोड:</strong> <code>${descriptionHTML}</code></p>
-<p><strong>लंबाई:</strong> ${optimizedDescription.length} करैक्टर (आदर्श: 150-160)</p>
-<button class="copy-btn" onclick="copyToClipboard('${descriptionHTML.replace(/'/g, "\\'")}')">
-<i class="fas fa-copy"></i> कॉपी करें
-</button>
-</div>
-
-<div class="result-box">
-<h4><i class="fab fa-facebook"></i> ओपन ग्राफ टैग्स (सोशल मीडिया)</h4>
-<pre style="background:#f8f9fa; padding:15px; border-radius:5px; overflow:auto; font-size:0.9rem;">${ogTags}</pre>
-<button class="copy-btn" onclick="copyToClipboard(\`${ogTags}\`)">
-<i class="fas fa-copy"></i> कॉपी करें
-</button>
-</div>
-`;
-
-// SERP प्रिव्यू अपडेट करें
-previewTitle.textContent = optimizedTitle;
-previewDescription.textContent = optimizedDescription;
-serpPreview.style.display = 'block';
-
-// सुझाव दिखाएँ
-showSuggestions(optimizedTitle.length, optimizedDescription.length);
-}
-
-// कॉपी टू क्लिपबोर्ड फंक्शन
-function copyToClipboard(text) {
-navigator.clipboard.writeText(text).then(() => {
-alert('कोड क्लिपबोर्ड में कॉपी हो गया!');
-});
-}
-
-// सुझाव दिखाने का फंक्शन
-function showSuggestions(titleLength, descLength) {
-let suggestions = [];
-
-if (titleLength < 50) {
-suggestions.push('टाइटल थोड़ा लंबा करें (आदर्श: 50-60 करैक्टर)');
-} else if (titleLength > 60) {
-suggestions.push('टाइटल थोड़ा छोटा करें (गूगल 60 करैक्टर के बाद काट देता है)');
-}
-
-if (descLength < 120) {
-suggestions.push('डिस्क्रिप्शन और विस्तार से लिखें (आदर्श: 150-160 करैक्टर)');
-} else if (descLength > 160) {
-suggestions.push('डिस्क्रिप्शन छोटा करें (गूगल 160 करैक्टर के बाद काट देता है)');
-}
-
-if (suggestions.length > 0) {
-const suggestionsHTML = suggestions.map(s => `<div class="tip-item">${s}</div>`).join('');
-resultsContainer.innerHTML += `
-<div class="tips-container" style="margin-top:20px;">
-<h4><i class="fas fa-bullseye"></i> सुधार के सुझाव</h4>
-${suggestionsHTML}
-</div>
-`;
-}
-}
-
-// पेज लोड होते ही टाइटल इनपुट पर फोकस
-window.onload = function() {
-pageTitleInput.focus();
-};
-</script>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="navbar.js"></script>
     <script>
-fetch('footer.html')
-  .then(response => response.text())
-  .then(data => {
-    document.body.insertAdjacentHTML('beforeend', data);
-  });
-</script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load navbar and footer
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar-container').innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Error loading navbar:', error);
+                    document.getElementById('navbar-container').innerHTML = `
+                        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                            <div class="container">
+                                <a class="navbar-brand" href="index.html">Free SEO Tool Hub</a>
+                            </div>
+                        </nav>`;
+                });
+            
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-container').innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Error loading footer:', error);
+                });
+            
+            // Initialize meta tag generator
+            initializeMetaGenerator();
+        });
+        
+        function initializeMetaGenerator() {
+            // DOM Elements
+            const pageTitle = document.getElementById('pageTitle');
+            const metaDescription = document.getElementById('metaDescription');
+            const pageUrl = document.getElementById('pageUrl');
+            const canonicalUrl = document.getElementById('canonicalUrl');
+            const generateMetaBtn = document.getElementById('generateMetaBtn');
+            const resetFormBtn = document.getElementById('resetFormBtn');
+            const copyAllBtn = document.getElementById('copyAllBtn');
+            const downloadHtmlBtn = document.getElementById('downloadHtmlBtn');
+            const validateMetaBtn = document.getElementById('validateMetaBtn');
+            const testSocialBtn = document.getElementById('testSocialBtn');
+            const analyzeCompetitorBtn = document.getElementById('analyzeCompetitorBtn');
+            const aiSuggestBtn = document.getElementById('aiSuggestBtn');
+            const loadingSpinner = document.getElementById('loadingSpinner');
+            const resultsSection = document.getElementById('resultsSection');
+            const livePreviewCheckbox = document.getElementById('livePreview');
+            
+            // Character counters
+            const titleCount = document.getElementById('titleCount');
+            const descCount = document.getElementById('descCount');
+            
+            // Set default canonical URL
+            canonicalUrl.value = pageUrl.value;
+            
+            // Update canonical URL when page URL changes
+            pageUrl.addEventListener('change', function() {
+                if (!canonicalUrl.value) {
+                    canonicalUrl.value = this.value;
+                }
+            });
+            
+            // Character count updates
+            pageTitle.addEventListener('input', updateCharacterCounts);
+            metaDescription.addEventListener('input', updateCharacterCounts);
+            
+            // Initialize character counts
+            updateCharacterCounts();
+            
+            // Live preview updates
+            if (livePreviewCheckbox.checked) {
+                pageTitle.addEventListener('input', generateLivePreview);
+                metaDescription.addEventListener('input', generateLivePreview);
+            }
+            
+            livePreviewCheckbox.addEventListener('change', function() {
+                if (this.checked) {
+                    pageTitle.addEventListener('input', generateLivePreview);
+                    metaDescription.addEventListener('input', generateLivePreview);
+                    generateLivePreview();
+                } else {
+                    pageTitle.removeEventListener('input', generateLivePreview);
+                    metaDescription.removeEventListener('input', generateLivePreview);
+                }
+            });
+            
+            // Button event listeners
+            generateMetaBtn.addEventListener('click', generateMetaTags);
+            resetFormBtn.addEventListener('click', resetForm);
+            copyAllBtn.addEventListener('click', copyAllMetaTags);
+            downloadHtmlBtn.addEventListener('click', downloadHtmlFile);
+            validateMetaBtn.addEventListener('click', validateMetaTags);
+            testSocialBtn.addEventListener('click', testSocialSharing);
+            analyzeCompetitorBtn.addEventListener('click', analyzeCompetitor);
+            aiSuggestBtn.addEventListener('click', generateAISuggestions);
+            
+            // Generate on page load for demo
+            setTimeout(() => {
+                if (livePreviewCheckbox.checked) {
+                    generateLivePreview();
+                }
+            }, 500);
+            
+            // Functions
+            function updateCharacterCounts() {
+                const titleLength = pageTitle.value.length;
+                const descLength = metaDescription.value.length;
+                
+                // Update counts
+                titleCount.textContent = titleLength;
+                descCount.textContent = descLength;
+                
+                // Update color coding
+                updateCountColor(titleCount, titleLength, 60);
+                updateCountColor(descCount, descLength, 160);
+            }
+            
+            function updateCountColor(element, length, max) {
+                element.classList.remove('count-good', 'count-warning', 'count-danger');
+                
+                if (length === 0) {
+                    element.classList.add('count-warning');
+                } else if (length <= max) {
+                    element.classList.add('count-good');
+                } else {
+                    element.classList.add('count-danger');
+                }
+            }
+            
+            function generateLivePreview() {
+                const title = pageTitle.value || 'Page Title';
+                const description = metaDescription.value || 'Page description goes here';
+                const url = pageUrl.value || 'https://example.com';
+                
+                // Update Google preview
+                const googlePreview = document.getElementById('googlePreview');
+                googlePreview.innerHTML = `
+                    <div class="google-title">${title}</div>
+                    <div class="google-url">${url.replace(/^https?:\/\//, '')} › ...</div>
+                    <div class="google-description">${description.substring(0, 160)}${description.length > 160 ? '...' : ''}</div>
+                `;
+                
+                // Update Facebook preview
+                const facebookPreview = document.getElementById('facebookPreview');
+                facebookPreview.innerHTML = `
+                    <div class="social-image">
+                        <i class="fas fa-image fa-3x"></i>
+                        <div>OG Image Preview</div>
+                    </div>
+                    <div class="social-content">
+                        <div class="social-site">freeseotoolhub.com</div>
+                        <div class="social-title">${title.substring(0, 80)}${title.length > 80 ? '...' : ''}</div>
+                        <div class="social-description">${description.substring(0, 200)}${description.length > 200 ? '...' : ''}</div>
+                    </div>
+                `;
+                
+                // Update Twitter preview
+                const twitterPreview = document.getElementById('twitterPreview');
+                twitterPreview.innerHTML = `
+                    <div class="social-image">
+                        <i class="fas fa-image fa-3x"></i>
+                        <div>Twitter Image Preview</div>
+                    </div>
+                    <div class="social-content">
+                        <div class="social-site">freeseotoolhub.com</div>
+                        <div class="social-title">${title.substring(0, 70)}${title.length > 70 ? '...' : ''}</div>
+                        <div class="social-description">${description.substring(0, 200)}${description.length > 200 ? '...' : ''}</div>
+                    </div>
+                `;
+            }
+            
+            function generateMetaTags() {
+                // Show loading spinner
+                loadingSpinner.style.display = 'block';
+                resultsSection.style.display = 'none';
+                
+                // Simulate processing delay
+                setTimeout(() => {
+                    // Gather form data
+                    const formData = gatherFormData();
+                    
+                    // Generate outputs
+                    generateHtmlOutput(formData);
+                    generateJsonLdOutput(formData);
+                    generateMetaTagsList(formData);
+                    generateSEOAnalysis(formData);
+                    
+                    // Update live preview
+                    generateLivePreview();
+                    
+                    // Hide loading and show results
+                    loadingSpinner.style.display = 'none';
+                    resultsSection.style.display = 'block';
+                    
+                    // Scroll to results
+                    resultsSection.scrollIntoView({ behavior: 'smooth' });
+                }, 800);
+            }
+            
+            function gatherFormData() {
+                return {
+                    // Basic meta tags
+                    title: document.getElementById('pageTitle').value,
+                    description: document.getElementById('metaDescription').value,
+                    keywords: document.getElementById('keywords').value,
+                    url: document.getElementById('pageUrl').value,
+                    canonical: document.getElementById('canonicalUrl').value || document.getElementById('pageUrl').value,
+                    robots: document.getElementById('robotsDirective').value,
+                    viewport: document.getElementById('viewport').value,
+                    author: document.getElementById('author').value,
+                    charset: document.getElementById('charset').value,
+                    
+                    // Open Graph
+                    ogTitle: document.getElementById('ogTitle').value || document.getElementById('pageTitle').value,
+                    ogDescription: document.getElementById('ogDescription').value || document.getElementById('metaDescription').value,
+                    ogImage: document.getElementById('ogImage').value,
+                    ogUrl: document.getElementById('ogUrl').value || document.getElementById('pageUrl').value,
+                    
+                    // Twitter Cards
+                    twitterCard: document.getElementById('twitterCard').value,
+                    twitterTitle: document.getElementById('twitterTitle').value || document.getElementById('pageTitle').value,
+                    twitterDescription: document.getElementById('twitterDescription').value || document.getElementById('metaDescription').value,
+                    twitterImage: document.getElementById('twitterImage').value,
+                    twitterSite: document.getElementById('twitterSite').value,
+                    
+                    // Advanced
+                    pageType: document.getElementById('pageType').value,
+                    siteName: document.getElementById('siteName').value,
+                    locale: document.getElementById('locale').value,
+                    generateJsonLd: document.getElementById('generateJsonLd').checked,
+                    refresh: document.getElementById('refresh').value,
+                    themeColor: document.getElementById('themeColor').value,
+                    additionalTags: document.getElementById('additionalTags').value
+                };
+            }
+            
+            function generateHtmlOutput(data) {
+                let html = `&lt;!-- Basic Meta Tags --&gt;\n`;
+                html += `&lt;meta charset="${data.charset}"&gt;\n`;
+                html += `&lt;meta name="viewport" content="${data.viewport}"&gt;\n`;
+                html += `&lt;title&gt;${escapeHtml(data.title)}&lt;/title&gt;\n`;
+                html += `&lt;meta name="description" content="${escapeHtml(data.description)}"&gt;\n`;
+                
+                if (data.keywords) {
+                    html += `&lt;meta name="keywords" content="${escapeHtml(data.keywords)}"&gt;\n`;
+                }
+                
+                html += `&lt;meta name="robots" content="${data.robots}"&gt;\n`;
+                
+                if (data.author) {
+                    html += `&lt;meta name="author" content="${escapeHtml(data.author)}"&gt;\n`;
+                }
+                
+                if (data.canonical) {
+                    html += `&lt;link rel="canonical" href="${data.canonical}"&gt;\n`;
+                }
+                
+                // Theme color
+                html += `&lt;meta name="theme-color" content="${data.themeColor}"&gt;\n`;
+                
+                // Open Graph Tags
+                html += `\n&lt;!-- Open Graph --&gt;\n`;
+                html += `&lt;meta property="og:type" content="website"&gt;\n`;
+                html += `&lt;meta property="og:title" content="${escapeHtml(data.ogTitle)}"&gt;\n`;
+                html += `&lt;meta property="og:description" content="${escapeHtml(data.ogDescription)}"&gt;\n`;
+                html += `&lt;meta property="og:url" content="${data.ogUrl}"&gt;\n`;
+                
+                if (data.ogImage) {
+                    html += `&lt;meta property="og:image" content="${data.ogImage}"&gt;\n`;
+                    html += `&lt;meta property="og:image:width" content="1200"&gt;\n`;
+                    html += `&lt;meta property="og:image:height" content="630"&gt;\n`;
+                }
+                
+                html += `&lt;meta property="og:site_name" content="${escapeHtml(data.siteName)}"&gt;\n`;
+                html += `&lt;meta property="og:locale" content="${data.locale}"&gt;\n`;
+                
+                // Twitter Cards
+                html += `\n&lt;!-- Twitter Cards --&gt;\n`;
+                html += `&lt;meta name="twitter:card" content="${data.twitterCard}"&gt;\n`;
+                html += `&lt;meta name="twitter:title" content="${escapeHtml(data.twitterTitle)}"&gt;\n`;
+                html += `&lt;meta name="twitter:description" content="${escapeHtml(data.twitterDescription)}"&gt;\n`;
+                
+                if (data.twitterImage) {
+                    html += `&lt;meta name="twitter:image" content="${data.twitterImage}"&gt;\n`;
+                }
+                
+                if (data.twitterSite) {
+                    html += `&lt;meta name="twitter:site" content="@${data.twitterSite}"&gt;\n`;
+                }
+                
+                // Additional meta tags
+                if (data.additionalTags) {
+                    html += `\n&lt;!-- Additional Meta Tags --&gt;\n`;
+                    const lines = data.additionalTags.split('\n');
+                    lines.forEach(line => {
+                        line = line.trim();
+                        if (line) {
+                            if (line.includes('=')) {
+                                const parts = line.split('=');
+                                if (parts.length >= 2) {
+                                    const name = parts[0].trim();
+                                    const content = parts.slice(1).join('=').trim();
+                                    html += `&lt;meta ${name} content="${escapeHtml(content)}"&gt;\n`;
+                                }
+                            }
+                        }
+                    });
+                }
+                
+                // Refresh redirect
+                if (data.refresh && parseInt(data.refresh) > 0) {
+                    html += `&lt;meta http-equiv="refresh" content="${data.refresh}"&gt;\n`;
+                }
+                
+                document.getElementById('htmlOutput').innerHTML = html;
+            }
+            
+            function generateJsonLdOutput(data) {
+                if (!data.generateJsonLd) {
+                    document.getElementById('jsonOutput').innerHTML = '&lt;!-- JSON-LD generation disabled --&gt;';
+                    return;
+                }
+                
+                let jsonLd = {
+                    "@context": "https://schema.org",
+                    "@type": data.pageType,
+                    "headline": data.title,
+                    "description": data.description,
+                    "url": data.url,
+                    "publisher": {
+                        "@type": "Organization",
+                        "name": data.siteName
+                    }
+                };
+                
+                // Add author if provided
+                if (data.author) {
+                    jsonLd.author = {
+                        "@type": "Person",
+                        "name": data.author
+                    };
+                }
+                
+                // Add image if provided
+                if (data.ogImage) {
+                    jsonLd.image = data.ogImage;
+                }
+                
+                // Format as HTML
+                const jsonString = JSON.stringify(jsonLd, null, 2);
+                const htmlOutput = `&lt;script type="application/ld+json"&gt;\n${jsonString}\n&lt;/script&gt;`;
+                
+                document.getElementById('jsonOutput').innerHTML = escapeHtml(htmlOutput);
+            }
+            
+            function generateMetaTagsList(data) {
+                const tagsList = document.getElementById('metaTagsList');
+                let html = '';
+                
+                // Basic tags
+                const basicTags = [
+                    { name: 'charset', content: data.charset, type: 'seo' },
+                    { name: 'viewport', content: data.viewport, type: 'seo' },
+                    { name: 'title', content: data.title, type: 'seo' },
+                    { name: 'description', content: data.description, type: 'seo' },
+                    { name: 'keywords', content: data.keywords, type: 'seo' },
+                    { name: 'robots', content: data.robots, type: 'seo' },
+                    { name: 'canonical', content: data.canonical, type: 'seo' },
+                    { name: 'author', content: data.author, type: 'seo' }
+                ];
+                
+                // Open Graph tags
+                const ogTags = [
+                    { property: 'og:type', content: 'website', type: 'og' },
+                    { property: 'og:title', content: data.ogTitle, type: 'og' },
+                    { property: 'og:description', content: data.ogDescription, type: 'og' },
+                    { property: 'og:url', content: data.ogUrl, type: 'og' },
+                    { property: 'og:image', content: data.ogImage, type: 'og' },
+                    { property: 'og:site_name', content: data.siteName, type: 'og' },
+                    { property: 'og:locale', content: data.locale, type: 'og' }
+                ];
+                
+                // Twitter tags
+                const twitterTags = [
+                    { name: 'twitter:card', content: data.twitterCard, type: 'twitter' },
+                    { name: 'twitter:title', content: data.twitterTitle, type: 'twitter' },
+                    { name: 'twitter:description', content: data.twitterDescription, type: 'twitter' },
+                    { name: 'twitter:image', content: data.twitterImage, type: 'twitter' },
+                    { name: 'twitter:site', content: data.twitterSite ? `@${data.twitterSite}` : '', type: 'twitter' }
+                ];
+                
+                // Display tags
+                html += '<h6 class="mb-3">Basic Meta Tags</h6>';
+                basicTags.forEach(tag => {
+                    if (tag.content) {
+                        html += createTagItem(tag);
+                    }
+                });
+                
+                html += '<h6 class="mb-3 mt-4">Open Graph Tags</h6>';
+                ogTags.forEach(tag => {
+                    if (tag.content) {
+                        html += createTagItem(tag);
+                    }
+                });
+                
+                html += '<h6 class="mb-3 mt-4">Twitter Cards</h6>';
+                twitterTags.forEach(tag => {
+                    if (tag.content) {
+                        html += createTagItem(tag);
+                    }
+                });
+                
+                tagsList.innerHTML = html;
+            }
+            
+            function createTagItem(tag) {
+                const typeClass = `tag-type-${tag.type}`;
+                const badgeText = tag.type === 'seo' ? 'SEO' : tag.type === 'og' ? 'OG' : 'Twitter';
+                
+                return `
+                    <div class="meta-tag-item">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <span class="meta-tag-badge ${typeClass}">${badgeText}</span>
+                                <strong>${tag.name || tag.property}:</strong>
+                            </div>
+                            <div>
+                                <small class="text-muted">${tag.content.substring(0, 50)}${tag.content.length > 50 ? '...' : ''}</small>
+                            </div>
+                        </div>
+                    </div>`;
+            }
+            
+            function generateSEOAnalysis(data) {
+                const analysisContent = document.getElementById('analysisContent');
+                let analysis = '';
+                
+                // Title analysis
+                const titleLength = data.title.length;
+                if (titleLength === 0) {
+                    analysis += '<div class="alert alert-danger mb-2">❌ Title tag is empty</div>';
+                } else if (titleLength > 60) {
+                    analysis += `<div class="alert alert-warning mb-2">⚠️ Title is ${titleLength} characters (recommended: 50-60)</div>`;
+                } else {
+                    analysis += `<div class="alert alert-success mb-2">✅ Title tag is ${titleLength} characters (good)</div>`;
+                }
+                
+                // Description analysis
+                const descLength = data.description.length;
+                if (descLength === 0) {
+                    analysis += '<div class="alert alert-danger mb-2">❌ Meta description is empty</div>';
+                } else if (descLength > 160) {
+                    analysis += `<div class="alert alert-warning mb-2">⚠️ Description is ${descLength} characters (recommended: 150-160)</div>`;
+                } else if (descLength < 50) {
+                    analysis += `<div class="alert alert-warning mb-2">⚠️ Description is only ${descLength} characters (too short)</div>`;
+                } else {
+                    analysis += `<div class="alert alert-success mb-2">✅ Description is ${descLength} characters (good)</div>`;
+                }
+                
+                // Keywords analysis
+                if (data.keywords) {
+                    const keywordCount = data.keywords.split(',').length;
+                    if (keywordCount > 10) {
+                        analysis += `<div class="alert alert-warning mb-2">⚠️ ${keywordCount} keywords (limit to 5-10)</div>`;
+                    } else {
+                        analysis += `<div class="alert alert-success mb-2">✅ ${keywordCount} keywords (good)</div>`;
+                    }
+                }
+                
+                // OG Image check
+                if (!data.ogImage) {
+                    analysis += '<div class="alert alert-warning mb-2">⚠️ Open Graph image is missing</div>';
+                }
+                
+                // Twitter Image check
+                if (!data.twitterImage) {
+                    analysis += '<div class="alert alert-warning mb-2">⚠️ Twitter image is missing</div>';
+                }
+                
+                // Canonical URL check
+                if (data.canonical !== data.url) {
+                    analysis += '<div class="alert alert-info mb-2">ℹ️ Canonical URL differs from page URL</div>';
+                }
+                
+                analysisContent.innerHTML = analysis;
+            }
+            
+            function resetForm() {
+                document.getElementById('pageTitle').value = '';
+                document.getElementById('metaDescription').value = '';
+                document.getElementById('keywords').value = '';
+                document.getElementById('pageUrl').value = 'https://freeseotoolhub.com';
+                document.getElementById('canonicalUrl').value = '';
+                document.getElementById('robotsDirective').value = 'index, follow';
+                document.getElementById('viewport').value = 'width=device-width, initial-scale=1.0';
+                document.getElementById('author').value = '';
+                document.getElementById('charset').value = 'UTF-8';
+                
+                // Reset social fields
+                document.getElementById('ogTitle').value = '';
+                document.getElementById('ogDescription').value = '';
+                document.getElementById('ogImage').value = '';
+                document.getElementById('ogUrl').value = '';
+                document.getElementById('twitterCard').value = 'summary';
+                document.getElementById('twitterTitle').value = '';
+                document.getElementById('twitterDescription').value = '';
+                document.getElementById('twitterImage').value = '';
+                document.getElementById('twitterSite').value = '';
+                
+                // Reset advanced fields
+                document.getElementById('pageType').value = 'Website';
+                document.getElementById('siteName').value = 'Free SEO Tool Hub';
+                document.getElementById('locale').value = 'en_US';
+                document.getElementById('generateJsonLd').checked = true;
+                document.getElementById('refresh').value = '';
+                document.getElementById('themeColor').value = '#4361ee';
+                document.getElementById('additionalTags').value = '';
+                
+                updateCharacterCounts();
+                resultsSection.style.display = 'none';
+            }
+            
+            function copyAllMetaTags() {
+                const htmlOutput = document.getElementById('htmlOutput').textContent;
+                const jsonOutput = document.getElementById('jsonOutput').textContent;
+                
+                const allContent = `=== HTML Meta Tags ===\n\n${htmlOutput}\n\n=== JSON-LD Structured Data ===\n\n${jsonOutput}`;
+                
+                navigator.clipboard.writeText(allContent.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&'))
+                    .then(() => {
+                        const originalText = copyAllBtn.innerHTML;
+                        copyAllBtn.innerHTML = '<i class="fas fa-check me-1"></i> Copied!';
+                        copyAllBtn.classList.remove('btn-outline-primary');
+                        copyAllBtn.classList.add('btn-success');
+                        
+                        setTimeout(() => {
+                            copyAllBtn.innerHTML = originalText;
+                            copyAllBtn.classList.remove('btn-success');
+                            copyAllBtn.classList.add('btn-outline-primary');
+                        }, 2000);
+                    });
+            }
+            
+            function downloadHtmlFile() {
+                const htmlOutput = document.getElementById('htmlOutput').textContent;
+                const jsonOutput = document.getElementById('jsonOutput').textContent;
+                
+                const htmlContent = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    ${htmlOutput.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&')}
+    ${jsonOutput.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&')}
+</head>
+<body>
+    <!-- Your content here -->
+</body>
+</html>`;
+                
+                const blob = new Blob([htmlContent], { type: 'text/html' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'meta-tags.html';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            }
+            
+            function validateMetaTags() {
+                alert('Meta tag validation would check your tags against search engine guidelines.\n\nIn a full implementation, this would connect to an API or validator service.');
+            }
+            
+            function testSocialSharing() {
+                const url = encodeURIComponent(document.getElementById('pageUrl').value || 'https://freeseotoolhub.com');
+                const title = encodeURIComponent(document.getElementById('pageTitle').value || 'Free SEO Tools');
+                const description = encodeURIComponent(document.getElementById('metaDescription').value || '');
+                
+                const modalHtml = `
+                    <div class="modal fade" id="socialTestModal" tabindex="-1">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Test Social Sharing</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-md-6 text-center mb-3">
+                                            <a href="https://www.facebook.com/sharer/sharer.php?u=${url}" target="_blank" class="btn btn-primary btn-lg w-100 mb-2">
+                                                <i class="fab fa-facebook me-2"></i> Test on Facebook
+                                            </a>
+                                            <small>Test Open Graph tags</small>
+                                        </div>
+                                        <div class="col-md-6 text-center mb-3">
+                                            <a href="https://twitter.com/intent/tweet?url=${url}&text=${title}" target="_blank" class="btn btn-info btn-lg w-100 mb-2">
+                                                <i class="fab fa-twitter me-2"></i> Test on Twitter
+                                            </a>
+                                            <small>Test Twitter Cards</small>
+                                        </div>
+                                        <div class="col-md-6 text-center mb-3">
+                                            <a href="https://www.linkedin.com/sharing/share-offsite/?url=${url}" target="_blank" class="btn btn-secondary btn-lg w-100 mb-2">
+                                                <i class="fab fa-linkedin me-2"></i> Test on LinkedIn
+                                            </a>
+                                        </div>
+                                        <div class="col-md-6 text-center mb-3">
+                                            <a href="https://developers.facebook.com/tools/debug/?q=${url}" target="_blank" class="btn btn-outline-primary btn-lg w-100 mb-2">
+                                                <i class="fas fa-tools me-2"></i> Facebook Debugger
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="alert alert-info mt-3">
+                                        <strong>Note:</strong> These tools will open in new tabs. Use them to validate how your content appears when shared.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>`;
+                
+                // Create and show modal
+                const modalContainer = document.createElement('div');
+                modalContainer.innerHTML = modalHtml;
+                document.body.appendChild(modalContainer);
+                
+                const modal = new bootstrap.Modal(document.getElementById('socialTestModal'));
+                modal.show();
+                
+                // Remove modal after hidden
+                document.getElementById('socialTestModal').addEventListener('hidden.bs.modal', function() {
+                    document.body.removeChild(modalContainer);
+                });
+            }
+            
+            function analyzeCompetitor() {
+                const competitorUrl = prompt('Enter competitor URL to analyze their meta tags:', 'https://example.com');
+                if (competitorUrl) {
+                    alert(`In a full implementation, this would fetch and analyze meta tags from: ${competitorUrl}\n\nThis feature requires a backend service to bypass CORS restrictions.`);
+                }
+            }
+            
+            function generateAISuggestions() {
+                const currentTitle = document.getElementById('pageTitle').value;
+                const currentDesc = document.getElementById('metaDescription').value;
+                
+                // Sample AI suggestions
+                const suggestions = [
+                    {
+                        title: "Boost Your SEO: Free Tools for Digital Marketing Success",
+                        desc: "Discover 50+ free SEO tools for keyword research, backlink analysis, website audits, and content optimization. Improve your search rankings today!"
+                    },
+                    {
+                        title: "SEO Tools Hub: Free Digital Marketing Toolkit | 2024",
+                        desc: "Complete collection of free SEO tools for marketers. Analyze websites, track keywords, check backlinks, and optimize content with our comprehensive toolkit."
+                    },
+                    {
+                        title: "Free SEO Tools - Website Analysis & Optimization Suite",
+                        desc: "Powerful suite of free SEO tools including site audits, keyword planners, rank trackers, and technical SEO checkers. No signup required."
+                    }
+                ];
+                
+                const modalHtml = `
+                    <div class="modal fade" id="aiSuggestionsModal" tabindex="-1">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title"><i class="fas fa-robot me-2"></i> AI Meta Tag Suggestions</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p class="mb-3">Based on your input, here are some optimized suggestions:</p>
+                                    
+                                    ${suggestions.map((suggestion, index) => `
+                                        <div class="card mb-3">
+                                            <div class="card-body">
+                                                <h6>Suggestion ${index + 1}</h6>
+                                                <div class="mb-2">
+                                                    <strong>Title:</strong> 
+                                                    <div class="text-muted">${suggestion.title} (${suggestion.title.length} chars)</div>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <strong>Description:</strong>
+                                                    <div class="text-muted">${suggestion.desc} (${suggestion.desc.length} chars)</div>
+                                                </div>
+                                                <button class="btn btn-sm btn-outline-primary use-suggestion" data-index="${index}">
+                                                    Use This Suggestion
+                                                </button>
+                                            </div>
+                                        </div>
+                                    `).join('')}
+                                    
+                                    <div class="alert alert-info">
+                                        <i class="fas fa-lightbulb me-2"></i>
+                                        <strong>Tip:</strong> AI suggestions are based on SEO best practices. Always customize them to match your specific content.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>`;
+                
+                // Create and show modal
+                const modalContainer = document.createElement('div');
+                modalContainer.innerHTML = modalHtml;
+                document.body.appendChild(modalContainer);
+                
+                const modal = new bootstrap.Modal(document.getElementById('aiSuggestionsModal'));
+                modal.show();
+                
+                // Add event listeners to suggestion buttons
+                setTimeout(() => {
+                    document.querySelectorAll('.use-suggestion').forEach(btn => {
+                        btn.addEventListener('click', function() {
+                            const index = parseInt(this.getAttribute('data-index'));
+                            const suggestion = suggestions[index];
+                            
+                            document.getElementById('pageTitle').value = suggestion.title;
+                            document.getElementById('metaDescription').value = suggestion.desc;
+                            
+                            updateCharacterCounts();
+                            generateLivePreview();
+                            
+                            modal.hide();
+                            document.body.removeChild(modalContainer);
+                        });
+                    });
+                }, 100);
+                
+                // Remove modal after hidden
+                document.getElementById('aiSuggestionsModal').addEventListener('hidden.bs.modal', function() {
+                    document.body.removeChild(modalContainer);
+                });
+            }
+            
+            function escapeHtml(text) {
+                const div = document.createElement('div');
+                div.textContent = text;
+                return div.innerHTML;
+            }
+        }
+    </script>
 </body>
 </html>
-
-
-
-
