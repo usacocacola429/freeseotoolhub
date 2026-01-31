@@ -1,362 +1,590 @@
-// ===== DOM ELEMENTS =====
-const userTextElement = document.getElementById('userText');
-const keywordInputElement = document.getElementById('keywordInput');
-const analyzeBtn = document.getElementById('analyzeBtn');
-const clearBtn = document.getElementById('clearBtn');
-const resultsContainer = document.getElementById('resultsContainer');
-const statsContainer = document.getElementById('statsContainer');
-const aiSuggestions = document.getElementById('aiSuggestions');
-const aiTips = document.getElementById('aiTips');
-const showMoreTipsBtn = document.getElementById('showMoreTips');
-const langHiBtn = document.getElementById('langHi');
-const langEnBtn = document.getElementById('langEn');
+ * Free SEO Tool Hub - Main JavaScript
+ * Version: 2.0
+ */
 
-// ===== APP STATE =====
-let currentLanguage = 'hi';
-let analysisResults = null;
-
-// ===== LANGUAGE DATA =====
-const translations = {
-hi: {
-heroTitle: "मुफ्त कीवर्ड डेंसिटी चेकर & एआई ऑप्टिमाइज़र",
-heroSubtitle: "अपने हिंदी या अंग्रेजी कंटेंट का विश्लेषण करें। सही कीवर्ड बैलेंस पाएं और एआई से स्मार्ट सुझाव लें।",
-useToolBtn: "टूल इस्तेमाल करें",
-inputTitle: "अपना कंटेंट पेस्ट करें",
-textAreaLabel: "कंटेंट (हिंदी या अंग्रेजी):",
-textAreaPlaceholder: "यहाँ अपना आर्टिकल, ब्लॉग पोस्ट, या वेबपेज कंटेंट पेस्ट करें... उदाहरण के लिए: 'एसईओ कीवर्ड डेंसिटी आपकी सामग्री में मुख्य शब्दों के उपयोग का प्रतिशत है। यह खोज इंजन को यह समझने में मदद करती है कि आपका पृष्ठ किस बारे में है।'",
-keywordLabel: "मुख्य कीवर्ड (अलग करने के लिए कॉमा दबाएं):",
-keywordPlaceholder: "जैसे: एसईओ, कीवर्ड डेंसिटी, ऑप्टिमाइज़ेशन",
-keywordHint: "आप एक से ज्यादा कीवर्ड भी डाल सकते हैं। जैसे: एसईओ, ब्लॉगिंग, गूगल रैंकिंग",
-analyzeBtn: "कंटेंट का विश्लेषण करें",
-clearBtn: "साफ करें",
-resultsTitle: "विश्लेषण परिणाम",
-placeholderTitle: "विश्लेषण के परिणाम यहाँ दिखेंगे",
-placeholderText: "कंटेंट पेस्ट करने और 'विश्लेषण करें' बटन दबाने के बाद, आपके कीवर्ड्स का विस्तृत विश्लेषण यहाँ दिखाई देगा।",
-aiSuggestionsTitle: "एआई ऑप्टिमाइज़ेशन सुझाव",
-showMoreTips: "और टिप्स दिखाएं",
-moreToolsTitle: "हमारे अन्य मुफ्त टूल्स",
-moreToolsSubtitle: "हम जल्द ही ये शक्तिशाली टूल्स लॉन्च कर रहे हैं। अपडेट के लिए बने रहें!",
-quickLinks: "त्वरित लिंक",
-home: "होम",
-allTools: "सभी टूल्स",
-aboutUs: "हमारे बारे में",
-contact: "संपर्क करें",
-stayUpdated: "अपडेट रहें",
-newsletterText: "नए टूल्स और अपडेट्स की सूचना सबसे पहले पाएं।",
-subscribeBtn: "ईमेल करें"
-},
-en: {
-heroTitle: "Free Keyword Density Checker & AI Optimizer",
-heroSubtitle: "Analyze your Hindi or English content. Get the right keyword balance and smart AI suggestions.",
-useToolBtn: "Use Tool",
-inputTitle: "Paste Your Content",
-textAreaLabel: "Content (Hindi or English):",
-textAreaPlaceholder: "Paste your article, blog post, or webpage content here... For example: 'SEO keyword density is the percentage of times your main keywords appear in your content. It helps search engines understand what your page is about.'",
-keywordLabel: "Main Keywords (separate by comma):",
-keywordPlaceholder: "e.g., SEO, keyword density, optimization",
-keywordHint: "You can enter multiple keywords. e.g., SEO, blogging, Google ranking",
-analyzeBtn: "Analyze Content",
-clearBtn: "Clear",
-resultsTitle: "Analysis Results",
-placeholderTitle: "Analysis results will appear here",
-placeholderText: "After pasting content and clicking 'Analyze', detailed analysis of your keywords will appear here.",
-aiSuggestionsTitle: "AI Optimization Suggestions",
-showMoreTips: "Show More Tips",
-moreToolsTitle: "Our Other Free Tools",
-moreToolsSubtitle: "We're launching these powerful tools soon. Stay tuned for updates!",
-quickLinks: "Quick Links",
-home: "Home",
-allTools: "All Tools",
-aboutUs: "About Us",
-contact: "Contact",
-stayUpdated: "Stay Updated",
-newsletterText: "Be the first to know about new tools and updates.",
-subscribeBtn: "Send Email"
-}
+// Configuration
+const CONFIG = {
+    SITE_NAME: 'Free SEO Tool Hub',
+    SITE_URL: window.location.origin,
+    TOOLS_PER_PAGE: 12,
+    API_BASE_URL: '', // Add if you have backend API
+    VERSION: '2.0.0'
 };
 
-// ===== LANGUAGE SWITCHER =====
-function switchLanguage(lang) {
-currentLanguage = lang;
+// Tool Database
+const TOOLS_DATABASE = {
+    'keyword-research': [
+        {
+            id: 'keyword-density',
+            name: 'Keyword Density Checker',
+            description: 'Analyze keyword usage and density in your content',
+            url: 'tools/keyword-research/keyword-density.html',
+            icon: 'fas fa-chart-pie',
+            category: 'Keyword Research',
+            featured: true,
+            tags: ['keyword', 'analysis', 'content', 'seo']
+        },
+        {
+            id: 'trending-keywords',
+            name: 'Trending Keywords Finder',
+            description: 'Discover popular and rising search terms',
+            url: 'tools/keyword-research/trending-keywords.html',
+            icon: 'fas fa-chart-line',
+            category: 'Keyword Research',
+            featured: true,
+            tags: ['trending', 'keywords', 'research', 'popular']
+        },
+        {
+            id: 'serp-position',
+            name: 'SERP Position Checker',
+            description: 'Check your website position in search results',
+            url: 'tools/keyword-research/serp-position-checker.html',
+            icon: 'fas fa-search',
+            category: 'Keyword Research',
+            featured: false,
+            tags: ['serp', 'ranking', 'position', 'google']
+        }
+    ],
+    'technical-seo': [
+        {
+            id: 'ssl-checker',
+            name: 'SSL Checker',
+            description: 'Verify SSL certificate status and validity',
+            url: 'tools/technical-seo/ssl-checker.html',
+            icon: 'fas fa-lock',
+            category: 'Technical SEO',
+            featured: true,
+            tags: ['ssl', 'security', 'certificate', 'https']
+        },
+        {
+            id: 'canonical-checker',
+            name: 'Canonical URL Checker',
+            description: 'Check canonical tags and URL canonicalization',
+            url: 'tools/technical-seo/canonical-url-checker.html',
+            icon: 'fas fa-link',
+            category: 'Technical SEO',
+            featured: false,
+            tags: ['canonical', 'url', 'tags', 'duplicate']
+        },
+        {
+            id: 'sitemap-generator',
+            name: 'Sitemap Generator',
+            description: 'Create XML sitemaps for your website',
+            url: 'tools/technical-seo/sitemap-generator.html',
+            icon: 'fas fa-sitemap',
+            category: 'Technical SEO',
+            featured: true,
+            tags: ['sitemap', 'xml', 'generator', 'seo']
+        }
+    ],
+    'backlink-tools': [
+        {
+            id: 'backlink-checker',
+            name: 'Backlink Checker',
+            description: 'Check backlinks for any website',
+            url: 'tools/backlink-tools/backlink-checker.html',
+            icon: 'fas fa-external-link-alt',
+            category: 'Backlink Tools',
+            featured: true,
+            tags: ['backlinks', 'analysis', 'links', 'seo']
+        },
+        {
+            id: 'broken-link-checker',
+            name: 'Broken Link Checker',
+            description: 'Find and fix broken links on your website',
+            url: 'tools/backlink-tools/broken-link-checker.html',
+            icon: 'fas fa-unlink',
+            category: 'Backlink Tools',
+            featured: false,
+            tags: ['broken', 'links', '404', 'errors']
+        },
+        {
+            id: 'domain-authority',
+            name: 'Domain Authority Checker',
+            description: 'Check domain authority and ranking metrics',
+            url: 'tools/backlink-tools/domain-authority-checker.html',
+            icon: 'fas fa-globe',
+            category: 'Backlink Tools',
+            featured: false,
+            tags: ['domain', 'authority', 'metrics', 'rank']
+        }
+    ],
+    'content-tools': [
+        {
+            id: 'plagiarism-checker',
+            name: 'Plagiarism Checker',
+            description: 'Check content for plagiarism and originality',
+            url: 'tools/content-tools/plagiarism-checker.html',
+            icon: 'fas fa-search',
+            category: 'Content Tools',
+            featured: true,
+            tags: ['plagiarism', 'content', 'originality', 'check']
+        },
+        {
+            id: 'grammar-checker',
+            name: 'Grammar & Spell Checker',
+            description: 'Check grammar and spelling errors in content',
+            url: 'tools/content-tools/grammar-spell-checker.html',
+            icon: 'fas fa-spell-check',
+            category: 'Content Tools',
+            featured: false,
+            tags: ['grammar', 'spell', 'check', 'writing']
+        },
+        {
+            id: 'headline-analyzer',
+            name: 'Headline Analyzer',
+            description: 'Analyze and optimize your headlines for SEO',
+            url: 'tools/content-tools/headline-analyzer.html',
+            icon: 'fas fa-heading',
+            category: 'Content Tools',
+            featured: false,
+            tags: ['headline', 'analyzer', 'title', 'seo']
+        },
+        {
+            id: 'meta-tag-generator',
+            name: 'Meta Tag Generator',
+            description: 'Generate SEO-friendly meta tags',
+            url: 'tools/content-tools/meta-tag-generator.html',
+            icon: 'fas fa-code',
+            category: 'Content Tools',
+            featured: true,
+            tags: ['meta', 'tags', 'generator', 'seo']
+        }
+    ]
+};
 
-// Update button states
-langHiBtn.classList.toggle('active', lang === 'hi');
-langEnBtn.classList.toggle('active', lang === 'en');
+// All tools flat array
+const ALL_TOOLS = Object.values(TOOLS_DATABASE).flat();
 
-// Update all elements with data-i18n attribute
-document.querySelectorAll('[data-i18n]').forEach(element => {
-const key = element.getAttribute('data-i18n');
-if (translations[lang][key]) {
-if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-element.placeholder = translations[lang][key];
-} else {
-element.textContent = translations[lang][key];
-}
-}
+// Utility Functions
+const Utils = {
+    // Format numbers with commas
+    formatNumber: (num) => {
+        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    },
+    
+    // Debounce function for search
+    debounce: (func, wait) => {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    },
+    
+    // Copy text to clipboard
+    copyToClipboard: (text) => {
+        return navigator.clipboard.writeText(text).then(() => {
+            return true;
+        }).catch(err => {
+            console.error('Failed to copy: ', err);
+            return false;
+        });
+    },
+    
+    // Show notification
+    showNotification: (message, type = 'info') => {
+        // Create notification element
+        const notification = document.createElement('div');
+        notification.className = `alert alert-${type} alert-dismissible fade show position-fixed`;
+        notification.style.cssText = `
+            top: 20px;
+            right: 20px;
+            z-index: 9999;
+            min-width: 300px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        `;
+        
+        notification.innerHTML = `
+            ${message}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        `;
+        
+        document.body.appendChild(notification);
+        
+        // Auto remove after 5 seconds
+        setTimeout(() => {
+            if (notification.parentNode) {
+                notification.remove();
+            }
+        }, 5000);
+    },
+    
+    // Get URL parameters
+    getUrlParams: () => {
+        const params = {};
+        const queryString = window.location.search.substring(1);
+        const pairs = queryString.split('&');
+        
+        pairs.forEach(pair => {
+            const [key, value] = pair.split('=');
+            if (key) {
+                params[decodeURIComponent(key)] = decodeURIComponent(value || '');
+            }
+        });
+        
+        return params;
+    },
+    
+    // Set page title
+    setPageTitle: (title) => {
+        document.title = `${title} - ${CONFIG.SITE_NAME}`;
+    }
+};
+
+// Tool Management
+const ToolManager = {
+    // Search tools
+    searchTools: (query) => {
+        if (!query) return ALL_TOOLS;
+        
+        const searchTerms = query.toLowerCase().split(' ');
+        return ALL_TOOLS.filter(tool => {
+            const searchString = `
+                ${tool.name.toLowerCase()}
+                ${tool.description.toLowerCase()}
+                ${tool.category.toLowerCase()}
+                ${tool.tags.join(' ')}
+            `;
+            
+            return searchTerms.every(term => searchString.includes(term));
+        });
+    },
+    
+    // Get tools by category
+    getToolsByCategory: (category) => {
+        return TOOLS_DATABASE[category] || [];
+    },
+    
+    // Get featured tools
+    getFeaturedTools: (count = 6) => {
+        return ALL_TOOLS
+            .filter(tool => tool.featured)
+            .slice(0, count);
+    },
+    
+    // Render tool card
+    renderToolCard: (tool) => {
+        return `
+            <div class="col-md-4 mb-4">
+                <div class="tool-card h-100" data-tool-id="${tool.id}">
+                    <div class="tool-icon">
+                        <i class="${tool.icon}"></i>
+                    </div>
+                    <h4>${tool.name}</h4>
+                    <p class="text-muted">${tool.description}</p>
+                    <div class="d-flex justify-content-between align-items-center mt-auto">
+                        <span class="badge bg-light text-dark">${tool.category}</span>
+                        <a href="${tool.url}" class="btn btn-sm btn-outline-primary">
+                            Use Tool <i class="fas fa-arrow-right ms-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        `;
+    },
+    
+    // Render category card
+    renderCategoryCard: (category) => {
+        const categories = {
+            'keyword-research': {
+                name: 'Keyword Research',
+                icon: 'fas fa-search',
+                color: 'primary',
+                count: 8,
+                description: 'Find profitable keywords and analyze competition'
+            },
+            'technical-seo': {
+                name: 'Technical SEO',
+                icon: 'fas fa-code',
+                color: 'success',
+                count: 6,
+                description: 'Website audit, SSL check, and technical analysis'
+            },
+            'backlink-tools': {
+                name: 'Backlink Analysis',
+                icon: 'fas fa-link',
+                color: 'warning',
+                count: 5,
+                description: 'Check backlinks and analyze link profiles'
+            },
+            'content-tools': {
+                name: 'Content Tools',
+                icon: 'fas fa-edit',
+                color: 'danger',
+                count: 7,
+                description: 'Plagiarism check, grammar, and content optimization'
+            }
+        };
+        
+        const cat = categories[category];
+        if (!cat) return '';
+        
+        return `
+            <div class="col-md-3 mb-4">
+                <a href="tools/${category}/" class="category-link">
+                    <div class="category-card h-100">
+                        <div class="category-icon bg-${cat.color}">
+                            <i class="${cat.icon}"></i>
+                        </div>
+                        <h5>${cat.name}</h5>
+                        <p class="small text-muted">${cat.description}</p>
+                        <div class="tool-count">${cat.count} Tools</div>
+                    </div>
+                </a>
+            </div>
+        `;
+    }
+};
+
+// Analytics
+const Analytics = {
+    trackToolUsage: (toolId) => {
+        try {
+            const usage = JSON.parse(localStorage.getItem('tool_usage') || '{}');
+            usage[toolId] = (usage[toolId] || 0) + 1;
+            localStorage.setItem('tool_usage', JSON.stringify(usage));
+            
+            // Send to analytics if configured
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'tool_usage', {
+                    'tool_id': toolId,
+                    'usage_count': usage[toolId]
+                });
+            }
+        } catch (e) {
+            console.error('Analytics error:', e);
+        }
+    },
+    
+    getPopularTools: (limit = 5) => {
+        try {
+            const usage = JSON.parse(localStorage.getItem('tool_usage') || '{}');
+            return Object.entries(usage)
+                .sort(([,a], [,b]) => b - a)
+                .slice(0, limit)
+                .map(([id]) => ALL_TOOLS.find(tool => tool.id === id))
+                .filter(tool => tool);
+        } catch (e) {
+            return [];
+        }
+    }
+};
+
+// Main Initialization
+document.addEventListener('DOMContentLoaded', function() {
+    console.log(`${CONFIG.SITE_NAME} v${CONFIG.VERSION} initialized`);
+    
+    // Initialize components based on page
+    const path = window.location.pathname;
+    
+    if (path.includes('index.html') || path === '/') {
+        initHomePage();
+    } else if (path.includes('all-tools.html')) {
+        initAllToolsPage();
+    } else if (path.includes('tools.html')) {
+        initCategoriesPage();
+    }
+    
+    // Common initialization
+    initCommonFeatures();
 });
 
-// Update body class for font
-document.body.classList.toggle('hindi', lang === 'hi');
-document.body.classList.toggle('english', lang === 'en');
+function initHomePage() {
+    // Load featured tools
+    const featuredContainer = document.getElementById('featuredTools');
+    if (featuredContainer) {
+        const featuredTools = ToolManager.getFeaturedTools();
+        featuredTools.forEach(tool => {
+            const toolHTML = ToolManager.renderToolCard(tool);
+            featuredContainer.insertAdjacentHTML('beforeend', toolHTML);
+        });
+    }
+    
+    // Load popular tools from analytics
+    const popularTools = Analytics.getPopularTools(3);
+    if (popularTools.length > 0) {
+        const popularContainer = document.getElementById('popularTools');
+        if (popularContainer) {
+            popularTools.forEach(tool => {
+                const toolHTML = ToolManager.renderToolCard(tool);
+                popularContainer.insertAdjacentHTML('beforeend', toolHTML);
+            });
+        }
+    }
 }
 
-// ===== ANALYSIS FUNCTIONS =====
-function analyzeContent() {
-const content = userTextElement.value.trim();
-const keywords = keywordInputElement.value
-.split(',')
-.map(k => k.trim())
-.filter(k => k.length > 0);
-
-if (!content) {
-alert(currentLanguage === 'hi' ? 'कृपया कुछ कंटेंट पेस्ट करें।' : 'Please paste some content.');
-return;
+function initAllToolsPage() {
+    const searchInput = document.getElementById('toolSearch');
+    const toolsContainer = document.getElementById('toolsContainer');
+    const categoryFilter = document.getElementById('categoryFilter');
+    
+    if (!toolsContainer) return;
+    
+    // Load all tools initially
+    renderTools(ALL_TOOLS, toolsContainer);
+    
+    // Search functionality
+    if (searchInput) {
+        searchInput.addEventListener('input', Utils.debounce(function() {
+            const query = this.value.trim();
+            const filteredTools = ToolManager.searchTools(query);
+            renderTools(filteredTools, toolsContainer);
+        }, 300));
+    }
+    
+    // Category filter
+    if (categoryFilter) {
+        categoryFilter.addEventListener('change', function() {
+            const category = this.value;
+            let filteredTools = ALL_TOOLS;
+            
+            if (category !== 'all') {
+                filteredTools = ToolManager.getToolsByCategory(category);
+            }
+            
+            renderTools(filteredTools, toolsContainer);
+        });
+    }
+    
+    // Check for URL search parameter
+    const params = Utils.getUrlParams();
+    if (params.search && searchInput) {
+        searchInput.value = params.search;
+        const filteredTools = ToolManager.searchTools(params.search);
+        renderTools(filteredTools, toolsContainer);
+    }
 }
 
-if (keywords.length === 0) {
-alert(currentLanguage === 'hi' ? 'कृपया कम से कम एक कीवर्ड डालें।' : 'Please enter at least one keyword.');
-return;
+function initCategoriesPage() {
+    const categoriesContainer = document.getElementById('categoriesContainer');
+    if (!categoriesContainer) return;
+    
+    const categories = ['keyword-research', 'technical-seo', 'backlink-tools', 'content-tools'];
+    
+    categories.forEach(category => {
+        const categoryHTML = ToolManager.renderCategoryCard(category);
+        categoriesContainer.insertAdjacentHTML('beforeend', categoryHTML);
+    });
 }
 
-// Show loading state
-analyzeBtn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> ${currentLanguage === 'hi' ? 'विश्लेषण हो रहा है...' : 'Analyzing...'}`;
-analyzeBtn.disabled = true;
-
-// Simulate API call with timeout
-setTimeout(() => {
-performAnalysis(content, keywords);
-analyzeBtn.innerHTML = `<i class="fas fa-chart-bar"></i> ${currentLanguage === 'hi' ? 'कंटेंट का विश्लेषण करें' : 'Analyze Content'}`;
-analyzeBtn.disabled = false;
-}, 800);
+function initCommonFeatures() {
+    // Initialize search form
+    const searchForm = document.getElementById('searchForm');
+    if (searchForm) {
+        searchForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const searchInput = this.querySelector('input[type="text"]');
+            if (searchInput && searchInput.value.trim()) {
+                window.location.href = `pages/all-tools.html?search=${encodeURIComponent(searchInput.value.trim())}`;
+            }
+        });
+    }
+    
+    // Track tool usage on tool pages
+    const toolId = getCurrentToolId();
+    if (toolId) {
+        Analytics.trackToolUsage(toolId);
+    }
+    
+    // Initialize copy buttons
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('copy-btn') || e.target.closest('.copy-btn')) {
+            const button = e.target.classList.contains('copy-btn') ? e.target : e.target.closest('.copy-btn');
+            const text = button.dataset.copy || button.closest('[data-copy]')?.dataset.copy;
+            
+            if (text) {
+                Utils.copyToClipboard(text).then(success => {
+                    if (success) {
+                        const originalHTML = button.innerHTML;
+                        button.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                        button.classList.add('btn-success');
+                        
+                        setTimeout(() => {
+                            button.innerHTML = originalHTML;
+                            button.classList.remove('btn-success');
+                        }, 2000);
+                        
+                        Utils.showNotification('Copied to clipboard!', 'success');
+                    }
+                });
+            }
+        }
+    });
+    
+    // Initialize share buttons
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('share-btn') || e.target.closest('.share-btn')) {
+            e.preventDefault();
+            shareCurrentPage();
+        }
+    });
 }
 
-function performAnalysis(content, keywords) {
-const words = content.split(/\s+/).filter(w => w.length > 0);
-const totalWords = words.length;
-
-analysisResults = keywords.map(keyword => {
-const regex = new RegExp(`\\b${keyword}\\b`, 'gi');
-const matches = content.match(regex);
-const count = matches ? matches.length : 0;
-const density = totalWords > 0 ? (count / totalWords) * 100 : 0;
-
-return { keyword, count, density, totalWords };
-});
-
-displayResults();
-displayStats(totalWords, content);
-generateAITips();
+function renderTools(tools, container) {
+    if (!container) return;
+    
+    if (tools.length === 0) {
+        container.innerHTML = `
+            <div class="col-12 text-center py-5">
+                <i class="fas fa-search fa-3x text-muted mb-3"></i>
+                <h4>No tools found</h4>
+                <p class="text-muted">Try a different search term</p>
+            </div>
+        `;
+        return;
+    }
+    
+    container.innerHTML = '';
+    tools.forEach(tool => {
+        const toolHTML = ToolManager.renderToolCard(tool);
+        container.insertAdjacentHTML('beforeend', toolHTML);
+    });
 }
 
-function displayResults() {
-let resultsHTML = '<div class="results-grid">';
-
-analysisResults.forEach(result => {
-const status = getDensityStatus(result.density);
-const statusText = currentLanguage === 'hi' ?
-{ optimal: 'आदर्श', low: 'कम', high: 'ज्यादा' }[status] :
-{ optimal: 'Optimal', low: 'Low', high: 'High' }[status];
-
-const barWidth = Math.min(result.density * 10, 100);
-
-resultsHTML += `
-<div class="keyword-result">
-<div class="keyword-name"><i class="fas fa-key"></i> ${result.keyword}</div>
-<div class="keyword-stats">
-<div>
-<div class="stat-label">${currentLanguage === 'hi' ? 'बार आया' : 'Count'}</div>
-<div class="stat-value">${result.count}</div>
-</div>
-<div>
-<div class="stat-label">${currentLanguage === 'hi' ? 'घनत्व' : 'Density'}</div>
-<div class="keyword-density">${result.density.toFixed(2)}%</div>
-</div>
-</div>
-<div class="density-status ${status}">
-<i class="fas fa-${status === 'optimal' ? 'check-circle' : status === 'low' ? 'exclamation-triangle' : 'exclamation-circle'}"></i>
-${currentLanguage === 'hi' ? 'स्थिति:' : 'Status:'} <strong>${statusText}</strong>
-${currentLanguage === 'hi' ?
-` (${status === 'optimal' ? 'बढ़िया!' : status === 'low' ? 'बढ़ाने की जरूरत' : 'कम करने की जरूरत'})` :
-` (${status === 'optimal' ? 'Great!' : status === 'low' ? 'Needs more' : 'Needs less'})`
-}
-</div>
-<div class="density-bar">
-<div class="density-fill" style="width: ${barWidth}%;"></div>
-</div>
-<small>${currentLanguage === 'hi' ? 'सुझाया गया रेंज: 0.5% - 2.5%' : 'Suggested range: 0.5% - 2.5%'}</small>
-</div>
-`;
-});
-
-resultsHTML += '</div>';
-resultsContainer.innerHTML = resultsHTML;
-
-// Animate the bars
-setTimeout(() => {
-document.querySelectorAll('.density-fill').forEach(bar => {
-bar.style.transition = 'width 1.5s ease';
-});
-}, 100);
+function getCurrentToolId() {
+    // Extract tool ID from current page
+    const path = window.location.pathname;
+    const match = path.match(/\/([^\/]+)\.html$/);
+    if (match) {
+        return match[1].replace('-checker', '').replace('-generator', '').replace('-analyzer', '');
+    }
+    return null;
 }
 
-function getDensityStatus(density) {
-if (density >= 0.5 && density <= 2.5) return 'optimal';
-if (density < 0.5) return 'low';
-return 'high';
+function shareCurrentPage() {
+    const title = document.title;
+    const url = window.location.href;
+    const text = `Check out this free SEO tool: ${title}`;
+    
+    if (navigator.share) {
+        navigator.share({
+            title: title,
+            text: text,
+            url: url
+        });
+    } else {
+        // Fallback: Copy URL
+        Utils.copyToClipboard(url).then(success => {
+            if (success) {
+                Utils.showNotification('Link copied to clipboard! Share it with others.', 'success');
+            }
+        });
+    }
 }
 
-function displayStats(totalWords, content) {
-const sentences = content.split(/[.!?]+/).filter(s => s.trim().length > 0).length;
-const paragraphs = content.split(/\n\s*\n/).filter(p => p.trim().length > 0).length;
-const chars = content.length;
-const readingTime = Math.ceil(totalWords / 200);
+// Export for global access
+window.SEOTools = {
+    config: CONFIG,
+    utils: Utils,
+    tools: ToolManager,
+    analytics: Analytics,
+    shareTool: shareCurrentPage
+};
+EOF
 
-const statsHTML = `
-<div class="stat-card">
-<div class="stat-icon"><i class="fas fa-font"></i></div>
-<div class="stat-value">${totalWords}</div>
-<div class="stat-label">${currentLanguage === 'hi' ? 'कुल शब्द' : 'Total Words'}</div>
-</div>
-<div class="stat-card">
-<div class="stat-icon"><i class="fas fa-clock"></i></div>
-<div class="stat-value">${readingTime} min</div>
-<div class="stat-label">${currentLanguage === 'hi' ? 'पढ़ने का समय' : 'Reading Time'}</div>
-</div>
-<div class="stat-card">
-<div class="stat-icon"><i class="fas fa-sentence"></i></div>
-<div class="stat-value">${sentences}</div>
-<div class="stat-label">${currentLanguage === 'hi' ? 'वाक्य' : 'Sentences'}</div>
-</div>
-<div class="stat-card">
-<div class="stat-icon"><i class="fas fa-paragraph"></i></div>
-<div class="stat-value">${paragraphs}</div>
-<div class="stat-label">${currentLanguage === 'hi' ? 'पैराग्राफ' : 'Paragraphs'}</div>
-</div>
-`;
-
-statsContainer.innerHTML = statsHTML;
-}
-
-function generateAITips() {
-aiSuggestions.classList.remove('hidden');
-
-const tips = [];
-
-analysisResults.forEach(result => {
-const status = getDensityStatus(result.density);
-
-if (status === 'low') {
-tips.push({
-type: 'warning',
-title: currentLanguage === 'hi' ? 'कीवर्ड बढ़ाएँ' : 'Increase Keyword',
-text: currentLanguage === 'hi' ?
-`"${result.keyword}" की डेंसिटी (${result.density.toFixed(2)}%) बहुत कम है। इसे प्राकृतिक तरीके से 2-3 और बार इस्तेमाल करने की कोशिश करें।` :
-`"${result.keyword}" density (${result.density.toFixed(2)}%) is too low. Try using it 2-3 more times naturally.`
-});
-} else if (status === 'high') {
-tips.push({
-type: 'bad',
-title: currentLanguage === 'hi' ? 'कीवर्ड स्टफिंग से बचें' : 'Avoid Keyword Stuffing',
-text: currentLanguage === 'hi' ?
-`"${result.keyword}" की डेंसिटी (${result.density.toFixed(2)}%) ज्यादा है। कीवर्ड स्टफिंग से बचें, वरना गूगल पेनलाइज कर सकता है।` :
-`"${result.keyword}" density (${result.density.toFixed(2)}%) is too high. Avoid keyword stuffing or Google may penalize you.`
-});
-} else {
-tips.push({
-type: 'good',
-title: currentLanguage === 'hi' ? 'बढ़िया बैलेंस' : 'Great Balance',
-text: currentLanguage === 'hi' ?
-`"${result.keyword}" की डेंसिटी (${result.density.toFixed(2)}%) एकदम सही है! इसे ऐसे ही रखें।` :
-`"${result.keyword}" density (${result.density.toFixed(2)}%) is perfect! Keep it as is.`
-});
-}
-});
-
-// Add general tips
-tips.push({
-type: 'good',
-title: currentLanguage === 'hi' ? 'LSI कीवर्ड्स का प्रयोग करें' : 'Use LSI Keywords',
-text: currentLanguage === 'hi' ?
-'मुख्य कीवर्ड के साथ-साथ उससे संबंधित शब्द (LSI कीवर्ड्स) भी इस्तेमाल करें। जैसे "एसईओ" के साथ "खोज इंजन अनुकूलन", "रैंकिंग", "बैकलिंक"।' :
-'Use related terms (LSI keywords) along with your main keyword. For "SEO", use "search engine optimization", "ranking", "backlink".'
-});
-
-tips.push({
-type: 'warning',
-title: currentLanguage === 'hi' ? 'कंटेंट की लंबाई चेक करें' : 'Check Content Length',
-text: currentLanguage === 'hi' ?
-`आपके कंटेंट में ${analysisResults[0].totalWords} शब्द हैं। गूगल विस्तृत कंटेंट (1000+ शब्द) को पसंद करता है।` :
-`Your content has ${analysisResults[0].totalWords} words. Google prefers comprehensive content (1000+ words).`
-});
-
-// Display first 3 tips
-displayTips(tips.slice(0, 3));
-
-// Store all tips for "Show More" button
-showMoreTipsBtn.dataset.allTips = JSON.stringify(tips);
-showMoreTipsBtn.style.display = tips.length > 3 ? 'block' : 'none';
-}
-
-function displayTips(tipsArray) {
-aiTips.innerHTML = '';
-
-tipsArray.forEach(tip => {
-const tipHTML = `
-<div class="ai-tip ${tip.type}">
-<h4><i class="fas fa-${tip.type === 'good' ? 'check-circle' : tip.type === 'warning' ? 'exclamation-triangle' : 'exclamation-circle'}"></i> ${tip.title}</h4>
-<p>${tip.text}</p>
-</div>
-`;
-aiTips.innerHTML += tipHTML;
-});
-}
-
-function showAllTips() {
-const allTips = JSON.parse(showMoreTipsBtn.dataset.allTips || '[]');
-displayTips(allTips);
-showMoreTipsBtn.style.display = 'none';
-}
-
-function clearAll() {
-userTextElement.value = '';
-keywordInputElement.value = '';
-resultsContainer.innerHTML = `
-<div class="placeholder-results">
-<div class="placeholder-icon">
-<i class="fas fa-search"></i>
-</div>
-<h3>${currentLanguage === 'hi' ? 'विश्लेषण के परिणाम यहाँ दिखेंगे' : 'Analysis results will appear here'}</h3>
-<p>${currentLanguage === 'hi' ? 'कंटेंट पेस्ट करने और "विश्लेषण करें" बटन दबाने के बाद, आपके कीवर्ड्स का विस्तृत विश्लेषण यहाँ दिखाई देगा।' : 'After pasting content and clicking "Analyze", detailed analysis of your keywords will appear here.'}</p>
-</div>
-`;
-statsContainer.innerHTML = '';
-aiSuggestions.classList.add('hidden');
-analysisResults = null;
-}
-
-// ===== EVENT LISTENERS =====
-analyzeBtn.addEventListener('click', analyzeContent);
-clearBtn.addEventListener('click', clearAll);
-showMoreTipsBtn.addEventListener('click', showAllTips);
-langHiBtn.addEventListener('click', () => switchLanguage('hi'));
-langEnBtn.addEventListener('click', () => switchLanguage('en'));
-
-// Auto-focus on textarea
-userTextElement.focus();
-
-// Set current year in footer
-document.getElementById('currentYear').textContent = new Date().getFullYear();
-
-// Initialize with Hindi
-switchLanguage('hi');
-
-// Add example content on first visit (optional)
-if (!localStorage.getItem('exampleShown')) {
-setTimeout(() => {
-if (!userTextElement.value) {
-userTextElement.value = translations[currentLanguage].textAreaPlaceholder;
-keywordInputElement.value = currentLanguage === 'hi' ? 'एसईओ, कीवर्ड डेंसिटी, ऑप्टिमाइज़ेशन' : 'SEO, keyword density, optimization';
-localStorage.setItem('exampleShown', 'true');
-}
-}, 1000);
-}
+echo "Main JavaScript file created!"
