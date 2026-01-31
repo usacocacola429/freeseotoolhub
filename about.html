@@ -1,721 +1,141 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
-  <!-- Google Analytics (GA4) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PFPCTBFG3Y"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-PFPCTBFG3Y');
-</script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>हमारे बारे में - FreeSEOToolHub.com</title>
-<meta name="description" content="FreeSEOToolHub.com के बारे में जानें। हम भारत में बने मुफ्त SEO टूल्स क्यों बना रहे हैं और हमारा मिशन क्या है।">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
-/* ===== REUSABLE STYLES (Same as index.html) ===== */
-:root {
---primary: #4361ee;
---primary-dark: #3a56d4;
---secondary: #7209b7;
---success: #06d6a0;
---warning: #ffd166;
---danger: #ef476f;
---light: #f8f9fa;
---dark: #212529;
---gray: #6c757d;
---gray-light: #e9ecef;
---shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
---radius: 12px;
---transition: all 0.3s ease;
-}
-
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-}
-
-body {
-font-family: 'Inter', 'Hind Siliguri', sans-serif;
-background-color: #f5f7ff;
-color: var(--dark);
-line-height: 1.6;
-}
-
-.container {
-width: 100%;
-max-width: 1200px;
-margin: 0 auto;
-padding: 0 20px;
-}
-
-/* ===== NAVBAR (Same as index.html) ===== */
-.navbar {
-background: white;
-box-shadow: var(--shadow);
-position: sticky;
-top: 0;
-z-index: 1000;
-padding: 15px 0;
-}
-
-.nav-container {
-display: flex;
-justify-content: space-between;
-align-items: center;
-max-width: 1200px;
-margin: 0 auto;
-padding: 0 20px;
-}
-
-.logo {
-font-size: 1.8rem;
-font-weight: 700;
-color: var(--primary);
-text-decoration: none;
-display: flex;
-align-items: center;
-gap: 10px;
-}
-
-.logo span { color: var(--secondary); }
-
-.nav-links {
-display: flex;
-gap: 25px;
-}
-
-@media (max-width: 768px) {
-.nav-links { display: none; }
-.mobile-menu-btn { display: block; }
-}
-
-.nav-link {
-text-decoration: none;
-color: var(--gray);
-font-weight: 600;
-transition: var(--transition);
-display: flex;
-align-items: center;
-gap: 6px;
-}
-
-.nav-link:hover, .nav-link.active {
-color: var(--primary);
-}
-
-.mobile-menu-btn {
-display: none;
-background: none;
-border: none;
-color: var(--primary);
-font-size: 1.5rem;
-cursor: pointer;
-}
-
-/* ===== ABOUT PAGE SPECIFIC STYLES ===== */
-.page-header {
-background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-color: white;
-padding: 100px 20px 70px;
-text-align: center;
-margin-bottom: 60px;
-border-radius: 0 0 40px 40px;
-}
-
-.page-title {
-font-size: 3.2rem;
-margin-bottom: 20px;
-font-weight: 800;
-}
-
-@media (max-width: 768px) {
-.page-title { font-size: 2.5rem; }
-}
-
-.page-subtitle {
-font-size: 1.4rem;
-max-width: 700px;
-margin: 0 auto;
-opacity: 0.9;
-}
-
-/* ===== MISSION SECTION ===== */
-.mission-section {
-padding: 80px 0;
-}
-
-.section-title {
-text-align: center;
-font-size: 2.5rem;
-margin-bottom: 20px;
-color: var(--dark);
-}
-
-.section-subtitle {
-text-align: center;
-font-size: 1.2rem;
-color: var(--gray);
-max-width: 700px;
-margin: 0 auto 60px;
-}
-
-.mission-card {
-background: white;
-border-radius: var(--radius);
-padding: 50px;
-box-shadow: var(--shadow);
-margin-bottom: 60px;
-border-top: 5px solid var(--primary);
-}
-
-.mission-content {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 50px;
-align-items: center;
-}
-
-@media (max-width: 900px) {
-.mission-content { grid-template-columns: 1fr; }
-}
-
-.mission-text h3 {
-font-size: 1.8rem;
-margin-bottom: 20px;
-color: var(--primary);
-}
-
-.mission-text p {
-margin-bottom: 20px;
-font-size: 1.1rem;
-line-height: 1.8;
-}
-
-.mission-stats {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 20px;
-text-align: center;
-}
-
-@media (max-width: 600px) {
-.mission-stats { grid-template-columns: 1fr; }
-}
-
-.stat-box {
-background: var(--light);
-padding: 25px;
-border-radius: var(--radius);
-transition: var(--transition);
-}
-
-.stat-box:hover {
-transform: translateY(-5px);
-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-.stat-number {
-font-size: 2.5rem;
-font-weight: 800;
-color: var(--primary);
-margin-bottom: 10px;
-}
-
-/* ===== TEAM/VALUES SECTION ===== */
-.values-section {
-padding: 80px 0;
-background: var(--light);
-border-radius: 40px;
-margin: 60px 0;
-}
-
-.values-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-gap: 30px;
-margin-top: 50px;
-}
-
-.value-card {
-background: white;
-border-radius: var(--radius);
-padding: 35px 30px;
-box-shadow: var(--shadow);
-text-align: center;
-transition: var(--transition);
-}
-
-.value-card:hover {
-transform: translateY(-10px);
-}
-
-.value-icon {
-font-size: 3rem;
-color: var(--primary);
-margin-bottom: 20px;
-height: 80px;
-width: 80px;
-display: flex;
-align-items: center;
-justify-content: center;
-background: rgba(67, 97, 238, 0.1);
-border-radius: 50%;
-margin: 0 auto 20px;
-}
-
-.value-card h3 {
-margin-bottom: 15px;
-font-size: 1.5rem;
-}
-
-/* ===== STORY SECTION ===== */
-.story-timeline {
-max-width: 800px;
-margin: 60px auto;
-position: relative;
-}
-
-.story-timeline::before {
-content: '';
-position: absolute;
-left: 30px;
-top: 0;
-bottom: 0;
-width: 4px;
-background: var(--primary);
-border-radius: 2px;
-}
-
-@media (min-width: 768px) {
-.story-timeline::before {
-left: 50%;
-transform: translateX(-50%);
-}
-}
-
-.timeline-item {
-margin-bottom: 50px;
-position: relative;
-padding-left: 60px;
-}
-
-@media (min-width: 768px) {
-.timeline-item {
-width: 50%;
-padding-left: 0;
-padding-right: 60px;
-}
-.timeline-item:nth-child(odd) {
-margin-left: auto;
-padding-left: 60px;
-padding-right: 0;
-}
-}
-
-.timeline-dot {
-position: absolute;
-left: 22px;
-top: 0;
-width: 20px;
-height: 20px;
-background: var(--primary);
-border-radius: 50%;
-border: 4px solid white;
-box-shadow: 0 0 0 4px var(--primary);
-}
-
-@media (min-width: 768px) {
-.timeline-dot {
-left: auto;
-right: -10px;
-}
-.timeline-item:nth-child(odd) .timeline-dot {
-right: auto;
-left: -10px;
-}
-}
-
-.timeline-content {
-background: white;
-padding: 25px;
-border-radius: var(--radius);
-box-shadow: var(--shadow);
-}
-
-.timeline-date {
-display: inline-block;
-background: var(--primary);
-color: white;
-padding: 5px 15px;
-border-radius: 50px;
-font-weight: 600;
-margin-bottom: 15px;
-}
-
-/* ===== CTA SECTION ===== */
-.cta-section {
-background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-color: white;
-padding: 80px 20px;
-text-align: center;
-border-radius: 40px;
-margin: 80px 0;
-}
-
-.cta-buttons {
-display: flex;
-gap: 20px;
-justify-content: center;
-flex-wrap: wrap;
-margin-top: 40px;
-}
-
-.btn-primary, .btn-secondary {
-padding: 18px 40px;
-border-radius: 50px;
-font-weight: 700;
-text-decoration: none;
-display: inline-flex;
-align-items: center;
-justify-content: center;
-gap: 12px;
-transition: var(--transition);
-border: none;
-cursor: pointer;
-font-size: 1.1rem;
-}
-
-.btn-primary {
-background: white;
-color: var(--primary);
-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-}
-
-.btn-primary:hover {
-transform: translateY(-5px);
-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-}
-
-.btn-secondary {
-background: rgba(255, 255, 255, 0.2);
-color: white;
-backdrop-filter: blur(10px);
-border: 2px solid rgba(255, 255, 255, 0.3);
-}
-
-.btn-secondary:hover {
-background: rgba(255, 255, 255, 0.3);
-transform: translateY(-3px);
-}
-
-/* ===== FOOTER (Same as index.html) ===== */
-.footer {
-background: #1a1a2e;
-color: white;
-padding: 60px 20px 30px;
-margin-top: 80px;
-}
-
-.footer-content {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-gap: 40px;
-margin-bottom: 50px;
-}
-
-.footer-brand h3 {
-font-size: 1.8rem;
-margin-bottom: 20px;
-display: flex;
-align-items: center;
-gap: 10px;
-}
-
-.footer-links h4, .footer-newsletter h4 {
-margin-bottom: 20px;
-font-size: 1.3rem;
-}
-
-.footer-links a {
-display: block;
-color: #b0b7c3;
-text-decoration: none;
-margin-bottom: 10px;
-transition: var(--transition);
-}
-
-.footer-links a:hover {
-color: white;
-padding-left: 5px;
-}
-
-.footer-bottom {
-text-align: center;
-padding-top: 30px;
-border-top: 1px solid rgba(255, 255, 255, 0.1);
-color: #b0b7c3;
-font-size: 0.9rem;
-}
-
-.footer-note {
-margin-top: 10px;
-color: var(--warning);
-display: flex;
-align-items: center;
-justify-content: center;
-gap: 8px;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Free SEO Tool Hub</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
-<!-- नेविगेशन बार -->
-<!-- नेविगेशन बार यहाँ लोड होगा -->
-<script src="navbar.js"></script>
+    <!-- Navigation (same as index.html) -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <i class="fas fa-tools me-2"></i>
+                <span class="fw-bold">SEO Tool Hub</span>
+            </a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="all-tools.html">All Tools</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-<!-- पेज हेडर -->
-<header class="page-header">
-<div class="container">
-<h1 class="page-title hindi">हमारी कहानी और मिशन</h1>
-<p class="page-subtitle">जानिए क्यों हमने भारत के लिए मुफ्त SEO टूल्स बनाने का सफर शुरू किया</p>
-</div>
-</header>
+    <!-- About Content -->
+    <div class="container mt-5 pt-5">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="about-header text-center mb-5">
+                    <h1 class="display-4 fw-bold">About Free SEO Tool Hub</h1>
+                    <p class="lead">Your complete SEO toolkit, completely free.</p>
+                </div>
 
-<!-- मिशन सेक्शन -->
-<main class="container">
-<section class="mission-section">
-<div class="mission-card">
-<div class="mission-content">
-<div class="mission-text">
-<h3><i class="fas fa-bullseye"></i> हमारा मिशन</h3>
-<p>भारत में लाखों ब्लॉगर्स, छोटे व्यवसाय और कंटेंट क्रिएटर्स महंगे SEO टूल्स की वजह से डिजिटल दुनिया में पीछे रह जाते हैं। हमारा मिशन है हर भारतीय क्रिएटर को मुफ्त, आसान और प्रभावी SEO टूल्स उपलब्ध कराना।</p>
-<p>हम मानते हैं कि तकनीक की ताकत से हर कोई अपनी आवाज़ दुनिया तक पहुँचा सकता है, बिना भारी खर्च के।</p>
-</div>
-<div class="mission-stats">
-<div class="stat-box">
-<div class="stat-number">100%</div>
-<div>मुफ्त टूल्स</div>
-</div>
-<div class="stat-box">
-<div class="stat-number">10+</div>
-<div>भारतीय भाषाएँ</div>
-</div>
-<div class="stat-box">
-<div class="stat-number">24/7</div>
-<div>सपोर्ट उपलब्ध</div>
-</div>
-</div>
-</div>
-</div>
-</section>
+                <div class="about-content">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h3 class="card-title"><i class="fas fa-bullseye text-primary me-2"></i> Our Mission</h3>
+                            <p class="card-text">
+                                To democratize SEO tools and make them accessible to everyone - from individual bloggers 
+                                to large enterprises. We believe that powerful SEO tools should be free and available 
+                                to all, without any barriers.
+                            </p>
+                        </div>
+                    </div>
 
-<!-- हमारे मूल्य -->
-<section class="values-section">
-<div class="container">
-<h2 class="section-title hindi"><i class="fas fa-heart"></i> हमारे मूल्य</h2>
-<p class="section-subtitle">ये सिद्धांत हमारे हर निर्णय और हर टूल का आधार हैं</p>
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h3 class="card-title"><i class="fas fa-history text-success me-2"></i> Our Story</h3>
+                            <p class="card-text">
+                                Started in 2023, Free SEO Tool Hub was born out of frustration with expensive SEO 
+                                tools that were out of reach for many. We noticed that most quality SEO tools required 
+                                monthly subscriptions, putting them beyond the reach of students, small businesses, 
+                                and independent creators.
+                            </p>
+                            <p class="card-text">
+                                Our team of SEO experts and developers came together with a simple mission: 
+                                create a comprehensive collection of SEO tools that are 100% free, with no hidden 
+                                costs, no registration requirements, and no limitations on usage.
+                            </p>
+                        </div>
+                    </div>
 
-<div class="values-grid">
-<div class="value-card">
-<div class="value-icon">
-<i class="fas fa-unlock-alt"></i>
-</div>
-<h3>मुफ्त और खुला</h3>
-<p>हमारे सभी बेसिक टूल्स हमेशा के लिए फ्री रहेंगे। कोई छुपी लागत नहीं, कोई ट्रायल पीरियड नहीं।</p>
-</div>
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h3 class="card-title"><i class="fas fa-check-circle text-warning me-2"></i> What We Offer</h3>
+                                    <ul class="list-unstyled">
+                                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i> 100+ Free SEO Tools</li>
+                                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i> No Registration Required</li>
+                                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Unlimited Usage</li>
+                                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Regular Updates</li>
+                                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Community Driven</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h3 class="card-title"><i class="fas fa-users text-info me-2"></i> Who We Serve</h3>
+                                    <ul class="list-unstyled">
+                                        <li class="mb-2"><i class="fas fa-user me-2"></i> Individual Bloggers</li>
+                                        <li class="mb-2"><i class="fas fa-briefcase me-2"></i> Small Businesses</li>
+                                        <li class="mb-2"><i class="fas fa-graduation-cap me-2"></i> Students & Researchers</li>
+                                        <li class="mb-2"><i class="fas fa-building me-2"></i> Digital Marketing Agencies</li>
+                                        <li class="mb-2"><i class="fas fa-globe me-2"></i> SEO Professionals</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-<div class="value-card">
-<div class="value-icon">
-<i class="fas fa-language"></i>
-</div>
-<h3>भारतीय भाषाएँ</h3>
-<p>हिंदी सहित सभी प्रमुख भारतीय भाषाओं में इंटरफ़ेस और सपोर्ट। अंग्रेजी न आने पर भी SEO सीखें।</p>
-</div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title"><i class="fas fa-handshake text-danger me-2"></i> Our Promise</h3>
+                            <p class="card-text">
+                                We promise to keep all our tools completely free forever. We believe in the open web 
+                                and want to contribute to making SEO knowledge and tools accessible to everyone. 
+                                Our tools are built with care, regularly updated, and improved based on user feedback.
+                            </p>
+                            <p class="card-text">
+                                <strong>No ads, no trackers, no nonsense.</strong> Just pure, useful SEO tools.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<div class="value-card">
-<div class="value-icon">
-<i class="fas fa-user-shield"></i>
-</div>
-<h3>गोपनीयता</h3>
-<p>आपका डेटा हमारे सर्वर पर कभी सेव नहीं होता। सभी प्रोसेसिंग आपके डिवाइस पर होती है।</p>
-</div>
+    <!-- Footer (same as index.html) -->
+    <footer class="footer py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2024 Free SEO Tool Hub. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">
+                        Made with <i class="fas fa-heart text-danger"></i> for the SEO community
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-<div class="value-card">
-<div class="value-icon">
-<i class="fas fa-graduation-cap"></i>
-</div>
-<h3>शिक्षा पर फोकस</h3>
-<p>सिर्फ टूल नहीं, बल्कि समझ। हर टूल के साथ विस्तृत गाइड और ट्यूटोरियल।</p>
-</div>
-
-<div class="value-card">
-<div class="value-icon">
-<i class="fas fa-hands-helping"></i>
-</div>
-<h3>कम्युनिटी ड्रिवन</h3>
-<p>यूजर्स के सुझावों पर नए टूल्स बनते हैं। आपकी जरूरत, हमारा अगला फीचर।</p>
-</div>
-
-<div class="value-card">
-<div class="value-icon">
-<i class="fas fa-rocket"></i>
-</div>
-<h3>निरंतर सुधार</h3>
-<p>हम लगातार नए फीचर्स ऐड करते रहते हैं। SEO की दुनिया में बदलाव के साथ हम भी बदलते हैं।</p>
-</div>
-</div>
-</div>
-</section>
-
-<!-- हमारी कहानी -->
-<section style="padding: 80px 0;">
-<h2 class="section-title hindi"><i class="fas fa-road"></i> हमारा सफर</h2>
-<p class="section-subtitle">एक आइडिया से लेकर FreeSEOToolHub.com तक का सफर</p>
-
-<div class="story-timeline">
-<!-- टाइमलाइन आइटम 1 -->
-<div class="timeline-item">
-<div class="timeline-dot"></div>
-<div class="timeline-content">
-<span class="timeline-date">जनवरी 2023</span>
-<h3>आइडिया का जन्म</h3>
-<p>भारतीय यूट्यूब क्रिएटर्स और ब्लॉगर्स से बातचीत के दौरान पता चला कि वे महंगे अंतर्राष्ट्रीय टूल्स नहीं खरीद सकते। तभी मुफ्त SEO टूल्स हब बनाने का आइडिया आया।</p>
-</div>
-</div>
-
-<!-- टाइमलाइन आइटम 2 -->
-<div class="timeline-item">
-<div class="timeline-dot"></div>
-<div class="timeline-content">
-<span class="timeline-date">मार्च 2023</span>
-<h3>पहला टूल डेवलपमेंट</h3>
-<p>हिंदी कीवर्ड डेंसिटी चेकर पर काम शुरू हुआ। लक्ष्य था - सरल इंटरफ़ेस, कोई रजिस्ट्रेशन नहीं, और पूरी तरह फ्री।</p>
-</div>
-</div>
-
-<!-- टाइमलाइन आइटम 3 -->
-<div class="timeline-item">
-<div class="timeline-dot"></div>
-<div class="timeline-content">
-<span class="timeline-date">अगस्त 2023</span>
-<h3>FreeSEOToolHub.com लॉन्च</h3>
-<p>डोमेन रजिस्टर किया गया और पहला वर्जन लाइव किया गया। पहले हफ्ते में ही 500+ यूजर्स ने टूल इस्तेमाल किया।</p>
-</div>
-</div>
-
-<!-- टाइमलाइन आइटम 4 -->
-<div class="timeline-item">
-<div class="timeline-dot"></div>
-<div class="timeline-content">
-<span class="timeline-date">अक्टूबर 2023</span>
-<h3>हिंदी सपोर्ट और AI फीचर्स</h3>
-<p>पूरा इंटरफ़ेस हिंदी में उपलब्ध कराया गया। कीवर्ड डेंसिटी टूल में AI-आधारित सुझाव फीचर ऐड किया गया।</p>
-</div>
-</div>
-
-<!-- टाइमलाइन आइटम 5 -->
-<div class="timeline-item">
-<div class="timeline-dot"></div>
-<div class="timeline-content">
-<span class="timeline-date">भविष्य (2024)</span>
-<h3>10+ नए टूल्स और मोबाइल ऐप</h3>
-<p>यूट्यूब ऑप्टिमाइज़र, प्लेजियरिज्म चेकर, और ई-कॉमर्स SEO टूल्स लॉन्च करने की योजना। Android ऐप पर भी काम शुरू होगा।</p>
-</div>
-</div>
-</div>
-</section>
-
-<!-- CTA सेक्शन -->
-<section class="cta-section">
-<h2 style="font-size: 2.5rem; margin-bottom: 20px;">हमारे साथ जुड़ें</h2>
-<p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto; opacity: 0.9;">
-चाहे आप ब्लॉगर हों, यूट्यूबर हों, या छोटा व्यवसाय चलाते हों - हमारे टूल्स आपकी ऑनलाइन उपस्थिति मजबूत करने में मदद करेंगे।
-</p>
-
-<div class="cta-buttons">
-<a href="tools.html" class="btn-primary">
-<i class="fas fa-th"></i> सभी टूल्स देखें
-</a>
-<a href="contact.html" class="btn-secondary">
-<i class="fas fa-comments"></i> सुझाव दें
-</a>
-</div>
-</section>
-</main>
-
-<!-- फुटर -->
-<footer class="footer">
-<div class="container">
-<div class="footer-content">
-<div class="footer-brand">
-<h3><i class="fas fa-tools"></i> FreeSEOToolHub.com</h3>
-<p>भारत में बना, पूरी दुनिया के लिए। शक्तिशाली, मुफ्त SEO टूल्स जो वाकई काम करते हैं।</p>
-<div style="margin-top: 20px; display: flex; gap: 15px;">
-<a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-twitter"></i></a>
-<a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-facebook"></i></a>
-<a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-linkedin"></i></a>
-<a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-youtube"></i></a>
-</div>
-</div>
-
-<div class="footer-links">
-<h4>त्वरित लिंक</h4>
-<a href="/">होम</a>
-<a href="tools.html">सभी टूल्स</a>
-<a href="about.html">हमारे बारे में</a>
-<a href="contact.html">संपर्क करें</a>
-<a href="privacy.html">गोपनीयता नीति</a>
-</div>
-
-<div class="footer-newsletter">
-<h4>अपडेट रहें</h4>
-<p>नए टूल्स और अपडेट्स की सूचना सबसे पहले पाएं।</p>
-<a href="contact.html" class="btn-secondary" style="margin-top: 15px; display: inline-flex;">
-<i class="fas fa-envelope"></i> हमें ईमेल करें
-</a>
-</div>
-</div>
-
-<div class="footer-bottom">
-<p>© <span id="currentYear">2023</span> FreeSEOToolHub.com | सभी अधिकार सुरक्षित।</p>
-<p class="footer-note"><i class="fas fa-heart"></i> गर्व से भारत में निर्मित | Made with ❤️ in India</p>
-</div>
-</div>
-</footer>
-
-<!-- जावास्क्रिप्ट -->
-<script>
-// Set current year in footer
-document.getElementById('currentYear').textContent = new Date().getFullYear();
-
-// Mobile menu toggle
-document.querySelector('.mobile-menu-btn')?.addEventListener('click', function() {
-const navLinks = document.querySelector('.nav-links');
-navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-});
-
-// Update nav links for mobile on resize
-window.addEventListener('resize', function() {
-if (window.innerWidth > 768) {
-document.querySelector('.nav-links').style.display = 'flex';
-}
-});
-</script>
-  <script>
-fetch('footer.html')
-  .then(response => response.text())
-  .then(data => {
-    document.body.insertAdjacentHTML('beforeend', data);
-  });
-</script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/main.js"></script>
 </body>
 </html>
+EOF
 
+echo "About page updated!"
 
-
-
-
+# Similar updates for other pages...
