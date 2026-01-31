@@ -1,826 +1,466 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPG77KWVCP"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-ZPG77KWVCP');
-        gtag('config', 'G-PFPCTBFG3Y');
-    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="FreeSEOToolHub.com: ब्लॉगर्स, यूट्यूबर्स, ई-कॉमर्स और व्यवसायों के लिए बिल्कुल मुफ्त, हिंदी और अंग्रेजी में शक्तिशाली SEO टूल्स। कीवर्ड डेंसिटी चेकर, मेटा टैग जनरेटर, प्लेजियरिज्म चेकर, ई-कॉमर्स SEO और सोशल मीडिया ऑप्टिमाइज़र।">
-    <meta name="keywords" content="मुफ्त SEO टूल्स, हिंदी SEO टूल, प्लेजियरिज्म चेकर, ई-कॉमर्स SEO, फ्लिपकार्ट SEO, अमेज़न SEO, सोशल मीडिया ऑप्टिमाइज़र, लोकल SEO">
-    <meta name="author" content="FreeSEOToolHub">
-    <title>FreeSEOToolHub - 15+ मुफ़्त SEO टूल्स ब्लॉगर्स, यूट्यूबर्स और व्यवसायों के लिए</title>
+    <title>Free SEO Tool Hub - 100+ Free SEO Tools Online</title>
+    <meta name="description" content="100+ Free SEO Tools for keyword research, website analysis, backlink checking, content optimization. No registration required.">
+    <meta name="keywords" content="free seo tools, keyword research, backlink checker, website analysis, seo analyzer">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * { 
-            margin: 0; 
-            padding: 0; 
-            box-sizing: border-box; 
-            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-        }
-        
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-        
-        :root {
-            --primary: #6366f1;
-            --primary-dark: #4f46e5;
-            --secondary: #10b981;
-            --accent: #f59e0b;
-            --dark: #1e293b;
-            --light: #f8fafc;
-            --gray: #64748b;
-            --success: #10b981;
-            --warning: #f59e0b;
-            --gradient-primary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-            --gradient-success: linear-gradient(135deg, #10b981 0%, #34d399 100%);
-            --gradient-warning: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
-            --gradient-dark: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
-            --shadow-md: 0 4px 6px rgba(0,0,0,0.07);
-            --shadow-lg: 0 10px 25px rgba(0,0,0,0.1);
-            --shadow-xl: 0 20px 40px rgba(0,0,0,0.15);
-            --radius-sm: 8px;
-            --radius-md: 12px;
-            --radius-lg: 16px;
-            --radius-xl: 24px;
-            --radius-full: 9999px;
-        }
-        
-        body { 
-            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); 
-            color: var(--dark); 
-            min-height: 100vh; 
-            line-height: 1.6; 
-        }
-        
-        .container { 
-            max-width: 1280px; 
-            margin: 0 auto; 
-            padding: 0 20px; 
-        }
-        
-        /* Header / Hero Section */
-        .hero { 
-            background: var(--gradient-primary);
-            color: white; 
-            padding: 80px 0; 
-            position: relative;
-            overflow: hidden;
-            border-radius: 0 0 var(--radius-xl) var(--radius-xl);
-            margin-bottom: 60px;
-            box-shadow: var(--shadow-xl);
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
-            opacity: 0.5;
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .hero h1 { 
-            font-size: 3.5rem; 
-            font-weight: 800;
-            margin-bottom: 20px; 
-            letter-spacing: -0.5px;
-        }
-        
-        .hero h1 span { 
-            background: linear-gradient(to right, #fbbf24, #f59e0b);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .hero .tagline { 
-            font-size: 1.4rem; 
-            max-width: 800px; 
-            margin: 0 auto 40px; 
-            line-height: 1.6; 
-            font-weight: 400;
-            opacity: 0.95;
-        }
-        
-        /* Stats Bar */
-        .stats { 
-            display: flex; 
-            justify-content: center; 
-            flex-wrap: wrap; 
-            gap: 40px; 
-            background: rgba(255, 255, 255, 0.15); 
-            backdrop-filter: blur(10px);
-            padding: 30px 40px; 
-            border-radius: var(--radius-lg); 
-            margin-top: 40px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .stat-box { 
-            text-align: center; 
-        }
-        
-        .stat-box .number { 
-            font-size: 3rem; 
-            font-weight: 800; 
-            color: white; 
-            display: block; 
-            line-height: 1;
-            margin-bottom: 5px;
-        }
-        
-        .stat-box .label { 
-            font-size: 1rem; 
-            opacity: 0.9; 
-            font-weight: 500;
-        }
-        
-        /* Main Content Area */
-        .content { 
-            padding: 60px 0; 
-        }
-        
-        .section-title { 
-            font-size: 2.5rem; 
-            margin-bottom: 50px; 
-            text-align: center; 
-            color: var(--dark); 
-            font-weight: 700;
-            position: relative;
-            display: inline-block;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: var(--gradient-primary);
-            border-radius: var(--radius-full);
-        }
-        
-        /* Live Tools Grid */
-        .tools-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); 
-            gap: 30px; 
-            margin-top: 40px; 
-        }
-        
-        .tool-card { 
-            background: white; 
-            border-radius: var(--radius-lg); 
-            padding: 30px; 
-            transition: all 0.3s ease; 
-            border: 1px solid #e2e8f0; 
-            position: relative; 
-            overflow: hidden;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            box-shadow: var(--shadow-md);
-        }
-        
-        .tool-card:hover { 
-            transform: translateY(-8px); 
-            box-shadow: var(--shadow-xl); 
-            border-color: var(--primary);
-        }
-        
-        .tool-card.live::before { 
-            content: "LIVE"; 
-            position: absolute; 
-            top: 15px; 
-            right: -35px; 
-            background: var(--gradient-success); 
-            color: white; 
-            padding: 6px 40px; 
-            font-size: 0.75rem; 
-            font-weight: 700; 
-            transform: rotate(45deg);
-            letter-spacing: 0.5px;
-            z-index: 1;
-        }
-        
-        .tool-icon { 
-            font-size: 2.5rem; 
-            color: var(--primary); 
-            margin-bottom: 20px; 
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .tool-card h3 { 
-            font-size: 1.5rem; 
-            margin-bottom: 15px; 
-            color: var(--dark); 
-            font-weight: 700;
-            line-height: 1.3;
-        }
-        
-        .tool-card p { 
-            color: var(--gray); 
-            line-height: 1.6; 
-            margin-bottom: 25px; 
-            font-size: 1rem; 
-            flex-grow: 1;
-        }
-        
-        .tool-status { 
-            display: inline-block; 
-            padding: 6px 16px; 
-            border-radius: var(--radius-full); 
-            font-weight: 600; 
-            font-size: 0.8rem; 
-            margin-bottom: 15px;
-            letter-spacing: 0.3px;
-        }
-        
-        .status-live { 
-            background: rgba(16, 185, 129, 0.1); 
-            color: var(--success);
-            border: 1px solid rgba(16, 185, 129, 0.3);
-        }
-        
-        .status-new { 
-            background: rgba(99, 102, 241, 0.1); 
-            color: var(--primary-dark);
-            border: 1px solid rgba(99, 102, 241, 0.3);
-        }
-        
-        .btn-tool { 
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            background: var(--gradient-primary); 
-            color: white; 
-            padding: 12px 28px; 
-            text-decoration: none; 
-            border-radius: var(--radius-full); 
-            font-weight: 600; 
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-            width: fit-content;
-            font-size: 0.95rem;
-        }
-        
-        .btn-tool:hover { 
-            background: linear-gradient(135deg, var(--primary-dark) 0%, #7c3aed 100%); 
-            box-shadow: 0 5px 20px rgba(99, 102, 241, 0.4); 
-            transform: translateY(-2px);
-        }
-        
-        /* CTA Section */
-        .cta { 
-            background: var(--gradient-dark);
-            color: white; 
-            padding: 80px 0; 
-            margin-top: 80px; 
-            text-align: center;
-            border-radius: var(--radius-xl);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .cta::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 30% 30%, rgba(99, 102, 241, 0.2) 0%, transparent 50%);
-        }
-        
-        .cta-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .cta h2 { 
-            font-size: 2.8rem; 
-            margin-bottom: 20px; 
-            font-weight: 700;
-        }
-        
-        .cta p { 
-            font-size: 1.2rem; 
-            max-width: 700px; 
-            margin: 0 auto 30px; 
-            opacity: 0.9;
-            line-height: 1.7;
-        }
-        
-        .btn-cta { 
-            background: white; 
-            color: var(--primary-dark); 
-            padding: 16px 45px; 
-            font-size: 1.1rem; 
-            font-weight: 600;
-        }
-        
-        .btn-cta:hover { 
-            background: #f0f0ff; 
-            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
-        }
-        
-        .highlight-badge {
-            background: rgba(245, 158, 11, 0.15);
-            color: #f59e0b;
-            padding: 10px 20px;
-            border-radius: var(--radius-full);
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 30px;
-            border: 1px solid rgba(245, 158, 11, 0.3);
-        }
-        
-        /* Footer */
-        .footer { 
-            background: var(--dark); 
-            color: #cbd5e1; 
-            padding: 60px 0 30px; 
-            margin-top: 80px;
-        }
-        
-        .footer-content {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 60px;
-        }
-        
-        .footer-logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 20px;
-            display: block;
-        }
-        
-        .footer-links {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        
-        .footer-links a { 
-            color: #94a3b8; 
-            text-decoration: none; 
-            transition: color 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .footer-links a:hover { 
-            color: var(--primary); 
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            margin-top: 50px;
-            padding-top: 30px;
-            border-top: 1px solid #334155;
-            color: #94a3b8;
-            font-size: 0.9rem;
-        }
-        
-        .footer-bottom a {
-            color: var(--primary);
-            text-decoration: none;
-        }
-        
-        /* Info Banner */
-        .info-banner {
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
-            border-radius: var(--radius-lg);
-            padding: 30px;
-            margin: 50px 0;
-            text-align: center;
-            border-left: 4px solid var(--primary);
-        }
-        
-        .info-banner h3 {
-            color: var(--dark);
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            font-weight: 600;
-        }
-        
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .tools-grid { 
-                grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .hero h1 { 
-                font-size: 2.5rem; 
-            }
-            
-            .hero .tagline {
-                font-size: 1.2rem;
-            }
-            
-            .tools-grid { 
-                grid-template-columns: 1fr; 
-            }
-            
-            .stats { 
-                gap: 30px; 
-                padding: 20px;
-            }
-            
-            .stat-box .number { 
-                font-size: 2.5rem; 
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .cta h2 {
-                font-size: 2rem;
-            }
-            
-            .cta p {
-                font-size: 1.1rem;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .hero {
-                padding: 60px 0;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .hero .tagline {
-                font-size: 1.1rem;
-            }
-            
-            .stats {
-                gap: 20px;
-            }
-            
-            .stat-box .number {
-                font-size: 2rem;
-            }
-            
-            .tool-card {
-                padding: 25px;
-            }
-            
-            .cta {
-                padding: 60px 20px;
-            }
-            
-            .cta h2 {
-                font-size: 1.8rem;
-            }
-        }
-        
-        /* Animation Classes */
-        .fade-in {
-            animation: fadeIn 0.8s ease-out;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        /* Floating Animation */
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
-        
-        .floating {
-            animation: float 3s ease-in-out infinite;
-        }
-    </style>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Free SEO Tool Hub",
+      "url": "https://freeseotoolhub.com",
+      "description": "Collection of 100+ free SEO tools for digital marketers",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Free SEO Tool Hub"
+      }
+    }
+    </script>
 </head>
 <body>
-    <div class="container">
-        <!-- Hero Section -->
-        <header class="hero">
-            <div class="hero-content">
-                <h1><span>FreeSEOToolHub</span>.com</h1>
-                <p class="tagline"><i class="fas fa-bullhorn"></i> भारत और दुनिया के लिए बिल्कुल मुफ्त, शक्तिशाली SEO टूल्स का हब | ब्लॉगर्स, यूट्यूबर्स, ई-कॉमर्स और व्यवसायों के लिए</p>
-                
-                <!-- Updated Stats with 25+ Tools -->
-                <div class="stats">
-                    <div class="stat-box">
-                        <span class="number">15+</span>
-                        <span class="label">मुफ्त टूल्स</span>
-                    </div>
-                    <div class="stat-box">
-                        <span class="number">100%</span>
-                        <span class="label">हमेशा फ्री</span>
-                    </div>
-                    <div class="stat-box">
-                        <span class="number">2</span>
-                        <span class="label">भाषाओं में</span>
-                    </div>
-                    <div class="stat-box">
-                        <span class="number">10K+</span>
-                        <span class="label">खुश यूजर्स</span>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <!-- Main Content Area -->
-        <main class="content">
-            <h2 class="section-title fade-in"><i class="fas fa-tools"></i> हमारे सभी लाइव और काम कर रहे टूल्स</h2>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-tools me-2"></i>
+                <span class="fw-bold">SEO Tool Hub</span>
+            </a>
             
-            <div class="highlight-badge fade-in">
-                <i class="fas fa-bolt"></i> सभी नए टूल्स जोड़े गए!
-            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             
-            <!-- ALL TOOLS GRID - ALL 25+ TOOLS NOW LIVE -->
-            <div class="tools-grid">
-                <!-- Tool 1: Hindi Keyword Density Checker -->
-                <div class="tool-card live fade-in">
-                    <div class="tool-icon"><i class="fas fa-search"></i></div>
-                    <span class="tool-status status-live"><i class="fas fa-circle"></i> LIVE</span>
-                    <h3>हिंदी कीवर्ड डेंसिटी चेकर</h3>
-                    <p>अपने हिंदी या अंग्रेजी कंटेंट का विश्लेषण करें। पता करें आपके कीवर्ड्स कितनी बार आए हैं और AI से स्मार्ट सुझाव पाएं।</p>
-                    <a href="keyword-density.html" class="btn-tool"><i class="fas fa-rocket"></i> टूल इस्तेमाल करें</a>
-                </div>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">
+                            <i class="fas fa-home me-1"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/all-tools.html">
+                            <i class="fas fa-th-large me-1"></i> All Tools
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/tools.html">
+                            <i class="fas fa-folder me-1"></i> Categories
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/about.html">
+                            <i class="fas fa-info-circle me-1"></i> About
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/contact.html">
+                            <i class="fas fa-envelope me-1"></i> Contact
+                        </a>
+                    </li>
+                </ul>
                 
-                <!-- Tool 2: Meta Tag Generator -->
-                <div class="tool-card live fade-in">
-                    <div class="tool-icon"><i class="fas fa-code"></i></div>
-                    <span class="tool-status status-live"><i class="fas fa-circle"></i> LIVE</span>
-                    <h3>मेटा टैग जनरेटर</h3>
-                    <p>परफेक्ट मेटा टाइटल और डिस्क्रिप्शन बनाएं। SERP प्रिव्यू देखें और अपनी क्लिक-थ्रू रेट बेहतर करें।</p>
-                    <a href="meta-tag-generator.html" class="btn-tool"><i class="fas fa-rocket"></i> टूल इस्तेमाल करें</a>
-                </div>
-                
-                <!-- Tool 3: Backlink Analyzer -->
-                <div class="tool-card live fade-in">
-                    <div class="tool-icon"><i class="fas fa-link"></i></div>
-                    <span class="tool-status status-live"><i class="fas fa-circle"></i> LIVE</span>
-                    <h3>बैकलिंक एनालाइज़र</h3>
-                    <p>किसी भी वेबसाइट के बैकलिंक्स का विश्लेषण करें और कंपटीटर रिसर्च करें। डोमेन अथॉरिटी और टॉप रेफ़रिंग डोमेन देखें।</p>
-                    <a href="backlink-checker.html" class="btn-tool"><i class="fas fa-rocket"></i> टूल इस्तेमाल करें</a>
-                </div>
-                
-                <!-- Tool 4: Website Speed Tester -->
-                <div class="tool-card live fade-in">
-                    <div class="tool-icon"><i class="fas fa-tachometer-alt"></i></div>
-                    <span class="tool-status status-live"><i class="fas fa-circle"></i> LIVE</span>
-                    <h3>वेबसाइट स्पीड टेस्टर</h3>
-                    <p>अपनी वेबसाइट की लोडिंग स्पीड चेक करें और सुधार के सुझाव पाएं। मोबाइल और डेस्कटॉप दोनों के लिए रिपोर्ट।</p>
-                    <a href="website-speed-test.html" class="btn-tool"><i class="fas fa-rocket"></i> टूल इस्तेमाल करें</a>
-                </div>
-                
-                <!-- Tool 5: NEW - E-commerce SEO Tool -->
-                <div class="tool-card live fade-in">
-                    <div class="tool-icon"><i class="fas fa-shopping-cart"></i></div>
-                    <span class="tool-status status-new"><i class="fas fa-star"></i> NEW</span>
-                    <h3>ई-कॉमर्स SEO टूल</h3>
-                    <p>फ्लिपकार्ट और अमेज़न लिस्टिंग्स के लिए विशेष SEO ऑप्टिमाइज़ेशन। प्रोडक्ट टाइटल, डिस्क्रिप्शन और कीवर्ड्स को ऑप्टिमाइज़ करें।</p>
-                    <a href="ecommerce-seo-tool.html" class="btn-tool"><i class="fas fa-rocket"></i> टूल इस्तेमाल करें</a>
-                </div>
-                
-                <!-- Tool 6: NEW - Plagiarism Checker -->
-                <div class="tool-card live fade-in">
-                    <div class="tool-icon"><i class="fas fa-copy"></i></div>
-                    <span class="tool-status status-new"><i class="fas fa-star"></i> NEW</span>
-                    <h3>प्लेजियरिज्म चेकर</h3>
-                    <p>अपने कंटेंट की ऑरिजिनलिटी चेक करें। वेब पर डुप्लिकेट कंटेंट का पता लगाएं और AI से रीराइटिंग सुझाव पाएं।</p>
-                    <a href="plagiarism-checker.html" class="btn-tool"><i class="fas fa-rocket"></i> टूल इस्तेमाल करें</a>
-                </div>
-                
-                <!-- Tool 7: NEW - Social Media Post Optimizer -->
-                <div class="tool-card live fade-in">
-                    <div class="tool-icon"><i class="fas fa-hashtag"></i></div>
-                    <span class="tool-status status-new"><i class="fas fa-star"></i> NEW</span>
-                    <h3>सोशल मीडिया पोस्ट ऑप्टिमाइज़र</h3>
-                    <p>फेसबुक, इंस्टाग्राम, ट्विटर और लिंक्डइन पोस्ट के लिए हैशटैग, टाइटल और डिस्क्रिप्शन ऑप्टिमाइज़ करें।</p>
-                    <a href="social-media-optimizer.html" class="btn-tool"><i class="fas fa-rocket"></i> टूल इस्तेमाल करें</a>
-                </div>
-                
-                <!-- Tool 8: NEW - Local SEO Checklist -->
-                <div class="tool-card live fade-in">
-                    <div class="tool-icon"><i class="fas fa-map-marker-alt"></i></div>
-                    <span class="tool-status status-new"><i class="fas fa-star"></i> NEW</span>
-                    <h3>लोकल SEO चेकलिस्ट</h3>
-                    <p>लोकल बिज़नेस के लिए पूरी SEO चेकलिस्ट। Google My Business ऑप्टिमाइज़ेशन, सिटेशन्स और लोकल कीवर्ड्स।</p>
-                    <a href="local-seo-checklist.html" class="btn-tool"><i class="fas fa-rocket"></i> टूल इस्तेमाल करें</a>
-                </div>
-                
-                <!-- Tool 9: YouTube SEO Optimizer -->
-                <div class="tool-card live fade-in">
-                    <div class="tool-icon"><i class="fab fa-youtube"></i></div>
-                    <span class="tool-status status-live"><i class="fas fa-circle"></i> LIVE</span>
-                    <h3>YouTube SEO ऑप्टिमाइज़र</h3>
-                    <p>अपने YouTube वीडियो के टाइटल, डिस्क्रिप्शन, टैग्स और थंबनेल को ऑप्टिमाइज़ करें।</p>
-                    <a href="youtube-title-generator.html" class="btn-tool"><i class="fas fa-rocket"></i> टूल इस्तेमाल करें</a>
-                </div>
-                
-                <!-- Tool 10: All Tools Page -->
-                <div class="tool-card fade-in">
-                    <div class="tool-icon"><i class="fas fa-th-large"></i></div>
-                    <h3>सभी टूल्स देखें</h3>
-                    <p>हमारे सभी 15+ मुफ्त SEO टूल्स की पूरी सूची देखें। एक ही पेज से सभी टूल्स तक तेज पहुंच।</p>
-                    <a href="all-tools.html" class="btn-tool" target="_blank"><i class="fas fa-external-link-alt"></i> सभी टूल्स देखें</a>
-                </div>
+                <form class="d-flex ms-3" id="searchForm">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search tools..." id="searchInput">
+                        <button class="btn btn-outline-light" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </form>
             </div>
+        </div>
+    </nav>
 
-            <!-- Tool 11: H1-H6 Heading Checker -->
-            <div class="tool-card live fade-in">
-                <div class="tool-icon"><i class="fas fa-heading"></i></div>
-                <span class="tool-status status-live"><i class="fas fa-circle"></i> LIVE</span>
-                <h3>H1-H6 हेडिंग चेकर</h3>
-                <p>किसी भी वेबपेज की हेडिंग स्ट्रक्चर एनालाइज़ करें और SEO के लिए इम्प्रूवमेंट सुझाव पाएं।</p>
-                <a href="h1-h6-checker.html" class="btn-tool"><i class="fas fa-rocket"></i> टूल इस्तेमाल करें</a>
-             </div>
-
-            <!-- Tool 12: Trending Keywords Finder -->
-            <div class="tool-card live fade-in">
-                  <div class="tool-icon"><i class="fas fa-chart-line"></i></div>
-                   <span class="tool-status status-live"><i class="fas fa-circle"></i> LIVE</span>
-                   <h3>ट्रेंडिंग कीवर्ड्स फाइंडर</h3>
-                   <p>वर्तमान में ट्रेंडिंग कीवर्ड्स और सर्च टर्म्स खोजें। कंटेंट क्रिएशन और SEO के लिए पॉपुलर कीवर्ड्स।</p>
-                   <a href="trending-keywords.html" class="btn-tool"><i class="fas fa-rocket"></i> टूल इस्तेमाल करें</a>
-             </div>
-            
-            <!-- Info Banner -->
-            <div class="info-banner fade-in">
-                <h3><i class="fas fa-lightbulb"></i> और भी टूल्स उपलब्ध हैं!</h3>
-                <p style="color: var(--gray);">हमारे पास और भी विशेष टूल्स हैं जैसे <strong>SSL चेकर, रिस्पॉन्सिव टेस्टर, XML साइटमैप जनरेटर</strong> आदि। <a href="all-tools.html" style="color: var(--primary); font-weight: 600; text-decoration: none;">सभी टूल्स देखें →</a></p>
-            </div>
-        </main>
-
-        <!-- Final CTA -->
-        <section class="cta fade-in">
-            <div class="cta-content">
-                <h2><i class="fas fa-gem"></i> अब तक का सबसे बड़ा मुफ्त SEO टूल्स कलेक्शन!</h2>
-                <p>15+ पेशेवर टूल्स, जिनमें नए ई-कॉमर्स, प्लेजियरिज्म और सोशल मीडिया टूल्स शामिल हैं। सभी 100% मुफ्त!</p>
-                <div class="highlight-badge" style="background: rgba(255,255,255,0.15); color: white; border-color: rgba(255,255,255,0.3);">
-                    <i class="fas fa-bolt"></i> <strong>2-4 दिनों में नए टूल्स लाइव होंगे!</strong>
-                </div>
-                <a href="all-tools.html" class="btn-tool btn-cta" target="_blank"><i class="fas fa-external-link-alt"></i> सभी 15+ टूल्स एक्सेस करें</a>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="footer fade-in">
-            <div class="footer-content">
-                <div>
-                    <span class="footer-logo">FreeSEOToolHub</span>
-                    <p style="color: #94a3b8; margin-bottom: 20px;">भारत और दुनिया के लिए बिल्कुल मुफ्त, शक्तिशाली SEO टूल्स का हब</p>
-                    <div class="footer-links">
-                        <a href="about.html"><i class="fas fa-info-circle"></i> हमारे बारे में</a>
-                        <a href="contact.html"><i class="fas fa-envelope"></i> संपर्क करें</a>
-                        <a href="privacy.html"><i class="fas fa-shield-alt"></i> प्राइवेसी पॉलिसी</a>
-                        <a href="all-tools.html"><i class="fas fa-tools"></i> सभी टूल्स</a>
+    <!-- Hero Section -->
+    <header class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Everything You Need For <span class="text-warning">SEO Success</span></h1>
+                    <p class="lead mb-4">100+ powerful SEO tools completely free. No signups, no limits, no hidden costs.</p>
+                    
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="pages/all-tools.html" class="btn btn-primary btn-lg px-4">
+                            <i class="fas fa-rocket me-2"></i> Explore All Tools
+                        </a>
+                        <a href="#featured-tools" class="btn btn-outline-light btn-lg px-4">
+                            <i class="fas fa-star me-2"></i> Popular Tools
+                        </a>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <small class="text-light">
+                            <i class="fas fa-check-circle me-1"></i> 100% Free
+                            <i class="fas fa-check-circle mx-3"></i> No Registration
+                            <i class="fas fa-check-circle mx-3"></i> Unlimited Use
+                        </small>
                     </div>
                 </div>
-                <div>
-                    <h4 style="color: white; margin-bottom: 20px; font-size: 1.2rem;">समर्थन</h4>
-                    <div class="footer-links">
-                        <a href="#"><i class="fas fa-question-circle"></i> FAQ</a>
-                        <a href="#"><i class="fas fa-book"></i> ट्यूटोरियल्स</a>
-                        <a href="#"><i class="fas fa-comments"></i> सपोर्ट</a>
+                
+                <div class="col-lg-6 text-center">
+                    <div class="hero-illustration">
+                        <div class="floating-icon">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Analytics</span>
+                        </div>
+                        <div class="floating-icon">
+                            <i class="fas fa-search"></i>
+                            <span>Research</span>
+                        </div>
+                        <div class="floating-icon">
+                            <i class="fas fa-code"></i>
+                            <span>Technical</span>
+                        </div>
+                        <div class="floating-icon">
+                            <i class="fas fa-link"></i>
+                            <span>Backlinks</span>
+                        </div>
+                        <div class="main-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p><i class="fas fa-info-circle"></i> सभी टूल्स 100% मुफ्त हैं और आपका डेटा कभी सेव नहीं किया जाता।</p>
-                <p style="margin-top: 10px;"><i class="fas fa-sync-alt"></i> सभी नए टूल्स लाइव</p>
-                <p style="margin-top: 20px;">© 2024 FreeSEOToolHub. सर्वाधिकार सुरक्षित।</p>
-            </div>
-        </footer>
-    </div>
+        </div>
+    </header>
 
+    <!-- Stats Section -->
+    <section class="stats-section py-5">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="stat-card">
+                        <h2 class="display-3 fw-bold text-primary">100+</h2>
+                        <p class="text-muted">Free Tools</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="stat-card">
+                        <h2 class="display-3 fw-bold text-success">24/7</h2>
+                        <p class="text-muted">Availability</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="stat-card">
+                        <h2 class="display-3 fw-bold text-warning">0$</h2>
+                        <p class="text-muted">No Cost</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="stat-card">
+                        <h2 class="display-3 fw-bold text-danger">∞</h2>
+                        <p class="text-muted">Unlimited Use</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-section py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Browse By Category</h2>
+                <p class="text-muted">Tools organized by SEO categories for easy navigation</p>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Category 1 -->
+                <div class="col-md-4">
+                    <a href="tools/keyword-research/" class="category-link">
+                        <div class="category-card">
+                            <div class="category-icon bg-primary">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <h3>Keyword Research</h3>
+                            <p class="text-muted">Find profitable keywords, analyze competition, track rankings</p>
+                            <div class="tool-count">8 Tools</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Category 2 -->
+                <div class="col-md-4">
+                    <a href="tools/technical-seo/" class="category-link">
+                        <div class="category-card">
+                            <div class="category-icon bg-success">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h3>Technical SEO</h3>
+                            <p class="text-muted">Website audit, SSL check, sitemap generator, canonical tags</p>
+                            <div class="tool-count">6 Tools</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Category 3 -->
+                <div class="col-md-4">
+                    <a href="tools/backlink-tools/" class="category-link">
+                        <div class="category-card">
+                            <div class="category-icon bg-warning">
+                                <i class="fas fa-link"></i>
+                            </div>
+                            <h3>Backlink Analysis</h3>
+                            <p class="text-muted">Check backlinks, find broken links, analyze domain authority</p>
+                            <div class="tool-count">5 Tools</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Category 4 -->
+                <div class="col-md-4">
+                    <a href="tools/content-tools/" class="category-link">
+                        <div class="category-card">
+                            <div class="category-icon bg-danger">
+                                <i class="fas fa-edit"></i>
+                            </div>
+                            <h3>Content Tools</h3>
+                            <p class="text-muted">Plagiarism check, grammar check, headline analyzer</p>
+                            <div class="tool-count">7 Tools</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Category 5 -->
+                <div class="col-md-4">
+                    <a href="tools/onpage-seo/" class="category-link">
+                        <div class="category-card">
+                            <div class="category-icon bg-info">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <h3>On-Page SEO</h3>
+                            <p class="text-muted">Meta tags, schema markup, heading structure analysis</p>
+                            <div class="tool-count">4 Tools</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Category 6 -->
+                <div class="col-md-4">
+                    <a href="tools/social-media/" class="category-link">
+                        <div class="category-card">
+                            <div class="category-icon bg-purple">
+                                <i class="fas fa-share-alt"></i>
+                            </div>
+                            <h3>Social Media</h3>
+                            <p class="text-muted">Social media optimization, hashtag generator</p>
+                            <div class="tool-count">3 Tools</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Tools -->
+    <section id="featured-tools" class="tools-section py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Most Popular Tools</h2>
+                <p class="text-muted">Most frequently used tools by our community</p>
+            </div>
+            
+            <div class="row g-4" id="featuredTools">
+                <!-- Tools will be loaded dynamically -->
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="pages/all-tools.html" class="btn btn-outline-primary btn-lg">
+                    <i class="fas fa-eye me-2"></i> View All Tools
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section py-5 bg-dark text-white">
+        <div class="container text-center">
+            <h2 class="mb-4">Ready to Boost Your SEO?</h2>
+            <p class="lead mb-4">Start using our free tools today and see the difference</p>
+            <a href="pages/all-tools.html" class="btn btn-light btn-lg px-5">
+                <i class="fas fa-play-circle me-2"></i> Get Started Now
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-brand">
+                        <i class="fas fa-tools fa-2x text-primary mb-3"></i>
+                        <h3>Free SEO Tool Hub</h3>
+                        <p class="text-muted">Your complete SEO toolkit, completely free.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <h5>Quick Links</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="pages/all-tools.html">All Tools</a></li>
+                                <li><a href="pages/tools.html">Categories</a></li>
+                                <li><a href="pages/about.html">About Us</a></li>
+                                <li><a href="pages/contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="col-md-4 mb-4">
+                            <h5>Legal</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="pages/privacy.html">Privacy Policy</a></li>
+                                <li><a href="#">Terms of Service</a></li>
+                                <li><a href="#">Cookie Policy</a></li>
+                                <li><a href="#">Disclaimer</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="col-md-4 mb-4">
+                            <h5>Connect With Us</h5>
+                            <div class="social-links">
+                                <a href="#" class="social-link">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="social-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="social-link">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="#" class="social-link">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </div>
+                            <p class="mt-3 text-muted small">
+                                <i class="fas fa-envelope me-1"></i>
+                                support@freeseotoolhub.com
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="my-4">
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2024 Free SEO Tool Hub. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">
+                        Made with <i class="fas fa-heart text-danger"></i> for the SEO community
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    
     <script>
-        // Simple animation for tool cards
+        // Load featured tools
         document.addEventListener('DOMContentLoaded', function() {
-            // Animate stats with improved animation
-            const statNumbers = document.querySelectorAll('.stat-box .number');
-            statNumbers.forEach(stat => {
-                const finalNum = stat.textContent;
-                stat.textContent = '0';
-                let count = 0;
-                const increment = parseInt(finalNum) / 25;
-                const timer = setInterval(() => {
-                    count += increment;
-                    if (finalNum.includes('+')) {
-                        stat.textContent = Math.floor(count) + '+';
-                    } else {
-                        stat.textContent = Math.floor(count);
-                    }
-                    if (count >= parseInt(finalNum)) {
-                        stat.textContent = finalNum;
-                        clearInterval(timer);
-                    }
-                }, 40);
-            });
+            const featuredTools = [
+                {
+                    name: "Keyword Density Checker",
+                    url: "tools/keyword-research/keyword-density.html",
+                    description: "Analyze keyword usage in your content",
+                    icon: "fas fa-chart-pie"
+                },
+                {
+                    name: "Backlink Checker",
+                    url: "tools/backlink-tools/backlink-checker.html",
+                    description: "Check backlinks for any website",
+                    icon: "fas fa-link"
+                },
+                {
+                    name: "Plagiarism Checker",
+                    url: "tools/content-tools/plagiarism-checker.html",
+                    description: "Check content originality",
+                    icon: "fas fa-search"
+                },
+                {
+                    name: "SSL Checker",
+                    url: "tools/technical-seo/ssl-checker.html",
+                    description: "Verify SSL certificate status",
+                    icon: "fas fa-lock"
+                },
+                {
+                    name: "Meta Tag Generator",
+                    url: "tools/content-tools/meta-tag-generator.html",
+                    description: "Generate SEO-friendly meta tags",
+                    icon: "fas fa-code"
+                },
+                {
+                    name: "Sitemap Generator",
+                    url: "tools/technical-seo/sitemap-generator.html",
+                    description: "Create XML sitemaps for websites",
+                    icon: "fas fa-sitemap"
+                }
+            ];
             
-            // Add hover effect to NEW tool cards
-            const newToolCards = document.querySelectorAll('.tool-card .status-new').forEach(card => {
-                const parentCard = card.parentElement;
-                parentCard.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-10px) scale(1.02)';
-                    this.style.boxShadow = '0 25px 50px rgba(99, 102, 241, 0.2)';
+            const container = document.getElementById('featuredTools');
+            if (container) {
+                featuredTools.forEach(tool => {
+                    const col = document.createElement('div');
+                    col.className = 'col-md-4';
+                    col.innerHTML = `
+                        <div class="tool-card h-100">
+                            <div class="tool-icon">
+                                <i class="${tool.icon}"></i>
+                            </div>
+                            <h4>${tool.name}</h4>
+                            <p class="text-muted">${tool.description}</p>
+                            <a href="${tool.url}" class="btn btn-sm btn-outline-primary">
+                                Use Tool <i class="fas fa-arrow-right ms-1"></i>
+                            </a>
+                        </div>
+                    `;
+                    container.appendChild(col);
                 });
-                parentCard.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(-8px) scale(1)';
-                    this.style.boxShadow = 'var(--shadow-xl)';
-                });
-            });
+            }
             
-            // Add floating animation to some elements
-            const floatingElements = document.querySelectorAll('.tool-icon, .hero h1');
-            floatingElements.forEach(el => {
-                el.classList.add('floating');
-            });
-            
-            // Intersection Observer for fade-in animations
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
+            // Search functionality
+            const searchForm = document.getElementById('searchForm');
+            if (searchForm) {
+                searchForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const query = document.getElementById('searchInput').value;
+                    if (query.trim()) {
+                        localStorage.setItem('searchQuery', query);
+                        window.location.href = 'pages/all-tools.html?search=' + encodeURIComponent(query);
                     }
                 });
-            }, observerOptions);
-            
-            // Observe all fade-in elements
-            document.querySelectorAll('.fade-in').forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(20px)';
-                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(el);
-            });
-        });
-    </script>
-    <script>
-        fetch('footer.html')
-        .then(response => response.text())
-        .then(data => {
-            document.body.insertAdjacentHTML('beforeend', data);
+            }
         });
     </script>
 </body>
 </html>
+EOF
 
-
+echo "New index.html created!"
