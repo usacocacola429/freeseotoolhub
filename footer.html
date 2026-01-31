@@ -1,57 +1,426 @@
 <!-- footer.html -->
 <footer class="site-footer">
-<div class="footer-content">
-<p> <strong>FreeSEOToolHub.com</strong> | भारत में बना | 100% मुफ़्त टूल्स</p>
+    <div class="container">
+        <div class="footer-content">
+            <!-- Main Header -->
+            <div class="footer-brand">
+                <h3 class="footer-title">
+                    <i class="fas fa-tools"></i> FreeSEOToolHub.com
+                </h3>
+                <p class="footer-subtitle">
+                    <span class="india-flag">🇮🇳</span> भारत में बना | 100% मुफ़्त SEO टूल्स | कोई लॉगिन नहीं
+                </p>
+            </div>
 
-<div class="footer-links">
-<a href="/">🏠 होम</a>
-<a href="all-tools.html">🔧 सभी टूल्स</a>
-<a href="about.html">ℹ️ हमारे बारे में</a>
-<a href="privacy.html">🔒 प्राइवेसी</a>
-<a href="contact.html">📞 संपर्क</a>
-</div>
+            <!-- Quick Links -->
+            <div class="footer-links-section">
+                <div class="row g-4">
+                    <div class="col-md-3 col-6">
+                        <h5 class="link-category">
+                            <i class="fas fa-home"></i> मुख्य
+                        </h5>
+                        <ul class="link-list">
+                            <li><a href="/"><i class="fas fa-chevron-right"></i> होम पेज</a></li>
+                            <li><a href="all-tools.html"><i class="fas fa-chevron-right"></i> सभी टूल्स</a></li>
+                            <li><a href="popular-tools.html"><i class="fas fa-chevron-right"></i> पॉपुलर टूल्स</a></li>
+                            <li><a href="new-tools.html"><i class="fas fa-chevron-right"></i> नए टूल्स</a></li>
+                        </ul>
+                    </div>
 
-<p class="footer-tagline">
-<i class="fas fa-shield-alt"></i> सुरक्षित |
-<i class="fas fa-bolt"></i> तेज़ |
-<i class="fas fa-heart"></i> यूजर्स के लिए
-</p>
-</div>
+                    <div class="col-md-3 col-6">
+                        <h5 class="link-category">
+                            <i class="fas fa-info-circle"></i> जानकारी
+                        </h5>
+                        <ul class="link-list">
+                            <li><a href="about.html"><i class="fas fa-chevron-right"></i> हमारे बारे में</a></li>
+                            <li><a href="contact.html"><i class="fas fa-chevron-right"></i> संपर्क करें</a></li>
+                            <li><a href="blog.html"><i class="fas fa-chevron-right"></i> ब्लॉग/गाइड</a></li>
+                            <li><a href="sitemap.xml"><i class="fas fa-chevron-right"></i> साइटमैप</a></li>
+                        </ul>
+                    </div>
 
-<style>
-.site-footer {
-margin-top: 60px;
-padding: 25px 20px;
-text-align: center;
-background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-color: #cbd5e1;
-border-radius: 10px;
-}
-.footer-content p {
-margin-bottom: 12px;
-font-size: 0.95rem;
-}
-.footer-links {
-display: flex;
-justify-content: center;
-gap: 20px;
-flex-wrap: wrap;
-margin: 15px 0;
-}
-.footer-links a {
-color: #93c5fd;
-text-decoration: none;
-transition: color 0.3s;
-}
-.footer-links a:hover {
-color: white;
-text-decoration: underline;
-}
-.footer-tagline {
-color: #94a3b8;
-font-size: 0.85rem;
-margin-top: 15px;
-}
-</style>
+                    <div class="col-md-3 col-6">
+                        <h5 class="link-category">
+                            <i class="fas fa-shield-alt"></i> कानूनी
+                        </h5>
+                        <ul class="link-list">
+                            <li><a href="privacy.html"><i class="fas fa-chevron-right"></i> प्राइवेसी पॉलिसी</a></li>
+                            <li><a href="terms.html"><i class="fas fa-chevron-right"></i> उपयोग की शर्तें</a></li>
+                            <li><a href="disclaimer.html"><i class="fas fa-chevron-right"></i> अस्वीकरण</a></li>
+                            <li><a href="cookies.html"><i class="fas fa-chevron-right"></i> कुकीज़ पॉलिसी</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-3 col-6">
+                        <h5 class="link-category">
+                            <i class="fas fa-hands-helping"></i> सहायता
+                        </h5>
+                        <ul class="link-list">
+                            <li><a href="faq.html"><i class="fas fa-chevron-right"></i> सामान्य प्रश्न</a></li>
+                            <li><a href="help.html"><i class="fas fa-chevron-right"></i> सहायता केंद्र</a></li>
+                            <li><a href="tools-guide.html"><i class="fas fa-chevron-right"></i> टूल गाइड</a></li>
+                            <li><a href="api.html"><i class="fas fa-chevron-right"></i> API एक्सेस</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social & Contact -->
+            <div class="footer-social-contact">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <div class="social-icons">
+                            <a href="https://facebook.com/freeseotoolhub" class="social-icon facebook" target="_blank" title="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://twitter.com/freeseotoolhub" class="social-icon twitter" target="_blank" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://linkedin.com/company/freeseotoolhub" class="social-icon linkedin" target="_blank" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://github.com/freeseotoolhub" class="social-icon github" target="_blank" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="mailto:contact@freeseotoolhub.com" class="social-icon email" title="Email">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="https://youtube.com/freeseotoolhub" class="social-icon youtube" target="_blank" title="YouTube">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="contact-info">
+                            <p>
+                                <i class="fas fa-envelope"></i> 
+                                <a href="mailto:support@freeseotoolhub.com">support@freeseotoolhub.com</a>
+                            </p>
+                            <p>
+                                <i class="fas fa-globe-asia"></i> 
+                                हिंदी & English में उपलब्ध
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- USP Badges -->
+            <div class="footer-usp">
+                <div class="usp-badge">
+                    <i class="fas fa-bolt"></i> तेज़ प्रोसेसिंग
+                </div>
+                <div class="usp-badge">
+                    <i class="fas fa-shield-alt"></i> सुरक्षित & प्राइवेट
+                </div>
+                <div class="usp-badge">
+                    <i class="fas fa-heart"></i> यूज़र फ्रेंडली
+                </div>
+                <div class="usp-badge">
+                    <i class="fas fa-mobile-alt"></i> मोबाइल ऑप्टिमाइज़्ड
+                </div>
+                <div class="usp-badge">
+                    <i class="fas fa-cloud"></i> क्लाउड बेस्ड
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>
+                        © <span id="current-year"></span> FreeSEOToolHub.com - सभी अधिकार सुरक्षित |
+                        <span class="made-in-india">🇮🇳 Made in India with ❤️</span>
+                    </p>
+                    <p class="footer-tagline">
+                        यह एक निःशुल्क सेवा है | हम आपके डेटा को कभी भी सेव या शेयर नहीं करते
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <style>
+        .site-footer {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #cbd5e1;
+            padding: 40px 0 20px;
+            margin-top: 80px;
+            border-top: 3px solid #3b82f6;
+            position: relative;
+        }
+
+        .footer-brand {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #334155;
+        }
+
+        .footer-title {
+            color: white;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .footer-title i {
+            color: #3b82f6;
+            margin-right: 10px;
+        }
+
+        .footer-subtitle {
+            color: #94a3b8;
+            font-size: 1rem;
+        }
+
+        .india-flag {
+            font-size: 1.2rem;
+            margin-right: 5px;
+        }
+
+        .link-category {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3b82f6;
+        }
+
+        .link-category i {
+            color: #3b82f6;
+            margin-right: 8px;
+        }
+
+        .link-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .link-list li {
+            margin-bottom: 12px;
+        }
+
+        .link-list a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            font-size: 0.95rem;
+        }
+
+        .link-list a:hover {
+            color: #3b82f6;
+            transform: translateX(5px);
+        }
+
+        .link-list a i {
+            margin-right: 8px;
+            font-size: 0.8rem;
+            color: #3b82f6;
+        }
+
+        .footer-social-contact {
+            margin: 40px 0;
+            padding: 30px;
+            background: rgba(30, 41, 59, 0.5);
+            border-radius: 10px;
+            border: 1px solid #334155;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+        }
+
+        .social-icon.facebook { background: #1877f2; }
+        .social-icon.twitter { background: #1da1f2; }
+        .social-icon.linkedin { background: #0a66c2; }
+        .social-icon.github { background: #333; }
+        .social-icon.email { background: #ea4335; }
+        .social-icon.youtube { background: #ff0000; }
+
+        .social-icon:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .contact-info p {
+            margin: 5px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .contact-info a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-usp {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .usp-badge {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid #3b82f6;
+            color: #cbd5e1;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .usp-badge i {
+            color: #3b82f6;
+        }
+
+        .footer-bottom {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #334155;
+            text-align: center;
+        }
+
+        .copyright p {
+            margin: 10px 0;
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+
+        .made-in-india {
+            color: #3b82f6;
+            font-weight: bold;
+        }
+
+        .footer-tagline {
+            color: #64748b;
+            font-size: 0.85rem;
+            margin-top: 15px;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+        }
+
+        .back-to-top:hover {
+            background: #2563eb;
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .footer-title {
+                font-size: 1.5rem;
+            }
+            
+            .footer-usp {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .social-icons {
+                margin-bottom: 20px;
+            }
+            
+            .contact-info p {
+                justify-content: center;
+                text-align: center;
+            }
+            
+            .footer-social-contact {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .footer-links-section .col-6 {
+                width: 100%;
+                margin-bottom: 25px;
+            }
+            
+            .link-category {
+                text-align: center;
+            }
+            
+            .link-list a {
+                justify-content: center;
+            }
+        }
+    </style>
+
+    <script>
+        // Set current year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Back to top button
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+        
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 </footer>
-
