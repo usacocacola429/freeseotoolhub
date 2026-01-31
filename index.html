@@ -3,376 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free SEO Tool Hub - 100+ Free SEO Tools Online</title>
+    <title>Free SEO Tool Hub - 100+ Free SEO Tools</title>
     <meta name="description" content="100+ Free SEO Tools for keyword research, website analysis, backlink checking, content optimization. No registration required.">
-    <meta name="keywords" content="free seo tools, keyword research, backlink checker, website analysis, seo analyzer">
     
-    <!-- Favicon -->
-    <link rel="icon" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-    
-    <!-- Bootstrap 5 -->
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Schema Markup -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Free SEO Tool Hub",
-      "url": "https://freeseotoolhub.com",
-      "description": "Collection of 100+ free SEO tools for digital marketers",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Free SEO Tool Hub"
-      }
-    }
-    </script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <i class="fas fa-tools me-2"></i>
-                <span class="fw-bold">SEO Tool Hub</span>
+                <i class="fas fa-tools"></i> Free SEO Tool Hub
             </a>
-            
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="index.html">
-                            <i class="fas fa-home me-1"></i> Home
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pages/all-tools.html">
-                            <i class="fas fa-th-large me-1"></i> All Tools
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pages/tools.html">
-                            <i class="fas fa-folder me-1"></i> Categories
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pages/about.html">
-                            <i class="fas fa-info-circle me-1"></i> About
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pages/contact.html">
-                            <i class="fas fa-envelope me-1"></i> Contact
-                        </a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="all-tools.html">All Tools</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tools.html">Categories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
-                
-                <form class="d-flex ms-3" id="searchForm">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search tools..." id="searchInput">
-                        <button class="btn btn-outline-light" type="submit">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </div>
-                </form>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="hero-section">
+    <section class="hero py-5">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <h1 class="display-4 fw-bold mb-4">Everything You Need For <span class="text-warning">SEO Success</span></h1>
+                    <h1 class="display-4 fw-bold mb-4">Everything You Need For <span class="text-primary">SEO Success</span></h1>
                     <p class="lead mb-4">100+ powerful SEO tools completely free. No signups, no limits, no hidden costs.</p>
-                    
-                    <div class="d-flex flex-wrap gap-3">
-                        <a href="pages/all-tools.html" class="btn btn-primary btn-lg px-4">
-                            <i class="fas fa-rocket me-2"></i> Explore All Tools
-                        </a>
-                        <a href="#featured-tools" class="btn btn-outline-light btn-lg px-4">
-                            <i class="fas fa-star me-2"></i> Popular Tools
-                        </a>
-                    </div>
-                    
-                    <div class="mt-4">
-                        <small class="text-light">
-                            <i class="fas fa-check-circle me-1"></i> 100% Free
-                            <i class="fas fa-check-circle mx-3"></i> No Registration
-                            <i class="fas fa-check-circle mx-3"></i> Unlimited Use
-                        </small>
-                    </div>
+                    <a href="all-tools.html" class="btn btn-primary btn-lg px-4">
+                        <i class="fas fa-rocket me-2"></i> Explore All Tools
+                    </a>
                 </div>
-                
-                <div class="col-lg-6 text-center">
-                    <div class="hero-illustration">
-                        <div class="floating-icon">
-                            <i class="fas fa-chart-line"></i>
-                            <span>Analytics</span>
-                        </div>
-                        <div class="floating-icon">
-                            <i class="fas fa-search"></i>
-                            <span>Research</span>
-                        </div>
-                        <div class="floating-icon">
-                            <i class="fas fa-code"></i>
-                            <span>Technical</span>
-                        </div>
-                        <div class="floating-icon">
-                            <i class="fas fa-link"></i>
-                            <span>Backlinks</span>
-                        </div>
-                        <div class="main-icon">
-                            <i class="fas fa-tools"></i>
-                        </div>
+                <div class="col-lg-6">
+                    <div class="text-center">
+                        <i class="fas fa-chart-line display-1 text-primary"></i>
+                        <i class="fas fa-search display-1 text-success mx-4"></i>
+                        <i class="fas fa-code display-1 text-warning"></i>
                     </div>
                 </div>
             </div>
         </div>
-    </header>
+    </section>
 
-    <!-- Stats Section -->
-    <section class="stats-section py-5">
+    <!-- Stats -->
+    <section class="stats py-5 bg-light">
         <div class="container">
             <div class="row text-center">
                 <div class="col-md-3 col-6 mb-4">
-                    <div class="stat-card">
-                        <h2 class="display-3 fw-bold text-primary">100+</h2>
-                        <p class="text-muted">Free Tools</p>
-                    </div>
+                    <h2 class="display-3 fw-bold text-primary">100+</h2>
+                    <p>Free Tools</p>
                 </div>
                 <div class="col-md-3 col-6 mb-4">
-                    <div class="stat-card">
-                        <h2 class="display-3 fw-bold text-success">24/7</h2>
-                        <p class="text-muted">Availability</p>
-                    </div>
+                    <h2 class="display-3 fw-bold text-success">24/7</h2>
+                    <p>Availability</p>
                 </div>
                 <div class="col-md-3 col-6 mb-4">
-                    <div class="stat-card">
-                        <h2 class="display-3 fw-bold text-warning">0$</h2>
-                        <p class="text-muted">No Cost</p>
-                    </div>
+                    <h2 class="display-3 fw-bold text-warning">0$</h2>
+                    <p>No Cost</p>
                 </div>
                 <div class="col-md-3 col-6 mb-4">
-                    <div class="stat-card">
-                        <h2 class="display-3 fw-bold text-danger">∞</h2>
-                        <p class="text-muted">Unlimited Use</p>
-                    </div>
+                    <h2 class="display-3 fw-bold text-danger">∞</h2>
+                    <p>Unlimited Use</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Categories Section -->
-    <section class="categories-section py-5 bg-light">
+    <!-- Popular Tools -->
+    <section class="tools py-5">
         <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="section-title">Browse By Category</h2>
-                <p class="text-muted">Tools organized by SEO categories for easy navigation</p>
-            </div>
-            
-            <div class="row g-4">
-                <!-- Category 1 -->
-                <div class="col-md-4">
-                    <a href="tools/keyword-research/" class="category-link">
-                        <div class="category-card">
-                            <div class="category-icon bg-primary">
-                                <i class="fas fa-search"></i>
-                            </div>
-                            <h3>Keyword Research</h3>
-                            <p class="text-muted">Find profitable keywords, analyze competition, track rankings</p>
-                            <div class="tool-count">8 Tools</div>
+            <h2 class="text-center mb-5">Popular SEO Tools</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <i class="fas fa-search fa-2x text-primary mb-3"></i>
+                            <h4>Keyword Density Checker</h4>
+                            <p>Analyze keyword usage in your content</p>
+                            <a href="keyword-density.html" class="btn btn-outline-primary">Use Tool</a>
                         </div>
-                    </a>
+                    </div>
                 </div>
-                
-                <!-- Category 2 -->
-                <div class="col-md-4">
-                    <a href="tools/technical-seo/" class="category-link">
-                        <div class="category-card">
-                            <div class="category-icon bg-success">
-                                <i class="fas fa-code"></i>
-                            </div>
-                            <h3>Technical SEO</h3>
-                            <p class="text-muted">Website audit, SSL check, sitemap generator, canonical tags</p>
-                            <div class="tool-count">6 Tools</div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <i class="fas fa-link fa-2x text-success mb-3"></i>
+                            <h4>Backlink Checker</h4>
+                            <p>Check backlinks for any website</p>
+                            <a href="backlink-checker.html" class="btn btn-outline-success">Use Tool</a>
                         </div>
-                    </a>
+                    </div>
                 </div>
-                
-                <!-- Category 3 -->
-                <div class="col-md-4">
-                    <a href="tools/backlink-tools/" class="category-link">
-                        <div class="category-card">
-                            <div class="category-icon bg-warning">
-                                <i class="fas fa-link"></i>
-                            </div>
-                            <h3>Backlink Analysis</h3>
-                            <p class="text-muted">Check backlinks, find broken links, analyze domain authority</p>
-                            <div class="tool-count">5 Tools</div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <i class="fas fa-lock fa-2x text-warning mb-3"></i>
+                            <h4>SSL Checker</h4>
+                            <p>Verify SSL certificate status</p>
+                            <a href="ssl-checker.html" class="btn btn-outline-warning">Use Tool</a>
                         </div>
-                    </a>
-                </div>
-                
-                <!-- Category 4 -->
-                <div class="col-md-4">
-                    <a href="tools/content-tools/" class="category-link">
-                        <div class="category-card">
-                            <div class="category-icon bg-danger">
-                                <i class="fas fa-edit"></i>
-                            </div>
-                            <h3>Content Tools</h3>
-                            <p class="text-muted">Plagiarism check, grammar check, headline analyzer</p>
-                            <div class="tool-count">7 Tools</div>
-                        </div>
-                    </a>
-                </div>
-                
-                <!-- Category 5 -->
-                <div class="col-md-4">
-                    <a href="tools/onpage-seo/" class="category-link">
-                        <div class="category-card">
-                            <div class="category-icon bg-info">
-                                <i class="fas fa-file-alt"></i>
-                            </div>
-                            <h3>On-Page SEO</h3>
-                            <p class="text-muted">Meta tags, schema markup, heading structure analysis</p>
-                            <div class="tool-count">4 Tools</div>
-                        </div>
-                    </a>
-                </div>
-                
-                <!-- Category 6 -->
-                <div class="col-md-4">
-                    <a href="tools/social-media/" class="category-link">
-                        <div class="category-card">
-                            <div class="category-icon bg-purple">
-                                <i class="fas fa-share-alt"></i>
-                            </div>
-                            <h3>Social Media</h3>
-                            <p class="text-muted">Social media optimization, hashtag generator</p>
-                            <div class="tool-count">3 Tools</div>
-                        </div>
-                    </a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Featured Tools -->
-    <section id="featured-tools" class="tools-section py-5">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="section-title">Most Popular Tools</h2>
-                <p class="text-muted">Most frequently used tools by our community</p>
+            <div class="text-center mt-4">
+                <a href="all-tools.html" class="btn btn-primary">View All Tools</a>
             </div>
-            
-            <div class="row g-4" id="featuredTools">
-                <!-- Tools will be loaded dynamically -->
-            </div>
-            
-            <div class="text-center mt-5">
-                <a href="pages/all-tools.html" class="btn btn-outline-primary btn-lg">
-                    <i class="fas fa-eye me-2"></i> View All Tools
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section py-5 bg-dark text-white">
-        <div class="container text-center">
-            <h2 class="mb-4">Ready to Boost Your SEO?</h2>
-            <p class="lead mb-4">Start using our free tools today and see the difference</p>
-            <a href="pages/all-tools.html" class="btn btn-light btn-lg px-5">
-                <i class="fas fa-play-circle me-2"></i> Get Started Now
-            </a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer py-5">
+    <footer class="bg-dark text-white py-4">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <div class="footer-brand">
-                        <i class="fas fa-tools fa-2x text-primary mb-3"></i>
-                        <h3>Free SEO Tool Hub</h3>
-                        <p class="text-muted">Your complete SEO toolkit, completely free.</p>
-                    </div>
-                </div>
-                
-                <div class="col-lg-8">
-                    <div class="row">
-                        <div class="col-md-4 mb-4">
-                            <h5>Quick Links</h5>
-                            <ul class="list-unstyled">
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="pages/all-tools.html">All Tools</a></li>
-                                <li><a href="pages/tools.html">Categories</a></li>
-                                <li><a href="pages/about.html">About Us</a></li>
-                                <li><a href="pages/contact.html">Contact</a></li>
-                            </ul>
-                        </div>
-                        
-                        <div class="col-md-4 mb-4">
-                            <h5>Legal</h5>
-                            <ul class="list-unstyled">
-                                <li><a href="pages/privacy.html">Privacy Policy</a></li>
-                                <li><a href="#">Terms of Service</a></li>
-                                <li><a href="#">Cookie Policy</a></li>
-                                <li><a href="#">Disclaimer</a></li>
-                            </ul>
-                        </div>
-                        
-                        <div class="col-md-4 mb-4">
-                            <h5>Connect With Us</h5>
-                            <div class="social-links">
-                                <a href="#" class="social-link">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                                <a href="#" class="social-link">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                                <a href="#" class="social-link">
-                                    <i class="fab fa-linkedin"></i>
-                                </a>
-                                <a href="#" class="social-link">
-                                    <i class="fab fa-youtube"></i>
-                                </a>
-                            </div>
-                            <p class="mt-3 text-muted small">
-                                <i class="fas fa-envelope me-1"></i>
-                                support@freeseotoolhub.com
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <hr class="my-4">
-            
-            <div class="row">
                 <div class="col-md-6">
-                    <p class="mb-0">&copy; 2024 Free SEO Tool Hub. All rights reserved.</p>
+                    <h5>Free SEO Tool Hub</h5>
+                    <p>Your complete SEO toolkit, completely free.</p>
                 </div>
                 <div class="col-md-6 text-md-end">
-                    <p class="mb-0">
-                        Made with <i class="fas fa-heart text-danger"></i> for the SEO community
-                    </p>
+                    <p>&copy; 2024 Free SEO Tool Hub. All rights reserved.</p>
                 </div>
             </div>
         </div>
@@ -380,87 +140,9 @@
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/main.js"></script>
-    
-    <script>
-        // Load featured tools
-        document.addEventListener('DOMContentLoaded', function() {
-            const featuredTools = [
-                {
-                    name: "Keyword Density Checker",
-                    url: "tools/keyword-research/keyword-density.html",
-                    description: "Analyze keyword usage in your content",
-                    icon: "fas fa-chart-pie"
-                },
-                {
-                    name: "Backlink Checker",
-                    url: "tools/backlink-tools/backlink-checker.html",
-                    description: "Check backlinks for any website",
-                    icon: "fas fa-link"
-                },
-                {
-                    name: "Plagiarism Checker",
-                    url: "tools/content-tools/plagiarism-checker.html",
-                    description: "Check content originality",
-                    icon: "fas fa-search"
-                },
-                {
-                    name: "SSL Checker",
-                    url: "tools/technical-seo/ssl-checker.html",
-                    description: "Verify SSL certificate status",
-                    icon: "fas fa-lock"
-                },
-                {
-                    name: "Meta Tag Generator",
-                    url: "tools/content-tools/meta-tag-generator.html",
-                    description: "Generate SEO-friendly meta tags",
-                    icon: "fas fa-code"
-                },
-                {
-                    name: "Sitemap Generator",
-                    url: "tools/technical-seo/sitemap-generator.html",
-                    description: "Create XML sitemaps for websites",
-                    icon: "fas fa-sitemap"
-                }
-            ];
-            
-            const container = document.getElementById('featuredTools');
-            if (container) {
-                featuredTools.forEach(tool => {
-                    const col = document.createElement('div');
-                    col.className = 'col-md-4';
-                    col.innerHTML = `
-                        <div class="tool-card h-100">
-                            <div class="tool-icon">
-                                <i class="${tool.icon}"></i>
-                            </div>
-                            <h4>${tool.name}</h4>
-                            <p class="text-muted">${tool.description}</p>
-                            <a href="${tool.url}" class="btn btn-sm btn-outline-primary">
-                                Use Tool <i class="fas fa-arrow-right ms-1"></i>
-                            </a>
-                        </div>
-                    `;
-                    container.appendChild(col);
-                });
-            }
-            
-            // Search functionality
-            const searchForm = document.getElementById('searchForm');
-            if (searchForm) {
-                searchForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    const query = document.getElementById('searchInput').value;
-                    if (query.trim()) {
-                        localStorage.setItem('searchQuery', query);
-                        window.location.href = 'pages/all-tools.html?search=' + encodeURIComponent(query);
-                    }
-                });
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
 EOF
 
-echo "New index.html created!"
+echo "Simple index.html created!"
