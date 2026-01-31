@@ -1,6 +1,3 @@
-# नया style.css create करें
-cat > assets/css/style.css << 'EOF'
-/* ====== CSS Reset ====== */
 * {
     margin: 0;
     padding: 0;
@@ -617,3 +614,4 @@ p {
 EOF
 
 echo "Professional style.css created!"
+
