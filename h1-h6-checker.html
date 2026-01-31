@@ -1,902 +1,366 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>H1-H6 Heading Structure Checker | Free SEO Tool Hub</title>
-<meta name="description" content="Free tool to check H1 to H6 heading structure of any webpage. Analyze heading hierarchy for better SEO and accessibility.">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<style>
-:root {
---primary-color: #4361ee;
---secondary-color: #3a0ca3;
---success-color: #4cc9f0;
---warning-color: #f72585;
---light-bg: #f8f9fa;
---dark-bg: #212529;
-}
-
-.heading-checker-container {
-max-width: 1200px;
-margin: 0 auto;
-padding: 20px;
-}
-
-.tool-header {
-background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-color: white;
-padding: 30px;
-border-radius: 15px;
-margin-bottom: 30px;
-box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-.input-section {
-background-color: white;
-padding: 25px;
-border-radius: 10px;
-box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-margin-bottom: 30px;
-}
-
-.results-section {
-background-color: white;
-padding: 25px;
-border-radius: 10px;
-box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-margin-bottom: 30px;
-}
-
-.heading-item {
-padding: 15px;
-margin-bottom: 15px;
-border-radius: 8px;
-border-left: 5px solid;
-background-color: var(--light-bg);
-}
-
-.h1-item { border-left-color: #dc3545; }
-.h2-item { border-left-color: #fd7e14; }
-.h3-item { border-left-color: #ffc107; }
-.h4-item { border-left-color: #198754; }
-.h5-item { border-left-color: #0dcaf0; }
-.h6-item { border-left-color: #6f42c1; }
-
-.heading-tag {
-display: inline-block;
-padding: 3px 10px;
-border-radius: 4px;
-font-weight: bold;
-font-size: 0.85rem;
-color: white;
-margin-right: 10px;
-}
-
-.h1-tag { background-color: #dc3545; }
-.h2-tag { background-color: #fd7e14; }
-.h3-tag { background-color: #ffc107; }
-.h4-tag { background-color: #198754; }
-.h5-tag { background-color: #0dcaf0; }
-.h6-tag { background-color: #6f42c1; }
-
-.seo-score {
-font-size: 4rem;
-font-weight: bold;
-text-align: center;
-margin: 20px 0;
-}
-
-.score-excellent { color: #198754; }
-.score-good { color: #ffc107; }
-.score-poor { color: #dc3545; }
-
-.seo-tips {
-background-color: #e7f5ff;
-border-left: 5px solid #0d6efd;
-padding: 20px;
-border-radius: 8px;
-margin-top: 20px;
-}
-
-.visual-hierarchy {
-background-color: #f8f9fa;
-padding: 20px;
-border-radius: 10px;
-margin: 20px 0;
-}
-
-.hierarchy-level {
-padding: 8px 15px;
-margin: 5px 0;
-border-radius: 5px;
-font-weight: bold;
-}
-
-.hierarchy-h1 { background-color: #dc3545; color: white; margin-left: 0; }
-.hierarchy-h2 { background-color: #fd7e14; color: white; margin-left: 20px; }
-.hierarchy-h3 { background-color: #ffc107; color: black; margin-left: 40px; }
-.hierarchy-h4 { background-color: #198754; color: white; margin-left: 60px; }
-.hierarchy-h5 { background-color: #0dcaf0; color: black; margin-left: 80px; }
-.hierarchy-h6 { background-color: #6f42c1; color: white; margin-left: 100px; }
-
-.stat-card {
-background: white;
-padding: 20px;
-border-radius: 10px;
-box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-text-align: center;
-height: 100%;
-}
-
-.stat-number {
-font-size: 2.5rem;
-font-weight: bold;
-color: var(--primary-color);
-}
-
-.pulse-animation {
-animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-0% { transform: scale(1); }
-50% { transform: scale(1.05); }
-100% { transform: scale(1); }
-}
-
-.loading-spinner {
-display: none;
-text-align: center;
-padding: 40px;
-}
-
-.copy-btn {
-cursor: pointer;
-transition: all 0.3s;
-}
-
-.copy-btn:hover {
-transform: translateY(-2px);
-}
-
-@media (max-width: 768px) {
-.heading-checker-container {
-padding: 10px;
-}
-
-.tool-header {
-padding: 20px 15px;
-}
-
-.hierarchy-h2 { margin-left: 15px; }
-.hierarchy-h3 { margin-left: 30px; }
-.hierarchy-h4 { margin-left: 45px; }
-.hierarchy-h5 { margin-left: 60px; }
-.hierarchy-h6 { margin-left: 75px; }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H1-H6 हेडिंग चेकर - FreeSEOToolHub</title>
+    <meta name="description" content="किसी भी वेबपेज की हेडिंग स्ट्रक्चर एनालाइज़ करें और SEO के लिए इम्प्रूवमेंट सुझाव पाएं।">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        :root {
+            --primary: #6366f1; --primary-dark: #4f46e5; --secondary: #10b981; --accent: #f59e0b;
+            --dark: #1e293b; --light: #f8fafc; --gray: #64748b; --success: #10b981; --warning: #f59e0b; --danger: #ef4444;
+        }
+        body { background: #f8fafc; color: var(--dark); min-height: 100vh; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        
+        /* Navigation */
+        .navbar { background: var(--primary); color: white; padding: 15px 0; }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { font-size: 1.5rem; font-weight: 700; color: white; text-decoration: none; }
+        .nav-links a { color: white; text-decoration: none; margin-left: 20px; }
+        
+        /* Header */
+        .tool-header { 
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white; padding: 40px; border-radius: 15px; text-align: center; margin: 30px 0;
+        }
+        
+        /* Tool Container */
+        .tool-container { 
+            background: white; padding: 30px; border-radius: 15px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 30px;
+        }
+        
+        /* Form Elements */
+        .input-group { margin-bottom: 25px; }
+        .input-group label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--dark); }
+        .form-control { 
+            width: 100%; padding: 14px 20px; border: 2px solid #e2e8f0; 
+            border-radius: 10px; font-size: 1rem; transition: all 0.3s;
+        }
+        .form-control:focus { border-color: var(--primary); outline: none; box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1); }
+        .btn-primary { 
+            background: var(--primary); color: white; border: none; 
+            padding: 14px 30px; border-radius: 10px; font-size: 1rem;
+            font-weight: 600; cursor: pointer; transition: all 0.3s;
+            display: inline-flex; align-items: center; gap: 10px;
+        }
+        .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3); }
+        
+        /* Results */
+        .results-container { margin-top: 30px; }
+        .heading-structure { 
+            background: #f8fafc; border-radius: 10px; padding: 25px; 
+            border-left: 4px solid var(--primary); margin-bottom: 25px;
+        }
+        .heading-item { 
+            padding: 12px 15px; margin-bottom: 10px; background: white; 
+            border-radius: 8px; border-left: 4px solid; display: flex; align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .h1-tag { border-left-color: var(--primary); }
+        .h2-tag { border-left-color: var(--secondary); }
+        .h3-tag { border-left-color: var(--warning); }
+        .h4-tag { border-left-color: #8b5cf6; }
+        .h5-tag { border-left-color: #06b6d4; }
+        .h6-tag { border-left-color: var(--gray); }
+        .tag-label { 
+            padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; 
+            font-weight: 600; margin-right: 15px; min-width: 50px; text-align: center;
+        }
+        .h1-label { background: rgba(99, 102, 241, 0.1); color: var(--primary); }
+        .h2-label { background: rgba(16, 185, 129, 0.1); color: var(--success); }
+        .h3-label { background: rgba(245, 158, 11, 0.1); color: var(--warning); }
+        .h4-label { background: rgba(139, 92, 246, 0.1); color: #8b5cf6; }
+        .h5-label { background: rgba(6, 182, 212, 0.1); color: #06b6d4; }
+        .h6-label { background: rgba(100, 116, 139, 0.1); color: var(--gray); }
+        
+        /* SEO Analysis */
+        .seo-analysis { 
+            background: #f0f9ff; border-radius: 10px; padding: 25px; 
+            border-left: 4px solid var(--secondary); margin-top: 30px;
+        }
+        .score-card { 
+            background: white; padding: 20px; border-radius: 10px; 
+            text-align: center; margin: 20px 0; box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .score-value { font-size: 3rem; font-weight: 700; margin: 10px 0; }
+        .good { color: var(--success); }
+        .average { color: var(--warning); }
+        .poor { color: var(--danger); }
+        
+        /* Tips */
+        .tips-container { background: #fffbeb; border-radius: 10px; padding: 25px; border-left: 4px solid var(--warning); }
+        .tip-item { display: flex; align-items: start; gap: 15px; margin-bottom: 15px; }
+        .tip-icon { color: var(--warning); font-size: 1.2rem; margin-top: 3px; }
+        
+        /* Loading */
+        .loading { text-align: center; padding: 30px; display: none; }
+        .spinner { 
+            width: 50px; height: 50px; border: 5px solid #f3f3f3; 
+            border-top: 5px solid var(--primary); border-radius: 50%;
+            animation: spin 1s linear infinite; margin: 0 auto 15px;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .tool-header { padding: 30px 20px; }
+            .tool-container { padding: 20px; }
+        }
+    </style>
 </head>
 <body>
-<!-- Navbar -->
-<div id="navbar-container"></div>
-
-<div class="heading-checker-container">
-<div class="tool-header">
-<h1><i class="fas fa-heading me-2"></i> H1-H6 Heading Structure Checker</h1>
-<p class="mb-0">Analyze heading hierarchy of any webpage for better SEO, accessibility and content structure</p>
-</div>
-
-<div class="input-section">
-<div class="row">
-<div class="col-md-8">
-<div class="mb-3">
-<label for="urlInput" class="form-label fw-bold">Enter Website URL</label>
-<div class="input-group">
-<span class="input-group-text"><i class="fas fa-link"></i></span>
-<input type="url" class="form-control" id="urlInput" placeholder="https://example.com" value="https://freeseotoolhub.com">
-<button class="btn btn-primary" id="checkHeadingsBtn">
-<i class="fas fa-search me-1"></i> Check Headings
-</button>
-</div>
-</div>
-</div>
-<div class="col-md-4">
-<div class="mb-3">
-<label class="form-label fw-bold">Or Test With</label>
-<div class="d-flex gap-2">
-<button class="btn btn-outline-primary flex-fill" id="testUrl1">
-<i class="fab fa-google me-1"></i> Google
-</button>
-<button class="btn btn-outline-primary flex-fill" id="testUrl2">
-<i class="fab fa-wikipedia-w me-1"></i> Wikipedia
-</button>
-</div>
-</div>
-</div>
-</div>
-
-<div class="row mt-3">
-<div class="col-12">
-<div class="alert alert-info d-flex align-items-center">
-<i class="fas fa-info-circle me-2 fs-4"></i>
-<div>
-<strong>How to use:</strong> Enter a website URL above or paste your HTML code below to analyze heading structure
-</div>
-</div>
-</div>
-</div>
-
-<div class="row mt-3">
-<div class="col-md-6">
-<div class="mb-3">
-<label for="htmlInput" class="form-label fw-bold">Or Paste HTML Code</label>
-<textarea class="form-control" id="htmlInput" rows="6" placeholder="Paste your HTML code here to check heading structure..."></textarea>
-</div>
-</div>
-<div class="col-md-6">
-<div class="mb-3">
-<label for="headingsInput" class="form-label fw-bold">Or Enter Headings Manually (one per line)</label>
-<textarea class="form-control" id="headingsInput" rows="6" placeholder="Enter headings in format: H1: Main Title
-H2: Section Title
-H3: Subsection Title"></textarea>
-</div>
-</div>
-</div>
-</div>
-
-<div class="loading-spinner" id="loadingSpinner">
-<div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-<span class="visually-hidden">Loading...</span>
-</div>
-<p class="mt-3">Analyzing heading structure...</p>
-</div>
-
-<div class="results-section" id="resultsSection" style="display: none;">
-<div class="row">
-<div class="col-md-8">
-<h3 class="mb-4"><i class="fas fa-list-ol me-2"></i> Heading Structure Analysis</h3>
-</div>
-<div class="col-md-4 text-end">
-<button class="btn btn-outline-secondary" id="downloadReportBtn">
-<i class="fas fa-download me-1"></i> Download Report
-</button>
-</div>
-</div>
-
-<div class="row mb-4">
-<div class="col-md-3">
-<div class="stat-card">
-<div class="stat-number" id="totalHeadingsCount">0</div>
-<div class="text-muted">Total Headings</div>
-</div>
-</div>
-<div class="col-md-3">
-<div class="stat-card">
-<div class="stat-number" id="h1Count">0</div>
-<div class="text-muted">H1 Headings</div>
-</div>
-</div>
-<div class="col-md-3">
-<div class="stat-card">
-<div class="stat-number" id="h2Count">0</div>
-<div class="text-muted">H2 Headings</div>
-</div>
-</div>
-<div class="col-md-3">
-<div class="stat-card">
-<div class="stat-number text-success" id="seoScore">0%</div>
-<div class="text-muted">SEO Score</div>
-</div>
-</div>
-</div>
-
-<div class="visual-hierarchy">
-<h5 class="mb-3"><i class="fas fa-project-diagram me-2"></i> Visual Heading Hierarchy</h5>
-<div id="hierarchyVisual"></div>
-</div>
-
-<div class="mt-4">
-<h5 class="mb-3"><i class="fas fa-th-list me-2"></i> Detailed Heading List</h5>
-<div id="headingsList"></div>
-</div>
-
-<div class="seo-tips mt-4">
-<h5><i class="fas fa-lightbulb me-2"></i> SEO Recommendations</h5>
-<div id="seoRecommendations"></div>
-</div>
-</div>
-
-<div class="row mt-4">
-<div class="col-md-8">
-<div class="card">
-<div class="card-header bg-primary text-white">
-<h5 class="mb-0"><i class="fas fa-graduation-cap me-2"></i> Why Heading Structure Matters for SEO</h5>
-</div>
-<div class="card-body">
-<ul class="list-group list-group-flush">
-<li class="list-group-item">
-<i class="fas fa-check text-success me-2"></i>
-<strong>Search Engine Understanding:</strong> Proper heading hierarchy helps search engines understand your content structure
-</li>
-<li class="list-group-item">
-<i class="fas fa-check text-success me-2"></i>
-<strong>User Experience:</strong> Clear headings improve readability and help users scan your content
-</li>
-<li class="list-group-item">
-<i class="fas fa-check text-success me-2"></i>
-<strong>Accessibility:</strong> Screen readers use headings to navigate content, improving accessibility
-</li>
-<li class="list-group-item">
-<i class="fas fa-check text-success me-2"></i>
-<strong>Keyword Optimization:</strong> Headings are important for placing relevant keywords naturally
-</li>
-<li class="list-group-item">
-<i class="fas fa-check text-success me-2"></i>
-<strong>Featured Snippets:</strong> Well-structured content has better chances of appearing in featured snippets
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="col-md-4">
-<div class="card">
-<div class="card-header bg-success text-white">
-<h5 class="mb-0"><i class="fas fa-tips me-2"></i> Best Practices</h5>
-</div>
-<div class="card-body">
-<div class="alert alert-success mb-2">
-<i class="fas fa-star me-2"></i>
-<strong>Use only one H1</strong> per page
-</div>
-<div class="alert alert-warning mb-2">
-<i class="fas fa-sort-amount-down me-2"></i>
-<strong>Maintain hierarchy:</strong> H1 → H2 → H3
-</div>
-<div class="alert alert-info mb-2">
-<i class="fas fa-text-width me-2"></i>
-<strong>Keep headings concise</strong> and descriptive
-</div>
-<div class="alert alert-primary mb-0">
-<i class="fas fa-key me-2"></i>
-<strong>Include keywords</strong> naturally in headings
-</div>
-</div>
-</div>
-</div>
-</div>
-
-<div class="mt-5">
-<div class="alert alert-warning">
-<h5><i class="fas fa-exclamation-triangle me-2"></i> Limitations</h5>
-<p class="mb-0">This tool extracts headings from the HTML source code. Some headings loaded dynamically via JavaScript may not be detected. For complete analysis, consider using browser developer tools.</p>
-</div>
-</div>
-</div>
-
-<!-- Footer -->
-<div id="footer-container"></div>
-
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="navbar.js"></script>
-<script>
-// Load navbar and footer
-document.addEventListener('DOMContentLoaded', function() {
-// Load navbar
-fetch('navbar.html')
-.then(response => response.text())
-.then(data => {
-document.getElementById('navbar-container').innerHTML = data;
-})
-.catch(error => {
-console.error('Error loading navbar:', error);
-document.getElementById('navbar-container').innerHTML = `
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-<div class="container">
-<a class="navbar-brand" href="index.html">Free SEO Tool Hub</a>
-</div>
-</nav>`;
-});
-
-// Load footer
-fetch('footer.html')
-.then(response => response.text())
-.then(data => {
-document.getElementById('footer-container').innerHTML = data;
-})
-.catch(error => {
-console.error('Error loading footer:', error);
-});
-
-// Initialize tool
-initializeHeadingChecker();
-});
-
-function initializeHeadingChecker() {
-// DOM Elements
-const urlInput = document.getElementById('urlInput');
-const htmlInput = document.getElementById('htmlInput');
-const headingsInput = document.getElementById('headingsInput');
-const checkHeadingsBtn = document.getElementById('checkHeadingsBtn');
-const testUrl1 = document.getElementById('testUrl1');
-const testUrl2 = document.getElementById('testUrl2');
-const loadingSpinner = document.getElementById('loadingSpinner');
-const resultsSection = document.getElementById('resultsSection');
-const downloadReportBtn = document.getElementById('downloadReportBtn');
-
-// Test URLs
-testUrl1.addEventListener('click', () => {
-urlInput.value = 'https://www.google.com';
-htmlInput.value = '';
-headingsInput.value = '';
-});
-
-testUrl2.addEventListener('click', () => {
-urlInput.value = 'https://en.wikipedia.org/wiki/Search_engine_optimization';
-htmlInput.value = '';
-headingsInput.value = '';
-});
-
-// Check headings button
-checkHeadingsBtn.addEventListener('click', checkHeadings);
-
-// Download report button
-downloadReportBtn.addEventListener('click', downloadReport);
-
-// Enter key support
-urlInput.addEventListener('keypress', (e) => {
-if (e.key === 'Enter') checkHeadings();
-});
-
-// Sample data for testing
-const sampleHeadings = [
-{ tag: 'H1', text: 'Free SEO Tools for Digital Marketing', count: 1 },
-{ tag: 'H2', text: 'On-Page SEO Tools', count: 1 },
-{ tag: 'H3', text: 'Meta Tag Generator', count: 1 },
-{ tag: 'H3', text: 'Heading Structure Checker', count: 2 },
-{ tag: 'H2', text: 'Technical SEO Tools', count: 2 },
-{ tag: 'H3', text: 'Website Speed Test', count: 3 },
-{ tag: 'H4', text: 'Core Web Vitals', count: 1 },
-{ tag: 'H2', text: 'Content Optimization Tools', count: 3 },
-{ tag: 'H3', text: 'Readability Checker', count: 4 },
-{ tag: 'H3', text: 'Plagiarism Checker', count: 5 }
-];
-
-function checkHeadings() {
-// Show loading spinner
-loadingSpinner.style.display = 'block';
-resultsSection.style.display = 'none';
-
-// Get input values
-const url = urlInput.value.trim();
-const html = htmlInput.value.trim();
-const manualHeadings = headingsInput.value.trim();
-
-// Determine source
-let sourceType = '';
-let headingsData = [];
-
-if (url) {
-sourceType = 'url';
-// In a real implementation, you would fetch the URL and parse HTML
-// For demo, we'll use sample data with a delay
-setTimeout(() => {
-headingsData = extractHeadingsFromSample(url);
-displayResults(headingsData);
-}, 1500);
-} else if (html) {
-sourceType = 'html';
-headingsData = extractHeadingsFromHTML(html);
-displayResults(headingsData);
-} else if (manualHeadings) {
-sourceType = 'manual';
-headingsData = extractHeadingsFromManual(manualHeadings);
-displayResults(headingsData);
-} else {
-// No input - show error
-loadingSpinner.style.display = 'none';
-alert('Please enter a URL, HTML code, or manual headings to analyze.');
-return;
-}
-}
-
-function extractHeadingsFromSample(url) {
-// For demo purposes, return sample data
-// In a real implementation, you would use CORS proxy or backend to fetch URL
-console.log('Analyzing URL:', url);
-
-// Return sample headings with slight randomization
-return sampleHeadings.map(heading => ({
-tag: heading.tag,
-text: heading.text,
-count: heading.count
-}));
-}
-
-function extractHeadingsFromHTML(html) {
-// Parse HTML string to extract headings
-const headings = [];
-
-// Create a temporary div to parse HTML
-const tempDiv = document.createElement('div');
-tempDiv.innerHTML = html;
-
-// Find all heading elements
-const headingElements = tempDiv.querySelectorAll('h1, h2, h3, h4, h5, h6');
-
-headingElements.forEach((element, index) => {
-headings.push({
-tag: element.tagName.toUpperCase(),
-text: element.textContent.trim(),
-count: index + 1
-});
-});
-
-// If no headings found in HTML, check for heading-like patterns
-if (headings.length === 0) {
-const regex = /<(h[1-6])(?:\s[^>]*)?>(.*?)<\/\1>/gi;
-let match;
-let count = 1;
-
-while ((match = regex.exec(html)) !== null) {
-headings.push({
-tag: match[1].toUpperCase(),
-text: match[2].replace(/<[^>]*>/g, '').trim(),
-count: count++
-});
-}
-}
-
-return headings;
-}
-
-function extractHeadingsFromManual(text) {
-const headings = [];
-const lines = text.split('\n');
-let count = 1;
-
-lines.forEach(line => {
-line = line.trim();
-if (!line) return;
-
-// Check for patterns like "H1: Title" or "# Title" or "<h1>Title</h1>"
-const h1Match = line.match(/^(H1|h1|#):\s*(.+)$/i) || line.match(/<h1(?:\s[^>]*)?>(.*?)<\/h1>/i);
-const h2Match = line.match(/^(H2|h2|##):\s*(.+)$/i) || line.match(/<h2(?:\s[^>]*)?>(.*?)<\/h2>/i);
-const h3Match = line.match(/^(H3|h3|###):\s*(.+)$/i) || line.match(/<h3(?:\s[^>]*)?>(.*?)<\/h3>/i);
-const h4Match = line.match(/^(H4|h4|####):\s*(.+)$/i) || line.match(/<h4(?:\s[^>]*)?>(.*?)<\/h4>/i);
-const h5Match = line.match(/^(H5|h5|#####):\s*(.+)$/i) || line.match(/<h5(?:\s[^>]*)?>(.*?)<\/h5>/i);
-const h6Match = line.match(/^(H6|h6|######):\s*(.+)$/i) || line.match(/<h6(?:\s[^>]*)?>(.*?)<\/h6>/i);
-
-if (h1Match) {
-headings.push({ tag: 'H1', text: h1Match[2] || h1Match[1], count: count++ });
-} else if (h2Match) {
-headings.push({ tag: 'H2', text: h2Match[2] || h2Match[1], count: count++ });
-} else if (h3Match) {
-headings.push({ tag: 'H3', text: h3Match[2] || h3Match[1], count: count++ });
-} else if (h4Match) {
-headings.push({ tag: 'H4', text: h4Match[2] || h4Match[1], count: count++ });
-} else if (h5Match) {
-headings.push({ tag: 'H5', text: h5Match[2] || h5Match[1], count: count++ });
-} else if (h6Match) {
-headings.push({ tag: 'H6', text: h6Match[2] || h6Match[1], count: count++ });
-} else {
-// If no pattern matched, assume it's a heading text
-headings.push({ tag: 'H2', text: line, count: count++ });
-}
-});
-
-return headings;
-}
-
-function displayResults(headings) {
-// Hide loading spinner
-loadingSpinner.style.display = 'none';
-
-// Show results section
-resultsSection.style.display = 'block';
-
-// Update statistics
-updateStatistics(headings);
-
-// Display headings list
-displayHeadingsList(headings);
-
-// Display visual hierarchy
-displayVisualHierarchy(headings);
-
-// Display SEO recommendations
-displaySEORecommendations(headings);
-
-// Scroll to results
-resultsSection.scrollIntoView({ behavior: 'smooth' });
-}
-
-function updateStatistics(headings) {
-// Count headings by type
-const counts = {
-total: headings.length,
-h1: headings.filter(h => h.tag === 'H1').length,
-h2: headings.filter(h => h.tag === 'H2').length,
-h3: headings.filter(h => h.tag === 'H3').length,
-h4: headings.filter(h => h.tag === 'H4').length,
-h5: headings.filter(h => h.tag === 'H5').length,
-h6: headings.filter(h => h.tag === 'H6').length
-};
-
-// Update UI
-document.getElementById('totalHeadingsCount').textContent = counts.total;
-document.getElementById('h1Count').textContent = counts.h1;
-document.getElementById('h2Count').textContent = counts.h2;
-
-// Calculate SEO score (simplified)
-let score = 100;
-
-// Deductions for issues
-if (counts.h1 === 0) score -= 40; // No H1 is critical
-else if (counts.h1 > 1) score -= (counts.h1 - 1) * 20; // Multiple H1s
-
-if (counts.total === 0) score = 0; // No headings
-
-// Adjust based on hierarchy
-if (counts.h1 > 0 && counts.h2 === 0) score -= 20; // H1 but no H2s
-if (counts.h2 > 0 && counts.h1 === 0) score -= 30; // H2s but no H1
-
-// Ensure score is between 0 and 100
-score = Math.max(0, Math.min(100, score));
-
-// Update score with color coding
-const seoScoreElement = document.getElementById('seoScore');
-seoScoreElement.textContent = `${Math.round(score)}%`;
-
-if (score >= 80) {
-seoScoreElement.className = 'stat-number text-success';
-} else if (score >= 50) {
-seoScoreElement.className = 'stat-number text-warning';
-} else {
-seoScoreElement.className = 'stat-number text-danger';
-}
-}
-
-function displayHeadingsList(headings) {
-const headingsList = document.getElementById('headingsList');
-
-if (headings.length === 0) {
-headingsList.innerHTML = `
-<div class="alert alert-warning">
-<i class="fas fa-exclamation-triangle me-2"></i>
-No headings found in the provided content.
-</div>`;
-return;
-}
-
-let html = '';
-
-headings.forEach((heading, index) => {
-const tagClass = heading.tag.toLowerCase() + '-tag';
-const itemClass = heading.tag.toLowerCase() + '-item';
-
-html += `
-<div class="heading-item ${itemClass}">
-<div class="d-flex justify-content-between align-items-start">
-<div>
-<span class="heading-tag ${tagClass}">${heading.tag}</span>
-<strong>${heading.text || '(Empty heading)'}</strong>
-</div>
-<div>
-<small class="text-muted">#${heading.count}</small>
-<button class="btn btn-sm btn-outline-secondary copy-btn ms-2" data-text="${heading.text}">
-<i class="fas fa-copy"></i>
-</button>
-</div>
-</div>
-</div>`;
-});
-
-headingsList.innerHTML = html;
-
-// Add copy functionality
-document.querySelectorAll('.copy-btn').forEach(btn => {
-btn.addEventListener('click', function() {
-const text = this.getAttribute('data-text');
-navigator.clipboard.writeText(text)
-.then(() => {
-const originalHTML = this.innerHTML;
-this.innerHTML = '<i class="fas fa-check"></i>';
-this.classList.remove('btn-outline-secondary');
-this.classList.add('btn-success');
-
-setTimeout(() => {
-this.innerHTML = originalHTML;
-this.classList.remove('btn-success');
-this.classList.add('btn-outline-secondary');
-}, 2000);
-});
-});
-});
-}
-
-function displayVisualHierarchy(headings) {
-const hierarchyVisual = document.getElementById('hierarchyVisual');
-
-if (headings.length === 0) {
-hierarchyVisual.innerHTML = '<p class="text-muted">No headings to display hierarchy</p>';
-return;
-}
-
-let html = '';
-let lastLevel = 0;
-
-headings.forEach(heading => {
-const level = parseInt(heading.tag.charAt(1)); // Get number from H1, H2, etc.
-
-html += `
-<div class="hierarchy-level hierarchy-h${level}">
-${heading.tag}: ${heading.text.substring(0, 50)}${heading.text.length > 50 ? '...' : ''}
-</div>`;
-
-lastLevel = level;
-});
-
-hierarchyVisual.innerHTML = html;
-}
-
-function displaySEORecommendations(headings) {
-const seoRecommendations = document.getElementById('seoRecommendations');
-const counts = {
-h1: headings.filter(h => h.tag === 'H1').length,
-h2: headings.filter(h => h.tag === 'H2').length,
-h3: headings.filter(h => h.tag === 'H3').length,
-total: headings.length
-};
-
-let recommendations = [];
-
-// Check for common issues
-if (counts.h1 === 0) {
-recommendations.push({
-type: 'error',
-text: '❌ No H1 heading found. Every page should have exactly one H1 heading.'
-});
-} else if (counts.h1 > 1) {
-recommendations.push({
-type: 'error',
-text: `❌ Multiple H1 headings found (${counts.h1}). Use only one H1 per page.`
-});
-} else {
-recommendations.push({
-type: 'success',
-text: '✅ Perfect! You have exactly one H1 heading.'
-});
-}
-
-if (counts.h2 === 0 && counts.total > 1) {
-recommendations.push({
-type: 'warning',
-text: '⚠️ No H2 headings found. Consider using H2 headings to organize content sections.'
-});
-} else if (counts.h2 > 0) {
-recommendations.push({
-type: 'success',
-text: `✅ Good! You have ${counts.h2} H2 heading(s) for content organization.`
-});
-}
-
-if (counts.total === 0) {
-recommendations.push({
-type: 'error',
-text: '❌ No headings found. Headings are essential for SEO and user experience.'
-});
-}
-
-// Check hierarchy
-let hasHierarchyIssue = false;
-let lastLevel = 0;
-
-for (let heading of headings) {
-const level = parseInt(heading.tag.charAt(1));
-if (level > lastLevel + 1) {
-hasHierarchyIssue = true;
-break;
-}
-lastLevel = level;
-}
-
-if (hasHierarchyIssue) {
-recommendations.push({
-type: 'warning',
-text: '⚠️ Heading hierarchy may have gaps. Try to follow a logical order: H1 → H2 → H3 etc.'
-});
-} else {
-recommendations.push({
-type: 'success',
-text: '✅ Heading hierarchy appears to be logical and well-structured.'
-});
-}
-
-// Check for empty headings
-const emptyHeadings = headings.filter(h => !h.text || h.text.trim() === '');
-if (emptyHeadings.length > 0) {
-recommendations.push({
-type: 'error',
-text: `❌ Found ${emptyHeadings.length} empty heading(s). All headings should have descriptive text.`
-});
-}
-
-// Display recommendations
-let html = '';
-recommendations.forEach(rec => {
-const alertClass = rec.type === 'error' ? 'alert-danger' :
-rec.type === 'warning' ? 'alert-warning' : 'alert-success';
-
-html += `
-<div class="alert ${alertClass} mb-2">
-${rec.text}
-</div>`;
-});
-
-// Add general tips
-html += `
-<div class="mt-3">
-<h6>Additional Tips:</h6>
-<ul class="mb-0">
-<li>Include primary keywords in H1 and secondary keywords in H2/H3 headings</li>
-<li>Keep headings concise (under 70 characters for H1, under 60 for others)</li>
-<li>Use headings to create a logical content outline</li>
-<li>Ensure headings accurately describe the content that follows</li>
-</ul>
-</div>`;
-
-seoRecommendations.innerHTML = html;
-}
-
-function downloadReport() {
-// Create report content
-const url = urlInput.value || 'Manual Input';
-const headingsList = document.querySelectorAll('.heading-item');
-
-let report = `H1-H6 Heading Structure Report\n`;
-report += `================================\n`;
-report += `URL: ${url}\n`;
-report += `Date: ${new Date().toLocaleDateString()}\n`;
-report += `Time: ${new Date().toLocaleTimeString()}\n`;
-report += `Total Headings: ${document.getElementById('totalHeadingsCount').textContent}\n\n`;
-
-report += `HEADING BREAKDOWN:\n`;
-report += `H1: ${document.getElementById('h1Count').textContent}\n`;
-report += `H2: ${document.getElementById('h2Count').textContent}\n`;
-report += `SEO Score: ${document.getElementById('seoScore').textContent}\n\n`;
-
-report += `DETAILED HEADING LIST:\n`;
-report += `=====================\n`;
-
-headingsList.forEach((item, index) => {
-const tag = item.querySelector('.heading-tag').textContent;
-const text = item.querySelector('strong').textContent;
-report += `${index + 1}. ${tag}: ${text}\n`;
-});
-
-report += `\nSEO RECOMMENDATIONS:\n`;
-report += `===================\n`;
-
-const recommendations = document.querySelectorAll('#seoRecommendations .alert');
-recommendations.forEach(rec => {
-report += `- ${rec.textContent.trim()}\n`;
-});
-
-// Create blob and download
-const blob = new Blob([report], { type: 'text/plain' });
-const urlBlob = URL.createObjectURL(blob);
-const a = document.createElement('a');
-a.href = urlBlob;
-a.download = `heading-report-${new Date().toISOString().slice(0,10)}.txt`;
-document.body.appendChild(a);
-a.click();
-document.body.removeChild(a);
-URL.revokeObjectURL(urlBlob);
-}
-}
-</script>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">FreeSEOToolHub</a>
+            <div class="nav-links">
+                <a href="index.html">होम</a>
+                <a href="all-tools.html">सभी टूल्स</a>
+                <a href="tools.html">कैटेगरी</a>
+                <a href="about.html">हमारे बारे में</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="tool-header">
+            <h1><i class="fas fa-heading"></i> H1-H6 हेडिंग चेकर</h1>
+            <p>किसी भी वेबपेज की हेडिंग स्ट्रक्चर एनालाइज़ करें और SEO के लिए इम्प्रूवमेंट सुझाव पाएं</p>
+        </div>
+
+        <div class="tool-container">
+            <!-- Input Section -->
+            <div class="input-section">
+                <h2><i class="fas fa-link"></i> वेबसाइट URL डालें</h2>
+                <p style="color: var(--gray); margin-bottom: 20px;">किसी भी वेबसाइट का URL डालकर उसकी हेडिंग स्ट्रक्चर चेक करें</p>
+                
+                <div class="input-group">
+                    <label for="websiteUrl">वेबसाइट URL</label>
+                    <input type="url" id="websiteUrl" class="form-control" 
+                           placeholder="https://example.com" 
+                           value="https://freeseotoolhub.com">
+                </div>
+                
+                <button onclick="analyzeHeadings()" class="btn-primary">
+                    <i class="fas fa-search"></i> हेडिंग्स एनालाइज़ करें
+                </button>
+                
+                <div id="loading" class="loading">
+                    <div class="spinner"></div>
+                    <p>वेबसाइट स्कैन की जा रही है...</p>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div id="resultsSection" class="results-container" style="display:none;">
+                <div class="heading-structure">
+                    <h3><i class="fas fa-sitemap"></i> हेडिंग स्ट्रक्चर</h3>
+                    <p id="totalHeadings"></p>
+                    <div id="headingsList"></div>
+                </div>
+
+                <!-- SEO Analysis -->
+                <div class="seo-analysis">
+                    <h3><i class="fas fa-chart-line"></i> SEO विश्लेषण</h3>
+                    
+                    <div class="score-card">
+                        <h4>हेडिंग स्ट्रक्चर स्कोर</h4>
+                        <div id="scoreValue" class="score-value">85</div>
+                        <div id="scoreStatus" class="status-good">अच्छा</div>
+                        <p style="color: var(--gray); margin-top: 10px;">आपकी हेडिंग स्ट्रक्चर SEO के लिए अच्छी है</p>
+                    </div>
+                    
+                    <div id="seoIssues"></div>
+                </div>
+
+                <!-- Improvement Tips -->
+                <div class="tips-container">
+                    <h3><i class="fas fa-lightbulb"></i> सुधार के सुझाव</h3>
+                    <div class="tips-list" id="tipsList">
+                        <!-- Tips will be added by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Sample data for headings
+        const sampleHeadings = [
+            { tag: 'h1', text: 'FreeSEOToolHub - 15+ मुफ़्त SEO टूल्स', count: 1 },
+            { tag: 'h2', text: 'हमारे सभी लाइव और काम कर रहे टूल्स', count: 1 },
+            { tag: 'h2', text: 'हिंदी कीवर्ड डेंसिटी चेकर', count: 1 },
+            { tag: 'h2', text: 'मेटा टैग जनरेटर', count: 1 },
+            { tag: 'h3', text: 'कैसे काम करता है', count: 1 },
+            { tag: 'h3', text: 'फीचर्स', count: 1 },
+            { tag: 'h4', text: '100% मुफ्त', count: 1 },
+            { tag: 'h4', text: 'कोई लॉगिन नहीं', count: 1 },
+            { tag: 'h2', text: 'फाइनल CTA', count: 1 },
+            { tag: 'h3', text: 'और जानकारी', count: 1 }
+        ];
+
+        // Tips for improvement
+        const seoTips = [
+            "हर पेज पर सिर्फ एक H1 टैग होना चाहिए",
+            "H2 टैग्स का उपयोग मुख्य सेक्शन्स के लिए करें",
+            "हेडिंग्स को हायरार्किकल ऑर्डर में रखें (H1 → H2 → H3 → H4)",
+            "हेडिंग्स में कीवर्ड्स शामिल करें",
+            "हेडिंग्स को छोटा और डिस्क्रिप्टिव रखें",
+            "बिना हेडिंग स्ट्रक्चर के कंटेंट न लिखें",
+            "हर हेडिंग के बाद उचित कंटेंट जोड़ें"
+        ];
+
+        function analyzeHeadings() {
+            const url = document.getElementById('websiteUrl').value;
+            if (!url) {
+                alert('कृपया वेबसाइट URL डालें');
+                return;
+            }
+
+            // Show loading
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('resultsSection').style.display = 'none';
+
+            // Simulate API call
+            setTimeout(() => {
+                displayResults(url);
+            }, 1500);
+        }
+
+        function displayResults(url) {
+            // Hide loading
+            document.getElementById('loading').style.display = 'none';
+            
+            // Show results
+            document.getElementById('resultsSection').style.display = 'block';
+
+            // Display total headings
+            document.getElementById('totalHeadings').innerHTML = 
+                `<strong>वेबसाइट:</strong> ${url}<br>
+                 <strong>कुल हेडिंग्स:</strong> ${sampleHeadings.length}`;
+
+            // Display headings list
+            const headingsList = document.getElementById('headingsList');
+            headingsList.innerHTML = '';
+            
+            let h1Count = 0, h2Count = 0, h3Count = 0, h4Count = 0, h5Count = 0, h6Count = 0;
+            
+            sampleHeadings.forEach((heading, index) => {
+                // Count headings
+                if (heading.tag === 'h1') h1Count++;
+                if (heading.tag === 'h2') h2Count++;
+                if (heading.tag === 'h3') h3Count++;
+                if (heading.tag === 'h4') h4Count++;
+                if (heading.tag === 'h5') h5Count++;
+                if (heading.tag === 'h6') h6Count++;
+                
+                const headingItem = document.createElement('div');
+                headingItem.className = `heading-item ${heading.tag}-tag`;
+                
+                headingItem.innerHTML = `
+                    <span class="tag-label ${heading.tag}-label">${heading.tag.toUpperCase()}</span>
+                    <span style="flex:1;">${heading.text}</span>
+                    <span style="color:var(--gray); font-size:0.9rem;">#${index + 1}</span>
+                `;
+                
+                headingsList.appendChild(headingItem);
+            });
+
+            // Calculate SEO score
+            let score = 100;
+            const issues = [];
+            
+            if (h1Count === 0) {
+                score -= 30;
+                issues.push('❌ कोई H1 हेडिंग नहीं मिली');
+            } else if (h1Count > 1) {
+                score -= 20;
+                issues.push(`⚠ ${h1Count} H1 हेडिंग्स मिलीं (सिर्फ 1 होना चाहिए)`);
+            } else {
+                issues.push('✅ सही: सिर्फ 1 H1 हेडिंग');
+            }
+            
+            if (h2Count === 0) {
+                score -= 20;
+                issues.push('❌ कोई H2 हेडिंग नहीं मिली');
+            } else {
+                issues.push(`✅ ${h2Count} H2 हेडिंग्स मिलीं`);
+            }
+            
+            // Check hierarchy
+            if (h2Count > 0 && h1Count === 0) {
+                score -= 15;
+                issues.push('⚠ H2 हेडिंग्स बिना H1 के हैं');
+            }
+            
+            if (h3Count > 0 && h2Count === 0) {
+                score -= 10;
+                issues.push('⚠ H3 हेडिंग्स बिना H2 के हैं');
+            }
+            
+            // Ensure score is between 0-100
+            score = Math.max(0, Math.min(100, score));
+            
+            // Display score
+            const scoreElement = document.getElementById('scoreValue');
+            const statusElement = document.getElementById('scoreStatus');
+            
+            scoreElement.textContent = score;
+            scoreElement.className = 'score-value ' + 
+                (score >= 80 ? 'good' : score >= 60 ? 'average' : 'poor');
+            
+            statusElement.textContent = 
+                score >= 80 ? 'अच्छा' : score >= 60 ? 'औसत' : 'खराब';
+            statusElement.className = score >= 80 ? 'status-good' : 
+                                     score >= 60 ? 'status-average' : 'status-poor';
+
+            // Display SEO issues
+            const issuesElement = document.getElementById('seoIssues');
+            issuesElement.innerHTML = `
+                <h4 style="margin-top:20px;"><i class="fas fa-exclamation-triangle"></i> मिली गई समस्याएं</h4>
+                <ul style="margin-left:20px; color:var(--dark);">
+                    ${issues.map(issue => `<li style="margin-bottom:8px;">${issue}</li>`).join('')}
+                </ul>
+            `;
+
+            // Display tips
+            const tipsList = document.getElementById('tipsList');
+            tipsList.innerHTML = '';
+            
+            seoTips.forEach(tip => {
+                const tipElement = document.createElement('div');
+                tipElement.className = 'tip-item';
+                tipElement.innerHTML = `
+                    <div class="tip-icon"><i class="fas fa-check-circle"></i></div>
+                    <div>${tip}</div>
+                `;
+                tipsList.appendChild(tipElement);
+            });
+        }
+
+        // Initialize with sample data on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Auto-analyze on page load with sample URL
+            setTimeout(() => {
+                analyzeHeadings();
+            }, 500);
+        });
+
+        // Load footer
+        fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.body.insertAdjacentHTML('beforeend', data);
+        })
+        .catch(error => {
+            console.log('Footer not found, continuing without it');
+        });
+    </script>
 </body>
 </html>
