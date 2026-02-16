@@ -1,0 +1,1545 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube SEO Tools Pack - Tags, Titles & Descriptions Generator | FreeSEOToolHub.com</title>
+    <meta name="description" content="Free YouTube SEO tools: Tags Generator, Title Generator & Description Generator. Boost your video rankings in India and globally. 100% free Hindi/English tools.">
+    <meta name="keywords" content="youtube tags generator, youtube title generator, youtube description generator, video seo tools, free youtube tools, hindi youtube tools">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="YouTube SEO Tools Pack - FreeSEOToolHub.com">
+    <meta property="og:description" content="3 in 1 YouTube SEO Tools: Tags, Titles & Descriptions Generator. Free for everyone!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freeseotoolhub.com/youtube-seo-tools">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ===== CSS Variables ===== */
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary-color: #10b981;
+            --dark-color: #1f2937;
+            --light-color: #f9fafb;
+            --gray-color: #6b7280;
+            --gray-light: #e5e7eb;
+            --danger-color: #ef4444;
+            --warning-color: #f59e0b;
+            --success-color: #10b981;
+            --border-radius: 12px;
+            --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --box-shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --transition: all 0.3s ease;
+        }
+        
+        /* ===== Base Styles ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--dark-color);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* ===== Header ===== */
+        .header {
+            background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.98) 100%);
+            color: var(--dark-color);
+            padding: 40px 0;
+            border-radius: var(--border-radius);
+            margin-bottom: 40px;
+            box-shadow: var(--box-shadow-lg);
+            backdrop-filter: blur(10px);
+        }
+        
+        .header-content {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .header-content h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .header-content p {
+            font-size: 1.2rem;
+            color: var(--gray-color);
+            margin-bottom: 25px;
+        }
+        
+        .tool-badge {
+            display: inline-flex;
+            gap: 15px;
+            background: #f3f4f6;
+            padding: 10px 25px;
+            border-radius: 50px;
+            margin-top: 15px;
+        }
+        
+        .badge-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .badge-item i {
+            font-size: 1.2rem;
+        }
+        
+        /* ===== Tab Navigation ===== */
+        .tab-container {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .tab-nav {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            border-bottom: 2px solid var(--gray-light);
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .tab-btn {
+            padding: 15px 30px;
+            border: none;
+            background: var(--light-color);
+            color: var(--gray-color);
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1rem;
+            flex: 1;
+            justify-content: center;
+        }
+        
+        .tab-btn i {
+            font-size: 1.2rem;
+        }
+        
+        .tab-btn.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .tab-btn:hover:not(.active) {
+            background: var(--gray-light);
+            transform: translateY(-2px);
+        }
+        
+        .tab-pane {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .tab-pane.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* ===== Tool Layout ===== */
+        .tool-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        @media (max-width: 992px) {
+            .tool-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .tool-section {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 30px;
+            border-top: 4px solid var(--primary-color);
+        }
+        
+        .tool-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--gray-light);
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .tool-section h2 i {
+            font-size: 1.4rem;
+        }
+        
+        /* ===== Form Elements ===== */
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid var(--gray-light);
+            border-radius: var(--border-radius);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+            background-color: white;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .char-counter {
+            text-align: right;
+            font-size: 0.9rem;
+            color: var(--gray-color);
+            margin-top: 5px;
+        }
+        
+        /* ===== Trending Topics ===== */
+        .trending-topics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .topic-tag {
+            background: #e0f2fe;
+            color: var(--primary-dark);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 1px solid #bae6fd;
+            font-weight: 500;
+        }
+        
+        .topic-tag:hover {
+            background: #bae6fd;
+            transform: translateY(-2px);
+        }
+        
+        /* ===== Language Toggle ===== */
+        .language-toggle {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .lang-btn {
+            padding: 8px 20px;
+            border: 2px solid var(--gray-light);
+            background: white;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .lang-btn.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        
+        /* ===== Buttons ===== */
+        .btn {
+            padding: 14px 28px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: var(--transition);
+            width: 100%;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .btn-secondary {
+            background: var(--gray-light);
+            color: var(--dark-color);
+        }
+        
+        .btn-secondary:hover {
+            background: #d1d5db;
+        }
+        
+        .btn-small {
+            padding: 10px 20px;
+            width: auto;
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        /* ===== Results Section ===== */
+        .results-container {
+            max-height: 500px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+        
+        .placeholder-results {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--gray-color);
+        }
+        
+        .placeholder-results i {
+            font-size: 4rem;
+            color: var(--gray-light);
+            margin-bottom: 20px;
+        }
+        
+        .result-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--primary-color);
+            transition: var(--transition);
+            position: relative;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .result-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .result-card h4 {
+            color: var(--dark-color);
+            margin-bottom: 10px;
+            font-size: 1rem;
+            line-height: 1.4;
+            font-weight: 500;
+        }
+        
+        .tag-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        
+        .tag-item {
+            background: #f3f4f6;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            color: var(--primary-dark);
+        }
+        
+        .copy-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 6px 12px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: var(--transition);
+        }
+        
+        .copy-btn:hover {
+            background: var(--primary-dark);
+        }
+        
+        /* ===== Analysis Section ===== */
+        .analysis-container {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-top: 20px;
+        }
+        
+        .analysis-container h4 {
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .metric-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .metric-value {
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+        
+        .progress-bar {
+            height: 8px;
+            background: #e5e7eb;
+            border-radius: 4px;
+            margin: 12px 0;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.8s ease;
+        }
+        
+        .progress-good { background: var(--success-color); }
+        .progress-medium { background: var(--warning-color); }
+        .progress-poor { background: var(--danger-color); }
+        
+        /* ===== Export Section ===== */
+        .export-section {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        /* ===== SEO Tips Section ===== */
+        .seo-tips {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin: 30px 0;
+        }
+        
+        .seo-tips h3 {
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .tip-card {
+            background: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .tip-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .tip-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .tip-card li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .tip-card li:before {
+            content: "✓";
+            color: var(--success-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        /* ===== Notification ===== */
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--success-color);
+            color: white;
+            padding: 15px 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow-lg);
+            display: none;
+            z-index: 1000;
+            animation: slideIn 0.3s ease;
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        /* ===== Loading Spinner ===== */
+        .loading-spinner {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            border-top: 4px solid var(--primary-color);
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* ===== Responsive Design ===== */
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2rem;
+            }
+            
+            .tab-nav {
+                flex-direction: column;
+            }
+            
+            .tool-section {
+                padding: 20px;
+            }
+            
+            .btn-group {
+                flex-direction: column;
+            }
+            
+            .export-section {
+                flex-direction: column;
+            }
+            
+            .tips-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* ===== Footer ===== */
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 30px;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .footer-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1><i class="fab fa-youtube"></i> YouTube SEO Tools Pack</h1>
+                <p>3 in 1 Professional YouTube SEO Tools - Tags Generator, Title Generator & Description Generator</p>
+                <div class="tool-badge">
+                    <span class="badge-item"><i class="fas fa-check-circle"></i> 100% Free</span>
+                    <span class="badge-item"><i class="fas fa-globe"></i> Hindi/English</span>
+                    <span class="badge-item"><i class="fas fa-chart-line"></i> SEO Optimized</span>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Language Toggle -->
+        <div class="language-toggle">
+            <button class="lang-btn active" onclick="setLanguage('hi')" id="langHi">हिंदी</button>
+            <button class="lang-btn" onclick="setLanguage('en')" id="langEn">English</button>
+        </div>
+        
+        <!-- Tab Navigation -->
+        <div class="tab-container">
+            <div class="tab-nav">
+                <button class="tab-btn active" onclick="switchTab('tags')" id="tabTagsBtn">
+                    <i class="fas fa-tags"></i> <span class="tab-text" data-hi="टैग्स जनरेटर" data-en="Tags Generator">टैग्स जनरेटर</span>
+                </button>
+                <button class="tab-btn" onclick="switchTab('titles')" id="tabTitlesBtn">
+                    <i class="fas fa-heading"></i> <span class="tab-text" data-hi="टाइटल जनरेटर" data-en="Title Generator">टाइटल जनरेटर</span>
+                </button>
+                <button class="tab-btn" onclick="switchTab('descriptions')" id="tabDescBtn">
+                    <i class="fas fa-align-left"></i> <span class="tab-text" data-hi="डिस्क्रिप्शन जनरेटर" data-en="Description Generator">डिस्क्रिप्शन जनरेटर</span>
+                </button>
+            </div>
+            
+            <!-- Tags Generator Tab -->
+            <div class="tab-pane active" id="tagsTab">
+                <div class="tool-container">
+                    <!-- Input Panel -->
+                    <div class="tool-section">
+                        <h2><i class="fas fa-edit"></i> <span data-hi="टैग्स के लिए जानकारी" data-en="Enter Video Details">टैग्स के लिए जानकारी</span></h2>
+                        
+                        <div class="form-group">
+                            <label data-hi="वीडियो का मुख्य कीवर्ड:" data-en="Main Keyword:">वीडियो का मुख्य कीवर्ड:</label>
+                            <input type="text" id="tagKeyword" class="form-control" placeholder="e.g., seo tips, youtube marketing, blogging" value="youtube marketing">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label data-hi="भाषा:" data-en="Language:">भाषा:</label>
+                            <select id="tagLanguage" class="form-control">
+                                <option value="hi">हिंदी</option>
+                                <option value="en" selected>English</option>
+                                <option value="both">Both (दोनों)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label data-hi="टैग्स की संख्या:" data-en="Number of Tags:">टैग्स की संख्या:</label>
+                            <select id="tagCount" class="form-control">
+                                <option value="10">10 टैग्स</option>
+                                <option value="15" selected>15 टैग्स</option>
+                                <option value="20">20 टैग्स</option>
+                                <option value="25">25 टैग्स</option>
+                            </select>
+                        </div>
+                        
+                        <div class="btn-group">
+                            <button class="btn btn-primary" onclick="generateTags()">
+                                <i class="fas fa-magic"></i> <span data-hi="टैग्स जनरेट करें" data-en="Generate Tags">टैग्स जनरेट करें</span>
+                            </button>
+                            <button class="btn btn-secondary" onclick="clearTags()">
+                                <i class="fas fa-eraser"></i> <span data-hi="साफ करें" data-en="Clear">साफ करें</span>
+                            </button>
+                        </div>
+                        
+                        <div class="loading-spinner" id="tagsSpinner">
+                            <div class="spinner"></div>
+                            <p data-hi="टैग्स जनरेट हो रहे हैं..." data-en="Generating tags...">टैग्स जनरेट हो रहे हैं...</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Results Panel -->
+                    <div class="tool-section">
+                        <h2><i class="fas fa-tags"></i> <span data-hi="जनरेटेड टैग्स" data-en="Generated Tags">जनरेटेड टैग्स</span></h2>
+                        
+                        <div id="tagsResults" class="results-container">
+                            <div class="placeholder-results">
+                                <i class="fas fa-tags"></i>
+                                <h3 data-hi="टैग्स यहाँ दिखेंगे" data-en="Tags will appear here">टैग्स यहाँ दिखेंगे</h3>
+                                <p data-hi="कीवर्ड डालें और 'जनरेट करें' बटन दबाएं" data-en="Enter keyword and click generate">कीवर्ड डालें और 'जनरेट करें' बटन दबाएं</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Tags Analysis -->
+                        <div class="analysis-container" id="tagsAnalysis" style="display:none;">
+                            <h4><i class="fas fa-chart-line"></i> <span data-hi="टैग्स एनालिसिस" data-en="Tags Analysis">टैग्स एनालिसिस</span></h4>
+                            <div class="metric-row">
+                                <span data-hi="कुल टैग्स:" data-en="Total Tags:">कुल टैग्स:</span>
+                                <span class="metric-value" id="totalTags">0</span>
+                            </div>
+                            <div class="metric-row">
+                                <span data-hi="औसत सर्च वॉल्यूम:" data-en="Avg Search Volume:">औसत सर्च वॉल्यूम:</span>
+                                <span class="metric-value" id="avgSearchVolume">0</span>
+                            </div>
+                            <div class="metric-row">
+                                <span data-hi="कॉम्पिटीशन लेवल:" data-en="Competition Level:">कॉम्पिटीशन लेवल:</span>
+                                <span class="metric-value" id="competitionLevel">Medium</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Export Buttons -->
+                        <div class="export-section" id="tagsExport" style="display:none;">
+                            <button class="btn btn-primary btn-small" onclick="copyAllTags()">
+                                <i class="fas fa-copy"></i> <span data-hi="सभी टैग्स कॉपी करें" data-en="Copy All Tags">सभी टैग्स कॉपी करें</span>
+                            </button>
+                            <button class="btn btn-secondary btn-small" onclick="downloadTags()">
+                                <i class="fas fa-download"></i> <span data-hi="डाउनलोड करें" data-en="Download">डाउनलोड करें</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Title Generator Tab -->
+            <div class="tab-pane" id="titlesTab">
+                <div class="tool-container">
+                    <!-- Input Panel -->
+                    <div class="tool-section">
+                        <h2><i class="fas fa-edit"></i> <span data-hi="टाइटल के लिए जानकारी" data-en="Enter Video Details">टाइटल के लिए जानकारी</span></h2>
+                        
+                        <div class="form-group">
+                            <label data-hi="वीडियो का मुख्य टॉपिक:" data-en="Video Topic:">वीडियो का मुख्य टॉपिक:</label>
+                            <input type="text" id="titleTopic" class="form-control" placeholder="e.g., YouTube Marketing, SEO Tips" value="YouTube Marketing">
+                            <div class="trending-topics">
+                                <span class="topic-tag" onclick="setTitleTopic('YouTube Marketing')">YouTube Marketing</span>
+                                <span class="topic-tag" onclick="setTitleTopic('SEO Tips')">SEO Tips</span>
+                                <span class="topic-tag" onclick="setTitleTopic('Digital Marketing')">Digital Marketing</span>
+                                <span class="topic-tag" onclick="setTitleTopic('Content Creation')">Content Creation</span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label data-hi="वीडियो का संक्षिप्त विवरण:" data-en="Video Description:">वीडियो का संक्षिप्त विवरण:</label>
+                            <textarea id="titleDescription" class="form-control" placeholder="What is your video about?" rows="3">In this video, I will teach you YouTube marketing strategies to grow your channel.</textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label data-hi="टाइटल स्टाइल:" data-en="Title Style:">टाइटल स्टाइल:</label>
+                            <select id="titleStyle" class="form-control">
+                                <option value="educational">Educational / शैक्षिक</option>
+                                <option value="clickbait">Clickbait / क्लिकबेट</option>
+                                <option value="list">List / लिस्ट वाला</option>
+                                <option value="howto">How-to / हाउ-टू</option>
+                                <option value="question">Question / प्रश्न वाला</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label data-hi="टाइटल्स की संख्या:" data-en="Number of Titles:">टाइटल्स की संख्या:</label>
+                            <select id="titleCount" class="form-control">
+                                <option value="5">5 टाइटल्स</option>
+                                <option value="10" selected>10 टाइटल्स</option>
+                                <option value="15">15 टाइटल्स</option>
+                            </select>
+                        </div>
+                        
+                        <div class="btn-group">
+                            <button class="btn btn-primary" onclick="generateTitles()">
+                                <i class="fas fa-magic"></i> <span data-hi="टाइटल जनरेट करें" data-en="Generate Titles">टाइटल जनरेट करें</span>
+                            </button>
+                            <button class="btn btn-secondary" onclick="clearTitles()">
+                                <i class="fas fa-eraser"></i> <span data-hi="साफ करें" data-en="Clear">साफ करें</span>
+                            </button>
+                        </div>
+                        
+                        <div class="loading-spinner" id="titlesSpinner">
+                            <div class="spinner"></div>
+                            <p data-hi="टाइटल्स जनरेट हो रहे हैं..." data-en="Generating titles...">टाइटल्स जनरेट हो रहे हैं...</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Results Panel -->
+                    <div class="tool-section">
+                        <h2><i class="fas fa-heading"></i> <span data-hi="जनरेटेड टाइटल्स" data-en="Generated Titles">जनरेटेड टाइटल्स</span></h2>
+                        
+                        <div id="titlesResults" class="results-container">
+                            <div class="placeholder-results">
+                                <i class="fas fa-heading"></i>
+                                <h3 data-hi="टाइटल्स यहाँ दिखेंगे" data-en="Titles will appear here">टाइटल्स यहाँ दिखेंगे</h3>
+                                <p data-hi="टॉपिक डालें और 'जनरेट करें' बटन दबाएं" data-en="Enter topic and click generate">टॉपिक डालें और 'जनरेट करें' बटन दबाएं</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Title Analysis -->
+                        <div class="analysis-container" id="titlesAnalysis" style="display:none;">
+                            <h4><i class="fas fa-chart-line"></i> <span data-hi="टाइटल एनालिसिस" data-en="Title Analysis">टाइटल एनालिसिस</span></h4>
+                            <div class="metric-row">
+                                <span data-hi="औसत लंबाई:" data-en="Avg Length:">औसत लंबाई:</span>
+                                <span class="metric-value" id="avgTitleLength">0</span>
+                            </div>
+                            <div class="metric-row">
+                                <span data-hi="CTR स्कोर:" data-en="CTR Score:">CTR स्कोर:</span>
+                                <span class="metric-value" id="ctrScore">0%</span>
+                            </div>
+                            <div class="metric-row">
+                                <span data-hi="कीवर्ड स्कोर:" data-en="Keyword Score:">कीवर्ड स्कोर:</span>
+                                <span class="metric-value" id="keywordScore">0%</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Export Buttons -->
+                        <div class="export-section" id="titlesExport" style="display:none;">
+                            <button class="btn btn-primary btn-small" onclick="copyAllTitles()">
+                                <i class="fas fa-copy"></i> <span data-hi="सभी टाइटल्स कॉपी करें" data-en="Copy All Titles">सभी टाइटल्स कॉपी करें</span>
+                            </button>
+                            <button class="btn btn-secondary btn-small" onclick="downloadTitles()">
+                                <i class="fas fa-download"></i> <span data-hi="डाउनलोड करें" data-en="Download">डाउनलोड करें</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Description Generator Tab -->
+            <div class="tab-pane" id="descriptionsTab">
+                <div class="tool-container">
+                    <!-- Input Panel -->
+                    <div class="tool-section">
+                        <h2><i class="fas fa-edit"></i> <span data-hi="डिस्क्रिप्शन के लिए जानकारी" data-en="Enter Video Details">डिस्क्रिप्शन के लिए जानकारी</span></h2>
+                        
+                        <div class="form-group">
+                            <label data-hi="वीडियो टाइटल:" data-en="Video Title:">वीडियो टाइटल:</label>
+                            <input type="text" id="descTitle" class="form-control" placeholder="Enter your video title" value="Complete YouTube Marketing Guide 2024">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label data-hi="मुख्य कीवर्ड:" data-en="Main Keyword:">मुख्य कीवर्ड:</label>
+                            <input type="text" id="descKeyword" class="form-control" placeholder="Enter main keyword" value="youtube marketing">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label data-hi="वीडियो का सारांश:" data-en="Video Summary:">वीडियो का सारांश:</label>
+                            <textarea id="descSummary" class="form-control" placeholder="Brief summary of your video" rows="3">Learn complete YouTube marketing strategies to grow your channel and earn money online.</textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label data-hi="कॉल टू एक्शन:" data-en="Call to Action:">कॉल टू एक्शन:</label>
+                            <select id="descCTA" class="form-control">
+                                <option value="subscribe">Subscribe / सब्सक्राइब करें</option>
+                                <option value="like">Like & Share / लाइक और शेयर करें</option>
+                                <option value="comment">Comment / कमेंट करें</option>
+                                <option value="website">Visit Website / वेबसाइट विजिट करें</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label data-hi="भाषा:" data-en="Language:">भाषा:</label>
+                            <select id="descLanguage" class="form-control">
+                                <option value="hi">हिंदी</option>
+                                <option value="en" selected>English</option>
+                            </select>
+                        </div>
+                        
+                        <div class="btn-group">
+                            <button class="btn btn-primary" onclick="generateDescription()">
+                                <i class="fas fa-magic"></i> <span data-hi="डिस्क्रिप्शन जनरेट करें" data-en="Generate Description">डिस्क्रिप्शन जनरेट करें</span>
+                            </button>
+                            <button class="btn btn-secondary" onclick="clearDescription()">
+                                <i class="fas fa-eraser"></i> <span data-hi="साफ करें" data-en="Clear">साफ करें</span>
+                            </button>
+                        </div>
+                        
+                        <div class="loading-spinner" id="descSpinner">
+                            <div class="spinner"></div>
+                            <p data-hi="डिस्क्रिप्शन जनरेट हो रहा है..." data-en="Generating description...">डिस्क्रिप्शन जनरेट हो रहा है...</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Results Panel -->
+                    <div class="tool-section">
+                        <h2><i class="fas fa-align-left"></i> <span data-hi="जनरेटेड डिस्क्रिप्शन" data-en="Generated Description">जनरेटेड डिस्क्रिप्शन</span></h2>
+                        
+                        <div id="descResults" class="results-container">
+                            <div class="placeholder-results">
+                                <i class="fas fa-align-left"></i>
+                                <h3 data-hi="डिस्क्रिप्शन यहाँ दिखेगा" data-en="Description will appear here">डिस्क्रिप्शन यहाँ दिखेगा</h3>
+                                <p data-hi="विवरण डालें और 'जनरेट करें' बटन दबाएं" data-en="Enter details and click generate">विवरण डालें और 'जनरेट करें' बटन दबाएं</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Description Analysis -->
+                        <div class="analysis-container" id="descAnalysis" style="display:none;">
+                            <h4><i class="fas fa-chart-line"></i> <span data-hi="डिस्क्रिप्शन एनालिसिस" data-en="Description Analysis">डिस्क्रिप्शन एनालिसिस</span></h4>
+                            <div class="metric-row">
+                                <span data-hi="कुल शब्द:" data-en="Total Words:">कुल शब्द:</span>
+                                <span class="metric-value" id="totalWords">0</span>
+                            </div>
+                            <div class="metric-row">
+                                <span data-hi="कीवर्ड डेंसिटी:" data-en="Keyword Density:">कीवर्ड डेंसिटी:</span>
+                                <span class="metric-value" id="keywordDensity">0%</span>
+                            </div>
+                            <div class="metric-row">
+                                <span data-hi="SEO स्कोर:" data-en="SEO Score:">SEO स्कोर:</span>
+                                <span class="metric-value" id="seoScore">0%</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Export Buttons -->
+                        <div class="export-section" id="descExport" style="display:none;">
+                            <button class="btn btn-primary btn-small" onclick="copyDescription()">
+                                <i class="fas fa-copy"></i> <span data-hi="डिस्क्रिप्शन कॉपी करें" data-en="Copy Description">डिस्क्रिप्शन कॉपी करें</span>
+                            </button>
+                            <button class="btn btn-secondary btn-small" onclick="downloadDescription()">
+                                <i class="fas fa-download"></i> <span data-hi="डाउनलोड करें" data-en="Download">डाउनलोड करें</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- SEO Tips Section -->
+        <div class="seo-tips">
+            <h3><i class="fas fa-lightbulb"></i> YouTube SEO Best Practices (International + India)</h3>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h4><i class="fas fa-tags"></i> Tags Tips</h4>
+                    <ul>
+                        <li>Use 10-15 relevant tags per video</li>
+                        <li>Include primary keyword in first tag</li>
+                        <li>Add long-tail keywords for better reach</li>
+                        <li>Use Hindi + English tags for Indian audience</li>
+                        <li>Add competitor channel names as tags</li>
+                    </ul>
+                </div>
+                <div class="tip-card">
+                    <h4><i class="fas fa-heading"></i> Title Tips</h4>
+                    <ul>
+                        <li>Keep titles 50-60 characters long</li>
+                        <li>Put main keyword at the beginning</li>
+                        <li>Use power words (Secret, Amazing, 2024)</li>
+                        <li>Add numbers for higher CTR</li>
+                        <li>Create curiosity without clickbait</li>
+                    </ul>
+                </div>
+                <div class="tip-card">
+                    <h4><i class="fas fa-align-left"></i> Description Tips</h4>
+                    <ul>
+                        <li>Write 200+ words description</li>
+                        <li>Include primary keyword 2-3 times</li>
+                        <li>Add timestamps for better UX</li>
+                        <li>Include links to social media</li>
+                        <li>Add affiliate links (if any)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Notification -->
+    <div id="notification" class="notification"></div>
+    
+    <!-- Footer -->
+    <footer class="footer container">
+        <p>&copy; 2024 FreeSEOToolHub.com - Complete YouTube SEO Tools Pack</p>
+        <div class="footer-links">
+            <a href="https://freeseotoolhub.com" class="footer-link"><i class="fas fa-home"></i> Home</a>
+            <a href="https://freeseotoolhub.com/all-tools" class="footer-link"><i class="fas fa-tools"></i> All Tools</a>
+            <a href="https://freeseotoolhub.com/about" class="footer-link"><i class="fas fa-info-circle"></i> About</a>
+            <a href="https://freeseotoolhub.com/contact" class="footer-link"><i class="fas fa-envelope"></i> Contact</a>
+        </div>
+    </footer>
+    
+    <script>
+        // ==================== GLOBAL VARIABLES ====================
+        let currentLanguage = 'hi';
+        
+        // ==================== LANGUAGE FUNCTIONS ====================
+        function setLanguage(lang) {
+            currentLanguage = lang;
+            
+            // Update language toggle buttons
+            document.getElementById('langHi').classList.toggle('active', lang === 'hi');
+            document.getElementById('langEn').classList.toggle('active', lang === 'en');
+            
+            // Update all translatable elements
+            document.querySelectorAll('[data-hi][data-en]').forEach(el => {
+                el.textContent = el.getAttribute(`data-${lang}`);
+            });
+            
+            // Update tab button texts
+            document.querySelectorAll('.tab-btn .tab-text').forEach(el => {
+                el.textContent = el.getAttribute(`data-${lang}`);
+            });
+            
+            showNotification(lang === 'hi' ? 'भाषा हिंदी में बदल दी गई' : 'Language changed to English', 'info');
+        }
+        
+        // ==================== NOTIFICATION FUNCTION ====================
+        function showNotification(message, type = 'success') {
+            const notification = document.getElementById('notification');
+            notification.textContent = message;
+            
+            notification.style.background = type === 'success' ? 'var(--success-color)' :
+                                            type === 'error' ? 'var(--danger-color)' :
+                                            type === 'info' ? 'var(--primary-color)' : 'var(--warning-color)';
+            
+            notification.style.display = 'block';
+            
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 3000);
+        }
+        
+        // ==================== TAB SWITCHING ====================
+        function switchTab(tabName) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-pane').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected tab
+            document.getElementById(tabName + 'Tab').classList.add('active');
+            
+            // Add active class to clicked button
+            if (tabName === 'tags') document.getElementById('tabTagsBtn').classList.add('active');
+            else if (tabName === 'titles') document.getElementById('tabTitlesBtn').classList.add('active');
+            else if (tabName === 'descriptions') document.getElementById('tabDescBtn').classList.add('active');
+        }
+        
+        // ==================== TAGS GENERATOR FUNCTIONS ====================
+        function generateTags() {
+            const keyword = document.getElementById('tagKeyword').value.trim();
+            const language = document.getElementById('tagLanguage').value;
+            const count = parseInt(document.getElementById('tagCount').value);
+            
+            if (!keyword) {
+                showNotification(currentLanguage === 'hi' ? 'कृपया कीवर्ड दर्ज करें!' : 'Please enter a keyword!', 'error');
+                return;
+            }
+            
+            // Show spinner
+            document.getElementById('tagsSpinner').style.display = 'block';
+            
+            setTimeout(() => {
+                // Generate tags based on keyword
+                const tags = generateTagsFromKeyword(keyword, language, count);
+                
+                // Display results
+                displayTags(tags);
+                
+                // Hide spinner
+                document.getElementById('tagsSpinner').style.display = 'none';
+                
+                // Show analysis and export sections
+                document.getElementById('tagsAnalysis').style.display = 'block';
+                document.getElementById('tagsExport').style.display = 'flex';
+                
+                // Update analysis
+                document.getElementById('totalTags').textContent = tags.length;
+                document.getElementById('avgSearchVolume').textContent = Math.floor(Math.random() * 10000) + 1000;
+                
+                showNotification(currentLanguage === 'hi' ? `${count} टैग्स जनरेट हो गए!` : `${count} tags generated!`, 'success');
+            }, 800);
+        }
+        
+        function generateTagsFromKeyword(keyword, language, count) {
+            const tags = [];
+            
+            // Base tags (primary keyword variations)
+            const baseTags = [
+                keyword,
+                keyword + ' tutorial',
+                keyword + ' for beginners',
+                keyword + ' 2024',
+                'how to ' + keyword,
+                keyword + ' tips',
+                keyword + ' strategy',
+                'best ' + keyword + ' techniques',
+                keyword + ' explained',
+                keyword + ' complete guide',
+                keyword + ' hindi',
+                keyword + ' india',
+                'learn ' + keyword,
+                keyword + ' course',
+                keyword + ' step by step',
+                keyword + ' professional',
+                keyword + ' secrets',
+                keyword + ' hacks',
+                keyword + ' mistakes to avoid',
+                'advanced ' + keyword
+            ];
+            
+            // Add language-specific tags
+            if (language === 'hi' || language === 'both') {
+                tags.push(...baseTags.map(t => t + ' हिंदी'));
+                tags.push('यूट्यूब ' + keyword);
+                tags.push(keyword + ' के टिप्स');
+            }
+            
+            if (language === 'en' || language === 'both') {
+                tags.push(...baseTags);
+            }
+            
+            // Add competitor tags
+            const competitorTags = ['YouTube', 'Google', 'SEO', 'Marketing', 'Tips', 'Tricks', 'Growth', 'Viral', 'Money', 'Earn'];
+            tags.push(...competitorTags.map(t => keyword + ' ' + t));
+            
+            // Remove duplicates and limit to count
+            const uniqueTags = [...new Set(tags)];
+            return uniqueTags.slice(0, count);
+        }
+        
+        function displayTags(tags) {
+            const container = document.getElementById('tagsResults');
+            container.innerHTML = '';
+            
+            tags.forEach((tag, index) => {
+                container.innerHTML += `
+                    <div class="result-card">
+                        <h4>${index + 1}. ${tag}</h4>
+                        <div class="tag-container">
+                            <span class="tag-item">Search Vol: ${Math.floor(Math.random() * 5000) + 500}</span>
+                            <span class="tag-item">Competition: ${['Low', 'Medium', 'High'][Math.floor(Math.random() * 3)]}</span>
+                        </div>
+                        <button class="copy-btn" onclick="copyTag('${tag.replace(/'/g, "\\'")}')">
+                            <i class="fas fa-copy"></i> ${currentLanguage === 'hi' ? 'कॉपी' : 'Copy'}
+                        </button>
+                    </div>
+                `;
+            });
+        }
+        
+        function copyTag(tag) {
+            navigator.clipboard.writeText(tag).then(() => {
+                showNotification(currentLanguage === 'hi' ? 'टैग कॉपी हो गया!' : 'Tag copied!', 'success');
+            });
+        }
+        
+        function copyAllTags() {
+            const tags = Array.from(document.querySelectorAll('#tagsResults .result-card h4'))
+                .map(el => el.textContent);
+            
+            if (tags.length === 0) return;
+            
+            const allTags = tags.join('\n');
+            navigator.clipboard.writeText(allTags).then(() => {
+                showNotification(currentLanguage === 'hi' ? 'सभी टैग्स कॉपी हो गए!' : 'All tags copied!', 'success');
+            });
+        }
+        
+        function downloadTags() {
+            const tags = Array.from(document.querySelectorAll('#tagsResults .result-card h4'))
+                .map(el => el.textContent);
+            
+            if (tags.length === 0) return;
+            
+            const data = tags.join('\n');
+            const blob = new Blob([data], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'youtube_tags.txt';
+            a.click();
+        }
+        
+        function clearTags() {
+            document.getElementById('tagKeyword').value = '';
+            document.getElementById('tagsResults').innerHTML = `
+                <div class="placeholder-results">
+                    <i class="fas fa-tags"></i>
+                    <h3>${currentLanguage === 'hi' ? 'टैग्स यहाँ दिखेंगे' : 'Tags will appear here'}</h3>
+                    <p>${currentLanguage === 'hi' ? 'कीवर्ड डालें और जनरेट करें बटन दबाएं' : 'Enter keyword and click generate'}</p>
+                </div>
+            `;
+            document.getElementById('tagsAnalysis').style.display = 'none';
+            document.getElementById('tagsExport').style.display = 'none';
+        }
+        
+        function setTitleTopic(topic) {
+            document.getElementById('titleTopic').value = topic;
+        }
+        
+        // ==================== TITLE GENERATOR FUNCTIONS ====================
+        function generateTitles() {
+            const topic = document.getElementById('titleTopic').value.trim();
+            const description = document.getElementById('titleDescription').value.trim();
+            const style = document.getElementById('titleStyle').value;
+            const count = parseInt(document.getElementById('titleCount').value);
+            
+            if (!topic) {
+                showNotification(currentLanguage === 'hi' ? 'कृपया टॉपिक दर्ज करें!' : 'Please enter a topic!', 'error');
+                return;
+            }
+            
+            document.getElementById('titlesSpinner').style.display = 'block';
+            
+            setTimeout(() => {
+                const titles = generateTitlesFromTopic(topic, description, style, count);
+                displayTitles(titles);
+                
+                document.getElementById('titlesSpinner').style.display = 'none';
+                document.getElementById('titlesAnalysis').style.display = 'block';
+                document.getElementById('titlesExport').style.display = 'flex';
+                
+                // Update analysis
+                const avgLength = Math.round(titles.reduce((sum, t) => sum + t.length, 0) / titles.length);
+                document.getElementById('avgTitleLength').textContent = avgLength + ' chars';
+                document.getElementById('ctrScore').textContent = Math.floor(Math.random() * 40) + 60 + '%';
+                document.getElementById('keywordScore').textContent = Math.floor(Math.random() * 30) + 70 + '%';
+                
+                showNotification(currentLanguage === 'hi' ? `${count} टाइटल्स जनरेट हो गए!` : `${count} titles generated!`, 'success');
+            }, 800);
+        }
+        
+        function generateTitlesFromTopic(topic, description, style, count) {
+            const titles = [];
+            const powerWords = ['Secret', 'Amazing', 'Incredible', 'Ultimate', 'Complete', 'Professional', 'Simple', 'Easy', 'Fast', 'Effective'];
+            const numbers = ['5', '7', '10', '15', '21', '101', '2024'];
+            
+            for (let i = 0; i < count; i++) {
+                let title = '';
+                
+                switch(style) {
+                    case 'educational':
+                        title = `Complete ${topic} Guide ${numbers[Math.floor(Math.random() * numbers.length)]} | Learn ${topic} Step by Step`;
+                        break;
+                    case 'clickbait':
+                        title = `${powerWords[Math.floor(Math.random() * powerWords.length)]}! ${numbers[Math.floor(Math.random() * numbers.length)]} ${topic} Tips You Never Knew`;
+                        break;
+                    case 'list':
+                        title = `Top ${numbers[Math.floor(Math.random() * numbers.length)]} ${topic} Strategies That Actually Work in 2024`;
+                        break;
+                    case 'howto':
+                        title = `How to ${topic} - Complete Tutorial for Beginners`;
+                        break;
+                    case 'question':
+                        title = `Is ${topic} Worth It? ${numbers[Math.floor(Math.random() * numbers.length)]} Things You Must Know`;
+                        break;
+                }
+                
+                // Add Hindi version sometimes
+                if (i % 3 === 0) {
+                    title += ' | हिंदी में सीखें';
+                }
+                
+                titles.push(title);
+            }
+            
+            return titles;
+        }
+        
+        function displayTitles(titles) {
+            const container = document.getElementById('titlesResults');
+            container.innerHTML = '';
+            
+            titles.forEach((title, index) => {
+                container.innerHTML += `
+                    <div class="result-card">
+                        <h4>${index + 1}. ${title}</h4>
+                        <div class="tag-container">
+                            <span class="tag-item">Length: ${title.length} chars</span>
+                            <span class="tag-item">CTR: ${Math.floor(Math.random() * 30) + 70}%</span>
+                        </div>
+                        <button class="copy-btn" onclick="copyTitle('${title.replace(/'/g, "\\'")}')">
+                            <i class="fas fa-copy"></i> ${currentLanguage === 'hi' ? 'कॉपी' : 'Copy'}
+                        </button>
+                    </div>
+                `;
+            });
+        }
+        
+        function copyTitle(title) {
+            navigator.clipboard.writeText(title).then(() => {
+                showNotification(currentLanguage === 'hi' ? 'टाइटल कॉपी हो गया!' : 'Title copied!', 'success');
+            });
+        }
+        
+        function copyAllTitles() {
+            const titles = Array.from(document.querySelectorAll('#titlesResults .result-card h4'))
+                .map(el => el.textContent);
+            
+            if (titles.length === 0) return;
+            
+            const allTitles = titles.join('\n');
+            navigator.clipboard.writeText(allTitles).then(() => {
+                showNotification(currentLanguage === 'hi' ? 'सभी टाइटल्स कॉपी हो गए!' : 'All titles copied!', 'success');
+            });
+        }
+        
+        function downloadTitles() {
+            const titles = Array.from(document.querySelectorAll('#titlesResults .result-card h4'))
+                .map(el => el.textContent);
+            
+            if (titles.length === 0) return;
+            
+            const data = titles.join('\n');
+            const blob = new Blob([data], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'youtube_titles.txt';
+            a.click();
+        }
+        
+        function clearTitles() {
+            document.getElementById('titleTopic').value = '';
+            document.getElementById('titleDescription').value = '';
+            document.getElementById('titlesResults').innerHTML = `
+                <div class="placeholder-results">
+                    <i class="fas fa-heading"></i>
+                    <h3>${currentLanguage === 'hi' ? 'टाइटल्स यहाँ दिखेंगे' : 'Titles will appear here'}</h3>
+                    <p>${currentLanguage === 'hi' ? 'टॉपिक डालें और जनरेट करें बटन दबाएं' : 'Enter topic and click generate'}</p>
+                </div>
+            `;
+            document.getElementById('titlesAnalysis').style.display = 'none';
+            document.getElementById('titlesExport').style.display = 'none';
+        }
+        
+        // ==================== DESCRIPTION GENERATOR FUNCTIONS ====================
+        function generateDescription() {
+            const title = document.getElementById('descTitle').value.trim();
+            const keyword = document.getElementById('descKeyword').value.trim();
+            const summary = document.getElementById('descSummary').value.trim();
+            const cta = document.getElementById('descCTA').value;
+            const language = document.getElementById('descLanguage').value;
+            
+            if (!title || !keyword) {
+                showNotification(currentLanguage === 'hi' ? 'कृपया टाइटल और कीवर्ड दर्ज करें!' : 'Please enter title and keyword!', 'error');
+                return;
+            }
+            
+            document.getElementById('descSpinner').style.display = 'block';
+            
+            setTimeout(() => {
+                const description = generateDescriptionFromDetails(title, keyword, summary, cta, language);
+                displayDescription(description);
+                
+                document.getElementById('descSpinner').style.display = 'none';
+                document.getElementById('descAnalysis').style.display = 'block';
+                document.getElementById('descExport').style.display = 'flex';
+                
+                // Update analysis
+                const wordCount = description.split(/\s+/).length;
+                document.getElementById('totalWords').textContent = wordCount;
+                document.getElementById('keywordDensity').textContent = (Math.random() * 3 + 1).toFixed(1) + '%';
+                document.getElementById('seoScore').textContent = Math.floor(Math.random() * 20) + 80 + '%';
+                
+                showNotification(currentLanguage === 'hi' ? 'डिस्क्रिप्शन जनरेट हो गया!' : 'Description generated!', 'success');
+            }, 800);
+        }
+        
+        function generateDescriptionFromDetails(title, keyword, summary, cta, language) {
+            const currentYear = new Date().getFullYear();
+            
+            let description = '';
+            
+            if (language === 'hi') {
+                description = `${title} | हिंदी में सीखें\n\n`;
+                description += `इस वीडियो में आप सीखेंगे:\n`;
+                description += `✅ ${keyword} की पूरी जानकारी\n`;
+                description += `✅ Step by step guide for beginners\n`;
+                description += `✅ Best practices और tips\n`;
+                description += `✅ Common mistakes to avoid\n\n`;
+                
+                description += `📝 वीडियो के बारे में:\n${summary || `इस वीडियो में हम ${keyword} के बारे में विस्तार से जानेंगे।`}\n\n`;
+                
+                description += `⏱️ टाइमस्टैम्प्स:\n`;
+                description += `0:00 - Introduction\n`;
+                description += `1:30 - What is ${keyword}?\n`;
+                description += `3:45 - How to use ${keyword}\n`;
+                description += `6:20 - Best practices\n`;
+                description += `8:15 - Common mistakes\n`;
+                description += `10:00 - Conclusion\n\n`;
+                
+                description += `🔗 उपयोगी लिंक्स:\n`;
+                description += `📌 Website: https://freeseotoolhub.com\n`;
+                description += `📌 Instagram: @freeseotoolhub\n`;
+                description += `📌 Twitter: @freeseotoolhub\n\n`;
+                
+                if (cta === 'subscribe') {
+                    description += `👉 अगर आपको यह वीडियो पसंद आया तो चैनल को सब्सक्राइब करना न भूलें! 🔔\n`;
+                } else if (cta === 'like') {
+                    description += `👍 वीडियो को लाइक और शेयर करें!\n`;
+                } else if (cta === 'comment') {
+                    description += `💬 कमेंट में बताएं आपको क्या सीखना है?\n`;
+                } else if (cta === 'website') {
+                    description += `🌐 अधिक जानकारी के लिए हमारी वेबसाइट विजिट करें: https://freeseotoolhub.com\n`;
+                }
+                
+                description += `\n#${keyword.replace(/\s+/g, '')} #YouTubeTips #${currentYear}`;
+                
+            } else {
+                description = `${title} - Complete Guide ${currentYear}\n\n`;
+                description += `In this video, you will learn:\n`;
+                description += `✅ Complete ${keyword} tutorial\n`;
+                description += `✅ Step by step guide for beginners\n`;
+                description += `✅ Best practices and tips\n`;
+                description += `✅ Common mistakes to avoid\n\n`;
+                
+                description += `📝 About this video:\n${summary || `In this video, we will learn everything about ${keyword}.`}\n\n`;
+                
+                description += `⏱️ Timestamps:\n`;
+                description += `0:00 - Introduction\n`;
+                description += `1:30 - What is ${keyword}?\n`;
+                description += `3:45 - How to use ${keyword}\n`;
+                description += `6:20 - Best practices\n`;
+                description += `8:15 - Common mistakes\n`;
+                description += `10:00 - Conclusion\n\n`;
+                
+                description += `🔗 Useful Links:\n`;
+                description += `📌 Website: https://freeseotoolhub.com\n`;
+                description += `📌 Instagram: @freeseotoolhub\n`;
+                description += `📌 Twitter: @freeseotoolhub\n\n`;
+                
+                if (cta === 'subscribe') {
+                    description += `👉 Don't forget to SUBSCRIBE for more videos! 🔔\n`;
+                } else if (cta === 'like') {
+                    description += `👍 Like and Share this video!\n`;
+                } else if (cta === 'comment') {
+                    description += `💬 Comment below what you want to learn next?\n`;
+                } else if (cta === 'website') {
+                    description += `🌐 Visit our website for more: https://freeseotoolhub.com\n`;
+                }
+                
+                description += `\n#${keyword.replace(/\s+/g, '')} #YouTubeSEO #Tutorial`;
+            }
+            
+            return description;
+        }
+        
+        function displayDescription(description) {
+            const container = document.getElementById('descResults');
+            container.innerHTML = `
+                <div class="result-card">
+                    <h4 style="white-space: pre-line; font-family: monospace;">${description}</h4>
+                    <button class="copy-btn" onclick="copyDescription()">
+                        <i class="fas fa-copy"></i> ${currentLanguage === 'hi' ? 'कॉपी' : 'Copy'}
+                    </button>
+                </div>
+            `;
+        }
+        
+        function copyDescription() {
+            const description = document.querySelector('#descResults .result-card h4').textContent;
+            navigator.clipboard.writeText(description).then(() => {
+                showNotification(currentLanguage === 'hi' ? 'डिस्क्रिप्शन कॉपी हो गया!' : 'Description copied!', 'success');
+            });
+        }
+        
+        function downloadDescription() {
+            const description = document.querySelector('#descResults .result-card h4').textContent;
+            const blob = new Blob([description], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'youtube_description.txt';
+            a.click();
+        }
+        
+        function clearDescription() {
+            document.getElementById('descTitle').value = '';
+            document.getElementById('descKeyword').value = '';
+            document.getElementById('descSummary').value = '';
+            document.getElementById('descResults').innerHTML = `
+                <div class="placeholder-results">
+                    <i class="fas fa-align-left"></i>
+                    <h3>${currentLanguage === 'hi' ? 'डिस्क्रिप्शन यहाँ दिखेगा' : 'Description will appear here'}</h3>
+                    <p>${currentLanguage === 'hi' ? 'विवरण डालें और जनरेट करें बटन दबाएं' : 'Enter details and click generate'}</p>
+                </div>
+            `;
+            document.getElementById('descAnalysis').style.display = 'none';
+            document.getElementById('descExport').style.display = 'none';
+        }
+        
+        // ==================== INITIALIZATION ====================
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year in footer
+            const yearElements = document.querySelectorAll('.current-year');
+            yearElements.forEach(el => {
+                el.textContent = new Date().getFullYear();
+            });
+            
+            // Show welcome message
+            setTimeout(() => {
+                showNotification('Welcome to YouTube SEO Tools Pack! Generate tags, titles & descriptions for free.', 'info');
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
