@@ -143,6 +143,12 @@ const allTools = [
     icon: '✍️',
     category: 'writing'
 }
+{
+    name: 'Domain Checker',
+    url: 'domain-checker.html',
+    icon: '🌐',
+    category: 'seo'
+}
 
 // मेगा मेनू ऑटो जेनरेट करें
 function generateMegaMenu() {
@@ -199,4 +205,5 @@ if (document.readyState === 'loading') {
 }
 </script>
 `);
+
 
