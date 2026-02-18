@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GST Calculator - India GST Tool | Free SEO Tool Hub</title>
+<meta name="description" content="Free online GST calculator for India. Calculate GST amounts, reverse GST, and see total prices. Supports 5%, 12%, 18%, 28% GST slabs. 100% free tool.">
+<meta name="keywords" content="gst calculator, gst calculation, gst kaise nikale, gst percentage calculator, india gst tool, gst slab calculator">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: 'Inter', sans-serif;
+background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+min-height: 100vh;
+padding: 20px;
+}
+
+.container {
+max-width: 1200px;
+margin: 0 auto;
+}
+
+/* Header */
+.header {
+background: white;
+border-radius: 20px 20px 0 0;
+padding: 40px;
+text-align: center;
+box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.header h1 {
+font-size: 2.5rem;
+color: #333;
+margin-bottom: 15px;
+}
+
+.header h1 i {
+color: #f59e0b;
+margin-right: 10px;
+}
+
+.header p {
+color: #666;
+font-size: 1.1rem;
+max-width: 600px;
+margin: 0 auto;
+}
+
+.india-badge {
+display: inline-block;
+background: #ff6b6b;
+color: white;
+padding: 8px 20px;
+border-radius: 50px;
+font-size: 0.9rem;
+font-weight: 600;
+margin-top: 15px;
+}
+
+.india-badge i {
+margin-right: 5px;
+}
+
+/* Main Tool Card */
+.tool-card {
+background: white;
+border-radius: 0 0 20px 20px;
+padding: 40px;
+box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* Calculator Grid */
+.calculator-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 30px;
+}
+
+@media (max-width: 768px) {
+.calculator-grid {
+grid-template-columns: 1fr;
+}
+}
+
+/* Input Section */
+.input-section {
+background: #f8fafc;
+border-radius: 15px;
+padding: 30px;
+}
+
+.section-title {
+font-size: 1.3rem;
+color: #333;
+margin-bottom: 25px;
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.section-title i {
+color: #667eea;
+}
+
+.calculation-type {
+display: flex;
+gap: 15px;
+margin-bottom: 30px;
+}
+
+.calc-type-btn {
+flex: 1;
+padding: 15px;
+border: 2px solid #e2e8f0;
+background: white;
+border-radius: 10px;
+cursor: pointer;
+transition: all 0.3s ease;
+font-weight: 600;
+color: #333;
+}
+
+.calc-type-btn.active {
+background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+color: white;
+border-color: transparent;
+}
+
+.calc-type-btn i {
+margin-right: 8px;
+}
+
+/* Form Group */
+.form-group {
+margin-bottom: 25px;
+}
+
+.form-group label {
+display: block;
+margin-bottom: 8px;
+font-weight: 600;
+color: #333;
+}
+
+.input-group {
+display: flex;
+align-items: center;
+border: 2px solid #e2e8f0;
+border-radius: 10px;
+overflow: hidden;
+background: white;
+}
+
+.input-group-text {
+padding: 15px 20px;
+background: #f1f5f9;
+color: #64748b;
+font-weight: 600;
+border-right: 2px solid #e2e8f0;
+}
+
+.input-group input {
+flex: 1;
+padding: 15px;
+border: none;
+outline: none;
+font-size: 1rem;
+width: 100%;
+}
+
+.input-group select {
+flex: 1;
+padding: 15px;
+border: none;
+outline: none;
+background: white;
+font-size: 1rem;
+cursor: pointer;
+}
+
+/* GST Slabs */
+.gst-slabs {
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+margin: 20px 0;
+}
+
+.gst-slab {
+flex: 1;
+min-width: 80px;
+padding: 15px;
+background: white;
+border: 2px solid #e2e8f0;
+border-radius: 10px;
+text-align: center;
+cursor: pointer;
+transition: all 0.3s ease;
+font-weight: 600;
+}
+
+.gst-slab:hover {
+border-color: #667eea;
+background: #f0f4ff;
+}
+
+.gst-slab.active {
+background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+color: white;
+border-color: transparent;
+}
+
+.gst-slab small {
+display: block;
+font-size: 0.7rem;
+color: #666;
+margin-top: 3px;
+}
+
+.gst-slab.active small {
+color: rgba(255,255,255,0.9);
+}
+
+/* Result Section */
+.result-section {
+background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+border-radius: 15px;
+padding: 30px;
+color: white;
+}
+
+.result-card {
+background: rgba(255,255,255,0.1);
+backdrop-filter: blur(10px);
+border-radius: 15px;
+padding: 25px;
+margin-bottom: 20px;
+}
+
+.result-row {
+display: flex;
+justify-content: space-between;
+margin-bottom: 15px;
+padding-bottom: 15px;
+border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.result-row:last-child {
+border-bottom: none;
+margin-bottom: 0;
+padding-bottom: 0;
+}
+
+.result-label {
+font-size: 1rem;
+opacity: 0.9;
+}
+
+.result-value {
+font-size: 1.5rem;
+font-weight: 700;
+}
+
+.result-value small {
+font-size: 0.9rem;
+opacity: 0.8;
+font-weight: normal;
+}
+
+.highlight {
+background: rgba(255,255,255,0.2);
+padding: 15px;
+border-radius: 10px;
+margin-top: 20px;
+}
+
+.total-amount {
+font-size: 2rem;
+font-weight: 800;
+margin: 10px 0;
+}
+
+/* Breakup Section */
+.breakup-section {
+background: white;
+border-radius: 10px;
+padding: 20px;
+margin-top: 20px;
+}
+
+.breakup-title {
+color: #333;
+font-size: 1rem;
+margin-bottom: 15px;
+display: flex;
+align-items: center;
+gap: 8px;
+}
+
+.breakup-item {
+display: flex;
+justify-content: space-between;
+padding: 10px 0;
+border-bottom: 1px dashed #e2e8f0;
+}
+
+.breakup-item:last-child {
+border-bottom: none;
+}
+
+.cgst {
+color: #10b981;
+}
+
+.sgst {
+color: #3b82f6;
+}
+
+.igst {
+color: #8b5cf6;
+}
+
+/* Quick Actions */
+.quick-actions {
+display: flex;
+gap: 15px;
+margin-top: 30px;
+flex-wrap: wrap;
+}
+
+.btn {
+padding: 15px 30px;
+border: none;
+border-radius: 10px;
+font-weight: 600;
+cursor: pointer;
+transition: all 0.3s ease;
+display: inline-flex;
+align-items: center;
+gap: 10px;
+font-size: 1rem;
+}
+
+.btn-primary {
+background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+color: white;
+box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.btn-primary:hover {
+transform: translateY(-2px);
+box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+background: white;
+color: #667eea;
+border: 2px solid #667eea;
+}
+
+.btn-secondary:hover {
+background: #f0f4ff;
+}
+
+/* Info Cards */
+.info-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 20px;
+margin-top: 40px;
+}
+
+.info-card {
+background: #f8fafc;
+border-radius: 15px;
+padding: 25px;
+}
+
+.info-card h4 {
+color: #333;
+margin-bottom: 15px;
+display: flex;
+align-items: center;
+gap: 8px;
+}
+
+.info-card h4 i {
+color: #667eea;
+}
+
+.gst-slab-list {
+list-style: none;
+}
+
+.gst-slab-list li {
+margin-bottom: 10px;
+padding: 8px;
+background: white;
+border-radius: 8px;
+display: flex;
+justify-content: space-between;
+}
+
+.gst-percent {
+font-weight: 600;
+color: #667eea;
+}
+
+.gst-items {
+color: #64748b;
+}
+
+/* Footer */
+.footer {
+text-align: center;
+margin-top: 40px;
+padding: 20px;
+color: white;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<!-- Header -->
+<div class="header">
+<h1><i class="fas fa-calculator"></i> GST Calculator India</h1>
+<p>Calculate GST easily for all Indian GST slabs. Includes CGST, SGST, and IGST breakup.</p>
+<div class="india-badge">
+<i class="fas fa-map-marker-alt"></i> भारत के लिए विशेष (Made for India)
+</div>
+</div>
+
+<!-- Main Tool Card -->
+<div class="tool-card">
+<!-- Calculator Grid -->
+<div class="calculator-grid">
+<!-- Input Section -->
+<div class="input-section">
+<h3 class="section-title">
+<i class="fas fa-edit"></i> Enter Details
+</h3>
+
+<!-- Calculation Type -->
+<div class="calculation-type">
+<button class="calc-type-btn active" id="typeExclusive" onclick="setCalculationType('exclusive')">
+<i class="fas fa-plus-circle"></i> Exclusive
+</button>
+<button class="calc-type-btn" id="typeInclusive" onclick="setCalculationType('inclusive')">
+<i class="fas fa-check-circle"></i> Inclusive
+</button>
+</div>
+
+<!-- Amount Input -->
+<div class="form-group">
+<label><i class="fas fa-rupee-sign"></i> Amount (₹)</label>
+<div class="input-group">
+<span class="input-group-text">₹</span>
+<input type="number" id="amountInput" value="1000" min="0" step="100">
+</div>
+</div>
+
+<!-- GST Slabs -->
+<div class="form-group">
+<label><i class="fas fa-tag"></i> GST Rate</label>
+<div class="gst-slabs">
+<div class="gst-slab active" onclick="setGSTRate(0)">
+0% <small>Nil</small>
+</div>
+<div class="gst-slab" onclick="setGSTRate(5)">
+5% <small>Essential</small>
+</div>
+<div class="gst-slab" onclick="setGSTRate(12)">
+12% <small>Standard</small>
+</div>
+<div class="gst-slab" onclick="setGSTRate(18)">
+18% <small>Standard</small>
+</div>
+<div class="gst-slab" onclick="setGSTRate(28)">
+28% <small>Luxury</small>
+</div>
+</div>
+</div>
+
+<!-- Custom GST -->
+<div class="form-group">
+<label><i class="fas fa-sliders-h"></i> Custom GST Rate</label>
+<div class="input-group">
+<input type="number" id="customGST" value="18" min="0" max="999" step="0.1">
+<span class="input-group-text">%</span>
+</div>
+</div>
+
+<!-- Transaction Type -->
+<div class="form-group">
+<label><i class="fas fa-exchange-alt"></i> Transaction Type</label>
+<select id="transactionType" class="input-group" style="width:100%;">
+<option value="intra">Intra-State (CGST + SGST)</option>
+<option value="inter">Inter-State (IGST)</option>
+</select>
+</div>
+
+<!-- Quick Actions -->
+<div class="quick-actions">
+<button class="btn btn-primary" onclick="calculateGST()">
+<i class="fas fa-calculator"></i> Calculate
+</button>
+<button class="btn btn-secondary" onclick="resetCalculator()">
+<i class="fas fa-redo"></i> Reset
+</button>
+</div>
+</div>
+
+<!-- Result Section -->
+<div class="result-section">
+<h3 class="section-title" style="color: white;">
+<i class="fas fa-chart-line"></i> GST Calculation Result
+</h3>
+
+<div class="result-card">
+<div class="result-row">
+<span class="result-label">Taxable Value</span>
+<span class="result-value" id="taxableValue">₹ 1,000</span>
+</div>
+<div class="result-row">
+<span class="result-label">GST Amount</span>
+<span class="result-value" id="gstAmount">₹ 180</span>
+</div>
+<div class="result-row">
+<span class="result-label">Total Amount</span>
+<span class="result-value" id="totalAmount">₹ 1,180</span>
+</div>
+</div>
+
+<!-- Tax Breakup -->
+<div class="breakup-section">
+<h4 class="breakup-title">
+<i class="fas fa-pie-chart"></i> Tax Breakup
+</h4>
+<div id="taxBreakup">
+<div class="breakup-item">
+<span class="cgst"><i class="fas fa-circle"></i> CGST (9%)</span>
+<span>₹ 90</span>
+</div>
+<div class="breakup-item">
+<span class="sgst"><i class="fas fa-circle"></i> SGST (9%)</span>
+<span>₹ 90</span>
+</div>
+</div>
+</div>
+
+<!-- Calculation Summary -->
+<div class="highlight">
+<div style="text-align: center;">
+<small>Calculation Type</small>
+<div style="font-weight: 600;" id="calcTypeText">GST Exclusive</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Information Section -->
+<div class="info-grid">
+<div class="info-card">
+<h4><i class="fas fa-tags"></i> GST Slabs India</h4>
+<ul class="gst-slab-list">
+<li><span>0%</span> <span class="gst-items">Food, Books, Newspapers</span></li>
+<li><span>5%</span> <span class="gst-items">Household items, Transport</span></li>
+<li><span>12%</span> <span class="gst-items">Computers, Processed food</span></li>
+<li><span>18%</span> <span class="gst-items">TV, Fridge, AC, Mobile</span></li>
+<li><span>28%</span> <span class="gst-items">Luxury items, Cars, Tobacco</span></li>
+</ul>
+</div>
+
+<div class="info-card">
+<h4><i class="fas fa-info-circle"></i> How to Calculate</h4>
+<p><strong>Exclusive:</strong> Amount + GST</p>
+<p class="small text-muted">GST = Amount × Rate ÷ 100</p>
+<p><strong>Inclusive:</strong> Amount includes GST</p>
+<p class="small text-muted">GST = Amount × Rate ÷ (100 + Rate) × 100</p>
+</div>
+
+<div class="info-card">
+<h4><i class="fas fa-clock"></i> Popular Searches</h4>
+<ul class="gst-slab-list">
+<li><span>🔍</span> <span class="gst-items">GST kaise nikale</span></li>
+<li><span>🔍</span> <span class="gst-items">18% GST calculator</span></li>
+<li><span>🔍</span> <span class="gst-items">GST inclusive meaning</span></li>
+<li><span>🔍</span> <span class="gst-items">Reverse GST calculation</span></li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+<p>© 2024 Free SEO Tool Hub - GST Calculator for India | Made with ❤️ for Indian Businesses</p>
+</div>
+</div>
+
+<script>
+// Current calculation type
+let calculationType = 'exclusive';
+let currentGSTRate = 18;
+
+// DOM Elements
+const amountInput = document.getElementById('amountInput');
+const customGST = document.getElementById('customGST');
+const transactionType = document.getElementById('transactionType');
+const taxableValue = document.getElementById('taxableValue');
+const gstAmount = document.getElementById('gstAmount');
+const totalAmount = document.getElementById('totalAmount');
+const taxBreakup = document.getElementById('taxBreakup');
+const calcTypeText = document.getElementById('calcTypeText');
+
+// Set calculation type
+function setCalculationType(type) {
+calculationType = type;
+
+// Update UI
+document.getElementById('typeExclusive').classList.toggle('active', type === 'exclusive');
+document.getElementById('typeInclusive').classList.toggle('active', type === 'inclusive');
+
+calcTypeText.textContent = type === 'exclusive' ? 'GST Exclusive' : 'GST Inclusive';
+
+calculateGST();
+}
+
+// Set GST rate
+function setGSTRate(rate) {
+currentGSTRate = rate;
+
+// Update UI
+document.querySelectorAll('.gst-slab').forEach((slab, index) => {
+const slabRates = [0, 5, 12, 18, 28];
+slab.classList.toggle('active', slabRates[index] === rate);
+});
+
+customGST.value = rate;
+calculateGST();
+}
+
+// Calculate GST
+function calculateGST() {
+const amount = parseFloat(amountInput.value) || 0;
+const rate = parseFloat(customGST.value) || 0;
+const type = transactionType.value;
+
+let taxable = 0;
+let gst = 0;
+let total = 0;
+let cgst = 0;
+let sgst = 0;
+let igst = 0;
+
+if (calculationType === 'exclusive') {
+// GST Exclusive: Amount + GST
+taxable = amount;
+gst = (amount * rate) / 100;
+total = amount + gst;
+} else {
+// GST Inclusive: Amount includes GST
+total = amount;
+gst = (amount * rate) / (100 + rate);
+taxable = amount - gst;
+}
+
+// Split GST based on transaction type
+if (type === 'intra') {
+cgst = gst / 2;
+sgst = gst / 2;
+igst = 0;
+} else {
+cgst = 0;
+sgst = 0;
+igst = gst;
+}
+
+// Update display
+taxableValue.textContent = formatCurrency(taxable);
+gstAmount.textContent = formatCurrency(gst);
+totalAmount.textContent = formatCurrency(total);
+
+// Update breakup
+if (type === 'intra') {
+taxBreakup.innerHTML = `
+<div class="breakup-item">
+<span class="cgst"><i class="fas fa-circle"></i> CGST (${rate/2}%)</span>
+<span>${formatCurrency(cgst)}</span>
+</div>
+<div class="breakup-item">
+<span class="sgst"><i class="fas fa-circle"></i> SGST (${rate/2}%)</span>
+<span>${formatCurrency(sgst)}</span>
+</div>
+`;
+} else {
+taxBreakup.innerHTML = `
+<div class="breakup-item">
+<span class="igst"><i class="fas fa-circle"></i> IGST (${rate}%)</span>
+<span>${formatCurrency(igst)}</span>
+</div>
+`;
+}
+}
+
+// Format currency
+function formatCurrency(amount) {
+return '₹ ' + amount.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+}
+
+// Reset calculator
+function resetCalculator() {
+amountInput.value = 1000;
+customGST.value = 18;
+transactionType.value = 'intra';
+setCalculationType('exclusive');
+setGSTRate(18);
+}
+
+// Event listeners
+amountInput.addEventListener('input', calculateGST);
+customGST.addEventListener('input', () => {
+const rate = parseFloat(customGST.value) || 0;
+currentGSTRate = rate;
+
+// Update slab active state
+document.querySelectorAll('.gst-slab').forEach((slab, index) => {
+const slabRates = [0, 5, 12, 18, 28];
+slab.classList.toggle('active', slabRates[index] === rate);
+});
+
+calculateGST();
+});
+
+transactionType.addEventListener('change', calculateGST);
+
+// Initial calculation
+calculateGST();
+</script>
+</body>
+</html>
