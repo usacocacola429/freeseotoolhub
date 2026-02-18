@@ -131,6 +131,18 @@ const allTools = [
     // 🔽 भविष्य में नया टूल जोड़ने के लिए यहाँ एक लाइन ऐड करें
     // {name: "नया टूल", link: "new-tool.html", icon: "fa-icon", category: "category"},
 ];
+{
+    name: 'QR Code Generator',
+    url: 'qr-code-generator.html',
+    icon: '📱',
+    category: 'business'
+}
+{
+    name: 'Paraphrasing Tool',
+    url: 'paraphrasing-tool.html',
+    icon: '✍️',
+    category: 'writing'
+}
 
 // मेगा मेनू ऑटो जेनरेट करें
 function generateMegaMenu() {
@@ -187,3 +199,4 @@ if (document.readyState === 'loading') {
 }
 </script>
 `);
+
