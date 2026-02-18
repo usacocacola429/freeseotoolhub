@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Paraphrasing Tool - Hindi & English | FreeSEOToolHub</title>
+<meta name="description" content="Free AI paraphrasing tool for Hindi and English. Rewrite articles, essays, blogs instantly with 4 unique modes. No signup required.">
+<meta name="keywords" content="paraphrasing tool, hindi paraphrasing, article rewriter, rewrite tool, content spinner">
+<link rel="stylesheet" href="style.css">
+<style>
+/* Additional tool-specific styles */
+.tool-header {
+background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+color: white;
+padding: 60px 20px;
+text-align: center;
+}
+.tool-container {
+max-width: 1200px;
+margin: -50px auto 50px;
+padding: 30px;
+background: white;
+border-radius: 20px;
+box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+position: relative;
+}
+.language-switch {
+display: flex;
+justify-content: center;
+gap: 20px;
+margin-bottom: 30px;
+}
+.lang-option {
+padding: 12px 40px;
+border: 2px solid #e0e0e0;
+border-radius: 30px;
+cursor: pointer;
+font-weight: 600;
+transition: all 0.3s;
+}
+.lang-option.active {
+background: #667eea;
+color: white;
+border-color: #667eea;
+}
+.mode-selector {
+display: flex;
+justify-content: center;
+gap: 15px;
+margin-bottom: 30px;
+flex-wrap: wrap;
+}
+.mode-btn {
+padding: 10px 25px;
+border: none;
+background: #f0f0f0;
+border-radius: 25px;
+cursor: pointer;
+font-weight: 500;
+transition: all 0.3s;
+}
+.mode-btn:hover {
+background: #667eea;
+color: white;
+}
+.mode-btn.active {
+background: #667eea;
+color: white;
+}
+.input-section {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 30px;
+margin-bottom: 30px;
+}
+.text-box {
+width: 100%;
+}
+.text-box label {
+display: block;
+margin-bottom: 10px;
+font-weight: 600;
+color: #333;
+}
+.text-box textarea {
+width: 100%;
+height: 300px;
+padding: 15px;
+border: 2px solid #e0e0e0;
+border-radius: 10px;
+font-size: 16px;
+resize: vertical;
+font-family: 'Poppins', sans-serif;
+}
+.text-box textarea:focus {
+outline: none;
+border-color: #667eea;
+}
+.word-count {
+text-align: right;
+margin-top: 5px;
+color: #666;
+font-size: 14px;
+}
+.action-buttons {
+display: flex;
+gap: 15px;
+justify-content: center;
+margin-top: 20px;
+flex-wrap: wrap;
+}
+.btn-primary {
+background: #667eea;
+color: white;
+padding: 15px 40px;
+border: none;
+border-radius: 30px;
+font-size: 18px;
+font-weight: 600;
+cursor: pointer;
+transition: all 0.3s;
+}
+.btn-primary:hover {
+background: #5a67d8;
+transform: translateY(-2px);
+}
+.btn-secondary {
+background: #48bb78;
+color: white;
+padding: 15px 30px;
+border: none;
+border-radius: 30px;
+font-size: 16px;
+font-weight: 600;
+cursor: pointer;
+transition: all 0.3s;
+}
+.btn-secondary:hover {
+background: #38a169;
+}
+.features-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 30px;
+margin-top: 50px;
+}
+.feature-card {
+background: #f9f9f9;
+padding: 25px;
+border-radius: 10px;
+text-align: center;
+}
+.feature-card h3 {
+color: #333;
+margin-bottom: 10px;
+}
+.feature-card p {
+color: #666;
+line-height: 1.6;
+}
+@media (max-width: 768px) {
+.input-section {
+grid-template-columns: 1fr;
+}
+}
+</style>
+</head>
+<body>
+<!-- Navigation (copy from your existing site) -->
+<nav class="navbar">
+<!-- Aapka existing navbar code -->
+</nav>
+
+<!-- Tool Header -->
+<div class="tool-header">
+<h1>✍️ Free AI Paraphrasing Tool</h1>
+<p>Hindi & English - Rewrite content instantly with smart AI</p>
+</div>
+
+<!-- Main Tool Container -->
+<div class="tool-container">
+<!-- Language Selection -->
+<div class="language-switch">
+<div class="lang-option active" onclick="setLanguage('en')">🇬🇧 English</div>
+<div class="lang-option" onclick="setLanguage('hi')">🇮🇳 हिन्दी</div>
+</div>
+
+<!-- Mode Selection -->
+<div class="mode-selector">
+<button class="mode-btn active" onclick="setMode('fluency')">✨ Fluency</button>
+<button class="mode-btn" onclick="setMode('creative')">🎨 Creative</button>
+<button class="mode-btn" onclick="setMode('formal')">📚 Formal</button>
+<button class="mode-btn" onclick="setMode('academic')">🎯 Academic</button>
+</div>
+
+<!-- Input/Output Section -->
+<div class="input-section">
+<div class="text-box">
+<label>📝 Input Text</label>
+<textarea id="inputText" placeholder="Enter your text here... (up to 1000 words)"></textarea>
+<div class="word-count" id="inputWordCount">0 / 1000 words</div>
+</div>
+<div class="text-box">
+<label>✨ Paraphrased Text</label>
+<textarea id="outputText" placeholder="Rewritten text will appear here..." readonly></textarea>
+<div class="word-count" id="outputWordCount">0 words</div>
+</div>
+</div>
+
+<!-- Action Buttons -->
+<div class="action-buttons">
+<button class="btn-primary" onclick="paraphrase()">
+<span id="btnText">🔄 Paraphrase Now</span>
+<span id="loadingSpinner" style="display: none;">⏳ Processing...</span>
+</button>
+<button class="btn-secondary" onclick="copyToClipboard()">📋 Copy</button>
+<button class="btn-secondary" onclick="downloadText()">📥 Download</button>
+<button class="btn-secondary" onclick="clearAll()">🗑️ Clear</button>
+</div>
+
+<!-- Features -->
+<div class="features-grid">
+<div class="feature-card">
+<h3>🇮🇳 Hindi + English</h3>
+<p>Dono languages mein kaam karein. Indian content creators ke liye perfect.</p>
+</div>
+<div class="feature-card">
+<h3>🎯 4 Smart Modes</h3>
+<p>Fluency, Creative, Formal aur Academic - har zarurat ke liye.</p>
+</div>
+<div class="feature-card">
+<h3>🔒 100% Private</h3>
+<p>Aapka data server par save nahi hota. Bilkul safe.</p>
+</div>
+<div class="feature-card">
+<h3>⚡ Instant Results</h3>
+<p>AI-powered paraphrasing within seconds.</p>
+</div>
+</div>
+</div>
+
+<!-- Footer (include your existing footer) -->
+<footer>
+<!-- Aapka existing footer code -->
+</footer>
+
+<script>
+// Tool Functionality
+let currentLanguage = 'en';
+let currentMode = 'fluency';
+
+function setLanguage(lang) {
+currentLanguage = lang;
+document.querySelectorAll('.lang-option').forEach(opt => {
+opt.classList.remove('active');
+});
+event.target.classList.add('active');
+}
+
+function setMode(mode) {
+currentMode = mode;
+document.querySelectorAll('.mode-btn').forEach(btn => {
+btn.classList.remove('active');
+});
+event.target.classList.add('active');
+}
+
+function paraphrase() {
+const inputText = document.getElementById('inputText').value;
+
+if (!inputText.trim()) {
+alert('Please enter some text to paraphrase');
+return;
+}
+
+// Check word limit
+const wordCount = inputText.trim().split(/\s+/).length;
+if (wordCount > 1000) {
+alert('Maximum 1000 words allowed');
+return;
+}
+
+// Show loading
+document.getElementById('btnText').style.display = 'none';
+document.getElementById('loadingSpinner').style.display = 'inline';
+
+// Prepare API request
+const data = {
+text: inputText,
+language: currentLanguage,
+mode: currentMode
+};
+
+// Make API call (using your backend)
+fetch('https://your-api.com/paraphrase', {
+method: 'POST',
+headers: {
+'Content-Type': 'application/json',
+},
+body: JSON.stringify(data)
+})
+.then(response => response.json())
+.then(data => {
+document.getElementById('outputText').value = data.paraphrased;
+updateWordCount();
+})
+.catch(error => {
+console.error('Error:', error);
+// Fallback demo response (remove in production)
+demoParaphrase(inputText);
+})
+.finally(() => {
+document.getElementById('btnText').style.display = 'inline';
+document.getElementById('loadingSpinner').style.display = 'none';
+});
+}
+
+// Demo function (remove when API is ready)
+function demoParaphrase(text) {
+const demos = {
+en: "This is a paraphrased version of your text. The AI has rewritten it while maintaining the original meaning.",
+hi: "यह आपके टेक्स्ट का पैराफ्रेज़्ड वर्जन है। AI ने मूल अर्थ को बनाए रखते हुए इसे फिर से लिखा है।"
+};
+document.getElementById('outputText').value = demos[currentLanguage];
+updateWordCount();
+}
+
+function updateWordCount() {
+const input = document.getElementById('inputText').value;
+const output = document.getElementById('outputText').value;
+
+const inputWords = input.trim() ? input.trim().split(/\s+/).length : 0;
+const outputWords = output.trim() ? output.trim().split(/\s+/).length : 0;
+
+document.getElementById('inputWordCount').innerHTML = `${inputWords} / 1000 words`;
+document.getElementById('outputWordCount').innerHTML = `${outputWords} words`;
+}
+
+function copyToClipboard() {
+const output = document.getElementById('outputText');
+output.select();
+document.execCommand('copy');
+alert('✅ Copied to clipboard!');
+}
+
+function downloadText() {
+const output = document.getElementById('outputText').value;
+if (!output.trim()) {
+alert('No text to download');
+return;
+}
+
+const blob = new Blob([output], {type: 'text/plain'});
+const link = document.createElement('a');
+link.download = 'paraphrased.txt';
+link.href = URL.createObjectURL(blob);
+link.click();
+}
+
+function clearAll() {
+document.getElementById('inputText').value = '';
+document.getElementById('outputText').value = '';
+updateWordCount();
+}
+
+// Auto-update word count
+document.getElementById('inputText').addEventListener('input', updateWordCount);
+</script>
+</body>
+</html>
