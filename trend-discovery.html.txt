@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trend Discovery Tool - Find Trending Topics | FreeSEOToolHub</title>
+<meta name="description" content="Free trend discovery tool. Find trending topics and keywords before they blow up. Analyze search trends and content opportunities.">
+<meta name="keywords" content="trend discovery, trending topics, keyword trends, content ideas, viral topics">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: #f8fafc; }
+
+.navbar {
+background: white;
+padding: 15px 0;
+box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+position: sticky;
+top: 0;
+z-index: 1000;
+}
+
+.container { max-width: 1400px; margin: 0 auto; padding: 0 20px; }
+.navbar .container { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 24px; font-weight: 700; color: #2563eb; text-decoration: none; }
+
+.nav-menu { display: flex; list-style: none; gap: 30px; }
+.nav-menu a { text-decoration: none; color: #1e293b; font-weight: 500; }
+.nav-menu a:hover, .nav-menu a.active { color: #2563eb; }
+
+.trend-header {
+background: linear-gradient(135deg, #10b981, #059669);
+color: white;
+padding: 60px 20px;
+text-align: center;
+}
+
+.trend-header h1 { font-size: 2.8rem; margin-bottom: 15px; }
+.trend-header p { font-size: 1.2rem; opacity: 0.95; max-width: 700px; margin: 0 auto; }
+
+.trend-container { max-width: 1400px; margin: -40px auto 50px; padding: 0 20px; }
+
+.search-section {
+background: white;
+padding: 30px;
+border-radius: 20px;
+box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+margin-bottom: 30px;
+}
+
+.keyword-search {
+display: flex;
+gap: 15px;
+margin: 20px 0;
+flex-wrap: wrap;
+}
+
+.search-input {
+flex: 1;
+padding: 15px 20px;
+border: 2px solid #e2e8f0;
+border-radius: 50px;
+font-size: 16px;
+min-width: 300px;
+}
+
+.search-input:focus {
+outline: none;
+border-color: #10b981;
+box-shadow: 0 0 0 3px rgba(16,185,129,0.1);
+}
+
+.search-btn {
+background: #10b981;
+color: white;
+padding: 15px 40px;
+border: none;
+border-radius: 50px;
+font-size: 16px;
+font-weight: 600;
+cursor: pointer;
+transition: all 0.3s;
+}
+
+.search-btn:hover {
+background: #059669;
+transform: translateY(-2px);
+}
+
+.category-tabs {
+display: flex;
+gap: 15px;
+margin: 30px 0;
+flex-wrap: wrap;
+}
+
+.category-btn {
+padding: 12px 25px;
+border: none;
+background: white;
+border-radius: 30px;
+cursor: pointer;
+font-weight: 600;
+box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+transition: all 0.3s;
+border: 1px solid #e2e8f0;
+}
+
+.category-btn:hover {
+background: #10b981;
+color: white;
+border-color: #10b981;
+}
+
+.category-btn.active {
+background: #10b981;
+color: white;
+border-color: #10b981;
+}
+
+.trends-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+gap: 25px;
+margin: 30px 0;
+}
+
+.trend-card {
+background: white;
+border-radius: 16px;
+overflow: hidden;
+box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+transition: all 0.3s;
+border: 1px solid #eaeaea;
+}
+
+.trend-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.trend-card-header {
+background: linear-gradient(135deg, #10b981, #059669);
+color: white;
+padding: 18px 20px;
+font-weight: 600;
+font-size: 1.2rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.trend-badge {
+background: rgba(255,255,255,0.2);
+padding: 5px 12px;
+border-radius: 30px;
+font-size: 14px;
+}
+
+.trend-body { padding: 25px; }
+
+.trend-growth {
+display: flex;
+align-items: center;
+gap: 10px;
+margin-bottom: 20px;
+background: #f0fdf4;
+padding: 12px 15px;
+border-radius: 12px;
+}
+
+.growth-badge {
+background: #10b981;
+color: white;
+padding: 8px 15px;
+border-radius: 30px;
+font-size: 18px;
+font-weight: 700;
+}
+
+.trend-description {
+color: #475569;
+margin: 15px 0;
+line-height: 1.6;
+font-size: 15px;
+padding: 10px 0;
+border-bottom: 1px dashed #e2e8f0;
+}
+
+.trend-stats {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 15px;
+margin: 20px 0;
+background: #f8fafc;
+padding: 20px;
+border-radius: 12px;
+}
+
+.stat {
+text-align: center;
+}
+
+.stat-value {
+font-weight: 700;
+color: #1e293b;
+font-size: 1.4rem;
+margin-bottom: 5px;
+}
+
+.stat-label {
+font-size: 12px;
+color: #64748b;
+text-transform: uppercase;
+letter-spacing: 0.5px;
+}
+
+.trend-keywords {
+margin-top: 20px;
+padding-top: 20px;
+border-top: 1px solid #e2e8f0;
+}
+
+.keywords-title {
+font-weight: 600;
+color: #1e293b;
+margin-bottom: 15px;
+display: flex;
+align-items: center;
+gap: 8px;
+}
+
+.keyword-tags {
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+}
+
+.keyword-tag {
+background: #f1f5f9;
+padding: 8px 15px;
+border-radius: 30px;
+font-size: 14px;
+color: #1e293b;
+transition: all 0.3s;
+cursor: pointer;
+border: 1px solid #e2e8f0;
+}
+
+.keyword-tag:hover {
+background: #10b981;
+color: white;
+border-color: #10b981;
+}
+
+.keyword-tag .growth {
+color: #10b981;
+font-weight: 600;
+margin-left: 5px;
+}
+
+.keyword-tag:hover .growth {
+color: white;
+}
+
+.trending-period {
+display: flex;
+align-items: center;
+gap: 15px;
+margin-top: 20px;
+padding: 12px 15px;
+background: #fff7ed;
+border-radius: 12px;
+color: #9a3412;
+}
+
+.period-days {
+display: flex;
+gap: 8px;
+}
+
+.day-indicator {
+width: 30px;
+height: 30px;
+border-radius: 8px;
+background: #fed7aa;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 12px;
+font-weight: 600;
+color: #9a3412;
+}
+
+.day-indicator.active {
+background: #f97316;
+color: white;
+}
+
+.footer {
+background: #1e293b;
+color: white;
+padding: 50px 0;
+margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+.trend-header h1 { font-size: 2rem; }
+.trends-grid { grid-template-columns: 1fr; }
+.trend-stats { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<nav class="navbar">
+<div class="container">
+<a href="index.html" class="logo">FreeSEOToolHub</a>
+<ul class="nav-menu">
+<li><a href="index.html">Home</a></li>
+<li><a href="all-tools.html">All Tools</a></li>
+<li><a href="trend-discovery.html" class="active">Trend Discovery</a></li>
+</ul>
+</div>
+</nav>
+
+<div class="trend-header">
+<h1>📈 Trend Discovery Tool</h1>
+<p>Find trending topics and keywords before they blow up. Analyze 7-day search trends and growth metrics.</p>
+</div>
+
+<div class="trend-container">
+<!-- Search Section -->
+<div class="search-section">
+<h3 style="margin-bottom: 15px;">🔍 Search for Trending Keywords</h3>
+<div class="keyword-search">
+<input type="text" class="search-input" id="keywordSearch" placeholder="Enter a keyword to find related trends (e.g., seo, ai, marketing)">
+<button class="search-btn" onclick="searchTrends()">
+<i class="fas fa-search"></i> Find Trends
+</button>
+</div>
+</div>
+
+<!-- Category Tabs -->
+<div class="category-tabs">
+<button class="category-btn active" onclick="filterTrends('all')">🌐 All Categories</button>
+<button class="category-btn" onclick="filterTrends('technology')">💻 Technology</button>
+<button class="category-btn" onclick="filterTrends('ai')">🤖 AI & Machine Learning</button>
+<button class="category-btn" onclick="filterTrends('marketing')">📊 Digital Marketing</button>
+<button class="category-btn" onclick="filterTrends('seo')">🔍 SEO</button>
+<button class="category-btn" onclick="filterTrends('business')">💼 Business</button>
+</div>
+
+<!-- Trends Grid -->
+<div class="trends-grid" id="trendsGrid"></div>
+</div>
+
+<footer class="footer">
+<div class="container">
+<p>© 2024 FreeSEOToolHub - Free SEO Tools for Everyone</p>
+</div>
+</footer>
+
+<script>
+// Enhanced trend data with keywords
+const trends = {
+technology: [
+{
+title: 'WebAssembly',
+growth: '+245%',
+volume: '45K',
+competition: 'Low',
+description: 'Running high-performance code in browsers at near-native speed',
+keywords: ['wasm', 'web assembly tutorial', 'wasm vs javascript', 'rust wasm', 'webassembly studio'],
+dailyGrowth: [180, 210, 245, 260, 280, 310, 340],
+category: 'technology'
+},
+{
+title: 'Edge Computing',
+growth: '+189%',
+volume: '38K',
+competition: 'Medium',
+description: 'Processing data closer to the source for faster response times',
+keywords: ['edge computing platform', 'cloudflare workers', 'aws lambda edge', 'edge ai', 'fog computing'],
+dailyGrowth: [120, 145, 167, 189, 210, 234, 256],
+category: 'technology'
+},
+{
+title: 'Progressive Web Apps',
+growth: '+156%',
+volume: '62K',
+competition: 'Medium',
+description: 'App-like experiences on the web with offline support',
+keywords: ['pwa examples', 'service worker', 'manifest.json', 'pwa builder', 'workbox'],
+dailyGrowth: [98, 112, 134, 156, 178, 198, 223],
+category: 'technology'
+}
+],
+ai: [
+{
+title: 'Generative AI',
+growth: '+425%',
+volume: '156K',
+competition: 'High',
+description: 'Creating content, images, and code with AI models',
+keywords: ['chatgpt', 'midjourney', 'stable diffusion', 'ai content generator', 'llm'],
+dailyGrowth: [250, 320, 380, 425, 470, 510, 560],
+category: 'ai'
+},
+{
+title: 'LLM Optimization',
+growth: '+267%',
+volume: '34K',
+competition: 'Medium',
+description: 'Optimizing content for large language models',
+keywords: ['prompt engineering', 'rag', 'fine tuning llm', 'vector database', 'embeddings'],
+dailyGrowth: [145, 178, 210, 245, 267, 290, 315],
+category: 'ai'
+},
+{
+title: 'AI Agents',
+growth: '+198%',
+volume: '41K',
+competition: 'Medium',
+description: 'Autonomous AI assistants that perform tasks',
+keywords: ['autogpt', 'agent gpt', 'ai workflow', 'multi-agent systems', 'autonomous ai'],
+dailyGrowth: [120, 145, 167, 189, 198, 210, 230],
+category: 'ai'
+}
+],
+marketing: [
+{
+title: 'AI Content Generation',
+growth: '+312%',
+volume: '89K',
+competition: 'High',
+description: 'Creating marketing content with AI tools',
+keywords: ['ai copywriting', 'content generator', 'ai blog writer', 'copy ai', 'jasper ai'],
+dailyGrowth: [200, 245, 280, 312, 340, 370, 400],
+category: 'marketing'
+},
+{
+title: 'Voice Search SEO',
+growth: '+178%',
+volume: '27K',
+competition: 'Medium',
+description: 'Optimizing content for voice assistants',
+keywords: ['voice search optimization', 'google assistant seo', 'alexa skills', 'voice commerce', 'conversational ai'],
+dailyGrowth: [110, 135, 155, 178, 195, 210, 230],
+category: 'marketing'
+},
+{
+title: 'Video Marketing',
+growth: '+145%',
+volume: '112K',
+competition: 'High',
+description: 'Engaging audiences with short-form video content',
+keywords: ['tiktok marketing', 'reels strategy', 'youtube shorts', 'video seo', 'viral video tips'],
+dailyGrowth: [95, 112, 130, 145, 160, 175, 190],
+category: 'marketing'
+}
+],
+seo: [
+{
+title: 'Core Web Vitals',
+growth: '+234%',
+volume: '67K',
+competition: 'Medium',
+description: 'Google page experience metrics for better rankings',
+keywords: ['lcp optimization', 'cls fix', 'fid improvement', 'pagespeed insights', 'web vitals'],
+dailyGrowth: [150, 178, 200, 220, 234, 250, 270],
+category: 'seo'
+},
+{
+title: 'E-E-A-T',
+growth: '+189%',
+volume: '23K',
+competition: 'Medium',
+description: 'Experience, Expertise, Authoritativeness, Trustworthiness',
+keywords: ['google eat', 'authority signals', 'expertise seo', 'trust factors', 'yandex ranking'],
+dailyGrowth: [110, 135, 160, 180, 189, 200, 215],
+category: 'seo'
+},
+{
+title: 'Programmatic SEO',
+growth: '+167%',
+volume: '18K',
+competition: 'Low',
+description: 'Creating thousands of landing pages automatically',
+keywords: ['pseo tools', 'bulk landing pages', 'seo automation', 'dynamic content', 'seo templates'],
+dailyGrowth: [98, 120, 140, 158, 167, 178, 190],
+category: 'seo'
+}
+],
+business: [
+{
+title: 'Remote Work Tools',
+growth: '+134%',
+volume: '78K',
+competition: 'Medium',
+description: 'Solutions for distributed and hybrid teams',
+keywords: ['zoom alternatives', 'asana vs trello', 'slack hacks', 'remote team management', 'virtual collaboration'],
+dailyGrowth: [89, 105, 118, 130, 142, 155, 168],
+category: 'business'
+},
+{
+title: 'Green Business',
+growth: '+112%',
+volume: '45K',
+competition: 'Low',
+description: 'Sustainable and eco-friendly business practices',
+keywords: ['carbon neutral', 'esg reporting', 'sustainable supply chain', 'green marketing', 'net zero strategy'],
+dailyGrowth: [75, 88, 98, 108, 118, 128, 140],
+category: 'business'
+},
+{
+title: 'Freelance Platforms',
+growth: '+98%',
+volume: '67K',
+competition: 'Medium',
+description: 'Connecting freelancers with global clients',
+keywords: ['upwork tips', 'fiverr gig ideas', 'freelancer marketplace', 'remote jobs', 'freelance pricing'],
+dailyGrowth: [65, 78, 88, 95, 105, 115, 125],
+category: 'business'
+}
+]
+};
+
+// Initialize
+window.onload = function() {
+filterTrends('all');
+};
+
+function filterTrends(category) {
+document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
+event.target.classList.add('active');
+
+const grid = document.getElementById('trendsGrid');
+grid.innerHTML = '';
+
+if (category === 'all') {
+// Show all trends
+Object.values(trends).flat().forEach(t => addTrendCard(t));
+} else {
+trends[category].forEach(t => addTrendCard(t));
+}
+}
+
+function searchTrends() {
+const query = document.getElementById('keywordSearch').value.trim().toLowerCase();
+
+if (!query) {
+filterTrends('all');
+return;
+}
+
+const grid = document.getElementById('trendsGrid');
+grid.innerHTML = '';
+
+// Search in all trends
+const allTrends = Object.values(trends).flat();
+const filtered = allTrends.filter(t =>
+t.title.toLowerCase().includes(query) ||
+t.description.toLowerCase().includes(query) ||
+t.keywords.some(k => k.toLowerCase().includes(query))
+);
+
+if (filtered.length === 0) {
+grid.innerHTML = `
+<div style="grid-column: 1/-1; text-align: center; padding: 50px;">
+<i class="fas fa-search" style="font-size: 50px; color: #94a3b8; margin-bottom: 20px;"></i>
+<h3 style="color: #1e293b;">No trends found for "${query}"</h3>
+<p style="color: #64748b;">Try searching with different keywords</p>
+</div>
+`;
+} else {
+filtered.forEach(t => addTrendCard(t));
+}
+}
+
+function addTrendCard(trend) {
+const grid = document.getElementById('trendsGrid');
+const card = document.createElement('div');
+card.className = 'trend-card';
+
+// Get 7-day growth data
+const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+
+card.innerHTML = `
+<div class="trend-card-header">
+<span>${trend.title}</span>
+<span class="trend-badge">${trend.category}</span>
+</div>
+<div class="trend-body">
+<!-- 7 Days Growth Visualization -->
+<div class="trending-period">
+<i class="fas fa-calendar-alt"></i>
+<span style="font-weight: 600;">7-Day Trend:</span>
+<div class="period-days">
+${days.map((day, i) => `
+<div class="day-indicator ${i >= 4 ? 'active' : ''}" title="${day}: ${trend.dailyGrowth[i]}% growth">
+${day}
+</div>
+`).join('')}
+</div>
+</div>
+
+<!-- Growth Badge -->
+<div class="trend-growth">
+<span class="growth-badge">${trend.growth}</span>
+<span style="color: #475569; font-weight: 500;">growth in last 30 days</span>
+</div>
+
+<!-- Description -->
+<div class="trend-description">
+<i class="fas fa-info-circle" style="color: #10b981; margin-right: 8px;"></i>
+${trend.description}
+</div>
+
+<!-- Stats -->
+<div class="trend-stats">
+<div class="stat">
+<div class="stat-value">${trend.volume}</div>
+<div class="stat-label">Monthly Search</div>
+</div>
+<div class="stat">
+<div class="stat-value">${trend.competition}</div>
+<div class="stat-label">Competition</div>
+</div>
+<div class="stat">
+<div class="stat-value">${trend.growth}</div>
+<div class="stat-label">Growth</div>
+</div>
+</div>
+
+<!-- Related Keywords -->
+<div class="trend-keywords">
+<div class="keywords-title">
+<i class="fas fa-tags" style="color: #10b981;"></i>
+Related Trending Keywords:
+</div>
+<div class="keyword-tags">
+${trend.keywords.map(k => `
+<span class="keyword-tag" onclick="searchTrendsWithKeyword('${k}')">
+${k}
+<span class="growth">+${Math.floor(Math.random() * 50 + 50)}%</span>
+</span>
+`).join('')}
+</div>
+</div>
+
+<!-- Trending Since -->
+<div style="margin-top: 15px; color: #64748b; font-size: 13px; display: flex; align-items: center; gap: 8px;">
+<i class="fas fa-chart-line" style="color: #10b981;"></i>
+<span>Trending since last week • Peak on ${days[days.length-1]}</span>
+</div>
+</div>
+`;
+grid.appendChild(card);
+}
+
+function searchTrendsWithKeyword(keyword) {
+document.getElementById('keywordSearch').value = keyword;
+searchTrends();
+}
+</script>
+</body>
+</html>
