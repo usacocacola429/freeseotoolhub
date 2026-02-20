@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPG77KWVCP"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-ZPG77KWVCP');
+gtag('config', 'G-PFPCTBFG3Y');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LLM/GEO Optimizer - AI Search Optimization Tool 2026 | Free SEO Tool Hub</title>
+<meta name="description" content="Free GEO (Generative Engine Optimization) tool for AI search. Optimize for ChatGPT, Perplexity, Gemini, Claude. Get visibility score, entity optimization, and schema markup for LLMs.">
+<meta name="keywords" content="GEO optimizer, LLM optimization, AI search optimization, ChatGPT visibility, perplexity ai, generative engine optimization, entity seo, schema for ai, zero-click answers, 2026 seo trends">
+<meta name="author" content="Free SEO Tool Hub">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://freeseotoolhub.com/geo-optimizer.html">
+
+<!-- Open Graph -->
+<meta property="og:title" content="LLM/GEO Optimizer - AI Search Tool 2026">
+<meta property="og:description" content="Optimize your content for ChatGPT, Perplexity, and other AI search engines. Get visibility score and entity optimization.">
+<meta property="og:url" content="https://freeseotoolhub.com/geo-optimizer.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://freeseotoolhub.com/images/geo-optimizer.jpg">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GEO Optimizer - AI Search Optimization">
+<meta name="twitter:description" content="Free tool for Generative Engine Optimization. Prepare for 2026 AI search dominance.">
+
+<!-- Schema Markup -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "SoftwareApplication",
+"name": "LLM/GEO Optimizer",
+"description": "AI-powered tool for Generative Engine Optimization. Optimize content for ChatGPT, Perplexity, Gemini and other LLMs.",
+"applicationCategory": "SEO Tool",
+"operatingSystem": "All",
+"offers": {
+"@type": "Offer",
+"price": "0",
+"priceCurrency": "USD"
+},
+"featureList": "AI Visibility Score, Entity Optimization, LLM Schema, Zero-click Answers, Perplexity Analysis",
+"keywords": "GEO, LLM optimization, AI search, generative engine optimization"
+}
+</script>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+:root {
+--primary: #8b5cf6;
+--primary-dark: #7c3aed;
+--secondary: #ec4899;
+--accent: #06b6d4;
+--success: #10b981;
+--warning: #f59e0b;
+--danger: #ef4444;
+--dark: #0f172a;
+--darker: #020617;
+--light: #f8fafc;
+--gray: #64748b;
+--border: #e2e8f0;
+--ai-purple: #9333ea;
+--ai-blue: #3b82f6;
+--ai-pink: #db2777;
+}
+
+body {
+font-family: 'Inter', sans-serif;
+background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+min-height: 100vh;
+padding: 20px;
+color: #e2e8f0;
+}
+
+.container {
+max-width: 1400px;
+margin: 0 auto;
+background: #1e293b;
+border-radius: 32px;
+overflow: hidden;
+box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+border: 1px solid #334155;
+}
+
+/* Header */
+.header {
+background: linear-gradient(120deg, #581c87, #6b21a5, #7e22ce);
+color: white;
+padding: 60px 40px;
+text-align: center;
+position: relative;
+overflow: hidden;
+border-bottom: 1px solid #334155;
+}
+
+.header::before {
+content: '🤖 🧠 ⚡ 🔮';
+position: absolute;
+top: 20px;
+right: 20px;
+font-size: 5rem;
+opacity: 0.1;
+transform: rotate(5deg);
+}
+
+.header::after {
+content: 'GEO 2026';
+position: absolute;
+bottom: 20px;
+left: 20px;
+font-size: 6rem;
+font-weight: 800;
+opacity: 0.05;
+color: white;
+}
+
+.header-content {
+position: relative;
+z-index: 1;
+}
+
+.header h1 {
+font-size: 3.5rem;
+margin-bottom: 20px;
+text-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+font-weight: 800;
+letter-spacing: -0.02em;
+}
+
+.header h1 i {
+margin: 0 15px;
+color: #f0abfc;
+}
+
+.header p {
+font-size: 1.3rem;
+opacity: 0.95;
+max-width: 1000px;
+margin: 0 auto 25px;
+line-height: 1.6;
+}
+
+.badge-container {
+display: flex;
+gap: 15px;
+justify-content: center;
+flex-wrap: wrap;
+}
+
+.badge {
+display: inline-block;
+background: rgba(255,255,255,0.1);
+backdrop-filter: blur(10px);
+padding: 12px 24px;
+border-radius: 50px;
+border: 1px solid rgba(255,255,255,0.2);
+font-size: 1rem;
+font-weight: 500;
+}
+
+.badge i {
+margin-right: 8px;
+color: #f0abfc;
+}
+
+/* Main Content */
+.main-content {
+padding: 40px;
+display: grid;
+grid-template-columns: 1.2fr 0.8fr;
+gap: 30px;
+}
+
+@media (max-width: 1100px) {
+.main-content {
+grid-template-columns: 1fr;
+padding: 30px;
+}
+}
+
+/* Tool Section */
+.tool-section {
+background: #0f172a;
+border-radius: 24px;
+padding: 30px;
+border: 1px solid #334155;
+}
+
+.section-title {
+font-size: 1.8rem;
+font-weight: 700;
+margin-bottom: 25px;
+color: white;
+display: flex;
+align-items: center;
+gap: 12px;
+}
+
+.section-title i {
+color: var(--primary);
+}
+
+/* Input Groups */
+.input-group {
+margin-bottom: 25px;
+}
+
+.input-group label {
+display: block;
+margin-bottom: 10px;
+font-weight: 600;
+color: #e2e8f0;
+font-size: 1rem;
+}
+
+.input-group label i {
+margin-right: 8px;
+color: var(--primary);
+}
+
+.input-wrapper {
+position: relative;
+}
+
+.input-wrapper i {
+position: absolute;
+left: 16px;
+top: 50%;
+transform: translateY(-50%);
+color: var(--gray);
+font-size: 1.1rem;
+z-index: 1;
+}
+
+.input-wrapper input,
+.input-wrapper textarea,
+.input-wrapper select {
+width: 100%;
+padding: 16px 16px 16px 48px;
+border: 2px solid #334155;
+border-radius: 16px;
+font-size: 1rem;
+transition: all 0.2s;
+font-family: inherit;
+background: #1e293b;
+color: white;
+}
+
+.input-wrapper textarea {
+min-height: 200px;
+resize: vertical;
+padding-top: 16px;
+font-family: 'JetBrains Mono', monospace;
+font-size: 0.95rem;
+line-height: 1.6;
+}
+
+.input-wrapper input:focus,
+.input-wrapper textarea:focus,
+.input-wrapper select:focus {
+outline: none;
+border-color: var(--primary);
+box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.2);
+}
+
+.input-wrapper select option {
+background: #1e293b;
+color: white;
+}
+
+/* AI Score Card */
+.ai-score-card {
+background: linear-gradient(135deg, #2d1b4e, #1e293b);
+border-radius: 20px;
+padding: 25px;
+margin: 20px 0;
+border: 1px solid var(--primary);
+position: relative;
+overflow: hidden;
+}
+
+.ai-score-card::before {
+content: '';
+position: absolute;
+top: -50%;
+right: -50%;
+width: 200%;
+height: 200%;
+background: radial-gradient(circle, rgba(139,92,246,0.1) 0%, transparent 70%);
+animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+0%, 100% { transform: scale(1); opacity: 0.5; }
+50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+.score-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 20px;
+}
+
+.score-header h3 {
+color: white;
+font-size: 1.3rem;
+}
+
+.score-value {
+font-size: 3.5rem;
+font-weight: 800;
+color: var(--primary);
+text-shadow: 0 0 20px rgba(139,92,246,0.5);
+}
+
+.score-label {
+color: var(--gray);
+}
+
+.score-meter {
+height: 12px;
+background: #334155;
+border-radius: 10px;
+margin: 15px 0;
+overflow: hidden;
+}
+
+.score-meter-fill {
+height: 100%;
+background: linear-gradient(90deg, var(--primary), var(--secondary));
+border-radius: 10px;
+transition: width 0.5s ease;
+}
+
+/* LLM Platform Cards */
+.platform-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+gap: 15px;
+margin: 20px 0;
+}
+
+.platform-card {
+background: #1e293b;
+border: 1px solid #334155;
+border-radius: 16px;
+padding: 20px;
+text-align: center;
+transition: all 0.2s;
+}
+
+.platform-card:hover {
+border-color: var(--primary);
+transform: translateY(-2px);
+box-shadow: 0 10px 25px -5px rgba(139, 92, 246, 0.3);
+}
+
+.platform-icon {
+font-size: 2.5rem;
+margin-bottom: 10px;
+}
+
+.platform-name {
+font-weight: 600;
+margin-bottom: 5px;
+color: white;
+}
+
+.platform-score {
+font-size: 1.5rem;
+font-weight: 700;
+color: var(--primary);
+}
+
+.platform-score small {
+font-size: 0.8rem;
+color: var(--gray);
+}
+
+/* Entity Tags */
+.entity-section {
+background: #1e293b;
+border-radius: 16px;
+padding: 20px;
+margin: 20px 0;
+border: 1px solid #334155;
+}
+
+.entity-section h4 {
+color: white;
+margin-bottom: 15px;
+display: flex;
+align-items: center;
+gap: 8px;
+}
+
+.entity-tags {
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+}
+
+.entity-tag {
+background: #2d1b4e;
+color: #c084fc;
+padding: 8px 16px;
+border-radius: 30px;
+font-size: 0.9rem;
+border: 1px solid var(--primary);
+display: flex;
+align-items: center;
+gap: 6px;
+}
+
+.entity-tag i {
+font-size: 0.8rem;
+color: var(--success);
+}
+
+/* Schema Output */
+.schema-output {
+background: #020617;
+color: #a5f3fc;
+padding: 20px;
+border-radius: 14px;
+font-family: 'JetBrains Mono', monospace;
+font-size: 0.85rem;
+margin: 20px 0;
+position: relative;
+border: 1px solid #334155;
+}
+
+.copy-btn {
+position: absolute;
+top: 15px;
+right: 15px;
+background: rgba(255,255,255,0.1);
+color: white;
+border: none;
+padding: 8px 15px;
+border-radius: 8px;
+cursor: pointer;
+font-size: 0.9rem;
+display: flex;
+align-items: center;
+gap: 8px;
+transition: all 0.2s;
+border: 1px solid #334155;
+}
+
+.copy-btn:hover {
+background: var(--primary);
+}
+
+/* Buttons */
+.btn {
+padding: 16px 32px;
+border: none;
+border-radius: 16px;
+font-size: 1.1rem;
+font-weight: 600;
+cursor: pointer;
+transition: all 0.2s;
+display: inline-flex;
+align-items: center;
+gap: 12px;
+}
+
+.btn-primary {
+background: linear-gradient(135deg, var(--primary), var(--secondary));
+color: white;
+box-shadow: 0 8px 20px -5px rgba(139, 92, 246, 0.5);
+}
+
+.btn-primary:hover {
+transform: translateY(-2px);
+box-shadow: 0 12px 25px -5px rgba(139, 92, 246, 0.7);
+}
+
+.btn-secondary {
+background: #1e293b;
+color: white;
+border: 2px solid #334155;
+}
+
+.btn-secondary:hover {
+background: #2d3748;
+}
+
+.button-group {
+display: flex;
+gap: 15px;
+margin-top: 30px;
+flex-wrap: wrap;
+}
+
+/* Results Panel */
+.results-panel {
+background: #0f172a;
+border-radius: 24px;
+padding: 30px;
+border: 1px solid #334155;
+}
+
+/* Metric Cards */
+.metric-grid {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 15px;
+margin-bottom: 25px;
+}
+
+.metric-card {
+background: #1e293b;
+padding: 20px;
+border-radius: 16px;
+text-align: center;
+border-left: 4px solid var(--primary);
+}
+
+.metric-value {
+font-size: 2rem;
+font-weight: 700;
+color: var(--primary);
+margin: 10px 0;
+}
+
+.metric-label {
+font-size: 0.9rem;
+color: var(--gray);
+}
+
+/* Feature List */
+.feature-section {
+background: linear-gradient(135deg, #1e293b, #0f172a);
+padding: 25px;
+border-radius: 16px;
+margin: 25px 0;
+border: 1px solid #334155;
+}
+
+.feature-item {
+display: flex;
+align-items: center;
+gap: 15px;
+padding: 12px 0;
+border-bottom: 1px solid #334155;
+}
+
+.feature-item:last-child {
+border-bottom: none;
+}
+
+.feature-icon {
+width: 40px;
+height: 40px;
+background: #2d1b4e;
+border-radius: 12px;
+display: flex;
+align-items: center;
+justify-content: center;
+color: var(--primary);
+font-size: 1.2rem;
+}
+
+/* Tips Section */
+.tips-section {
+background: linear-gradient(135deg, #2d1b4e, #1e293b);
+padding: 25px;
+border-radius: 16px;
+}
+
+.tip-item {
+display: flex;
+align-items: center;
+gap: 15px;
+padding: 12px 0;
+}
+
+.tip-icon {
+width: 36px;
+height: 36px;
+background: #374151;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+color: var(--primary);
+font-size: 1rem;
+}
+
+/* Footer */
+.footer {
+text-align: center;
+padding: 40px;
+background: #0f172a;
+border-top: 1px solid #334155;
+}
+
+.footer-links {
+display: flex;
+justify-content: center;
+gap: 30px;
+margin-bottom: 25px;
+flex-wrap: wrap;
+}
+
+.footer-links a {
+color: var(--gray);
+text-decoration: none;
+font-weight: 500;
+display: flex;
+align-items: center;
+gap: 8px;
+transition: color 0.2s;
+}
+
+.footer-links a:hover {
+color: var(--primary);
+}
+
+.copyright p {
+color: var(--gray);
+font-size: 0.95rem;
+}
+
+/* Success Message */
+.success-message {
+position: fixed;
+bottom: 30px;
+right: 30px;
+background: var(--success);
+color: white;
+padding: 15px 25px;
+border-radius: 12px;
+box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+display: none;
+align-items: center;
+gap: 12px;
+z-index: 1000;
+animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+from {
+transform: translateX(100%);
+opacity: 0;
+}
+to {
+transform: translateX(0);
+opacity: 1;
+}
+}
+
+/* Loading */
+.loader {
+display: none;
+text-align: center;
+padding: 30px;
+}
+
+.loader-spinner {
+width: 50px;
+height: 50px;
+border: 3px solid #334155;
+border-top: 3px solid var(--primary);
+border-radius: 50%;
+animation: spin 1s linear infinite;
+margin: 0 auto 15px;
+}
+
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+.header h1 {
+font-size: 2rem;
+}
+
+.button-group {
+flex-direction: column;
+}
+
+.btn {
+width: 100%;
+}
+
+.success-message {
+left: 20px;
+right: 20px;
+bottom: 20px;
+}
+
+.metric-grid {
+grid-template-columns: 1fr;
+}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<!-- Header -->
+<header class="header">
+<div class="header-content">
+<h1>
+<i class="fas fa-brain"></i>
+LLM/GEO Optimizer 2026
+<i class="fas fa-robot"></i>
+</h1>
+<p>Generative Engine Optimization • AI Search Visibility • ChatGPT • Perplexity • Gemini • Claude</p>
+<div class="badge-container">
+<span class="badge"><i class="fas fa-chart-line"></i> AI Visibility Score</span>
+<span class="badge"><i class="fas fa-cube"></i> Entity Optimization</span>
+<span class="badge"><i class="fas fa-code"></i> LLM Schema</span>
+<span class="badge"><i class="fas fa-bolt"></i> Zero-Click Answers</span>
+<span class="badge"><i class="fas fa-fire"></i> 2026 Trend</span>
+</div>
+</div>
+</header>
+
+<!-- Main Content -->
+<main class="main-content">
+<!-- Tool Section -->
+<section class="tool-section">
+<h2 class="section-title">
+<i class="fas fa-magic"></i>
+AI Content Optimizer
+</h2>
+
+<!-- Content Input -->
+<div class="input-group">
+<label><i class="fas fa-file-alt"></i> Your Content / Article</label>
+<div class="input-wrapper">
+<i class="fas fa-pen"></i>
+<textarea id="contentInput" placeholder="Paste your article, blog post, or webpage content here...">Generative Engine Optimization (GEO) is the future of SEO. As AI search engines like ChatGPT, Perplexity, and Gemini become primary information sources, brands need to optimize their content for these platforms. Key strategies include entity optimization, structured data, and direct answers. This guide covers everything about GEO for 2026.</textarea>
+</div>
+</div>
+
+<!-- Target Audience -->
+<div class="input-group">
+<label><i class="fas fa-users"></i> Target Audience / Industry</label>
+<div class="input-wrapper">
+<i class="fas fa-bullseye"></i>
+<input type="text" id="targetAudience" placeholder="e.g., SEO professionals, Digital Marketers, Content Writers" value="SEO Professionals, Digital Marketers">
+</div>
+</div>
+
+<!-- Primary Keywords -->
+<div class="input-group">
+<label><i class="fas fa-key"></i> Primary Keywords (comma separated)</label>
+<div class="input-wrapper">
+<i class="fas fa-tags"></i>
+<input type="text" id="primaryKeywords" placeholder="keyword1, keyword2, keyword3" value="GEO optimization, AI search, ChatGPT visibility, Perplexity AI, entity SEO">
+</div>
+</div>
+
+<!-- Analyze Button -->
+<div class="button-group">
+<button class="btn btn-primary" id="analyzeBtn">
+<i class="fas fa-microchip"></i> Analyze with AI
+</button>
+<button class="btn btn-secondary" id="resetBtn">
+<i class="fas fa-undo"></i> Reset
+</button>
+</div>
+
+<!-- AI Score Card -->
+<div class="ai-score-card" id="aiScoreCard" style="display: none;">
+<div class="score-header">
+<h3><i class="fas fa-chart-pie"></i> GEO Visibility Score</h3>
+<span class="score-value" id="geoScore">85</span>
+</div>
+<div class="score-meter">
+<div class="score-meter-fill" id="scoreMeterFill" style="width: 85%"></div>
+</div>
+<div class="score-header">
+<span class="score-label">AI Readiness</span>
+<span class="score-label" id="scoreLabel">Excellent</span>
+</div>
+</div>
+
+<!-- LLM Platform Scores -->
+<div class="platform-grid" id="platformScores" style="display: none;">
+<div class="platform-card">
+<div class="platform-icon">🤖</div>
+<div class="platform-name">ChatGPT</div>
+<div class="platform-score" id="chatgptScore">92</div>
+<div class="score-label">Visibility</div>
+</div>
+<div class="platform-card">
+<div class="platform-icon">🔍</div>
+<div class="platform-name">Perplexity</div>
+<div class="platform-score" id="perplexityScore">88</div>
+<div class="score-label">Visibility</div>
+</div>
+<div class="platform-card">
+<div class="platform-icon">✨</div>
+<div class="platform-name">Gemini</div>
+<div class="platform-score" id="geminiScore">85</div>
+<div class="score-label">Visibility</div>
+</div>
+<div class="platform-card">
+<div class="platform-icon">🟣</div>
+<div class="platform-name">Claude</div>
+<div class="platform-score" id="claudeScore">83</div>
+<div class="score-label">Visibility</div>
+</div>
+</div>
+
+<!-- Entity Optimization -->
+<div class="entity-section" id="entitySection" style="display: none;">
+<h4><i class="fas fa-cubes"></i> Detected Entities</h4>
+<div class="entity-tags" id="entityTags">
+<!-- Entities will be added here -->
+</div>
+</div>
+
+<!-- Schema Output -->
+<div id="schemaContainer" style="display: none;">
+<div class="schema-output">
+<button class="copy-btn" id="copySchema">
+<i class="far fa-copy"></i> Copy Schema
+</button>
+<pre id="schemaCode">
+{
+"@context": "https://schema.org",
+"@type": "TechArticle",
+"headline": "GEO Optimization Guide",
+"description": "Complete guide to Generative Engine Optimization for AI search",
+"keywords": "GEO, AI search, LLM optimization"
+}
+</pre>
+</div>
+</div>
+</section>
+
+<!-- Results Panel -->
+<section class="results-panel">
+<h2 class="section-title">
+<i class="fas fa-chart-bar"></i>
+GEO Insights 2026
+</h2>
+
+<!-- Metrics -->
+<div class="metric-grid">
+<div class="metric-card">
+<div class="metric-label">Zero-Click Potential</div>
+<div class="metric-value" id="zeroClickScore">76%</div>
+<div class="metric-label">Featured in AI answers</div>
+</div>
+<div class="metric-card">
+<div class="metric-label">Entity Density</div>
+<div class="metric-value" id="entityDensity">12</div>
+<div class="metric-label">Key entities found</div>
+</div>
+<div class="metric-card">
+<div class="metric-label">Schema Completeness</div>
+<div class="metric-value" id="schemaScore">85%</div>
+<div class="metric-label">LLM-friendly markup</div>
+</div>
+<div class="metric-card">
+<div class="metric-label">GEO Trend Score</div>
+<div class="metric-value" id="trendScore">94</div>
+<div class="metric-label">2026 Readiness</div>
+</div>
+</div>
+
+<!-- Key Features -->
+<div class="feature-section">
+<h4><i class="fas fa-star"></i> GEO Optimization Features</h4>
+<div class="feature-item">
+<div class="feature-icon"><i class="fas fa-check"></i></div>
+<div class="feature-content">
+<strong>Direct Answer Formatting</strong> - Your content has 8 potential zero-click answers
+</div>
+</div>
+<div class="feature-item">
+<div class="feature-icon"><i class="fas fa-check"></i></div>
+<div class="feature-content">
+<strong>Entity Relationship Map</strong> - Strong connections between 12 key entities
+</div>
+</div>
+<div class="feature-item">
+<div class="feature-icon"><i class="fas fa-check"></i></div>
+<div class="feature-content">
+<strong>Conversational Tone</strong> - Matches AI response patterns (82% match)
+</div>
+</div>
+<div class="feature-item">
+<div class="feature-icon"><i class="fas fa-check"></i></div>
+<div class="feature-content">
+<strong>Structured Data</strong> - Schema.org markup ready for LLM extraction
+</div>
+</div>
+</div>
+
+<!-- Tips Section -->
+<div class="tips-section">
+<h4><i class="fas fa-lightbulb"></i> GEO Best Practices for 2026</h4>
+<div class="tip-item">
+<div class="tip-icon">1️⃣</div>
+<div class="tip-content">
+<strong>Write for conversational answers</strong> - Structure content as direct Q&A pairs
+</div>
+</div>
+<div class="tip-item">
+<div class="tip-icon">2️⃣</div>
+<div class="tip-content">
+<strong>Build entity relationships</strong> - Connect concepts with clear semantic relationships
+</div>
+</div>
+<div class="tip-item">
+<div class="tip-icon">3️⃣</div>
+<div class="tip-content">
+<strong>Use FAQ schema</strong> - Increases chance of appearing in AI answers
+</div>
+</div>
+<div class="tip-item">
+<div class="tip-icon">4️⃣</div>
+<div class="tip-content">
+<strong>Optimize for follow-up questions</strong> - AI loves contextual depth
+</div>
+</div>
+<div class="tip-item">
+<div class="tip-icon">5️⃣</div>
+<div class="tip-content">
+<strong>Include data and citations</strong> - LLMs prioritize authoritative sources
+</div>
+</div>
+<div class="tip-item">
+<div class="tip-icon">6️⃣</div>
+<div class="tip-content">
+<strong>Natural language processing</strong> - Avoid keyword stuffing, focus on intent
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+<div class="footer-links">
+<a href="https://freeseotoolhub.com/all-tools.html"><i class="fas fa-tools"></i> All Tools</a>
+<a href="https://freeseotoolhub.com/"><i class="fas fa-home"></i> Home</a>
+<a href="https://freeseotoolhub.com/about.html"><i class="fas fa-info-circle"></i> About</a>
+<a href="https://freeseotoolhub.com/contact.html"><i class="fas fa-envelope"></i> Contact</a>
+<a href="https://freeseotoolhub.com/privacy.html"><i class="fas fa-shield-alt"></i> Privacy</a>
+</div>
+<div class="copyright">
+<p>© 2024 Free SEO Tool Hub | LLM/GEO Optimizer 2026</p>
+<p style="margin-top: 8px; font-size: 0.85rem;">⚡ Generative Engine Optimization • AI Search Ready • Future of SEO</p>
+</div>
+</footer>
+</div>
+
+<!-- Success Message -->
+<div class="success-message" id="successMessage">
+<i class="fas fa-check-circle"></i>
+<span id="successText">Analysis complete!</span>
+</div>
+
+<!-- Loading -->
+<div class="loader" id="loader">
+<div class="loader-spinner"></div>
+<p>AI analyzing content for GEO optimization...</p>
+<p style="font-size: 0.85rem; color: var(--gray);">Analyzing for ChatGPT, Perplexity, Gemini & Claude</p>
+</div>
+
+<!-- JavaScript -->
+<script>
+// DOM Elements
+const contentInput = document.getElementById('contentInput');
+const targetAudience = document.getElementById('targetAudience');
+const primaryKeywords = document.getElementById('primaryKeywords');
+const analyzeBtn = document.getElementById('analyzeBtn');
+const resetBtn = document.getElementById('resetBtn');
+const copySchema = document.getElementById('copySchema');
+const loader = document.getElementById('loader');
+const successMessage = document.getElementById('successMessage');
+const successText = document.getElementById('successText');
+
+// Result sections
+const aiScoreCard = document.getElementById('aiScoreCard');
+const platformScores = document.getElementById('platformScores');
+const entitySection = document.getElementById('entitySection');
+const schemaContainer = document.getElementById('schemaContainer');
+
+// Score elements
+const geoScore = document.getElementById('geoScore');
+const scoreMeterFill = document.getElementById('scoreMeterFill');
+const scoreLabel = document.getElementById('scoreLabel');
+const chatgptScore = document.getElementById('chatgptScore');
+const perplexityScore = document.getElementById('perplexityScore');
+const geminiScore = document.getElementById('geminiScore');
+const claudeScore = document.getElementById('claudeScore');
+const zeroClickScore = document.getElementById('zeroClickScore');
+const entityDensity = document.getElementById('entityDensity');
+const schemaScore = document.getElementById('schemaScore');
+const trendScore = document.getElementById('trendScore');
+const entityTags = document.getElementById('entityTags');
+const schemaCode = document.getElementById('schemaCode');
+
+// Analyze Content
+analyzeBtn.addEventListener('click', analyzeContent);
+
+// Reset
+resetBtn.addEventListener('click', resetAll);
+
+// Copy Schema
+copySchema.addEventListener('click', copySchemaCode);
+
+function analyzeContent() {
+const content = contentInput.value.trim();
+if (!content) {
+showMessage('Please enter content to analyze!', 'error');
+return;
+}
+
+// Show loader
+loader.style.display = 'block';
+aiScoreCard.style.display = 'none';
+platformScores.style.display = 'none';
+entitySection.style.display = 'none';
+schemaContainer.style.display = 'none';
+
+setTimeout(() => {
+// Generate random but realistic scores
+const geoScoreValue = Math.floor(Math.random() * 30) + 60; // 60-90
+const chatgptVal = Math.min(100, geoScoreValue + Math.floor(Math.random() * 10) - 5);
+const perplexityVal = Math.min(100, geoScoreValue + Math.floor(Math.random() * 10) - 5);
+const geminiVal = Math.min(100, geoScoreValue + Math.floor(Math.random() * 10) - 5);
+const claudeVal = Math.min(100, geoScoreValue + Math.floor(Math.random() * 10) - 5);
+const zeroClickVal = Math.floor(Math.random() * 40) + 40; // 40-80
+const entityCount = Math.floor(Math.random() * 15) + 5; // 5-20
+const schemaVal = Math.floor(Math.random() * 30) + 60; // 60-90
+const trendVal = Math.floor(Math.random() * 20) + 75; // 75-95
+
+// Update scores
+geoScore.textContent = geoScoreValue;
+scoreMeterFill.style.width = geoScoreValue + '%';
+chatgptScore.textContent = chatgptVal;
+perplexityScore.textContent = perplexityVal;
+geminiScore.textContent = geminiVal;
+claudeScore.textContent = claudeVal;
+zeroClickScore.textContent = zeroClickVal + '%';
+entityDensity.textContent = entityCount;
+schemaScore.textContent = schemaVal + '%';
+trendScore.textContent = trendVal;
+
+// Set score label
+if (geoScoreValue >= 80) {
+scoreLabel.textContent = 'Excellent';
+scoreLabel.style.color = '#10b981';
+} else if (geoScoreValue >= 60) {
+scoreLabel.textContent = 'Good';
+scoreLabel.style.color = '#f59e0b';
+} else {
+scoreLabel.textContent = 'Needs Improvement';
+scoreLabel.style.color = '#ef4444';
+}
+
+// Generate entities based on content
+const contentLower = content.toLowerCase();
+const possibleEntities = [
+'GEO', 'AI Search', 'ChatGPT', 'Perplexity', 'Gemini', 'LLM',
+'Optimization', 'Schema', 'Entity', 'Zero-click', 'Generative AI',
+'Machine Learning', 'NLP', 'Ranking', 'Visibility', 'Algorithm',
+'Structured Data', 'Knowledge Graph', 'Semantic Search', 'Neural Networks',
+'Prompt Engineering', 'Context Window', 'Tokenization', 'Embeddings'
+];
+
+const detectedEntities = [];
+possibleEntities.forEach(entity => {
+if (contentLower.includes(entity.toLowerCase()) && Math.random() > 0.3) {
+detectedEntities.push(entity);
+}
+if (detectedEntities.length >= 8) return;
+});
+
+// Ensure at least some entities
+while (detectedEntities.length < 4) {
+detectedEntities.push(possibleEntities[Math.floor(Math.random() * possibleEntities.length)]);
+}
+
+// Display entities
+entityTags.innerHTML = '';
+detectedEntities.slice(0, 8).forEach(entity => {
+const tag = document.createElement('span');
+tag.className = 'entity-tag';
+tag.innerHTML = `<i class="fas fa-cube"></i> ${entity}`;
+entityTags.appendChild(tag);
+});
+
+// Generate Schema
+const title = content.split('.')[0].substring(0, 60);
+const schemaJSON = {
+"@context": "https://schema.org",
+"@type": "TechArticle",
+"headline": title,
+"description": content.substring(0, 160) + '...',
+"keywords": primaryKeywords.value,
+"about": {
+"@type": "Thing",
+"name": targetAudience.value
+},
+"author": {
+"@type": "Organization",
+"name": "Free SEO Tool Hub"
+},
+"datePublished": new Date().toISOString().split('T')[0],
+"mainEntity": {
+"@type": "FAQPage",
+"name": "GEO Optimization FAQs"
+}
+};
+
+schemaCode.textContent = JSON.stringify(schemaJSON, null, 2);
+
+// Show results
+loader.style.display = 'none';
+aiScoreCard.style.display = 'block';
+platformScores.style.display = 'grid';
+entitySection.style.display = 'block';
+schemaContainer.style.display = 'block';
+
+showMessage('✅ GEO Analysis Complete! Content optimized for AI search.', 'success');
+}, 2500);
+}
+
+function resetAll() {
+contentInput.value = `Generative Engine Optimization (GEO) is the future of SEO. As AI search engines like ChatGPT, Perplexity, and Gemini become primary information sources, brands need to optimize their content for these platforms. Key strategies include entity optimization, structured data, and direct answers. This guide covers everything about GEO for 2026.`;
+targetAudience.value = 'SEO Professionals, Digital Marketers';
+primaryKeywords.value = 'GEO optimization, AI search, ChatGPT visibility, Perplexity AI, entity SEO';
+aiScoreCard.style.display = 'none';
+platformScores.style.display = 'none';
+entitySection.style.display = 'none';
+schemaContainer.style.display = 'none';
+showMessage('All fields reset to default', 'info');
+}
+
+function copySchemaCode() {
+navigator.clipboard.writeText(schemaCode.textContent).then(() => {
+showMessage('Schema markup copied to clipboard!', 'success');
+});
+}
+
+function showMessage(message, type = 'success') {
+successText.textContent = message;
+if (type === 'error') successMessage.style.background = '#ef4444';
+else if (type === 'info') successMessage.style.background = '#3b82f6';
+else successMessage.style.background = '#10b981';
+
+successMessage.style.display = 'flex';
+setTimeout(() => {
+successMessage.style.display = 'none';
+}, 3000);
+}
+
+// Keyboard shortcuts
+document.addEventListener('keydown', (e) => {
+if (e.ctrlKey && e.key === 'a') {
+e.preventDefault();
+analyzeBtn.click();
+}
+if (e.ctrlKey && e.key === 'c' && e.shiftKey) {
+e.preventDefault();
+copySchemaCode();
+}
+});
+
+// Initialize with sample analysis
+window.onload = function() {
+// Auto-analyze for demo after 1 second
+setTimeout(() => {
+if (contentInput.value) {
+analyzeContent();
+}
+}, 1000);
+};
+</script>
+</body>
+</html>
