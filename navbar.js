@@ -161,13 +161,12 @@ const allTools = [
     {name: "SSL Checker", link: "ssl-checker.html", icon: "fa-lock", category: "Technical", description: "Check SSL certificate"},
     {name: "Broken Link Checker", link: "broken-link-checker.html", icon: "fa-unlink", category: "Technical", description: "Find broken links"},
     {name: "Canonical Checker", link: "canonical-url-checker.html", icon: "fa-link", category: "Technical", description: "Check canonical tags"},
-    {name: "H1/H6 Checker", link: "h1-h6-checker.html", icon: "fa-heading", category: "Technical", description: "Check heading structure"},
+    {name: "Heading & Headline Analyzer", link: "heading-headline-analyzer.html", icon: "fa-heading", category: "SEO Tools", description: "Check headings and analyze headlines"}
     {name: "Responsive Tester", link: "responsive-tester.html", icon: "fa-mobile-screen", category: "Technical", description: "Test mobile responsiveness"},
     
     // ============ CONTENT TOOLS ============
     {name: "Plagiarism Checker", link: "plagiarism-checker.html", icon: "fa-copy", category: "Content", description: "Check duplicate content"},
     {name: "Grammar Checker", link: "grammar-spell-checker.html", icon: "fa-spell-check", category: "Content", description: "Check grammar & spelling"},
-    {name: "Headline Analyzer", link: "headline-analyzer.html", icon: "fa-heading", category: "Content", description: "Analyze headline quality"},
     {name: "Hashtag Generator", link: "hashtag-generator.html", icon: "fa-hashtag", category: "Content", description: "Generate trending hashtags"},
     {name: "AI Ideas Generator", link: "ai-ideas.html", icon: "fa-brain", category: "Content", description: "Generate content ideas"},
     
@@ -294,3 +293,4 @@ if (document.readyState === 'loading') {
 console.log('Total tools loaded: ' + allTools.length);
 </script>
 `);
+
