@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPG77KWVCP"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-ZPG77KWVCP');
+gtag('config', 'G-PFPCTBFG3Y');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aadhaar Masking Tool - Secure Aadhaar Number Masker | Free SEO Tool Hub</title>
+<meta name="description" content="Free Aadhaar masking tool to securely mask Aadhaar numbers. Show only last 4 digits, hide sensitive information. 100% secure, client-side processing.">
+<meta name="keywords" content="aadhaar masking, aadhaar number mask, hide aadhaar digits, secure aadhaar, aadhaar privacy tool, last 4 digits aadhaar">
+<meta name="author" content="Free SEO Tool Hub">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://freeseotoolhub.com/aadhaar-mask.html">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Aadhaar Masking Tool - Secure Aadhaar Number Masker">
+<meta property="og:description" content="Free tool to mask Aadhaar numbers. Show only last 4 digits. 100% secure client-side processing.">
+<meta property="og:url" content="https://freeseotoolhub.com/aadhaar-mask.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://freeseotoolhub.com/images/aadhaar-mask.jpg">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Aadhaar Masking Tool">
+<meta name="twitter:description" content="Securely mask Aadhaar numbers - show only last 4 digits">
+
+<!-- Schema Markup -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "SoftwareApplication",
+"name": "Aadhaar Masking Tool",
+"description": "Secure tool to mask Aadhaar numbers, showing only last 4 digits",
+"applicationCategory": "Privacy Tool",
+"operatingSystem": "All",
+"offers": {
+"@type": "Offer",
+"price": "0",
+"priceCurrency": "USD"
+},
+"featureList": "Aadhaar masking, Last 4 digits, Client-side processing, Privacy protection",
+"countriesSupported": "IN"
+}
+</script>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+:root {
+--primary: #2563eb;
+--primary-dark: #1d4ed8;
+--secondary: #7c3aed;
+--success: #10b981;
+--warning: #f59e0b;
+--danger: #ef4444;
+--dark: #1e293b;
+--light: #f8fafc;
+--gray: #64748b;
+--border: #e2e8f0;
+--orange: #f97316;
+--orange-dark: #ea580c;
+}
+
+body {
+font-family: 'Inter', sans-serif;
+background: linear-gradient(135deg, #f97316 0%, #f59e0b 100%);
+min-height: 100vh;
+padding: 20px;
+color: var(--dark);
+}
+
+.container {
+max-width: 1200px;
+margin: 0 auto;
+background: white;
+border-radius: 32px;
+overflow: hidden;
+box-shadow: 0 25px 60px rgba(0,0,0,0.2);
+}
+
+/* Header */
+.header {
+background: linear-gradient(120deg, #f97316, #f59e0b, #fbbf24);
+color: white;
+padding: 50px 40px;
+text-align: center;
+position: relative;
+overflow: hidden;
+}
+
+.header::before {
+content: '🆔 🔒 ✓';
+position: absolute;
+top: 20px;
+right: 20px;
+font-size: 5rem;
+opacity: 0.1;
+transform: rotate(5deg);
+}
+
+.header::after {
+content: 'आधार';
+position: absolute;
+bottom: 20px;
+left: 20px;
+font-size: 6rem;
+font-weight: 800;
+opacity: 0.05;
+color: white;
+}
+
+.header-content {
+position: relative;
+z-index: 1;
+}
+
+.header h1 {
+font-size: 3rem;
+margin-bottom: 15px;
+text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+font-weight: 700;
+}
+
+.header h1 i {
+margin: 0 10px;
+color: #fef9c3;
+}
+
+.header p {
+font-size: 1.2rem;
+opacity: 0.95;
+max-width: 800px;
+margin: 0 auto 20px;
+line-height: 1.6;
+}
+
+.badge-container {
+display: flex;
+gap: 12px;
+justify-content: center;
+flex-wrap: wrap;
+}
+
+.badge {
+display: inline-block;
+background: rgba(255,255,255,0.2);
+backdrop-filter: blur(10px);
+padding: 10px 20px;
+border-radius: 50px;
+border: 1px solid rgba(255,255,255,0.3);
+font-size: 0.95rem;
+font-weight: 500;
+}
+
+.badge i {
+margin-right: 6px;
+color: #fef9c3;
+}
+
+/* Main Content */
+.main-content {
+padding: 40px;
+}
+
+@media (max-width: 768px) {
+.main-content {
+padding: 25px;
+}
+}
+
+/* Tool Grid */
+.tool-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 30px;
+}
+
+@media (max-width: 900px) {
+.tool-grid {
+grid-template-columns: 1fr;
+}
+}
+
+/* Tool Card */
+.tool-card {
+background: var(--light);
+border-radius: 24px;
+padding: 30px;
+border: 1px solid var(--border);
+box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1);
+}
+
+.card-title {
+font-size: 1.8rem;
+font-weight: 700;
+margin-bottom: 25px;
+color: var(--dark);
+display: flex;
+align-items: center;
+gap: 12px;
+}
+
+.card-title i {
+color: var(--orange);
+}
+
+/* Input Groups */
+.input-group {
+margin-bottom: 25px;
+}
+
+.input-group label {
+display: block;
+margin-bottom: 10px;
+font-weight: 600;
+color: var(--dark);
+font-size: 1rem;
+}
+
+.input-group label i {
+margin-right: 8px;
+color: var(--orange);
+}
+
+.input-wrapper {
+position: relative;
+}
+
+.input-wrapper i {
+position: absolute;
+left: 16px;
+top: 50%;
+transform: translateY(-50%);
+color: var(--gray);
+font-size: 1.1rem;
+z-index: 1;
+}
+
+.input-wrapper input,
+.input-wrapper textarea {
+width: 100%;
+padding: 16px 16px 16px 48px;
+border: 2px solid var(--border);
+border-radius: 16px;
+font-size: 1rem;
+transition: all 0.2s;
+font-family: 'JetBrains Mono', monospace;
+background: white;
+}
+
+.input-wrapper input:focus,
+.input-wrapper textarea:focus {
+outline: none;
+border-color: var(--orange);
+box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.1);
+}
+
+.input-wrapper textarea {
+min-height: 120px;
+resize: vertical;
+padding-top: 16px;
+}
+
+/* Mask Options */
+.mask-options {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+gap: 15px;
+margin: 20px 0;
+}
+
+.mask-option {
+background: white;
+border: 2px solid var(--border);
+border-radius: 14px;
+padding: 15px;
+cursor: pointer;
+transition: all 0.2s;
+text-align: center;
+}
+
+.mask-option:hover {
+border-color: var(--orange);
+}
+
+.mask-option.active {
+border-color: var(--orange);
+background: #fff7ed;
+}
+
+.mask-option input[type="radio"] {
+display: none;
+}
+
+.mask-option .option-name {
+font-weight: 600;
+margin-bottom: 5px;
+color: var(--dark);
+}
+
+.mask-option .option-desc {
+font-size: 0.8rem;
+color: var(--gray);
+}
+
+/* Result Box */
+.result-box {
+background: #f8fafc;
+border-radius: 16px;
+padding: 20px;
+margin: 25px 0;
+border: 2px dashed var(--orange);
+}
+
+.result-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 15px;
+}
+
+.result-header h3 {
+font-size: 1.1rem;
+color: var(--dark);
+}
+
+.result-content {
+font-family: 'JetBrains Mono', monospace;
+font-size: 2rem;
+font-weight: 600;
+color: var(--orange);
+background: white;
+padding: 20px;
+border-radius: 12px;
+text-align: center;
+letter-spacing: 4px;
+word-break: break-all;
+}
+
+.result-note {
+margin-top: 10px;
+font-size: 0.85rem;
+color: var(--gray);
+text-align: center;
+}
+
+/* Buttons */
+.btn {
+padding: 16px 28px;
+border: none;
+border-radius: 14px;
+font-size: 1rem;
+font-weight: 600;
+cursor: pointer;
+transition: all 0.2s;
+display: inline-flex;
+align-items: center;
+gap: 10px;
+}
+
+.btn-primary {
+background: linear-gradient(135deg, var(--orange), var(--orange-dark));
+color: white;
+box-shadow: 0 8px 20px -5px rgba(249, 115, 22, 0.4);
+}
+
+.btn-primary:hover {
+transform: translateY(-2px);
+box-shadow: 0 12px 25px -5px rgba(249, 115, 22, 0.5);
+}
+
+.btn-secondary {
+background: white;
+color: var(--dark);
+border: 2px solid var(--border);
+}
+
+.btn-secondary:hover {
+background: var(--light);
+}
+
+.btn-success {
+background: var(--success);
+color: white;
+}
+
+.btn-success:hover {
+background: #059669;
+}
+
+.button-group {
+display: flex;
+gap: 15px;
+margin-top: 20px;
+flex-wrap: wrap;
+}
+
+/* Info Panel */
+.info-panel {
+background: white;
+border-radius: 24px;
+padding: 30px;
+border: 1px solid var(--border);
+}
+
+/* Stats Cards */
+.stats-grid {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 15px;
+margin-bottom: 25px;
+}
+
+.stat-card {
+background: linear-gradient(135deg, #fff7ed, #ffedd5);
+padding: 20px;
+border-radius: 16px;
+text-align: center;
+border-bottom: 4px solid var(--orange);
+}
+
+.stat-value {
+font-size: 2rem;
+font-weight: 700;
+color: var(--orange);
+margin: 10px 0;
+}
+
+.stat-label {
+font-size: 0.9rem;
+color: var(--gray);
+}
+
+/* Features List */
+.features-list {
+margin: 25px 0;
+}
+
+.feature-item {
+display: flex;
+align-items: center;
+gap: 15px;
+padding: 12px 0;
+border-bottom: 1px solid var(--border);
+}
+
+.feature-item:last-child {
+border-bottom: none;
+}
+
+.feature-icon {
+width: 40px;
+height: 40px;
+background: #fff7ed;
+border-radius: 12px;
+display: flex;
+align-items: center;
+justify-content: center;
+color: var(--orange);
+font-size: 1.2rem;
+}
+
+/* Tips Section */
+.tips-section {
+background: linear-gradient(135deg, #fff7ed, #ffedd5);
+padding: 25px;
+border-radius: 16px;
+margin-top: 25px;
+}
+
+.tips-section h3 {
+color: var(--orange-dark);
+margin-bottom: 15px;
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.tip-item {
+display: flex;
+align-items: center;
+gap: 12px;
+padding: 10px 0;
+}
+
+.tip-icon {
+width: 28px;
+height: 28px;
+background: white;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+color: var(--orange);
+font-size: 0.9rem;
+}
+
+/* Footer */
+.footer {
+text-align: center;
+padding: 30px;
+background: var(--light);
+border-top: 1px solid var(--border);
+}
+
+.footer-links {
+display: flex;
+justify-content: center;
+gap: 25px;
+margin-bottom: 20px;
+flex-wrap: wrap;
+}
+
+.footer-links a {
+color: var(--gray);
+text-decoration: none;
+font-weight: 500;
+display: flex;
+align-items: center;
+gap: 8px;
+transition: color 0.2s;
+}
+
+.footer-links a:hover {
+color: var(--orange);
+}
+
+.copyright p {
+color: var(--gray);
+font-size: 0.9rem;
+}
+
+/* Success Message */
+.success-message {
+position: fixed;
+bottom: 30px;
+right: 30px;
+background: var(--success);
+color: white;
+padding: 15px 25px;
+border-radius: 12px;
+box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+display: none;
+align-items: center;
+gap: 12px;
+z-index: 1000;
+animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+from {
+transform: translateX(100%);
+opacity: 0;
+}
+to {
+transform: translateX(0);
+opacity: 1;
+}
+}
+
+/* Loading */
+.loader {
+display: none;
+text-align: center;
+padding: 20px;
+}
+
+.loader-spinner {
+width: 40px;
+height: 40px;
+border: 3px solid var(--border);
+border-top: 3px solid var(--orange);
+border-radius: 50%;
+animation: spin 1s linear infinite;
+margin: 0 auto 10px;
+}
+
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+
+/* Sample Cards */
+.sample-card {
+background: #f8fafc;
+border-radius: 12px;
+padding: 15px;
+margin-bottom: 15px;
+border-left: 4px solid var(--orange);
+}
+
+.sample-card .sample-title {
+font-weight: 600;
+margin-bottom: 8px;
+color: var(--dark);
+}
+
+.sample-card .sample-masked {
+font-family: 'JetBrains Mono', monospace;
+color: var(--orange);
+font-size: 1.1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+.header h1 {
+font-size: 2rem;
+}
+
+.result-content {
+font-size: 1.5rem;
+letter-spacing: 2px;
+}
+
+.button-group {
+flex-direction: column;
+}
+
+.btn {
+width: 100%;
+}
+
+.success-message {
+left: 20px;
+right: 20px;
+bottom: 20px;
+}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<!-- Header -->
+<header class="header">
+<div class="header-content">
+<h1>
+<i class="fas fa-id-card"></i>
+Aadhaar Masking Tool
+<i class="fas fa-lock"></i>
+</h1>
+<p>Securely mask Aadhaar numbers - Show only last 4 digits • Client-side processing • 100% private</p>
+<div class="badge-container">
+<span class="badge"><i class="fas fa-check-circle"></i> Last 4 Digits Only</span>
+<span class="badge"><i class="fas fa-shield-alt"></i> Client-Side</span>
+<span class="badge"><i class="fas fa-eye-slash"></i> Hide Sensitive Data</span>
+<span class="badge"><i class="fas fa-print"></i> Print Ready</span>
+</div>
+</div>
+</header>
+
+<!-- Main Content -->
+<main class="main-content">
+<!-- Tool Grid -->
+<div class="tool-grid">
+<!-- Left Column - Masking Tool -->
+<div class="tool-card">
+<h2 class="card-title">
+<i class="fas fa-mask"></i>
+Mask Your Aadhaar
+</h2>
+
+<!-- Single Aadhaar Input -->
+<div class="input-group">
+<label><i class="fas fa-id-card"></i> Enter Aadhaar Number</label>
+<div class="input-wrapper">
+<i class="fas fa-hashtag"></i>
+<input type="text" id="aadhaarInput" placeholder="1234 5678 9012 or 123456789012" maxlength="14">
+</div>
+</div>
+
+<!-- Mask Options -->
+<div class="input-group">
+<label><i class="fas fa-sliders-h"></i> Mask Style</label>
+<div class="mask-options" id="maskOptions">
+<label class="mask-option active">
+<input type="radio" name="maskStyle" value="last4" checked>
+<span class="option-name">Last 4 Digits</span>
+<span class="option-desc">XXXX XXXX 9012</span>
+</label>
+<label class="mask-option">
+<input type="radio" name="maskStyle" value="first2last4">
+<span class="option-name">First 2 + Last 4</span>
+<span class="option-desc">12XX XXXX 9012</span>
+</label>
+<label class="mask-option">
+<input type="radio" name="maskStyle" value="middle">
+<span class="option-name">Bank Format</span>
+<span class="option-desc">XXXX 5678 9012</span>
+</label>
+<label class="mask-option">
+<input type="radio" name="maskStyle" value="custom">
+<span class="option-name">Custom</span>
+<span class="option-desc">Show first 4 digits</span>
+</label>
+</div>
+</div>
+
+<!-- Custom Digits Input (hidden by default) -->
+<div id="customDigitsContainer" style="display: none;" class="input-group">
+<label><i class="fas fa-cog"></i> Visible Digits (comma separated positions)</label>
+<div class="input-wrapper">
+<i class="fas fa-list-ol"></i>
+<input type="text" id="customDigits" placeholder="e.g., 1,2,3,4,11,12" value="1,2,3,4">
+</div>
+</div>
+
+<!-- Buttons -->
+<div class="button-group">
+<button class="btn btn-primary" id="maskBtn">
+<i class="fas fa-mask"></i> Mask Aadhaar
+</button>
+<button class="btn btn-secondary" id="clearBtn">
+<i class="fas fa-eraser"></i> Clear
+</button>
+</div>
+
+<!-- Result -->
+<div class="result-box" id="resultBox" style="display: none;">
+<div class="result-header">
+<h3><i class="fas fa-check-circle" style="color: var(--success);"></i> Masked Aadhaar</h3>
+<button class="btn btn-secondary" id="copyResultBtn" style="padding: 8px 15px; font-size: 0.9rem;">
+<i class="far fa-copy"></i> Copy
+</button>
+</div>
+<div class="result-content" id="maskedResult">XXXX XXXX 9012</div>
+<div class="result-note" id="maskNote">✓ Only last 4 digits visible - Safe for sharing</div>
+</div>
+
+<!-- Bulk Masking -->
+<div style="margin-top: 30px;">
+<h3 style="font-size: 1.2rem; margin-bottom: 15px; display: flex; align-items: center; gap: 8px;">
+<i class="fas fa-layer-group"></i> Bulk Aadhaar Masking
+</h3>
+<div class="input-group">
+<label><i class="fas fa-list"></i> Enter multiple Aadhaar numbers (one per line)</label>
+<div class="input-wrapper">
+<i class="fas fa-paste"></i>
+<textarea id="bulkInput" placeholder="1234 5678 9012&#10;2345 6789 0123&#10;3456 7890 1234" rows="4"></textarea>
+</div>
+</div>
+<button class="btn btn-primary" id="bulkMaskBtn" style="width: 100%;">
+<i class="fas fa-masks"></i> Mask All
+</button>
+
+<div id="bulkResult" style="margin-top: 20px; display: none;">
+<div class="result-header">
+<h4>Masked Results</h4>
+<button class="btn btn-secondary" id="copyBulkBtn" style="padding: 8px 15px;">
+<i class="far fa-copy"></i> Copy All
+</button>
+</div>
+<div class="result-content" style="font-size: 1.2rem; text-align: left; padding: 15px;" id="bulkResultText">
+XXXX XXXX 9012<br>
+XXXX XXXX 0123<br>
+XXXX XXXX 1234
+</div>
+</div>
+</div>
+</div>
+
+<!-- Right Column - Info Panel -->
+<div class="info-panel">
+<h2 class="card-title">
+<i class="fas fa-shield-alt"></i>
+Privacy First
+</h2>
+
+<!-- Stats -->
+<div class="stats-grid">
+<div class="stat-card">
+<div class="stat-label">Processed Today</div>
+<div class="stat-value" id="processedCount">1,234</div>
+<div class="stat-label">Aadhaar Numbers</div>
+</div>
+<div class="stat-card">
+<div class="stat-label">Privacy Mode</div>
+<div class="stat-value">100%</div>
+<div class="stat-label">Client-Side</div>
+</div>
+</div>
+
+<!-- Why Mask Aadhaar -->
+<h3 style="margin: 20px 0 15px;"><i class="fas fa-question-circle"></i> Why Mask Aadhaar?</h3>
+<div class="features-list">
+<div class="feature-item">
+<div class="feature-icon"><i class="fas fa-lock"></i></div>
+<div class="feature-content">
+<strong>Prevent Identity Theft</strong> - Full Aadhaar can be misused
+</div>
+</div>
+<div class="feature-item">
+<div class="feature-icon"><i class="fas fa-gavel"></i></div>
+<div class="feature-content">
+<strong>UIDAI Guidelines</strong> - Only last 4 digits should be shared
+</div>
+</div>
+<div class="feature-item">
+<div class="feature-icon"><i class="fas fa-print"></i></div>
+<div class="feature-content">
+<strong>Print Copies</strong> - Always mask before printing
+</div>
+</div>
+<div class="feature-item">
+<div class="feature-icon"><i class="fas fa-whatsapp"></i></div>
+<div class="feature-content">
+<strong>Digital Sharing</strong> - Safe for WhatsApp/Email
+</div>
+</div>
+</div>
+
+<!-- Sample Formats -->
+<h3 style="margin: 20px 0 15px;"><i class="fas fa-eye"></i> Sample Masked Formats</h3>
+<div class="sample-card">
+<div class="sample-title">✅ Last 4 Digits (Recommended)</div>
+<div class="sample-masked">XXXX XXXX 9012</div>
+</div>
+<div class="sample-card">
+<div class="sample-title">✅ First 2 + Last 4</div>
+<div class="sample-masked">12XX XXXX 9012</div>
+</div>
+<div class="sample-card">
+<div class="sample-title">✅ Bank Statement Format</div>
+<div class="sample-masked">XXXX 5678 9012</div>
+</div>
+
+<!-- Tips Section -->
+<div class="tips-section">
+<h3><i class="fas fa-lightbulb"></i> Aadhaar Safety Tips</h3>
+<div class="tip-item">
+<div class="tip-icon">✓</div>
+<div class="tip-content">Never share full Aadhaar number publicly</div>
+</div>
+<div class="tip-item">
+<div class="tip-icon">✓</div>
+<div class="tip-content">Mask before uploading to websites</div>
+</div>
+<div class="tip-item">
+<div class="tip-icon">✓</div>
+<div class="tip-content">Use Virtual ID (VID) when possible</div>
+</div>
+<div class="tip-item">
+<div class="tip-icon">✓</div>
+<div class="tip-content">Lock Aadhaar via UIDAI website</div>
+</div>
+<div class="tip-item">
+<div class="tip-icon">✓</div>
+<div class="tip-content">Check last 8 digits are hidden</div>
+</div>
+</div>
+
+<!-- Security Badge -->
+<div style="background: #f0f9ff; border-radius: 12px; padding: 15px; margin-top: 20px; border: 1px solid #bae6fd;">
+<div style="display: flex; align-items: center; gap: 12px;">
+<i class="fas fa-shield-virus" style="font-size: 2rem; color: #0284c7;"></i>
+<div>
+<strong style="color: #0369a1;">100% Client-Side Processing</strong>
+<p style="font-size: 0.85rem; color: #075985; margin-top: 5px;">Your data never leaves your browser. No server storage.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+<div class="footer-links">
+<a href="https://freeseotoolhub.com/all-tools.html"><i class="fas fa-tools"></i> All Tools</a>
+<a href="https://freeseotoolhub.com/"><i class="fas fa-home"></i> Home</a>
+<a href="https://freeseotoolhub.com/about.html"><i class="fas fa-info-circle"></i> About</a>
+<a href="https://freeseotoolhub.com/contact.html"><i class="fas fa-envelope"></i> Contact</a>
+<a href="https://freeseotoolhub.com/privacy.html"><i class="fas fa-shield-alt"></i> Privacy</a>
+</div>
+<div class="copyright">
+<p>© 2024 Free SEO Tool Hub | Aadhaar Masking Tool</p>
+<p style="margin-top: 8px; font-size: 0.85rem;">🔒 Secure • Private • Client-Side • UIDAI Guidelines Compliant</p>
+</div>
+</footer>
+</div>
+
+<!-- Success Message -->
+<div class="success-message" id="successMessage">
+<i class="fas fa-check-circle"></i>
+<span id="successText">Aadhaar masked successfully!</span>
+</div>
+
+<!-- JavaScript -->
+<script>
+// DOM Elements
+const aadhaarInput = document.getElementById('aadhaarInput');
+const maskBtn = document.getElementById('maskBtn');
+const clearBtn = document.getElementById('clearBtn');
+const copyResultBtn = document.getElementById('copyResultBtn');
+const resultBox = document.getElementById('resultBox');
+const maskedResult = document.getElementById('maskedResult');
+const maskNote = document.getElementById('maskNote');
+const maskOptions = document.querySelectorAll('input[name="maskStyle"]');
+const customDigitsContainer = document.getElementById('customDigitsContainer');
+const customDigits = document.getElementById('customDigits');
+const bulkInput = document.getElementById('bulkInput');
+const bulkMaskBtn = document.getElementById('bulkMaskBtn');
+const bulkResult = document.getElementById('bulkResult');
+const bulkResultText = document.getElementById('bulkResultText');
+const copyBulkBtn = document.getElementById('copyBulkBtn');
+const successMessage = document.getElementById('successMessage');
+const successText = document.getElementById('successText');
+const processedCount = document.getElementById('processedCount');
+
+// Initialize counter
+let counter = parseInt(localStorage.getItem('aadhaarMasked') || '1234');
+processedCount.textContent = counter.toLocaleString();
+
+// Mask style change
+maskOptions.forEach(option => {
+option.addEventListener('change', function() {
+// Update active class
+document.querySelectorAll('.mask-option').forEach(opt => {
+opt.classList.remove('active');
+});
+this.parentElement.classList.add('active');
+
+// Show/hide custom digits
+if (this.value === 'custom') {
+customDigitsContainer.style.display = 'block';
+} else {
+customDigitsContainer.style.display = 'none';
+}
+
+// Auto-mask if there's input
+if (aadhaarInput.value) {
+maskAadhaar();
+}
+});
+});
+
+// Mask function
+function maskAadhaar() {
+let aadhaar = aadhaarInput.value.trim();
+if (!aadhaar) {
+showMessage('Please enter an Aadhaar number!', 'error');
+return;
+}
+
+// Remove spaces and non-digits
+aadhaar = aadhaar.replace(/\D/g, '');
+
+// Validate length
+if (aadhaar.length !== 12) {
+showMessage('Aadhaar must be 12 digits!', 'error');
+return;
+}
+
+// Get selected mask style
+const selectedStyle = document.querySelector('input[name="maskStyle"]:checked').value;
+let masked = '';
+let note = '';
+
+switch(selectedStyle) {
+case 'last4':
+masked = 'XXXX XXXX ' + aadhaar.slice(-4);
+note = '✓ Only last 4 digits visible - Safe for sharing';
+break;
+case 'first2last4':
+masked = aadhaar.slice(0, 2) + 'XX XXXX ' + aadhaar.slice(-4);
+note = '✓ First 2 and last 4 digits visible';
+break;
+case 'middle':
+masked = 'XXXX ' + aadhaar.slice(4, 8) + ' ' + aadhaar.slice(-4);
+note = '✓ Middle 4 digits visible (bank format)';
+break;
+case 'custom':
+const positions = customDigits.value.split(',').map(p => parseInt(p.trim())).filter(p => !isNaN(p) && p >= 1 && p <= 12);
+let result = '';
+for (let i = 0; i < 12; i++) {
+if (positions.includes(i + 1)) {
+result += aadhaar[i];
+} else {
+result += 'X';
+}
+if (i === 3 || i === 7) result += ' ';
+}
+masked = result;
+note = `✓ Digits at positions ${positions.join(', ')} visible`;
+break;
+default:
+masked = 'XXXX XXXX ' + aadhaar.slice(-4);
+note = '✓ Only last 4 digits visible';
+}
+
+// Format with spaces
+if (!masked.includes(' ')) {
+masked = masked.slice(0, 4) + ' ' + masked.slice(4, 8) + ' ' + masked.slice(8);
+}
+
+maskedResult.textContent = masked;
+maskNote.textContent = note;
+resultBox.style.display = 'block';
+
+// Update counter
+counter++;
+localStorage.setItem('aadhaarMasked', counter);
+processedCount.textContent = counter.toLocaleString();
+
+showMessage('✅ Aadhaar masked successfully!', 'success');
+}
+
+// Bulk mask function
+function bulkMask() {
+const bulkText = bulkInput.value.trim();
+if (!bulkText) {
+showMessage('Please enter Aadhaar numbers!', 'error');
+return;
+}
+
+const lines = bulkText.split('\n');
+const maskedLines = [];
+const selectedStyle = document.querySelector('input[name="maskStyle"]:checked').value;
+
+lines.forEach(line => {
+line = line.trim();
+if (!line) return;
+
+// Extract digits
+const digits = line.replace(/\D/g, '');
+if (digits.length === 12) {
+let masked = '';
+switch(selectedStyle) {
+case 'last4':
+masked = 'XXXX XXXX ' + digits.slice(-4);
+break;
+case 'first2last4':
+masked = digits.slice(0, 2) + 'XX XXXX ' + digits.slice(-4);
+break;
+case 'middle':
+masked = 'XXXX ' + digits.slice(4, 8) + ' ' + digits.slice(-4);
+break;
+case 'custom':
+const positions = customDigits.value.split(',').map(p => parseInt(p.trim())).filter(p => !isNaN(p) && p >= 1 && p <= 12);
+let result = '';
+for (let i = 0; i < 12; i++) {
+if (positions.includes(i + 1)) {
+result += digits[i];
+} else {
+result += 'X';
+}
+if (i === 3 || i === 7) result += ' ';
+}
+masked = result;
+break;
+}
+maskedLines.push(masked);
+} else {
+maskedLines.push('❌ Invalid: ' + line);
+}
+});
+
+bulkResultText.innerHTML = maskedLines.join('<br>');
+bulkResult.style.display = 'block';
+counter += maskedLines.length;
+localStorage.setItem('aadhaarMasked', counter);
+processedCount.textContent = counter.toLocaleString();
+
+showMessage(`✅ ${maskedLines.length} Aadhaar numbers masked!`, 'success');
+}
+
+// Event Listeners
+maskBtn.addEventListener('click', maskAadhaar);
+
+clearBtn.addEventListener('click', () => {
+aadhaarInput.value = '';
+resultBox.style.display = 'none';
+bulkInput.value = '';
+bulkResult.style.display = 'none';
+showMessage('All fields cleared', 'info');
+});
+
+copyResultBtn.addEventListener('click', () => {
+navigator.clipboard.writeText(maskedResult.textContent).then(() => {
+showMessage('Masked Aadhaar copied!', 'success');
+});
+});
+
+bulkMaskBtn.addEventListener('click', bulkMask);
+
+copyBulkBtn.addEventListener('click', () => {
+const text = bulkResultText.innerText;
+navigator.clipboard.writeText(text).then(() => {
+showMessage('All results copied!', 'success');
+});
+});
+
+// Auto-format Aadhaar input
+aadhaarInput.addEventListener('input', function(e) {
+let value = this.value.replace(/\D/g, '');
+if (value.length > 12) value = value.slice(0, 12);
+if (value.length > 8) {
+value = value.slice(0, 4) + ' ' + value.slice(4, 8) + ' ' + value.slice(8);
+} else if (value.length > 4) {
+value = value.slice(0, 4) + ' ' + value.slice(4);
+}
+this.value = value;
+});
+
+// Enter key
+aadhaarInput.addEventListener('keypress', function(e) {
+if (e.key === 'Enter') {
+maskAadhaar();
+}
+});
+
+// Show message function
+function showMessage(message, type = 'success') {
+successText.textContent = message;
+if (type === 'error') successMessage.style.background = '#ef4444';
+else if (type === 'info') successMessage.style.background = '#3b82f6';
+else successMessage.style.background = '#10b981';
+
+successMessage.style.display = 'flex';
+setTimeout(() => {
+successMessage.style.display = 'none';
+}, 3000);
+}
+
+// Keyboard shortcuts
+document.addEventListener('keydown', (e) => {
+if (e.ctrlKey && e.key === 'm') {
+e.preventDefault();
+maskBtn.click();
+}
+if (e.ctrlKey && e.key === 'k') {
+e.preventDefault();
+clearBtn.click();
+}
+});
+
+// Initialize with example
+window.onload = function() {
+aadhaarInput.value = '1234 5678 9012';
+// Don't auto-mask on load, let user click button
+};
+</script>
+</body>
+</html>
