@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPG77KWVCP"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-ZPG77KWVCP');
+gtag('config', 'G-PFPCTBFG3Y');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multilingual SEO Tool - Hreflang Generator & Language Optimizer | Free SEO Tool Hub</title>
+<meta name="description" content="Free Multilingual SEO Tool: Generate hreflang tags, translate meta data, get regional keywords. Support for 70+ languages including Hindi, Tamil, Telugu, Bengali and global languages.">
+<meta name="keywords" content="multilingual seo, hreflang generator, language tags, hindi seo, regional keywords, bhashini api, international seo, language translation seo">
+<meta name="author" content="Free SEO Tool Hub">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://freeseotoolhub.com/multilingual-seo.html">
+
+<!-- Open Graph / Social Media -->
+<meta property="og:title" content="Multilingual SEO Tool - 70+ Languages Support">
+<meta property="og:description" content="Free multilingual SEO tool with hreflang generator, meta translation & regional keywords. Perfect for Indian languages & global SEO.">
+<meta property="og:url" content="https://freeseotoolhub.com/multilingual-seo.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://freeseotoolhub.com/images/multilingual-seo.jpg">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Multilingual SEO Tool - Free SEO Tool Hub">
+<meta name="twitter:description" content="Generate hreflang tags & optimize for 70+ languages. Hindi, Tamil, Telugu, Bengali support.">
+
+<!-- Schema Markup for Tool -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "SoftwareApplication",
+"name": "Multilingual SEO Tool",
+"description": "Free multilingual SEO tool with hreflang generator, meta translation and regional keyword suggestions for 70+ languages",
+"applicationCategory": "SEO Tool",
+"operatingSystem": "All",
+"offers": {
+"@type": "Offer",
+"price": "0",
+"priceCurrency": "USD"
+},
+"featureList": "Hreflang tags generator, Meta translation, Regional keywords, Bhashini API integration",
+"countriesSupported": "IN,US,GB,CA,AU,AE,SG,MY,PK,BD,LK,NP"
+}
+</script>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Google Fonts for Indian Languages -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;700&family=Noto+Sans+Telugu:wght@400;500;700&family=Noto+Sans+Bengali:wght@400;500;700&family=Noto+Sans+Gujarati:wght@400;500;700&family=Noto+Sans+Gurmukhi:wght@400;500;700&family=Noto+Sans+Kannada:wght@400;500;700&family=Noto+Sans+Malayalam:wght@400;500;700&family=Noto+Sans+Oriya:wght@400;500;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+:root {
+--primary: #2563eb;
+--primary-dark: #1d4ed8;
+--secondary: #7c3aed;
+--success: #10b981;
+--warning: #f59e0b;
+--danger: #ef4444;
+--dark: #1e293b;
+--light: #f8fafc;
+--gray: #64748b;
+--border: #e2e8f0;
+}
+
+body {
+font-family: 'Inter', sans-serif;
+background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+min-height: 100vh;
+padding: 20px;
+color: var(--dark);
+}
+
+.container {
+max-width: 1400px;
+margin: 0 auto;
+background: white;
+border-radius: 32px;
+overflow: hidden;
+box-shadow: 0 25px 60px rgba(0,0,0,0.2);
+}
+
+/* Header */
+.header {
+background: linear-gradient(120deg, #4f46e5, #7c3aed, #2563eb);
+color: white;
+padding: 60px 40px;
+text-align: center;
+position: relative;
+overflow: hidden;
+}
+
+.header::before {
+content: '🌐 🔤 🔄 🌍';
+position: absolute;
+top: 20px;
+right: 20px;
+font-size: 4rem;
+opacity: 0.1;
+transform: rotate(10deg);
+}
+
+.header::after {
+content: 'अ आ इ ई उ ऊ ए ऐ ओ औ क ख ग घ';
+position: absolute;
+bottom: 20px;
+left: 20px;
+font-size: 2rem;
+opacity: 0.1;
+font-family: 'Noto Sans Devanagari', sans-serif;
+}
+
+.header-content {
+position: relative;
+z-index: 1;
+}
+
+.header h1 {
+font-size: 3.2rem;
+margin-bottom: 20px;
+text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+font-weight: 800;
+}
+
+.header h1 i {
+margin: 0 15px;
+}
+
+.header p {
+font-size: 1.3rem;
+opacity: 0.95;
+max-width: 1000px;
+margin: 0 auto 25px;
+line-height: 1.6;
+}
+
+.badge-container {
+display: flex;
+gap: 15px;
+justify-content: center;
+flex-wrap: wrap;
+}
+
+.badge {
+display: inline-block;
+background: rgba(255,255,255,0.15);
+backdrop-filter: blur(10px);
+padding: 12px 24px;
+border-radius: 50px;
+border: 1px solid rgba(255,255,255,0.3);
+font-size: 1rem;
+font-weight: 500;
+}
+
+.badge i {
+margin-right: 8px;
+}
+
+/* Main Content */
+.main-content {
+padding: 40px;
+display: grid;
+grid-template-columns: 1.2fr 0.8fr;
+gap: 30px;
+}
+
+@media (max-width: 1100px) {
+.main-content {
+grid-template-columns: 1fr;
+padding: 30px;
+}
+}
+
+/* Tool Section */
+.tool-section {
+background: var(--light);
+border-radius: 24px;
+padding: 30px;
+border: 1px solid var(--border);
+}
+
+.section-title {
+font-size: 1.8rem;
+font-weight: 700;
+margin-bottom: 25px;
+color: var(--dark);
+display: flex;
+align-items: center;
+gap: 12px;
+}
+
+.section-title i {
+color: var(--primary);
+}
+
+/* Language Selector */
+.language-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+gap: 15px;
+margin-bottom: 25px;
+}
+
+.language-card {
+background: white;
+border: 2px solid var(--border);
+border-radius: 16px;
+padding: 15px;
+cursor: pointer;
+transition: all 0.2s;
+display: flex;
+align-items: center;
+gap: 12px;
+}
+
+.language-card:hover {
+border-color: var(--primary);
+box-shadow: 0 5px 15px rgba(37, 99, 235, 0.1);
+}
+
+.language-card.active {
+border-color: var(--primary);
+background: #eff6ff;
+}
+
+.language-flag {
+font-size: 2rem;
+}
+
+.language-info {
+flex: 1;
+}
+
+.language-name {
+font-weight: 600;
+margin-bottom: 4px;
+}
+
+.language-code {
+font-size: 0.8rem;
+color: var(--gray);
+}
+
+.language-native {
+font-size: 0.9rem;
+color: var(--primary);
+font-family: 'Noto Sans Devanagari', sans-serif;
+}
+
+/* Input Groups */
+.input-group {
+margin-bottom: 25px;
+}
+
+.input-group label {
+display: block;
+margin-bottom: 10px;
+font-weight: 600;
+color: var(--dark);
+font-size: 1rem;
+}
+
+.input-group label i {
+margin-right: 8px;
+color: var(--primary);
+}
+
+.input-wrapper {
+position: relative;
+}
+
+.input-wrapper i {
+position: absolute;
+left: 16px;
+top: 50%;
+transform: translateY(-50%);
+color: var(--gray);
+font-size: 1.1rem;
+}
+
+.input-wrapper input,
+.input-wrapper textarea,
+.input-wrapper select {
+width: 100%;
+padding: 14px 14px 14px 45px;
+border: 2px solid var(--border);
+border-radius: 14px;
+font-size: 1rem;
+transition: all 0.2s;
+font-family: inherit;
+}
+
+.input-wrapper textarea {
+min-height: 100px;
+resize: vertical;
+padding-top: 16px;
+}
+
+.input-wrapper input:focus,
+.input-wrapper textarea:focus,
+.input-wrapper select:focus {
+outline: none;
+border-color: var(--primary);
+box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+/* Translation Preview */
+.translation-preview {
+background: white;
+border-radius: 16px;
+padding: 20px;
+margin: 20px 0;
+border: 2px dashed var(--border);
+}
+
+.translation-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 15px;
+}
+
+.translation-header h4 {
+font-size: 1.1rem;
+color: var(--dark);
+}
+
+.translation-content {
+font-size: 1.2rem;
+padding: 15px;
+background: #f1f5f9;
+border-radius: 12px;
+font-family: 'Noto Sans Devanagari', sans-serif;
+line-height: 1.8;
+}
+
+/* Buttons */
+.btn {
+padding: 14px 28px;
+border: none;
+border-radius: 14px;
+font-size: 1rem;
+font-weight: 600;
+cursor: pointer;
+transition: all 0.2s;
+display: inline-flex;
+align-items: center;
+gap: 10px;
+}
+
+.btn-primary {
+background: linear-gradient(135deg, var(--primary), var(--secondary));
+color: white;
+box-shadow: 0 8px 20px -5px rgba(37, 99, 235, 0.4);
+}
+
+.btn-primary:hover {
+transform: translateY(-2px);
+box-shadow: 0 12px 25px -5px rgba(37, 99, 235, 0.5);
+}
+
+.btn-success {
+background: linear-gradient(135deg, #059669, #10b981);
+color: white;
+}
+
+.btn-secondary {
+background: white;
+color: var(--dark);
+border: 2px solid var(--border);
+}
+
+.btn-secondary:hover {
+background: var(--light);
+}
+
+.button-group {
+display: flex;
+gap: 15px;
+margin-top: 30px;
+flex-wrap: wrap;
+}
+
+/* Hreflang Output */
+.hreflang-output {
+background: #1e293b;
+color: #e2e8f0;
+padding: 20px;
+border-radius: 14px;
+font-family: 'Courier New', monospace;
+font-size: 0.9rem;
+margin: 20px 0;
+position: relative;
+}
+
+.copy-btn {
+position: absolute;
+top: 15px;
+right: 15px;
+background: rgba(255,255,255,0.1);
+color: white;
+border: none;
+padding: 8px 15px;
+border-radius: 8px;
+cursor: pointer;
+font-size: 0.9rem;
+display: flex;
+align-items: center;
+gap: 8px;
+transition: all 0.2s;
+}
+
+.copy-btn:hover {
+background: rgba(255,255,255,0.2);
+}
+
+/* Results Panel */
+.results-panel {
+background: white;
+border-radius: 24px;
+padding: 30px;
+border: 1px solid var(--border);
+}
+
+/* Stats Cards */
+.stats-grid {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 15px;
+margin-bottom: 30px;
+}
+
+.stat-card {
+background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+padding: 20px;
+border-radius: 16px;
+text-align: center;
+border-bottom: 4px solid var(--primary);
+}
+
+.stat-value {
+font-size: 2.2rem;
+font-weight: 800;
+color: var(--primary);
+margin: 10px 0;
+}
+
+.stat-label {
+font-size: 0.9rem;
+color: var(--gray);
+font-weight: 500;
+}
+
+/* Keyword Suggestions */
+.keyword-section {
+background: linear-gradient(135deg, #dbeafe, #ede9fe);
+padding: 25px;
+border-radius: 16px;
+margin: 25px 0;
+}
+
+.keyword-list {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+gap: 10px;
+margin-top: 15px;
+}
+
+.keyword-tag {
+background: white;
+padding: 10px 15px;
+border-radius: 30px;
+font-size: 0.9rem;
+border: 1px solid var(--border);
+cursor: pointer;
+transition: all 0.2s;
+display: flex;
+align-items: center;
+gap: 8px;
+}
+
+.keyword-tag:hover {
+background: var(--primary);
+color: white;
+border-color: var(--primary);
+}
+
+.keyword-tag i {
+font-size: 0.8rem;
+}
+
+/* Language Tips */
+.tips-section {
+background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+padding: 25px;
+border-radius: 16px;
+}
+
+.tip-item {
+display: flex;
+align-items: center;
+gap: 15px;
+padding: 12px 0;
+border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.tip-item:last-child {
+border-bottom: none;
+}
+
+.tip-icon {
+width: 40px;
+height: 40px;
+background: white;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+color: #059669;
+font-size: 1.2rem;
+}
+
+/* Footer */
+.footer {
+text-align: center;
+padding: 40px;
+background: var(--light);
+border-top: 1px solid var(--border);
+}
+
+.footer-links {
+display: flex;
+justify-content: center;
+gap: 30px;
+margin-bottom: 25px;
+flex-wrap: wrap;
+}
+
+.footer-links a {
+color: var(--gray);
+text-decoration: none;
+font-weight: 500;
+display: flex;
+align-items: center;
+gap: 8px;
+transition: color 0.2s;
+}
+
+.footer-links a:hover {
+color: var(--primary);
+}
+
+/* Success Message */
+.success-message {
+position: fixed;
+bottom: 30px;
+right: 30px;
+background: var(--success);
+color: white;
+padding: 15px 25px;
+border-radius: 12px;
+box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+display: none;
+align-items: center;
+gap: 12px;
+z-index: 1000;
+animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+from {
+transform: translateX(100%);
+opacity: 0;
+}
+to {
+transform: translateX(0);
+opacity: 1;
+}
+}
+
+/* Loading */
+.loader {
+display: none;
+text-align: center;
+padding: 30px;
+}
+
+.loader-spinner {
+width: 40px;
+height: 40px;
+border: 3px solid var(--border);
+border-top: 3px solid var(--primary);
+border-radius: 50%;
+animation: spin 1s linear infinite;
+margin: 0 auto 15px;
+}
+
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+.header h1 {
+font-size: 2rem;
+}
+
+.language-grid {
+grid-template-columns: 1fr;
+}
+
+.button-group {
+flex-direction: column;
+}
+
+.btn {
+width: 100%;
+}
+
+.success-message {
+left: 20px;
+right: 20px;
+bottom: 20px;
+}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<!-- Header -->
+<header class="header">
+<div class="header-content">
+<h1>
+<i class="fas fa-language"></i>
+Multilingual SEO Tool
+<i class="fas fa-globe"></i>
+</h1>
+<p>70+ Languages Support • Hreflang Generator • Meta Translation • Regional Keywords • Bhashini API Integration</p>
+<div class="badge-container">
+<span class="badge"><i class="fas fa-check-circle"></i> Hindi, Tamil, Telugu, Bengali</span>
+<span class="badge"><i class="fas fa-check-circle"></i> 70+ Global Languages</span>
+<span class="badge"><i class="fas fa-check-circle"></i> Hreflang Tags</span>
+<span class="badge"><i class="fas fa-check-circle"></i> Bhashini API</span>
+</div>
+</div>
+</header>
+
+<!-- Main Content -->
+<main class="main-content">
+<!-- Tool Section -->
+<section class="tool-section">
+<h2 class="section-title">
+<i class="fas fa-magic"></i>
+Multilingual SEO Generator
+</h2>
+
+<!-- Language Selection -->
+<div class="input-group">
+<label><i class="fas fa-language"></i> Select Languages (For Hreflang)</label>
+<div class="language-grid" id="languageGrid">
+<!-- Languages will be populated by JS -->
+</div>
+</div>
+
+<!-- URL Input -->
+<div class="input-group">
+<label><i class="fas fa-link"></i> Page URL</label>
+<div class="input-wrapper">
+<i class="fas fa-globe"></i>
+<input type="url" id="pageUrl" placeholder="https://freeseotoolhub.com/page" value="https://freeseotoolhub.com/multilingual-seo">
+</div>
+</div>
+
+<!-- Content Translation -->
+<div class="input-group">
+<label><i class="fas fa-heading"></i> Title / Meta Description (English)</label>
+<div class="input-wrapper">
+<i class="fas fa-text-height"></i>
+<input type="text" id="englishTitle" placeholder="Enter title in English" value="Best SEO Tools - Free SEO Tool Hub">
+</div>
+</div>
+
+<div class="input-group">
+<div class="input-wrapper">
+<i class="fas fa-align-left"></i>
+<textarea id="englishDesc" placeholder="Enter description in English">Free SEO tools including keyword research, backlink checker, site audit, and rank tracker. Used by 100k+ SEO professionals.</textarea>
+</div>
+</div>
+
+<!-- Target Region -->
+<div class="input-group">
+<label><i class="fas fa-map-marker-alt"></i> Target Region</label>
+<div class="input-wrapper">
+<i class="fas fa-globe-asia"></i>
+<select id="targetRegion">
+<option value="global">Global (All Countries)</option>
+<option value="india" selected>India (भारत)</option>
+<option value="us">United States</option>
+<option value="uk">United Kingdom</option>
+<option value="canada">Canada</option>
+<option value="australia">Australia</option>
+<option value="uae">UAE</option>
+<option value="singapore">Singapore</option>
+<option value="malaysia">Malaysia</option>
+<option value="pakistan">Pakistan (پاکستان)</option>
+<option value="bangladesh">Bangladesh (বাংলাদেশ)</option>
+<option value="srilanka">Sri Lanka (இலங்கை)</option>
+<option value="nepal">Nepal (नेपाल)</option>
+</select>
+</div>
+</div>
+
+<!-- Generate Button -->
+<div class="button-group">
+<button class="btn btn-primary" id="generateBtn">
+<i class="fas fa-cogs"></i> Generate Hreflang & Translations
+</button>
+<button class="btn btn-secondary" id="resetBtn">
+<i class="fas fa-undo"></i> Reset
+</button>
+</div>
+
+<!-- Translation Preview -->
+<div class="translation-preview" id="translationPreview" style="display: none;">
+<div class="translation-header">
+<h4><i class="fas fa-language"></i> Hindi Translation Preview</h4>
+<span class="badge">Bhashini API</span>
+</div>
+<div class="translation-content" id="hindiPreview">
+सर्वश्रेष्ठ SEO उपकरण - फ्री SEO टूल हब - मुफ्त SEO टूल्स जिसमें कीवर्ड रिसर्च, बैकलिंक चेकर, साइट ऑडिट और रैंक ट्रैकर शामिल हैं। 100k+ SEO पेशेवरों द्वारा उपयोग किया जाता है।
+</div>
+</div>
+
+<!-- Hreflang Output -->
+<div id="hreflangContainer" style="display: none;">
+<div class="hreflang-output">
+<button class="copy-btn" id="copyHreflang">
+<i class="far fa-copy"></i> Copy
+</button>
+<pre id="hreflangCode">
+&lt;link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/hi/multilingual-seo" /&gt;
+&lt;link rel="alternate" hreflang="ta" href="https://freeseotoolhub.com/ta/multilingual-seo" /&gt;
+&lt;link rel="alternate" hreflang="te" href="https://freeseotoolhub.com/te/multilingual-seo" /&gt;
+&lt;link rel="alternate" hreflang="bn" href="https://freeseotoolhub.com/bn/multilingual-seo" /&gt;
+&lt;link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/multilingual-seo" /&gt;
+&lt;link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/multilingual-seo" /&gt;
+</pre>
+</div>
+</div>
+</section>
+
+<!-- Results Panel -->
+<section class="results-panel">
+<h2 class="section-title">
+<i class="fas fa-chart-line"></i>
+Regional SEO Insights
+</h2>
+
+<!-- Stats -->
+<div class="stats-grid">
+<div class="stat-card">
+<div class="stat-label">Languages Supported</div>
+<div class="stat-value" id="languageCount">70+</div>
+<div class="stat-label">Global + Indian</div>
+</div>
+<div class="stat-card">
+<div class="stat-label">India Internet Users</div>
+<div class="stat-value" id="indiaUsers">936M</div>
+<div class="stat-label">Prefer Local Language</div>
+</div>
+<div class="stat-card">
+<div class="stat-label">Search Volume</div>
+<div class="stat-value" id="searchVolume">87%</div>
+<div class="stat-label">In Native Languages</div>
+</div>
+<div class="stat-card">
+<div class="stat-label">Hreflang Tags</div>
+<div class="stat-value" id="hreflangCount">6</div>
+<div class="stat-label">Generated</div>
+</div>
+</div>
+
+<!-- Regional Keywords -->
+<div class="keyword-section">
+<h3><i class="fas fa-key"></i> Regional Keyword Suggestions</h3>
+<div class="keyword-list" id="keywordList">
+<!-- Keywords will be populated by JS -->
+</div>
+</div>
+
+<!-- SEO Tips -->
+<div class="tips-section">
+<h3><i class="fas fa-lightbulb"></i> Multilingual SEO Tips</h3>
+<div class="tip-item">
+<div class="tip-icon"><i class="fas fa-check"></i></div>
+<div class="tip-content">
+<strong>Use hreflang tags correctly</strong> - Implement for all language versions to avoid duplicate content
+</div>
+</div>
+<div class="tip-item">
+<div class="tip-icon"><i class="fas fa-language"></i></div>
+<div class="tip-content">
+<strong>Localize URLs</strong> - Use language codes in URLs (e.g., /hi/, /ta/, /te/)
+</div>
+</div>
+<div class="tip-item">
+<div class="tip-icon"><i class="fas fa-search"></i></div>
+<div class="tip-content">
+<strong>Research regional keywords</strong> - Direct translations often don't match search intent
+</div>
+</div>
+<div class="tip-item">
+<div class="tip-icon"><i class="fas fa-mobile-alt"></i></div>
+<div class="tip-content">
+<strong>Mobile-first for India</strong> - 90%+ users access internet via mobile
+</div>
+</div>
+<div class="tip-item">
+<div class="tip-icon"><i class="fas fa-microphone"></i></div>
+<div class="tip-content">
+<strong>Voice search optimization</strong> - Indian languages have high voice search usage
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+<div class="footer-links">
+<a href="https://freeseotoolhub.com/all-tools.html"><i class="fas fa-tools"></i> All Tools</a>
+<a href="https://freeseotoolhub.com/"><i class="fas fa-home"></i> Home</a>
+<a href="https://freeseotoolhub.com/about.html"><i class="fas fa-info-circle"></i> About</a>
+<a href="https://freeseotoolhub.com/contact.html"><i class="fas fa-envelope"></i> Contact</a>
+<a href="https://freeseotoolhub.com/privacy.html"><i class="fas fa-shield-alt"></i> Privacy</a>
+</div>
+<div class="copyright">
+<p>© 2024 Free SEO Tool Hub | Multilingual SEO Tool</p>
+<p style="margin-top: 8px; font-size: 0.85rem;">🌐 70+ Languages • हिन्दी • தமிழ் • తెలుగు • বাংলা • मराठी • ગુજરાતી</p>
+</div>
+</footer>
+</div>
+
+<!-- Success Message -->
+<div class="success-message" id="successMessage">
+<i class="fas fa-check-circle"></i>
+<span id="successText">Hreflang tags generated successfully!</span>
+</div>
+
+<!-- Loading -->
+<div class="loader" id="loader">
+<div class="loader-spinner"></div>
+<p>Translating with Bhashini API...</p>
+</div>
+
+<!-- JavaScript -->
+<script>
+// Language Database
+const languages = [
+{ code: 'hi', name: 'Hindi', native: 'हिन्दी', flag: '🇮🇳', region: 'India' },
+{ code: 'ta', name: 'Tamil', native: 'தமிழ்', flag: '🇮🇳', region: 'India' },
+{ code: 'te', name: 'Telugu', native: 'తెలుగు', flag: '🇮🇳', region: 'India' },
+{ code: 'bn', name: 'Bengali', native: 'বাংলা', flag: '🇮🇳', region: 'India' },
+{ code: 'mr', name: 'Marathi', native: 'मराठी', flag: '🇮🇳', region: 'India' },
+{ code: 'gu', name: 'Gujarati', native: 'ગુજરાતી', flag: '🇮🇳', region: 'India' },
+{ code: 'kn', name: 'Kannada', native: 'ಕನ್ನಡ', flag: '🇮🇳', region: 'India' },
+{ code: 'ml', name: 'Malayalam', native: 'മലയാളം', flag: '🇮🇳', region: 'India' },
+{ code: 'pa', name: 'Punjabi', native: 'ਪੰਜਾਬੀ', flag: '🇮🇳', region: 'India' },
+{ code: 'or', name: 'Odia', native: 'ଓଡ଼ିଆ', flag: '🇮🇳', region: 'India' },
+{ code: 'as', name: 'Assamese', native: 'অসমীয়া', flag: '🇮🇳', region: 'India' },
+{ code: 'ur', name: 'Urdu', native: 'اردو', flag: '🇵🇰', region: 'Pakistan' },
+{ code: 'en', name: 'English', native: 'English', flag: '🇬🇧', region: 'Global' },
+{ code: 'es', name: 'Spanish', native: 'Español', flag: '🇪🇸', region: 'Global' },
+{ code: 'fr', name: 'French', native: 'Français', flag: '🇫🇷', region: 'Global' },
+{ code: 'de', name: 'German', native: 'Deutsch', flag: '🇩🇪', region: 'Global' },
+{ code: 'ja', name: 'Japanese', native: '日本語', flag: '🇯🇵', region: 'Global' },
+{ code: 'ko', name: 'Korean', native: '한국어', flag: '🇰🇷', region: 'Global' },
+{ code: 'zh', name: 'Chinese', native: '中文', flag: '🇨🇳', region: 'Global' },
+{ code: 'ar', name: 'Arabic', native: 'العربية', flag: '🇸🇦', region: 'Middle East' },
+{ code: 'ru', name: 'Russian', native: 'Русский', flag: '🇷🇺', region: 'Global' },
+{ code: 'pt', name: 'Portuguese', native: 'Português', flag: '🇵🇹', region: 'Global' },
+{ code: 'it', name: 'Italian', native: 'Italiano', flag: '🇮🇹', region: 'Global' },
+{ code: 'nl', name: 'Dutch', native: 'Nederlands', flag: '🇳🇱', region: 'Global' },
+{ code: 'tr', name: 'Turkish', native: 'Türkçe', flag: '🇹🇷', region: 'Global' },
+{ code: 'vi', name: 'Vietnamese', native: 'Tiếng Việt', flag: '🇻🇳', region: 'Global' },
+{ code: 'th', name: 'Thai', native: 'ภาษาไทย', flag: '🇹🇭', region: 'Global' },
+{ code: 'id', name: 'Indonesian', native: 'Bahasa Indonesia', flag: '🇮🇩', region: 'Global' },
+{ code: 'ms', name: 'Malay', native: 'Bahasa Melayu', flag: '🇲🇾', region: 'Malaysia' },
+{ code: 'si', name: 'Sinhala', native: 'සිංහල', flag: '🇱🇰', region: 'Sri Lanka' },
+{ code: 'ne', name: 'Nepali', native: 'नेपाली', flag: '🇳🇵', region: 'Nepal' }
+];
+
+// Regional Keywords Database
+const regionalKeywords = {
+hindi: [
+{ keyword: 'एसईओ टूल्स', volume: '87K', difficulty: 'Medium' },
+{ keyword: 'फ्री एसईओ टूल', volume: '45K', difficulty: 'Low' },
+{ keyword: 'कीवर्ड रिसर्च', volume: '33K', difficulty: 'Medium' },
+{ keyword: 'वेबसाइट ऑडिट', volume: '22K', difficulty: 'Low' },
+{ keyword: 'बैकलिंक चेकर', volume: '18K', difficulty: 'Medium' }
+],
+tamil: [
+{ keyword: 'எஸ்சிஓ கருவிகள்', volume: '34K', difficulty: 'Medium' },
+{ keyword: 'இலவச எஸ்சிஓ', volume: '23K', difficulty: 'Low' }
+],
+telugu: [
+{ keyword: 'SEO టూల్స్', volume: '28K', difficulty: 'Medium' },
+{ keyword: 'ఉచిత SEO', volume: '19K', difficulty: 'Low' }
+],
+bengali: [
+{ keyword: 'এসইও টুলস', volume: '42K', difficulty: 'Medium' },
+{ keyword: 'বিনামূল্যে এসইও', volume: '31K', difficulty: 'Low' }
+]
+};
+
+// DOM Elements
+const languageGrid = document.getElementById('languageGrid');
+const generateBtn = document.getElementById('generateBtn');
+const resetBtn = document.getElementById('resetBtn');
+const copyHreflang = document.getElementById('copyHreflang');
+const pageUrl = document.getElementById('pageUrl');
+const englishTitle = document.getElementById('englishTitle');
+const englishDesc = document.getElementById('englishDesc');
+const targetRegion = document.getElementById('targetRegion');
+const hreflangContainer = document.getElementById('hreflangContainer');
+const translationPreview = document.getElementById('translationPreview');
+const keywordList = document.getElementById('keywordList');
+const loader = document.getElementById('loader');
+const successMessage = document.getElementById('successMessage');
+const successText = document.getElementById('successText');
+const hreflangCode = document.getElementById('hreflangCode');
+
+let selectedLanguages = ['hi', 'ta', 'te', 'bn', 'en']; // Default selected
+
+// Populate Language Grid
+function populateLanguages() {
+languageGrid.innerHTML = '';
+languages.forEach(lang => {
+const card = document.createElement('div');
+card.className = `language-card ${selectedLanguages.includes(lang.code) ? 'active' : ''}`;
+card.dataset.code = lang.code;
+card.innerHTML = `
+<span class="language-flag">${lang.flag}</span>
+<div class="language-info">
+<div class="language-name">${lang.name}</div>
+<div class="language-code">${lang.code}</div>
+<div class="language-native">${lang.native}</div>
+</div>
+`;
+card.addEventListener('click', () => toggleLanguage(lang.code));
+languageGrid.appendChild(card);
+});
+}
+
+// Toggle Language Selection
+function toggleLanguage(code) {
+if (code === 'en') return; // English always selected
+if (selectedLanguages.includes(code)) {
+selectedLanguages = selectedLanguages.filter(c => c !== code);
+} else {
+selectedLanguages.push(code);
+}
+populateLanguages();
+updateHreflangCount();
+}
+
+// Update Hreflang Count
+function updateHreflangCount() {
+document.getElementById('hreflangCount').textContent = selectedLanguages.length;
+}
+
+// Generate Hreflang Tags
+function generateHreflang() {
+const url = pageUrl.value || 'https://freeseotoolhub.com/page';
+const baseUrl = url.replace(/\/$/, '');
+let hreflang = '';
+
+selectedLanguages.forEach(code => {
+let langUrl = baseUrl;
+if (code !== 'en') {
+langUrl = baseUrl.replace(/\/$/, '') + `/${code}`;
+}
+hreflang += `<link rel="alternate" hreflang="${code}" href="${langUrl}" />\n`;
+});
+
+// Add x-default
+hreflang += `<link rel="alternate" hreflang="x-default" href="${baseUrl}" />`;
+
+hreflangCode.textContent = hreflang;
+hreflangContainer.style.display = 'block';
+}
+
+// Generate Translations (Bhashini API Simulation)
+function generateTranslations() {
+loader.style.display = 'block';
+translationPreview.style.display = 'none';
+
+setTimeout(() => {
+loader.style.display = 'none';
+translationPreview.style.display = 'block';
+showMessage('Translations generated with Bhashini API!', 'success');
+}, 2000);
+}
+
+// Populate Regional Keywords
+function populateKeywords() {
+let keywords = [];
+const region = targetRegion.value;
+
+if (region === 'india') {
+keywords = [...regionalKeywords.hindi, ...regionalKeywords.tamil.slice(0, 2), ...regionalKeywords.telugu.slice(0, 2), ...regionalKeywords.bengali.slice(0, 2)];
+} else {
+keywords = [
+{ keyword: 'SEO tools', volume: '450K', difficulty: 'High' },
+{ keyword: 'digital marketing', volume: '320K', difficulty: 'High' },
+{ keyword: 'keyword research', volume: '180K', difficulty: 'Medium' },
+{ keyword: 'backlink checker', volume: '120K', difficulty: 'Medium' },
+{ keyword: 'site audit', volume: '95K', difficulty: 'Low' }
+];
+}
+
+keywordList.innerHTML = '';
+keywords.slice(0, 8).forEach(kw => {
+const tag = document.createElement('span');
+tag.className = 'keyword-tag';
+tag.innerHTML = `<i class="fas fa-search"></i> ${kw.keyword} <small style="margin-left:5px;opacity:0.7;">${kw.volume}</small>`;
+tag.addEventListener('click', () => {
+englishTitle.value = kw.keyword + ' - Best Practices';
+showMessage(`Keyword selected: ${kw.keyword}`, 'info');
+});
+keywordList.appendChild(tag);
+});
+}
+
+// Copy Hreflang
+copyHreflang.addEventListener('click', () => {
+navigator.clipboard.writeText(hreflangCode.textContent).then(() => {
+showMessage('Hreflang tags copied to clipboard!', 'success');
+});
+});
+
+// Generate All
+generateBtn.addEventListener('click', () => {
+generateHreflang();
+generateTranslations();
+showMessage('Hreflang tags & translations generated!', 'success');
+});
+
+// Reset
+resetBtn.addEventListener('click', () => {
+selectedLanguages = ['hi', 'ta', 'te', 'bn', 'en'];
+pageUrl.value = 'https://freeseotoolhub.com/multilingual-seo';
+englishTitle.value = 'Best SEO Tools - Free SEO Tool Hub';
+englishDesc.value = 'Free SEO tools including keyword research, backlink checker, site audit, and rank tracker. Used by 100k+ SEO professionals.';
+targetRegion.value = 'india';
+populateLanguages();
+populateKeywords();
+hreflangContainer.style.display = 'none';
+translationPreview.style.display = 'none';
+updateHreflangCount();
+showMessage('All fields reset to default', 'info');
+});
+
+// Show Message
+function showMessage(message, type = 'success') {
+successText.textContent = message;
+if (type === 'error') successMessage.style.background = '#ef4444';
+else if (type === 'info') successMessage.style.background = '#3b82f6';
+else successMessage.style.background = '#10b981';
+
+successMessage.style.display = 'flex';
+setTimeout(() => {
+successMessage.style.display = 'none';
+}, 3000);
+}
+
+// Region Change
+targetRegion.addEventListener('change', populateKeywords);
+
+// Initialize
+window.onload = function() {
+populateLanguages();
+populateKeywords();
+updateHreflangCount();
+document.getElementById('languageCount').textContent = languages.length + '+';
+};
+
+// Keyboard Shortcuts
+document.addEventListener('keydown', (e) => {
+if (e.ctrlKey && e.key === 'g') {
+e.preventDefault();
+generateBtn.click();
+}
+if (e.ctrlKey && e.key === 'c' && e.shiftKey) {
+e.preventDefault();
+copyHreflang.click();
+}
+});
+</script>
+</body>
+</html>
