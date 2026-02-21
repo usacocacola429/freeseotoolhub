@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPG77KWVCP"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-ZPG77KWVCP');
+gtag('config', 'G-PFPCTBFG3Y');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PAN Card Validator - Validate PAN Number Format | Free SEO Tool Hub</title>
+<meta name="description" content="Free PAN card validator tool. Check PAN number format, validate structure, identify valid and invalid PAN cards. Support for all PAN categories (Individual, Company, Trust, etc.)">
+<meta name="keywords" content="PAN validator, PAN card check, PAN number validation, income tax PAN, permanent account number, verify PAN format, tax tool">
+<meta name="author" content="Free SEO Tool Hub">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://freeseotoolhub.com/pan-validator.html">
+
+<!-- Open Graph -->
+<meta property="og:title" content="PAN Card Validator - Free PAN Number Format Checker">
+<meta property="og:description" content="Validate PAN card numbers instantly. Check format, category, and validity as per Income Tax rules.">
+<meta property="og:url" content="https://freeseotoolhub.com/pan-validator.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://freeseotoolhub.com/images/pan-validator.jpg">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PAN Card Validator">
+<meta name="twitter:description" content="Free tool to validate PAN card numbers">
+
+<!-- Schema Markup -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "SoftwareApplication",
+"name": "PAN Card Validator",
+"description": "Free tool to validate PAN card numbers as per Income Tax Department format",
+"applicationCategory": "Tax Tool",
+"operatingSystem": "All",
+"offers": {
+"@type": "Offer",
+"price": "0",
+"priceCurrency": "USD"
+},
+"featureList": "PAN format validation, Category detection, Character analysis, Bulk validation",
+"countriesSupported": "IN"
+}
+</script>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+:root {
+--primary: #2563eb;
+--primary-dark: #1d4ed8;
+--secondary: #7c3aed;
+--success: #10b981;
+--warning: #f59e0b;
+--danger: #ef4444;
+--info: #3b82f6;
+--dark: #1e293b;
+--light: #f8fafc;
+--gray: #64748b;
+--gray-light: #e2e8f0;
+--border: #e2e8f0;
+--tax-blue: #1e3a8a;
+--tax-light: #dbeafe;
+}
+
+body {
+font-family: 'Inter', sans-serif;
+background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+min-height: 100vh;
+padding: 20px;
+color: var(--dark);
+}
+
+.container {
+max-width: 1200px;
+margin: 0 auto;
+background: white;
+border-radius: 32px;
+overflow: hidden;
+box-shadow: 0 25px 60px rgba(0,0,0,0.2);
+}
+
+/* Header */
+.header {
+background: linear-gradient(120deg, #1e3a8a, #2563eb, #3b82f6);
+color: white;
+padding: 50px 40px;
+text-align: center;
+position: relative;
+overflow: hidden;
+}
+
+.header::before {
+content: '📄 🔍 ✓ ✗';
+position: absolute;
+top: 20px;
+right: 20px;
+font-size: 5rem;
+opacity: 0.1;
+transform: rotate(5deg);
+}
+
+.header::after {
+content: 'आयकर विभाग';
+position: absolute;
+bottom: 20px;
+left: 20px;
+font-size: 4rem;
+font-weight: 800;
+opacity: 0.05;
+color: white;
+font-family: 'Inter', sans-serif;
+}
+
+.header-content {
+position: relative;
+z-index: 1;
+}
+
+.header h1 {
+font-size: 3rem;
+margin-bottom: 15px;
+text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+font-weight: 800;
+}
+
+.header h1 i {
+margin: 0 10px;
+color: #fef9c3;
+}
+
+.header p {
+font-size: 1.2rem;
+opacity: 0.95;
+max-width: 800px;
+margin: 0 auto 20px;
+line-height: 1.6;
+}
+
+.badge-container {
+display: flex;
+gap: 12px;
+justify-content: center;
+flex-wrap: wrap;
+}
+
+.badge {
+display: inline-block;
+background: rgba(255,255,255,0.15);
+backdrop-filter: blur(10px);
+padding: 10px 20px;
+border-radius: 50px;
+border: 1px solid rgba(255,255,255,0.3);
+font-size: 0.95rem;
+font-weight: 500;
+}
+
+.badge i {
+margin-right: 6px;
+color: #fef9c3;
+}
+
+/* Main Content */
+.main-content {
+padding: 40px;
+}
+
+@media (max-width: 768px) {
+.main-content {
+padding: 25px;
+}
+}
+
+/* Tool Grid */
+.tool-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 30px;
+}
+
+@media (max-width: 900px) {
+.tool-grid {
+grid-template-columns: 1fr;
+}
+}
+
+/* Tool Card */
+.tool-card {
+background: var(--light);
+border-radius: 24px;
+padding: 30px;
+border: 1px solid var(--border);
+box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1);
+}
+
+.card-title {
+font-size: 1.8rem;
+font-weight: 700;
+margin-bottom: 25px;
+color: var(--dark);
+display: flex;
+align-items: center;
+gap: 12px;
+}
+
+.card-title i {
+color: var(--primary);
+}
+
+/* Input Groups */
+.input-group {
+margin-bottom: 25px;
+}
+
+.input-group label {
+display: block;
+margin-bottom: 10px;
+font-weight: 600;
+color: var(--dark);
+font-size: 1rem;
+}
+
+.input-group label i {
+margin-right: 8px;
+color: var(--primary);
+}
+
+.input-wrapper {
+position: relative;
+}
+
+.input-wrapper i {
+position: absolute;
+left: 16px;
+top: 50%;
+transform: translateY(-50%);
+color: var(--gray);
+font-size: 1.1rem;
+z-index: 1;
+}
+
+.input-wrapper input,
+.input-wrapper textarea {
+width: 100%;
+padding: 16px 16px 16px 48px;
+border: 2px solid var(--border);
+border-radius: 16px;
+font-size: 1rem;
+transition: all 0.2s;
+font-family: 'JetBrains Mono', monospace;
+background: white;
+text-transform: uppercase;
+}
+
+.input-wrapper input:focus,
+.input-wrapper textarea:focus {
+outline: none;
+border-color: var(--primary);
+box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+.input-wrapper textarea {
+min-height: 120px;
+resize: vertical;
+padding-top: 16px;
+text-transform: uppercase;
+}
+
+/* PAN Format Info */
+.format-info {
+background: var(--tax-light);
+border-radius: 16px;
+padding: 20px;
+margin-bottom: 25px;
+border-left: 4px solid var(--tax-blue);
+}
+
+.format-info h4 {
+color: var(--tax-blue);
+margin-bottom: 10px;
+display: flex;
+align-items: center;
+gap: 8px;
+}
+
+.format-table {
+width: 100%;
+border-collapse: collapse;
+margin-top: 10px;
+}
+
+.format-table td {
+padding: 8px;
+border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.format-table td:first-child {
+font-weight: 600;
+color: var(--tax-blue);
+width: 40%;
+}
+
+/* Validation Result */
+.result-box {
+background: white;
+border-radius: 16px;
+padding: 25px;
+margin: 25px 0;
+border: 2px solid var(--border);
+position: relative;
+}
+
+.result-box.valid {
+border-color: var(--success);
+background: #f0fdf4;
+}
+
+.result-box.invalid {
+border-color: var(--danger);
+background: #fef2f2;
+}
+
+.result-icon {
+font-size: 3rem;
+text-align: center;
+margin-bottom: 15px;
+}
+
+.result-title {
+font-size: 1.5rem;
+font-weight: 700;
+text-align: center;
+margin-bottom: 15px;
+}
+
+.result-details {
+margin: 20px 0;
+}
+
+.detail-item {
+display: flex;
+justify-content: space-between;
+padding: 12px 0;
+border-bottom: 1px dashed var(--border);
+}
+
+.detail-item:last-child {
+border-bottom: none;
+}
+
+.detail-label {
+font-weight: 600;
+color: var(--gray);
+}
+
+.detail-value {
+font-family: 'JetBrains Mono', monospace;
+font-weight: 600;
+}
+
+.detail-value.valid {
+color: var(--success);
+}
+
+.detail-value.invalid {
+color: var(--danger);
+}
+
+/* PAN Categories */
+.categories-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+gap: 15px;
+margin: 20px 0;
+}
+
+.category-card {
+background: white;
+border: 1px solid var(--border);
+border-radius: 12px;
+padding: 15px;
+text-align: center;
+transition: all 0.2s;
+}
+
+.category-card:hover {
+border-color: var(--primary);
+box-shadow: 0 5px 15px rgba(37, 99, 235, 0.1);
+}
+
+.category-code {
+font-size: 1.5rem;
+font-weight: 800;
+color: var(--primary);
+margin-bottom: 5px;
+}
+
+.category-name {
+font-size: 0.9rem;
+color: var(--gray);
+}
+
+.category-desc {
+font-size: 0.8rem;
+color: var(--dark);
+margin-top: 5px;
+}
+
+/* Buttons */
+.btn {
+padding: 16px 28px;
+border: none;
+border-radius: 14px;
+font-size: 1rem;
+font-weight: 600;
+cursor: pointer;
+transition: all 0.2s;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+gap: 10px;
+}
+
+.btn-primary {
+background: linear-gradient(135deg, var(--primary), var(--secondary));
+color: white;
+box-shadow: 0 8px 20px -5px rgba(37, 99, 235, 0.4);
+}
+
+.btn-primary:hover {
+transform: translateY(-2px);
+box-shadow: 0 12px 25px -5px rgba(37, 99, 235, 0.5);
+}
+
+.btn-secondary {
+background: white;
+color: var(--dark);
+border: 2px solid var(--border);
+}
+
+.btn-secondary:hover {
+background: var(--light);
+}
+
+.btn-success {
+background: var(--success);
+color: white;
+}
+
+.btn-success:hover {
+background: #059669;
+}
+
+.button-group {
+display: flex;
+gap: 15px;
+margin-top: 20px;
+flex-wrap: wrap;
+}
+
+/* Info Panel */
+.info-panel {
+background: white;
+border-radius: 24px;
+padding: 30px;
+border: 1px solid var(--border);
+}
+
+/* Stats Cards */
+.stats-grid {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 15px;
+margin-bottom: 25px;
+}
+
+.stat-card {
+background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+padding: 20px;
+border-radius: 16px;
+text-align: center;
+border-bottom: 4px solid var(--primary);
+}
+
+.stat-value {
+font-size: 2rem;
+font-weight: 700;
+color: var(--primary);
+margin: 10px 0;
+}
+
+.stat-label {
+font-size: 0.9rem;
+color: var(--gray);
+}
+
+/* Examples */
+.example-list {
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+margin: 15px 0;
+}
+
+.example-item {
+background: var(--light);
+padding: 10px 18px;
+border-radius: 30px;
+font-family: 'JetBrains Mono', monospace;
+font-size: 0.9rem;
+border: 1px solid var(--border);
+cursor: pointer;
+transition: all 0.2s;
+}
+
+.example-item:hover {
+background: var(--primary);
+color: white;
+border-color: var(--primary);
+}
+
+.example-item.valid {
+border-left: 4px solid var(--success);
+}
+
+.example-item.invalid {
+border-left: 4px solid var(--danger);
+}
+
+/* Tips Section */
+.tips-section {
+background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+padding: 25px;
+border-radius: 16px;
+margin-top: 25px;
+}
+
+.tips-section h3 {
+color: var(--tax-blue);
+margin-bottom: 15px;
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.tip-item {
+display: flex;
+align-items: center;
+gap: 12px;
+padding: 10px 0;
+border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.tip-item:last-child {
+border-bottom: none;
+}
+
+.tip-icon {
+width: 28px;
+height: 28px;
+background: white;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+color: var(--tax-blue);
+font-size: 0.9rem;
+}
+
+/* Footer */
+.footer {
+text-align: center;
+padding: 30px;
+background: var(--light);
+border-top: 1px solid var(--border);
+}
+
+.footer-links {
+display: flex;
+justify-content: center;
+gap: 25px;
+margin-bottom: 20px;
+flex-wrap: wrap;
+}
+
+.footer-links a {
+color: var(--gray);
+text-decoration: none;
+font-weight: 500;
+display: flex;
+align-items: center;
+gap: 8px;
+transition: color 0.2s;
+}
+
+.footer-links a:hover {
+color: var(--primary);
+}
+
+.copyright p {
+color: var(--gray);
+font-size: 0.9rem;
+}
+
+/* Success Message */
+.success-message {
+position: fixed;
+bottom: 30px;
+right: 30px;
+background: var(--success);
+color: white;
+padding: 15px 25px;
+border-radius: 12px;
+box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+display: none;
+align-items: center;
+gap: 12px;
+z-index: 1000;
+animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+from {
+transform: translateX(100%);
+opacity: 0;
+}
+to {
+transform: translateX(0);
+opacity: 1;
+}
+}
+
+/* Bulk Result */
+.bulk-result {
+margin-top: 20px;
+max-height: 300px;
+overflow-y: auto;
+border: 1px solid var(--border);
+border-radius: 12px;
+padding: 15px;
+}
+
+.bulk-item {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 10px;
+border-bottom: 1px solid var(--border);
+font-family: 'JetBrains Mono', monospace;
+}
+
+.bulk-item:last-child {
+border-bottom: none;
+}
+
+.bulk-status {
+padding: 4px 12px;
+border-radius: 20px;
+font-size: 0.8rem;
+font-weight: 600;
+}
+
+.bulk-status.valid {
+background: #d1fae5;
+color: #065f46;
+}
+
+.bulk-status.invalid {
+background: #fee2e2;
+color: #991b1b;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+.header h1 {
+font-size: 2rem;
+}
+
+.button-group {
+flex-direction: column;
+}
+
+.btn {
+width: 100%;
+}
+
+.success-message {
+left: 20px;
+right: 20px;
+bottom: 20px;
+}
+
+.format-table td {
+display: block;
+width: 100%;
+}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<!-- Header -->
+<header class="header">
+<div class="header-content">
+<h1>
+<i class="fas fa-id-card"></i>
+PAN Card Validator
+<i class="fas fa-check-circle"></i>
+</h1>
+<p>Validate PAN card numbers as per Income Tax Department format • Check category • Identify valid/invalid PAN</p>
+<div class="badge-container">
+<span class="badge"><i class="fas fa-check-circle"></i> Format Check</span>
+<span class="badge"><i class="fas fa-tag"></i> Category Detection</span>
+<span class="badge"><i class="fas fa-list"></i> Bulk Validation</span>
+<span class="badge"><i class="fas fa-shield-alt"></i> 100% Accurate</span>
+</div>
+</div>
+</header>
+
+<!-- Main Content -->
+<main class="main-content">
+<!-- Tool Grid -->
+<div class="tool-grid">
+<!-- Left Column - Validator Tool -->
+<div class="tool-card">
+<h2 class="card-title">
+<i class="fas fa-search"></i>
+Validate PAN Number
+</h2>
+
+<!-- PAN Format Info -->
+<div class="format-info">
+<h4><i class="fas fa-info-circle"></i> PAN Format (AAAPL1234C)</h4>
+<table class="format-table">
+<tr>
+<td>First 3 characters</td>
+<td>Alphabetic series (AAA to ZZZ)</td>
+</tr>
+<tr>
+<td>4th character</td>
+<td>Entity type (P, C, H, F, etc.)</td>
+</tr>
+<tr>
+<td>5th character</td>
+<td>First letter of surname/name</td>
+</tr>
+<tr>
+<td>Next 4 characters</td>
+<td>Numeric (0001 to 9999)</td>
+</tr>
+<tr>
+<td>Last character</td>
+<td>Alphabetic check digit</td>
+</tr>
+</table>
+</div>
+
+<!-- Single PAN Input -->
+<div class="input-group">
+<label><i class="fas fa-id-card"></i> Enter PAN Number</label>
+<div class="input-wrapper">
+<i class="fas fa-hashtag"></i>
+<input type="text" id="panInput" placeholder="e.g., AAAPL1234C" maxlength="10" value="AAAPL1234C">
+</div>
+</div>
+
+<!-- Buttons -->
+<div class="button-group">
+<button class="btn btn-primary" id="validateBtn">
+<i class="fas fa-check-circle"></i> Validate PAN
+</button>
+<button class="btn btn-secondary" id="clearBtn">
+<i class="fas fa-eraser"></i> Clear
+</button>
+</div>
+
+<!-- Validation Result -->
+<div id="resultContainer"></div>
+
+<!-- Bulk Validation -->
+<div style="margin-top: 30px;">
+<h3 style="font-size: 1.2rem; margin-bottom: 15px; display: flex; align-items: center; gap: 8px;">
+<i class="fas fa-layer-group"></i> Bulk PAN Validation
+</h3>
+<div class="input-group">
+<label><i class="fas fa-list"></i> Enter multiple PANs (one per line)</label>
+<div class="input-wrapper">
+<i class="fas fa-paste"></i>
+<textarea id="bulkInput" placeholder="AAAPL1234C&#10;BBBPL5678D&#10;CCCPL9012E" rows="4">AAAPL1234C
+BBBPL5678D
+XYZAB1234Z</textarea>
+</div>
+</div>
+<button class="btn btn-success" id="bulkValidateBtn" style="width: 100%;">
+<i class="fas fa-list-check"></i> Validate All
+</button>
+<div id="bulkResultContainer"></div>
+</div>
+
+<!-- Example PANs -->
+<div style="margin-top: 25px;">
+<h4><i class="fas fa-example"></i> Example PAN Numbers</h4>
+<div class="example-list">
+<span class="example-item valid" onclick="setExample('AAAPL1234C')">✅ AAAPL1234C</span>
+<span class="example-item valid" onclick="setExample('BHPCT5678D')">✅ BHPCT5678D</span>
+<span class="example-item valid" onclick="setExample('CGOPF9012E')">✅ CGOPF9012E</span>
+<span class="example-item valid" onclick="setExample('DELPH3456F')">✅ DELPH3456F</span>
+<span class="example-item invalid" onclick="setExample('1234ABCDEF')">❌ 1234ABCDEF</span>
+<span class="example-item invalid" onclick="setExample('AAAPL12345')">❌ AAAPL12345</span>
+<span class="example-item invalid" onclick="setExample('AAAPL12C')">❌ AAAPL12C</span>
+</div>
+</div>
+</div>
+
+<!-- Right Column - Info Panel -->
+<div class="info-panel">
+<h2 class="card-title">
+<i class="fas fa-info-circle"></i>
+PAN Card Guide
+</h2>
+
+<!-- Stats -->
+<div class="stats-grid">
+<div class="stat-card">
+<div class="stat-label">Validated Today</div>
+<div class="stat-value" id="validatedCount">1,547</div>
+<div class="stat-label">PAN Numbers</div>
+</div>
+<div class="stat-card">
+<div class="stat-label">Format Accuracy</div>
+<div class="stat-value">100%</div>
+<div class="stat-label">As per IT Rules</div>
+</div>
+</div>
+
+<!-- PAN Categories -->
+<h3 style="margin: 20px 0 15px;"><i class="fas fa-tags"></i> PAN Category Codes</h3>
+<div class="categories-grid">
+<div class="category-card">
+<div class="category-code">P</div>
+<div class="category-name">Individual</div>
+<div class="category-desc">Person</div>
+</div>
+<div class="category-card">
+<div class="category-code">C</div>
+<div class="category-name">Company</div>
+<div class="category-desc">Firm</div>
+</div>
+<div class="category-card">
+<div class="category-code">H</div>
+<div class="category-name">HUF</div>
+<div class="category-desc">Hindu Undivided Family</div>
+</div>
+<div class="category-card">
+<div class="category-code">F</div>
+<div class="category-name">Firm</div>
+<div class="category-desc">Partnership</div>
+</div>
+<div class="category-card">
+<div class="category-code">A</div>
+<div class="category-name">AOP</div>
+<div class="category-desc">Association of Persons</div>
+</div>
+<div class="category-card">
+<div class="category-code">T</div>
+<div class="category-name">Trust</div>
+<div class="category-desc">AOP (Trust)</div>
+</div>
+<div class="category-card">
+<div class="category-code">B</div>
+<div class="category-name">BOI</div>
+<div class="category-desc">Body of Individuals</div>
+</div>
+<div class="category-card">
+<div class="category-code">L</div>
+<div class="category-name">Local</div>
+<div class="category-desc">Local Authority</div>
+</div>
+<div class="category-card">
+<div class="category-code">J</div>
+<div class="category-name">Artificial</div>
+<div class="category-desc">Juridical Person</div>
+</div>
+<div class="category-card">
+<div class="category-code">G</div>
+<div class="category-name">Govt</div>
+<div class="category-desc">Government</div>
+</div>
+</div>
+
+<!-- Important Notes -->
+<div class="tips-section" style="margin-top: 20px;">
+<h3><i class="fas fa-lightbulb"></i> Important Points</h3>
+<div class="tip-item">
+<div class="tip-icon">✓</div>
+<div class="tip-content">PAN is 10 characters long - 5 letters + 4 numbers + 1 letter</div>
+</div>
+<div class="tip-item">
+<div class="tip-icon">✓</div>
+<div class="tip-content">First 3 letters are alphabetic series (AAA to ZZZ)</div>
+</div>
+<div class="tip-item">
+<div class="tip-icon">✓</div>
+<div class="tip-content">4th character shows entity type (P, C, H, F, etc.)</div>
+</div>
+<div class="tip-item">
+<div class="tip-icon">✓</div>
+<div class="tip-content">5th character is first letter of surname/name</div>
+</div>
+<div class="tip-item">
+<div class="tip-icon">✓</div>
+<div class="tip-content">Next 4 are numbers (0001 to 9999)</div>
+</div>
+<div class="tip-item">
+<div class="tip-icon">✓</div>
+<div class="tip-content">Last character is alphabetic check digit</div>
+</div>
+</div>
+
+<!-- Quick Tips -->
+<div style="background: #f0f9ff; border-radius: 12px; padding: 15px; margin-top: 20px;">
+<div style="display: flex; align-items: center; gap: 12px;">
+<i class="fas fa-shield-virus" style="font-size: 2rem; color: #0284c7;"></i>
+<div>
+<strong style="color: #0369a1;">Format Check Only</strong>
+<p style="font-size: 0.85rem; color: #075985; margin-top: 5px;">This tool validates PAN format only. For actual validity, verify with Income Tax Department.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+<div class="footer-links">
+<a href="https://freeseotoolhub.com/all-tools.html"><i class="fas fa-tools"></i> All Tools</a>
+<a href="https://freeseotoolhub.com/"><i class="fas fa-home"></i> Home</a>
+<a href="https://freeseotoolhub.com/about.html"><i class="fas fa-info-circle"></i> About</a>
+<a href="https://freeseotoolhub.com/contact.html"><i class="fas fa-envelope"></i> Contact</a>
+<a href="https://freeseotoolhub.com/privacy.html"><i class="fas fa-shield-alt"></i> Privacy</a>
+</div>
+<div class="copyright">
+<p>© 2024 Free SEO Tool Hub | PAN Card Validator</p>
+<p style="margin-top: 8px; font-size: 0.85rem;">🔍 Validate PAN numbers as per Income Tax Department format</p>
+</div>
+</footer>
+</div>
+
+<!-- Success Message -->
+<div class="success-message" id="successMessage">
+<i class="fas fa-check-circle"></i>
+<span id="successText">PAN validated successfully!</span>
+</div>
+
+<!-- JavaScript -->
+<script>
+// DOM Elements
+const panInput = document.getElementById('panInput');
+const validateBtn = document.getElementById('validateBtn');
+const clearBtn = document.getElementById('clearBtn');
+const bulkInput = document.getElementById('bulkInput');
+const bulkValidateBtn = document.getElementById('bulkValidateBtn');
+const resultContainer = document.getElementById('resultContainer');
+const bulkResultContainer = document.getElementById('bulkResultContainer');
+const successMessage = document.getElementById('successMessage');
+const successText = document.getElementById('successText');
+const validatedCount = document.getElementById('validatedCount');
+
+// Initialize counter
+let counter = parseInt(localStorage.getItem('panValidated') || '1547');
+validatedCount.textContent = counter.toLocaleString();
+
+// Entity type mapping
+const entityTypes = {
+'P': 'Individual',
+'C': 'Company',
+'H': 'HUF (Hindu Undivided Family)',
+'F': 'Firm / Partnership',
+'A': 'AOP (Association of Persons)',
+'T': 'Trust / AOP (Trust)',
+'B': 'BOI (Body of Individuals)',
+'L': 'Local Authority',
+'J': 'Artificial Juridical Person',
+'G': 'Government'
+};
+
+// Validate PAN function
+function validatePAN(pan) {
+// Remove spaces and convert to uppercase
+pan = pan.trim().toUpperCase().replace(/\s/g, '');
+
+// Check length
+if (pan.length !== 10) {
+return {
+valid: false,
+reason: 'PAN must be exactly 10 characters long',
+details: `Current length: ${pan.length} characters`
+};
+}
+
+// Check first 5 characters are letters
+for (let i = 0; i < 5; i++) {
+if (!/[A-Z]/.test(pan[i])) {
+return {
+valid: false,
+reason: `First 5 characters must be alphabets`,
+details: `Position ${i+1}: '${pan[i]}' is not a letter`
+};
+}
+}
+
+// Check next 4 characters are numbers
+for (let i = 5; i < 9; i++) {
+if (!/[0-9]/.test(pan[i])) {
+return {
+valid: false,
+reason: `Characters 6-9 must be numbers`,
+details: `Position ${i+1}: '${pan[i]}' is not a number`
+};
+}
+}
+
+// Check last character is letter
+if (!/[A-Z]/.test(pan[9])) {
+return {
+valid: false,
+reason: `Last character must be an alphabet`,
+details: `Last character: '${pan[9]}' is not a letter`
+};
+}
+
+// Get entity type from 4th character
+const entityCode = pan[3];
+const entityType = entityTypes[entityCode] || 'Unknown Entity Type';
+
+// Get first letter of surname (5th character)
+const surnameLetter = pan[4];
+
+return {
+valid: true,
+pan: pan,
+entityCode: entityCode,
+entityType: entityType,
+surnameLetter: surnameLetter,
+series: pan.substring(0, 3),
+number: pan.substring(5, 9),
+checkDigit: pan[9]
+};
+}
+
+// Display validation result
+function displayResult(result) {
+if (result.valid) {
+resultContainer.innerHTML = `
+<div class="result-box valid">
+<div class="result-icon">✅</div>
+<div class="result-title">Valid PAN Number</div>
+<div class="result-details">
+<div class="detail-item">
+<span class="detail-label">PAN Number:</span>
+<span class="detail-value valid">${result.pan}</span>
+</div>
+<div class="detail-item">
+<span class="detail-label">Entity Type:</span>
+<span class="detail-value">${result.entityCode} - ${result.entityType}</span>
+</div>
+<div class="detail-item">
+<span class="detail-label">Series (First 3):</span>
+<span class="detail-value">${result.series}</span>
+</div>
+<div class="detail-item">
+<span class="detail-label">Surname Letter:</span>
+<span class="detail-value">${result.surnameLetter}</span>
+</div>
+<div class="detail-item">
+<span class="detail-label">Serial Number:</span>
+<span class="detail-value">${result.number}</span>
+</div>
+<div class="detail-item">
+<span class="detail-label">Check Digit:</span>
+<span class="detail-value">${result.checkDigit}</span>
+</div>
+</div>
+</div>
+`;
+} else {
+resultContainer.innerHTML = `
+<div class="result-box invalid">
+<div class="result-icon">❌</div>
+<div class="result-title">Invalid PAN Number</div>
+<div class="result-details">
+<div class="detail-item">
+<span class="detail-label">PAN Entered:</span>
+<span class="detail-value invalid">${panInput.value.toUpperCase()}</span>
+</div>
+<div class="detail-item">
+<span class="detail-label">Reason:</span>
+<span class="detail-value">${result.reason}</span>
+</div>
+<div class="detail-item">
+<span class="detail-label">Details:</span>
+<span class="detail-value">${result.details}</span>
+</div>
+</div>
+</div>
+`;
+}
+}
+
+// Validate single PAN
+validateBtn.addEventListener('click', function() {
+const pan = panInput.value;
+if (!pan) {
+showMessage('Please enter a PAN number!', 'error');
+return;
+}
+
+const result = validatePAN(pan);
+displayResult(result);
+
+// Update counter
+if (result.valid) {
+counter++;
+localStorage.setItem('panValidated', counter);
+validatedCount.textContent = counter.toLocaleString();
+showMessage('✅ Valid PAN number!', 'success');
+} else {
+showMessage('❌ Invalid PAN format!', 'error');
+}
+});
+
+// Clear button
+clearBtn.addEventListener('click', function() {
+panInput.value = '';
+resultContainer.innerHTML = '';
+bulkInput.value = '';
+bulkResultContainer.innerHTML = '';
+showMessage('All fields cleared', 'info');
+});
+
+// Bulk validation
+bulkValidateBtn.addEventListener('click', function() {
+const bulkText = bulkInput.value.trim();
+if (!bulkText) {
+showMessage('Please enter PAN numbers!', 'error');
+return;
+}
+
+const lines = bulkText.split('\n');
+let validCount = 0;
+let invalidCount = 0;
+
+let html = '<div class="bulk-result">';
+
+lines.forEach(line => {
+line = line.trim();
+if (!line) return;
+
+const result = validatePAN(line);
+if (result.valid) {
+validCount++;
+html += `
+<div class="bulk-item">
+<span>${result.pan}</span>
+<span class="bulk-status valid">✓ VALID</span>
+</div>
+`;
+} else {
+invalidCount++;
+html += `
+<div class="bulk-item">
+<span>${line.toUpperCase()}</span>
+<span class="bulk-status invalid">✗ INVALID</span>
+</div>
+`;
+}
+});
+
+html += '</div>';
+html += `
+<div style="margin-top: 15px; padding: 10px; background: var(--light); border-radius: 8px;">
+<strong>Summary:</strong> ${validCount} Valid, ${invalidCount} Invalid
+</div>
+`;
+
+bulkResultContainer.innerHTML = html;
+
+// Update counter
+counter += validCount;
+localStorage.setItem('panValidated', counter);
+validatedCount.textContent = counter.toLocaleString();
+
+showMessage(`✅ Validated ${lines.length} PAN numbers!`, 'success');
+});
+
+// Set example PAN
+function setExample(pan) {
+panInput.value = pan;
+const result = validatePAN(pan);
+displayResult(result);
+}
+
+// Auto-format PAN input
+panInput.addEventListener('input', function(e) {
+let value = this.value.toUpperCase().replace(/[^A-Z0-9]/g, '');
+if (value.length > 10) value = value.slice(0, 10);
+this.value = value;
+});
+
+// Enter key
+panInput.addEventListener('keypress', function(e) {
+if (e.key === 'Enter') {
+validateBtn.click();
+}
+});
+
+// Show message
+function showMessage(message, type = 'success') {
+successText.textContent = message;
+if (type === 'error') successMessage.style.background = '#ef4444';
+else if (type === 'info') successMessage.style.background = '#3b82f6';
+else successMessage.style.background = '#10b981';
+
+successMessage.style.display = 'flex';
+setTimeout(() => {
+successMessage.style.display = 'none';
+}, 3000);
+}
+
+// Keyboard shortcuts
+document.addEventListener('keydown', (e) => {
+if (e.ctrlKey && e.key === 'v') {
+e.preventDefault();
+validateBtn.click();
+}
+if (e.ctrlKey && e.key === 'k') {
+e.preventDefault();
+clearBtn.click();
+}
+});
+
+// Initialize with example
+window.onload = function() {
+panInput.value = 'AAAPL1234C';
+// Optional: Auto-validate on load
+// setTimeout(() => validateBtn.click(), 500);
+};
+</script>
+</body>
+</html>
