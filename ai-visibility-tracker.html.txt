@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPG77KWVCP"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-ZPG77KWVCP');
+gtag('config', 'G-PFPCTBFG3Y');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Visibility Tracker - GEO Analytics 2026 | Free SEO Tool Hub</title>
+<meta name="description" content="Track your brand visibility across AI search engines. Real-time GEO analytics for ChatGPT, Perplexity, Gemini, Claude, and Copilot. Monitor share of voice in AI answers.">
+<meta name="keywords" content="AI visibility tracker, GEO analytics, ChatGPT tracking, Perplexity monitoring, AI search rank, generative engine optimization, share of voice AI, LLM tracking 2026">
+<meta name="author" content="Free SEO Tool Hub">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://freeseotoolhub.com/ai-visibility-tracker.html">
+
+<!-- Open Graph -->
+<meta property="og:title" content="AI Visibility Tracker - GEO Analytics 2026">
+<meta property="og:description" content="Real-time tracking for ChatGPT, Perplexity, Gemini & Claude. Monitor your brand's visibility in AI search results.">
+<meta property="og:url" content="https://freeseotoolhub.com/ai-visibility-tracker.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://freeseotoolhub.com/images/ai-tracker.jpg">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Visibility Tracker - GEO Analytics">
+<meta name="twitter:description" content="Track AI search visibility across all major LLM platforms.">
+
+<!-- Schema Markup -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "SoftwareApplication",
+"name": "AI Visibility Tracker",
+"description": "Real-time GEO tracking and analytics for AI search engines. Monitor brand visibility across ChatGPT, Perplexity, Gemini, Claude, and Copilot.",
+"applicationCategory": "SEO Tool",
+"operatingSystem": "All",
+"offers": {
+"@type": "Offer",
+"price": "0",
+"priceCurrency": "USD"
+},
+"featureList": "Multi-platform AI tracking, Share of Voice analysis, Trend detection, Competitor monitoring, GEO score tracking"
+}
+</script>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Chart.js for Analytics -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+:root {
+--primary: #06b6d4;
+--primary-dark: #0891b2;
+--secondary: #8b5cf6;
+--accent: #f43f5e;
+--success: #10b981;
+--warning: #f59e0b;
+--danger: #ef4444;
+--info: #3b82f6;
+--dark: #0f172a;
+--darker: #020617;
+--light: #f8fafc;
+--gray: #64748b;
+--border: #334155;
+--chatgpt: #10a37f;
+--perplexity: #5436da;
+--gemini: #4285f4;
+--claude: #c17b9e;
+--copilot: #7f3fbf;
+}
+
+body {
+font-family: 'Inter', sans-serif;
+background: linear-gradient(135deg, #0a0f1e 0%, #1a1f2e 100%);
+min-height: 100vh;
+padding: 20px;
+color: #e2e8f0;
+}
+
+.container {
+max-width: 1400px;
+margin: 0 auto;
+background: #1e293b;
+border-radius: 32px;
+overflow: hidden;
+box-shadow: 0 25px 60px rgba(0,0,0,0.7);
+border: 1px solid #334155;
+}
+
+/* Header */
+.header {
+background: linear-gradient(120deg, #155e75, #164863, #0b3b5c);
+color: white;
+padding: 60px 40px;
+text-align: center;
+position: relative;
+overflow: hidden;
+border-bottom: 1px solid #334155;
+}
+
+.header::before {
+content: '📊 🤖 🔍 📈';
+position: absolute;
+top: 20px;
+right: 20px;
+font-size: 5rem;
+opacity: 0.1;
+transform: rotate(5deg);
+}
+
+.header::after {
+content: 'GEO TRACKING 2026';
+position: absolute;
+bottom: 20px;
+left: 20px;
+font-size: 5rem;
+font-weight: 800;
+opacity: 0.05;
+color: white;
+letter-spacing: 5px;
+}
+
+.header-content {
+position: relative;
+z-index: 1;
+}
+
+.header h1 {
+font-size: 3.2rem;
+margin-bottom: 20px;
+text-shadow: 0 0 30px rgba(6, 182, 212, 0.5);
+font-weight: 800;
+letter-spacing: -0.02em;
+}
+
+.header h1 i {
+margin: 0 15px;
+color: #a5f3fc;
+}
+
+.header p {
+font-size: 1.3rem;
+opacity: 0.95;
+max-width: 1000px;
+margin: 0 auto 25px;
+line-height: 1.6;
+}
+
+.badge-container {
+display: flex;
+gap: 15px;
+justify-content: center;
+flex-wrap: wrap;
+}
+
+.badge {
+display: inline-block;
+background: rgba(255,255,255,0.1);
+backdrop-filter: blur(10px);
+padding: 12px 24px;
+border-radius: 50px;
+border: 1px solid rgba(255,255,255,0.2);
+font-size: 1rem;
+font-weight: 500;
+}
+
+.badge i {
+margin-right: 8px;
+color: #a5f3fc;
+}
+
+/* Main Content */
+.main-content {
+padding: 40px;
+display: grid;
+grid-template-columns: 1fr 1.2fr;
+gap: 30px;
+}
+
+@media (max-width: 1100px) {
+.main-content {
+grid-template-columns: 1fr;
+padding: 30px;
+}
+}
+
+/* Input Section */
+.input-section {
+background: #0f172a;
+border-radius: 24px;
+padding: 30px;
+border: 1px solid #334155;
+}
+
+.section-title {
+font-size: 1.8rem;
+font-weight: 700;
+margin-bottom: 25px;
+color: white;
+display: flex;
+align-items: center;
+gap: 12px;
+}
+
+.section-title i {
+color: var(--primary);
+}
+
+/* Input Groups */
+.input-group {
+margin-bottom: 25px;
+}
+
+.input-group label {
+display: block;
+margin-bottom: 10px;
+font-weight: 600;
+color: #e2e8f0;
+font-size: 1rem;
+}
+
+.input-group label i {
+margin-right: 8px;
+color: var(--primary);
+}
+
+.input-wrapper {
+position: relative;
+}
+
+.input-wrapper i {
+position: absolute;
+left: 16px;
+top: 50%;
+transform: translateY(-50%);
+color: var(--gray);
+font-size: 1.1rem;
+z-index: 1;
+}
+
+.input-wrapper input,
+.input-wrapper textarea,
+.input-wrapper select {
+width: 100%;
+padding: 16px 16px 16px 48px;
+border: 2px solid #334155;
+border-radius: 16px;
+font-size: 1rem;
+transition: all 0.2s;
+font-family: inherit;
+background: #1e293b;
+color: white;
+}
+
+.input-wrapper input:focus,
+.input-wrapper select:focus {
+outline: none;
+border-color: var(--primary);
+box-shadow: 0 0 0 4px rgba(6, 182, 212, 0.2);
+}
+
+.input-wrapper select option {
+background: #1e293b;
+color: white;
+}
+
+/* Date Range */
+.date-range {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 15px;
+margin-bottom: 25px;
+}
+
+/* Platform Selector */
+.platform-selector {
+display: flex;
+flex-wrap: wrap;
+gap: 12px;
+margin: 20px 0;
+}
+
+.platform-check {
+flex: 1 1 calc(50% - 12px);
+background: #1e293b;
+border: 2px solid #334155;
+border-radius: 14px;
+padding: 15px;
+cursor: pointer;
+transition: all 0.2s;
+display: flex;
+align-items: center;
+gap: 12px;
+}
+
+.platform-check:hover {
+border-color: var(--primary);
+}
+
+.platform-check.active {
+border-color: var(--primary);
+background: #164863;
+}
+
+.platform-check input {
+display: none;
+}
+
+.platform-icon {
+width: 40px;
+height: 40px;
+border-radius: 12px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 1.5rem;
+}
+
+.platform-info {
+flex: 1;
+}
+
+.platform-name {
+font-weight: 600;
+color: white;
+}
+
+.platform-desc {
+font-size: 0.8rem;
+color: var(--gray);
+}
+
+/* Buttons */
+.btn {
+padding: 16px 32px;
+border: none;
+border-radius: 16px;
+font-size: 1.1rem;
+font-weight: 600;
+cursor: pointer;
+transition: all 0.2s;
+display: inline-flex;
+align-items: center;
+gap: 12px;
+}
+
+.btn-primary {
+background: linear-gradient(135deg, var(--primary), var(--secondary));
+color: white;
+box-shadow: 0 8px 20px -5px rgba(6, 182, 212, 0.4);
+}
+
+.btn-primary:hover {
+transform: translateY(-2px);
+box-shadow: 0 12px 25px -5px rgba(6, 182, 212, 0.6);
+}
+
+.btn-secondary {
+background: #1e293b;
+color: white;
+border: 2px solid #334155;
+}
+
+.btn-secondary:hover {
+background: #2d3748;
+}
+
+.btn-success {
+background: linear-gradient(135deg, #059669, #10b981);
+color: white;
+}
+
+.button-group {
+display: flex;
+gap: 15px;
+margin: 30px 0 20px;
+flex-wrap: wrap;
+}
+
+/* Results Panel */
+.results-panel {
+background: #0f172a;
+border-radius: 24px;
+padding: 30px;
+border: 1px solid #334155;
+}
+
+/* Overview Cards */
+.overview-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 15px;
+margin-bottom: 25px;
+}
+
+.overview-card {
+background: #1e293b;
+padding: 20px;
+border-radius: 16px;
+text-align: center;
+border-left: 4px solid var(--primary);
+}
+
+.overview-value {
+font-size: 2rem;
+font-weight: 700;
+color: var(--primary);
+margin: 10px 0;
+}
+
+.overview-label {
+font-size: 0.9rem;
+color: var(--gray);
+}
+
+.overview-trend {
+font-size: 0.85rem;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 5px;
+}
+
+.trend-up { color: #10b981; }
+.trend-down { color: #ef4444; }
+
+/* Chart Container */
+.chart-container {
+background: #1e293b;
+border-radius: 20px;
+padding: 20px;
+margin: 25px 0;
+border: 1px solid #334155;
+height: 300px;
+position: relative;
+}
+
+/* Platform Scores Grid */
+.platform-scores-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+gap: 15px;
+margin: 20px 0;
+}
+
+.platform-score-card {
+background: #1e293b;
+border-radius: 16px;
+padding: 20px;
+border: 1px solid #334155;
+transition: all 0.2s;
+}
+
+.platform-score-card:hover {
+border-color: var(--primary);
+transform: translateY(-2px);
+}
+
+.platform-score-header {
+display: flex;
+align-items: center;
+gap: 12px;
+margin-bottom: 15px;
+}
+
+.platform-score-icon {
+width: 40px;
+height: 40px;
+border-radius: 12px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 1.5rem;
+}
+
+.platform-score-name {
+font-weight: 600;
+color: white;
+}
+
+.platform-score-value {
+font-size: 2rem;
+font-weight: 700;
+color: var(--primary);
+margin: 10px 0;
+}
+
+.platform-score-change {
+font-size: 0.9rem;
+display: flex;
+align-items: center;
+gap: 5px;
+}
+
+/* Keywords Table */
+.keywords-table {
+background: #1e293b;
+border-radius: 16px;
+padding: 20px;
+margin: 20px 0;
+border: 1px solid #334155;
+}
+
+.table-header {
+display: grid;
+grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+padding: 12px;
+background: #0f172a;
+border-radius: 12px;
+font-weight: 600;
+color: var(--gray);
+margin-bottom: 10px;
+}
+
+.table-row {
+display: grid;
+grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+padding: 12px;
+border-bottom: 1px solid #334155;
+align-items: center;
+}
+
+.table-row:last-child {
+border-bottom: none;
+}
+
+.keyword-name {
+font-weight: 500;
+color: white;
+}
+
+.keyword-platform {
+font-size: 0.8rem;
+padding: 4px 8px;
+border-radius: 20px;
+background: #0f172a;
+display: inline-block;
+}
+
+/* Trend Indicators */
+.trend-indicator {
+display: flex;
+align-items: center;
+gap: 5px;
+}
+
+/* Alerts Section */
+.alerts-section {
+background: linear-gradient(135deg, #422006, #2d1b0e);
+border-radius: 16px;
+padding: 20px;
+margin: 20px 0;
+border: 1px solid #854d0e;
+}
+
+.alert-item {
+display: flex;
+align-items: center;
+gap: 15px;
+padding: 12px;
+background: rgba(0,0,0,0.2);
+border-radius: 12px;
+margin-bottom: 10px;
+}
+
+.alert-item:last-child {
+margin-bottom: 0;
+}
+
+.alert-icon {
+color: #fbbf24;
+}
+
+/* Footer */
+.footer {
+text-align: center;
+padding: 40px;
+background: #0f172a;
+border-top: 1px solid #334155;
+}
+
+.footer-links {
+display: flex;
+justify-content: center;
+gap: 30px;
+margin-bottom: 25px;
+flex-wrap: wrap;
+}
+
+.footer-links a {
+color: var(--gray);
+text-decoration: none;
+font-weight: 500;
+display: flex;
+align-items: center;
+gap: 8px;
+transition: color 0.2s;
+}
+
+.footer-links a:hover {
+color: var(--primary);
+}
+
+.copyright p {
+color: var(--gray);
+font-size: 0.95rem;
+}
+
+/* Success Message */
+.success-message {
+position: fixed;
+bottom: 30px;
+right: 30px;
+background: var(--success);
+color: white;
+padding: 15px 25px;
+border-radius: 12px;
+box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+display: none;
+align-items: center;
+gap: 12px;
+z-index: 1000;
+animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+from {
+transform: translateX(100%);
+opacity: 0;
+}
+to {
+transform: translateX(0);
+opacity: 1;
+}
+}
+
+/* Loading */
+.loader {
+display: none;
+text-align: center;
+padding: 40px;
+}
+
+.loader-spinner {
+width: 50px;
+height: 50px;
+border: 3px solid #334155;
+border-top: 3px solid var(--primary);
+border-radius: 50%;
+animation: spin 1s linear infinite;
+margin: 0 auto 15px;
+}
+
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+.header h1 {
+font-size: 2rem;
+}
+
+.overview-grid {
+grid-template-columns: 1fr;
+}
+
+.platform-selector {
+flex-direction: column;
+}
+
+.table-header, .table-row {
+grid-template-columns: 2fr 1fr 1fr;
+}
+
+.table-header span:nth-child(4),
+.table-header span:nth-child(5),
+.table-row span:nth-child(4),
+.table-row span:nth-child(5) {
+display: none;
+}
+
+.button-group {
+flex-direction: column;
+}
+
+.btn {
+width: 100%;
+}
+
+.success-message {
+left: 20px;
+right: 20px;
+bottom: 20px;
+}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<!-- Header -->
+<header class="header">
+<div class="header-content">
+<h1>
+<i class="fas fa-eye"></i>
+AI Visibility Tracker 2026
+<i class="fas fa-chart-line"></i>
+</h1>
+<p>Real-time GEO Analytics • ChatGPT • Perplexity • Gemini • Claude • Copilot • Share of Voice Tracking</p>
+<div class="badge-container">
+<span class="badge"><i class="fas fa-robot"></i> 5+ AI Platforms</span>
+<span class="badge"><i class="fas fa-chart-pie"></i> Share of Voice</span>
+<span class="badge"><i class="fas fa-trend-up"></i> Real-time Trends</span>
+<span class="badge"><i class="fas fa-bell"></i> Alert System</span>
+<span class="badge"><i class="fas fa-database"></i> 30-Day History</span>
+</div>
+</div>
+</header>
+
+<!-- Main Content -->
+<main class="main-content">
+<!-- Input Section -->
+<section class="input-section">
+<h2 class="section-title">
+<i class="fas fa-sliders-h"></i>
+Tracking Configuration
+</h2>
+
+<!-- Brand/Website -->
+<div class="input-group">
+<label><i class="fas fa-globe"></i> Brand / Website URL</label>
+<div class="input-wrapper">
+<i class="fas fa-link"></i>
+<input type="text" id="brandUrl" placeholder="https://freeseotoolhub.com or Your Brand Name" value="Free SEO Tool Hub">
+</div>
+</div>
+
+<!-- Keywords -->
+<div class="input-group">
+<label><i class="fas fa-key"></i> Keywords to Track (comma separated)</label>
+<div class="input-wrapper">
+<i class="fas fa-tags"></i>
+<input type="text" id="trackKeywords" placeholder="seo tools, keyword research, backlink checker" value="seo tools, keyword research, free seo tools, site audit">
+</div>
+</div>
+
+<!-- Date Range -->
+<div class="date-range">
+<div class="input-group">
+<label><i class="fas fa-calendar-alt"></i> From</label>
+<input type="date" id="dateFrom" value="2024-01-01">
+</div>
+<div class="input-group">
+<label><i class="fas fa-calendar-alt"></i> To</label>
+<input type="date" id="dateTo" value="2024-01-30">
+</div>
+</div>
+
+<!-- Platform Selection -->
+<label><i class="fas fa-microchip"></i> AI Platforms to Track</label>
+<div class="platform-selector" id="platformSelector">
+<div class="platform-check active" data-platform="chatgpt">
+<input type="checkbox" checked>
+<span class="platform-icon" style="color: #10a37f;">🤖</span>
+<div class="platform-info">
+<div class="platform-name">ChatGPT</div>
+<div class="platform-desc">OpenAI</div>
+</div>
+</div>
+<div class="platform-check active" data-platform="perplexity">
+<input type="checkbox" checked>
+<span class="platform-icon" style="color: #5436da;">🔍</span>
+<div class="platform-info">
+<div class="platform-name">Perplexity</div>
+<div class="platform-desc">AI Search</div>
+</div>
+</div>
+<div class="platform-check active" data-platform="gemini">
+<input type="checkbox" checked>
+<span class="platform-icon" style="color: #4285f4;">✨</span>
+<div class="platform-info">
+<div class="platform-name">Gemini</div>
+<div class="platform-desc">Google</div>
+</div>
+</div>
+<div class="platform-check active" data-platform="claude">
+<input type="checkbox" checked>
+<span class="platform-icon" style="color: #c17b9e;">🟣</span>
+<div class="platform-info">
+<div class="platform-name">Claude</div>
+<div class="platform-desc">Anthropic</div>
+</div>
+</div>
+<div class="platform-check active" data-platform="copilot">
+<input type="checkbox" checked>
+<span class="platform-icon" style="color: #7f3fbf;">💠</span>
+<div class="platform-info">
+<div class="platform-name">Copilot</div>
+<div class="platform-desc">Microsoft</div>
+</div>
+</div>
+</div>
+
+<!-- Track Button -->
+<div class="button-group">
+<button class="btn btn-primary" id="trackBtn">
+<i class="fas fa-play"></i> Track AI Visibility
+</button>
+<button class="btn btn-secondary" id="exportBtn">
+<i class="fas fa-download"></i> Export Report
+</button>
+<button class="btn btn-secondary" id="resetBtn">
+<i class="fas fa-undo"></i> Reset
+</button>
+</div>
+
+<!-- Alert Settings -->
+<div class="alerts-section">
+<h4 style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
+<i class="fas fa-bell"></i> AI Alerts Configuration
+</h4>
+<div class="alert-item">
+<i class="fas fa-exclamation-triangle alert-icon"></i>
+<div>
+<strong>Visibility Drop Alert</strong> - Notify when visibility drops below 50
+</div>
+</div>
+<div class="alert-item">
+<i class="fas fa-chart-line alert-icon"></i>
+<div>
+<strong>Trend Alert</strong> - Significant changes in any platform
+</div>
+</div>
+<div class="alert-item">
+<i class="fas fa-trophy alert-icon"></i>
+<div>
+<strong>Top Ranking Alert</strong> - When brand appears in top 3 AI answers
+</div>
+</div>
+</div>
+</section>
+
+<!-- Results Panel -->
+<section class="results-panel">
+<h2 class="section-title">
+<i class="fas fa-chart-bar"></i>
+GEO Analytics Dashboard
+</h2>
+
+<!-- Overview Stats -->
+<div class="overview-grid">
+<div class="overview-card">
+<div class="overview-label">Overall AI Visibility</div>
+<div class="overview-value" id="overallVisibility">78</div>
+<div class="overview-trend">
+<i class="fas fa-arrow-up trend-up"></i>
+<span>+5.2% vs last period</span>
+</div>
+</div>
+<div class="overview-card">
+<div class="overview-label">Share of Voice</div>
+<div class="overview-value" id="shareOfVoice">23%</div>
+<div class="overview-trend">
+<i class="fas fa-arrow-up trend-up"></i>
+<span>+2.1%</span>
+</div>
+</div>
+<div class="overview-card">
+<div class="overview-label">AI Answer Appearances</div>
+<div class="overview-value" id="answerAppearances">47</div>
+<div class="overview-trend">
+<i class="fas fa-arrow-up trend-up"></i>
+<span>+12 this week</span>
+</div>
+</div>
+</div>
+
+<!-- Chart -->
+<div class="chart-container">
+<canvas id="visibilityChart"></canvas>
+</div>
+
+<!-- Platform Scores -->
+<div class="platform-scores-grid" id="platformScores">
+<!-- Dynamically populated -->
+</div>
+
+<!-- Keywords Performance -->
+<div class="keywords-table">
+<h4 style="margin-bottom: 15px; display: flex; align-items: center; gap: 8px;">
+<i class="fas fa-key"></i> Keyword Performance by Platform
+</h4>
+<div class="table-header">
+<span>Keyword</span>
+<span>ChatGPT</span>
+<span>Perplexity</span>
+<span>Gemini</span>
+<span>Claude</span>
+</div>
+<div id="keywordRows">
+<!-- Dynamically populated -->
+</div>
+</div>
+
+<!-- Recommendations -->
+<div class="alerts-section" style="background: linear-gradient(135deg, #164863, #0b3b5c); border-color: #06b6d4;">
+<h4 style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
+<i class="fas fa-lightbulb"></i> AI Visibility Recommendations
+</h4>
+<div id="recommendations">
+<div class="alert-item">
+<i class="fas fa-check-circle" style="color: #10b981;"></i>
+<div>ChatGPT visibility is strong - maintain Q&A format content</div>
+</div>
+<div class="alert-item">
+<i class="fas fa-exclamation-circle" style="color: #f59e0b;"></i>
+<div>Perplexity needs improvement - add more citations and sources</div>
+</div>
+<div class="alert-item">
+<i class="fas fa-arrow-up" style="color: #3b82f6;"></i>
+<div>Gemini showing growth - optimize for multimodal content</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+<div class="footer-links">
+<a href="https://freeseotoolhub.com/all-tools.html"><i class="fas fa-tools"></i> All Tools</a>
+<a href="https://freeseotoolhub.com/"><i class="fas fa-home"></i> Home</a>
+<a href="https://freeseotoolhub.com/about.html"><i class="fas fa-info-circle"></i> About</a>
+<a href="https://freeseotoolhub.com/contact.html"><i class="fas fa-envelope"></i> Contact</a>
+<a href="https://freeseotoolhub.com/privacy.html"><i class="fas fa-shield-alt"></i> Privacy</a>
+</div>
+<div class="copyright">
+<p>© 2024 Free SEO Tool Hub | AI Visibility Tracker 2026</p>
+<p style="margin-top: 8px; font-size: 0.85rem;">🤖 Real-time GEO Analytics • ChatGPT • Perplexity • Gemini • Claude • Copilot</p>
+</div>
+</footer>
+</div>
+
+<!-- Success Message -->
+<div class="success-message" id="successMessage">
+<i class="fas fa-check-circle"></i>
+<span id="successText">Tracking started!</span>
+</div>
+
+<!-- Loading -->
+<div class="loader" id="loader">
+<div class="loader-spinner"></div>
+<p>Scanning AI platforms for your brand...</p>
+<p style="font-size: 0.85rem; color: var(--gray;">Analyzing ChatGPT, Perplexity, Gemini, Claude & Copilot</p>
+</div>
+
+<!-- JavaScript -->
+<script>
+// DOM Elements
+const brandUrl = document.getElementById('brandUrl');
+const trackKeywords = document.getElementById('trackKeywords');
+const dateFrom = document.getElementById('dateFrom');
+const dateTo = document.getElementById('dateTo');
+const trackBtn = document.getElementById('trackBtn');
+const exportBtn = document.getElementById('exportBtn');
+const resetBtn = document.getElementById('resetBtn');
+const loader = document.getElementById('loader');
+const successMessage = document.getElementById('successMessage');
+const successText = document.getElementById('successText');
+const platformChecks = document.querySelectorAll('.platform-check');
+const platformScores = document.getElementById('platformScores');
+const keywordRows = document.getElementById('keywordRows');
+const overallVisibility = document.getElementById('overallVisibility');
+const shareOfVoice = document.getElementById('shareOfVoice');
+const answerAppearances = document.getElementById('answerAppearances');
+
+// Chart instance
+let visibilityChart = null;
+
+// Platform selection
+platformChecks.forEach(check => {
+check.addEventListener('click', function() {
+this.classList.toggle('active');
+const input = this.querySelector('input');
+input.checked = !input.checked;
+});
+});
+
+// Track Visibility
+trackBtn.addEventListener('click', startTracking);
+
+// Export Report
+exportBtn.addEventListener('click', exportReport);
+
+// Reset
+resetBtn.addEventListener('click', resetAll);
+
+function startTracking() {
+const brand = brandUrl.value.trim();
+const keywords = trackKeywords.value.trim();
+
+if (!brand) {
+showMessage('Please enter brand name or URL!', 'error');
+return;
+}
+
+if (!keywords) {
+showMessage('Please enter keywords to track!', 'error');
+return;
+}
+
+// Show loader
+loader.style.display = 'block';
+
+// Simulate API call
+setTimeout(() => {
+updateDashboard();
+loader.style.display = 'none';
+showMessage(`✅ Tracking started for ${brand} across AI platforms!`, 'success');
+}, 2500);
+}
+
+function updateDashboard() {
+// Generate random but realistic data
+const visibility = Math.floor(Math.random() * 30) + 60; // 60-90
+const sov = Math.floor(Math.random() * 25) + 15; // 15-40
+const appearances = Math.floor(Math.random() * 60) + 30; // 30-90
+
+overallVisibility.textContent = visibility;
+shareOfVoice.textContent = sov + '%';
+answerAppearances.textContent = appearances;
+
+// Platform scores
+const platforms = [
+{ name: 'ChatGPT', icon: '🤖', color: '#10a37f', score: Math.floor(Math.random() * 30) + 65 },
+{ name: 'Perplexity', icon: '🔍', color: '#5436da', score: Math.floor(Math.random() * 30) + 55 },
+{ name: 'Gemini', icon: '✨', color: '#4285f4', score: Math.floor(Math.random() * 30) + 60 },
+{ name: 'Claude', icon: '🟣', color: '#c17b9e', score: Math.floor(Math.random() * 30) + 50 },
+{ name: 'Copilot', icon: '💠', color: '#7f3fbf', score: Math.floor(Math.random() * 30) + 55 }
+];
+
+platformScores.innerHTML = '';
+platforms.forEach(platform => {
+const card = document.createElement('div');
+card.className = 'platform-score-card';
+card.innerHTML = `
+<div class="platform-score-header">
+<span class="platform-score-icon" style="color: ${platform.color};">${platform.icon}</span>
+<span class="platform-score-name">${platform.name}</span>
+</div>
+<div class="platform-score-value">${platform.score}</div>
+<div class="platform-score-change">
+<i class="fas fa-arrow-up trend-up"></i>
+<span>+${Math.floor(Math.random() * 8) + 1}%</span>
+</div>
+`;
+platformScores.appendChild(card);
+});
+
+// Keyword performance
+const keywordList = trackKeywords.value.split(',').map(k => k.trim()).slice(0, 4);
+keywordRows.innerHTML = '';
+
+keywordList.forEach(keyword => {
+const row = document.createElement('div');
+row.className = 'table-row';
+row.innerHTML = `
+<span class="keyword-name">${keyword}</span>
+<span>${Math.floor(Math.random() * 40) + 40}</span>
+<span>${Math.floor(Math.random() * 40) + 35}</span>
+<span>${Math.floor(Math.random() * 40) + 30}</span>
+<span>${Math.floor(Math.random() * 40) + 25}</span>
+`;
+keywordRows.appendChild(row);
+});
+
+// Update chart
+updateChart(platforms);
+}
+
+function updateChart(platforms) {
+const ctx = document.getElementById('visibilityChart').getContext('2d');
+
+// Generate last 30 days data
+const labels = [];
+const chatgptData = [];
+const perplexityData = [];
+const geminiData = [];
+
+for (let i = 29; i >= 0; i--) {
+const date = new Date();
+date.setDate(date.getDate() - i);
+labels.push(date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }));
+chatgptData.push(Math.floor(Math.random() * 30) + 60);
+perplexityData.push(Math.floor(Math.random() * 30) + 50);
+geminiData.push(Math.floor(Math.random() * 30) + 55);
+}
+
+if (visibilityChart) {
+visibilityChart.destroy();
+}
+
+visibilityChart = new Chart(ctx, {
+type: 'line',
+data: {
+labels: labels,
+datasets: [
+{
+label: 'ChatGPT',
+data: chatgptData,
+borderColor: '#10a37f',
+backgroundColor: 'rgba(16, 163, 127, 0.1)',
+tension: 0.4,
+fill: false
+},
+{
+label: 'Perplexity',
+data: perplexityData,
+borderColor: '#5436da',
+backgroundColor: 'rgba(84, 54, 218, 0.1)',
+tension: 0.4,
+fill: false
+},
+{
+label: 'Gemini',
+data: geminiData,
+borderColor: '#4285f4',
+backgroundColor: 'rgba(66, 133, 244, 0.1)',
+tension: 0.4,
+fill: false
+}
+]
+},
+options: {
+responsive: true,
+maintainAspectRatio: false,
+plugins: {
+legend: {
+display: true,
+position: 'top',
+labels: {
+color: '#e2e8f0'
+}
+}
+},
+scales: {
+y: {
+beginAtZero: false,
+min: 40,
+max: 100,
+grid: {
+color: '#334155'
+},
+ticks: {
+color: '#94a3b8'
+}
+},
+x: {
+grid: {
+display: false
+},
+ticks: {
+color: '#94a3b8',
+maxRotation: 45,
+minRotation: 45
+}
+}
+}
+}
+});
+}
+
+function exportReport() {
+const brand = brandUrl.value || 'brand';
+const data = {
+brand: brand,
+visibility: overallVisibility.textContent,
+shareOfVoice: shareOfVoice.textContent,
+appearances: answerAppearances.textContent,
+timestamp: new Date().toISOString()
+};
+
+const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+const url = URL.createObjectURL(blob);
+const a = document.createElement('a');
+a.href = url;
+a.download = `ai-visibility-${brand}-${new Date().toISOString().split('T')[0]}.json`;
+a.click();
+
+showMessage('Report exported successfully!', 'success');
+}
+
+function resetAll() {
+brandUrl.value = 'Free SEO Tool Hub';
+trackKeywords.value = 'seo tools, keyword research, free seo tools, site audit';
+dateFrom.value = '2024-01-01';
+dateTo.value = '2024-01-30';
+
+platformChecks.forEach(check => {
+check.classList.add('active');
+check.querySelector('input').checked = true;
+});
+
+showMessage('All fields reset to default', 'info');
+}
+
+function showMessage(message, type = 'success') {
+successText.textContent = message;
+if (type === 'error') successMessage.style.background = '#ef4444';
+else if (type === 'info') successMessage.style.background = '#3b82f6';
+else successMessage.style.background = '#10b981';
+
+successMessage.style.display = 'flex';
+setTimeout(() => {
+successMessage.style.display = 'none';
+}, 3000);
+}
+
+// Initialize chart
+window.onload = function() {
+// Set default dates
+const today = new Date();
+const thirtyDaysAgo = new Date();
+thirtyDaysAgo.setDate(today.getDate() - 30);
+
+dateTo.value = today.toISOString().split('T')[0];
+dateFrom.value = thirtyDaysAgo.toISOString().split('T')[0];
+
+// Initial dashboard load
+updateDashboard();
+};
+
+// Keyboard shortcuts
+document.addEventListener('keydown', (e) => {
+if (e.ctrlKey && e.key === 't') {
+e.preventDefault();
+trackBtn.click();
+}
+if (e.ctrlKey && e.key === 'e') {
+e.preventDefault();
+exportBtn.click();
+}
+});
+</script>
+</body>
+</html>
