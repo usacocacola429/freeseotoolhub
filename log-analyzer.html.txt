@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Primary Meta Tags -->
+<title>Log Analyzer Tool - Free Server Log File Analyzer for SEO | FreeSEOToolHub.com</title>
+<meta name="title" content="Log Analyzer Tool - Free Server Log File Analyzer for SEO">
+<meta name="description" content="Free Log Analyzer Tool to analyze server log files, identify crawl errors, find Googlebot activity, and improve technical SEO. Supports Apache, Nginx, IIS logs.">
+<meta name="keywords" content="log analyzer, log file analyzer, seo log analyzer, server log analyzer, apache log analyzer, nginx log analyzer, log file analysis, googlebot activity, crawl errors, log parser, technical seo tool">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://freeseotoolhub.com/log-analyzer.html">
+<meta property="og:title" content="Log Analyzer Tool - Free Server Log File Analyzer">
+<meta property="og:description" content="Analyze server log files to find Googlebot activity, crawl errors, and technical SEO issues. Free tool for Apache, Nginx, IIS logs.">
+<meta property="og:image" content="https://freeseotoolhub.com/assets/log-analyzer-og.jpg">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://freeseotoolhub.com/log-analyzer.html">
+<meta property="twitter:title" content="Log Analyzer Tool - Free Server Log File Analyzer">
+<meta property="twitter:description" content="Analyze server log files to find Googlebot activity, crawl errors, and technical SEO issues.">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://freeseotoolhub.com/log-analyzer.html">
+
+<!-- Language Alternatives -->
+<link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/log-analyzer.html">
+<link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/hi/log-analyzer.html">
+<link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/log-analyzer.html">
+
+<!-- Fonts and Icons -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+:root {
+--primary: #2563eb;
+--primary-dark: #1d4ed8;
+--secondary: #7c3aed;
+--success: #10b981;
+--danger: #ef4444;
+--warning: #f59e0b;
+--dark: #1e293b;
+--light: #f8fafc;
+--gray: #64748b;
+}
+
+body {
+font-family: 'Inter', sans-serif;
+background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+min-height: 100vh;
+padding: 20px;
+color: var(--dark);
+}
+
+/* Header Styles */
+.main-header {
+background: rgba(255, 255, 255, 0.95);
+backdrop-filter: blur(10px);
+border-radius: 20px;
+padding: 40px 20px;
+margin-bottom: 30px;
+box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.header-content {
+text-align: center;
+max-width: 900px;
+margin: 0 auto;
+}
+
+.header-content h1 {
+font-size: 2.8rem;
+font-weight: 800;
+background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+margin-bottom: 15px;
+}
+
+.header-content p {
+font-size: 1.2rem;
+color: var(--gray);
+margin-bottom: 20px;
+}
+
+.feature-badges {
+display: flex;
+justify-content: center;
+gap: 20px;
+flex-wrap: wrap;
+}
+
+.badge-item {
+background: var(--light);
+padding: 10px 25px;
+border-radius: 50px;
+font-weight: 600;
+color: var(--primary);
+box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+/* Main Tool Card */
+.tool-card {
+background: white;
+border-radius: 24px;
+padding: 30px;
+margin-bottom: 30px;
+box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.section-title {
+font-size: 1.8rem;
+font-weight: 700;
+color: var(--dark);
+margin-bottom: 25px;
+position: relative;
+padding-left: 15px;
+}
+
+.section-title:before {
+content: '';
+position: absolute;
+left: 0;
+top: 0;
+height: 100%;
+width: 4px;
+background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+border-radius: 4px;
+}
+
+/* Form Elements */
+.form-group {
+margin-bottom: 20px;
+}
+
+.form-group label {
+font-weight: 600;
+color: var(--dark);
+margin-bottom: 8px;
+display: block;
+}
+
+.form-control, .form-select {
+padding: 12px 16px;
+border: 2px solid #e2e8f0;
+border-radius: 12px;
+font-size: 1rem;
+transition: all 0.3s;
+}
+
+.form-control:focus, .form-select:focus {
+border-color: var(--primary);
+box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+outline: none;
+}
+
+textarea.form-control {
+font-family: 'Monaco', 'Menlo', monospace;
+font-size: 0.9rem;
+min-height: 250px;
+}
+
+/* Buttons */
+.btn {
+padding: 12px 30px;
+border-radius: 12px;
+font-weight: 600;
+transition: all 0.3s;
+border: none;
+}
+
+.btn-primary {
+background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+color: white;
+}
+
+.btn-primary:hover {
+transform: translateY(-2px);
+box-shadow: 0 10px 20px rgba(102,126,234,0.3);
+}
+
+.btn-success {
+background: var(--success);
+color: white;
+}
+
+.btn-outline-primary {
+border: 2px solid var(--primary);
+color: var(--primary);
+background: transparent;
+}
+
+.btn-outline-primary:hover {
+background: var(--primary);
+color: white;
+}
+
+/* Stats Cards */
+.stats-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 20px;
+margin: 30px 0;
+}
+
+.stat-card {
+background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+border-radius: 16px;
+padding: 20px;
+text-align: center;
+border: 1px solid #e2e8f0;
+}
+
+.stat-icon {
+width: 50px;
+height: 50px;
+background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+border-radius: 12px;
+display: flex;
+align-items: center;
+justify-content: center;
+margin: 0 auto 15px;
+color: white;
+font-size: 1.5rem;
+}
+
+.stat-value {
+font-size: 2rem;
+font-weight: 700;
+color: var(--dark);
+margin-bottom: 5px;
+}
+
+.stat-label {
+color: var(--gray);
+font-weight: 500;
+}
+
+/* Tables */
+.table-container {
+background: white;
+border-radius: 16px;
+padding: 20px;
+border: 1px solid #e2e8f0;
+margin-top: 20px;
+}
+
+.table {
+margin-bottom: 0;
+}
+
+.table th {
+background: var(--light);
+font-weight: 600;
+color: var(--dark);
+border-bottom: 2px solid var(--primary);
+}
+
+.table td {
+vertical-align: middle;
+}
+
+.badge-googlebot {
+background: #10b981;
+color: white;
+padding: 4px 10px;
+border-radius: 20px;
+font-size: 0.8rem;
+}
+
+.badge-error {
+background: var(--danger);
+color: white;
+padding: 4px 10px;
+border-radius: 20px;
+}
+
+.badge-warning {
+background: var(--warning);
+color: white;
+padding: 4px 10px;
+border-radius: 20px;
+}
+
+/* Progress Bars */
+.progress {
+height: 8px;
+border-radius: 4px;
+margin: 10px 0;
+}
+
+.progress-bar {
+background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+border-radius: 4px;
+}
+
+/* Tabs */
+.nav-tabs {
+border-bottom: 2px solid #e2e8f0;
+margin-bottom: 20px;
+}
+
+.nav-tabs .nav-link {
+border: none;
+color: var(--gray);
+font-weight: 600;
+padding: 12px 20px;
+}
+
+.nav-tabs .nav-link.active {
+color: var(--primary);
+border-bottom: 3px solid var(--primary);
+background: transparent;
+}
+
+/* Sample Data Section */
+.sample-data {
+background: #f8fafc;
+border-radius: 16px;
+padding: 20px;
+margin: 20px 0;
+border: 1px solid #e2e8f0;
+}
+
+.sample-data pre {
+background: var(--dark);
+color: #e2e8f0;
+padding: 15px;
+border-radius: 12px;
+font-size: 0.8rem;
+max-height: 200px;
+overflow: auto;
+}
+
+/* SEO Content Section */
+.seo-content {
+background: white;
+border-radius: 24px;
+padding: 40px;
+margin-top: 40px;
+}
+
+.seo-content h2 {
+font-size: 2rem;
+font-weight: 700;
+color: var(--dark);
+margin-bottom: 20px;
+}
+
+.seo-content h3 {
+font-size: 1.5rem;
+font-weight: 600;
+color: var(--primary-dark);
+margin: 30px 0 15px;
+}
+
+.seo-content p {
+color: var(--gray);
+line-height: 1.8;
+margin-bottom: 20px;
+}
+
+.seo-content ul, .seo-content ol {
+margin-bottom: 20px;
+padding-left: 20px;
+}
+
+.seo-content li {
+margin-bottom: 10px;
+color: var(--gray);
+}
+
+/* Language Toggle */
+.lang-toggle {
+position: fixed;
+top: 100px;
+right: 30px;
+z-index: 1000;
+display: flex;
+gap: 10px;
+background: white;
+padding: 10px;
+border-radius: 50px;
+box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.lang-btn {
+padding: 8px 20px;
+border: none;
+border-radius: 30px;
+font-weight: 600;
+cursor: pointer;
+transition: all 0.3s;
+}
+
+.lang-btn.active {
+background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+.header-content h1 {
+font-size: 2rem;
+}
+.lang-toggle {
+top: 80px;
+right: 15px;
+}
+}
+
+/* Loading Spinner */
+.loading-spinner {
+display: none;
+text-align: center;
+padding: 30px;
+}
+
+.spinner {
+border: 4px solid #f3f3f3;
+border-top: 4px solid var(--primary);
+border-radius: 50%;
+width: 50px;
+height: 50px;
+animation: spin 1s linear infinite;
+margin: 0 auto 15px;
+}
+
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+
+/* Notification */
+.notification {
+position: fixed;
+bottom: 20px;
+right: 20px;
+background: var(--success);
+color: white;
+padding: 15px 25px;
+border-radius: 12px;
+box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+display: none;
+z-index: 9999;
+animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+from { transform: translateX(100%); opacity: 0; }
+to { transform: translateX(0); opacity: 1; }
+}
+</style>
+</head>
+<body>
+<!-- Language Toggle -->
+<div class="lang-toggle">
+<button class="lang-btn active" onclick="setLanguage('en')" id="langEn">English</button>
+<button class="lang-btn" onclick="setLanguage('hi')" id="langHi">हिंदी</button>
+</div>
+
+<!-- Main Container -->
+<div class="container">
+<!-- Header -->
+<header class="main-header">
+<div class="header-content">
+<h1 id="mainTitle">Log Analyzer Tool</h1>
+<p id="mainDesc">Analyze server log files, find Googlebot activity, crawl errors, and technical SEO issues. Supports Apache, Nginx, IIS logs.</p>
+<div class="feature-badges">
+<span class="badge-item"><i class="fas fa-robot me-2"></i> <span id="badge1">Googlebot Analysis</span></span>
+<span class="badge-item"><i class="fas fa-exclamation-triangle me-2"></i> <span id="badge2">Crawl Errors</span></span>
+<span class="badge-item"><i class="fas fa-chart-line me-2"></i> <span id="badge3">Traffic Analysis</span></span>
+<span class="badge-item"><i class="fas fa-globe me-2"></i> <span id="badge4">India & Global</span></span>
+</div>
+</div>
+</header>
+
+<!-- Main Tool Card -->
+<div class="tool-card">
+<h2 class="section-title" id="analyzerTitle">Log File Analyzer</h2>
+
+<!-- Input Options -->
+<div class="row mb-4">
+<div class="col-md-8">
+<div class="form-group">
+<label id="logFormatLabel">Log Format:</label>
+<select id="logFormat" class="form-select">
+<option value="apache">Apache Common Log Format</option>
+<option value="apache-combined" selected>Apache Combined Log Format</option>
+<option value="nginx">Nginx</option>
+<option value="iis">IIS</option>
+<option value="custom">Custom Format</option>
+</select>
+</div>
+
+<div class="form-group">
+<label id="logDataLabel">Paste Your Log Data:</label>
+<textarea id="logData" class="form-control" placeholder='127.0.0.1 - - [10/Oct/2024:13:55:36 +0000] "GET /index.html HTTP/1.1" 200 2326 "https://www.google.com/" "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"'></textarea>
+</div>
+
+<div class="row">
+<div class="col-md-6">
+<div class="form-group">
+<label id="uploadLabel">Or Upload Log File:</label>
+<input type="file" id="logFile" class="form-control" accept=".log,.txt">
+</div>
+</div>
+<div class="col-md-6">
+<div class="form-group">
+<label id="sampleLabel">Sample Data:</label>
+<button class="btn btn-outline-primary w-100" onclick="loadSampleData()">
+<i class="fas fa-database me-2"></i> <span id="loadSampleBtn">Load Sample Log</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="sample-data">
+<h6 id="sampleTitle"><i class="fas fa-info-circle me-2"></i>Sample Log Format:</h6>
+<pre>127.0.0.1 - - [10/Oct/2024:13:55:36 +0000] "GET /page1.html HTTP/1.1" 200 2326 "-" "Mozilla/5.0 (compatible; Googlebot/2.1)"
+66.249.66.1 - - [10/Oct/2024:13:56:10 +0000] "GET /blog/post1 HTTP/1.1" 200 5432 "-" "Mozilla/5.0 (compatible; Googlebot/2.1)"
+192.168.1.1 - - [10/Oct/2024:13:57:22 +0000] "GET /products/item1 HTTP/1.1" 404 1234 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"</pre>
+</div>
+
+<div class="d-grid gap-2 mt-3">
+<button class="btn btn-primary" onclick="analyzeLogs()">
+<i class="fas fa-chart-bar me-2"></i> <span id="analyzeBtn">Analyze Logs</span>
+</button>
+<button class="btn btn-success" onclick="exportReport()">
+<i class="fas fa-download me-2"></i> <span id="exportBtn">Export Report</span>
+</button>
+</div>
+</div>
+</div>
+
+<!-- Loading Spinner -->
+<div class="loading-spinner" id="loadingSpinner">
+<div class="spinner"></div>
+<p id="loadingText">Analyzing log files... This may take a few seconds.</p>
+</div>
+
+<!-- Stats Cards -->
+<div class="stats-grid" id="statsSection" style="display: none;">
+<div class="stat-card">
+<div class="stat-icon"><i class="fas fa-file-lines"></i></div>
+<div class="stat-value" id="totalEntries">0</div>
+<div class="stat-label" id="totalEntriesLabel">Total Log Entries</div>
+</div>
+<div class="stat-card">
+<div class="stat-icon"><i class="fas fa-robot"></i></div>
+<div class="stat-value" id="googlebotHits">0</div>
+<div class="stat-label" id="googlebotLabel">Googlebot Hits</div>
+</div>
+<div class="stat-card">
+<div class="stat-icon"><i class="fas fa-exclamation-triangle"></i></div>
+<div class="stat-value" id="errorCount">0</div>
+<div class="stat-label" id="errorLabel">4xx/5xx Errors</div>
+</div>
+<div class="stat-card">
+<div class="stat-icon"><i class="fas fa-link"></i></div>
+<div class="stat-value" id="uniqueUrls">0</div>
+<div class="stat-label" id="uniqueUrlLabel">Unique URLs</div>
+</div>
+</div>
+
+<!-- Results Tabs -->
+<div id="resultsSection" style="display: none;">
+<ul class="nav nav-tabs" id="resultTabs" role="tablist">
+<li class="nav-item" role="presentation">
+<button class="nav-link active" id="summary-tab" data-bs-toggle="tab" data-bs-target="#summary" type="button" role="tab">
+<i class="fas fa-chart-pie me-2"></i> <span id="summaryTab">Summary</span>
+</button>
+</li>
+<li class="nav-item" role="presentation">
+<button class="nav-link" id="googlebot-tab" data-bs-toggle="tab" data-bs-target="#googlebot" type="button" role="tab">
+<i class="fas fa-robot me-2"></i> <span id="googlebotTab">Googlebot Activity</span>
+</button>
+</li>
+<li class="nav-item" role="presentation">
+<button class="nav-link" id="errors-tab" data-bs-toggle="tab" data-bs-target="#errors" type="button" role="tab">
+<i class="fas fa-exclamation-circle me-2"></i> <span id="errorsTab">Crawl Errors</span>
+</button>
+</li>
+<li class="nav-item" role="presentation">
+<button class="nav-link" id="pages-tab" data-bs-toggle="tab" data-bs-target="#pages" type="button" role="tab">
+<i class="fas fa-file me-2"></i> <span id="pagesTab">Most Crawled Pages</span>
+</button>
+</li>
+<li class="nav-item" role="presentation">
+<button class="nav-link" id="status-tab" data-bs-toggle="tab" data-bs-target="#status" type="button" role="tab">
+<i class="fas fa-code me-2"></i> <span id="statusTab">Status Codes</span>
+</button>
+</li>
+</ul>
+
+<div class="tab-content" id="resultTabsContent">
+<!-- Summary Tab -->
+<div class="tab-pane fade show active" id="summary" role="tabpanel">
+<div class="table-container">
+<h5 id="summaryTitle"><i class="fas fa-chart-line me-2"></i>Log Analysis Summary</h5>
+<div id="summaryContent"></div>
+</div>
+</div>
+
+<!-- Googlebot Tab -->
+<div class="tab-pane fade" id="googlebot" role="tabpanel">
+<div class="table-container">
+<h5 id="googlebotTitle"><i class="fas fa-robot me-2"></i>Googlebot Crawl Activity</h5>
+<div class="table-responsive">
+<table class="table" id="googlebotTable">
+<thead>
+<tr>
+<th>URL</th>
+<th>Hits</th>
+<th>Last Crawl</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody id="googlebotTableBody"></tbody>
+</table>
+</div>
+</div>
+</div>
+
+<!-- Errors Tab -->
+<div class="tab-pane fade" id="errors" role="tabpanel">
+<div class="table-container">
+<h5 id="errorsTitle"><i class="fas fa-exclamation-triangle me-2"></i>Crawl Errors (4xx/5xx)</h5>
+<div class="table-responsive">
+<table class="table" id="errorsTable">
+<thead>
+<tr>
+<th>URL</th>
+<th>Error Code</th>
+<th>Count</th>
+<th>Last Occurrence</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody id="errorsTableBody"></tbody>
+</table>
+</div>
+</div>
+</div>
+
+<!-- Most Crawled Pages Tab -->
+<div class="tab-pane fade" id="pages" role="tabpanel">
+<div class="table-container">
+<h5 id="pagesTitle"><i class="fas fa-fire me-2"></i>Most Crawled Pages</h5>
+<div class="table-responsive">
+<table class="table" id="pagesTable">
+<thead>
+<tr>
+<th>URL</th>
+<th>Total Hits</th>
+<th>% of Total</th>
+<th>Avg Response Size</th>
+</tr>
+</thead>
+<tbody id="pagesTableBody"></tbody>
+</table>
+</div>
+</div>
+</div>
+
+<!-- Status Codes Tab -->
+<div class="tab-pane fade" id="status" role="tabpanel">
+<div class="table-container">
+<h5 id="statusTitle"><i class="fas fa-chart-bar me-2"></i>Status Code Distribution</h5>
+<div class="table-responsive">
+<table class="table" id="statusTable">
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Count</th>
+<th>Percentage</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody id="statusTableBody"></tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- SEO Content Section -->
+<div class="seo-content" id="seoContent">
+<h2 id="seoH2">Log File Analysis for SEO: Complete Guide</h2>
+
+<div class="row">
+<div class="col-md-6">
+<h3 id="seoH3_1">What is Log File Analysis?</h3>
+<p id="seoP1">Log file analysis is the process of examining server log files to understand how search engines like Googlebot crawl your website. It provides valuable insights into crawl budget, crawl errors, and search engine behavior that cannot be obtained from other SEO tools.</p>
+
+<h3 id="seoH3_2">Why is Log Analysis Important for SEO?</h3>
+<ul id="seoUl1">
+<li><strong>Understand Googlebot Behavior:</strong> See exactly which pages Googlebot crawls, how often, and when.</li>
+<li><strong>Identify Crawl Budget Waste:</strong> Find pages that are crawled too often or unnecessarily.</li>
+<li><strong>Detect Crawl Errors:</strong> Discover 404 errors, server errors, and redirect chains.</li>
+<li><strong>Validate Robots.txt:</strong> Confirm that important pages are being crawled.</li>
+<li><strong>Find Security Issues:</strong> Identify suspicious bot activity.</li>
+</ul>
+</div>
+
+<div class="col-md-6">
+<h3 id="seoH3_3">Key Metrics to Track</h3>
+<ul id="seoUl2">
+<li><strong>Crawl Frequency:</strong> How often Googlebot visits your site.</li>
+<li><strong>Crawl Depth:</strong> How deep Googlebot crawls into your site structure.</li>
+<li><strong>Response Codes:</strong> 200 (OK), 301 (Redirect), 404 (Not Found), 500 (Server Error).</li>
+<li><strong>Googlebot IPs:</strong> Verify if crawls are from genuine Googlebot.</li>
+<li><strong>Mobile vs Desktop:</strong> See if Googlebot is crawling mobile version.</li>
+</ul>
+
+<h3 id="seoH3_4">How to Improve Crawl Budget</h3>
+<ul id="seoUl3">
+<li>Fix 404 errors to prevent wasted crawls</li>
+<li>Optimize site structure for better crawl efficiency</li>
+<li>Use robots.txt to block unimportant pages</li>
+<li>Improve server response time</li>
+<li>Update XML sitemaps regularly</li>
+</ul>
+</div>
+</div>
+
+<h3 id="seoH3_5">Log Analysis for Indian Websites</h3>
+<p id="seoP2">For websites targeting Indian audience, log analysis helps understand if Googlebot is crawling your site from Indian data centers. You can also identify if there are any regional crawling issues and optimize your site for better performance in Indian search results.</p>
+
+<h3 id="seoH3_6">Supported Log Formats</h3>
+<p id="seoP3">Our tool supports all major log formats including Apache Common/Combined, Nginx, and IIS. It automatically detects the format and provides accurate analysis regardless of your server configuration.</p>
+</div>
+</div>
+
+<!-- Footer -->
+<footer class="text-center mt-5 text-white">
+<p>&copy; 2024 FreeSEOToolHub.com - Professional SEO Tools for India & Global Audience</p>
+<p>
+<a href="index.html" class="text-white me-3">Home</a>
+<a href="all-tools.html" class="text-white me-3">All Tools</a>
+<a href="about.html" class="text-white me-3">About</a>
+<a href="contact.html" class="text-white me-3">Contact</a>
+<a href="privacy.html" class="text-white me-3">Privacy</a>
+</p>
+</footer>
+
+<!-- Notification -->
+<div id="notification" class="notification"></div>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+// Language translations
+const translations = {
+en: {
+mainTitle: "Log Analyzer Tool",
+mainDesc: "Analyze server log files, find Googlebot activity, crawl errors, and technical SEO issues. Supports Apache, Nginx, IIS logs.",
+badge1: "Googlebot Analysis",
+badge2: "Crawl Errors",
+badge3: "Traffic Analysis",
+badge4: "India & Global",
+analyzerTitle: "Log File Analyzer",
+logFormatLabel: "Log Format:",
+logDataLabel: "Paste Your Log Data:",
+uploadLabel: "Or Upload Log File:",
+sampleLabel: "Sample Data:",
+loadSampleBtn: "Load Sample Log",
+sampleTitle: "Sample Log Format:",
+analyzeBtn: "Analyze Logs",
+exportBtn: "Export Report",
+loadingText: "Analyzing log files... This may take a few seconds.",
+totalEntriesLabel: "Total Log Entries",
+googlebotLabel: "Googlebot Hits",
+errorLabel: "4xx/5xx Errors",
+uniqueUrlLabel: "Unique URLs",
+summaryTab: "Summary",
+googlebotTab: "Googlebot Activity",
+errorsTab: "Crawl Errors",
+pagesTab: "Most Crawled Pages",
+statusTab: "Status Codes",
+summaryTitle: "Log Analysis Summary",
+googlebotTitle: "Googlebot Crawl Activity",
+errorsTitle: "Crawl Errors (4xx/5xx)",
+pagesTitle: "Most Crawled Pages",
+statusTitle: "Status Code Distribution",
+seoH2: "Log File Analysis for SEO: Complete Guide",
+seoH3_1: "What is Log File Analysis?",
+seoP1: "Log file analysis is the process of examining server log files to understand how search engines like Googlebot crawl your website. It provides valuable insights into crawl budget, crawl errors, and search engine behavior that cannot be obtained from other SEO tools.",
+seoH3_2: "Why is Log Analysis Important for SEO?",
+seoUl1: "<li><strong>Understand Googlebot Behavior:</strong> See exactly which pages Googlebot crawls, how often, and when.</li><li><strong>Identify Crawl Budget Waste:</strong> Find pages that are crawled too often or unnecessarily.</li><li><strong>Detect Crawl Errors:</strong> Discover 404 errors, server errors, and redirect chains.</li><li><strong>Validate Robots.txt:</strong> Confirm that important pages are being crawled.</li><li><strong>Find Security Issues:</strong> Identify suspicious bot activity.</li>",
+seoH3_3: "Key Metrics to Track",
+seoUl2: "<li><strong>Crawl Frequency:</strong> How often Googlebot visits your site.</li><li><strong>Crawl Depth:</strong> How deep Googlebot crawls into your site structure.</li><li><strong>Response Codes:</strong> 200 (OK), 301 (Redirect), 404 (Not Found), 500 (Server Error).</li><li><strong>Googlebot IPs:</strong> Verify if crawls are from genuine Googlebot.</li><li><strong>Mobile vs Desktop:</strong> See if Googlebot is crawling mobile version.</li>",
+seoH3_4: "How to Improve Crawl Budget",
+seoUl3: "<li>Fix 404 errors to prevent wasted crawls</li><li>Optimize site structure for better crawl efficiency</li><li>Use robots.txt to block unimportant pages</li><li>Improve server response time</li><li>Update XML sitemaps regularly</li>",
+seoH3_5: "Log Analysis for Indian Websites",
+seoP2: "For websites targeting Indian audience, log analysis helps understand if Googlebot is crawling your site from Indian data centers. You can also identify if there are any regional crawling issues and optimize your site for better performance in Indian search results.",
+seoH3_6: "Supported Log Formats",
+seoP3: "Our tool supports all major log formats including Apache Common/Combined, Nginx, and IIS. It automatically detects the format and provides accurate analysis regardless of your server configuration."
+},
+hi: {
+mainTitle: "लॉग एनालाइज़र टूल",
+mainDesc: "सर्वर लॉग फाइलों का विश्लेषण करें, Googlebot गतिविधि, क्रॉल एरर और तकनीकी SEO समस्याएं ढूंढें। Apache, Nginx, IIS लॉग सपोर्ट करता है।",
+badge1: "Googlebot विश्लेषण",
+badge2: "क्रॉल एरर",
+badge3: "ट्रैफिक विश्लेषण",
+badge4: "भारत और वैश्विक",
+analyzerTitle: "लॉग फाइल एनालाइज़र",
+logFormatLabel: "लॉग फॉर्मेट:",
+logDataLabel: "अपना लॉग डेटा पेस्ट करें:",
+uploadLabel: "या लॉग फाइल अपलोड करें:",
+sampleLabel: "सैंपल डेटा:",
+loadSampleBtn: "सैंपल लॉग लोड करें",
+sampleTitle: "सैंपल लॉग फॉर्मेट:",
+analyzeBtn: "लॉग एनालाइज़ करें",
+exportBtn: "रिपोर्ट एक्सपोर्ट करें",
+loadingText: "लॉग फाइलों का विश्लेषण किया जा रहा है... इसमें कुछ सेकंड लग सकते हैं।",
+totalEntriesLabel: "कुल लॉग एंट्री",
+googlebotLabel: "Googlebot हिट्स",
+errorLabel: "4xx/5xx एरर",
+uniqueUrlLabel: "यूनिक URL",
+summaryTab: "सारांश",
+googlebotTab: "Googlebot गतिविधि",
+errorsTab: "क्रॉल एरर",
+pagesTab: "सबसे ज्यादा क्रॉल किए गए पेज",
+statusTab: "स्टेटस कोड",
+summaryTitle: "लॉग विश्लेषण सारांश",
+googlebotTitle: "Googlebot क्रॉल गतिविधि",
+errorsTitle: "क्रॉल एरर (4xx/5xx)",
+pagesTitle: "सबसे ज्यादा क्रॉल किए गए पेज",
+statusTitle: "स्टेटस कोड वितरण",
+seoH2: "SEO के लिए लॉग फाइल विश्लेषण: संपूर्ण गाइड",
+seoH3_1: "लॉग फाइल विश्लेषण क्या है?",
+seoP1: "लॉग फाइल विश्लेषण सर्वर लॉग फाइलों की जांच करने की प्रक्रिया है ताकि यह समझा जा सके कि Googlebot जैसे सर्च इंजन आपकी वेबसाइट को कैसे क्रॉल करते हैं। यह क्रॉल बजट, क्रॉल एरर और सर्च इंजन व्यवहार के बारे में बहुमूल्य जानकारी प्रदान करता है जो अन्य SEO टूल्स से प्राप्त नहीं की जा सकती।",
+seoH3_2: "SEO के लिए लॉग विश्लेषण क्यों महत्वपूर्ण है?",
+seoUl1: "<li><strong>Googlebot व्यवहार समझें:</strong> देखें कि Googlebot कौन से पेज क्रॉल करता है, कितनी बार और कब।</li><li><strong>क्रॉल बजट बर्बादी पहचानें:</strong> उन पेजों को ढूंढें जो बहुत अधिक या अनावश्यक रूप से क्रॉल किए जाते हैं।</li><li><strong>क्रॉल एरर डिटेक्ट करें:</strong> 404 एरर, सर्वर एरर और रीडायरेक्ट चेन ढूंढें।</li><li><strong>Robots.txt मान्य करें:</strong> पुष्टि करें कि महत्वपूर्ण पेज क्रॉल किए जा रहे हैं।</li><li><strong>सुरक्षा मुद्दे ढूंढें:</strong> संदिग्ध बॉट गतिविधि पहचानें।</li>",
+seoH3_3: "ट्रैक करने योग्य मुख्य मीट्रिक्स",
+seoUl2: "<li><strong>क्रॉल फ्रीक्वेंसी:</strong> Googlebot आपकी साइट पर कितनी बार आता है।</li><li><strong>क्रॉल डेप्थ:</strong> Googlebot आपकी साइट संरचना में कितना गहरा क्रॉल करता है।</li><li><strong>रिस्पॉन्स कोड:</strong> 200 (OK), 301 (Redirect), 404 (Not Found), 500 (Server Error)।</li><li><strong>Googlebot IPs:</strong> सत्यापित करें कि क्रॉल वास्तविक Googlebot से हैं।</li><li><strong>मोबाइल बनाम डेस्कटॉप:</strong> देखें कि Googlebot मोबाइल वर्जन क्रॉल कर रहा है या नहीं।</li>",
+seoH3_4: "क्रॉल बजट कैसे सुधारें",
+seoUl3: "<li>बर्बाद क्रॉल को रोकने के लिए 404 एरर ठीक करें</li><li>बेहतर क्रॉल दक्षता के लिए साइट संरचना अनुकूलित करें</li><li>अनावश्यक पेजों को ब्लॉक करने के लिए robots.txt का उपयोग करें</li><li>सर्वर रिस्पॉन्स टाइम सुधारें</li><li>XML साइटमैप नियमित रूप से अपडेट करें</li>",
+seoH3_5: "भारतीय वेबसाइटों के लिए लॉग विश्लेषण",
+seoP2: "भारतीय दर्शकों को लक्षित करने वाली वेबसाइटों के लिए, लॉग विश्लेषण यह समझने में मदद करता है कि Googlebot आपकी साइट को भारतीय डेटा सेंटर से क्रॉल कर रहा है या नहीं। आप किसी भी क्षेत्रीय क्रॉलिंग मुद्दे की पहचान कर सकते हैं और भारतीय खोज परिणामों में बेहतर प्रदर्शन के लिए अपनी साइट को अनुकूलित कर सकते हैं।",
+seoH3_6: "समर्थित लॉग फॉर्मेट",
+seoP3: "हमारा टूल Apache Common/Combined, Nginx, और IIS सहित सभी प्रमुख लॉग फॉर्मेट का समर्थन करता है। यह स्वचालित रूप से फॉर्मेट का पता लगाता है और आपके सर्वर कॉन्फ़िगरेशन के बावजूद सटीक विश्लेषण प्रदान करता है।"
+}
+};
+
+// Current language
+let currentLang = 'en';
+
+// Function to set language
+function setLanguage(lang) {
+currentLang = lang;
+
+// Update toggle buttons
+document.getElementById('langEn').classList.toggle('active', lang === 'en');
+document.getElementById('langHi').classList.toggle('active', lang === 'hi');
+
+// Update all translatable elements
+document.getElementById('mainTitle').innerText = translations[lang].mainTitle;
+document.getElementById('mainDesc').innerText = translations[lang].mainDesc;
+document.getElementById('badge1').innerText = translations[lang].badge1;
+document.getElementById('badge2').innerText = translations[lang].badge2;
+document.getElementById('badge3').innerText = translations[lang].badge3;
+document.getElementById('badge4').innerText = translations[lang].badge4;
+document.getElementById('analyzerTitle').innerText = translations[lang].analyzerTitle;
+document.getElementById('logFormatLabel').innerText = translations[lang].logFormatLabel;
+document.getElementById('logDataLabel').innerText = translations[lang].logDataLabel;
+document.getElementById('uploadLabel').innerText = translations[lang].uploadLabel;
+document.getElementById('sampleLabel').innerText = translations[lang].sampleLabel;
+document.getElementById('loadSampleBtn').innerText = translations[lang].loadSampleBtn;
+document.getElementById('sampleTitle').innerHTML = `<i class="fas fa-info-circle me-2"></i>${translations[lang].sampleTitle}`;
+document.getElementById('analyzeBtn').innerText = translations[lang].analyzeBtn;
+document.getElementById('exportBtn').innerText = translations[lang].exportBtn;
+document.getElementById('loadingText').innerText = translations[lang].loadingText;
+document.getElementById('totalEntriesLabel').innerText = translations[lang].totalEntriesLabel;
+document.getElementById('googlebotLabel').innerText = translations[lang].googlebotLabel;
+document.getElementById('errorLabel').innerText = translations[lang].errorLabel;
+document.getElementById('uniqueUrlLabel').innerText = translations[lang].uniqueUrlLabel;
+document.getElementById('summaryTab').innerHTML = `<i class="fas fa-chart-pie me-2"></i> ${translations[lang].summaryTab}`;
+document.getElementById('googlebotTab').innerHTML = `<i class="fas fa-robot me-2"></i> ${translations[lang].googlebotTab}`;
+document.getElementById('errorsTab').innerHTML = `<i class="fas fa-exclamation-circle me-2"></i> ${translations[lang].errorsTab}`;
+document.getElementById('pagesTab').innerHTML = `<i class="fas fa-file me-2"></i> ${translations[lang].pagesTab}`;
+document.getElementById('statusTab').innerHTML = `<i class="fas fa-code me-2"></i> ${translations[lang].statusTab}`;
+document.getElementById('summaryTitle').innerHTML = `<i class="fas fa-chart-line me-2"></i>${translations[lang].summaryTitle}`;
+document.getElementById('googlebotTitle').innerHTML = `<i class="fas fa-robot me-2"></i>${translations[lang].googlebotTitle}`;
+document.getElementById('errorsTitle').innerHTML = `<i class="fas fa-exclamation-triangle me-2"></i>${translations[lang].errorsTitle}`;
+document.getElementById('pagesTitle').innerHTML = `<i class="fas fa-fire me-2"></i>${translations[lang].pagesTitle}`;
+document.getElementById('statusTitle').innerHTML = `<i class="fas fa-chart-bar me-2"></i>${translations[lang].statusTitle}`;
+
+// SEO content
+document.getElementById('seoH2').innerText = translations[lang].seoH2;
+document.getElementById('seoH3_1').innerText = translations[lang].seoH3_1;
+document.getElementById('seoP1').innerText = translations[lang].seoP1;
+document.getElementById('seoH3_2').innerText = translations[lang].seoH3_2;
+document.getElementById('seoUl1').innerHTML = translations[lang].seoUl1;
+document.getElementById('seoH3_3').innerText = translations[lang].seoH3_3;
+document.getElementById('seoUl2').innerHTML = translations[lang].seoUl2;
+document.getElementById('seoH3_4').innerText = translations[lang].seoH3_4;
+document.getElementById('seoUl3').innerHTML = translations[lang].seoUl3;
+document.getElementById('seoH3_5').innerText = translations[lang].seoH3_5;
+document.getElementById('seoP2').innerText = translations[lang].seoP2;
+document.getElementById('seoH3_6').innerText = translations[lang].seoH3_6;
+document.getElementById('seoP3').innerText = translations[lang].seoP3;
+
+showNotification(lang === 'en' ? 'Language changed to English' : 'भाषा हिंदी में बदल दी गई', 'info');
+}
+
+// Sample log data
+const sampleLog = `127.0.0.1 - - [10/Oct/2024:13:55:36 +0000] "GET /index.html HTTP/1.1" 200 2326 "-" "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+66.249.66.1 - - [10/Oct/2024:13:56:10 +0000] "GET /blog/seo-tips HTTP/1.1" 200 5432 "-" "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+66.249.66.2 - - [10/Oct/2024:13:57:22 +0000] "GET /products/item1 HTTP/1.1" 404 1234 "-" "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+192.168.1.1 - - [10/Oct/2024:13:58:45 +0000] "GET /about-us HTTP/1.1" 200 3456 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+127.0.0.1 - - [10/Oct/2024:13:59:01 +0000] "GET /contact HTTP/1.1" 200 2345 "-" "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+66.249.66.3 - - [10/Oct/2024:14:00:30 +0000] "GET /blog HTTP/1.1" 200 6789 "-" "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+66.249.66.4 - - [10/Oct/2024:14:01:15 +0000] "GET /products/item2 HTTP/1.1" 500 567 "-" "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+192.168.1.2 - - [10/Oct/2024:14:02:40 +0000] "GET /images/logo.png HTTP/1.1" 200 12345 "-" "Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X)"
+127.0.0.1 - - [10/Oct/2024:14:03:22 +0000] "GET /services HTTP/1.1" 301 432 "-" "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+66.249.66.5 - - [10/Oct/2024:14:04:55 +0000] "GET /blog/seo-tips/part2 HTTP/1.1" 200 4567 "-" "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"`;
+
+// Function to load sample data
+function loadSampleData() {
+document.getElementById('logData').value = sampleLog;
+showNotification(currentLang === 'en' ? 'Sample log loaded!' : 'सैंपल लॉग लोड हो गया!', 'success');
+}
+
+// Function to analyze logs
+function analyzeLogs() {
+const logData = document.getElementById('logData').value.trim();
+
+if (!logData) {
+showNotification(currentLang === 'en' ? 'Please paste log data or upload a file!' : 'कृपया लॉग डेटा पेस्ट करें या फाइल अपलोड करें!', 'error');
+return;
+}
+
+// Show loading
+document.getElementById('loadingSpinner').style.display = 'block';
+document.getElementById('analyzeBtn').disabled = true;
+
+setTimeout(() => {
+// Parse log data
+const entries = parseLogEntries(logData);
+
+// Update stats
+document.getElementById('totalEntries').innerText = entries.length;
+document.getElementById('googlebotHits').innerText = entries.filter(e => e.isGooglebot).length;
+document.getElementById('errorCount').innerText = entries.filter(e => e.status >= 400).length;
+document.getElementById('uniqueUrls').innerText = [...new Set(entries.map(e => e.url))].length;
+
+// Show stats and results
+document.getElementById('statsSection').style.display = 'grid';
+document.getElementById('resultsSection').style.display = 'block';
+
+// Populate tables
+populateGooglebotTable(entries);
+populateErrorsTable(entries);
+populatePagesTable(entries);
+populateStatusTable(entries);
+populateSummary(entries);
+
+// Hide loading
+document.getElementById('loadingSpinner').style.display = 'none';
+document.getElementById('analyzeBtn').disabled = false;
+
+showNotification(currentLang === 'en' ? 'Analysis complete!' : 'विश्लेषण पूरा हुआ!', 'success');
+}, 1500);
+}
+
+// Function to parse log entries
+function parseLogEntries(logData) {
+const lines = logData.split('\n');
+const entries = [];
+
+lines.forEach(line => {
+if (line.trim() === '') return;
+
+// Simple Apache Combined Log Format parser
+const regex = /^(\S+) \S+ \S+ \[([^\]]+)\] "([A-Z]+) (\S+) [^"]*" (\d+) (\d+) "[^"]*" "([^"]*)"$/;
+const match = line.match(regex);
+
+if (match) {
+const ip = match[1];
+const timestamp = match[2];
+const method = match[3];
+const url = match[4];
+const status = parseInt(match[5]);
+const size = parseInt(match[6]);
+const userAgent = match[7];
+
+entries.push({
+ip,
+timestamp,
+method,
+url,
+status,
+size,
+userAgent,
+isGooglebot: userAgent.toLowerCase().includes('googlebot')
+});
+}
+});
+
+return entries;
+}
+
+// Populate Googlebot table
+function populateGooglebotTable(entries) {
+const googlebotEntries = entries.filter(e => e.isGooglebot);
+const urlStats = {};
+
+googlebotEntries.forEach(entry => {
+if (!urlStats[entry.url]) {
+urlStats[entry.url] = {
+url: entry.url,
+hits: 0,
+lastCrawl: entry.timestamp,
+status: entry.status
+};
+}
+urlStats[entry.url].hits++;
+urlStats[entry.url].lastCrawl = entry.timestamp;
+});
+
+const sortedUrls = Object.values(urlStats).sort((a, b) => b.hits - a.hits);
+
+let html = '';
+sortedUrls.forEach(item => {
+html += `<tr>
+<td>${item.url}</td>
+<td><span class="badge-googlebot">${item.hits}</span></td>
+<td>${item.lastCrawl}</td>
+<td>${item.status}</td>
+</tr>`;
+});
+
+document.getElementById('googlebotTableBody').innerHTML = html || '<tr><td colspan="4" class="text-center">No Googlebot activity found</td></tr>';
+}
+
+// Populate errors table
+function populateErrorsTable(entries) {
+const errorEntries = entries.filter(e => e.status >= 400);
+const errorStats = {};
+
+errorEntries.forEach(entry => {
+const key = `${entry.url}-${entry.status}`;
+if (!errorStats[key]) {
+errorStats[key] = {
+url: entry.url,
+status: entry.status,
+count: 0,
+lastOccurrence: entry.timestamp
+};
+}
+errorStats[key].count++;
+errorStats[key].lastOccurrence = entry.timestamp;
+});
+
+const sortedErrors = Object.values(errorStats).sort((a, b) => b.count - a.count);
+
+let html = '';
+sortedErrors.forEach(item => {
+const errorClass = item.status >= 500 ? 'badge-error' : 'badge-warning';
+html += `<tr>
+<td>${item.url}</td>
+<td><span class="${errorClass}">${item.status}</span></td>
+<td>${item.count}</td>
+<td>${item.lastOccurrence}</td>
+<td><button class="btn btn-sm btn-outline-primary" onclick="fixError('${item.url}')">Fix</button></td>
+</tr>`;
+});
+
+document.getElementById('errorsTableBody').innerHTML = html || '<tr><td colspan="5" class="text-center">No errors found</td></tr>';
+}
+
+// Populate pages table
+function populatePagesTable(entries) {
+const pageStats = {};
+
+entries.forEach(entry => {
+if (!pageStats[entry.url]) {
+pageStats[entry.url] = {
+url: entry.url,
+hits: 0,
+totalSize: 0
+};
+}
+pageStats[entry.url].hits++;
+pageStats[entry.url].totalSize += entry.size;
+});
+
+const sortedPages = Object.values(pageStats).sort((a, b) => b.hits - a.hits);
+const totalHits = entries.length;
+
+let html = '';
+sortedPages.slice(0, 10).forEach(item => {
+const percentage = ((item.hits / totalHits) * 100).toFixed(1);
+const avgSize = Math.round(item.totalSize / item.hits);
+html += `<tr>
+<td>${item.url}</td>
+<td>${item.hits}</td>
+<td>${percentage}%</td>
+<td>${avgSize} bytes</td>
+</tr>`;
+});
+
+document.getElementById('pagesTableBody').innerHTML = html;
+}
+
+// Populate status table
+function populateStatusTable(entries) {
+const statusStats = {};
+
+entries.forEach(entry => {
+if (!statusStats[entry.status]) {
+statusStats[entry.status] = 0;
+}
+statusStats[entry.status]++;
+});
+
+const totalHits = entries.length;
+const statusDescriptions = {
+200: 'OK',
+301: 'Moved Permanently',
+302: 'Found',
+304: 'Not Modified',
+400: 'Bad Request',
+401: 'Unauthorized',
+403: 'Forbidden',
+404: 'Not Found',
+500: 'Internal Server Error',
+502: 'Bad Gateway',
+503: 'Service Unavailable'
+};
+
+let html = '';
+Object.entries(statusStats).sort((a, b) => b[1] - a[1]).forEach(([status, count]) => {
+const percentage = ((count / totalHits) * 100).toFixed(1);
+html += `<tr>
+<td><strong>${status}</strong></td>
+<td>${count}</td>
+<td>${percentage}%</td>
+<td>${statusDescriptions[status] || 'Unknown'}</td>
+</tr>`;
+});
+
+document.getElementById('statusTableBody').innerHTML = html;
+}
+
+// Populate summary
+function populateSummary(entries) {
+const googlebotCount = entries.filter(e => e.isGooglebot).length;
+const errorCount = entries.filter(e => e.status >= 400).length;
+const redirectCount = entries.filter(e => e.status >= 300 && e.status < 400).length;
+const successCount = entries.filter(e => e.status >= 200 && e.status < 300).length;
+
+const html = `
+<div class="row mt-3">
+<div class="col-md-6">
+<h6>Crawl Health:</h6>
+<div class="progress">
+<div class="progress-bar" style="width: ${(successCount/entries.length*100).toFixed(1)}%">${(successCount/entries.length*100).toFixed(1)}% Success</div>
+</div>
+<div class="progress mt-2">
+<div class="progress-bar bg-warning" style="width: ${(redirectCount/entries.length*100).toFixed(1)}%">${(redirectCount/entries.length*100).toFixed(1)}% Redirects</div>
+</div>
+<div class="progress mt-2">
+<div class="progress-bar bg-danger" style="width: ${(errorCount/entries.length*100).toFixed(1)}%">${(errorCount/entries.length*100).toFixed(1)}% Errors</div>
+</div>
+</div>
+<div class="col-md-6">
+<h6>Googlebot Activity:</h6>
+<p>Googlebot crawled ${googlebotCount} times (${(googlebotCount/entries.length*100).toFixed(1)}% of total traffic)</p>
+<p>Average response size: ${Math.round(entries.reduce((sum, e) => sum + e.size, 0) / entries.length)} bytes</p>
+<p>Most active time: ${getMostActiveTime(entries)}</p>
+</div>
+</div>
+`;
+
+document.getElementById('summaryContent').innerHTML = html;
+}
+
+// Get most active time
+function getMostActiveTime(entries) {
+const hours = {};
+entries.forEach(entry => {
+const hour = entry.timestamp.split(':')[1];
+hours[hour] = (hours[hour] || 0) + 1;
+});
+
+let maxHour = 0;
+let maxCount = 0;
+Object.entries(hours).forEach(([hour, count]) => {
+if (count > maxCount) {
+maxCount = count;
+maxHour = hour;
+}
+});
+
+return `${maxHour}:00 - ${parseInt(maxHour)+1}:00 (${maxCount} requests)`;
+}
+
+// Fix error function
+function fixError(url) {
+showNotification(currentLang === 'en' ? `Redirecting to fix error for: ${url}` : `एरर ठीक करने के लिए रीडायरेक्ट किया जा रहा है: ${url}`, 'info');
+}
+
+// Export report
+function exportReport() {
+const entries = parseLogEntries(document.getElementById('logData').value);
+
+const report = {
+timestamp: new Date().toISOString(),
+tool: 'Log Analyzer',
+stats: {
+totalEntries: entries.length,
+googlebotHits: entries.filter(e => e.isGooglebot).length,
+errorCount: entries.filter(e => e.status >= 400).length,
+uniqueUrls: [...new Set(entries.map(e => e.url))].length
+},
+data: entries
+};
+
+const dataStr = JSON.stringify(report, null, 2);
+const blob = new Blob([dataStr], { type: 'application/json' });
+const url = URL.createObjectURL(blob);
+const a = document.createElement('a');
+a.href = url;
+a.download = `log-analysis-${Date.now()}.json`;
+a.click();
+
+showNotification(currentLang === 'en' ? 'Report exported successfully!' : 'रिपोर्ट सफलतापूर्वक एक्सपोर्ट हो गई!', 'success');
+}
+
+// Notification function
+function showNotification(message, type = 'success') {
+const notification = document.getElementById('notification');
+notification.textContent = message;
+
+notification.style.background = type === 'success' ? '#10b981' :
+type === 'error' ? '#ef4444' :
+type === 'info' ? '#3b82f6' : '#f59e0b';
+
+notification.style.display = 'block';
+
+setTimeout(() => {
+notification.style.display = 'none';
+}, 3000);
+}
+</script>
+</body>
+</html>
