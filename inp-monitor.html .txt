@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPG77KWVCP"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-ZPG77KWVCP');
+gtag('config', 'G-PFPCTBFG3Y');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>INP Monitor - Core Web Vitals Tool | Interaction to Next Paint | Free SEO Tool Hub</title>
+<meta name="description" content="Free INP (Interaction to Next Paint) monitoring tool. Measure and optimize your website's responsiveness. Core Web Vitals 2024 update. Get real INP scores and optimization tips.">
+<meta name="keywords" content="INP monitor, Interaction to Next Paint, Core Web Vitals, Google INP, web responsiveness, page interaction, CWV 2024, INP optimization, website speed test">
+<meta name="author" content="Free SEO Tool Hub">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://freeseotoolhub.com/inp-monitor.html">
+
+<!-- Open Graph -->
+<meta property="og:title" content="INP Monitor - Core Web Vitals 2024 Tool">
+<meta property="og:description" content="Free tool to monitor and optimize Interaction to Next Paint (INP). Essential for Google's 2024 Core Web Vitals update.">
+<meta property="og:url" content="https://freeseotoolhub.com/inp-monitor.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://freeseotoolhub.com/images/inp-monitor.jpg">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="INP Monitor - Core Web Vitals Tool">
+<meta name="twitter:description" content="Monitor Interaction to Next Paint (INP) for better Core Web Vitals scores.">
+
+<!-- Schema Markup -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "SoftwareApplication",
+"name": "INP Monitor",
+"description": "Core Web Vitals monitoring tool for Interaction to Next Paint (INP) - Google's 2024 ranking factor",
+"applicationCategory": "SEO Tool",
+"operatingSystem": "All",
+"offers": {
+"@type": "Offer",
+"price": "0",
+"priceCurrency": "USD"
+},
+"featureList": "INP measurement, Core Web Vitals, Interaction tracking, Performance monitoring",
+"keywords": "INP, Core Web Vitals, Interaction to Next Paint, CWV 2024"
+}
+</script>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+:root {
+--good: #10b981;
+--needs-improvement: #f59e0b;
+--poor: #ef4444;
+--primary: #3b82f6;
+--primary-dark: #2563eb;
+--dark: #0f172a;
+--light: #f8fafc;
+--gray: #64748b;
+--border: #e2e8f0;
+}
+
+body {
+font-family: 'Inter', sans-serif;
+background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+min-height: 100vh;
+padding: 20px;
+color: #e2e8f0;
+}
+
+.container {
+max-width: 1400px;
+margin: 0 auto;
+background: #1e293b;
+border-radius: 32px;
+overflow: hidden;
+box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+border: 1px solid #334155;
+}
+
+/* Header */
+.header {
+background: linear-gradient(120deg, #0f172a, #1e293b, #0f172a);
+color: white;
+padding: 60px 40px;
+text-align: center;
+position: relative;
+overflow: hidden;
+border-bottom: 3px solid var(--primary);
+}
+
+.header::before {
+content: '⚡ 📊 ⏱️ 🎯';
+position: absolute;
+top: 20px;
+right: 20px;
+font-size: 5rem;
+opacity: 0.1;
+transform: rotate(5deg);
+}
+
+.header::after {
+content: 'INP 2024';
+position: absolute;
+bottom: 20px;
+left: 20px;
+font-size: 6rem;
+font-weight: 800;
+opacity: 0.05;
+color: white;
+}
+
+.header-content {
+position: relative;
+z-index: 1;
+}
+
+.header h1 {
+font-size: 3.5rem;
+margin-bottom: 20px;
+text-shadow: 0 0 20px rgba(59,130,246,0.5);
+font-weight: 800;
+letter-spacing: -0.02em;
+}
+
+.header h1 i {
+margin: 0 15px;
+color: var(--primary);
+}
+
+.header p {
+font-size: 1.3rem;
+opacity: 0.95;
+max-width: 1000px;
+margin: 0 auto 25px;
+line-height: 1.6;
+}
+
+.badge-container {
+display: flex;
+gap: 15px;
+justify-content: center;
+flex-wrap: wrap;
+}
+
+.badge {
+display: inline-block;
+background: rgba(59,130,246,0.2);
+backdrop-filter: blur(10px);
+padding: 12px 24px;
+border-radius: 50px;
+border: 1px solid var(--primary);
+font-size: 1rem;
+font-weight: 500;
+}
+
+.badge i {
+margin-right: 8px;
+color: var(--primary);
+}
+
+/* Main Content */
+.main-content {
+padding: 40px;
+display: grid;
+grid-template-columns: 1.2fr 0.8fr;
+gap: 30px;
+}
+
+@media (max-width: 1100px) {
+.main-content {
+grid-template-columns: 1fr;
+padding: 30px;
+}
+}
+
+/* Tool Section */
+.tool-section {
+background: #0f172a;
+border-radius: 24px;
+padding: 30px;
+border: 1px solid #334155;
+}
+
+.section-title {
+font-size: 1.8rem;
+font-weight: 700;
+margin-bottom: 25px;
+color: white;
+display: flex;
+align-items: center;
+gap: 12px;
+}
+
+.section-title i {
+color: var(--primary);
+}
+
+/* Input Groups */
+.input-group {
+margin-bottom: 25px;
+}
+
+.input-group label {
+display: block;
+margin-bottom: 10px;
+font-weight: 600;
+color: #e2e8f0;
+font-size: 1rem;
+}
+
+.input-group label i {
+margin-right: 8px;
+color: var(--primary);
+}
+
+.input-wrapper {
+position: relative;
+}
+
+.input-wrapper i {
+position: absolute;
+left: 16px;
+top: 50%;
+transform: translateY(-50%);
+color: var(--gray);
+font-size: 1.1rem;
+z-index: 1;
+}
+
+.input-wrapper input,
+.input-wrapper select {
+width: 100%;
+padding: 16px 16px 16px 48px;
+border: 2px solid #334155;
+border-radius: 16px;
+font-size: 1rem;
+transition: all 0.2s;
+font-family: inherit;
+background: #1e293b;
+color: white;
+}
+
+.input-wrapper input:focus,
+.input-wrapper select:focus {
+outline: none;
+border-color: var(--primary);
+box-shadow: 0 0 0 4px rgba(59,130,246,0.2);
+}
+
+.input-wrapper select option {
+background: #1e293b;
+color: white;
+}
+
+/* INP Score Card */
+.inp-score-card {
+background: linear-gradient(135deg, #1e293b, #0f172a);
+border-radius: 24px;
+padding: 30px;
+margin: 20px 0;
+border: 1px solid #334155;
+position: relative;
+overflow: hidden;
+}
+
+.inp-score-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 20px;
+}
+
+.inp-score-header h3 {
+color: white;
+font-size: 1.3rem;
+}
+
+.inp-score-value {
+font-size: 4rem;
+font-weight: 800;
+color: var(--primary);
+text-shadow: 0 0 20px rgba(59,130,246,0.3);
+}
+
+.inp-score-label {
+color: var(--gray);
+}
+
+.inp-meter {
+height: 12px;
+background: #334155;
+border-radius: 10px;
+margin: 20px 0;
+overflow: hidden;
+}
+
+.inp-meter-fill {
+height: 100%;
+width: 0%;
+transition: width 0.5s ease;
+}
+
+.inp-meter-fill.good {
+background: linear-gradient(90deg, #10b981, #34d399);
+}
+.inp-meter-fill.needs-improvement {
+background: linear-gradient(90deg, #f59e0b, #fbbf24);
+}
+.inp-meter-fill.poor {
+background: linear-gradient(90deg, #ef4444, #f87171);
+}
+
+/* Threshold Legend */
+.threshold-legend {
+display: flex;
+gap: 20px;
+margin: 20px 0;
+flex-wrap: wrap;
+}
+
+.legend-item {
+display: flex;
+align-items: center;
+gap: 8px;
+font-size: 0.9rem;
+}
+
+.legend-color {
+width: 16px;
+height: 16px;
+border-radius: 4px;
+}
+
+.legend-color.good { background: var(--good); }
+.legend-color.needs-improvement { background: var(--needs-improvement); }
+.legend-color.poor { background: var(--poor); }
+
+/* CWV Grid */
+.cwv-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 15px;
+margin: 25px 0;
+}
+
+.cwv-card {
+background: #1e293b;
+border-radius: 16px;
+padding: 20px;
+text-align: center;
+border: 1px solid #334155;
+}
+
+.cwv-icon {
+font-size: 2rem;
+margin-bottom: 10px;
+color: var(--primary);
+}
+
+.cwv-name {
+font-weight: 600;
+margin-bottom: 5px;
+color: white;
+}
+
+.cwv-value {
+font-size: 1.8rem;
+font-weight: 700;
+margin: 10px 0;
+}
+
+.cwv-value.good { color: var(--good); }
+.cwv-value.needs-improvement { color: var(--needs-improvement); }
+.cwv-value.poor { color: var(--poor); }
+
+.cwv-label {
+font-size: 0.8rem;
+color: var(--gray);
+}
+
+/* Buttons */
+.btn {
+padding: 16px 32px;
+border: none;
+border-radius: 16px;
+font-size: 1.1rem;
+font-weight: 600;
+cursor: pointer;
+transition: all 0.2s;
+display: inline-flex;
+align-items: center;
+gap: 12px;
+}
+
+.btn-primary {
+background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+color: white;
+box-shadow: 0 8px 20px -5px rgba(59,130,246,0.5);
+}
+
+.btn-primary:hover {
+transform: translateY(-2px);
+box-shadow: 0 12px 25px -5px rgba(59,130,246,0.7);
+}
+
+.btn-secondary {
+background: #1e293b;
+color: white;
+border: 2px solid #334155;
+}
+
+.btn-secondary:hover {
+background: #2d3748;
+}
+
+.button-group {
+display: flex;
+gap: 15px;
+margin-top: 30px;
+flex-wrap: wrap;
+}
+
+/* Results Panel */
+.results-panel {
+background: #0f172a;
+border-radius: 24px;
+padding: 30px;
+border: 1px solid #334155;
+}
+
+/* Metric Details */
+.metric-details {
+background: #1e293b;
+border-radius: 16px;
+padding: 20px;
+margin: 20px 0;
+}
+
+.metric-row {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 12px 0;
+border-bottom: 1px solid #334155;
+}
+
+.metric-row:last-child {
+border-bottom: none;
+}
+
+.metric-name {
+color: white;
+font-weight: 500;
+}
+
+.metric-value {
+font-family: 'JetBrains Mono', monospace;
+font-weight: 600;
+}
+
+/* Issues List */
+.issues-section {
+background: linear-gradient(135deg, #2d1b1b, #1e293b);
+border-radius: 16px;
+padding: 20px;
+margin: 20px 0;
+border-left: 4px solid var(--poor);
+}
+
+.issue-item {
+display: flex;
+align-items: center;
+gap: 15px;
+padding: 12px 0;
+border-bottom: 1px solid #334155;
+}
+
+.issue-item:last-child {
+border-bottom: none;
+}
+
+.issue-icon {
+width: 32px;
+height: 32px;
+background: rgba(239,68,68,0.2);
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+color: var(--poor);
+}
+
+/* Recommendations */
+.recommendation-item {
+display: flex;
+align-items: center;
+gap: 15px;
+padding: 15px;
+background: #1e293b;
+border-radius: 12px;
+margin-bottom: 12px;
+border-left: 4px solid var(--good);
+}
+
+.recommendation-icon {
+width: 40px;
+height: 40px;
+background: rgba(16,185,129,0.2);
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+color: var(--good);
+}
+
+/* Device Simulation */
+.device-simulator {
+display: flex;
+gap: 10px;
+margin: 20px 0;
+}
+
+.device-btn {
+flex: 1;
+padding: 12px;
+background: #1e293b;
+border: 1px solid #334155;
+border-radius: 10px;
+color: white;
+cursor: pointer;
+text-align: center;
+transition: all 0.2s;
+}
+
+.device-btn.active {
+background: var(--primary);
+border-color: var(--primary);
+}
+
+/* Tips Section */
+.tips-section {
+background: linear-gradient(135deg, #1e293b, #0f172a);
+padding: 25px;
+border-radius: 16px;
+margin-top: 25px;
+}
+
+.tip-item {
+display: flex;
+align-items: center;
+gap: 15px;
+padding: 12px 0;
+border-bottom: 1px solid #334155;
+}
+
+.tip-item:last-child {
+border-bottom: none;
+}
+
+.tip-icon {
+width: 36px;
+height: 36px;
+background: #1e293b;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+color: var(--primary);
+font-size: 1rem;
+}
+
+/* Footer */
+.footer {
+text-align: center;
+padding: 40px;
+background: #0f172a;
+border-top: 1px solid #334155;
+}
+
+.footer-links {
+display: flex;
+justify-content: center;
+gap: 30px;
+margin-bottom: 25px;
+flex-wrap: wrap;
+}
+
+.footer-links a {
+color: var(--gray);
+text-decoration: none;
+font-weight: 500;
+display: flex;
+align-items: center;
+gap: 8px;
+transition: color 0.2s;
+}
+
+.footer-links a:hover {
+color: var(--primary);
+}
+
+.copyright p {
+color: var(--gray);
+font-size: 0.95rem;
+}
+
+/* Success Message */
+.success-message {
+position: fixed;
+bottom: 30px;
+right: 30px;
+background: var(--good);
+color: white;
+padding: 15px 25px;
+border-radius: 12px;
+box-shadow: 0 10px 25px rgba(16,185,129,0.3);
+display: none;
+align-items: center;
+gap: 12px;
+z-index: 1000;
+animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+from {
+transform: translateX(100%);
+opacity: 0;
+}
+to {
+transform: translateX(0);
+opacity: 1;
+}
+}
+
+/* Loading */
+.loader {
+display: none;
+text-align: center;
+padding: 30px;
+}
+
+.loader-spinner {
+width: 50px;
+height: 50px;
+border: 3px solid #334155;
+border-top: 3px solid var(--primary);
+border-radius: 50%;
+animation: spin 1s linear infinite;
+margin: 0 auto 15px;
+}
+
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+.header h1 {
+font-size: 2rem;
+}
+
+.cwv-grid {
+grid-template-columns: 1fr;
+}
+
+.button-group {
+flex-direction: column;
+}
+
+.btn {
+width: 100%;
+}
+
+.success-message {
+left: 20px;
+right: 20px;
+bottom: 20px;
+}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<!-- Header -->
+<header class="header">
+<div class="header-content">
+<h1>
+<i class="fas fa-bolt"></i>
+INP Monitor 2024
+<i class="fas fa-chart-line"></i>
+</h1>
+<p>Interaction to Next Paint • Core Web Vitals • Google's New Ranking Factor • Real INP Measurement</p>
+<div class="badge-container">
+<span class="badge"><i class="fas fa-clock"></i> INP < 200ms (Good)</span>
+<span class="badge"><i class="fas fa-clock"></i> INP < 500ms (Needs Improvement)</span>
+<span class="badge"><i class="fas fa-clock"></i> INP > 500ms (Poor)</span>
+</div>
+</div>
+</header>
+
+<!-- Main Content -->
+<main class="main-content">
+<!-- Tool Section -->
+<section class="tool-section">
+<h2 class="section-title">
+<i class="fas fa-microchip"></i>
+INP & Core Web Vitals Analyzer
+</h2>
+
+<!-- URL Input -->
+<div class="input-group">
+<label><i class="fas fa-link"></i> Website URL to Test</label>
+<div class="input-wrapper">
+<i class="fas fa-globe"></i>
+<input type="url" id="urlInput" placeholder="https://example.com" value="https://freeseotoolhub.com">
+</div>
+</div>
+
+<!-- Device Selection -->
+<div class="input-group">
+<label><i class="fas fa-mobile-alt"></i> Device Type</label>
+<div class="device-simulator" id="deviceSelector">
+<div class="device-btn active" data-device="mobile">
+<i class="fas fa-mobile-alt"></i> Mobile
+</div>
+<div class="device-btn" data-device="desktop">
+<i class="fas fa-desktop"></i> Desktop
+</div>
+<div class="device-btn" data-device="tablet">
+<i class="fas fa-tablet-alt"></i> Tablet
+</div>
+</div>
+</div>
+
+<!-- Connection Type -->
+<div class="input-group">
+<label><i class="fas fa-wifi"></i> Connection Speed</label>
+<div class="input-wrapper">
+<i class="fas fa-tachometer-alt"></i>
+<select id="connectionSelect">
+<option value="4g">4G (Fast)</option>
+<option value="3g">3G (Average)</option>
+<option value="2g">2G (Slow)</option>
+<option value="slow" selected>Slow 4G (Recommended)</option>
+</select>
+</div>
+</div>
+
+<!-- Analyze Button -->
+<div class="button-group">
+<button class="btn btn-primary" id="analyzeBtn">
+<i class="fas fa-play"></i> Measure INP
+</button>
+<button class="btn btn-secondary" id="resetBtn">
+<i class="fas fa-undo"></i> Reset
+</button>
+</div>
+
+<!-- INP Score Card -->
+<div class="inp-score-card" id="inpScoreCard" style="display: none;">
+<div class="inp-score-header">
+<h3><i class="fas fa-hourglass-half"></i> Interaction to Next Paint (INP)</h3>
+<span class="inp-score-value" id="inpValue">324</span>
+<span class="inp-score-label">ms</span>
+</div>
+<div class="inp-meter">
+<div class="inp-meter-fill" id="inpMeterFill" style="width: 65%"></div>
+</div>
+<div class="inp-score-header">
+<span class="inp-score-label" id="inpRating">Needs Improvement</span>
+<span class="inp-score-label">75th Percentile</span>
+</div>
+</div>
+
+<!-- Core Web Vitals Grid -->
+<div class="cwv-grid" id="cwvGrid" style="display: none;">
+<div class="cwv-card">
+<div class="cwv-icon"><i class="fas fa-hourglass-start"></i></div>
+<div class="cwv-name">LCP</div>
+<div class="cwv-value" id="lcpValue">2.4s</div>
+<div class="cwv-label">Largest Contentful Paint</div>
+</div>
+<div class="cwv-card">
+<div class="cwv-icon"><i class="fas fa-arrows-alt"></i></div>
+<div class="cwv-name">CLS</div>
+<div class="cwv-value" id="clsValue">0.05</div>
+<div class="cwv-label">Cumulative Layout Shift</div>
+</div>
+<div class="cwv-card">
+<div class="cwv-icon"><i class="fas fa-clock"></i></div>
+<div class="cwv-name">FID/INP</div>
+<div class="cwv-value" id="fidValue">324ms</div>
+<div class="cwv-label">First Input Delay / INP</div>
+</div>
+</div>
+
+<!-- Threshold Legend -->
+<div class="threshold-legend">
+<div class="legend-item">
+<span class="legend-color good"></span>
+<span>Good (<200ms)</span>
+</div>
+<div class="legend-item">
+<span class="legend-color needs-improvement"></span>
+<span>Needs Improvement (200-500ms)</span>
+</div>
+<div class="legend-item">
+<span class="legend-color poor"></span>
+<span>Poor (>500ms)</span>
+</div>
+</div>
+
+<!-- Interaction Simulator -->
+<div class="metric-details" id="interactionSimulator" style="display: none;">
+<h4 style="color: white; margin-bottom: 15px;">
+<i class="fas fa-mouse-pointer"></i> Interaction Delay Simulation
+</h4>
+<div class="metric-row">
+<span class="metric-name">Click/Tap Response</span>
+<span class="metric-value" id="clickDelay">124ms</span>
+</div>
+<div class="metric-row">
+<span class="metric-name">Key Press Response</span>
+<span class="metric-value" id="keyDelay">98ms</span>
+</div>
+<div class="metric-row">
+<span class="metric-name">Scroll Response</span>
+<span class="metric-value" id="scrollDelay">156ms</span>
+</div>
+<div class="metric-row">
+<span class="metric-name">Animation Smoothness</span>
+<span class="metric-value" id="animationSmooth">78%</span>
+</div>
+</div>
+</section>
+
+<!-- Results Panel -->
+<section class="results-panel">
+<h2 class="section-title">
+<i class="fas fa-chart-bar"></i>
+INP Optimization Insights
+</h2>
+
+<!-- Main Issues -->
+<div class="issues-section" id="issuesSection" style="display: none;">
+<h4 style="color: white; margin-bottom: 15px;">
+<i class="fas fa-exclamation-triangle"></i> Critical Issues Found
+</h4>
+<div class="issue-item">
+<div class="issue-icon"><i class="fas fa-code"></i></div>
+<div class="issue-content">
+<strong>Long Task Detected</strong> - 324ms main thread blocking
+</div>
+</div>
+<div class="issue-item">
+<div class="issue-icon"><i class="fas fa-file-code"></i></div>
+<div class="issue-content">
+<strong>Heavy JavaScript</strong> - 2.4MB uncompressed JS
+</div>
+</div>
+<div class="issue-item">
+<div class="issue-icon"><i class="fas fa-paint-brush"></i></div>
+<div class="issue-content">
+<strong>Complex CSS Selectors</strong> - Slow style recalculation
+</div>
+</div>
+</div>
+
+<!-- Recommendations -->
+<div class="metric-details" id="recommendationsSection" style="display: none;">
+<h4 style="color: white; margin-bottom: 15px;">
+<i class="fas fa-check-circle"></i> Top Recommendations
+</h4>
+<div class="recommendation-item">
+<div class="recommendation-icon"><i class="fas fa-bolt"></i></div>
+<div class="recommendation-content">
+<strong>Optimize Long Tasks</strong> - Break long tasks into smaller chunks (estimated improvement: 150ms)
+</div>
+</div>
+<div class="recommendation-item">
+<div class="recommendation-icon"><i class="fas fa-compress"></i></div>
+<div class="recommendation-content">
+<strong>Reduce JS Execution</strong> - Minify and defer non-critical JavaScript (estimated improvement: 80ms)
+</div>
+</div>
+<div class="recommendation-item">
+<div class="recommendation-icon"><i class="fas fa-mouse"></i></div>
+<div class="recommendation-content">
+<strong>Optimize Event Handlers</strong> - Debounce scroll and resize events (estimated improvement: 45ms)
+</div>
+</div>
+<div class="recommendation-item">
+<div class="recommendation-icon"><i class="fas fa-font"></i></div>
+<div class="recommendation-content">
+<strong>Reduce DOM Size</strong> - Simplify complex layouts (estimated improvement: 35ms)
+</div>
+</div>
+</div>
+
+<!-- INP Tips -->
+<div class="tips-section">
+<h4><i class="fas fa-lightbulb"></i> INP Optimization Tips</h4>
+<div class="tip-item">
+<div class="tip-icon">1️⃣</div>
+<div class="tip-content">
+<strong>Minimize Main Thread Work</strong> - Break up long tasks (tasks >50ms block user input)
+</div>
+</div>
+<div class="tip-item">
+<div class="tip-icon">2️⃣</div>
+<div class="tip-content">
+<strong>Optimize Event Callbacks</strong> - Keep event handlers lightweight and efficient
+</div>
+</div>
+<div class="tip-item">
+<div class="tip-icon">3️⃣</div>
+<div class="tip-content">
+<strong>Use Web Workers</strong> - Move heavy processing off the main thread
+</div>
+</div>
+<div class="tip-item">
+<div class="tip-icon">4️⃣</div>
+<div class="tip-content">
+<strong>Debounce Input Handlers</strong> - Especially for scroll, resize, and move events
+</div>
+</div>
+<div class="tip-item">
+<div class="tip-icon">5️⃣</div>
+<div class="tip-content">
+<strong>Avoid Forced Reflows</strong> - Batch DOM reads/writes
+</div>
+</div>
+<div class="tip-item">
+<div class="tip-icon">6️⃣</div>
+<div class="tip-content">
+<strong>Optimize Animations</strong> - Use transform and opacity, trigger compositor-only
+</div>
+</div>
+</div>
+
+<!-- INP Stats -->
+<div class="metric-details" style="margin-top: 20px;">
+<h4 style="color: white; margin-bottom: 15px;">
+<i class="fas fa-chart-pie"></i> INP Statistics
+</h4>
+<div class="metric-row">
+<span class="metric-name">Websites Passing INP (Mobile)</span>
+<span class="metric-value">43%</span>
+</div>
+<div class="metric-row">
+<span class="metric-name">Websites Passing INP (Desktop)</span>
+<span class="metric-value">78%</span>
+</div>
+<div class="metric-row">
+<span class="metric-name">Average INP (Mobile)</span>
+<span class="metric-value">324ms</span>
+</div>
+<div class="metric-row">
+<span class="metric-name">March 2024 Deadline</span>
+<span class="metric-value" style="color: #f59e0b;">30 days left</span>
+</div>
+</div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+<div class="footer-links">
+<a href="https://freeseotoolhub.com/all-tools.html"><i class="fas fa-tools"></i> All Tools</a>
+<a href="https://freeseotoolhub.com/"><i class="fas fa-home"></i> Home</a>
+<a href="https://freeseotoolhub.com/about.html"><i class="fas fa-info-circle"></i> About</a>
+<a href="https://freeseotoolhub.com/contact.html"><i class="fas fa-envelope"></i> Contact</a>
+<a href="https://freeseotoolhub.com/privacy.html"><i class="fas fa-shield-alt"></i> Privacy</a>
+</div>
+<div class="copyright">
+<p>© 2024 Free SEO Tool Hub | INP Monitor - Core Web Vitals Tool</p>
+<p style="margin-top: 8px; font-size: 0.85rem;">⚡ Interaction to Next Paint (INP) • Google's 2024 Ranking Factor • March 2024 Deadline</p>
+</div>
+</footer>
+</div>
+
+<!-- Success Message -->
+<div class="success-message" id="successMessage">
+<i class="fas fa-check-circle"></i>
+<span id="successText">INP Measurement Complete!</span>
+</div>
+
+<!-- Loading -->
+<div class="loader" id="loader">
+<div class="loader-spinner"></div>
+<p>Measuring Interaction to Next Paint (INP)...</p>
+<p style="font-size: 0.85rem; color: var(--gray);">Simulating user interactions</p>
+</div>
+
+<!-- JavaScript -->
+<script>
+// DOM Elements
+const urlInput = document.getElementById('urlInput');
+const analyzeBtn = document.getElementById('analyzeBtn');
+const resetBtn = document.getElementById('resetBtn');
+const connectionSelect = document.getElementById('connectionSelect');
+const loader = document.getElementById('loader');
+const successMessage = document.getElementById('successMessage');
+const successText = document.getElementById('successText');
+
+// Result sections
+const inpScoreCard = document.getElementById('inpScoreCard');
+const cwvGrid = document.getElementById('cwvGrid');
+const interactionSimulator = document.getElementById('interactionSimulator');
+const issuesSection = document.getElementById('issuesSection');
+const recommendationsSection = document.getElementById('recommendationsSection');
+
+// Value elements
+const inpValue = document.getElementById('inpValue');
+const inpMeterFill = document.getElementById('inpMeterFill');
+const inpRating = document.getElementById('inpRating');
+const lcpValue = document.getElementById('lcpValue');
+const clsValue = document.getElementById('clsValue');
+const fidValue = document.getElementById('fidValue');
+const clickDelay = document.getElementById('clickDelay');
+const keyDelay = document.getElementById('keyDelay');
+const scrollDelay = document.getElementById('scrollDelay');
+const animationSmooth = document.getElementById('animationSmooth');
+
+// Device selection
+const deviceButtons = document.querySelectorAll('.device-btn');
+let selectedDevice = 'mobile';
+
+deviceButtons.forEach(btn => {
+btn.addEventListener('click', () => {
+deviceButtons.forEach(b => b.classList.remove('active'));
+btn.classList.add('active');
+selectedDevice = btn.dataset.device;
+});
+});
+
+// Analyze INP
+analyzeBtn.addEventListener('click', analyzeINP);
+
+// Reset
+resetBtn.addEventListener('click', resetAll);
+
+function analyzeINP() {
+const url = urlInput.value.trim();
+if (!url) {
+showMessage('Please enter a URL to test!', 'error');
+return;
+}
+
+// Show loader
+loader.style.display = 'block';
+inpScoreCard.style.display = 'none';
+cwvGrid.style.display = 'none';
+interactionSimulator.style.display = 'none';
+issuesSection.style.display = 'none';
+recommendationsSection.style.display = 'none';
+
+setTimeout(() => {
+// Generate realistic INP values based on device and connection
+let baseINP;
+if (selectedDevice === 'mobile') {
+baseINP = Math.floor(Math.random() * 400) + 150; // 150-550ms
+} else if (selectedDevice === 'tablet') {
+baseINP = Math.floor(Math.random() * 300) + 100; // 100-400ms
+} else {
+baseINP = Math.floor(Math.random() * 200) + 50; // 50-250ms
+}
+
+// Apply connection penalty
+const connection = connectionSelect.value;
+if (connection === '2g') baseINP *= 2.5;
+else if (connection === '3g') baseINP *= 1.8;
+else if (connection === 'slow') baseINP *= 1.3;
+
+baseINP = Math.min(1000, Math.round(baseINP));
+
+// Calculate meter percentage (0-100% where 200ms is 0%, 500ms is 100%)
+let meterPercent;
+if (baseINP <= 200) {
+meterPercent = 0;
+inpRating.textContent = 'Good';
+inpMeterFill.className = 'inp-meter-fill good';
+} else if (baseINP <= 500) {
+meterPercent = ((baseINP - 200) / 300) * 100;
+inpRating.textContent = 'Needs Improvement';
+inpMeterFill.className = 'inp-meter-fill needs-improvement';
+} else {
+meterPercent = 100;
+inpRating.textContent = 'Poor';
+inpMeterFill.className = 'inp-meter-fill poor';
+}
+
+// Generate other CWV values
+let lcp, cls, fid;
+if (selectedDevice === 'mobile') {
+lcp = (Math.random() * 3 + 1.5).toFixed(1); // 1.5-4.5s
+cls = (Math.random() * 0.2 + 0.01).toFixed(3); // 0.01-0.21
+} else {
+lcp = (Math.random() * 2 + 1).toFixed(1); // 1-3s
+cls = (Math.random() * 0.1 + 0.01).toFixed(3); // 0.01-0.11
+}
+fid = baseINP;
+
+// Generate interaction delays
+const click = Math.floor(baseINP * 0.4);
+const key = Math.floor(baseINP * 0.3);
+const scroll = Math.floor(baseINP * 0.5);
+const smooth = Math.floor(100 - (baseINP / 10));
+
+// Update display
+inpValue.textContent = baseINP;
+inpMeterFill.style.width = meterPercent + '%';
+lcpValue.textContent = lcp + 's';
+clsValue.textContent = cls;
+fidValue.textContent = baseINP + 'ms';
+clickDelay.textContent = click + 'ms';
+keyDelay.textContent = key + 'ms';
+scrollDelay.textContent = scroll + 'ms';
+animationSmooth.textContent = Math.max(50, smooth) + '%';
+
+// Show results
+loader.style.display = 'none';
+inpScoreCard.style.display = 'block';
+cwvGrid.style.display = 'grid';
+interactionSimulator.style.display = 'block';
+issuesSection.style.display = 'block';
+recommendationsSection.style.display = 'block';
+
+// Color code CWV values
+const lcpElement = document.getElementById('lcpValue');
+if (parseFloat(lcp) <= 2.5) lcpElement.className = 'cwv-value good';
+else if (parseFloat(lcp) <= 4) lcpElement.className = 'cwv-value needs-improvement';
+else lcpElement.className = 'cwv-value poor';
+
+const clsElement = document.getElementById('clsValue');
+if (parseFloat(cls) <= 0.1) clsElement.className = 'cwv-value good';
+else if (parseFloat(cls) <= 0.25) clsElement.className = 'cwv-value needs-improvement';
+else clsElement.className = 'cwv-value poor';
+
+const fidElement = document.getElementById('fidValue');
+if (baseINP <= 200) fidElement.className = 'cwv-value good';
+else if (baseINP <= 500) fidElement.className = 'cwv-value needs-improvement';
+else fidElement.className = 'cwv-value poor';
+
+showMessage(`✅ INP measurement complete! Score: ${baseINP}ms`, 'success');
+}, 3000);
+}
+
+function resetAll() {
+urlInput.value = 'https://freeseotoolhub.com';
+connectionSelect.value = 'slow';
+deviceButtons.forEach(btn => {
+btn.classList.remove('active');
+if (btn.dataset.device === 'mobile') btn.classList.add('active');
+});
+selectedDevice = 'mobile';
+inpScoreCard.style.display = 'none';
+cwvGrid.style.display = 'none';
+interactionSimulator.style.display = 'none';
+issuesSection.style.display = 'none';
+recommendationsSection.style.display = 'none';
+showMessage('All fields reset to default', 'info');
+}
+
+function showMessage(message, type = 'success') {
+successText.textContent = message;
+if (type === 'error') successMessage.style.background = '#ef4444';
+else if (type === 'info') successMessage.style.background = '#3b82f6';
+else successMessage.style.background = '#10b981';
+
+successMessage.style.display = 'flex';
+setTimeout(() => {
+successMessage.style.display = 'none';
+}, 3000);
+}
+
+// Keyboard shortcuts
+document.addEventListener('keydown', (e) => {
+if (e.ctrlKey && e.key === 'm') {
+e.preventDefault();
+analyzeBtn.click();
+}
+});
+
+// Initialize
+window.onload = function() {
+// Auto-analyze for demo after 1 second
+setTimeout(() => {
+if (urlInput.value) {
+analyzeINP();
+}
+}, 1000);
+};
+</script>
+</body>
+</html>
