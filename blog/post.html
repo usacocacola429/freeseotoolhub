@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">Loading... | FreeSEOToolHub Blog</title>
+    <meta name="description" id="metaDescription" content="">
+    <meta name="keywords" id="metaKeywords" content="">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" id="ogTitle" content="">
+    <meta property="og:description" id="ogDescription" content="">
+    <meta property="og:image" id="ogImage" content="">
+    <meta property="og:url" content="https://freeseotoolhub.com/blog/post.html">
+    
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Navigation */
+        .navbar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.9;
+        }
+        
+        .nav-links a:hover { opacity: 1; }
+        
+        body { font-family: 'Segoe UI', sans-serif; background: #f8fafc; padding-top: 70px; }
+        
+        /* Post Container */
+        .post-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        .post-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .post-header h1 {
+            font-size: 2.5rem;
+            color: #1e293b;
+            margin: 20px 0;
+        }
+        
+        .post-meta {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            color: #64748b;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .post-meta i { margin-right: 5px; color: #667eea; }
+        
+        .category-badge {
+            display: inline-block;
+            background: #667eea20;
+            color: #667eea;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .featured-image {
+            width: 100%;
+            border-radius: 20px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .post-content {
+            line-height: 1.8;
+            color: #334155;
+            font-size: 1.1rem;
+        }
+        
+        .post-content h2 {
+            color: #1e293b;
+            margin: 40px 0 20px;
+            font-size: 1.8rem;
+        }
+        
+        .post-content h3 {
+            color: #1e293b;
+            margin: 30px 0 15px;
+            font-size: 1.4rem;
+        }
+        
+        .post-content p { margin-bottom: 20px; }
+        
+        .post-content ul, .post-content ol {
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+        
+        .post-content li { margin-bottom: 10px; }
+        
+        .post-content a { color: #667eea; text-decoration: none; }
+        .post-content a:hover { text-decoration: underline; }
+        
+        .info-box {
+            background: #f0f7ff;
+            border-left: 6px solid #667eea;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+        
+        .cta-box {
+            background: linear-gradient(135deg, #667eea10, #764ba210);
+            padding: 40px;
+            border-radius: 16px;
+            text-align: center;
+            margin: 40px 0;
+            border: 1px solid #667eea30;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+        
+        /* Share Section */
+        .share-section {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin: 50px 0;
+        }
+        
+        .share-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .share-btn:hover { transform: translateY(-5px); }
+        
+        .facebook { background: #1877f2; }
+        .twitter { background: #1da1f2; }
+        .whatsapp { background: #25d366; }
+        .linkedin { background: #0a66c2; }
+        
+        /* Author Box */
+        .author-box {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            margin: 40px 0;
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            border: 1px solid #eaeaea;
+        }
+        
+        .author-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+        
+        .author-info h3 {
+            color: #1e293b;
+            margin-bottom: 10px;
+        }
+        
+        .author-info p {
+            color: #64748b;
+            margin-bottom: 15px;
+        }
+        
+        .author-social a {
+            color: #667eea;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+        
+        /* Comments Section */
+        .comments-section {
+            margin: 60px 0;
+        }
+        
+        .comment-form input,
+        .comment-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+        }
+        
+        .comment-form button {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        
+        /* Related Posts */
+        .related-posts {
+            margin: 40px 0;
+        }
+        
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .related-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #eaeaea;
+        }
+        
+        .related-card h4 {
+            font-size: 1rem;
+            margin: 10px 0;
+        }
+        
+        /* Edit Button */
+        .edit-post-btn {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            background: #667eea;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+            border: none;
+            z-index: 100;
+        }
+        
+        /* Table of Contents */
+        .toc {
+            background: #f8fafc;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+            border: 1px solid #eaeaea;
+        }
+        
+        .toc h3 {
+            margin-bottom: 15px;
+            color: #1e293b;
+        }
+        
+        .toc ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .toc li {
+            margin-bottom: 10px;
+        }
+        
+        .toc a {
+            color: #475569;
+            text-decoration: none;
+        }
+        
+        .toc a:hover {
+            color: #667eea;
+            padding-left: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .post-header h1 { font-size: 1.8rem; }
+            .post-meta { flex-direction: column; gap: 10px; }
+            .author-box { flex-direction: column; text-align: center; }
+            .related-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo"><i class="fas fa-tools"></i> FreeSEOToolHub</a>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../all-tools.html">Tools</a>
+                <a href="index.html">Blog</a>
+                <a href="../about.html">About</a>
+                <a href="../contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Post Container -->
+    <article class="post-container" id="postContainer">
+        <!-- Content will be loaded dynamically -->
+    </article>
+
+    <!-- Edit Button -->
+    <button class="edit-post-btn" onclick="editCurrentPost()" id="editBtn">
+        <i class="fas fa-edit"></i>
+    </button>
+
+    <script>
+        let currentPost = null;
+
+        async function loadPost() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const postId = parseInt(urlParams.get('id'));
+            
+            try {
+                // Fetch from JSON file
+                const response = await fetch('posts.json');
+                const data = await response.json();
+                
+                // Get from localStorage
+                const localPosts = JSON.parse(localStorage.getItem('blogPosts')) || [];
+                
+                // Combine all posts
+                const allPosts = [...data.posts, ...localPosts];
+                
+                // Find current post
+                currentPost = allPosts.find(p => p.id === postId);
+                
+                if (currentPost) {
+                    displayPost(currentPost, allPosts);
+                    
+                    // Update view count
+                    currentPost.views += 1;
+                    
+                    // Save to localStorage
+                    const localPostIndex = localPosts.findIndex(p => p.id === postId);
+                    if (localPostIndex >= 0) {
+                        localPosts[localPostIndex] = currentPost;
+                        localStorage.setItem('blogPosts', JSON.stringify(localPosts));
+                    }
+                    
+                } else {
+                    document.getElementById('postContainer').innerHTML = '<h1>Post not found</h1>';
+                }
+                
+            } catch (error) {
+                console.log('Error loading post:', error);
+                // Try localStorage only
+                const localPosts = JSON.parse(localStorage.getItem('blogPosts')) || [];
+                currentPost = localPosts.find(p => p.id === postId);
+                
+                if (currentPost) {
+                    displayPost(currentPost, localPosts);
+                }
+            }
+        }
+
+        function displayPost(post, allPosts) {
+            // Update meta tags
+            document.getElementById('pageTitle').innerText = post.title + ' | FreeSEOToolHub Blog';
+            document.getElementById('metaDescription').content = post.excerpt;
+            document.getElementById('metaKeywords').content = post.keywords.join(', ');
+            
+            document.getElementById('ogTitle').content = post.title;
+            document.getElementById('ogDescription').content = post.excerpt;
+            document.getElementById('ogImage').content = post.image;
+            
+            // Create table of contents
+            const toc = generateTOC(post.content);
+            
+            // Find related posts (same category)
+            const relatedPosts = allPosts
+                .filter(p => p.category === post.category && p.id !== post.id)
+                .slice(0, 3);
+            
+            // Build HTML
+            const container = document.getElementById('postContainer');
+            container.innerHTML = `
+                <header class="post-header">
+                    <span class="category-badge">${post.category}</span>
+                    <h1>${post.title}</h1>
+                    <div class="post-meta">
+                        <span><i class="fas fa-user"></i> ${post.author}</span>
+                        <span><i class="fas fa-calendar"></i> ${post.date}</span>
+                        <span><i class="fas fa-clock"></i> ${Math.ceil(post.content.split(' ').length / 200)} min read</span>
+                        <span><i class="fas fa-eye"></i> ${post.views.toLocaleString()} views</span>
+                    </div>
+                </header>
+                
+                <img src="${post.image}" alt="${post.title}" class="featured-image">
+                
+                <div class="toc">
+                    <h3>📋 Table of Contents</h3>
+                    ${toc}
+                </div>
+                
+                <div class="post-content">
+                    ${post.content}
+                </div>
+                
+                <div class="share-section">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}" target="_blank" class="share-btn facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(post.title)}" target="_blank" class="share-btn twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://api.whatsapp.com/send?text=${encodeURIComponent(post.title + ' ' + window.location.href)}" target="_blank" class="share-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(window.location.href)}&title=${encodeURIComponent(post.title)}" target="_blank" class="share-btn linkedin"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                
+                <div class="author-box">
+                    <div class="author-avatar">${post.author.charAt(0)}</div>
+                    <div class="author-info">
+                        <h3>${post.author}</h3>
+                        <p>SEO expert and digital marketing specialist. Helping businesses rank higher on Google.</p>
+                        <div class="author-social">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                ${relatedPosts.length > 0 ? `
+                    <div class="related-posts">
+                        <h3>📚 Related Posts</h3>
+                        <div class="related-grid">
+                            ${relatedPosts.map(p => `
+                                <div class="related-card">
+                                    <h4><a href="post.html?id=${p.id}">${p.title}</a></h4>
+                                    <div class="post-meta">
+                                        <span><i class="fas fa-eye"></i> ${p.views.toLocaleString()}</span>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                ` : ''}
+                
+                <div class="comments-section">
+                    <h3>💬 Comments (${post.comments})</h3>
+                    
+                    <div class="comment-form">
+                        <input type="text" id="commentName" placeholder="Your Name">
+                        <input type="email" id="commentEmail" placeholder="Your Email">
+                        <textarea id="commentContent" rows="4" placeholder="Your Comment"></textarea>
+                        <button onclick="submitComment(${post.id})">Post Comment</button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function generateTOC(content) {
+            // Simple TOC generation
+            const headings = content.match(/<h2>(.*?)<\/h2>/g) || [];
+            if (headings.length === 0) return '<p>No sections</p>';
+            
+            let toc = '<ul>';
+            headings.forEach(h => {
+                const text = h.replace(/<[^>]*>/g, '');
+                const id = text.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+                toc += `<li><a href="#${id}">${text}</a></li>`;
+            });
+            toc += '</ul>';
+            return toc;
+        }
+
+        function editCurrentPost() {
+            if (currentPost) {
+                window.location.href = `index.html?edit=${currentPost.id}`;
+            }
+        }
+
+        function submitComment(postId) {
+            const name = document.getElementById('commentName').value;
+            const email = document.getElementById('commentEmail').value;
+            const content = document.getElementById('commentContent').value;
+            
+            if (name && email && content) {
+                alert('Comment posted successfully! (Demo)');
+                document.getElementById('commentName').value = '';
+                document.getElementById('commentEmail').value = '';
+                document.getElementById('commentContent').value = '';
+            } else {
+                alert('Please fill all fields');
+            }
+        }
+
+        window.onload = loadPost;
+    </script>
+</body>
+</html>
