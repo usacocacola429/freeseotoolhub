@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-<!-- Google tag (gtag.js) -->
+  <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPG77KWVCP"></script>
 <script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-gtag('config', 'G-ZPG77KWVCP');
-gtag('config', 'G-PFPCTBFG3Y');
+  gtag('config', 'G-ZPG77KWVCP');
+  gtag('config', 'G-PFPCTBFG3Y');
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,20 +35,20 @@ gtag('config', 'G-PFPCTBFG3Y');
 <!-- Schema Markup -->
 <script type="application/ld+json">
 {
-"@context": "https://schema.org",
-"@type": "SoftwareApplication",
-"name": "Voice Search Optimizer",
-"description": "Voice search optimization tool for 50+ languages including Hindi, Tamil, Telugu, Bengali. Featured snippet analysis and conversational content tips.",
-"applicationCategory": "SEO Tool",
-"operatingSystem": "All",
-"offers": {
-"@type": "Offer",
-"price": "0",
-"priceCurrency": "INR"
-},
-"featureList": "Voice keywords, Featured snippet analysis, Conversational score, Question optimization, Local voice search",
-"countriesSupported": "IN,US,GB,CA,AU,AE",
-"inLanguage": ["hi", "en", "ta", "te", "bn", "mr", "gu", "kn", "ml", "pa", "ur"]
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Voice Search Optimizer",
+  "description": "Voice search optimization tool for 50+ languages including Hindi, Tamil, Telugu, Bengali. Featured snippet analysis and conversational content tips.",
+  "applicationCategory": "SEO Tool",
+  "operatingSystem": "All",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "INR"
+  },
+  "featureList": "Voice keywords, Featured snippet analysis, Conversational score, Question optimization, Local voice search",
+  "countriesSupported": "IN,US,GB,CA,AU,AE",
+  "inLanguage": ["hi", "en", "ta", "te", "bn", "mr", "gu", "kn", "ml", "pa", "ur"]
 }
 </script>
 
@@ -859,7 +859,7 @@ Voice Content Optimizer
 <label><i class="fas fa-key"></i> Voice Keywords (comma separated)</label>
 <div class="input-wrapper">
 <i class="fas fa-microphone"></i>
-<input type="text" id="voiceKeywords" placeholder="online shopping kaise kare, best deals, सस्ता सामान" value="online shopping kaise kare, best deals, सस्ता सामान">
+<input type="text" id="voiceKeywordsInput" placeholder="online shopping kaise kare, best deals, सस्ता सामान" value="online shopping kaise kare, best deals, सस्ता सामान">
 </div>
 </div>
 
@@ -1141,8 +1141,8 @@ siri: 32
 }
 };
 
-// Voice Keywords Database
-const voiceKeywords = {
+// Voice Keywords Database (renamed to avoid conflict)
+const voiceKeywordsData = {
 hi: [
 'ऑनलाइन शॉपिंग कैसे करें',
 'फ्लिपकार्ट पर सामान कैसे खरीदें',
@@ -1193,7 +1193,7 @@ const regionSelector = document.querySelectorAll('.region-btn');
 const languageTabs = document.querySelectorAll('.lang-tab');
 const contentInput = document.getElementById('contentInput');
 const targetQuestion = document.getElementById('targetQuestion');
-const voiceKeywords = document.getElementById('voiceKeywords');
+const voiceKeywordsInput = document.getElementById('voiceKeywordsInput');
 const analyzeBtn = document.getElementById('analyzeBtn');
 const resetBtn = document.getElementById('resetBtn');
 const loader = document.getElementById('loader');
@@ -1245,7 +1245,7 @@ updateVoiceKeywords();
 
 // Update Voice Keywords
 function updateVoiceKeywords() {
-const keywords = voiceKeywords[currentLanguage] || voiceKeywords.en;
+const keywords = voiceKeywordsData[currentLanguage] || voiceKeywordsData.en;
 keywordCloud.innerHTML = '';
 keywords.slice(0, 5).forEach(kw => {
 const tag = document.createElement('span');
@@ -1265,7 +1265,9 @@ voiceGlobal.textContent = voiceStats.global.users;
 }
 
 // Analyze Voice Readiness
-analyzeBtn.addEventListener('click', analyzeVoice);
+analyzeBtn.addEventListener('click', function() {
+analyzeVoice();
+});
 
 function analyzeVoice() {
 const content = contentInput.value.trim();
@@ -1282,6 +1284,7 @@ keywordCloud.style.display = 'none';
 snippetPreview.style.display = 'none';
 
 setTimeout(() => {
+try {
 // Calculate voice score based on content length and question match
 let baseScore = 70;
 const contentLength = content.length;
@@ -1301,7 +1304,7 @@ if (content.toLowerCase().includes(word)) convCount += 2;
 baseScore += Math.min(15, convCount);
 
 // Generate scores
-const finalScore = Math.min(99, baseScore);
+const finalScore = Math.min(99, Math.max(40, baseScore));
 const googleCompatibility = Math.min(99, finalScore + 5);
 const alexaCompatibility = Math.min(99, finalScore - 3);
 const siriCompatibility = Math.min(99, finalScore - 8);
@@ -1339,14 +1342,19 @@ keywordCloud.style.display = 'flex';
 snippetPreview.style.display = 'block';
 
 showMessage('✅ Voice analysis complete! Content optimized for voice search.', 'success');
-}, 2000);
+} catch (error) {
+loader.style.display = 'none';
+showMessage('Error analyzing content. Please try again.', 'error');
+console.error(error);
+}
+}, 1500);
 }
 
 // Reset
 resetBtn.addEventListener('click', () => {
 contentInput.value = 'ऑनलाइन शॉपिंग कैसे करें? आजकल लोग मोबाइल से ऑनलाइन शॉपिंग करना पसंद करते हैं। फ्लिपकार्ट और अमेज़न जैसी वेबसाइट से आप आसानी से सामान खरीद सकते हैं। सबसे पहले अपना अकाउंट बनाएं, फिर प्रोडक्ट सर्च करें और ऑर्डर करें। पेमेंट के लिए UPI, क्रेडिट कार्ड या कैश ऑन डिलीवरी का विकल्प चुनें।';
 targetQuestion.value = 'ऑनलाइन शॉपिंग कैसे करें?';
-voiceKeywords.value = 'online shopping kaise kare, best deals, सस्ता सामान';
+voiceKeywordsInput.value = 'online shopping kaise kare, best deals, सस्ता सामान';
 voiceScoreCard.style.display = 'none';
 assistantScores.style.display = 'none';
 questionSection.style.display = 'none';
@@ -1369,20 +1377,20 @@ successMessage.style.display = 'none';
 }
 
 // Initialize
-window.onload = function() {
+document.addEventListener('DOMContentLoaded', function() {
 updateStats();
 updateVoiceKeywords();
-// Auto-analyze for demo
+// Auto-analyze for demo after page loads
 setTimeout(() => {
 analyzeVoice();
 }, 1000);
-};
+});
 
 // Keyboard shortcuts
 document.addEventListener('keydown', (e) => {
-if (e.ctrlKey && e.key === 'v') {
+if (e.ctrlKey && e.key === 'Enter') {
 e.preventDefault();
-analyzeBtn.click();
+analyzeVoice();
 }
 });
 </script>
