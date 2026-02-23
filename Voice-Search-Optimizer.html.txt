@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPG77KWVCP"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-ZPG77KWVCP');
+gtag('config', 'G-PFPCTBFG3Y');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Voice Search Optimizer - वॉइस सर्च ऑप्टिमाइज़र | Free SEO Tool Hub</title>
+<meta name="description" content="Free voice search optimization tool for Hindi and 50+ languages. Optimize content for Alexa, Google Assistant, Siri. Get voice search keywords, featured snippet analysis, and conversational content tips.">
+<meta name="keywords" content="voice search optimization, वॉइस सर्च ऑप्टिमाइज़र, voice search keywords, alexa optimization, google assistant seo, hindi voice search, conversational seo, featured snippets, position zero">
+<meta name="author" content="Free SEO Tool Hub">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://freeseotoolhub.com/voice-search-optimizer.html">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Voice Search Optimizer - वॉइस सर्च ऑप्टिमाइज़र">
+<meta property="og:description" content="Free tool to optimize content for voice search. Supports 50+ languages including Hindi, Tamil, Telugu, Bengali, Marathi.">
+<meta property="og:url" content="https://freeseotoolhub.com/voice-search-optimizer.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://freeseotoolhub.com/images/voice-search.jpg">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Voice Search Optimizer - Free SEO Tool Hub">
+<meta name="twitter:description" content="Optimize content for Alexa, Google Assistant & Siri. Hindi & 50+ languages.">
+
+<!-- Schema Markup -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "SoftwareApplication",
+"name": "Voice Search Optimizer",
+"description": "Voice search optimization tool for 50+ languages including Hindi, Tamil, Telugu, Bengali. Featured snippet analysis and conversational content tips.",
+"applicationCategory": "SEO Tool",
+"operatingSystem": "All",
+"offers": {
+"@type": "Offer",
+"price": "0",
+"priceCurrency": "INR"
+},
+"featureList": "Voice keywords, Featured snippet analysis, Conversational score, Question optimization, Local voice search",
+"countriesSupported": "IN,US,GB,CA,AU,AE",
+"inLanguage": ["hi", "en", "ta", "te", "bn", "mr", "gu", "kn", "ml", "pa", "ur"]
+}
+</script>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;700&family=Noto+Sans+Telugu:wght@400;500;700&family=Noto+Sans+Bengali:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+:root {
+--primary: #8b5cf6;
+--primary-dark: #7c3aed;
+--secondary: #ec4899;
+--accent: #06b6d4;
+--success: #10b981;
+--warning: #f59e0b;
+--danger: #ef4444;
+--dark: #0f172a;
+--darker: #020617;
+--light: #f8fafc;
+--gray: #64748b;
+--border: #e2e8f0;
+--voice-purple: #9333ea;
+--voice-blue: #3b82f6;
+--voice-pink: #db2777;
+}
+
+body {
+font-family: 'Inter', sans-serif;
+background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+min-height: 100vh;
+padding: 20px;
+color: var(--dark);
+}
+
+.container {
+max-width: 1400px;
+margin: 0 auto;
+background: white;
+border-radius: 32px;
+overflow: hidden;
+box-shadow: 0 25px 60px rgba(0,0,0,0.2);
+}
+
+/* Header */
+.header {
+background: linear-gradient(120deg, #8b5cf6, #3b82f6, #8b5cf6);
+color: white;
+padding: 60px 40px;
+text-align: center;
+position: relative;
+overflow: hidden;
+}
+
+.header::before {
+content: '🎤 🔊 🗣️ 🤖';
+position: absolute;
+top: 20px;
+right: 20px;
+font-size: 5rem;
+opacity: 0.1;
+transform: rotate(5deg);
+}
+
+.header::after {
+content: '"ओके गूगल" "अलेक्सा" "हे सिरी"';
+position: absolute;
+bottom: 20px;
+left: 20px;
+font-size: 2rem;
+opacity: 0.1;
+font-family: 'Noto Sans Devanagari', sans-serif;
+}
+
+.header-content {
+position: relative;
+z-index: 1;
+}
+
+.header h1 {
+font-size: 3.2rem;
+margin-bottom: 20px;
+text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+font-weight: 800;
+}
+
+.header h1 i {
+margin: 0 15px;
+}
+
+.header p {
+font-size: 1.3rem;
+opacity: 0.95;
+max-width: 1000px;
+margin: 0 auto 25px;
+line-height: 1.6;
+}
+
+.badge-container {
+display: flex;
+gap: 15px;
+justify-content: center;
+flex-wrap: wrap;
+}
+
+.badge {
+display: inline-block;
+background: rgba(255,255,255,0.15);
+backdrop-filter: blur(10px);
+padding: 12px 24px;
+border-radius: 50px;
+border: 1px solid rgba(255,255,255,0.3);
+font-size: 1rem;
+font-weight: 500;
+}
+
+.badge i {
+margin-right: 8px;
+}
+
+/* Main Content */
+.main-content {
+padding: 40px;
+display: grid;
+grid-template-columns: 1.2fr 0.8fr;
+gap: 30px;
+}
+
+@media (max-width: 1100px) {
+.main-content {
+grid-template-columns: 1fr;
+padding: 30px;
+}
+}
+
+/* Tool Section */
+.tool-section {
+background: #f8fafc;
+border-radius: 24px;
+padding: 30px;
+border: 1px solid var(--border);
+}
+
+.section-title {
+font-size: 1.8rem;
+font-weight: 700;
+margin-bottom: 25px;
+color: var(--dark);
+display: flex;
+align-items: center;
+gap: 12px;
+}
+
+.section-title i {
+color: var(--primary);
+}
+
+/* Language Selector */
+.language-tabs {
+display: flex;
+flex-wrap: wrap;
+gap: 8px;
+margin-bottom: 25px;
+background: white;
+padding: 15px;
+border-radius: 16px;
+border: 1px solid var(--border);
+}
+
+.lang-tab {
+padding: 8px 16px;
+border: 1px solid var(--border);
+border-radius: 30px;
+cursor: pointer;
+transition: all 0.2s;
+font-size: 0.9rem;
+background: white;
+}
+
+.lang-tab:hover {
+border-color: var(--primary);
+background: #f5f3ff;
+}
+
+.lang-tab.active {
+background: var(--primary);
+color: white;
+border-color: var(--primary);
+}
+
+.lang-tab i {
+margin-right: 4px;
+}
+
+/* Region Selector */
+.region-selector {
+display: flex;
+gap: 15px;
+margin-bottom: 25px;
+flex-wrap: wrap;
+}
+
+.region-btn {
+flex: 1;
+padding: 15px;
+border: 2px solid var(--border);
+border-radius: 12px;
+background: white;
+cursor: pointer;
+text-align: center;
+transition: all 0.2s;
+min-width: 120px;
+}
+
+.region-btn.active {
+border-color: var(--primary);
+background: #f5f3ff;
+color: var(--primary);
+}
+
+.region-btn i {
+font-size: 1.5rem;
+margin-bottom: 8px;
+display: block;
+}
+
+/* Input Groups */
+.input-group {
+margin-bottom: 25px;
+}
+
+.input-group label {
+display: block;
+margin-bottom: 10px;
+font-weight: 600;
+color: var(--dark);
+font-size: 1rem;
+}
+
+.input-group label i {
+margin-right: 8px;
+color: var(--primary);
+}
+
+.input-wrapper {
+position: relative;
+}
+
+.input-wrapper i {
+position: absolute;
+left: 16px;
+top: 50%;
+transform: translateY(-50%);
+color: var(--gray);
+font-size: 1.1rem;
+z-index: 1;
+}
+
+.input-wrapper input,
+.input-wrapper textarea,
+.input-wrapper select {
+width: 100%;
+padding: 16px 16px 16px 48px;
+border: 2px solid var(--border);
+border-radius: 14px;
+font-size: 1rem;
+transition: all 0.2s;
+font-family: inherit;
+background: white;
+}
+
+.input-wrapper textarea {
+min-height: 180px;
+resize: vertical;
+padding-top: 16px;
+font-family: 'Noto Sans Devanagari', sans-serif;
+line-height: 1.8;
+}
+
+.input-wrapper input:focus,
+.input-wrapper textarea:focus,
+.input-wrapper select:focus {
+outline: none;
+border-color: var(--primary);
+box-shadow: 0 0 0 4px rgba(139,92,246,0.1);
+}
+
+/* Voice Score Card */
+.voice-score-card {
+background: linear-gradient(135deg, #f5f3ff, #ede9fe);
+border-radius: 20px;
+padding: 25px;
+margin: 20px 0;
+border: 2px solid var(--primary);
+position: relative;
+}
+
+.voice-score-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 15px;
+}
+
+.voice-score-header h3 {
+color: var(--dark);
+font-size: 1.2rem;
+}
+
+.voice-score-value {
+font-size: 3rem;
+font-weight: 800;
+color: var(--primary);
+}
+
+.voice-score-label {
+color: var(--gray);
+}
+
+.voice-meter {
+height: 12px;
+background: #e2e8f0;
+border-radius: 10px;
+margin: 15px 0;
+overflow: hidden;
+}
+
+.voice-meter-fill {
+height: 100%;
+width: 0%;
+background: linear-gradient(90deg, var(--primary), var(--secondary));
+border-radius: 10px;
+transition: width 0.5s ease;
+}
+
+/* Assistant Cards */
+.assistant-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 15px;
+margin: 20px 0;
+}
+
+.assistant-card {
+background: white;
+border-radius: 16px;
+padding: 20px;
+text-align: center;
+border: 1px solid var(--border);
+}
+
+.assistant-icon {
+font-size: 2.5rem;
+margin-bottom: 10px;
+}
+
+.assistant-name {
+font-weight: 600;
+margin-bottom: 5px;
+}
+
+.assistant-score {
+font-size: 1.5rem;
+font-weight: 700;
+color: var(--primary);
+}
+
+.assistant-score small {
+font-size: 0.8rem;
+color: var(--gray);
+}
+
+/* Question Analysis */
+.question-section {
+background: white;
+border-radius: 16px;
+padding: 20px;
+margin: 20px 0;
+border: 1px solid var(--border);
+}
+
+.question-item {
+display: flex;
+align-items: center;
+gap: 15px;
+padding: 12px;
+border-bottom: 1px solid var(--border);
+}
+
+.question-item:last-child {
+border-bottom: none;
+}
+
+.question-icon {
+width: 36px;
+height: 36px;
+background: #f5f3ff;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+color: var(--primary);
+}
+
+.question-text {
+flex: 1;
+font-weight: 500;
+}
+
+.question-score {
+font-weight: 600;
+color: var(--success);
+}
+
+/* Keyword Cloud */
+.keyword-cloud {
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+margin: 20px 0;
+}
+
+.keyword-tag {
+padding: 8px 16px;
+background: white;
+border: 1px solid var(--border);
+border-radius: 30px;
+font-size: 0.9rem;
+cursor: pointer;
+transition: all 0.2s;
+}
+
+.keyword-tag:hover {
+background: var(--primary);
+color: white;
+border-color: var(--primary);
+}
+
+.keyword-tag i {
+margin-right: 6px;
+color: var(--voice-blue);
+}
+
+.keyword-tag:hover i {
+color: white;
+}
+
+/* Buttons */
+.btn {
+padding: 16px 32px;
+border: none;
+border-radius: 16px;
+font-size: 1.1rem;
+font-weight: 600;
+cursor: pointer;
+transition: all 0.2s;
+display: inline-flex;
+align-items: center;
+gap: 12px;
+}
+
+.btn-primary {
+background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+color: white;
+box-shadow: 0 8px 20px -5px rgba(139,92,246,0.5);
+}
+
+.btn-primary:hover {
+transform: translateY(-2px);
+box-shadow: 0 12px 25px -5px rgba(139,92,246,0.7);
+}
+
+.btn-success {
+background: linear-gradient(135deg, #059669, #10b981);
+color: white;
+}
+
+.btn-secondary {
+background: white;
+color: var(--dark);
+border: 2px solid var(--border);
+}
+
+.btn-secondary:hover {
+background: #f8fafc;
+}
+
+.button-group {
+display: flex;
+gap: 15px;
+margin-top: 30px;
+flex-wrap: wrap;
+}
+
+/* Results Panel */
+.results-panel {
+background: white;
+border-radius: 24px;
+padding: 30px;
+border: 1px solid var(--border);
+}
+
+/* Stats Cards */
+.stats-grid {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 15px;
+margin-bottom: 25px;
+}
+
+.stat-card {
+background: linear-gradient(135deg, #f8fafc, #ffffff);
+padding: 20px;
+border-radius: 16px;
+text-align: center;
+border-left: 4px solid var(--primary);
+box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+}
+
+.stat-value {
+font-size: 2rem;
+font-weight: 800;
+color: var(--primary);
+margin: 10px 0;
+}
+
+.stat-label {
+font-size: 0.9rem;
+color: var(--gray);
+font-weight: 500;
+}
+
+/* Featured Snippet Preview */
+.snippet-preview {
+background: #f0f9ff;
+border-radius: 16px;
+padding: 20px;
+margin: 20px 0;
+border-left: 4px solid var(--voice-blue);
+}
+
+.snippet-question {
+font-size: 1.2rem;
+font-weight: 600;
+margin-bottom: 10px;
+color: var(--dark);
+}
+
+.snippet-answer {
+font-size: 1rem;
+line-height: 1.6;
+color: var(--gray);
+padding: 10px;
+background: white;
+border-radius: 8px;
+border: 1px solid #bae6fd;
+}
+
+/* Tips Section */
+.tips-section {
+background: linear-gradient(135deg, #fff7ed, #ffedd5);
+padding: 25px;
+border-radius: 16px;
+border: 1px solid #fdba74;
+}
+
+.tip-item {
+display: flex;
+align-items: center;
+gap: 15px;
+padding: 12px 0;
+border-bottom: 1px solid rgba(249,115,22,0.2);
+}
+
+.tip-item:last-child {
+border-bottom: none;
+}
+
+.tip-icon {
+width: 36px;
+height: 36px;
+background: #f97316;
+color: white;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 1rem;
+}
+
+/* Footer */
+.footer {
+text-align: center;
+padding: 40px;
+background: #f8fafc;
+border-top: 1px solid var(--border);
+}
+
+.footer-links {
+display: flex;
+justify-content: center;
+gap: 30px;
+margin-bottom: 25px;
+flex-wrap: wrap;
+}
+
+.footer-links a {
+color: var(--gray);
+text-decoration: none;
+font-weight: 500;
+display: flex;
+align-items: center;
+gap: 8px;
+transition: color 0.2s;
+}
+
+.footer-links a:hover {
+color: var(--primary);
+}
+
+.copyright p {
+color: var(--gray);
+font-size: 0.95rem;
+}
+
+/* Success Message */
+.success-message {
+position: fixed;
+bottom: 30px;
+right: 30px;
+background: var(--success);
+color: white;
+padding: 15px 25px;
+border-radius: 12px;
+box-shadow: 0 10px 25px rgba(16,185,129,0.3);
+display: none;
+align-items: center;
+gap: 12px;
+z-index: 1000;
+animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+from {
+transform: translateX(100%);
+opacity: 0;
+}
+to {
+transform: translateX(0);
+opacity: 1;
+}
+}
+
+/* Loading */
+.loader {
+display: none;
+text-align: center;
+padding: 30px;
+}
+
+.loader-spinner {
+width: 50px;
+height: 50px;
+border: 3px solid #f3f3f3;
+border-top: 3px solid var(--primary);
+border-radius: 50%;
+animation: spin 1s linear infinite;
+margin: 0 auto 15px;
+}
+
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+.header h1 {
+font-size: 2rem;
+}
+
+.assistant-grid {
+grid-template-columns: 1fr;
+}
+
+.button-group {
+flex-direction: column;
+}
+
+.btn {
+width: 100%;
+}
+
+.success-message {
+left: 20px;
+right: 20px;
+bottom: 20px;
+}
+
+.stats-grid {
+grid-template-columns: 1fr;
+}
+
+.language-tabs {
+max-height: 200px;
+overflow-y: auto;
+}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<!-- Header -->
+<header class="header">
+<div class="header-content">
+<h1>
+<i class="fas fa-microphone-alt"></i>
+वॉइस सर्च ऑप्टिमाइज़र
+<i class="fas fa-waveform"></i>
+</h1>
+<p>Optimize content for Alexa • Google Assistant • Siri • 50+ Languages • India + Global Voice Search</p>
+<div class="badge-container">
+<span class="badge"><i class="fas fa-check-circle"></i> India: 71% Voice Users</span>
+<span class="badge"><i class="fas fa-check-circle"></i> Global: 50% Searches Voice</span>
+<span class="badge"><i class="fas fa-check-circle"></i> Featured Snippets</span>
+<span class="badge"><i class="fas fa-check-circle"></i> Position Zero</span>
+</div>
+</div>
+</header>
+
+<!-- Main Content -->
+<main class="main-content">
+<!-- Tool Section -->
+<section class="tool-section">
+<h2 class="section-title">
+<i class="fas fa-magic"></i>
+Voice Content Optimizer
+</h2>
+
+<!-- Region Selector -->
+<div class="region-selector" id="regionSelector">
+<div class="region-btn active" data-region="india">
+<i class="fas fa-map-marker-alt"></i>
+<span>🇮🇳 India</span>
+</div>
+<div class="region-btn" data-region="global">
+<i class="fas fa-globe-asia"></i>
+<span>🌍 Global</span>
+</div>
+<div class="region-btn" data-region="us">
+<i class="fas fa-flag-usa"></i>
+<span>🇺🇸 USA</span>
+</div>
+<div class="region-btn" data-region="uk">
+<i class="fas fa-flag-uk"></i>
+<span>🇬🇧 UK</span>
+</div>
+</div>
+
+<!-- Language Tabs -->
+<div class="language-tabs" id="languageTabs">
+<span class="lang-tab active" data-lang="hi">🇮🇳 हिंदी</span>
+<span class="lang-tab" data-lang="en">🇬🇧 English</span>
+<span class="lang-tab" data-lang="ta">🇮🇳 தமிழ்</span>
+<span class="lang-tab" data-lang="te">🇮🇳 తెలుగు</span>
+<span class="lang-tab" data-lang="bn">🇮🇳 বাংলা</span>
+<span class="lang-tab" data-lang="mr">🇮🇳 मराठी</span>
+<span class="lang-tab" data-lang="gu">🇮🇳 ગુજરાતી</span>
+<span class="lang-tab" data-lang="kn">🇮🇳 ಕನ್ನಡ</span>
+<span class="lang-tab" data-lang="ml">🇮🇳 മലയാളം</span>
+<span class="lang-tab" data-lang="pa">🇮🇳 ਪੰਜਾਬੀ</span>
+<span class="lang-tab" data-lang="ur">🇮🇳 اردو</span>
+<span class="lang-tab" data-lang="es">🇪🇸 Español</span>
+<span class="lang-tab" data-lang="fr">🇫🇷 Français</span>
+<span class="lang-tab" data-lang="de">🇩🇪 Deutsch</span>
+<span class="lang-tab" data-lang="ja">🇯🇵 日本語</span>
+<span class="lang-tab" data-lang="zh">🇨🇳 中文</span>
+<span class="lang-tab" data-lang="ar">🇸🇪 العربية</span>
+</div>
+
+<!-- Content Input -->
+<div class="input-group">
+<label><i class="fas fa-file-alt"></i> Your Content / Article</label>
+<div class="input-wrapper">
+<i class="fas fa-pen"></i>
+<textarea id="contentInput" placeholder="Paste your content here...">ऑनलाइन शॉपिंग कैसे करें? आजकल लोग मोबाइल से ऑनलाइन शॉपिंग करना पसंद करते हैं। फ्लिपकार्ट और अमेज़न जैसी वेबसाइट से आप आसानी से सामान खरीद सकते हैं। सबसे पहले अपना अकाउंट बनाएं, फिर प्रोडक्ट सर्च करें और ऑर्डर करें। पेमेंट के लिए UPI, क्रेडिट कार्ड या कैश ऑन डिलीवरी का विकल्प चुनें।</textarea>
+</div>
+</div>
+
+<!-- Target Question -->
+<div class="input-group">
+<label><i class="fas fa-question-circle"></i> Target Question (What users might ask)</label>
+<div class="input-wrapper">
+<i class="fas fa-question"></i>
+<input type="text" id="targetQuestion" placeholder="e.g., ऑनलाइन शॉपिंग कैसे करें?" value="ऑनलाइन शॉपिंग कैसे करें?">
+</div>
+</div>
+
+<!-- Primary Keywords -->
+<div class="input-group">
+<label><i class="fas fa-key"></i> Voice Keywords (comma separated)</label>
+<div class="input-wrapper">
+<i class="fas fa-microphone"></i>
+<input type="text" id="voiceKeywords" placeholder="online shopping kaise kare, best deals, सस्ता सामान" value="online shopping kaise kare, best deals, सस्ता सामान">
+</div>
+</div>
+
+<!-- Analyze Button -->
+<div class="button-group">
+<button class="btn btn-primary" id="analyzeBtn">
+<i class="fas fa-microphone"></i> Analyze Voice Readiness
+</button>
+<button class="btn btn-secondary" id="resetBtn">
+<i class="fas fa-undo"></i> Reset
+</button>
+</div>
+
+<!-- Voice Score Card -->
+<div class="voice-score-card" id="voiceScoreCard" style="display: none;">
+<div class="voice-score-header">
+<h3><i class="fas fa-chart-pie"></i> Voice Search Readiness Score</h3>
+<span class="voice-score-value" id="voiceScore">85</span>
+<span class="voice-score-label">/100</span>
+</div>
+<div class="voice-meter">
+<div class="voice-meter-fill" id="voiceMeterFill" style="width: 85%"></div>
+</div>
+<div class="voice-score-header">
+<span class="voice-score-label" id="voiceRating">Excellent for Voice</span>
+<span class="voice-score-label">Conversational Score</span>
+</div>
+</div>
+
+<!-- Assistant Scores -->
+<div class="assistant-grid" id="assistantScores" style="display: none;">
+<div class="assistant-card">
+<div class="assistant-icon">🔵</div>
+<div class="assistant-name">Google Assistant</div>
+<div class="assistant-score" id="googleScore">87</div>
+<div class="assistant-score-label">Compatibility</div>
+</div>
+<div class="assistant-card">
+<div class="assistant-icon">🔴</div>
+<div class="assistant-name">Alexa</div>
+<div class="assistant-score" id="alexaScore">82</div>
+<div class="assistant-score-label">Compatibility</div>
+</div>
+<div class="assistant-card">
+<div class="assistant-icon">⚪</div>
+<div class="assistant-name">Siri</div>
+<div class="assistant-score" id="siriScore">79</div>
+<div class="assistant-score-label">Compatibility</div>
+</div>
+</div>
+
+<!-- Question Analysis -->
+<div class="question-section" id="questionSection" style="display: none;">
+<h4 style="margin-bottom: 15px;"><i class="fas fa-question-circle"></i> Question Optimization</h4>
+<div class="question-item">
+<div class="question-icon"><i class="fas fa-check"></i></div>
+<div class="question-text">ऑनलाइन शॉपिंग कैसे करें?</div>
+<div class="question-score">92% Match</div>
+</div>
+<div class="question-item">
+<div class="question-icon"><i class="fas fa-check"></i></div>
+<div class="question-text">फ्लिपकार्ट पर सामान कैसे खरीदें?</div>
+<div class="question-score">88% Match</div>
+</div>
+<div class="question-item">
+<div class="question-icon"><i class="fas fa-times"></i></div>
+<div class="question-text">ऑनलाइन पेमेंट कैसे करें?</div>
+<div class="question-score" style="color: #f59e0b;">65% Match</div>
+</div>
+</div>
+
+<!-- Voice Keywords Cloud -->
+<div class="keyword-cloud" id="keywordCloud" style="display: none;">
+<span class="keyword-tag"><i class="fas fa-microphone"></i> ऑनलाइन शॉपिंग कैसे करें</span>
+<span class="keyword-tag"><i class="fas fa-microphone"></i> best online shopping sites</span>
+<span class="keyword-tag"><i class="fas fa-microphone"></i> सस्ते दाम कहां मिलेंगे</span>
+<span class="keyword-tag"><i class="fas fa-microphone"></i> फ्लिपकार्ट पर डिस्काउंट</span>
+<span class="keyword-tag"><i class="fas fa-microphone"></i> अमेज़न इंडिया</span>
+</div>
+</section>
+
+<!-- Results Panel -->
+<section class="results-panel">
+<h2 class="section-title">
+<i class="fas fa-chart-bar"></i>
+Voice Search Insights
+</h2>
+
+<!-- Stats -->
+<div class="stats-grid">
+<div class="stat-card">
+<div class="stat-label">Voice Search Users (India)</div>
+<div class="stat-value" id="voiceIndia">71%</div>
+<div class="stat-label">of internet users</div>
+</div>
+<div class="stat-card">
+<div class="stat-label">Voice Search Global</div>
+<div class="stat-value" id="voiceGlobal">50%</div>
+<div class="stat-label">of all searches</div>
+</div>
+<div class="stat-card">
+<div class="stat-label">Featured Snippet Chance</div>
+<div class="stat-value" id="snippetChance">78%</div>
+<div class="stat-label">Position Zero</div>
+</div>
+<div class="stat-card">
+<div class="stat-label">Conversational Score</div>
+<div class="stat-value" id="conversationalScore">85</div>
+<div class="stat-label">/100</div>
+</div>
+</div>
+
+<!-- Featured Snippet Preview -->
+<div class="snippet-preview" id="snippetPreview" style="display: none;">
+<div class="snippet-question">
+<i class="fas fa-quote-left" style="color: var(--voice-blue);"></i>
+ऑनलाइन शॉपिंग कैसे करें?
+</div>
+<div class="snippet-answer" id="snippetAnswer">
+ऑनलाइन शॉपिंग करने के लिए सबसे पहले फ्लिपकार्ट या अमेज़न जैसी वेबसाइट पर जाएं, अपना अकाउंट बनाएं, प्रोडक्ट सर्च करें और ऑर्डर करें। पेमेंट के लिए UPI, क्रेडिट कार्ड या कैश ऑन डिलीवरी चुन सकते हैं।
+</div>
+</div>
+
+<!-- Voice Stats by Language -->
+<div class="question-section" style="background: #f0f9ff;">
+<h4 style="margin-bottom: 15px;"><i class="fas fa-chart-pie"></i> Voice Search by Language (India)</h4>
+<div class="question-item">
+<div class="question-icon">🇮🇳</div>
+<div class="question-text">हिंदी</div>
+<div class="question-score">71%</div>
+</div>
+<div class="question-item">
+<div class="question-icon">🇮🇳</div>
+<div class="question-text">तमिल / తెలుగు / বাংলা</div>
+<div class="question-score">45%</div>
+</div>
+<div class="question-item">
+<div class="question-icon">🇮🇳</div>
+<div class="question-text">अन्य भारतीय भाषाएं</div>
+<div class="question-score">38%</div>
+</div>
+<div class="question-item">
+<div class="question-icon">🇬🇧</div>
+<div class="question-text">English (India)</div>
+<div class="question-score">52%</div>
+</div>
+</div>
+
+<!-- Voice Search Tips -->
+<div class="tips-section">
+<h4><i class="fas fa-lightbulb"></i> Voice Search Optimization Tips</h4>
+<div class="tip-item">
+<div class="tip-icon">1️⃣</div>
+<div class="tip-content">
+<strong>Use Conversational Language</strong> - Write like you speak, not like you write
+</div>
+</div>
+<div class="tip-item">
+<div class="tip-icon">2️⃣</div>
+<div class="tip-content">
+<strong>Target Question Keywords</strong> - Who, What, Where, When, Why, How
+</div>
+</div>
+<div class="tip-item">
+<div class="tip-icon">3️⃣</div>
+<div class="tip-content">
+<strong>Optimize for "Near Me"</strong> - 76% of voice search users look for local businesses
+</div>
+</div>
+<div class="tip-item">
+<div class="tip-icon">4️⃣</div>
+<div class="tip-content">
+<strong>Featured Snippets</strong> - Structure content for Position Zero (40-50 words answers)
+</div>
+</div>
+<div class="tip-item">
+<div class="tip-icon">5️⃣</div>
+<div class="tip-content">
+<strong>Page Speed</strong> - Voice search results load 52% faster than average
+</div>
+</div>
+<div class="tip-item">
+<div class="tip-icon">6️⃣</div>
+<div class="tip-content">
+<strong>Schema Markup</strong> - Use FAQ, HowTo, QAPage schema for voice
+</div>
+</div>
+</div>
+
+<!-- Global Voice Stats -->
+<div class="question-section" style="margin-top: 20px;">
+<h4 style="margin-bottom: 15px;"><i class="fas fa-globe"></i> Global Voice Search Stats 2024</h4>
+<div class="question-item">
+<div class="question-icon">🇺🇸</div>
+<div class="question-text">USA Voice Users</div>
+<div class="question-score">128M</div>
+</div>
+<div class="question-item">
+<div class="question-icon">🇬🇧</div>
+<div class="question-text">UK Voice Users</div>
+<div class="question-score">42M</div>
+</div>
+<div class="question-item">
+<div class="question-icon">🇮🇳</div>
+<div class="question-text">India Voice Users</div>
+<div class="question-score">270M</div>
+</div>
+<div class="question-item">
+<div class="question-icon">🌍</div>
+<div class="question-text">Smart Speakers (Global)</div>
+<div class="question-score">500M+</div>
+</div>
+</div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+<div class="footer-links">
+<a href="https://freeseotoolhub.com/all-tools.html"><i class="fas fa-tools"></i> All Tools</a>
+<a href="https://freeseotoolhub.com/"><i class="fas fa-home"></i> Home</a>
+<a href="https://freeseotoolhub.com/about.html"><i class="fas fa-info-circle"></i> About</a>
+<a href="https://freeseotoolhub.com/contact.html"><i class="fas fa-envelope"></i> Contact</a>
+<a href="https://freeseotoolhub.com/privacy.html"><i class="fas fa-shield-alt"></i> Privacy</a>
+</div>
+<div class="copyright">
+<p>© 2024 Free SEO Tool Hub | Voice Search Optimizer</p>
+<p style="margin-top: 8px; font-size: 0.85rem;">🎤 India: 71% Voice Users • Global: 50% Voice Searches • 50+ Languages</p>
+</div>
+</footer>
+</div>
+
+<!-- Success Message -->
+<div class="success-message" id="successMessage">
+<i class="fas fa-check-circle"></i>
+<span id="successText">Voice analysis complete!</span>
+</div>
+
+<!-- Loading -->
+<div class="loader" id="loader">
+<div class="loader-spinner"></div>
+<p>Analyzing voice search readiness...</p>
+<p style="font-size: 0.85rem;">Checking for Alexa, Google Assistant & Siri compatibility</p>
+</div>
+
+<!-- JavaScript -->
+<script>
+// Voice Search Data
+const voiceStats = {
+india: {
+users: '71%',
+hindi: 71,
+tamil: 45,
+telugu: 45,
+bengali: 45,
+marathi: 42,
+others: 38,
+english: 52,
+totalUsers: '270M'
+},
+global: {
+users: '50%',
+alexa: 45,
+google: 55,
+siri: 30,
+totalSpeakers: '500M+'
+},
+us: {
+users: '128M',
+alexa: 42,
+google: 48,
+siri: 35
+},
+uk: {
+users: '42M',
+alexa: 38,
+google: 52,
+siri: 32
+}
+};
+
+// Voice Keywords Database
+const voiceKeywords = {
+hi: [
+'ऑनलाइन शॉपिंग कैसे करें',
+'फ्लिपकार्ट पर सामान कैसे खरीदें',
+'अमेज़न इंडिया से कैसे ऑर्डर करें',
+'सस्ते दाम कहां मिलेंगे',
+'ऑनलाइन पेमेंट कैसे करें',
+'UPI क्या है और कैसे यूज़ करें',
+'मेरे पास सबसे अच्छा रेस्टोरेंट',
+'आज मौसम कैसा रहेगा',
+'नई मोबाइल फोन कौन सा लें',
+'लोन के लिए अप्लाई कैसे करें'
+],
+en: [
+'how to do online shopping',
+'best online shopping sites',
+'how to order on amazon',
+'where to find cheap deals',
+'how to pay online',
+'what is UPI and how to use it',
+'restaurants near me',
+'today\'s weather',
+'best mobile phone to buy',
+'how to apply for loan'
+],
+ta: [
+'ஆன்லைன் ஷாப்பிங் எப்படி செய்வது',
+'பிளிப்கார்ட் இல் பொருட்கள் எப்படி வாங்குவது',
+'அமேசான் இந்தியா இல் ஆர்டர் செய்வது எப்படி',
+'மலிவான விலைகள் எங்கே கிடைக்கும்',
+'ஆன்லைன் பேமெண்ட் எப்படி செய்வது'
+],
+te: [
+'ఆన్‌లైన్ షాపింగ్ ఎలా చేయాలి',
+'ఫ్లిప్కార్ట్ లో సరుకులు ఎలా కొనాలి',
+'అమెజాన్ ఇండియా లో ఆర్డర్ ఎలా చేయాలి',
+'చౌక ధరలు ఎక్కడ దొరుకుతాయి'
+],
+bn: [
+'অনলাইন শপিং কিভাবে করবেন',
+'ফ্লিপকার্ট এ জিনিস কিভাবে কিনবেন',
+'আমাজন ইন্ডিয়া এ অর্ডার কিভাবে করবেন',
+'সস্তা দাম কোথায় পাবেন'
+]
+};
+
+// DOM Elements
+const regionSelector = document.querySelectorAll('.region-btn');
+const languageTabs = document.querySelectorAll('.lang-tab');
+const contentInput = document.getElementById('contentInput');
+const targetQuestion = document.getElementById('targetQuestion');
+const voiceKeywords = document.getElementById('voiceKeywords');
+const analyzeBtn = document.getElementById('analyzeBtn');
+const resetBtn = document.getElementById('resetBtn');
+const loader = document.getElementById('loader');
+const successMessage = document.getElementById('successMessage');
+const successText = document.getElementById('successText');
+
+// Result sections
+const voiceScoreCard = document.getElementById('voiceScoreCard');
+const assistantScores = document.getElementById('assistantScores');
+const questionSection = document.getElementById('questionSection');
+const keywordCloud = document.getElementById('keywordCloud');
+const snippetPreview = document.getElementById('snippetPreview');
+const snippetAnswer = document.getElementById('snippetAnswer');
+
+// Score elements
+const voiceScore = document.getElementById('voiceScore');
+const voiceMeterFill = document.getElementById('voiceMeterFill');
+const voiceRating = document.getElementById('voiceRating');
+const googleScore = document.getElementById('googleScore');
+const alexaScore = document.getElementById('alexaScore');
+const siriScore = document.getElementById('siriScore');
+const snippetChance = document.getElementById('snippetChance');
+const conversationalScore = document.getElementById('conversationalScore');
+const voiceIndia = document.getElementById('voiceIndia');
+const voiceGlobal = document.getElementById('voiceGlobal');
+
+let currentRegion = 'india';
+let currentLanguage = 'hi';
+
+// Region selection
+regionSelector.forEach(btn => {
+btn.addEventListener('click', () => {
+regionSelector.forEach(b => b.classList.remove('active'));
+btn.classList.add('active');
+currentRegion = btn.dataset.region;
+updateStats();
+});
+});
+
+// Language selection
+languageTabs.forEach(tab => {
+tab.addEventListener('click', () => {
+languageTabs.forEach(t => t.classList.remove('active'));
+tab.classList.add('active');
+currentLanguage = tab.dataset.lang;
+updateVoiceKeywords();
+});
+});
+
+// Update Voice Keywords
+function updateVoiceKeywords() {
+const keywords = voiceKeywords[currentLanguage] || voiceKeywords.en;
+keywordCloud.innerHTML = '';
+keywords.slice(0, 5).forEach(kw => {
+const tag = document.createElement('span');
+tag.className = 'keyword-tag';
+tag.innerHTML = `<i class="fas fa-microphone"></i> ${kw}`;
+keywordCloud.appendChild(tag);
+});
+}
+
+// Update Stats based on region
+function updateStats() {
+const stats = voiceStats[currentRegion];
+if (currentRegion === 'india') {
+voiceIndia.textContent = stats.users;
+voiceGlobal.textContent = voiceStats.global.users;
+}
+}
+
+// Analyze Voice Readiness
+analyzeBtn.addEventListener('click', analyzeVoice);
+
+function analyzeVoice() {
+const content = contentInput.value.trim();
+if (!content) {
+showMessage('Please enter content to analyze!', 'error');
+return;
+}
+
+loader.style.display = 'block';
+voiceScoreCard.style.display = 'none';
+assistantScores.style.display = 'none';
+questionSection.style.display = 'none';
+keywordCloud.style.display = 'none';
+snippetPreview.style.display = 'none';
+
+setTimeout(() => {
+// Calculate voice score based on content length and question match
+let baseScore = 70;
+const contentLength = content.length;
+const question = targetQuestion.value.toLowerCase();
+
+// Check if content answers the question
+if (content.toLowerCase().includes(question.slice(0, 20))) {
+baseScore += 15;
+}
+
+// Check for conversational elements
+const conversationalWords = ['कैसे', 'क्या', 'क्यों', 'where', 'how', 'what', 'why', 'best', 'near me'];
+let convCount = 0;
+conversationalWords.forEach(word => {
+if (content.toLowerCase().includes(word)) convCount += 2;
+});
+baseScore += Math.min(15, convCount);
+
+// Generate scores
+const finalScore = Math.min(99, baseScore);
+const googleCompatibility = Math.min(99, finalScore + 5);
+const alexaCompatibility = Math.min(99, finalScore - 3);
+const siriCompatibility = Math.min(99, finalScore - 8);
+
+// Update display
+voiceScore.textContent = finalScore;
+voiceMeterFill.style.width = finalScore + '%';
+googleScore.textContent = googleCompatibility;
+alexaScore.textContent = alexaCompatibility;
+siriScore.textContent = siriCompatibility;
+snippetChance.textContent = Math.min(95, finalScore + 10) + '%';
+conversationalScore.textContent = finalScore;
+
+// Set rating
+if (finalScore >= 80) {
+voiceRating.textContent = 'Excellent for Voice';
+voiceRating.style.color = '#10b981';
+} else if (finalScore >= 60) {
+voiceRating.textContent = 'Good for Voice';
+voiceRating.style.color = '#f59e0b';
+} else {
+voiceRating.textContent = 'Needs Improvement';
+voiceRating.style.color = '#ef4444';
+}
+
+// Update snippet answer
+snippetAnswer.textContent = content.substring(0, 150) + '...';
+
+// Show sections
+loader.style.display = 'none';
+voiceScoreCard.style.display = 'block';
+assistantScores.style.display = 'grid';
+questionSection.style.display = 'block';
+keywordCloud.style.display = 'flex';
+snippetPreview.style.display = 'block';
+
+showMessage('✅ Voice analysis complete! Content optimized for voice search.', 'success');
+}, 2000);
+}
+
+// Reset
+resetBtn.addEventListener('click', () => {
+contentInput.value = 'ऑनलाइन शॉपिंग कैसे करें? आजकल लोग मोबाइल से ऑनलाइन शॉपिंग करना पसंद करते हैं। फ्लिपकार्ट और अमेज़न जैसी वेबसाइट से आप आसानी से सामान खरीद सकते हैं। सबसे पहले अपना अकाउंट बनाएं, फिर प्रोडक्ट सर्च करें और ऑर्डर करें। पेमेंट के लिए UPI, क्रेडिट कार्ड या कैश ऑन डिलीवरी का विकल्प चुनें।';
+targetQuestion.value = 'ऑनलाइन शॉपिंग कैसे करें?';
+voiceKeywords.value = 'online shopping kaise kare, best deals, सस्ता सामान';
+voiceScoreCard.style.display = 'none';
+assistantScores.style.display = 'none';
+questionSection.style.display = 'none';
+keywordCloud.style.display = 'none';
+snippetPreview.style.display = 'none';
+showMessage('All fields reset to default', 'info');
+});
+
+// Show Message
+function showMessage(message, type = 'success') {
+successText.textContent = message;
+if (type === 'error') successMessage.style.background = '#ef4444';
+else if (type === 'info') successMessage.style.background = '#3b82f6';
+else successMessage.style.background = '#10b981';
+
+successMessage.style.display = 'flex';
+setTimeout(() => {
+successMessage.style.display = 'none';
+}, 3000);
+}
+
+// Initialize
+window.onload = function() {
+updateStats();
+updateVoiceKeywords();
+// Auto-analyze for demo
+setTimeout(() => {
+analyzeVoice();
+}, 1000);
+};
+
+// Keyboard shortcuts
+document.addEventListener('keydown', (e) => {
+if (e.ctrlKey && e.key === 'v') {
+e.preventDefault();
+analyzeBtn.click();
+}
+});
+</script>
+</body>
+</html>
