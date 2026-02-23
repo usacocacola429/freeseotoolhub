@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEO Blog - Free SEO Tools Tutorials | FreeSEOToolHub</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+/* Previous styles + new styles for dynamic content */
+.admin-controls {
+position: fixed;
+bottom: 30px;
+right: 30px;
+z-index: 1000;
+}
+
+.admin-btn {
+background: #667eea;
+color: white;
+width: 60px;
+height: 60px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 24px;
+cursor: pointer;
+box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+transition: all 0.3s;
+border: none;
+}
+
+.admin-btn:hover {
+transform: scale(1.1) rotate(90deg);
+}
+
+.admin-panel {
+position: fixed;
+top: 0;
+right: -400px;
+width: 380px;
+height: 100vh;
+background: white;
+box-shadow: -5px 0 30px rgba(0,0,0,0.1);
+transition: right 0.3s;
+z-index: 2000;
+padding: 30px;
+overflow-y: auto;
+}
+
+.admin-panel.open {
+right: 0;
+}
+
+.admin-panel h2 {
+color: #1e293b;
+margin-bottom: 20px;
+padding-bottom: 15px;
+border-bottom: 2px solid #667eea;
+}
+
+.form-group {
+margin-bottom: 20px;
+}
+
+.form-group label {
+display: block;
+margin-bottom: 8px;
+font-weight: 600;
+color: #475569;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+width: 100%;
+padding: 12px;
+border: 2px solid #e2e8f0;
+border-radius: 8px;
+font-size: 14px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+border-color: #667eea;
+outline: none;
+}
+
+.save-btn {
+background: linear-gradient(135deg, #667eea, #764ba2);
+color: white;
+border: none;
+padding: 15px;
+width: 100%;
+border-radius: 8px;
+font-weight: 600;
+cursor: pointer;
+transition: all 0.3s;
+}
+
+.save-btn:hover {
+transform: translateY(-2px);
+box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.close-btn {
+position: absolute;
+top: 20px;
+right: 20px;
+background: none;
+border: none;
+font-size: 24px;
+cursor: pointer;
+color: #64748b;
+}
+
+.blog-card {
+position: relative;
+}
+
+.edit-btn {
+position: absolute;
+top: 15px;
+right: 15px;
+background: #667eea;
+color: white;
+width: 40px;
+height: 40px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+opacity: 0;
+transition: opacity 0.3s;
+border: none;
+}
+
+.blog-card:hover .edit-btn {
+opacity: 1;
+}
+
+.ql-editor {
+min-height: 200px;
+}
+</style>
+<!-- Quill Editor for Rich Text -->
+<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar">
+<!-- Your navbar code -->
+</nav>
+
+<!-- Blog Header -->
+<div class="blog-header">
+<h1>📝 FreeSEO Tool Hub Blog</h1>
+<p>Learn SEO, tool tutorials, and digital marketing tips</p>
+</div>
+
+<!-- Blog Container -->
+<div class="blog-container" id="blogContainer">
+<!-- Posts will be loaded here dynamically -->
+</div>
+
+<!-- Admin Controls -->
+<div class="admin-controls">
+<button class="admin-btn" onclick="toggleAdminPanel()">
+<i class="fas fa-plus"></i>
+</button>
+</div>
+
+<!-- Admin Panel -->
+<div class="admin-panel" id="adminPanel">
+<button class="close-btn" onclick="toggleAdminPanel()">×</button>
+<h2>📝 नया पोस्ट लिखें</h2>
+
+<form id="postForm">
+<div class="form-group">
+<label>पोस्ट का टाइटल</label>
+<input type="text" id="postTitle" placeholder="Domain Authority Guide 2026" required>
+</div>
+
+<div class="form-group">
+<label>Category</label>
+<select id="postCategory">
+<option value="SEO Guide">SEO Guide</option>
+<option value="Business">Business</option>
+<option value="Fintech">Fintech</option>
+<option value="Content Writing">Content Writing</option>
+<option value="Technical SEO">Technical SEO</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>Author Name</label>
+<input type="text" id="postAuthor" value="Rahul Kumar" required>
+</div>
+
+<div class="form-group">
+<label>Image URL</label>
+<input type="url" id="postImage" placeholder="https://example.com/image.jpg">
+</div>
+
+<div class="form-group">
+<label>Excerpt (Short Description)</label>
+<textarea id="postExcerpt" rows="3" placeholder="Brief description of your post..."></textarea>
+</div>
+
+<div class="form-group">
+<label>Content (HTML allowed)</label>
+<div id="editor" style="height: 300px;"></div>
+<textarea id="postContent" style="display: none;"></textarea>
+</div>
+
+<div class="form-group">
+<label>Keywords (comma separated)</label>
+<input type="text" id="postKeywords" placeholder="domain authority, seo, ranking">
+</div>
+
+<button type="button" class="save-btn" onclick="savePost()">
+<i class="fas fa-save"></i> पोस्ट सेव करें
+</button>
+</form>
+</div>
+
+<!-- Quill Editor Script -->
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+<script>
+// Initialize Quill Editor
+var quill = new Quill('#editor', {
+theme: 'snow',
+modules: {
+toolbar: [
+[{ 'header': [1,2,3,4,5,6, false] }],
+['bold', 'italic', 'underline', 'strike'],
+[{ 'list': 'ordered'}, { 'list': 'bullet' }],
+['link', 'image', 'video'],
+['clean']
+]
+}
+});
+
+// Toggle Admin Panel
+function toggleAdminPanel() {
+document.getElementById('adminPanel').classList.toggle('open');
+}
+
+// Save Post Function
+function savePost() {
+// Get form values
+const title = document.getElementById('postTitle').value;
+const category = document.getElementById('postCategory').value;
+const author = document.getElementById('postAuthor').value;
+const image = document.getElementById('postImage').value;
+const excerpt = document.getElementById('postExcerpt').value;
+const content = quill.root.innerHTML;
+const keywords = document.getElementById('postKeywords').value;
+
+// Create post object
+const newPost = {
+id: Date.now(),
+title: title,
+slug: title.toLowerCase().replace(/[^a-z0-9]+/g, '-'),
+category: category,
+date: new Date().toISOString().split('T')[0],
+author: author,
+image: image || 'default.jpg',
+excerpt: excerpt,
+content: content,
+keywords: keywords.split(',').map(k => k.trim()),
+views: 0,
+comments: 0,
+featured: false
+};
+
+// Get existing posts
+let posts = JSON.parse(localStorage.getItem('blogPosts')) || [];
+posts.unshift(newPost); // Add new post at top
+
+// Save to localStorage
+localStorage.setItem('blogPosts', JSON.stringify(posts));
+
+alert('✅ पोस्ट सेव हो गई!');
+toggleAdminPanel();
+loadPosts();
+
+// Clear form
+document.getElementById('postForm').reset();
+quill.setContents([]);
+}
+
+// Load Posts Function
+function loadPosts() {
+const container = document.getElementById('blogContainer');
+let posts = JSON.parse(localStorage.getItem('blogPosts')) || [];
+
+// If no posts in localStorage, use default posts
+if (posts.length === 0) {
+posts = [
+{
+id: 1,
+title: "Domain Authority Guide 2026: How to Check and Improve DA",
+category: "SEO Guide",
+date: "2026-02-23",
+author: "Rahul Kumar",
+image: "https://via.placeholder.com/800x400?text=Domain+Authority",
+excerpt: "Complete guide to Domain Authority (DA). Learn how to check DA, understand scores, and improve your website's authority.",
+views: 15420,
+comments: 12,
+featured: true
+},
+{
+id: 2,
+title: "GST Calculator India: How to Calculate GST for Your Business?",
+category: "Business",
+date: "2026-02-20",
+author: "Priya Sharma",
+image: "https://via.placeholder.com/800x400?text=GST+Calculator",
+excerpt: "Complete guide to using GST calculator. Learn about CGST, SGST, IGST, and reverse calculation.",
+views: 12350,
+comments: 8,
+featured: false
+}
+];
+}
+
+// Build HTML
+let html = '<div class="blog-grid"><div class="main-content">';
+
+// Featured Post
+const featured = posts.find(p => p.featured);
+if (featured) {
+html += `
+<article class="featured-post">
+<img src="${featured.image}" alt="${featured.title}">
+<div class="featured-content">
+<span class="category-badge">${featured.category}</span>
+<h2>${featured.title}</h2>
+<div class="post-meta">
+<span><i class="fas fa-user"></i> ${featured.author}</span>
+<span><i class="fas fa-calendar"></i> ${featured.date}</span>
+<span><i class="fas fa-eye"></i> ${featured.views.toLocaleString()} views</span>
+</div>
+<p>${featured.excerpt}</p>
+<a href="post.html?id=${featured.id}" class="read-more">Read Full Article <i class="fas fa-arrow-right"></i></a>
+</div>
+</article>
+`;
+}
+
+// Latest Posts
+html += '<h2 style="margin: 30px 0 20px;">📌 Latest Posts</h2>';
+
+posts.slice(0, 5).forEach(post => {
+html += `
+<div class="blog-card">
+<span class="category-badge">${post.category}</span>
+<h3>${post.title}</h3>
+<div class="post-meta">
+<span><i class="fas fa-user"></i> ${post.author}</span>
+<span><i class="fas fa-calendar"></i> ${post.date}</span>
+<span><i class="fas fa-eye"></i> ${post.views.toLocaleString()}</span>
+</div>
+<p>${post.excerpt}</p>
+<a href="post.html?id=${post.id}" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+<button class="edit-btn" onclick="editPost(${post.id})">
+<i class="fas fa-edit"></i>
+</button>
+</div>
+`;
+});
+
+html += `</div>
+<aside class="sidebar">
+<!-- Categories -->
+<div class="sidebar-widget">
+<h3>📂 Categories</h3>
+<ul class="category-list" id="categoryList"></ul>
+</div>
+
+<!-- Popular Posts -->
+<div class="sidebar-widget">
+<h3>🔥 Popular Posts</h3>
+<ul class="popular-posts" id="popularPosts"></ul>
+</div>
+</aside>
+</div>`;
+
+container.innerHTML = html;
+
+// Update categories
+updateCategories(posts);
+
+// Update popular posts
+updatePopularPosts(posts);
+}
+
+function updateCategories(posts) {
+const cats = {};
+posts.forEach(p => {
+cats[p.category] = (cats[p.category] || 0) + 1;
+});
+
+let html = '';
+for (let cat in cats) {
+html += `<li><a href="#">${cat} <span>(${cats[cat]})</span></a></li>`;
+}
+document.getElementById('categoryList').innerHTML = html;
+}
+
+function updatePopularPosts(posts) {
+const popular = [...posts].sort((a,b) => b.views - a.views).slice(0,5);
+
+let html = '';
+popular.forEach(p => {
+html += `
+<li>
+<a href="post.html?id=${p.id}">${p.title}</a>
+<span class="date">${p.date} • ${p.views.toLocaleString()} views</span>
+</li>
+`;
+});
+document.getElementById('popularPosts').innerHTML = html;
+}
+
+function editPost(id) {
+const posts = JSON.parse(localStorage.getItem('blogPosts')) || [];
+const post = posts.find(p => p.id === id);
+
+if (post) {
+document.getElementById('postTitle').value = post.title;
+document.getElementById('postCategory').value = post.category;
+document.getElementById('postAuthor').value = post.author;
+document.getElementById('postImage').value = post.image;
+document.getElementById('postExcerpt').value = post.excerpt;
+document.getElementById('postKeywords').value = post.keywords.join(', ');
+
+quill.root.innerHTML = post.content;
+
+toggleAdminPanel();
+}
+}
+
+// Load posts on page load
+window.onload = loadPosts;
+</script>
+</body>
+</html>

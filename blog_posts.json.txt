@@ -1,0 +1,73 @@
+{
+"posts": [
+{
+"id": 1,
+"title": "Domain Authority Guide 2026: How to Check and Improve DA",
+"slug": "domain-authority-guide-2026",
+"category": "SEO Guide",
+"date": "2026-02-23",
+"author": "Rahul Kumar",
+"authorImage": "author1.jpg",
+"image": "domain-authority.jpg",
+"excerpt": "Complete guide to Domain Authority (DA). Learn how to check DA, understand scores, and improve your website's authority.",
+"content": "<p>Domain Authority (DA) is one of the most important metrics in SEO...</p><h2>What is Domain Authority?</h2><p>Domain Authority is a search engine ranking score...</p>",
+"keywords": ["domain authority", "da checker", "improve da"],
+"views": 15420,
+"comments": 12,
+"featured": true
+},
+{
+"id": 2,
+"title": "GST Calculator India: How to Calculate GST for Your Business?",
+"slug": "gst-calculator-india-guide",
+"category": "Business",
+"date": "2026-02-20",
+"author": "Priya Sharma",
+"image": "gst-calculator.jpg",
+"excerpt": "Complete guide to using GST calculator. Learn about CGST, SGST, IGST, and reverse calculation.",
+"content": "<p>GST (Goods and Services Tax) is an indirect tax used in India...</p>",
+"keywords": ["gst calculator", "gst calculation", "india tax"],
+"views": 12350,
+"comments": 8,
+"featured": false
+},
+{
+"id": 3,
+"title": "UPI QR Generator: Accept Payments Easily in 2026",
+"slug": "upi-qr-generator-guide",
+"category": "Fintech",
+"date": "2026-02-18",
+"author": "Amit Patel",
+"image": "upi-qr.jpg",
+"excerpt": "Step-by-step guide to create UPI QR codes. Accept payments via Google Pay, PhonePe, Paytm instantly.",
+"content": "<p>UPI (Unified Payments Interface) has revolutionized digital payments in India...</p>",
+"keywords": ["upi qr", "payment qr", "upi generator"],
+"views": 10890,
+"comments": 5,
+"featured": true
+}
+],
+
+"categories": [
+{"name": "SEO Guide", "slug": "seo-guide", "count": 8},
+{"name": "Business", "slug": "business", "count": 5},
+{"name": "Fintech", "slug": "fintech", "count": 4},
+{"name": "Content Writing", "slug": "content-writing", "count": 6},
+{"name": "Technical SEO", "slug": "technical-seo", "count": 3}
+],
+
+"authors": [
+{
+"name": "Rahul Kumar",
+"bio": "SEO expert with 8+ years experience",
+"avatar": "rahul.jpg",
+"social": {"twitter": "@rahulseo", "linkedin": "rahul-seo"}
+},
+{
+"name": "Priya Sharma",
+"bio": "Digital marketing specialist",
+"avatar": "priya.jpg",
+"social": {"twitter": "@priyamkt", "linkedin": "priya-digital"}
+}
+]
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="postTitle">Loading...</title>
+<meta name="description" id="postDescription" content="">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+/* Post styles from previous example */
+.post-container { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+.post-header { text-align: center; margin-bottom: 40px; }
+.post-header h1 { font-size: 2.5rem; color: #1e293b; margin: 20px 0; }
+.post-meta { display: flex; justify-content: center; gap: 30px; color: #64748b; margin-bottom: 20px; }
+.featured-image { width: 100%; border-radius: 16px; margin: 30px 0; }
+.post-content { line-height: 1.8; color: #334155; }
+.post-content h2 { color: #1e293b; margin: 30px 0 20px; }
+.share-section { display: flex; gap: 15px; justify-content: center; margin: 40px 0; }
+.share-btn { width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; }
+.facebook { background: #1877f2; }
+.twitter { background: #1da1f2; }
+.whatsapp { background: #25d366; }
+.linkedin { background: #0a66c2; }
+
+.edit-post-btn {
+position: fixed;
+bottom: 100px;
+right: 30px;
+background: #667eea;
+color: white;
+width: 60px;
+height: 60px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 24px;
+cursor: pointer;
+box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+border: none;
+z-index: 100;
+}
+</style>
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar">
+<!-- Your navbar code -->
+</nav>
+
+<article class="post-container" id="postContainer">
+<!-- Content will be loaded dynamically -->
+</article>
+
+<!-- Edit Button -->
+<button class="edit-post-btn" onclick="editCurrentPost()" id="editBtn">
+<i class="fas fa-edit"></i>
+</button>
+
+<script>
+function loadPost() {
+const urlParams = new URLSearchParams(window.location.search);
+const postId = parseInt(urlParams.get('id'));
+
+const posts = JSON.parse(localStorage.getItem('blogPosts')) || [];
+const post = posts.find(p => p.id === postId);
+
+if (post) {
+// Update page title and meta
+document.getElementById('postTitle').innerText = post.title + ' | FreeSEOToolHub Blog';
+document.getElementById('postDescription').content = post.excerpt;
+
+// Update post content
+const container = document.getElementById('postContainer');
+container.innerHTML = `
+<header class="post-header">
+<span class="category-badge">${post.category}</span>
+<h1>${post.title}</h1>
+<div class="post-meta">
+<span><i class="fas fa-user"></i> ${post.author}</span>
+<span><i class="fas fa-calendar"></i> ${post.date}</span>
+<span><i class="fas fa-eye"></i> ${post.views.toLocaleString()} views</span>
+</div>
+</header>
+
+<img src="${post.image}" alt="${post.title}" class="featured-image">
+
+<div class="post-content">
+${post.content}
+</div>
+
+<div class="share-section">
+<a href="#" class="share-btn facebook"><i class="fab fa-facebook-f"></i></a>
+<a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i></a>
+<a href="#" class="share-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
+<a href="#" class="share-btn linkedin"><i class="fab fa-linkedin-in"></i></a>
+</div>
+`;
+
+// Increment view count
+post.views += 1;
+localStorage.setItem('blogPosts', JSON.stringify(posts));
+}
+}
+
+function editCurrentPost() {
+const urlParams = new URLSearchParams(window.location.search);
+const postId = urlParams.get('id');
+window.location.href = `index.html?edit=${postId}`;
+}
+
+window.onload = loadPost;
+</script>
+</body>
+</html>
