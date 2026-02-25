@@ -1,782 +1,306 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPG77KWVCP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZPG77KWVCP');
+  gtag('config', 'G-PFPCTBFG3Y');
+</script>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SEO Blog - Free SEO Tools Tutorials & Guides | FreeSEOToolHub</title>
-<meta name="description" content="Learn SEO with our free blog. Hindi and English tutorials on domain checker, GST calculator, UPI QR generator, and more SEO tools.">
-<meta name="keywords" content="seo blog, seo tutorials, digital marketing hindi, seo tips, tool guides">
+<title>SEO Blog - Free SEO Tool Hub | Latest SEO Tips & Guides</title>
+<meta name="description" content="Latest SEO tips, guides, and industry insights. Learn about voice search, Core Web Vitals, multilingual SEO, GEO, and more.">
+<meta name="keywords" content="SEO blog, voice search tips, Core Web Vitals guide, multilingual SEO, GEO optimization">
+<link rel="canonical" href="https://freeseotoolhub.com/blog/">
 
-<!-- Open Graph -->
-<meta property="og:title" content="SEO Blog - Free SEO Tools Tutorials">
-<meta property="og:description" content="Learn SEO with our free blog. Hindi and English tutorials.">
-<meta property="og:image" content="https://freeseotoolhub.com/images/blog-og.jpg">
-
-<link rel="stylesheet" href="../style.css">
+<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 <style>
-/* Global Styles */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Segoe UI', sans-serif; background: #f8fafc; padding-top: 70px; }
-
-/* Navigation */
-.navbar {
-background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-padding: 15px 0;
-position: fixed;
-top: 0;
-width: 100%;
-z-index: 1000;
-box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+/* Blog Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.nav-container {
-max-width: 1200px;
-margin: 0 auto;
-padding: 0 20px;
-display: flex;
-justify-content: space-between;
-align-items: center;
+body {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 20px;
 }
 
-.logo {
-color: white;
-font-size: 1.5rem;
-font-weight: 700;
-text-decoration: none;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.2);
 }
 
-.nav-links {
-display: flex;
-gap: 20px;
+h1 {
+  font-size: 2.5rem;
+  color: #1e293b;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
-.nav-links a {
-color: white;
-text-decoration: none;
-opacity: 0.9;
-}
-
-.nav-links a:hover { opacity: 1; }
-
-/* Blog Header */
-.blog-header {
-background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-color: white;
-padding: 80px 20px;
-text-align: center;
-margin-bottom: 40px;
-}
-
-.blog-header h1 {
-font-size: 3rem;
-margin-bottom: 15px;
-}
-
-.blog-header p {
-font-size: 1.2rem;
-max-width: 600px;
-margin: 0 auto;
-opacity: 0.95;
-}
-
-/* Blog Container */
-.blog-container {
-max-width: 1200px;
-margin: 0 auto 50px;
-padding: 0 20px;
+.subtitle {
+  color: #64748b;
+  margin-bottom: 40px;
+  font-size: 1.1rem;
 }
 
 .blog-grid {
-display: grid;
-grid-template-columns: 2fr 1fr;
-gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
 }
 
-/* Featured Post */
-.featured-post {
-background: white;
-border-radius: 20px;
-overflow: hidden;
-box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-margin-bottom: 30px;
-border: 1px solid #eaeaea;
-}
-
-.featured-post img {
-width: 100%;
-height: 350px;
-object-fit: cover;
-}
-
-.featured-content {
-padding: 30px;
-}
-
-.featured-content h2 {
-font-size: 2rem;
-margin-bottom: 15px;
-color: #1e293b;
-}
-
-.post-meta {
-display: flex;
-gap: 20px;
-margin-bottom: 15px;
-color: #64748b;
-font-size: 0.9rem;
-}
-
-.post-meta i { margin-right: 5px; color: #667eea; }
-
-.category-badge {
-display: inline-block;
-background: #667eea20;
-color: #667eea;
-padding: 5px 15px;
-border-radius: 30px;
-font-size: 0.8rem;
-font-weight: 600;
-margin-bottom: 15px;
-}
-
-/* Blog Cards */
 .blog-card {
-background: white;
-border-radius: 16px;
-padding: 25px;
-margin-bottom: 20px;
-box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-border: 1px solid #eaeaea;
-transition: all 0.3s;
-position: relative;
+  background: #f8fafc;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid #e2e8f0;
 }
 
 .blog-card:hover {
-transform: translateY(-5px);
-box-shadow: 0 15px 30px rgba(102, 126, 234, 0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
 }
 
-.blog-card h3 {
-font-size: 1.3rem;
-margin: 10px 0;
-color: #1e293b;
+.blog-card-image {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  color: white;
 }
 
-.blog-card p {
-color: #64748b;
-margin-bottom: 15px;
-line-height: 1.6;
+.blog-card-content {
+  padding: 25px;
+}
+
+.blog-card-category {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.blog-card-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.blog-card-title a {
+  color: #1e293b;
+  text-decoration: none;
+}
+
+.blog-card-title a:hover {
+  color: #2563eb;
+}
+
+.blog-card-excerpt {
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.blog-card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 15px;
+  border-top: 1px solid #e2e8f0;
+  font-size: 0.9rem;
+  color: #94a3b8;
 }
 
 .read-more {
-color: #667eea;
-text-decoration: none;
-font-weight: 600;
-display: inline-flex;
-align-items: center;
-gap: 5px;
+  display: inline-block;
+  padding: 8px 20px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s;
 }
 
-.read-more:hover { gap: 10px; }
-
-/* Sidebar */
-.sidebar {
-background: white;
-border-radius: 20px;
-padding: 25px;
-box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-border: 1px solid #eaeaea;
+.read-more:hover {
+  transform: translateX(5px);
+  box-shadow: 0 5px 15px rgba(102,126,234,0.4);
 }
 
-.sidebar-widget {
-margin-bottom: 30px;
+.footer-links {
+  margin-top: 60px;
+  text-align: center;
+  padding-top: 30px;
+  border-top: 1px solid #e2e8f0;
 }
 
-.sidebar-widget h3 {
-color: #1e293b;
-margin-bottom: 20px;
-padding-bottom: 10px;
-border-bottom: 2px solid #667eea;
+.footer-links a {
+  color: #64748b;
+  text-decoration: none;
+  margin: 0 15px;
 }
 
-.category-list {
-list-style: none;
-padding: 0;
-}
-
-.category-list li {
-margin-bottom: 12px;
-}
-
-.category-list a {
-color: #475569;
-text-decoration: none;
-display: flex;
-justify-content: space-between;
-transition: color 0.3s;
-}
-
-.category-list a:hover { color: #667eea; }
-
-.popular-posts {
-list-style: none;
-padding: 0;
-}
-
-.popular-posts li {
-margin-bottom: 20px;
-padding-bottom: 20px;
-border-bottom: 1px solid #eaeaea;
-}
-
-.popular-posts li:last-child { border-bottom: none; }
-
-.popular-posts a {
-color: #1e293b;
-text-decoration: none;
-font-weight: 600;
-display: block;
-margin-bottom: 5px;
-}
-
-.popular-posts a:hover { color: #667eea; }
-
-.popular-posts .date {
-color: #64748b;
-font-size: 0.8rem;
-}
-
-/* Newsletter */
-.newsletter {
-background: linear-gradient(135deg, #667eea10, #764ba210);
-padding: 30px;
-border-radius: 16px;
-text-align: center;
-}
-
-.newsletter h4 {
-color: #1e293b;
-margin-bottom: 15px;
-}
-
-.newsletter input {
-width: 100%;
-padding: 12px;
-border: 2px solid #e2e8f0;
-border-radius: 8px;
-margin-bottom: 10px;
-}
-
-.newsletter button {
-width: 100%;
-background: linear-gradient(135deg, #667eea, #764ba2);
-color: white;
-border: none;
-padding: 12px;
-border-radius: 8px;
-font-weight: 600;
-cursor: pointer;
-}
-
-/* Admin Panel */
-.admin-controls {
-position: fixed;
-bottom: 30px;
-right: 30px;
-z-index: 1000;
-}
-
-.admin-btn {
-background: #667eea;
-color: white;
-width: 60px;
-height: 60px;
-border-radius: 50%;
-display: flex;
-align-items: center;
-justify-content: center;
-font-size: 24px;
-cursor: pointer;
-box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
-border: none;
-}
-
-.admin-panel {
-position: fixed;
-top: 0;
-right: -500px;
-width: 450px;
-height: 100vh;
-background: white;
-box-shadow: -5px 0 30px rgba(0,0,0,0.1);
-transition: right 0.3s;
-z-index: 2000;
-padding: 30px;
-overflow-y: auto;
-}
-
-.admin-panel.open { right: 0; }
-
-.form-group { margin-bottom: 20px; }
-
-.form-group label {
-display: block;
-margin-bottom: 8px;
-font-weight: 600;
-color: #475569;
-}
-
-.form-group input,
-.form-group textarea,
-.form-group select {
-width: 100%;
-padding: 12px;
-border: 2px solid #e2e8f0;
-border-radius: 8px;
-}
-
-.save-btn {
-background: linear-gradient(135deg, #667eea, #764ba2);
-color: white;
-border: none;
-padding: 15px;
-width: 100%;
-border-radius: 8px;
-font-weight: 600;
-cursor: pointer;
-}
-
-.close-btn {
-position: absolute;
-top: 20px;
-right: 20px;
-background: none;
-border: none;
-font-size: 24px;
-cursor: pointer;
-}
-
-.edit-btn {
-position: absolute;
-top: 15px;
-right: 15px;
-background: #667eea;
-color: white;
-width: 40px;
-height: 40px;
-border-radius: 50%;
-display: flex;
-align-items: center;
-justify-content: center;
-cursor: pointer;
-opacity: 0;
-transition: opacity 0.3s;
-border: none;
-}
-
-.blog-card:hover .edit-btn { opacity: 1; }
-
-/* Quill Editor */
-.ql-editor { min-height: 200px; }
-
-/* Pagination */
-.pagination {
-display: flex;
-justify-content: center;
-gap: 10px;
-margin: 40px 0;
-}
-
-.page-btn {
-width: 40px;
-height: 40px;
-display: flex;
-align-items: center;
-justify-content: center;
-border-radius: 8px;
-background: white;
-border: 1px solid #e2e8f0;
-color: #475569;
-text-decoration: none;
-}
-
-.page-btn.active {
-background: #667eea;
-color: white;
-}
-
-@media (max-width: 768px) {
-.blog-grid { grid-template-columns: 1fr; }
-.blog-header h1 { font-size: 2rem; }
-.admin-panel { width: 100%; }
+.footer-links a:hover {
+  color: #2563eb;
 }
 </style>
-<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 </head>
 <body>
-<!-- Navigation -->
-<nav class="navbar">
-<div class="nav-container">
-<a href="../index.html" class="logo"><i class="fas fa-tools"></i> FreeSEOToolHub</a>
-<div class="nav-links">
-<a href="../index.html">Home</a>
-<a href="../all-tools.html">Tools</a>
-<a href="index.html" class="active">Blog</a>
-<a href="../about.html">About</a>
-<a href="../contact.html">Contact</a>
+<div class="container">
+  <h1>
+    <i class="fas fa-blog" style="color: #667eea;"></i>
+    Free SEO Tool Hub Blog
+  </h1>
+  <p class="subtitle">Latest insights, guides, and tips for SEO professionals</p>
+
+  <div class="blog-grid">
+    <!-- Blog Post 1 - Voice Search -->
+    <div class="blog-card">
+      <div class="blog-card-image" style="background: linear-gradient(135deg, #8b5cf6, #3b82f6);">
+        <i class="fas fa-microphone-alt"></i>
+      </div>
+      <div class="blog-card-content">
+        <span class="blog-card-category" style="background: #e0f2fe; color: #0369a1;">
+          <i class="fas fa-microphone"></i> Voice Search
+        </span>
+        <h2 class="blog-card-title">
+          <a href="/blog/voice-search-optimizer/">Voice Search Optimization Guide 2024</a>
+        </h2>
+        <p class="blog-card-excerpt">
+          Complete guide to optimize your content for voice search. Learn how to target "near me" queries, featured snippets, and optimize for Alexa, Google Assistant & Siri in India & Global.
+        </p>
+        <div class="blog-card-meta">
+          <span><i class="far fa-calendar"></i> Mar 15, 2024</span>
+          <span><i class="far fa-clock"></i> 8 min read</span>
+        </div>
+        <a href="/blog/voice-search-optimizer/" class="read-more" style="margin-top: 15px;">Read More →</a>
+      </div>
+    </div>
+
+    <!-- Blog Post 2 - Core Web Vitals -->
+    <div class="blog-card">
+      <div class="blog-card-image" style="background: linear-gradient(135deg, #10b981, #059669);">
+        <i class="fas fa-bolt"></i>
+      </div>
+      <div class="blog-card-content">
+        <span class="blog-card-category" style="background: #dcfce7; color: #166534;">
+          <i class="fas fa-chart-line"></i> Core Web Vitals
+        </span>
+        <h2 class="blog-card-title">
+          <a href="/blog/inp-monitor-guide/">INP (Interaction to Next Paint) Complete Guide 2024</a>
+        </h2>
+        <p class="blog-card-excerpt">
+          Everything you need to know about Interaction to Next Paint - Google's new Core Web Vital replacing FID. Tips to improve your INP score and pass Core Web Vitals assessment.
+        </p>
+        <div class="blog-card-meta">
+          <span><i class="far fa-calendar"></i> Mar 10, 2024</span>
+          <span><i class="far fa-clock"></i> 10 min read</span>
+        </div>
+        <a href="/blog/inp-monitor-guide/" class="read-more" style="margin-top: 15px;">Read More →</a>
+      </div>
+    </div>
+
+    <!-- Blog Post 3 - Multilingual SEO -->
+    <div class="blog-card">
+      <div class="blog-card-image" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
+        <i class="fas fa-language"></i>
+      </div>
+      <div class="blog-card-content">
+        <span class="blog-card-category" style="background: #fef3c7; color: #92400e;">
+          <i class="fas fa-globe"></i> Multilingual SEO
+        </span>
+        <h2 class="blog-card-title">
+          <a href="/blog/multilingual-seo-india/">भारतीय भाषाओं के लिए SEO: हिंदी, तमिल, तेलुगु, बंगाली गाइड</a>
+        </h2>
+        <p class="blog-card-excerpt">
+          Complete guide to optimize your website for 12+ Indian languages. Learn hreflang implementation, regional keyword research, Bhashini API integration, and voice search in Hindi.
+        </p>
+        <div class="blog-card-meta">
+          <span><i class="far fa-calendar"></i> Mar 5, 2024</span>
+          <span><i class="far fa-clock"></i> 12 min read</span>
+        </div>
+        <a href="/blog/multilingual-seo-india/" class="read-more" style="margin-top: 15px;">Read More →</a>
+      </div>
+    </div>
+
+    <!-- Blog Post 4 - GEO Optimizer 2026 -->
+    <div class="blog-card">
+      <div class="blog-card-image" style="background: linear-gradient(135deg, #ec4899, #db2777);">
+        <i class="fas fa-brain"></i>
+      </div>
+      <div class="blog-card-content">
+        <span class="blog-card-category" style="background: #fce7f3; color: #9d174d;">
+          <i class="fas fa-robot"></i> GEO 2026
+        </span>
+        <h2 class="blog-card-title">
+          <a href="/blog/geo-optimizer-guide/">LLM/GEO Optimizer: AI Search Optimization for 2026</a>
+        </h2>
+        <p class="blog-card-excerpt">
+          Generative Engine Optimization (GEO) is the future. Learn how to optimize your content for ChatGPT, Perplexity, Gemini, and other AI search engines. Entity optimization and zero-click answers.
+        </p>
+        <div class="blog-card-meta">
+          <span><i class="far fa-calendar"></i> Feb 28, 2024</span>
+          <span><i class="far fa-clock"></i> 15 min read</span>
+        </div>
+        <a href="/blog/geo-optimizer-guide/" class="read-more" style="margin-top: 15px;">Read More →</a>
+      </div>
+    </div>
+
+    <!-- Blog Post 5 - Bhashini SEO -->
+    <div class="blog-card">
+      <div class="blog-card-image" style="background: linear-gradient(135deg, #FF9933, #138808);">
+        <i class="fas fa-om"></i>
+      </div>
+      <div class="blog-card-content">
+        <span class="blog-card-category" style="background: #fff3cd; color: #856404;">
+          <i class="fas fa-language"></i> भाषिनी SEO
+        </span>
+        <h2 class="blog-card-title">
+          <a href="/blog/bhashini-seo-tool/">भाषिनी SEO टूल: भारतीय भाषाओं में कीवर्ड रिसर्च कैसे करें?</a>
+        </h2>
+        <p class="blog-card-excerpt">
+          भारत सरकार के भाषिनी API का उपयोग करके भारतीय भाषाओं में SEO कैसे करें? हिंदी, तमिल, तेलुगु, बंगाली, मराठी में कीवर्ड रिसर्च का complete guide.
+        </p>
+        <div class="blog-card-meta">
+          <span><i class="far fa-calendar"></i> Feb 20, 2024</span>
+          <span><i class="far fa-clock"></i> 10 min read</span>
+        </div>
+        <a href="/blog/bhashini-seo-tool/" class="read-more" style="margin-top: 15px;">Read More →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer-links">
+    <a href="/"><i class="fas fa-home"></i> Home</a>
+    <a href="/all-tools.html"><i class="fas fa-tools"></i> All Tools</a>
+    <a href="/about.html"><i class="fas fa-info-circle"></i> About</a>
+    <a href="/contact.html"><i class="fas fa-envelope"></i> Contact</a>
+  </div>
 </div>
-</div>
-</nav>
-
-<!-- Blog Header -->
-<div class="blog-header">
-<h1>📝 FreeSEO Tool Hub Blog</h1>
-<p>Learn SEO, tool tutorials, and digital marketing tips in Hindi & English</p>
-</div>
-
-<!-- Blog Container -->
-<div class="blog-container">
-<div class="blog-grid">
-<!-- Main Content -->
-<div class="main-content" id="mainContent">
-<!-- Posts will be loaded here -->
-</div>
-
-<!-- Sidebar -->
-<aside class="sidebar" id="sidebar">
-<!-- Sidebar will be loaded here -->
-</aside>
-</div>
-</div>
-
-<!-- Admin Controls -->
-<div class="admin-controls">
-<button class="admin-btn" onclick="toggleAdminPanel()">
-<i class="fas fa-plus"></i>
-</button>
-</div>
-
-<!-- Admin Panel -->
-<div class="admin-panel" id="adminPanel">
-<button class="close-btn" onclick="toggleAdminPanel()">×</button>
-<h2 style="margin-bottom: 20px;">📝 नया पोस्ट लिखें</h2>
-
-<form id="postForm">
-<div class="form-group">
-<label>पोस्ट टाइटल</label>
-<input type="text" id="postTitle" placeholder="Domain Authority Guide 2026" required>
-</div>
-
-<div class="form-group">
-<label>Category</label>
-<select id="postCategory">
-<option value="SEO Guide">SEO Guide</option>
-<option value="Business">Business</option>
-<option value="Fintech">Fintech</option>
-<option value="Content Writing">Content Writing</option>
-<option value="Technical SEO">Technical SEO</option>
-<option value="Social Media">Social Media</option>
-<option value="E-commerce">E-commerce</option>
-<option value="Local SEO">Local SEO</option>
-</select>
-</div>
-
-<div class="form-group">
-<label>Author Name</label>
-<input type="text" id="postAuthor" value="Rahul Kumar" required>
-</div>
-
-<div class="form-group">
-<label>Image URL</label>
-<input type="url" id="postImage" placeholder="https://example.com/image.jpg">
-</div>
-
-<div class="form-group">
-<label>Excerpt (Short Description)</label>
-<textarea id="postExcerpt" rows="3" placeholder="Brief description..."></textarea>
-</div>
-
-<div class="form-group">
-<label>Content</label>
-<div id="editor" style="height: 300px;"></div>
-</div>
-
-<div class="form-group">
-<label>Keywords (comma separated)</label>
-<input type="text" id="postKeywords" placeholder="seo, domain authority, ranking">
-</div>
-
-<div class="form-group">
-<label>Featured Post?</label>
-<input type="checkbox" id="postFeatured">
-</div>
-
-<button type="button" class="save-btn" onclick="savePost()">
-<i class="fas fa-save"></i> पोस्ट सेव करें
-</button>
-</form>
-</div>
-
-<!-- Scripts -->
-<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-<script>
-// Initialize Quill Editor
-var quill = new Quill('#editor', {
-theme: 'snow',
-modules: {
-toolbar: [
-[{ 'header': [1,2,3,4,5,6, false] }],
-['bold', 'italic', 'underline', 'strike'],
-[{ 'list': 'ordered'}, { 'list': 'bullet' }],
-['link', 'image', 'video'],
-['clean']
-]
-}
-});
-
-// Toggle Admin Panel
-function toggleAdminPanel() {
-document.getElementById('adminPanel').classList.toggle('open');
-}
-
-// Load Posts Function
-async function loadPosts() {
-try {
-// Fetch posts from JSON file
-const response = await fetch('posts.json');
-const data = await response.json();
-
-// Get posts from localStorage (new posts)
-const localPosts = JSON.parse(localStorage.getItem('blogPosts')) || [];
-
-// Combine and sort by date (newest first)
-let allPosts = [...data.posts, ...localPosts];
-allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
-
-// Display posts
-displayPosts(allPosts, data.categories, data.authors);
-
-} catch (error) {
-console.log('Error loading posts:', error);
-// Fallback to localStorage only
-const localPosts = JSON.parse(localStorage.getItem('blogPosts')) || [];
-displayPosts(localPosts, [], []);
-}
-}
-
-function displayPosts(posts, categories, authors) {
-const mainContent = document.getElementById('mainContent');
-const sidebar = document.getElementById('sidebar');
-
-// Find featured post
-const featured = posts.find(p => p.featured) || posts[0];
-
-// Build main content
-let html = '';
-
-if (featured) {
-html += `
-<article class="featured-post">
-<img src="${featured.image || 'https://via.placeholder.com/800x400'}" alt="${featured.title}">
-<div class="featured-content">
-<span class="category-badge">${featured.category}</span>
-<h2>${featured.title}</h2>
-<div class="post-meta">
-<span><i class="fas fa-user"></i> ${featured.author}</span>
-<span><i class="fas fa-calendar"></i> ${featured.date}</span>
-<span><i class="fas fa-eye"></i> ${featured.views.toLocaleString()} views</span>
-</div>
-<p>${featured.excerpt}</p>
-<a href="post.html?id=${featured.id}" class="read-more">Read Full Article <i class="fas fa-arrow-right"></i></a>
-</div>
-</article>
-`;
-}
-
-html += '<h2 style="margin: 30px 0 20px;">📌 Latest Posts</h2>';
-
-posts.slice(0, 5).forEach(post => {
-html += `
-<div class="blog-card">
-<span class="category-badge">${post.category}</span>
-<h3>${post.title}</h3>
-<div class="post-meta">
-<span><i class="fas fa-user"></i> ${post.author}</span>
-<span><i class="fas fa-calendar"></i> ${post.date}</span>
-<span><i class="fas fa-eye"></i> ${post.views.toLocaleString()}</span>
-</div>
-<p>${post.excerpt.substring(0, 150)}...</p>
-<a href="post.html?id=${post.id}" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-<button class="edit-btn" onclick="editPost(${post.id})">
-<i class="fas fa-edit"></i>
-</button>
-</div>
-`;
-});
-
-// Pagination
-html += `
-<div class="pagination">
-<a href="#" class="page-btn active">1</a>
-<a href="#" class="page-btn">2</a>
-<a href="#" class="page-btn">3</a>
-<a href="#" class="page-btn">»</a>
-</div>
-`;
-
-mainContent.innerHTML = html;
-
-// Build sidebar
-let sidebarHtml = `
-<div class="sidebar-widget">
-<h3>🔍 Search Blog</h3>
-<div style="display: flex; gap: 10px;">
-<input type="text" id="searchInput" placeholder="Search posts..." style="flex: 1; padding: 10px; border: 1px solid #e2e8f0; border-radius: 8px;">
-<button onclick="searchPosts()" style="background: #667eea; color: white; border: none; padding: 10px 15px; border-radius: 8px;">
-<i class="fas fa-search"></i>
-</button>
-</div>
-</div>
-
-<div class="sidebar-widget">
-<h3>📂 Categories</h3>
-<ul class="category-list" id="categoryList"></ul>
-</div>
-
-<div class="sidebar-widget">
-<h3>🔥 Popular Posts</h3>
-<ul class="popular-posts" id="popularPosts"></ul>
-</div>
-
-<div class="sidebar-widget newsletter">
-<h4>📧 Get Latest SEO Tips</h4>
-<p style="color: #475569; margin-bottom: 20px;">Subscribe to our newsletter</p>
-<input type="email" placeholder="Your email address" id="newsletterEmail">
-<button onclick="subscribeNewsletter()">Subscribe Now</button>
-</div>
-`;
-
-sidebar.innerHTML = sidebarHtml;
-
-// Update categories
-updateCategories(posts);
-
-// Update popular posts
-updatePopularPosts(posts);
-}
-
-function updateCategories(posts) {
-const cats = {};
-posts.forEach(p => {
-cats[p.category] = (cats[p.category] || 0) + 1;
-});
-
-let html = '';
-for (let cat in cats) {
-html += `<li><a href="#">${cat} <span>(${cats[cat]})</span></a></li>`;
-}
-document.getElementById('categoryList').innerHTML = html;
-}
-
-function updatePopularPosts(posts) {
-const popular = [...posts].sort((a,b) => b.views - a.views).slice(0,5);
-
-let html = '';
-popular.forEach(p => {
-html += `
-<li>
-<a href="post.html?id=${p.id}">${p.title}</a>
-<span class="date">${p.date} • ${p.views.toLocaleString()} views</span>
-</li>
-`;
-});
-document.getElementById('popularPosts').innerHTML = html;
-}
-
-function savePost() {
-// Get form values
-const title = document.getElementById('postTitle').value;
-const category = document.getElementById('postCategory').value;
-const author = document.getElementById('postAuthor').value;
-const image = document.getElementById('postImage').value;
-const excerpt = document.getElementById('postExcerpt').value;
-const content = quill.root.innerHTML;
-const keywords = document.getElementById('postKeywords').value;
-const featured = document.getElementById('postFeatured').checked;
-
-if (!title || !author) {
-alert('Please fill all required fields');
-return;
-}
-
-// Create new post
-const newPost = {
-id: Date.now(),
-title: title,
-slug: title.toLowerCase().replace(/[^a-z0-9]+/g, '-'),
-category: category,
-date: new Date().toISOString().split('T')[0],
-author: author,
-image: image || 'https://via.placeholder.com/800x400',
-excerpt: excerpt,
-content: content,
-keywords: keywords.split(',').map(k => k.trim()),
-views: 0,
-comments: 0,
-featured: featured
-};
-
-// Get existing posts from localStorage
-let posts = JSON.parse(localStorage.getItem('blogPosts')) || [];
-posts.unshift(newPost);
-
-// Save to localStorage
-localStorage.setItem('blogPosts', JSON.stringify(posts));
-
-alert('✅ पोस्ट सेव हो गई!');
-toggleAdminPanel();
-loadPosts();
-
-// Clear form
-document.getElementById('postForm').reset();
-quill.setContents([]);
-}
-
-function editPost(id) {
-const localPosts = JSON.parse(localStorage.getItem('blogPosts')) || [];
-const post = localPosts.find(p => p.id === id);
-
-if (post) {
-document.getElementById('postTitle').value = post.title;
-document.getElementById('postCategory').value = post.category;
-document.getElementById('postAuthor').value = post.author;
-document.getElementById('postImage').value = post.image;
-document.getElementById('postExcerpt').value = post.excerpt;
-document.getElementById('postKeywords').value = post.keywords.join(', ');
-document.getElementById('postFeatured').checked = post.featured;
-
-quill.root.innerHTML = post.content;
-
-toggleAdminPanel();
-}
-}
-
-function searchPosts() {
-const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-// Implement search functionality
-alert('Searching for: ' + searchTerm);
-}
-
-function subscribeNewsletter() {
-const email = document.getElementById('newsletterEmail').value;
-if (email) {
-alert('Thanks for subscribing!');
-}
-}
-
-// Load posts on page load
-window.onload = loadPosts;
-</script>
 </body>
 </html>
