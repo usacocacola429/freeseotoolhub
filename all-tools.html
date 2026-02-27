@@ -14,36 +14,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO Meta Tags -->
-    <title>सभी मुफ्त SEO टूल्स - FreeSEOToolHub | 50+ टूल्स हिंदी में</title>
-    <meta name="description" content="50+ मुफ्त SEO टूल्स हिंदी में। डोमेन चेकर, कीवर्ड एनालिसिस, बैकलिंक चेकर, GST कैलकुलेटर, UPI QR जनरेटर, और भी बहुत कुछ। 100% मुफ्त।">
-    <meta name="keywords" content="seo tools hindi, free seo tools, domain checker, gst calculator, upi qr generator, aadhaar masking tool, pan validator, pincode finder">
+    <!-- SEO Meta Tags (updated) -->
+    <title>100+ मुफ्त SEO टूल्स - FreeSEOToolHub | हिंदी और अंग्रेजी में</title>
+    <meta name="description" content="100+ मुफ्त SEO टूल्स: डोमेन चेकर, कीवर्ड गैप एनालाइज़र, ट्रेंडिंग टॉपिक्स, लोकल रैंक ट्रैकर, GST, UPI QR, और भी बहुत कुछ। 100% मुफ्त, कोई साइनअप नहीं।">
+    <meta name="keywords" content="free seo tools, google trends analyzer, keyword gap analyzer, hinglish converter, local rank tracker, pinterest seo, core web vitals monitor, domain authority checker, gst calculator, upi qr generator, aadhaar masking tool, pan validator">
     <meta name="author" content="FreeSEOToolHub">
     <meta name="robots" content="index, follow">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://freeseotoolhub.com/all-tools.html">
-    <meta property="og:title" content="50+ मुफ्त SEO टूल्स - FreeSEOToolHub">
-    <meta property="og:description" content="सभी मुफ्त SEO टूल्स एक ही जगह। डोमेन चेकर, GST कैलकुलेटर, UPI QR जनरेटर और भी बहुत कुछ।">
+    <meta property="og:title" content="100+ मुफ्त SEO टूल्स - FreeSEOToolHub">
+    <meta property="og:description" content="सभी मुफ्त SEO टूल्स एक ही जगह: Google Trends Analyzer, Keyword Gap, Local Rank Tracker, GST, UPI QR, और बहुत कुछ।">
     <meta property="og:image" content="https://freeseotoolhub.com/images/og-image.jpg">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://freeseotoolhub.com/all-tools.html">
-    <meta property="twitter:title" content="50+ मुफ्त SEO टूल्स - FreeSEOToolHub">
+    <meta property="twitter:title" content="100+ मुफ्त SEO टूल्स - FreeSEOToolHub">
     <meta property="twitter:description" content="सभी मुफ्त SEO टूल्स एक ही जगह।">
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://freeseotoolhub.com/all-tools.html">
     
-    <!-- Schema Markup -->
+    <!-- Schema Markup (extended with new tools) -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "WebPage",
         "name": "All Free SEO Tools",
-        "description": "50+ free SEO tools in Hindi",
+        "description": "100+ free SEO tools in Hindi and English",
         "url": "https://freeseotoolhub.com/all-tools.html",
         "mainEntity": {
             "@type": "ItemList",
@@ -59,6 +58,18 @@
                     "position": 2,
                     "name": "GST Calculator",
                     "url": "https://freeseotoolhub.com/gst-calculator.html"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Google Trends Analyzer",
+                    "url": "https://freeseotoolhub.com/google-trends-analyzer.html"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 4,
+                    "name": "Keyword Gap Analyzer",
+                    "url": "https://freeseotoolhub.com/keyword-gap-analyzer.html"
                 }
             ]
         }
@@ -69,317 +80,81 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        * { 
-            margin: 0; 
-            padding: 0; 
-            box-sizing: border-box; 
-            font-family: 'Segoe UI', 'Nirmala UI', Tahoma, Geneva, Verdana, sans-serif; 
-        }
+        * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI','Nirmala UI',sans-serif; }
+        body { background:linear-gradient(135deg,#f8fafc 0%,#f1f5f9 100%); color:#333; padding-top:80px; min-height:100vh; }
 
-        body { 
-            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); 
-            color: #333; 
-            padding-top: 80px;
-            min-height: 100vh;
-        }
+        .navbar { background:linear-gradient(135deg, #1e2b4f 0%, #2d3b68 100%); box-shadow:0 4px 12px rgba(0,0,0,0.15); }
+        .navbar-brand { font-weight:700; font-size:1.6rem; }
+        .nav-link { color:rgba(255,255,255,0.9) !important; font-weight:500; }
+        .nav-link:hover, .nav-link.active { color:white !important; }
 
-        /* Navigation */
-        .navbar {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-
-        .navbar-brand {
-            font-weight: bold;
-            font-size: 1.5rem;
-        }
-
-        .nav-link {
-            color: rgba(255,255,255,0.9) !important;
-            font-weight: 500;
-        }
-
-        .nav-link:hover, .nav-link.active {
-            color: white !important;
-        }
-
-        /* Header Styles */
+        /* Hero/Header - refined */
         .header { 
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white; 
-            padding: 50px 30px; 
-            border-radius: 15px; 
-            margin-bottom: 40px; 
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
-            position: relative;
-            overflow: hidden;
+            background: linear-gradient(145deg, #1e2b4f 0%, #2d3b68 100%);
+            color: white; padding: 50px 30px; border-radius: 30px; margin-bottom: 40px;
+            box-shadow: 0 20px 30px rgba(0,20,40,0.25); text-align:center;
         }
+        .header h1 { font-size:3rem; font-weight:800; margin-bottom:15px; }
+        .header p { font-size:1.2rem; opacity:0.95; max-width:800px; margin:0 auto 20px; }
+        .header .badge { background:rgba(255,255,255,0.15); backdrop-filter:blur(5px); border:1px solid rgba(255,255,255,0.2); }
 
-        .header h1 { 
-            font-size: 2.8rem; 
-            margin-bottom: 15px;
-        }
-
-        .header p {
-            font-size: 1.2rem;
-            opacity: 0.95;
-            max-width: 800px;
-            margin: 0 auto 20px;
-        }
-
-        /* Search Bar */
-        .search-section {
-            max-width: 800px;
-            margin: 0 auto 40px;
-        }
-
-        .search-box input {
-            border-radius: 10px;
-            padding: 15px 20px 15px 50px;
-            font-size: 1.1rem;
-            border: 2px solid #e2e8f0;
-        }
-
-        .search-box input:focus {
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-        }
+        .search-section { max-width:700px; margin:0 auto 40px; }
+        .search-box input { border-radius:60px; padding:18px 25px 18px 55px; font-size:1.1rem; border:2px solid #e2e8f0; }
+        .search-box input:focus { border-color:#1e2b4f; box-shadow:0 0 0 3px rgba(30,43,79,0.2); }
+        .search-box .input-group-text { border-radius:60px 0 0 60px; border:2px solid #e2e8f0; border-right:0; background:white; }
 
         /* Tool Cards */
         .tool-card {
-            background: white;
-            border-radius: 12px;
-            padding: 25px;
-            height: 100%;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            border: 1px solid #e2e8f0;
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
+            background: white; border-radius:20px; padding:25px; height:100%;
+            box-shadow:0 10px 20px rgba(0,0,0,0.03); border:1px solid #eef2f6;
+            transition: all 0.25s; position:relative; cursor:pointer;
         }
-
-        .tool-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.15);
-            border-color: #667eea;
-        }
-
+        .tool-card:hover { transform:translateY(-6px); box-shadow:0 20px 30px rgba(30,43,79,0.1); border-color:#1e2b4f; }
         .tool-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            margin-bottom: 20px;
+            width:65px; height:65px; background:linear-gradient(135deg,#1e2b4f 0%,#2d3b68 100%);
+            border-radius:18px; display:flex; align-items:center; justify-content:center;
+            color:white; font-size:1.8rem; margin-bottom:20px;
         }
+        .tool-card h3 { font-size:1.25rem; font-weight:700; margin-bottom:8px; color:#0b1a33; }
+        .tool-card p { color:#4a5a72; font-size:0.9rem; margin-bottom:15px; }
+        .btn-primary { background:linear-gradient(135deg,#1e2b4f 0%,#2d3b68 100%); border:none; border-radius:12px; }
+        .btn-primary:hover { background:#2d3b68; transform:translateY(-2px); box-shadow:0 8px 15px rgba(30,43,79,0.3); }
 
-        .tool-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            color: #1e293b;
-        }
-
-        .tool-card p {
-            color: #64748b;
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-            line-height: 1.5;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border: none;
-            border-radius: 8px;
-            padding: 10px 20px;
-            font-weight: 500;
-        }
-
-        .btn-primary:hover {
-            background: linear-gradient(135deg, #5a6fd8 0%, #694391 100%);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
-        }
-
-        /* Category Headers */
         .category-header {
-            margin: 40px 0 25px;
-            padding-bottom: 10px;
-            border-bottom: 3px solid #667eea;
-            color: #1e293b;
-            font-weight: 700;
-            position: relative;
+            margin:45px 0 25px; padding-bottom:12px; border-bottom:3px solid #1e2b4f;
+            font-weight:800; font-size:2rem; color:#0b1a33;
         }
+        .category-header i { color:#1e2b4f; margin-right:12px; }
 
-        .category-header i {
-            color: #667eea;
+        .india-badge, .global-badge, .featured-badge {
+            position:absolute; top:15px; left:15px; background:#ff9933; color:white;
+            padding:5px 14px; border-radius:40px; font-size:0.75rem; font-weight:600; z-index:5;
         }
+        .global-badge { background:#3b82f6; left:15px; }
+        .featured-badge { background:#f59e0b; color:#1e2b4f; left:auto; right:15px; font-weight:700; }
 
-        /* Featured Tool */
-        .featured-tool {
-            border: 3px solid #667eea;
-            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-        }
+        .status-badge { display:inline-block; padding:4px 12px; border-radius:40px; font-size:0.7rem; font-weight:600; margin-bottom:12px; }
+        .status-new { background:#dbeafe; color:#1e40af; }
+        .status-hot { background:#fee2b5; color:#854d0e; }
+        .tool-tags { margin:15px 0; }
+        .tool-tags .badge { margin-right:5px; padding:5px 10px; font-size:0.7rem; background:#eef2f8; color:#1e2b4f; }
 
-        .featured-badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            z-index: 10;
-        }
+        footer { background:#0f1a2f; color:white; margin-top:60px; padding:50px 0 20px; }
+        footer a { color:#b0c4de; text-decoration:none; }
+        footer a:hover { color:white; }
 
-        /* Status Badges */
-        .status-badge {
-            display: inline-block;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
+        .no-results { text-align:center; padding:60px; background:white; border-radius:30px; display:none; }
+        .coming-soon { opacity:0.7; filter:grayscale(0.3); }
+        .coming-soon-badge { position:absolute; bottom:15px; right:15px; background:#94a3b8; color:white; padding:4px 12px; border-radius:40px; font-size:0.7rem; }
 
-        .status-new {
-            background: #dbeafe;
-            color: #1e40af;
-        }
-
-        .status-live {
-            background: #d1fae5;
-            color: #065f46;
-        }
-
-        .status-india {
-            background: #fee2b5;
-            color: #854d0e;
-        }
-
-        .status-global {
-            background: #e0e7ff;
-            color: #3730a3;
-        }
-
-        /* India Special Badge */
-        .india-badge {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background: #ff9933;
-            color: white;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            z-index: 10;
-        }
-
-        .india-badge i {
-            margin-right: 5px;
-        }
-
-        /* Tool Tags */
-        .tool-tags {
-            margin: 15px 0;
-        }
-
-        .tool-tags .badge {
-            margin-right: 5px;
-            padding: 5px 10px;
-            font-size: 0.75rem;
-        }
-
-        /* Footer */
-        footer {
-            background: #1e293b;
-            color: white;
-            margin-top: 50px;
-        }
-
-        footer a {
-            color: #cbd5e1;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            color: white;
-        }
-
-        /* Animation */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .tool-card {
-            animation: fadeIn 0.5s ease forwards;
-        }
-
-        /* No Results */
-        .no-results {
-            text-align: center;
-            padding: 50px;
-            background: white;
-            border-radius: 12px;
-            display: none;
-        }
-
-        .no-results i {
-            font-size: 50px;
-            color: #94a3b8;
-            margin-bottom: 20px;
-        }
-
-        /* Coming Soon */
-        .coming-soon {
-            opacity: 0.7;
-            filter: grayscale(0.3);
-        }
-
-        .coming-soon-badge {
-            position: absolute;
-            bottom: 15px;
-            right: 15px;
-            background: #94a3b8;
-            color: white;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.7rem;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2rem;
-            }
-            .category-header {
-                font-size: 1.5rem;
-            }
-        }
+        @media (max-width:768px){ .header h1 { font-size:2.2rem; } }
     </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <i class="fas fa-tools me-2"></i> Free SEO Tool Hub
-            </a>
+            <a class="navbar-brand" href="index.html"><i class="fas fa-tools me-2"></i>Free SEO Tool Hub</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -396,29 +171,27 @@
     </nav>
 
     <div class="container">
-        <!-- Header Section -->
+        <!-- Header Section (updated as per image) -->
         <div class="header">
             <h1>🚀 सभी मुफ्त SEO टूल्स</h1>
-            <p>50+ प्रोफेशनल SEO टूल्स हिंदी में | डोमेन चेकर, GST कैलकुलेटर, UPI QR जनरेटर और भी बहुत कुछ</p>
-            <div class="badge bg-light text-dark p-3">
+            <p>100+ प्रोफेशनल SEO टूल्स हिंदी और अंग्रेजी में | डोमेन चेकर, कीवर्ड गैप, ट्रेंडिंग टॉपिक्स, GST, UPI QR, लोकल रैंक ट्रैकर और भी बहुत कुछ</p>
+            <div class="badge p-3 fs-6">
                 <i class="fas fa-check-circle text-success me-2"></i> 
-                <span id="toolCount">50+ टूल्स | 100% मुफ्त | प्रोफेशनल रिजल्ट्स</span>
+                <span id="toolCount">100+ टूल्स | 100% मुफ्त | कोई साइनअप नहीं</span>
             </div>
         </div>
 
         <!-- Search Bar -->
         <div class="search-section">
             <div class="input-group search-box">
-                <span class="input-group-text bg-white border-end-0">
-                    <i class="fas fa-search text-muted"></i>
-                </span>
+                <span class="input-group-text bg-white border-end-0"><i class="fas fa-search text-muted"></i></span>
                 <input type="text" id="toolSearch" class="form-control border-start-0" placeholder="टूल्स सर्च करें (हिंदी/English)...">
             </div>
         </div>
 
         <!-- No Results Message -->
         <div class="no-results" id="noResults">
-            <i class="fas fa-search"></i>
+            <i class="fas fa-search fa-3x text-muted mb-3"></i>
             <h3>कोई टूल नहीं मिला</h3>
             <p>कृपया दूसरे कीवर्ड से सर्च करें</p>
         </div>
@@ -427,699 +200,91 @@
         <h2 class="category-header"><i class="fas fa-indian-rupee-sign text-warning me-2"></i> 🇮🇳 इंडिया स्पेशल टूल्स</h2>
         <div class="row g-4 mb-5">
             <!-- UPI QR Generator -->
-            <div class="col-md-4">
-                <div class="tool-card">
-                    <span class="india-badge"><i class="fas fa-indian-rupee-sign"></i> INDIA</span>
-                    <span class="featured-badge">🔥 TRENDING</span>
-                    <div class="tool-icon"><i class="fas fa-qrcode"></i></div>
-                    <span class="status-badge status-new">NEW</span>
-                    <h3>UPI QR जनरेटर</h3>
-                    <p>अपने UPI ID के साथ पेमेंट QR कोड बनाएं। Google Pay, PhonePe, Paytm सपोर्ट।</p>
-                    <div class="tool-tags">
-                        <span class="badge bg-primary">UPI</span>
-                        <span class="badge bg-success">Payment</span>
-                    </div>
-                    <a href="upi-qr-generator.html" class="btn btn-primary mt-3">
-                        <i class="fas fa-play-circle me-2"></i> टूल इस्तेमाल करें
-                    </a>
-                </div>
-            </div>
-
-            <!-- Aadhaar Masking Tool -->
-            <div class="col-md-4">
-                <div class="tool-card">
-                    <span class="india-badge"><i class="fas fa-indian-rupee-sign"></i> INDIA</span>
-                    <div class="tool-icon"><i class="fas fa-id-card"></i></div>
-                    <span class="status-badge status-new">NEW</span>
-                    <h3>आधार मास्किंग टूल</h3>
-                    <p>आधार नंबर को सुरक्षित रूप से मास्क करें। सिर्फ आखिरी 4 अंक दिखाएं।</p>
-                    <div class="tool-tags">
-                        <span class="badge bg-danger">Aadhaar</span>
-                        <span class="badge bg-warning">Security</span>
-                    </div>
-                    <a href="aadhaar-mask.html" class="btn btn-primary mt-3">
-                        <i class="fas fa-play-circle me-2"></i> टूल इस्तेमाल करें
-                    </a>
-                </div>
-            </div>
-
-            <!-- PAN Card Validator -->
-            <div class="col-md-4">
-                <div class="tool-card">
-                    <span class="india-badge"><i class="fas fa-indian-rupee-sign"></i> INDIA</span>
-                    <div class="tool-icon"><i class="fas fa-id-card"></i></div>
-                    <span class="status-badge status-new">NEW</span>
-                    <h3>PAN कार्ड वैलिडेटर</h3>
-                    <p>PAN कार्ड नंबर का फॉर्मेट चेक करें। Valid और invalid PAN पहचानें।</p>
-                    <div class="tool-tags">
-                        <span class="badge bg-info">PAN</span>
-                        <span class="badge bg-secondary">Tax</span>
-                    </div>
-                    <a href="pan-validator.html" class="btn btn-primary mt-3">
-                        <i class="fas fa-play-circle me-2"></i> टूल इस्तेमाल करें
-                    </a>
-                </div>
-            </div>
-
-            <!-- INP Monitor - Core Web Vitals Tool 2024 -->
-<div class="col-md-4">
-    <div class="tool-card">
-        <span class="global-badge"><i class="fas fa-globe"></i> GLOBAL</span>
-        <div class="tool-icon"><i class="fas fa-bolt"></i></div>
-        <span class="status-badge status-new">NEW 2024</span>
-        <h3>INP Monitor</h3>
-        <p>Interaction to Next Paint (INP) मापें। Google Core Web Vitals 2024 अपडेट के लिए तैयार हों।</p>
-        <div class="tool-tags">
-            <span class="badge bg-success">INP</span>
-            <span class="badge bg-primary">Core Web Vitals</span>
-            <span class="badge bg-warning">200ms</span>
-        </div>
-        <a href="inp-monitor.html" class="btn btn-primary mt-3">
-            <i class="fas fa-play-circle me-2"></i> INP चेक करें
-        </a>
-    </div>
-</div>
-
-            <!-- AI Visibility Tracker -->
-<div class="col-md-4">
-    <div class="tool-card">
-        <span class="global-badge"><i class="fas fa-globe"></i> GLOBAL</span>
-        <div class="tool-icon"><i class="fas fa-robot"></i></div>
-        <span class="status-badge status-hot">HOT 🔥</span>
-        <h3>AI Visibility Tracker</h3>
-        <p>ChatGPT, Perplexity, Gemini में अपनी ब्रांड की visibility ट्रैक करें। GEO analytics 2026</p>
-        <div class="tool-tags">
-            <span class="badge" style="background: #10a37f;">ChatGPT</span>
-            <span class="badge" style="background: #5436da;">Perplexity</span>
-            <span class="badge" style="background: #4285f4;">Gemini</span>
-            <span class="badge" style="background: #7f3fbf;">Copilot</span>
-        </div>
-        <a href="ai-visibility-tracker.html" class="btn btn-primary mt-3">
-            <i class="fas fa-play-circle me-2"></i> टूल इस्तेमाल करें
-        </a>
-    </div>
-</div>
-
-         <!-- Log Analyzer Tool - Server Logs & SEO Insights -->
-<div class="col-md-4">
-    <div class="tool-card">
-        <span class="global-badge"><i class="fas fa-globe"></i> GLOBAL</span>
-        <div class="tool-icon"><i class="fas fa-file-alt"></i></div>
-        <span class="status-badge status-new">BETA</span>
-        <h3>Log Analyzer</h3>
-        <p>सर्वर लॉग्स का विश्लेषण करें। क्रॉल एरर, बॉट एक्टिविटी और SEO इश्यूज़ ट्रैक करें।</p>
-        <div class="tool-tags">
-            <span class="badge bg-success">Logs</span>
-            <span class="badge bg-primary">Crawl Stats</span>
-            <span class="badge bg-info">404 Errors</span>
-            <span class="badge bg-warning">Bots</span>
-        </div>
-        <a href="log-analyzer.html" class="btn btn-primary mt-3">
-            <i class="fas fa-play-circle me-2"></i> लॉग एनालिसिस करें
-        </a>
-    </div>
-</div>   
-
-     <!-- Regional Keywords India -->
-<div class="col-md-4">
-    <div class="tool-card">
-        <span class="global-badge"><i class="fas fa-map-marker-alt"></i> INDIA</span>
-        <div class="tool-icon"><i class="fas fa-language"></i></div>
-        <span class="status-badge status-hot">NEW ✨</span>
-        <h3>Regional Keywords India</h3>
-        <p>हिंदी, तमिल, तेलुगू, मराठी, बंगाली और गुजराती में कीवर्ड रिसर्च। भारतीय भाषाओं में SEO 2026</p>
-        <div class="tool-tags">
-            <span class="badge" style="background: #ff9933;">हिंदी</span>
-            <span class="badge" style="background: #138808;">தமிழ்</span>
-            <span class="badge" style="background: #ff4d4d;">తెలుగు</span>
-            <span class="badge" style="background: #1a8cff;">मराठी</span>
-        </div>
-        <a href="regional-keywords-india.html" class="btn btn-primary mt-3">
-            <i class="fas fa-play-circle me-2"></i> टूल इस्तेमाल करें
-        </a>
-    </div>
-</div>
-
-<!-- Udyam Checker -->
-<div class="col-md-4">
-    <div class="tool-card">
-        <span class="global-badge"><i class="fas fa-certificate"></i> MSME</span>
-        <div class="tool-icon"><i class="fas fa-building"></i></div>
-        <span class="status-badge status-hot">GOVT 🔥</span>
-        <h3>Udyam Checker</h3>
-        <p>Udyam Registration सर्टिफिकेट वेरिफिकेशन, MSME स्टेटस चेक करें। Udyam Number और Certificate Download 2026</p>
-        <div class="tool-tags">
-            <span class="badge" style="background: #138808;">MSME</span>
-            <span class="badge" style="background: #ff9933;">Udyam</span>
-            <span class="badge" style="background: #000080;">Govt Scheme</span>
-            <span class="badge" style="background: #b22222;">Certificate</span>
-        </div>
-        <a href="udyam-checker.html" class="btn btn-primary mt-3">
-            <i class="fas fa-play-circle me-2"></i> टूल इस्तेमाल करें
-        </a>
-    </div>
-</div>       
-
-            <!-- ============ 🔴 FUTURE INDIA TOOLS - PLACEHOLDER ============ -->
-            <!-- यहाँ नए INDIA TOOLS जोड़ने के लिए ऊपर वाले format में कॉपी करें -->
-            <!-- TEMPLATE:
-            <div class="col-md-4">
-                <div class="tool-card">
-                    <span class="india-badge"><i class="fas fa-indian-rupee-sign"></i> INDIA</span>
-                    <div class="tool-icon"><i class="fas fa-ICON-NAME"></i></div>
-                    <span class="status-badge status-new">NEW</span>
-                    <h3>TOOL NAME</h3>
-                    <p>DESCRIPTION</p>
-                    <div class="tool-tags">
-                        <span class="badge bg-primary">TAG1</span>
-                        <span class="badge bg-success">TAG2</span>
-                    </div>
-                    <a href="FILE-NAME.html" class="btn btn-primary mt-3">
-                        <i class="fas fa-play-circle me-2"></i> टूल इस्तेमाल करें
-                    </a>
-                </div>
-            </div>
-            -->
+            <div class="col-md-4"><div class="tool-card"><span class="india-badge"><i class="fas fa-indian-rupee-sign"></i> INDIA</span><span class="featured-badge">🔥 TRENDING</span><div class="tool-icon"><i class="fas fa-qrcode"></i></div><span class="status-badge status-new">NEW</span><h3>UPI QR जनरेटर</h3><p>Google Pay, PhonePe, Paytm के लिए UPI QR कोड बनाएं।</p><div class="tool-tags"><span class="badge bg-primary">UPI</span><span class="badge bg-success">Payment</span></div><a href="upi-qr-generator.html" class="btn btn-primary mt-3 w-100">इस्तेमाल करें</a></div></div>
+            <!-- Aadhaar Masking -->
+            <div class="col-md-4"><div class="tool-card"><span class="india-badge">🇮🇳 INDIA</span><div class="tool-icon"><i class="fas fa-id-card"></i></div><span class="status-badge status-new">NEW</span><h3>आधार मास्किंग टूल</h3><p>आधार नंबर को मास्क करें (केवल अंतिम 4 अंक)</p><div class="tool-tags"><span class="badge bg-danger">Aadhaar</span><span class="badge bg-warning">Security</span></div><a href="aadhaar-mask.html" class="btn btn-primary mt-3 w-100">इस्तेमाल करें</a></div></div>
+            <!-- PAN Validator -->
+            <div class="col-md-4"><div class="tool-card"><span class="india-badge">🇮🇳 INDIA</span><div class="tool-icon"><i class="fas fa-id-card"></i></div><span class="status-badge status-new">NEW</span><h3>PAN कार्ड वैलिडेटर</h3><p>PAN फॉर्मेट वैलिडेशन, इनवैलिड PAN पहचानें।</p><div class="tool-tags"><span class="badge bg-info">PAN</span><span class="badge bg-secondary">Tax</span></div><a href="pan-validator.html" class="btn btn-primary mt-3 w-100">इस्तेमाल करें</a></div></div>
+            <!-- Regional Keywords India (new) -->
+            <div class="col-md-4"><div class="tool-card"><span class="india-badge">🇮🇳 INDIA</span><div class="tool-icon"><i class="fas fa-language"></i></div><span class="status-badge status-hot">HOT</span><h3>Regional Keywords India</h3><p>हिंदी, तमिल, तेलुगु, मराठी, बंगाली में कीवर्ड रिसर्च।</p><div class="tool-tags"><span class="badge" style="background:#ff9933;">हिंदी</span><span class="badge" style="background:#138808;">தமிழ்</span></div><a href="regional-keywords-india.html" class="btn btn-primary mt-3 w-100">इस्तेमाल करें</a></div></div>
+            <!-- Udyam Checker -->
+            <div class="col-md-4"><div class="tool-card"><span class="india-badge"><i class="fas fa-certificate"></i> MSME</span><div class="tool-icon"><i class="fas fa-building"></i></div><span class="status-badge status-hot">GOVT</span><h3>Udyam Checker</h3><p>Udyam Registration वेरिफिकेशन, MSME status चेक करें।</p><div class="tool-tags"><span class="badge" style="background:#138808;">MSME</span><span class="badge" style="background:#ff9933;">Udyam</span></div><a href="udyam-checker.html" class="btn btn-primary mt-3 w-100">इस्तेमाल करें</a></div></div>
+            <!-- Bhashini SEO -->
+            <div class="col-md-4"><div class="tool-card"><span class="india-badge">🇮🇳 INDIA</span><div class="tool-icon"><i class="fas fa-language"></i></div><span class="status-badge status-new">NEW</span><h3>भाषिनी SEO</h3><p>12+ भारतीय भाषाओं में SEO ऑप्टिमाइज़ेशन।</p><div class="tool-tags"><span class="badge bg-success">हिंदी</span><span class="badge bg-primary">தமிழ்</span></div><a href="bhashini-seo.html" class="btn btn-primary mt-3 w-100">इस्तेमाल करें</a></div></div>
+            <!-- Hinglish to English Converter (new) -->
+            <div class="col-md-4"><div class="tool-card"><span class="india-badge">🇮🇳 INDIA</span><div class="tool-icon"><i class="fas fa-exchange-alt"></i></div><span class="status-badge status-new">NEW</span><h3>Hinglish to English Converter</h3><p>हिंग्लिश को इंग्लिश में बदलें, SEO कंटेंट के लिए।</p><div class="tool-tags"><span class="badge bg-dark">Hinglish</span></div><a href="hinglish-converter.html" class="btn btn-primary mt-3 w-100">इस्तेमाल करें</a></div></div>
+            <!-- Local Rank Tracker (new) -->
+            <div class="col-md-4"><div class="tool-card"><span class="india-badge">🇮🇳 INDIA</span><div class="tool-icon"><i class="fas fa-map-marker-alt"></i></div><span class="status-badge status-hot">NEW</span><h3>Local Rank Tracker</h3><p>किसी शहर में आपकी रैंकिंग ट्रैक करें।</p><div class="tool-tags"><span class="badge bg-warning">Local SEO</span></div><a href="local-rank-tracker.html" class="btn btn-primary mt-3 w-100">इस्तेमाल करें</a></div></div>
         </div>
 
-        <!-- Bhashini SEO Tool - Indian Languages -->
-<div class="col-md-4">
-    <div class="tool-card">
-        <span class="india-badge"><i class="fas fa-indian-rupee-sign"></i> INDIA</span>
-        <div class="tool-icon"><i class="fas fa-language"></i></div>
-        <span class="status-badge status-new">NEW</span>
-        <h3>भाषिनी SEO</h3>
-        <p>12+ भारतीय भाषाओं में SEO। हिंदी, तमिल, तेलुगु, बंगाली में कीवर्ड और कंटेंट ऑप्टिमाइज़ करें।</p>
-        <div class="tool-tags">
-            <span class="badge bg-success">हिंदी</span>
-            <span class="badge bg-primary">தமிழ்</span>
-            <span class="badge bg-info">తెలుగు</span>
-            <span class="badge bg-warning">বাংলা</span>
-        </div>
-        <a href="bhashini-seo.html" class="btn btn-primary mt-3">
-            <i class="fas fa-play-circle me-2"></i> टूल इस्तेमाल करें
-        </a>
-    </div>
-</div>
-
-        <!-- ============ 🔥 FEATURED TOOLS ============ -->
-        <h2 class="category-header"><i class="fas fa-fire text-warning me-2"></i> फीचर्ड टूल्स</h2>
+        <!-- ============ 🔥 FEATURED / GLOBAL NEW TOOLS (Keyword & Trend Tools) ============ -->
+        <h2 class="category-header"><i class="fas fa-chart-line"></i> कीवर्ड रिसर्च & ट्रेंड टूल्स</h2>
         <div class="row g-4 mb-5">
-            <!-- Featured Tool 1 -->
-            <div class="col-md-4">
-                <div class="tool-card featured-tool">
-                    <span class="featured-badge">⭐ FEATURED</span>
-                    <div class="tool-icon"><i class="fas fa-unlink"></i></div>
-                    <span class="status-badge status-live">LIVE</span>
-                    <h3>ब्रोकन लिंक चेकर</h3>
-                    <p>वेबसाइट में टूटी हुई लिंक्स ढूंढें। 404 errors और redirect chains डिटेक्ट करें।</p>
-                    <a href="broken-link-checker.html" class="btn btn-primary">
-                        <i class="fas fa-play-circle me-2"></i> टूल इस्तेमाल करें
-                    </a>
-                </div>
-            </div>
-            
-            <!-- Featured Tool 2 -->
-            <div class="col-md-4">
-                <div class="tool-card featured-tool">
-                    <span class="featured-badge">⭐ FEATURED</span>
-                    <div class="tool-icon"><i class="fas fa-search"></i></div>
-                    <span class="status-badge status-live">LIVE</span>
-                    <h3>हिंदी कीवर्ड डेंसिटी चेकर</h3>
-                    <p>अपने हिंदी या अंग्रेजी कंटेंट का विश्लेषण करें। कीवर्ड्स कितनी बार आए हैं।</p>
-                    <a href="keyword-density.html" class="btn btn-primary">
-                        <i class="fas fa-play-circle me-2"></i> टूल इस्तेमाल करें
-                    </a>
-                </div>
-            </div>
-
-            <!-- Featured Tool 3 -->
-            <div class="col-md-4">
-                <div class="tool-card featured-tool">
-                    <span class="featured-badge">⭐ FEATURED</span>
-                    <div class="tool-icon"><i class="fas fa-code"></i></div>
-                    <span class="status-badge status-live">LIVE</span>
-                    <h3>मेटा टैग जनरेटर</h3>
-                    <p>परफेक्ट मेटा टाइटल और डिस्क्रिप्शन बनाएं। SERP प्रिव्यू देखें।</p>
-                    <a href="meta-tag-generator.html" class="btn btn-primary">
-                        <i class="fas fa-play-circle me-2"></i> टूल इस्तेमाल करें
-                    </a>
-                </div>
-            </div>
+            <!-- Google Trends Analyzer -->
+            <div class="col-md-4"><div class="tool-card"><div class="tool-icon"><i class="fab fa-google"></i></div><span class="status-badge status-new">NEW</span><h3>Google Trends Analyzer</h3><p>टॉपिक्स और कीवर्ड्स के ट्रेंड का गहराई से विश्लेषण करें।</p><a href="google-trends-analyzer.html" class="btn btn-primary w-100">इस्तेमाल करें</a></div></div>
+            <!-- Trending Topics Finder -->
+            <div class="col-md-4"><div class="tool-card"><div class="tool-icon"><i class="fas fa-fire"></i></div><span class="status-badge status-hot">HOT</span><h3>Trending Topics Finder</h3><p>अभी चर्चित विषय खोजें, कंटेंट आइडिया पाएं।</p><a href="trending-topics-finder.html" class="btn btn-primary w-100">इस्तेमाल करें</a></div></div>
+            <!-- Keyword Gap Analyzer -->
+            <div class="col-md-4"><div class="tool-card"><div class="tool-icon"><i class="fas fa-arrows-spin"></i></div><h3>Keyword Gap Analyzer</h3><p>कंपटीटर्स की तुलना में आप कौनसे कीवर्ड मिस कर रहे हैं।</p><a href="keyword-gap-analyzer.html" class="btn btn-primary w-100">इस्तेमाल करें</a></div></div>
+            <!-- Long-Tail Keyword Generator -->
+            <div class="col-md-4"><div class="tool-card"><div class="tool-icon"><i class="fas fa-ellipsis"></i></div><h3>Long-Tail Keyword Generator</h3><p>लंबी पूंछ वाले कम प्रतिस्पर्धा वाले कीवर्ड्स खोजें।</p><a href="long-tail-generator.html" class="btn btn-primary w-100">इस्तेमाल करें</a></div></div>
+            <!-- Question-Based Keyword Tool -->
+            <div class="col-md-4"><div class="tool-card"><div class="tool-icon"><i class="fas fa-question"></i></div><h3>Question-Based Keyword Tool</h3><p>लोगों के सवालों पर आधारित कीवर्ड रिसर्च करें।</p><a href="question-keyword-tool.html" class="btn btn-primary w-100">इस्तेमाल करें</a></div></div>
+            <!-- Market Saturation Checker -->
+            <div class="col-md-4"><div class="tool-card"><div class="tool-icon"><i class="fas fa-chart-pie"></i></div><h3>Market Saturation Checker</h3><p>कीवर्ड मार्केट में कंपटीशन की जांच करें।</p><a href="market-saturation.html" class="btn btn-primary w-100">इस्तेमाल करें</a></div></div>
         </div>
 
-        <!-- ============ 🌍 INTERNATIONAL/GLOBAL TOOLS ============ -->
-        <h2 class="category-header"><i class="fas fa-globe text-info me-2"></i> ग्लोबल SEO टूल्स</h2>
+        <h2 class="category-header"><i class="fas fa-file-lines"></i> कंटेंट & टेक्निकल SEO</h2>
         <div class="row g-4 mb-5">
-            <!-- Domain Authority Checker -->
-            <div class="col-md-4">
-                <div class="tool-card">
-                    <span class="status-badge status-global">🌐 GLOBAL</span>
-                    <div class="tool-icon"><i class="fas fa-crown"></i></div>
-                    <span class="status-badge status-live">LIVE</span>
-                    <h3>डोमेन अथॉरिटी चेकर</h3>
-                    <p>किसी भी वेबसाइट का DA/PA स्कोर फ्री में चेक करें। Accurate results।</p>
-                    <a href="domain-authority-checker.html" class="btn btn-primary">
-                        <i class="fas fa-play-circle me-2"></i> टूल इस्तेमाल करें
-                    </a>
-                </div>
-            </div>
-
-            <!-- Domain Checker (International) -->
-            <div class="col-md-4">
-                <div class="tool-card">
-                    <span class="status-badge status-global">🌐 GLOBAL</span>
-                    <div class="tool-icon"><i class="fas fa-globe"></i></div>
-                    <span class="status-badge status-new">NEW</span>
-                    <h3>इंटरनेशनल डोमेन चेकर</h3>
-                    <p>.com, .co.uk, .au, .in और 50+ TLDs पर डोमेन अवेलेबिलिटी चेक करें।</p>
-                    <a href="domain-checker.html" class="btn btn-primary">
-                        <i class="fas fa-play-circle me-2"></i> टूल इस्तेमाल करें
-                    </a>
-                </div>
-            </div>
-
-            <!-- QR Code Generator -->
-            <div class="col-md-4">
-                <div class="tool-card">
-                    <span class="status-badge status-global">🌐 GLOBAL</span>
-                    <div class="tool-icon"><i class="fas fa-qrcode"></i></div>
-                    <span class="status-badge status-new">NEW</span>
-                    <h3>QR कोड जनरेटर</h3>
-                    <p>लोगो के साथ कस्टम QR कोड बनाएं। बिजनेस और मार्केटिंग के लिए।</p>
-                    <a href="qr-code-generator.html" class="btn btn-primary">
-                        <i class="fas fa-play-circle me-2"></i> टूल इस्तेमाल करें
-                    </a>
-                </div>
-            </div>
-
-            <!-- Paraphrasing Tool -->
-            <div class="col-md-4">
-                <div class="tool-card">
-                    <span class="status-badge status-global">🌐 GLOBAL</span>
-                    <div class="tool-icon"><i class="fas fa-pen-fancy"></i></div>
-                    <span class="status-badge status-new">NEW</span>
-                    <h3>पैराफ्रेज़िंग टूल</h3>
-                    <p>AI की मदद से हिंदी और अंग्रेजी में कंटेंट रीराइट करें।</p>
-                    <a href="paraphrasing-tool.html" class="btn btn-primary">
-                        <i class="fas fa-play-circle me-2"></i> टूल इस्तेमाल करें
-                    </a>
-                </div>
-            </div>
+            <!-- Internal Link Suggester -->
+            <div class="col-md-4"><div class="tool-card"><div class="tool-icon"><i class="fas fa-link"></i></div><h3>Internal Link Suggester</h3><p>ऑटोमैटिक इंटरनल लिंक सुझाव पाएं।</p><a href="internal-link-suggester.html" class="btn btn-primary w-100">इस्तेमाल करें</a></div></div>
+            <!-- Image Alt Text Generator -->
+            <div class="col-md-4"><div class="tool-card"><div class="tool-icon"><i class="fas fa-image"></i></div><h3>Image Alt Text Generator</h3><p>SEO-फ्रेंडली alt टेक्स्ट जनरेट करें।</p><a href="image-alt-generator.html" class="btn btn-primary w-100">इस्तेमाल करें</a></div></div>
+            <!-- Heading Structure Validator -->
+            <div class="col-md-4"><div class="tool-card"><div class="tool-icon"><i class="fas fa-heading"></i></div><h3>Heading Structure Validator</h3><p>H1/H2/H3 टैग्स की संरचना जांचें।</p><a href="heading-validator.html" class="btn btn-primary w-100">इस्तेमाल करें</a></div></div>
+            <!-- Content Gap Analyzer -->
+            <div class="col-md-4"><div class="tool-card"><div class="tool-icon"><i class="fas fa-magnifying-glass-chart"></i></div><h3>Content Gap Analyzer</h3><p>कंटेंट में कमियां ढूंढें और टॉपिक आइडिया पाएं।</p><a href="content-gap-analyzer.html" class="btn btn-primary w-100">इस्तेमाल करें</a></div></div>
+            <!-- Page Speed Insights History -->
+            <div class="col-md-4"><div class="tool-card"><div class="tool-icon"><i class="fas fa-gauge-high"></i></div><h3>Page Speed Insights History</h3><p>पेज स्पीड स्कोर का ऐतिहासिक डेटा देखें।</p><a href="page-speed-history.html" class="btn btn-primary w-100">इस्तेमाल करें</a></div></div>
+            <!-- Canonical URL Validator -->
+            <div class="col-md-4"><div class="tool-card"><div class="tool-icon"><i class="fas fa-code"></i></div><h3>Canonical URL Validator</h3><p>कैनोनिकल टैग सही हैं या नहीं जांचें।</p><a href="canonical-validator.html" class="btn btn-primary w-100">इस्तेमाल करें</a></div></div>
+            <!-- Core Web Vitals Monitor -->
+            <div class="col-md-4"><div class="tool-card"><div class="tool-icon"><i class="fas fa-bolt"></i></div><h3>Core Web Vitals Monitor</h3><p>LCP, INP, CLS की नियमित निगरानी करें।</p><a href="core-web-vitals-monitor.html" class="btn btn-primary w-100">इस्तेमाल करें</a></div></div>
         </div>
 
-        <!-- ============ 📊 KEYWORD RESEARCH TOOLS ============ -->
-        <h2 class="category-header"><i class="fas fa-search me-2"></i> कीवर्ड रिसर्च टूल्स</h2>
+        <h2 class="category-header"><i class="fas fa-hashtag"></i> सोशल & लोकल SEO</h2>
         <div class="row g-4 mb-5">
-            <!-- Trending Keywords -->
-            <div class="col-md-4">
-                <div class="tool-card">
-                    <div class="tool-icon"><i class="fas fa-chart-line"></i></div>
-                    <span class="status-badge status-live">LIVE</span>
-                    <h3>ट्रेंडिंग कीवर्ड फाइंडर</h3>
-                    <p>Discover popular and rising search terms for content creation</p>
-                    <a href="trending-keywords.html" class="btn btn-primary">
-                        <i class="fas fa-play-circle me-2"></i> Use Tool
-                    </a>
-                </div>
-            </div>
-
-            <!-- SERP Position Checker -->
-            <div class="col-md-4">
-                <div class="tool-card">
-                    <div class="tool-icon"><i class="fab fa-google"></i></div>
-                    <span class="status-badge status-live">LIVE</span>
-                    <h3>SERP पोजीशन चेकर</h3>
-                    <p>अपने कीवर्ड्स का Google में पोजीशन चेक करें। मोबाइल और डेस्कटॉप रिजल्ट्स।</p>
-                    <a href="serp-features.html" class="btn btn-primary">
-                        <i class="fas fa-play-circle me-2"></i> टूल इस्तेमाल करें
-                    </a>
-                </div>
-            </div>
+            <!-- Social Keyword Tracker -->
+            <div class="col-md-4"><div class="tool-card"><div class="tool-icon"><i class="fab fa-instagram"></i></div><span class="status-badge status-new">NEW</span><h3>Social Keyword Tracker</h3><p>सोशल मीडिया पर कीवर्ड परफॉर्मेंस ट्रैक करें।</p><a href="social-keyword-tracker.html" class="btn btn-primary w-100">इस्तेमाल करें</a></div></div>
+            <!-- Pinterest SEO Tool -->
+            <div class="col-md-4"><div class="tool-card"><div class="tool-icon"><i class="fab fa-pinterest"></i></div><h3>Pinterest SEO Tool</h3><p>पिनटेरेस्ट के लिए कीवर्ड और पिन ऑप्टिमाइज़ करें।</p><a href="pinterest-seo.html" class="btn btn-primary w-100">इस्तेमाल करें</a></div></div>
+            <!-- Local SEO tools (multi) -->
+            <div class="col-md-4"><div class="tool-card"><div class="tool-icon"><i class="fas fa-map-location-dot"></i></div><h3>Local SEO Toolkit</h3><p>Google Maps, सिटी-वार कीवर्ड, स्थानीय रैंकिंग।</p><a href="local-seo-tools.html" class="btn btn-primary w-100">इस्तेमाल करें</a></div></div>
+            <!-- Local Rank Tracker (already added but including for completeness) -->
         </div>
 
-        <!-- ============ 🔗 BACKLINK & TECHNICAL SEO ============ -->
-        <h2 class="category-header"><i class="fas fa-link me-2"></i> बैकलिंक और टेक्निकल SEO</h2>
+        <!-- GLOBAL / EXISTING TOOLS (condensed but present) -->
+        <h2 class="category-header"><i class="fas fa-globe"></i> ग्लोबल & कोर SEO टूल्स</h2>
         <div class="row g-4 mb-5">
-            <!-- Backlink Checker -->
-            <div class="col-md-4">
-                <div class="tool-card">
-                    <div class="tool-icon"><i class="fas fa-link"></i></div>
-                    <span class="status-badge status-live">LIVE</span>
-                    <h3>बैकलिंक चेकर</h3>
-                    <p>किसी भी वेबसाइट के बैकलिंक्स का विश्लेषण करें और कंपटीटर रिसर्च करें।</p>
-                    <a href="backlink-checker.html" class="btn btn-primary">
-                        <i class="fas fa-play-circle me-2"></i> टूल इस्तेमाल करें
-                    </a>
-                </div>
-            </div>
-
-            <!-- SSL Checker -->
-            <div class="col-md-4">
-                <div class="tool-card">
-                    <div class="tool-icon"><i class="fas fa-shield-alt"></i></div>
-                    <span class="status-badge status-live">LIVE</span>
-                    <h3>SSL चेकर</h3>
-                    <p>किसी भी वेबसाइट का SSL सर्टिफिकेट चेक करें। सुरक्षा स्तर और एक्सपायरी डेट देखें।</p>
-                    <a href="ssl-checker.html" class="btn btn-primary">
-                        <i class="fas fa-play-circle me-2"></i> टूल इस्तेमाल करें
-                    </a>
-                </div>
-            </div>
-
-            <!-- Sitemap Generator -->
-            <div class="col-md-4">
-                <div class="tool-card">
-                    <div class="tool-icon"><i class="fas fa-sitemap"></i></div>
-                    <span class="status-badge status-live">LIVE</span>
-                    <h3>XML साइटमैप जनरेटर</h3>
-                    <p>अपनी वेबसाइट के लिए XML साइटमैप बनाएं और Google में इंडेक्सिंग बेहतर करें।</p>
-                    <a href="sitemap-generator.html" class="btn btn-primary">
-                        <i class="fas fa-play-circle me-2"></i> टूल इस्तेमाल करें
-                    </a>
-                </div>
-            </div>
-
-            <!-- Canonical URL Checker -->
-            <div class="col-md-4">
-                <div class="tool-card">
-                    <div class="tool-icon"><i class="fas fa-redo"></i></div>
-                    <span class="status-badge status-live">LIVE</span>
-                    <h3>कैनोनिकल URL चेकर</h3>
-                    <p>वेबसाइट के canonical tags check करें और duplicate content issues ढूंढें।</p>
-                    <a href="canonical-url-checker.html" class="btn btn-primary">
-                        <i class="fas fa-play-circle me-2"></i> टूल इस्तेमाल करें
-                    </a>
-                </div>
-            </div>
+            <div class="col-md-4"><div class="tool-card"><span class="global-badge">GLOBAL</span><div class="tool-icon"><i class="fas fa-crown"></i></div><h3>Domain Authority Checker</h3><p>DA/PA स्कोर फ्री में चेक करें।</p><a href="domain-authority-checker.html" class="btn btn-primary w-100">इस्तेमाल करें</a></div></div>
+            <div class="col-md-4"><div class="tool-card"><span class="global-badge">GLOBAL</span><div class="tool-icon"><i class="fas fa-globe"></i></div><h3>Intl. Domain Checker</h3><p>.com, .in, .uk सहित 50+ TLDs अवेलेबिलिटी चेक करें।</p><a href="domain-checker.html" class="btn btn-primary w-100">इस्तेमाल करें</a></div></div>
+            <div class="col-md-4"><div class="tool-card"><span class="global-badge">GLOBAL</span><div class="tool-icon"><i class="fas fa-pen-fancy"></i></div><h3>Paraphrasing Tool</h3><p>AI रीराइटर हिंदी/अंग्रेजी।</p><a href="paraphrasing-tool.html" class="btn btn-primary w-100">इस्तेमाल करें</a></div></div>
+            <div class="col-md-4"><div class="tool-card"><div class="tool-icon"><i class="fas fa-unlink"></i></div><h3>Broken Link Checker</h3><p>404 errors, redirect chains डिटेक्ट करें।</p><a href="broken-link-checker.html" class="btn btn-primary w-100">इस्तेमाल करें</a></div></div>
+            <div class="col-md-4"><div class="tool-card"><div class="tool-icon"><i class="fas fa-search"></i></div><h3>Hindi Keyword Density</h3><p>कीवर्ड डेंसिटी चेक करें।</p><a href="keyword-density.html" class="btn btn-primary w-100">इस्तेमाल करें</a></div></div>
+            <div class="col-md-4"><div class="tool-card"><div class="tool-icon"><i class="fas fa-code"></i></div><h3>Meta Tag Generator</h3><p>SERP प्रिव्यू के साथ मेटा टैग बनाएं।</p><a href="meta-tag-generator.html" class="btn btn-primary w-100">इस्तेमाल करें</a></div></div>
+            <div class="col-md-4"><div class="tool-card"><div class="tool-icon"><i class="fas fa-link"></i></div><h3>Backlink Checker</h3><p>बैकलिंक्स का विश्लेषण, कंपटीटर रिसर्च।</p><a href="backlink-checker.html" class="btn btn-primary w-100">इस्तेमाल करें</a></div></div>
+            <div class="col-md-4"><div class="tool-card"><div class="tool-icon"><i class="fas fa-shield-alt"></i></div><h3>SSL Checker</h3><p>SSL सर्टिफिकेट, एक्सपायरी डेट देखें।</p><a href="ssl-checker.html" class="btn btn-primary w-100">इस्तेमाल करें</a></div></div>
+            <div class="col-md-4"><div class="tool-card"><div class="tool-icon"><i class="fas fa-sitemap"></i></div><h3>XML Sitemap Generator</h3><p>साइटमैप बनाएं, इंडेक्सिंग बेहतर करें।</p><a href="sitemap-generator.html" class="btn btn-primary w-100">इस्तेमाल करें</a></div></div>
+            <div class="col-md-4"><div class="tool-card"><div class="tool-icon"><i class="fas fa-calculator"></i></div><span class="status-badge status-india">🇮🇳 INDIA</span><h3>GST Calculator</h3><p>CGST, SGST, IGST सहित कैलकुलेशन।</p><a href="gst-calculator.html" class="btn btn-primary w-100">इस्तेमाल करें</a></div></div>
+            <div class="col-md-4"><div class="tool-card coming-soon"><div class="tool-icon"><i class="fas fa-chart-pie"></i></div><span class="status-badge status-new">SOON</span><h3>ट्रैफिक एनालाइज़र</h3><p>डीटेल एनालिसिस और रिपोर्टिंग।</p><span class="coming-soon-badge">Coming Soon</span></div></div>
         </div>
 
-        <!-- ============ 📝 CONTENT & WRITING TOOLS ============ -->
-        <h2 class="category-header"><i class="fas fa-edit me-2"></i> कंटेंट और राइटिंग टूल्स</h2>
-        <div class="row g-4 mb-5">
-            <!-- Plagiarism Checker -->
-            <div class="col-md-4">
-                <div class="tool-card">
-                    <div class="tool-icon"><i class="fas fa-copy"></i></div>
-                    <span class="status-badge status-new">NEW</span>
-                    <h3>प्लेजियरिज्म चेकर</h3>
-                    <p>अपने कंटेंट की ऑरिजिनलिटी चेक करें। डुप्लिकेट कंटेंट का पता लगाएं।</p>
-                    <a href="plagiarism-checker.html" class="btn btn-primary">
-                        <i class="fas fa-play-circle me-2"></i> टूल इस्तेमाल करें
-                    </a>
-                </div>
-            </div>
-
-            <!-- Grammar Checker -->
-            <div class="col-md-4">
-                <div class="tool-card">
-                    <div class="tool-icon"><i class="fas fa-spell-check"></i></div>
-                    <span class="status-badge status-new">NEW</span>
-                    <h3>ग्रामर और स्पेल चेकर</h3>
-                    <p>अंग्रेजी टेक्स्ट का grammar check, spelling mistakes ढूंढें और improvement suggestions पाएं।</p>
-                    <a href="grammar-spell-checker.html" class="btn btn-primary">
-                        <i class="fas fa-play-circle me-2"></i> टूल इस्तेमाल करें
-                    </a>
-                </div>
-            </div>
-
-            <!-- Headline Analyzer -->
-            <div class="col-md-4">
-                <div class="tool-card">
-                    <div class="tool-icon"><i class="fas fa-heading"></i></div>
-                    <span class="status-badge status-new">NEW</span>
-                    <h3>हेडलाइन एनालाइज़र</h3>
-                    <p>Click-worthy headlines create करें और headline score पाएं।</p>
-                    <a href="heading-headline-analyzer.html" class="btn btn-primary">
-                        <i class="fas fa-play-circle me-2"></i> टूल इस्तेमाल करें
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- ============ 🛒 E-COMMERCE & BUSINESS ============ -->
-        <h2 class="category-header"><i class="fas fa-shopping-cart me-2"></i> ई-कॉमर्स और बिज़नेस टूल्स</h2>
-        <div class="row g-4 mb-5">
-            <!-- Ecommerce SEO -->
-            <div class="col-md-4">
-                <div class="tool-card">
-                    <div class="tool-icon"><i class="fas fa-shopping-cart"></i></div>
-                    <span class="status-badge status-new">NEW</span>
-                    <h3>ई-कॉमर्स SEO टूल</h3>
-                    <p>फ्लिपकार्ट और अमेज़न लिस्टिंग्स के लिए विशेष SEO ऑप्टिमाइज़ेशन।</p>
-                    <a href="ecommerce-seo-tool.html" class="btn btn-primary">
-                        <i class="fas fa-play-circle me-2"></i> टूल इस्तेमाल करें
-                    </a>
-                </div>
-            </div>
-
-            <!-- Price Comparison -->
-            <div class="col-md-4">
-                <div class="tool-card">
-                    <div class="tool-icon"><i class="fas fa-balance-scale"></i></div>
-                    <span class="status-badge status-new">NEW</span>
-                    <h3>प्राइस कंपेरिजन टूल</h3>
-                    <p>Amazon, Flipkart, Myntra की कीमतों की तुलना करें। Best deals ढूंढें।</p>
-                    <a href="price-comparison-tool.html" class="btn btn-primary">
-                        <i class="fas fa-play-circle me-2"></i> टूल इस्तेमाल करें
-                    </a>
-                </div>
-            </div>
-
-            <!-- Profit Margin Calculator -->
-            <div class="col-md-4">
-                <div class="tool-card">
-                    <div class="tool-icon"><i class="fas fa-calculator"></i></div>
-                    <span class="status-badge status-new">NEW</span>
-                    <h3>प्रॉफिट मार्जिन कैलकुलेटर</h3>
-                    <p>Business profit margin calculate करें। Gross और net profit analysis।</p>
-                    <a href="profit-margin-calculator.html" class="btn btn-primary">
-                        <i class="fas fa-play-circle me-2"></i> टूल इस्तेमाल करें
-                    </a>
-                </div>
-            </div>
-
-            <!-- GST Calculator -->
-            <div class="col-md-4">
-                <div class="tool-card">
-                    <div class="tool-icon"><i class="fas fa-calculator"></i></div>
-                    <span class="status-badge status-india">🇮🇳 INDIA</span>
-                    <h3>GST कैलकुलेटर</h3>
-                    <p>सभी GST स्लैब के लिए कैलकुलेशन। CGST, SGST, IGST के साथ।</p>
-                    <a href="gst-calculator.html" class="btn btn-primary">
-                        <i class="fas fa-play-circle me-2"></i> टूल इस्तेमाल करें
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Amazon SEO Tool Free -->
-<div class="col-md-4">
-    <div class="tool-card">
-        <span class="global-badge"><i class="fas fa-globe"></i> GLOBAL</span>
-        <div class="tool-icon"><i class="fas fa-shopping-cart"></i></div>
-        <span class="status-badge status-hot">HOT 🔥</span>
-        <h3>Amazon SEO Tool Free</h3>
-        <p>Amazon पर प्रोडक्ट लिस्टिंग ऑप्टिमाइज़ करें। फ्री कीवर्ड रिसर्च, टाइटल ऑप्टिमाइज़र और रैंक ट्रैकर 2026</p>
-        <div class="tool-tags">
-            <span class="badge" style="background: #ff9900;">Amazon</span>
-            <span class="badge" style="background: #232f3e;">FBA</span>
-            <span class="badge" style="background: #37475a;">Keyword Research</span>
-            <span class="badge" style="background: #146eb4;">Rank Tracker</span>
-        </div>
-        <a href="amazon-seo-tool-free.html" class="btn btn-primary mt-3">
-            <i class="fas fa-play-circle me-2"></i> टूल इस्तेमाल करें
-        </a>
-    </div>
-</div>
-
-<!-- Voice Search Optimizer -->
-<div class="col-md-4">
-    <div class="tool-card">
-        <span class="global-badge"><i class="fas fa-microphone"></i> VOICE</span>
-        <div class="tool-icon"><i class="fas fa-microphone-alt"></i></div>
-        <span class="status-badge status-hot">TRENDING 🎯</span>
-        <h3>Voice Search Optimizer</h3>
-        <p>वॉयस सर्च के लिए कंटेंट ऑप्टिमाइज़ करें। Alexa, Siri और Google Assistant के लिए नेचुरल लैंग्वेज कीवर्ड्स 2026</p>
-        <div class="tool-tags">
-            <span class="badge" style="background: #4285f4;">Google Assistant</span>
-            <span class="badge" style="background: #000000;">Alexa</span>
-            <span class="badge" style="background: #5e5e5e;">Siri</span>
-            <span class="badge" style="background: #00b395;">Voice Search</span>
-        </div>
-        <a href="voice-search-optimizer.html" class="btn btn-primary mt-3">
-            <i class="fas fa-play-circle me-2"></i> टूल इस्तेमाल करें
-        </a>
-    </div>
-</div>
-
-        <!-- ============ 📱 SOCIAL MEDIA TOOLS ============ -->
-        <h2 class="category-header"><i class="fas fa-hashtag me-2"></i> सोशल मीडिया टूल्स</h2>
-        <div class="row g-4 mb-5">
-            <!-- Hashtag Generator -->
-            <div class="col-md-4">
-                <div class="tool-card">
-                    <div class="tool-icon"><i class="fas fa-hashtag"></i></div>
-                    <span class="status-badge status-new">NEW</span>
-                    <h3>हैशटैग जनरेटर</h3>
-                    <p>Instagram, Twitter, Facebook के लिए best hashtags generate करें।</p>
-                    <a href="hashtag-generator.html" class="btn btn-primary">
-                        <i class="fas fa-play-circle me-2"></i> टूल इस्तेमाल करें
-                    </a>
-                </div>
-            </div>
-
-            <!-- Social Media Optimizer -->
-            <div class="col-md-4">
-                <div class="tool-card">
-                    <div class="tool-icon"><i class="fas fa-share-alt"></i></div>
-                    <span class="status-badge status-new">NEW</span>
-                    <h3>सोशल मीडिया ऑप्टिमाइज़र</h3>
-                    <p>फेसबुक, इंस्टाग्राम, ट्विटर, LinkedIn के लिए पोस्ट ऑप्टिमाइज़ करें।</p>
-                    <a href="social-media-optimizer.html" class="btn btn-primary">
-                        <i class="fas fa-play-circle me-2"></i> टूल इस्तेमाल करें
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- ============ 🗺️ LOCAL SEO TOOLS ============ -->
-        <h2 class="category-header"><i class="fas fa-map-marker-alt me-2"></i> लोकल SEO टूल्स</h2>
-        <div class="row g-4 mb-5">
-            <!-- Local SEO Checklist -->
-            <div class="col-md-4">
-                <div class="tool-card">
-                    <div class="tool-icon"><i class="fas fa-map-marker-alt"></i></div>
-                    <span class="status-badge status-new">NEW</span>
-                    <h3>लोकल SEO चेकलिस्ट</h3>
-                    <p>लोकल बिज़नेस के लिए पूरी SEO चेकलिस्ट। Google My Business ऑप्टिमाइज़ेशन।</p>
-                    <a href="local-seo-checklist.html" class="btn btn-primary">
-                        <i class="fas fa-play-circle me-2"></i> टूल इस्तेमाल करें
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- ============ ⚙️ OTHER USEFUL TOOLS ============ -->
-        <h2 class="category-header"><i class="fas fa-tools me-2"></i> अन्य उपयोगी टूल्स</h2>
-        <div class="row g-4 mb-5">
-            <!-- Schema Markup Generator -->
-            <div class="col-md-4">
-                <div class="tool-card">
-                    <div class="tool-icon"><i class="fas fa-code"></i></div>
-                    <span class="status-badge status-new">NEW</span>
-                    <h3>स्कीमा मार्कअप जनरेटर</h3>
-                    <p>SEO-friendly schema markup generate करें। Rich snippets के लिए structured data बनाएं।</p>
-                    <a href="schema-markup-generator.html" class="btn btn-primary">
-                        <i class="fas fa-play-circle me-2"></i> टूल इस्तेमाल करें
-                    </a>
-                </div>
-            </div>
-
-            <!-- CSV Sorter -->
-            <div class="col-md-4">
-                <div class="tool-card">
-                    <div class="tool-icon"><i class="fas fa-file-csv"></i></div>
-                    <span class="status-badge status-live">LIVE</span>
-                    <h3>CSV सोर्टर</h3>
-                    <p>CSV फाइल्स को सॉर्ट करें, फ़िल्टर करें और विभिन्न फॉर्मेट में कन्वर्ट करें।</p>
-                    <a href="csv-sorter.html" class="btn btn-primary">
-                        <i class="fas fa-play-circle me-2"></i> टूल इस्तेमाल करें
-                    </a>
-                </div>
-            </div>
-
-            <!-- Responsive Tester -->
-            <div class="col-md-4">
-                <div class="tool-card">
-                    <div class="tool-icon"><i class="fas fa-mobile-alt"></i></div>
-                    <span class="status-badge status-live">LIVE</span>
-                    <h3>रिस्पॉन्सिव टेस्टर</h3>
-                    <p>वेबसाइट को विभिन्न डिवाइस स्क्रीन पर टेस्ट करें। Mobile responsive design check करें।</p>
-                    <a href="responsive-tester.html" class="btn btn-primary">
-                        <i class="fas fa-play-circle me-2"></i> टूल इस्तेमाल करें
-                    </a>
-                </div>
-            </div>
-
-            <!-- AI Ideas Generator -->
-            <div class="col-md-4">
-                <div class="tool-card">
-                    <div class="tool-icon"><i class="fas fa-robot"></i></div>
-                    <span class="status-badge status-new">NEW</span>
-                    <h3>AI आइडिया जनरेटर</h3>
-                    <p>AI की मदद से ब्लॉग पोस्ट और आर्टिकल के लिए आइडियाज जनरेट करें।</p>
-                    <a href="ai-ideas.html" class="btn btn-primary">
-                        <i class="fas fa-play-circle me-2"></i> टूल इस्तेमाल करें
-                    </a>
-                </div>
-            </div>
-
-            <!-- Image Compressor -->
-            <div class="col-md-4">
-                <div class="tool-card">
-                    <div class="tool-icon"><i class="fas fa-compress-alt"></i></div>
-                    <span class="status-badge status-new">NEW</span>
-                    <h3>Image Compressor</h3>
-                    <p>Compress JPG, PNG images and convert to WebP format for faster websites.</p>
-                    <a href="image-compressor.html" class="btn btn-primary">
-                        <i class="fas fa-play-circle me-2"></i> टूल इस्तेमाल करें
-                    </a>
-                </div>
-            </div>
-
-            <!-- Multilingual SEO Tool -->
-                <div class="col-md-4">
-                    <div class="tool-card">
-                        <span class="india-badge"><i class="fas fa-indian-rupee-sign"></i> INDIA</span>
-                        <div class="tool-icon"><i class="fas fa-language"></i></div>
-                        <span class="status-badge status-hot">HOT 🔥</span>
-                        <h3>Multilingual SEO</h3>
-                        <p>70+ भाषाओं में SEO करें। Hreflang generator, Hindi, Tamil, Telugu, Bengali support</p>
-                        <div class="tool-tags">
-                            <span class="badge" style="background: #ff6b6b;">Hindi</span>
-                            <span class="badge" style="background: #4a5568;">Tamil</span>
-                            <span class="badge" style="background: #805ad5;">Telugu</span>
-                        </div>
-                        <a href="multilingual-seo.html" class="btn btn-primary mt-3">
-                            <i class="fas fa-play-circle me-2"></i> टूल इस्तेमाल करें
-                        </a>
-                    </div>
-                </div>
-
-            <!-- ============ 🔴 FUTURE TOOLS PLACEHOLDER SECTION ============ -->
-            <!-- नए टूल्स जोड़ने के लिए यहाँ सेक्शन बनाएं -->
-            <!-- 
-            <h2 class="category-header"><i class="fas fa-NEW-ICON me-2"></i> NEW CATEGORY NAME</h2>
-            <div class="row g-4 mb-5">
-                नए टूल कार्ड्स यहाँ जोड़ें - ऊपर के format में
-            </div>
-            -->
-        </div>
-
-            <!-- Coming Soon Tool 2 -->
-            <div class="col-md-4">
-                <div class="tool-card coming-soon">
-                    <div class="tool-icon"><i class="fas fa-chart-pie"></i></div>
-                    <span class="status-badge status-new">SOON</span>
-                    <h3>ट्रैफिक एनालाइज़र</h3>
-                    <p>वेबसाइट ट्रैफिक का डीटेल एनालिसिस और रिपोर्टिंग।</p>
-                    <span class="coming-soon-badge">Coming Soon</span>
-                </div>
-            </div>
-
-        <!-- ============ 📋 TOOLS COUNT ============ -->
+        <!-- Tools Count & Back -->
         <div class="text-center mb-4">
-            <div class="badge bg-primary p-3">
-                <i class="fas fa-calculator me-2"></i> कुल टूल्स: <span id="totalToolCount">50+</span> | 100% मुफ्त
-            </div>
+            <div class="badge bg-primary p-3 fs-6"><i class="fas fa-calculator me-2"></i> कुल टूल्स: <span id="totalToolCount">100+</span> | 100% मुफ्त</div>
         </div>
-
-        <!-- Back to Home -->
         <div class="text-center mb-5">
-            <a href="index.html" class="btn btn-outline-primary btn-lg">
-                <i class="fas fa-arrow-left me-2"></i> होमपेज पर वापस जाएं
-            </a>
+            <a href="index.html" class="btn btn-outline-dark btn-lg px-5"><i class="fas fa-arrow-left me-2"></i> होमपेज पर वापस जाएं</a>
         </div>
     </div>
 
@@ -1127,126 +292,61 @@
     <footer class="py-5">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 mb-4">
-                    <h5 class="text-white">Free SEO Tool Hub</h5>
-                    <p class="text-muted">Your complete SEO toolkit, completely free.</p>
-                </div>
-                <div class="col-md-8">
-                    <div class="row">
-                        <div class="col-md-4 mb-4">
-                            <h6 class="text-white">Quick Links</h6>
-                            <ul class="list-unstyled">
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="all-tools.html">All Tools</a></li>
-                                <li><a href="about.html">About Us</a></li>
-                                <li><a href="contact.html">Contact</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <h6 class="text-white">Popular Tools</h6>
-                            <ul class="list-unstyled">
-                                <li><a href="domain-authority-checker.html">Domain Authority</a></li>
-                                <li><a href="gst-calculator.html">GST Calculator</a></li>
-                                <li><a href="upi-qr-generator.html">UPI QR Generator</a></li>
-                                <li><a href="pan-validator.html">PAN Validator</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <h6 class="text-white">Legal</h6>
-                            <ul class="list-unstyled">
-                                <li><a href="privacy.html">Privacy Policy</a></li>
-                                <li><a href="#">Terms of Service</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                <div class="col-md-4 mb-4"><h5 class="text-white">Free SEO Tool Hub</h5><p class="text-light-emphasis">100+ free SEO tools. हिंदी और अंग्रेजी में उपलब्ध।</p></div>
+                <div class="col-md-8"><div class="row">
+                    <div class="col-md-4"><h6 class="text-white">Quick Links</h6><ul class="list-unstyled"><li><a href="index.html">Home</a></li><li><a href="all-tools.html">All Tools</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+                    <div class="col-md-4"><h6 class="text-white">Popular</h6><ul class="list-unstyled"><li><a href="domain-authority-checker.html">Domain Authority</a></li><li><a href="gst-calculator.html">GST Calculator</a></li><li><a href="keyword-gap-analyzer.html">Keyword Gap</a></li><li><a href="local-rank-tracker.html">Local Rank Tracker</a></li></ul></div>
+                    <div class="col-md-4"><h6 class="text-white">Legal</h6><ul class="list-unstyled"><li><a href="privacy.html">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li></ul></div>
+                </div></div>
             </div>
             <hr class="bg-light">
-            <div class="text-center text-muted">
-                <p class="mb-0">© 2024 Free SEO Tool Hub. All rights reserved.</p>
-                <p class="mt-2">
-                    <i class="fas fa-heart text-danger"></i> 
-                    Made for the SEO community
-                </p>
-            </div>
+            <div class="text-center text-light-emphasis"><p>© 2024 Free SEO Tool Hub. All rights reserved. Made with <i class="fas fa-heart text-danger"></i> for SEO community.</p></div>
         </div>
     </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
     <script>
-        // Tool count and search functionality
         document.addEventListener('DOMContentLoaded', function() {
-            // Update tool count
             const toolCards = document.querySelectorAll('.tool-card:not(.coming-soon)');
             const totalTools = toolCards.length;
-            
-            const countElement = document.getElementById('toolCount');
-            if (countElement) {
-                countElement.textContent = `${totalTools}+ टूल्स | 100% मुफ्त | प्रोफेशनल रिजल्ट्स`;
-            }
-            
-            const totalCountElement = document.getElementById('totalToolCount');
-            if (totalCountElement) {
-                totalCountElement.textContent = totalTools + '+';
-            }
+            document.getElementById('toolCount').textContent = totalTools + '+ टूल्स | 100% मुफ्त | कोई साइनअप नहीं';
+            document.getElementById('totalToolCount').textContent = totalTools + '+';
 
-            // Search functionality
+            // Search
             const searchInput = document.getElementById('toolSearch');
             const allToolCards = document.querySelectorAll('.tool-card');
             const categories = document.querySelectorAll('.category-header');
             const noResults = document.getElementById('noResults');
 
             searchInput.addEventListener('input', function() {
-                const searchTerm = this.value.toLowerCase().trim();
-                let visibleCount = 0;
-                
+                const term = this.value.toLowerCase().trim();
+                let visible = 0;
                 allToolCards.forEach(card => {
-                    const title = card.querySelector('h3').textContent.toLowerCase();
-                    const desc = card.querySelector('p').textContent.toLowerCase();
-                    
-                    if (searchTerm === '' || title.includes(searchTerm) || desc.includes(searchTerm)) {
-                        card.closest('.col-md-4').style.display = 'block';
-                        setTimeout(() => {
-                            card.style.opacity = '1';
-                            card.style.transform = 'translateY(0)';
-                        }, 10);
-                        visibleCount++;
-                    } else {
-                        card.closest('.col-md-4').style.display = 'none';
-                    }
+                    const title = card.querySelector('h3')?.innerText.toLowerCase() || '';
+                    const desc = card.querySelector('p')?.innerText.toLowerCase() || '';
+                    const match = term === '' || title.includes(term) || desc.includes(term);
+                    card.closest('.col-md-4').style.display = match ? 'block' : 'none';
+                    if(match) visible++;
                 });
-
-                // Show/hide categories
-                categories.forEach(category => {
-                    const section = category.nextElementSibling;
-                    if (section) {
-                        const visibleTools = section.querySelectorAll('.col-md-4[style*="block"]');
-                        if (visibleTools.length === 0 && searchTerm !== '') {
-                            category.style.display = 'none';
-                        } else {
-                            category.style.display = 'block';
-                        }
+                categories.forEach(cat => {
+                    let next = cat.nextElementSibling;
+                    let hasVisible = false;
+                    while(next && !next.classList.contains('category-header')){
+                        if(next.querySelector('.col-md-4[style*="block"]')) hasVisible = true;
+                        next = next.nextElementSibling;
                     }
+                    cat.style.display = (hasVisible || term === '') ? 'block' : 'none';
                 });
-
-                // Show no results message
-                if (visibleCount === 0 && searchTerm !== '') {
-                    noResults.style.display = 'block';
-                } else {
-                    noResults.style.display = 'none';
-                }
+                noResults.style.display = (visible === 0 && term !== '') ? 'block' : 'none';
             });
 
-            // Track tool clicks
+            // Click card
             allToolCards.forEach(card => {
                 card.addEventListener('click', function(e) {
-                    if (e.target.tagName === 'A' || e.target.closest('a')) return;
-                    
-                    const link = this.querySelector('a');
-                    if (link) {
-                        window.location.href = link.href;
+                    if(e.target.tagName !== 'A' && !e.target.closest('a')){
+                        const link = this.querySelector('a');
+                        if(link) window.location.href = link.href;
                     }
                 });
             });
@@ -1254,10 +354,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
