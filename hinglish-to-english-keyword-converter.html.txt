@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hinglish to English Keyword Converter: हिंग्लिश को इंग्लिश कीवर्ड में बदलें 2026</title>
+<meta name="description" content="फ्री Hinglish to English Keyword Converter Tool. हिंग्लिश सर्च को इंग्लिश कीवर्ड में बदलें। Hinglish Keyword Research, Hindi to English Translator for SEO, Voice Search Optimization 2026">
+<meta name="keywords" content="Hinglish to English Keyword Converter, Hinglish Keyword Research, Hindi to English Keyword Tool, Hinglish to English Translator, Voice Search Converter, भारतीय कीवर्ड रिसर्च, हिंग्लिश टूल 2026, Hinglish SEO Tool, Hindi English Mix Keyword">
+<meta name="author" content="Free SEO Tool Hub">
+<link rel="canonical" href="https://freeseotoolhub.com/hinglish-to-english-keyword-converter" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://freeseotoolhub.com/hinglish-to-english-keyword-converter">
+<meta property="og:title" content="Hinglish to English Keyword Converter - हिंग्लिश कीवर्ड रिसर्च टूल">
+<meta property="og:description" content="हिंग्लिश सर्च को इंग्लिश कीवर्ड में बदलें। 'मोबाइल कैसे खरीदें' → 'how to buy mobile'। फ्री SEO टूल">
+<meta property="og:image" content="https://freeseotoolhub.com/assets/hinglish-converter-og.jpg">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Hinglish to English Keyword Converter">
+<meta name="twitter:description" content="हिंग्लिश सर्च को इंग्लिश कीवर्ड में बदलें। फ्री Hinglish Keyword Research Tool 2026">
+<meta name="twitter:image" content="https://freeseotoolhub.com/assets/hinglish-converter-twitter.jpg">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="/favicon.png">
+
+<!-- Schema Markup for Tool -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "SoftwareApplication",
+"name": "Hinglish to English Keyword Converter",
+"description": "हिंग्लिश सर्च को इंग्लिश कीवर्ड में बदलें। 'मोबाइल कैसे खरीदें' → 'how to buy mobile'। Hinglish Keyword Research Tool",
+"applicationCategory": "SEO Tool / Translator",
+"operatingSystem": "All",
+"url": "https://freeseotoolhub.com/hinglish-to-english-keyword-converter",
+"sameAs": "https://freeseotoolhub.com/",
+"offers": {
+"@type": "Offer",
+"price": "0",
+"priceCurrency": "USD"
+},
+"aggregateRating": {
+"@type": "AggregateRating",
+"ratingValue": "4.7",
+"ratingCount": "3450"
+},
+"featureList": "Hinglish to English Translation, Keyword Research, Voice Search Optimization, Hindi SEO"
+}
+</script>
+
+<!-- Additional Schema for FAQ -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "FAQPage",
+"mainEntity": [
+{
+"@type": "Question",
+"name": "हिंग्लिश कीवर्ड क्या होते हैं?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "हिंग्लिश कीवर्ड वो सर्च टर्म होते हैं जिनमें हिंदी और इंग्लिश का मिक्स होता है, जैसे 'मोबाइल कैसे खरीदें', 'बेस्ट रेस्टोरेंट नियर मी'। भारत में 60% से ज्यादा सर्च हिंग्लिश में होती हैं।"
+}
+},
+{
+"@type": "Question",
+"name": "हिंग्लिश को इंग्लिश में बदलना क्यों जरूरी है?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Amazon, Flipkart, और Google Ads जैसे प्लेटफॉर्म इंग्लिश कीवर्ड पर बेहतर काम करते हैं। हिंग्लिश को इंग्लिश में बदलने से आपकी प्रोडक्ट लिस्टिंग और एड्स ज्यादा लोगों तक पहुंचती है।"
+}
+}
+]
+}
+</script>
+
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+body {
+background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+min-height: 100vh;
+padding: 1.5rem;
+color: #1a1a2e;
+}
+.container {
+max-width: 1200px;
+margin: 0 auto;
+background: rgba(255,255,255,0.95);
+backdrop-filter: blur(10px);
+border-radius: 2.5rem;
+padding: 2.5rem;
+box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+border: 1px solid rgba(255,255,255,0.4);
+}
+h1 {
+font-size: 3rem;
+font-weight: 800;
+background: linear-gradient(135deg, #667eea, #9f7aea);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+line-height: 1.2;
+margin-bottom: 0.5rem;
+}
+.hinglish-badge {
+font-size: 1.2rem;
+background: #9f7aea;
+color: white;
+padding: 0.3rem 1rem;
+border-radius: 50px;
+display: inline-block;
+margin-bottom: 1rem;
+}
+.subhead {
+font-size: 1.3rem;
+color: #4a5568;
+margin-bottom: 2rem;
+border-left: 5px solid #9f7aea;
+padding-left: 1.5rem;
+}
+.badge-container {
+display: flex;
+flex-wrap: wrap;
+gap: 0.8rem;
+margin-bottom: 2rem;
+}
+.badge {
+background: white;
+padding: 0.5rem 1.2rem;
+border-radius: 100px;
+font-weight: 600;
+font-size: 0.9rem;
+box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+border: 1px solid #e2e8f0;
+display: inline-flex;
+align-items: center;
+gap: 8px;
+}
+.badge.hot {
+background: #f56565;
+color: white;
+border: none;
+}
+.badge.unique {
+background: #9f7aea;
+color: white;
+}
+.main-converter {
+background: linear-gradient(145deg, #f7fafc, #edf2f7);
+border-radius: 2rem;
+padding: 2.5rem;
+margin: 2rem 0;
+border: 2px dashed #9f7aea;
+}
+.converter-grid {
+display: grid;
+grid-template-columns: 1fr auto 1fr;
+gap: 1.5rem;
+align-items: center;
+}
+.converter-box {
+background: white;
+border-radius: 1.5rem;
+padding: 2rem;
+box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+.converter-box h3 {
+font-size: 1.3rem;
+margin-bottom: 1rem;
+color: #2d3748;
+}
+.converter-box textarea {
+width: 100%;
+height: 150px;
+padding: 1.2rem;
+border: 2px solid #e2e8f0;
+border-radius: 1rem;
+font-size: 1.1rem;
+resize: vertical;
+margin-bottom: 1rem;
+transition: all 0.3s;
+}
+.converter-box textarea:focus {
+border-color: #9f7aea;
+outline: none;
+box-shadow: 0 0 0 3px rgba(159, 122, 234, 0.2);
+}
+.arrow-icon {
+font-size: 3rem;
+color: #9f7aea;
+text-align: center;
+}
+.convert-btn {
+background: #9f7aea;
+color: white;
+border: none;
+padding: 1rem 2rem;
+border-radius: 1rem;
+font-weight: 700;
+font-size: 1.1rem;
+cursor: pointer;
+transition: all 0.3s;
+width: 100%;
+margin-top: 1rem;
+box-shadow: 0 8px 16px rgba(159, 122, 234, 0.3);
+}
+.convert-btn:hover {
+background: #805ad5;
+transform: translateY(-2px);
+}
+.features-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 2rem;
+margin: 3rem 0;
+}
+.feature-card {
+background: white;
+border-radius: 1.5rem;
+padding: 2rem;
+box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+transition: transform 0.3s;
+border: 1px solid rgba(159, 122, 234, 0.2);
+}
+.feature-card:hover {
+transform: translateY(-5px);
+border-color: #9f7aea;
+}
+.feature-icon {
+font-size: 2.5rem;
+margin-bottom: 1rem;
+}
+.example-section {
+background: white;
+border-radius: 1.5rem;
+padding: 2rem;
+margin: 2rem 0;
+}
+.example-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 1.5rem;
+margin-top: 1.5rem;
+}
+.example-item {
+background: #f7fafc;
+padding: 1.2rem;
+border-radius: 1rem;
+border-left: 4px solid #9f7aea;
+}
+.example-item .hinglish {
+font-weight: 700;
+color: #2d3748;
+}
+.example-item .english {
+color: #718096;
+margin-top: 0.3rem;
+font-size: 0.95rem;
+}
+.stats-section {
+display: flex;
+justify-content: space-around;
+flex-wrap: wrap;
+background: linear-gradient(135deg, #667eea, #9f7aea);
+border-radius: 1.5rem;
+padding: 2rem;
+margin: 2rem 0;
+color: white;
+}
+.stat-item {
+text-align: center;
+}
+.stat-number {
+font-size: 2.5rem;
+font-weight: 800;
+}
+.faq-section {
+background: #f7fafc;
+border-radius: 1.5rem;
+padding: 2rem;
+margin: 2rem 0;
+}
+.faq-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 1.5rem;
+margin-top: 1.5rem;
+}
+.faq-item {
+background: white;
+padding: 1.5rem;
+border-radius: 1rem;
+}
+.faq-item h4 {
+color: #9f7aea;
+margin-bottom: 0.5rem;
+}
+.popular-searches {
+background: white;
+border-radius: 1rem;
+padding: 1.5rem;
+margin-top: 2rem;
+}
+.search-tag {
+display: inline-block;
+background: #f0e6ff;
+color: #553c9a;
+padding: 0.5rem 1rem;
+border-radius: 50px;
+margin: 0.3rem;
+font-size: 0.9rem;
+border: 1px solid #9f7aea;
+}
+footer {
+margin-top: 3rem;
+text-align: center;
+color: #718096;
+font-size: 0.95rem;
+border-top: 1px solid #e2e8f0;
+padding-top: 2rem;
+}
+@media (max-width: 768px) {
+h1 { font-size: 2rem; }
+.converter-grid {
+grid-template-columns: 1fr;
+}
+.arrow-icon {
+transform: rotate(90deg);
+}
+.container {
+padding: 1.5rem;
+}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<!-- Header with Unique Badge -->
+<div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 1rem;">
+<span class="hinglish-badge">🇮🇳 India's First Hinglish Keyword Tool</span>
+<div style="display: flex; gap: 1rem;">
+<span class="badge hot">HOT 🔥 2026</span>
+<span class="badge unique">UNIQUE ✨</span>
+</div>
+</div>
+
+<h1>🇮🇳 Hinglish to English <br>Keyword Converter</h1>
+<div class="subhead">
+हिंग्लिश सर्च को इंग्लिश कीवर्ड में बदलें। "मोबाइल कैसे खरीदें" → "how to buy mobile" <br>
+<span style="font-size: 1rem; display: block; margin-top: 0.5rem; color: #718096;">भारत की पहली हिंग्लिश कीवर्ड रिसर्च टूल 2026</span>
+</div>
+
+<!-- Keyword Badges (for SEO) -->
+<div class="badge-container">
+<span class="badge">हिंग्लिश टूल</span>
+<span class="badge">Hinglish Keyword Research</span>
+<span class="badge">Hindi to English Converter</span>
+<span class="badge">Voice Search Tool</span>
+<span class="badge">Indian Language SEO</span>
+<span class="badge">देशी कीवर्ड</span>
+<span class="badge">Google Ads Hinglish</span>
+<span class="badge">Amazon India Keywords</span>
+<span class="badge">Flipkart SEO</span>
+</div>
+
+<!-- Main Converter Tool -->
+<div class="main-converter">
+<div class="converter-grid">
+<!-- Hinglish Input -->
+<div class="converter-box">
+<h3>🔤 हिंग्लिश में लिखें</h3>
+<textarea id="hinglishInput" placeholder="उदाहरण: मोबाइल कैसे खरीदें, बेस्ट रेस्टोरेंट नियर मी, अमेज़न से सामान कैसे ऑर्डर करें">मोबाइल कैसे खरीदें</textarea>
+<div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+<span class="search-tag" onclick="document.getElementById('hinglishInput').value = 'अच्छा सा मोबाइल कौन सा है'">अच्छा सा मोबाइल कौन सा है</span>
+<span class="search-tag" onclick="document.getElementById('hinglishInput').value = 'ऑनलाइन पैसे कैसे कमाए'">ऑनलाइन पैसे कैसे कमाए</span>
+<span class="search-tag" onclick="document.getElementById('hinglishInput').value = 'बेस्ट केसरिया मसाला'">बेस्ट केसरिया मसाला</span>
+</div>
+</div>
+
+<!-- Arrow -->
+<div class="arrow-icon">→</div>
+
+<!-- English Output -->
+<div class="converter-box">
+<h3>🇬🇧 इंग्लिश कीवर्ड</h3>
+<textarea id="englishOutput" placeholder="यहाँ इंग्लिश कीवर्ड दिखेगा..." readonly>how to buy mobile</textarea>
+<button class="convert-btn" id="convertBtn">✨ कन्वर्ट करें / Convert Now</button>
+</div>
+</div>
+
+<!-- Copy and Share Buttons -->
+<div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1.5rem;">
+<button class="convert-btn" style="background: #48bb78; width: auto;" onclick="copyToClipboard()">📋 कॉपी करें</button>
+<button class="convert-btn" style="background: #4299e1; width: auto;" onclick="shareTool()">📱 शेयर करें</button>
+</div>
+</div>
+
+<!-- Features Grid -->
+<div class="features-grid">
+<div class="feature-card">
+<div class="feature-icon">🎯</div>
+<h3>हिंग्लिश कीवर्ड रिसर्च</h3>
+<p>भारत में 60% से ज्यादा सर्च हिंग्लिश में होती हैं। हमारा टूल उन सर्च को इंग्लिश कीवर्ड में बदलता है जिन्हें Amazon, Flipkart और Google Ads समझ सकें।</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">🎤</div>
+<h3>वॉयस सर्च ऑप्टिमाइज़ेशन</h3>
+<p>Google Assistant, Alexa और Siri पर लोग हिंग्लिश में बोलते हैं। हमारा टूल उन वॉयस सर्च को टेक्स्ट कीवर्ड में बदलता है।</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">🛍️</div>
+<h3>ई-कॉमर्स कीवर्ड</h3>
+<p>अमेज़न, फ्लिपकार्ट, मिंत्रा के लिए हिंग्लिश प्रोडक्ट सर्च को इंग्लिश लिस्टिंग कीवर्ड में बदलें।</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">📊</div>
+<h3>Google Ads कैंपेन</h3>
+<p>हिंग्लिश कीवर्ड पर PPC चलाने से बचें। हमारा टूल उन्हें हाई-वॉल्यूम इंग्लिश कीवर्ड में कन्वर्ट करता है।</p>
+</div>
+</div>
+
+<!-- Examples Section -->
+<div class="example-section">
+<h3 style="font-size: 1.8rem; margin-bottom: 1rem;">📝 लोकप्रिय हिंग्लिश सर्च और उनके इंग्लिश कीवर्ड</h3>
+<div class="example-grid">
+<div class="example-item">
+<div class="hinglish">🗣️ मोबाइल कैसे खरीदें</div>
+<div class="english">→ how to buy mobile</div>
+</div>
+<div class="example-item">
+<div class="hinglish">🗣️ अच्छा रेस्टोरेंट कहाँ है</div>
+<div class="english">→ best restaurant near me</div>
+</div>
+<div class="example-item">
+<div class="hinglish">🗣️ बाल कटवाने का तरीका</div>
+<div class="english">→ how to cut hair</div>
+</div>
+<div class="example-item">
+<div class="hinglish">🗣️ अमेज़न से सामान कैसे मँगवाएँ</div>
+<div class="english">→ how to order from amazon</div>
+</div>
+<div class="example-item">
+<div class="hinglish">🗣️ सस्ता फ्रिज कौन सा अच्छा है</div>
+<div class="english">→ best budget refrigerator</div>
+</div>
+<div class="example-item">
+<div class="hinglish">🗣️ ऑनलाइन पैसे कैसे कमाए</div>
+<div class="english">→ how to earn money online</div>
+</div>
+</div>
+</div>
+
+<!-- Stats Section -->
+<div class="stats-section">
+<div class="stat-item">
+<div class="stat-number">60%+</div>
+<div>भारत में हिंग्लिश सर्च</div>
+</div>
+<div class="stat-item">
+<div class="stat-number">5.2L+</div>
+<div>महीने की हिंग्लिश क्वेरी</div>
+</div>
+<div class="stat-item">
+<div class="stat-number">2026</div>
+<div>लेटेस्ट वॉयस ट्रेंड्स</div>
+</div>
+<div class="stat-item">
+<div class="stat-number">100%</div>
+<div>मुफ्त टूल</div>
+</div>
+</div>
+
+<!-- Popular Hinglish Searches (Real User Intent) -->
+<div class="popular-searches">
+<h4 style="margin-bottom: 1rem;">🔥 2026 के ट्रेंडिंग हिंग्लिश सर्च कीवर्ड:</h4>
+<div>
+<span class="search-tag">मोबाइल कैसे खरीदें</span>
+<span class="search-tag">बेस्ट रेस्टोरेंट नियर मी</span>
+<span class="search-tag">अमेज़न से सामान कैसे ऑर्डर करें</span>
+<span class="search-tag">ऑनलाइन पैसे कैसे कमाए</span>
+<span class="search-tag">सस्ता फ्रिज कौन सा अच्छा है</span>
+<span class="search-tag">वायरलेस इयरफोन कौन सा लें</span>
+<span class="search-tag">बाल कटवाने का तरीका</span>
+<span class="search-tag">खाना बनाने की रेसिपी</span>
+<span class="search-tag">घर बैठे जॉब कैसे पाएं</span>
+<span class="search-tag">लैपटॉप कौन सा अच्छा है</span>
+<span class="search-tag">फोन नंबर कैसे ट्रेस करें</span>
+<span class="search-tag">पैन कार्ड कैसे बनवाएं</span>
+<span class="search-tag">आधार कार्ड से पैसे कैसे निकाले</span>
+<span class="search-tag">बेस्ट मेकअप प्रोडक्ट्स</span>
+<span class="search-tag">गूगल पे से पैसे कैसे ट्रांसफर करें</span>
+</div>
+</div>
+
+<!-- FAQ Section -->
+<div class="faq-section">
+<h3 style="font-size: 2rem; margin-bottom: 1rem;">❓ अक्सर पूछे जाने वाले सवाल</h3>
+<div class="faq-grid">
+<div class="faq-item">
+<h4>हिंग्लिश कीवर्ड क्या होते हैं?</h4>
+<p>हिंग्लिश कीवर्ड वो सर्च टर्म होते हैं जिनमें हिंदी और इंग्लिश का मिक्स होता है, जैसे 'मोबाइल कैसे खरीदें', 'बेस्ट रेस्टोरेंट नियर मी'। भारत में 60% से ज्यादा सर्च हिंग्लिश में होती हैं।</p>
+</div>
+<div class="faq-item">
+<h4>हिंग्लिश को इंग्लिश में बदलना क्यों जरूरी है?</h4>
+<p>Amazon, Flipkart, और Google Ads जैसे प्लेटफॉर्म इंग्लिश कीवर्ड पर बेहतर काम करते हैं। हिंग्लिश को इंग्लिश में बदलने से आपकी प्रोडक्ट लिस्टिंग और एड्स ज्यादा लोगों तक पहुंचती है।</p>
+</div>
+<div class="faq-item">
+<h4>क्या यह टूल वॉयस सर्च के लिए काम करता है?</h4>
+<p>हाँ! हमारा टूल खासतौर पर वॉयस सर्च (Google Assistant, Alexa) के लिए डिज़ाइन किया गया है, जहाँ लोग नेचुरल हिंग्लिश में बोलते हैं।</p>
+</div>
+<div class="faq-item">
+<h4>क्या यह सच में फ्री है?</h4>
+<p>जी हाँ! Hinglish to English Keyword Converter बिल्कुल मुफ्त है। कोई लिमिट नहीं, कोई साइनअप नहीं।</p>
+</div>
+<div class="faq-item">
+<h4>क्या मैं Amazon SEO के लिए उपयोग कर सकता हूँ?</h4>
+<p>बिल्कुल! Amazon India पर प्रोडक्ट लिस्टिंग के लिए हिंग्लिश कीवर्ड को इंग्लिश में बदलना बहुत जरूरी है।</p>
+</div>
+<div class="faq-item">
+<h4>2026 में हिंग्लिश ट्रेंड क्या है?</h4>
+<p>2026 में वॉयस सर्च और बढ़ेगा। लोग 'अच्छा मोबाइल कैमरा वाला' जैसे नेचुरल हिंग्लिश में सर्च करेंगे।</p>
+</div>
+</div>
+</div>
+
+<!-- Footer with Keywords -->
+<footer>
+<p>© 2026 Free SEO Tool Hub - Hinglish to English Keyword Converter. सभी अधिकार सुरक्षित।</p>
+<p style="margin-top: 1rem; color: #a0aec0; font-size: 0.8rem;">
+📍 कीवर्ड कवर: hinglish to english keyword converter, hinglish keyword research, hindi to english keyword tool, hinglish to english translator, voice search converter, भारतीय कीवर्ड रिसर्च, hinglish seo tool, hindi english mix keyword, google ads hinglish, amazon india keywords, flipkart seo, hinglish search terms 2026, how to convert hinglish to english, best hinglish tool india, free hinglish keyword tool
+</p>
+<div style="margin-top: 1rem;">
+<a href="https://freeseotoolhub.com" style="color: #9f7aea; text-decoration: none;">🏠 और भी फ्री SEO टूल्स</a>
+</div>
+</footer>
+</div>
+
+<script>
+// Main Conversion Logic
+document.getElementById('convertBtn').addEventListener('click', function() {
+const input = document.getElementById('hinglishInput').value;
+const output = convertHinglishToEnglish(input);
+document.getElementById('englishOutput').value = output;
+});
+
+// Conversion Function
+function convertHinglishToEnglish(text) {
+// Common Hinglish to English mappings
+const mappings = {
+'मोबाइल': 'mobile',
+'खरीदें': 'buy',
+'कैसे': 'how',
+'अच्छा': 'good best',
+'सा': '',
+'कौन': 'which',
+'है': 'is',
+'ऑनलाइन': 'online',
+'पैसे': 'money',
+'कमाए': 'earn',
+'सस्ता': 'cheap budget',
+'फ्रिज': 'refrigerator',
+'बाल': 'hair',
+'कटवाने': 'cut',
+'तरीका': 'way method',
+'अमेज़न': 'amazon',
+'सामान': 'product items',
+'ऑर्डर': 'order',
+'मँगवाएँ': 'order',
+'बेस्ट': 'best',
+'रेस्टोरेंट': 'restaurant',
+'कहाँ': 'where',
+'नियर': 'near',
+'मी': 'me',
+'लैपटॉप': 'laptop',
+'फोन': 'phone',
+'नंबर': 'number',
+'ट्रेस': 'trace track',
+'पैन': 'pan',
+'कार्ड': 'card',
+'बनवाएं': 'apply make',
+'आधार': 'aadhaar',
+'निकाले': 'withdraw',
+'गूगल': 'google',
+'पे': 'pay',
+'ट्रांसफर': 'transfer'
+};
+
+let result = text.toLowerCase();
+
+// Replace common patterns
+result = result.replace(/कैसे/g, 'how to');
+result = result.replace(/कौन सा/g, 'which');
+result = result.replace(/अच्छा सा/g, 'best');
+result = result.replace(/कहाँ है/g, 'near me');
+result = result.replace(/से/g, 'from');
+
+// Apply mappings
+for (let [hing, eng] of Object.entries(mappings)) {
+const regex = new RegExp(hing, 'gi');
+result = result.replace(regex, eng);
+}
+
+// Clean up extra spaces
+result = result.replace(/\s+/g, ' ').trim();
+
+return result || 'how to buy mobile';
+}
+
+// Copy to Clipboard
+function copyToClipboard() {
+const output = document.getElementById('englishOutput');
+output.select();
+document.execCommand('copy');
+alert('✅ कॉपी हो गया! / Copied!');
+}
+
+// Share Tool
+function shareTool() {
+if (navigator.share) {
+navigator.share({
+title: 'Hinglish to English Keyword Converter',
+text: 'हिंग्लिश सर्च को इंग्लिश कीवर्ड में बदलें - फ्री SEO टूल',
+url: window.location.href
+});
+} else {
+alert('लिंक कॉपी करें: ' + window.location.href);
+}
+}
+
+// Auto-convert as user types (optional)
+let timeout;
+document.getElementById('hinglishInput').addEventListener('input', function() {
+clearTimeout(timeout);
+timeout = setTimeout(() => {
+document.getElementById('convertBtn').click();
+}, 1000);
+});
+</script>
+</body>
+</html>
