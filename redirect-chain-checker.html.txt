@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Redirect Chain Checker: Find Long Redirect Chains Hurting Page Speed 2026</title>
+<meta name="description" content="Free Redirect Chain Checker Tool. Find long redirect chains (301, 302) that hurt page speed and SEO. Analyze redirect loops, chain length, and HTTP status codes.">
+<meta name="keywords" content="Redirect Chain Checker, 301 Redirect Checker, Redirect Loop Detector, HTTP Status Checker, URL Redirect Path, Page Speed SEO, Redirect Chain Analysis">
+<meta name="author" content="Free SEO Tool Hub">
+<link rel="canonical" href="https://freeseotoolhub.com/redirect-chain-checker" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://freeseotoolhub.com/redirect-chain-checker">
+<meta property="og:title" content="Redirect Chain Checker - Find Long Redirect Chains">
+<meta property="og:description" content="लंबी रीडायरेक्ट चेन ढूंढें जो पेज स्पीड को नुकसान पहुंचा रही हैं">
+<meta property="og:image" content="https://freeseotoolhub.com/assets/redirect-chain-og.jpg">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Redirect Chain Checker">
+<meta name="twitter:description" content="Analyze redirect chains, loops, and HTTP status codes">
+<meta name="twitter:image" content="https://freeseotoolhub.com/assets/redirect-chain-twitter.jpg">
+
+<!-- Schema Markup -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "SoftwareApplication",
+"name": "Redirect Chain Checker",
+"description": "लंबी रीडायरेक्ट चेन ढूंढें जो पेज स्पीड को नुकसान पहुंचा रही हैं",
+"applicationCategory": "SEO Tool / Technical SEO",
+"operatingSystem": "All",
+"url": "https://freeseotoolhub.com/redirect-chain-checker",
+"offers": {
+"@type": "Offer",
+"price": "0",
+"priceCurrency": "USD"
+}
+}
+</script>
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+body {
+background: linear-gradient(145deg, #0B3B5C 0%, #062134 100%);
+min-height: 100vh;
+padding: 1.5rem;
+}
+.container {
+max-width: 1400px;
+margin: 0 auto;
+background: rgba(255,255,255,0.98);
+backdrop-filter: blur(10px);
+border-radius: 2.5rem;
+padding: 2.5rem;
+box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+}
+h1 {
+font-size: 3rem;
+font-weight: 800;
+background: linear-gradient(135deg, #0B3B5C, #1E6F9F);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+margin-bottom: 0.5rem;
+}
+.tech-badge {
+background: #0B3B5C;
+color: white;
+padding: 0.5rem 1.5rem;
+border-radius: 50px;
+display: inline-block;
+margin-bottom: 1rem;
+font-weight: 600;
+letter-spacing: 1px;
+}
+.global-badge {
+background: #1E6F9F;
+color: white;
+padding: 0.3rem 1rem;
+border-radius: 50px;
+font-size: 0.9rem;
+margin-left: 1rem;
+}
+.subhead {
+font-size: 1.3rem;
+color: #2d3748;
+margin-bottom: 2rem;
+border-left: 5px solid #0B3B5C;
+padding-left: 1.5rem;
+}
+.search-section {
+background: linear-gradient(145deg, #E6F3FF, #CCE7FF);
+border-radius: 2rem;
+padding: 2.5rem;
+margin: 2rem 0;
+border: 2px solid #0B3B5C;
+}
+.search-grid {
+display: grid;
+grid-template-columns: 3fr 1fr;
+gap: 1rem;
+align-items: center;
+}
+.url-input {
+padding: 1.2rem 1.5rem;
+border: 2px solid #cbd5e0;
+border-radius: 1rem;
+font-size: 1rem;
+transition: all 0.3s;
+}
+.url-input:focus {
+border-color: #0B3B5C;
+outline: none;
+box-shadow: 0 0 0 3px rgba(11,59,92,0.2);
+}
+.search-btn {
+background: #0B3B5C;
+color: white;
+border: none;
+padding: 1.2rem 2rem;
+border-radius: 1rem;
+font-weight: 700;
+font-size: 1.1rem;
+cursor: pointer;
+transition: all 0.3s;
+white-space: nowrap;
+}
+.search-btn:hover {
+background: #062134;
+transform: translateY(-2px);
+box-shadow: 0 10px 20px rgba(11,59,92,0.3);
+}
+.status-bar {
+display: flex;
+gap: 2rem;
+margin: 1.5rem 0;
+flex-wrap: wrap;
+}
+.status-item {
+display: flex;
+align-items: center;
+gap: 0.8rem;
+}
+.status-dot {
+width: 12px;
+height: 12px;
+border-radius: 50%;
+}
+.status-dot.good { background: #10B981; }
+.status-dot.warning { background: #F59E0B; }
+.status-dot.bad { background: #EF4444; }
+.results-summary {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 1.5rem;
+margin: 2rem 0;
+}
+.summary-card {
+background: white;
+padding: 1.5rem;
+border-radius: 1rem;
+border: 1px solid #e2e8f0;
+text-align: center;
+}
+.summary-value {
+font-size: 2.5rem;
+font-weight: 800;
+color: #0B3B5C;
+}
+.chain-visualization {
+background: white;
+border-radius: 1.5rem;
+padding: 2rem;
+margin: 2rem 0;
+overflow-x: auto;
+}
+.chain-flow {
+display: flex;
+align-items: center;
+gap: 0.5rem;
+flex-wrap: nowrap;
+min-width: min-content;
+}
+.chain-node {
+background: #f7fafc;
+border: 2px solid #e2e8f0;
+border-radius: 1rem;
+padding: 1rem;
+min-width: 250px;
+position: relative;
+}
+.chain-node.start {
+border-color: #10B981;
+background: #F0FDF4;
+}
+.chain-node.redirect {
+border-color: #F59E0B;
+background: #FFFBEB;
+}
+.chain-node.final {
+border-color: #3B82F6;
+background: #EFF6FF;
+}
+.chain-node.error {
+border-color: #EF4444;
+background: #FEF2F2;
+}
+.chain-arrow {
+font-size: 2rem;
+color: #94a3b8;
+}
+.http-code {
+display: inline-block;
+padding: 0.2rem 0.8rem;
+border-radius: 50px;
+font-size: 0.9rem;
+font-weight: 600;
+}
+.code-301 { background: #F59E0B; color: white; }
+.code-302 { background: #3B82F6; color: white; }
+.code-200 { background: #10B981; color: white; }
+.code-404 { background: #EF4444; color: white; }
+.chain-stats {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 1.5rem;
+margin: 2rem 0;
+}
+.stat-card {
+background: #f8fafc;
+padding: 1.5rem;
+border-radius: 1rem;
+border: 1px solid #e2e8f0;
+}
+.stat-label {
+color: #64748b;
+font-size: 0.9rem;
+text-transform: uppercase;
+}
+.stat-value {
+font-size: 1.8rem;
+font-weight: 700;
+color: #0B3B5C;
+}
+.impact-meter {
+height: 10px;
+background: #e2e8f0;
+border-radius: 5px;
+margin: 1rem 0;
+overflow: hidden;
+}
+.impact-fill {
+height: 100%;
+background: linear-gradient(90deg, #10B981, #F59E0B, #EF4444);
+border-radius: 5px;
+}
+.bulk-check-section {
+background: #f8fafc;
+border-radius: 1.5rem;
+padding: 2rem;
+margin: 2rem 0;
+border: 2px dashed #0B3B5C;
+}
+.bulk-textarea {
+width: 100%;
+height: 150px;
+padding: 1.2rem;
+border: 2px solid #e2e8f0;
+border-radius: 1rem;
+font-size: 1rem;
+margin: 1rem 0;
+resize: vertical;
+}
+.url-list {
+max-height: 400px;
+overflow-y: auto;
+background: white;
+border-radius: 1rem;
+padding: 1rem;
+margin: 2rem 0;
+}
+.url-item {
+display: flex;
+align-items: center;
+gap: 1rem;
+padding: 0.8rem;
+border-bottom: 1px solid #e2e8f0;
+}
+.url-item:last-child {
+border-bottom: none;
+}
+.url-status {
+width: 80px;
+text-align: center;
+padding: 0.2rem 0.5rem;
+border-radius: 50px;
+font-weight: 600;
+}
+.recommendation-card {
+background: white;
+border-radius: 1rem;
+padding: 1.5rem;
+margin: 1rem 0;
+border-left: 5px solid;
+}
+.recommendation-card.good { border-left-color: #10B981; }
+.recommendation-card.warning { border-left-color: #F59E0B; }
+.recommendation-card.bad { border-left-color: #EF4444; }
+.export-bar {
+display: flex;
+gap: 1rem;
+justify-content: flex-end;
+margin: 1.5rem 0;
+}
+.btn {
+padding: 0.8rem 1.5rem;
+border: none;
+border-radius: 0.8rem;
+font-weight: 600;
+cursor: pointer;
+transition: all 0.2s;
+}
+.btn-primary {
+background: #0B3B5C;
+color: white;
+}
+.btn-primary:hover {
+background: #062134;
+}
+.btn-outline {
+background: white;
+color: #0B3B5C;
+border: 2px solid #0B3B5C;
+}
+.btn-outline:hover {
+background: #0B3B5C;
+color: white;
+}
+footer {
+margin-top: 3rem;
+text-align: center;
+color: #64748b;
+border-top: 1px solid #e2e8f0;
+padding-top: 2rem;
+}
+@media (max-width: 768px) {
+h1 { font-size: 2rem; }
+.search-grid { grid-template-columns: 1fr; }
+.results-summary { grid-template-columns: repeat(2, 1fr); }
+.chain-stats { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<!-- Header -->
+<div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+<div>
+<span class="tech-badge">⚙️ TECHNICAL SEO TOOL 2026</span>
+<h1>Redirect Chain <br>Checker</h1>
+</div>
+<div style="font-size: 4rem;">🔄🔍</div>
+</div>
+
+<div class="subhead">
+Find long redirect chains (301, 302) that hurt page speed and SEO. Analyze redirect loops, chain length, and HTTP status codes.
+<span class="global-badge">🌍 CHECK ANY URL</span>
+</div>
+
+<!-- Status Legend -->
+<div class="status-bar">
+<div class="status-item">
+<span class="status-dot good"></span>
+<span>Direct 200 OK (Good)</span>
+</div>
+<div class="status-item">
+<span class="status-dot warning"></span>
+<span>1-2 Redirects (Acceptable)</span>
+</div>
+<div class="status-item">
+<span class="status-dot bad"></span>
+<span>3+ Redirects (Bad for SEO)</span>
+</div>
+</div>
+
+<!-- Single URL Check -->
+<div class="search-section">
+<div class="search-grid">
+<input type="url" class="url-input" id="singleUrl" placeholder="Enter URL to check (e.g., https://example.com/old-page)" value="https://example.com/old-page">
+<button class="search-btn" onclick="checkSingleURL()">🔍 Check Redirect Chain</button>
+</div>
+
+<!-- Quick Examples -->
+<div style="display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.5rem;">
+<span class="status-item" style="cursor: pointer;" onclick="quickCheck('https://example.com/301-chain')">
+<span class="status-dot bad"></span> Long Chain (5 redirects)
+</span>
+<span class="status-item" style="cursor: pointer;" onclick="quickCheck('https://example.com/loop')">
+<span class="status-dot bad"></span> Redirect Loop
+</span>
+<span class="status-item" style="cursor: pointer;" onclick="quickCheck('https://example.com/broken')">
+<span class="status-dot bad"></span> 404 Broken
+</span>
+<span class="status-item" style="cursor: pointer;" onclick="quickCheck('https://example.com/clean')">
+<span class="status-dot good"></span> Clean URL
+</span>
+</div>
+</div>
+
+<!-- Results Summary -->
+<div class="results-summary" id="resultsSummary">
+<!-- Dynamic summary will be inserted here -->
+</div>
+
+<!-- Chain Visualization -->
+<div class="chain-visualization" id="chainVisualization">
+<h3 style="margin-bottom: 1.5rem;">🔄 Redirect Chain Visualization</h3>
+<div class="chain-flow" id="chainFlow">
+<!-- Dynamic chain nodes will be inserted here -->
+</div>
+</div>
+
+<!-- Chain Stats -->
+<div class="chain-stats" id="chainStats">
+<!-- Dynamic stats will be inserted here -->
+</div>
+
+<!-- Impact Analysis -->
+<div class="stat-card" style="margin: 2rem 0;" id="impactAnalysis">
+<!-- Dynamic impact will be inserted here -->
+</div>
+
+<!-- Bulk URL Check -->
+<div class="bulk-check-section">
+<h3 style="margin-bottom: 1rem;">📋 Bulk URL Check (Max 50 URLs)</h3>
+<textarea class="bulk-textarea" id="bulkUrls" placeholder="Enter up to 50 URLs (one per line)&#10;https://example.com/page1&#10;https://example.com/page2&#10;https://example.com/page3">https://example.com/page1
+https://example.com/page2
+https://example.com/page3</textarea>
+<div style="display: flex; gap: 1rem;">
+<button class="btn btn-primary" onclick="checkBulkURLs()">🔍 Check Bulk URLs</button>
+<button class="btn btn-outline" onclick="clearBulk()">🗑️ Clear</button>
+</div>
+
+<!-- Bulk Results -->
+<div class="url-list" id="bulkResults" style="display: none;">
+<!-- Dynamic bulk results will be inserted here -->
+</div>
+</div>
+
+<!-- Recommendations -->
+<div style="margin: 2rem 0;">
+<h3 style="margin-bottom: 1.5rem;">💡 SEO Recommendations</h3>
+<div class="recommendation-card good">
+<h4 style="color: #10B981;">✅ Good: Direct URLs (0 redirects)</h4>
+<p>Your URL loads directly without any redirects. This is perfect for SEO and page speed.</p>
+</div>
+<div class="recommendation-card warning">
+<h4 style="color: #F59E0B;">⚠️ Acceptable: 1-2 Redirects</h4>
+<p>Minor redirect chain. Consider updating internal links to point directly to the final URL.</p>
+</div>
+<div class="recommendation-card bad">
+<h4 style="color: #EF4444;">🚨 Critical: 3+ Redirects or Loops</h4>
+<p>Long redirect chains waste crawl budget and slow down page speed. Update all links to point to the final destination URL.</p>
+</div>
+</div>
+
+<!-- Export Bar -->
+<div class="export-bar">
+<button class="btn btn-outline" onclick="exportReport()">📊 Export Report</button>
+<button class="btn btn-outline" onclick="generateFixList()">📝 Generate Fix List</button>
+<button class="btn btn-primary" onclick="shareAnalysis()">🔗 Share Analysis</button>
+</div>
+
+<!-- Footer -->
+<footer>
+<p>© 2026 Free SEO Tool Hub - Redirect Chain Checker. All rights reserved.</p>
+<p style="margin-top: 1rem; color: #94a3b8; font-size: 0.8rem;">
+📍 Keywords covered: redirect chain checker, 301 redirect checker, redirect loop detector, http status checker, url redirect path, page speed seo, redirect chain analysis, 302 redirect, 307 redirect, canonical redirect, redirect seo impact
+</p>
+<div style="margin-top: 1rem;">
+<a href="https://freeseotoolhub.com" style="color: #0B3B5C; text-decoration: none;">🏠 Back to Free SEO Tools</a>
+</div>
+</footer>
+</div>
+
+<script>
+// Mock redirect chain data generator
+function generateRedirectChain(url) {
+// Simulate different scenarios based on URL path
+if (url.includes('301-chain')) {
+return {
+startUrl: url,
+finalUrl: 'https://example.com/final-destination',
+chain: [
+{ url: 'https://example.com/old-page-1', status: 301, type: 'Permanent Redirect' },
+{ url: 'https://example.com/old-page-2', status: 301, type: 'Permanent Redirect' },
+{ url: 'https://example.com/old-page-3', status: 302, type: 'Temporary Redirect' },
+{ url: 'https://example.com/old-page-4', status: 301, type: 'Permanent Redirect' },
+{ url: 'https://example.com/final-destination', status: 200, type: 'OK' }
+],
+chainLength: 5,
+totalTime: '850ms',
+crawlBudgetWaste: 'High',
+seoImpact: 'Critical'
+};
+} else if (url.includes('loop')) {
+return {
+startUrl: url,
+finalUrl: '⚠️ REDIRECT LOOP DETECTED',
+chain: [
+{ url: 'https://example.com/page-a', status: 301, type: 'Permanent Redirect' },
+{ url: 'https://example.com/page-b', status: 302, type: 'Temporary Redirect' },
+{ url: 'https://example.com/page-a', status: 301, type: 'Permanent Redirect (LOOP)' },
+{ url: 'https://example.com/page-b', status: 302, type: 'Temporary Redirect (LOOP)' }
+],
+chainLength: '∞',
+totalTime: 'Timeout',
+crawlBudgetWaste: 'Severe',
+seoImpact: 'Critical - Loop Detected'
+};
+} else if (url.includes('broken')) {
+return {
+startUrl: url,
+finalUrl: '404 Not Found',
+chain: [
+{ url: 'https://example.com/broken', status: 404, type: 'Not Found' }
+],
+chainLength: 1,
+totalTime: '150ms',
+crawlBudgetWaste: 'Low',
+seoImpact: 'High - Broken Link'
+};
+} else if (url.includes('clean')) {
+return {
+startUrl: url,
+finalUrl: 'https://example.com/clean',
+chain: [
+{ url: 'https://example.com/clean', status: 200, type: 'OK' }
+],
+chainLength: 0,
+totalTime: '120ms',
+crawlBudgetWaste: 'None',
+seoImpact: 'Good'
+};
+} else {
+// Default - 2 redirects
+return {
+startUrl: url,
+finalUrl: 'https://example.com/new-page',
+chain: [
+{ url: 'https://example.com/old-page', status: 301, type: 'Permanent Redirect' },
+{ url: 'https://example.com/temp-page', status: 302, type: 'Temporary Redirect' },
+{ url: 'https://example.com/new-page', status: 200, type: 'OK' }
+],
+chainLength: 2,
+totalTime: '320ms',
+crawlBudgetWaste: 'Medium',
+seoImpact: 'Warning'
+};
+}
+}
+
+// Update results summary
+function updateSummary(data) {
+const impactColor = data.seoImpact === 'Good' ? '#10B981' :
+data.seoImpact === 'Warning' ? '#F59E0B' : '#EF4444';
+
+document.getElementById('resultsSummary').innerHTML = `
+<div class="summary-card">
+<div class="summary-value">${data.chainLength}</div>
+<div>Redirect Chain Length</div>
+</div>
+<div class="summary-card">
+<div class="summary-value">${data.totalTime}</div>
+<div>Total Time</div>
+</div>
+<div class="summary-card">
+<div class="summary-value">${data.crawlBudgetWaste}</div>
+<div>Crawl Budget Waste</div>
+</div>
+<div class="summary-card">
+<div class="summary-value" style="color: ${impactColor};">${data.seoImpact}</div>
+<div>SEO Impact</div>
+</div>
+`;
+}
+
+// Update chain visualization
+function updateChainVisualization(data) {
+let html = '';
+data.chain.forEach((node, index) => {
+let nodeClass = 'chain-node';
+let codeClass = '';
+
+if (node.status === 200) {
+nodeClass += ' final';
+codeClass = 'code-200';
+} else if (node.status === 404) {
+nodeClass += ' error';
+codeClass = 'code-404';
+} else if (node.status === 301) {
+nodeClass += ' redirect';
+codeClass = 'code-301';
+} else if (node.status === 302) {
+nodeClass += ' redirect';
+codeClass = 'code-302';
+}
+
+html += `
+<div class="${nodeClass}">
+<div style="margin-bottom: 0.5rem;">
+<span class="http-code ${codeClass}">${node.status}</span>
+<span style="margin-left: 0.5rem; font-weight: 600;">${node.type}</span>
+</div>
+<div style="font-size: 0.9rem; word-break: break-all;">
+${node.url}
+</div>
+${node.url.includes('LOOP') ? '<div style="color: #EF4444; margin-top: 0.5rem;">⚠️ LOOP DETECTED</div>' : ''}
+</div>
+`;
+
+if (index < data.chain.length - 1) {
+html += '<div class="chain-arrow">→</div>';
+}
+});
+
+document.getElementById('chainFlow').innerHTML = html;
+}
+
+// Update chain stats
+function updateChainStats(data) {
+const redirectCount = data.chain.filter(n => n.status === 301 || n.status === 302).length;
+const timeImpact = redirectCount * 0.15; // 150ms per redirect
+
+document.getElementById('chainStats').innerHTML = `
+<div class="stat-card">
+<div class="stat-label">Redirect Types</div>
+<div class="stat-value">
+${data.chain.filter(n => n.status === 301).length} × 301,
+${data.chain.filter(n => n.status === 302).length} × 302
+</div>
+</div>
+<div class="stat-card">
+<div class="stat-label">Time Impact</div>
+<div class="stat-value">+${timeImpact}s</div>
+<small>additional load time</small>
+</div>
+<div class="stat-card">
+<div class="stat-label">Page Speed Score</div>
+<div class="stat-value">${Math.max(0, 100 - redirectCount * 15)}/100</div>
+</div>
+`;
+
+// Update impact analysis
+const impactPercent = Math.min(100, redirectCount * 25);
+document.getElementById('impactAnalysis').innerHTML = `
+<h4 style="margin-bottom: 1rem;">📊 SEO Impact Analysis</h4>
+<div class="impact-meter">
+<div class="impact-fill" style="width: ${impactPercent}%;"></div>
+</div>
+<div style="display: flex; justify-content: space-between; margin-top: 0.5rem;">
+<span>Low Impact</span>
+<span>High Impact</span>
+</div>
+<p style="margin-top: 1rem; color: ${impactPercent > 70 ? '#EF4444' : impactPercent > 40 ? '#F59E0B' : '#10B981'};">
+${impactPercent > 70 ? '🚨 Critical: Fix these redirects immediately' :
+impactPercent > 40 ? '⚠️ Warning: Consider optimizing' :
+'✅ Good: No major issues'}
+</p>
+`;
+}
+
+// Check single URL
+function checkSingleURL() {
+const url = document.getElementById('singleUrl').value.trim();
+if (!url) {
+alert('Please enter a URL');
+return;
+}
+
+const data = generateRedirectChain(url);
+
+updateSummary(data);
+updateChainVisualization(data);
+updateChainStats(data);
+}
+
+// Quick check examples
+function quickCheck(url) {
+document.getElementById('singleUrl').value = url;
+checkSingleURL();
+}
+
+// Bulk URL check
+function checkBulkURLs() {
+const urls = document.getElementById('bulkUrls').value.split('\n').filter(u => u.trim());
+if (urls.length === 0) {
+alert('Please enter at least one URL');
+return;
+}
+
+let results = '<h4 style="margin-bottom: 1rem;">📋 Bulk Check Results</h4>';
+
+urls.forEach(url => {
+const data = generateRedirectChain(url.trim());
+const statusColor = data.seoImpact === 'Good' ? '#10B981' :
+data.seoImpact === 'Warning' ? '#F59E0B' : '#EF4444';
+
+results += `
+<div class="url-item">
+<span class="url-status" style="background: ${statusColor}20; color: ${statusColor};">
+${data.chainLength} redirects
+</span>
+<span style="flex: 1;">${url}</span>
+<span>→ ${data.finalUrl.substring(0, 50)}${data.finalUrl.length > 50 ? '...' : ''}</span>
+</div>
+`;
+});
+
+document.getElementById('bulkResults').innerHTML = results;
+document.getElementById('bulkResults').style.display = 'block';
+}
+
+// Clear bulk
+function clearBulk() {
+document.getElementById('bulkUrls').value = '';
+document.getElementById('bulkResults').style.display = 'none';
+}
+
+// Export functions
+function exportReport() {
+const data = generateRedirectChain(document.getElementById('singleUrl').value);
+const report = `
+REDIRECT CHAIN REPORT
+=====================
+Start URL: ${data.startUrl}
+Final URL: ${data.finalUrl}
+Chain Length: ${data.chainLength}
+Total Time: ${data.totalTime}
+SEO Impact: ${data.seoImpact}
+
+CHAIN DETAILS:
+${data.chain.map((n, i) => `${i+1}. ${n.status} - ${n.url}`).join('\n')}
+`;
+
+const blob = new Blob([report], { type: 'text/plain' });
+const link = document.createElement('a');
+link.download = 'redirect-chain-report.txt';
+link.href = URL.createObjectURL(blob);
+link.click();
+}
+
+function generateFixList() {
+const data = generateRedirectChain(document.getElementById('singleUrl').value);
+let fixList = '🔧 FIX LIST\n\n';
+
+if (data.chainLength > 2) {
+fixList += 'CRITICAL ISSUES:\n';
+fixList += `1. Long redirect chain detected (${data.chainLength} steps)\n`;
+fixList += `2. Update all internal links pointing to: ${data.startUrl}\n`;
+fixList += `3. Change them to point directly to: ${data.finalUrl}\n\n`;
+fixList += 'IMPLEMENTATION:\n';
+fixList += '- Update hard-coded links in HTML\n';
+fixList += '- Update database URLs if applicable\n';
+fixList += '- Update sitemap.xml\n';
+fixList += '- Update canonical tags\n';
+}
+
+alert(fixList);
+}
+
+function shareAnalysis() {
+const url = document.getElementById('singleUrl').value;
+const shareUrl = new URL(window.location.href);
+shareUrl.searchParams.set('url', url);
+
+navigator.clipboard.writeText(shareUrl.toString()).then(() => {
+alert('🔗 Analysis URL copied to clipboard!');
+});
+}
+
+// Initialize with default URL
+window.onload = function() {
+checkSingleURL();
+};
+</script>
+</body>
+</html>
