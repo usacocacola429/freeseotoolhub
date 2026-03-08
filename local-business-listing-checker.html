@@ -1,673 +1,216 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Local Business Listing Checker: Google Maps, Justdial, Sulekha, IndiaMart पर लिस्टिंग चेक करें 2026</title>
-<meta name="description" content="फ्री Local Business Listing Checker Tool। एक क्लिक में चेक करें आपका बिजनेस Google Maps, Justdial, Sulekha, IndiaMart, Practo, UrbanClap, MagicBricks, Zomato पर लिस्टेड है या नहीं।">
-<meta name="keywords" content="Local Business Listing Checker, Google Maps Listing Check, Justdial Listing Check, Sulekha Listing, IndiaMart Listing, Business Directory Checker, भारतीय बिजनेस लिस्टिंग, Local SEO India, NAP Consistency Checker">
-<meta name="author" content="Free SEO Tool Hub">
-<link rel="canonical" href="https://freeseotoolhub.com/local-business-listing-checker" />
-
-<!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://freeseotoolhub.com/local-business-listing-checker">
-<meta property="og:title" content="Local Business Listing Checker - भारतीय बिजनेस डायरेक्ट्री चेकर">
-<meta property="og:description" content="चेक करें आपका बिजनेस Google Maps, Justdial, Sulekha, IndiaMart पर लिस्टेड है या नहीं">
-<meta property="og:image" content="https://freeseotoolhub.com/assets/local-listing-checker-og.jpg">
-
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Local Business Listing Checker">
-<meta name="twitter:description" content="भारत की 10+ बिजनेस डायरेक्ट्री पर लिस्टिंग चेक करें">
-<meta name="twitter:image" content="https://freeseotoolhub.com/assets/local-listing-checker-twitter.jpg">
-
-<!-- Schema Markup -->
-<script type="application/ld+json">
-{
-"@context": "https://schema.org",
-"@type": "SoftwareApplication",
-"name": "Local Business Listing Checker",
-"description": "चेक करें आपका बिजनेस Google Maps, Justdial, Sulekha, IndiaMart पर लिस्टेड है या नहीं",
-"applicationCategory": "SEO Tool / Local Business",
-"operatingSystem": "All",
-"url": "https://freeseotoolhub.com/local-business-listing-checker",
-"offers": {
-"@type": "Offer",
-"price": "0",
-"priceCurrency": "USD"
-}
-}
-</script>
-
-<style>
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-font-family: 'Inter', 'Poppins', -apple-system, sans-serif;
-}
-body {
-background: linear-gradient(145deg, #0b2b40 0%, #1a4b6d 100%);
-min-height: 100vh;
-padding: 1.5rem;
-}
-.container {
-max-width: 1400px;
-margin: 0 auto;
-background: rgba(255,255,255,0.97);
-backdrop-filter: blur(10px);
-border-radius: 2.5rem;
-padding: 2.5rem;
-box-shadow: 0 30px 60px rgba(0,0,0,0.3);
-}
-h1 {
-font-size: 3rem;
-font-weight: 800;
-background: linear-gradient(135deg, #1a4b6d, #0b2b40);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-margin-bottom: 0.5rem;
-}
-.local-badge {
-background: #1a4b6d;
-color: white;
-padding: 0.5rem 1.5rem;
-border-radius: 50px;
-display: inline-block;
-margin-bottom: 1rem;
-font-weight: 600;
-}
-.subhead {
-font-size: 1.3rem;
-color: #2d3748;
-margin-bottom: 2rem;
-border-left: 5px solid #1a4b6d;
-padding-left: 1.5rem;
-}
-.search-section {
-background: linear-gradient(145deg, #f0f9ff, #e6f3ff);
-border-radius: 2rem;
-padding: 2.5rem;
-margin: 2rem 0;
-border: 2px solid #1a4b6d;
-}
-.search-grid {
-display: grid;
-grid-template-columns: 2fr 1fr 0.5fr;
-gap: 1rem;
-align-items: center;
-}
-.search-input {
-padding: 1.2rem 1.5rem;
-border: 2px solid #cbd5e0;
-border-radius: 1rem;
-font-size: 1.1rem;
-transition: all 0.3s;
-}
-.search-input:focus {
-border-color: #1a4b6d;
-outline: none;
-box-shadow: 0 0 0 3px rgba(26,75,109,0.2);
-}
-.search-btn {
-background: #1a4b6d;
-color: white;
-border: none;
-padding: 1.2rem 2rem;
-border-radius: 1rem;
-font-weight: 700;
-font-size: 1.1rem;
-cursor: pointer;
-transition: all 0.3s;
-white-space: nowrap;
-}
-.search-btn:hover {
-background: #0b2b40;
-transform: translateY(-2px);
-box-shadow: 0 10px 20px rgba(26,75,109,0.3);
-}
-.directories-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-gap: 1rem;
-margin: 1.5rem 0;
-}
-.directory-card {
-background: white;
-border-radius: 1rem;
-padding: 1rem;
-text-align: center;
-cursor: pointer;
-border: 2px solid transparent;
-transition: all 0.2s;
-box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-}
-.directory-card.selected {
-border-color: #1a4b6d;
-background: #f0f9ff;
-transform: scale(1.02);
-}
-.directory-logo {
-font-size: 2rem;
-font-weight: 700;
-margin-bottom: 0.5rem;
-}
-.directory-name {
-font-weight: 600;
-color: #2d3748;
-}
-.directory-status {
-font-size: 0.9rem;
-margin-top: 0.3rem;
-padding: 0.2rem 0.5rem;
-border-radius: 50px;
-display: inline-block;
-}
-.results-section {
-margin: 2rem 0;
-}
-.result-card {
-background: white;
-border-radius: 1rem;
-padding: 1.5rem;
-margin-bottom: 1rem;
-border-left: 5px solid;
-transition: all 0.2s;
-box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-}
-.result-card.listed {
-border-left-color: #48bb78;
-background: #f0fff4;
-}
-.result-card.unlisted {
-border-left-color: #f56565;
-background: #fff5f5;
-}
-.result-card.partial {
-border-left-color: #ecc94b;
-background: #fffff0;
-}
-.result-header {
-display: flex;
-justify-content: space-between;
-align-items: center;
-flex-wrap: wrap;
-margin-bottom: 1rem;
-}
-.result-platform {
-display: flex;
-align-items: center;
-gap: 1rem;
-}
-.platform-icon {
-font-size: 2rem;
-}
-.platform-name {
-font-size: 1.3rem;
-font-weight: 700;
-}
-.status-badge {
-padding: 0.5rem 1rem;
-border-radius: 50px;
-font-weight: 600;
-}
-.status-badge.listed {
-background: #48bb78;
-color: white;
-}
-.status-badge.unlisted {
-background: #f56565;
-color: white;
-}
-.status-badge.partial {
-background: #ecc94b;
-color: #744210;
-}
-.info-row {
-display: flex;
-gap: 2rem;
-flex-wrap: wrap;
-margin: 0.5rem 0;
-color: #4a5568;
-}
-.action-btn {
-background: #1a4b6d;
-color: white;
-border: none;
-padding: 0.5rem 1.2rem;
-border-radius: 50px;
-font-weight: 500;
-cursor: pointer;
-transition: all 0.2s;
-margin-right: 0.5rem;
-display: inline-block;
-text-decoration: none;
-font-size: 0.9rem;
-}
-.action-btn:hover {
-background: #0b2b40;
-}
-.stats-overview {
-display: grid;
-grid-template-columns: repeat(4, 1fr);
-gap: 1rem;
-margin: 2rem 0;
-}
-.stat-card {
-background: white;
-padding: 1.5rem;
-border-radius: 1rem;
-text-align: center;
-box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-}
-.stat-number {
-font-size: 2rem;
-font-weight: 800;
-color: #1a4b6d;
-}
-.stat-label {
-color: #718096;
-margin-top: 0.3rem;
-}
-.tips-section {
-background: #f7fafc;
-border-radius: 1.5rem;
-padding: 2rem;
-margin: 2rem 0;
-}
-.tip-item {
-display: flex;
-gap: 1rem;
-margin: 1rem 0;
-align-items: start;
-}
-.tip-icon {
-background: #1a4b6d;
-color: white;
-width: 24px;
-height: 24px;
-border-radius: 50%;
-display: flex;
-align-items: center;
-justify-content: center;
-font-size: 0.9rem;
-flex-shrink: 0;
-}
-.city-selector {
-display: flex;
-gap: 1rem;
-flex-wrap: wrap;
-margin: 1rem 0;
-}
-.city-tag {
-background: #edf2f7;
-padding: 0.5rem 1.2rem;
-border-radius: 50px;
-cursor: pointer;
-transition: all 0.2s;
-}
-.city-tag:hover, .city-tag.active {
-background: #1a4b6d;
-color: white;
-}
-footer {
-margin-top: 3rem;
-text-align: center;
-color: #718096;
-border-top: 1px solid #e2e8f0;
-padding-top: 2rem;
-}
-@media (max-width: 768px) {
-h1 { font-size: 2rem; }
-.search-grid {
-grid-template-columns: 1fr;
-}
-.stats-overview {
-grid-template-columns: repeat(2, 1fr);
-}
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Business Listing Checker - Free SEO Tool Hub</title>
+    <meta name="description" content="Check if your business is listed on Google Maps, Justdial, Sulekha, and IndiaMart. Local SEO tool for Indian businesses.">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body { background-color: #f4f7f6; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .tool-header { background: linear-gradient(135deg, #0d6efd, #0a58ca); color: white; padding: 40px 0; text-align: center; border-radius: 0 0 20px 20px; margin-bottom: 30px; }
+        .check-card { background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); padding: 20px; margin-bottom: 20px; transition: transform 0.2s; }
+        .check-card:hover { transform: translateY(-3px); }
+        .status-badge { padding: 5px 12px; border-radius: 20px; font-size: 0.9rem; font-weight: bold; }
+        .status-found { background-color: #d1e7dd; color: #0f5132; }
+        .status-not-found { background-color: #f8d7da; color: #842029; }
+        .status-pending { background-color: #fff3cd; color: #664d03; }
+        .loader { display: none; border: 4px solid #f3f3f3; border-top: 4px solid #3498db; border-radius: 50%; width: 20px; height: 20px; animation: spin 1s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .btn-check-all { background-color: #198754; color: white; border: none; padding: 10px 25px; font-size: 1.1rem; }
+        .btn-check-all:hover { background-color: #146c43; color: white; }
+        .platform-icon { width: 30px; text-align: center; margin-right: 10px; }
+    </style>
 </head>
 <body>
-<div class="container">
-<!-- Header -->
-<div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
-<div>
-<span class="local-badge">🇮🇳 भारतीय बिजनेस लिस्टिंग चेकर 2026</span>
-<h1>Local Business <br>Listing Checker</h1>
-</div>
-<div style="font-size: 4rem;">📍</div>
+
+<!-- Header Section -->
+<div class="tool-header">
+    <div class="container">
+        <h1><i class="fas fa-map-marker-alt"></i> Local Business Listing Checker</h1>
+        <p class="lead">अपने बिजनेस को Google Maps, Justdial, Sulekha और IndiaMart पर लिस्टेड चेक करें।</p>
+        <span class="badge bg-light text-primary"><i class="fas fa-globe"></i> LOCAL | UNIQUE</span>
+    </div>
 </div>
 
-<div class="subhead">
-चेक करें आपका बिजनेस Google Maps, Justdial, Sulekha, IndiaMart, Practo, UrbanClap, MagicBricks, Zomato, Swiggy और 10+ अन्य प्लेटफॉर्म पर लिस्टेड है या नहीं
-</div>
+<div class="container mb-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            
+            <!-- Input Section -->
+            <div class="card shadow-sm p-4 mb-4">
+                <h4 class="mb-3">🔍 अपनी जानकारी दर्ज करें</h4>
+                <form id="listingForm">
+                    <div class="mb-3">
+                        <label class="form-label">Business Name (बिजनेस का नाम)</label>
+                        <input type="text" id="businessName" class="form-control form-control-lg" placeholder="जैसे: Sharma Electronics Delhi" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">City / Location (शहर)</label>
+                        <input type="text" id="city" class="form-control form-control-lg" placeholder="जैसे: New Delhi, Mumbai" required>
+                    </div>
+                    <button type="submit" class="btn btn-check-all w-100">
+                        <i class="fas fa-search"></i> अब चेक करें (Check Now)
+                    </button>
+                </form>
+            </div>
 
-<!-- City Selector -->
-<div class="city-selector">
-<span style="font-weight: 600;">शहर चुनें:</span>
-<span class="city-tag active" onclick="selectCity('delhi')">दिल्ली-NCR</span>
-<span class="city-tag" onclick="selectCity('mumbai')">मुंबई</span>
-<span class="city-tag" onclick="selectCity('bangalore')">बैंगलोर</span>
-<span class="city-tag" onclick="selectCity('kolkata')">कोलकाता</span>
-<span class="city-tag" onclick="selectCity('chennai')">चेन्नई</span>
-<span class="city-tag" onclick="selectCity('pune')">पुणे</span>
-<span class="city-tag" onclick="selectCity('jaipur')">जयपुर</span>
-<span class="city-tag" onclick="selectCity('lucknow')">लखनऊ</span>
-</div>
+            <!-- Results Section -->
+            <div id="resultsArea" style="display: none;">
+                <h4 class="mb-3 text-center">परिणाम (Results)</h4>
+                
+                <!-- Google Maps -->
+                <div class="check-card">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div>
+                            <i class="fab fa-google platform-icon text-danger"></i>
+                            <strong>Google Maps (Google Business Profile)</strong>
+                        </div>
+                        <div id="status-google" class="status-badge status-pending">Checking...</div>
+                    </div>
+                    <div class="mt-2 text-muted small">
+                        <a href="#" target="_blank" id="link-google" class="text-decoration-none fw-bold">Search Link →</a>
+                    </div>
+                </div>
 
-<!-- Search Section -->
-<div class="search-section">
-<div class="search-grid">
-<input type="text" class="search-input" id="businessName" placeholder="बिजनेस का नाम दर्ज करें (जैसे: Sharma Electronics, Raj Medical Store)" value="Sharma Electronics">
-<input type="text" class="search-input" id="businessCity" placeholder="शहर (जैसे: Delhi, Mumbai)" value="Delhi">
-<button class="search-btn" onclick="checkListings()">🔍 चेक करें</button>
-</div>
+                <!-- Justdial -->
+                <div class="check-card">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div>
+                            <i class="fas fa-phone platform-icon text-warning"></i>
+                            <strong>Justdial</strong>
+                        </div>
+                        <div id="status-justdial" class="status-badge status-pending">Checking...</div>
+                    </div>
+                    <div class="mt-2 text-muted small">
+                        <a href="#" target="_blank" id="link-justdial" class="text-decoration-none fw-bold">Search Link →</a>
+                    </div>
+                </div>
 
-<!-- Popular Directories -->
-<div style="margin-top: 1.5rem;">
-<p style="margin-bottom: 1rem; font-weight: 600;">लोकप्रिय डायरेक्ट्री:</p>
-<div class="directories-grid">
-<div class="directory-card selected" onclick="toggleDirectory('google')" id="dir-google">
-<div class="directory-logo">📍</div>
-<div class="directory-name">Google Maps</div>
-</div>
-<div class="directory-card" onclick="toggleDirectory('justdial')" id="dir-justdial">
-<div class="directory-logo">📞</div>
-<div class="directory-name">Justdial</div>
-</div>
-<div class="directory-card" onclick="toggleDirectory('sulekha')" id="dir-sulekha">
-<div class="directory-logo">📋</div>
-<div class="directory-name">Sulekha</div>
-</div>
-<div class="directory-card" onclick="toggleDirectory('indiamart')" id="dir-indiamart">
-<div class="directory-logo">🏭</div>
-<div class="directory-name">IndiaMart</div>
-</div>
-<div class="directory-card" onclick="toggleDirectory('practo')" id="dir-practo">
-<div class="directory-logo">🏥</div>
-<div class="directory-name">Practo</div>
-</div>
-<div class="directory-card" onclick="toggleDirectory('urbanclap')" id="dir-urbanclap">
-<div class="directory-logo">🔧</div>
-<div class="directory-name">Urban Company</div>
-</div>
-<div class="directory-card" onclick="toggleDirectory('zomato')" id="dir-zomato">
-<div class="directory-logo">🍽️</div>
-<div class="directory-name">Zomato</div>
-</div>
-<div class="directory-card" onclick="toggleDirectory('magicbricks')" id="dir-magicbricks">
-<div class="directory-logo">🏢</div>
-<div class="directory-name">MagicBricks</div>
-</div>
-</div>
-</div>
-</div>
+                <!-- Sulekha -->
+                <div class="check-card">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div>
+                            <i class="fas fa-building platform-icon text-info"></i>
+                            <strong>Sulekha</strong>
+                        </div>
+                        <div id="status-sulekha" class="status-badge status-pending">Checking...</div>
+                    </div>
+                    <div class="mt-2 text-muted small">
+                        <a href="#" target="_blank" id="link-sulekha" class="text-decoration-none fw-bold">Search Link →</a>
+                    </div>
+                </div>
 
-<!-- Stats Overview -->
-<div class="stats-overview">
-<div class="stat-card">
-<div class="stat-number" id="totalListed">0</div>
-<div class="stat-label">कुल लिस्टिंग</div>
-</div>
-<div class="stat-card">
-<div class="stat-number" id="listedCount">0</div>
-<div class="stat-label">लिस्टेड</div>
-</div>
-<div class="stat-card">
-<div class="stat-number" id="unlistedCount">0</div>
-<div class="stat-label">अनलिस्टेड</div>
-</div>
-<div class="stat-card">
-<div class="stat-number" id="partialCount">0</div>
-<div class="stat-label">अधूरी जानकारी</div>
-</div>
-</div>
+                <!-- IndiaMart -->
+                <div class="check-card">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div>
+                            <i class="fas fa-truck platform-icon text-success"></i>
+                            <strong>IndiaMART</strong>
+                        </div>
+                        <div id="status-indiamart" class="status-badge status-pending">Checking...</div>
+                    </div>
+                    <div class="mt-2 text-muted small">
+                        <a href="#" target="_blank" id="link-indiamart" class="text-decoration-none fw-bold">Search Link →</a>
+                    </div>
+                </div>
 
-<!-- Results Section -->
-<div class="results-section" id="resultsSection">
-<!-- Results will be dynamically inserted here -->
-</div>
+                <!-- Manual Action Box -->
+                <div class="alert alert-warning mt-4 text-center">
+                    <small><strong>नोट:</strong> कुछ प्लेटफॉर्म (Justdial/Sulekha) सीधी API नहीं देते। कृपया ऊपर दिए गए लिंक पर क्लिक करके खुद देखें और नीचे दिए गए बटन पर क्लिक करें यदि आपने लिस्टिंग पाई।</small>
+                </div>
 
-<!-- NAP Consistency Checker -->
-<div style="background: #f0f9ff; border-radius: 1.5rem; padding: 2rem; margin: 2rem 0;">
-<h3 style="font-size: 1.8rem; margin-bottom: 1rem;">📋 NAP Consistency Checker</h3>
-<p style="margin-bottom: 1rem;">NAP = Name, Address, Phone Number। सभी प्लेटफॉर्म पर एक जैसी जानकारी होना जरूरी है।</p>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
-<div>
-<label style="font-weight: 600;">बिजनेस नाम:</label>
-<input type="text" class="search-input" value="Sharma Electronics" style="margin-top: 0.5rem;">
-</div>
-<div>
-<label style="font-weight: 600;">पता:</label>
-<input type="text" class="search-input" value="Main Market, Lajpat Nagar, Delhi" style="margin-top: 0.5rem;">
-</div>
-<div>
-<label style="font-weight: 600;">फोन नंबर:</label>
-<input type="text" class="search-input" value="+91 98765 43210" style="margin-top: 0.5rem;">
-</div>
-</div>
-<button class="search-btn" style="margin-top: 1.5rem; width: 100%;" onclick="checkNAP()">NAP Consistency Check करें</button>
-</div>
+                <div class="text-center mt-3">
+                    <button class="btn btn-outline-primary" onclick="resetTool()">नया चेक करें</button>
+                </div>
+            </div>
 
-<!-- Tips Section -->
-<div class="tips-section">
-<h3 style="font-size: 1.8rem; margin-bottom: 1rem;">💡 लिस्टिंग इम्प्रूवमेंट टिप्स</h3>
-<div class="tip-item">
-<div class="tip-icon">1</div>
-<div><strong>NAP Consistency:</strong> सभी प्लेटफॉर्म पर बिजनेस का नाम, पता और फोन नंबर एक जैसा रखें।</div>
-</div>
-<div class="tip-item">
-<div class="tip-icon">2</div>
-<div><strong>फोटो अपलोड करें:</strong> प्रोडक्ट, स्टोर और टीम की क्वालिटी फोटोज लगाएं - लिस्टिंग परफॉरमेंस 40% बढ़ जाती है।</div>
-</div>
-<div class="tip-item">
-<div class="tip-icon">3</div>
-<div><strong>रिव्यू मैनेजमेंट:</strong> हर प्लेटफॉर्म पर रिव्यू का जवाब दें। पॉजिटिव रिव्यू से रैंकिंग बेहतर होती है।</div>
-</div>
-<div class="tip-item">
-<div class="tip-icon">4</div>
-<div><strong>कैटेगरी सही चुनें:</strong> बिजनेस की सही कैटेगरी चुनें ताकि सही कस्टमर तक पहुंच हो।</div>
-</div>
-<div class="tip-item">
-<div class="tip-icon">5</div>
-<div><strong>अपडेट रखें:</strong> त्योहारों के ऑफर, टाइमिंग और सर्विस अपडेट रेगुलर करें।</div>
-</div>
-</div>
-
-<!-- Popular Business Categories -->
-<div style="background: white; border-radius: 1.5rem; padding: 2rem; margin: 2rem 0;">
-<h3 style="margin-bottom: 1rem;">🔥 ट्रेंडिंग बिजनेस कैटेगरी 2026</h3>
-<div style="display: flex; flex-wrap: wrap; gap: 0.8rem;">
-<span class="city-tag" style="background: #e6f3ff;">रेस्टोरेंट</span>
-<span class="city-tag" style="background: #e6f3ff;">मेडिकल स्टोर</span>
-<span class="city-tag" style="background: #e6f3ff;">इलेक्ट्रॉनिक्स</span>
-<span class="city-tag" style="background: #e6f3ff;">सैलून</span>
-<span class="city-tag" style="background: #e6f3ff;">फिटनेस सेंटर</span>
-<span class="city-tag" style="background: #e6f3ff;">ट्यूशन सेंटर</span>
-<span class="city-tag" style="background: #e6f3ff;">प्लंबर</span>
-<span class="city-tag" style="background: #e6f3ff;">इलेक्ट्रीशियन</span>
-<span class="city-tag" style="background: #e6f3ff;">केटरर्स</span>
-<span class="city-tag" style="background: #e6f3ff;">इवेंट प्लानर</span>
-</div>
-</div>
-
-<!-- Footer -->
-<footer>
-<p>© 2026 Free SEO Tool Hub - Local Business Listing Checker. सभी अधिकार सुरक्षित।</p>
-<p style="margin-top: 1rem; color: #a0aec0; font-size: 0.8rem;">
-📍 कीवर्ड कवर: local business listing checker, google maps listing check, justdial listing check, sulekha listing, indiamart listing, business directory checker, local seo india, nap consistency checker, google my business verification, भारतीय बिजनेस लिस्टिंग, व्यापार सूची चेकर, local listing management, citation building india, local seo tool 2026
-</p>
-<div style="margin-top: 1rem;">
-<a href="https://freeseotoolhub.com" style="color: #1a4b6d; text-decoration: none;">🏠 और भी फ्री SEO टूल्स</a>
-</div>
-</footer>
+        </div>
+    </div>
 </div>
 
 <script>
-// Selected directories tracking
-let selectedDirs = new Set(['google', 'justdial', 'sulekha', 'indiamart']);
+    document.getElementById('listingForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const name = document.getElementById('businessName').value.trim();
+        const city = document.getElementById('city').value.trim();
+        
+        if(!name || !city) {
+            alert("कृपया बिजनेस का नाम और शहर दर्ज करें।");
+            return;
+        }
 
-function toggleDirectory(dir) {
-const element = document.getElementById(`dir-${dir}`);
-if (selectedDirs.has(dir)) {
-selectedDirs.delete(dir);
-element.classList.remove('selected');
-} else {
-selectedDirs.add(dir);
-element.classList.add('selected');
-}
-}
+        // Show results area
+        document.getElementById('resultsArea').style.display = 'block';
 
-// City selection
-function selectCity(city) {
-document.querySelectorAll('.city-tag').forEach(tag => tag.classList.remove('active'));
-event.target.classList.add('active');
-document.getElementById('businessCity').value = city.charAt(0).toUpperCase() + city.slice(1);
-}
+        // Generate Links
+        updatePlatformStatus('google', true);
+        updatePlatformStatus('justdial', true);
+        updatePlatformStatus('sulekha', true);
+        updatePlatformStatus('indiamart', true);
 
-// Main check function
-function checkListings() {
-const businessName = document.getElementById('businessName').value;
-const city = document.getElementById('businessCity').value;
+        // Simulate Checking Process (Since we can't scrape directly without backend)
+        setTimeout(() => {
+            // Logic: Since we cannot verify live data from client-side JS due to CORS,
+            // We will assume the user needs to check manually via the links provided.
+            // However, for UX, we will mark them as "Link Generated - Please Verify".
+            
+            // In a real production app with a backend proxy, you would fetch here.
+            // For this static site, we set status to "Link Ready" and let user click.
+            
+            updatePlatformStatus('google', false, true);
+            updatePlatformStatus('justdial', false, true);
+            updatePlatformStatus('sulekha', false, true);
+            updatePlatformStatus('indiamart', false, true);
+            
+        }, 1500);
+    });
 
-if (!businessName || !city) {
-alert('कृपया बिजनेस का नाम और शहर दर्ज करें');
-return;
-}
+    function updatePlatformStatus(platform, isLoading, isVerified = false) {
+        const statusEl = document.getElementById(`status-${platform}`);
+        const linkEl = document.getElementById(`link-${platform}`);
+        
+        const name = encodeURIComponent(document.getElementById('businessName').value);
+        const city = encodeURIComponent(document.getElementById('city').value);
 
-// Simulate checking listings
-const directories = [
-{ id: 'google', name: 'Google Maps', icon: '📍', url: 'https://maps.google.com', category: 'मैप्स' },
-{ id: 'justdial', name: 'Justdial', icon: '📞', url: 'https://www.justdial.com', category: 'डायरेक्ट्री' },
-{ id: 'sulekha', name: 'Sulekha', icon: '📋', url: 'https://www.sulekha.com', category: 'डायरेक्ट्री' },
-{ id: 'indiamart', name: 'IndiaMart', icon: '🏭', url: 'https://www.indiamart.com', category: 'B2B' },
-{ id: 'practo', name: 'Practo', icon: '🏥', url: 'https://www.practo.com', category: 'हेल्थकेयर' },
-{ id: 'urbanclap', name: 'Urban Company', icon: '🔧', url: 'https://www.urbancompany.com', category: 'सर्विस' },
-{ id: 'zomato', name: 'Zomato', icon: '🍽️', url: 'https://www.zomato.com', category: 'फूड' },
-{ id: 'swiggy', name: 'Swiggy', icon: '🚚', url: 'https://www.swiggy.com', category: 'फूड' },
-{ id: 'magicbricks', name: 'MagicBricks', icon: '🏢', url: 'https://www.magicbricks.com', category: 'रियल एस्टेट' },
-{ id: 'yellowpages', name: 'Yellow Pages', icon: '📒', url: 'https://www.yellowpages.in', category: 'डायरेक्ट्री' },
-{ id: 'asklaila', name: 'AskLaila', icon: '❓', url: 'https://www.asklaila.com', category: 'डायरेक्ट्री' },
-{ id: 'tradeindia', name: 'TradeIndia', icon: '📦', url: 'https://www.tradeindia.com', category: 'B2B' }
-];
+        let searchUrl = "";
 
-let results = '';
-let listed = 0, unlisted = 0, partial = 0;
+        if (platform === 'google') {
+            searchUrl = `https://www.google.com/maps/search/?api=1&query=${name}+${city}`;
+            linkEl.href = searchUrl;
+        } else if (platform === 'justdial') {
+            searchUrl = `https://www.justdial.com/${city.replace(/ /g, '+')}/${name.replace(/ /g, '+')}/nct-10000000`;
+            linkEl.href = searchUrl;
+        } else if (platform === 'sulekha') {
+            searchUrl = `https://www.sulekha.com/biz/${name.replace(/ /g, '+')}+in+${city.replace(/ /g, '+')}`;
+            linkEl.href = searchUrl;
+        } else if (platform === 'indiamart') {
+            searchUrl = `https://www.indiamart.com/proxy/search.html?q=${name}+in+${city}`;
+            linkEl.href = searchUrl;
+        }
 
-directories.forEach(dir => {
-// Simulate different statuses based on business name length and city
-let status, statusClass, statusText, details;
-const random = Math.random();
+        if (isLoading) {
+            statusEl.className = "status-badge status-pending";
+            statusEl.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Searching...';
+        } else {
+            // Since we can't auto-verify without a backend, we inform the user
+            statusEl.className = "status-badge status-pending";
+            statusEl.innerHTML = '<i class="fas fa-link"></i> Check Manually';
+            statusEl.title = "Please click the link to verify listing manually.";
+        }
+    }
 
-if (selectedDirs.has(dir.id)) {
-if (random < 0.6) {
-status = 'listed';
-listed++;
-statusClass = 'listed';
-statusText = '✅ लिस्टेड';
-details = {
-rating: (4 + Math.random()).toFixed(1),
-reviews: Math.floor(Math.random() * 200) + 10,
-verified: Math.random() > 0.3 ? '✅ वेरिफाइड' : '⚠️ अनवेरिफाइड',
-lastUpdated: '2026-' + Math.floor(Math.random() * 2 + 1) + '-15'
-};
-} else if (random < 0.8) {
-status = 'partial';
-partial++;
-statusClass = 'partial';
-statusText = '⚠️ अधूरी जानकारी';
-details = {
-missing: Math.random() > 0.5 ? 'फोन नंबर मिसिंग' : 'एड्रेस मिसिंग',
-action: 'जानकारी अपडेट करें'
-};
-} else {
-status = 'unlisted';
-unlisted++;
-statusClass = 'unlisted';
-statusText = '❌ लिस्टेड नहीं';
-details = {
-reason: 'लिस्टिंग नहीं मिली',
-action: 'अभी लिस्ट करें'
-};
-}
-
-results += `
-<div class="result-card ${statusClass}">
-<div class="result-header">
-<div class="result-platform">
-<span class="platform-icon">${dir.icon}</span>
-<span class="platform-name">${dir.name}</span>
-<span style="background: #e2e8f0; padding: 0.2rem 0.8rem; border-radius: 50px; font-size: 0.8rem;">${dir.category}</span>
-</div>
-<span class="status-badge ${statusClass}">${statusText}</span>
-</div>
-
-${status === 'listed' ? `
-<div class="info-row">
-<span>⭐ रेटिंग: ${details.rating}/5 (${details.reviews} रिव्यू)</span>
-<span>🔵 ${details.verified}</span>
-<span>📅 लास्ट अपडेट: ${details.lastUpdated}</span>
-</div>
-` : status === 'partial' ? `
-<div class="info-row">
-<span>⚠️ ${details.missing}</span>
-</div>
-` : `
-<div class="info-row">
-<span>🔴 ${details.reason}</span>
-</div>
-`}
-
-<div style="margin-top: 1rem;">
-${status === 'listed' ? `
-<a href="${dir.url}/search?q=${businessName}+${city}" target="_blank" class="action-btn">🔍 प्रोफाइल देखें</a>
-<button class="action-btn" style="background: #48bb78;" onclick="claimListing('${dir.name}')">📝 क्लेम करें</button>
-` : status === 'partial' ? `
-<button class="action-btn" onclick="updateListing('${dir.name}')">📝 जानकारी अपडेट करें</button>
-` : `
-<button class="action-btn" onclick="addListing('${dir.name}')">➕ लिस्टिंग जोड़ें</button>
-`}
-<button class="action-btn" style="background: #718096;" onclick="checkDetails('${dir.name}')">ℹ️ डिटेल</button>
-</div>
-</div>
-`;
-}
-});
-
-document.getElementById('resultsSection').innerHTML = results;
-document.getElementById('totalListed').textContent = selectedDirs.size;
-document.getElementById('listedCount').textContent = listed;
-document.getElementById('unlistedCount').textContent = unlisted;
-document.getElementById('partialCount').textContent = partial;
-}
-
-// Helper functions
-function claimListing(platform) {
-alert(`${platform} पर लिस्टिंग क्लेम करने के लिए हम आपकी मदद करेंगे। हमसे संपर्क करें: support@freeseotoolhub.com`);
-}
-
-function updateListing(platform) {
-alert(`${platform} पर जानकारी अपडेट करने के लिए स्टेप बाय स्टेप गाइड भेजी जाएगी।`);
-}
-
-function addListing(platform) {
-alert(`${platform} पर नई लिस्टिंग जोड़ने के लिए हमारा Listing Creation Tool इस्तेमाल करें।`);
-}
-
-function checkDetails(platform) {
-alert(`${platform} के लिए डिटेल्ड रिपोर्ट तैयार है। डाउनलोड करने के लिए हमसे संपर्क करें।`);
-}
-
-function checkNAP() {
-alert('NAP Consistency Report तैयार है। सभी प्लेटफॉर्म पर आपकी जानकारी का मिलान किया जा रहा है।');
-}
-
-// Initial check on page load
-window.onload = function() {
-checkListings();
-};
+    function resetTool() {
+        document.getElementById('resultsArea').style.display = 'none';
+        document.getElementById('listingForm').reset();
+    }
 </script>
+
 </body>
 </html>
