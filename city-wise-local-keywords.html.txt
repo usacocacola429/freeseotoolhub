@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>City-wise Local Keywords Generator - Free SEO Tool Hub</title>
+<meta name="description" content="Generate location-specific keywords for local SEO. Find keywords like 'Plumber in Delhi', 'Best Cafe in Mumbai' instantly.">
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+body { background-color: #f0f2f5; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+.hero-section { background: linear-gradient(135deg, #2c3e50, #4ca1af); color: white; padding: 50px 0; text-align: center; border-radius: 0 0 30px 30px; margin-bottom: 30px; }
+.keyword-card { background: white; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); padding: 15px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; transition: all 0.2s; }
+.keyword-card:hover { transform: translateX(5px); border-left: 4px solid #4ca1af; }
+.copy-btn { cursor: pointer; color: #2c3e50; transition: 0.2s; }
+.copy-btn:hover { color: #4ca1af; }
+.result-box { max-height: 400px; overflow-y: auto; border: 1px solid #ddd; border-radius: 8px; padding: 10px; background: #fafafa; }
+.badge-local { background-color: #ff9800; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.8rem; }
+.loader { display: none; }
+.search-input { font-size: 1.2rem; border-radius: 25px; border: 2px solid #ddd; }
+.btn-generate { background-color: #4ca1af; color: white; border: none; padding: 10px 30px; border-radius: 25px; font-weight: bold; }
+.btn-generate:hover { background-color: #3b8a96; color: white; }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="hero-section">
+<div class="container">
+<h1><i class="fas fa-map-marked-alt"></i> City-wise Local Keywords Generator</h1>
+<p class="lead">अपने बिजनेस के लिए शहर-वार कीवर्ड्स खोजें। Local SEO के लिए बेस्ट टूल।</p>
+<span class="badge bg-light text-dark"><i class="fas fa-city"></i> LOCAL | SEO</span>
+</div>
+</div>
+
+<div class="container mb-5">
+<div class="row justify-content-center">
+<div class="col-lg-8">
+
+<!-- Input Section -->
+<div class="card shadow p-4 mb-4">
+<h4 class="mb-3">🔍 अपनी सेवा और शहर बताएं</h4>
+<form id="keywordForm">
+<div class="row g-3">
+<div class="col-md-6">
+<label class="form-label fw-bold">Service / Product (सेवा)</label>
+<input type="text" id="service" class="form-control search-input" placeholder="जैसे: Plumber, Dentist, Bakery" required>
+</div>
+<div class="col-md-6">
+<label class="form-label fw-bold">City / Area (शहर)</label>
+<input type="text" id="city" class="form-control search-input" placeholder="जैसे: Delhi, Mumbai, Jaipur" required>
+</div>
+</div>
+<div class="mt-3 text-end">
+<button type="submit" class="btn btn-generate">
+<i class="fas fa-magic"></i> Generate Keywords
+</button>
+</div>
+</form>
+</div>
+
+<!-- Results Section -->
+<div id="resultsSection" style="display: none;">
+<div class="d-flex justify-content-between align-items-center mb-3">
+<h5 class="m-0">जनरेटेड कीवर्ड्स (<span id="count">0</span>)</h5>
+<button class="btn btn-sm btn-outline-success" onclick="copyAll()">
+<i class="fas fa-copy"></i> Copy All
+</button>
+</div>
+
+<div class="result-box" id="keywordsList">
+<!-- Keywords will appear here -->
+</div>
+
+<div class="alert alert-info mt-3 small">
+<i class="fas fa-info-circle"></i> <strong>Tip:</strong> इन कीवर्ड्स को अपने Website Title, Meta Description, और Google Business Profile में use करें।
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+<script>
+document.getElementById('keywordForm').addEventListener('submit', function(e) {
+e.preventDefault();
+
+const service = document.getElementById('service').value.trim().toLowerCase();
+const city = document.getElementById('city').value.trim().toLowerCase();
+
+if(!service || !city) {
+alert("कृपया सेवा और शहर दोनों दर्ज करें।");
+return;
+}
+
+// Show loader briefly
+const btn = document.querySelector('.btn-generate');
+const originalText = btn.innerHTML;
+btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating...';
+btn.disabled = true;
+
+setTimeout(() => {
+generateKeywords(service, city);
+btn.innerHTML = originalText;
+btn.disabled = false;
+}, 800);
+});
+
+function generateKeywords(service, city) {
+const resultsArea = document.getElementById('keywordsList');
+const countSpan = document.getElementById('count');
+resultsArea.innerHTML = '';
+
+let keywords = [];
+
+// Pattern 1: Service in City
+keywords.push(`${service} in ${city}`);
+
+// Pattern 2: Best Service in City
+keywords.push(`best ${service} in ${city}`);
+keywords.push(`top rated ${service} ${city}`);
+
+// Pattern 3: Service near me (if user is searching locally)
+keywords.push(`${service} near me`);
+keywords.push(`${service} nearby`);
+
+// Pattern 4: Contact/Call
+keywords.push(`${service} contact number ${city}`);
+keywords.push(`emergency ${service} ${city}`);
+
+// Pattern 5: Price/Cost
+keywords.push(`${service} price in ${city}`);
+keywords.push(`cost of ${service} ${city}`);
+
+// Pattern 6: Reviews/Ratings
+keywords.push(`${service} reviews ${city}`);
+keywords.push(`${service} rating ${city}`);
+
+// Pattern 7: Open Now
+keywords.push(`${service} open now ${city}`);
+keywords.push(`${service} working hours ${city}`);
+
+// Pattern 8: Professional/Expert
+keywords.push(`professional ${service} ${city}`);
+keywords.push(`expert ${service} ${city}`);
+
+// Pattern 9: Affordable/Cheap
+keywords.push(`affordable ${service} ${city}`);
+keywords.push(`cheap ${service} ${city}`);
+
+// Pattern 10: Home Service
+keywords.push(`home ${service} ${city}`);
+keywords.push(`${service} at home ${city}`);
+
+// Pattern 11: Services plural
+const servicePlural = service.endsWith('s') ? service : `${service}s`;
+keywords.push(`${servicePlural} in ${city}`);
+keywords.push(`services by ${service} ${city}`);
+
+// Pattern 12: Location specific (assuming city is the main location)
+keywords.push(`${service} ${city} address`);
+keywords.push(`${service} location ${city}`);
+
+// Sort and Remove Duplicates
+keywords = [...new Set(keywords)].sort();
+
+// Render to HTML
+keywords.forEach((kw, index) => {
+const div = document.createElement('div');
+div.className = 'keyword-card';
+div.innerHTML = `
+<span class="fw-bold text-dark">${index + 1}. ${kw}</span>
+<i class="fas fa-copy copy-btn" onclick="copyText('${kw}')"></i>
+`;
+resultsArea.appendChild(div);
+});
+
+document.getElementById('resultsSection').style.display = 'block';
+countSpan.textContent = keywords.length;
+
+// Scroll to results
+resultsArea.scrollIntoView({ behavior: 'smooth' });
+}
+
+function copyText(text) {
+navigator.clipboard.writeText(text).then(() => {
+alert(`Copied: "${text}"`);
+}).catch(err => {
+console.error('Failed to copy: ', err);
+});
+}
+
+function copyAll() {
+const list = document.querySelectorAll('#keywordsList span.fw-bold');
+let allText = "";
+list.forEach(span => {
+allText += span.textContent.replace(/^[0-9]+\.\s/, "") + "\n";
+});
+
+navigator.clipboard.writeText(allText).then(() => {
+alert("All keywords copied to clipboard!");
+});
+}
+</script>
+
+</body>
+</html>
