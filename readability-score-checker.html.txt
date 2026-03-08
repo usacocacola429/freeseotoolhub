@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Readability Score Checker - Free SEO & Writing Tool | Analyze Text Readability | FreeSEOToolHub</title>
+<meta name="title" content="Readability Score Checker - Free Global Tool | Flesch, Gunning Fog & More">
+<meta name="description" content="Free Readability Score Checker for SEO and content. Analyze text readability with Flesch-Kincaid, Gunning Fog, SMOG scores. Get grade levels, audience insights & optimization tips. Bulk check multiple texts.">
+<meta name="keywords" content="readability score checker, free readability tool, Flesch reading ease calculator, Gunning Fog index, SMOG readability score, text readability analyzer, SEO readability checker, content grade level tool, free writing readability score, audience reading level">
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://freeseotoolhub.com/readability-score-checker.html">
+<meta property="og:title" content="Readability Score Checker - Free SEO & Writing Tool">
+<meta property="og:description" content="Check text readability instantly. Optimize for better SEO and audience engagement with multiple scores.">
+<meta property="og:image" content="https://freeseotoolhub.com/images/readability-checker-og.jpg">
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://freeseotoolhub.com/readability-score-checker.html">
+<meta property="twitter:title" content="Readability Score Checker - Free SEO & Writing Tool">
+<meta property="twitter:description" content="Check text readability instantly. Optimize for better SEO and audience engagement with multiple scores.">
+<meta property="twitter:image" content="https://freeseotoolhub.com/images/readability-checker-twitter.jpg">
+<!-- Canonical URL -->
+<link rel="canonical" href="https://freeseotoolhub.com/readability-score-checker.html">
+<!-- Schema Markup -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "WebApplication",
+"name": "Readability Score Checker",
+"url": "https://freeseotoolhub.com/readability-score-checker.html",
+"description": "Free tool to calculate readability scores for text content and SEO optimization",
+"applicationCategory": "BusinessApplication",
+"operatingSystem": "All",
+"offers": {
+"@type": "Offer",
+"price": "0",
+"priceCurrency": "USD"
+},
+"featureList": [
+"Flesch Reading Ease",
+"Gunning Fog Index",
+"SMOG Grade Level",
+"Bulk Text Analysis",
+"Audience Insights",
+"Export Results"
+]
+}
+</script>
+<style>
+/* Tool-specific styles - matching your site theme */
+.rs-header {
+background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+color: white;
+padding: 80px 20px;
+text-align: center;
+margin-bottom: 30px;
+}
+
+.rs-header h1 {
+font-size: 3rem;
+margin-bottom: 15px;
+font-weight: 700;
+}
+
+.rs-header p {
+font-size: 1.2rem;
+opacity: 0.95;
+max-width: 600px;
+margin: 0 auto;
+}
+
+.rs-container {
+max-width: 1300px;
+margin: 0 auto 50px;
+padding: 0 20px;
+}
+
+.search-section {
+background: white;
+padding: 40px;
+border-radius: 20px;
+box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+margin-bottom: 30px;
+border: 1px solid #eaeaea;
+}
+
+.section-title {
+font-size: 1.8rem;
+color: #1e293b;
+margin-bottom: 25px;
+font-weight: 600;
+}
+
+.text-input-group {
+margin-bottom: 25px;
+}
+
+.text-input {
+width: 100%;
+padding: 16px 20px;
+border: 2px solid #e2e8f0;
+border-radius: 12px;
+font-size: 16px;
+transition: all 0.3s;
+min-height: 150px;
+resize: vertical;
+font-family: Arial, sans-serif;
+}
+
+.text-input:focus {
+outline: none;
+border-color: #f59e0b;
+box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+}
+
+.search-btn {
+background: #f59e0b;
+color: white;
+padding: 16px 40px;
+border: none;
+border-radius: 12px;
+font-size: 16px;
+font-weight: 600;
+cursor: pointer;
+transition: all 0.3s;
+white-space: nowrap;
+display: inline-flex;
+align-items: center;
+gap: 10px;
+}
+
+.search-btn:hover {
+background: #d97706;
+transform: translateY(-2px);
+box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
+}
+
+.bulk-toggle {
+display: flex;
+align-items: center;
+gap: 20px;
+margin: 25px 0;
+padding: 15px 20px;
+background: #f8fafc;
+border-radius: 12px;
+border: 1px solid #e2e8f0;
+}
+
+.switch {
+position: relative;
+display: inline-block;
+width: 60px;
+height: 34px;
+}
+
+.switch input {
+opacity: 0;
+width: 0;
+height: 0;
+}
+
+.slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #cbd5e1;
+transition: .4s;
+border-radius: 34px;
+}
+
+.slider:before {
+position: absolute;
+content: "";
+height: 26px;
+width: 26px;
+left: 4px;
+bottom: 4px;
+background-color: white;
+transition: .4s;
+border-radius: 50%;
+}
+
+input:checked + .slider {
+background-color: #f59e0b;
+}
+
+input:checked + .slider:before {
+transform: translateX(26px);
+}
+
+.bulk-input {
+display: none;
+margin-top: 25px;
+}
+
+.bulk-input textarea {
+width: 100%;
+height: 200px;
+padding: 20px;
+border: 2px solid #e2e8f0;
+border-radius: 12px;
+font-size: 15px;
+resize: vertical;
+font-family: 'Monaco', 'Menlo', monospace;
+}
+
+.bulk-input textarea:focus {
+outline: none;
+border-color: #f59e0b;
+}
+
+.results-section {
+margin-top: 40px;
+background: white;
+border-radius: 20px;
+padding: 30px;
+box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+border: 1px solid #eaeaea;
+}
+
+.results-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 25px;
+flex-wrap: wrap;
+gap: 15px;
+}
+
+.filter-options {
+display: flex;
+gap: 10px;
+flex-wrap: wrap;
+}
+
+.filter-btn {
+padding: 8px 18px;
+border: 1px solid #e2e8f0;
+background: white;
+border-radius: 25px;
+cursor: pointer;
+font-size: 14px;
+transition: all 0.2s;
+}
+
+.filter-btn:hover {
+background: #f1f5f9;
+}
+
+.filter-btn.active {
+background: #f59e0b;
+color: white;
+border-color: #f59e0b;
+}
+
+.rs-table {
+width: 100%;
+border-collapse: collapse;
+background: white;
+border-radius: 12px;
+overflow: hidden;
+border: 1px solid #e2e8f0;
+}
+
+.rs-table th {
+background: #f8fafc;
+color: #1e293b;
+padding: 16px;
+text-align: left;
+font-weight: 600;
+border-bottom: 2px solid #e2e8f0;
+}
+
+.rs-table td {
+padding: 16px;
+border-bottom: 1px solid #e2e8f0;
+}
+
+.rs-table tr:last-child td {
+border-bottom: none;
+}
+
+.rs-table tr:hover {
+background: #f8fafc;
+}
+
+.score-badge {
+padding: 6px 14px;
+border-radius: 25px;
+font-weight: 600;
+font-size: 13px;
+display: inline-block;
+}
+
+.level-easy {
+background: #d1fae5;
+color: #065f46;
+}
+
+.level-medium {
+background: #fef3c7;
+color: #92400e;
+}
+
+.level-hard {
+background: #fee2e2;
+color: #991b1b;
+}
+
+.insights-section {
+margin-top: 40px;
+background: white;
+border-radius: 20px;
+padding: 30px;
+box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+}
+
+.insight-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 20px;
+margin-top: 25px;
+}
+
+.insight-card {
+background: #f8fafc;
+padding: 20px;
+border-radius: 12px;
+border: 1px solid #e2e8f0;
+transition: all 0.3s;
+}
+
+.insight-card:hover {
+transform: translateY(-2px);
+box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+border-color: #f59e0b;
+}
+
+.features-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 25px;
+margin: 50px 0;
+}
+
+.feature-card {
+text-align: center;
+padding: 30px 25px;
+background: white;
+border-radius: 16px;
+border: 1px solid #eaeaea;
+transition: all 0.3s;
+}
+
+.feature-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.feature-icon {
+font-size: 48px;
+margin-bottom: 20px;
+}
+
+.feature-card h3 {
+color: #1e293b;
+margin-bottom: 12px;
+font-size: 1.3rem;
+}
+
+.feature-card p {
+color: #64748b;
+line-height: 1.6;
+}
+
+.loading-spinner {
+display: inline-block;
+width: 20px;
+height: 20px;
+border: 3px solid rgba(255,255,255,0.3);
+border-radius: 50%;
+border-top-color: white;
+animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+to { transform: rotate(360deg); }
+}
+
+.stats-badge {
+background: #f1f5f9;
+color: #1e293b;
+padding: 4px 10px;
+border-radius: 20px;
+font-size: 13px;
+font-weight: 500;
+}
+
+@media (max-width: 768px) {
+.rs-header h1 {
+font-size: 2rem;
+}
+
+.rs-table {
+display: block;
+overflow-x: auto;
+white-space: nowrap;
+}
+
+.search-section, .results-section {
+padding: 20px;
+}
+
+.text-input {
+min-height: 120px;
+}
+}
+
+/* Breadcrumbs */
+.breadcrumb {
+padding: 15px 0;
+color: #64748b;
+font-size: 14px;
+}
+
+.breadcrumb a {
+color: #f59e0b;
+text-decoration: none;
+}
+
+.breadcrumb a:hover {
+text-decoration: underline;
+}
+</style>
+</head>
+<body>
+<!-- Navigation (as per your existing navbar) -->
+<nav class="navbar">
+<!-- Your existing navbar code -->
+</nav>
+
+<!-- Breadcrumb -->
+<div class="rs-container">
+<div class="breadcrumb">
+<a href="index.html">Home</a> »
+<a href="all-tools.html">All Tools</a> »
+<span>Readability Score Checker</span>
+</div>
+</div>
+
+<!-- Header -->
+<div class="rs-header">
+<h1>📖 Readability Score Checker</h1>
+<p>Analyze your content's readability for better SEO and engagement. Get Flesch Reading Ease, Gunning Fog, SMOG scores, grade levels, and tips to optimize for your target audience.</p>
+</div>
+
+<!-- Main Container -->
+<div class="rs-container">
+<!-- Search Section -->
+<div class="search-section">
+<h2 class="section-title">🔍 Check Readability Score</h2>
+
+<!-- Single Text Check -->
+<div id="singleSearch">
+<div class="text-input-group">
+<textarea class="text-input" id="textInput" placeholder="Paste your text here... (e.g., The quick brown fox jumps over the lazy dog. This is a sample sentence to test readability.)">The quick brown fox jumps over the lazy dog. This is a sample sentence to test readability scores. It contains multiple words and sentences for accurate analysis.</textarea>
+<button class="search-btn" onclick="checkReadability()" style="margin-top: 15px;">
+<span>📊 Analyze Readability</span>
+</button>
+</div>
+</div>
+
+<!-- Bulk Toggle -->
+<div class="bulk-toggle">
+<span style="font-weight: 600;">📋 Bulk Analysis (Up to 10 Texts)</span>
+<label class="switch">
+<input type="checkbox" id="bulkToggle" onchange="toggleBulk()">
+<span class="slider"></span>
+</label>
+</div>
+
+<!-- Bulk Input -->
+<div class="bulk-input" id="bulkSearch">
+<textarea id="bulkTexts" placeholder="Enter multiple texts (separate with --- or new sections)
+Example:
+Text 1: Short and simple content here.
+
+---
+Text 2: Longer, more complex paragraph with advanced vocabulary."></textarea>
+<button class="search-btn" style="margin-top: 15px;" onclick="checkBulkReadability()">
+<span>📊 Analyze All</span>
+</button>
+</div>
+</div>
+
+<!-- Results Section -->
+<div class="results-section" id="resultsSection" style="display: none;">
+<div class="results-header">
+<h2 style="color: #1e293b;">📈 Readability Analysis Results</h2>
+<div class="filter-options">
+<button class="filter-btn active" onclick="filterResults('all')">All</button>
+<button class="filter-btn" onclick="filterResults('easy')">🟢 Easy Read</button>
+<button class="filter-btn" onclick="filterResults('medium')">🟡 Medium Read</button>
+<button class="filter-btn" onclick="filterResults('hard')">🔴 Hard Read</button>
+</div>
+</div>
+
+<!-- Results Table -->
+<table class="rs-table" id="resultsTable">
+<thead>
+<tr>
+<th>Text Snippet</th>
+<th>Flesch Ease</th>
+<th>Gunning Fog</th>
+<th>SMOG Grade</th>
+<th>Level</th>
+<th>Audience</th>
+<th>SEO Tip</th>
+</tr>
+</thead>
+<tbody id="resultsBody">
+<!-- Results will be inserted here -->
+</tbody>
+</table>
+
+<!-- Export Options -->
+<div style="display: flex; gap: 15px; justify-content: flex-end; margin-top: 20px;">
+<button class="filter-btn" onclick="exportResults('csv')">
+<span>📥 Export as CSV</span>
+</button>
+<button class="filter-btn" onclick="exportResults('pdf')">
+<span>📥 Export as PDF</span>
+</button>
+<button class="filter-btn" onclick="copyResults()">
+<span>📋 Copy to Clipboard</span>
+</button>
+</div>
+</div>
+
+<!-- Insights Section -->
+<div class="insights-section">
+<h2 style="color: #1e293b;">💡 Readability Insights</h2>
+<p style="color: #64748b; margin-top: 5px;">Tips to improve your content based on analysis</p>
+<div class="insight-grid" id="insightGrid"></div>
+</div>
+
+<!-- Features Section -->
+<div class="features-grid">
+<div class="feature-card">
+<div class="feature-icon">📊</div>
+<h3>Flesch Reading Ease</h3>
+<p>Score from 0-100: Higher = easier to read for broader audiences</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">📈</div>
+<h3>Gunning Fog Index</h3>
+<p>Estimates years of education needed to understand the text</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">🎓</div>
+<h3>SMOG Grade Level</h3>
+<p>Simple Measure of Gobbledygook for quick readability assessment</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">📝</div>
+<h3>Bulk Analysis</h3>
+<p>Check multiple texts or sections at once</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">👥</div>
+<h3>Audience Matching</h3>
+<p>Target grade levels for general, business, or academic readers</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">📥</div>
+<h3>Export Results</h3>
+<p>Download scores in CSV or PDF for reports</p>
+</div>
+</div>
+
+<!-- SEO Content -->
+<div style="margin-top: 50px; padding: 30px; background: #f8fafc; border-radius: 16px;">
+<h2 style="color: #1e293b; margin-bottom: 20px;">Readability Score Checker - Complete Guide</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
+<div>
+<h3 style="color: #1e293b; margin-bottom: 10px;">🟢 Easy Read (Grade 1-6)</h3>
+<ul style="color: #475569; line-height: 2;">
+<li>General audience</li>
+<li>High engagement</li>
+<li>SEO friendly</li>
+<li>Short sentences</li>
+</ul>
+</div>
+<div>
+<h3 style="color: #1e293b; margin-bottom: 10px;">🟡 Medium Read (Grade 7-12)</h3>
+<ul style="color: #475569; line-height: 2;">
+<li>Business readers</li>
+<li>Balanced complexity</li>
+<li>Common for blogs</li>
+<li>Moderate vocab</li>
+</ul>
+</div>
+<div>
+<h3 style="color: #1e293b; margin-bottom: 10px;">🔴 Hard Read (Grade 13+)</h3>
+<ul style="color: #475569; line-height: 2;">
+<li>Expert audience</li>
+<li>Technical content</li>
+<li>Lower engagement</li>
+<li>Long sentences</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Footer -->
+<footer>
+<!-- Your existing footer code -->
+</footer>
+
+<!-- jsPDF for PDF Export -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script>
+// State Management
+let currentResults = [];
+
+// Toggle bulk
+function toggleBulk() {
+const bulkMode = document.getElementById('bulkToggle').checked;
+document.getElementById('singleSearch').style.display = bulkMode ? 'none' : 'block';
+document.getElementById('bulkSearch').style.display = bulkMode ? 'block' : 'none';
+}
+
+// Text analysis functions
+function countSyllables(word) {
+word = word.toLowerCase();
+if (word.length <= 3) return 1;
+let syllables = 0;
+let vowelClusters = 0;
+const vowels = 'aeiouy';
+let prevChar = '';
+for (let char of word) {
+if (vowels.includes(char) && !vowels.includes(prevChar)) {
+vowelClusters++;
+}
+prevChar = char;
+}
+syllables = vowelClusters;
+if (word.endsWith('e')) syllables--;
+if (word.endsWith('le') && word.length > 3 && !vowels.includes(word[word.length - 3])) syllables++;
+return Math.max(1, syllables);
+}
+
+function analyzeText(text) {
+if (!text || text.trim().length < 50) {
+return { error: 'Text too short. Use at least 50 words.' };
+}
+const sentences = text.split(/[.!?]+/).filter(s => s.trim().length > 0).length;
+const words = text.split(/\s+/).filter(w => w.length > 0).length;
+const syllables = text.split(/\s+/).reduce((total, word) => total + countSyllables(word), 0);
+
+const avgWordsPerSentence = sentences > 0 ? words / sentences : 0;
+const avgSyllablesPerWord = words > 0 ? syllables / words : 0;
+
+// Flesch Reading Ease: 206.835 - 1.015 * ASL - 84.6 * ASW
+const fleschEase = 206.835 - 1.015 * avgWordsPerSentence - 84.6 * avgSyllablesPerWord;
+
+// Flesch-Kincaid Grade: 0.39 * ASL + 11.8 * ASW - 15.59
+const fleschGrade = 0.39 * avgWordsPerSentence + 11.8 * avgSyllablesPerWord - 15.59;
+
+// Gunning Fog: 0.4 * (ASL + (complexWords / words * 100))
+const complexWords = text.split(/\s+/).filter(w => countSyllables(w) >= 3).length;
+const gunningFog = 0.4 * (avgWordsPerSentence + 100 * (complexWords / words));
+
+// SMOG: 1.043 * sqrt(complexSentences * 30 / sentences) + 3.1291 (approx)
+const complexSentences = text.split(/[.!?]+/).filter(s => {
+const wordsInSentence = s.trim().split(/\s+/).length;
+return wordsInSentence > 30 || s.trim().split(/\s+/).filter(w => countSyllables(w) >= 3).length > 5;
+}).length;
+const smog = 1.043 * Math.sqrt(complexSentences * 30 / sentences) + 3.1291;
+
+const grade = Math.round(Math.max(1, fleschGrade));
+const level = grade <= 6 ? 'easy' : grade <= 12 ? 'medium' : 'hard';
+const levelClass = `level-${level}`;
+const audience = grade <= 8 ? 'General Public' : grade <= 12 ? 'Business Readers' : 'Experts/Academics';
+
+const tip = grade <= 6 ? 'Perfect for broad appeal – keep it simple!' : grade <= 12 ? 'Good for professionals – add examples.' : 'Advanced content – include summaries.';
+
+return {
+snippet: text.substring(0, 100) + '...',
+fleschEase: Math.round(fleschEase),
+gunningFog: Math.round(gunningFog * 10) / 10,
+smogGrade: Math.round(smog * 10) / 10,
+grade,
+level,
+levelClass,
+audience,
+tip,
+words,
+sentences,
+syllables
+};
+}
+
+// Check single text
+function checkReadability() {
+const text = document.getElementById('textInput').value.trim();
+if (!text) {
+alert('Please enter text to analyze');
+return;
+}
+
+document.getElementById('resultsSection').style.display = 'block';
+document.getElementById('resultsBody').innerHTML = `
+<tr>
+<td colspan="7" style="text-align: center; padding: 40px;">
+<div class="loading-spinner" style="margin: 0 auto 15px;"></div>
+Analyzing readability...
+</td>
+</tr>
+`;
+
+const result = analyzeText(text);
+if (result.error) {
+document.getElementById('resultsBody').innerHTML = `<tr><td colspan="7" style="text-align: center; color: red;">${result.error}</td></tr>`;
+return;
+}
+
+currentResults = [result];
+displayResults(currentResults);
+generateInsights(result.grade, result.level);
+}
+
+// Bulk check
+function checkBulkReadability() {
+const bulkText = document.getElementById('bulkTexts').value.trim();
+if (!bulkText) {
+alert('Please enter texts to analyze');
+return;
+}
+
+const texts = bulkText.split('---').map(t => t.trim()).filter(t => t.length > 0);
+if (texts.length === 0 || texts.length > 10) {
+alert('Enter 1-10 texts separated by ---');
+return;
+}
+
+document.getElementById('resultsSection').style.display = 'block';
+document.getElementById('resultsBody').innerHTML = `
+<tr>
+<td colspan="7" style="text-align: center; padding: 40px;">
+<div class="loading-spinner" style="margin: 0 auto 15px;"></div>
+Analyzing ${texts.length} texts...
+</td>
+</tr>
+`;
+
+currentResults = texts.map((text, i) => {
+// Progress update
+if (i % 2 === 0) { // Update every other
+document.getElementById('resultsBody').innerHTML = `
+<tr>
+<td colspan="7" style="text-align: center; padding: 40px;">
+<div class="loading-spinner" style="margin: 0 auto 15px;"></div>
+Analyzed ${i + 1}/${texts.length} texts...
+</td>
+</tr>
+`;
+}
+return analyzeText(text);
+}).filter(r => !r.error);
+
+displayResults(currentResults);
+if (currentResults.length > 0) generateInsights(currentResults[0].grade, currentResults[0].level);
+}
+
+// Display results
+function displayResults(results) {
+const tbody = document.getElementById('resultsBody');
+tbody.innerHTML = '';
+
+results.forEach(result => {
+const row = document.createElement('tr');
+row.innerHTML = `
+<td><strong>${result.snippet}</strong></td>
+<td>${result.fleschEase}</td>
+<td>${result.gunningFog}</td>
+<td>${result.smogGrade}</td>
+<td><span class="score-badge ${result.levelClass}">${result.level.charAt(0).toUpperCase() + result.level.slice(1)}</span></td>
+<td>${result.audience}</td>
+<td>${result.tip}</td>
+`;
+tbody.appendChild(row);
+});
+}
+
+// Filter results
+function filterResults(filter) {
+document.querySelectorAll('.filter-options .filter-btn').forEach(btn => {
+btn.classList.remove('active');
+});
+event.target.classList.add('active');
+
+let filtered = currentResults;
+if (filter !== 'all') {
+filtered = currentResults.filter(r => r.level === filter);
+}
+displayResults(filtered);
+}
+
+// Generate insights
+function generateInsights(grade, level) {
+const insights = [
+`Aim for grade ${grade - 2} for wider reach.`,
+'Use shorter sentences to lower complexity.',
+'Simplify vocabulary for better engagement.',
+'Test with target audience for feedback.'
+];
+const grid = document.getElementById('insightGrid');
+grid.innerHTML = '';
+
+insights.forEach(insight => {
+const card = document.createElement('div');
+card.className = 'insight-card';
+card.innerHTML = `<p style="color: #64748b; margin: 0;">${insight}</p>`;
+grid.appendChild(card);
+});
+}
+
+// Export
+function exportResults(format) {
+if (!currentResults.length) {
+alert('No results to export');
+return;
+}
+
+if (format === 'csv') {
+let csv = 'Snippet,Flesch Ease,Gunning Fog,SMOG Grade,Level,Audience,Tip\n';
+currentResults.forEach(r => {
+csv += `"${r.snippet}",${r.fleschEase},${r.gunningFog},${r.smogGrade},"${r.level}","${r.audience}","${r.tip}"\n`;
+});
+
+const blob = new Blob([csv], { type: 'text/csv' });
+const link = document.createElement('a');
+link.download = `readability-results-${new Date().toISOString().split('T')[0]}.csv`;
+link.href = URL.createObjectURL(blob);
+link.click();
+} else if (format === 'pdf') {
+const { jsPDF } = window.jspdf;
+const doc = new jsPDF();
+let y = 20;
+doc.text('Readability Score Results', 20, y);
+y += 10;
+currentResults.forEach(r => {
+if (y > 280) { doc.addPage(); y = 20; }
+doc.text(`${r.snippet.substring(0, 50)}...: Flesch ${r.fleschEase} | Fog ${r.gunningFog} | SMOG ${r.smogGrade} | Level: ${r.level}`, 20, y);
+y += 10;
+});
+doc.save(`readability-results-${new Date().toISOString().split('T')[0]}.pdf`);
+}
+}
+
+// Copy
+function copyResults() {
+if (!currentResults.length) {
+alert('No results to copy');
+return;
+}
+
+let text = 'Readability Score Results\n';
+text += '=========================\n\n';
+
+currentResults.forEach(r => {
+text += `${r.snippet.substring(0, 50)}...: Flesch ${r.fleschEase} | Fog ${r.gunningFog} | SMOG ${r.smogGrade} | Level: ${r.level} | Audience: ${r.audience} | ${r.tip}\n`;
+});
+
+navigator.clipboard.writeText(text).then(() => {
+alert('Results copied to clipboard!');
+}).catch(() => {
+alert('Failed to copy results');
+});
+}
+
+// Enter key
+document.getElementById('textInput').addEventListener('keypress', function(e) {
+if (e.key === 'Enter' && e.ctrlKey) checkReadability();
+});
+
+window.onload = function() {
+// Auto-analyze sample
+// checkReadability();
+};
+</script>
+</body>
+</html>

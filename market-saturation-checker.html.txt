@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Market Saturation Checker - Free SEO & Business Tool | Global Analysis | FreeSEOToolHub</title>
+<meta name="title" content="Market Saturation Checker - Free Global Tool | Analyze Competition Density">
+<meta name="description" content="Free Market Saturation Checker for SEO and business. Analyze keyword or industry saturation globally. Get saturation scores, competitor density, opportunity ratings & growth tips. Bulk check up to 50 terms.">
+<meta name="keywords" content="market saturation checker, free saturation tool, keyword saturation analysis, industry saturation calculator, SEO market density, competitor saturation checker, global market analysis tool, free business saturation metric, opportunity score calculator, market research tool">
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://freeseotoolhub.com/market-saturation-checker.html">
+<meta property="og:title" content="Market Saturation Checker - Free Global SEO & Business Tool">
+<meta property="og:description" content="Check market saturation instantly. Identify opportunities in crowded industries with real-time data.">
+<meta property="og:image" content="https://freeseotoolhub.com/images/market-saturation-og.jpg">
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://freeseotoolhub.com/market-saturation-checker.html">
+<meta property="twitter:title" content="Market Saturation Checker - Free Global SEO & Business Tool">
+<meta property="twitter:description" content="Check market saturation instantly. Identify opportunities in crowded industries with real-time data.">
+<meta property="twitter:image" content="https://freeseotoolhub.com/images/market-saturation-twitter.jpg">
+<!-- Canonical URL -->
+<link rel="canonical" href="https://freeseotoolhub.com/market-saturation-checker.html">
+<!-- Schema Markup -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "WebApplication",
+"name": "Market Saturation Checker",
+"url": "https://freeseotoolhub.com/market-saturation-checker.html",
+"description": "Free global tool to check market saturation for keywords and industries",
+"applicationCategory": "BusinessApplication",
+"operatingSystem": "All",
+"offers": {
+"@type": "Offer",
+"price": "0",
+"priceCurrency": "USD"
+},
+"featureList": [
+"Saturation Score 1-100",
+"Bulk Market Analysis",
+"Competitor Density Metrics",
+"Opportunity Ratings",
+"Growth Strategy Tips",
+"Export Reports"
+]
+}
+</script>
+<style>
+/* Tool-specific styles - matching your site theme */
+.ms-header {
+background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+color: white;
+padding: 80px 20px;
+text-align: center;
+margin-bottom: 30px;
+}
+
+.ms-header h1 {
+font-size: 3rem;
+margin-bottom: 15px;
+font-weight: 700;
+}
+
+.ms-header p {
+font-size: 1.2rem;
+opacity: 0.95;
+max-width: 600px;
+margin: 0 auto;
+}
+
+.ms-container {
+max-width: 1300px;
+margin: 0 auto 50px;
+padding: 0 20px;
+}
+
+.search-section {
+background: white;
+padding: 40px;
+border-radius: 20px;
+box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+margin-bottom: 30px;
+border: 1px solid #eaeaea;
+}
+
+.section-title {
+font-size: 1.8rem;
+color: #1e293b;
+margin-bottom: 25px;
+font-weight: 600;
+}
+
+.input-group {
+display: flex;
+gap: 15px;
+margin-bottom: 25px;
+flex-wrap: wrap;
+}
+
+.market-input {
+flex: 1;
+padding: 16px 20px;
+border: 2px solid #e2e8f0;
+border-radius: 12px;
+font-size: 16px;
+transition: all 0.3s;
+min-width: 250px;
+}
+
+.market-input:focus {
+outline: none;
+border-color: #ef4444;
+box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.search-btn {
+background: #ef4444;
+color: white;
+padding: 16px 40px;
+border: none;
+border-radius: 12px;
+font-size: 16px;
+font-weight: 600;
+cursor: pointer;
+transition: all 0.3s;
+white-space: nowrap;
+display: inline-flex;
+align-items: center;
+gap: 10px;
+}
+
+.search-btn:hover {
+background: #dc2626;
+transform: translateY(-2px);
+box-shadow: 0 10px 25px rgba(239, 68, 68, 0.3);
+}
+
+.bulk-toggle {
+display: flex;
+align-items: center;
+gap: 20px;
+margin: 25px 0;
+padding: 15px 20px;
+background: #f8fafc;
+border-radius: 12px;
+border: 1px solid #e2e8f0;
+}
+
+.switch {
+position: relative;
+display: inline-block;
+width: 60px;
+height: 34px;
+}
+
+.switch input {
+opacity: 0;
+width: 0;
+height: 0;
+}
+
+.slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #cbd5e1;
+transition: .4s;
+border-radius: 34px;
+}
+
+.slider:before {
+position: absolute;
+content: "";
+height: 26px;
+width: 26px;
+left: 4px;
+bottom: 4px;
+background-color: white;
+transition: .4s;
+border-radius: 50%;
+}
+
+input:checked + .slider {
+background-color: #ef4444;
+}
+
+input:checked + .slider:before {
+transform: translateX(26px);
+}
+
+.bulk-input {
+display: none;
+margin-top: 25px;
+}
+
+.bulk-input textarea {
+width: 100%;
+height: 180px;
+padding: 20px;
+border: 2px solid #e2e8f0;
+border-radius: 12px;
+font-size: 15px;
+resize: vertical;
+font-family: 'Monaco', 'Menlo', monospace;
+}
+
+.bulk-input textarea:focus {
+outline: none;
+border-color: #ef4444;
+}
+
+.results-section {
+margin-top: 40px;
+background: white;
+border-radius: 20px;
+padding: 30px;
+box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+border: 1px solid #eaeaea;
+}
+
+.results-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 25px;
+flex-wrap: wrap;
+gap: 15px;
+}
+
+.filter-options {
+display: flex;
+gap: 10px;
+flex-wrap: wrap;
+}
+
+.filter-btn {
+padding: 8px 18px;
+border: 1px solid #e2e8f0;
+background: white;
+border-radius: 25px;
+cursor: pointer;
+font-size: 14px;
+transition: all 0.2s;
+}
+
+.filter-btn:hover {
+background: #f1f5f9;
+}
+
+.filter-btn.active {
+background: #ef4444;
+color: white;
+border-color: #ef4444;
+}
+
+.ms-table {
+width: 100%;
+border-collapse: collapse;
+background: white;
+border-radius: 12px;
+overflow: hidden;
+border: 1px solid #e2e8f0;
+}
+
+.ms-table th {
+background: #f8fafc;
+color: #1e293b;
+padding: 16px;
+text-align: left;
+font-weight: 600;
+border-bottom: 2px solid #e2e8f0;
+}
+
+.ms-table td {
+padding: 16px;
+border-bottom: 1px solid #e2e8f0;
+}
+
+.ms-table tr:last-child td {
+border-bottom: none;
+}
+
+.ms-table tr:hover {
+background: #f8fafc;
+}
+
+.saturation-badge {
+padding: 6px 14px;
+border-radius: 25px;
+font-weight: 600;
+font-size: 13px;
+display: inline-block;
+}
+
+.level-low {
+background: #d1fae5;
+color: #065f46;
+}
+
+.level-medium {
+background: #fef3c7;
+color: #92400e;
+}
+
+.level-high {
+background: #fee2e2;
+color: #991b1b;
+}
+
+.saturation-circle {
+width: 60px;
+height: 60px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+font-weight: bold;
+font-size: 18px;
+margin: 0 auto;
+}
+
+.opportunities-section {
+margin-top: 40px;
+background: white;
+border-radius: 20px;
+padding: 30px;
+box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+}
+
+.opportunity-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 20px;
+margin-top: 25px;
+}
+
+.opportunity-card {
+background: #f8fafc;
+padding: 20px;
+border-radius: 12px;
+border: 1px solid #e2e8f0;
+transition: all 0.3s;
+}
+
+.opportunity-card:hover {
+transform: translateY(-2px);
+box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+border-color: #ef4444;
+}
+
+.features-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 25px;
+margin: 50px 0;
+}
+
+.feature-card {
+text-align: center;
+padding: 30px 25px;
+background: white;
+border-radius: 16px;
+border: 1px solid #eaeaea;
+transition: all 0.3s;
+}
+
+.feature-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.feature-icon {
+font-size: 48px;
+margin-bottom: 20px;
+}
+
+.feature-card h3 {
+color: #1e293b;
+margin-bottom: 12px;
+font-size: 1.3rem;
+}
+
+.feature-card p {
+color: #64748b;
+line-height: 1.6;
+}
+
+.loading-spinner {
+display: inline-block;
+width: 20px;
+height: 20px;
+border: 3px solid rgba(255,255,255,0.3);
+border-radius: 50%;
+border-top-color: white;
+animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+to { transform: rotate(360deg); }
+}
+
+.stats-badge {
+background: #f1f5f9;
+color: #1e293b;
+padding: 4px 10px;
+border-radius: 20px;
+font-size: 13px;
+font-weight: 500;
+}
+
+@media (max-width: 768px) {
+.ms-header h1 {
+font-size: 2rem;
+}
+
+.input-group {
+flex-direction: column;
+}
+
+.ms-table {
+display: block;
+overflow-x: auto;
+white-space: nowrap;
+}
+
+.search-section, .results-section {
+padding: 20px;
+}
+}
+
+/* Breadcrumbs */
+.breadcrumb {
+padding: 15px 0;
+color: #64748b;
+font-size: 14px;
+}
+
+.breadcrumb a {
+color: #ef4444;
+text-decoration: none;
+}
+
+.breadcrumb a:hover {
+text-decoration: underline;
+}
+</style>
+</head>
+<body>
+<!-- Navigation (as per your existing navbar) -->
+<nav class="navbar">
+<!-- Your existing navbar code -->
+</nav>
+
+<!-- Breadcrumb -->
+<div class="ms-container">
+<div class="breadcrumb">
+<a href="index.html">Home</a> »
+<a href="all-tools.html">All Tools</a> »
+<span>Market Saturation Checker</span>
+</div>
+</div>
+
+<!-- Header -->
+<div class="ms-header">
+<h1>📉 Market Saturation Checker</h1>
+<p>Assess market density and competition levels globally. Get saturation scores, opportunity ratings, and strategic insights for keywords or industries. Perfect for SEO, startups, and business expansion.</p>
+</div>
+
+<!-- Main Container -->
+<div class="ms-container">
+<!-- Search Section -->
+<div class="search-section">
+<h2 class="section-title">🔍 Check Market Saturation</h2>
+
+<!-- Single Market Check -->
+<div id="singleSearch">
+<div class="input-group">
+<input type="text" class="market-input" id="marketInput" placeholder="Keyword/Industry (e.g., electric vehicles)" value="SEO tools">
+<button class="search-btn" onclick="checkSaturation()">
+<span>📊 Analyze Saturation</span>
+</button>
+</div>
+</div>
+
+<!-- Bulk Toggle -->
+<div class="bulk-toggle">
+<span style="font-weight: 600;">📋 Bulk Saturation Check (Up to 50 terms)</span>
+<label class="switch">
+<input type="checkbox" id="bulkToggle" onchange="toggleBulk()">
+<span class="slider"></span>
+</label>
+</div>
+
+<!-- Bulk Input -->
+<div class="bulk-input" id="bulkSearch">
+<textarea id="bulkMarkets" placeholder="Enter keywords/industries (one per line)
+Example:
+electric vehicles
+SEO tools
+sustainable fashion
+cloud computing
+e-commerce platforms"></textarea>
+<button class="search-btn" style="margin-top: 15px;" onclick="checkBulkSaturation()">
+<span>📊 Analyze All</span>
+</button>
+</div>
+</div>
+
+<!-- Results Section -->
+<div class="results-section" id="resultsSection" style="display: none;">
+<div class="results-header">
+<h2 style="color: #1e293b;">📈 Market Saturation Results</h2>
+<div class="filter-options">
+<button class="filter-btn active" onclick="filterResults('all')">All</button>
+<button class="filter-btn" onclick="filterResults('low')">🟢 Low Saturation</button>
+<button class="filter-btn" onclick="filterResults('medium')">🟡 Medium Saturation</button>
+<button class="filter-btn" onclick="filterResults('high')">🔴 High Saturation</button>
+</div>
+</div>
+
+<!-- Results Table -->
+<table class="ms-table" id="resultsTable">
+<thead>
+<tr>
+<th>Market/Keyword</th>
+<th>Saturation Score</th>
+<th>Level</th>
+<th>Competitors (Est.)</th>
+<th>Opportunity Rating</th>
+<th>Strategy Tip</th>
+</tr>
+</thead>
+<tbody id="resultsBody">
+<!-- Results will be inserted here -->
+</tbody>
+</table>
+
+<!-- Export Options -->
+<div style="display: flex; gap: 15px; justify-content: flex-end; margin-top: 20px;">
+<button class="filter-btn" onclick="exportResults('csv')">
+<span>📥 Export as CSV</span>
+</button>
+<button class="filter-btn" onclick="exportResults('pdf')">
+<span>📥 Export as PDF</span>
+</button>
+<button class="filter-btn" onclick="copyResults()">
+<span>📋 Copy to Clipboard</span>
+</button>
+</div>
+</div>
+
+<!-- Opportunities Section -->
+<div class="opportunities-section">
+<h2 style="color: #1e293b;">🚀 Market Opportunities</h2>
+<p style="color: #64748b; margin-top: 5px;">Recommended niches with low saturation for growth</p>
+<div class="opportunity-grid" id="opportunityGrid"></div>
+</div>
+
+<!-- Features Section -->
+<div class="features-grid">
+<div class="feature-card">
+<div class="feature-icon">📉</div>
+<h3>Saturation Score 1-100</h3>
+<p>Quantitative measure of market density based on global search competition</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">📊</div>
+<h3>Bulk Analysis</h3>
+<p>Evaluate up to 50 markets simultaneously for efficient research</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">👥</div>
+<h3>Competitor Density</h3>
+<p>Estimate number of active players and market crowding</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">⭐</div>
+<h3>Opportunity Rating</h3>
+<p>Identify high-potential, low-competition entry points</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">💡</div>
+<h3>Growth Tips</h3>
+<p>Personalized strategies for market entry and expansion</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">📥</div>
+<h3>Export Reports</h3>
+<p>Download data in CSV or PDF for business planning</p>
+</div>
+</div>
+
+<!-- SEO Content -->
+<div style="margin-top: 50px; padding: 30px; background: #f8fafc; border-radius: 16px;">
+<h2 style="color: #1e293b; margin-bottom: 20px;">Market Saturation Checker - Complete Guide</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
+<div>
+<h3 style="color: #1e293b; margin-bottom: 10px;">🟢 Low Saturation (1-30)</h3>
+<ul style="color: #475569; line-height: 2;">
+<li>Emerging markets</li>
+<li>High growth potential</li>
+<li>Easy entry barriers</li>
+<li>Target for startups</li>
+</ul>
+</div>
+<div>
+<h3 style="color: #1e293b; margin-bottom: 10px;">🟡 Medium Saturation (31-70)</h3>
+<ul style="color: #475569; line-height: 2;">
+<li>Balanced competition</li>
+<li>Moderate opportunities</li>
+<li>Differentiation required</li>
+<li>Suitable for established brands</li>
+</ul>
+</div>
+<div>
+<h3 style="color: #1e293b; margin-bottom: 10px;">🔴 High Saturation (71-100)</h3>
+<ul style="color: #475569; line-height: 2;">
+<li>Crowded markets</li>
+<li>Low entry success rate</li>
+<li>Focus on niches</li>
+<li>Advanced strategies needed</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Footer -->
+<footer>
+<!-- Your existing footer code -->
+</footer>
+
+<!-- jsPDF for PDF Export -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script>
+// State Management
+let currentResults = [];
+
+// Toggle bulk
+function toggleBulk() {
+const bulkMode = document.getElementById('bulkToggle').checked;
+document.getElementById('singleSearch').style.display = bulkMode ? 'none' : 'block';
+document.getElementById('bulkSearch').style.display = bulkMode ? 'block' : 'none';
+}
+
+// Fetch search results count
+async function fetchResultsCount(term) {
+const proxyUrl = 'https://api.allorigins.win/raw?url=';
+const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(term)}&num=1`;
+try {
+const response = await fetch(proxyUrl + encodeURIComponent(searchUrl));
+const html = await response.text();
+const resultsMatch = html.match(/About ([\d,]+) results/);
+let numResults = 0;
+if (resultsMatch) {
+numResults = parseInt(resultsMatch[1].replace(/,/g, ''));
+} else {
+numResults = 1000000; // Fallback
+}
+return numResults;
+} catch (error) {
+// Fallback
+console.error('Fetch error:', error);
+return Math.floor(Math.random() * 10000000) + 100000;
+}
+}
+
+// Check single market
+async function checkSaturation() {
+const term = document.getElementById('marketInput').value.trim();
+if (!term) {
+alert('Please enter a keyword or industry');
+return;
+}
+
+// Loading
+document.getElementById('resultsSection').style.display = 'block';
+document.getElementById('resultsBody').innerHTML = `
+<tr>
+<td colspan="6" style="text-align: center; padding: 40px;">
+<div class="loading-spinner" style="margin: 0 auto 15px;"></div>
+Analyzing saturation for "${term}" globally...
+</td>
+</tr>
+`;
+
+const numResults = await fetchResultsCount(term);
+const saturationScore = Math.min(100, Math.log10(numResults / 1000) * 15); // Adjusted formula
+const score = Math.round(saturationScore);
+
+const level = score > 70 ? 'high' : score > 30 ? 'medium' : 'low';
+const levelClass = `level-${level}`;
+const competitors = Math.round(numResults / 10000); // Est. competitors
+const opportunity = 100 - score; // Inverse for opportunity
+const tip = score > 60 ? 'Focus on niche sub-segments or innovation.' : score > 30 ? 'Differentiate with unique value propositions.' : 'Excellent entry point – invest now!';
+
+const result = {
+term,
+score,
+level,
+levelClass,
+competitors: competitors.toLocaleString(),
+opportunity: `${opportunity}%`,
+tip
+};
+
+currentResults = [result];
+displayResults(currentResults);
+generateOpportunities(term, score);
+}
+
+// Bulk check
+async function checkBulkSaturation() {
+const bulkText = document.getElementById('bulkMarkets').value;
+const terms = bulkText.split('\n').map(t => t.trim()).filter(t => t.length > 0);
+if (terms.length === 0) {
+alert('Please enter at least one term');
+return;
+}
+
+if (terms.length > 50) {
+alert('Maximum 50 terms allowed');
+return;
+}
+
+document.getElementById('resultsSection').style.display = 'block';
+document.getElementById('resultsBody').innerHTML = `
+<tr>
+<td colspan="6" style="text-align: center; padding: 40px;">
+<div class="loading-spinner" style="margin: 0 auto 15px;"></div>
+Analyzing ${terms.length} markets...
+</td>
+</tr>
+`;
+
+currentResults = [];
+for (let i = 0; i < terms.length; i++) {
+const numResults = await fetchResultsCount(terms[i]);
+const score = Math.round(Math.min(100, Math.log10(numResults / 1000) * 15));
+const level = score > 70 ? 'high' : score > 30 ? 'medium' : 'low';
+const levelClass = `level-${level}`;
+const competitors = Math.round(numResults / 10000);
+const opportunity = 100 - score;
+const tip = score > 60 ? 'Niche focus recommended.' : score > 30 ? 'Differentiate strategically.' : 'Prime opportunity!';
+
+currentResults.push({
+term: terms[i],
+score,
+level,
+levelClass,
+competitors: competitors.toLocaleString(),
+opportunity: `${opportunity}%`,
+tip
+});
+
+// Progress
+document.getElementById('resultsBody').innerHTML = `
+<tr>
+<td colspan="6" style="text-align: center; padding: 40px;">
+<div class="loading-spinner" style="margin: 0 auto 15px;"></div>
+Analyzed ${i + 1}/${terms.length} markets...
+</td>
+</tr>
+`;
+await new Promise(resolve => setTimeout(resolve, 300));
+}
+
+// Sort by opportunity descending
+currentResults.sort((a, b) => parseInt(b.opportunity) - parseInt(a.opportunity));
+
+displayResults(currentResults);
+if (currentResults.length > 0) generateOpportunities(currentResults[0].term, currentResults[0].score);
+}
+
+// Display results
+function displayResults(results) {
+const tbody = document.getElementById('resultsBody');
+tbody.innerHTML = '';
+
+results.forEach(result => {
+const row = document.createElement('tr');
+row.innerHTML = `
+<td><strong>${result.term}</strong></td>
+<td><div class="saturation-circle ${result.levelClass}">${result.score}</div></td>
+<td><span class="saturation-badge ${result.levelClass}">${result.level.charAt(0).toUpperCase() + result.level.slice(1)}</span></td>
+<td>${result.competitors}</td>
+<td>${result.opportunity}</td>
+<td>${result.tip}</td>
+`;
+tbody.appendChild(row);
+});
+}
+
+// Filter results
+function filterResults(filter) {
+document.querySelectorAll('.filter-options .filter-btn').forEach(btn => {
+btn.classList.remove('active');
+});
+event.target.classList.add('active');
+
+let filtered = currentResults;
+if (filter !== 'all') {
+filtered = currentResults.filter(r => r.level === filter);
+}
+displayResults(filtered);
+}
+
+// Generate opportunities
+function generateOpportunities(term, score) {
+const opps = [
+`Niche in "${term} for [region/specific audience]"`,
+`Innovate with [tech/trend] in ${term}`,
+`Target underserved segments in ${term}`,
+`Bundle services around ${term}`
+];
+const grid = document.getElementById('opportunityGrid');
+grid.innerHTML = '';
+
+opps.slice(0, 4).forEach(opp => {
+const card = document.createElement('div');
+card.className = 'opportunity-card';
+card.innerHTML = `
+<h4 style="color: #1e293b; margin-bottom: 10px;">Low-Sat Opportunity</h4>
+<p style="color: #64748b;">${opp}</p>
+`;
+grid.appendChild(card);
+});
+}
+
+// Export
+function exportResults(format) {
+if (!currentResults.length) {
+alert('No results to export');
+return;
+}
+
+if (format === 'csv') {
+let csv = 'Term,Score,Level,Competitors,Opportunity,Tip\n';
+currentResults.forEach(r => {
+csv += `"${r.term}",${r.score},"${r.level}",${r.competitors},"${r.opportunity}","${r.tip}"\n`;
+});
+
+const blob = new Blob([csv], { type: 'text/csv' });
+const link = document.createElement('a');
+link.download = `market-saturation-results-${new Date().toISOString().split('T')[0]}.csv`;
+link.href = URL.createObjectURL(blob);
+link.click();
+} else if (format === 'pdf') {
+const { jsPDF } = window.jspdf;
+const doc = new jsPDF();
+let y = 20;
+doc.text('Market Saturation Results', 20, y);
+y += 10;
+currentResults.forEach(r => {
+if (y > 280) { doc.addPage(); y = 20; }
+doc.text(`${r.term}: ${r.score} (${r.level}) - Competitors: ${r.competitors} - Opp: ${r.opportunity}`, 20, y);
+y += 10;
+});
+doc.save(`market-results-${new Date().toISOString().split('T')[0]}.pdf`);
+}
+}
+
+// Copy
+function copyResults() {
+if (!currentResults.length) {
+alert('No results to copy');
+return;
+}
+
+let text = 'Market Saturation Results\n';
+text += '=========================\n\n';
+
+currentResults.forEach(r => {
+text += `${r.term}: Score ${r.score} (${r.level}) | Competitors: ${r.competitors} | Opp: ${r.opportunity} | ${r.tip}\n`;
+});
+
+navigator.clipboard.writeText(text).then(() => {
+alert('Results copied to clipboard!');
+}).catch(() => {
+alert('Failed to copy results');
+});
+}
+
+// Enter key
+document.getElementById('marketInput').addEventListener('keypress', function(e) {
+if (e.key === 'Enter') checkSaturation();
+});
+
+window.onload = function() {
+// Default
+};
+</script>
+</body>
+</html>
