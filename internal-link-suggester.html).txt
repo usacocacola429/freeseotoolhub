@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Internal Link Suggester - Improve Site Structure | FreeSEOToolHub</title>
+<meta name="description" content="Find internal linking opportunities in your content. Analyze text to suggest anchor texts for better site structure and SEO juice flow.">
+<meta name="keywords" content="internal link builder, SEO site structure, anchor text suggestions, interlinking tool">
+<link rel="canonical" href="https://freeseotoolhub.com/internal-link-suggester.html">
+
+<link rel="stylesheet" href="style.css">
+<style>
+.link-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px; margin-top: 20px; }
+.link-card { background: #fff; border: 1px solid #ddd; padding: 15px; border-radius: 6px; }
+.link-card strong { color: #007bff; display: block; margin-bottom: 5px; }
+.copy-btn { font-size: 12px; padding: 4px 8px; background: #eee; border: none; cursor: pointer; border-radius: 4px; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Internal Link Suggester</h1>
+<p>Paste your article content below. We will identify keywords that should be internally linked to boost your SEO.</p>
+
+<textarea id="contentInput" rows="10" placeholder="Paste your blog post or article content here..."></textarea>
+<button onclick="suggestLinks()" class="btn-primary">Find Link Opportunities</button>
+
+<div id="results" class="link-grid"></div>
+</div>
+
+<script>
+function suggestLinks() {
+const text = document.getElementById('contentInput').value.toLowerCase();
+const resultsDiv = document.getElementById('results');
+resultsDiv.innerHTML = '';
+
+if (text.length < 50) {
+alert("Please paste more content to analyze.");
+return;
+}
+
+// Common SEO Keywords Map (Simulated Database of your site pages)
+const keywordMap = {
+"seo tools": "/all-tools.html",
+"keyword research": "/trending-keywords.html",
+"backlink": "/backlink-checker.html",
+"domain authority": "/domain-authority-checker.html",
+"speed test": "/website-speed-test.html",
+"mobile friendly": "/responsive-tester.html",
+"schema": "/schema-markup-generator.html",
+"meta tags": "/meta-tag-generator.html",
+"ai content": "/ai-content-detector.html",
+"local seo": "/local-seo-checklist.html",
+"image optimization": "/image-compressor.html"
+};
+
+let found = false;
+
+for (const [key, url] of Object.entries(keywordMap)) {
+if (text.includes(key)) {
+found = true;
+const card = document.createElement('div');
+card.className = 'link-card';
+card.innerHTML = `
+<strong>Anchor Text: "${key}"</strong>
+<p>Suggested Link: <code>${url}</code></p>
+<button class="copy-btn" onclick="navigator.clipboard.writeText('<a href=\'${url}\'>${key}</a>')">Copy HTML</button>
+`;
+resultsDiv.appendChild(card);
+}
+}
+
+if (!found) {
+resultsDiv.innerHTML = '<p>No specific internal link opportunities found based on common keywords. Try adding more SEO-related terms.</p>';
+}
+}
+</script>
+</body>
+</html>
