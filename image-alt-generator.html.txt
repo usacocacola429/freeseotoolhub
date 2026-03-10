@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Alt Text Generator - SEO Friendly Descriptions | FreeSEOToolHub</title>
+<meta name="description" content="Generate SEO-friendly Alt Text for your images automatically. Improve accessibility and image search rankings with our free tool.">
+<meta name="keywords" content="alt text generator, image SEO, accessibility tool, automatic alt text, SEO image optimizer">
+<link rel="canonical" href="https://freeseotoolhub.com/image-alt-generator.html">
+
+<link rel="stylesheet" href="style.css">
+<style>
+.alt-suggestions { margin-top: 20px; background: #f9f9f9; padding: 15px; border-radius: 8px; display: none; }
+.suggestion-item { background: white; padding: 10px; margin-bottom: 10px; border-left: 4px solid #007bff; cursor: pointer; }
+.suggestion-item:hover { background: #f0f8ff; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Image Alt Text Generator</h1>
+<p>Enter your image filename and context to generate optimized Alt Text for SEO and Accessibility.</p>
+
+<div class="tracker-form">
+<input type="text" id="fileName" placeholder="Image Filename (e.g., red-running-shoes.jpg)">
+<input type="text" id="context" placeholder="Context (e.g., selling sports shoes for men)">
+<button onclick="generateAlt()" class="btn-primary">Generate Alt Text</button>
+</div>
+
+<div id="suggestions" class="alt-suggestions">
+<h3>Recommended Alt Text Options:</h3>
+<div id="suggestionList"></div>
+</div>
+</div>
+
+<script>
+function generateAlt() {
+const fileName = document.getElementById('fileName').value;
+const context = document.getElementById('context').value;
+const suggestionBox = document.getElementById('suggestions');
+const list = document.getElementById('suggestionList');
+
+if (!fileName) {
+alert("Please enter an image filename.");
+return;
+}
+
+// Clean filename
+let cleanName = fileName.replace(/\.[^/.]+$/, "").replace(/[-_]/g, " ");
+cleanName = cleanName.charAt(0).toUpperCase() + cleanName.slice(1);
+
+suggestionBox.style.display = 'block';
+list.innerHTML = '';
+
+// Generate variations
+const options = [
+`${cleanName} - ${context}`,
+`High quality image of ${cleanName.toLowerCase()} for ${context}`,
+`${cleanName} available online`,
+`Best ${cleanName.toLowerCase()} for ${context} in India`
+];
+
+options.forEach(opt => {
+const div = document.createElement('div');
+div.className = 'suggestion-item';
+div.innerText = opt;
+div.onclick = () => {
+navigator.clipboard.writeText(opt);
+alert("Copied to clipboard: " + opt);
+};
+list.appendChild(div);
+});
+}
+</script>
+</body>
+</html>
