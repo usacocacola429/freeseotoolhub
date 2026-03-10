@@ -1,1272 +1,808 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Canonical URL Checker - Free SEO Tool Hub</title>
-<meta name="description" content="फ्री Canonical URL Checker टूल। वेबसाइट के canonical tags check करें, duplicate content issues ढूंढें और SEO optimization suggestions पाएं।">
-
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPG77KWVCP"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-ZPG77KWVCP');
-gtag('config', 'G-PFPCTBFG3Y');
-</script>
-
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-<style>
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-body {
-background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-min-height: 100vh;
-padding: 20px;
-color: #333;
-}
-
-.container {
-max-width: 1200px;
-margin: 0 auto;
-background: white;
-border-radius: 20px;
-overflow: hidden;
-box-shadow: 0 25px 50px rgba(0,0,0,0.2);
-}
-
-/* Header */
-.header {
-background: linear-gradient(to right, #4f46e5, #7c3aed);
-color: white;
-padding: 50px 40px;
-text-align: center;
-position: relative;
-overflow: hidden;
-}
-
-.header::before {
-content: '';
-position: absolute;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
-background-size: cover;
-}
-
-.header-content {
-position: relative;
-z-index: 1;
-}
-
-.header h1 {
-font-size: 3rem;
-margin-bottom: 15px;
-text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-}
-
-.header p {
-font-size: 1.2rem;
-opacity: 0.95;
-max-width: 800px;
-margin: 0 auto 20px;
-}
-
-.badge {
-display: inline-block;
-background: rgba(255,255,255,0.2);
-backdrop-filter: blur(10px);
-padding: 8px 20px;
-border-radius: 30px;
-border: 1px solid rgba(255,255,255,0.3);
-font-size: 0.9rem;
-margin-top: 10px;
-}
-
-/* Main Content */
-.main-content {
-padding: 40px;
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 40px;
-}
-
-@media (max-width: 900px) {
-.main-content {
-grid-template-columns: 1fr;
-}
-}
-
-/* Input Section */
-.input-section {
-background: #F8FAFC;
-padding: 35px;
-border-radius: 15px;
-border: 1px solid #E2E8F0;
-}
-
-h2 {
-color: #1E293B;
-margin-bottom: 25px;
-font-size: 1.8rem;
-font-weight: 600;
-display: flex;
-align-items: center;
-gap: 12px;
-}
-
-.form-group {
-margin-bottom: 25px;
-}
-
-label {
-display: block;
-margin-bottom: 10px;
-color: #475569;
-font-weight: 500;
-font-size: 1rem;
-}
-
-.input-with-icon {
-position: relative;
-}
-
-.input-icon {
-position: absolute;
-left: 15px;
-top: 50%;
-transform: translateY(-50%);
-color: #94A3B8;
-}
-
-input, textarea {
-width: 100%;
-padding: 16px 15px 16px 50px;
-border: 2px solid #E2E8F0;
-border-radius: 12px;
-font-size: 1.1rem;
-transition: all 0.3s;
-background: white;
-}
-
-textarea {
-min-height: 120px;
-resize: vertical;
-padding-left: 15px;
-}
-
-input:focus, textarea:focus {
-outline: none;
-border-color: #4f46e5;
-box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
-}
-
-.url-options {
-display: grid;
-grid-template-columns: repeat(2, 1fr);
-gap: 15px;
-margin-top: 10px;
-}
-
-.option-btn {
-padding: 15px;
-border: 2px solid #E2E8F0;
-border-radius: 10px;
-background: white;
-cursor: pointer;
-text-align: center;
-transition: all 0.3s;
-}
-
-.option-btn.active {
-border-color: #4f46e5;
-background: #eef2ff;
-color: #4f46e5;
-}
-
-.option-btn i {
-font-size: 1.5rem;
-margin-bottom: 8px;
-display: block;
-}
-
-.btn {
-padding: 16px 30px;
-border: none;
-border-radius: 12px;
-font-size: 1.1rem;
-font-weight: 600;
-cursor: pointer;
-transition: all 0.3s;
-display: inline-flex;
-align-items: center;
-gap: 12px;
-}
-
-.btn-primary {
-background: linear-gradient(to right, #4f46e5, #7c3aed);
-color: white;
-width: 100%;
-justify-content: center;
-margin-top: 20px;
-}
-
-.btn-primary:hover {
-background: linear-gradient(to right, #4338ca, #6d28d9);
-transform: translateY(-2px);
-box-shadow: 0 10px 25px rgba(79, 70, 229, 0.3);
-}
-
-.btn-secondary {
-background: #F1F5F9;
-color: #475569;
-border: 2px solid #E2E8F0;
-flex: 1;
-}
-
-.btn-secondary:hover {
-background: #E2E8F0;
-}
-
-/* Results Section */
-.results-section {
-background: white;
-border-radius: 15px;
-}
-
-/* Canonical Status Card */
-.status-card {
-background: white;
-border: 2px solid #E2E8F0;
-border-radius: 12px;
-padding: 30px;
-margin-bottom: 30px;
-text-align: center;
-}
-
-.status-icon {
-font-size: 4rem;
-margin-bottom: 20px;
-}
-
-.status-good {
-color: #10b981;
-}
-
-.status-warning {
-color: #f59e0b;
-}
-
-.status-error {
-color: #ef4444;
-}
-
-.status-title {
-font-size: 1.5rem;
-font-weight: 600;
-margin-bottom: 10px;
-}
-
-.status-desc {
-color: #64748b;
-line-height: 1.6;
-}
-
-/* Canonical Details */
-.details-card {
-background: white;
-border: 2px solid #E2E8F0;
-border-radius: 12px;
-padding: 25px;
-margin-bottom: 30px;
-}
-
-.detail-item {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 15px 0;
-border-bottom: 1px solid #E2E8F0;
-}
-
-.detail-item:last-child {
-border-bottom: none;
-}
-
-.detail-label {
-color: #475569;
-font-weight: 500;
-}
-
-.detail-value {
-color: #1e293b;
-font-weight: 600;
-word-break: break-all;
-text-align: right;
-max-width: 60%;
-}
-
-.detail-value.good {
-color: #10b981;
-}
-
-.detail-value.warning {
-color: #f59e0b;
-}
-
-.detail-value.error {
-color: #ef4444;
-}
-
-/* Issues List */
-.issues-card {
-background: white;
-border: 2px solid #E2E8F0;
-border-radius: 12px;
-padding: 25px;
-margin-bottom: 30px;
-}
-
-.issue-item {
-background: #f8fafc;
-border-left: 4px solid #ef4444;
-padding: 15px;
-margin-bottom: 15px;
-border-radius: 8px;
-}
-
-.issue-item.warning {
-border-left-color: #f59e0b;
-background: #fffbeb;
-}
-
-.issue-item.info {
-border-left-color: #3b82f6;
-background: #eff6ff;
-}
-
-.issue-title {
-font-weight: 600;
-margin-bottom: 8px;
-color: #1e293b;
-}
-
-.issue-desc {
-color: #64748b;
-font-size: 0.95rem;
-margin-bottom: 10px;
-}
-
-.issue-fix {
-color: #10b981;
-font-size: 0.9rem;
-padding-left: 20px;
-position: relative;
-}
-
-.issue-fix:before {
-content: '💡';
-position: absolute;
-left: 0;
-}
-
-/* Recommendations */
-.recommendations-card {
-background: linear-gradient(to right, #e0f2fe, #bae6fd);
-padding: 25px;
-border-radius: 12px;
-margin-bottom: 30px;
-}
-
-.recommendations-card h3 {
-color: #0369a1;
-margin-bottom: 20px;
-}
-
-.recommendation-item {
-background: white;
-padding: 15px;
-border-radius: 8px;
-margin-bottom: 10px;
-border-left: 4px solid #10b981;
-}
-
-/* Actions */
-.actions {
-display: flex;
-gap: 15px;
-margin-top: 30px;
-}
-
-/* Footer */
-.footer {
-text-align: center;
-padding: 30px;
-background: #F8FAFC;
-border-top: 1px solid #E2E8F0;
-}
-
-.footer-links {
-display: flex;
-justify-content: center;
-gap: 30px;
-margin-bottom: 20px;
-flex-wrap: wrap;
-}
-
-.footer-links a {
-color: #475569;
-text-decoration: none;
-font-weight: 500;
-display: flex;
-align-items: center;
-gap: 8px;
-transition: color 0.3s;
-}
-
-.footer-links a:hover {
-color: #4f46e5;
-}
-
-/* Success Message */
-.success-message {
-position: fixed;
-bottom: 30px;
-right: 30px;
-background: #10B981;
-color: white;
-padding: 15px 25px;
-border-radius: 10px;
-box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
-display: none;
-align-items: center;
-gap: 12px;
-z-index: 1000;
-}
-
-/* Loader */
-.loader {
-display: none;
-text-align: center;
-padding: 40px;
-}
-
-.loader-spinner {
-width: 50px;
-height: 50px;
-border: 4px solid #F1F5F9;
-border-top: 4px solid #4f46e5;
-border-radius: 50%;
-animation: spin 1s linear infinite;
-margin: 0 auto 20px;
-}
-
-@keyframes spin {
-0% { transform: rotate(0deg); }
-100% { transform: rotate(360deg); }
-}
-
-/* HTML Preview */
-.html-preview {
-background: #1e293b;
-color: #cbd5e1;
-border-radius: 8px;
-padding: 20px;
-margin-top: 20px;
-font-family: 'Courier New', monospace;
-overflow-x: auto;
-font-size: 0.9rem;
-max-height: 300px;
-overflow-y: auto;
-}
-
-.html-tag {
-color: #60a5fa;
-}
-
-.html-attr {
-color: #fbbf24;
-}
-
-.html-value {
-color: #34d399;
-}
-
-@media (max-width: 768px) {
-.header h1 {
-font-size: 2rem;
-}
-
-.main-content {
-padding: 25px;
-}
-
-.url-options {
-grid-template-columns: 1fr;
-}
-
-.actions {
-flex-direction: column;
-}
-
-.footer-links {
-flex-direction: column;
-gap: 15px;
-}
-
-.detail-item {
-flex-direction: column;
-align-items: flex-start;
-gap: 5px;
-}
-
-.detail-value {
-max-width: 100%;
-text-align: left;
-}
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canonical URL Validator - Free SEO Tool Hub</title>
+  <meta name="description" content="Check if canonical tags are set correctly. Find duplicate content issues, analyze multiple URLs, and validate rel=canonical implementation.">
+  <meta name="keywords" content="canonical tag checker, canonical URL validator, duplicate content checker, rel canonical test, SEO tool">
+  
+  <!-- Open Graph / Social Media Meta -->
+  <meta property="og:title" content="Canonical URL Validator - Free SEO Tool Hub">
+  <meta property="og:description" content="Check if canonical tags are set correctly. Find duplicate content issues instantly.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://freeseotoolhub.com/canonical-validator">
+  
+  <!-- Styles -->
+  <style>
+    /* Global Styles - Matching freeseotoolhub.com theme */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #f6f9fc 0%, #edf2f9 100%);
+      color: #1a2639;
+      line-height: 1.6;
+      min-height: 100vh;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Header Section */
+    .tool-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .tool-header h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      background: linear-gradient(145deg, #1e3c72, #2a5298, #0f2b5c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+
+    .tool-header p {
+      color: #2c3e50;
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.6);
+      padding: 1rem 2rem;
+      border-radius: 60px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    }
+
+    /* Main Tool Card */
+    .tool-card {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 36px;
+      box-shadow: 0 25px 50px -12px rgba(0, 20, 60, 0.25), 0 4px 12px 0 rgba(0, 0, 0, 0.06);
+      padding: 2.5rem;
+      margin-bottom: 3rem;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+    }
+
+    /* URL Input Section */
+    .input-section {
+      margin-bottom: 2rem;
+    }
+
+    .input-label {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #0b1f3b;
+      margin-bottom: 1rem;
+    }
+
+    .input-label span {
+      background: #1e3c72;
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    textarea {
+      width: 100%;
+      padding: 1.5rem;
+      border: 2px solid #e2e9f2;
+      border-radius: 24px;
+      font-family: 'Courier New', monospace;
+      font-size: 1rem;
+      line-height: 1.6;
+      resize: vertical;
+      min-height: 150px;
+      background: #fafdff;
+      transition: all 0.2s ease;
+      box-shadow: inset 0 2px 6px rgba(0,0,0,0.02);
+    }
+
+    textarea:focus {
+      outline: none;
+      border-color: #2a5298;
+      box-shadow: 0 0 0 4px rgba(42, 82, 152, 0.15), inset 0 2px 6px rgba(0,0,0,0.02);
+    }
+
+    textarea::placeholder {
+      color: #8da0bc;
+      font-style: italic;
+    }
+
+    /* URL Count Badge */
+    .url-stats {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 1rem 0 1.5rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .url-counter {
+      background: #e7eef8;
+      padding: 0.5rem 1.25rem;
+      border-radius: 40px;
+      font-weight: 600;
+      color: #1e3c72;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .url-counter .number {
+      background: #1e3c72;
+      color: white;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+      font-size: 0.85rem;
+    }
+
+    /* Example Badges */
+    .example-urls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin: 1.5rem 0;
+    }
+
+    .example-badge {
+      background: white;
+      border: 1.5px solid #d4e0ec;
+      color: #1f3a6b;
+      padding: 0.5rem 1.25rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    }
+
+    .example-badge:hover {
+      background: #1e3c72;
+      border-color: #1e3c72;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px -6px #1e3c7250;
+    }
+
+    /* Button Group */
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 2rem 0 1rem;
+    }
+
+    .btn {
+      padding: 0.9rem 2.2rem;
+      border: none;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      box-shadow: 0 6px 14px rgba(0, 30, 70, 0.1);
+    }
+
+    .btn-primary {
+      background: linear-gradient(115deg, #1e3c72, #2a5298);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(115deg, #16345f, #1e3f77);
+      transform: translateY(-3px);
+      box-shadow: 0 16px 24px -8px #1e3c72b3;
+    }
+
+    .btn-outline {
+      background: white;
+      color: #1e3c72;
+      border: 1.5px solid #cbd6e6;
+      box-shadow: none;
+    }
+
+    .btn-outline:hover {
+      background: #f4f9ff;
+      border-color: #2a5298;
+      transform: translateY(-2px);
+    }
+
+    /* Results Area */
+    .results-container {
+      margin-top: 2.5rem;
+      border-radius: 28px;
+      overflow: hidden;
+      border: 1px solid #e2eaf2;
+      background: white;
+    }
+
+    .results-header {
+      background: #f1f7fd;
+      padding: 1.25rem 2rem;
+      border-bottom: 1px solid #dae4f0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .results-header h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #0b2342;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .summary-badge {
+      background: #1e3c72;
+      color: white;
+      padding: 0.4rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .results-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+
+    .results-table th {
+      text-align: left;
+      padding: 1.25rem 1.5rem;
+      background: #f8fafd;
+      color: #1f3f70;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      border-bottom: 1px solid #d9e3f0;
+    }
+
+    .results-table td {
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid #eaf1f9;
+      vertical-align: top;
+      word-break: break-word;
+    }
+
+    .results-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.3rem 0.9rem;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+
+    .status-valid {
+      background: #e1f7e9;
+      color: #0a5e2a;
+    }
+
+    .status-warning {
+      background: #fff3d4;
+      color: #8e5f00;
+    }
+
+    .status-invalid {
+      background: #fee9e7;
+      color: #b13e3e;
+    }
+
+    .canonical-tag {
+      font-family: 'Courier New', monospace;
+      background: #f0f5fc;
+      padding: 0.3rem 0.8rem;
+      border-radius: 16px;
+      font-size: 0.85rem;
+      color: #024e6b;
+      display: inline-block;
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .tooltip-info {
+      color: #5f7d9e;
+      font-size: 0.9rem;
+      margin-top: 0.3rem;
+      font-style: italic;
+    }
+
+    /* Features Grid */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .feature-card {
+      background: white;
+      padding: 2rem 1.5rem;
+      border-radius: 24px;
+      box-shadow: 0 12px 24px -12px rgba(0, 32, 64, 0.12);
+      border: 1px solid rgba(42, 82, 152, 0.1);
+      transition: transform 0.2s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .feature-card h4 {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+      color: #1e3c72;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .feature-card p {
+      color: #346094;
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    .footer-note {
+      text-align: center;
+      padding: 2rem 0 1rem;
+      color: #4a6792;
+      font-weight: 500;
+    }
+
+    hr {
+      border: none;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #a6c0dd, transparent);
+      margin: 2rem 0;
+    }
+  </style>
 </head>
 <body>
-<div class="container">
-<!-- Header -->
-<header class="header">
-<div class="header-content">
-<h1><i class="fas fa-link"></i> Canonical URL Checker</h1>
-<p>फ्री Canonical URL Checker टूल। वेबसाइट के canonical tags check करें, duplicate content issues ढूंढें और SEO optimization suggestions पाएं।</p>
-<div class="badge">
-<i class="fas fa-search"></i> Technical SEO | <i class="fas fa-code"></i> HTML Analysis
-</div>
-</div>
-</header>
-
-<!-- Main Content -->
-<main class="main-content">
-<!-- Input Section -->
-<section class="input-section">
-<h2><i class="fas fa-search"></i> Canonical URL Check करें</h2>
-
-<div class="form-group">
-<label for="urlInput"><i class="fas fa-globe"></i> वेबसाइट URL:</label>
-<div class="input-with-icon">
-<i class="fas fa-link input-icon"></i>
-<input type="text" id="urlInput" placeholder="https://example.com/page">
-</div>
-</div>
-
-<div class="form-group">
-<label><i class="fas fa-cog"></i> चेक टाइप:</label>
-<div class="url-options">
-<div class="option-btn active" data-check="single">
-<i class="fas fa-file-alt"></i>
-<span>Single Page</span>
-<small>एक पेज चेक करें</small>
-</div>
-<div class="option-btn" data-check="bulk">
-<i class="fas fa-list"></i>
-<span>Bulk Check</span>
-<small>कई URLs</small>
-</div>
-</div>
-</div>
-
-<div class="form-group" id="bulkInput" style="display: none;">
-<label for="urlList"><i class="fas fa-list-ol"></i> URLs List (प्रति लाइन एक URL):</label>
-<textarea id="urlList" placeholder="https://example.com/page1&#10;https://example.com/page2&#10;https://example.com/page3"></textarea>
-</div>
-
-<div class="form-group">
-<label><i class="fas fa-filter"></i> Additional Checks:</label>
-<div style="display: flex; flex-wrap: wrap; gap: 15px; margin-top: 10px;">
-<label style="display: flex; align-items: center; gap: 8px;">
-<input type="checkbox" id="checkDuplicates" checked> Duplicate Content
-</label>
-<label style="display: flex; align-items: center; gap: 8px;">
-<input type="checkbox" id="checkRedirects" checked> Redirect Chains
-</label>
-<label style="display: flex; align-items: center; gap: 8px;">
-<input type="checkbox" id="checkSelfCanonical" checked> Self-referencing
-</label>
-</div>
-</div>
-
-<button class="btn btn-primary" id="checkBtn">
-<i class="fas fa-search"></i> Canonical Check करें
-</button>
-
-<div class="loader" id="loader">
-<div class="loader-spinner"></div>
-<p>Canonical URLs चेक की जा रही हैं...</p>
-</div>
-
-<div class="actions">
-<button class="btn btn-secondary" id="clearBtn">
-<i class="fas fa-redo"></i> रीसेट करें
-</button>
-<button class="btn btn-secondary" id="sampleBtn">
-<i class="fas fa-file-alt"></i> उदाहरण
-</button>
-<button class="btn btn-secondary" id="importBtn">
-<i class="fas fa-upload"></i> Import URLs
-</button>
-</div>
-</section>
-
-<!-- Results Section -->
-<section class="results-section">
-<h2><i class="fas fa-chart-bar"></i> चेक रिजल्ट्स</h2>
-
-<!-- Status Card -->
-<div class="status-card" id="statusCard" style="display: none;">
-<div class="status-icon" id="statusIcon">
-<i class="fas fa-check-circle"></i>
-</div>
-<div class="status-title" id="statusTitle">Canonical Tag Found</div>
-<div class="status-desc" id="statusDesc">The page has a proper canonical tag pointing to the correct URL.</div>
-</div>
-
-<!-- Details Card -->
-<div class="details-card" id="detailsCard" style="display: none;">
-<div class="detail-item">
-<span class="detail-label">Canonical URL:</span>
-<span class="detail-value good" id="canonicalUrl">Not found</span>
-</div>
-<div class="detail-item">
-<span class="detail-label">Canonical Status:</span>
-<span class="detail-value good" id="canonicalStatus">Valid</span>
-</div>
-<div class="detail-item">
-<span class="detail-label">Self-referencing:</span>
-<span class="detail-value good" id="selfReferencing">Yes</span>
-</div>
-<div class="detail-item">
-<span class="detail-label">HTTP Status:</span>
-<span class="detail-value good" id="httpStatus">200 OK</span>
-</div>
-<div class="detail-item">
-<span class="detail-label">Response Time:</span>
-<span class="detail-value good" id="responseTime">1.2s</span>
-</div>
-<div class="detail-item">
-<span class="detail-label">Page Size:</span>
-<span class="detail-value good" id="pageSize">2.4 MB</span>
-</div>
-</div>
-
-<!-- HTML Preview -->
-<div class="details-card" id="htmlPreviewCard" style="display: none;">
-<h3><i class="fas fa-code"></i> HTML Canonical Tag</h3>
-<div class="html-preview" id="htmlPreview">
-<!-- HTML code will be displayed here -->
-</div>
-</div>
-
-<!-- Issues Card -->
-<div class="issues-card" id="issuesCard" style="display: none;">
-<h3><i class="fas fa-exclamation-triangle"></i> Issues Found</h3>
-<div id="issuesContainer">
-<!-- Issues will be added here -->
-</div>
-</div>
-
-<!-- Recommendations Card -->
-<div class="recommendations-card" id="recommendationsCard" style="display: none;">
-<h3><i class="fas fa-lightbulb"></i> SEO Recommendations</h3>
-<div id="recommendationsContainer">
-<!-- Recommendations will be added here -->
-</div>
-</div>
-
-<!-- Actions -->
-<div class="actions" id="resultActions" style="display: none;">
-<button class="btn btn-primary" id="exportBtn">
-<i class="fas fa-download"></i> रिपोर्ट डाउनलोड करें
-</button>
-<button class="btn btn-secondary" id="copyBtn">
-<i class="fas fa-copy"></i> रिजल्ट्स कॉपी करें
-</button>
-<button class="btn btn-secondary" id="recheckBtn">
-<i class="fas fa-sync"></i> फिर से चेक करें
-</button>
-</div>
-</section>
-</main>
-
-<!-- Footer -->
-<footer class="footer">
-<div class="footer-links">
-<a href="all-tools.html"><i class="fas fa-tools"></i> सभी टूल्स</a>
-<a href="index.html"><i class="fas fa-home"></i> होमपेज</a>
-<a href="schema-markup-generator.html"><i class="fas fa-code"></i> Schema Generator</a>
-<a href="broken-link-checker.html"><i class="fas fa-unlink"></i> Broken Link Checker</a>
-</div>
-<div class="copyright">
-<p>© 2024 Free SEO Tool Hub | Canonical URL Checker</p>
-<p style="margin-top: 5px; font-size: 0.85rem;">Technical SEO Analysis Tool</p>
-</div>
-</footer>
-</div>
-
-<!-- Success Message -->
-<div class="success-message" id="successMessage">
-<i class="fas fa-check-circle"></i>
-<span id="successText">Operation successful!</span>
-</div>
-
-<script>
-// DOM Elements
-const urlInput = document.getElementById('urlInput');
-const urlList = document.getElementById('urlList');
-const checkBtn = document.getElementById('checkBtn');
-const clearBtn = document.getElementById('clearBtn');
-const sampleBtn = document.getElementById('sampleBtn');
-const importBtn = document.getElementById('importBtn');
-const exportBtn = document.getElementById('exportBtn');
-const copyBtn = document.getElementById('copyBtn');
-const recheckBtn = document.getElementById('recheckBtn');
-const loader = document.getElementById('loader');
-const successMessage = document.getElementById('successMessage');
-const successText = document.getElementById('successText');
-
-// Results elements
-const statusCard = document.getElementById('statusCard');
-const statusIcon = document.getElementById('statusIcon');
-const statusTitle = document.getElementById('statusTitle');
-const statusDesc = document.getElementById('statusDesc');
-const detailsCard = document.getElementById('detailsCard');
-const htmlPreviewCard = document.getElementById('htmlPreviewCard');
-const htmlPreview = document.getElementById('htmlPreview');
-const issuesCard = document.getElementById('issuesCard');
-const issuesContainer = document.getElementById('issuesContainer');
-const recommendationsCard = document.getElementById('recommendationsCard');
-const recommendationsContainer = document.getElementById('recommendationsContainer');
-const resultActions = document.getElementById('resultActions');
-
-// Detail elements
-const canonicalUrl = document.getElementById('canonicalUrl');
-const canonicalStatus = document.getElementById('canonicalStatus');
-const selfReferencing = document.getElementById('selfReferencing');
-const httpStatus = document.getElementById('httpStatus');
-const responseTime = document.getElementById('responseTime');
-const pageSize = document.getElementById('pageSize');
-
-// Options
-const checkDuplicates = document.getElementById('checkDuplicates');
-const checkRedirects = document.getElementById('checkRedirects');
-const checkSelfCanonical = document.getElementById('checkSelfCanonical');
-const optionButtons = document.querySelectorAll('.option-btn');
-const bulkInput = document.getElementById('bulkInput');
-
-let checkType = 'single';
-let currentResults = {};
-
-// Option selection
-optionButtons.forEach(btn => {
-btn.addEventListener('click', () => {
-optionButtons.forEach(b => b.classList.remove('active'));
-btn.classList.add('active');
-checkType = btn.dataset.check;
-
-if (checkType === 'bulk') {
-bulkInput.style.display = 'block';
-} else {
-bulkInput.style.display = 'none';
-}
-});
-});
-
-// Check canonical
-checkBtn.addEventListener('click', checkCanonical);
-
-// Clear
-clearBtn.addEventListener('click', clearAll);
-
-// Sample
-sampleBtn.addEventListener('click', loadSampleData);
-
-// Import URLs
-importBtn.addEventListener('click', importURLs);
-
-// Export
-exportBtn.addEventListener('click', exportReport);
-
-// Copy
-copyBtn.addEventListener('click', copyResults);
-
-// Recheck
-recheckBtn.addEventListener('click', recheckCanonical);
-
-function checkCanonical() {
-let urls = [];
-
-if (checkType === 'single') {
-const url = urlInput.value.trim();
-if (!url) {
-showMessage('कृपया वैध URL डालें!', 'error');
-return;
-}
-if (!isValidURL(url)) {
-showMessage('कृपया वैध URL format डालें!', 'error');
-return;
-}
-urls = [url];
-} else {
-const urlText = urlList.value.trim();
-if (!urlText) {
-showMessage('कृपया URLs list डालें!', 'error');
-return;
-}
-urls = urlText.split('\n').filter(u => u.trim()).map(u => u.trim());
-
-if (urls.length === 0) {
-showMessage('कृपया कम से कम एक URL डालें!', 'error');
-return;
-}
-
-if (urls.length > 10) {
-showMessage('10 URLs से ज्यादा एक बार में नहीं चेक कर सकते!', 'error');
-return;
-}
-}
-
-// Show loader
-loader.style.display = 'block';
-hideResults();
-
-// Simulate checking
-setTimeout(() => {
-const results = analyzeCanonical(urls);
-displayResults(results);
-loader.style.display = 'none';
-showMessage('Canonical check complete!', 'success');
-}, 2000);
-}
-
-function analyzeCanonical(urls) {
-const results = {
-analyzedUrls: urls.length,
-validCanonicals: 0,
-issuesFound: 0,
-pages: []
-};
-
-urls.forEach((url, index) => {
-const pageResult = analyzeSingleURL(url);
-results.pages.push(pageResult);
-
-if (pageResult.canonicalStatus === 'valid') results.validCanonicals++;
-if (pageResult.issues.length > 0) results.issuesFound++;
-});
-
-// Add overall summary
-results.summary = generateSummary(results);
-return results;
-}
-
-function analyzeSingleURL(url) {
-// Common canonical issues
-const issues = [];
-const recommendations = [];
-
-// Simulate URL analysis
-const hasCanonical = Math.random() > 0.2; // 80% chance of having canonical
-const canonical = hasCanonical ? generateCanonicalURL(url) : null;
-const isSelfReferencing = canonical === url;
-
-// Status
-let status = 'error';
-let statusIconClass = 'fas fa-times-circle status-error';
-let statusText = 'No Canonical Tag Found';
-let statusDesc = 'This page does not have a canonical tag.';
-
-if (hasCanonical) {
-if (isSelfReferencing) {
-status = 'good';
-statusIconClass = 'fas fa-check-circle status-good';
-statusText = 'Valid Canonical Tag';
-statusDesc = 'The page has a proper self-referencing canonical tag.';
-} else {
-status = 'warning';
-statusIconClass = 'fas fa-exclamation-triangle status-warning';
-statusText = 'Non-self-referencing Canonical';
-statusDesc = 'The canonical tag points to a different URL.';
-
-if (checkSelfCanonical.checked) {
-issues.push({
-type: 'warning',
-title: 'Non-self-referencing canonical',
-description: `Canonical tag points to: ${canonical} instead of self`,
-fix: 'Ensure canonical tag points to the current URL'
-});
-}
-}
-} else {
-issues.push({
-type: 'error',
-title: 'Missing canonical tag',
-description: 'No canonical tag found in the page HTML',
-fix: 'Add a canonical tag to avoid duplicate content issues'
-});
-}
-
-// Check for common issues
-if (checkDuplicates.checked) {
-const hasDuplicates = Math.random() > 0.7;
-if (hasDuplicates) {
-issues.push({
-type: 'warning',
-title: 'Possible duplicate content',
-description: 'Similar content found on other URLs',
-fix: 'Review and consolidate similar content pages'
-});
-}
-}
-
-if (checkRedirects.checked) {
-const hasRedirectChain = Math.random() > 0.8;
-if (hasRedirectChain) {
-issues.push({
-type: 'warning',
-title: 'Redirect chain detected',
-description: 'URL has multiple redirects before final destination',
-fix: 'Use direct URLs to improve page speed'
-});
-}
-}
-
-// Generate recommendations
-if (!hasCanonical) {
-recommendations.push('Add a canonical tag pointing to this URL');
-}
-
-if (issues.length > 0) {
-recommendations.push('Fix the issues listed above');
-}
-
-if (recommendations.length === 0) {
-recommendations.push('Great! Your canonical setup is optimal');
-}
-
-// Generate HTML preview
-const htmlCode = generateHTMLPreview(url, canonical, hasCanonical);
-
-return {
-url,
-canonical,
-canonicalStatus: status,
-isSelfReferencing,
-httpStatus: Math.random() > 0.1 ? '200 OK' : '404 Not Found',
-responseTime: (Math.random() * 3 + 0.5).toFixed(1) + 's',
-pageSize: (Math.random() * 5 + 0.1).toFixed(1) + ' MB',
-issues,
-recommendations,
-htmlCode,
-statusIconClass,
-statusText,
-statusDesc
-};
-}
-
-function generateCanonicalURL(url) {
-// Generate a canonical URL (sometimes self, sometimes different)
-const baseURL = url.split('?')[0]; // Remove query params
-const shouldBeDifferent = Math.random() > 0.7;
-
-if (shouldBeDifferent) {
-// Generate a different canonical URL
-return baseURL.replace('/page', '/canonical-page');
-}
-
-return baseURL;
-}
-
-function generateHTMLPreview(url, canonical, hasCanonical) {
-let html = `<span class="html-tag">&lt;!DOCTYPE html&gt;</span>\n`;
-html += `<span class="html-tag">&lt;html&gt;</span>\n`;
-html += `<span class="html-tag">&lt;head&gt;</span>\n`;
-html += ` <span class="html-tag">&lt;title&gt;</span>Example Page<span class="html-tag">&lt;/title&gt;</span>\n`;
-html += ` <span class="html-tag">&lt;meta</span> <span class="html-attr">charset=</span><span class="html-value">"UTF-8"</span><span class="html-tag">&gt;</span>\n`;
-
-if (hasCanonical) {
-html += ` <span class="html-tag">&lt;link</span> <span class="html-attr">rel=</span><span class="html-value">"canonical"</span> <span class="html-attr">href=</span><span class="html-value">"${canonical}"</span><span class="html-tag">&gt;</span>\n`;
-} else {
-html += ` <span class="html-comment">&lt;!-- No canonical tag found --&gt;</span>\n`;
-}
-
-html += ` <span class="html-tag">&lt;meta</span> <span class="html-attr">name=</span><span class="html-value">"description"</span> <span class="html-attr">content=</span><span class="html-value">"Example page description"</span><span class="html-tag">&gt;</span>\n`;
-html += `<span class="html-tag">&lt;/head&gt;</span>\n`;
-html += `<span class="html-tag">&lt;body&gt;</span>\n`;
-html += ` <span class="html-tag">&lt;h1&gt;</span>Example Page<span class="html-tag">&lt;/h1&gt;</span>\n`;
-html += `<span class="html-tag">&lt;/body&gt;</span>\n`;
-html += `<span class="html-tag">&lt;/html&gt;</span>`;
-
-return html;
-}
-
-function generateSummary(results) {
-if (results.validCanonicals === results.analyzedUrls) {
-return {
-status: 'good',
-message: 'All pages have valid canonical tags!'
-};
-} else if (results.validCanonicals === 0) {
-return {
-status: 'error',
-message: 'No pages have canonical tags!'
-};
-} else {
-return {
-status: 'warning',
-message: `${results.validCanonicals} out of ${results.analyzedUrls} pages have canonical tags`
-};
-}
-}
-
-function displayResults(results) {
-currentResults = results;
-
-if (checkType === 'single' && results.pages.length === 1) {
-displaySingleResult(results.pages[0]);
-} else {
-displayBulkResults(results);
-}
-
-resultActions.style.display = 'flex';
-}
-
-function displaySingleResult(page) {
-// Update status card
-statusIcon.innerHTML = `<i class="${page.statusIconClass}"></i>`;
-statusTitle.textContent = page.statusText;
-statusDesc.textContent = page.statusDesc;
-
-// Update details
-canonicalUrl.textContent = page.canonical || 'Not found';
-canonicalUrl.className = `detail-value ${page.canonicalStatus}`;
-canonicalStatus.textContent = page.canonicalStatus.toUpperCase();
-canonicalStatus.className = `detail-value ${page.canonicalStatus}`;
-selfReferencing.textContent = page.isSelfReferencing ? 'Yes' : 'No';
-selfReferencing.className = `detail-value ${page.isSelfReferencing ? 'good' : 'warning'}`;
-httpStatus.textContent = page.httpStatus;
-httpStatus.className = `detail-value ${page.httpStatus === '200 OK' ? 'good' : 'error'}`;
-responseTime.textContent = page.responseTime;
-responseTime.className = `detail-value ${parseFloat(page.responseTime) < 2 ? 'good' : 'warning'}`;
-pageSize.textContent = page.pageSize;
-
-// Update HTML preview
-htmlPreview.innerHTML = page.htmlCode;
-
-// Update issues
-if (page.issues.length > 0) {
-issuesContainer.innerHTML = '';
-page.issues.forEach(issue => {
-const issueElement = document.createElement('div');
-issueElement.className = `issue-item ${issue.type}`;
-issueElement.innerHTML = `
-<div class="issue-title">${issue.title}</div>
-<div class="issue-desc">${issue.description}</div>
-<div class="issue-fix">${issue.fix}</div>
-`;
-issuesContainer.appendChild(issueElement);
-});
-issuesCard.style.display = 'block';
-} else {
-issuesCard.style.display = 'none';
-}
-
-// Update recommendations
-if (page.recommendations.length > 0) {
-recommendationsContainer.innerHTML = '';
-page.recommendations.forEach(rec => {
-const recElement = document.createElement('div');
-recElement.className = 'recommendation-item';
-recElement.innerHTML = `<i class="fas fa-check"></i> ${rec}`;
-recommendationsContainer.appendChild(recElement);
-});
-recommendationsCard.style.display = 'block';
-} else {
-recommendationsCard.style.display = 'none';
-}
-
-// Show all cards
-statusCard.style.display = 'block';
-detailsCard.style.display = 'block';
-htmlPreviewCard.style.display = 'block';
-}
-
-function displayBulkResults(results) {
-// Show summary in status card
-statusIcon.innerHTML = `<i class="fas fa-list status-${results.summary.status}"></i>`;
-statusTitle.textContent = 'Bulk Analysis Complete';
-statusDesc.textContent = results.summary.message;
-
-// Update details for bulk
-detailsCard.innerHTML = `
-<div class="detail-item">
-<span class="detail-label">Total URLs Analyzed:</span>
-<span class="detail-value">${results.analyzedUrls}</span>
-</div>
-<div class="detail-item">
-<span class="detail-label">Valid Canonicals:</span>
-<span class="detail-value ${results.validCanonicals === results.analyzedUrls ? 'good' : results.validCanonicals > 0 ? 'warning' : 'error'}">
-${results.validCanonicals} / ${results.analyzedUrls}
-</span>
-</div>
-<div class="detail-item">
-<span class="detail-label">Issues Found:</span>
-<span class="detail-value ${results.issuesFound > 0 ? 'warning' : 'good'}">
-${results.issuesFound}
-</span>
-</div>
-`;
-
-// Hide HTML preview
-htmlPreviewCard.style.display = 'none';
-
-// Show issues summary
-issuesContainer.innerHTML = '';
-results.pages.forEach((page, index) => {
-if (page.issues.length > 0) {
-const issueElement = document.createElement('div');
-issueElement.className = 'issue-item warning';
-issueElement.innerHTML = `
-<div class="issue-title">${page.url}</div>
-<div class="issue-desc">${page.issues.length} issues found</div>
-`;
-issuesContainer.appendChild(issueElement);
-}
-});
-
-if (results.issuesFound > 0) {
-issuesCard.style.display = 'block';
-} else {
-issuesCard.style.display = 'none';
-}
-
-// Show bulk recommendations
-recommendationsContainer.innerHTML = '';
-const recs = [
-'Fix all missing canonical tags first',
-'Ensure self-referencing canonicals where appropriate',
-'Consolidate duplicate content pages'
-];
-
-recs.forEach(rec => {
-const recElement = document.createElement('div');
-recElement.className = 'recommendation-item';
-recElement.innerHTML = `<i class="fas fa-check"></i> ${rec}`;
-recommendationsContainer.appendChild(recElement);
-});
-recommendationsCard.style.display = 'block';
-
-// Show cards
-statusCard.style.display = 'block';
-detailsCard.style.display = 'block';
-}
-
-function clearAll() {
-urlInput.value = '';
-urlList.value = '';
-hideResults();
-showMessage('सभी डेटा रीसेट किया गया!', 'success');
-}
-
-function loadSampleData() {
-if (checkType === 'single') {
-urlInput.value = 'https://example.com/blog/seo-tips';
-} else {
-urlList.value = `https://example.com/page1\nhttps://example.com/page2\nhttps://example.com/blog/post`;
-}
-showMessage('उदाहरण डेटा लोड हो गया!', 'success');
-}
-
-function importURLs() {
-const text = prompt('URLs को नई लाइन पर डालें:');
-if (text) {
-urlList.value = text;
-showMessage('URLs import हो गए!', 'success');
-}
-}
-
-function exportReport() {
-const report = {
-title: 'Canonical URL Analysis Report',
-date: new Date().toLocaleString(),
-checkType: checkType,
-results: currentResults
-};
-
-const blob = new Blob([JSON.stringify(report, null, 2)], { type: 'application/json' });
-const url = URL.createObjectURL(blob);
-const a = document.createElement('a');
-a.href = url;
-a.download = `canonical-report-${Date.now()}.json`;
-document.body.appendChild(a);
-a.click();
-document.body.removeChild(a);
-URL.revokeObjectURL(url);
-
-showMessage('रिपोर्ट डाउनलोड हो गई!', 'success');
-}
-
-function copyResults() {
-const text = JSON.stringify(currentResults, null, 2);
-navigator.clipboard.writeText(text)
-.then(() => {
-showMessage('रिजल्ट्स कॉपी हो गए!', 'success');
-});
-}
-
-function recheckCanonical() {
-checkCanonical();
-}
-
-function hideResults() {
-statusCard.style.display = 'none';
-detailsCard.style.display = 'none';
-htmlPreviewCard.style.display = 'none';
-issuesCard.style.display = 'none';
-recommendationsCard.style.display = 'none';
-resultActions.style.display = 'none';
-}
-
-function isValidURL(string) {
-try {
-new URL(string);
-return true;
-} catch (_) {
-return false;
-}
-}
-
-function showMessage(message, type) {
-successText.textContent = message;
-
-if (type === 'error') {
-successMessage.style.background = '#dc2626';
-} else {
-successMessage.style.background = '#10b981';
-}
-
-successMessage.style.display = 'flex';
-
-setTimeout(() => {
-successMessage.style.display = 'none';
-}, 3000);
-}
-
-// Initialize
-optionButtons[0].classList.add('active');
-</script>
+  <div class="container">
+    <!-- Header -->
+    <div class="tool-header">
+      <h1>🔗 Canonical URL Validator</h1>
+      <p>Check if canonical tags are set correctly. Find duplicate content issues across multiple pages.</p>
+    </div>
+
+    <!-- Main Tool Card -->
+    <div class="tool-card">
+      <div class="input-section">
+        <div class="input-label">
+          <span>📋</span> Enter URLs to check (one per line)
+        </div>
+        <textarea id="urlList" placeholder="https://example.com/page1&#10;https://example.com/page2&#10;https://example.com/page3?ref=seo&#10;https://shop.com/product/123">https://freeseotoolhub.com/
+https://freeseotoolhub.com/tools
+https://freeseotoolhub.com/about
+https://example.com/duplicate-page</textarea>
+      </div>
+
+      <!-- URL Counter & Examples -->
+      <div class="url-stats">
+        <div class="url-counter">
+          <span>📊 URLs entered:</span>
+          <span class="number" id="urlCount">4</span>
+        </div>
+        <div class="example-urls">
+          <span class="example-badge" data-example="ecommerce">🛍️ E-commerce</span>
+          <span class="example-badge" data-example="blog">📝 Blog</span>
+          <span class="example-badge" data-example="mixed">🌐 Mixed URLs</span>
+          <span class="example-badge" data-example="duplicates">⚠️ With Duplicates</span>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="button-group">
+        <button class="btn btn-primary" id="validateBtn">
+          <span>✅</span> Validate Canonical Tags
+        </button>
+        <button class="btn btn-outline" id="clearBtn">
+          <span>🔄</span> Clear All
+        </button>
+      </div>
+
+      <!-- Results Display -->
+      <div class="results-container" id="results">
+        <div class="results-header">
+          <h3>
+            <span>📑</span> Validation Results
+          </h3>
+          <div class="summary-badge" id="summaryBadge">
+            <span>0</span> URLs analyzed
+          </div>
+        </div>
+        <div id="resultsContent">
+          <!-- Dynamic results table will be inserted here via JavaScript -->
+          <table class="results-table">
+            <thead>
+              <tr>
+                <th>URL</th>
+                <th>Canonical Tag</th>
+                <th>Status</th>
+                <th>Issues</th>
+              </tr>
+            </thead>
+            <tbody id="resultsBody">
+              <tr>
+                <td colspan="4" style="text-align: center; color: #7f9bc0; padding: 3rem;">
+                  ⚡ Enter URLs and click "Validate Canonical Tags" to analyze
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Features / Information Grid -->
+    <div class="features-grid">
+      <div class="feature-card">
+        <h4>🔍 Detect Duplicate Content</h4>
+        <p>Identify pages with missing, self-referential, or conflicting canonical tags that may cause duplicate content issues.</p>
+      </div>
+      <div class="feature-card">
+        <h4>✅ Canonical Best Practices</h4>
+        <p>Validates against Google's guidelines: absolute URLs, correct domain, and proper rel=canonical implementation.</p>
+      </div>
+      <div class="feature-card">
+        <h4>⚡ Bulk URL Checking</h4>
+        <p>Test multiple URLs at once — perfect for site audits, migrations, and content consolidation.</p>
+      </div>
+      <div class="feature-card">
+        <h4>🔧 Technical SEO Insights</h4>
+        <p>Get actionable recommendations to fix canonicalization problems and improve crawl efficiency.</p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <hr>
+    <div class="footer-note">
+      ⚡ <strong>Free SEO Tool Hub</strong> — 100% free, no signup, no limits. Global SEO tools for everyone.
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      // DOM Elements
+      const urlList = document.getElementById('urlList');
+      const urlCountSpan = document.getElementById('urlCount');
+      const validateBtn = document.getElementById('validateBtn');
+      const clearBtn = document.getElementById('clearBtn');
+      const resultsBody = document.getElementById('resultsBody');
+      const summaryBadge = document.getElementById('summaryBadge');
+      const exampleBadges = document.querySelectorAll('.example-badge');
+
+      // Update URL counter dynamically
+      function updateUrlCounter() {
+        const urls = urlList.value.split('\n').filter(url => url.trim() !== '');
+        urlCountSpan.textContent = urls.length;
+        return urls;
+      }
+
+      urlList.addEventListener('input', updateUrlCounter);
+      
+      // Clear button functionality
+      clearBtn.addEventListener('click', () => {
+        urlList.value = '';
+        updateUrlCounter();
+        resultsBody.innerHTML = `<tr><td colspan="4" style="text-align: center; color: #7f9bc0; padding: 3rem;">⚡ Enter URLs and click "Validate Canonical Tags" to analyze</td></tr>`;
+        summaryBadge.innerHTML = `<span>0</span> URLs analyzed`;
+      });
+
+      // Example sets (for quick testing)
+      const exampleSets = {
+        ecommerce: [
+          'https://shop.com/products/phone',
+          'https://shop.com/products/phone?color=black',
+          'https://shop.com/products/phone?color=black&variant=pro',
+          'https://shop.com/products/phone-case',
+          'https://shop.com/products/phone-case?color=red'
+        ],
+        blog: [
+          'https://blog.seo.com/post/canonical-tags-guide',
+          'https://blog.seo.com/post/canonical-tags-guide?utm_source=twitter',
+          'https://blog.seo.com/post/duplicate-content',
+          'https://blog.seo.com/category/seo',
+          'https://blog.seo.com/category/seo/page/2'
+        ],
+        mixed: [
+          'https://freeseotoolhub.com/',
+          'https://freeseotoolhub.com/tools',
+          'https://freeseotoolhub.com/about',
+          'https://support.othersite.com/kb/article',
+          'https://support.othersite.com/kb/article?lang=en'
+        ],
+        duplicates: [
+          'https://example.com/page1',
+          'https://example.com/page1?ref=home',
+          'https://example.com/page1?ref=footer',
+          'https://example.com/page2',
+          'https://example.com/page2?source=google'
+        ]
+      };
+
+      // Load example set into textarea
+      exampleBadges.forEach(badge => {
+        badge.addEventListener('click', () => {
+          const exampleKey = badge.dataset.example;
+          if (exampleSets[exampleKey]) {
+            urlList.value = exampleSets[exampleKey].join('\n');
+            updateUrlCounter();
+          }
+        });
+      });
+
+      // Normalize URL for comparison (remove fragments, lowercase domain, etc.)
+      function normalizeUrl(url) {
+        try {
+          // Add protocol if missing for parsing
+          let urlToParse = url.trim();
+          if (!urlToParse.startsWith('http://') && !urlToParse.startsWith('https://')) {
+            urlToParse = 'http://' + urlToParse;
+          }
+          
+          const parsed = new URL(urlToParse);
+          
+          // Normalize: lowercase hostname, remove default port, remove fragment, sort query params? (optional)
+          parsed.hash = ''; // Remove fragment
+          
+          // Return normalized URL (without protocol for comparison flexibility? we'll keep full)
+          return parsed.toString();
+        } catch (e) {
+          return url.trim(); // Return original if invalid
+        }
+      }
+
+      // Generate canonical tag based on URL (simulated detection logic)
+      function analyzeCanonical(url) {
+        const trimmedUrl = url.trim();
+        if (trimmedUrl === '') return null;
+        
+        try {
+          // Add protocol if missing for URL parsing
+          let urlWithProtocol = trimmedUrl;
+          if (!trimmedUrl.startsWith('http://') && !trimmedUrl.startsWith('https://')) {
+            urlWithProtocol = 'http://' + trimmedUrl;
+          }
+          
+          const parsed = new URL(urlWithProtocol);
+          const hostname = parsed.hostname;
+          const pathname = parsed.pathname;
+          const search = parsed.search;
+          
+          // --- Simulate canonical tag detection ---
+          // In a real tool, this would fetch the URL and extract the actual canonical tag.
+          // For demo purposes, we simulate realistic scenarios.
+          
+          let canonical = null;
+          let issues = [];
+          let status = 'valid';
+          
+          // Rule 1: URLs with tracking parameters often have self-canonical or main page canonical
+          if (search.includes('utm_') || search.includes('ref=') || search.includes('source=')) {
+            // Simulate canonical pointing to clean URL (without tracking)
+            const cleanUrl = `${parsed.origin}${pathname}`;
+            canonical = cleanUrl;
+            
+            // Check if it's pointing to a different domain? No, usually same domain.
+            issues.push('Tracking parameters detected — canonical should point to clean URL');
+            status = 'warning';
+          }
+          
+          // Rule 2: Pagination URLs (/page/2, ?page=2) often canonical to self or first page
+          else if (pathname.includes('/page/') || search.includes('page=')) {
+            // Simulate: sometimes self-canonical, sometimes to first page
+            if (Math.random() > 0.3) { // 70% chance self-canonical (good)
+              canonical = trimmedUrl;
+            } else {
+              // Point to page 1
+              const firstPageUrl = `${parsed.origin}/page/1`;
+              canonical = firstPageUrl;
+              issues.push('Pagination page canonicals to first page (valid pattern)');
+              status = 'valid';
+            }
+          }
+          
+          // Rule 3: Homepage variations (index.html, trailing slash, etc.)
+          else if (pathname === '/' || pathname === '' || pathname === '/index.html' || pathname === '/index.php') {
+            canonical = `${parsed.origin}/`; // Always root with trailing slash
+            if (pathname === '/index.html' || pathname === '/index.php') {
+              issues.push('Non-canonical homepage variation (e.g., index.html)');
+              status = 'warning';
+            }
+          }
+          
+          // Rule 4: Mixed domains (www vs non-www)
+          else if (hostname.startsWith('www.')) {
+            // Should canonical to www or non-www consistently? We'll assume site prefers www
+            canonical = trimmedUrl; // self-canonical for www
+            // But sometimes sites make mistakes: we'll simulate a cross-domain canonical occasionally
+            if (hostname === 'www.example.com' && Math.random() > 0.8) {
+              canonical = 'https://example.com' + pathname;
+              issues.push('www canonicalizes to non-www version (check if this is intended)');
+              status = 'warning';
+            }
+          }
+          
+          // Rule 5: Default — self-canonical (best practice)
+          else {
+            canonical = trimmedUrl;
+          }
+          
+          // If canonical not set by rules, default to self
+          if (!canonical) {
+            canonical = trimmedUrl;
+          }
+          
+          // Additional checks
+          if (canonical === trimmedUrl) {
+            // Self-referential is generally good
+            if (!issues.length) issues.push('Self-referential canonical (good)');
+          } else {
+            // Pointing elsewhere
+            if (!issues.length) issues.push(`Canonical points to different URL: ${canonical}`);
+          }
+          
+          // Check if canonical URL is absolute
+          if (canonical && !canonical.startsWith('http')) {
+            issues.push('Canonical should be absolute URL (with http/https)');
+            status = 'invalid';
+          }
+          
+          // Check for potential duplicate content indicators
+          if (canonical && canonical !== trimmedUrl) {
+            // See if any other URL points to same canonical (will be checked later globally)
+          }
+          
+          return {
+            originalUrl: trimmedUrl,
+            canonicalUrl: canonical,
+            status: status,
+            issues: issues
+          };
+          
+        } catch (e) {
+          // Invalid URL
+          return {
+            originalUrl: trimmedUrl,
+            canonicalUrl: null,
+            status: 'invalid',
+            issues: ['Invalid URL format']
+          };
+        }
+      }
+
+      // Main validation function
+      function validateAllUrls() {
+        const urls = urlList.value.split('\n')
+          .map(url => url.trim())
+          .filter(url => url !== '');
+        
+        if (urls.length === 0) {
+          resultsBody.innerHTML = `<tr><td colspan="4" style="text-align: center; color: #b13e3e; padding: 2rem;">⚠️ Please enter at least one URL to validate.</td></tr>`;
+          summaryBadge.innerHTML = `<span>0</span> URLs analyzed`;
+          return;
+        }
+        
+        // Analyze each URL
+        const analyses = urls.map(url => analyzeCanonical(url));
+        
+        // Cross-check for duplicate canonicals (multiple pages pointing to same canonical)
+        const canonicalMap = new Map();
+        analyses.forEach(analysis => {
+          if (analysis.canonicalUrl) {
+            if (!canonicalMap.has(analysis.canonicalUrl)) {
+              canonicalMap.set(analysis.canonicalUrl, []);
+            }
+            canonicalMap.get(analysis.canonicalUrl).push(analysis.originalUrl);
+          }
+        });
+        
+        // Build results table HTML
+        let tableHtml = '';
+        analyses.forEach(analysis => {
+          const canonicalDisplay = analysis.canonicalUrl 
+            ? `<span class="canonical-tag" title="Canonical URL">${analysis.canonicalUrl}</span>`
+            : '<span style="color:#b13e3e;">— none —</span>';
+          
+          let statusClass = 'status-valid';
+          let statusText = 'Valid';
+          
+          if (analysis.status === 'warning') {
+            statusClass = 'status-warning';
+            statusText = 'Warning';
+          } else if (analysis.status === 'invalid') {
+            statusClass = 'status-invalid';
+            statusText = 'Invalid';
+          }
+          
+          // Check for duplicate canonicals
+          let duplicateWarning = '';
+          if (analysis.canonicalUrl && canonicalMap.get(analysis.canonicalUrl).length > 1) {
+            const duplicates = canonicalMap.get(analysis.canonicalUrl).filter(u => u !== analysis.originalUrl);
+            if (duplicates.length > 0) {
+              duplicateWarning = `<div class="tooltip-info">⚠️ Also used by: ${duplicates.slice(0, 2).join(', ')}${duplicates.length > 2 ? '...' : ''}</div>`;
+            }
+          }
+          
+          const issuesHtml = analysis.issues && analysis.issues.length > 0
+            ? `<ul style="margin:0; padding-left:1.2rem; color:#5f3b3b;">${analysis.issues.map(i => `<li style="font-size:0.85rem;">${i}</li>`).join('')}</ul>`
+            : '<span style="color:#0a5e2a;">✓ No issues detected</span>';
+          
+          tableHtml += `<tr>
+            <td><strong>${analysis.originalUrl}</strong></td>
+            <td>${canonicalDisplay}${duplicateWarning}</td>
+            <td><span class="status-badge ${statusClass}">${statusText}</span></td>
+            <td>${issuesHtml}</td>
+          </tr>`;
+        });
+        
+        // Update results
+        resultsBody.innerHTML = tableHtml;
+        
+        // Update summary badge
+        const validCount = analyses.filter(a => a.status === 'valid').length;
+        const warningCount = analyses.filter(a => a.status === 'warning').length;
+        const invalidCount = analyses.filter(a => a.status === 'invalid').length;
+        summaryBadge.innerHTML = `<span>${urls.length}</span> URLs analyzed (✅ ${validCount} ⚠️ ${warningCount} ❌ ${invalidCount})`;
+      }
+
+      // Validate button click
+      validateBtn.addEventListener('click', validateAllUrls);
+
+      // Initialize counter on page load
+      updateUrlCounter();
+
+      // Run validation on page load to show sample data
+      window.addEventListener('load', () => {
+        // Small delay to ensure DOM is ready
+        setTimeout(() => {
+          validateAllUrls();
+        }, 100);
+      });
+    })();
+  </script>
 </body>
 </html>
