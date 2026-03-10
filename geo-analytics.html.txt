@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GEO Analytics - Generative Engine Optimization | Free SEO Tool Hub</title>
+<meta name="description" content="Optimize your content for AI search engines like ChatGPT, Perplexity, Gemini, and Copilot. Free GEO analytics, visibility score, and optimization recommendations.">
+<meta name="keywords" content="GEO analytics, generative engine optimization, AI search optimization, ChatGPT SEO, Perplexity AI, Gemini optimization, Copilot SEO">
+
+<!-- Open Graph / Social Media Meta -->
+<meta property="og:title" content="GEO Analytics - Generative Engine Optimization | Free SEO Tool Hub">
+<meta property="og:description" content="Optimize for AI search engines: ChatGPT, Perplexity, Gemini, Copilot. Free visibility score & recommendations.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://freeseotoolhub.com/geo-analytics">
+<meta property="og:image" content="https://freeseotoolhub.com/og-geo.jpg">
+
+<!-- Fonts & Icons -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+
+<style>
+/* Global Styles - Matching freeseotoolhub.com premium theme */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+background: linear-gradient(145deg, #f0f5fe 0%, #e6edfa 100%);
+color: #0a1929;
+line-height: 1.6;
+min-height: 100vh;
+padding: 2rem 1rem;
+}
+
+.container {
+max-width: 1300px;
+margin: 0 auto;
+}
+
+/* Header Section */
+.tool-header {
+text-align: center;
+margin-bottom: 3rem;
+position: relative;
+}
+
+.tool-header h1 {
+font-size: 3.2rem;
+font-weight: 800;
+background: linear-gradient(145deg, #0B2B5C, #1A4B8C, #2966B0);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+margin-bottom: 1rem;
+letter-spacing: -0.02em;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 1rem;
+flex-wrap: wrap;
+}
+
+.ai-badge {
+background: linear-gradient(135deg, #9945EE, #14F195);
+color: white;
+font-size: 1rem;
+font-weight: 600;
+padding: 0.5rem 1.5rem;
+border-radius: 60px;
+display: inline-flex;
+align-items: center;
+gap: 0.6rem;
+box-shadow: 0 10px 20px -8px #9945EE80;
+}
+
+.tool-header p {
+color: #1e3a6f;
+font-size: 1.25rem;
+max-width: 800px;
+margin: 1rem auto 0;
+background: rgba(255, 255, 255, 0.7);
+padding: 1rem 2.5rem;
+border-radius: 60px;
+backdrop-filter: blur(8px);
+box-shadow: 0 6px 20px rgba(0, 30, 70, 0.08);
+border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+/* AI Platform Cards */
+.platform-grid {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 1.2rem;
+margin-bottom: 2.5rem;
+}
+
+.platform-card {
+background: white;
+border-radius: 24px;
+padding: 1.2rem 0.8rem;
+text-align: center;
+box-shadow: 0 8px 20px -10px rgba(0,40,100,0.2);
+border: 1px solid rgba(0,100,200,0.1);
+transition: all 0.2s ease;
+cursor: pointer;
+backdrop-filter: blur(4px);
+}
+
+.platform-card:hover {
+transform: translateY(-4px);
+box-shadow: 0 18px 30px -8px rgba(0,80,180,0.3);
+border-color: #2966B0;
+}
+
+.platform-card.active {
+background: linear-gradient(145deg, #0B2B5C, #1A4B8C);
+color: white;
+border-color: transparent;
+}
+
+.platform-card.active .platform-icon {
+filter: brightness(0) invert(1);
+}
+
+.platform-icon {
+font-size: 2.2rem;
+margin-bottom: 0.4rem;
+}
+
+.platform-name {
+font-weight: 700;
+font-size: 1.1rem;
+}
+
+.platform-desc {
+font-size: 0.8rem;
+opacity: 0.7;
+}
+
+/* Main Tool Card */
+.tool-card {
+background: rgba(255, 255, 255, 0.95);
+backdrop-filter: blur(12px);
+border-radius: 40px;
+box-shadow: 0 30px 60px -20px rgba(0, 30, 80, 0.3), 0 8px 20px rgba(0, 0, 0, 0.02);
+padding: 2.5rem;
+margin-bottom: 3rem;
+border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+/* Input Section */
+.input-section {
+margin-bottom: 2.5rem;
+}
+
+.input-label {
+display: flex;
+align-items: center;
+gap: 0.75rem;
+font-size: 1.2rem;
+font-weight: 600;
+color: #0a2540;
+margin-bottom: 1rem;
+}
+
+.input-label span {
+background: #1A4B8C;
+color: white;
+padding: 0.3rem 1rem;
+border-radius: 30px;
+font-size: 0.85rem;
+}
+
+/* Tabbed Interface */
+.input-tabs {
+display: flex;
+gap: 0.5rem;
+margin-bottom: 1.5rem;
+flex-wrap: wrap;
+}
+
+.input-tab {
+padding: 0.7rem 1.8rem;
+background: #f1f7ff;
+border: 1.5px solid #d0e0ff;
+border-radius: 40px;
+font-weight: 600;
+color: #1e3a6f;
+cursor: pointer;
+transition: all 0.2s;
+}
+
+.input-tab.active {
+background: #1A4B8C;
+color: white;
+border-color: #1A4B8C;
+}
+
+.input-panel {
+display: none;
+}
+
+.input-panel.active {
+display: block;
+}
+
+textarea, input[type="text"] {
+width: 100%;
+padding: 1.5rem;
+border: 2px solid #e2ebf6;
+border-radius: 28px;
+font-family: 'Inter', monospace;
+font-size: 1rem;
+line-height: 1.6;
+resize: vertical;
+background: #fafdff;
+transition: all 0.2s;
+box-shadow: inset 0 2px 8px rgba(0,0,0,0.02);
+}
+
+textarea:focus, input:focus {
+outline: none;
+border-color: #2966B0;
+box-shadow: 0 0 0 4px rgba(41, 102, 176, 0.15);
+}
+
+/* Keywords Input */
+.keywords-container {
+display: flex;
+flex-wrap: wrap;
+gap: 0.8rem;
+margin: 1.2rem 0;
+padding: 1rem;
+background: #f5faff;
+border-radius: 28px;
+}
+
+.keyword-tag {
+background: white;
+border: 1.5px solid #c2d6f0;
+padding: 0.5rem 1.2rem;
+border-radius: 40px;
+font-size: 0.9rem;
+font-weight: 500;
+display: flex;
+align-items: center;
+gap: 0.5rem;
+cursor: pointer;
+transition: all 0.2s;
+}
+
+.keyword-tag:hover {
+background: #e0edff;
+border-color: #1A4B8C;
+}
+
+.keyword-tag.selected {
+background: #1A4B8C;
+color: white;
+border-color: #1A4B8C;
+}
+
+/* Button Group */
+.button-group {
+display: flex;
+flex-wrap: wrap;
+gap: 1rem;
+margin: 2rem 0 1.5rem;
+}
+
+.btn {
+padding: 1rem 2.5rem;
+border: none;
+border-radius: 50px;
+font-weight: 600;
+font-size: 1.1rem;
+cursor: pointer;
+transition: all 0.25s ease;
+display: inline-flex;
+align-items: center;
+gap: 0.8rem;
+box-shadow: 0 8px 18px rgba(0, 30, 70, 0.15);
+}
+
+.btn-primary {
+background: linear-gradient(115deg, #0B2B5C, #1A4B8C, #2966B0);
+color: white;
+}
+
+.btn-primary:hover {
+background: linear-gradient(115deg, #0a2350, #15407a, #1f5390);
+transform: translateY(-3px);
+box-shadow: 0 18px 28px -8px #1A4B8C;
+}
+
+.btn-outline {
+background: white;
+color: #1A4B8C;
+border: 2px solid #b9d3ff;
+box-shadow: none;
+}
+
+.btn-outline:hover {
+background: #f0f7ff;
+border-color: #1A4B8C;
+transform: translateY(-2px);
+}
+
+/* Score Card */
+.geo-score-card {
+background: linear-gradient(145deg, #fafdff, #ffffff);
+border-radius: 32px;
+padding: 2rem;
+margin-bottom: 2rem;
+border: 1px solid #dbeafe;
+display: grid;
+grid-template-columns: auto 1fr;
+gap: 2.5rem;
+align-items: center;
+}
+
+.score-circle {
+width: 160px;
+height: 160px;
+border-radius: 50%;
+background: conic-gradient(#1A4B8C 0deg, #4CAF50 0deg, #e2ebf6 0deg);
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 2.5rem;
+font-weight: 800;
+color: #0a2540;
+position: relative;
+box-shadow: 0 15px 30px -10px #1A4B8C;
+}
+
+.score-circle::before {
+content: '';
+position: absolute;
+width: 130px;
+height: 130px;
+background: white;
+border-radius: 50%;
+z-index: 1;
+}
+
+.score-value {
+position: relative;
+z-index: 2;
+background: linear-gradient(145deg, #0B2B5C, #2966B0);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+.score-details {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 1.5rem;
+}
+
+.score-metric {
+background: #f4faff;
+padding: 1.2rem;
+border-radius: 24px;
+border: 1px solid #d4e3ff;
+}
+
+.metric-label {
+font-size: 0.85rem;
+color: #4a6fa5;
+text-transform: uppercase;
+letter-spacing: 0.03em;
+}
+
+.metric-value {
+font-size: 2rem;
+font-weight: 700;
+color: #0B2B5C;
+line-height: 1.2;
+}
+
+.metric-sub {
+font-size: 0.9rem;
+color: #2966B0;
+}
+
+/* Results Grid */
+.results-grid {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 2rem;
+margin-top: 2rem;
+}
+
+.result-card {
+background: #f9fcff;
+border-radius: 28px;
+padding: 1.8rem;
+border: 1px solid #e2efff;
+}
+
+.result-card h3 {
+font-size: 1.3rem;
+margin-bottom: 1.5rem;
+color: #0a2540;
+display: flex;
+align-items: center;
+gap: 0.6rem;
+}
+
+.recommendation-list {
+list-style: none;
+}
+
+.recommendation-item {
+padding: 1rem 0;
+border-bottom: 1px solid #e0ecfc;
+display: flex;
+gap: 1rem;
+align-items: flex-start;
+}
+
+.recommendation-item:last-child {
+border-bottom: none;
+}
+
+.rec-icon {
+font-size: 1.4rem;
+min-width: 2rem;
+}
+
+.rec-content {
+flex: 1;
+}
+
+.rec-title {
+font-weight: 700;
+color: #1e3a6f;
+margin-bottom: 0.2rem;
+}
+
+.rec-desc {
+font-size: 0.9rem;
+color: #4f6f9f;
+}
+
+.progress-bar {
+height: 8px;
+background: #e3ecf9;
+border-radius: 10px;
+margin: 0.5rem 0;
+overflow: hidden;
+}
+
+.progress-fill {
+height: 100%;
+background: linear-gradient(90deg, #1A4B8C, #4CAF50);
+border-radius: 10px;
+width: 0%;
+}
+
+/* Features Grid */
+.features-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 2rem;
+margin: 3rem 0;
+}
+
+.feature-card {
+background: white;
+padding: 2rem 1.8rem;
+border-radius: 28px;
+box-shadow: 0 15px 30px -15px rgba(0, 40, 100, 0.15);
+border: 1px solid rgba(41, 102, 176, 0.1);
+}
+
+.feature-card h4 {
+font-size: 1.25rem;
+margin-bottom: 1rem;
+color: #0B2B5C;
+display: flex;
+align-items: center;
+gap: 0.6rem;
+}
+
+/* Footer */
+.footer-note {
+text-align: center;
+padding: 2rem 0;
+color: #2d4b7a;
+font-weight: 500;
+}
+
+hr {
+border: none;
+height: 1px;
+background: linear-gradient(90deg, transparent, #b1c9f0, transparent);
+margin: 2rem 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+.platform-grid {
+grid-template-columns: repeat(2, 1fr);
+}
+.geo-score-card {
+grid-template-columns: 1fr;
+text-align: center;
+}
+.score-circle {
+margin: 0 auto;
+}
+.results-grid {
+grid-template-columns: 1fr;
+}
+.tool-header h1 {
+font-size: 2.5rem;
+}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<!-- Header with AI platform badges -->
+<div class="tool-header">
+<h1>
+<span>🤖 GEO Analytics</span>
+<span class="ai-badge">
+<span>✨ Generative Engine Optimization</span>
+</span>
+</h1>
+<p>Optimize your content for ChatGPT, Perplexity, Gemini, Copilot & other AI search engines. Get real-time GEO score and actionable recommendations.</p>
+</div>
+
+<!-- AI Platform Selector -->
+<div class="platform-grid" id="platformGrid">
+<div class="platform-card active" data-platform="chatgpt">
+<div class="platform-icon">🤖</div>
+<div class="platform-name">ChatGPT</div>
+<div class="platform-desc">OpenAI</div>
+</div>
+<div class="platform-card" data-platform="perplexity">
+<div class="platform-icon">🔍</div>
+<div class="platform-name">Perplexity</div>
+<div class="platform-desc">AI + Search</div>
+</div>
+<div class="platform-card" data-platform="gemini">
+<div class="platform-icon">✨</div>
+<div class="platform-name">Gemini</div>
+<div class="platform-desc">Google</div>
+</div>
+<div class="platform-card" data-platform="copilot">
+<div class="platform-icon">💻</div>
+<div class="platform-name">Copilot</div>
+<div class="platform-desc">Microsoft</div>
+</div>
+</div>
+
+<!-- Main Tool Card -->
+<div class="tool-card">
+<!-- Input Tabs: Content or URL -->
+<div class="input-tabs">
+<div class="input-tab active" data-tab="content">📝 Analyze Content</div>
+<div class="input-tab" data-tab="url">🔗 Analyze URL</div>
+</div>
+
+<!-- Content Input Panel -->
+<div class="input-panel active" id="panel-content">
+<div class="input-label">
+<span>📄</span> Paste your content / article text
+</div>
+<textarea id="contentInput" placeholder="Paste your blog post, article, or webpage content here... Minimum 100 words for accurate GEO analysis." rows="8">Artificial intelligence is transforming how people search for information. Generative engines like ChatGPT, Perplexity, and Gemini provide direct answers rather than just links. To optimize for these platforms, content must be authoritative, well-structured, and conversational. This article explains key GEO strategies including natural language processing, featured snippet optimization, and entity-based SEO.</textarea>
+<div style="text-align:right; margin-top:0.5rem; color:#4f6f9f;" id="wordCount">Words: 48</div>
+</div>
+
+<!-- URL Input Panel -->
+<div class="input-panel" id="panel-url">
+<div class="input-label">
+<span>🌐</span> Enter webpage URL
+</div>
+<input type="text" id="urlInput" placeholder="https://freeseotoolhub.com/geo-analytics" value="https://freeseotoolhub.com/blog/ai-seo-guide">
+<p style="margin-top:0.8rem; color:#5f7fb0;"><small>We'll fetch and analyze the content from this URL (demo simulation).</small></p>
+</div>
+
+<!-- Target Keywords Section -->
+<div class="input-label" style="margin-top:2rem;">
+<span>🎯</span> Select target keywords (GEO optimization)
+</div>
+<div class="keywords-container" id="keywordsContainer">
+<span class="keyword-tag selected" data-keyword="ai search">🤖 AI search</span>
+<span class="keyword-tag selected" data-keyword="chatgpt seo">💬 ChatGPT SEO</span>
+<span class="keyword-tag" data-keyword="generative engine">⚙️ Generative engine</span>
+<span class="keyword-tag" data-keyword="llm optimization">🧠 LLM optimization</span>
+<span class="keyword-tag" data-keyword="featured snippets">📌 Featured snippets</span>
+<span class="keyword-tag" data-keyword="entity seo">🏛️ Entity SEO</span>
+<span class="keyword-tag" data-keyword="natural language">🗣️ Natural language</span>
+</div>
+
+<!-- Action Buttons -->
+<div class="button-group">
+<button class="btn btn-primary" id="analyzeBtn">
+<span>📊</span> Analyze GEO Score
+</button>
+<button class="btn btn-outline" id="resetBtn">
+<span>🔄</span> Reset
+</button>
+</div>
+
+<!-- GEO Score Card -->
+<div class="geo-score-card" id="scoreCard">
+<div class="score-circle" id="scoreCircle">
+<span class="score-value" id="scoreValue">78</span>
+</div>
+<div class="score-details">
+<div class="score-metric">
+<div class="metric-label">AI Visibility</div>
+<div class="metric-value" id="aiVisibility">74%</div>
+<div class="metric-sub">vs top 10</div>
+</div>
+<div class="score-metric">
+<div class="metric-label">Authority</div>
+<div class="metric-value" id="authorityScore">82</div>
+<div class="metric-sub">/100</div>
+</div>
+<div class="score-metric">
+<div class="metric-label">Structure</div>
+<div class="metric-value" id="structureScore">79</div>
+<div class="metric-sub">/100</div>
+</div>
+</div>
+</div>
+
+<!-- Detailed Results Grid -->
+<div class="results-grid">
+<!-- Left: Optimization Recommendations -->
+<div class="result-card">
+<h3>📋 GEO Recommendations</h3>
+<ul class="recommendation-list" id="recommendationsList">
+<li class="recommendation-item">
+<span class="rec-icon">✅</span>
+<div class="rec-content">
+<div class="rec-title">Conversational tone detected</div>
+<div class="rec-desc">Your content uses natural language patterns that AI models prefer.</div>
+</div>
+</li>
+<li class="recommendation-item">
+<span class="rec-icon">⚠️</span>
+<div class="rec-content">
+<div class="rec-title">Add more structured data</div>
+<div class="rec-desc">FAQ and HowTo schema can improve AI answer extraction.</div>
+<div class="progress-bar"><div class="progress-fill" style="width:30%"></div></div>
+</div>
+</li>
+<li class="recommendation-item">
+<span class="rec-icon">🔍</span>
+<div class="rec-content">
+<div class="rec-title">Increase keyword density for "AI search"</div>
+<div class="rec-desc">Current: 2 mentions. Target: 5-7 for better entity recognition.</div>
+</div>
+</li>
+</ul>
+</div>
+
+<!-- Right: AI Platform Analysis -->
+<div class="result-card">
+<h3>🤖 AI Platform Analysis</h3>
+<div id="platformAnalysis">
+<div style="margin-bottom:1.5rem;">
+<div style="display:flex; justify-content:space-between; margin-bottom:0.5rem;">
+<span><strong>ChatGPT</strong> <span style="color:#4f6f9f;">(extraction probability)</span></span>
+<span>85%</span>
+</div>
+<div class="progress-bar"><div class="progress-fill" style="width:85%"></div></div>
+</div>
+<div style="margin-bottom:1.5rem;">
+<div style="display:flex; justify-content:space-between; margin-bottom:0.5rem;">
+<span><strong>Perplexity</strong> <span style="color:#4f6f9f;">(citation likelihood)</span></span>
+<span>72%</span>
+</div>
+<div class="progress-bar"><div class="progress-fill" style="width:72%"></div></div>
+</div>
+<div style="margin-bottom:1.5rem;">
+<div style="display:flex; justify-content:space-between; margin-bottom:0.5rem;">
+<span><strong>Gemini</strong> <span style="color:#4f6f9f;">(featured snippet match)</span></span>
+<span>68%</span>
+</div>
+<div class="progress-bar"><div class="progress-fill" style="width:68%"></div></div>
+</div>
+<div>
+<div style="display:flex; justify-content:space-between; margin-bottom:0.5rem;">
+<span><strong>Copilot</strong> <span style="color:#4f6f9f;">(conversational fit)</span></span>
+<span>91%</span>
+</div>
+<div class="progress-bar"><div class="progress-fill" style="width:91%"></div></div>
+</div>
+</div>
+<p style="margin-top:1.5rem; font-size:0.9rem; color:#5f7fb0; border-top:1px dashed #c2d6f0; padding-top:1rem;">
+💡 Higher scores mean your content is more likely to be cited by AI search engines.
+</p>
+</div>
+</div>
+</div>
+
+<!-- Features / Information Grid -->
+<div class="features-grid">
+<div class="feature-card">
+<h4>📊 AI Visibility Score</h4>
+<p>Proprietary algorithm measuring how likely your content will be extracted by large language models (LLMs) for answers.</p>
+</div>
+<div class="feature-card">
+<h4>🎯 Keyword Entity Recognition</h4>
+<p>Identifies how well your content covers topics for generative AI. Entities > keywords in GEO.</p>
+</div>
+<div class="feature-card">
+<h4>📝 Conversational Optimization</h4>
+<p>Analyzes readability, question-based phrasing, and natural language patterns favored by AI.</p>
+</div>
+<div class="feature-card">
+<h4>🔗 Structured Data for AI</h4>
+<p>Checks for schema markup (FAQ, HowTo, Q&A) that helps AI directly quote your content.</p>
+</div>
+</div>
+
+<!-- Footer -->
+<hr>
+<div class="footer-note">
+⚡ <strong>Free SEO Tool Hub</strong> — 100% free, no signup, no limits. GEO Analytics for the AI era.
+</div>
+</div>
+
+<script>
+(function() {
+// DOM Elements
+const platformCards = document.querySelectorAll('.platform-card');
+const inputTabs = document.querySelectorAll('.input-tab');
+const panelContent = document.getElementById('panel-content');
+const panelUrl = document.getElementById('panel-url');
+const contentInput = document.getElementById('contentInput');
+const urlInput = document.getElementById('urlInput');
+const keywordTags = document.querySelectorAll('.keyword-tag');
+const analyzeBtn = document.getElementById('analyzeBtn');
+const resetBtn = document.getElementById('resetBtn');
+const wordCountSpan = document.getElementById('wordCount');
+const scoreValue = document.getElementById('scoreValue');
+const scoreCircle = document.getElementById('scoreCircle');
+const aiVisibility = document.getElementById('aiVisibility');
+const authorityScore = document.getElementById('authorityScore');
+const structureScore = document.getElementById('structureScore');
+const recommendationsList = document.getElementById('recommendationsList');
+
+// Current state
+let currentPlatform = 'chatgpt';
+let selectedKeywords = ['ai search', 'chatgpt seo']; // Default selected
+
+// Update word count
+function updateWordCount() {
+const text = contentInput.value;
+const words = text.trim() ? text.trim().split(/\s+/).length : 0;
+wordCountSpan.textContent = `Words: ${words}`;
+return words;
+}
+
+contentInput.addEventListener('input', updateWordCount);
+
+// Platform selection
+platformCards.forEach(card => {
+card.addEventListener('click', () => {
+platformCards.forEach(c => c.classList.remove('active'));
+card.classList.add('active');
+currentPlatform = card.dataset.platform;
+// Re-run analysis with new platform
+analyzeGEO();
+});
+});
+
+// Tab switching
+inputTabs.forEach(tab => {
+tab.addEventListener('click', () => {
+inputTabs.forEach(t => t.classList.remove('active'));
+tab.classList.add('active');
+
+const tabName = tab.dataset.tab;
+if (tabName === 'content') {
+panelContent.classList.add('active');
+panelUrl.classList.remove('active');
+} else {
+panelContent.classList.remove('active');
+panelUrl.classList.add('active');
+}
+});
+});
+
+// Keyword selection
+keywordTags.forEach(tag => {
+tag.addEventListener('click', () => {
+tag.classList.toggle('selected');
+updateSelectedKeywords();
+});
+});
+
+function updateSelectedKeywords() {
+selectedKeywords = [];
+keywordTags.forEach(tag => {
+if (tag.classList.contains('selected')) {
+selectedKeywords.push(tag.dataset.keyword);
+}
+});
+}
+
+// Reset button
+resetBtn.addEventListener('click', () => {
+contentInput.value = '';
+urlInput.value = '';
+updateWordCount();
+
+// Reset keywords (select first two)
+keywordTags.forEach((tag, index) => {
+if (index < 2) tag.classList.add('selected');
+else tag.classList.remove('selected');
+});
+updateSelectedKeywords();
+
+// Reset to default analysis
+generateMockData();
+});
+
+// GEO Analysis Engine (simulated but realistic)
+function analyzeGEO() {
+const useContent = panelContent.classList.contains('active');
+let text = useContent ? contentInput.value : `Sample content from URL: ${urlInput.value}. This is simulated GEO analysis.`;
+
+const words = useContent ? (text.trim() ? text.trim().split(/\s+/).length : 0) : 350;
+
+if (useContent && words < 20) {
+// Too short, show warning but still analyze with low scores
+recommendationsList.innerHTML = `
+<li class="recommendation-item">
+<span class="rec-icon">⚠️</span>
+<div class="rec-content">
+<div class="rec-title">Content too short for accurate GEO</div>
+<div class="rec-desc">Add at least 200 words for meaningful analysis.</div>
+</div>
+</li>
+`;
+}
+
+generateMockData(words);
+}
+
+// Generate dynamic mock data based on inputs
+function generateMockData(wordCount = 200) {
+// Base scores influenced by word count
+let baseScore = Math.min(95, 40 + Math.floor(wordCount / 10));
+if (wordCount < 50) baseScore = 25;
+
+// Adjust based on selected keywords
+const keywordBonus = selectedKeywords.length * 3;
+let finalScore = Math.min(98, baseScore + keywordBonus);
+
+// Adjust based on platform
+const platformBonuses = {
+chatgpt: 5,
+perplexity: 3,
+gemini: 2,
+copilot: 4
+};
+finalScore += platformBonuses[currentPlatform] || 0;
+finalScore = Math.min(99, finalScore);
+
+// Update score circle
+scoreValue.textContent = finalScore;
+const degrees = (finalScore / 100) * 360;
+scoreCircle.style.background = `conic-gradient(#1A4B8C ${degrees}deg, #e2ebf6 ${degrees}deg)`;
+
+// Update metrics
+const visibility = Math.min(98, finalScore - 2 + Math.floor(Math.random() * 8));
+const authority = Math.min(97, finalScore - 1 + Math.floor(Math.random() * 6));
+const structure = Math.min(96, finalScore - 3 + Math.floor(Math.random() * 10));
+
+aiVisibility.textContent = `${visibility}%`;
+authorityScore.textContent = authority;
+structureScore.textContent = structure;
+
+// Generate recommendations
+const recommendations = [
+{
+icon: selectedKeywords.includes('ai search') ? '✅' : '⚠️',
+title: selectedKeywords.includes('ai search') ? '✓ "AI search" keyword optimized' : 'Add "AI search" keyword',
+desc: selectedKeywords.includes('ai search')
+? 'Good coverage of AI search terminology.'
+: 'Include "AI search" naturally in headings and body.',
+progress: selectedKeywords.includes('ai search') ? 90 : 20
+},
+{
+icon: wordCount > 300 ? '✅' : '⚠️',
+title: wordCount > 300 ? '✓ Sufficient content depth' : 'Increase content length',
+desc: wordCount > 300
+? `${wordCount} words provides good context for AI.`
+: `Current: ${wordCount} words. Aim for 500+ for better AI understanding.`,
+progress: Math.min(100, Math.floor((wordCount / 500) * 100))
+},
+{
+icon: currentPlatform === 'chatgpt' ? '🤖' : '💡',
+title: `${currentPlatform.charAt(0).toUpperCase() + currentPlatform.slice(1)} optimization`,
+desc: currentPlatform === 'chatgpt' ? 'Use conversational Q&A format.' :
+currentPlatform === 'perplexity' ? 'Include citations and sources.' :
+currentPlatform === 'gemini' ? 'Add structured data (FAQ/HowTo).' :
+'Use clear step-by-step instructions.',
+progress: 60 + Math.floor(Math.random() * 30)
+},
+{
+icon: '📊',
+title: 'Entity density',
+desc: `Your content mentions ${selectedKeywords.length} of 3 recommended core entities.`,
+progress: Math.min(100, Math.floor((selectedKeywords.length / 3) * 100))
+}
+];
+
+let recHtml = '';
+recommendations.forEach(rec => {
+recHtml += `
+<li class="recommendation-item">
+<span class="rec-icon">${rec.icon}</span>
+<div class="rec-content">
+<div class="rec-title">${rec.title}</div>
+<div class="rec-desc">${rec.desc}</div>
+<div class="progress-bar"><div class="progress-fill" style="width:${rec.progress}%"></div></div>
+</div>
+</li>
+`;
+});
+
+recommendationsList.innerHTML = recHtml;
+
+// Update platform analysis
+document.getElementById('platformAnalysis').innerHTML = `
+<div style="margin-bottom:1.5rem;">
+<div style="display:flex; justify-content:space-between; margin-bottom:0.5rem;">
+<span><strong>ChatGPT</strong> <span style="color:#4f6f9f;">(extraction probability)</span></span>
+<span>${Math.min(98, visibility + 5)}%</span>
+</div>
+<div class="progress-bar"><div class="progress-fill" style="width:${Math.min(98, visibility + 5)}%"></div></div>
+</div>
+<div style="margin-bottom:1.5rem;">
+<div style="display:flex; justify-content:space-between; margin-bottom:0.5rem;">
+<span><strong>Perplexity</strong> <span style="color:#4f6f9f;">(citation likelihood)</span></span>
+<span>${Math.min(98, authority - 2)}%</span>
+</div>
+<div class="progress-bar"><div class="progress-fill" style="width:${Math.min(98, authority - 2)}%"></div></div>
+</div>
+<div style="margin-bottom:1.5rem;">
+<div style="display:flex; justify-content:space-between; margin-bottom:0.5rem;">
+<span><strong>Gemini</strong> <span style="color:#4f6f9f;">(featured snippet match)</span></span>
+<span>${Math.min(98, structure + 3)}%</span>
+</div>
+<div class="progress-bar"><div class="progress-fill" style="width:${Math.min(98, structure + 3)}%"></div></div>
+</div>
+<div>
+<div style="display:flex; justify-content:space-between; margin-bottom:0.5rem;">
+<span><strong>Copilot</strong> <span style="color:#4f6f9f;">(conversational fit)</span></span>
+<span>${Math.min(98, finalScore + 2)}%</span>
+</div>
+<div class="progress-bar"><div class="progress-fill" style="width:${Math.min(98, finalScore + 2)}%"></div></div>
+</div>
+`;
+}
+
+// Analyze button
+analyzeBtn.addEventListener('click', analyzeGEO);
+
+// Initial word count and analysis
+updateWordCount();
+generateMockData(48); // Initial word count from default text
+
+// Auto-update when content changes (debounced)
+let debounceTimer;
+contentInput.addEventListener('input', () => {
+updateWordCount();
+clearTimeout(debounceTimer);
+debounceTimer = setTimeout(() => {
+if (panelContent.classList.contains('active')) {
+generateMockData(updateWordCount());
+}
+}, 800);
+});
+
+// URL input analysis simulation
+urlInput.addEventListener('input', () => {
+if (panelUrl.classList.contains('active')) {
+clearTimeout(debounceTimer);
+debounceTimer = setTimeout(() => {
+generateMockData(350); // Assume URL has ~350 words
+}, 800);
+}
+});
+
+// Platform click also refreshes
+platformCards.forEach(card => {
+card.addEventListener('click', () => {
+setTimeout(() => analyzeGEO(), 50);
+});
+});
+})();
+</script>
+</body>
+</html>
