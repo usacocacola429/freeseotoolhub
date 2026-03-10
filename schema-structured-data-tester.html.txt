@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SCHEMA Structured Data Tester - Free SEO Tool Hub</title>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+background: #f9fafc;
+color: #111827;
+line-height: 1.6;
+padding: 2rem 1rem;
+}
+
+.container {
+max-width: 1200px;
+margin: 0 auto;
+}
+
+/* Header */
+.tool-header {
+text-align: center;
+margin-bottom: 2.5rem;
+}
+
+.tool-header h1 {
+font-size: 2.5rem;
+font-weight: 700;
+background: linear-gradient(135deg, #2563eb, #7c3aed);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+margin-bottom: 0.5rem;
+}
+
+.tool-header p {
+color: #4b5563;
+font-size: 1.1rem;
+}
+
+/* Language toggle (matching your site's bilingual style) */
+.lang-toggle {
+display: flex;
+justify-content: center;
+gap: 0.5rem;
+margin-bottom: 2rem;
+}
+
+.lang-btn {
+background: white;
+border: 1px solid #d1d5db;
+padding: 0.5rem 1.5rem;
+border-radius: 9999px;
+font-weight: 500;
+cursor: pointer;
+transition: all 0.2s;
+color: #374151;
+}
+
+.lang-btn.active {
+background: #2563eb;
+color: white;
+border-color: #2563eb;
+}
+
+/* Main tool card */
+.tool-card {
+background: white;
+border-radius: 24px;
+box-shadow: 0 20px 35px -8px rgba(0, 0, 0, 0.1), 0 4px 8px -2px rgba(0, 0, 0, 0.05);
+padding: 2rem;
+margin-bottom: 2.5rem;
+border: 1px solid rgba(255, 255, 255, 0.5);
+backdrop-filter: blur(4px);
+}
+
+.tool-card h2 {
+font-size: 1.5rem;
+margin-bottom: 1.5rem;
+display: flex;
+align-items: center;
+gap: 0.5rem;
+color: #1f2937;
+}
+
+.tool-card h2 span {
+background: #dbeafe;
+color: #1e40af;
+font-size: 0.875rem;
+font-weight: 600;
+padding: 0.25rem 0.75rem;
+border-radius: 9999px;
+}
+
+/* Textarea */
+.input-group {
+margin-bottom: 1.5rem;
+}
+
+textarea {
+width: 100%;
+padding: 1.25rem;
+border: 2px solid #e5e7eb;
+border-radius: 20px;
+font-family: 'Fira Code', 'Courier New', monospace;
+font-size: 0.95rem;
+line-height: 1.5;
+resize: vertical;
+min-height: 250px;
+background: #f8fafc;
+transition: border 0.2s;
+}
+
+textarea:focus {
+outline: none;
+border-color: #2563eb;
+box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+/* Buttons */
+.button-group {
+display: flex;
+flex-wrap: wrap;
+gap: 1rem;
+margin: 1.5rem 0;
+}
+
+.btn {
+padding: 0.75rem 2rem;
+border: none;
+border-radius: 9999px;
+font-weight: 600;
+font-size: 1rem;
+cursor: pointer;
+transition: all 0.2s;
+display: inline-flex;
+align-items: center;
+gap: 0.5rem;
+box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.btn-primary {
+background: #2563eb;
+color: white;
+}
+
+.btn-primary:hover {
+background: #1d4ed8;
+transform: translateY(-2px);
+box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
+}
+
+.btn-outline {
+background: white;
+color: #374151;
+border: 1px solid #d1d5db;
+}
+
+.btn-outline:hover {
+background: #f9fafb;
+border-color: #9ca3af;
+}
+
+/* Example badges */
+.examples {
+display: flex;
+flex-wrap: wrap;
+gap: 0.75rem;
+margin: 1.5rem 0;
+padding: 1rem 0;
+border-top: 1px dashed #e2e8f0;
+border-bottom: 1px dashed #e2e8f0;
+}
+
+.example-badge {
+background: #f1f5f9;
+color: #334155;
+padding: 0.4rem 1rem;
+border-radius: 9999px;
+font-size: 0.85rem;
+font-weight: 500;
+cursor: pointer;
+border: 1px solid #e2e8f0;
+transition: all 0.15s;
+}
+
+.example-badge:hover {
+background: #e2e8f0;
+border-color: #94a3b8;
+}
+
+/* Results area */
+.results {
+margin-top: 2rem;
+border-radius: 20px;
+overflow: hidden;
+border: 1px solid #e5e7eb;
+}
+
+.results-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+background: #f1f5f9;
+padding: 1rem 1.5rem;
+border-bottom: 1px solid #e2e8f0;
+}
+
+.results-header h3 {
+font-weight: 600;
+color: #0f172a;
+}
+
+.validation-badge {
+padding: 0.25rem 0.75rem;
+border-radius: 9999px;
+font-size: 0.75rem;
+font-weight: 600;
+text-transform: uppercase;
+}
+
+.badge-valid {
+background: #d1fae5;
+color: #065f46;
+}
+
+.badge-invalid {
+background: #fee2e2;
+color: #991b1b;
+}
+
+.results-content {
+background: #0f172a;
+color: #e2e8f0;
+padding: 1.5rem;
+max-height: 400px;
+overflow: auto;
+font-family: 'Fira Code', 'Courier New', monospace;
+font-size: 0.85rem;
+line-height: 1.7;
+white-space: pre-wrap;
+word-break: break-word;
+}
+
+.error-message {
+color: #fecaca;
+background: #7f1d1d;
+padding: 1rem;
+border-radius: 12px;
+margin-bottom: 1rem;
+border-left: 4px solid #ef4444;
+}
+
+/* Features grid (like your site's style) */
+.features-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+gap: 1.5rem;
+margin-top: 2.5rem;
+}
+
+.feature-card {
+background: white;
+padding: 1.5rem;
+border-radius: 20px;
+box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.05);
+border: 1px solid #f0f2f5;
+}
+
+.feature-card h4 {
+font-size: 1.1rem;
+margin-bottom: 0.5rem;
+color: #1e293b;
+display: flex;
+align-items: center;
+gap: 0.5rem;
+}
+
+.feature-card p {
+color: #475569;
+font-size: 0.95rem;
+}
+
+/* Footer note */
+.note {
+text-align: center;
+font-size: 0.9rem;
+color: #64748b;
+margin-top: 3rem;
+padding-top: 1.5rem;
+border-top: 1px solid #e2e8f0;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<!-- Header with language toggle (matching your site's theme) -->
+<div class="tool-header">
+<h1>🔍 SCHEMA Structured Data Tester</h1>
+<p>Validate schema markup. Test for rich snippets.</p>
+</div>
+
+<div class="lang-toggle" id="languageToggle">
+<button class="lang-btn active" data-lang="en">🇬🇧 English</button>
+<button class="lang-btn" data-lang="hi">🇮🇳 हिंदी</button>
+</div>
+
+<!-- Main Tool Card -->
+<div class="tool-card">
+<h2>
+📝 Enter Your Schema Markup
+<span>JSON-LD / Microdata</span>
+</h2>
+
+<!-- Textarea for schema input -->
+<div class="input-group">
+<textarea id="schemaInput" placeholder='{\n "@context": "https://schema.org",\n "@type": "Article",\n "headline": "SEO Guide 2026",\n "description": "Complete structured data tutorial"\n}'></textarea>
+</div>
+
+<!-- Action Buttons -->
+<div class="button-group">
+<button class="btn btn-primary" id="validateBtn">
+<span>✅</span> Validate Schema
+</button>
+<button class="btn btn-outline" id="clearBtn">
+<span>🗑️</span> Clear
+</button>
+<button class="btn btn-outline" id="formatBtn">
+<span>✨</span> Pretty Print
+</button>
+</div>
+
+<!-- Example quick-load badges -->
+<div class="examples" id="exampleContainer">
+<span class="example-badge" data-example="article">📄 Article</span>
+<span class="example-badge" data-example="product">🛒 Product</span>
+<span class="example-badge" data-example="faq">❓ FAQ</span>
+<span class="example-badge" data-example="breadcrumb">🍞 Breadcrumb</span>
+<span class="example-badge" data-example="event">📅 Event</span>
+</div>
+
+<!-- Results Panel -->
+<div class="results" id="results">
+<div class="results-header">
+<h3>📋 Validation Result</h3>
+<span class="validation-badge" id="validationBadge">Ready</span>
+</div>
+<div class="results-content" id="resultContent">
+Click "Validate Schema" to test your structured data.
+</div>
+</div>
+</div>
+
+<!-- Information / Features Grid (similar to your site's tool cards) -->
+<div class="features-grid">
+<div class="feature-card">
+<h4>🧪 Syntax Validation</h4>
+<p>Checks JSON-LD syntax, required fields, and schema.org compatibility.</p>
+</div>
+<div class="feature-card">
+<h4>🔎 Rich Snippet Preview</h4>
+<p>See how Google might display your markup in search results.</p>
+</div>
+<div class="feature-card">
+<h4>🌐 Bilingual Support</h4>
+<p>Test schema in both English and Hindi — हिंदी में भी टेस्ट करें।</p>
+</div>
+<div class="feature-card">
+<h4>⚡ Zero Storage</h4>
+<p>Your data stays private. No uploads, no logs, 100% client-side.</p>
+</div>
+</div>
+
+<div class="note">
+🇮🇳 <strong>Free SEO Tool Hub</strong> — 100% मुफ्त, बिना साइनअप के। Supports all schema.org types.
+</div>
+</div>
+
+<script>
+(function() {
+// ----- DOM elements -----
+const schemaInput = document.getElementById('schemaInput');
+const validateBtn = document.getElementById('validateBtn');
+const clearBtn = document.getElementById('clearBtn');
+const formatBtn = document.getElementById('formatBtn');
+const resultContent = document.getElementById('resultContent');
+const validationBadge = document.getElementById('validationBadge');
+const exampleBadges = document.querySelectorAll('.example-badge');
+const langBtns = document.querySelectorAll('.lang-btn');
+
+// ----- Language translations (matching your site's bilingual nature) -----
+const translations = {
+en: {
+placeholder: '{\n "@context": "https://schema.org",\n "@type": "Article",\n "headline": "SEO Guide 2026",\n "description": "Complete structured data tutorial"\n}',
+badgeReady: 'Ready',
+badgeValid: 'Valid Schema',
+badgeInvalid: 'Invalid Schema',
+resultPlaceholder: 'Click "Validate Schema" to test your structured data.',
+validateBtn: '✅ Validate Schema',
+clearBtn: '🗑️ Clear',
+formatBtn: '✨ Pretty Print',
+feature1: 'Syntax Validation',
+feature1Desc: 'Checks JSON-LD syntax, required fields, and schema.org compatibility.',
+feature2: 'Rich Snippet Preview',
+feature2Desc: 'See how Google might display your markup in search results.',
+feature3: 'Bilingual Support',
+feature3Desc: 'Test schema in both English and Hindi — हिंदी में भी टेस्ट करें।',
+feature4: 'Zero Storage',
+feature4Desc: 'Your data stays private. No uploads, no logs, 100% client-side.'
+},
+hi: {
+placeholder: '{\n "@context": "https://schema.org",\n "@type": "Article",\n "headline": "SEO गाइड 2026",\n "description": "संपूर्ण स्ट्रक्चर्ड डेटा ट्यूटोरियल"\n}',
+badgeReady: 'तैयार',
+badgeValid: 'मान्य स्कीमा',
+badgeInvalid: 'अमान्य स्कीमा',
+resultPlaceholder: 'स्ट्रक्चर्ड डेटा टेस्ट करने के लिए "Validate Schema" बटन दबाएं।',
+validateBtn: '✅ स्कीमा जांचें',
+clearBtn: '🗑️ साफ करें',
+formatBtn: '✨ फॉर्मेट करें',
+feature1: 'सिंटैक्स जांच',
+feature1Desc: 'JSON-LD सिंटैक्स, आवश्यक फ़ील्ड और schema.org संगतता की जांच करता है।',
+feature2: 'रिच स्निपेट पूर्वावलोकन',
+feature2Desc: 'देखें कि Google आपके मार्कअप को खोज परिणामों में कैसे दिखा सकता है।',
+feature3: 'द्विभाषी समर्थन',
+feature3Desc: 'अंग्रेजी और हिंदी दोनों में स्कीमा टेस्ट करें।',
+feature4: 'निजता सुरक्षित',
+feature4Desc: 'आपका डेटा प्राइवेट रहता है। कोई सर्वर नहीं, 100% क्लाइंट-साइड।'
+}
+};
+
+let currentLang = 'en';
+
+// ----- Update UI language -----
+function setLanguage(lang) {
+currentLang = lang;
+const t = translations[lang];
+
+schemaInput.placeholder = t.placeholder;
+validateBtn.innerHTML = t.validateBtn;
+clearBtn.innerHTML = t.clearBtn;
+formatBtn.innerHTML = t.formatBtn;
+validationBadge.textContent = t.badgeReady;
+
+// Update feature cards
+const features = document.querySelectorAll('.feature-card');
+if (features.length >= 4) {
+features[0].querySelector('h4').innerHTML = '🧪 ' + t.feature1;
+features[0].querySelector('p').textContent = t.feature1Desc;
+features[1].querySelector('h4').innerHTML = '🔎 ' + t.feature2;
+features[1].querySelector('p').textContent = t.feature2Desc;
+features[2].querySelector('h4').innerHTML = '🌐 ' + t.feature3;
+features[2].querySelector('p').textContent = t.feature3Desc;
+features[3].querySelector('h4').innerHTML = '⚡ ' + t.feature4;
+features[3].querySelector('p').textContent = t.feature4Desc;
+}
+
+// If result is placeholder, update it
+if (resultContent.innerText.includes('Click "Validate Schema"') || resultContent.innerText.includes('स्ट्रक्चर्ड डेटा टेस्ट')) {
+resultContent.innerText = t.resultPlaceholder;
+}
+
+// Update active button
+langBtns.forEach(btn => {
+btn.classList.remove('active');
+if (btn.dataset.lang === lang) btn.classList.add('active');
+});
+}
+
+// ----- Language toggle event -----
+langBtns.forEach(btn => {
+btn.addEventListener('click', () => {
+setLanguage(btn.dataset.lang);
+});
+});
+
+// ----- Validation logic (core functionality) -----
+function validateSchema(jsonString) {
+const t = translations[currentLang];
+try {
+// 1. Parse JSON
+const parsed = JSON.parse(jsonString);
+
+// 2. Check basic schema.org required fields
+if (!parsed['@context'] || !parsed['@type']) {
+return {
+valid: false,
+message: '❌ Missing "@context" or "@type". Both are required for schema.org markup.'
+};
+}
+
+if (parsed['@context'] !== 'https://schema.org' && parsed['@context'] !== 'http://schema.org') {
+return {
+valid: false,
+message: '⚠️ "@context" should be "https://schema.org" (or http).'
+};
+}
+
+// 3. Additional helpful checks (optional)
+const warnings = [];
+if (parsed['@type'] === 'Article' && !parsed.headline) {
+warnings.push('ℹ️ Article type usually benefits from a "headline" field.');
+}
+if (parsed['@type'] === 'Product' && !parsed.name && !parsed.description) {
+warnings.push('ℹ️ Product type should have at least "name" or "description".');
+}
+
+// 4. Pretty print for success
+const prettyJson = JSON.stringify(parsed, null, 2);
+return {
+valid: true,
+message: '✅ Valid schema.org JSON-LD!',
+pretty: prettyJson,
+warnings: warnings.length ? warnings : null
+};
+
+} catch (error) {
+return {
+valid: false,
+message: `❌ Invalid JSON: ${error.message}`
+};
+}
+}
+
+// ----- Update result display -----
+function displayResult(validation) {
+const t = translations[currentLang];
+
+if (validation.valid) {
+validationBadge.textContent = t.badgeValid;
+validationBadge.className = 'validation-badge badge-valid';
+
+let output = validation.pretty || schemaInput.value;
+if (validation.warnings) {
+output = '⚠️ Warnings:\n' + validation.warnings.map(w => ' ' + w).join('\n') + '\n\n' + output;
+}
+resultContent.innerText = output;
+} else {
+validationBadge.textContent = t.badgeInvalid;
+validationBadge.className = 'validation-badge badge-invalid';
+resultContent.innerText = validation.message;
+}
+}
+
+// ----- Validate button click -----
+validateBtn.addEventListener('click', () => {
+const rawInput = schemaInput.value.trim();
+if (rawInput === '') {
+resultContent.innerText = currentLang === 'en' ? '⚠️ Please enter some schema markup.' : '⚠️ कृपया स्कीमा मार्कअप दर्ज करें।';
+validationBadge.textContent = translations[currentLang].badgeReady;
+validationBadge.className = 'validation-badge';
+return;
+}
+const validation = validateSchema(rawInput);
+displayResult(validation);
+});
+
+// ----- Clear button -----
+clearBtn.addEventListener('click', () => {
+schemaInput.value = '';
+resultContent.innerText = translations[currentLang].resultPlaceholder;
+validationBadge.textContent = translations[currentLang].badgeReady;
+validationBadge.className = 'validation-badge';
+});
+
+// ----- Format (Pretty Print) button -----
+formatBtn.addEventListener('click', () => {
+try {
+const parsed = JSON.parse(schemaInput.value);
+schemaInput.value = JSON.stringify(parsed, null, 2);
+} catch (e) {
+alert(currentLang === 'en' ? 'Cannot format invalid JSON.' : 'अमान्य JSON को फॉर्मेट नहीं कर सकते।');
+}
+});
+
+// ----- Example badges -----
+const examples = {
+article: `{
+"@context": "https://schema.org",
+"@type": "Article",
+"headline": "Complete SEO Guide for 2026",
+"description": "Learn structured data and rich snippets",
+"author": {
+"@type": "Person",
+"name": "Rahul Sharma"
+},
+"datePublished": "2026-03-10"
+}`,
+product: `{
+"@context": "https://schema.org",
+"@type": "Product",
+"name": "Wireless Headphones",
+"description": "Noise cancelling Bluetooth headphones",
+"brand": "SoundMax",
+"offers": {
+"@type": "Offer",
+"price": "2999",
+"priceCurrency": "INR"
+}
+}`,
+faq: `{
+"@context": "https://schema.org",
+"@type": "FAQPage",
+"mainEntity": [{
+"@type": "Question",
+"name": "What is schema markup?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Schema markup is code that helps search engines understand your content."
+}
+}]
+}`,
+breadcrumb: `{
+"@context": "https://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement": [{
+"@type": "ListItem",
+"position": 1,
+"name": "Home",
+"item": "https://freeseotoolhub.com"
+},{
+"@type": "ListItem",
+"position": 2,
+"name": "Tools",
+"item": "https://freeseotoolhub.com/tools"
+}]
+}`,
+event: `{
+"@context": "https://schema.org",
+"@type": "Event",
+"name": "SEO Workshop 2026",
+"startDate": "2026-04-15T10:00",
+"endDate": "2026-04-15T17:00",
+"location": {
+"@type": "Place",
+"name": "Delhi Convention Center"
+}
+}`
+};
+
+exampleBadges.forEach(badge => {
+badge.addEventListener('click', () => {
+const ex = badge.dataset.example;
+if (examples[ex]) {
+schemaInput.value = examples[ex];
+// Optionally auto-validate? For better UX, we just fill, user can click validate.
+}
+});
+});
+
+// ----- Initial language set -----
+setLanguage('en');
+})();
+</script>
+</body>
+</html>
