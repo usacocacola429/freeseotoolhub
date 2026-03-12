@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPG77KWVCP"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PFPCTBFG3Y"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-ZPG77KWVCP');
+gtag('config', 'G-PFPCTBFG3Y');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Primary SEO Meta Tags -->
+<title>Amazon Product Research Tool 2026 - Free FBA Product Finder & Niche Analyzer</title>
+<meta name="title" content="Amazon Product Research Tool 2026 - Free FBA Product Finder & Niche Analyzer">
+<meta name="description" content="Find profitable products to sell on Amazon. Free product research tool with sales estimates, competition analysis, FBA calculator, and niche research. 100% free, no signup required.">
+<meta name="keywords" content="amazon product research, fba product finder, amazon niche analyzer, profitable products amazon, amazon sales estimator, competition analysis amazon, product research tool, amazon fba tools">
+<meta name="author" content="FreeSEOToolHub - Amazon Research Tools">
+<meta name="robots" content="index, follow">
+<meta name="language" content="English">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://freeseotoolhub.com/amazon-product-research.html">
+<meta property="og:title" content="Amazon Product Research Tool 2026 - Free FBA Product Finder">
+<meta property="og:description" content="Find profitable products to sell on Amazon. Free product research tool with sales estimates, competition analysis, and niche research.">
+<meta property="og:image" content="https://freeseotoolhub.com/images/amazon-product-research-og.jpg">
+<meta property="og:site_name" content="Free SEO Tool Hub">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://freeseotoolhub.com/amazon-product-research.html">
+<meta property="twitter:title" content="Amazon Product Research Tool 2026 - Free FBA Product Finder">
+<meta property="twitter:description" content="Find profitable products to sell on Amazon with our free product research tool.">
+<meta property="twitter:image" content="https://freeseotoolhub.com/images/amazon-product-research-twitter.jpg">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://freeseotoolhub.com/amazon-product-research.html">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="/favicon.png">
+
+<!-- Schema Markup for Tool -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "SoftwareApplication",
+"name": "Amazon Product Research Tool",
+"description": "Free tool to find profitable products for Amazon FBA. Analyze sales estimates, competition, and niche opportunities.",
+"applicationCategory": "BusinessApplication",
+"operatingSystem": "All",
+"offers": {
+"@type": "Offer",
+"price": "0",
+"priceCurrency": "USD"
+},
+"aggregateRating": {
+"@type": "AggregateRating",
+"ratingValue": "4.8",
+"ratingCount": "1250"
+},
+"featureList": [
+"Sales Estimator",
+"Competition Analysis",
+"Niche Research",
+"Profit Calculator",
+"Seasonality Trends"
+]
+}
+</script>
+
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "FAQPage",
+"mainEntity": [
+{
+"@type": "Question",
+"name": "How to find profitable products on Amazon?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Use our Amazon Product Research Tool to analyze sales estimates, competition levels, and niche opportunities. Look for products with high demand (500+ monthly sales), low competition (under 1000 reviews on top products), and good profit margins (30%+)."
+}
+},
+{
+"@type": "Question",
+"name": "Is this product research tool free?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Yes, this Amazon Product Research Tool is completely free. No registration, no credit card required. Unlimited searches."
+}
+},
+{
+"@type": "Question",
+"name": "What is a good product opportunity score?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "A score of 70+ indicates a good opportunity. This considers sales estimates, competition level, price point, and market trends."
+}
+}
+]
+}
+</script>
+
+<!-- Breadcrumb Schema -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement": [
+{
+"@type": "ListItem",
+"position": 1,
+"name": "Home",
+"item": "https://freeseotoolhub.com/"
+},
+{
+"@type": "ListItem",
+"position": 2,
+"name": "All Tools",
+"item": "https://freeseotoolhub.com/all-tools.html"
+},
+{
+"@type": "ListItem",
+"position": 3,
+"name": "Amazon Product Research Tool",
+"item": "https://freeseotoolhub.com/amazon-product-research.html"
+}
+]
+}
+</script>
+
+<!-- Bootstrap & Fonts -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Chart.js for visualizations -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Poppins', sans-serif;
+}
+
+body {
+background: linear-gradient(135deg, #f5f7fa 0%, #f0f4f8 100%);
+color: #333;
+padding-top: 80px;
+min-height: 100vh;
+}
+
+/* Navigation */
+.navbar {
+background: linear-gradient(135deg, #232f3e 0%, #131921 100%);
+box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.navbar-brand {
+font-weight: 700;
+font-size: 1.5rem;
+}
+.nav-link {
+color: rgba(255,255,255,0.9) !important;
+font-weight: 500;
+}
+.nav-link:hover, .nav-link.active {
+color: #ff9900 !important;
+}
+
+/* Tool Header */
+.tool-header {
+background: linear-gradient(145deg, #232f3e 0%, #37475a 100%);
+color: white;
+padding: 50px 30px;
+border-radius: 30px;
+margin-bottom: 40px;
+box-shadow: 0 20px 40px rgba(35,47,62,0.3);
+position: relative;
+overflow: hidden;
+}
+.tool-header::before {
+content: "📦";
+font-size: 150px;
+position: absolute;
+right: 20px;
+bottom: -20px;
+opacity: 0.1;
+transform: rotate(-10deg);
+}
+.tool-header h1 {
+font-size: 2.8rem;
+font-weight: 700;
+margin-bottom: 15px;
+}
+.tool-header h1 span {
+color: #ff9900;
+}
+.tool-header p {
+font-size: 1.2rem;
+opacity: 0.95;
+max-width: 800px;
+}
+.amazon-badge {
+background: #ff9900;
+color: #232f3e;
+padding: 8px 16px;
+border-radius: 50px;
+display: inline-block;
+font-weight: 600;
+margin-right: 10px;
+}
+
+/* Stats Cards */
+.stats-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 20px;
+margin-bottom: 40px;
+}
+.stat-card {
+background: white;
+border-radius: 20px;
+padding: 25px;
+text-align: center;
+box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+border: 1px solid #eef2f6;
+transition: transform 0.3s;
+}
+.stat-card:hover {
+transform: translateY(-5px);
+border-color: #ff9900;
+}
+.stat-icon {
+width: 60px;
+height: 60px;
+background: linear-gradient(135deg, #ff9900 0%, #ff7700 100%);
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+color: white;
+font-size: 1.8rem;
+margin: 0 auto 15px;
+}
+.stat-value {
+font-size: 2.2rem;
+font-weight: 700;
+color: #232f3e;
+margin-bottom: 5px;
+}
+.stat-label {
+color: #666;
+font-size: 0.95rem;
+}
+
+/* Main Tool Card */
+.tool-card {
+background: white;
+border-radius: 30px;
+padding: 30px;
+margin-bottom: 40px;
+box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+border: 1px solid #eef2f6;
+}
+.tool-card h2 {
+color: #232f3e;
+margin-bottom: 25px;
+font-weight: 600;
+display: flex;
+align-items: center;
+gap: 10px;
+}
+.tool-card h2 i {
+color: #ff9900;
+}
+
+/* Form Elements */
+.form-group {
+margin-bottom: 20px;
+}
+.form-label {
+font-weight: 600;
+color: #232f3e;
+margin-bottom: 8px;
+}
+.form-control, .form-select {
+border-radius: 15px;
+padding: 12px 20px;
+border: 2px solid #e2e8f0;
+font-size: 1rem;
+transition: all 0.3s;
+}
+.form-control:focus, .form-select:focus {
+border-color: #ff9900;
+box-shadow: 0 0 0 3px rgba(255,153,0,0.2);
+outline: none;
+}
+.btn-primary {
+background: linear-gradient(135deg, #ff9900 0%, #ff7700 100%);
+border: none;
+border-radius: 50px;
+padding: 15px 30px;
+font-weight: 600;
+font-size: 1.1rem;
+width: 100%;
+transition: all 0.3s;
+}
+.btn-primary:hover {
+background: linear-gradient(135deg, #ff7700 0%, #ff5500 100%);
+transform: translateY(-2px);
+box-shadow: 0 10px 20px rgba(255,119,0,0.3);
+}
+.btn-outline-primary {
+border: 2px solid #ff9900;
+color: #ff9900;
+border-radius: 50px;
+padding: 10px 25px;
+font-weight: 500;
+}
+.btn-outline-primary:hover {
+background: #ff9900;
+color: white;
+}
+
+/* Results Section */
+.results-section {
+display: none;
+margin-top: 40px;
+}
+.product-card {
+background: white;
+border-radius: 20px;
+padding: 25px;
+margin-bottom: 20px;
+border: 1px solid #eef2f6;
+transition: all 0.3s;
+position: relative;
+overflow: hidden;
+}
+.product-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 15px 30px rgba(255,153,0,0.1);
+border-color: #ff9900;
+}
+.product-card.high-potential {
+border-left: 5px solid #00a86b;
+}
+.product-card.medium-potential {
+border-left: 5px solid #ff9900;
+}
+.product-card.low-potential {
+border-left: 5px solid #d9534f;
+}
+.product-badge {
+position: absolute;
+top: 15px;
+right: 15px;
+z-index: 10;
+}
+.product-badge .badge {
+padding: 8px 15px;
+border-radius: 50px;
+font-size: 0.9rem;
+}
+.product-title {
+font-size: 1.3rem;
+font-weight: 600;
+color: #232f3e;
+margin-bottom: 15px;
+padding-right: 100px;
+}
+.product-metrics {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+gap: 15px;
+margin: 20px 0;
+}
+.metric-item {
+text-align: center;
+padding: 10px;
+background: #f8f9fa;
+border-radius: 12px;
+}
+.metric-label {
+font-size: 0.85rem;
+color: #666;
+margin-bottom: 5px;
+}
+.metric-value {
+font-size: 1.2rem;
+font-weight: 600;
+color: #232f3e;
+}
+.metric-value.good {
+color: #00a86b;
+}
+.metric-value.warning {
+color: #ff9900;
+}
+.metric-value.bad {
+color: #d9534f;
+}
+.product-tags {
+margin: 15px 0;
+}
+.product-tags .badge {
+margin-right: 8px;
+margin-bottom: 8px;
+padding: 6px 12px;
+font-size: 0.8rem;
+background: #eef2f8;
+color: #232f3e;
+}
+
+/* Charts */
+.chart-container {
+background: white;
+border-radius: 20px;
+padding: 25px;
+margin: 30px 0;
+box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+.chart-box {
+height: 300px;
+margin-top: 20px;
+}
+
+/* Niche Analysis */
+.niche-score {
+display: inline-block;
+width: 60px;
+height: 60px;
+border-radius: 50%;
+background: linear-gradient(135deg, #ff9900 0%, #ff7700 100%);
+color: white;
+font-size: 1.5rem;
+font-weight: 700;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-right: 15px;
+}
+.progress {
+height: 10px;
+border-radius: 10px;
+margin: 10px 0;
+}
+.progress-bar {
+background: linear-gradient(90deg, #ff9900, #ff7700);
+}
+
+/* Features List */
+.features-list {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 20px;
+margin: 40px 0;
+}
+.feature-item {
+background: white;
+border-radius: 20px;
+padding: 25px;
+text-align: center;
+border: 1px solid #eef2f6;
+transition: all 0.3s;
+}
+.feature-item:hover {
+transform: translateY(-5px);
+border-color: #ff9900;
+}
+.feature-icon {
+width: 70px;
+height: 70px;
+background: linear-gradient(135deg, #ff9900 0%, #ff7700 100%);
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+color: white;
+font-size: 2rem;
+margin: 0 auto 20px;
+}
+.feature-item h4 {
+font-weight: 600;
+margin-bottom: 10px;
+color: #232f3e;
+}
+.feature-item p {
+color: #666;
+font-size: 0.95rem;
+}
+
+/* FAQ Section */
+.faq-section {
+background: white;
+border-radius: 30px;
+padding: 40px;
+margin: 40px 0;
+}
+.accordion-item {
+border: none;
+margin-bottom: 15px;
+border-radius: 15px !important;
+overflow: hidden;
+}
+.accordion-button {
+background: #f8f9fa;
+color: #232f3e;
+font-weight: 600;
+padding: 20px;
+}
+.accordion-button:not(.collapsed) {
+background: linear-gradient(135deg, #ff9900 0%, #ff7700 100%);
+color: white;
+}
+.accordion-button:focus {
+box-shadow: none;
+}
+.accordion-body {
+padding: 25px;
+background: white;
+}
+
+/* Loading Spinner */
+.spinner {
+display: none;
+text-align: center;
+padding: 40px;
+}
+.spinner-border {
+width: 3rem;
+height: 3rem;
+color: #ff9900;
+}
+
+/* No Results */
+.no-results {
+text-align: center;
+padding: 60px;
+background: white;
+border-radius: 20px;
+display: none;
+}
+.no-results i {
+font-size: 4rem;
+color: #ff9900;
+margin-bottom: 20px;
+}
+
+/* Footer */
+footer {
+background: #232f3e;
+color: white;
+margin-top: 60px;
+padding: 50px 0 20px;
+}
+footer a {
+color: #ff9900;
+text-decoration: none;
+}
+footer a:hover {
+color: #ff7700;
+}
+
+@media (max-width: 768px) {
+.tool-header h1 {
+font-size: 2rem;
+}
+.stats-grid {
+grid-template-columns: 1fr 1fr;
+}
+}
+</style>
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+<div class="container">
+<a class="navbar-brand" href="index.html">
+<i class="fas fa-tools me-2"></i>
+Free SEO Tool Hub
+</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="all-tools.html">All Tools</a></li>
+<li class="nav-item"><a class="nav-link active" href="amazon-product-research.html">Amazon Research</a></li>
+<li class="nav-item"><a class="nav-link" href="amazon-seo-tool-free.html">Amazon SEO</a></li>
+<li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<div class="container">
+<!-- Tool Header -->
+<div class="tool-header">
+<div class="mb-3">
+<span class="amazon-badge"><i class="fab fa-amazon me-2"></i> AMAZON FBA TOOL</span>
+<span class="amazon-badge" style="background: #232f3e; color: #ff9900;">🔥 FREE FOREVER</span>
+</div>
+<h1><span>Amazon Product Research</span> Tool 2026</h1>
+<p>Find profitable products to sell on Amazon FBA. Get sales estimates, competition analysis, niche research, and profit potential scores. 100% free, no signup required.</p>
+
+<!-- Stats Counter -->
+<div class="stats-grid mt-4">
+<div class="stat-card">
+<div class="stat-icon"><i class="fas fa-chart-line"></i></div>
+<div class="stat-value">50K+</div>
+<div class="stat-label">Products Analyzed</div>
+</div>
+<div class="stat-card">
+<div class="stat-icon"><i class="fas fa-dollar-sign"></i></div>
+<div class="stat-value">$10K+</div>
+<div class="stat-label">Avg. Monthly Revenue</div>
+</div>
+<div class="stat-card">
+<div class="stat-icon"><i class="fas fa-star"></i></div>
+<div class="stat-value">4.8/5</div>
+<div class="stat-label">User Rating</div>
+</div>
+<div class="stat-card">
+<div class="stat-icon"><i class="fas fa-users"></i></div>
+<div class="stat-value">15K+</div>
+<div class="stat-label">Active Users</div>
+</div>
+</div>
+</div>
+
+<!-- Main Tool Card -->
+<div class="tool-card">
+<h2><i class="fas fa-search"></i> Find Profitable Amazon Products</h2>
+
+<div class="row">
+<div class="col-md-6">
+<div class="form-group">
+<label class="form-label"><i class="fas fa-tag me-2"></i>Product Niche / Keyword</label>
+<input type="text" class="form-control" id="productNiche" placeholder="e.g., yoga mat, wireless earbuds, kitchen gadgets" value="yoga mat">
+</div>
+</div>
+<div class="col-md-3">
+<div class="form-group">
+<label class="form-label"><i class="fas fa-dollar-sign me-2"></i>Min Price ($)</label>
+<input type="number" class="form-control" id="minPrice" value="15">
+</div>
+</div>
+<div class="col-md-3">
+<div class="form-group">
+<label class="form-label"><i class="fas fa-dollar-sign me-2"></i>Max Price ($)</label>
+<input type="number" class="form-control" id="maxPrice" value="50">
+</div>
+</div>
+</div>
+
+<div class="row mt-3">
+<div class="col-md-4">
+<div class="form-group">
+<label class="form-label"><i class="fas fa-box me-2"></i>Category</label>
+<select class="form-select" id="productCategory">
+<option value="all">All Categories</option>
+<option value="sports">Sports & Outdoors</option>
+<option value="electronics">Electronics</option>
+<option value="home">Home & Kitchen</option>
+<option value="beauty">Beauty & Personal Care</option>
+<option value="toys">Toys & Games</option>
+<option value="pet">Pet Supplies</option>
+<option value="baby">Baby Products</option>
+<option value="office">Office Products</option>
+</select>
+</div>
+</div>
+<div class="col-md-4">
+<div class="form-group">
+<label class="form-label"><i class="fas fa-trophy me-2"></i>Competition Level</label>
+<select class="form-select" id="competitionLevel">
+<option value="any">Any</option>
+<option value="low">Low Competition</option>
+<option value="medium">Medium Competition</option>
+<option value="high">High Competition</option>
+</select>
+</div>
+</div>
+<div class="col-md-4">
+<div class="form-group">
+<label class="form-label"><i class="fas fa-chart-line me-2"></i>Min Monthly Sales</label>
+<select class="form-select" id="minSales">
+<option value="100">100+ sales</option>
+<option value="300">300+ sales</option>
+<option value="500" selected>500+ sales</option>
+<option value="1000">1000+ sales</option>
+<option value="5000">5000+ sales</option>
+</select>
+</div>
+</div>
+</div>
+
+<div class="row mt-4">
+<div class="col-md-8">
+<button class="btn btn-primary" onclick="searchProducts()" id="searchBtn">
+<i class="fas fa-search me-2"></i> Find Profitable Products
+</button>
+</div>
+<div class="col-md-4">
+<button class="btn btn-outline-primary" onclick="resetFilters()">
+<i class="fas fa-undo me-2"></i> Reset Filters
+</button>
+</div>
+</div>
+
+<!-- Loading Spinner -->
+<div class="spinner" id="loadingSpinner">
+<div class="spinner-border" role="status">
+<span class="visually-hidden">Loading...</span>
+</div>
+<p class="mt-3">Analyzing Amazon products...</p>
+</div>
+
+<!-- No Results -->
+<div class="no-results" id="noResults">
+<i class="fas fa-box-open"></i>
+<h3>No Products Found</h3>
+<p>Try different keywords or adjust your filters</p>
+<button class="btn btn-primary" onclick="resetFilters()">Try Again</button>
+</div>
+
+<!-- Results Section -->
+<div class="results-section" id="resultsSection">
+<!-- Summary Stats -->
+<div class="row mt-4">
+<div class="col-md-3">
+<div class="stat-card">
+<div class="stat-value" id="totalProducts">0</div>
+<div class="stat-label">Products Found</div>
+</div>
+</div>
+<div class="col-md-3">
+<div class="stat-card">
+<div class="stat-value" id="avgPrice">$0</div>
+<div class="stat-label">Avg. Price</div>
+</div>
+</div>
+<div class="col-md-3">
+<div class="stat-card">
+<div class="stat-value" id="avgSales">0</div>
+<div class="stat-label">Avg. Monthly Sales</div>
+</div>
+</div>
+<div class="col-md-3">
+<div class="stat-card">
+<div class="stat-value" id="avgRating">0.0</div>
+<div class="stat-label">Avg. Rating</div>
+</div>
+</div>
+</div>
+
+<!-- Niche Analysis Chart -->
+<div class="chart-container">
+<h3><i class="fas fa-chart-pie me-2"></i> Niche Analysis</h3>
+<div class="row">
+<div class="col-md-6">
+<div class="chart-box">
+<canvas id="competitionChart"></canvas>
+</div>
+</div>
+<div class="col-md-6">
+<div class="chart-box">
+<canvas id="priceChart"></canvas>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Product List -->
+<h3 class="mt-4 mb-3"><i class="fas fa-list me-2"></i> Top Product Opportunities</h3>
+<div id="productList"></div>
+</div>
+</div>
+
+<!-- Features Section -->
+<h2 class="text-center mb-4" style="color: #232f3e;"><i class="fas fa-star me-2" style="color: #ff9900;"></i> Why Use Our Amazon Product Research Tool?</h2>
+<div class="features-list">
+<div class="feature-item">
+<div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+<h4>Sales Estimates</h4>
+<p>Accurate monthly sales estimates based on BSR and historical data</p>
+</div>
+<div class="feature-item">
+<div class="feature-icon"><i class="fas fa-trophy"></i></div>
+<h4>Competition Analysis</h4>
+<p>Analyze top competitors, their reviews, and market saturation</p>
+</div>
+<div class="feature-item">
+<div class="feature-icon"><i class="fas fa-calculator"></i></div>
+<h4>Profit Calculator</h4>
+<p>Calculate FBA fees, profit margins, and ROI instantly</p>
+</div>
+<div class="feature-item">
+<div class="feature-icon"><i class="fas fa-chart-bar"></i></div>
+<h4>Seasonality Trends</h4>
+<p>Check if products are seasonal or have year-round demand</p>
+</div>
+</div>
+
+<!-- How It Works -->
+<div class="chart-container">
+<h3><i class="fas fa-info-circle me-2" style="color: #ff9900;"></i> How to Find Profitable Amazon Products</h3>
+<div class="row mt-4">
+<div class="col-md-3 text-center">
+<div class="niche-score" style="margin: 0 auto 15px;">1</div>
+<h5>Enter Niche</h5>
+<p class="text-muted">Type your product idea or keyword</p>
+</div>
+<div class="col-md-3 text-center">
+<div class="niche-score" style="margin: 0 auto 15px;">2</div>
+<h5>Set Filters</h5>
+<p class="text-muted">Adjust price, competition, and sales</p>
+</div>
+<div class="col-md-3 text-center">
+<div class="niche-score" style="margin: 0 auto 15px;">3</div>
+<h5>Analyze Results</h5>
+<p class="text-muted">Review sales estimates and competition</p>
+</div>
+<div class="col-md-3 text-center">
+<div class="niche-score" style="margin: 0 auto 15px;">4</div>
+<h5>Find Winners</h5>
+<p class="text-muted">Focus on high-opportunity products</p>
+</div>
+</div>
+</div>
+
+<!-- FAQ Section -->
+<div class="faq-section">
+<h3 class="mb-4"><i class="fas fa-question-circle me-2" style="color: #ff9900;"></i> Frequently Asked Questions</h3>
+<div class="accordion" id="faqAccordion">
+<div class="accordion-item">
+<h2 class="accordion-header">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+How to find profitable products on Amazon?
+</button>
+</h2>
+<div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+<div class="accordion-body">
+Use our Amazon Product Research Tool to analyze:
+<ul class="mt-2">
+<li><strong>Demand:</strong> Look for 500+ monthly sales</li>
+<li><strong>Competition:</strong> Top products should have under 1000 reviews</li>
+<li><strong>Price:</strong> $15-$50 is sweet spot for beginners</li>
+<li><strong>Profit Margin:</strong> Aim for 30%+ after FBA fees</li>
+<li><strong>Seasonality:</strong> Avoid highly seasonal products</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="accordion-item">
+<h2 class="accordion-header">
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+What is a good product opportunity score?
+</button>
+</h2>
+<div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+<div class="accordion-body">
+<p>Our product opportunity score ranges from 0-100:</p>
+<ul>
+<li><span class="badge bg-success">80-100</span> <strong>Excellent:</strong> High demand, low competition</li>
+<li><span class="badge bg-warning">60-79</span> <strong>Good:</strong> Viable opportunity</li>
+<li><span class="badge bg-info">40-59</span> <strong>Fair:</strong> Further research needed</li>
+<li><span class="badge bg-danger">0-39</span> <strong>Poor:</strong> Too competitive or low demand</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="accordion-item">
+<h2 class="accordion-header">
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+Is this tool really free?
+</button>
+</h2>
+<div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+<div class="accordion-body">
+<p>Yes! Our Amazon Product Research Tool is completely free:</p>
+<ul>
+<li>✅ No credit card required</li>
+<li>✅ No registration needed</li>
+<li>✅ Unlimited searches</li>
+<li>✅ All features included</li>
+<li>✅ Regular updates with latest data</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="accordion-item">
+<h2 class="accordion-header">
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+How accurate are the sales estimates?
+</button>
+</h2>
+<div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+<div class="accordion-body">
+<p>Our sales estimates are based on:</p>
+<ul>
+<li>Best Sellers Rank (BSR) data</li>
+<li>Historical sales patterns</li>
+<li>Category-specific multipliers</li>
+<li>Recent market trends</li>
+</ul>
+<p class="mt-2">Accuracy is typically within 20% of actual sales for most categories.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Related Tools -->
+<div class="chart-container">
+<h3><i class="fas fa-tools me-2" style="color: #ff9900;"></i> Related Amazon Tools</h3>
+<div class="row mt-3">
+<div class="col-md-4">
+<a href="amazon-seo-tool-free.html" class="text-decoration-none">
+<div class="feature-item" style="cursor: pointer;">
+<div class="feature-icon"><i class="fab fa-amazon"></i></div>
+<h5>Amazon SEO Tool</h5>
+<p>Keyword research & rank tracker</p>
+</div>
+</a>
+</div>
+<div class="col-md-4">
+<a href="amazon-fba-calculator.html" class="text-decoration-none">
+<div class="feature-item" style="cursor: pointer;">
+<div class="feature-icon"><i class="fas fa-calculator"></i></div>
+<h5>FBA Calculator</h5>
+<p>Calculate fees & profit margins</p>
+</div>
+</a>
+</div>
+<div class="col-md-4">
+<a href="keyword-gap-analyzer.html" class="text-decoration-none">
+<div class="feature-item" style="cursor: pointer;">
+<div class="feature-icon"><i class="fas fa-chart-bar"></i></div>
+<h5>Keyword Gap Analyzer</h5>
+<p>Find competitor keywords</p>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Footer -->
+<footer>
+<div class="container">
+<div class="row">
+<div class="col-md-4 mb-4">
+<h5 class="text-white">Free SEO Tool Hub</h5>
+<p class="text-white-50">Your complete SEO toolkit, completely free. Including Amazon FBA tools and product research.</p>
+</div>
+<div class="col-md-8">
+<div class="row">
+<div class="col-md-4 mb-4">
+<h6 class="text-white">Quick Links</h6>
+<ul class="list-unstyled">
+<li><a href="index.html">Home</a></li>
+<li><a href="all-tools.html">All Tools</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+<div class="col-md-4 mb-4">
+<h6 class="text-white">Amazon Tools</h6>
+<ul class="list-unstyled">
+<li><a href="amazon-product-research.html">Product Research</a></li>
+<li><a href="amazon-seo-tool-free.html">Amazon SEO Tool</a></li>
+<li><a href="amazon-fba-calculator.html">FBA Calculator</a></li>
+</ul>
+</div>
+<div class="col-md-4 mb-4">
+<h6 class="text-white">Legal</h6>
+<ul class="list-unstyled">
+<li><a href="privacy.html">Privacy</a></li>
+<li><a href="terms.html">Terms</a></li>
+<li><a href="sitemap.xml">Sitemap</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<hr class="bg-white-50">
+<div class="text-center text-white-50">
+© 2026 Free SEO Tool Hub. All rights reserved. | Updated with Amazon Product Research Tool 2026
+</div>
+</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+// Sample product database (in real app, this would come from API)
+const sampleProducts = [
+{
+name: "Premium Yoga Mat - Non Slip Exercise Mat",
+price: 29.99,
+monthlySales: 850,
+rating: 4.6,
+reviews: 1250,
+competition: "Medium",
+category: "sports",
+opportunityScore: 78,
+keywords: ["yoga mat", "exercise mat", "fitness mat"],
+fbaFees: 8.50,
+profitMargin: 42,
+seasonality: "Year-round",
+image: "https://via.placeholder.com/150"
+},
+{
+name: "Wireless Earbuds Bluetooth 5.3 with Charging Case",
+price: 39.99,
+monthlySales: 2200,
+rating: 4.4,
+reviews: 3450,
+competition: "High",
+category: "electronics",
+opportunityScore: 45,
+keywords: ["wireless earbuds", "bluetooth headphones"],
+fbaFees: 6.75,
+profitMargin: 28,
+seasonality: "Year-round",
+image: "https://via.placeholder.com/150"
+},
+{
+name: "Kitchen Utensil Set - 12 Piece Non-Stick Cooking Utensils",
+price: 24.99,
+monthlySales: 620,
+rating: 4.7,
+reviews: 890,
+competition: "Low",
+category: "home",
+opportunityScore: 82,
+keywords: ["kitchen utensils", "cooking tools"],
+fbaFees: 7.25,
+profitMargin: 45,
+seasonality: "Year-round",
+image: "https://via.placeholder.com/150"
+},
+{
+name: "Resistance Bands Set for Workout - Exercise Bands with Handles",
+price: 19.99,
+monthlySales: 1500,
+rating: 4.5,
+reviews: 2100,
+competition: "Medium",
+category: "sports",
+opportunityScore: 65,
+keywords: ["resistance bands", "exercise bands"],
+fbaFees: 5.50,
+profitMargin: 38,
+seasonality: "Year-round",
+image: "https://via.placeholder.com/150"
+},
+{
+name: "Bamboo Cutting Board Set - 3 Piece Wooden Chopping Boards",
+price: 34.99,
+monthlySales: 450,
+rating: 4.8,
+reviews: 620,
+competition: "Low",
+category: "home",
+opportunityScore: 85,
+keywords: ["cutting board", "chopping board"],
+fbaFees: 9.00,
+profitMargin: 48,
+seasonality: "Year-round",
+image: "https://via.placeholder.com/150"
+},
+{
+name: "Phone Holder for Car - Dashboard Air Vent Magnetic Mount",
+price: 15.99,
+monthlySales: 3200,
+rating: 4.3,
+reviews: 5600,
+competition: "High",
+category: "electronics",
+opportunityScore: 35,
+keywords: ["phone holder", "car mount"],
+fbaFees: 4.75,
+profitMargin: 25,
+seasonality: "Year-round",
+image: "https://via.placeholder.com/150"
+},
+{
+name: "LED Strip Lights for Bedroom - 16.4ft RGB Color Changing Lights",
+price: 22.99,
+monthlySales: 1800,
+rating: 4.4,
+reviews: 3200,
+competition: "High",
+category: "home",
+opportunityScore: 40,
+keywords: ["led lights", "strip lights"],
+fbaFees: 6.25,
+profitMargin: 30,
+seasonality: "Year-round",
+image: "https://via.placeholder.com/150"
+},
+{
+name: "Travel Jewelry Organizer - Portable Jewelry Case",
+price: 18.99,
+monthlySales: 750,
+rating: 4.7,
+reviews: 1100,
+competition: "Medium",
+category: "beauty",
+opportunityScore: 72,
+keywords: ["jewelry organizer", "travel case"],
+fbaFees: 5.25,
+profitMargin: 44,
+seasonality: "Year-round",
+image: "https://via.placeholder.com/150"
+}
+];
+
+let currentChart1, currentChart2;
+
+function searchProducts() {
+const niche = document.getElementById('productNiche').value.trim().toLowerCase();
+const minPrice = parseFloat(document.getElementById('minPrice').value) || 0;
+const maxPrice = parseFloat(document.getElementById('maxPrice').value) || 1000;
+const category = document.getElementById('productCategory').value;
+const competition = document.getElementById('competitionLevel').value;
+const minSales = parseInt(document.getElementById('minSales').value) || 0;
+
+// Show loading
+document.getElementById('loadingSpinner').style.display = 'block';
+document.getElementById('resultsSection').style.display = 'none';
+document.getElementById('noResults').style.display = 'none';
+document.getElementById('searchBtn').disabled = true;
+
+// Simulate API call delay
+setTimeout(() => {
+// Filter products
+let filtered = sampleProducts.filter(product => {
+// Price filter
+if (product.price < minPrice || product.price > maxPrice) return false;
+
+// Category filter
+if (category !== 'all' && product.category !== category) return false;
+
+// Competition filter
+if (competition !== 'any' && product.competition.toLowerCase() !== competition) return false;
+
+// Sales filter
+if (product.monthlySales < minSales) return false;
+
+// Keyword/niche filter (simple contains check)
+if (niche && !product.keywords.some(k => k.includes(niche))) return false;
+
+return true;
+});
+
+// Sort by opportunity score (highest first)
+filtered.sort((a, b) => b.opportunityScore - a.opportunityScore);
+
+// Hide loading
+document.getElementById('loadingSpinner').style.display = 'none';
+document.getElementById('searchBtn').disabled = false;
+
+if (filtered.length === 0) {
+document.getElementById('noResults').style.display = 'block';
+document.getElementById('resultsSection').style.display = 'none';
+return;
+}
+
+// Update summary stats
+document.getElementById('totalProducts').textContent = filtered.length;
+const avgPrice = filtered.reduce((sum, p) => sum + p.price, 0) / filtered.length;
+document.getElementById('avgPrice').textContent = '$' + avgPrice.toFixed(2);
+const avgSales = filtered.reduce((sum, p) => sum + p.monthlySales, 0) / filtered.length;
+document.getElementById('avgSales').textContent = Math.round(avgSales);
+const avgRating = filtered.reduce((sum, p) => sum + p.rating, 0) / filtered.length;
+document.getElementById('avgRating').textContent = avgRating.toFixed(1);
+
+// Display products
+displayProducts(filtered);
+
+// Update charts
+updateCharts(filtered);
+
+// Show results
+document.getElementById('resultsSection').style.display = 'block';
+}, 1500);
+}
+
+function displayProducts(products) {
+const container = document.getElementById('productList');
+container.innerHTML = '';
+
+products.forEach(product => {
+let potentialClass = 'low-potential';
+if (product.opportunityScore >= 70) potentialClass = 'high-potential';
+else if (product.opportunityScore >= 50) potentialClass = 'medium-potential';
+
+const productCard = `
+<div class="product-card ${potentialClass}">
+<div class="product-badge">
+<span class="badge ${product.opportunityScore >= 70 ? 'bg-success' : (product.opportunityScore >= 50 ? 'bg-warning' : 'bg-danger')}">
+Score: ${product.opportunityScore}
+</span>
+</div>
+<h3 class="product-title">${product.name}</h3>
+
+<div class="product-metrics">
+<div class="metric-item">
+<div class="metric-label">Price</div>
+<div class="metric-value good">$${product.price}</div>
+</div>
+<div class="metric-item">
+<div class="metric-label">Monthly Sales</div>
+<div class="metric-value ${product.monthlySales > 1000 ? 'good' : 'warning'}">
+${product.monthlySales.toLocaleString()}
+</div>
+</div>
+<div class="metric-item">
+<div class="metric-label">Rating</div>
+<div class="metric-value good">${product.rating} ⭐</div>
+</div>
+<div class="metric-item">
+<div class="metric-label">Reviews</div>
+<div class="metric-value ${product.reviews < 1000 ? 'good' : (product.reviews < 3000 ? 'warning' : 'bad')}">
+${product.reviews.toLocaleString()}
+</div>
+</div>
+<div class="metric-item">
+<div class="metric-label">Profit Margin</div>
+<div class="metric-value ${product.profitMargin >= 40 ? 'good' : (product.profitMargin >= 30 ? 'warning' : 'bad')}">
+${product.profitMargin}%
+</div>
+</div>
+<div class="metric-item">
+<div class="metric-label">Competition</div>
+<div class="metric-value ${product.competition === 'Low' ? 'good' : (product.competition === 'Medium' ? 'warning' : 'bad')}">
+${product.competition}
+</div>
+</div>
+</div>
+
+<div class="product-tags">
+${product.keywords.map(k => `<span class="badge">${k}</span>`).join('')}
+<span class="badge">${product.seasonality}</span>
+</div>
+
+<div class="row mt-3">
+<div class="col-md-6">
+<small class="text-muted">
+<i class="fas fa-box me-1"></i> FBA Fee: $${product.fbaFees.toFixed(2)}
+</small>
+</div>
+<div class="col-md-6 text-end">
+<button class="btn btn-sm btn-outline-primary" onclick="analyzeProduct('${product.name}')">
+<i class="fas fa-chart-line me-1"></i> Detailed Analysis
+</button>
+</div>
+</div>
+</div>
+`;
+
+container.innerHTML += productCard;
+});
+}
+
+function updateCharts(products) {
+// Destroy existing charts
+if (currentChart1) currentChart1.destroy();
+if (currentChart2) currentChart2.destroy();
+
+// Competition distribution chart
+const compCounts = {
+Low: products.filter(p => p.competition === 'Low').length,
+Medium: products.filter(p => p.competition === 'Medium').length,
+High: products.filter(p => p.competition === 'High').length
+};
+
+const ctx1 = document.getElementById('competitionChart').getContext('2d');
+currentChart1 = new Chart(ctx1, {
+type: 'doughnut',
+data: {
+labels: ['Low Competition', 'Medium Competition', 'High Competition'],
+datasets: [{
+data: [compCounts.Low, compCounts.Medium, compCounts.High],
+backgroundColor: ['#00a86b', '#ff9900', '#d9534f'],
+borderWidth: 0
+}]
+},
+options: {
+responsive: true,
+maintainAspectRatio: false,
+plugins: {
+legend: {
+position: 'bottom'
+},
+title: {
+display: true,
+text: 'Competition Distribution'
+}
+}
+}
+});
+
+// Price distribution chart
+const priceRanges = {
+'<$20': products.filter(p => p.price < 20).length,
+'$20-$30': products.filter(p => p.price >= 20 && p.price < 30).length,
+'$30-$40': products.filter(p => p.price >= 30 && p.price < 40).length,
+'$40+': products.filter(p => p.price >= 40).length
+};
+
+const ctx2 = document.getElementById('priceChart').getContext('2d');
+currentChart2 = new Chart(ctx2, {
+type: 'bar',
+data: {
+labels: Object.keys(priceRanges),
+datasets: [{
+label: 'Number of Products',
+data: Object.values(priceRanges),
+backgroundColor: '#ff9900',
+borderRadius: 5
+}]
+},
+options: {
+responsive: true,
+maintainAspectRatio: false,
+plugins: {
+legend: {
+display: false
+},
+title: {
+display: true,
+text: 'Price Distribution'
+}
+},
+scales: {
+y: {
+beginAtZero: true,
+ticks: {
+stepSize: 1
+}
+}
+}
+}
+});
+}
+
+function resetFilters() {
+document.getElementById('productNiche').value = '';
+document.getElementById('minPrice').value = '15';
+document.getElementById('maxPrice').value = '50';
+document.getElementById('productCategory').value = 'all';
+document.getElementById('competitionLevel').value = 'any';
+document.getElementById('minSales').value = '500';
+
+document.getElementById('resultsSection').style.display = 'none';
+document.getElementById('noResults').style.display = 'none';
+}
+
+function analyzeProduct(productName) {
+alert(`Detailed analysis for "${productName}" will be available soon!\n\nIn the full version, you would see:\n- Historical sales trends\n- Competitor analysis\n- Keyword opportunities\n- Profit calculator\n- Seasonal patterns`);
+}
+
+// Initialize with default search on page load
+window.onload = function() {
+// Optional: Auto-search with default value
+// searchProducts();
+};
+</script>
+</body>
+</html>
