@@ -1,1 +1,1244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free Competitor SERP Analyzer Tool - Analyze top 10 Google search results for Domain Authority, Backlinks, Content Length, and more. Improve your SEO strategy with competitor insights.">
+    <title>Competitor SERP Analyzer - Free SEO Tool | freeseotoolhub.com</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #10b981;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --border: #e2e8f0;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --success: #10b981;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header h1 i {
+            margin-right: 10px;
+            font-size: 2rem;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .header-badges {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: rgba(255,255,255,0.2);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            backdrop-filter: blur(5px);
+        }
+
+        .badge i {
+            margin-right: 5px;
+        }
+
+        /* Main Content */
+        .content {
+            padding: 40px;
+        }
+
+        /* Search Section */
+        .search-section {
+            background: var(--light);
+            padding: 30px;
+            border-radius: 16px;
+            margin-bottom: 30px;
+            border: 1px solid var(--border);
+        }
+
+        .input-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .keyword-input {
+            flex: 2;
+            min-width: 300px;
+            position: relative;
+        }
+
+        .keyword-input i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray);
+            font-size: 1.2rem;
+        }
+
+        .keyword-input input {
+            width: 100%;
+            padding: 18px 25px 18px 50px;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .keyword-input input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+        }
+
+        .location-select {
+            flex: 1;
+            min-width: 200px;
+            position: relative;
+        }
+
+        .location-select i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray);
+            z-index: 1;
+        }
+
+        .location-select select {
+            width: 100%;
+            padding: 18px 25px 18px 45px;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            font-size: 1rem;
+            background: white;
+            cursor: pointer;
+            appearance: none;
+            font-family: inherit;
+        }
+
+        .location-select::after {
+            content: '\f078';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray);
+            pointer-events: none;
+        }
+
+        .analyze-btn {
+            flex: 0.5;
+            min-width: 150px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 0 20px;
+        }
+
+        .analyze-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
+        }
+
+        .analyze-btn i {
+            font-size: 1.2rem;
+        }
+
+        .analyze-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        /* Search Options */
+        .search-options {
+            display: flex;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .option-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--dark);
+            font-size: 0.95rem;
+        }
+
+        .option-item input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            accent-color: var(--primary);
+        }
+
+        .option-item select {
+            padding: 8px 15px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 0.95rem;
+            cursor: pointer;
+        }
+
+        /* Loading Spinner */
+        .loading-spinner {
+            text-align: center;
+            padding: 40px;
+            display: none;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid var(--border);
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Results Section */
+        .results-section {
+            margin-top: 30px;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .section-title h2 {
+            font-size: 1.8rem;
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+        .keyword-badge {
+            background: var(--light);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 1rem;
+            color: var(--primary);
+            border: 1px solid var(--border);
+        }
+
+        .keyword-badge i {
+            margin-right: 5px;
+            color: var(--warning);
+        }
+
+        .export-buttons {
+            display: flex;
+            gap: 10px;
+            margin-left: auto;
+        }
+
+        .export-btn {
+            padding: 10px 20px;
+            border: 1px solid var(--border);
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .export-btn:hover {
+            background: var(--light);
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        /* Summary Cards */
+        .summary-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .summary-card {
+            background: var(--light);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid var(--border);
+        }
+
+        .summary-card i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .summary-card .label {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 5px;
+        }
+
+        .summary-card .value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .summary-card .sub-value {
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-top: 5px;
+        }
+
+        /* Table */
+        .table-container {
+            overflow-x: auto;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 1000px;
+        }
+
+        th {
+            background: var(--light);
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            color: var(--dark);
+            border-bottom: 2px solid var(--border);
+            font-size: 0.95rem;
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: middle;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover {
+            background: var(--light);
+        }
+
+        /* Position Number */
+        .position {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+
+        /* Website Info */
+        .website-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .favicon {
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+        }
+
+        .website-details {
+            flex: 1;
+        }
+
+        .website-title {
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 4px;
+            max-width: 300px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .website-url {
+            font-size: 0.85rem;
+            color: var(--gray);
+            text-decoration: none;
+        }
+
+        .website-url:hover {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+
+        /* Metrics */
+        .metric-bar {
+            width: 100px;
+            height: 6px;
+            background: var(--border);
+            border-radius: 3px;
+            overflow: hidden;
+            margin: 8px 0;
+        }
+
+        .metric-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 3px;
+        }
+
+        .metric-value {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .metric-sub {
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+
+        /* Score Badges */
+        .score-badge {
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            display: inline-block;
+        }
+
+        .score-high {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .score-medium {
+            background: #fed7aa;
+            color: #92400e;
+        }
+
+        .score-low {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        /* Difficulty Scale */
+        .difficulty-scale {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .difficulty-bar {
+            width: 80px;
+            height: 8px;
+            background: var(--border);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .difficulty-fill {
+            height: 100%;
+            width: 0%;
+        }
+
+        .difficulty-easy .difficulty-fill { background: var(--success); width: 30%; }
+        .difficulty-medium .difficulty-fill { background: var(--warning); width: 60%; }
+        .difficulty-hard .difficulty-fill { background: var(--danger); width: 90%; }
+
+        /* Charts Container */
+        .charts-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .chart-card {
+            background: var(--light);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .chart-card h3 {
+            font-size: 1.1rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .chart-card h3 i {
+            color: var(--primary);
+        }
+
+        .chart-wrapper {
+            height: 200px;
+            position: relative;
+        }
+
+        /* Content Analysis */
+        .content-analysis {
+            margin-top: 30px;
+        }
+
+        .keyword-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 20px;
+            background: var(--light);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .keyword-tag {
+            padding: 5px 15px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .keyword-tag:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            transform: scale(1.05);
+        }
+
+        /* Recommendations */
+        .recommendations {
+            background: linear-gradient(135deg, #667eea15, #764ba215);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-top: 30px;
+        }
+
+        .recommendations h3 {
+            font-size: 1.3rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .rec-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .rec-item {
+            display: flex;
+            gap: 15px;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .rec-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .rec-content h4 {
+            font-size: 1rem;
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+
+        .rec-content p {
+            font-size: 0.9rem;
+            color: var(--gray);
+            line-height: 1.4;
+        }
+
+        /* SEO Footer */
+        .seo-footer {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid var(--border);
+        }
+
+        .faq-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .faq-item {
+            background: var(--light);
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        .faq-item h4 {
+            font-size: 1.1rem;
+            color: var(--dark);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .faq-item p {
+            color: var(--gray);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .input-group {
+                flex-direction: column;
+            }
+            
+            .keyword-input, .location-select, .analyze-btn {
+                width: 100%;
+            }
+            
+            .section-title {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .export-buttons {
+                margin-left: 0;
+            }
+        }
+
+        /* Error Message */
+        .error-message {
+            background: #fee2e2;
+            color: #991b1b;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid #fecaca;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>
+                <i class="fas fa-chart-line"></i>
+                Competitor SERP Analyzer
+            </h1>
+            <p>Analyze top 10 Google results - Domain Authority, Backlinks, Content Length & More</p>
+            <div class="header-badges">
+                <span class="badge"><i class="fas fa-globe"></i> Global Tool</span>
+                <span class="badge"><i class="fas fa-chart-bar"></i> DA/PA Checker</span>
+                <span class="badge"><i class="fas fa-link"></i> Backlinks Analysis</span>
+                <span class="badge"><i class="fas fa-file-alt"></i> Content Length</span>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <!-- Search Section -->
+            <div class="search-section">
+                <div class="input-group">
+                    <div class="keyword-input">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="keyword" placeholder="Enter your keyword (e.g., 'digital marketing')" value="seo tools">
+                    </div>
+                    <div class="location-select">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <select id="country">
+                            <option value="us">United States</option>
+                            <option value="uk">United Kingdom</option>
+                            <option value="in">India</option>
+                            <option value="ca">Canada</option>
+                            <option value="au">Australia</option>
+                            <option value="de">Germany</option>
+                            <option value="fr">France</option>
+                        </select>
+                    </div>
+                    <button class="analyze-btn" id="analyzeBtn">
+                        <i class="fas fa-microscope"></i>
+                        Analyze SERP
+                    </button>
+                </div>
+
+                <div class="search-options">
+                    <div class="option-item">
+                        <input type="checkbox" id="includeDA" checked>
+                        <label for="includeDA">Include Domain Authority</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="checkbox" id="includeBacklinks" checked>
+                        <label for="includeBacklinks">Include Backlinks</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="checkbox" id="includeContent" checked>
+                        <label for="includeContent">Content Analysis</label>
+                    </div>
+                    <div class="option-item">
+                        <select id="resultsLimit">
+                            <option value="10">Top 10 Results</option>
+                            <option value="20">Top 20 Results</option>
+                            <option value="30">Top 30 Results</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loading Spinner -->
+            <div class="loading-spinner" id="loadingSpinner">
+                <div class="spinner"></div>
+                <p>Fetching SERP data and analyzing competitors...</p>
+                <small>This may take a few seconds</small>
+            </div>
+
+            <!-- Results Section (Initially Hidden) -->
+            <div class="results-section" id="resultsSection" style="display: none;">
+                <!-- Section Title with Export -->
+                <div class="section-title">
+                    <h2><i class="fas fa-chart-simple" style="color: var(--primary);"></i> Analysis Results</h2>
+                    <span class="keyword-badge" id="searchedKeyword"><i class="fas fa-tag"></i> </span>
+                    <div class="export-buttons">
+                        <button class="export-btn" id="exportCSV"><i class="fas fa-file-csv"></i> CSV</button>
+                        <button class="export-btn" id="exportPDF"><i class="fas fa-file-pdf"></i> PDF</button>
+                        <button class="export-btn" id="copyTable"><i class="fas fa-copy"></i> Copy</button>
+                    </div>
+                </div>
+
+                <!-- Summary Cards -->
+                <div class="summary-cards" id="summaryCards"></div>
+
+                <!-- Charts Container -->
+                <div class="charts-container">
+                    <div class="chart-card">
+                        <h3><i class="fas fa-chart-bar"></i> Domain Authority Distribution</h3>
+                        <div class="chart-wrapper">
+                            <canvas id="daChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <h3><i class="fas fa-link"></i> Backlinks Overview</h3>
+                        <div class="chart-wrapper">
+                            <canvas id="backlinksChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <h3><i class="fas fa-file-alt"></i> Content Length Analysis</h3>
+                        <div class="chart-wrapper">
+                            <canvas id="contentChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Table -->
+                <div class="table-container">
+                    <table id="resultTable">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Website</th>
+                                <th>DA</th>
+                                <th>PA</th>
+                                <th>Backlinks</th>
+                                <th>RD</th>
+                                <th>Content Length</th>
+                                <th>Title Length</th>
+                                <th>Keyword in Title</th>
+                                <th>Keyword Density</th>
+                                <th>Difficulty</th>
+                                <th>Competitor Score</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                            <!-- Data will be inserted here -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Content Analysis Section -->
+                <div class="content-analysis">
+                    <h3 style="margin-bottom: 15px;"><i class="fas fa-key"></i> Common Keywords Used by Competitors</h3>
+                    <div class="keyword-cloud" id="keywordCloud"></div>
+                </div>
+
+                <!-- Recommendations -->
+                <div class="recommendations" id="recommendations"></div>
+
+                <!-- SEO Footer with FAQs -->
+                <div class="seo-footer">
+                    <h3 style="margin-bottom: 25px;"><i class="fas fa-question-circle"></i> Frequently Asked Questions</h3>
+                    <div class="faq-section">
+                        <div class="faq-item">
+                            <h4><i class="fas fa-chart-line"></i> What is Domain Authority?</h4>
+                            <p>Domain Authority (DA) is a search engine ranking score developed by Moz that predicts how likely a website is to rank in search engine result pages (SERPs). It ranges from 1-100, with higher scores indicating greater ranking ability.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4><i class="fas fa-link"></i> Why analyze backlinks?</h4>
+                            <p>Backlinks are crucial for SEO as they act as "votes of confidence" from other websites. Analyzing competitor backlinks helps you understand their link building strategies and identify opportunities for your own website.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4><i class="fas fa-file-alt"></i> What is ideal content length?</h4>
+                            <p>While there's no perfect length, top-ranking pages typically have comprehensive content (1500-2500+ words). However, content quality and relevance are more important than word count alone.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4><i class="fas fa-tachometer-alt"></i> How to use this data?</h4>
+                            <p>Use competitor analysis to identify content gaps, understand what makes top pages rank, and develop a data-driven SEO strategy. Focus on creating better, more comprehensive content than your competitors.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const analyzeBtn = document.getElementById('analyzeBtn');
+            const loadingSpinner = document.getElementById('loadingSpinner');
+            const resultsSection = document.getElementById('resultsSection');
+            const keywordInput = document.getElementById('keyword');
+            const countrySelect = document.getElementById('country');
+            const tableBody = document.getElementById('tableBody');
+            const searchedKeyword = document.getElementById('searchedKeyword');
+
+            // Sample data for demonstration (in production, this would come from an API)
+            function generateSampleData(keyword) {
+                const websites = [
+                    { name: 'Ahrefs', url: 'ahrefs.com', da: 92, pa: 85, backlinks: '15.2M', rd: '2.1M', contentLen: 2450, titleLen: 58, keywordTitle: true, density: 1.8, difficulty: 'hard' },
+                    { name: 'SEMrush', url: 'semrush.com', da: 94, pa: 88, backlinks: '18.5M', rd: '2.8M', contentLen: 3120, titleLen: 62, keywordTitle: true, density: 2.1, difficulty: 'hard' },
+                    { name: 'Moz', url: 'moz.com', da: 91, pa: 84, backlinks: '12.8M', rd: '1.9M', contentLen: 1890, titleLen: 55, keywordTitle: true, density: 1.5, difficulty: 'hard' },
+                    { name: 'Search Engine Journal', url: 'searchenginejournal.com', da: 89, pa: 82, backlinks: '8.2M', rd: '1.2M', contentLen: 2150, titleLen: 61, keywordTitle: true, density: 1.9, difficulty: 'medium' },
+                    { name: 'Neil Patel', url: 'neilpatel.com', da: 88, pa: 81, backlinks: '7.5M', rd: '980K', contentLen: 2780, titleLen: 57, keywordTitle: true, density: 2.2, difficulty: 'medium' },
+                    { name: 'Backlinko', url: 'backlinko.com', da: 87, pa: 83, backlinks: '6.9M', rd: '890K', contentLen: 3450, titleLen: 49, keywordTitle: true, density: 2.4, difficulty: 'medium' },
+                    { name: 'HubSpot', url: 'blog.hubspot.com', da: 93, pa: 86, backlinks: '22.1M', rd: '3.2M', contentLen: 1980, titleLen: 53, keywordTitle: false, density: 1.2, difficulty: 'hard' },
+                    { name: 'WordStream', url: 'wordstream.com', da: 85, pa: 78, backlinks: '4.2M', rd: '620K', contentLen: 1670, titleLen: 59, keywordTitle: true, density: 1.6, difficulty: 'medium' },
+                    { name: 'Yoast', url: 'yoast.com', da: 86, pa: 79, backlinks: '5.1M', rd: '750K', contentLen: 2230, titleLen: 48, keywordTitle: true, density: 1.7, difficulty: 'medium' },
+                    { name: 'SERoundtable', url: 'seroundtable.com', da: 84, pa: 76, backlinks: '3.8M', rd: '510K', contentLen: 1450, titleLen: 56, keywordTitle: true, density: 1.4, difficulty: 'easy' }
+                ];
+
+                return websites.map((site, index) => ({
+                    position: index + 1,
+                    ...site
+                }));
+            }
+
+            // Update summary cards
+            function updateSummaryCards(data) {
+                const avgDA = Math.round(data.reduce((sum, item) => sum + item.da, 0) / data.length);
+                const avgBacklinks = data.reduce((sum, item) => {
+                    const num = parseFloat(item.backlinks.replace('M', '')) * (item.backlinks.includes('M') ? 1000000 : 1);
+                    return sum + num;
+                }, 0) / data.length;
+                
+                const avgContent = Math.round(data.reduce((sum, item) => sum + item.contentLen, 0) / data.length);
+                const hardCount = data.filter(item => item.difficulty === 'hard').length;
+
+                const summaryHTML = `
+                    <div class="summary-card">
+                        <i class="fas fa-chart-line"></i>
+                        <div class="label">Avg Domain Authority</div>
+                        <div class="value">${avgDA}</div>
+                        <div class="sub-value">Range: ${Math.min(...data.map(d => d.da))} - ${Math.max(...data.map(d => d.da))}</div>
+                    </div>
+                    <div class="summary-card">
+                        <i class="fas fa-link"></i>
+                        <div class="label">Avg Backlinks</div>
+                        <div class="value">${(avgBacklinks / 1000000).toFixed(1)}M</div>
+                        <div class="sub-value">Total: ${data.reduce((sum, d) => sum + parseFloat(d.backlinks.replace('M', '')), 0).toFixed(1)}M</div>
+                    </div>
+                    <div class="summary-card">
+                        <i class="fas fa-file-alt"></i>
+                        <div class="label">Avg Content Length</div>
+                        <div class="value">${avgContent}</div>
+                        <div class="sub-value">words</div>
+                    </div>
+                    <div class="summary-card">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <div class="label">Competition Level</div>
+                        <div class="value">${hardCount}/10</div>
+                        <div class="sub-value">Hard competitors</div>
+                    </div>
+                `;
+
+                document.getElementById('summaryCards').innerHTML = summaryHTML;
+            }
+
+            // Populate table
+            function populateTable(data) {
+                let html = '';
+                data.forEach(item => {
+                    const difficultyClass = item.difficulty === 'hard' ? 'score-low' : item.difficulty === 'medium' ? 'score-medium' : 'score-high';
+                    const difficultyText = item.difficulty === 'hard' ? 'Hard' : item.difficulty === 'medium' ? 'Medium' : 'Easy';
+                    
+                    html += `
+                        <tr>
+                            <td><div class="position">${item.position}</div></td>
+                            <td>
+                                <div class="website-info">
+                                    <img src="https://www.google.com/s2/favicons?domain=${item.url}&sz=32" class="favicon" alt="favicon" onerror="this.src='https://via.placeholder.com/24'">
+                                    <div class="website-details">
+                                        <div class="website-title">${item.name}</div>
+                                        <a href="https://${item.url}" target="_blank" class="website-url">${item.url}</a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="metric-value">${item.da}</div>
+                                <div class="metric-bar"><div class="metric-fill" style="width: ${item.da}%"></div></div>
+                            </td>
+                            <td>
+                                <div class="metric-value">${item.pa}</div>
+                                <div class="metric-bar"><div class="metric-fill" style="width: ${item.pa}%"></div></div>
+                            </td>
+                            <td>${item.backlinks}</td>
+                            <td>${item.rd}</td>
+                            <td>${item.contentLen}</td>
+                            <td>${item.titleLen}</td>
+                            <td>
+                                ${item.keywordTitle ? 
+                                    '<span class="score-badge score-high"><i class="fas fa-check"></i> Yes</span>' : 
+                                    '<span class="score-badge score-low"><i class="fas fa-times"></i> No</span>'}
+                            </td>
+                            <td>${item.density}%</td>
+                            <td>
+                                <div class="difficulty-scale">
+                                    <span class="score-badge ${difficultyClass}">${difficultyText}</span>
+                                    <div class="difficulty-bar">
+                                        <div class="difficulty-fill" style="width: ${item.difficulty === 'hard' ? 90 : item.difficulty === 'medium' ? 60 : 30}%"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="metric-value">${Math.round((item.da * 0.4 + (parseFloat(item.backlinks.replace('M', '')) * 5) * 0.3 + item.contentLen/100 * 0.3))}</div>
+                                <div class="metric-bar"><div class="metric-fill" style="width: ${Math.min(100, Math.round((item.da * 0.4 + (parseFloat(item.backlinks.replace('M', '')) * 5) * 0.3 + item.contentLen/100 * 0.3))}%"></div></div>
+                            </td>
+                        </tr>
+                    `;
+                });
+                tableBody.innerHTML = html;
+            }
+
+            // Generate keyword cloud
+            function generateKeywordCloud(data) {
+                const commonKeywords = ['seo', 'marketing', 'digital', 'tools', 'analysis', 'backlinks', 'ranking', 'google', 'search', 'optimization', 'traffic', 'keywords', 'content', 'strategy', 'guide', 'tips', '2024', 'beginner', 'advanced', 'free'];
+                const cloudHTML = commonKeywords.map(keyword => 
+                    `<span class="keyword-tag"><i class="fas fa-tag"></i> ${keyword}</span>`
+                ).join('');
+                document.getElementById('keywordCloud').innerHTML = cloudHTML;
+            }
+
+            // Generate recommendations
+            function generateRecommendations(data) {
+                const avgDA = data.reduce((sum, item) => sum + item.da, 0) / data.length;
+                const avgContent = data.reduce((sum, item) => sum + item.contentLen, 0) / data.length;
+                
+                const recommendations = [
+                    {
+                        icon: 'fa-chart-line',
+                        title: 'Domain Authority Target',
+                        desc: `Average DA of top competitors is ${Math.round(avgDA)}. You need strong backlinks to compete.`
+                    },
+                    {
+                        icon: 'fa-file-alt',
+                        title: 'Content Length',
+                        desc: `Top pages average ${avgContent} words. Create comprehensive content of at least ${Math.round(avgContent * 1.2)} words to stand out.`
+                    },
+                    {
+                        icon: 'fa-key',
+                        title: 'Keyword Strategy',
+                        desc: `${data.filter(d => d.keywordTitle).length}/10 competitors use exact keyword in title. Always include your target keyword in H1 and title.`
+                    },
+                    {
+                        icon: 'fa-link',
+                        title: 'Backlink Gap',
+                        desc: `The top site has ${data[0].backlinks} backlinks. Focus on quality guest posts and digital PR to build authority.`
+                    }
+                ];
+
+                const recHTML = recommendations.map(rec => `
+                    <div class="rec-item">
+                        <div class="rec-icon"><i class="fas ${rec.icon}"></i></div>
+                        <div class="rec-content">
+                            <h4>${rec.title}</h4>
+                            <p>${rec.desc}</p>
+                        </div>
+                    </div>
+                `).join('');
+
+                document.getElementById('recommendations').innerHTML = `
+                    <h3><i class="fas fa-lightbulb"></i> Actionable Recommendations</h3>
+                    <div class="rec-list">${recHTML}</div>
+                `;
+            }
+
+            // Initialize charts
+            function initCharts(data) {
+                // DA Chart
+                const daCtx = document.getElementById('daChart').getContext('2d');
+                new Chart(daCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: data.map(d => d.name.substring(0, 10) + '...'),
+                        datasets: [{
+                            label: 'Domain Authority',
+                            data: data.map(d => d.da),
+                            backgroundColor: 'rgba(99, 102, 241, 0.8)',
+                            borderColor: 'rgb(99, 102, 241)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false }
+                        },
+                        scales: {
+                            y: { beginAtZero: true, max: 100 }
+                        }
+                    }
+                });
+
+                // Backlinks Chart
+                const backlinksCtx = document.getElementById('backlinksChart').getContext('2d');
+                new Chart(backlinksCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: data.map(d => d.name.substring(0, 10) + '...'),
+                        datasets: [{
+                            label: 'Backlinks (Millions)',
+                            data: data.map(d => parseFloat(d.backlinks.replace('M', ''))),
+                            backgroundColor: 'rgba(16, 185, 129, 0.8)',
+                            borderColor: 'rgb(16, 185, 129)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false }
+                        }
+                    }
+                });
+
+                // Content Chart
+                const contentCtx = document.getElementById('contentChart').getContext('2d');
+                new Chart(contentCtx, {
+                    type: 'line',
+                    data: {
+                        labels: data.map((d, i) => '#' + (i+1)),
+                        datasets: [{
+                            label: 'Content Length',
+                            data: data.map(d => d.contentLen),
+                            borderColor: 'rgb(245, 158, 11)',
+                            backgroundColor: 'rgba(245, 158, 11, 0.1)',
+                            tension: 0.4,
+                            fill: true
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false }
+                        }
+                    }
+                });
+            }
+
+            // Handle analyze button click
+            analyzeBtn.addEventListener('click', function() {
+                const keyword = keywordInput.value.trim();
+                if (!keyword) {
+                    alert('Please enter a keyword to analyze');
+                    return;
+                }
+
+                // Show loading, hide results
+                loadingSpinner.style.display = 'block';
+                resultsSection.style.display = 'none';
+
+                // Simulate API call delay
+                setTimeout(() => {
+                    const sampleData = generateSampleData(keyword);
+                    
+                    // Update UI
+                    searchedKeyword.innerHTML = `<i class="fas fa-tag"></i> ${keyword} (${countrySelect.options[countrySelect.selectedIndex].text})`;
+                    
+                    updateSummaryCards(sampleData);
+                    populateTable(sampleData);
+                    generateKeywordCloud(sampleData);
+                    generateRecommendations(sampleData);
+                    
+                    // Initialize charts
+                    const oldCharts = document.querySelectorAll('canvas');
+                    oldCharts.forEach(canvas => {
+                        const parent = canvas.parentNode;
+                        parent.innerHTML = `<canvas id="${canvas.id}"></canvas>`;
+                    });
+                    initCharts(sampleData);
+                    
+                    // Hide loading, show results
+                    loadingSpinner.style.display = 'none';
+                    resultsSection.style.display = 'block';
+                }, 2000);
+            });
+
+            // Export functions
+            document.getElementById('exportCSV').addEventListener('click', function() {
+                const keyword = keywordInput.value.trim() || 'competitor-analysis';
+                const table = document.getElementById('resultTable');
+                const rows = table.querySelectorAll('tr');
+                let csv = [];
+                
+                rows.forEach(row => {
+                    const cols = row.querySelectorAll('td, th');
+                    const rowData = [];
+                    cols.forEach(col => {
+                        let text = col.innerText.replace(/,/g, '') // Remove commas
+                                               .replace(/\n/g, ' ') // Replace newlines
+                                               .trim();
+                        rowData.push(`"${text}"`);
+                    });
+                    csv.push(rowData.join(','));
+                });
+                
+                const csvContent = csv.join('\n');
+                const blob = new Blob([csvContent], { type: 'text/csv' });
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `serp-analysis-${keyword}-${new Date().toISOString().split('T')[0]}.csv`;
+                a.click();
+            });
+
+            document.getElementById('copyTable').addEventListener('click', function() {
+                const table = document.getElementById('resultTable');
+                const range = document.createRange();
+                range.selectNode(table);
+                window.getSelection().removeAllRanges();
+                window.getSelection().addRange(range);
+                document.execCommand('copy');
+                window.getSelection().removeAllRanges();
+                alert('Table copied to clipboard!');
+            });
+
+            // PDF export (simplified - would need pdf library for production)
+            document.getElementById('exportPDF').addEventListener('click', function() {
+                alert('PDF export will be available soon! For now, use CSV export or copy table.');
+            });
+
+            // Auto-run on page load for demo
+            setTimeout(() => {
+                analyzeBtn.click();
+            }, 500);
+        });
+    </script>
+</body>
+</html>
