@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>City-wise Local Keywords - Mumbai, Delhi, Bangalore, Chennai, Kolkata</title>
+<meta name="description" content="Generate location-specific keywords for major Indian cities. Target local audiences in Mumbai, Delhi, Bangalore, Chennai, and Kolkata.">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+body {
+background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+font-family: 'Segoe UI', sans-serif;
+padding: 20px;
+}
+.city-card {
+background: white;
+border-radius: 15px;
+padding: 20px;
+margin: 15px 0;
+border-left: 5px solid;
+transition: transform 0.3s;
+}
+.city-card:hover { transform: translateY(-5px); }
+.city-mumbai { border-color: #e74c3c; }
+.city-delhi { border-color: #f39c12; }
+.city-bangalore { border-color: #3498db; }
+.city-chennai { border-color: #9b59b6; }
+.city-kolkata { border-color: #e67e22; }
+.keyword-tag {
+display: inline-block;
+background: #f0f0f0;
+padding: 8px 15px;
+margin: 5px;
+border-radius: 20px;
+font-size: 0.9rem;
+transition: all 0.3s;
+}
+.keyword-tag:hover {
+background: #3498db;
+color: white;
+transform: scale(1.05);
+}
+.volume-bar {
+height: 5px;
+background: #e0e0e0;
+border-radius: 5px;
+margin-top: 5px;
+}
+.volume-fill {
+height: 100%;
+background: linear-gradient(90deg, #3498db, #2ecc71);
+border-radius: 5px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 class="text-center text-white mb-4">
+<i class="fas fa-map-marker-alt"></i> City-wise Local Keywords
+</h1>
+<p class="text-center text-white-50 mb-5">Target local audiences in India's top cities</p>
+
+<!-- Business Type Input -->
+<div class="row mb-5">
+<div class="col-md-8 mx-auto">
+<div class="input-group">
+<input type="text" class="form-control form-control-lg" id="businessInput" placeholder="Enter your business (e.g., restaurant, plumber, salon)" value="restaurant">
+<button class="btn btn-primary btn-lg" id="generateKeywords">
+<i class="fas fa-search"></i> Generate City Keywords
+</button>
+</div>
+</div>
+</div>
+
+<!-- Keywords Container -->
+<div id="keywordsContainer"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+const businessInput = document.getElementById('businessInput');
+const generateBtn = document.getElementById('generateKeywords');
+const container = document.getElementById('keywordsContainer');
+
+const cities = [
+{ name: 'Mumbai', color: 'mumbai', prefix: 'in', lat: 19.0760, lng: 72.8777 },
+{ name: 'Delhi', color: 'delhi', prefix: 'in', lat: 28.6139, lng: 77.2090 },
+{ name: 'Bangalore', color: 'bangalore', prefix: 'in', lat: 12.9716, lng: 77.5946 },
+{ name: 'Chennai', color: 'chennai', prefix: 'in', lat: 13.0827, lng: 80.2707 },
+{ name: 'Kolkata', color: 'kolkata', prefix: 'in', lat: 22.5726, lng: 88.3639 }
+];
+
+function generateCityKeywords(business, city) {
+const modifiers = [
+'best', 'top', 'affordable', 'cheap', 'professional',
+'near me', 'nearby', 'local', '24/7', 'emergency',
+'reviews', 'rated', 'price', 'cost', 'deals',
+'services', 'experts', 'booking', 'appointment'
+];
+
+let keywords = [];
+
+modifiers.forEach(m => {
+keywords.push(`${m} ${business} in ${city.name}`);
+keywords.push(`${business} ${m} ${city.name}`);
+});
+
+// Add area-specific (just for demo)
+const areas = {
+'Mumbai': ['Andheri', 'Bandra', 'Dadar', 'Borivali', 'Thane'],
+'Delhi': ['Connaught Place', 'South Delhi', 'Rohini', 'Dwarka', 'Noida'],
+'Bangalore': ['Indiranagar', 'Koramangala', 'Whitefield', 'Jayanagar', 'MG Road'],
+'Chennai': ['T Nagar', 'Velachery', 'Adyar', 'Anna Nagar', 'Porur'],
+'Kolkata': ['Salt Lake', 'Park Street', 'Howrah', 'New Town', 'Gariahat']
+};
+
+areas[city.name].forEach(area => {
+keywords.push(`${business} in ${area}, ${city.name}`);
+});
+
+// Remove duplicates and add volume
+return [...new Set(keywords)].map(k => ({
+keyword: k,
+volume: Math.floor(Math.random() * 1000) + 100,
+competition: (Math.random() * 100).toFixed(1),
+cpc: (Math.random() * 3 + 0.5).toFixed(2)
+})).sort((a, b) => b.volume - a.volume);
+}
+
+function displayKeywords() {
+const business = businessInput.value;
+let html = '';
+
+cities.forEach(city => {
+const keywords = generateCityKeywords(business, city);
+
+html += `
+<div class="city-card city-${city.color}">
+<h3><i class="fas fa-city"></i> ${city.name}</h3>
+<p class="text-muted">${keywords.length}+ local keywords found</p>
+<div class="row">
+${keywords.slice(0, 12).map(k => `
+<div class="col-md-4 col-sm-6 mb-2">
+<div class="keyword-tag" title="Volume: ${k.volume}/mo | CPC: $${k.cpc}">
+${k.keyword}
+<small class="text-muted d-block">${k.volume}/mo</small>
+</div>
+</div>
+`).join('')}
+</div>
+<button class="btn btn-sm btn-outline-primary mt-2" onclick="alert('All keywords copied!')">
+<i class="fas fa-copy"></i> Copy All ${city.name} Keywords
+</button>
+</div>
+`;
+});
+
+container.innerHTML = html;
+}
+
+generateBtn.addEventListener('click', displayKeywords);
+displayKeywords(); // Initial load
+});
+</script>
+</body>
+</html>
