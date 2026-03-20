@@ -8,655 +8,749 @@
         http://www.google.com/schemas/sitemap-image/1.1
         http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd">
     
-    <!-- ============ MAIN PAGES (High Priority) ============ -->
+    <!-- ==================== MAIN PAGES (High Priority) ==================== -->
     <url>
         <loc>https://freeseotoolhub.com/</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
         <image:image>
             <image:loc>https://freeseotoolhub.com/images/og-home-2026.jpg</image:loc>
-            <image:title>Free SEO Tool Hub - 100+ Free SEO Tools 2026</image:title>
+            <image:title>Free SEO Tool Hub - 105+ Free SEO Tools 2026</image:title>
         </image:image>
     </url>
     
     <url>
         <loc>https://freeseotoolhub.com/all-tools.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.95</priority>
-        <image:image>
-            <image:loc>https://freeseotoolhub.com/images/og-alltools-2026.jpg</image:loc>
-            <image:title>All Free SEO Tools - 100+ Tools 2026</image:title>
-        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://freeseotoolhub.com/tools.html</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.95</priority>
     </url>
     
     <url>
         <loc>https://freeseotoolhub.com/about.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     
     <url>
         <loc>https://freeseotoolhub.com/contact.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     
     <url>
-        <loc>https://freeseotoolhub.com/blog.html</loc>
-        <lastmod>2026-03-11</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
         <loc>https://freeseotoolhub.com/privacy.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
     </url>
     
+    <!-- ==================== 🛒 AMAZON SEO TOOLS ==================== -->
     <url>
-        <loc>https://freeseotoolhub.com/terms.html</loc>
-        <lastmod>2026-03-11</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.5</priority>
-    </url>
-
-    <!-- ============ 🛒 AMAZON SEO TOOLS (NEW) ============ -->
-    <url>
-        <loc>https://freeseotoolhub.com/amazon-seo-tool-free.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <loc>https://freeseotoolhub.com/amazon-seo-tool-api.html</loc>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.95</priority>
-        <image:image>
-            <image:loc>https://freeseotoolhub.com/images/amazon-seo-tool.jpg</image:loc>
-            <image:title>Amazon SEO Tool Free - Keyword Research & Rank Tracker</image:title>
-        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://freeseotoolhub.com/amazon-seo-tool-free.html</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.95</priority>
     </url>
     
     <url>
         <loc>https://freeseotoolhub.com/amazon-product-research.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     
     <url>
         <loc>https://freeseotoolhub.com/amazon-fba-calculator.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
-
-    <!-- ============ 🎤 VOICE SEARCH TOOLS (NEW) ============ -->
+    
+    <!-- ==================== 🎤 VOICE SEARCH TOOLS ==================== -->
     <url>
         <loc>https://freeseotoolhub.com/voice-search-optimizer.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     
     <url>
         <loc>https://freeseotoolhub.com/voice-question-generator.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     
     <url>
         <loc>https://freeseotoolhub.com/voice-search-keywords.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
-
-    <!-- ============ 🤖 AI & FUTURE TOOLS (NEW) ============ -->
+    
+    <!-- ==================== 🤖 AI & FUTURE TOOLS ==================== -->
     <url>
         <loc>https://freeseotoolhub.com/ai-visibility-tracker.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.95</priority>
     </url>
     
     <url>
         <loc>https://freeseotoolhub.com/ai-content-detector.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     
     <url>
         <loc>https://freeseotoolhub.com/geo-analytics.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    
+    <url>
+        <loc>https://freeseotoolhub.com/geo-optimizer.html</loc>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     
     <url>
         <loc>https://freeseotoolhub.com/ai-ideas.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
-
-    <!-- ============ 🇮🇳 INDIA SPECIAL TOOLS (High Priority) ============ -->
+    
+    <!-- ==================== 🇮🇳 INDIA SPECIAL TOOLS ==================== -->
     <url>
         <loc>https://freeseotoolhub.com/hinglish-converter.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.95</priority>
     </url>
     
     <url>
         <loc>https://freeseotoolhub.com/regional-keywords-india.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.95</priority>
     </url>
     
     <url>
         <loc>https://freeseotoolhub.com/festival-keyword-calendar.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     
     <url>
         <loc>https://freeseotoolhub.com/local-listing-checker.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     
     <url>
         <loc>https://freeseotoolhub.com/hinglish-volume-estimator.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     
     <url>
         <loc>https://freeseotoolhub.com/city-wise-keywords.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    
+    <url>
+        <loc>https://freeseotoolhub.com/indian-city-keywords.html</loc>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     
     <url>
         <loc>https://freeseotoolhub.com/aadhaar-mask.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     
     <url>
         <loc>https://freeseotoolhub.com/pan-validator.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     
     <url>
         <loc>https://freeseotoolhub.com/gst-calculator.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     
     <url>
         <loc>https://freeseotoolhub.com/upi-qr-generator.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     
     <url>
         <loc>https://freeseotoolhub.com/udyam-checker.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     
     <url>
         <loc>https://freeseotoolhub.com/bhashini-seo.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     
     <url>
         <loc>https://freeseotoolhub.com/multilingual-seo.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
-
-    <!-- ============ 🌍 GLOBAL SEO TOOLS ============ -->
+    
+    <url>
+        <loc>https://freeseotoolhub.com/advanced-pincode-finder.html</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    
+    <!-- ==================== 🌍 GLOBAL SEO TOOLS ==================== -->
     <url>
         <loc>https://freeseotoolhub.com/google-trends-visualizer.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.95</priority>
     </url>
     
     <url>
         <loc>https://freeseotoolhub.com/competitor-serp-analyzer.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     
     <url>
         <loc>https://freeseotoolhub.com/question-keyword-generator.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     
     <url>
         <loc>https://freeseotoolhub.com/content-gap-analyzer.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     
     <url>
         <loc>https://freeseotoolhub.com/serp-feature-checker.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    
+    <url>
+        <loc>https://freeseotoolhub.com/serp-features.html</loc>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     
     <url>
         <loc>https://freeseotoolhub.com/redirect-chain-checker.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     
     <url>
         <loc>https://freeseotoolhub.com/hreflang-generator.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     
     <url>
         <loc>https://freeseotoolhub.com/core-web-vitals-monitor.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     
     <url>
         <loc>https://freeseotoolhub.com/long-tail-keyword-generator.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     
     <url>
         <loc>https://freeseotoolhub.com/domain-authority-checker.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     
     <url>
         <loc>https://freeseotoolhub.com/domain-checker.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     
     <url>
         <loc>https://freeseotoolhub.com/backlink-checker.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     
     <url>
         <loc>https://freeseotoolhub.com/broken-link-checker.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     
     <url>
         <loc>https://freeseotoolhub.com/sitemap-generator.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     
     <url>
         <loc>https://freeseotoolhub.com/schema-markup-generator.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     
     <url>
+        <loc>https://freeseotoolhub.com/schema-structured-data-tester.html</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    
+    <url>
         <loc>https://freeseotoolhub.com/canonical-url-checker.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     
     <url>
         <loc>https://freeseotoolhub.com/ssl-checker.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     
     <url>
         <loc>https://freeseotoolhub.com/website-crawler.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
-
-    <!-- ============ 📊 KEYWORD & CONTENT TOOLS ============ -->
+    
+    <!-- ==================== 📊 KEYWORD & CONTENT TOOLS ==================== -->
     <url>
         <loc>https://freeseotoolhub.com/keyword-gap-analyzer.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     
     <url>
         <loc>https://freeseotoolhub.com/trending-keywords-finder.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
     </url>
     
     <url>
+        <loc>https://freeseotoolhub.com/trend-discovery.html</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.85</priority>
+    </url>
+    
+    <url>
         <loc>https://freeseotoolhub.com/keyword-difficulty-checker.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     
     <url>
         <loc>https://freeseotoolhub.com/keyword-density.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     
     <url>
         <loc>https://freeseotoolhub.com/meta-tag-generator.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     
     <url>
         <loc>https://freeseotoolhub.com/heading-headline-analyzer.html</loc>
-        <lastmod>2026-03-11</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-
-    <!-- ============ PERFORMANCE & ANALYTICS TOOLS ============ -->
-    <url>
-        <loc>https://freeseotoolhub.com/pagespeed-insights.html</loc>
-        <lastmod>2026-03-11</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    
-    <url>
-        <loc>https://freeseotoolhub.com/website-speed-test.html</loc>
-        <lastmod>2026-03-11</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    
-    <url>
-        <loc>https://freeseotoolhub.com/inp-monitor.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     
     <url>
-        <loc>https://freeseotoolhub.com/log-analyzer.html</loc>
-        <lastmod>2026-03-11</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-
-    <!-- ============ 📈 RANK TRACKING TOOLS ============ -->
-    <url>
-        <loc>https://freeseotoolhub.com/local-rank-tracker.html</loc>
-        <lastmod>2026-03-11</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    
-    <url>
-        <loc>https://freeseotoolhub.com/mobile-desktop-rank.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <loc>https://freeseotoolhub.com/heading-structure-validator.html</loc>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     
     <url>
-        <loc>https://freeseotoolhub.com/serp-volatility.html</loc>
-        <lastmod>2026-03-11</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    
-    <url>
-        <loc>https://freeseotoolhub.com/share-of-voice-calculator.html</loc>
-        <lastmod>2026-03-11</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    
-    <url>
-        <loc>https://freeseotoolhub.com/market-saturation-checker.html</loc>
-        <lastmod>2026-03-11</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-
-    <!-- ============ 📝 CONTENT CREATION TOOLS ============ -->
-    <url>
-        <loc>https://freeseotoolhub.com/paraphrasing-tool.html</loc>
-        <lastmod>2026-03-11</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    
-    <url>
-        <loc>https://freeseotoolhub.com/plagiarism-checker.html</loc>
-        <lastmod>2026-03-11</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    
-    <url>
-        <loc>https://freeseotoolhub.com/grammar-spell-checker.html</loc>
-        <lastmod>2026-03-11</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-
-    <!-- ============ QR CODE TOOLS ============ -->
-    <url>
-        <loc>https://freeseotoolhub.com/qr-code-generator.html</loc>
-        <lastmod>2026-03-11</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-
-    <!-- ============ 📱 SOCIAL MEDIA TOOLS ============ -->
-    <url>
-        <loc>https://freeseotoolhub.com/social-media-optimizer.html</loc>
-        <lastmod>2026-03-11</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    
-    <url>
-        <loc>https://freeseotoolhub.com/hashtag-generator.html</loc>
-        <lastmod>2026-03-11</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-
-    <!-- ============ 🛒 E-COMMERCE & BUSINESS TOOLS ============ -->
-    <url>
-        <loc>https://freeseotoolhub.com/ecommerce-seo-tool.html</loc>
-        <lastmod>2026-03-11</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    
-    <url>
-        <loc>https://freeseotoolhub.com/price-comparison-tool.html</loc>
-        <lastmod>2026-03-11</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    
-    <url>
-        <loc>https://freeseotoolhub.com/profit-margin-calculator.html</loc>
-        <lastmod>2026-03-11</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-
-    <!-- ============ 🗺️ LOCAL SEO TOOLS ============ -->
-    <url>
-        <loc>https://freeseotoolhub.com/local-seo-checklist.html</loc>
-        <lastmod>2026-03-11</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    
-    <url>
-        <loc>https://freeseotoolhub.com/local-competitor-monitor.html</loc>
-        <lastmod>2026-03-11</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-
-    <!-- ============ 🖼️ IMAGE TOOLS ============ -->
-    <url>
-        <loc>https://freeseotoolhub.com/image-compressor.html</loc>
-        <lastmod>2026-03-11</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    
-    <url>
-        <loc>https://freeseotoolhub.com/image-alt-generator.html</loc>
-        <lastmod>2026-03-11</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-
-    <!-- ============ ⚙️ UTILITY TOOLS ============ -->
-    <url>
-        <loc>https://freeseotoolhub.com/csv-sorter.html</loc>
-        <lastmod>2026-03-11</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://freeseotoolhub.com/url-encoder.html</loc>
-        <lastmod>2026-03-11</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://freeseotoolhub.com/responsive-tester.html</loc>
-        <lastmod>2026-03-11</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    
-    <url>
-        <loc>https://freeseotoolhub.com/readability-checker.html</loc>
-        <lastmod>2026-03-11</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    
-    <url>
-        <loc>https://freeseotoolhub.com/heading-validator.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <loc>https://freeseotoolhub.com/readability-score-checker.html</loc>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     
     <url>
         <loc>https://freeseotoolhub.com/internal-link-suggester.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     
+    <!-- ==================== 📈 RANK TRACKING TOOLS ==================== -->
     <url>
-        <loc>https://freeseotoolhub.com/canonical-validator.html</loc>
-        <lastmod>2026-03-11</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    
-    <url>
-        <loc>https://freeseotoolhub.com/schema-tester.html</loc>
-        <lastmod>2026-03-11</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-
-    <!-- ============ YOUTUBE SEO TOOLS ============ -->
-    <url>
-        <loc>https://freeseotoolhub.com/youtube-seo-tools.html</loc>
-        <lastmod>2026-03-11</lastmod>
+        <loc>https://freeseotoolhub.com/local-rank-tracker.html</loc>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
-
-    <!-- ============ CONFIGURATION FILES (Low Priority) ============ -->
+    
+    <url>
+        <loc>https://freeseotoolhub.com/mobile-desktop-rank.html</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    
+    <url>
+        <loc>https://freeseotoolhub.com/serp-volatility.html</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    
+    <url>
+        <loc>https://freeseotoolhub.com/share-of-voice-calculator.html</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    
+    <url>
+        <loc>https://freeseotoolhub.com/market-saturation-checker.html</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    
+    <url>
+        <loc>https://freeseotoolhub.com/gsc-visualizer.html</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    
+    <url>
+        <loc>https://freeseotoolhub.com/local-competitor-monitor.html</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    
+    <!-- ==================== ⚡ PERFORMANCE & ANALYTICS TOOLS ==================== -->
+    <url>
+        <loc>https://freeseotoolhub.com/pagespeed-insights.html</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://freeseotoolhub.com/website-speed-test.html</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://freeseotoolhub.com/inp-monitor.html</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    
+    <url>
+        <loc>https://freeseotoolhub.com/log-analyzer.html</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    
+    <url>
+        <loc>https://freeseotoolhub.com/google-site-verification.html</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://freeseotoolhub.com/yoast-analyzer.html</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    
+    <!-- ==================== 📝 CONTENT CREATION TOOLS ==================== -->
+    <url>
+        <loc>https://freeseotoolhub.com/paraphrasing-tool.html</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://freeseotoolhub.com/plagiarism-checker.html</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://freeseotoolhub.com/grammar-spell-checker.html</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- ==================== 🖼️ IMAGE & QR CODE TOOLS ==================== -->
+    <url>
+        <loc>https://freeseotoolhub.com/qr-code-generator.html</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://freeseotoolhub.com/image-compressor.html</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    
+    <url>
+        <loc>https://freeseotoolhub.com/image-alt-generator.html</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    
+    <!-- ==================== 📱 SOCIAL MEDIA TOOLS ==================== -->
+    <url>
+        <loc>https://freeseotoolhub.com/social-media-optimizer.html</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    
+    <url>
+        <loc>https://freeseotoolhub.com/hashtag-generator.html</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    
+    <!-- ==================== 🛒 E-COMMERCE & BUSINESS TOOLS ==================== -->
+    <url>
+        <loc>https://freeseotoolhub.com/ecommerce-seo-tool.html</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    
+    <url>
+        <loc>https://freeseotoolhub.com/price-comparison-tool.html</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    
+    <url>
+        <loc>https://freeseotoolhub.com/profit-margin-calculator.html</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    
+    <!-- ==================== 🗺️ LOCAL SEO TOOLS ==================== -->
+    <url>
+        <loc>https://freeseotoolhub.com/local-seo-checklist.html</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    
+    <url>
+        <loc>https://freeseotoolhub.com/local-competitor-monitor.html</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    
+    <!-- ==================== ⚙️ UTILITY TOOLS ==================== -->
+    <url>
+        <loc>https://freeseotoolhub.com/csv-sorter.html</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://freeseotoolhub.com/url-encoder.html</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://freeseotoolhub.com/responsive-tester.html</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    
+    <url>
+        <loc>https://freeseotoolhub.com/readability-score-checker.html</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    
+    <!-- ==================== 📺 YOUTUBE SEO TOOLS ==================== -->
+    <url>
+        <loc>https://freeseotoolhub.com/youtube-seo-tools.html</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- ==================== ✍️ WRITING TOOLS ==================== -->
+    <url>
+        <loc>https://freeseotoolhub.com/writing-tools.html</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    
+    <!-- ==================== 📄 CONFIGURATION FILES ==================== -->
     <url>
         <loc>https://freeseotoolhub.com/robots.txt</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.4</priority>
     </url>
     
     <url>
         <loc>https://freeseotoolhub.com/sitemap.xml</loc>
-        <lastmod>2026-03-11</lastmod>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.3</priority>
     </url>
-
-    <!-- ============ SITE MAP INDEX (if multiple sitemaps) ============ -->
-    <!-- <url>
-        <loc>https://freeseotoolhub.com/sitemap-index.xml</loc>
-        <lastmod>2026-03-11</lastmod>
+    
+    <!-- ==================== STATIC FILES (Low Priority) ==================== -->
+    <url>
+        <loc>https://freeseotoolhub.com/style.css</loc>
+        <lastmod>2026-03-20</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.3</priority>
-    </url> -->
+        <priority>0.2</priority>
+    </url>
+    
+    <url>
+        <loc>https://freeseotoolhub.com/script.js</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.2</priority>
+    </url>
+    
+    <url>
+        <loc>https://freeseotoolhub.com/navbar.js</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.2</priority>
+    </url>
+    
+    <url>
+        <loc>https://freeseotoolhub.com/utils_config.js</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.2</priority>
+    </url>
+    
+    <url>
+        <loc>https://freeseotoolhub.com/footer.html</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.2</priority>
+    </url>
 
-    <!-- ============ TOTAL URLS: 104+ ============ -->
-    <!-- Last Updated: 2026-03-11 -->
-    <!-- Total Active Tools: 100+ -->
+    <!-- ==================== TOTAL URLS: 118+ ==================== -->
+    <!-- Last Updated: 2026-03-20 -->
+    <!-- Total Active Tools: 105+ SEO Tools -->
+    <!-- Categories: Amazon SEO (4), Voice Search (3), AI Tools (5), India Special (15), 
+         Global SEO (20+), Keyword Tools (10+), Rank Tracking (7), Performance (6),
+         Content Tools (5), Social Media (2), E-commerce (3), Local SEO (3), Utility (5),
+         YouTube (1), Writing (1) -->
 
 </urlset>
