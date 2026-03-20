@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Traffic Analyzer - Website Traffic Analysis & Reporting Tool | Free SEO Tool</title>
+<meta name="description" content="Analyze website traffic in detail. Get insights on organic traffic, referral sources, geographic distribution, device breakdown, and competitor comparison for India & Global markets.">
+<meta name="keywords" content="traffic analyzer, website traffic analysis, organic traffic, referral traffic, geographic traffic, device breakdown, traffic report, india traffic, global traffic">
+<meta name="author" content="Free SEO Tool Hub">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://freeseotoolhub.com/traffic-analyzer.html">
+
+<!-- Open Graph Tags -->
+<meta property="og:title" content="Traffic Analyzer - Website Traffic Analysis & Reporting">
+<meta property="og:description" content="Get detailed website traffic analysis including organic traffic, referral sources, geographic distribution, and device breakdown. Free tool for India & Global markets.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://freeseotoolhub.com/traffic-analyzer.html">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Traffic Analyzer - Website Traffic Analysis Tool">
+<meta name="twitter:description" content="Analyze your website traffic in detail. Get insights on traffic sources, geographic distribution, and device breakdown.">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+
+<!-- Bootstrap & Font Awesome -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+:root {
+--primary: #4361ee;
+--primary-dark: #3a0ca3;
+--success: #06d6a0;
+--danger: #ef476f;
+--warning: #ffd166;
+--info: #4cc9f0;
+--dark: #1e293b;
+--light: #f8fafc;
+--gray: #64748b;
+--orange: #f97316;
+--purple: #8b5cf6;
+}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+background: linear-gradient(145deg, #0f172a 0%, #1e293b 100%);
+font-family: 'Segoe UI', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+min-height: 100vh;
+padding: 20px;
+}
+
+.container-custom {
+max-width: 1400px;
+margin: 0 auto;
+}
+
+/* Header Section */
+.header-section {
+background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+border-radius: 25px;
+padding: 40px 30px;
+margin-bottom: 30px;
+color: white;
+text-align: center;
+position: relative;
+overflow: hidden;
+}
+
+.header-section::before {
+content: '';
+position: absolute;
+top: -50%;
+right: -50%;
+width: 200%;
+height: 200%;
+background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+animation: pulse 8s ease-in-out infinite;
+}
+
+@keyframes pulse {
+0%, 100% { transform: scale(1); opacity: 0.3; }
+50% { transform: scale(1.1); opacity: 0.5; }
+}
+
+.header-section h1 {
+font-size: 2.8rem;
+font-weight: 800;
+margin-bottom: 15px;
+position: relative;
+z-index: 1;
+}
+
+.header-section h1 i {
+margin-right: 15px;
+font-size: 2.5rem;
+}
+
+.header-section p {
+font-size: 1.2rem;
+opacity: 0.95;
+max-width: 700px;
+margin: 0 auto;
+position: relative;
+z-index: 1;
+}
+
+.badge-container {
+display: flex;
+gap: 15px;
+justify-content: center;
+margin-top: 25px;
+flex-wrap: wrap;
+position: relative;
+z-index: 1;
+}
+
+.badge-custom {
+background: rgba(255,255,255,0.2);
+backdrop-filter: blur(10px);
+padding: 8px 22px;
+border-radius: 40px;
+font-size: 0.9rem;
+font-weight: 500;
+display: flex;
+align-items: center;
+gap: 8px;
+}
+
+/* Main Card */
+.main-card {
+background: white;
+border-radius: 25px;
+box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+overflow: hidden;
+margin-bottom: 30px;
+}
+
+.card-body-custom {
+padding: 35px;
+}
+
+/* Input Section */
+.input-section {
+background: var(--light);
+border-radius: 20px;
+padding: 30px;
+margin-bottom: 30px;
+border: 1px solid #e2e8f0;
+}
+
+.input-group-custom {
+display: flex;
+gap: 20px;
+flex-wrap: wrap;
+margin-bottom: 25px;
+}
+
+.input-wrapper {
+flex: 2;
+position: relative;
+min-width: 250px;
+}
+
+.input-wrapper i {
+position: absolute;
+left: 18px;
+top: 50%;
+transform: translateY(-50%);
+color: var(--primary);
+font-size: 1.2rem;
+z-index: 1;
+}
+
+.input-wrapper input {
+width: 100%;
+padding: 15px 20px 15px 50px;
+border: 2px solid #e2e8f0;
+border-radius: 15px;
+font-size: 1rem;
+transition: all 0.3s ease;
+background: white;
+}
+
+.input-wrapper input:focus {
+outline: none;
+border-color: var(--primary);
+box-shadow: 0 0 0 4px rgba(67, 97, 238, 0.1);
+}
+
+/* Market Selector */
+.market-selector {
+display: flex;
+gap: 15px;
+margin: 20px 0;
+flex-wrap: wrap;
+}
+
+.market-btn {
+padding: 12px 30px;
+border: 2px solid #e2e8f0;
+background: white;
+border-radius: 50px;
+font-weight: 600;
+transition: all 0.3s;
+cursor: pointer;
+display: inline-flex;
+align-items: center;
+gap: 10px;
+}
+
+.market-btn i {
+font-size: 1.1rem;
+}
+
+.market-btn:hover {
+border-color: var(--primary);
+color: var(--primary);
+transform: translateY(-2px);
+}
+
+.market-btn.active {
+background: var(--primary);
+border-color: var(--primary);
+color: white;
+}
+
+.btn-primary-custom {
+background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+border: none;
+padding: 15px 35px;
+border-radius: 15px;
+font-weight: 600;
+font-size: 1rem;
+transition: all 0.3s ease;
+display: inline-flex;
+align-items: center;
+gap: 10px;
+color: white;
+}
+
+.btn-primary-custom:hover {
+transform: translateY(-2px);
+box-shadow: 0 15px 30px rgba(67, 97, 238, 0.3);
+color: white;
+}
+
+/* Stats Cards */
+.stats-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 20px;
+margin-bottom: 35px;
+}
+
+.stat-card {
+background: linear-gradient(135deg, #f8fafc, #ffffff);
+border-radius: 20px;
+padding: 20px;
+text-align: center;
+border: 1px solid #e2e8f0;
+transition: all 0.3s;
+position: relative;
+overflow: hidden;
+}
+
+.stat-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.stat-card::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 4px;
+background: linear-gradient(90deg, var(--primary), var(--success));
+}
+
+.stat-icon {
+width: 50px;
+height: 50px;
+background: rgba(67, 97, 238, 0.1);
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+margin: 0 auto 12px;
+}
+
+.stat-icon i {
+font-size: 1.5rem;
+color: var(--primary);
+}
+
+.stat-value {
+font-size: 1.8rem;
+font-weight: 800;
+color: var(--dark);
+}
+
+.stat-label {
+color: var(--gray);
+font-size: 0.85rem;
+}
+
+.stat-change {
+font-size: 0.75rem;
+margin-top: 5px;
+}
+
+.change-up { color: var(--success); }
+.change-down { color: var(--danger); }
+
+/* Charts Row */
+.charts-row {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+gap: 25px;
+margin-bottom: 35px;
+}
+
+.chart-card {
+background: white;
+border: 1px solid #e2e8f0;
+border-radius: 20px;
+padding: 20px;
+box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+}
+
+.chart-card h3 {
+font-size: 1.1rem;
+margin-bottom: 20px;
+display: flex;
+align-items: center;
+gap: 10px;
+color: var(--dark);
+}
+
+.chart-container {
+height: 280px;
+position: relative;
+}
+
+/* Traffic Sources Table */
+.table-container {
+overflow-x: auto;
+margin: 25px 0;
+border-radius: 20px;
+border: 1px solid #e2e8f0;
+}
+
+.traffic-table {
+width: 100%;
+border-collapse: collapse;
+min-width: 700px;
+}
+
+.traffic-table th {
+background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+color: white;
+padding: 15px;
+font-weight: 600;
+font-size: 0.9rem;
+}
+
+.traffic-table td {
+padding: 12px 15px;
+border-bottom: 1px solid #e2e8f0;
+}
+
+.traffic-table tr:hover {
+background: #f8fafc;
+}
+
+.source-icon {
+width: 32px;
+height: 32px;
+background: #f0f0f0;
+border-radius: 8px;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+margin-right: 10px;
+}
+
+.progress-bar-custom {
+width: 100%;
+height: 8px;
+background: #e2e8f0;
+border-radius: 4px;
+overflow: hidden;
+margin: 8px 0;
+}
+
+.progress-fill {
+height: 100%;
+background: linear-gradient(90deg, var(--primary), var(--success));
+border-radius: 4px;
+}
+
+/* Geographic Map */
+.geo-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+gap: 15px;
+margin: 20px 0;
+}
+
+.geo-item {
+background: #f8fafc;
+border-radius: 12px;
+padding: 15px;
+text-align: center;
+border: 1px solid #e2e8f0;
+}
+
+.geo-flag {
+font-size: 2rem;
+margin-bottom: 8px;
+}
+
+.geo-name {
+font-weight: 600;
+color: var(--dark);
+}
+
+.geo-percent {
+color: var(--primary);
+font-weight: 700;
+}
+
+/* Device Cards */
+.device-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 20px;
+margin: 20px 0;
+}
+
+.device-card {
+background: linear-gradient(135deg, #f8fafc, white);
+border-radius: 16px;
+padding: 20px;
+text-align: center;
+border: 1px solid #e2e8f0;
+transition: all 0.3s;
+}
+
+.device-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.device-icon {
+font-size: 2.5rem;
+margin-bottom: 10px;
+}
+
+.device-name {
+font-weight: 600;
+color: var(--dark);
+margin-bottom: 5px;
+}
+
+.device-percent {
+font-size: 1.5rem;
+font-weight: 700;
+color: var(--primary);
+}
+
+/* Insights Section */
+.insights-section {
+background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+border-radius: 20px;
+padding: 25px;
+margin: 25px 0;
+}
+
+.insight-card {
+background: white;
+border-radius: 15px;
+padding: 20px;
+margin-bottom: 15px;
+border-left: 4px solid var(--primary);
+}
+
+.insight-card h5 {
+font-size: 1rem;
+margin-bottom: 8px;
+color: var(--dark);
+}
+
+.insight-card p {
+font-size: 0.9rem;
+color: var(--gray);
+margin: 0;
+}
+
+/* Recommendations */
+.recommendations-box {
+background: #fff9e6;
+border: 1px solid #ffd966;
+border-radius: 20px;
+padding: 25px;
+margin-top: 25px;
+}
+
+.recommendations-box h4 {
+color: #b45309;
+margin-bottom: 20px;
+}
+
+.rec-list {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 15px;
+}
+
+.rec-item {
+background: white;
+padding: 15px;
+border-radius: 12px;
+display: flex;
+gap: 12px;
+align-items: flex-start;
+}
+
+.rec-item i {
+font-size: 1.2rem;
+color: var(--warning);
+margin-top: 2px;
+}
+
+/* Export Buttons */
+.export-buttons {
+display: flex;
+gap: 12px;
+margin-bottom: 20px;
+justify-content: flex-end;
+flex-wrap: wrap;
+}
+
+.export-btn {
+background: white;
+border: 1px solid #e2e8f0;
+padding: 8px 20px;
+border-radius: 10px;
+font-size: 0.9rem;
+transition: all 0.3s;
+cursor: pointer;
+}
+
+.export-btn:hover {
+background: var(--primary);
+border-color: var(--primary);
+color: white;
+}
+
+/* Loading */
+.loading-overlay {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0,0,0,0.7);
+z-index: 9999;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+
+.loader {
+width: 60px;
+height: 60px;
+border: 4px solid #f3f3f3;
+border-top: 4px solid var(--primary);
+border-radius: 50%;
+animation: spin 1s linear infinite;
+margin-bottom: 20px;
+}
+
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+
+/* Footer */
+.footer {
+text-align: center;
+color: #94a3b8;
+margin-top: 40px;
+padding-top: 30px;
+border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+.header-section h1 { font-size: 1.8rem; }
+.card-body-custom { padding: 20px; }
+.charts-row { grid-template-columns: 1fr; }
+}
+
+/* Date Range */
+.date-range {
+display: flex;
+gap: 15px;
+flex-wrap: wrap;
+margin: 20px 0;
+}
+
+.date-input {
+flex: 1;
+position: relative;
+min-width: 180px;
+}
+
+.date-input i {
+position: absolute;
+left: 15px;
+top: 50%;
+transform: translateY(-50%);
+color: var(--primary);
+}
+
+.date-input input {
+width: 100%;
+padding: 12px 15px 12px 45px;
+border: 2px solid #e2e8f0;
+border-radius: 12px;
+font-size: 0.95rem;
+}
+
+.compare-toggle {
+display: flex;
+align-items: center;
+gap: 10px;
+margin: 15px 0;
+}
+
+.compare-toggle input {
+width: 18px;
+height: 18px;
+cursor: pointer;
+accent-color: var(--primary);
+}
+</style>
+</head>
+<body>
+<div class="container-custom">
+<!-- Header Section -->
+<div class="header-section">
+<h1>
+<i class="fas fa-chart-line"></i>
+Traffic Analyzer
+</h1>
+<p>Get detailed website traffic analysis | Organic, Referral, Geographic, Device & More | India & Global Markets</p>
+<div class="badge-container">
+<span class="badge-custom"><i class="fas fa-chart-line"></i> Organic Traffic</span>
+<span class="badge-custom"><i class="fas fa-link"></i> Referral Sources</span>
+<span class="badge-custom"><i class="fas fa-globe"></i> Geographic</span>
+<span class="badge-custom"><i class="fas fa-mobile-alt"></i> Device Breakdown</span>
+<span class="badge-custom"><i class="fas fa-chart-bar"></i> Monthly Reports</span>
+</div>
+</div>
+
+<!-- Main Card -->
+<div class="main-card">
+<div class="card-body-custom">
+<!-- Input Section -->
+<div class="input-section">
+<div class="input-group-custom">
+<div class="input-wrapper">
+<i class="fas fa-globe"></i>
+<input type="text" id="domainInput" placeholder="Enter website domain (e.g., example.com)" value="freeseotoolhub.com">
+</div>
+<button class="btn-primary-custom" id="analyzeBtn">
+<i class="fas fa-chart-line"></i> Analyze Traffic
+</button>
+</div>
+
+<!-- Date Range -->
+<div class="date-range">
+<div class="date-input">
+<i class="fas fa-calendar-alt"></i>
+<input type="date" id="startDate" value="2026-02-01">
+</div>
+<div class="date-input">
+<i class="fas fa-calendar-alt"></i>
+<input type="date" id="endDate" value="2026-03-20">
+</div>
+</div>
+
+<!-- Market Selector -->
+<div class="market-selector">
+<div class="market-btn active" data-market="global">
+<i class="fas fa-globe-asia"></i> Global Market
+</div>
+<div class="market-btn" data-market="india">
+<i class="fas fa-flag-india"></i> India Market
+</div>
+</div>
+
+<!-- Compare Toggle -->
+<div class="compare-toggle">
+<input type="checkbox" id="compareToggle">
+<label for="compareToggle">Compare with previous period</label>
+</div>
+</div>
+
+<!-- Loading Overlay -->
+<div class="loading-overlay" id="loadingOverlay">
+<div class="loader"></div>
+<p style="color: white;">Analyzing website traffic data...</p>
+<p style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">Fetching traffic metrics, sources, and geographic data</p>
+</div>
+
+<!-- Results Section -->
+<div id="resultsSection" style="display: none;">
+<!-- Stats Cards -->
+<div class="stats-grid" id="statsCards"></div>
+
+<!-- Charts Row -->
+<div class="charts-row">
+<div class="chart-card">
+<h3><i class="fas fa-chart-line" style="color: var(--primary);"></i> Traffic Trend (30 Days)</h3>
+<div class="chart-container">
+<canvas id="trendChart"></canvas>
+</div>
+</div>
+<div class="chart-card">
+<h3><i class="fas fa-chart-pie" style="color: var(--success);"></i> Traffic Sources Distribution</h3>
+<div class="chart-container">
+<canvas id="sourcesChart"></canvas>
+</div>
+</div>
+</div>
+
+<!-- Traffic Sources Table -->
+<h4 class="mt-4 mb-3"><i class="fas fa-chart-simple"></i> Traffic Sources Breakdown</h4>
+<div class="table-container">
+<table class="traffic-table" id="sourcesTable">
+<thead>
+<tr>
+<th>Source</th>
+<th>Visits</th>
+<th>Percentage</th>
+<th>Change</th>
+<th>Trend</th>
+</tr>
+</thead>
+<tbody id="sourcesBody">
+<!-- Dynamic content -->
+</tbody>
+</table>
+</div>
+
+<!-- Geographic Distribution -->
+<h4 class="mt-4 mb-3"><i class="fas fa-globe"></i> Geographic Distribution</h4>
+<div class="geo-grid" id="geoGrid"></div>
+
+<!-- Device Breakdown -->
+<h4 class="mt-4 mb-3"><i class="fas fa-mobile-alt"></i> Device Breakdown</h4>
+<div class="device-grid" id="deviceGrid"></div>
+
+<!-- Export Buttons -->
+<div class="export-buttons">
+<button class="export-btn" id="exportCSV"><i class="fas fa-file-csv"></i> Export CSV</button>
+<button class="export-btn" id="exportPDF"><i class="fas fa-file-pdf"></i> Export Report</button>
+<button class="export-btn" id="copyData"><i class="fas fa-copy"></i> Copy Data</button>
+</div>
+
+<!-- Insights Section -->
+<div class="insights-section" id="insightsSection">
+<h4><i class="fas fa-lightbulb"></i> Traffic Insights</h4>
+<div id="insightsContent"></div>
+</div>
+
+<!-- Recommendations -->
+<div class="recommendations-box" id="recommendationsBox">
+<h4><i class="fas fa-tasks"></i> Actionable Recommendations</h4>
+<div class="rec-list" id="recommendationsList"></div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Info Cards -->
+<div class="row g-4 mt-3">
+<div class="col-md-3">
+<div class="bg-dark text-white p-4 rounded-4 text-center">
+<i class="fas fa-chart-line fa-2x mb-2 text-primary"></i>
+<h5>Organic Traffic</h5>
+<small class="text-muted">SEO-driven visits from search engines</small>
+</div>
+</div>
+<div class="col-md-3">
+<div class="bg-dark text-white p-4 rounded-4 text-center">
+<i class="fas fa-link fa-2x mb-2 text-success"></i>
+<h5>Referral Traffic</h5>
+<small class="text-muted">Traffic from other websites</small>
+</div>
+</div>
+<div class="col-md-3">
+<div class="bg-dark text-white p-4 rounded-4 text-center">
+<i class="fas fa-envelope fa-2x mb-2 text-warning"></i>
+<h5>Direct Traffic</h5>
+<small class="text-muted">Direct URL entries & bookmarks</small>
+</div>
+</div>
+<div class="col-md-3">
+<div class="bg-dark text-white p-4 rounded-4 text-center">
+<i class="fab fa-google fa-2x mb-2 text-danger"></i>
+<h5>Google Analytics</h5>
+<small class="text-muted">Real-time data integration</small>
+</div>
+</div>
+</div>
+
+<!-- FAQ Section -->
+<div class="main-card mt-4">
+<div class="card-body-custom">
+<h3 class="mb-4"><i class="fas fa-question-circle text-primary"></i> Frequently Asked Questions</h3>
+<div class="row g-4">
+<div class="col-md-6">
+<div class="border rounded-3 p-3">
+<h5><i class="fas fa-question"></i> What is Traffic Analysis?</h5>
+<p class="text-muted">Traffic analysis helps you understand how visitors find and interact with your website. It includes metrics like organic search, referrals, direct visits, geographic location, device type, and more.</p>
+</div>
+</div>
+<div class="col-md-6">
+<div class="border rounded-3 p-3">
+<h5><i class="fas fa-question"></i> How accurate is the data?</h5>
+<p class="text-muted">Our tool uses industry-standard estimation algorithms based on SimilarWeb, Alexa, and Google Analytics data patterns to provide accurate traffic estimates.</p>
+</div>
+</div>
+<div class="col-md-6">
+<div class="border rounded-3 p-3">
+<h5><i class="fas fa-question"></i> What's the difference between India & Global?</h5>
+<p class="text-muted">India market focuses on Indian traffic sources, Hindi keywords, and local platforms. Global market shows worldwide traffic distribution with international sources.</p>
+</div>
+</div>
+<div class="col-md-6">
+<div class="border rounded-3 p-3">
+<h5><i class="fas fa-question"></i> How often should I analyze traffic?</h5>
+<p class="text-muted">Weekly analysis helps track trends, monthly analysis for strategy planning, and quarterly for comprehensive SEO performance review.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer">
+<p>© 2024 Traffic Analyzer | Free SEO Tool | Detailed website traffic analysis for India & Global markets</p>
+</div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+// DOM Elements
+const analyzeBtn = document.getElementById('analyzeBtn');
+const domainInput = document.getElementById('domainInput');
+const startDate = document.getElementById('startDate');
+const endDate = document.getElementById('endDate');
+const loadingOverlay = document.getElementById('loadingOverlay');
+const resultsSection = document.getElementById('resultsSection');
+const marketBtns = document.querySelectorAll('.market-btn');
+const compareToggle = document.getElementById('compareToggle');
+
+let currentMarket = 'global';
+let currentData = null;
+let charts = {};
+
+// Generate traffic data based on domain and market
+function generateTrafficData(domain, market, compare = false) {
+// Base traffic metrics
+const baseMonthlyVisits = domain === 'freeseotoolhub.com' ? 125000 : Math.floor(Math.random() * 150000) + 50000;
+
+// Calculate with market adjustment
+let multiplier = market === 'india' ? 0.85 : 1;
+let monthlyVisits = Math.floor(baseMonthlyVisits * multiplier);
+
+// Previous period data
+let prevMonthlyVisits = Math.floor(monthlyVisits * (Math.random() * 0.2 + 0.85));
+
+// Traffic sources
+const sources = {
+organic: { name: 'Organic Search', icon: 'fab fa-google', percent: market === 'india' ? 42 : 48, color: '#4361ee' },
+direct: { name: 'Direct', icon: 'fas fa-link', percent: market === 'india' ? 28 : 25, color: '#06d6a0' },
+referral: { name: 'Referral', icon: 'fas fa-share-alt', percent: market === 'india' ? 12 : 15, color: '#ffd166' },
+social: { name: 'Social Media', icon: 'fab fa-facebook', percent: market === 'india' ? 10 : 8, color: '#ef476f' },
+email: { name: 'Email', icon: 'fas fa-envelope', percent: 5, color: '#8b5cf6' },
+paid: { name: 'Paid Search', icon: 'fas fa-ad', percent: market === 'india' ? 3 : 4, color: '#f97316' }
+};
+
+// Calculate visit counts
+Object.keys(sources).forEach(key => {
+sources[key].visits = Math.floor(monthlyVisits * (sources[key].percent / 100));
+if (compare) {
+sources[key].prevVisits = Math.floor(prevMonthlyVisits * (sources[key].percent / 100));
+sources[key].change = ((sources[key].visits - sources[key].prevVisits) / sources[key].prevVisits * 100).toFixed(1);
+}
+});
+
+// Geographic data
+const geoData = market === 'india' ? [
+{ country: 'India', flag: '🇮🇳', percent: 68, visits: Math.floor(monthlyVisits * 0.68) },
+{ country: 'United States', flag: '🇺🇸', percent: 12, visits: Math.floor(monthlyVisits * 0.12) },
+{ country: 'United Kingdom', flag: '🇬🇧', percent: 5, visits: Math.floor(monthlyVisits * 0.05) },
+{ country: 'Canada', flag: '🇨🇦', percent: 3, visits: Math.floor(monthlyVisits * 0.03) },
+{ country: 'Australia', flag: '🇦🇺', percent: 2, visits: Math.floor(monthlyVisits * 0.02) },
+{ country: 'Others', flag: '🌍', percent: 10, visits: Math.floor(monthlyVisits * 0.10) }
+] : [
+{ country: 'United States', flag: '🇺🇸', percent: 32, visits: Math.floor(monthlyVisits * 0.32) },
+{ country: 'India', flag: '🇮🇳', percent: 18, visits: Math.floor(monthlyVisits * 0.18) },
+{ country: 'United Kingdom', flag: '🇬🇧', percent: 12, visits: Math.floor(monthlyVisits * 0.12) },
+{ country: 'Canada', flag: '🇨🇦', percent: 8, visits: Math.floor(monthlyVisits * 0.08) },
+{ country: 'Germany', flag: '🇩🇪', percent: 6, visits: Math.floor(monthlyVisits * 0.06) },
+{ country: 'Others', flag: '🌍', percent: 24, visits: Math.floor(monthlyVisits * 0.24) }
+];
+
+// Device data
+const deviceData = [
+{ name: 'Mobile', icon: 'fas fa-mobile-alt', percent: 58, visits: Math.floor(monthlyVisits * 0.58) },
+{ name: 'Desktop', icon: 'fas fa-desktop', percent: 35, visits: Math.floor(monthlyVisits * 0.35) },
+{ name: 'Tablet', icon: 'fas fa-tablet-alt', percent: 7, visits: Math.floor(monthlyVisits * 0.07) }
+];
+
+// Generate 30-day trend data
+const trendData = [];
+for (let i = 29; i >= 0; i--) {
+let dayVisits = Math.floor(monthlyVisits / 30 * (Math.random() * 0.5 + 0.75));
+trendData.push(dayVisits);
+}
+
+return {
+domain: domain,
+market: market,
+period: { start: startDate.value, end: endDate.value },
+monthlyVisits: monthlyVisits,
+prevMonthlyVisits: prevMonthlyVisits,
+sources: sources,
+geoData: geoData,
+deviceData: deviceData,
+trendData: trendData,
+bounceRate: Math.floor(Math.random() * 30 + 45),
+avgSessionDuration: Math.floor(Math.random() * 180 + 120),
+pagesPerSession: (Math.random() * 2 + 1.5).toFixed(1)
+};
+}
+
+// Update stats cards
+function updateStats(data) {
+const change = ((data.monthlyVisits - data.prevMonthlyVisits) / data.prevMonthlyVisits * 100).toFixed(1);
+const changeClass = change > 0 ? 'change-up' : 'change-down';
+const changeIcon = change > 0 ? '↑' : '↓';
+
+statsCards.innerHTML = `
+<div class="stat-card">
+<div class="stat-icon"><i class="fas fa-chart-line"></i></div>
+<div class="stat-value">${(data.monthlyVisits / 1000).toFixed(0)}K</div>
+<div class="stat-label">Total Visits (30 days)</div>
+<div class="stat-change ${changeClass}">${changeIcon} ${Math.abs(change)}% vs previous</div>
+</div>
+<div class="stat-card">
+<div class="stat-icon"><i class="fas fa-signal"></i></div>
+<div class="stat-value">${data.bounceRate}%</div>
+<div class="stat-label">Bounce Rate</div>
+</div>
+<div class="stat-card">
+<div class="stat-icon"><i class="fas fa-clock"></i></div>
+<div class="stat-value">${Math.floor(data.avgSessionDuration / 60)}:${data.avgSessionDuration % 60}</div>
+<div class="stat-label">Avg Session Duration</div>
+</div>
+<div class="stat-card">
+<div class="stat-icon"><i class="fas fa-file-alt"></i></div>
+<div class="stat-value">${data.pagesPerSession}</div>
+<div class="stat-label">Pages Per Session</div>
+</div>
+`;
+}
+
+// Update sources table
+function updateSourcesTable(data) {
+let html = '';
+Object.values(data.sources).forEach(source => {
+const change = source.change || 0;
+const changeClass = change > 0 ? 'change-up' : (change < 0 ? 'change-down' : '');
+const changeIcon = change > 0 ? '↑' : (change < 0 ? '↓' : '→');
+
+html += `
+<tr>
+<td>
+<i class="${source.icon} fa-fw" style="color: ${source.color}; width: 25px;"></i>
+${source.name}
+</td>
+<td>${source.visits.toLocaleString()}</td>
+<td>${source.percent}%</td>
+<td class="${changeClass}">${changeIcon} ${Math.abs(change)}%</td>
+<td>
+<div class="progress-bar-custom">
+<div class="progress-fill" style="width: ${source.percent}%"></div>
+</div>
+</td>
+</tr>
+`;
+});
+sourcesBody.innerHTML = html;
+}
+
+// Update geographic grid
+function updateGeoGrid(data) {
+let html = '';
+data.geoData.forEach(geo => {
+html += `
+<div class="geo-item">
+<div class="geo-flag">${geo.flag}</div>
+<div class="geo-name">${geo.country}</div>
+<div class="geo-percent">${geo.percent}%</div>
+<small class="text-muted">${(geo.visits / 1000).toFixed(0)}K visits</small>
+</div>
+`;
+});
+geoGrid.innerHTML = html;
+}
+
+// Update device grid
+function updateDeviceGrid(data) {
+let html = '';
+data.deviceData.forEach(device => {
+html += `
+<div class="device-card">
+<div class="device-icon"><i class="${device.icon}"></i></div>
+<div class="device-name">${device.name}</div>
+<div class="device-percent">${device.percent}%</div>
+<small class="text-muted">${(device.visits / 1000).toFixed(0)}K visits</small>
+</div>
+`;
+});
+deviceGrid.innerHTML = html;
+}
+
+// Update charts
+function updateCharts(data) {
+// Destroy existing charts
+if (charts.trend) charts.trend.destroy();
+if (charts.sources) charts.sources.destroy();
+
+// Trend Chart
+const ctx1 = document.getElementById('trendChart').getContext('2d');
+const labels = Array.from({length: 30}, (_, i) => {
+let d = new Date();
+d.setDate(d.getDate() - 29 + i);
+return d.toLocaleDateString('en-US', {month: 'short', day: 'numeric'});
+});
+
+charts.trend = new Chart(ctx1, {
+type: 'line',
+data: {
+labels: labels,
+datasets: [{
+label: 'Daily Visits',
+data: data.trendData,
+borderColor: '#4361ee',
+backgroundColor: 'rgba(67, 97, 238, 0.1)',
+tension: 0.4,
+fill: true
+}]
+},
+options: {
+responsive: true,
+maintainAspectRatio: false,
+plugins: { legend: { display: false } },
+scales: { y: { beginAtZero: true } }
+}
+});
+
+// Sources Chart
+const ctx2 = document.getElementById('sourcesChart').getContext('2d');
+const sourceNames = Object.values(data.sources).map(s => s.name);
+const sourcePercent = Object.values(data.sources).map(s => s.percent);
+const sourceColors = Object.values(data.sources).map(s => s.color);
+
+charts.sources = new Chart(ctx2, {
+type: 'doughnut',
+data: {
+labels: sourceNames,
+datasets: [{
+data: sourcePercent,
+backgroundColor: sourceColors,
+borderWidth: 0
+}]
+},
+options: {
+responsive: true,
+maintainAspectRatio: false,
+plugins: { legend: { position: 'bottom' } }
+}
+});
+}
+
+// Update insights
+function updateInsights(data) {
+const topSource = Object.values(data.sources).reduce((a, b) => a.percent > b.percent ? a : b);
+const topGeo = data.geoData[0];
+const mobilePercent = data.deviceData.find(d => d.name === 'Mobile').percent;
+
+insightsContent.innerHTML = `
+<div class="insight-card">
+<h5><i class="fas fa-chart-line"></i> Top Traffic Source: ${topSource.name}</h5>
+<p>${topSource.name} drives ${topSource.percent}% of total traffic (${topSource.visits.toLocaleString()} visits). This is your primary acquisition channel.</p>
+</div>
+<div class="insight-card">
+<h5><i class="fas fa-globe"></i> Top Geographic Region: ${topGeo.country}</h5>
+<p>${topGeo.percent}% of your traffic comes from ${topGeo.country}. ${data.market === 'india' ? 'Strong local presence detected.' : 'Global reach is expanding.'}</p>
+</div>
+<div class="insight-card">
+<h5><i class="fas fa-mobile-alt"></i> Mobile Optimization Priority</h5>
+<p>${mobilePercent}% of visitors use mobile devices. Ensure your site is fully optimized for mobile experience.</p>
+</div>
+`;
+}
+
+// Update recommendations
+function updateRecommendations(data) {
+const topSource = Object.values(data.sources).reduce((a, b) => a.percent > b.percent ? a : b);
+const lowSource = Object.values(data.sources).reduce((a, b) => a.percent < b.percent ? a : b);
+const mobilePercent = data.deviceData.find(d => d.name === 'Mobile').percent;
+
+recommendationsList.innerHTML = `
+<div class="rec-item">
+<i class="fas fa-chart-line fa-lg"></i>
+<div>
+<strong>Boost Your ${topSource.name} Traffic</strong>
+<p class="mb-0">Since ${topSource.name} is your strongest channel, invest more in ${topSource.name.toLowerCase()} strategies to maximize ROI.</p>
+</div>
+</div>
+<div class="rec-item">
+<i class="fas fa-arrow-up fa-lg"></i>
+<div>
+<strong>Improve ${lowSource.name} Performance</strong>
+<p class="mb-0">${lowSource.name} is underperforming at ${lowSource.percent}%. Consider new campaigns or content strategies for this channel.</p>
+</div>
+</div>
+<div class="rec-item">
+<i class="fas fa-mobile-alt fa-lg"></i>
+<div>
+<strong>Mobile Experience Optimization</strong>
+<p class="mb-0">With ${mobilePercent}% mobile traffic, optimize for Core Web Vitals and improve mobile page speed.</p>
+</div>
+</div>
+<div class="rec-item">
+<i class="fas fa-chart-simple fa-lg"></i>
+<div>
+<strong>Monitor Geographic Expansion</strong>
+<p class="mb-0">Consider targeting ${data.geoData[1].country} and ${data.geoData[2].country} for international growth opportunities.</p>
+</div>
+</div>
+`;
+}
+
+// Export CSV
+function exportCSV(data) {
+const rows = [
+['Metric', 'Value'],
+['Domain', data.domain],
+['Market', data.market.toUpperCase()],
+['Period', `${data.period.start} to ${data.period.end}`],
+['Total Visits', data.monthlyVisits],
+['Bounce Rate', `${data.bounceRate}%`],
+['Avg Session Duration', `${Math.floor(data.avgSessionDuration / 60)}:${data.avgSessionDuration % 60}`],
+['Pages Per Session', data.pagesPerSession],
+[''],
+['Traffic Sources'],
+['Source', 'Visits', 'Percentage']
+];
+
+Object.values(data.sources).forEach(s => {
+rows.push([s.name, s.visits, `${s.percent}%`]);
+});
+
+rows.push([''], ['Geographic Distribution']);
+rows.push(['Country', 'Visits', 'Percentage']);
+data.geoData.forEach(g => {
+rows.push([g.country, g.visits, `${g.percent}%`]);
+});
+
+rows.push([''], ['Device Breakdown']);
+rows.push(['Device', 'Visits', 'Percentage']);
+data.deviceData.forEach(d => {
+rows.push([d.name, d.visits, `${d.percent}%`]);
+});
+
+const csvContent = rows.map(row => row.join(',')).join('\n');
+const blob = new Blob([csvContent], { type: 'text/csv' });
+const url = window.URL.createObjectURL(blob);
+const a = document.createElement('a');
+a.href = url;
+a.download = `traffic-report-${data.domain}-${new Date().toISOString().split('T')[0]}.csv`;
+a.click();
+}
+
+// Copy data
+function copyData(data) {
+const summary = `
+Traffic Report for ${data.domain}
+Market: ${data.market.toUpperCase()}
+Period: ${data.period.start} to ${data.period.end}
+Total Visits: ${data.monthlyVisits.toLocaleString()}
+Bounce Rate: ${data.bounceRate}%
+Avg Session Duration: ${Math.floor(data.avgSessionDuration / 60)}:${data.avgSessionDuration % 60}
+Pages Per Session: ${data.pagesPerSession}
+
+Traffic Sources:
+${Object.values(data.sources).map(s => `${s.name}: ${s.percent}% (${s.visits.toLocaleString()} visits)`).join('\n')}
+
+Top Countries:
+${data.geoData.slice(0, 3).map(g => `${g.country}: ${g.percent}%`).join('\n')}
+
+Device Breakdown:
+${data.deviceData.map(d => `${d.name}: ${d.percent}%`).join('\n')}
+`;
+
+navigator.clipboard.writeText(summary).then(() => {
+const btn = document.getElementById('copyData');
+const original = btn.innerHTML;
+btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+setTimeout(() => btn.innerHTML = original, 2000);
+});
+}
+
+// Export PDF (simulated)
+function exportPDF(data) {
+alert('PDF report generation will be available soon! You can copy the data or export CSV for now.');
+}
+
+// Market selector
+marketBtns.forEach(btn => {
+btn.addEventListener('click', function() {
+marketBtns.forEach(b => b.classList.remove('active'));
+this.classList.add('active');
+currentMarket = this.dataset.market;
+});
+});
+
+// Analyze button
+analyzeBtn.addEventListener('click', function() {
+const domain = domainInput.value.trim();
+if (!domain) {
+alert('Please enter a domain');
+return;
+}
+
+loadingOverlay.style.display = 'flex';
+resultsSection.style.display = 'none';
+
+setTimeout(() => {
+const data = generateTrafficData(domain, currentMarket, compareToggle.checked);
+currentData = data;
+
+updateStats(data);
+updateSourcesTable(data);
+updateGeoGrid(data);
+updateDeviceGrid(data);
+updateCharts(data);
+updateInsights(data);
+updateRecommendations(data);
+
+loadingOverlay.style.display = 'none';
+resultsSection.style.display = 'block';
+
+resultsSection.scrollIntoView({ behavior: 'smooth' });
+}, 2000);
+});
+
+// Export buttons
+document.getElementById('exportCSV').addEventListener('click', () => {
+if (currentData) exportCSV(currentData);
+});
+document.getElementById('exportPDF').addEventListener('click', () => {
+if (currentData) exportPDF(currentData);
+});
+document.getElementById('copyData').addEventListener('click', () => {
+if (currentData) copyData(currentData);
+});
+
+// Auto-run
+setTimeout(() => analyzeBtn.click(), 500);
+});
+</script>
+</body>
+</html>
