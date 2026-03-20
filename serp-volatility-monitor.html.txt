@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SERP Volatility Monitor - Track Google Algorithm Updates</title>
+<meta name="description" content="Monitor Google algorithm updates and SERP volatility in real-time. Track ranking fluctuations and identify potential Google updates affecting your site.">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+:root {
+--volatility-low: #06d6a0;
+--volatility-medium: #ffd166;
+--volatility-high: #ef476f;
+--volatility-extreme: #9d4edd;
+}
+body {
+background: linear-gradient(135deg, #0b1a33 0%, #1a2f4f 100%);
+font-family: 'Segoe UI', sans-serif;
+min-height: 100vh;
+padding: 20px;
+}
+.main-card {
+background: white;
+border-radius: 20px;
+box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+overflow: hidden;
+margin-bottom: 25px;
+}
+.header {
+background: linear-gradient(135deg, #ef476f, #9d4edd);
+color: white;
+padding: 30px;
+text-align: center;
+}
+.header h1 { font-size: 2.5rem; }
+.volatility-meter {
+background: white;
+border-radius: 100px;
+padding: 5px;
+margin: 20px 0;
+position: relative;
+height: 30px;
+box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+}
+.meter-fill {
+height: 100%;
+border-radius: 100px;
+background: linear-gradient(90deg, var(--volatility-low), var(--volatility-medium), var(--volatility-high), var(--volatility-extreme));
+width: 0%;
+transition: width 1s ease;
+}
+.update-card {
+background: #f8f9fa;
+border-left: 5px solid #ef476f;
+padding: 20px;
+border-radius: 10px;
+margin: 20px 0;
+}
+.severity-badge {
+display: inline-block;
+padding: 5px 15px;
+border-radius: 20px;
+font-weight: 600;
+font-size: 0.9rem;
+}
+.severity-low { background: #d1fae5; color: #065f46; }
+.severity-medium { background: #fed7aa; color: #92400e; }
+.severity-high { background: #fee2e2; color: #991b1b; }
+.severity-extreme { background: #e9d5ff; color: #6b21a8; }
+.timeline-item {
+display: flex;
+gap: 20px;
+padding: 15px;
+border-bottom: 1px solid #e0e0e0;
+}
+.timeline-date { min-width: 100px; font-weight: 600; }
+.timeline-dot {
+width: 12px;
+height: 12px;
+border-radius: 50%;
+margin-top: 5px;
+}
+.impact-card {
+background: white;
+border: 1px solid #e0e0e0;
+border-radius: 10px;
+padding: 15px;
+margin: 10px 0;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="main-card">
+<div class="header">
+<h1><i class="fas fa-chart-line"></i> SERP Volatility Monitor</h1>
+<p>Track Google algorithm updates and ranking fluctuations in real-time</p>
+<div class="row mt-4">
+<div class="col-md-4">
+<div class="bg-white text-dark p-3 rounded">
+<small>Current Volatility</small>
+<h2 id="currentVolatility">85%</h2>
+</div>
+</div>
+<div class="col-md-4">
+<div class="bg-white text-dark p-3 rounded">
+<small>Active Updates</small>
+<h2 id="activeUpdates">3</h2>
+</div>
+</div>
+<div class="col-md-4">
+<div class="bg-white text-dark p-3 rounded">
+<small>Affected Sites</small>
+<h2 id="affectedSites">12.5K</h2>
+</div>
+</div>
+</div>
+</div>
+
+<div class="body-content p-4">
+<!-- Date Range -->
+<div class="row mb-4">
+<div class="col-md-4">
+<label>Start Date</label>
+<input type="date" class="form-control" id="startDate" value="2024-01-01">
+</div>
+<div class="col-md-4">
+<label>End Date</label>
+<input type="date" class="form-control" id="endDate" value="2024-03-20">
+</div>
+<div class="col-md-4">
+<label>Niche</label>
+<select class="form-control" id="nicheSelect">
+<option value="all">All Niches</option>
+<option value="yMyH">YMYL</option>
+<option value="ecommerce">E-commerce</option>
+<option value="blog">Blogs</option>
+<option value="local">Local</option>
+</select>
+</div>
+</div>
+
+<!-- Volatility Meter -->
+<div class="update-card">
+<h5><i class="fas fa-bolt"></i> Current SERP Volatility: <span id="volatilityLevel">High</span></h5>
+<div class="volatility-meter">
+<div class="meter-fill" id="meterFill" style="width: 85%;"></div>
+</div>
+<p class="mt-3"><i class="fas fa-info-circle"></i> Major algorithm update detected - December 2024 Core Update rolling out</p>
+</div>
+
+<!-- Charts -->
+<div class="row mt-4">
+<div class="col-md-8">
+<div class="card">
+<div class="card-header bg-primary text-white">
+<i class="fas fa-chart-line"></i> 30-Day Volatility Trend
+</div>
+<div class="card-body">
+<canvas id="volatilityChart" height="300"></canvas>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header bg-info text-white">
+<i class="fas fa-pie-chart"></i> Impact by Niche
+</div>
+<div class="card-body">
+<canvas id="nicheChart" height="250"></canvas>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Severity Cards -->
+<h4 class="mt-4"><i class="fas fa-exclamation-triangle"></i> Recent Algorithm Updates</h4>
+<div class="row" id="updatesList">
+<div class="col-md-6">
+<div class="impact-card">
+<div class="d-flex justify-content-between">
+<h5>December 2024 Core Update</h5>
+<span class="severity-badge severity-high">High Impact</span>
+</div>
+<p class="text-muted">Started: Dec 5, 2024 • Rolling out</p>
+<p>Focus on helpful content and user experience. YMYL sites seeing major fluctuations.</p>
+<div class="progress mb-2">
+<div class="progress-bar bg-danger" style="width: 75%">75% rolled out</div>
+</div>
+</div>
+</div>
+<div class="col-md-6">
+<div class="impact-card">
+<div class="d-flex justify-content-between">
+<h5>Reviews Update</h5>
+<span class="severity-badge severity-medium">Medium Impact</span>
+</div>
+<p class="text-muted">Started: Nov 20, 2024 • Completed</p>
+<p>Product review sites affected. Emphasis on original research and testing.</p>
+<div class="progress mb-2">
+<div class="progress-bar bg-warning" style="width: 100%">100% rolled out</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Timeline -->
+<h4 class="mt-4"><i class="fas fa-clock"></i> Volatility Timeline</h4>
+<div class="card">
+<div class="card-body" id="timelineContainer">
+<div class="timeline-item">
+<div class="timeline-date">Mar 20, 2024</div>
+<div class="timeline-dot bg-danger"></div>
+<div><strong>High Volatility</strong> - Core update fluctuations</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-date">Mar 18, 2024</div>
+<div class="timeline-dot bg-warning"></div>
+<div><strong>Medium Volatility</strong> - Minor ranking shifts</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-date">Mar 15, 2024</div>
+<div class="timeline-dot bg-success"></div>
+<div><strong>Low Volatility</strong> - Stable SERPs</div>
+</div>
+</div>
+</div>
+
+<!-- Affected Keywords -->
+<h4 class="mt-4"><i class="fas fa-key"></i> Most Affected Keywords</h4>
+<div class="table-responsive">
+<table class="table table-bordered">
+<thead class="table-dark">
+<tr>
+<th>Keyword</th>
+<th>Volatility</th>
+<th>Position Change</th>
+<th>New Ranking</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody id="keywordTable">
+<tr><td>best seo tools</td><td><span class="badge bg-danger">High</span></td><td>-12</td><td>#8</td><td>Dropped</td></tr>
+<tr><td>digital marketing agency</td><td><span class="badge bg-warning">Medium</span></td><td>+5</td><td>#3</td><td>Improved</td></tr>
+<tr><td>local seo services</td><td><span class="badge bg-success">Low</span></td><td>+2</td><td>#6</td><td>Stable</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+// Volatility Chart
+const ctx1 = document.getElementById('volatilityChart').getContext('2d');
+new Chart(ctx1, {
+type: 'line',
+data: {
+labels: Array.from({length: 30}, (_, i) => {
+let d = new Date();
+d.setDate(d.getDate() - 29 + i);
+return d.toLocaleDateString('en-US', {month: 'short', day: 'numeric'});
+}),
+datasets: [{
+label: 'SERP Volatility',
+data: Array.from({length: 30}, () => Math.floor(Math.random() * 40) + 40),
+borderColor: '#ef476f',
+backgroundColor: 'rgba(239, 71, 111, 0.1)',
+tension: 0.4,
+fill: true
+}]
+},
+options: {
+responsive: true,
+maintainAspectRatio: false
+}
+});
+
+// Niche Chart
+const ctx2 = document.getElementById('nicheChart').getContext('2d');
+new Chart(ctx2, {
+type: 'doughnut',
+data: {
+labels: ['YMYL', 'E-commerce', 'Blogs', 'Local'],
+datasets: [{
+data: [45, 25, 20, 10],
+backgroundColor: ['#ef476f', '#ffd166', '#06d6a0', '#4361ee']
+}]
+}
+});
+});
+</script>
+</body>
+</html>

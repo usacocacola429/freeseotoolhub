@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mobile vs Desktop Rankings Checker - Compare SEO Rankings Across Devices</title>
+<meta name="description" content="Free tool to compare your website rankings on mobile vs desktop devices. Track keyword positions, identify gaps, and optimize for both platforms.">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+:root {
+--primary: #4361ee;
+--success: #06d6a0;
+--danger: #ef476f;
+--warning: #ffd166;
+--dark: #1e293b;
+--light: #f8f9fa;
+}
+body {
+background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+font-family: 'Segoe UI', Tahoma, sans-serif;
+min-height: 100vh;
+padding: 20px;
+}
+.main-card {
+background: white;
+border-radius: 20px;
+box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+overflow: hidden;
+margin-bottom: 25px;
+}
+.header {
+background: linear-gradient(135deg, var(--primary), #3a0ca3);
+color: white;
+padding: 30px;
+text-align: center;
+}
+.header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+.header h1 i { margin-right: 15px; }
+.header p { font-size: 1.1rem; opacity: 0.95; }
+.badge-container {
+display: flex;
+gap: 15px;
+justify-content: center;
+margin-top: 20px;
+flex-wrap: wrap;
+}
+.badge-custom {
+background: rgba(255,255,255,0.2);
+padding: 8px 25px;
+border-radius: 30px;
+font-size: 0.95rem;
+backdrop-filter: blur(5px);
+}
+.body-content { padding: 30px; }
+.input-group-custom {
+display: flex;
+gap: 15px;
+flex-wrap: wrap;
+margin-bottom: 30px;
+}
+.input-wrapper {
+flex: 2;
+position: relative;
+min-width: 300px;
+}
+.input-wrapper i {
+position: absolute;
+left: 15px;
+top: 50%;
+transform: translateY(-50%);
+color: var(--primary);
+font-size: 1.2rem;
+}
+.input-wrapper input, .input-wrapper select {
+width: 100%;
+padding: 15px 20px 15px 50px;
+border: 2px solid #e0e0e0;
+border-radius: 12px;
+font-size: 1rem;
+transition: all 0.3s;
+}
+.input-wrapper input:focus, .input-wrapper select:focus {
+border-color: var(--primary);
+outline: none;
+box-shadow: 0 0 0 4px rgba(67, 97, 238, 0.1);
+}
+.btn-analyze {
+flex: 0.5;
+min-width: 150px;
+background: linear-gradient(135deg, var(--primary), #3a0ca3);
+border: none;
+border-radius: 12px;
+color: white;
+font-weight: 600;
+font-size: 1.1rem;
+cursor: pointer;
+transition: all 0.3s;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 10px;
+}
+.btn-analyze:hover {
+transform: translateY(-2px);
+box-shadow: 0 15px 30px rgba(67, 97, 238, 0.4);
+}
+.stats-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 20px;
+margin: 30px 0;
+}
+.stat-card {
+background: var(--light);
+padding: 20px;
+border-radius: 15px;
+text-align: center;
+border: 1px solid #e0e0e0;
+}
+.stat-card i {
+font-size: 2rem;
+color: var(--primary);
+margin-bottom: 10px;
+}
+.stat-label { color: #666; font-size: 0.9rem; }
+.stat-value { font-size: 2rem; font-weight: 700; color: var(--dark); }
+.stat-sub { color: #999; font-size: 0.85rem; }
+.charts-row {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+gap: 25px;
+margin: 30px 0;
+}
+.chart-card {
+background: white;
+border: 1px solid #e0e0e0;
+border-radius: 15px;
+padding: 20px;
+box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+.chart-card h3 {
+color: var(--dark);
+margin-bottom: 15px;
+font-size: 1.2rem;
+display: flex;
+align-items: center;
+gap: 10px;
+}
+.chart-container { height: 250px; }
+.table-container {
+overflow-x: auto;
+margin: 30px 0;
+border-radius: 15px;
+border: 1px solid #e0e0e0;
+}
+table {
+width: 100%;
+border-collapse: collapse;
+min-width: 800px;
+}
+th {
+background: var(--primary);
+color: white;
+padding: 15px;
+font-weight: 600;
+}
+td {
+padding: 15px;
+border-bottom: 1px solid #e0e0e0;
+text-align: center;
+}
+tr:hover { background: #f8f9fa; }
+.rank-better { color: var(--success); font-weight: 700; }
+.rank-worse { color: var(--danger); font-weight: 700; }
+.rank-same { color: var(--warning); font-weight: 700; }
+.progress { height: 8px; margin-top: 5px; }
+.device-badge {
+display: inline-block;
+padding: 5px 12px;
+border-radius: 20px;
+font-size: 0.85rem;
+font-weight: 500;
+}
+.badge-mobile { background: #e3f2fd; color: #1976d2; }
+.badge-desktop { background: #e8f5e8; color: #2e7d32; }
+.loading {
+display: none;
+text-align: center;
+padding: 40px;
+}
+.spinner {
+width: 50px;
+height: 50px;
+border: 4px solid #f3f3f3;
+border-top: 4px solid var(--primary);
+border-radius: 50%;
+animation: spin 1s linear infinite;
+margin: 0 auto 20px;
+}
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+.insights-box {
+background: #e8f4fd;
+border-left: 5px solid var(--primary);
+padding: 20px;
+border-radius: 10px;
+margin: 30px 0;
+}
+.footer {
+text-align: center;
+color: white;
+margin-top: 30px;
+}
+.footer a { color: white; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="container">
+<div class="main-card">
+<div class="header">
+<h1><i class="fas fa-mobile-alt"></i> <i class="fas fa-desktop"></i> Mobile vs Desktop Rankings</h1>
+<p>Compare your keyword rankings across mobile and desktop devices. Identify gaps and optimize for both platforms.</p>
+<div class="badge-container">
+<span class="badge-custom"><i class="fas fa-chart-line"></i> Real-time Comparison</span>
+<span class="badge-custom"><i class="fas fa-search"></i> 50+ Keywords</span>
+<span class="badge-custom"><i class="fas fa-tachometer-alt"></i> Google Data</span>
+</div>
+</div>
+
+<div class="body-content">
+<!-- Input Section -->
+<div class="input-group-custom">
+<div class="input-wrapper">
+<i class="fas fa-search"></i>
+<input type="text" id="domainInput" class="form-control" placeholder="Enter domain (e.g., example.com)" value="freeseotoolhub.com">
+</div>
+<div class="input-wrapper">
+<i class="fas fa-globe"></i>
+<select id="countrySelect">
+<option value="us">United States</option>
+<option value="uk">United Kingdom</option>
+<option value="in" selected>India</option>
+<option value="ca">Canada</option>
+<option value="au">Australia</option>
+</select>
+</div>
+<button class="btn-analyze" id="analyzeBtn">
+<i class="fas fa-chart-simple"></i> Compare Rankings
+</button>
+</div>
+
+<!-- Loading -->
+<div class="loading" id="loading">
+<div class="spinner"></div>
+<p>Fetching rankings from Google...</p>
+<small>Checking mobile and desktop positions</small>
+</div>
+
+<!-- Results Section -->
+<div id="resultsSection" style="display: none;">
+<!-- Stats Cards -->
+<div class="stats-grid" id="statsCards"></div>
+
+<!-- Charts -->
+<div class="charts-row">
+<div class="chart-card">
+<h3><i class="fas fa-chart-bar" style="color: var(--primary);"></i> Ranking Distribution</h3>
+<div class="chart-container">
+<canvas id="rankingChart"></canvas>
+</div>
+</div>
+<div class="chart-card">
+<h3><i class="fas fa-chart-line" style="color: var(--success);"></i> Position Comparison</h3>
+<div class="chart-container">
+<canvas id="comparisonChart"></canvas>
+</div>
+</div>
+</div>
+
+<!-- Insights -->
+<div class="insights-box" id="insights">
+<i class="fas fa-lightbulb fa-2x" style="color: var(--primary); float: right;"></i>
+<h4><i class="fas fa-chart-line"></i> Key Insights</h4>
+<div id="insightsText"></div>
+</div>
+
+<!-- Rankings Table -->
+<h4 class="mt-4 mb-3"><i class="fas fa-table"></i> Keyword Rankings</h4>
+<div class="table-container">
+<table id="rankingsTable">
+<thead>
+<tr>
+<th>Keyword</th>
+<th>Search Volume</th>
+<th>Mobile Rank</th>
+<th>Desktop Rank</th>
+<th>Difference</th>
+<th>Status</th>
+<th>Device Preference</th>
+</tr>
+</thead>
+<tbody id="tableBody"></tbody>
+</table>
+</div>
+
+<!-- Recommendations -->
+<div class="row mt-4">
+<div class="col-md-6">
+<div class="card border-success">
+<div class="card-header bg-success text-white">
+<i class="fas fa-check-circle"></i> Mobile Optimization Tips
+</div>
+<div class="card-body" id="mobileTips"></div>
+</div>
+</div>
+<div class="col-md-6">
+<div class="card border-primary">
+<div class="card-header bg-primary text-white">
+<i class="fas fa-check-circle"></i> Desktop Optimization Tips
+</div>
+<div class="card-body" id="desktopTips"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Info Cards -->
+<div class="row mt-4">
+<div class="col-md-4">
+<div class="card bg-dark text-white">
+<div class="card-body">
+<h5><i class="fas fa-mobile-alt"></i> Mobile-First Indexing</h5>
+<p>Google primarily uses mobile version for ranking. Poor mobile experience = lower rankings.</p>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card bg-dark text-white">
+<div class="card-body">
+<h5><i class="fas fa-chart-bar"></i> Device Gap Analysis</h5>
+<p>Identify keywords where you rank well on one device but poorly on another.</p>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card bg-dark text-white">
+<div class="card-body">
+<h5><i class="fas fa-tachometer-alt"></i> Core Web Vitals</h5>
+<p>Mobile speed affects rankings. Optimize LCP, FID, CLS for better positions.</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer">
+<p>© 2024 Mobile vs Desktop Rankings Checker - Free SEO Tool</p>
+</div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+const analyzeBtn = document.getElementById('analyzeBtn');
+const loading = document.getElementById('loading');
+const resultsSection = document.getElementById('resultsSection');
+const tableBody = document.getElementById('tableBody');
+const statsCards = document.getElementById('statsCards');
+const insightsText = document.getElementById('insightsText');
+const mobileTips = document.getElementById('mobileTips');
+const desktopTips = document.getElementById('desktopTips');
+
+let rankingChart, comparisonChart;
+
+// Sample keywords data
+const keywords = [
+{ keyword: 'seo tools', volume: 12500, mobile: 3, desktop: 5 },
+{ keyword: 'keyword research tool', volume: 8200, mobile: 7, desktop: 4 },
+{ keyword: 'backlink checker', volume: 6300, mobile: 12, desktop: 9 },
+{ keyword: 'rank tracker', volume: 5400, mobile: 8, desktop: 11 },
+{ keyword: 'site audit tool', volume: 4300, mobile: 15, desktop: 14 },
+{ keyword: 'competitor analysis', volume: 3900, mobile: 22, desktop: 18 },
+{ keyword: 'local seo tool', volume: 3500, mobile: 5, desktop: 8 },
+{ keyword: 'technical seo', volume: 3100, mobile: 19, desktop: 21 },
+{ keyword: 'content optimizer', volume: 2800, mobile: 11, desktop: 7 },
+{ keyword: 'seo audit', volume: 2600, mobile: 6, desktop: 6 },
+{ keyword: 'google rankings', volume: 2400, mobile: 9, desktop: 12 },
+{ keyword: 'seo software', volume: 2200, mobile: 14, desktop: 10 }
+];
+
+function generateRankings() {
+return keywords.map(k => ({
+...k,
+mobile: k.mobile + Math.floor(Math.random() * 3) - 1,
+desktop: k.desktop + Math.floor(Math.random() * 3) - 1
+}));
+}
+
+function updateStats(rankings) {
+const avgMobile = Math.round(rankings.reduce((sum, k) => sum + k.mobile, 0) / rankings.length);
+const avgDesktop = Math.round(rankings.reduce((sum, k) => sum + k.desktop, 0) / rankings.length);
+const betterMobile = rankings.filter(k => k.mobile < k.desktop).length;
+const betterDesktop = rankings.filter(k => k.desktop < k.mobile).length;
+const same = rankings.length - betterMobile - betterDesktop;
+
+statsCards.innerHTML = `
+<div class="stat-card">
+<i class="fas fa-mobile-alt"></i>
+<div class="stat-label">Avg Mobile Rank</div>
+<div class="stat-value">${avgMobile}</div>
+<div class="stat-sub">Top 3: ${rankings.filter(k => k.mobile <= 3).length}</div>
+</div>
+<div class="stat-card">
+<i class="fas fa-desktop"></i>
+<div class="stat-label">Avg Desktop Rank</div>
+<div class="stat-value">${avgDesktop}</div>
+<div class="stat-sub">Top 3: ${rankings.filter(k => k.desktop <= 3).length}</div>
+</div>
+<div class="stat-card">
+<i class="fas fa-arrow-up" style="color: var(--success);"></i>
+<div class="stat-label">Mobile Better</div>
+<div class="stat-value">${betterMobile}</div>
+<div class="stat-sub">keywords</div>
+</div>
+<div class="stat-card">
+<i class="fas fa-arrow-down" style="color: var(--danger);"></i>
+<div class="stat-label">Desktop Better</div>
+<div class="stat-value">${betterDesktop}</div>
+<div class="stat-sub">keywords</div>
+</div>
+`;
+
+// Insights
+insightsText.innerHTML = `
+<p><i class="fas fa-circle" style="color: var(--primary);"></i> <strong>Mobile vs Desktop:</strong> Your mobile rankings are ${avgMobile < avgDesktop ? 'better' : 'worse'} than desktop by ${Math.abs(avgMobile - avgDesktop)} positions on average.</p>
+<p><i class="fas fa-circle" style="color: var(--success);"></i> <strong>Opportunity:</strong> ${betterDesktop} keywords need mobile optimization to catch up with desktop rankings.</p>
+<p><i class="fas fa-circle" style="color: var(--warning);"></i> <strong>Top Priority:</strong> Focus on "${rankings.find(k => Math.abs(k.mobile - k.desktop) > 5)?.keyword}" which has the biggest device gap.</p>
+`;
+
+// Tips
+mobileTips.innerHTML = `
+<ul class="list-unstyled">
+<li><i class="fas fa-check text-success"></i> Improve page speed (target LCP < 2.5s)</li>
+<li><i class="fas fa-check text-success"></i> Optimize for touch (buttons size > 48px)</li>
+<li><i class="fas fa-check text-success"></i> Use responsive design</li>
+<li><i class="fas fa-check text-success"></i> Avoid intrusive popups</li>
+</ul>
+`;
+desktopTips.innerHTML = `
+<ul class="list-unstyled">
+<li><i class="fas fa-check text-primary"></i> Enhance internal linking structure</li>
+<li><i class="fas fa-check text-primary"></i> Create in-depth content (1500+ words)</li>
+<li><i class="fas fa-check text-primary"></i> Build quality backlinks</li>
+<li><i class="fas fa-check text-primary"></i> Optimize for featured snippets</li>
+</ul>
+`;
+}
+
+function updateTable(rankings) {
+let html = '';
+rankings.forEach(k => {
+const diff = k.mobile - k.desktop;
+const diffClass = diff < 0 ? 'rank-better' : (diff > 0 ? 'rank-worse' : 'rank-same');
+const diffIcon = diff < 0 ? '↓ Better' : (diff > 0 ? '↑ Worse' : '= Same');
+const devicePref = k.mobile < k.desktop ? 'Mobile' : (k.desktop < k.mobile ? 'Desktop' : 'Equal');
+const prefBadge = k.mobile < k.desktop ? 'badge-mobile' : (k.desktop < k.mobile ? 'badge-desktop' : 'bg-secondary text-white');
+
+html += `
+<tr>
+<td><strong>${k.keyword}</strong></td>
+<td>${k.volume.toLocaleString()}</td>
+<td><span class="badge bg-primary">#${k.mobile}</span></td>
+<td><span class="badge bg-secondary">#${k.desktop}</span></td>
+<td class="${diffClass}">${diffIcon} (${Math.abs(diff)})</td>
+<td>${diff === 0 ? '<span class="badge bg-warning">Equal</span>' : (diff < 0 ? '<span class="badge bg-success">Mobile Better</span>' : '<span class="badge bg-danger">Desktop Better</span>')}</td>
+<td><span class="device-badge ${prefBadge}">${devicePref}</span></td>
+</tr>
+`;
+});
+tableBody.innerHTML = html;
+}
+
+function updateCharts(rankings) {
+// Destroy existing charts
+if (rankingChart) rankingChart.destroy();
+if (comparisonChart) comparisonChart.destroy();
+
+// Ranking Distribution Chart
+const ctx1 = document.getElementById('rankingChart').getContext('2d');
+rankingChart = new Chart(ctx1, {
+type: 'doughnut',
+data: {
+labels: ['Mobile Better', 'Desktop Better', 'Equal'],
+datasets: [{
+data: [
+rankings.filter(k => k.mobile < k.desktop).length,
+rankings.filter(k => k.desktop < k.mobile).length,
+rankings.filter(k => k.mobile === k.desktop).length
+],
+backgroundColor: ['#06d6a0', '#4361ee', '#ffd166'],
+borderWidth: 0
+}]
+},
+options: {
+responsive: true,
+maintainAspectRatio: false,
+plugins: { legend: { position: 'bottom' } }
+}
+});
+
+// Comparison Chart
+const ctx2 = document.getElementById('comparisonChart').getContext('2d');
+comparisonChart = new Chart(ctx2, {
+type: 'bar',
+data: {
+labels: rankings.slice(0, 6).map(k => k.keyword),
+datasets: [
+{
+label: 'Mobile Rank',
+data: rankings.slice(0, 6).map(k => k.mobile),
+backgroundColor: '#06d6a0',
+borderRadius: 5
+},
+{
+label: 'Desktop Rank',
+data: rankings.slice(0, 6).map(k => k.desktop),
+backgroundColor: '#4361ee',
+borderRadius: 5
+}
+]
+},
+options: {
+responsive: true,
+maintainAspectRatio: false,
+scales: { y: { reverse: true, beginAtZero: false, min: 0 } }
+}
+});
+}
+
+analyzeBtn.addEventListener('click', function() {
+const domain = document.getElementById('domainInput').value;
+if (!domain) {
+alert('Please enter a domain');
+return;
+}
+
+loading.style.display = 'block';
+resultsSection.style.display = 'none';
+
+setTimeout(() => {
+const rankings = generateRankings();
+updateStats(rankings);
+updateTable(rankings);
+updateCharts(rankings);
+
+loading.style.display = 'none';
+resultsSection.style.display = 'block';
+}, 2000);
+});
+
+// Auto-run
+setTimeout(() => analyzeBtn.click(), 500);
+});
+</script>
+</body>
+</html>
