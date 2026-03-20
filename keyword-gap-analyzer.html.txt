@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Keyword Gap Analyzer - Find Missing Keywords & Opportunities | Free SEO Tool</title>
+<meta name="description" content="Find keyword gaps between your website and competitors. Discover missing keywords, content opportunities, and SEO strategies for India & Global markets.">
+<meta name="keywords" content="keyword gap analyzer, competitor keyword analysis, missing keywords, seo gap analysis, keyword opportunities, india seo, global seo">
+<meta name="author" content="Free SEO Tool Hub">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://freeseotoolhub.com/keyword-gap-analyzer.html">
+
+<!-- Open Graph Tags -->
+<meta property="og:title" content="Keyword Gap Analyzer - Find Missing Keyword Opportunities">
+<meta property="og:description" content="Discover keywords your competitors rank for but you don't. Find content gaps and SEO opportunities.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://freeseotoolhub.com/keyword-gap-analyzer.html">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Keyword Gap Analyzer - Find Missing SEO Opportunities">
+<meta name="twitter:description" content="Analyze keyword gaps between your website and competitors. Free SEO tool for India & Global markets.">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔍</text></svg>">
+
+<!-- Bootstrap & Font Awesome -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+:root {
+--primary: #4361ee;
+--primary-dark: #3a0ca3;
+--success: #06d6a0;
+--danger: #ef476f;
+--warning: #ffd166;
+--info: #4cc9f0;
+--dark: #1e293b;
+--light: #f8fafc;
+--gray: #64748b;
+}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+background: linear-gradient(145deg, #0f172a 0%, #1e293b 100%);
+font-family: 'Segoe UI', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+min-height: 100vh;
+padding: 20px;
+}
+
+.container-custom {
+max-width: 1400px;
+margin: 0 auto;
+}
+
+/* Header Section */
+.header-section {
+background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+border-radius: 25px;
+padding: 40px 30px;
+margin-bottom: 30px;
+color: white;
+text-align: center;
+position: relative;
+overflow: hidden;
+}
+
+.header-section::before {
+content: '';
+position: absolute;
+top: -50%;
+right: -50%;
+width: 200%;
+height: 200%;
+background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+animation: pulse 8s ease-in-out infinite;
+}
+
+@keyframes pulse {
+0%, 100% { transform: scale(1); opacity: 0.3; }
+50% { transform: scale(1.1); opacity: 0.5; }
+}
+
+.header-section h1 {
+font-size: 2.8rem;
+font-weight: 800;
+margin-bottom: 15px;
+position: relative;
+z-index: 1;
+}
+
+.header-section h1 i {
+margin-right: 15px;
+font-size: 2.5rem;
+}
+
+.header-section p {
+font-size: 1.2rem;
+opacity: 0.95;
+max-width: 700px;
+margin: 0 auto;
+position: relative;
+z-index: 1;
+}
+
+.badge-container {
+display: flex;
+gap: 15px;
+justify-content: center;
+margin-top: 25px;
+flex-wrap: wrap;
+position: relative;
+z-index: 1;
+}
+
+.badge-custom {
+background: rgba(255,255,255,0.2);
+backdrop-filter: blur(10px);
+padding: 8px 22px;
+border-radius: 40px;
+font-size: 0.9rem;
+font-weight: 500;
+display: flex;
+align-items: center;
+gap: 8px;
+}
+
+/* Main Card */
+.main-card {
+background: white;
+border-radius: 25px;
+box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+overflow: hidden;
+margin-bottom: 30px;
+}
+
+.card-body-custom {
+padding: 35px;
+}
+
+/* Input Section */
+.input-section {
+background: var(--light);
+border-radius: 20px;
+padding: 30px;
+margin-bottom: 30px;
+border: 1px solid #e2e8f0;
+}
+
+.input-group-custom {
+display: flex;
+gap: 20px;
+flex-wrap: wrap;
+margin-bottom: 25px;
+}
+
+.input-wrapper {
+flex: 1;
+position: relative;
+min-width: 250px;
+}
+
+.input-wrapper i {
+position: absolute;
+left: 18px;
+top: 50%;
+transform: translateY(-50%);
+color: var(--primary);
+font-size: 1.2rem;
+z-index: 1;
+}
+
+.input-wrapper input {
+width: 100%;
+padding: 15px 20px 15px 50px;
+border: 2px solid #e2e8f0;
+border-radius: 15px;
+font-size: 1rem;
+transition: all 0.3s ease;
+background: white;
+}
+
+.input-wrapper input:focus {
+outline: none;
+border-color: var(--primary);
+box-shadow: 0 0 0 4px rgba(67, 97, 238, 0.1);
+}
+
+/* Market Selector */
+.market-selector {
+display: flex;
+gap: 15px;
+margin: 20px 0;
+flex-wrap: wrap;
+}
+
+.market-btn {
+padding: 12px 30px;
+border: 2px solid #e2e8f0;
+background: white;
+border-radius: 50px;
+font-weight: 600;
+transition: all 0.3s;
+cursor: pointer;
+display: inline-flex;
+align-items: center;
+gap: 10px;
+}
+
+.market-btn i {
+font-size: 1.1rem;
+}
+
+.market-btn:hover {
+border-color: var(--primary);
+color: var(--primary);
+transform: translateY(-2px);
+}
+
+.market-btn.active {
+background: var(--primary);
+border-color: var(--primary);
+color: white;
+}
+
+.btn-primary-custom {
+background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+border: none;
+padding: 15px 35px;
+border-radius: 15px;
+font-weight: 600;
+font-size: 1rem;
+transition: all 0.3s ease;
+display: inline-flex;
+align-items: center;
+gap: 10px;
+color: white;
+}
+
+.btn-primary-custom:hover {
+transform: translateY(-2px);
+box-shadow: 0 15px 30px rgba(67, 97, 238, 0.3);
+color: white;
+}
+
+/* Stats Cards */
+.stats-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 20px;
+margin-bottom: 35px;
+}
+
+.stat-card {
+background: linear-gradient(135deg, #f8fafc, #ffffff);
+border-radius: 20px;
+padding: 20px;
+text-align: center;
+border: 1px solid #e2e8f0;
+transition: all 0.3s;
+}
+
+.stat-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.stat-icon {
+width: 50px;
+height: 50px;
+background: rgba(67, 97, 238, 0.1);
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+margin: 0 auto 12px;
+}
+
+.stat-icon i {
+font-size: 1.5rem;
+color: var(--primary);
+}
+
+.stat-value {
+font-size: 1.8rem;
+font-weight: 800;
+color: var(--dark);
+}
+
+.stat-label {
+color: var(--gray);
+font-size: 0.85rem;
+}
+
+/* Charts Row */
+.charts-row {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+gap: 25px;
+margin-bottom: 35px;
+}
+
+.chart-card {
+background: white;
+border: 1px solid #e2e8f0;
+border-radius: 20px;
+padding: 20px;
+}
+
+.chart-card h3 {
+font-size: 1.1rem;
+margin-bottom: 20px;
+display: flex;
+align-items: center;
+gap: 10px;
+color: var(--dark);
+}
+
+.chart-container {
+height: 250px;
+position: relative;
+}
+
+/* Table Styles */
+.table-container {
+overflow-x: auto;
+margin: 25px 0;
+border-radius: 20px;
+border: 1px solid #e2e8f0;
+}
+
+.keyword-table {
+width: 100%;
+border-collapse: collapse;
+min-width: 800px;
+}
+
+.keyword-table th {
+background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+color: white;
+padding: 15px;
+font-weight: 600;
+font-size: 0.9rem;
+}
+
+.keyword-table td {
+padding: 12px 15px;
+border-bottom: 1px solid #e2e8f0;
+}
+
+.keyword-table tr:hover {
+background: #f8fafc;
+}
+
+.opportunity-badge {
+display: inline-block;
+padding: 4px 12px;
+border-radius: 20px;
+font-size: 0.8rem;
+font-weight: 600;
+}
+
+.opportunity-high {
+background: #d1fae5;
+color: #065f46;
+}
+
+.opportunity-medium {
+background: #fed7aa;
+color: #92400e;
+}
+
+.opportunity-low {
+background: #fee2e2;
+color: #991b1b;
+}
+
+.volume-bar {
+width: 80px;
+height: 6px;
+background: #e2e8f0;
+border-radius: 3px;
+overflow: hidden;
+}
+
+.volume-fill {
+height: 100%;
+background: var(--primary);
+border-radius: 3px;
+}
+
+/* Tabs */
+.tabs-container {
+display: flex;
+gap: 10px;
+margin: 25px 0;
+border-bottom: 2px solid #e2e8f0;
+padding-bottom: 10px;
+}
+
+.tab-btn {
+padding: 10px 25px;
+background: none;
+border: none;
+font-weight: 600;
+color: var(--gray);
+cursor: pointer;
+transition: all 0.3s;
+border-radius: 30px;
+}
+
+.tab-btn:hover {
+color: var(--primary);
+}
+
+.tab-btn.active {
+background: var(--primary);
+color: white;
+}
+
+/* Insights Section */
+.insights-section {
+background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+border-radius: 20px;
+padding: 25px;
+margin: 25px 0;
+}
+
+.insight-card {
+background: white;
+border-radius: 15px;
+padding: 20px;
+margin-bottom: 15px;
+border-left: 4px solid var(--primary);
+}
+
+.insight-card h5 {
+font-size: 1rem;
+margin-bottom: 8px;
+color: var(--dark);
+}
+
+.insight-card p {
+font-size: 0.9rem;
+color: var(--gray);
+margin: 0;
+}
+
+/* Recommendations */
+.recommendations-box {
+background: #fff9e6;
+border: 1px solid #ffd966;
+border-radius: 20px;
+padding: 25px;
+margin-top: 25px;
+}
+
+.recommendations-box h4 {
+color: #b45309;
+margin-bottom: 20px;
+}
+
+.rec-list {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 15px;
+}
+
+.rec-item {
+background: white;
+padding: 15px;
+border-radius: 12px;
+display: flex;
+gap: 12px;
+align-items: flex-start;
+}
+
+.rec-item i {
+font-size: 1.2rem;
+color: var(--warning);
+margin-top: 2px;
+}
+
+/* Export Buttons */
+.export-buttons {
+display: flex;
+gap: 12px;
+margin-bottom: 20px;
+justify-content: flex-end;
+flex-wrap: wrap;
+}
+
+.export-btn {
+background: white;
+border: 1px solid #e2e8f0;
+padding: 8px 20px;
+border-radius: 10px;
+font-size: 0.9rem;
+transition: all 0.3s;
+cursor: pointer;
+}
+
+.export-btn:hover {
+background: var(--primary);
+border-color: var(--primary);
+color: white;
+}
+
+/* Loading */
+.loading-overlay {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0,0,0,0.7);
+z-index: 9999;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+
+.loader {
+width: 60px;
+height: 60px;
+border: 4px solid #f3f3f3;
+border-top: 4px solid var(--primary);
+border-radius: 50%;
+animation: spin 1s linear infinite;
+margin-bottom: 20px;
+}
+
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+
+/* Footer */
+.footer {
+text-align: center;
+color: #94a3b8;
+margin-top: 40px;
+padding-top: 30px;
+border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+.header-section h1 { font-size: 1.8rem; }
+.card-body-custom { padding: 20px; }
+.charts-row { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="container-custom">
+<!-- Header Section -->
+<div class="header-section">
+<h1>
+<i class="fas fa-chart-gap"></i>
+Keyword Gap Analyzer
+</h1>
+<p>Discover keywords your competitors rank for but you don't | Find content gaps & SEO opportunities in India & Global markets</p>
+<div class="badge-container">
+<span class="badge-custom"><i class="fas fa-chart-line"></i> Competitor Analysis</span>
+<span class="badge-custom"><i class="fas fa-search"></i> Missing Keywords</span>
+<span class="badge-custom"><i class="fas fa-globe"></i> India & Global</span>
+<span class="badge-custom"><i class="fas fa-chart-bar"></i> Volume & Difficulty</span>
+</div>
+</div>
+
+<!-- Main Card -->
+<div class="main-card">
+<div class="card-body-custom">
+<!-- Input Section -->
+<div class="input-section">
+<div class="input-group-custom">
+<div class="input-wrapper">
+<i class="fas fa-globe"></i>
+<input type="text" id="yourDomain" placeholder="Your website (e.g., example.com)" value="freeseotoolhub.com">
+</div>
+<div class="input-wrapper">
+<i class="fas fa-trophy"></i>
+<input type="text" id="competitor1" placeholder="Competitor 1 (e.g., semrush.com)" value="ahrefs.com">
+</div>
+<div class="input-wrapper">
+<i class="fas fa-trophy"></i>
+<input type="text" id="competitor2" placeholder="Competitor 2 (e.g., moz.com)" value="semrush.com">
+</div>
+</div>
+
+<!-- Market Selector -->
+<div class="market-selector">
+<div class="market-btn active" data-market="global">
+<i class="fas fa-globe-asia"></i> Global Market
+</div>
+<div class="market-btn" data-market="india">
+<i class="fas fa-flag-india"></i> India Market
+</div>
+</div>
+
+<button class="btn-primary-custom" id="analyzeBtn">
+<i class="fas fa-chart-line"></i> Analyze Keyword Gap
+</button>
+</div>
+
+<!-- Loading Overlay -->
+<div class="loading-overlay" id="loadingOverlay">
+<div class="loader"></div>
+<p style="color: white;">Analyzing keyword gaps...</p>
+<p style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">Comparing your keywords with competitors</p>
+</div>
+
+<!-- Results Section -->
+<div id="resultsSection" style="display: none;">
+<!-- Stats Cards -->
+<div class="stats-grid" id="statsCards"></div>
+
+<!-- Charts Row -->
+<div class="charts-row">
+<div class="chart-card">
+<h3><i class="fas fa-chart-pie" style="color: var(--primary);"></i> Keyword Distribution</h3>
+<div class="chart-container">
+<canvas id="distributionChart"></canvas>
+</div>
+</div>
+<div class="chart-card">
+<h3><i class="fas fa-chart-bar" style="color: var(--success);"></i> Top Opportunities by Volume</h3>
+<div class="chart-container">
+<canvas id="opportunityChart"></canvas>
+</div>
+</div>
+</div>
+
+<!-- Tabs -->
+<div class="tabs-container">
+<button class="tab-btn active" data-tab="missing">
+<i class="fas fa-exclamation-triangle"></i> Missing Keywords
+</button>
+<button class="tab-btn" data-tab="weak">
+<i class="fas fa-chart-line"></i> Weak Keywords
+</button>
+<button class="tab-btn" data-tab="strong">
+<i class="fas fa-trophy"></i> Your Strengths
+</button>
+<button class="tab-btn" data-tab="all">
+<i class="fas fa-list"></i> All Keywords
+</button>
+</div>
+
+<!-- Export Buttons -->
+<div class="export-buttons">
+<button class="export-btn" id="exportCSV"><i class="fas fa-file-csv"></i> Export CSV</button>
+<button class="export-btn" id="exportJSON"><i class="fas fa-code"></i> Export JSON</button>
+<button class="export-btn" id="copyTable"><i class="fas fa-copy"></i> Copy Table</button>
+</div>
+
+<!-- Table Container -->
+<div class="table-container">
+<table class="keyword-table" id="keywordTable">
+<thead>
+<tr>
+<th><i class="fas fa-key"></i> Keyword</th>
+<th><i class="fas fa-chart-line"></i> Search Volume</th>
+<th><i class="fas fa-tachometer-alt"></i> Difficulty</th>
+<th><i class="fas fa-dollar-sign"></i> CPC</th>
+<th><i class="fas fa-trophy"></i> Competitors</th>
+<th><i class="fas fa-chart-bar"></i> Opportunity</th>
+<th><i class="fas fa-flag-checkered"></i> Priority</th>
+</tr>
+</thead>
+<tbody id="tableBody">
+<!-- Dynamic content -->
+</tbody>
+</table>
+</div>
+
+<!-- Insights Section -->
+<div class="insights-section" id="insightsSection">
+<h4><i class="fas fa-lightbulb"></i> Key Insights</h4>
+<div id="insightsContent"></div>
+</div>
+
+<!-- Recommendations -->
+<div class="recommendations-box" id="recommendationsBox">
+<h4><i class="fas fa-tasks"></i> Actionable Recommendations</h4>
+<div class="rec-list" id="recommendationsList"></div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Info Cards -->
+<div class="row g-4 mt-3">
+<div class="col-md-3">
+<div class="bg-dark text-white p-4 rounded-4 text-center">
+<i class="fas fa-chart-line fa-2x mb-2 text-primary"></i>
+<h5>Keyword Gap Analysis</h5>
+<small class="text-muted">Find keywords competitors rank for but you don't</small>
+</div>
+</div>
+<div class="col-md-3">
+<div class="bg-dark text-white p-4 rounded-4 text-center">
+<i class="fas fa-search fa-2x mb-2 text-success"></i>
+<h5>Content Opportunities</h5>
+<small class="text-muted">Discover topics to create new content</small>
+</div>
+</div>
+<div class="col-md-3">
+<div class="bg-dark text-white p-4 rounded-4 text-center">
+<i class="fas fa-chart-bar fa-2x mb-2 text-warning"></i>
+<h5>Volume & Difficulty</h5>
+<small class="text-muted">Prioritize based on search volume</small>
+</div>
+</div>
+<div class="col-md-3">
+<div class="bg-dark text-white p-4 rounded-4 text-center">
+<i class="fas fa-flag-checkered fa-2x mb-2 text-info"></i>
+<h5>Quick Wins</h5>
+<small class="text-muted">Low difficulty, high volume keywords</small>
+</div>
+</div>
+</div>
+
+<!-- FAQ Section -->
+<div class="main-card mt-4">
+<div class="card-body-custom">
+<h3 class="mb-4"><i class="fas fa-question-circle text-primary"></i> Frequently Asked Questions</h3>
+<div class="row g-4">
+<div class="col-md-6">
+<div class="border rounded-3 p-3">
+<h5><i class="fas fa-question"></i> What is Keyword Gap Analysis?</h5>
+<p class="text-muted">Keyword gap analysis identifies keywords that your competitors rank for but your website doesn't. It helps you find content opportunities and improve your SEO strategy.</p>
+</div>
+</div>
+<div class="col-md-6">
+<div class="border rounded-3 p-3">
+<h5><i class="fas fa-question"></i> How to use this tool?</h5>
+<p class="text-muted">Enter your domain and up to 2 competitor domains. Select your target market (India or Global) and click analyze. The tool will show missing keywords and opportunities.</p>
+</div>
+</div>
+<div class="col-md-6">
+<div class="border rounded-3 p-3">
+<h5><i class="fas fa-question"></i> What is Keyword Difficulty?</h5>
+<p class="text-muted">Keyword Difficulty (KD) scores how hard it is to rank for a keyword. Lower KD (0-30) is easier, higher KD (70-100) requires more authority and backlinks.</p>
+</div>
+</div>
+<div class="col-md-6">
+<div class="border rounded-3 p-3">
+<h5><i class="fas fa-question"></i> India vs Global Market?</h5>
+<p class="text-muted">India market focuses on Hindi, Hinglish, and India-specific keywords. Global market focuses on English keywords with international search intent.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer">
+<p>© 2024 Keyword Gap Analyzer | Free SEO Tool | Find missing keywords and content opportunities</p>
+</div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+// DOM Elements
+const analyzeBtn = document.getElementById('analyzeBtn');
+const loadingOverlay = document.getElementById('loadingOverlay');
+const resultsSection = document.getElementById('resultsSection');
+const tableBody = document.getElementById('tableBody');
+const statsCards = document.getElementById('statsCards');
+const insightsContent = document.getElementById('insightsContent');
+const recommendationsList = document.getElementById('recommendationsList');
+const marketBtns = document.querySelectorAll('.market-btn');
+const tabBtns = document.querySelectorAll('.tab-btn');
+
+let currentMarket = 'global';
+let currentData = null;
+let charts = {};
+
+// Generate keyword database based on market
+function generateKeywordData(yourDomain, competitors, market) {
+// Base keywords with volumes and difficulty
+const baseKeywords = [
+{ keyword: 'seo tools', volume: 12500, difficulty: 45, cpc: 3.5, category: 'tools' },
+{ keyword: 'keyword research tool', volume: 8200, difficulty: 38, cpc: 2.8, category: 'tools' },
+{ keyword: 'backlink checker', volume: 6300, difficulty: 42, cpc: 3.2, category: 'tools' },
+{ keyword: 'rank tracker', volume: 5400, difficulty: 35, cpc: 2.5, category: 'tools' },
+{ keyword: 'site audit tool', volume: 4300, difficulty: 40, cpc: 2.9, category: 'tools' },
+{ keyword: 'competitor analysis', volume: 3900, difficulty: 48, cpc: 3.8, category: 'analysis' },
+{ keyword: 'local seo services', volume: 3500, difficulty: 32, cpc: 4.2, category: 'local' },
+{ keyword: 'technical seo audit', volume: 3100, difficulty: 52, cpc: 3.9, category: 'technical' },
+{ keyword: 'content optimization', volume: 2800, difficulty: 38, cpc: 2.7, category: 'content' },
+{ keyword: 'seo agency mumbai', volume: 2600, difficulty: 28, cpc: 5.5, category: 'india' },
+{ keyword: 'digital marketing company delhi', volume: 2400, difficulty: 30, cpc: 5.2, category: 'india' },
+{ keyword: 'best seo services bangalore', volume: 2200, difficulty: 27, cpc: 4.8, category: 'india' },
+{ keyword: 'seo expert', volume: 4500, difficulty: 55, cpc: 4.5, category: 'services' },
+{ keyword: 'google ranking check', volume: 3800, difficulty: 32, cpc: 2.2, category: 'tools' },
+{ keyword: 'seo consultant', volume: 3200, difficulty: 48, cpc: 4.8, category: 'services' },
+{ keyword: 'ecommerce seo', volume: 2900, difficulty: 44, cpc: 3.6, category: 'ecommerce' },
+{ keyword: 'wordpress seo', volume: 4100, difficulty: 36, cpc: 2.4, category: 'cms' },
+{ keyword: 'seo company', volume: 5400, difficulty: 52, cpc: 5.0, category: 'services' },
+{ keyword: 'link building services', volume: 2800, difficulty: 48, cpc: 4.2, category: 'link' },
+{ keyword: 'seo pricing', volume: 2100, difficulty: 30, cpc: 3.5, category: 'business' }
+];
+
+// India specific keywords
+const indiaKeywords = [
+{ keyword: 'सेवा टूल्स हिंदी', volume: 1800, difficulty: 22, cpc: 1.2, category: 'hindi' },
+{ keyword: 'best seo company in india', volume: 3200, difficulty: 45, cpc: 4.5, category: 'india' },
+{ keyword: 'seo services in mumbai', volume: 2100, difficulty: 28, cpc: 3.8, category: 'india' },
+{ keyword: 'digital marketing agency in delhi', volume: 2800, difficulty: 35, cpc: 4.2, category: 'india' },
+{ keyword: 'cheap seo services india', volume: 1900, difficulty: 25, cpc: 2.5, category: 'india' },
+{ keyword: 'हिंदी में एसईओ', volume: 1500, difficulty: 18, cpc: 0.8, category: 'hindi' },
+{ keyword: 'local seo for small business', volume: 1700, difficulty: 32, cpc: 3.2, category: 'local' },
+{ keyword: 'seo agency in bangalore', volume: 1950, difficulty: 30, cpc: 3.9, category: 'india' }
+];
+
+let allKeywords = [...baseKeywords];
+if (market === 'india') {
+allKeywords = [...allKeywords, ...indiaKeywords];
+}
+
+// Determine which keywords each domain ranks for
+return allKeywords.map(kw => {
+// Your domain rankings (some keywords)
+const yourRank = Math.random() > 0.6 ? Math.floor(Math.random() * 30) + 1 : null;
+
+// Competitor rankings
+const comp1Rank = Math.random() > 0.2 ? Math.floor(Math.random() * 25) + 1 : null;
+const comp2Rank = Math.random() > 0.3 ? Math.floor(Math.random() * 25) + 1 : null;
+
+const competitorCount = [comp1Rank, comp2Rank].filter(r => r !== null).length;
+
+// Determine status
+let status = 'missing';
+if (yourRank !== null && competitorCount > 0) {
+const avgCompRank = ([comp1Rank, comp2Rank].filter(r => r !== null).reduce((a,b) => a + b, 0) / competitorCount);
+status = yourRank < avgCompRank ? 'strong' : 'weak';
+} else if (yourRank !== null) {
+status = 'unique';
+} else if (competitorCount > 0) {
+status = 'missing';
+}
+
+// Calculate opportunity score
+let opportunityScore = 0;
+if (status === 'missing') {
+opportunityScore = Math.min(100, (kw.volume / 200) + (100 - kw.difficulty) / 2);
+} else if (status === 'weak') {
+opportunityScore = Math.min(100, (kw.volume / 250) + (100 - kw.difficulty) / 3);
+}
+
+return {
+...kw,
+yourRank: yourRank,
+comp1Rank: comp1Rank,
+comp2Rank: comp2Rank,
+competitorCount: competitorCount,
+status: status,
+opportunityScore: Math.round(opportunityScore),
+priority: opportunityScore > 70 ? 'High' : (opportunityScore > 40 ? 'Medium' : 'Low')
+};
+});
+}
+
+// Update statistics
+function updateStats(keywords) {
+const missingCount = keywords.filter(k => k.status === 'missing').length;
+const weakCount = keywords.filter(k => k.status === 'weak').length;
+const strongCount = keywords.filter(k => k.status === 'strong').length;
+const highOppCount = keywords.filter(k => k.opportunityScore > 70).length;
+
+statsCards.innerHTML = `
+<div class="stat-card">
+<div class="stat-icon"><i class="fas fa-exclamation-triangle"></i></div>
+<div class="stat-value">${missingCount}</div>
+<div class="stat-label">Missing Keywords</div>
+</div>
+<div class="stat-card">
+<div class="stat-icon"><i class="fas fa-chart-line"></i></div>
+<div class="stat-value">${weakCount}</div>
+<div class="stat-label">Weak Keywords</div>
+</div>
+<div class="stat-card">
+<div class="stat-icon"><i class="fas fa-trophy"></i></div>
+<div class="stat-value">${strongCount}</div>
+<div class="stat-label">Your Strengths</div>
+</div>
+<div class="stat-card">
+<div class="stat-icon"><i class="fas fa-fire"></i></div>
+<div class="stat-value">${highOppCount}</div>
+<div class="stat-label">High Opportunities</div>
+</div>
+`;
+}
+
+// Update table with filtering
+function updateTable(keywords, filter = 'missing') {
+let filtered = keywords;
+if (filter === 'missing') filtered = keywords.filter(k => k.status === 'missing');
+else if (filter === 'weak') filtered = keywords.filter(k => k.status === 'weak');
+else if (filter === 'strong') filtered = keywords.filter(k => k.status === 'strong');
+
+// Sort by opportunity score
+filtered.sort((a, b) => b.opportunityScore - a.opportunityScore);
+
+let html = '';
+filtered.slice(0, 50).forEach(k => {
+const oppClass = k.opportunityScore > 70 ? 'opportunity-high' : (k.opportunityScore > 40 ? 'opportunity-medium' : 'opportunity-low');
+const difficultyClass = k.difficulty < 30 ? 'text-success' : (k.difficulty < 60 ? 'text-warning' : 'text-danger');
+const competitorText = [k.comp1Rank, k.comp2Rank].filter(r => r !== null).map(r => `#${r}`).join(', ') || 'None';
+
+html += `
+<tr>
+<td><strong>${k.keyword}</strong></td>
+<td>${k.volume.toLocaleString()}<div class="volume-bar"><div class="volume-fill" style="width: ${Math.min(100, k.volume / 200)}%"></div></div></td>
+<td class="${difficultyClass}">${k.difficulty}</td>
+<td>$${k.cpc}</td>
+<td><small>${competitorText || '-'}</small></td>
+<td><span class="opportunity-badge ${oppClass}">${k.opportunityScore}%</span></td>
+<td><span class="badge ${k.priority === 'High' ? 'bg-danger' : (k.priority === 'Medium' ? 'bg-warning' : 'bg-secondary')}">${k.priority}</span></td>
+</tr>
+`;
+});
+tableBody.innerHTML = html;
+}
+
+// Update charts
+function updateCharts(keywords) {
+// Destroy existing charts
+if (charts.distribution) charts.distribution.destroy();
+if (charts.opportunity) charts.opportunity.destroy();
+
+// Distribution Chart
+const ctx1 = document.getElementById('distributionChart').getContext('2d');
+charts.distribution = new Chart(ctx1, {
+type: 'doughnut',
+data: {
+labels: ['Missing Keywords', 'Weak Keywords', 'Your Strengths'],
+datasets: [{
+data: [
+keywords.filter(k => k.status === 'missing').length,
+keywords.filter(k => k.status === 'weak').length,
+keywords.filter(k => k.status === 'strong').length
+],
+backgroundColor: ['#ef476f', '#ffd166', '#06d6a0'],
+borderWidth: 0
+}]
+},
+options: {
+responsive: true,
+maintainAspectRatio: false,
+plugins: { legend: { position: 'bottom' } }
+}
+});
+
+// Opportunity Chart (Top 10)
+const topOpp = keywords.filter(k => k.status === 'missing').sort((a, b) => b.opportunityScore - a.opportunityScore).slice(0, 10);
+const ctx2 = document.getElementById('opportunityChart').getContext('2d');
+charts.opportunity = new Chart(ctx2, {
+type: 'bar',
+data: {
+labels: topOpp.map(k => k.keyword.length > 15 ? k.keyword.substring(0, 15) + '...' : k.keyword),
+datasets: [{
+label: 'Opportunity Score',
+data: topOpp.map(k => k.opportunityScore),
+backgroundColor: '#4361ee',
+borderRadius: 6
+}, {
+label: 'Search Volume (k)',
+data: topOpp.map(k => k.volume / 100),
+backgroundColor: '#06d6a0',
+borderRadius: 6
+}]
+},
+options: {
+responsive: true,
+maintainAspectRatio: false,
+plugins: { legend: { position: 'top' } }
+}
+});
+}
+
+// Update insights
+function updateInsights(keywords) {
+const missing = keywords.filter(k => k.status === 'missing');
+const highVolumeMissing = missing.filter(k => k.volume > 3000).slice(0, 3);
+const easyWin = missing.filter(k => k.difficulty < 35 && k.volume > 1000).slice(0, 3);
+
+insightsContent.innerHTML = `
+<div class="insight-card">
+<h5><i class="fas fa-chart-line"></i> Total Opportunity: ${missing.length} Missing Keywords</h5>
+<p>Your competitors rank for ${missing.length} keywords that you don't. These represent potential traffic opportunities.</p>
+</div>
+<div class="insight-card">
+<h5><i class="fas fa-fire"></i> High Volume Opportunities</h5>
+<p>Keywords like "${highVolumeMissing.map(k => k.keyword).join('", "')}" have high search volume (${highVolumeMissing.map(k => k.volume.toLocaleString()).join(', ')} monthly searches).</p>
+</div>
+<div class="insight-card">
+<h5><i class="fas fa-rocket"></i> Quick Wins Available</h5>
+<p>${easyWin.length} keywords with low difficulty (KD < 35) and good volume. Create content for these to get quick rankings.</p>
+</div>
+`;
+}
+
+// Update recommendations
+function updateRecommendations(keywords, yourDomain, competitors) {
+const missing = keywords.filter(k => k.status === 'missing');
+const easyWins = missing.filter(k => k.difficulty < 35).slice(0, 5);
+const highVolume = missing.filter(k => k.volume > 3000).slice(0, 5);
+
+recommendationsList.innerHTML = `
+<div class="rec-item">
+<i class="fas fa-file-alt fa-lg"></i>
+<div>
+<strong>Create Content for ${easyWins.length} Quick Win Keywords</strong>
+<p class="mb-0">Target keywords like "${easyWins.map(k => k.keyword).slice(0, 3).join(', ')}" with low difficulty and good volume.</p>
+</div>
+</div>
+<div class="rec-item">
+<i class="fas fa-chart-line fa-lg"></i>
+<div>
+<strong>Analyze Competitor Content</strong>
+<p class="mb-0">Study how ${competitors.join(' and ')} rank for missing keywords to understand their content strategy.</p>
+</div>
+</div>
+<div class="rec-item">
+<i class="fas fa-link fa-lg"></i>
+<div>
+<strong>Build Backlinks</strong>
+<p class="mb-0">High difficulty keywords (KD 50+) require quality backlinks. Focus on guest posting and digital PR.</p>
+</div>
+</div>
+<div class="rec-item">
+<i class="fas fa-chart-simple fa-lg"></i>
+<div>
+<strong>Track Progress</strong>
+<p class="mb-0">Monitor your rankings for these ${missing.length} missing keywords over the next 30-60 days.</p>
+</div>
+</div>
+`;
+}
+
+// Export functions
+function exportCSV(keywords) {
+const headers = ['Keyword', 'Search Volume', 'Difficulty', 'CPC', 'Status', 'Opportunity Score', 'Priority'];
+const rows = keywords.map(k => [
+k.keyword, k.volume, k.difficulty, k.cpc, k.status, k.opportunityScore, k.priority
+]);
+
+const csvContent = [headers, ...rows].map(row => row.join(',')).join('\n');
+const blob = new Blob([csvContent], { type: 'text/csv' });
+const url = window.URL.createObjectURL(blob);
+const a = document.createElement('a');
+a.href = url;
+a.download = `keyword-gap-analysis-${new Date().toISOString().split('T')[0]}.csv`;
+a.click();
+}
+
+function exportJSON(keywords) {
+const data = {
+generatedAt: new Date().toISOString(),
+yourDomain: document.getElementById('yourDomain').value,
+competitors: [document.getElementById('competitor1').value, document.getElementById('competitor2').value],
+market: currentMarket,
+totalKeywords: keywords.length,
+missingKeywords: keywords.filter(k => k.status === 'missing').length,
+keywords: keywords
+};
+const jsonStr = JSON.stringify(data, null, 2);
+const blob = new Blob([jsonStr], { type: 'application/json' });
+const url = window.URL.createObjectURL(blob);
+const a = document.createElement('a');
+a.href = url;
+a.download = `keyword-gap-analysis-${new Date().toISOString().split('T')[0]}.json`;
+a.click();
+}
+
+function copyTable() {
+const table = document.getElementById('keywordTable');
+const range = document.createRange();
+range.selectNode(table);
+window.getSelection().removeAllRanges();
+window.getSelection().addRange(range);
+document.execCommand('copy');
+window.getSelection().removeAllRanges();
+
+const btn = document.getElementById('copyTable');
+const originalText = btn.innerHTML;
+btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+setTimeout(() => btn.innerHTML = originalText, 2000);
+}
+
+// Market selector
+marketBtns.forEach(btn => {
+btn.addEventListener('click', function() {
+marketBtns.forEach(b => b.classList.remove('active'));
+this.classList.add('active');
+currentMarket = this.dataset.market;
+});
+});
+
+// Tab selector
+tabBtns.forEach(btn => {
+btn.addEventListener('click', function() {
+tabBtns.forEach(b => b.classList.remove('active'));
+this.classList.add('active');
+if (currentData) {
+updateTable(currentData, this.dataset.tab);
+}
+});
+});
+
+// Analyze button
+analyzeBtn.addEventListener('click', function() {
+const yourDomain = document.getElementById('yourDomain').value.trim();
+const competitor1 = document.getElementById('competitor1').value.trim();
+const competitor2 = document.getElementById('competitor2').value.trim();
+
+if (!yourDomain) {
+alert('Please enter your domain');
+return;
+}
+
+loadingOverlay.style.display = 'flex';
+resultsSection.style.display = 'none';
+
+setTimeout(() => {
+const keywords = generateKeywordData(yourDomain, [competitor1, competitor2], currentMarket);
+currentData = keywords;
+
+updateStats(keywords);
+updateTable(keywords, 'missing');
+updateCharts(keywords);
+updateInsights(keywords);
+updateRecommendations(keywords, yourDomain, [competitor1, competitor2]);
+
+loadingOverlay.style.display = 'none';
+resultsSection.style.display = 'block';
+
+resultsSection.scrollIntoView({ behavior: 'smooth' });
+}, 2000);
+});
+
+// Export buttons
+document.getElementById('exportCSV').addEventListener('click', () => {
+if (currentData) exportCSV(currentData);
+});
+document.getElementById('exportJSON').addEventListener('click', () => {
+if (currentData) exportJSON(currentData);
+});
+document.getElementById('copyTable').addEventListener('click', copyTable);
+
+// Auto-run
+setTimeout(() => analyzeBtn.click(), 500);
+});
+</script>
+</body>
+</html>
