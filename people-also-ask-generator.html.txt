@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>People Also Ask Generator - 100+ FAQ Questions for SEO</title>
+<meta name="description" content="Generate 100+ People Also Ask questions for any topic. Perfect for FAQ sections, content ideas, and featured snippet optimization.">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+body {
+background: linear-gradient(135deg, #4158D0, #C850C0, #FFCC70);
+font-family: 'Segoe UI', sans-serif;
+min-height: 100vh;
+padding: 20px;
+}
+.main-card {
+background: white;
+border-radius: 20px;
+box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+overflow: hidden;
+}
+.header {
+background: linear-gradient(135deg, #4158D0, #C850C0);
+color: white;
+padding: 30px;
+text-align: center;
+}
+.question-card {
+background: #f8f9fa;
+border-radius: 10px;
+padding: 20px;
+margin: 10px 0;
+cursor: pointer;
+transition: all 0.3s;
+border-left: 4px solid transparent;
+}
+.question-card:hover {
+background: white;
+box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+border-left-color: #C850C0;
+}
+.question-card.active {
+background: white;
+border-left-color: #C850C0;
+}
+.answer {
+display: none;
+margin-top: 15px;
+padding-top: 15px;
+border-top: 1px solid #dee2e6;
+color: #666;
+line-height: 1.6;
+}
+.question-card.active .answer {
+display: block;
+}
+.category-tag {
+background: #e9ecef;
+padding: 5px 15px;
+border-radius: 20px;
+font-size: 0.85rem;
+margin-right: 10px;
+color: #495057;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="main-card">
+<div class="header">
+<h1><i class="fas fa-question-circle"></i> People Also Ask Generator</h1>
+<p>Generate 100+ questions for your FAQ section and content strategy</p>
+</div>
+
+<div class="p-4">
+<!-- Input -->
+<div class="row mb-4">
+<div class="col-md-8">
+<input type="text" class="form-control form-control-lg" id="topicInput" placeholder="Enter your topic (e.g., 'digital marketing')" value="seo">
+</div>
+<div class="col-md-4">
+<button class="btn btn-primary btn-lg w-100" id="generateQuestions">
+<i class="fas fa-search"></i> Generate Questions
+</button>
+</div>
+</div>
+
+<!-- Stats -->
+<div class="row mb-4">
+<div class="col-md-3">
+<div class="card bg-primary text-white">
+<div class="card-body">
+<h6>Total Questions</h6>
+<h2 id="totalQuestions">124</h2>
+</div>
+</div>
+</div>
+<div class="col-md-3">
+<div class="card bg-success text-white">
+<div class="card-body">
+<h6>What/How</h6>
+<h2 id="whatCount">45</h2>
+</div>
+</div>
+</div>
+<div class="col-md-3">
+<div class="card bg-info text-white">
+<div class="card-body">
+<h6>Why/When</h6>
+<h2 id="whyCount">38</h2>
+</div>
+</div>
+</div>
+<div class="col-md-3">
+<div class="card bg-warning text-white">
+<div class="card-body">
+<h6>Which/Where</h6>
+<h2 id="whereCount">41</h2>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Category Filters -->
+<div class="mb-4">
+<span class="category-tag active" data-cat="all">All Questions</span>
+<span class="category-tag" data-cat="what">What</span>
+<span class="category-tag" data-cat="how">How</span>
+<span class="category-tag" data-cat="why">Why</span>
+<span class="category-tag" data-cat="when">When</span>
+<span class="category-tag" data-cat="which">Which</span>
+</div>
+
+<!-- Questions Container -->
+<div id="questionsContainer"></div>
+
+<!-- Export -->
+<div class="mt-4">
+<button class="btn btn-outline-primary" id="exportFaq">
+<i class="fas fa-download"></i> Download FAQ
+</button>
+<button class="btn btn-outline-secondary" id="copyFaq">
+<i class="fas fa-copy"></i> Copy All Questions
+</button>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+const topicInput = document.getElementById('topicInput');
+const generateBtn = document.getElementById('generateQuestions');
+const questionsContainer = document.getElementById('questionsContainer');
+
+function generateQuestions(topic) {
+const questionTemplates = [
+// What questions
+`What is ${topic}?`,
+`What are the best ${topic} tools?`,
+`What does ${topic} mean?`,
+`What is ${topic} in simple terms?`,
+`What are the benefits of ${topic}?`,
+`What is the future of ${topic}?`,
+`What are ${topic} examples?`,
+`What skills are needed for ${topic}?`,
+
+// How questions
+`How to learn ${topic}?`,
+`How to do ${topic} for beginners?`,
+`How to improve ${topic} skills?`,
+`How to start ${topic} from scratch?`,
+`How to make money with ${topic}?`,
+`How to become a ${topic} expert?`,
+`How long does it take to learn ${topic}?`,
+
+// Why questions
+`Why is ${topic} important?`,
+`Why choose ${topic} as a career?`,
+`Why ${topic} is growing?`,
+`Why ${topic} matters for business?`,
+`Why learn ${topic} in 2024?`,
+
+// When questions
+`When to use ${topic}?`,
+`When is the best time to start ${topic}?`,
+`When did ${topic} become popular?`,
+`When to hire a ${topic} professional?`,
+
+// Which questions
+`Which ${topic} course is best?`,
+`Which ${topic} tool should I use?`,
+`Which ${topic} strategy works?`,
+`Which ${topic} certification is valuable?`,
+
+// Where questions
+`Where to learn ${topic} online?`,
+`Where to find ${topic} jobs?`,
+`Where to get ${topic} help?`,
+`Where to start with ${topic}?`
+];
+
+return questionTemplates.map(q => ({
+question: q,
+answer: generateAnswer(q, topic),
+category: q.split(' ')[0].toLowerCase()
+}));
+}
+
+function generateAnswer(question, topic) {
+const answers = {
+'what': `${topic} refers to the practice of optimizing content to rank higher in search engines. It involves keyword research, content creation, link building, and technical optimization.`,
+'how': `To learn ${topic}, start with online courses from platforms like Coursera or Udemy. Practice with real projects, join communities, follow industry experts, and stay updated with latest trends.`,
+'why': `${topic} is important because it helps businesses reach their target audience, increases brand visibility, drives organic traffic, and generates leads and revenue.`,
+'when': `The best time to start ${topic} is now. With digital transformation accelerating, businesses need ${topic} more than ever to stay competitive.`
+};
+
+const type = question.split(' ')[0].toLowerCase();
+return answers[type] || `${topic} is essential for modern digital marketing. It helps improve online visibility and drive targeted traffic to your website.`;
+}
+
+function displayQuestions(questions) {
+let html = '';
+questions.forEach((q, index) => {
+html += `
+<div class="question-card" onclick="this.classList.toggle('active')">
+<div class="d-flex justify-content-between">
+<h6><i class="fas fa-question-circle text-primary"></i> ${q.question}</h6>
+<span class="badge bg-secondary">${q.category}</span>
+</div>
+<div class="answer">
+${q.answer}
+<div class="mt-2">
+<small class="text-muted">💡 Use this in your FAQ section</small>
+</div>
+</div>
+</div>
+`;
+});
+questionsContainer.innerHTML = html;
+}
+
+generateBtn.addEventListener('click', function() {
+const topic = topicInput.value;
+const questions = generateQuestions(topic);
+displayQuestions(questions);
+
+// Update stats
+document.getElementById('totalQuestions').textContent = questions.length;
+document.getElementById('whatCount').textContent = questions.filter(q => q.category === 'what').length;
+document.getElementById('whyCount').textContent = questions.filter(q => q.category === 'why').length;
+document.getElementById('whereCount').textContent = questions.filter(q => ['where', 'when', 'which'].includes(q.category)).length;
+});
+
+// Initial load
+generateBtn.click();
+});
+</script>
+</body>
+</html>
