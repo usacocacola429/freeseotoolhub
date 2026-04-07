@@ -1,1138 +1,1044 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
+<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPG77KWVCP"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
-  // Configure both Measurement IDs
   gtag('config', 'G-ZPG77KWVCP');
   gtag('config', 'G-PFPCTBFG3Y');
 </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Content Idea Generator - Free SEO Tool Hub</title>
-    <meta name="description" content="AI की मदद से ब्लॉग पोस्ट और आर्टिकल के लिए आइडियाज जनरेट करें। 100% मुफ्त AI टूल।">
-    <meta name="keywords" content="AI content generator, blog ideas, article ideas, content ideas, AI writer, free AI tools">
-    
-    <!-- Open Graph Tags -->
-    <meta property="og:title" content="AI Content Idea Generator - Free SEO Tool Hub">
-    <meta property="og:description" content="AI की मदद से ब्लॉग पोस्ट और आर्टिकल के लिए आइडियाज जनरेट करें।">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://freeseotoolhub.com/ai-ideas.html">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background: linear-gradient(135deg, #8B5CF6 0%, #10B981 100%);
-            min-height: 100vh;
-            padding: 20px;
-            color: #333;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
-        }
-        
-        .header {
-            background: linear-gradient(to right, #7C3AED, #10B981);
-            color: white;
-            padding: 40px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
-            background-size: cover;
-        }
-        
-        .header-content {
-            position: relative;
-            z-index: 1;
-        }
-        
-        .header h1 {
-            font-size: 3rem;
-            margin-bottom: 15px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-        }
-        
-        .header p {
-            font-size: 1.2rem;
-            opacity: 0.95;
-            max-width: 800px;
-            margin: 0 auto 20px;
-        }
-        
-        .ai-badge {
-            display: inline-block;
-            background: rgba(255,255,255,0.2);
-            backdrop-filter: blur(10px);
-            padding: 8px 20px;
-            border-radius: 30px;
-            border: 1px solid rgba(255,255,255,0.3);
-            font-size: 0.9rem;
-            margin-top: 10px;
-        }
-        
-        .main-content {
-            padding: 40px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-        
-        @media (max-width: 900px) {
-            .main-content {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        .input-section {
-            background: #F8FAFC;
-            padding: 35px;
-            border-radius: 15px;
-            border: 1px solid #E2E8F0;
-        }
-        
-        .output-section {
-            background: white;
-            border-radius: 15px;
-        }
-        
-        h2 {
-            color: #1E293B;
-            margin-bottom: 25px;
-            font-size: 1.8rem;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        
-        .form-group {
-            margin-bottom: 25px;
-        }
-        
-        label {
-            display: block;
-            margin-bottom: 10px;
-            color: #475569;
-            font-weight: 500;
-            font-size: 1rem;
-        }
-        
-        .input-with-icon {
-            position: relative;
-        }
-        
-        .input-icon {
-            position: absolute;
-            left: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #94A3B8;
-        }
-        
-        input, select, textarea {
-            width: 100%;
-            padding: 14px 15px 14px 45px;
-            border: 2px solid #E2E8F0;
-            border-radius: 10px;
-            font-size: 1rem;
-            transition: all 0.3s;
-            background: white;
-        }
-        
-        input:focus, select:focus, textarea:focus {
-            outline: none;
-            border-color: #7C3AED;
-            box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
-        }
-        
-        textarea {
-            min-height: 120px;
-            resize: vertical;
-            padding-left: 15px;
-        }
-        
-        select {
-            appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23475569' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 15px center;
-            background-size: 16px;
-            padding-right: 45px;
-        }
-        
-        .range-slider {
-            margin-top: 15px;
-        }
-        
-        .slider-container {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-        
-        .slider-value {
-            font-weight: 600;
-            color: #7C3AED;
-            min-width: 40px;
-        }
-        
-        input[type="range"] {
-            flex: 1;
-            height: 6px;
-            -webkit-appearance: none;
-            background: #E2E8F0;
-            border-radius: 3px;
-        }
-        
-        input[type="range"]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            width: 22px;
-            height: 22px;
-            background: #7C3AED;
-            border-radius: 50%;
-            cursor: pointer;
-            box-shadow: 0 2px 6px rgba(124, 58, 237, 0.3);
-        }
-        
-        .checkbox-group {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            margin-top: 10px;
-        }
-        
-        @media (max-width: 576px) {
-            .checkbox-group {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        .checkbox-label {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px;
-            background: white;
-            border: 2px solid #E2E8F0;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .checkbox-label:hover {
-            border-color: #7C3AED;
-            background: #F5F3FF;
-        }
-        
-        .button-group {
-            display: flex;
-            gap: 15px;
-            margin-top: 30px;
-            flex-wrap: wrap;
-        }
-        
-        .btn {
-            padding: 16px 30px;
-            border: none;
-            border-radius: 10px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-        }
-        
-        .btn-primary {
-            background: linear-gradient(to right, #7C3AED, #8B5CF6);
-            color: white;
-            flex: 1;
-            justify-content: center;
-        }
-        
-        .btn-primary:hover {
-            background: linear-gradient(to right, #6D28D9, #7C3AED);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(124, 58, 237, 0.3);
-        }
-        
-        .btn-secondary {
-            background: #F1F5F9;
-            color: #475569;
-            flex: 1;
-            justify-content: center;
-        }
-        
-        .btn-secondary:hover {
-            background: #E2E8F0;
-        }
-        
-        .output-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        
-        .results-count {
-            color: #64748B;
-            font-size: 0.95rem;
-        }
-        
-        .ideas-container {
-            max-height: 600px;
-            overflow-y: auto;
-            padding-right: 10px;
-        }
-        
-        .ideas-container::-webkit-scrollbar {
-            width: 6px;
-        }
-        
-        .ideas-container::-webkit-scrollbar-track {
-            background: #F1F5F9;
-            border-radius: 3px;
-        }
-        
-        .ideas-container::-webkit-scrollbar-thumb {
-            background: #CBD5E1;
-            border-radius: 3px;
-        }
-        
-        .idea-card {
-            background: white;
-            border: 1px solid #E2E8F0;
-            border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 20px;
-            transition: all 0.3s;
-            position: relative;
-        }
-        
-        .idea-card:hover {
-            border-color: #7C3AED;
-            box-shadow: 0 10px 25px rgba(124, 58, 237, 0.08);
-            transform: translateY(-2px);
-        }
-        
-        .blog-post { border-left: 4px solid #10B981; }
-        .how-to { border-left: 4px solid #3B82F6; }
-        .listicle { border-left: 4px solid #8B5CF6; }
-        .case-study { border-left: 4px solid #F59E0B; }
-        
-        .idea-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 15px;
-        }
-        
-        .idea-number {
-            background: #F5F3FF;
-            color: #7C3AED;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            font-size: 1rem;
-        }
-        
-        .idea-category {
-            background: #D1FAE5;
-            color: #065F46;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
-        
-        .category-tech { background: #DBEAFE; color: #1E40AF; }
-        .category-business { background: #D1FAE5; color: #065F46; }
-        .category-health { background: #FEE2E2; color: #991B1B; }
-        .category-education { background: #FEF3C7; color: #92400E; }
-        .category-lifestyle { background: #EDE9FE; color: #5B21B6; }
-        .category-marketing { background: #FCE7F3; color: #9D174D; }
-        
-        .idea-title {
-            font-size: 1.3rem;
-            color: #1E293B;
-            margin-bottom: 12px;
-            line-height: 1.4;
-        }
-        
-        .idea-description {
-            color: #64748B;
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-        
-        .idea-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 15px;
-            border-top: 1px solid #F1F5F9;
-        }
-        
-        .idea-meta {
-            display: flex;
-            gap: 15px;
-            color: #94A3B8;
-            font-size: 0.9rem;
-        }
-        
-        .idea-actions {
-            display: flex;
-            gap: 10px;
-        }
-        
-        .action-btn {
-            background: none;
-            border: none;
-            color: #64748B;
-            cursor: pointer;
-            padding: 6px;
-            border-radius: 6px;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            font-size: 0.9rem;
-        }
-        
-        .action-btn:hover {
-            background: #F1F5F9;
-            color: #475569;
-        }
-        
-        .action-btn.save:hover {
-            color: #10B981;
-        }
-        
-        .action-btn.copy:hover {
-            color: #7C3AED;
-        }
-        
-        .action-btn.regenerate:hover {
-            color: #F59E0B;
-        }
-        
-        .loader {
-            display: none;
-            text-align: center;
-            padding: 40px;
-        }
-        
-        .loader-spinner {
-            width: 50px;
-            height: 50px;
-            border: 4px solid #F1F5F9;
-            border-top: 4px solid #7C3AED;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 20px;
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        .empty-state {
-            text-align: center;
-            padding: 60px 30px;
-            color: #94A3B8;
-        }
-        
-        .empty-state i {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            color: #CBD5E1;
-        }
-        
-        .tips-section {
-            background: linear-gradient(to right, #FEF3C7, #FDE68A);
-            padding: 25px;
-            border-radius: 12px;
-            margin-top: 30px;
-        }
-        
-        .tips-section h3 {
-            color: #92400E;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .tips-list {
-            list-style: none;
-            color: #78350F;
-        }
-        
-        .tips-list li {
-            margin-bottom: 10px;
-            padding-left: 25px;
-            position: relative;
-        }
-        
-        .tips-list li:before {
-            content: '💡';
-            position: absolute;
-            left: 0;
-        }
-        
-        .footer {
-            text-align: center;
-            padding: 30px;
-            background: #F8FAFC;
-            border-top: 1px solid #E2E8F0;
-        }
-        
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-        
-        .footer-links a {
-            color: #475569;
-            text-decoration: none;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: color 0.3s;
-        }
-        
-        .footer-links a:hover {
-            color: #7C3AED;
-        }
-        
-        .success-message {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #10B981;
-            color: white;
-            padding: 15px 25px;
-            border-radius: 10px;
-            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
-            display: none;
-            align-items: center;
-            gap: 12px;
-            z-index: 1000;
-            animation: slideIn 0.3s ease;
-        }
-        
-        @keyframes slideIn {
-            from {
-                transform: translateX(100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2rem;
-            }
-            
-            .main-content {
-                padding: 25px;
-            }
-            
-            .input-section, .output-section {
-                padding: 25px;
-            }
-            
-            .button-group {
-                flex-direction: column;
-            }
-            
-            .btn {
-                width: 100%;
-            }
-            
-            .success-message {
-                left: 20px;
-                right: 20px;
-                bottom: 20px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>AI Content Idea Generator | Free Blog Topic Ideas | SEO Tool Hub</title>
+<meta name="description" content="Free AI-powered content idea generator. Get unique blog post ideas, article topics, and content suggestions for any niche. Boost your content strategy.">
+<meta name="keywords" content="AI content generator, blog idea generator, content ideas, article topics, SEO content, free AI tool, content strategy">
+<meta name="author" content="Free SEO Tool Hub">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://freeseotoolhub.com/ai-content-idea-generator.html">
+
+<!-- Open Graph -->
+<meta property="og:title" content="AI Content Idea Generator - Free Blog Topic Ideas">
+<meta property="og:description" content="Generate creative content ideas with AI. Perfect for bloggers, marketers, and content creators.">
+<meta property="og:url" content="https://freeseotoolhub.com/ai-content-idea-generator.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://freeseotoolhub.com/images/ai-ideas-og.jpg">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Content Idea Generator">
+<meta name="twitter:description" content="Free AI tool to generate blog post ideas and content topics.">
+
+<!-- Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "AI Content Idea Generator",
+  "description": "Free AI-powered tool to generate blog post ideas, article topics, and content suggestions",
+  "applicationCategory": "SEOApplication",
+  "operatingSystem": "All",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "featureList": "AI content ideas, Blog topic generation, Multiple content types, Audience targeting",
+  "isAccessibleForFree": true
+}
+</script>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #7c3aed;
+  --primary-dark: #6d28d9;
+  --primary-light: #ede9fe;
+  --secondary: #10b981;
+  --accent: #f59e0b;
+  --dark: #0f172a;
+  --gray-dark: #334155;
+  --gray: #64748b;
+  --gray-light: #e2e8f0;
+  --light: #f8fafc;
+  --white: #ffffff;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  --radius-xl: 1.5rem;
+  --radius-lg: 1rem;
+  --radius-md: 0.75rem;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: linear-gradient(135deg, #f5f3ff 0%, #ecfdf5 100%);
+  min-height: 100vh;
+  padding: 1.5rem;
+  color: var(--dark);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 60%;
+  height: 200%;
+  background: rgba(255,255,255,0.08);
+  transform: rotate(35deg);
+}
+
+.header-content {
+  position: relative;
+  z-index: 1;
+}
+
+.header h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: white;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.header p {
+  font-size: 1.15rem;
+  color: rgba(255,255,255,0.95);
+  max-width: 750px;
+  margin: 0 auto 1.2rem;
+}
+
+.ai-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(10px);
+  padding: 0.6rem 1.5rem;
+  border-radius: 60px;
+  font-size: 0.9rem;
+  color: white;
+  font-weight: 500;
+}
+
+/* Main Grid */
+.main-content {
+  background: var(--white);
+  border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+  padding: 2rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.tool-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 2rem;
+}
+
+@media (max-width: 1000px) {
+  .tool-grid {
+    grid-template-columns: 1fr;
+  }
+  .header h1 { font-size: 2rem; }
+  .main-content { padding: 1.5rem; }
+}
+
+/* Input Panel */
+.input-panel {
+  background: var(--light);
+  border-radius: var(--radius-lg);
+  padding: 1.8rem;
+  border: 1px solid var(--gray-light);
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--dark);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-left: 5px solid var(--primary);
+  padding-left: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.6rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--gray-dark);
+}
+
+label i {
+  margin-right: 0.5rem;
+  color: var(--primary);
+}
+
+.input-with-icon {
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--gray);
+  font-size: 1rem;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 0.85rem 0.85rem 0.85rem 2.7rem;
+  border: 2px solid var(--gray-light);
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  transition: all 0.2s;
+  background: var(--white);
+  font-family: inherit;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
+}
+
+/* Slider */
+.range-slider {
+  margin-top: 0.8rem;
+}
+
+.slider-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.slider-value {
+  font-weight: 600;
+  color: var(--primary);
+  min-width: 2.5rem;
+}
+
+input[type="range"] {
+  padding: 0;
+  height: 6px;
+  -webkit-appearance: none;
+  background: var(--gray-light);
+  border-radius: 3px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: var(--primary);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Checkbox Group */
+.checkbox-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 500px) {
+  .checkbox-group { grid-template-columns: 1fr; }
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 1rem;
+  background: var(--white);
+  border: 2px solid var(--gray-light);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.checkbox-label:hover {
+  border-color: var(--primary);
+  background: var(--primary-light);
+}
+
+.checkbox-label input {
+  width: auto;
+  padding: 0;
+  margin: 0;
+}
+
+/* Buttons */
+.button-group {
+  display: flex;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.85rem 1.5rem;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.btn-primary {
+  background: linear-gradient(105deg, var(--primary), var(--primary-dark));
+  color: white;
+  flex: 1;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+  background: var(--white);
+  color: var(--dark);
+  border: 2px solid var(--gray-light);
+  flex: 1;
+}
+
+.btn-secondary:hover {
+  border-color: var(--primary);
+  background: var(--primary-light);
+}
+
+/* Output Panel */
+.output-panel {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--gray-light);
+  overflow: hidden;
+}
+
+.output-header {
+  padding: 1.2rem 1.5rem;
+  background: var(--light);
+  border-bottom: 1px solid var(--gray-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.output-header h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.results-count {
+  background: var(--gray-light);
+  padding: 0.3rem 0.9rem;
+  border-radius: 40px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Ideas Container */
+.ideas-container {
+  max-height: 550px;
+  overflow-y: auto;
+  padding: 1.2rem;
+}
+
+.ideas-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.ideas-container::-webkit-scrollbar-track {
+  background: var(--gray-light);
+  border-radius: 3px;
+}
+
+.ideas-container::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 3px;
+}
+
+.idea-card {
+  background: var(--white);
+  border: 1px solid var(--gray-light);
+  border-radius: var(--radius-md);
+  padding: 1.2rem;
+  margin-bottom: 1rem;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.idea-card:hover {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.idea-card.blog-post { border-left: 4px solid var(--secondary); }
+.idea-card.how-to { border-left: 4px solid var(--primary); }
+.idea-card.listicle { border-left: 4px solid var(--accent); }
+.idea-card.case-study { border-left: 4px solid #ef4444; }
+
+.idea-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.8rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.idea-number {
+  background: var(--primary-light);
+  color: var(--primary-dark);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.idea-category {
+  padding: 0.2rem 0.8rem;
+  border-radius: 30px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.cat-technology { background: #dbeafe; color: #1e40af; }
+.cat-business { background: #d1fae5; color: #065f46; }
+.cat-health { background: #fee2e2; color: #991b1b; }
+.cat-education { background: #fef3c7; color: #92400e; }
+.cat-lifestyle { background: #ede9fe; color: #5b21b6; }
+.cat-marketing { background: #fce7f3; color: #9d174d; }
+.cat-general { background: #e2e8f0; color: #334155; }
+
+.idea-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 0.6rem;
+  line-height: 1.4;
+}
+
+.idea-description {
+  font-size: 0.85rem;
+  color: var(--gray);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.idea-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.7rem;
+  color: var(--gray);
+  margin-bottom: 0.8rem;
+}
+
+.idea-actions {
+  display: flex;
+  gap: 0.8rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--gray-light);
+}
+
+.action-btn {
+  background: none;
+  border: none;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 30px;
+  transition: all 0.2s;
+  color: var(--gray);
+}
+
+.action-btn:hover {
+  background: var(--light);
+}
+
+.action-btn.copy:hover { color: var(--primary); }
+.action-btn.save:hover { color: var(--secondary); }
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  color: var(--gray);
+}
+
+.empty-state i {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  color: var(--gray-light);
+}
+
+/* Loader */
+.loader {
+  display: none;
+  text-align: center;
+  padding: 2rem;
+}
+
+.loader-spinner {
+  width: 45px;
+  height: 45px;
+  border: 4px solid var(--gray-light);
+  border-top: 4px solid var(--primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Tips Section */
+.tips-section {
+  background: linear-gradient(105deg, #fef3c7, #fffbeb);
+  padding: 1.2rem;
+  border-radius: var(--radius-md);
+  margin-top: 1.5rem;
+}
+
+.tips-section h4 {
+  color: #92400e;
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.tips-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.tips-list li {
+  font-size: 0.75rem;
+  color: #78350f;
+  background: rgba(255,255,200,0.6);
+  padding: 0.2rem 0.8rem;
+  border-radius: 30px;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 1.8rem;
+  background: var(--light);
+  border-top: 1px solid var(--gray-light);
+  margin-top: 1.5rem;
+  border-radius: var(--radius-lg);
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.8rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.footer-links a {
+  color: var(--gray);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: var(--primary);
+}
+
+/* Toast */
+.toast {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: var(--dark);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  z-index: 1000;
+  animation: slideUp 0.3s ease;
+  display: none;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@media (max-width: 640px) {
+  body { padding: 0.8rem; }
+  .toast { left: 20px; right: 20px; bottom: 20px; }
+}
+</style>
 </head>
 <body>
-    <div class="container">
-        <!-- Header -->
-        <header class="header">
-            <div class="header-content">
-                <h1><i class="fas fa-robot"></i> AI Content Idea Generator</h1>
-                <p>AI की मदद से ब्लॉग पोस्ट और आर्टिकल के लिए आइडियाज जनरेट करें। किसी भी टॉपिक के लिए 100% यूनिक आइडियाज</p>
-                <div class="ai-badge">
-                    <i class="fas fa-brain"></i> एडवांस्ड AI एल्गोरिदम | <i class="fas fa-bolt"></i> तुरंत रिजल्ट
-                </div>
-            </div>
-        </header>
-
-        <!-- Main Content -->
-        <main class="main-content">
-            <!-- Input Section -->
-            <section class="input-section">
-                <h2><i class="fas fa-cogs"></i> आइडिया सेटिंग्स</h2>
-                
-                <div class="form-group">
-                    <label for="topic"><i class="fas fa-lightbulb"></i> मुख्य टॉपिक या कीवर्ड</label>
-                    <div class="input-with-icon">
-                        <i class="fas fa-hashtag input-icon"></i>
-                        <input type="text" id="topic" placeholder="उदाहरण: डिजिटल मार्केटिंग, एसईओ, फिटनेस, टेक्नोलॉजी...">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="niche"><i class="fas fa-tags"></i> निच (कैटेगरी)</label>
-                    <div class="input-with-icon">
-                        <i class="fas fa-folder input-icon"></i>
-                        <select id="niche">
-                            <option value="general">सामान्य</option>
-                            <option value="technology">टेक्नोलॉजी</option>
-                            <option value="business">बिजनेस</option>
-                            <option value="health">हेल्थ & फिटनेस</option>
-                            <option value="education">एजुकेशन</option>
-                            <option value="lifestyle">लाइफस्टाइल</option>
-                            <option value="marketing">मार्केटिंग</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="contentType"><i class="fas fa-file-alt"></i> कंटेंट टाइप</label>
-                    <div class="input-with-icon">
-                        <i class="fas fa-edit input-icon"></i>
-                        <select id="contentType">
-                            <option value="all">सभी टाइप</option>
-                            <option value="blog">ब्लॉग पोस्ट</option>
-                            <option value="howto">हाउ-टू गाइड</option>
-                            <option value="listicle">लिस्टिकल</option>
-                            <option value="casestudy">केस स्टडी</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label><i class="fas fa-sliders-h"></i> आइडियाज की संख्या: <span id="ideaCountValue">10</span></label>
-                    <div class="range-slider">
-                        <div class="slider-container">
-                            <span class="slider-value">5</span>
-                            <input type="range" id="ideaCount" min="5" max="20" value="10" step="1">
-                            <span class="slider-value">20</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label><i class="fas fa-bullseye"></i> टारगेट ऑडियंस</label>
-                    <div class="checkbox-group">
-                        <label class="checkbox-label">
-                            <input type="checkbox" id="audienceBeginners" checked>
-                            <span>बिगिनर्स</span>
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" id="audienceIntermediate" checked>
-                            <span>इंटरमीडिएट</span>
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" id="audienceAdvanced">
-                            <span>एडवांस्ड</span>
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" id="audienceBusiness">
-                            <span>बिजनेस</span>
-                        </label>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="tone"><i class="fas fa-comment-alt"></i> टोन ऑफ वॉयस</label>
-                    <div class="input-with-icon">
-                        <i class="fas fa-volume-up input-icon"></i>
-                        <select id="tone">
-                            <option value="professional">प्रोफेशनल</option>
-                            <option value="casual" selected>कैजुअल</option>
-                            <option value="friendly">फ्रेंडली</option>
-                            <option value="authoritative">ऑथोरिटेटिव</option>
-                            <option value="inspirational">इंस्पिरेशनल</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="button-group">
-                    <button class="btn btn-primary" id="generateBtn">
-                        <i class="fas fa-magic"></i> आइडियाज जनरेट करें
-                    </button>
-                    <button class="btn btn-secondary" id="clearBtn">
-                        <i class="fas fa-redo"></i> रीसेट करें
-                    </button>
-                </div>
-
-                <!-- Tips Section -->
-                <div class="tips-section">
-                    <h3><i class="fas fa-lightbulb"></i> बेस्ट प्रैक्टिस टिप्स</h3>
-                    <ul class="tips-list">
-                        <li>टॉपिक स्पेसिफिक रखें (जितना स्पेसिफिक, उतने बेहतर आइडियाज)</li>
-                        <li>अलग-अलग कंटेंट टाइप्स ट्राई करें</li>
-                        <li>ऑडियंस लेवल के हिसाब से आइडियाज जनरेट करें</li>
-                        <li>ट्रेंडिंग टॉपिक्स के लिए कीवर्ड्स रिसर्च करें</li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Output Section -->
-            <section class="output-section">
-                <div class="output-header">
-                    <h2><i class="fas fa-list-ul"></i> जनरेटेड आइडियाज</h2>
-                    <div class="results-count" id="resultsCount">0 आइडियाज</div>
-                </div>
-
-                <!-- Loading Animation -->
-                <div class="loader" id="loader">
-                    <div class="loader-spinner"></div>
-                    <p>AI आइडियाज जनरेट कर रहा है...</p>
-                    <p style="font-size: 0.9rem; color: #94A3B8; margin-top: 10px;">कृपया प्रतीक्षा करें</p>
-                </div>
-
-                <!-- Ideas Container -->
-                <div class="ideas-container" id="ideasContainer">
-                    <div class="empty-state">
-                        <i class="fas fa-lightbulb"></i>
-                        <h3>आइडियाज यहाँ दिखेंगे</h3>
-                        <p>सेटिंग्स भरें और "आइडियाज जनरेट करें" बटन दबाएं</p>
-                    </div>
-                </div>
-
-                <!-- Action Buttons -->
-                <div class="button-group" style="margin-top: 30px;">
-                    <button class="btn btn-primary" id="saveAllBtn" style="display: none;">
-                        <i class="fas fa-save"></i> सभी आइडियाज सेव करें
-                    </button>
-                    <button class="btn btn-secondary" id="copyAllBtn" style="display: none;">
-                        <i class="fas fa-copy"></i> सभी कॉपी करें
-                    </button>
-                </div>
-            </section>
-        </main>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="footer-links">
-                <a href="all-tools.html"><i class="fas fa-tools"></i> सभी टूल्स</a>
-                <a href="index.html"><i class="fas fa-home"></i> होमपेज</a>
-                <a href="about.html"><i class="fas fa-info-circle"></i> हमारे बारे में</a>
-                <a href="contact.html"><i class="fas fa-envelope"></i> संपर्क करें</a>
-            </div>
-            <div class="copyright">
-                <p> Free SEO Tool Hub | AI Content Idea Generator</p>
-                <p style="margin-top: 5px; font-size: 0.85rem;">100% फ्री AI टूल - कोई सब्सक्रिप्शन नहीं</p>
-            </div>
-        </footer>
+<div class="container">
+  <header class="header">
+    <div class="header-content">
+      <h1><i class="fas fa-robot"></i> AI Content Idea Generator</h1>
+      <p>Generate unique blog post ideas, article topics, and content suggestions powered by AI. Perfect for bloggers and content creators.</p>
+      <div class="ai-badge"><i class="fas fa-brain"></i> Advanced AI | <i class="fas fa-bolt"></i> Instant Results | <i class="fas fa-gem"></i> 100% Free</div>
     </div>
+  </header>
 
-    <!-- Success Message -->
-    <div class="success-message" id="successMessage">
-        <i class="fas fa-check-circle"></i>
-        <span id="successText">आइडियाज सफलतापूर्वक जनरेट हो गए!</span>
+  <div class="main-content">
+    <div class="tool-grid">
+      <!-- Input Panel -->
+      <div class="input-panel">
+        <h2 class="section-title"><i class="fas fa-sliders-h"></i> Idea Settings</h2>
+
+        <div class="form-group">
+          <label><i class="fas fa-lightbulb"></i> Main Topic / Keyword</label>
+          <div class="input-with-icon">
+            <i class="fas fa-hashtag input-icon"></i>
+            <input type="text" id="topicInput" placeholder="e.g., Digital Marketing, SEO, Fitness, Technology...">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label><i class="fas fa-tags"></i> Niche / Category</label>
+          <div class="input-with-icon">
+            <i class="fas fa-folder input-icon"></i>
+            <select id="nicheSelect">
+              <option value="general">General</option>
+              <option value="technology">Technology</option>
+              <option value="business">Business</option>
+              <option value="health">Health & Fitness</option>
+              <option value="education">Education</option>
+              <option value="lifestyle">Lifestyle</option>
+              <option value="marketing">Marketing</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label><i class="fas fa-file-alt"></i> Content Type</label>
+          <div class="input-with-icon">
+            <i class="fas fa-edit input-icon"></i>
+            <select id="contentTypeSelect">
+              <option value="all">All Types</option>
+              <option value="blog">Blog Post</option>
+              <option value="howto">How-To Guide</option>
+              <option value="listicle">Listicle</option>
+              <option value="casestudy">Case Study</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label><i class="fas fa-chart-line"></i> Number of Ideas: <span id="ideaCountVal">10</span></label>
+          <div class="range-slider">
+            <div class="slider-container">
+              <span class="slider-value">5</span>
+              <input type="range" id="ideaCountSlider" min="5" max="20" value="10" step="1">
+              <span class="slider-value">20</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label><i class="fas fa-users"></i> Target Audience</label>
+          <div class="checkbox-group">
+            <label class="checkbox-label"><input type="checkbox" id="audBeginner" checked> Beginners</label>
+            <label class="checkbox-label"><input type="checkbox" id="audIntermediate" checked> Intermediate</label>
+            <label class="checkbox-label"><input type="checkbox" id="audAdvanced"> Advanced</label>
+            <label class="checkbox-label"><input type="checkbox" id="audBusiness"> Business</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label><i class="fas fa-comment-dots"></i> Tone of Voice</label>
+          <div class="input-with-icon">
+            <i class="fas fa-volume-up input-icon"></i>
+            <select id="toneSelect">
+              <option value="professional">Professional</option>
+              <option value="casual" selected>Casual</option>
+              <option value="friendly">Friendly</option>
+              <option value="authoritative">Authoritative</option>
+              <option value="inspirational">Inspirational</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="button-group">
+          <button class="btn btn-primary" id="generateBtn"><i class="fas fa-magic"></i> Generate Ideas</button>
+          <button class="btn btn-secondary" id="resetBtn"><i class="fas fa-undo-alt"></i> Reset</button>
+        </div>
+
+        <div class="tips-section">
+          <h4><i class="fas fa-lightbulb"></i> Pro Tips</h4>
+          <ul class="tips-list">
+            <li>Be specific with your topic</li>
+            <li>Try different content types</li>
+            <li>Target audience matters</li>
+            <li>Save your favorite ideas</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Output Panel -->
+      <div class="output-panel">
+        <div class="output-header">
+          <h2><i class="fas fa-list-ul"></i> Generated Ideas</h2>
+          <div class="results-count" id="resultsCount">0 ideas</div>
+        </div>
+
+        <div class="loader" id="loader">
+          <div class="loader-spinner"></div>
+          <p>AI is generating creative ideas...</p>
+        </div>
+
+        <div class="ideas-container" id="ideasContainer">
+          <div class="empty-state">
+            <i class="fas fa-lightbulb"></i>
+            <h3>Your ideas will appear here</h3>
+            <p>Fill in the settings and click "Generate Ideas"</p>
+          </div>
+        </div>
+
+        <div style="padding: 0 1.2rem 1.2rem 1.2rem; display: flex; gap: 1rem;" id="actionButtons">
+          <button class="btn btn-secondary" id="copyAllBtn" style="display: none; flex:1;"><i class="fas fa-copy"></i> Copy All</button>
+          <button class="btn btn-primary" id="saveAllBtn" style="display: none; flex:1;"><i class="fas fa-save"></i> Save All</button>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <!-- JavaScript -->
-    <script>
-        // DOM Elements
-        const topicInput = document.getElementById('topic');
-        const nicheSelect = document.getElementById('niche');
-        const contentTypeSelect = document.getElementById('contentType');
-        const ideaCountSlider = document.getElementById('ideaCount');
-        const ideaCountValue = document.getElementById('ideaCountValue');
-        const toneSelect = document.getElementById('tone');
-        const generateBtn = document.getElementById('generateBtn');
-        const clearBtn = document.getElementById('clearBtn');
-        const ideasContainer = document.getElementById('ideasContainer');
-        const loader = document.getElementById('loader');
-        const resultsCount = document.getElementById('resultsCount');
-        const saveAllBtn = document.getElementById('saveAllBtn');
-        const copyAllBtn = document.getElementById('copyAllBtn');
-        const successMessage = document.getElementById('successMessage');
-        const successText = document.getElementById('successText');
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="all-tools.html"><i class="fas fa-tools"></i> All Tools</a>
+      <a href="index.html"><i class="fas fa-home"></i> Home</a>
+      <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+      <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+    </div>
+    <p>© 2025 Free SEO Tool Hub | AI Content Idea Generator | Made with <i class="fas fa-heart" style="color:#ef4444;"></i> for Creators</p>
+  </footer>
+</div>
 
-        // Update slider value display
-        ideaCountSlider.addEventListener('input', function() {
-            ideaCountValue.textContent = this.value;
-        });
+<div class="toast" id="toast"><i class="fas fa-check-circle"></i> <span id="toastMsg"></span></div>
 
-        // Generate Ideas
-        generateBtn.addEventListener('click', generateIdeas);
+<script>
+  // DOM Elements
+  const topicInput = document.getElementById('topicInput');
+  const nicheSelect = document.getElementById('nicheSelect');
+  const contentTypeSelect = document.getElementById('contentTypeSelect');
+  const ideaCountSlider = document.getElementById('ideaCountSlider');
+  const ideaCountVal = document.getElementById('ideaCountVal');
+  const toneSelect = document.getElementById('toneSelect');
+  const generateBtn = document.getElementById('generateBtn');
+  const resetBtn = document.getElementById('resetBtn');
+  const copyAllBtn = document.getElementById('copyAllBtn');
+  const saveAllBtn = document.getElementById('saveAllBtn');
+  const ideasContainer = document.getElementById('ideasContainer');
+  const loader = document.getElementById('loader');
+  const resultsCountSpan = document.getElementById('resultsCount');
+  const toast = document.getElementById('toast');
+  const toastMsg = document.getElementById('toastMsg');
 
-        // Clear All
-        clearBtn.addEventListener('click', clearAll);
+  // Slider update
+  ideaCountSlider.addEventListener('input', () => {
+    ideaCountVal.textContent = ideaCountSlider.value;
+  });
 
-        // Save All Ideas
-        saveAllBtn.addEventListener('click', saveAllIdeas);
+  function showToast(message, isError = false) {
+    toastMsg.textContent = message;
+    toast.style.backgroundColor = isError ? '#ef4444' : '#0f172a';
+    toast.style.display = 'flex';
+    setTimeout(() => { toast.style.display = 'none'; }, 3000);
+  }
 
-        // Copy All Ideas
-        copyAllBtn.addEventListener('click', copyAllIdeas);
+  // Generate Ideas
+  function generateIdeas() {
+    let topic = topicInput.value.trim();
+    if (!topic) {
+      showToast('Please enter a topic or keyword', true);
+      topicInput.focus();
+      return;
+    }
 
-        // Content Types Data
-        const contentTypes = {
-            blog: { name: "ब्लॉग पोस्ट", icon: "fa-blog", color: "blog-post" },
-            howto: { name: "हाउ-टू गाइड", icon: "fa-book", color: "how-to" },
-            listicle: { name: "लिस्टिकल", icon: "fa-list-ol", color: "listicle" },
-            casestudy: { name: "केस स्टडी", icon: "fa-chart-line", color: "case-study" }
-        };
+    const niche = nicheSelect.value;
+    const contentType = contentTypeSelect.value;
+    const count = parseInt(ideaCountSlider.value);
+    const tone = toneSelect.value;
 
-        // Category Colors
-        const categoryColors = {
-            technology: "category-tech",
-            business: "category-business", 
-            health: "category-health",
-            education: "category-education",
-            lifestyle: "category-lifestyle",
-            marketing: "category-marketing",
-            general: "category-tech"
-        };
+    // Get audiences
+    const audiences = [];
+    if (document.getElementById('audBeginner').checked) audiences.push('Beginners');
+    if (document.getElementById('audIntermediate').checked) audiences.push('Intermediate');
+    if (document.getElementById('audAdvanced').checked) audiences.push('Advanced');
+    if (document.getElementById('audBusiness').checked) audiences.push('Business');
 
-        // Tone translations
-        const toneMap = {
-            professional: "प्रोफेशनल",
-            casual: "कैजुअल", 
-            friendly: "फ्रेंडली",
-            authoritative: "ऑथोरिटेटिव",
-            inspirational: "इंस्पिरेशनल"
-        };
+    loader.style.display = 'block';
+    ideasContainer.innerHTML = '';
+    copyAllBtn.style.display = 'none';
+    saveAllBtn.style.display = 'none';
 
-        // Generate Ideas Function
-        function generateIdeas() {
-            const topic = topicInput.value.trim();
-            const niche = nicheSelect.value;
-            const contentType = contentTypeSelect.value;
-            const count = parseInt(ideaCountSlider.value);
-            const tone = toneSelect.value;
-            
-            // Validation
-            if (!topic) {
-                showMessage("कृपया टॉपिक या कीवर्ड दर्ज करें", "error");
-                topicInput.focus();
-                return;
-            }
+    setTimeout(() => {
+      const ideas = generateIdeaData(topic, niche, contentType, count, tone, audiences);
+      renderIdeas(ideas);
+      loader.style.display = 'none';
+      copyAllBtn.style.display = 'flex';
+      saveAllBtn.style.display = 'flex';
+      resultsCountSpan.textContent = `${ideas.length} ideas`;
+      showToast(`Generated ${ideas.length} creative ideas!`);
+    }, 1200);
+  }
 
-            // Show loader
-            loader.style.display = 'block';
-            ideasContainer.innerHTML = '';
-            saveAllBtn.style.display = 'none';
-            copyAllBtn.style.display = 'none';
+  function generateIdeaData(topic, niche, contentType, count, tone, audiences) {
+    const ideas = [];
+    const types = contentType === 'all' ? ['blog', 'howto', 'listicle', 'casestudy'] : [contentType];
+    
+    const typeNames = { blog: 'Blog Post', howto: 'How-To', listicle: 'Listicle', casestudy: 'Case Study' };
+    const toneMap = { professional: 'Professional', casual: 'Casual', friendly: 'Friendly', authoritative: 'Authoritative', inspirational: 'Inspirational' };
+    
+    const templates = [
+      "The Ultimate Guide to {topic}: Everything You Need to Know",
+      "{topic} for {audience}: {num} Proven Strategies That Work",
+      "How to Master {topic} in {num} Simple Steps",
+      "{topic} Trends 2025: What's Changing and Why",
+      "Top {num} Tools to Supercharge Your {topic} Strategy",
+      "The Beginner's Guide to {topic}: Start from Zero",
+      "{topic} vs Alternative: Which One Should You Choose?",
+      "10 Common {topic} Mistakes and How to Fix Them",
+      "How I Grew My {topic} Skills in 30 Days",
+      "The Future of {topic}: Expert Predictions for 2026",
+      "{topic} ROI: How to Measure and Improve Results",
+      "Case Study: How We Achieved Success with {topic}"
+    ];
+    
+    const descriptions = {
+      professional: `A comprehensive ${typeNames[types[0]]} about ${topic} targeting ${audiences.join(', ')} audience.`,
+      casual: `An easy-to-follow ${typeNames[types[0]]} that breaks down ${topic} in simple terms.`,
+      friendly: `Let's explore ${topic} together! This ${typeNames[types[0]]} is perfect for ${audiences[0] || 'everyone'}.`,
+      authoritative: `Expert-level insights on ${topic} backed by industry research and data.`,
+      inspirational: `Get motivated to master ${topic} with this inspiring ${typeNames[types[0]]}.`
+    };
+    
+    for (let i = 0; i < count; i++) {
+      const currentType = types[Math.floor(Math.random() * types.length)];
+      const audience = audiences.length > 0 ? audiences[Math.floor(Math.random() * audiences.length)] : 'Everyone';
+      const template = templates[Math.floor(Math.random() * templates.length)];
+      const num = Math.floor(Math.random() * 15) + 5;
+      
+      let title = template
+        .replace('{topic}', topic)
+        .replace('{audience}', audience)
+        .replace('{num}', num.toString());
+      
+      const description = (descriptions[tone] || descriptions.casual)
+        .replace('{typeNames[currentType]}', typeNames[currentType])
+        .replace('{topic}', topic)
+        .replace('{audiences.join(', ')}', audience);
+      
+      ideas.push({
+        id: i + 1,
+        title: title,
+        description: description,
+        type: currentType,
+        typeName: typeNames[currentType],
+        niche: niche,
+        audience: audience,
+        tone: toneMap[tone],
+        wordCount: Math.floor(Math.random() * 1500) + 800,
+        readTime: Math.floor(Math.random() * 25) + 8
+      });
+    }
+    return ideas;
+  }
 
-            // Simulate AI processing
-            setTimeout(() => {
-                const ideas = createIdeas(topic, niche, contentType, count, tone);
-                displayIdeas(ideas);
-                
-                loader.style.display = 'none';
-                saveAllBtn.style.display = 'inline-flex';
-                copyAllBtn.style.display = 'inline-flex';
-                
-                showMessage(`${count} आइडियाज सफलतापूर्वक जनरेट हो गए!`, "success");
-            }, 1500);
-        }
+  function getNicheClass(niche) {
+    const classes = {
+      technology: 'cat-technology', business: 'cat-business', health: 'cat-health',
+      education: 'cat-education', lifestyle: 'cat-lifestyle', marketing: 'cat-marketing'
+    };
+    return classes[niche] || 'cat-general';
+  }
 
-        // Create AI-generated Ideas
-        function createIdeas(topic, niche, contentType, count, tone) {
-            const ideas = [];
-            const contentTypesList = contentType === 'all' ? Object.keys(contentTypes) : [contentType];
-            
-            // Audience types
-            const audiences = [];
-            if (document.getElementById('audienceBeginners').checked) audiences.push("बिगिनर्स");
-            if (document.getElementById('audienceIntermediate').checked) audiences.push("इंटरमीडिएट");
-            if (document.getElementById('audienceAdvanced').checked) audiences.push("एडवांस्ड");
-            if (document.getElementById('audienceBusiness').checked) audiences.push("बिजनेस");
+  function renderIdeas(ideas) {
+    ideasContainer.innerHTML = '';
+    ideas.forEach(idea => {
+      const card = document.createElement('div');
+      card.className = `idea-card ${idea.type}`;
+      card.innerHTML = `
+        <div class="idea-header">
+          <div class="idea-number">${idea.id}</div>
+          <span class="idea-category ${getNicheClass(idea.niche)}">${idea.niche}</span>
+        </div>
+        <div class="idea-title">${escapeHtml(idea.title)}</div>
+        <div class="idea-description">${escapeHtml(idea.description)}</div>
+        <div class="idea-meta">
+          <span><i class="fas fa-file-alt"></i> ${idea.typeName}</span>
+          <span><i class="fas fa-user-friends"></i> ${idea.audience}</span>
+          <span><i class="fas fa-clock"></i> ${idea.readTime} min read</span>
+          <span><i class="fas fa-chart-simple"></i> ${idea.wordCount} words</span>
+        </div>
+        <div class="idea-actions">
+          <button class="action-btn copy" data-title="${escapeHtml(idea.title)}"><i class="far fa-copy"></i> Copy</button>
+          <button class="action-btn save" data-id="${idea.id}"><i class="far fa-bookmark"></i> Save</button>
+        </div>
+      `;
+      ideasContainer.appendChild(card);
+    });
+    
+    // Attach event listeners
+    document.querySelectorAll('.action-btn.copy').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const title = btn.getAttribute('data-title');
+        navigator.clipboard.writeText(title);
+        showToast(`Copied: "${title.substring(0, 50)}..."`);
+      });
+    });
+    
+    document.querySelectorAll('.action-btn.save').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const id = btn.getAttribute('data-id');
+        showToast(`Idea #${id} saved to your collection!`);
+        // Store in localStorage
+        let saved = JSON.parse(localStorage.getItem('ai_ideas_saved') || '[]');
+        saved.push({ id: id, timestamp: Date.now() });
+        localStorage.setItem('ai_ideas_saved', JSON.stringify(saved.slice(-20)));
+      });
+    });
+  }
+  
+  function escapeHtml(str) {
+    return str.replace(/[&<>]/g, function(m) {
+      if (m === '&') return '&amp;';
+      if (m === '<') return '&lt;';
+      if (m === '>') return '&gt;';
+      return m;
+    });
+  }
 
-            // Idea templates in Hindi
-            const ideaTemplates = [
-                "{topic} के लिए पूरी गाइड: {point1}, {point2}, और {point3}",
-                "{topic} में कामयाब होने के {number} आसान तरीके",
-                "{topic} के बारे में {number} मिथक और उनकी सच्चाई",
-                "2026 में {topic}: नए ट्रेंड्स और अपडेट्स",
-                "{topic} के लिए बेस्ट टूल्स और रिसोर्सेज",
-                "{topic} से पैसे कैसे कमाएं: {point1} और {point2}",
-                "{topic} में शुरुआत कैसे करें: स्टेप बाय स्टेप गाइड",
-                "{topic} के फायदे और नुकसान",
-                "{topic} vs {otherTopic}: कौनसा बेहतर है?",
-                "{topic} के {number} प्रैक्टिकल उदाहरण"
-            ];
+  function copyAllIdeas() {
+    const titles = Array.from(document.querySelectorAll('.idea-title')).map((el, idx) => `${idx + 1}. ${el.textContent}`);
+    if (titles.length === 0) {
+      showToast('No ideas to copy', true);
+      return;
+    }
+    navigator.clipboard.writeText(titles.join('\n\n'));
+    showToast(`Copied ${titles.length} ideas to clipboard!`);
+  }
 
-            // Points for ideas
-            const points = [
-                "बेसिक कांसेप्ट्स समझें",
-                "टूल्स और रिसोर्सेज",
-                "प्रैक्टिकल टिप्स",
-                "कॉमन मिस्टेक्स",
-                "एडवांस्ड टेक्नीक्स",
-                "केस स्टडीज",
-                "फ्यूचर ट्रेंड्स",
-                "बेस्ट प्रैक्टिसेज",
-                "ट्रबलशूटिंग",
-                "ऑप्टिमाइजेशन"
-            ];
+  function saveAllIdeas() {
+    const ideas = Array.from(document.querySelectorAll('.idea-title')).map(el => el.textContent);
+    if (ideas.length === 0) {
+      showToast('No ideas to save', true);
+      return;
+    }
+    localStorage.setItem('ai_ideas_bulk', JSON.stringify({ ideas: ideas, savedAt: Date.now() }));
+    showToast(`Saved ${ideas.length} ideas to browser storage!`);
+  }
 
-            // Get related topic
-            function getRelatedTopic(topic) {
-                const relatedTopics = {
-                    "डिजिटल मार्केटिंग": "ट्रेडिशनल मार्केटिंग",
-                    "SEO": "PPC एडवर्टाइजिंग",
-                    "फिटनेस": "योग और मेडिटेशन",
-                    "वेब डेवलपमेंट": "मोबाइल डेवलपमेंट",
-                    "सोशल मीडिया": "कंटेंट मार्केटिंग",
-                    "पैसिव इनकम": "एक्टिव इनकम",
-                    "होम डेकोर": "ऑफिस डेकोर",
-                    "हेल्दी रेसिपी": "फास्ट फूड",
-                    "ट्रैवल गाइड": "लोकल टूरिज्म",
-                    "पर्सनल फाइनेंस": "बिजनेस फाइनेंस"
-                };
-                return relatedTopics[topic] || "संबंधित टॉपिक";
-            }
+  function resetForm() {
+    topicInput.value = '';
+    nicheSelect.value = 'general';
+    contentTypeSelect.value = 'all';
+    ideaCountSlider.value = '10';
+    ideaCountVal.textContent = '10';
+    toneSelect.value = 'casual';
+    document.getElementById('audBeginner').checked = true;
+    document.getElementById('audIntermediate').checked = true;
+    document.getElementById('audAdvanced').checked = false;
+    document.getElementById('audBusiness').checked = false;
+    
+    ideasContainer.innerHTML = `<div class="empty-state"><i class="fas fa-lightbulb"></i><h3>Your ideas will appear here</h3><p>Fill in the settings and click "Generate Ideas"</p></div>`;
+    resultsCountSpan.textContent = '0 ideas';
+    copyAllBtn.style.display = 'none';
+    saveAllBtn.style.display = 'none';
+    showToast('Form reset complete');
+  }
 
-            // Generate ideas
-            for (let i = 0; i < count; i++) {
-                const currentContentType = contentTypesList[Math.floor(Math.random() * contentTypesList.length)];
-                const audience = audiences.length > 0 ? audiences[Math.floor(Math.random() * audiences.length)] : "जनरल";
-                
-                // Get random template
-                let title = ideaTemplates[Math.floor(Math.random() * ideaTemplates.length)];
-                
-                // Replace placeholders
-                title = title.replace('{topic}', topic);
-                title = title.replace('{number}', Math.floor(Math.random() * 10) + 5);
-                title = title.replace('{point1}', points[Math.floor(Math.random() * points.length)]);
-                title = title.replace('{point2}', points[Math.floor(Math.random() * points.length)]);
-                title = title.replace('{point3}', points[Math.floor(Math.random() * points.length)]);
-                title = title.replace('{otherTopic}', getRelatedTopic(topic));
-                
-                // Create description based on tone
-                const descriptions = {
-                    professional: `यह ${contentTypes[currentContentType].name.toLowerCase()} ${audience} के लिए ${topic} पर व्यापक जानकारी प्रदान करता है।`,
-                    casual: `${topic} के बारे में यह ${contentTypes[currentContentType].name.toLowerCase()} आसानी से समझ में आता है और उपयोगी है।`,
-                    friendly: `आइए ${topic} के बारे में सीखें! यह ${contentTypes[currentContentType].name.toLowerCase()} आपकी मदद करेगा।`,
-                    authoritative: `${topic} पर यह विशेषज्ञ ${contentTypes[currentContentType].name.toLowerCase()} गहन ज्ञान प्रदान करता है।`,
-                    inspirational: `${topic} में महारत हासिल करने के लिए यह ${contentTypes[currentContentType].name.toLowerCase()} आपको प्रेरित करेगा।`
-                };
-                
-                const description = descriptions[tone] || descriptions.casual;
-                
-                ideas.push({
-                    id: i + 1,
-                    title: title,
-                    description: description,
-                    category: niche,
-                    type: currentContentType,
-                    tone: toneMap[tone],
-                    audience: audience,
-                    length: Math.floor(Math.random() * 1500) + 500 + " शब्द",
-                    time: Math.floor(Math.random() * 45) + 15 + " मिनट"
-                });
-            }
-
-            return ideas;
-        }
-
-        // Display Ideas
-        function displayIdeas(ideas) {
-            ideasContainer.innerHTML = '';
-            resultsCount.textContent = `${ideas.length} आइडियाज`;
-            
-            ideas.forEach(idea => {
-                const ideaCard = document.createElement('div');
-                ideaCard.className = `idea-card ${contentTypes[idea.type].color}`;
-                
-                ideaCard.innerHTML = `
-                    <div class="idea-header">
-                        <div class="idea-number">${idea.id}</div>
-                        <span class="idea-category ${categoryColors[idea.category]}">
-                            ${idea.category}
-                        </span>
-                    </div>
-                    <h3 class="idea-title">${idea.title}</h3>
-                    <p class="idea-description">${idea.description}</p>
-                    <div class="idea-footer">
-                        <div class="idea-meta">
-                            <span><i class="fas fa-${contentTypes[idea.type].icon}"></i> ${contentTypes[idea.type].name}</span>
-                            <span><i class="fas fa-user-friends"></i> ${idea.audience}</span>
-                            <span><i class="fas fa-clock"></i> ${idea.time}</span>
-                            <span><i class="fas fa-file-word"></i> ${idea.length}</span>
-                        </div>
-                        <div class="idea-actions">
-                            <button class="action-btn copy" onclick="copyIdea('${idea.title.replace(/'/g, "\\'")}')" title="कॉपी करें">
-                                <i class="far fa-copy"></i> Copy
-                            </button>
-                            <button class="action-btn save" onclick="saveIdea(${idea.id})" title="सेव करें">
-                                <i class="far fa-bookmark"></i> Save
-                            </button>
-                        </div>
-                    </div>
-                `;
-                
-                ideasContainer.appendChild(ideaCard);
-            });
-        }
-
-        // Copy Individual Idea
-        function copyIdea(title) {
-            navigator.clipboard.writeText(title).then(() => {
-                showMessage(`आइडिया कॉपी हो गया: "${title.substring(0, 50)}..."`, "success");
-            });
-        }
-
-        // Save Individual Idea
-        function saveIdea(ideaId) {
-            showMessage(`आइडिया #${ideaId} सेव हो गया!`, "success");
-            // In real implementation, save to localStorage
-            localStorage.setItem(`ai-idea-${ideaId}`, Date.now());
-        }
-
-        // Save All Ideas
-        function saveAllIdeas() {
-            const ideas = document.querySelectorAll('.idea-title');
-            const ideaData = [];
-            ideas.forEach((idea, index) => {
-                ideaData.push({
-                    id: index + 1,
-                    title: idea.textContent,
-                    saved: Date.now()
-                });
-            });
-            
-            localStorage.setItem('ai-ideas-saved', JSON.stringify(ideaData));
-            showMessage("सभी आइडियाज सेव हो गए! आप इन्हें बाद में एक्सेस कर सकते हैं।", "success");
-        }
-
-        // Copy All Ideas
-        function copyAllIdeas() {
-            const ideas = document.querySelectorAll('.idea-title');
-            const allTitles = Array.from(ideas).map((idea, index) => 
-                `${index + 1}. ${idea.textContent}`
-            ).join('\n\n');
-            
-            navigator.clipboard.writeText(allTitles).then(() => {
-                showMessage(`सभी ${ideas.length} आइडियाज कॉपी हो गए!`, "success");
-            });
-        }
-
-        // Clear All
-        function clearAll() {
-            topicInput.value = '';
-            ideaCountSlider.value = 10;
-            ideaCountValue.textContent = '10';
-            toneSelect.value = 'casual';
-            
-            ideasContainer.innerHTML = `
-                <div class="empty-state">
-                    <i class="fas fa-lightbulb"></i>
-                    <h3>आइडियाज यहाँ दिखेंगे</h3>
-                    <p>सेटिंग्स भरें और "आइडियाज जनरेट करें" बटन दबाएं</p>
-                </div>
-            `;
-            
-            resultsCount.textContent = '0 आइडियाज';
-            saveAllBtn.style.display = 'none';
-            copyAllBtn.style.display = 'none';
-            
-            showMessage("सभी सेटिंग्स रीसेट हो गईं", "info");
-        }
-
-        // Show Message
-        function showMessage(message, type) {
-            successText.textContent = message;
-            
-            // Set color based on type
-            if (type === 'error') {
-                successMessage.style.background = '#e53e3e';
-            } else if (type === 'warning') {
-                successMessage.style.background = '#ed8936';
-            } else if (type === 'info') {
-                successMessage.style.background = '#4299e1';
-            } else {
-                successMessage.style.background = '#10B981';
-            }
-            
-            successMessage.style.display = 'flex';
-            
-            // Hide after 3 seconds
-            setTimeout(() => {
-                successMessage.style.display = 'none';
-            }, 3000);
-        }
-
-        // Initialize with sample topic
-        window.onload = function() {
-            // Set random topic
-            const topics = ["SEO", "डिजिटल मार्केटिंग", "फिटनेस", "वेब डेवलपमेंट", "पैसिव इनकम"];
-            const randomTopic = topics[Math.floor(Math.random() * topics.length)];
-            topicInput.value = randomTopic;
-            
-            // Update counts
-            ideaCountValue.textContent = ideaCountSlider.value;
-        };
-
-        // Keyboard shortcuts
-        document.addEventListener('keydown', (e) => {
-            // Ctrl+Enter to generate
-            if (e.ctrlKey && e.key === 'Enter') {
-                e.preventDefault();
-                generateBtn.click();
-            }
-            
-            // Ctrl+R to reset
-            if (e.ctrlKey && e.key === 'r') {
-                e.preventDefault();
-                clearBtn.click();
-            }
-        });
-    </script>
+  // Event listeners
+  generateBtn.addEventListener('click', generateIdeas);
+  resetBtn.addEventListener('click', resetForm);
+  copyAllBtn.addEventListener('click', copyAllIdeas);
+  saveAllBtn.addEventListener('click', saveAllIdeas);
+  topicInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') generateIdeas(); });
+  
+  // Set a sample topic on load
+  window.onload = () => {
+    topicInput.value = 'Content Marketing';
+    // optional: auto-generate on load? better to let user click
+  };
+</script>
 </body>
 </html>
-
