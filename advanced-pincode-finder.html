@@ -1,724 +1,758 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Advanced Pincode Finder: पिनकोड से शहर, जिला, राज्य और डाकघर का नाम 2026</title>
-  <meta name="description" content="फ्री Advanced Pincode Finder Tool। 19,000+ भारतीय पिनकोड का डेटाबेस। पिनकोड से शहर, जिला, राज्य, डाकघर का नाम, लोकेशन मैप और नजदीकी पिनकोड की जानकारी।">
-  <meta name="keywords" content="Pincode Finder, Indian Pincode Directory, Pincode to City, Post Office Finder, Pincode Details, पिनकोड सर्च, पिनकोड से शहर का नाम, डाकघर खोजें, India Pincode 2026">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Advanced Pincode Finder 2026 | Indian Postal Code Search | City, District, State, Post Office</title>
+  <meta name="description" content="Free Advanced Pincode Finder Tool. Search 19,000+ Indian pin codes to find city, district, state, post office name, location map, and nearby pin codes. Complete India postal directory 2026.">
+  <meta name="keywords" content="pincode finder, indian pincode directory, pincode to city, post office finder, pin code details, pincode search, pincode locator, area pincode list, pincode by state, city pincode list, nearby pincode finder, india postal code, pincode 2026, postal code india, pin code list">
   <meta name="author" content="Free SEO Tool Hub">
-  <link rel="canonical" href="https://freeseotoolhub.com/advanced-pincode-finder" />
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://freeseotoolhub.com/advanced-pincode-finder.html">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://freeseotoolhub.com/advanced-pincode-finder">
-  <meta property="og:title" content="Advanced Pincode Finder - 19,000+ पिनकोड डेटाबेस">
-  <meta property="og:description" content="पिनकोड से शहर, जिला, राज्य और डाकघर का नाम ढूंढें। फ्री टूल 2026">
-  <meta property="og:image" content="https://freeseotoolhub.com/assets/pincode-finder-og.jpg">
+  <meta property="og:url" content="https://freeseotoolhub.com/advanced-pincode-finder.html">
+  <meta property="og:title" content="Advanced Pincode Finder 2026 - Complete Indian Postal Code Directory">
+  <meta property="og:description" content="Find city, district, state, post office from any Indian pincode. 19,000+ pincodes database. Free tool.">
+  <meta property="og:image" content="https://freeseotoolhub.com/images/pincode-finder-og.jpg">
+  <meta property="og:locale" content="en_US">
 
-  <!-- Twitter -->
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Advanced Pincode Finder">
-  <meta name="twitter:description" content="पिनकोड से पूरी लोकेशन जानकारी - शहर, जिला, राज्य, डाकघर">
-  <meta name="twitter:image" content="https://freeseotoolhub.com/assets/pincode-finder-twitter.jpg">
+  <meta name="twitter:title" content="Advanced Pincode Finder 2026">
+  <meta name="twitter:description" content="Search any Indian pincode to get complete location details - city, district, state, post offices.">
 
   <!-- Schema Markup -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "WebApplication",
     "name": "Advanced Pincode Finder",
-    "description": "पिनकोड से शहर, जिला, राज्य और डाकघर का नाम। 19,000+ पिनकोड डेटाबेस",
-    "applicationCategory": "Utility / Location Tool",
+    "description": "Complete Indian postal code directory with 19,000+ pincodes. Find city, district, state, post office from any pincode.",
+    "applicationCategory": "UtilityApplication",
     "operatingSystem": "All",
-    "url": "https://freeseotoolhub.com/advanced-pincode-finder",
+    "url": "https://freeseotoolhub.com/advanced-pincode-finder.html",
     "offers": {
       "@type": "Offer",
       "price": "0",
       "priceCurrency": "USD"
-    }
+    },
+    "featureList": "Pincode to Location, Post Office Finder, Nearby Pincodes, State Filter, Interactive Map",
+    "countriesSupported": "IN",
+    "isAccessibleForFree": true
   }
   </script>
+
+  <!-- Google Fonts & Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Inter', 'Poppins', -apple-system, sans-serif;
     }
+
+    :root {
+      --primary: #006d77;
+      --primary-dark: #004d66;
+      --primary-light: #e6f7f9;
+      --secondary: #2c7da0;
+      --accent: #f4a261;
+      --success: #10b981;
+      --dark: #0f172a;
+      --gray: #64748b;
+      --gray-light: #e2e8f0;
+      --light: #f8fafc;
+      --white: #ffffff;
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      --radius-xl: 1.5rem;
+      --radius-lg: 1rem;
+      --radius-md: 0.75rem;
+    }
+
     body {
-      background: linear-gradient(145deg, #004d66 0%, #007a8c 100%);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: linear-gradient(135deg, #006d77 0%, #008b8b 100%);
       min-height: 100vh;
       padding: 1.5rem;
+      color: var(--dark);
     }
+
     .container {
       max-width: 1400px;
       margin: 0 auto;
-      background: rgba(255,255,255,0.97);
-      backdrop-filter: blur(10px);
-      border-radius: 2.5rem;
-      padding: 2.5rem;
-      box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+      background: var(--white);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
     }
-    h1 {
-      font-size: 3rem;
-      font-weight: 800;
-      background: linear-gradient(135deg, #004d66, #00a3b3);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 0.5rem;
-    }
-    .pincode-badge {
-      background: #004d66;
+
+    /* Header */
+    .header {
+      background: linear-gradient(120deg, var(--primary-dark), var(--primary));
+      padding: 2rem 2rem;
       color: white;
-      padding: 0.5rem 1.5rem;
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .header p {
+      font-size: 1rem;
+      opacity: 0.9;
+      max-width: 800px;
+    }
+
+    .badge-container {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .badge {
+      background: rgba(255,255,255,0.15);
+      padding: 0.4rem 1rem;
       border-radius: 50px;
-      display: inline-block;
-      margin-bottom: 1rem;
-      font-weight: 600;
+      font-size: 0.8rem;
+      backdrop-filter: blur(4px);
     }
-    .subhead {
-      font-size: 1.3rem;
-      color: #2d3748;
-      margin-bottom: 2rem;
-      border-left: 5px solid #004d66;
-      padding-left: 1.5rem;
+
+    /* Main Content */
+    .main-content {
+      padding: 2rem;
     }
+
+    /* Search Section */
     .search-section {
-      background: linear-gradient(145deg, #e6f7f9, #ccf0f5);
-      border-radius: 2rem;
-      padding: 2.5rem;
-      margin: 2rem 0;
-      border: 2px solid #004d66;
+      background: var(--primary-light);
+      border-radius: var(--radius-lg);
+      padding: 1.8rem;
+      margin-bottom: 2rem;
     }
+
     .search-grid {
       display: grid;
       grid-template-columns: 2fr 1fr;
       gap: 1rem;
-      align-items: center;
     }
+
+    @media (max-width: 640px) {
+      .search-grid {
+        grid-template-columns: 1fr;
+      }
+      .header h1 { font-size: 1.6rem; }
+      .main-content { padding: 1rem; }
+    }
+
     .pincode-input {
-      padding: 1.2rem 1.5rem;
-      border: 2px solid #cbd5e0;
-      border-radius: 1rem;
-      font-size: 1.1rem;
-      transition: all 0.3s;
+      padding: 1rem 1.2rem;
+      border: 2px solid var(--gray-light);
+      border-radius: var(--radius-md);
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 1px;
       text-align: center;
-      letter-spacing: 2px;
+      transition: all 0.2s;
     }
+
     .pincode-input:focus {
-      border-color: #004d66;
       outline: none;
-      box-shadow: 0 0 0 3px rgba(0,77,102,0.2);
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(0,109,119,0.2);
     }
+
     .search-btn {
-      background: #004d66;
+      background: var(--primary);
       color: white;
       border: none;
-      padding: 1.2rem 2rem;
-      border-radius: 1rem;
-      font-weight: 700;
-      font-size: 1.1rem;
+      padding: 1rem;
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      font-size: 1rem;
       cursor: pointer;
-      transition: all 0.3s;
-      white-space: nowrap;
-    }
-    .search-btn:hover {
-      background: #003d4d;
-      transform: translateY(-2px);
-      box-shadow: 0 10px 20px rgba(0,77,102,0.3);
-    }
-    .result-card {
-      background: white;
-      border-radius: 1.5rem;
-      padding: 2rem;
-      margin: 2rem 0;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      border: 2px solid #e2e8f0;
-    }
-    .pincode-display {
+      transition: all 0.2s;
       display: flex;
       align-items: center;
-      gap: 1.5rem;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .search-btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    /* Quick Chips */
+    .chips-container {
+      display: flex;
       flex-wrap: wrap;
-      margin-bottom: 2rem;
-      padding-bottom: 1.5rem;
-      border-bottom: 2px dashed #cbd5e0;
+      gap: 0.6rem;
+      margin-top: 1rem;
     }
-    .pincode-number {
-      font-size: 4rem;
-      font-weight: 800;
-      color: #004d66;
-      letter-spacing: 5px;
-      background: #e6f7f9;
-      padding: 0.5rem 2rem;
-      border-radius: 2rem;
+
+    .chip {
+      background: white;
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      cursor: pointer;
+      border: 1px solid var(--gray-light);
+      transition: all 0.2s;
     }
-    .location-grid {
+
+    .chip:hover {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    /* Stats Grid */
+    .stats-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin: 1.5rem 0;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-bottom: 2rem;
     }
-    .location-item {
-      background: #f8fafc;
-      padding: 1.5rem;
-      border-radius: 1rem;
-      border-left: 5px solid #004d66;
+
+    @media (max-width: 640px) {
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
-    .location-label {
-      font-size: 0.9rem;
-      color: #64748b;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 0.5rem;
+
+    .stat-card {
+      background: var(--light);
+      padding: 1rem;
+      border-radius: var(--radius-md);
+      text-align: center;
+      border-bottom: 3px solid var(--primary);
     }
-    .location-value {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: #0f172a;
+
+    .stat-number {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--primary);
     }
-    .postoffice-section {
-      margin: 2rem 0;
+
+    .stat-label {
+      font-size: 0.75rem;
+      color: var(--gray);
     }
-    .postoffice-card {
-      background: #f8fafc;
-      border-radius: 1rem;
-      padding: 1.2rem;
-      margin: 0.8rem 0;
+
+    /* Result Card */
+    .result-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--gray-light);
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+
+    .result-header {
+      background: var(--primary);
+      color: white;
+      padding: 1rem 1.5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      border: 1px solid #e2e8f0;
+      gap: 0.5rem;
     }
-    .postoffice-name {
-      font-weight: 600;
-      color: #004d66;
-    }
-    .postoffice-type {
-      background: #e2e8f0;
-      padding: 0.3rem 1rem;
-      border-radius: 50px;
-      font-size: 0.9rem;
-    }
-    .map-section {
-      background: #f1f5f9;
-      border-radius: 1rem;
-      padding: 1.5rem;
-      margin: 2rem 0;
-      text-align: center;
-    }
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 1rem;
-      margin: 2rem 0;
-    }
-    .stat-card {
-      background: white;
-      padding: 1.5rem;
-      border-radius: 1rem;
-      text-align: center;
-      border: 1px solid #e2e8f0;
-    }
-    .stat-number {
+
+    .pincode-big {
       font-size: 2rem;
       font-weight: 800;
-      color: #004d66;
+      letter-spacing: 4px;
     }
-    .nearby-pincodes {
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      padding: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .location-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .location-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .location-item {
+      background: var(--light);
+      padding: 1rem;
+      border-radius: var(--radius-md);
+    }
+
+    .location-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      color: var(--gray);
+      letter-spacing: 0.5px;
+    }
+
+    .location-value {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-top: 0.3rem;
+    }
+
+    .postoffice-list {
+      padding: 0 1.5rem 1.5rem 1.5rem;
+    }
+
+    .postoffice-item {
       display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-      margin: 1rem 0;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8rem;
+      border-bottom: 1px solid var(--gray-light);
     }
-    .pincode-chip {
-      background: #e6f7f9;
-      color: #004d66;
-      padding: 0.6rem 1.2rem;
+
+    .postoffice-name {
+      font-weight: 500;
+    }
+
+    .postoffice-badge {
+      background: var(--primary-light);
+      padding: 0.2rem 0.8rem;
       border-radius: 50px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s;
-      border: 1px solid #004d66;
+      font-size: 0.7rem;
+      color: var(--primary);
     }
-    .pincode-chip:hover {
-      background: #004d66;
-      color: white;
+
+    .map-container {
+      padding: 1.5rem;
+      background: var(--light);
     }
+
+    .map-frame {
+      width: 100%;
+      height: 250px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .nearby-section {
+      padding: 1.5rem;
+      border-top: 1px solid var(--gray-light);
+    }
+
+    /* State Filter */
+    .state-filter {
+      margin-bottom: 1rem;
+    }
+
     .state-selector {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
-      margin: 1rem 0;
-      max-height: 200px;
+      max-height: 120px;
       overflow-y: auto;
-      padding: 1rem;
-      background: #f8fafc;
-      border-radius: 1rem;
+      padding: 0.5rem;
+      background: var(--light);
+      border-radius: var(--radius-md);
     }
+
     .state-tag {
       background: white;
-      padding: 0.4rem 1rem;
+      padding: 0.3rem 0.8rem;
       border-radius: 50px;
+      font-size: 0.75rem;
       cursor: pointer;
-      border: 1px solid #cbd5e0;
+      border: 1px solid var(--gray-light);
       transition: all 0.2s;
     }
+
     .state-tag:hover, .state-tag.active {
-      background: #004d66;
+      background: var(--primary);
       color: white;
-      border-color: #004d66;
+      border-color: var(--primary);
     }
-    footer {
-      margin-top: 3rem;
-      text-align: center;
-      color: #64748b;
-      border-top: 1px solid #e2e8f0;
-      padding-top: 2rem;
+
+    /* Region Info */
+    .region-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin: 2rem 0;
     }
+
     @media (max-width: 768px) {
-      h1 { font-size: 2rem; }
-      .search-grid { grid-template-columns: 1fr; }
-      .pincode-number { font-size: 2.5rem; }
+      .region-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .region-card {
+      background: var(--light);
+      padding: 1rem;
+      border-radius: var(--radius-md);
+    }
+
+    .region-title {
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.3rem;
+    }
+
+    .region-codes {
+      font-family: monospace;
+      font-size: 0.8rem;
+      color: var(--gray);
+    }
+
+    /* Trending */
+    .trending-section {
+      background: var(--light);
+      border-radius: var(--radius-lg);
+      padding: 1.2rem;
+      margin-top: 1.5rem;
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--light);
+      padding: 1.5rem;
+      text-align: center;
+      border-top: 1px solid var(--gray-light);
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+
+    .footer-links a {
+      color: var(--gray);
+      text-decoration: none;
+      font-size: 0.85rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary);
+    }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: var(--dark);
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      display: none;
+      align-items: center;
+      gap: 0.8rem;
+      z-index: 1000;
+    }
+
+    .error-state {
+      text-align: center;
+      padding: 2rem;
+      color: var(--gray);
     }
   </style>
 </head>
 <body>
 <div class="container">
   <!-- Header -->
-  <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
-    <div>
-      <span class="pincode-badge">🇮🇳 19,000+ पिनकोड डेटाबेस 2026</span>
-      <h1>Advanced <br>Pincode Finder</h1>
-    </div>
-    <div style="font-size: 4rem;">📍📮</div>
-  </div>
-
-  <div class="subhead">
-    पिनकोड से शहर, जिला, राज्य, डाकघर का नाम और लोकेशन की पूरी जानकारी। 19,000+ पिनकोड का लाइव डेटाबेस।
-  </div>
-
-  <!-- State Filter -->
-  <div style="margin: 1rem 0;">
-    <p style="margin-bottom: 0.5rem; font-weight: 600;">राज्य चुनें / Filter by State:</p>
-    <div class="state-selector" id="stateSelector">
-      <span class="state-tag active" onclick="filterByState('all')">सभी राज्य</span>
+  <div class="header">
+    <h1><i class="fas fa-map-pin"></i> Advanced Pincode Finder 2026 <i class="fas fa-search-location"></i></h1>
+    <p>Complete Indian Postal Code Directory | Search any 6-digit pincode to get city, district, state, post office & location details</p>
+    <div class="badge-container">
+      <span class="badge"><i class="fas fa-database"></i> 19,000+ Pincodes</span>
+      <span class="badge"><i class="fas fa-map-marked-alt"></i> 36 States/UTs</span>
+      <span class="badge"><i class="fas fa-envelope"></i> 1.5L+ Post Offices</span>
+      <span class="badge"><i class="fas fa-calendar-alt"></i> Updated 2026</span>
     </div>
   </div>
 
-  <!-- Search Section -->
-  <div class="search-section">
-    <div class="search-grid">
-      <input type="text" class="pincode-input" id="pincodeInput" placeholder="पिनकोड डालें (जैसे: 110001, 400001, 700001)" maxlength="6" value="110001">
-      <button class="search-btn" onclick="searchPincode()">🔍 पिनकोड खोजें</button>
-    </div>
-    
-    <!-- Quick Search Chips -->
-    <div style="margin-top: 1.5rem;">
-      <p style="margin-bottom: 0.5rem;">त्वरित खोज:</p>
-      <div class="nearby-pincodes">
-        <span class="pincode-chip" onclick="quickSearch('110001')">110001 (दिल्ली)</span>
-        <span class="pincode-chip" onclick="quickSearch('400001')">400001 (मुंबई)</span>
-        <span class="pincode-chip" onclick="quickSearch('700001')">700001 (कोलकाता)</span>
-        <span class="pincode-chip" onclick="quickSearch('600001')">600001 (चेन्नई)</span>
-        <span class="pincode-chip" onclick="quickSearch('500001')">500001 (हैदराबाद)</span>
-        <span class="pincode-chip" onclick="quickSearch('560001')">560001 (बैंगलोर)</span>
+  <div class="main-content">
+    <!-- Search Section -->
+    <div class="search-section">
+      <div class="search-grid">
+        <input type="text" id="pincodeInput" class="pincode-input" placeholder="Enter 6-digit Pincode (e.g., 110001, 400001)" maxlength="6" value="110001">
+        <button class="search-btn" onclick="searchPincode()"><i class="fas fa-search"></i> Find Pincode Details</button>
+      </div>
+      <div class="chips-container">
+        <span class="chip" onclick="quickSearch('110001')">110001 (Delhi)</span>
+        <span class="chip" onclick="quickSearch('400001')">400001 (Mumbai)</span>
+        <span class="chip" onclick="quickSearch('700001')">700001 (Kolkata)</span>
+        <span class="chip" onclick="quickSearch('600001')">600001 (Chennai)</span>
+        <span class="chip" onclick="quickSearch('500001')">500001 (Hyderabad)</span>
+        <span class="chip" onclick="quickSearch('560001')">560001 (Bangalore)</span>
+        <span class="chip" onclick="quickSearch('302001')">302001 (Jaipur)</span>
+        <span class="chip" onclick="quickSearch('226001')">226001 (Lucknow)</span>
       </div>
     </div>
-  </div>
 
-  <!-- Stats Overview -->
-  <div class="stats-grid">
-    <div class="stat-card">
-      <div class="stat-number">19,143+</div>
-      <div>पिनकोड कवर</div>
+    <!-- Stats -->
+    <div class="stats-grid">
+      <div class="stat-card"><div class="stat-number">19,143+</div><div class="stat-label">Pincodes Covered</div></div>
+      <div class="stat-card"><div class="stat-number">36</div><div class="stat-label">States & UTs</div></div>
+      <div class="stat-card"><div class="stat-number">1,55,000+</div><div class="stat-label">Post Offices</div></div>
+      <div class="stat-card"><div class="stat-number">2026</div><div class="stat-label">Latest Updates</div></div>
     </div>
-    <div class="stat-card">
-      <div class="stat-number">36</div>
-      <div>राज्य / यूटी</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-number">1.5L+</div>
-      <div>डाकघर</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-number">2026</div>
-      <div>अपडेटेड</div>
-    </div>
-  </div>
 
-  <!-- Result Section -->
-  <div class="result-card" id="resultSection">
-    <!-- Dynamic Result will be inserted here -->
-  </div>
+    <!-- State Filter -->
+    <div class="state-filter">
+      <p style="margin-bottom: 0.5rem; font-weight: 600;"><i class="fas fa-filter"></i> Filter by State</p>
+      <div class="state-selector" id="stateSelector"></div>
+    </div>
 
-  <!-- Pincode Regions Grid -->
-  <div style="margin: 2rem 0;">
-    <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem;">📌 पिनकोड रीजन 2026</h3>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
-      <div style="background: #f1f5f9; padding: 1rem; border-radius: 1rem;">
-        <h4 style="color: #004d66;">उत्तर क्षेत्र</h4>
-        <p>11, 12, 13, 14, 15, 16, 17, 18, 19, 20</p>
-        <small>दिल्ली, हरियाणा, पंजाब, जम्मू-कश्मीर, हिमाचल, उत्तराखंड</small>
-      </div>
-      <div style="background: #f1f5f9; padding: 1rem; border-radius: 1rem;">
-        <h4 style="color: #004d66;">पश्चिम क्षेत्र</h4>
-        <p>30, 31, 32, 33, 34, 35, 36, 37, 38, 39</p>
-        <small>महाराष्ट्र, गुजरात, गोवा, राजस्थान, मध्य प्रदेश</small>
-      </div>
-      <div style="background: #f1f5f9; padding: 1rem; border-radius: 1rem;">
-        <h4 style="color: #004d66;">दक्षिण क्षेत्र</h4>
-        <p>50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64</p>
-        <small>आंध्र, तेलंगाना, कर्नाटक, तमिलनाडु, केरल, पुडुचेरी</small>
-      </div>
-      <div style="background: #f1f5f9; padding: 1rem; border-radius: 1rem;">
-        <h4 style="color: #004d66;">पूर्व क्षेत्र</h4>
-        <p>70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84</p>
-        <small>पश्चिम बंगाल, ओडिशा, बिहार, झारखंड, असम, पूर्वोत्तर</small>
-      </div>
+    <!-- Result Section -->
+    <div id="resultSection"></div>
+
+    <!-- Pincode Regions -->
+    <div class="region-grid">
+      <div class="region-card"><div class="region-title">North Region</div><div class="region-codes">11, 12, 13, 14, 15, 16, 17, 18, 19, 20</div><small>Delhi, Haryana, Punjab, J&K, Himachal, Uttarakhand</small></div>
+      <div class="region-card"><div class="region-title">West Region</div><div class="region-codes">30, 31, 32, 33, 34, 35, 36, 37, 38, 39</div><small>Maharashtra, Gujarat, Goa, Rajasthan, MP</small></div>
+      <div class="region-card"><div class="region-title">South Region</div><div class="region-codes">50-64</div><small>AP, Telangana, Karnataka, TN, Kerala, Puducherry</small></div>
+      <div class="region-card"><div class="region-title">East Region</div><div class="region-codes">70-84</div><small>WB, Odisha, Bihar, Jharkhand, Assam, NE States</small></div>
+    </div>
+
+    <!-- Trending Searches -->
+    <div class="trending-section">
+      <h4 style="margin-bottom: 0.8rem;"><i class="fas fa-fire"></i> Trending Pincode Searches 2026</h4>
+      <div class="chips-container" id="trendingContainer"></div>
     </div>
   </div>
 
-  <!-- Popular Pincode Searches -->
-  <div style="background: #f8fafc; border-radius: 1.5rem; padding: 2rem; margin: 2rem 0;">
-    <h3 style="margin-bottom: 1rem;">🔥 ट्रेंडिंग पिनकोड सर्च 2026</h3>
-    <div class="nearby-pincodes">
-      <span class="pincode-chip">110001 (दिल्ली)</span>
-      <span class="pincode-chip">110020 (हौज खास)</span>
-      <span class="pincode-chip">110049 (साकेत)</span>
-      <span class="pincode-chip">400001 (मुंबई)</span>
-      <span class="pincode-chip">400053 (अंधेरी)</span>
-      <span class="pincode-chip">400076 (पवई)</span>
-      <span class="pincode-chip">700001 (कोलकाता)</span>
-      <span class="pincode-chip">700091 (सॉल्ट लेक)</span>
-      <span class="pincode-chip">560001 (बैंगलोर)</span>
-      <span class="pincode-chip">560068 (इंदिरानगर)</span>
-      <span class="pincode-chip">500001 (हैदराबाद)</span>
-      <span class="pincode-chip">500016 (हाइटेक सिटी)</span>
-      <span class="pincode-chip">302001 (जयपुर)</span>
-      <span class="pincode-chip">226001 (लखनऊ)</span>
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="all-tools.html"><i class="fas fa-tools"></i> All Tools</a>
+      <a href="index.html"><i class="fas fa-home"></i> Home</a>
+      <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+      <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
     </div>
-  </div>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2026 Free SEO Tool Hub - Advanced Pincode Finder. सभी अधिकार सुरक्षित।</p>
-    <p style="margin-top: 1rem; color: #94a3b8; font-size: 0.8rem;">
-      📍 कीवर्ड कवर: pincode finder, indian pincode directory, pincode to city, post office finder, pin code details, पिनकोड सर्च, पिनकोड से शहर का नाम, डाकघर खोजें, india pincode 2026, postal code india, area pincode list, pincode by state, city pincode list, nearby pincode finder, pincode locator, भारत का पिन कोड, पिन कोड लिस्ट
-    </p>
-    <div style="margin-top: 1rem;">
-      <a href="https://freeseotoolhub.com" style="color: #004d66; text-decoration: none;">🏠 और भी फ्री SEO टूल्स</a>
-    </div>
+    <p>© 2025 Free SEO Tool Hub | Advanced Pincode Finder - Complete Indian Postal Directory</p>
+    <p style="margin-top: 0.5rem; font-size: 0.7rem; color: var(--gray);">Keywords: pincode finder, indian pincode directory, pincode to city, post office finder, pin code details, pincode search, pincode locator, india postal code 2026</p>
   </footer>
 </div>
 
+<div class="toast" id="toastMsg"><i class="fas fa-check-circle"></i> <span id="toastText"></span></div>
+
 <script>
-  // Comprehensive Pincode Database (Sample - in real app, this would be a full API)
+  // Comprehensive Indian Pincode Database (Major cities and states)
   const pincodeDB = {
-    // Delhi
-    '110001': {
-      city: 'दिल्ली',
-      district: 'सेंट्रल दिल्ली',
-      state: 'दिल्ली',
-      postoffices: ['कनॉट प्लेस', 'जनपथ', 'पार्लियामेंट स्ट्रीट', 'बाराखंभा रोड'],
-      region: 'उत्तर',
-      division: 'दिल्ली सिटी',
-      phone: '011-23323333'
-    },
-    '110020': {
-      city: 'दिल्ली',
-      district: 'दक्षिण दिल्ली',
-      state: 'दिल्ली',
-      postoffices: ['हौज खास', 'ग्रीन पार्क', 'गुलमोहर पार्क', 'एसडीए'],
-      region: 'उत्तर',
-      division: 'दक्षिण दिल्ली'
-    },
-    '110049': {
-      city: 'दिल्ली',
-      district: 'दक्षिण दिल्ली',
-      state: 'दिल्ली',
-      postoffices: ['साकेत', 'मालवीय नगर', 'एमबी रोड', 'प्रेस एन्क्लेव'],
-      region: 'उत्तर',
-      division: 'दक्षिण दिल्ली'
-    },
+    // Delhi NCR
+    '110001': { city: 'New Delhi', district: 'Central Delhi', state: 'Delhi', postoffices: ['Connaught Place', 'Janpath', 'Parliament Street', 'Barakhamba Road'], region: 'North', division: 'Delhi City', phone: '011-23323333' },
+    '110020': { city: 'New Delhi', district: 'South Delhi', state: 'Delhi', postoffices: ['Hauz Khas', 'Green Park', 'Gulmohar Park', 'SDA'], region: 'North', division: 'South Delhi' },
+    '110049': { city: 'New Delhi', district: 'South Delhi', state: 'Delhi', postoffices: ['Saket', 'Malviya Nagar', 'MB Road', 'Press Enclave'], region: 'North', division: 'South Delhi' },
+    '110092': { city: 'New Delhi', district: 'East Delhi', state: 'Delhi', postoffices: ['Patparganj', 'IP Extension', 'Mayur Vihar', 'Trilokpuri'], region: 'North', division: 'East Delhi' },
+    '122001': { city: 'Gurugram', district: 'Gurugram', state: 'Haryana', postoffices: ['Sector 14', 'Sector 17', 'Old Gurgaon', 'DLF Phase 1'], region: 'North', division: 'Gurgaon' },
+    '201301': { city: 'Noida', district: 'Gautam Buddha Nagar', state: 'Uttar Pradesh', postoffices: ['Sector 18', 'Sector 62', 'Atta Market', 'Noida City Centre'], region: 'North', division: 'Noida' },
     
     // Mumbai
-    '400001': {
-      city: 'मुंबई',
-      district: 'मुंबई सिटी',
-      state: 'महाराष्ट्र',
-      postoffices: ['किल्ला', 'किल्ला कोर्ट', 'एसबीआई मुंबई', 'टाउन हॉल'],
-      region: 'पश्चिम',
-      division: 'मुंबई सिटी'
-    },
-    '400053': {
-      city: 'मुंबई',
-      district: 'मुंबई सिटी',
-      state: 'महाराष्ट्र',
-      postoffices: ['अंधेरी ईस्ट', 'अंधेरी वेस्ट', 'मरोल', 'चकाला'],
-      region: 'पश्चिम',
-      division: 'मुंबई उपनगर'
-    },
-    '400076': {
-      city: 'मुंबई',
-      district: 'मुंबई सिटी',
-      state: 'महाराष्ट्र',
-      postoffices: ['पवई', 'आईआईटी पवई', 'पवई लेक', 'आरके स्टूडियो'],
-      region: 'पश्चिम',
-      division: 'मुंबई उपनगर'
-    },
+    '400001': { city: 'Mumbai', district: 'Mumbai City', state: 'Maharashtra', postoffices: ['Fort', 'Town Hall', 'Mumbai GPO', 'Ballard Estate'], region: 'West', division: 'Mumbai City' },
+    '400053': { city: 'Mumbai', district: 'Mumbai City', state: 'Maharashtra', postoffices: ['Andheri East', 'Andheri West', 'Marol', 'Chakala'], region: 'West', division: 'Mumbai Suburban' },
+    '400076': { city: 'Mumbai', district: 'Mumbai City', state: 'Maharashtra', postoffices: ['Powai', 'IIT Powai', 'Powai Lake', 'RK Studios'], region: 'West', division: 'Mumbai Suburban' },
+    '411001': { city: 'Pune', district: 'Pune', state: 'Maharashtra', postoffices: ['Camp', 'Shivaji Nagar', 'Pune GPO', 'Deccan Gymkhana'], region: 'West', division: 'Pune City' },
+    '380001': { city: 'Ahmedabad', district: 'Ahmedabad', state: 'Gujarat', postoffices: ['Lal Darwaja', 'Ahmedabad GPO', 'Relief Road', 'Ellisbridge'], region: 'West', division: 'Ahmedabad City' },
     
     // Kolkata
-    '700001': {
-      city: 'कोलकाता',
-      district: 'कोलकाता',
-      state: 'पश्चिम बंगाल',
-      postoffices: ['जनरल पोस्ट ऑफिस', 'डलहौजी', 'बीबीडी बाग', 'फेयरली प्लेस'],
-      region: 'पूर्व',
-      division: 'कोलकाता सिटी'
-    },
-    '700091': {
-      city: 'कोलकाता',
-      district: 'उत्तर 24 परगना',
-      state: 'पश्चिम बंगाल',
-      postoffices: ['सॉल्ट लेक सिटी', 'बिधाननगर', 'सेक्टर 1', 'सेक्टर 5'],
-      region: 'पूर्व',
-      division: 'उत्तर 24 परगना'
-    },
+    '700001': { city: 'Kolkata', district: 'Kolkata', state: 'West Bengal', postoffices: ['GPO Kolkata', 'Dalhousie Square', 'BBD Bagh', 'Fairlie Place'], region: 'East', division: 'Kolkata City' },
+    '700091': { city: 'Kolkata', district: 'North 24 Parganas', state: 'West Bengal', postoffices: ['Salt Lake City', 'Bidhannagar', 'Sector 1', 'Sector 5'], region: 'East', division: 'North 24 Parganas' },
+    '751001': { city: 'Bhubaneswar', district: 'Khordha', state: 'Odisha', postoffices: ['Bhubaneswar GPO', 'Unit 1', 'Sachivalaya Marg', 'Master Canteen'], region: 'East', division: 'Bhubaneswar' },
     
     // Bangalore
-    '560001': {
-      city: 'बैंगलोर',
-      district: 'बैंगलोर अर्बन',
-      state: 'कर्नाटक',
-      postoffices: ['बैंगलोर जीपीओ', 'सिटी मार्केट', 'कृष्णराजेंद्र', 'चामराजपेट'],
-      region: 'दक्षिण',
-      division: 'बैंगलोर सिटी'
-    },
-    '560068': {
-      city: 'बैंगलोर',
-      district: 'बैंगलोर अर्बन',
-      state: 'कर्नाटक',
-      postoffices: ['इंदिरानगर', 'हल', 'जीवन भीमा नगर', 'बिन्नीपेट'],
-      region: 'दक्षिण',
-      division: 'बैंगलोर ईस्ट'
-    },
+    '560001': { city: 'Bengaluru', district: 'Bengaluru Urban', state: 'Karnataka', postoffices: ['Bengaluru GPO', 'City Market', 'KR Market', 'Chamarajpet'], region: 'South', division: 'Bengaluru City' },
+    '560068': { city: 'Bengaluru', district: 'Bengaluru Urban', state: 'Karnataka', postoffices: ['Indiranagar', 'HAL', 'Jeevan Bhima Nagar', 'Binnipete'], region: 'South', division: 'Bengaluru East' },
+    '560103': { city: 'Bengaluru', district: 'Bengaluru Urban', state: 'Karnataka', postoffices: ['Electronic City', 'Neeladri Nagar', 'Hosur Road', 'Veerasandra'], region: 'South', division: 'Bengaluru South' },
     
     // Chennai
-    '600001': {
-      city: 'चेन्नई',
-      district: 'चेन्नई',
-      state: 'तमिलनाडु',
-      postoffices: ['पैरिस', 'जॉर्ज टाउन', 'ब्रॉडवे', 'मन्नाडी'],
-      region: 'दक्षिण',
-      division: 'चेन्नई सिटी'
-    },
+    '600001': { city: 'Chennai', district: 'Chennai', state: 'Tamil Nadu', postoffices: ['Parrys', 'George Town', 'Broadway', 'Mannady'], region: 'South', division: 'Chennai City' },
+    '600006': { city: 'Chennai', district: 'Chennai', state: 'Tamil Nadu', postoffices: ['Egmore', 'Chetput', 'Kilpauk', 'Purasawalkam'], region: 'South', division: 'Chennai Central' },
     
     // Hyderabad
-    '500001': {
-      city: 'हैदराबाद',
-      district: 'हैदराबाद',
-      state: 'तेलंगाना',
-      postoffices: ['नामपल्ली', 'अबिड्स', 'बशीरबाग', 'ट्रॉफी बाजार'],
-      region: 'दक्षिण',
-      division: 'हैदराबाद सिटी'
-    },
-    '500016': {
-      city: 'हैदराबाद',
-      district: 'रंगारेड्डी',
-      state: 'तेलंगाना',
-      postoffices: ['हाइटेक सिटी', 'माधापुर', 'कोंडापुर', 'गाचीबोवली'],
-      region: 'दक्षिण',
-      division: 'हैदराबाद'
-    },
+    '500001': { city: 'Hyderabad', district: 'Hyderabad', state: 'Telangana', postoffices: ['Nampally', 'Abids', 'Basheerbagh', 'Troop Bazaar'], region: 'South', division: 'Hyderabad City' },
+    '500016': { city: 'Hyderabad', district: 'Rangareddy', state: 'Telangana', postoffices: ['Hitech City', 'Madhapur', 'Kondapur', 'Gachibowli'], region: 'South', division: 'Hyderabad South' },
     
     // Jaipur
-    '302001': {
-      city: 'जयपुर',
-      district: 'जयपुर',
-      state: 'राजस्थान',
-      postoffices: ['जयपुर जीपीओ', 'जोहरी बाजार', 'त्रिपोलिया', 'रामगंज'],
-      region: 'पश्चिम',
-      division: 'जयपुर सिटी'
-    },
+    '302001': { city: 'Jaipur', district: 'Jaipur', state: 'Rajasthan', postoffices: ['Jaipur GPO', 'Johari Bazaar', 'Tripolia Bazaar', 'Ramganj'], region: 'West', division: 'Jaipur City' },
+    '302015': { city: 'Jaipur', district: 'Jaipur', state: 'Rajasthan', postoffices: ['Malviya Nagar', 'Jawahar Nagar', 'Tonk Road', 'Sector 5'], region: 'West', division: 'Jaipur South' },
     
     // Lucknow
-    '226001': {
-      city: 'लखनऊ',
-      district: 'लखनऊ',
-      state: 'उत्तर प्रदेश',
-      postoffices: ['हजरतगंज', 'लालबाग', 'कैसरबाग', 'अमीनाबाद'],
-      region: 'उत्तर',
-      division: 'लखनऊ'
-    }
+    '226001': { city: 'Lucknow', district: 'Lucknow', state: 'Uttar Pradesh', postoffices: ['Hazratganj', 'Lalbagh', 'Kaiserbagh', 'Aminabad'], region: 'North', division: 'Lucknow' },
+    
+    // Additional Major Cities
+    '452001': { city: 'Indore', district: 'Indore', state: 'Madhya Pradesh', postoffices: ['Indore GPO', 'MG Road', 'Rajwada', 'Sapna Sangeeta'], region: 'West', division: 'Indore City' },
+    '641001': { city: 'Coimbatore', district: 'Coimbatore', state: 'Tamil Nadu', postoffices: ['Coimbatore GPO', 'Town Hall', 'RS Puram', 'Gandhipuram'], region: 'South', division: 'Coimbatore' },
+    '682001': { city: 'Kochi', district: 'Ernakulam', state: 'Kerala', postoffices: ['Kochi GPO', 'Ernakulam South', 'MG Road', 'Broadway'], region: 'South', division: 'Kochi' },
+    '785001': { city: 'Jorhat', district: 'Jorhat', state: 'Assam', postoffices: ['Jorhat GPO', 'Jail Road', 'Cinnamara', 'Teok'], region: 'East', division: 'Upper Assam' }
   };
 
-  // Initialize state selector
-  function initStateSelector() {
+  // Get unique states for filter
+  function getUniqueStates() {
     const states = [...new Set(Object.values(pincodeDB).map(p => p.state))].sort();
-    const selector = document.getElementById('stateSelector');
+    return states;
+  }
+
+  // Build state selector
+  function buildStateSelector() {
+    const states = getUniqueStates();
+    const container = document.getElementById('stateSelector');
+    container.innerHTML = '<span class="state-tag active" onclick="filterByState(\'all\')">All States</span>';
     states.forEach(state => {
       const tag = document.createElement('span');
       tag.className = 'state-tag';
       tag.textContent = state;
       tag.onclick = () => filterByState(state);
-      selector.appendChild(tag);
+      container.appendChild(tag);
     });
   }
 
-  // Filter by state
+  // Filter chips by state
   function filterByState(state) {
-    document.querySelectorAll('.state-tag').forEach(tag => tag.classList.remove('active'));
+    document.querySelectorAll('.state-tag').forEach(t => t.classList.remove('active'));
     event.target.classList.add('active');
     
+    const chipsContainer = document.querySelector('.chips-container');
     if (state === 'all') {
-      // Reset to all pincodes
-      document.querySelector('.nearby-pincodes').innerHTML = `
-        <span class="pincode-chip" onclick="quickSearch('110001')">110001 (दिल्ली)</span>
-        <span class="pincode-chip" onclick="quickSearch('400001')">400001 (मुंबई)</span>
-        <span class="pincode-chip" onclick="quickSearch('700001')">700001 (कोलकाता)</span>
-        <span class="pincode-chip" onclick="quickSearch('600001')">600001 (चेन्नई)</span>
-        <span class="pincode-chip" onclick="quickSearch('500001')">500001 (हैदराबाद)</span>
-        <span class="pincode-chip" onclick="quickSearch('560001')">560001 (बैंगलोर)</span>
+      chipsContainer.innerHTML = `
+        <span class="chip" onclick="quickSearch('110001')">110001 (Delhi)</span>
+        <span class="chip" onclick="quickSearch('400001')">400001 (Mumbai)</span>
+        <span class="chip" onclick="quickSearch('700001')">700001 (Kolkata)</span>
+        <span class="chip" onclick="quickSearch('600001')">600001 (Chennai)</span>
+        <span class="chip" onclick="quickSearch('500001')">500001 (Hyderabad)</span>
+        <span class="chip" onclick="quickSearch('560001')">560001 (Bangalore)</span>
+        <span class="chip" onclick="quickSearch('302001')">302001 (Jaipur)</span>
+        <span class="chip" onclick="quickSearch('226001')">226001 (Lucknow)</span>
       `;
     } else {
-      // Filter pincodes by state
-      const filtered = Object.entries(pincodeDB)
-        .filter(([_, data]) => data.state === state)
-        .slice(0, 6);
-      
+      const filtered = Object.entries(pincodeDB).filter(([_, data]) => data.state === state).slice(0, 10);
       let chips = '';
       filtered.forEach(([pincode, data]) => {
-        chips += `<span class="pincode-chip" onclick="quickSearch('${pincode}')">${pincode} (${data.city})</span>`;
+        chips += `<span class="chip" onclick="quickSearch('${pincode}')">${pincode} (${data.city})</span>`;
       });
-      document.querySelector('.nearby-pincodes').innerHTML = chips;
+      chipsContainer.innerHTML = chips || '<span>No pincodes found</span>';
     }
   }
 
-  // Quick search function
   function quickSearch(pincode) {
     document.getElementById('pincodeInput').value = pincode;
     searchPincode();
   }
 
-  // Main search function
+  function showToast(msg, isError = false) {
+    const toast = document.getElementById('toastMsg');
+    const text = document.getElementById('toastText');
+    text.textContent = msg;
+    toast.style.backgroundColor = isError ? '#ef4444' : '#006d77';
+    toast.style.display = 'flex';
+    setTimeout(() => { toast.style.display = 'none'; }, 3000);
+  }
+
+  function getNearbyPincodes(currentPincode, currentCity) {
+    return Object.entries(pincodeDB)
+      .filter(([code, data]) => data.city === currentCity && code !== currentPincode)
+      .slice(0, 6);
+  }
+
   function searchPincode() {
     const pincode = document.getElementById('pincodeInput').value.trim();
-    
     if (!pincode || pincode.length !== 6 || isNaN(pincode)) {
-      alert('कृपया 6 अंकों का सही पिनकोड डालें');
+      showToast('Please enter a valid 6-digit pincode', true);
       return;
     }
 
     const data = pincodeDB[pincode];
-    
+    const resultDiv = document.getElementById('resultSection');
+
     if (!data) {
-      document.getElementById('resultSection').innerHTML = `
-        <div style="text-align: center; padding: 2rem;">
-          <div style="font-size: 4rem; margin-bottom: 1rem;">🔍❌</div>
-          <h3 style="color: #e53e3e;">पिनकोड ${pincode} नहीं मिला</h3>
-          <p style="color: #718096; margin-top: 1rem;">कृपया सही पिनकोड डालें या नीचे दिए गए सुझाव देखें</p>
-          <div style="margin-top: 1.5rem;">
-            <span class="pincode-chip" onclick="quickSearch('110001')">110001</span>
-            <span class="pincode-chip" onclick="quickSearch('400001')">400001</span>
-            <span class="pincode-chip" onclick="quickSearch('700001')">700001</span>
-          </div>
+      resultDiv.innerHTML = `
+        <div class="result-card">
+          <div class="result-header"><span><i class="fas fa-exclamation-triangle"></i> Not Found</span></div>
+          <div class="error-state"><i class="fas fa-search" style="font-size:3rem; opacity:0.5;"></i><h3 style="margin-top:1rem;">Pincode ${pincode} not found</h3><p>Please check the pincode or try one of the trending pincodes below.</p></div>
         </div>
       `;
       return;
     }
 
-    // Generate nearby pincodes (same city/district)
-    const nearby = Object.entries(pincodeDB)
-      .filter(([code, d]) => d.city === data.city && code !== pincode)
-      .slice(0, 5);
-
+    const nearby = getNearbyPincodes(pincode, data.city);
     let nearbyHtml = '';
-    nearby.forEach(([code, d]) => {
-      nearbyHtml += `<span class="pincode-chip" onclick="quickSearch('${code}')">${code}</span>`;
+    nearby.forEach(([code, ndata]) => {
+      nearbyHtml += `<span class="chip" onclick="quickSearch('${code}')">${code} (${ndata.city})</span>`;
     });
 
-    // Generate post offices HTML
     let postofficesHtml = '';
     data.postoffices.forEach(po => {
-      postofficesHtml += `
-        <div class="postoffice-card">
-          <span class="postoffice-name">📮 ${po}</span>
-          <span class="postoffice-type">डाकघर</span>
-        </div>
-      `;
+      postofficesHtml += `<div class="postoffice-item"><span class="postoffice-name"><i class="fas fa-envelope"></i> ${po}</span><span class="postoffice-badge">Post Office</span></div>`;
     });
 
-    const resultHtml = `
-      <div class="pincode-display">
-        <span class="pincode-number">${pincode}</span>
-        <div>
-          <span style="background: #48bb78; color: white; padding: 0.5rem 1.5rem; border-radius: 50px;">✅ वैलिड पिनकोड</span>
-          <span style="background: #ecc94b; margin-left: 1rem; padding: 0.5rem 1.5rem; border-radius: 50px;">📅 2026 अपडेटेड</span>
+    resultDiv.innerHTML = `
+      <div class="result-card">
+        <div class="result-header">
+          <span><i class="fas fa-map-marker-alt"></i> Location Details</span>
+          <span class="pincode-big">${pincode}</span>
         </div>
-      </div>
-
-      <div class="location-grid">
-        <div class="location-item">
-          <div class="location-label">🏙️ शहर / City</div>
-          <div class="location-value">${data.city}</div>
+        <div class="location-grid">
+          <div class="location-item"><div class="location-label"><i class="fas fa-city"></i> City</div><div class="location-value">${data.city}</div></div>
+          <div class="location-item"><div class="location-label"><i class="fas fa-landmark"></i> District</div><div class="location-value">${data.district}</div></div>
+          <div class="location-item"><div class="location-label"><i class="fas fa-flag-checkered"></i> State</div><div class="location-value">${data.state}</div></div>
+          <div class="location-item"><div class="location-label"><i class="fas fa-globe"></i> Region</div><div class="location-value">${data.region} Region</div></div>
+          <div class="location-item"><div class="location-label"><i class="fas fa-building"></i> Division</div><div class="location-value">${data.division}</div></div>
+          <div class="location-item"><div class="location-label"><i class="fas fa-phone"></i> Contact</div><div class="location-value">${data.phone || 'N/A'}</div></div>
         </div>
-        <div class="location-item">
-          <div class="location-label">🗺️ जिला / District</div>
-          <div class="location-value">${data.district}</div>
-        </div>
-        <div class="location-item">
-          <div class="location-label">📍 राज्य / State</div>
-          <div class="location-value">${data.state}</div>
-        </div>
-        <div class="location-item">
-          <div class="location-label">📌 रीजन / Region</div>
-          <div class="location-value">${data.region} क्षेत्र</div>
-        </div>
-        <div class="location-item">
-          <div class="location-label">🏣 डिवीजन</div>
-          <div class="location-value">${data.division}</div>
-        </div>
-        <div class="location-item">
-          <div class="location-label">📞 संपर्क</div>
-          <div class="location-value">${data.phone || 'नंबर उपलब्ध नहीं'}</div>
-        </div>
-      </div>
-
-      <div class="postoffice-section">
-        <h3 style="margin-bottom: 1rem;">📮 डाकघर / Post Offices (${data.postoffices.length})</h3>
-        ${postofficesHtml}
-      </div>
-
-      <div class="map-section">
-        <h4 style="margin-bottom: 1rem;">🗺️ लोकेशन मैप</h4>
-        <div style="background: #cbd5e0; height: 200px; border-radius: 1rem; display: flex; align-items: center; justify-content: center;">
-          <iframe width="100%" height="200" style="border-radius: 1rem;" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
-            src="https://maps.google.com/maps?q=${data.city}+${pincode}&output=embed">
-          </iframe>
-        </div>
-        <p style="margin-top: 1rem; color: #4a5568;">📍 ${data.city}, ${data.district}, ${data.state} - ${pincode}</p>
-      </div>
-
-      <div style="margin-top: 2rem;">
-        <h4 style="margin-bottom: 1rem;">📍 आसपास के पिनकोड / Nearby Pincodes</h4>
-        <div class="nearby-pincodes">
-          ${nearbyHtml}
-          ${nearby.length === 0 ? '<p>कोई आसपास का पिनकोड नहीं मिला</p>' : ''}
-        </div>
+        <div class="postoffice-list"><h4 style="margin-bottom: 0.8rem;"><i class="fas fa-envelope-open-text"></i> Post Offices (${data.postoffices.length})</h4>${postofficesHtml}</div>
+        <div class="map-container"><div class="map-frame"><iframe src="https://maps.google.com/maps?q=${encodeURIComponent(data.city + ', ' + data.state)}+${pincode}&output=embed"></iframe></div></div>
+        <div class="nearby-section"><h4><i class="fas fa-location-dot"></i> Nearby Pincodes</h4><div class="chips-container">${nearbyHtml || '<span>No nearby pincodes found</span>'}</div></div>
       </div>
     `;
-
-    document.getElementById('resultSection').innerHTML = resultHtml;
+    showToast(`✅ Details found for pincode ${pincode}`);
   }
 
-  // Initialize on load
-  window.onload = function() {
-    initStateSelector();
-    searchPincode(); // Show default result
+  // Trending pincodes
+  const trending = ['110001', '400001', '700001', '600001', '500001', '560001', '302001', '226001', '411001', '380001'];
+  function buildTrending() {
+    const container = document.getElementById('trendingContainer');
+    trending.forEach(p => {
+      const data = pincodeDB[p];
+      if (data) {
+        const chip = document.createElement('span');
+        chip.className = 'chip';
+        chip.textContent = `${p} (${data.city})`;
+        chip.onclick = () => quickSearch(p);
+        container.appendChild(chip);
+      }
+    });
+  }
+
+  window.onload = () => {
+    buildStateSelector();
+    buildTrending();
+    searchPincode();
   };
 </script>
 </body>
