@@ -1,696 +1,1153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Google Trends Visualizer: Compare 5 Keywords, Regional Data & Trend Visualization 2026</title>
-<meta name="description" content="Free Google Trends Visualizer Tool. Compare up to 5 keywords, view regional interest, time-based trends, and real-time data visualization. Global trends analysis 2026.">
-<meta name="keywords" content="Google Trends Visualizer, Keyword Comparison Tool, Regional Trend Data, Trends Visualization, Google Trends API, Keyword Trends 2026, Compare Search Terms, Global Trends Analysis">
-<meta name="author" content="Free SEO Tool Hub">
-<link rel="canonical" href="https://freeseotoolhub.com/google-trends-visualizer" />
-
-<!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://freeseotoolhub.com/google-trends-visualizer">
-<meta property="og:title" content="Google Trends Visualizer - Compare 5 Keywords & Regional Data">
-<meta property="og:description" content="Free tool to compare up to 5 keywords, view regional interest, and visualize trends over time">
-<meta property="og:image" content="https://freeseotoolhub.com/assets/trends-visualizer-og.jpg">
-
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Google Trends Visualizer">
-<meta name="twitter:description" content="Compare keywords, regional data & trend visualization">
-<meta name="twitter:image" content="https://freeseotoolhub.com/assets/trends-visualizer-twitter.jpg">
-
-<!-- Schema Markup -->
-<script type="application/ld+json">
-{
-"@context": "https://schema.org",
-"@type": "SoftwareApplication",
-"name": "Google Trends Visualizer",
-"description": "5 कीवर्ड की तुलना, क्षेत्रीय डेटा, समय के साथ ट्रेंड का विजुअलाइजेशन",
-"applicationCategory": "SEO Tool / Analytics",
-"operatingSystem": "All",
-"url": "https://freeseotoolhub.com/google-trends-visualizer",
-"offers": {
-"@type": "Offer",
-"price": "0",
-"priceCurrency": "USD"
-}
-}
-</script>
-
-<!-- Chart.js for visualizations -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-
-<style>
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-}
-body {
-background: linear-gradient(145deg, #0B2B40 0%, #1A4B6D 100%);
-min-height: 100vh;
-padding: 1.5rem;
-}
-.container {
-max-width: 1400px;
-margin: 0 auto;
-background: rgba(255,255,255,0.98);
-backdrop-filter: blur(10px);
-border-radius: 2.5rem;
-padding: 2.5rem;
-box-shadow: 0 30px 60px rgba(0,0,0,0.3);
-}
-h1 {
-font-size: 3rem;
-font-weight: 800;
-background: linear-gradient(135deg, #0B2B40, #1A4B6D);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-margin-bottom: 0.5rem;
-}
-.global-badge {
-background: #1A4B6D;
-color: white;
-padding: 0.5rem 1.5rem;
-border-radius: 50px;
-display: inline-block;
-margin-bottom: 1rem;
-font-weight: 600;
-letter-spacing: 1px;
-}
-.trending-badge {
-background: #FF6B6B;
-color: white;
-padding: 0.3rem 1rem;
-border-radius: 50px;
-font-size: 0.9rem;
-margin-left: 1rem;
-}
-.subhead {
-font-size: 1.3rem;
-color: #2d3748;
-margin-bottom: 2rem;
-border-left: 5px solid #1A4B6D;
-padding-left: 1.5rem;
-}
-.control-panel {
-background: linear-gradient(145deg, #F0F9FF, #E6F3FF);
-border-radius: 2rem;
-padding: 2rem;
-margin: 2rem 0;
-border: 2px solid #1A4B6D;
-}
-.keywords-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-gap: 1rem;
-margin-bottom: 1.5rem;
-}
-.keyword-input {
-padding: 1rem;
-border: 2px solid #cbd5e0;
-border-radius: 1rem;
-font-size: 1rem;
-transition: all 0.3s;
-}
-.keyword-input:focus {
-border-color: #1A4B6D;
-outline: none;
-box-shadow: 0 0 0 3px rgba(26,75,109,0.2);
-}
-.filter-row {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-gap: 1rem;
-margin: 1.5rem 0;
-}
-.select-style {
-padding: 1rem;
-border: 2px solid #cbd5e0;
-border-radius: 1rem;
-font-size: 1rem;
-background: white;
-}
-.btn {
-background: #1A4B6D;
-color: white;
-border: none;
-padding: 1rem 2rem;
-border-radius: 1rem;
-font-weight: 700;
-font-size: 1.1rem;
-cursor: pointer;
-transition: all 0.3s;
-white-space: nowrap;
-}
-.btn:hover {
-background: #0B2B40;
-transform: translateY(-2px);
-box-shadow: 0 10px 20px rgba(26,75,109,0.3);
-}
-.btn-outline {
-background: white;
-color: #1A4B6D;
-border: 2px solid #1A4B6D;
-}
-.btn-outline:hover {
-background: #1A4B6D;
-color: white;
-}
-.chart-container {
-background: white;
-border-radius: 1.5rem;
-padding: 2rem;
-margin: 2rem 0;
-box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-border: 1px solid #e2e8f0;
-height: 400px;
-position: relative;
-}
-.metrics-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-gap: 1.5rem;
-margin: 2rem 0;
-}
-.metric-card {
-background: #f7fafc;
-padding: 1.5rem;
-border-radius: 1rem;
-text-align: center;
-border: 1px solid #e2e8f0;
-}
-.metric-value {
-font-size: 2.5rem;
-font-weight: 800;
-color: #1A4B6D;
-}
-.region-list {
-max-height: 300px;
-overflow-y: auto;
-background: #f7fafc;
-border-radius: 1rem;
-padding: 1rem;
-}
-.region-item {
-display: flex;
-justify-content: space-between;
-padding: 0.8rem;
-border-bottom: 1px solid #e2e8f0;
-}
-.region-item:last-child {
-border-bottom: none;
-}
-.region-bar {
-height: 8px;
-background: #1A4B6D;
-border-radius: 4px;
-width: 0%;
-transition: width 0.3s;
-}
-.trending-keywords {
-display: flex;
-flex-wrap: wrap;
-gap: 0.8rem;
-margin: 1rem 0;
-}
-.trend-tag {
-background: #F0F9FF;
-color: #1A4B6D;
-padding: 0.6rem 1.2rem;
-border-radius: 50px;
-font-weight: 500;
-cursor: pointer;
-transition: all 0.2s;
-border: 1px solid #1A4B6D;
-}
-.trend-tag:hover {
-background: #1A4B6D;
-color: white;
-}
-.time-range {
-display: flex;
-gap: 0.5rem;
-flex-wrap: wrap;
-margin: 1rem 0;
-}
-.time-btn {
-padding: 0.5rem 1.2rem;
-border: 1px solid #cbd5e0;
-border-radius: 50px;
-background: white;
-cursor: pointer;
-transition: all 0.2s;
-}
-.time-btn.active {
-background: #1A4B6D;
-color: white;
-border-color: #1A4B6D;
-}
-.export-btn {
-display: flex;
-gap: 0.5rem;
-justify-content: flex-end;
-margin: 1rem 0;
-}
-footer {
-margin-top: 3rem;
-text-align: center;
-color: #718096;
-border-top: 1px solid #e2e8f0;
-padding-top: 2rem;
-}
-@media (max-width: 768px) {
-h1 { font-size: 2rem; }
-.container { padding: 1.5rem; }
-.chart-container { height: 300px; }
-}
-</style>
+    <!-- ✅ Google Analytics - Optimized -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPG77KWVCP"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PFPCTBFG3Y"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ZPG77KWVCP');
+        gtag('config', 'G-PFPCTBFG3Y');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 🔴 PRIMARY SEO META TAGS -->
+    <title>Google Trends Visualizer | Compare 5 Keywords | Regional Data & Trends 2026</title>
+    <meta name="description" content="Free Google Trends Visualizer Tool. Compare up to 5 keywords, view regional interest, time-based trends, and real-time data visualization. Global trends analysis 2026. No signup required.">
+    <meta name="keywords" content="Google Trends Visualizer, Keyword Comparison Tool, Regional Trend Data, Trends Visualization, Google Trends API, Keyword Trends 2026, Compare Search Terms, Global Trends Analysis, trend comparison chart, keyword interest over time">
+    <meta name="author" content="Free SEO Tool Hub">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- 🔴 OPEN GRAPH META TAGS -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freeseotoolhub.com/google-trends-visualizer.html">
+    <meta property="og:title" content="Google Trends Visualizer - Compare 5 Keywords & Regional Data 2026">
+    <meta property="og:description" content="Free tool to compare up to 5 keywords, view regional interest, and visualize trends over time. Perfect for SEO and market research.">
+    <meta property="og:image" content="https://freeseotoolhub.com/images/trends-visualizer-og.jpg">
+    <meta property="og:site_name" content="Free SEO Tool Hub">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- 🔴 TWITTER CARD -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://freeseotoolhub.com/google-trends-visualizer.html">
+    <meta name="twitter:title" content="Google Trends Visualizer | Free SEO Tool 2026">
+    <meta name="twitter:description" content="Compare keywords, regional data & trend visualization. 100% Free.">
+    <meta name="twitter:image" content="https://freeseotoolhub.com/images/trends-visualizer-twitter.jpg">
+    <meta name="twitter:site" content="@FreeSEOToolHub">
+    
+    <!-- 🔴 CANONICAL & HREFLANG -->
+    <link rel="canonical" href="https://freeseotoolhub.com/google-trends-visualizer.html">
+    <link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/google-trends-visualizer.html">
+    <link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/google-trends-visualizer.html">
+    
+    <!-- 🔴 SCHEMA MARKUP - SoftwareApplication -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Google Trends Visualizer",
+        "description": "Free online tool to compare up to 5 keywords, view regional interest, time-based trends, and real-time data visualization. Perfect for SEO and market research.",
+        "applicationCategory": "SEO Tool / Analytics",
+        "operatingSystem": "All",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "Compare up to 5 keywords",
+            "Regional interest data",
+            "Time-based trends",
+            "Real-time visualization",
+            "Export as PNG/CSV",
+            "Related queries analysis"
+        ],
+        "softwareVersion": "2.0",
+        "dateModified": "2026-04-12",
+        "url": "https://freeseotoolhub.com/google-trends-visualizer.html"
+    }
+    </script>
+    
+    <!-- 🔴 FAQ SCHEMA -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How many keywords can I compare in this Google Trends Visualizer?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You can compare up to 5 keywords simultaneously. This allows you to analyze relative search interest and identify trending topics effectively."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is this Google Trends tool free to use?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, this Google Trends Visualizer is 100% free. No signup, no registration, no hidden costs. Generate unlimited trend comparisons."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What regions and countries are supported?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The tool supports worldwide data as well as country-specific trends for US, UK, India, Canada, Australia, Germany, France, Japan, Brazil, and many more."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I export the trend data?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, you can export the trend chart as PNG image or download the raw data as CSV file for further analysis in Excel or other tools."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What time ranges are available?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You can view trends for last 7 days, 30 days, 90 days, 12 months, 5 years, or all data since 2004."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How accurate is the trend data?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The tool uses real-time data simulation based on actual Google Trends patterns. For production use, it can be connected to Google Trends API for live data."
+                }
+            }
+        ]
+    }
+    </script>
+    
+    <!-- 🔴 BREADCRUMB SCHEMA -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://freeseotoolhub.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "All Tools",
+                "item": "https://freeseotoolhub.com/all-tools.html"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Google Trends Visualizer",
+                "item": "https://freeseotoolhub.com/google-trends-visualizer.html"
+            }
+        ]
+    }
+    </script>
+    
+    <!-- 🔴 HOW-TO SCHEMA -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How to Use Google Trends Visualizer",
+        "description": "Step-by-step guide to compare keywords and analyze trends",
+        "step": [
+            {
+                "@type": "HowToStep",
+                "name": "Enter Keywords",
+                "text": "Enter up to 5 keywords you want to compare in the input fields."
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Select Filters",
+                "text": "Choose country, category, search type, and time range for your analysis."
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Visualize Trends",
+                "text": "Click 'Visualize Trends' to generate the comparison chart and metrics."
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Export or Share",
+                "text": "Download chart as PNG, export data as CSV, or share the comparison link."
+            }
+        ]
+    }
+    </script>
+    
+    <!-- Chart.js for visualizations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        body {
+            background: linear-gradient(145deg, #0B2B40 0%, #1A4B6D 100%);
+            min-height: 100vh;
+            padding: 1.5rem;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.98);
+            backdrop-filter: blur(10px);
+            border-radius: 2.5rem;
+            padding: 2.5rem;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+        }
+        
+        /* Breadcrumb Navigation */
+        .breadcrumb-nav {
+            background: #f0f9ff;
+            padding: 12px 25px;
+            border-radius: 50px;
+            margin-bottom: 25px;
+            display: inline-block;
+            border: 1px solid #1A4B6D;
+        }
+        .breadcrumb-nav a {
+            color: #1A4B6D;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .breadcrumb-nav a:hover {
+            color: #0B2B40;
+            text-decoration: underline;
+        }
+        .breadcrumb-nav span {
+            color: #718096;
+            margin: 0 10px;
+        }
+        .last-updated-badge {
+            display: inline-block;
+            background: #1A4B6D;
+            color: white;
+            padding: 5px 18px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            margin-left: 20px;
+        }
+        
+        /* Table of Contents */
+        .toc-section {
+            background: #f7fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+        .toc-title {
+            color: #0B2B40;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .toc-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            list-style: none;
+        }
+        .toc-list li a {
+            color: #2d3748;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 0;
+            transition: color 0.3s;
+        }
+        .toc-list li a:hover {
+            color: #1A4B6D;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #0B2B40, #1A4B6D);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+        .global-badge {
+            background: #1A4B6D;
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            display: inline-block;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        .trending-badge {
+            background: #FF6B6B;
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            margin-left: 1rem;
+        }
+        .subhead {
+            font-size: 1.3rem;
+            color: #2d3748;
+            margin-bottom: 2rem;
+            border-left: 5px solid #1A4B6D;
+            padding-left: 1.5rem;
+        }
+        .control-panel {
+            background: linear-gradient(145deg, #F0F9FF, #E6F3FF);
+            border-radius: 2rem;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 2px solid #1A4B6D;
+        }
+        .keywords-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .keyword-input {
+            padding: 1rem;
+            border: 2px solid #cbd5e0;
+            border-radius: 1rem;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        .keyword-input:focus {
+            border-color: #1A4B6D;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(26,75,109,0.2);
+        }
+        .filter-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .select-style {
+            padding: 1rem;
+            border: 2px solid #cbd5e0;
+            border-radius: 1rem;
+            font-size: 1rem;
+            background: white;
+        }
+        .btn {
+            background: #1A4B6D;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 1rem;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+        .btn:hover {
+            background: #0B2B40;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(26,75,109,0.3);
+        }
+        .btn-outline {
+            background: white;
+            color: #1A4B6D;
+            border: 2px solid #1A4B6D;
+        }
+        .btn-outline:hover {
+            background: #1A4B6D;
+            color: white;
+        }
+        .try-example-btn {
+            background: #FF6B6B;
+            border: none;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .try-example-btn:hover {
+            background: #e05555;
+            transform: translateY(-2px);
+        }
+        .chart-container {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 1px solid #e2e8f0;
+            height: 400px;
+            position: relative;
+        }
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .metric-card {
+            background: #f7fafc;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #1A4B6D;
+        }
+        .region-list {
+            max-height: 300px;
+            overflow-y: auto;
+            background: #f7fafc;
+            border-radius: 1rem;
+            padding: 1rem;
+        }
+        .region-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.8rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .region-item:last-child {
+            border-bottom: none;
+        }
+        .region-bar {
+            height: 8px;
+            background: #1A4B6D;
+            border-radius: 4px;
+            width: 0%;
+            transition: width 0.3s;
+        }
+        .trending-keywords {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin: 1rem 0;
+        }
+        .trend-tag {
+            background: #F0F9FF;
+            color: #1A4B6D;
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 1px solid #1A4B6D;
+        }
+        .trend-tag:hover {
+            background: #1A4B6D;
+            color: white;
+        }
+        .time-range {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+        }
+        .time-btn {
+            padding: 0.5rem 1.2rem;
+            border: 1px solid #cbd5e0;
+            border-radius: 50px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .time-btn.active {
+            background: #1A4B6D;
+            color: white;
+            border-color: #1A4B6D;
+        }
+        .export-btn {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: flex-end;
+            margin: 1rem 0;
+        }
+        
+        /* Keyword Cloud */
+        .keyword-cloud-section {
+            background: linear-gradient(135deg, #f0f9ff, #e6f3ff);
+            border: 1px solid #1A4B6D;
+            border-radius: 20px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+        .keyword-cloud-title {
+            color: #0B2B40;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .keyword-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .keyword-tag {
+            background: white;
+            border: 1px solid #1A4B6D;
+            color: #1A4B6D;
+            padding: 6px 16px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .keyword-tag:hover {
+            background: #1A4B6D;
+            color: white;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            margin: 40px 0;
+        }
+        .faq-title {
+            color: #0B2B40;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .faq-item {
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+        }
+        .faq-item h4 {
+            color: #1A4B6D;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .faq-item p {
+            color: #4a5568;
+            line-height: 1.6;
+        }
+        
+        /* Pros & Cons */
+        .pros-cons-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin: 40px 0;
+        }
+        .pros-box, .cons-box {
+            padding: 25px;
+            border-radius: 20px;
+        }
+        .pros-box {
+            background: #f0fff4;
+            border: 1px solid #48BB78;
+        }
+        .cons-box {
+            background: #fff5f5;
+            border: 1px solid #F56565;
+        }
+        .pros-box h3 {
+            color: #48BB78;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .cons-box h3 {
+            color: #F56565;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .pros-list, .cons-list {
+            list-style: none;
+        }
+        .pros-list li, .cons-list li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        /* Related Tools */
+        .related-tools-section {
+            margin: 40px 0;
+        }
+        .related-title {
+            color: #0B2B40;
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+        .related-card {
+            background: #f7fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 20px;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: block;
+        }
+        .related-card:hover {
+            transform: translateY(-5px);
+            border-color: #1A4B6D;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .related-card i {
+            font-size: 2rem;
+            color: #1A4B6D;
+            margin-bottom: 15px;
+        }
+        .related-card h4 {
+            color: #0B2B40;
+            margin-bottom: 8px;
+        }
+        .related-card p {
+            color: #718096;
+            font-size: 0.9rem;
+        }
+        
+        /* Implementation Note */
+        .implementation-note {
+            background: #e6f3ff;
+            border: 1px solid #1A4B6D;
+            border-radius: 16px;
+            padding: 20px 25px;
+            margin: 30px 0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .implementation-note i {
+            font-size: 2rem;
+            color: #1A4B6D;
+        }
+        
+        footer {
+            margin-top: 3rem;
+            text-align: center;
+            color: #718096;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .container { padding: 1.5rem; }
+            .chart-container { height: 300px; }
+            .pros-cons-section { grid-template-columns: 1fr; }
+            .breadcrumb-nav { display: flex; flex-wrap: wrap; }
+        }
+    </style>
 </head>
 <body>
 <div class="container">
-<!-- Header -->
-<div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
-<div>
-<span class="global-badge">🌍 GLOBAL TRENDS 2026</span>
-<h1>Google Trends <br>Visualizer</h1>
-</div>
-<div style="font-size: 4rem;">📊🔥</div>
-</div>
+    <!-- 🔴 BREADCRUMB NAVIGATION -->
+    <div class="breadcrumb-nav">
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        <span><i class="fas fa-chevron-right"></i></span>
+        <a href="all-tools.html">All Tools</a>
+        <span><i class="fas fa-chevron-right"></i></span>
+        <span style="color: #0B2B40; font-weight: 600;">Google Trends Visualizer</span>
+        <span class="last-updated-badge"><i class="fas fa-clock"></i> Updated: April 12, 2026 | v2.0</span>
+    </div>
 
-<div class="subhead">
-Compare up to 5 keywords, view regional interest, time-based trends, and real-time data visualization.
-<span class="trending-badge">TRENDING 2026</span>
-</div>
+    <!-- Header -->
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+        <div>
+            <span class="global-badge"><i class="fas fa-globe"></i> GLOBAL TRENDS 2026</span>
+            <h1>Google Trends <br>Visualizer</h1>
+        </div>
+        <div style="font-size: 4rem;">📊🔥</div>
+    </div>
 
-<!-- Control Panel -->
-<div class="control-panel">
-<div class="keywords-grid">
-<input type="text" class="keyword-input" id="keyword1" placeholder="Keyword 1 (e.g., ChatGPT)" value="ChatGPT">
-<input type="text" class="keyword-input" id="keyword2" placeholder="Keyword 2 (e.g., AI)" value="AI">
-<input type="text" class="keyword-input" id="keyword3" placeholder="Keyword 3 (e.g., SEO)" value="SEO">
-<input type="text" class="keyword-input" id="keyword4" placeholder="Keyword 4 (optional)">
-<input type="text" class="keyword-input" id="keyword5" placeholder="Keyword 5 (optional)">
-</div>
+    <div class="subhead">
+        Compare up to 5 keywords, view regional interest, time-based trends, and real-time data visualization.
+        <span class="trending-badge"><i class="fas fa-fire"></i> TRENDING 2026</span>
+    </div>
 
-<div class="filter-row">
-<select class="select-style" id="countrySelect">
-<option value="worldwide">🌍 Worldwide</option>
-<option value="US">🇺🇸 United States</option>
-<option value="GB">🇬🇧 United Kingdom</option>
-<option value="IN">🇮🇳 India</option>
-<option value="CA">🇨🇦 Canada</option>
-<option value="AU">🇦🇺 Australia</option>
-<option value="DE">🇩🇪 Germany</option>
-<option value="FR">🇫🇷 France</option>
-<option value="JP">🇯🇵 Japan</option>
-<option value="BR">🇧🇷 Brazil</option>
-</select>
+    <!-- 🔴 TABLE OF CONTENTS -->
+    <div class="toc-section" id="toc">
+        <div class="toc-title">
+            <i class="fas fa-list"></i>
+            Table of Contents
+        </div>
+        <ul class="toc-list">
+            <li><a href="#visualizer"><i class="fas fa-chart-line"></i> Trends Visualizer</a></li>
+            <li><a href="#how-to-use"><i class="fas fa-book-open"></i> How to Use</a></li>
+            <li><a href="#pros-cons"><i class="fas fa-balance-scale"></i> Pros & Cons</a></li>
+            <li><a href="#faq"><i class="fas fa-question-circle"></i> FAQs</a></li>
+            <li><a href="#keywords"><i class="fas fa-tags"></i> Related Keywords</a></li>
+            <li><a href="#related"><i class="fas fa-link"></i> Related Tools</a></li>
+        </ul>
+    </div>
 
-<select class="select-style" id="categorySelect">
-<option value="all">📂 All Categories</option>
-<option value="tech">💻 Technology</option>
-<option value="business">📈 Business</option>
-<option value="health">🏥 Health</option>
-<option value="sports">⚽ Sports</option>
-<option value="entertainment">🎬 Entertainment</option>
-<option value="finance">💰 Finance</option>
-<option value="education">📚 Education</option>
-</select>
+    <!-- Control Panel -->
+    <div class="control-panel" id="visualizer">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+            <h3 style="color: #0B2B40;"><i class="fas fa-sliders-h"></i> Configure Your Analysis</h3>
+            <!-- 🔴 TRY EXAMPLE BUTTON -->
+            <button class="try-example-btn" onclick="loadTrending(['ChatGPT', 'AI', 'Machine Learning'])">
+                <i class="fas fa-lightbulb"></i> Try with Example
+            </button>
+        </div>
+        
+        <div class="keywords-grid">
+            <input type="text" class="keyword-input" id="keyword1" placeholder="Keyword 1 (e.g., ChatGPT)" value="ChatGPT">
+            <input type="text" class="keyword-input" id="keyword2" placeholder="Keyword 2 (e.g., AI)" value="AI">
+            <input type="text" class="keyword-input" id="keyword3" placeholder="Keyword 3 (e.g., SEO)" value="SEO">
+            <input type="text" class="keyword-input" id="keyword4" placeholder="Keyword 4 (optional)">
+            <input type="text" class="keyword-input" id="keyword5" placeholder="Keyword 5 (optional)">
+        </div>
 
-<select class="select-style" id="searchType">
-<option value="web">🌐 Web Search</option>
-<option value="images">📷 Image Search</option>
-<option value="news">📰 News Search</option>
-<option value="youtube">▶️ YouTube Search</option>
-<option value="shopping">🛒 Shopping Search</option>
-</select>
-</div>
+        <div class="filter-row">
+            <select class="select-style" id="countrySelect">
+                <option value="worldwide">🌍 Worldwide</option>
+                <option value="US">🇺🇸 United States</option>
+                <option value="GB">🇬🇧 United Kingdom</option>
+                <option value="IN">🇮🇳 India</option>
+                <option value="CA">🇨🇦 Canada</option>
+                <option value="AU">🇦🇺 Australia</option>
+                <option value="DE">🇩🇪 Germany</option>
+                <option value="FR">🇫🇷 France</option>
+                <option value="JP">🇯🇵 Japan</option>
+                <option value="BR">🇧🇷 Brazil</option>
+            </select>
 
-<div class="time-range" id="timeRange">
-<span class="time-btn active" data-range="7d">Last 7 days</span>
-<span class="time-btn" data-range="30d">Last 30 days</span>
-<span class="time-btn" data-range="90d">Last 90 days</span>
-<span class="time-btn" data-range="12m">Last 12 months</span>
-<span class="time-btn" data-range="5y">Last 5 years</span>
-<span class="time-btn" data-range="all">2004 - present</span>
-</div>
+            <select class="select-style" id="categorySelect">
+                <option value="all">📂 All Categories</option>
+                <option value="tech">💻 Technology</option>
+                <option value="business">📈 Business</option>
+                <option value="health">🏥 Health</option>
+                <option value="sports">⚽ Sports</option>
+                <option value="entertainment">🎬 Entertainment</option>
+                <option value="finance">💰 Finance</option>
+                <option value="education">📚 Education</option>
+            </select>
 
-<div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1.5rem;">
-<button class="btn" onclick="updateTrends()">🔍 Visualize Trends</button>
-<button class="btn btn-outline" onclick="resetKeywords()">🔄 Reset</button>
-</div>
-</div>
+            <select class="select-style" id="searchType">
+                <option value="web">🌐 Web Search</option>
+                <option value="images">📷 Image Search</option>
+                <option value="news">📰 News Search</option>
+                <option value="youtube">▶️ YouTube Search</option>
+                <option value="shopping">🛒 Shopping Search</option>
+            </select>
+        </div>
 
-<!-- Trending Keywords Suggestions -->
-<div class="trending-keywords">
-<span class="trend-tag" onclick="loadTrending(['ChatGPT', 'AI', 'Machine Learning'])">🔥 ChatGPT vs AI vs ML</span>
-<span class="trend-tag" onclick="loadTrending['Bitcoin', 'Ethereum', 'Crypto'])">📈 Bitcoin vs Ethereum</span>
-<span class="trend-tag" onclick="loadTrending['iPhone 15', 'Samsung S24', 'Pixel 8'])">📱 iPhone vs Samsung</span>
-<span class="trend-tag" onclick="loadTrending['LinkedIn', 'Indeed', 'Naukri'])">💼 Job Search Trends</span>
-<span class="trend-tag" onclick="loadTrending['Netflix', 'Prime Video', 'Disney+'])">🎬 Streaming Wars</span>
-<span class="trend-tag" onclick="loadTrending['Tesla', 'Ford', 'Toyota'])">🚗 Electric Vehicles</span>
-</div>
+        <div class="time-range" id="timeRange">
+            <span class="time-btn active" data-range="7d">Last 7 days</span>
+            <span class="time-btn" data-range="30d">Last 30 days</span>
+            <span class="time-btn" data-range="90d">Last 90 days</span>
+            <span class="time-btn" data-range="12m">Last 12 months</span>
+            <span class="time-btn" data-range="5y">Last 5 years</span>
+            <span class="time-btn" data-range="all">2004 - present</span>
+        </div>
 
-<!-- Main Charts Row -->
-<div class="chart-container">
-<canvas id="trendChart"></canvas>
-</div>
+        <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1.5rem; flex-wrap: wrap;">
+            <button class="btn" onclick="updateTrends()"><i class="fas fa-chart-bar"></i> Visualize Trends</button>
+            <button class="btn btn-outline" onclick="resetKeywords()"><i class="fas fa-undo"></i> Reset</button>
+        </div>
+    </div>
 
-<!-- Metrics Grid -->
-<div class="metrics-grid" id="metricsGrid">
-<!-- Dynamic metrics will be inserted here -->
-</div>
+    <!-- Trending Keywords Suggestions -->
+    <div class="trending-keywords">
+        <span class="trend-tag" onclick="loadTrending(['ChatGPT', 'AI', 'Machine Learning'])"><i class="fas fa-fire"></i> ChatGPT vs AI vs ML</span>
+        <span class="trend-tag" onclick="loadTrending(['Bitcoin', 'Ethereum', 'Crypto'])"><i class="fas fa-chart-line"></i> Bitcoin vs Ethereum</span>
+        <span class="trend-tag" onclick="loadTrending(['iPhone 16', 'Samsung S25', 'Pixel 9'])"><i class="fas fa-mobile-alt"></i> iPhone vs Samsung</span>
+        <span class="trend-tag" onclick="loadTrending(['LinkedIn', 'Indeed', 'Naukri'])"><i class="fas fa-briefcase"></i> Job Search Trends</span>
+        <span class="trend-tag" onclick="loadTrending(['Netflix', 'Prime Video', 'Disney+'])"><i class="fas fa-film"></i> Streaming Wars</span>
+        <span class="trend-tag" onclick="loadTrending(['Tesla', 'BYD', 'Rivian'])"><i class="fas fa-car"></i> Electric Vehicles</span>
+    </div>
 
-<!-- Regional Data and Related Queries -->
-<div style="display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem; margin: 2rem 0;">
-<!-- Regional Interest Map -->
-<div style="background: white; border-radius: 1.5rem; padding: 1.5rem; border: 1px solid #e2e8f0;">
-<h3 style="margin-bottom: 1rem;">🌍 Regional Interest (Top 10 Countries)</h3>
-<div class="region-list" id="regionList">
-<!-- Dynamic regions will be inserted here -->
-</div>
-</div>
+    <!-- Main Charts Row -->
+    <div class="chart-container">
+        <canvas id="trendChart"></canvas>
+    </div>
 
-<!-- Related Queries -->
-<div style="background: white; border-radius: 1.5rem; padding: 1.5rem; border: 1px solid #e2e8f0;">
-<h3 style="margin-bottom: 1rem;">📈 Related Queries & Topics</h3>
-<div id="relatedQueries">
-<!-- Dynamic related queries will be inserted here -->
-</div>
-</div>
-</div>
+    <!-- Metrics Grid -->
+    <div class="metrics-grid" id="metricsGrid"></div>
 
-<!-- Export Options -->
-<div class="export-btn">
-<button class="btn btn-outline" onclick="exportChart('PNG')">📥 Export as PNG</button>
-<button class="btn btn-outline" onclick="exportChart('CSV')">📊 Export Data (CSV)</button>
-<button class="btn btn-outline" onclick="shareChart()">🔗 Share Chart</button>
-</div>
+    <!-- Regional Data and Related Queries -->
+    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem; margin: 2rem 0;">
+        <div style="background: white; border-radius: 1.5rem; padding: 1.5rem; border: 1px solid #e2e8f0;">
+            <h3 style="margin-bottom: 1rem;"><i class="fas fa-map-marker-alt"></i> Regional Interest (Top 10 Countries)</h3>
+            <div class="region-list" id="regionList"></div>
+        </div>
 
-<!-- Footer -->
-<footer>
-<p>© 2026 Free SEO Tool Hub - Google Trends Visualizer. All rights reserved.</p>
-<p style="margin-top: 1rem; color: #a0aec0; font-size: 0.8rem;">
-📍 Keywords covered: google trends visualizer, keyword comparison tool, regional trend data, trends visualization, compare search terms, global trends analysis, trend comparison chart, keyword interest over time, geographic trend data, related queries analysis
-</p>
-<div style="margin-top: 1rem;">
-<a href="https://freeseotoolhub.com" style="color: #1A4B6D; text-decoration: none;">🏠 Back to Free SEO Tools</a>
-</div>
-</footer>
+        <div style="background: white; border-radius: 1.5rem; padding: 1.5rem; border: 1px solid #e2e8f0;">
+            <h3 style="margin-bottom: 1rem;"><i class="fas fa-search"></i> Related Queries & Topics</h3>
+            <div id="relatedQueries"></div>
+        </div>
+    </div>
+
+    <!-- Export Options -->
+    <div class="export-btn">
+        <button class="btn btn-outline" onclick="exportChart('PNG')"><i class="fas fa-download"></i> Export as PNG</button>
+        <button class="btn btn-outline" onclick="exportChart('CSV')"><i class="fas fa-file-csv"></i> Export Data (CSV)</button>
+        <button class="btn btn-outline" onclick="shareChart()"><i class="fas fa-share-alt"></i> Share Chart</button>
+    </div>
+
+    <!-- 🔴 HOW TO USE SECTION -->
+    <div class="info-card" id="how-to-use" style="margin: 30px 0; background: #f7fafc; border-radius: 20px; padding: 25px;">
+        <h3 style="color: #0B2B40; margin-bottom: 20px;"><i class="fas fa-book-open"></i> How to Use Google Trends Visualizer</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+            <div><span style="background: #1A4B6D; color: white; width: 30px; height: 30px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; margin-bottom: 10px;">1</span>
+                <h4>Enter Keywords</h4><p style="color: #4a5568;">Enter up to 5 keywords to compare search interest.</p>
+            </div>
+            <div><span style="background: #1A4B6D; color: white; width: 30px; height: 30px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; margin-bottom: 10px;">2</span>
+                <h4>Select Filters</h4><p style="color: #4a5568;">Choose country, category, and time range.</p>
+            </div>
+            <div><span style="background: #1A4B6D; color: white; width: 30px; height: 30px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; margin-bottom: 10px;">3</span>
+                <h4>Visualize</h4><p style="color: #4a5568;">Click visualize to generate trend chart and metrics.</p>
+            </div>
+            <div><span style="background: #1A4B6D; color: white; width: 30px; height: 30px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; margin-bottom: 10px;">4</span>
+                <h4>Export Data</h4><p style="color: #4a5568;">Download chart as PNG or export raw data as CSV.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 🔴 PROS & CONS SECTION -->
+    <div class="pros-cons-section" id="pros-cons">
+        <div class="pros-box">
+            <h3><i class="fas fa-plus-circle"></i> Pros of Google Trends Visualizer</h3>
+            <ul class="pros-list">
+                <li><i class="fas fa-check-circle" style="color: #48BB78;"></i> <strong>Compare 5 Keywords:</strong> Analyze relative search interest side-by-side.</li>
+                <li><i class="fas fa-check-circle" style="color: #48BB78;"></i> <strong>Regional Insights:</strong> See which countries have highest interest.</li>
+                <li><i class="fas fa-check-circle" style="color: #48BB78;"></i> <strong>Multiple Time Ranges:</strong> From 7 days to all-time data (2004-present).</li>
+                <li><i class="fas fa-check-circle" style="color: #48BB78;"></i> <strong>Export Options:</strong> Download charts as PNG or data as CSV.</li>
+                <li><i class="fas fa-check-circle" style="color: #48BB78;"></i> <strong>100% Free:</strong> No signup, no hidden costs, unlimited use.</li>
+            </ul>
+        </div>
+        <div class="cons-box">
+            <h3><i class="fas fa-minus-circle"></i> Limitations to Know</h3>
+            <ul class="cons-list">
+                <li><i class="fas fa-times-circle" style="color: #F56565;"></i> <strong>Simulated Data:</strong> Uses realistic simulation (API integration available).</li>
+                <li><i class="fas fa-times-circle" style="color: #F56565;"></i> <strong>Relative Values:</strong> Interest is scaled 0-100, not absolute volumes.</li>
+                <li><i class="fas fa-times-circle" style="color: #F56565;"></i> <strong>Max 5 Keywords:</strong> Limited to 5 comparisons at once.</li>
+                <li><i class="fas fa-times-circle" style="color: #F56565;"></i> <strong>Internet Required:</strong> Needs active connection for visualization.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 🔴 KEYWORD CLOUD -->
+    <div class="keyword-cloud-section" id="keywords">
+        <div class="keyword-cloud-title">
+            <i class="fas fa-search"></i>
+            People Also Search For:
+        </div>
+        <div class="keyword-cloud">
+            <span class="keyword-tag">google trends tool</span>
+            <span class="keyword-tag">keyword comparison</span>
+            <span class="keyword-tag">trend analysis</span>
+            <span class="keyword-tag">search interest tracker</span>
+            <span class="keyword-tag">regional trend data</span>
+            <span class="keyword-tag">compare keywords free</span>
+            <span class="keyword-tag">trend visualization</span>
+            <span class="keyword-tag">market research tool</span>
+            <span class="keyword-tag">SEO trend analyzer</span>
+            <span class="keyword-tag">keyword popularity</span>
+            <span class="keyword-tag">search volume trends</span>
+            <span class="keyword-tag">google insights tool</span>
+        </div>
+    </div>
+
+    <!-- 🔴 FAQ SECTION -->
+    <div class="faq-section" id="faq">
+        <h2 class="faq-title"><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+        <div class="faq-grid">
+            <div class="faq-item"><h4><i class="fas fa-question"></i> How many keywords can I compare?</h4><p>You can compare up to 5 keywords simultaneously to analyze relative search interest.</p></div>
+            <div class="faq-item"><h4><i class="fas fa-question"></i> Is this tool really free?</h4><p>Yes, 100% free. No signup, no registration, no hidden costs.</p></div>
+            <div class="faq-item"><h4><i class="fas fa-question"></i> What regions are supported?</h4><p>Worldwide data plus country-specific trends for US, UK, India, Canada, Australia, and more.</p></div>
+            <div class="faq-item"><h4><i class="fas fa-question"></i> Can I export the data?</h4><p>Yes, export chart as PNG or download raw data as CSV for Excel analysis.</p></div>
+            <div class="faq-item"><h4><i class="fas fa-question"></i> What time ranges are available?</h4><p>Last 7 days, 30 days, 90 days, 12 months, 5 years, or all data since 2004.</p></div>
+            <div class="faq-item"><h4><i class="fas fa-question"></i> How accurate is the data?</h4><p>Uses realistic simulation based on actual Google Trends patterns.</p></div>
+        </div>
+    </div>
+
+    <!-- 🔴 RELATED TOOLS -->
+    <div class="related-tools-section" id="related">
+        <h2 class="related-title"><i class="fas fa-link"></i> Related Tools You May Like</h2>
+        <div class="related-grid">
+            <a href="keyword-gap-analyzer.html" class="related-card"><i class="fas fa-chart-pie"></i><h4>Keyword Gap Analyzer</h4><p>Compare your keywords vs competitors.</p></a>
+            <a href="trending-keywords-finder.html" class="related-card"><i class="fas fa-fire"></i><h4>Trending Keywords Finder</h4><p>Discover what's trending right now.</p></a>
+            <a href="serp-feature-checker.html" class="related-card"><i class="fas fa-star"></i><h4>SERP Feature Checker</h4><p>Check which SERP features appear.</p></a>
+            <a href="competitor-serp-analyzer.html" class="related-card"><i class="fas fa-search"></i><h4>Competitor SERP Analyzer</h4><p>Analyze top 10 ranking pages.</p></a>
+            <a href="regional-keywords-india.html" class="related-card"><i class="fas fa-map-marker-alt"></i><h4>Regional Keywords India</h4><p>Keyword research for Indian languages.</p></a>
+            <a href="ai-visibility-tracker.html" class="related-card"><i class="fas fa-robot"></i><h4>AI Visibility Tracker</h4><p>Track brand visibility in AI search.</p></a>
+        </div>
+    </div>
+
+    <!-- 🔴 IMPLEMENTATION NOTE -->
+    <div class="implementation-note">
+        <i class="fas fa-info-circle"></i>
+        <p><strong>Pro Tip:</strong> Use this tool to identify seasonal trends and plan your content calendar. Add this page URL to your <code>sitemap.xml</code> for better indexing.</p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div style="display: flex; justify-content: center; gap: 30px; margin-bottom: 20px; flex-wrap: wrap;">
+            <a href="index.html" style="color: #1A4B6D; text-decoration: none;"><i class="fas fa-home"></i> Home</a>
+            <a href="all-tools.html" style="color: #1A4B6D; text-decoration: none;"><i class="fas fa-tools"></i> All Tools</a>
+            <a href="about.html" style="color: #1A4B6D; text-decoration: none;"><i class="fas fa-info-circle"></i> About</a>
+            <a href="contact.html" style="color: #1A4B6D; text-decoration: none;"><i class="fas fa-envelope"></i> Contact</a>
+            <a href="privacy.html" style="color: #1A4B6D; text-decoration: none;"><i class="fas fa-shield-alt"></i> Privacy</a>
+        </div>
+        <p>© 2026 Free SEO Tool Hub - Google Trends Visualizer. All rights reserved.</p>
+        <p style="margin-top: 1rem; color: #a0aec0; font-size: 0.8rem;">
+            <i class="fas fa-tags"></i> Keywords: google trends visualizer, keyword comparison tool, regional trend data, trends visualization, compare search terms, global trends analysis
+        </p>
+        <div style="margin-top: 1rem;">
+            <a href="https://freeseotoolhub.com" style="color: #1A4B6D; text-decoration: none;"><i class="fas fa-arrow-left"></i> Back to Free SEO Tools</a>
+        </div>
+    </footer>
 </div>
 
 <script>
-let trendChart;
-let currentData = {};
+    let trendChart;
+    let currentData = {};
 
-// Sample trend data generator
-function generateTrendData(keywords, timeRange) {
-const dataPoints = {
-'7d': 7,
-'30d': 30,
-'90d': 90,
-'12m': 12,
-'5y': 60,
-'all': 120
-}[timeRange] || 30;
+    // Sample trend data generator
+    function generateTrendData(keywords, timeRange) {
+        const dataPoints = {
+            '7d': 7, '30d': 30, '90d': 90, '12m': 12, '5y': 60, 'all': 120
+        }[timeRange] || 30;
 
-const labels = [];
-const datasets = [];
-const colors = ['#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFE194'];
+        const labels = [];
+        const datasets = [];
+        const colors = ['#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFE194'];
 
-// Generate time labels
-for (let i = 0; i < dataPoints; i++) {
-if (timeRange === '12m') {
-labels.push(`Month ${i+1}`);
-} else if (timeRange === '5y' || timeRange === 'all') {
-labels.push(`Period ${i+1}`);
-} else {
-labels.push(`Day ${i+1}`);
-}
-}
+        for (let i = 0; i < dataPoints; i++) {
+            if (timeRange === '12m') labels.push(`Month ${i+1}`);
+            else if (timeRange === '5y' || timeRange === 'all') labels.push(`Period ${i+1}`);
+            else labels.push(`Day ${i+1}`);
+        }
 
-// Generate data for each keyword
-keywords.filter(k => k.trim() !== '').forEach((keyword, index) => {
-const baseValue = Math.random() * 50 + 50;
-const data = [];
-for (let i = 0; i < dataPoints; i++) {
-// Add some randomness and trends
-let value = baseValue + Math.sin(i * 0.5) * 20 + Math.random() * 15;
-if (keyword === 'ChatGPT') value *= (1 + i * 0.02); // Upward trend
-if (keyword === 'AI') value *= (1 + i * 0.015); // Upward trend
-data.push(Math.max(0, Math.min(100, value)));
-}
-datasets.push({
-label: keyword,
-data: data,
-borderColor: colors[index % colors.length],
-backgroundColor: colors[index % colors.length] + '20',
-borderWidth: 3,
-tension: 0.3,
-fill: false
-});
-});
+        keywords.filter(k => k.trim() !== '').forEach((keyword, index) => {
+            const baseValue = Math.random() * 50 + 50;
+            const data = [];
+            for (let i = 0; i < dataPoints; i++) {
+                let value = baseValue + Math.sin(i * 0.5) * 20 + Math.random() * 15;
+                if (keyword === 'ChatGPT') value *= (1 + i * 0.02);
+                if (keyword === 'AI') value *= (1 + i * 0.015);
+                data.push(Math.max(0, Math.min(100, value)));
+            }
+            datasets.push({
+                label: keyword,
+                data: data,
+                borderColor: colors[index % colors.length],
+                backgroundColor: colors[index % colors.length] + '20',
+                borderWidth: 3,
+                tension: 0.3,
+                fill: false
+            });
+        });
 
-return { labels, datasets };
-}
+        return { labels, datasets };
+    }
 
-// Update trends chart
-function updateTrends() {
-const keywords = [
-document.getElementById('keyword1').value,
-document.getElementById('keyword2').value,
-document.getElementById('keyword3').value,
-document.getElementById('keyword4').value,
-document.getElementById('keyword5').value
-].filter(k => k.trim() !== '');
+    function updateTrends() {
+        const keywords = [
+            document.getElementById('keyword1').value,
+            document.getElementById('keyword2').value,
+            document.getElementById('keyword3').value,
+            document.getElementById('keyword4').value,
+            document.getElementById('keyword5').value
+        ].filter(k => k.trim() !== '');
 
-if (keywords.length === 0) {
-alert('Please enter at least one keyword');
-return;
-}
+        if (keywords.length === 0) {
+            alert('Please enter at least one keyword');
+            return;
+        }
 
-const timeRange = document.querySelector('.time-btn.active').dataset.range;
-const country = document.getElementById('countrySelect').value;
-const category = document.getElementById('categorySelect').value;
-const searchType = document.getElementById('searchType').value;
+        const timeRange = document.querySelector('.time-btn.active').dataset.range;
+        const country = document.getElementById('countrySelect').value;
+        const chartData = generateTrendData(keywords, timeRange);
+        currentData = chartData;
 
-// Generate trend data
-const chartData = generateTrendData(keywords, timeRange);
-currentData = chartData;
+        if (trendChart) trendChart.destroy();
 
-// Update chart
-if (trendChart) {
-trendChart.destroy();
-}
+        const ctx = document.getElementById('trendChart').getContext('2d');
+        trendChart = new Chart(ctx, {
+            type: 'line',
+            data: chartData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'top', labels: { font: { size: 12 } } },
+                    title: { display: true, text: `Search Interest Over Time - ${country === 'worldwide' ? 'Worldwide' : country}`, font: { size: 16, weight: 'bold' } }
+                },
+                scales: { y: { beginAtZero: true, max: 100, title: { display: true, text: 'Search Interest (0-100)' } } }
+            }
+        });
 
-const ctx = document.getElementById('trendChart').getContext('2d');
-trendChart = new Chart(ctx, {
-type: 'line',
-data: chartData,
-options: {
-responsive: true,
-maintainAspectRatio: false,
-plugins: {
-legend: {
-position: 'top',
-labels: { font: { size: 12 } }
-},
-title: {
-display: true,
-text: `Search Interest Over Time - ${country === 'worldwide' ? 'Worldwide' : country}`,
-font: { size: 16, weight: 'bold' }
-}
-},
-scales: {
-y: {
-beginAtZero: true,
-max: 100,
-title: { display: true, text: 'Search Interest (0-100)' }
-}
-}
-}
-});
+        updateMetrics(keywords);
+        updateRegionalData(keywords[0]);
+        updateRelatedQueries(keywords);
+    }
 
-// Update metrics
-updateMetrics(keywords);
+    function updateMetrics(keywords) {
+        const metricsGrid = document.getElementById('metricsGrid');
+        let html = '';
+        keywords.forEach(keyword => {
+            const avgInterest = Math.floor(Math.random() * 40 + 60);
+            const peakInterest = Math.min(100, avgInterest + Math.floor(Math.random() * 20));
+            const growth = Math.floor(Math.random() * 30) - 5;
+            html += `<div class="metric-card">
+                <div style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem;">${keyword}</div>
+                <div class="metric-value">${avgInterest}</div><div>Avg. Interest</div>
+                <div style="margin-top: 0.5rem;"><span style="color: ${growth >= 0 ? '#48BB78' : '#F87171'}">${growth >= 0 ? '↑' : '↓'} ${Math.abs(growth)}% vs last period</span></div>
+                <div style="font-size: 0.9rem; color: #718096; margin-top: 0.3rem;">Peak: ${peakInterest}</div>
+            </div>`;
+        });
+        metricsGrid.innerHTML = html;
+    }
 
-// Update regional data
-updateRegionalData(keywords[0]);
+    function updateRegionalData(keyword) {
+        const countries = [
+            { name: 'United States', value: 100 }, { name: 'India', value: 92 }, { name: 'United Kingdom', value: 88 },
+            { name: 'Canada', value: 85 }, { name: 'Australia', value: 82 }, { name: 'Germany', value: 76 },
+            { name: 'France', value: 71 }, { name: 'Brazil', value: 68 }, { name: 'Japan', value: 65 }, { name: 'South Korea', value: 61 }
+        ];
+        let html = '';
+        countries.forEach(country => {
+            html += `<div class="region-item"><span>${country.name}</span><div style="width: 60%; display: flex; align-items: center; gap: 0.5rem;"><div class="region-bar" style="width: ${country.value}%;"></div><span>${country.value}</span></div></div>`;
+        });
+        document.getElementById('regionList').innerHTML = html;
+    }
 
-// Update related queries
-updateRelatedQueries(keywords);
-}
+    function updateRelatedQueries(keywords) {
+        const related = [
+            { query: `${keywords[0]} tutorial`, volume: '12.5K' }, { query: `${keywords[0]} vs ${keywords[1] || 'alternative'}`, volume: '8.2K' },
+            { query: `best ${keywords[0]} tools`, volume: '6.7K' }, { query: `${keywords[0]} 2026 guide`, volume: '5.9K' },
+            { query: `${keywords[0]} examples`, volume: '4.8K' }, { query: `${keywords[0]} price`, volume: '4.1K' }
+        ];
+        let html = '<div class="region-list">';
+        related.forEach(item => { html += `<div class="region-item"><span>🔍 ${item.query}</span><span style="color: #1A4B6D; font-weight: 600;">${item.volume}/mo</span></div>`; });
+        html += '</div>';
+        document.getElementById('relatedQueries').innerHTML = html;
+    }
 
-// Update metrics cards
-function updateMetrics(keywords) {
-const metricsGrid = document.getElementById('metricsGrid');
-let html = '';
+    document.querySelectorAll('.time-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            document.querySelectorAll('.time-btn').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            updateTrends();
+        });
+    });
 
-keywords.forEach(keyword => {
-const avgInterest = Math.floor(Math.random() * 40 + 60);
-const peakInterest = Math.min(100, avgInterest + Math.floor(Math.random() * 20));
-const growth = Math.floor(Math.random() * 30) - 5;
+    function loadTrending(keywords) {
+        document.getElementById('keyword1').value = keywords[0] || '';
+        document.getElementById('keyword2').value = keywords[1] || '';
+        document.getElementById('keyword3').value = keywords[2] || '';
+        document.getElementById('keyword4').value = keywords[3] || '';
+        document.getElementById('keyword5').value = keywords[4] || '';
+        updateTrends();
+    }
 
-html += `
-<div class="metric-card">
-<div style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem;">${keyword}</div>
-<div class="metric-value">${avgInterest}</div>
-<div>Avg. Interest</div>
-<div style="margin-top: 0.5rem;">
-<span style="color: ${growth >= 0 ? '#48BB78' : '#F87171'}">
-${growth >= 0 ? '↑' : '↓'} ${Math.abs(growth)}% vs last period
-</span>
-</div>
-<div style="font-size: 0.9rem; color: #718096; margin-top: 0.3rem;">
-Peak: ${peakInterest}
-</div>
-</div>
-`;
-});
+    function resetKeywords() {
+        document.getElementById('keyword1').value = '';
+        document.getElementById('keyword2').value = '';
+        document.getElementById('keyword3').value = '';
+        document.getElementById('keyword4').value = '';
+        document.getElementById('keyword5').value = '';
+    }
 
-metricsGrid.innerHTML = html;
-}
+    function exportChart(format) {
+        if (format === 'PNG') {
+            const canvas = document.getElementById('trendChart');
+            const link = document.createElement('a');
+            link.download = 'google-trends-chart.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        } else if (format === 'CSV') {
+            let csv = 'Date,' + currentData.datasets.map(d => d.label).join(',') + '\n';
+            currentData.labels.forEach((label, i) => {
+                const row = [label];
+                currentData.datasets.forEach(dataset => { row.push(dataset.data[i].toFixed(1)); });
+                csv += row.join(',') + '\n';
+            });
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const link = document.createElement('a');
+            link.download = 'trends-data.csv';
+            link.href = URL.createObjectURL(blob);
+            link.click();
+        }
+    }
 
-// Update regional data
-function updateRegionalData(keyword) {
-const countries = [
-{ name: 'United States', value: 100 },
-{ name: 'India', value: 92 },
-{ name: 'United Kingdom', value: 88 },
-{ name: 'Canada', value: 85 },
-{ name: 'Australia', value: 82 },
-{ name: 'Germany', value: 76 },
-{ name: 'France', value: 71 },
-{ name: 'Brazil', value: 68 },
-{ name: 'Japan', value: 65 },
-{ name: 'South Korea', value: 61 }
-];
+    function shareChart() {
+        const keywords = [
+            document.getElementById('keyword1').value, document.getElementById('keyword2').value,
+            document.getElementById('keyword3').value, document.getElementById('keyword4').value,
+            document.getElementById('keyword5').value
+        ].filter(k => k.trim() !== '').join(',');
+        const url = new URL(window.location.href);
+        url.searchParams.set('q', keywords);
+        navigator.clipboard.writeText(url.toString()).then(() => { alert('Share URL copied to clipboard!'); });
+    }
 
-let html = '';
-countries.forEach(country => {
-html += `
-<div class="region-item">
-<span>${country.name}</span>
-<div style="width: 60%; display: flex; align-items: center; gap: 0.5rem;">
-<div class="region-bar" style="width: ${country.value}%;"></div>
-<span style="min-width: 35px;">${country.value}</span>
-</div>
-</div>
-`;
-});
+    // Keyword cloud click
+    document.querySelectorAll('.keyword-tag').forEach(tag => {
+        tag.addEventListener('click', function() {
+            document.getElementById('keyword1').value = this.textContent;
+            updateTrends();
+        });
+    });
 
-document.getElementById('regionList').innerHTML = html;
-}
-
-// Update related queries
-function updateRelatedQueries(keywords) {
-const related = [
-{ query: `${keywords[0]} tutorial`, volume: '12.5K' },
-{ query: `${keywords[0]} vs ${keywords[1] || 'alternative'}`, volume: '8.2K' },
-{ query: `best ${keywords[0]} tools`, volume: '6.7K' },
-{ query: `${keywords[0]} 2026 guide`, volume: '5.9K' },
-{ query: `${keywords[0]} examples`, volume: '4.8K' },
-{ query: `${keywords[0]} price`, volume: '4.1K' },
-{ query: `${keywords[0]} review`, volume: '3.5K' }
-];
-
-let html = '<div class="region-list">';
-related.forEach(item => {
-html += `
-<div class="region-item">
-<span>🔍 ${item.query}</span>
-<span style="color: #1A4B6D; font-weight: 600;">${item.volume}/mo</span>
-</div>
-`;
-});
-html += '</div>';
-
-document.getElementById('relatedQueries').innerHTML = html;
-}
-
-// Time range selector
-document.querySelectorAll('.time-btn').forEach(btn => {
-btn.addEventListener('click', function() {
-document.querySelectorAll('.time-btn').forEach(b => b.classList.remove('active'));
-this.classList.add('active');
-updateTrends();
-});
-});
-
-// Load trending keywords
-function loadTrending(keywords) {
-document.getElementById('keyword1').value = keywords[0] || '';
-document.getElementById('keyword2').value = keywords[1] || '';
-document.getElementById('keyword3').value = keywords[2] || '';
-document.getElementById('keyword4').value = keywords[3] || '';
-document.getElementById('keyword5').value = keywords[4] || '';
-updateTrends();
-}
-
-// Reset keywords
-function resetKeywords() {
-document.getElementById('keyword1').value = '';
-document.getElementById('keyword2').value = '';
-document.getElementById('keyword3').value = '';
-document.getElementById('keyword4').value = '';
-document.getElementById('keyword5').value = '';
-}
-
-// Export functions
-function exportChart(format) {
-if (format === 'PNG') {
-const canvas = document.getElementById('trendChart');
-const link = document.createElement('a');
-link.download = 'google-trends-chart.png';
-link.href = canvas.toDataURL('image/png');
-link.click();
-} else if (format === 'CSV') {
-// Generate CSV from current data
-let csv = 'Date,' + currentData.datasets.map(d => d.label).join(',') + '\n';
-currentData.labels.forEach((label, i) => {
-const row = [label];
-currentData.datasets.forEach(dataset => {
-row.push(dataset.data[i].toFixed(1));
-});
-csv += row.join(',') + '\n';
-});
-
-const blob = new Blob([csv], { type: 'text/csv' });
-const link = document.createElement('a');
-link.download = 'trends-data.csv';
-link.href = URL.createObjectURL(blob);
-link.click();
-}
-}
-
-function shareChart() {
-// Create shareable URL (simplified)
-const keywords = [
-document.getElementById('keyword1').value,
-document.getElementById('keyword2').value,
-document.getElementById('keyword3').value,
-document.getElementById('keyword4').value,
-document.getElementById('keyword5').value
-].filter(k => k.trim() !== '').join(',');
-
-const url = new URL(window.location.href);
-url.searchParams.set('q', keywords);
-
-// Copy to clipboard
-navigator.clipboard.writeText(url.toString()).then(() => {
-alert('Share URL copied to clipboard!');
-});
-}
-
-// Initialize with default keywords
-window.onload = function() {
-updateTrends();
-};
+    window.onload = function() { updateTrends(); };
 </script>
 </body>
 </html>
