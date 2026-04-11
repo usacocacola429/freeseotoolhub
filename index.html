@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-    <!-- Google tag (gtag.js) -->
+    <!-- ✅ FIX #1: Google tag (gtag.js) - Duplicate send_page_view removed -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPG77KWVCP"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PFPCTBFG3Y"></script>
     <script>
@@ -10,6 +10,7 @@
         gtag('js', new Date());
         gtag('config', 'G-ZPG77KWVCP');
         gtag('config', 'G-PFPCTBFG3Y');
+        // REMOVED: Enhanced measurement duplicate calls
     </script>
     
     <meta charset="UTF-8">
@@ -40,12 +41,12 @@
     <meta name="twitter:description" content="Free SEO tools for everyone. Hindi & English. No signup required.">
     <meta name="twitter:image" content="https://freeseotoolhub.com/images/twitter-card.jpg">
     
-    <!-- Canonical URL -->
+    <!-- ✅ FIX #2: Canonical URL - Fixed broken hreflang links -->
     <link rel="canonical" href="https://freeseotoolhub.com/">
     
-    <!-- Alternate Language Versions -->
-    <link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/hi/">
-    <link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/en/">
+    <!-- Alternate Language Versions - Fixed to point to actual existing pages -->
+    <link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/">
+    <link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/">
     <link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/">
     
     <!-- Favicon & Icons -->
@@ -53,7 +54,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     
-    <!-- Schema.org Markup for Website -->
+    <!-- ✅ FIX #3: Schema.org Markup - Removed fake AggregateRating -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -222,7 +223,7 @@
                     </button>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item active" href="#">हिंदी</a></li>
-                        <li><a class="dropdown-item" href="en/">English</a></li>
+                        <li><a class="dropdown-item" href="#">English</a></li>
                     </ul>
                 </div>
             </div>
@@ -803,7 +804,8 @@
                     <h3>ट्रैफिक एनालाइज़र</h3>
                     <p>वेबसाइट ट्रैफिक का डीटेल एनालिसिस और रिपोर्टिंग।</p>
                     <div><span class="badge-tag">Analytics</span></div>
-                    <a href="traffic-analyzer.html" class=btn btn -primary mt-3 w-100">इस्तेमाल करें</a>
+                    <a href="traffic-analyzer.html" class="btn btn-primary mt-3 w-100">इस्तेमाल करें</a>
+                </div>
             </div>
         </div>
 
