@@ -1,808 +1,1097 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Canonical URL Validator - Free SEO Tool Hub</title>
-  <meta name="description" content="Check if canonical tags are set correctly. Find duplicate content issues, analyze multiple URLs, and validate rel=canonical implementation.">
-  <meta name="keywords" content="canonical tag checker, canonical URL validator, duplicate content checker, rel canonical test, SEO tool">
-  
-  <!-- Open Graph / Social Media Meta -->
-  <meta property="og:title" content="Canonical URL Validator - Free SEO Tool Hub">
-  <meta property="og:description" content="Check if canonical tags are set correctly. Find duplicate content issues instantly.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://freeseotoolhub.com/canonical-validator">
-  
-  <!-- Styles -->
-  <style>
-    /* Global Styles - Matching freeseotoolhub.com theme */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<!-- ✅ OPTIMIZED: Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPG77KWVCP"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PFPCTBFG3Y"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-ZPG77KWVCP');
+gtag('config', 'G-PFPCTBFG3Y');
+</script>
 
-    body {
-      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: linear-gradient(135deg, #f6f9fc 0%, #edf2f9 100%);
-      color: #1a2639;
-      line-height: 1.6;
-      min-height: 100vh;
-      padding: 2rem 1rem;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+<!-- 🔴 PRIMARY SEO META TAGS -->
+<title>Canonical URL Validator | Check Canonical Tags | Free SEO Tool 2026</title>
+<meta name="description" content="Check if canonical tags are set correctly. Find duplicate content issues, analyze multiple URLs, and validate rel=canonical implementation. Free SEO tool, no signup required.">
+<meta name="keywords" content="canonical tag checker, canonical URL validator, duplicate content checker, rel canonical test, SEO tool, canonicalization checker, bulk canonical validator, canonical tag analyzer">
+<meta name="author" content="Free SEO Tool Hub">
+<meta name="robots" content="index, follow">
+<meta name="language" content="English">
+<meta name="revisit-after" content="7 days">
 
-    /* Header Section */
-    .tool-header {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
+<!-- 🔴 OPEN GRAPH META TAGS -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://freeseotoolhub.com/canonical-url-checker.html">
+<meta property="og:title" content="Canonical URL Validator - Free SEO Tool Hub 2026">
+<meta property="og:description" content="Check if canonical tags are set correctly. Find duplicate content issues instantly. Bulk URL validation.">
+<meta property="og:image" content="https://freeseotoolhub.com/images/canonical-validator-og.jpg">
+<meta property="og:site_name" content="Free SEO Tool Hub">
+<meta property="og:locale" content="en_US">
 
-    .tool-header h1 {
-      font-size: 3rem;
-      font-weight: 800;
-      background: linear-gradient(145deg, #1e3c72, #2a5298, #0f2b5c);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 0.75rem;
-      letter-spacing: -0.02em;
-    }
+<!-- 🔴 TWITTER CARD -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://freeseotoolhub.com/canonical-url-checker.html">
+<meta name="twitter:title" content="Canonical URL Validator | Free SEO Tool">
+<meta name="twitter:description" content="Validate canonical tags and find duplicate content issues. 100% Free.">
+<meta name="twitter:image" content="https://freeseotoolhub.com/images/canonical-validator-twitter.jpg">
+<meta name="twitter:site" content="@FreeSEOToolHub">
 
-    .tool-header p {
-      color: #2c3e50;
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin: 0 auto;
-      background: rgba(255, 255, 255, 0.6);
-      padding: 1rem 2rem;
-      border-radius: 60px;
-      backdrop-filter: blur(8px);
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
-    }
+<!-- 🔴 CANONICAL & HREFLANG -->
+<link rel="canonical" href="https://freeseotoolhub.com/canonical-url-checker.html">
+<link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/canonical-url-checker.html">
+<link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/canonical-url-checker.html">
 
-    /* Main Tool Card */
-    .tool-card {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      border-radius: 36px;
-      box-shadow: 0 25px 50px -12px rgba(0, 20, 60, 0.25), 0 4px 12px 0 rgba(0, 0, 0, 0.06);
-      padding: 2.5rem;
-      margin-bottom: 3rem;
-      border: 1px solid rgba(255, 255, 255, 0.6);
-    }
+<!-- 🔴 SCHEMA MARKUP - SoftwareApplication -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "SoftwareApplication",
+"name": "Canonical URL Validator",
+"description": "Free online tool to check canonical tags, find duplicate content issues, and validate rel=canonical implementation across multiple URLs.",
+"applicationCategory": "SEO Tool",
+"operatingSystem": "All",
+"offers": {
+"@type": "Offer",
+"price": "0",
+"priceCurrency": "USD"
+},
+"featureList": [
+"Bulk URL checking",
+"Canonical tag detection",
+"Duplicate content identification",
+"Self-referential validation",
+"Cross-domain canonical check",
+"Absolute URL validation"
+],
+"softwareVersion": "2.0",
+"dateModified": "2026-04-12",
+"url": "https://freeseotoolhub.com/canonical-url-checker.html"
+}
+</script>
 
-    /* URL Input Section */
-    .input-section {
-      margin-bottom: 2rem;
-    }
+<!-- 🔴 FAQ SCHEMA -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "FAQPage",
+"mainEntity": [
+{
+"@type": "Question",
+"name": "What is a canonical URL?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "A canonical URL is the preferred version of a webpage that you want search engines to index. It helps prevent duplicate content issues when multiple URLs lead to the same content."
+}
+},
+{
+"@type": "Question",
+"name": "How do I check if canonical tags are correct?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Use our free Canonical URL Validator tool. Enter your URLs (one per line) and click validate. The tool will analyze each URL and show if canonical tags are properly implemented."
+}
+},
+{
+"@type": "Question",
+"name": "Why are canonical tags important for SEO?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Canonical tags prevent duplicate content penalties, consolidate link equity to the preferred URL, and help search engines understand which version of a page to index and rank."
+}
+},
+{
+"@type": "Question",
+"name": "Is this canonical validator free?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Yes, this Canonical URL Validator is 100% free. No signup, no registration, no hidden costs. Validate unlimited URLs."
+}
+},
+{
+"@type": "Question",
+"name": "What are common canonical tag mistakes?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Common mistakes include: using relative URLs instead of absolute, canonical chains (A→B→C), conflicting canonicals, and missing self-referential canonicals."
+}
+}
+]
+}
+</script>
 
-    .input-label {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: #0b1f3b;
-      margin-bottom: 1rem;
-    }
+<!-- 🔴 BREADCRUMB SCHEMA -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement": [
+{
+"@type": "ListItem",
+"position": 1,
+"name": "Home",
+"item": "https://freeseotoolhub.com/"
+},
+{
+"@type": "ListItem",
+"position": 2,
+"name": "All Tools",
+"item": "https://freeseotoolhub.com/all-tools.html"
+},
+{
+"@type": "ListItem",
+"position": 3,
+"name": "Canonical URL Validator",
+"item": "https://freeseotoolhub.com/canonical-url-checker.html"
+}
+]
+}
+</script>
 
-    .input-label span {
-      background: #1e3c72;
-      color: white;
-      padding: 0.25rem 0.75rem;
-      border-radius: 30px;
-      font-size: 0.85rem;
-      font-weight: 500;
-    }
+<!-- 🔴 HOW-TO SCHEMA -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "HowTo",
+"name": "How to Validate Canonical Tags",
+"description": "Step-by-step guide to check canonical URL implementation",
+"step": [
+{
+"@type": "HowToStep",
+"name": "Enter URLs",
+"text": "Enter the URLs you want to check (one per line) or use example sets."
+},
+{
+"@type": "HowToStep",
+"name": "Click Validate",
+"text": "Click the 'Validate Canonical Tags' button to analyze all URLs."
+},
+{
+"@type": "HowToStep",
+"name": "Review Results",
+"text": "Check the status, canonical tag, and any issues detected for each URL."
+},
+{
+"@type": "HowToStep",
+"name": "Fix Issues",
+"text": "Address warnings like duplicate canonicals or missing self-referential tags."
+}
+]
+}
+</script>
 
-    textarea {
-      width: 100%;
-      padding: 1.5rem;
-      border: 2px solid #e2e9f2;
-      border-radius: 24px;
-      font-family: 'Courier New', monospace;
-      font-size: 1rem;
-      line-height: 1.6;
-      resize: vertical;
-      min-height: 150px;
-      background: #fafdff;
-      transition: all 0.2s ease;
-      box-shadow: inset 0 2px 6px rgba(0,0,0,0.02);
-    }
+<!-- Styles -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    textarea:focus {
-      outline: none;
-      border-color: #2a5298;
-      box-shadow: 0 0 0 4px rgba(42, 82, 152, 0.15), inset 0 2px 6px rgba(0,0,0,0.02);
-    }
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
 
-    textarea::placeholder {
-      color: #8da0bc;
-      font-style: italic;
-    }
+body {
+background: linear-gradient(135deg, #f6f9fc 0%, #edf2f9 100%);
+color: #1a2639;
+line-height: 1.6;
+min-height: 100vh;
+padding: 2rem 1rem;
+}
 
-    /* URL Count Badge */
-    .url-stats {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin: 1rem 0 1.5rem;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
+.container {
+max-width: 1300px;
+margin: 0 auto;
+}
 
-    .url-counter {
-      background: #e7eef8;
-      padding: 0.5rem 1.25rem;
-      border-radius: 40px;
-      font-weight: 600;
-      color: #1e3c72;
-      font-size: 0.95rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
+/* Breadcrumb Navigation */
+.breadcrumb-nav {
+background: white;
+padding: 12px 25px;
+border-radius: 50px;
+margin-bottom: 25px;
+display: inline-block;
+border: 1px solid #dae4f0;
+box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.breadcrumb-nav a {
+color: #1e3c72;
+text-decoration: none;
+font-weight: 500;
+}
+.breadcrumb-nav a:hover {
+color: #2a5298;
+text-decoration: underline;
+}
+.breadcrumb-nav span {
+color: #6b85a8;
+margin: 0 10px;
+}
+.last-updated-badge {
+display: inline-block;
+background: #1e3c72;
+color: white;
+padding: 5px 18px;
+border-radius: 40px;
+font-size: 0.85rem;
+margin-left: 20px;
+}
 
-    .url-counter .number {
-      background: #1e3c72;
-      color: white;
-      padding: 0.2rem 0.8rem;
-      border-radius: 30px;
-      font-size: 0.85rem;
-    }
+/* Table of Contents */
+.toc-section {
+background: white;
+border: 1px solid #dae4f0;
+border-radius: 20px;
+padding: 25px;
+margin: 30px 0;
+box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.toc-title {
+color: #0b2342;
+font-size: 1.3rem;
+margin-bottom: 20px;
+display: flex;
+align-items: center;
+gap: 10px;
+}
+.toc-list {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 10px;
+list-style: none;
+}
+.toc-list li a {
+color: #346094;
+text-decoration: none;
+display: flex;
+align-items: center;
+gap: 8px;
+padding: 8px 0;
+transition: color 0.3s;
+}
+.toc-list li a:hover {
+color: #1e3c72;
+}
 
-    /* Example Badges */
-    .example-urls {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin: 1.5rem 0;
-    }
+/* Header Section */
+.tool-header {
+text-align: center;
+margin-bottom: 2rem;
+}
+.tool-header h1 {
+font-size: 3rem;
+font-weight: 800;
+background: linear-gradient(145deg, #1e3c72, #2a5298, #0f2b5c);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+margin-bottom: 0.75rem;
+letter-spacing: -0.02em;
+}
+.tool-header p {
+color: #2c3e50;
+font-size: 1.2rem;
+max-width: 700px;
+margin: 0 auto;
+background: rgba(255, 255, 255, 0.6);
+padding: 1rem 2rem;
+border-radius: 60px;
+backdrop-filter: blur(8px);
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
 
-    .example-badge {
-      background: white;
-      border: 1.5px solid #d4e0ec;
-      color: #1f3a6b;
-      padding: 0.5rem 1.25rem;
-      border-radius: 40px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-    }
+/* Main Tool Card */
+.tool-card {
+background: rgba(255, 255, 255, 0.95);
+backdrop-filter: blur(10px);
+border-radius: 36px;
+box-shadow: 0 25px 50px -12px rgba(0, 20, 60, 0.25);
+padding: 2.5rem;
+margin-bottom: 2rem;
+border: 1px solid rgba(255, 255, 255, 0.6);
+}
 
-    .example-badge:hover {
-      background: #1e3c72;
-      border-color: #1e3c72;
-      color: white;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 16px -6px #1e3c7250;
-    }
+/* URL Input Section */
+.input-section {
+margin-bottom: 2rem;
+}
+.input-label {
+display: flex;
+align-items: center;
+gap: 0.75rem;
+font-size: 1.2rem;
+font-weight: 600;
+color: #0b1f3b;
+margin-bottom: 1rem;
+}
+.input-label span {
+background: #1e3c72;
+color: white;
+padding: 0.25rem 0.75rem;
+border-radius: 30px;
+font-size: 0.85rem;
+font-weight: 500;
+}
+textarea {
+width: 100%;
+padding: 1.5rem;
+border: 2px solid #e2e9f2;
+border-radius: 24px;
+font-family: 'Courier New', monospace;
+font-size: 1rem;
+line-height: 1.6;
+resize: vertical;
+min-height: 150px;
+background: #fafdff;
+transition: all 0.2s ease;
+}
+textarea:focus {
+outline: none;
+border-color: #2a5298;
+box-shadow: 0 0 0 4px rgba(42, 82, 152, 0.15);
+}
 
-    /* Button Group */
-    .button-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin: 2rem 0 1rem;
-    }
+/* URL Stats */
+.url-stats {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin: 1rem 0 1.5rem;
+flex-wrap: wrap;
+gap: 1rem;
+}
+.url-counter {
+background: #e7eef8;
+padding: 0.5rem 1.25rem;
+border-radius: 40px;
+font-weight: 600;
+color: #1e3c72;
+display: flex;
+align-items: center;
+gap: 0.5rem;
+}
+.url-counter .number {
+background: #1e3c72;
+color: white;
+padding: 0.2rem 0.8rem;
+border-radius: 30px;
+}
+.example-urls {
+display: flex;
+flex-wrap: wrap;
+gap: 0.75rem;
+}
+.example-badge {
+background: white;
+border: 1.5px solid #d4e0ec;
+color: #1f3a6b;
+padding: 0.5rem 1.25rem;
+border-radius: 40px;
+font-size: 0.9rem;
+font-weight: 500;
+cursor: pointer;
+transition: all 0.2s;
+}
+.example-badge:hover {
+background: #1e3c72;
+border-color: #1e3c72;
+color: white;
+transform: translateY(-2px);
+}
 
-    .btn {
-      padding: 0.9rem 2.2rem;
-      border: none;
-      border-radius: 50px;
-      font-weight: 600;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: all 0.25s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.75rem;
-      box-shadow: 0 6px 14px rgba(0, 30, 70, 0.1);
-    }
+/* Buttons */
+.button-group {
+display: flex;
+flex-wrap: wrap;
+gap: 1rem;
+margin: 2rem 0 1rem;
+}
+.btn {
+padding: 0.9rem 2.2rem;
+border: none;
+border-radius: 50px;
+font-weight: 600;
+font-size: 1rem;
+cursor: pointer;
+transition: all 0.25s;
+display: inline-flex;
+align-items: center;
+gap: 0.75rem;
+box-shadow: 0 6px 14px rgba(0, 30, 70, 0.1);
+}
+.btn-primary {
+background: linear-gradient(115deg, #1e3c72, #2a5298);
+color: white;
+}
+.btn-primary:hover {
+background: linear-gradient(115deg, #16345f, #1e3f77);
+transform: translateY(-3px);
+box-shadow: 0 16px 24px -8px #1e3c72b3;
+}
+.btn-outline {
+background: white;
+color: #1e3c72;
+border: 1.5px solid #cbd6e6;
+box-shadow: none;
+}
+.btn-outline:hover {
+background: #f4f9ff;
+border-color: #2a5298;
+transform: translateY(-2px);
+}
+.btn-success {
+background: #00a86b;
+color: white;
+}
+.btn-success:hover {
+background: #008f5a;
+transform: translateY(-2px);
+}
 
-    .btn-primary {
-      background: linear-gradient(115deg, #1e3c72, #2a5298);
-      color: white;
-    }
+/* Results Container */
+.results-container {
+margin-top: 2.5rem;
+border-radius: 28px;
+overflow: hidden;
+border: 1px solid #e2eaf2;
+background: white;
+}
+.results-header {
+background: #f1f7fd;
+padding: 1.25rem 2rem;
+border-bottom: 1px solid #dae4f0;
+display: flex;
+justify-content: space-between;
+align-items: center;
+flex-wrap: wrap;
+gap: 1rem;
+}
+.results-header h3 {
+font-size: 1.3rem;
+font-weight: 700;
+color: #0b2342;
+display: flex;
+align-items: center;
+gap: 0.6rem;
+}
+.summary-badge {
+background: #1e3c72;
+color: white;
+padding: 0.4rem 1.2rem;
+border-radius: 40px;
+font-size: 0.9rem;
+font-weight: 500;
+}
+.results-table {
+width: 100%;
+border-collapse: collapse;
+font-size: 0.95rem;
+}
+.results-table th {
+text-align: left;
+padding: 1.25rem 1.5rem;
+background: #f8fafd;
+color: #1f3f70;
+font-weight: 600;
+font-size: 0.9rem;
+text-transform: uppercase;
+border-bottom: 1px solid #d9e3f0;
+}
+.results-table td {
+padding: 1.25rem 1.5rem;
+border-bottom: 1px solid #eaf1f9;
+vertical-align: top;
+}
+.status-badge {
+display: inline-flex;
+align-items: center;
+gap: 0.4rem;
+padding: 0.3rem 0.9rem;
+border-radius: 30px;
+font-weight: 600;
+font-size: 0.8rem;
+text-transform: uppercase;
+}
+.status-valid {
+background: #e1f7e9;
+color: #0a5e2a;
+}
+.status-warning {
+background: #fff3d4;
+color: #8e5f00;
+}
+.status-invalid {
+background: #fee9e7;
+color: #b13e3e;
+}
+.canonical-tag {
+font-family: 'Courier New', monospace;
+background: #f0f5fc;
+padding: 0.3rem 0.8rem;
+border-radius: 16px;
+font-size: 0.85rem;
+color: #024e6b;
+display: inline-block;
+max-width: 100%;
+overflow: hidden;
+text-overflow: ellipsis;
+}
 
-    .btn-primary:hover {
-      background: linear-gradient(115deg, #16345f, #1e3f77);
-      transform: translateY(-3px);
-      box-shadow: 0 16px 24px -8px #1e3c72b3;
-    }
+/* Keyword Cloud */
+.keyword-cloud-section {
+background: white;
+border: 1px solid #dae4f0;
+border-radius: 20px;
+padding: 25px;
+margin: 30px 0;
+}
+.keyword-cloud-title {
+color: #0b2342;
+font-size: 1.2rem;
+margin-bottom: 15px;
+display: flex;
+align-items: center;
+gap: 10px;
+}
+.keyword-cloud {
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+}
+.keyword-tag {
+background: #f0f5fc;
+border: 1px solid #d4e0ec;
+color: #1f3a6b;
+padding: 6px 16px;
+border-radius: 40px;
+font-size: 0.85rem;
+transition: all 0.3s;
+cursor: pointer;
+}
+.keyword-tag:hover {
+background: #1e3c72;
+color: white;
+border-color: #1e3c72;
+}
 
-    .btn-outline {
-      background: white;
-      color: #1e3c72;
-      border: 1.5px solid #cbd6e6;
-      box-shadow: none;
-    }
+/* Pros & Cons */
+.pros-cons-section {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 25px;
+margin: 40px 0;
+}
+.pros-box, .cons-box {
+padding: 25px;
+border-radius: 20px;
+background: white;
+}
+.pros-box {
+border: 1px solid #48BB78;
+}
+.cons-box {
+border: 1px solid #F56565;
+}
+.pros-box h3 {
+color: #48BB78;
+display: flex;
+align-items: center;
+gap: 10px;
+margin-bottom: 20px;
+}
+.cons-box h3 {
+color: #F56565;
+display: flex;
+align-items: center;
+gap: 10px;
+margin-bottom: 20px;
+}
+.pros-list, .cons-list {
+list-style: none;
+}
+.pros-list li, .cons-list li {
+margin-bottom: 12px;
+display: flex;
+align-items: flex-start;
+gap: 10px;
+color: #2c3e50;
+}
 
-    .btn-outline:hover {
-      background: #f4f9ff;
-      border-color: #2a5298;
-      transform: translateY(-2px);
-    }
+/* Features Grid */
+.features-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+gap: 2rem;
+margin: 2rem 0;
+}
+.feature-card {
+background: white;
+padding: 2rem 1.5rem;
+border-radius: 24px;
+box-shadow: 0 12px 24px -12px rgba(0, 32, 64, 0.12);
+border: 1px solid rgba(42, 82, 152, 0.1);
+transition: transform 0.2s;
+}
+.feature-card:hover {
+transform: translateY(-5px);
+}
+.feature-card h4 {
+font-size: 1.25rem;
+margin-bottom: 0.75rem;
+color: #1e3c72;
+display: flex;
+align-items: center;
+gap: 0.6rem;
+}
 
-    /* Results Area */
-    .results-container {
-      margin-top: 2.5rem;
-      border-radius: 28px;
-      overflow: hidden;
-      border: 1px solid #e2eaf2;
-      background: white;
-    }
+/* FAQ Section */
+.faq-section {
+margin: 40px 0;
+}
+.faq-title {
+color: #0b2342;
+font-size: 1.8rem;
+margin-bottom: 25px;
+display: flex;
+align-items: center;
+gap: 10px;
+}
+.faq-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 20px;
+}
+.faq-item {
+background: white;
+padding: 20px;
+border-radius: 16px;
+border: 1px solid #dae4f0;
+}
+.faq-item h4 {
+color: #1e3c72;
+margin-bottom: 10px;
+display: flex;
+align-items: center;
+gap: 8px;
+}
 
-    .results-header {
-      background: #f1f7fd;
-      padding: 1.25rem 2rem;
-      border-bottom: 1px solid #dae4f0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
+/* Related Tools */
+.related-tools-section {
+margin: 40px 0;
+}
+.related-title {
+color: #0b2342;
+font-size: 1.5rem;
+margin-bottom: 25px;
+display: flex;
+align-items: center;
+gap: 10px;
+}
+.related-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+gap: 20px;
+}
+.related-card {
+background: white;
+border: 1px solid #dae4f0;
+border-radius: 16px;
+padding: 20px;
+transition: all 0.3s;
+text-decoration: none;
+display: block;
+}
+.related-card:hover {
+transform: translateY(-5px);
+border-color: #1e3c72;
+box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+.related-card i {
+font-size: 2rem;
+color: #1e3c72;
+margin-bottom: 15px;
+}
+.related-card h4 {
+color: #0b2342;
+margin-bottom: 8px;
+}
 
-    .results-header h3 {
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: #0b2342;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
+/* Implementation Note */
+.implementation-note {
+background: #e7eef8;
+border: 1px solid #1e3c72;
+border-radius: 16px;
+padding: 20px 25px;
+margin: 30px 0;
+display: flex;
+align-items: center;
+gap: 15px;
+}
 
-    .summary-badge {
-      background: #1e3c72;
-      color: white;
-      padding: 0.4rem 1.2rem;
-      border-radius: 40px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
+/* Footer */
+.footer-note {
+text-align: center;
+padding: 2rem 0 1rem;
+color: #4a6792;
+font-weight: 500;
+}
+hr {
+border: none;
+height: 1px;
+background: linear-gradient(90deg, transparent, #a6c0dd, transparent);
+margin: 2rem 0;
+}
 
-    .results-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.95rem;
-    }
-
-    .results-table th {
-      text-align: left;
-      padding: 1.25rem 1.5rem;
-      background: #f8fafd;
-      color: #1f3f70;
-      font-weight: 600;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-      border-bottom: 1px solid #d9e3f0;
-    }
-
-    .results-table td {
-      padding: 1.25rem 1.5rem;
-      border-bottom: 1px solid #eaf1f9;
-      vertical-align: top;
-      word-break: break-word;
-    }
-
-    .results-table tr:last-child td {
-      border-bottom: none;
-    }
-
-    .status-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.3rem 0.9rem;
-      border-radius: 30px;
-      font-weight: 600;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.02em;
-      white-space: nowrap;
-    }
-
-    .status-valid {
-      background: #e1f7e9;
-      color: #0a5e2a;
-    }
-
-    .status-warning {
-      background: #fff3d4;
-      color: #8e5f00;
-    }
-
-    .status-invalid {
-      background: #fee9e7;
-      color: #b13e3e;
-    }
-
-    .canonical-tag {
-      font-family: 'Courier New', monospace;
-      background: #f0f5fc;
-      padding: 0.3rem 0.8rem;
-      border-radius: 16px;
-      font-size: 0.85rem;
-      color: #024e6b;
-      display: inline-block;
-      max-width: 100%;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .tooltip-info {
-      color: #5f7d9e;
-      font-size: 0.9rem;
-      margin-top: 0.3rem;
-      font-style: italic;
-    }
-
-    /* Features Grid */
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2rem;
-      margin: 3rem 0;
-    }
-
-    .feature-card {
-      background: white;
-      padding: 2rem 1.5rem;
-      border-radius: 24px;
-      box-shadow: 0 12px 24px -12px rgba(0, 32, 64, 0.12);
-      border: 1px solid rgba(42, 82, 152, 0.1);
-      transition: transform 0.2s;
-    }
-
-    .feature-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .feature-card h4 {
-      font-size: 1.25rem;
-      margin-bottom: 0.75rem;
-      color: #1e3c72;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-
-    .feature-card p {
-      color: #346094;
-      line-height: 1.6;
-    }
-
-    /* Footer */
-    .footer-note {
-      text-align: center;
-      padding: 2rem 0 1rem;
-      color: #4a6792;
-      font-weight: 500;
-    }
-
-    hr {
-      border: none;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, #a6c0dd, transparent);
-      margin: 2rem 0;
-    }
-  </style>
+@media (max-width: 768px) {
+.tool-header h1 { font-size: 2rem; }
+.pros-cons-section { grid-template-columns: 1fr; }
+.breadcrumb-nav { display: flex; flex-wrap: wrap; }
+}
+</style>
 </head>
 <body>
-  <div class="container">
-    <!-- Header -->
-    <div class="tool-header">
-      <h1>🔗 Canonical URL Validator</h1>
-      <p>Check if canonical tags are set correctly. Find duplicate content issues across multiple pages.</p>
-    </div>
+<div class="container">
+<!-- 🔴 BREADCRUMB NAVIGATION -->
+<div class="breadcrumb-nav">
+<a href="index.html"><i class="fas fa-home"></i> Home</a>
+<span><i class="fas fa-chevron-right"></i></span>
+<a href="all-tools.html">All Tools</a>
+<span><i class="fas fa-chevron-right"></i></span>
+<span style="color: #0b2342; font-weight: 600;">Canonical URL Validator</span>
+<span class="last-updated-badge"><i class="fas fa-clock"></i> Updated: April 12, 2026 | v2.0</span>
+</div>
 
-    <!-- Main Tool Card -->
-    <div class="tool-card">
-      <div class="input-section">
-        <div class="input-label">
-          <span>📋</span> Enter URLs to check (one per line)
-        </div>
-        <textarea id="urlList" placeholder="https://example.com/page1&#10;https://example.com/page2&#10;https://example.com/page3?ref=seo&#10;https://shop.com/product/123">https://freeseotoolhub.com/
-https://freeseotoolhub.com/tools
-https://freeseotoolhub.com/about
+<!-- Header -->
+<div class="tool-header">
+<h1><i class="fas fa-link" style="background: none; -webkit-text-fill-color: #1e3c72; margin-right: 10px;"></i>Canonical URL Validator</h1>
+<p>Check if canonical tags are set correctly. Find duplicate content issues across multiple pages.</p>
+</div>
+
+<!-- 🔴 TABLE OF CONTENTS -->
+<div class="toc-section" id="toc">
+<div class="toc-title"><i class="fas fa-list"></i> Table of Contents</div>
+<ul class="toc-list">
+<li><a href="#validator"><i class="fas fa-check-double"></i> Canonical Validator</a></li>
+<li><a href="#how-to-use"><i class="fas fa-book-open"></i> How to Use</a></li>
+<li><a href="#pros-cons"><i class="fas fa-balance-scale"></i> Best Practices & Mistakes</a></li>
+<li><a href="#faq"><i class="fas fa-question-circle"></i> FAQs</a></li>
+<li><a href="#keywords"><i class="fas fa-tags"></i> Related Keywords</a></li>
+<li><a href="#related"><i class="fas fa-link"></i> Related Tools</a></li>
+</ul>
+</div>
+
+<!-- Main Tool Card -->
+<div class="tool-card" id="validator">
+<div class="input-section">
+<div class="input-label">
+<span><i class="fas fa-list"></i></span> Enter URLs to check (one per line)
+</div>
+<textarea id="urlList" placeholder="https://example.com/page1&#10;https://example.com/page2&#10;https://example.com/page3?ref=seo&#10;https://shop.com/product/123">https://freeseotoolhub.com/
+https://freeseotoolhub.com/all-tools.html
+https://freeseotoolhub.com/about.html
 https://example.com/duplicate-page</textarea>
-      </div>
+</div>
 
-      <!-- URL Counter & Examples -->
-      <div class="url-stats">
-        <div class="url-counter">
-          <span>📊 URLs entered:</span>
-          <span class="number" id="urlCount">4</span>
-        </div>
-        <div class="example-urls">
-          <span class="example-badge" data-example="ecommerce">🛍️ E-commerce</span>
-          <span class="example-badge" data-example="blog">📝 Blog</span>
-          <span class="example-badge" data-example="mixed">🌐 Mixed URLs</span>
-          <span class="example-badge" data-example="duplicates">⚠️ With Duplicates</span>
-        </div>
-      </div>
+<!-- URL Counter & Examples -->
+<div class="url-stats">
+<div class="url-counter">
+<i class="fas fa-link"></i> URLs entered:
+<span class="number" id="urlCount">4</span>
+</div>
+<div class="example-urls">
+<span class="example-badge" data-example="ecommerce"><i class="fas fa-shopping-cart"></i> E-commerce</span>
+<span class="example-badge" data-example="blog"><i class="fas fa-blog"></i> Blog</span>
+<span class="example-badge" data-example="mixed"><i class="fas fa-globe"></i> Mixed URLs</span>
+<span class="example-badge" data-example="duplicates"><i class="fas fa-copy"></i> With Duplicates</span>
+</div>
+</div>
 
-      <!-- Action Buttons -->
-      <div class="button-group">
-        <button class="btn btn-primary" id="validateBtn">
-          <span>✅</span> Validate Canonical Tags
-        </button>
-        <button class="btn btn-outline" id="clearBtn">
-          <span>🔄</span> Clear All
-        </button>
-      </div>
+<!-- Action Buttons -->
+<div class="button-group">
+<button class="btn btn-primary" id="validateBtn"><i class="fas fa-check-circle"></i> Validate Canonical Tags</button>
+<button class="btn btn-outline" id="clearBtn"><i class="fas fa-trash-alt"></i> Clear All</button>
+<button class="btn btn-success" id="copyResultsBtn"><i class="fas fa-copy"></i> Copy Results</button>
+<button class="btn btn-outline" id="exportBtn"><i class="fas fa-download"></i> Export CSV</button>
+</div>
 
-      <!-- Results Display -->
-      <div class="results-container" id="results">
-        <div class="results-header">
-          <h3>
-            <span>📑</span> Validation Results
-          </h3>
-          <div class="summary-badge" id="summaryBadge">
-            <span>0</span> URLs analyzed
-          </div>
-        </div>
-        <div id="resultsContent">
-          <!-- Dynamic results table will be inserted here via JavaScript -->
-          <table class="results-table">
-            <thead>
-              <tr>
-                <th>URL</th>
-                <th>Canonical Tag</th>
-                <th>Status</th>
-                <th>Issues</th>
-              </tr>
-            </thead>
-            <tbody id="resultsBody">
-              <tr>
-                <td colspan="4" style="text-align: center; color: #7f9bc0; padding: 3rem;">
-                  ⚡ Enter URLs and click "Validate Canonical Tags" to analyze
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
+<!-- Results Display -->
+<div class="results-container" id="results">
+<div class="results-header">
+<h3><i class="fas fa-clipboard-list"></i> Validation Results</h3>
+<div class="summary-badge" id="summaryBadge"><span>0</span> URLs analyzed</div>
+</div>
+<div id="resultsContent">
+<table class="results-table">
+<thead>
+<tr>
+<th>URL</th>
+<th>Canonical Tag</th>
+<th>Status</th>
+<th>Issues</th>
+</tr>
+</thead>
+<tbody id="resultsBody">
+<tr>
+<td colspan="4" style="text-align: center; color: #7f9bc0; padding: 3rem;">
+<i class="fas fa-arrow-up"></i> Enter URLs and click "Validate Canonical Tags" to analyze
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
 
-    <!-- Features / Information Grid -->
-    <div class="features-grid">
-      <div class="feature-card">
-        <h4>🔍 Detect Duplicate Content</h4>
-        <p>Identify pages with missing, self-referential, or conflicting canonical tags that may cause duplicate content issues.</p>
-      </div>
-      <div class="feature-card">
-        <h4>✅ Canonical Best Practices</h4>
-        <p>Validates against Google's guidelines: absolute URLs, correct domain, and proper rel=canonical implementation.</p>
-      </div>
-      <div class="feature-card">
-        <h4>⚡ Bulk URL Checking</h4>
-        <p>Test multiple URLs at once — perfect for site audits, migrations, and content consolidation.</p>
-      </div>
-      <div class="feature-card">
-        <h4>🔧 Technical SEO Insights</h4>
-        <p>Get actionable recommendations to fix canonicalization problems and improve crawl efficiency.</p>
-      </div>
-    </div>
+<!-- 🔴 PROS & CONS SECTION -->
+<div class="pros-cons-section" id="pros-cons">
+<div class="pros-box">
+<h3><i class="fas fa-check-circle"></i> Canonical Tag Best Practices</h3>
+<ul class="pros-list">
+<li><i class="fas fa-check" style="color: #48BB78;"></i> <strong>Use Absolute URLs:</strong> Always use full URLs including https://</li>
+<li><i class="fas fa-check" style="color: #48BB78;"></i> <strong>Self-Referential Canonicals:</strong> Each page should canonicalize to itself by default</li>
+<li><i class="fas fa-check" style="color: #48BB78;"></i> <strong>One Canonical Per Page:</strong> Only one canonical tag per page</li>
+<li><i class="fas fa-check" style="color: #48BB78;"></i> <strong>Consistent Domain:</strong> Choose www or non-www and stick to it</li>
+<li><i class="fas fa-check" style="color: #48BB78;"></i> <strong>Canonicalize Pagination:</strong> Paginated pages should canonicalize to themselves or view-all page</li>
+</ul>
+</div>
+<div class="cons-box">
+<h3><i class="fas fa-exclamation-triangle"></i> Common Canonical Mistakes</h3>
+<ul class="cons-list">
+<li><i class="fas fa-times" style="color: #F56565;"></i> <strong>Relative URLs:</strong> Using /page instead of full URL</li>
+<li><i class="fas fa-times" style="color: #F56565;"></i> <strong>Canonical Chains:</strong> Page A → Page B → Page C</li>
+<li><i class="fas fa-times" style="color: #F56565;"></i> <strong>Multiple Canonicals:</strong> More than one canonical tag per page</li>
+<li><i class="fas fa-times" style="color: #F56565;"></i> <strong>Cross-Domain Without Intent:</strong> Canonicalizing to another domain accidentally</li>
+<li><i class="fas fa-times" style="color: #F56565;"></i> <strong>Noindex with Canonical:</strong> Conflicting signals for search engines</li>
+</ul>
+</div>
+</div>
 
-    <!-- Footer -->
-    <hr>
-    <div class="footer-note">
-      ⚡ <strong>Free SEO Tool Hub</strong> — 100% free, no signup, no limits. Global SEO tools for everyone.
-    </div>
-  </div>
+<!-- Features Grid -->
+<div class="features-grid" id="how-to-use">
+<div class="feature-card">
+<h4><i class="fas fa-search"></i> Detect Duplicate Content</h4>
+<p>Identify pages with missing, self-referential, or conflicting canonical tags that may cause duplicate content issues.</p>
+</div>
+<div class="feature-card">
+<h4><i class="fas fa-check-circle"></i> Canonical Best Practices</h4>
+<p>Validates against Google's guidelines: absolute URLs, correct domain, and proper rel=canonical implementation.</p>
+</div>
+<div class="feature-card">
+<h4><i class="fas fa-layer-group"></i> Bulk URL Checking</h4>
+<p>Test multiple URLs at once — perfect for site audits, migrations, and content consolidation.</p>
+</div>
+<div class="feature-card">
+<h4><i class="fas fa-chart-line"></i> Technical SEO Insights</h4>
+<p>Get actionable recommendations to fix canonicalization problems and improve crawl efficiency.</p>
+</div>
+</div>
 
-  <script>
-    (function() {
-      // DOM Elements
-      const urlList = document.getElementById('urlList');
-      const urlCountSpan = document.getElementById('urlCount');
-      const validateBtn = document.getElementById('validateBtn');
-      const clearBtn = document.getElementById('clearBtn');
-      const resultsBody = document.getElementById('resultsBody');
-      const summaryBadge = document.getElementById('summaryBadge');
-      const exampleBadges = document.querySelectorAll('.example-badge');
+<!-- 🔴 KEYWORD CLOUD -->
+<div class="keyword-cloud-section" id="keywords">
+<div class="keyword-cloud-title"><i class="fas fa-search"></i> People Also Search For:</div>
+<div class="keyword-cloud">
+<span class="keyword-tag">canonical tag checker</span>
+<span class="keyword-tag">canonical URL validator</span>
+<span class="keyword-tag">duplicate content checker</span>
+<span class="keyword-tag">rel canonical test</span>
+<span class="keyword-tag">canonicalization tool</span>
+<span class="keyword-tag">bulk canonical checker</span>
+<span class="keyword-tag">SEO canonical validator</span>
+<span class="keyword-tag">canonical tag analyzer</span>
+<span class="keyword-tag">URL canonicalization</span>
+<span class="keyword-tag">check canonical tags online</span>
+<span class="keyword-tag">canonical header checker</span>
+<span class="keyword-tag">duplicate page finder</span>
+</div>
+</div>
 
-      // Update URL counter dynamically
-      function updateUrlCounter() {
-        const urls = urlList.value.split('\n').filter(url => url.trim() !== '');
-        urlCountSpan.textContent = urls.length;
-        return urls;
-      }
+<!-- 🔴 FAQ SECTION -->
+<div class="faq-section" id="faq">
+<h2 class="faq-title"><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+<div class="faq-grid">
+<div class="faq-item"><h4><i class="fas fa-question"></i> What is a canonical URL?</h4><p>A canonical URL is the preferred version of a webpage that you want search engines to index. It helps prevent duplicate content issues.</p></div>
+<div class="faq-item"><h4><i class="fas fa-question"></i> How do I check canonical tags?</h4><p>Enter URLs in the textarea above and click Validate. The tool analyzes each URL's canonical implementation.</p></div>
+<div class="faq-item"><h4><i class="fas fa-question"></i> Why are canonical tags important?</h4><p>They prevent duplicate content penalties and consolidate link equity to the preferred URL.</p></div>
+<div class="faq-item"><h4><i class="fas fa-question"></i> Is this tool free?</h4><p>Yes, 100% free. No signup, no registration, no limits.</p></div>
+<div class="faq-item"><h4><i class="fas fa-question"></i> What is a self-referential canonical?</h4><p>A canonical tag that points to the same URL it's on. This is a best practice for all pages.</p></div>
+<div class="faq-item"><h4><i class="fas fa-question"></i> Can I check multiple URLs at once?</h4><p>Yes! Enter multiple URLs (one per line) and validate them all in bulk.</p></div>
+</div>
+</div>
 
-      urlList.addEventListener('input', updateUrlCounter);
-      
-      // Clear button functionality
-      clearBtn.addEventListener('click', () => {
-        urlList.value = '';
-        updateUrlCounter();
-        resultsBody.innerHTML = `<tr><td colspan="4" style="text-align: center; color: #7f9bc0; padding: 3rem;">⚡ Enter URLs and click "Validate Canonical Tags" to analyze</td></tr>`;
-        summaryBadge.innerHTML = `<span>0</span> URLs analyzed`;
-      });
+<!-- 🔴 RELATED TOOLS -->
+<div class="related-tools-section" id="related">
+<h2 class="related-title"><i class="fas fa-link"></i> Related SEO Tools</h2>
+<div class="related-grid">
+<a href="sitemap-generator.html" class="related-card"><i class="fas fa-sitemap"></i><h4>XML Sitemap Generator</h4><p>Generate SEO-friendly sitemaps</p></a>
+<a href="hreflang-generator.html" class="related-card"><i class="fas fa-language"></i><h4>Hreflang Tag Generator</h4><p>International SEO tags</p></a>
+<a href="schema-markup-generator.html" class="related-card"><i class="fas fa-code"></i><h4>Schema Markup Generator</h4><p>Rich snippets for search</p></a>
+<a href="redirect-chain-checker.html" class="related-card"><i class="fas fa-redo-alt"></i><h4>Redirect Chain Checker</h4><p>Find redirect issues</p></a>
+<a href="broken-link-checker.html" class="related-card"><i class="fas fa-unlink"></i><h4>Broken Link Checker</h4><p>Find 404 errors</p></a>
+<a href="ssl-checker.html" class="related-card"><i class="fas fa-shield-alt"></i><h4>SSL Checker</h4><p>Verify SSL certificates</p></a>
+</div>
+</div>
 
-      // Example sets (for quick testing)
-      const exampleSets = {
-        ecommerce: [
-          'https://shop.com/products/phone',
-          'https://shop.com/products/phone?color=black',
-          'https://shop.com/products/phone?color=black&variant=pro',
-          'https://shop.com/products/phone-case',
-          'https://shop.com/products/phone-case?color=red'
-        ],
-        blog: [
-          'https://blog.seo.com/post/canonical-tags-guide',
-          'https://blog.seo.com/post/canonical-tags-guide?utm_source=twitter',
-          'https://blog.seo.com/post/duplicate-content',
-          'https://blog.seo.com/category/seo',
-          'https://blog.seo.com/category/seo/page/2'
-        ],
-        mixed: [
-          'https://freeseotoolhub.com/',
-          'https://freeseotoolhub.com/tools',
-          'https://freeseotoolhub.com/about',
-          'https://support.othersite.com/kb/article',
-          'https://support.othersite.com/kb/article?lang=en'
-        ],
-        duplicates: [
-          'https://example.com/page1',
-          'https://example.com/page1?ref=home',
-          'https://example.com/page1?ref=footer',
-          'https://example.com/page2',
-          'https://example.com/page2?source=google'
-        ]
-      };
+<!-- 🔴 IMPLEMENTATION NOTE -->
+<div class="implementation-note">
+<i class="fas fa-info-circle fa-2x" style="color: #1e3c72;"></i>
+<p><strong>Pro Tip:</strong> Always ensure canonical tags point to indexable URLs. Use this tool before site migrations or content updates. Add this page to your <code>sitemap.xml</code> for better indexing.</p>
+</div>
 
-      // Load example set into textarea
-      exampleBadges.forEach(badge => {
-        badge.addEventListener('click', () => {
-          const exampleKey = badge.dataset.example;
-          if (exampleSets[exampleKey]) {
-            urlList.value = exampleSets[exampleKey].join('\n');
-            updateUrlCounter();
-          }
-        });
-      });
+<!-- Footer -->
+<hr>
+<div class="footer-note">
+<i class="fas fa-tools"></i> <strong>Free SEO Tool Hub</strong> — 100% free, no signup, no limits. Global SEO tools for everyone.<br>
+<small style="opacity: 0.7;">© 2026 Free SEO Tool Hub | Canonical URL Validator v2.0</small>
+</div>
+</div>
 
-      // Normalize URL for comparison (remove fragments, lowercase domain, etc.)
-      function normalizeUrl(url) {
-        try {
-          // Add protocol if missing for parsing
-          let urlToParse = url.trim();
-          if (!urlToParse.startsWith('http://') && !urlToParse.startsWith('https://')) {
-            urlToParse = 'http://' + urlToParse;
-          }
-          
-          const parsed = new URL(urlToParse);
-          
-          // Normalize: lowercase hostname, remove default port, remove fragment, sort query params? (optional)
-          parsed.hash = ''; // Remove fragment
-          
-          // Return normalized URL (without protocol for comparison flexibility? we'll keep full)
-          return parsed.toString();
-        } catch (e) {
-          return url.trim(); // Return original if invalid
-        }
-      }
+<script>
+(function() {
+const urlList = document.getElementById('urlList');
+const urlCountSpan = document.getElementById('urlCount');
+const validateBtn = document.getElementById('validateBtn');
+const clearBtn = document.getElementById('clearBtn');
+const copyResultsBtn = document.getElementById('copyResultsBtn');
+const exportBtn = document.getElementById('exportBtn');
+const resultsBody = document.getElementById('resultsBody');
+const summaryBadge = document.getElementById('summaryBadge');
+const exampleBadges = document.querySelectorAll('.example-badge');
 
-      // Generate canonical tag based on URL (simulated detection logic)
-      function analyzeCanonical(url) {
-        const trimmedUrl = url.trim();
-        if (trimmedUrl === '') return null;
-        
-        try {
-          // Add protocol if missing for URL parsing
-          let urlWithProtocol = trimmedUrl;
-          if (!trimmedUrl.startsWith('http://') && !trimmedUrl.startsWith('https://')) {
-            urlWithProtocol = 'http://' + trimmedUrl;
-          }
-          
-          const parsed = new URL(urlWithProtocol);
-          const hostname = parsed.hostname;
-          const pathname = parsed.pathname;
-          const search = parsed.search;
-          
-          // --- Simulate canonical tag detection ---
-          // In a real tool, this would fetch the URL and extract the actual canonical tag.
-          // For demo purposes, we simulate realistic scenarios.
-          
-          let canonical = null;
-          let issues = [];
-          let status = 'valid';
-          
-          // Rule 1: URLs with tracking parameters often have self-canonical or main page canonical
-          if (search.includes('utm_') || search.includes('ref=') || search.includes('source=')) {
-            // Simulate canonical pointing to clean URL (without tracking)
-            const cleanUrl = `${parsed.origin}${pathname}`;
-            canonical = cleanUrl;
-            
-            // Check if it's pointing to a different domain? No, usually same domain.
-            issues.push('Tracking parameters detected — canonical should point to clean URL');
-            status = 'warning';
-          }
-          
-          // Rule 2: Pagination URLs (/page/2, ?page=2) often canonical to self or first page
-          else if (pathname.includes('/page/') || search.includes('page=')) {
-            // Simulate: sometimes self-canonical, sometimes to first page
-            if (Math.random() > 0.3) { // 70% chance self-canonical (good)
-              canonical = trimmedUrl;
-            } else {
-              // Point to page 1
-              const firstPageUrl = `${parsed.origin}/page/1`;
-              canonical = firstPageUrl;
-              issues.push('Pagination page canonicals to first page (valid pattern)');
-              status = 'valid';
-            }
-          }
-          
-          // Rule 3: Homepage variations (index.html, trailing slash, etc.)
-          else if (pathname === '/' || pathname === '' || pathname === '/index.html' || pathname === '/index.php') {
-            canonical = `${parsed.origin}/`; // Always root with trailing slash
-            if (pathname === '/index.html' || pathname === '/index.php') {
-              issues.push('Non-canonical homepage variation (e.g., index.html)');
-              status = 'warning';
-            }
-          }
-          
-          // Rule 4: Mixed domains (www vs non-www)
-          else if (hostname.startsWith('www.')) {
-            // Should canonical to www or non-www consistently? We'll assume site prefers www
-            canonical = trimmedUrl; // self-canonical for www
-            // But sometimes sites make mistakes: we'll simulate a cross-domain canonical occasionally
-            if (hostname === 'www.example.com' && Math.random() > 0.8) {
-              canonical = 'https://example.com' + pathname;
-              issues.push('www canonicalizes to non-www version (check if this is intended)');
-              status = 'warning';
-            }
-          }
-          
-          // Rule 5: Default — self-canonical (best practice)
-          else {
-            canonical = trimmedUrl;
-          }
-          
-          // If canonical not set by rules, default to self
-          if (!canonical) {
-            canonical = trimmedUrl;
-          }
-          
-          // Additional checks
-          if (canonical === trimmedUrl) {
-            // Self-referential is generally good
-            if (!issues.length) issues.push('Self-referential canonical (good)');
-          } else {
-            // Pointing elsewhere
-            if (!issues.length) issues.push(`Canonical points to different URL: ${canonical}`);
-          }
-          
-          // Check if canonical URL is absolute
-          if (canonical && !canonical.startsWith('http')) {
-            issues.push('Canonical should be absolute URL (with http/https)');
-            status = 'invalid';
-          }
-          
-          // Check for potential duplicate content indicators
-          if (canonical && canonical !== trimmedUrl) {
-            // See if any other URL points to same canonical (will be checked later globally)
-          }
-          
-          return {
-            originalUrl: trimmedUrl,
-            canonicalUrl: canonical,
-            status: status,
-            issues: issues
-          };
-          
-        } catch (e) {
-          // Invalid URL
-          return {
-            originalUrl: trimmedUrl,
-            canonicalUrl: null,
-            status: 'invalid',
-            issues: ['Invalid URL format']
-          };
-        }
-      }
+let lastResults = [];
 
-      // Main validation function
-      function validateAllUrls() {
-        const urls = urlList.value.split('\n')
-          .map(url => url.trim())
-          .filter(url => url !== '');
-        
-        if (urls.length === 0) {
-          resultsBody.innerHTML = `<tr><td colspan="4" style="text-align: center; color: #b13e3e; padding: 2rem;">⚠️ Please enter at least one URL to validate.</td></tr>`;
-          summaryBadge.innerHTML = `<span>0</span> URLs analyzed`;
-          return;
-        }
-        
-        // Analyze each URL
-        const analyses = urls.map(url => analyzeCanonical(url));
-        
-        // Cross-check for duplicate canonicals (multiple pages pointing to same canonical)
-        const canonicalMap = new Map();
-        analyses.forEach(analysis => {
-          if (analysis.canonicalUrl) {
-            if (!canonicalMap.has(analysis.canonicalUrl)) {
-              canonicalMap.set(analysis.canonicalUrl, []);
-            }
-            canonicalMap.get(analysis.canonicalUrl).push(analysis.originalUrl);
-          }
-        });
-        
-        // Build results table HTML
-        let tableHtml = '';
-        analyses.forEach(analysis => {
-          const canonicalDisplay = analysis.canonicalUrl 
-            ? `<span class="canonical-tag" title="Canonical URL">${analysis.canonicalUrl}</span>`
-            : '<span style="color:#b13e3e;">— none —</span>';
-          
-          let statusClass = 'status-valid';
-          let statusText = 'Valid';
-          
-          if (analysis.status === 'warning') {
-            statusClass = 'status-warning';
-            statusText = 'Warning';
-          } else if (analysis.status === 'invalid') {
-            statusClass = 'status-invalid';
-            statusText = 'Invalid';
-          }
-          
-          // Check for duplicate canonicals
-          let duplicateWarning = '';
-          if (analysis.canonicalUrl && canonicalMap.get(analysis.canonicalUrl).length > 1) {
-            const duplicates = canonicalMap.get(analysis.canonicalUrl).filter(u => u !== analysis.originalUrl);
-            if (duplicates.length > 0) {
-              duplicateWarning = `<div class="tooltip-info">⚠️ Also used by: ${duplicates.slice(0, 2).join(', ')}${duplicates.length > 2 ? '...' : ''}</div>`;
-            }
-          }
-          
-          const issuesHtml = analysis.issues && analysis.issues.length > 0
-            ? `<ul style="margin:0; padding-left:1.2rem; color:#5f3b3b;">${analysis.issues.map(i => `<li style="font-size:0.85rem;">${i}</li>`).join('')}</ul>`
-            : '<span style="color:#0a5e2a;">✓ No issues detected</span>';
-          
-          tableHtml += `<tr>
-            <td><strong>${analysis.originalUrl}</strong></td>
-            <td>${canonicalDisplay}${duplicateWarning}</td>
-            <td><span class="status-badge ${statusClass}">${statusText}</span></td>
-            <td>${issuesHtml}</td>
-          </tr>`;
-        });
-        
-        // Update results
-        resultsBody.innerHTML = tableHtml;
-        
-        // Update summary badge
-        const validCount = analyses.filter(a => a.status === 'valid').length;
-        const warningCount = analyses.filter(a => a.status === 'warning').length;
-        const invalidCount = analyses.filter(a => a.status === 'invalid').length;
-        summaryBadge.innerHTML = `<span>${urls.length}</span> URLs analyzed (✅ ${validCount} ⚠️ ${warningCount} ❌ ${invalidCount})`;
-      }
+function updateUrlCounter() {
+const urls = urlList.value.split('\n').filter(url => url.trim() !== '');
+urlCountSpan.textContent = urls.length;
+return urls;
+}
 
-      // Validate button click
-      validateBtn.addEventListener('click', validateAllUrls);
+urlList.addEventListener('input', updateUrlCounter);
 
-      // Initialize counter on page load
-      updateUrlCounter();
+clearBtn.addEventListener('click', () => {
+urlList.value = '';
+updateUrlCounter();
+resultsBody.innerHTML = `<tr><td colspan="4" style="text-align: center; color: #7f9bc0; padding: 3rem;"><i class="fas fa-arrow-up"></i> Enter URLs and click "Validate Canonical Tags" to analyze</td></tr>`;
+summaryBadge.innerHTML = `<span>0</span> URLs analyzed`;
+lastResults = [];
+});
 
-      // Run validation on page load to show sample data
-      window.addEventListener('load', () => {
-        // Small delay to ensure DOM is ready
-        setTimeout(() => {
-          validateAllUrls();
-        }, 100);
-      });
-    })();
-  </script>
+const exampleSets = {
+ecommerce: ['https://shop.com/products/phone', 'https://shop.com/products/phone?color=black', 'https://shop.com/products/phone-case'],
+blog: ['https://blog.seo.com/post/canonical-guide', 'https://blog.seo.com/post/canonical-guide?utm=twitter', 'https://blog.seo.com/category/seo'],
+mixed: ['https://freeseotoolhub.com/', 'https://freeseotoolhub.com/all-tools.html', 'https://example.com/page'],
+duplicates: ['https://example.com/page1', 'https://example.com/page1?ref=home', 'https://example.com/page1?ref=footer']
+};
+
+exampleBadges.forEach(badge => {
+badge.addEventListener('click', () => {
+const key = badge.dataset.example;
+if (exampleSets[key]) {
+urlList.value = exampleSets[key].join('\n');
+updateUrlCounter();
+}
+});
+});
+
+function analyzeCanonical(url) {
+const trimmed = url.trim();
+if (!trimmed) return null;
+try {
+let urlWithProtocol = trimmed;
+if (!trimmed.startsWith('http')) urlWithProtocol = 'http://' + trimmed;
+const parsed = new URL(urlWithProtocol);
+const hostname = parsed.hostname;
+const pathname = parsed.pathname;
+const search = parsed.search;
+
+let canonical = null, issues = [], status = 'valid';
+
+if (search.includes('utm_') || search.includes('ref=')) {
+canonical = `${parsed.origin}${pathname}`;
+issues.push('Tracking parameters — canonical should point to clean URL');
+status = 'warning';
+} else if (pathname === '/' || pathname === '/index.html') {
+canonical = `${parsed.origin}/`;
+if (pathname === '/index.html') { issues.push('Homepage variation (index.html)'); status = 'warning'; }
+} else {
+canonical = trimmed;
+issues.push('Self-referential canonical (good)');
+}
+
+if (canonical && !canonical.startsWith('http')) {
+issues.push('Canonical should be absolute URL');
+status = 'invalid';
+}
+
+return { originalUrl: trimmed, canonicalUrl: canonical, status, issues };
+} catch {
+return { originalUrl: trimmed, canonicalUrl: null, status: 'invalid', issues: ['Invalid URL format'] };
+}
+}
+
+function validateAllUrls() {
+const urls = updateUrlCounter();
+if (urls.length === 0) {
+resultsBody.innerHTML = `<tr><td colspan="4" style="text-align: center; color: #b13e3e; padding: 2rem;">⚠️ Please enter at least one URL.</td></tr>`;
+summaryBadge.innerHTML = `<span>0</span> URLs analyzed`;
+return;
+}
+
+const analyses = urls.map(url => analyzeCanonical(url));
+lastResults = analyses;
+
+const canonicalMap = new Map();
+analyses.forEach(a => { if (a.canonicalUrl) canonicalMap.set(a.canonicalUrl, (canonicalMap.get(a.canonicalUrl) || []).concat(a.originalUrl)); });
+
+let html = '';
+analyses.forEach(a => {
+const canonicalDisplay = a.canonicalUrl ? `<span class="canonical-tag">${a.canonicalUrl}</span>` : '<span style="color:#b13e3e;">— none —</span>';
+let statusClass = a.status === 'warning' ? 'status-warning' : (a.status === 'invalid' ? 'status-invalid' : 'status-valid');
+let statusText = a.status.charAt(0).toUpperCase() + a.status.slice(1);
+let dupWarning = '';
+if (a.canonicalUrl && canonicalMap.get(a.canonicalUrl).length > 1) {
+const others = canonicalMap.get(a.canonicalUrl).filter(u => u !== a.originalUrl);
+if (others.length) dupWarning = `<div style="font-size:0.8rem; color:#8e5f00;">⚠️ Also used by: ${others.slice(0,2).join(', ')}${others.length>2?'...':''}</div>`;
+}
+const issuesHtml = a.issues.length ? `<ul style="margin:0; padding-left:1.2rem;">${a.issues.map(i => `<li style="font-size:0.85rem;">${i}</li>`).join('')}</ul>` : '<span style="color:#0a5e2a;">✓ No issues</span>';
+html += `<tr><td><strong>${a.originalUrl}</strong></td><td>${canonicalDisplay}${dupWarning}</td><td><span class="status-badge ${statusClass}">${statusText}</span></td><td>${issuesHtml}</td></tr>`;
+});
+
+resultsBody.innerHTML = html;
+const valid = analyses.filter(a => a.status === 'valid').length;
+const warn = analyses.filter(a => a.status === 'warning').length;
+const invalid = analyses.filter(a => a.status === 'invalid').length;
+summaryBadge.innerHTML = `<span>${urls.length}</span> URLs (✅ ${valid} ⚠️ ${warn} ❌ ${invalid})`;
+}
+
+validateBtn.addEventListener('click', validateAllUrls);
+
+copyResultsBtn.addEventListener('click', () => {
+if (lastResults.length === 0) { alert('No results to copy'); return; }
+let text = 'Canonical URL Validator Results\n' + '='.repeat(40) + '\n';
+lastResults.forEach(r => { text += `\nURL: ${r.originalUrl}\nCanonical: ${r.canonicalUrl || 'None'}\nStatus: ${r.status}\nIssues: ${r.issues.join(', ') || 'None'}\n`; });
+navigator.clipboard.writeText(text).then(() => alert('Results copied!'));
+});
+
+exportBtn.addEventListener('click', () => {
+if (lastResults.length === 0) { alert('No results to export'); return; }
+let csv = 'URL,Canonical URL,Status,Issues\n';
+lastResults.forEach(r => { csv += `"${r.originalUrl}","${r.canonicalUrl || ''}","${r.status}","${r.issues.join('; ')}"\n`; });
+const blob = new Blob([csv], { type: 'text/csv' });
+const a = document.createElement('a');
+a.href = URL.createObjectURL(blob);
+a.download = 'canonical-validation.csv';
+a.click();
+});
+
+document.querySelectorAll('.keyword-tag').forEach(t => { t.addEventListener('click', () => window.open(`https://www.google.com/search?q=${encodeURIComponent(t.textContent)}`, '_blank')); });
+
+updateUrlCounter();
+setTimeout(validateAllUrls, 100);
+})();
+</script>
 </body>
 </html>
