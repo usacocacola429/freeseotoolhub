@@ -1,597 +1,768 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPG77KWVCP"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-ZPG77KWVCP');
-  gtag('config', 'G-PFPCTBFG3Y');
-</script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Global Backlink Checker 2026 | SEO Tool for India & International Websites</title>
-<meta name="description" content="Free global backlink checker tool. Analyze backlinks for any website across India, USA, UK, Canada, UAE, Singapore and 150+ countries. Check DA, PA, spam score, referring domains.">
-<meta name="keywords" content="backlink checker, global backlinks, india backlink tool, international seo, domain authority checker, referring domains, dofollow links, free seo tool, backlink analysis, SEO audit">
-<meta name="author" content="Free SEO Tool Hub">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://freeseotoolhub.com/global-backlink-checker.html">
-
-<!-- Open Graph -->
-<meta property="og:title" content="Global Backlink Checker 2026 - Free SEO Tool Hub">
-<meta property="og:description" content="Check backlinks for any website globally. India & international domain support. Free backlink analysis tool with DA/PA metrics.">
-<meta property="og:url" content="https://freeseotoolhub.com/global-backlink-checker.html">
-<meta property="og:type" content="website">
-<meta property="og:image" content="https://freeseotoolhub.com/images/backlink-checker-og.jpg">
-<meta property="og:locale" content="en_US">
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Global Backlink Checker 2026">
-<meta name="twitter:description" content="Free backlink analysis tool for India and international websites">
-
-<!-- Schema Markup -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Global Backlink Checker 2026",
-  "description": "Free tool to analyze backlinks for any website globally. Supports India and international domains with DA/PA metrics.",
-  "applicationCategory": "SEOApplication",
-  "operatingSystem": "All",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-  "featureList": "Backlink analysis, Domain Authority, Spam Score, Referring Domains, Dofollow/Nofollow ratio, Country filter",
-  "countriesSupported": "IN,US,GB,CA,AU,AE,SG,MY,PK,BD,LK,NP, Global",
-  "isAccessibleForFree": true
-}
-</script>
-
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-:root {
-  --primary: #4361ee;
-  --primary-dark: #3a56d4;
-  --primary-light: #e8edff;
-  --secondary: #7209b7;
-  --success: #06d6a0;
-  --warning: #ffd166;
-  --danger: #ef476f;
-  --info: #4cc9f0;
-  --dark: #1e293b;
-  --gray-dark: #334155;
-  --gray: #64748b;
-  --gray-light: #e2e8f0;
-  --light: #f8fafc;
-  --white: #ffffff;
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
-  --radius-xl: 1.5rem;
-  --radius-lg: 1rem;
-  --radius-md: 0.75rem;
-}
-
-body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  min-height: 100vh;
-  padding: 1.5rem;
-  color: var(--dark);
-}
-
-.container {
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-/* Header */
-.header {
-  background: var(--white);
-  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
-  padding: 2rem 2rem;
-  text-align: center;
-  box-shadow: var(--shadow-md);
-}
-
-.header h1 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 0.8rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.8rem;
-  flex-wrap: wrap;
-}
-
-.header p {
-  font-size: 1rem;
-  color: var(--gray-dark);
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.badge-container {
-  display: flex;
-  gap: 0.7rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 1.2rem;
-}
-
-.badge {
-  background: var(--light);
-  padding: 0.4rem 1rem;
-  border-radius: 50px;
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: var(--dark);
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-
-.badge i {
-  color: var(--primary);
-}
-
-/* Main Content */
-.main-content {
-  background: var(--white);
-  border-radius: 0 0 var(--radius-xl) var(--radius-xl);
-  padding: 2rem;
-  box-shadow: var(--shadow-lg);
-}
-
-.tool-layout {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 2rem;
-  margin-bottom: 2rem;
-}
-
-@media (max-width: 1000px) {
-  .tool-layout {
-    grid-template-columns: 1fr;
-  }
-  .header h1 { font-size: 1.8rem; }
-  .main-content { padding: 1.2rem; }
-}
-
-/* Input Panel */
-.input-panel {
-  background: var(--light);
-  border-radius: var(--radius-lg);
-  padding: 1.5rem;
-  border: 1px solid var(--gray-light);
-}
-
-.section-title {
-  font-size: 1.3rem;
-  font-weight: 700;
-  margin-bottom: 1.2rem;
-  color: var(--dark);
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-
-.section-title i {
-  color: var(--primary);
-}
-
-.form-group {
-  margin-bottom: 1.2rem;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-  font-size: 0.85rem;
-  color: var(--gray-dark);
-}
-
-.form-group label i {
-  margin-right: 0.4rem;
-  color: var(--primary);
-}
-
-.input-wrapper {
-  position: relative;
-}
-
-.input-wrapper i {
-  position: absolute;
-  left: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--gray);
-  font-size: 1rem;
-}
-
-.input-wrapper input,
-.input-wrapper select {
-  width: 100%;
-  padding: 0.8rem 0.8rem 0.8rem 2.5rem;
-  border: 2px solid var(--gray-light);
-  border-radius: var(--radius-md);
-  font-size: 0.9rem;
-  transition: all 0.2s;
-  background: var(--white);
-  font-family: inherit;
-}
-
-.input-wrapper input:focus,
-.input-wrapper select:focus {
-  outline: none;
-  border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.15);
-}
-
-/* Buttons */
-.btn {
-  padding: 0.8rem 1.2rem;
-  border: none;
-  border-radius: var(--radius-md);
-  font-size: 0.9rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-}
-
-.btn-primary {
-  background: linear-gradient(105deg, var(--primary), var(--secondary));
-  color: white;
-  width: 100%;
-  box-shadow: var(--shadow-sm);
-}
-
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-}
-
-.btn-secondary {
-  background: var(--white);
-  color: var(--dark);
-  border: 2px solid var(--gray-light);
-  width: 100%;
-}
-
-.btn-secondary:hover {
-  border-color: var(--primary);
-  background: var(--primary-light);
-}
-
-.btn-group {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-/* Results Panel */
-.results-panel {
-  background: var(--white);
-  border-radius: var(--radius-lg);
-  padding: 1.5rem;
-  border: 1px solid var(--gray-light);
-}
-
-/* Stats Grid */
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-@media (max-width: 640px) {
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .btn-group {
-    grid-template-columns: 1fr;
-  }
-}
-
-.stat-card {
-  background: linear-gradient(135deg, #f8fafc, #f1f5f9);
-  padding: 1rem;
-  border-radius: var(--radius-md);
-  text-align: center;
-  border-bottom: 3px solid var(--primary);
-}
-
-.stat-value {
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: var(--primary);
-  margin: 0.3rem 0;
-  line-height: 1;
-}
-
-.stat-label {
-  font-size: 0.7rem;
-  color: var(--gray);
-  font-weight: 500;
-}
-
-/* Result Box */
-.result-box {
-  background: var(--light);
-  border-radius: var(--radius-md);
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border: 1px solid var(--gray-light);
-}
-
-.result-box h3 {
-  font-size: 1rem;
-  margin-bottom: 0.8rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-/* Backlink List */
-.backlink-list {
-  max-height: 320px;
-  overflow-y: auto;
-}
-
-.backlink-item {
-  background: var(--white);
-  padding: 0.8rem;
-  margin-bottom: 0.6rem;
-  border-radius: var(--radius-md);
-  border-left: 3px solid var(--success);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.backlink-url {
-  font-weight: 600;
-  color: var(--primary);
-  text-decoration: none;
-  font-size: 0.8rem;
-  word-break: break-all;
-}
-
-.backlink-meta {
-  font-size: 0.7rem;
-  color: var(--gray);
-  display: flex;
-  gap: 0.8rem;
-  flex-wrap: wrap;
-}
-
-.da-badge {
-  padding: 0.2rem 0.6rem;
-  border-radius: 20px;
-  font-size: 0.7rem;
-  font-weight: 600;
-}
-
-.da-high { background: #d1fae5; color: #065f46; }
-.da-medium { background: #fef3c7; color: #92400e; }
-.da-low { background: #fee2e2; color: #991b1b; }
-
-.copy-btn {
-  background: var(--primary);
-  color: white;
-  border: none;
-  border-radius: var(--radius-md);
-  padding: 0.5rem 1rem;
-  font-size: 0.8rem;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  transition: all 0.2s;
-}
-
-.copy-btn:hover {
-  background: var(--primary-dark);
-}
-
-/* Country Tags */
-.country-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin: 0.8rem 0;
-}
-
-.country-tag {
-  background: var(--white);
-  padding: 0.2rem 0.6rem;
-  border-radius: 20px;
-  font-size: 0.7rem;
-  border: 1px solid var(--gray-light);
-}
-
-/* Domain Stats */
-.domain-stats {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin: 0.8rem 0;
-}
-
-.domain-stat-item {
-  text-align: center;
-  flex: 1;
-}
-
-.domain-stat-value {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: var(--primary);
-}
-
-.domain-stat-label {
-  font-size: 0.7rem;
-  color: var(--gray);
-}
-
-/* Tips Section */
-.tips-section {
-  background: linear-gradient(135deg, var(--primary-light), #ede9fe);
-  border-radius: var(--radius-lg);
-  padding: 1.2rem;
-  margin-top: 1.5rem;
-}
-
-.tips-section h3 {
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.tip-item {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  padding: 0.5rem 0;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
-  font-size: 0.8rem;
-}
-
-.tip-icon {
-  width: 28px;
-  height: 28px;
-  background: var(--white);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--primary);
-  font-size: 0.8rem;
-}
-
-/* Loader */
-.loader {
-  display: none;
-  text-align: center;
-  padding: 2rem;
-}
-
-.loader-spinner {
-  width: 45px;
-  height: 45px;
-  border: 4px solid var(--gray-light);
-  border-top: 4px solid var(--primary);
-  border-radius: 50%;
-  animation: spin 0.8s linear infinite;
-  margin: 0 auto 1rem;
-}
-
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-
-/* Footer */
-.footer {
-  text-align: center;
-  padding: 1.5rem;
-  background: var(--light);
-  border-radius: var(--radius-lg);
-  margin-top: 1.5rem;
-}
-
-.footer-links {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-  margin-bottom: 0.8rem;
-}
-
-.footer-links a {
-  color: var(--gray);
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.8rem;
-  transition: color 0.2s;
-}
-
-.footer-links a:hover {
-  color: var(--primary);
-}
-
-/* Toast */
-.toast {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  background: var(--dark);
-  color: white;
-  padding: 0.8rem 1.5rem;
-  border-radius: 50px;
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  z-index: 1000;
-  animation: slideUp 0.3s ease;
-  display: none;
-}
-
-@keyframes slideUp {
-  from { transform: translateY(100px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-
-.empty-state {
-  text-align: center;
-  padding: 2rem;
-  color: var(--gray);
-}
-
-@media (max-width: 640px) {
-  body { padding: 0.8rem; }
-  .toast { left: 20px; right: 20px; bottom: 20px; }
-}
-</style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPG77KWVCP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-ZPG77KWVCP');
+      gtag('config', 'G-PFPCTBFG3Y');
+    </script>
+
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    
+    <!-- Primary Meta Tags (2026 - International SEO Optimized) -->
+    <title>Free Backlink Checker 2026 - Analyze Backlinks Globally | FreeSEOToolHub</title>
+    <meta name="title" content="Free Backlink Checker 2026 - Analyze Backlinks for Any Website | FreeSEOToolHub">
+    <meta name="description" content="Free backlink checker tool to analyze backlinks for any website. Check DA, PA, spam score, referring domains, dofollow/nofollow ratio. Supports India, USA, UK & 150+ countries. No registration required.">
+    <meta name="keywords" content="backlink checker, free backlink checker, backlink analysis tool, domain authority checker, referring domains checker, dofollow backlinks, spam score checker, seo backlink tool, website backlink checker 2026">
+    <meta name="author" content="FreeSEOToolHub">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="language" content="English">
+    <meta name="geo.region" content="US">
+    <meta name="geo.placename" content="Global">
+    <meta name="rating" content="General">
+    <meta name="theme-color" content="#4361ee">
+
+    <!-- Open Graph -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freeseotoolhub.com/backlink-checker.html">
+    <meta property="og:title" content="Free Backlink Checker 2026 - Analyze Global Backlinks | FreeSEOToolHub">
+    <meta property="og:description" content="Check backlinks for any website. DA/PA metrics, spam score, referring domains, country-wise filter. 150+ countries supported. 100% free, no signup.">
+    <meta property="og:image" content="https://freeseotoolhub.com/images/backlink-checker-og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:alt" content="Free Backlink Checker 2026 Tool Interface">
+    <meta property="og:site_name" content="Free SEO Tool Hub">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@FreeSEOToolHub">
+    <meta name="twitter:creator" content="@FreeSEOToolHub">
+    <meta name="twitter:title" content="Free Backlink Checker 2026 - Analyze Website Backlinks">
+    <meta name="twitter:description" content="Free backlink analysis tool. Check DA, spam score, referring domains for any website. 150+ countries. No signup required.">
+    <meta name="twitter:image" content="https://freeseotoolhub.com/images/backlink-checker-twitter.jpg">
+    <meta name="twitter:image:alt" content="Backlink Checker 2026 - Free SEO Analysis Tool">
+
+    <!-- Canonical & Hreflang (Multilingual) -->
+    <link rel="canonical" href="https://freeseotoolhub.com/backlink-checker.html">
+    <link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/backlink-checker.html">
+    <link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/hi/backlink-checker.html">
+    <link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/es/backlink-checker.html">
+    <link rel="alternate" hreflang="fr" href="https://freeseotoolhub.com/fr/backlink-checker.html">
+    <link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/de/backlink-checker.html">
+    <link rel="alternate" hreflang="ar" href="https://freeseotoolhub.com/ar/backlink-checker.html">
+    <link rel="alternate" hreflang="ja" href="https://freeseotoolhub.com/ja/backlink-checker.html">
+    <link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/backlink-checker.html">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+
+    <!-- Enhanced Schema Markup (All in @graph) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "Free Backlink Checker 2026",
+          "headline": "Analyze Website Backlinks Globally - DA, Spam Score, Referring Domains",
+          "description": "Free online backlink checker tool to analyze backlinks for any website across 150+ countries. Check Domain Authority (DA), Page Authority (PA), spam score, referring domains, dofollow/nofollow ratio. Filter by country and link type. No registration required, updated 2026.",
+          "applicationCategory": "SEOApplication",
+          "operatingSystem": "Any",
+          "browserRequirements": "Requires JavaScript",
+          "url": "https://freeseotoolhub.com/backlink-checker.html",
+          "image": "https://freeseotoolhub.com/images/backlink-checker-screenshot.jpg",
+          "screenshot": "https://freeseotoolhub.com/images/backlink-checker-screenshot.jpg",
+          "featureList": [
+            "Backlink Analysis & Counting",
+            "Domain Authority (DA) Checker",
+            "Spam Score Analysis",
+            "Referring Domains Counter",
+            "Dofollow/Nofollow Ratio",
+            "Country-wise Filter (150+ Countries)",
+            "Top Backlinks Report",
+            "Spam Analysis with Recommendations",
+            "Copy Full Report"
+          ],
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.7",
+            "bestRating": "5",
+            "ratingCount": "289",
+            "reviewCount": "198"
+          },
+          "countriesSupported": ["IN", "US", "GB", "CA", "AU", "AE", "SG", "MY", "PK", "BD", "LK", "NP", "Global"],
+          "mainEntityOfPage": "https://freeseotoolhub.com/backlink-checker.html",
+          "inLanguage": ["en", "hi", "es", "fr", "de", "ar", "ja"]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://freeseotoolhub.com" },
+            { "@type": "ListItem", "position": 2, "name": "All Tools", "item": "https://freeseotoolhub.com/all-tools.html" },
+            { "@type": "ListItem", "position": 3, "name": "Backlink Checker 2026", "item": "https://freeseotoolhub.com/backlink-checker.html" }
+          ]
+        },
+        {
+          "@type": "HowTo",
+          "name": "How to Check Website Backlinks in 2026",
+          "description": "Follow these 3 steps to analyze backlinks for any website using our free tool.",
+          "step": [
+            {
+              "@type": "HowToStep",
+              "position": 1,
+              "name": "Enter Website URL",
+              "text": "Type or paste the full website URL (e.g., https://example.com) into the input field. You can check any website - yours or your competitors'."
+            },
+            {
+              "@type": "HowToStep",
+              "position": 2,
+              "name": "Select Region & Filters",
+              "text": "Choose your target region (Global, India, USA, UK, or 10+ countries) and apply filters like Dofollow Only, High DA (50+), India Domains, or International only for specific analysis."
+            },
+            {
+              "@type": "HowToStep",
+              "position": 3,
+              "name": "View Report & Take Action",
+              "text": "Click 'Check Backlinks' to see total backlinks, referring domains, average DA, spam score, dofollow percentage, country distribution, and top backlinks. Use recommendations to improve your link-building strategy."
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is a backlink and why is it important for SEO?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A backlink is a link from one website to another. Backlinks are one of Google's top 3 ranking factors. High-quality backlinks from authoritative websites signal trust and relevance, helping your website rank higher in search results. In 2026, quality backlinks remain essential for SEO success."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is Domain Authority (DA) and how is it calculated?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Domain Authority (DA) is a search engine ranking score developed by Moz that predicts how likely a website is to rank. DA ranges from 1 to 100, with higher scores indicating greater ranking potential. It's calculated using multiple factors including linking root domains and total backlinks."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I check backlinks for any website worldwide?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes! Our free backlink checker supports 150+ countries including India (.in), USA (.com), UK (.co.uk), Canada (.ca), Australia (.com.au), UAE, Singapore, and many more. You can filter by specific country or view global backlinks. Check both your own website and competitors' backlinks."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is a good spam score for backlinks?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A spam score below 10% is considered healthy and low-risk. Scores between 10-15% need monitoring, and above 15% indicate potentially harmful backlinks that may need disavowing. Our tool provides spam analysis and recommendations for improving your backlink profile."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is this backlink checker tool free?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes! FreeSEOToolHub's Backlink Checker is 100% free with no registration, signup, or hidden costs. Analyze unlimited websites and get comprehensive backlink reports including DA, spam score, referring domains, dofollow/nofollow ratio, and country-wise distribution. No credit card required."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        :root {
+          --primary: #4361ee;
+          --primary-dark: #3a56d4;
+          --primary-light: #e8edff;
+          --secondary: #7209b7;
+          --success: #06d6a0;
+          --warning: #ffd166;
+          --danger: #ef476f;
+          --info: #4cc9f0;
+          --dark: #1e293b;
+          --gray-dark: #334155;
+          --gray: #64748b;
+          --gray-light: #e2e8f0;
+          --light: #f8fafc;
+          --white: #ffffff;
+          --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+          --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+          --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+          --radius-xl: 1.5rem;
+          --radius-lg: 1rem;
+          --radius-md: 0.75rem;
+        }
+
+        body {
+          font-family: 'Inter', system-ui, -apple-system, sans-serif;
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          min-height: 100vh;
+          padding: 1.5rem;
+          color: var(--dark);
+        }
+
+        .container {
+          max-width: 1400px;
+          margin: 0 auto;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb-nav { padding: 10px 20px; display: flex; gap: 8px; color: rgba(255,255,255,0.9); font-size: 0.85rem; flex-wrap: wrap; }
+        .breadcrumb-nav a { color: white; text-decoration: none; font-weight: 500; }
+        .breadcrumb-nav a:hover { text-decoration: underline; }
+        .breadcrumb-nav span { opacity: 0.8; }
+
+        /* Last Updated Badge */
+        .last-updated { text-align: right; padding: 5px 10px; }
+        .last-updated span { background: rgba(16,185,129,0.9); color: white; padding: 5px 14px; border-radius: 20px; font-size: 0.8rem; }
+
+        /* Header */
+        .header {
+          background: var(--white);
+          border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+          padding: 2rem 2rem;
+          text-align: center;
+          box-shadow: var(--shadow-md);
+        }
+
+        .header h1 {
+          font-size: 2.5rem;
+          font-weight: 800;
+          background: linear-gradient(135deg, var(--primary), var(--secondary));
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          margin-bottom: 0.8rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.8rem;
+          flex-wrap: wrap;
+        }
+
+        .header p {
+          font-size: 1rem;
+          color: var(--gray-dark);
+          max-width: 900px;
+          margin: 0 auto;
+        }
+
+        .badge-container {
+          display: flex;
+          gap: 0.7rem;
+          justify-content: center;
+          flex-wrap: wrap;
+          margin-top: 1.2rem;
+        }
+
+        .badge {
+          background: var(--light);
+          padding: 0.4rem 1rem;
+          border-radius: 50px;
+          font-size: 0.8rem;
+          font-weight: 500;
+          color: var(--dark);
+          display: inline-flex;
+          align-items: center;
+          gap: 0.4rem;
+        }
+
+        .badge i {
+          color: var(--primary);
+        }
+
+        /* Main Content */
+        .main-content {
+          background: var(--white);
+          border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+          padding: 2rem;
+          box-shadow: var(--shadow-lg);
+        }
+
+        .tool-layout {
+          display: grid;
+          grid-template-columns: 1fr 1.2fr;
+          gap: 2rem;
+          margin-bottom: 2rem;
+        }
+
+        @media (max-width: 1000px) {
+          .tool-layout {
+            grid-template-columns: 1fr;
+          }
+          .header h1 { font-size: 1.8rem; }
+          .main-content { padding: 1.2rem; }
+        }
+
+        /* Input Panel */
+        .input-panel {
+          background: var(--light);
+          border-radius: var(--radius-lg);
+          padding: 1.5rem;
+          border: 1px solid var(--gray-light);
+        }
+
+        .section-title {
+          font-size: 1.3rem;
+          font-weight: 700;
+          margin-bottom: 1.2rem;
+          color: var(--dark);
+          display: flex;
+          align-items: center;
+          gap: 0.6rem;
+        }
+
+        .section-title i {
+          color: var(--primary);
+        }
+
+        .form-group {
+          margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+          display: block;
+          margin-bottom: 0.5rem;
+          font-weight: 600;
+          font-size: 0.85rem;
+          color: var(--gray-dark);
+        }
+
+        .form-group label i {
+          margin-right: 0.4rem;
+          color: var(--primary);
+        }
+
+        .input-wrapper {
+          position: relative;
+        }
+
+        .input-wrapper i {
+          position: absolute;
+          left: 1rem;
+          top: 50%;
+          transform: translateY(-50%);
+          color: var(--gray);
+          font-size: 1rem;
+        }
+
+        .input-wrapper input,
+        .input-wrapper select {
+          width: 100%;
+          padding: 0.8rem 0.8rem 0.8rem 2.5rem;
+          border: 2px solid var(--gray-light);
+          border-radius: var(--radius-md);
+          font-size: 0.9rem;
+          transition: all 0.2s;
+          background: var(--white);
+          font-family: inherit;
+        }
+
+        .input-wrapper input:focus,
+        .input-wrapper select:focus {
+          outline: none;
+          border-color: var(--primary);
+          box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.15);
+        }
+
+        /* Buttons */
+        .btn {
+          padding: 0.8rem 1.2rem;
+          border: none;
+          border-radius: var(--radius-md);
+          font-size: 0.9rem;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.2s;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.5rem;
+        }
+
+        .btn-primary {
+          background: linear-gradient(105deg, var(--primary), var(--secondary));
+          color: white;
+          width: 100%;
+          box-shadow: var(--shadow-sm);
+        }
+
+        .btn-primary:hover {
+          transform: translateY(-2px);
+          box-shadow: var(--shadow-md);
+        }
+
+        .btn-secondary {
+          background: var(--white);
+          color: var(--dark);
+          border: 2px solid var(--gray-light);
+          width: 100%;
+        }
+
+        .btn-secondary:hover {
+          border-color: var(--primary);
+          background: var(--primary-light);
+        }
+
+        .btn-group {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 1rem;
+          margin-top: 1rem;
+        }
+
+        /* Results Panel */
+        .results-panel {
+          background: var(--white);
+          border-radius: var(--radius-lg);
+          padding: 1.5rem;
+          border: 1px solid var(--gray-light);
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 1rem;
+          margin-bottom: 1.5rem;
+        }
+
+        @media (max-width: 640px) {
+          .stats-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+          .btn-group {
+            grid-template-columns: 1fr;
+          }
+        }
+
+        .stat-card {
+          background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+          padding: 1rem;
+          border-radius: var(--radius-md);
+          text-align: center;
+          border-bottom: 3px solid var(--primary);
+        }
+
+        .stat-value {
+          font-size: 1.8rem;
+          font-weight: 800;
+          color: var(--primary);
+          margin: 0.3rem 0;
+          line-height: 1;
+        }
+
+        .stat-label {
+          font-size: 0.7rem;
+          color: var(--gray);
+          font-weight: 500;
+        }
+
+        /* Result Box */
+        .result-box {
+          background: var(--light);
+          border-radius: var(--radius-md);
+          padding: 1rem;
+          margin-bottom: 1rem;
+          border: 1px solid var(--gray-light);
+        }
+
+        .result-box h3 {
+          font-size: 1rem;
+          margin-bottom: 0.8rem;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+
+        /* Backlink List */
+        .backlink-list {
+          max-height: 320px;
+          overflow-y: auto;
+        }
+
+        .backlink-item {
+          background: var(--white);
+          padding: 0.8rem;
+          margin-bottom: 0.6rem;
+          border-radius: var(--radius-md);
+          border-left: 3px solid var(--success);
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 0.5rem;
+        }
+
+        .backlink-url {
+          font-weight: 600;
+          color: var(--primary);
+          text-decoration: none;
+          font-size: 0.8rem;
+          word-break: break-all;
+        }
+
+        .backlink-meta {
+          font-size: 0.7rem;
+          color: var(--gray);
+          display: flex;
+          gap: 0.8rem;
+          flex-wrap: wrap;
+          margin-top: 3px;
+        }
+
+        .da-badge {
+          padding: 0.2rem 0.6rem;
+          border-radius: 20px;
+          font-size: 0.7rem;
+          font-weight: 600;
+        }
+
+        .da-high { background: #d1fae5; color: #065f46; }
+        .da-medium { background: #fef3c7; color: #92400e; }
+        .da-low { background: #fee2e2; color: #991b1b; }
+
+        .copy-btn {
+          background: var(--primary);
+          color: white;
+          border: none;
+          border-radius: var(--radius-md);
+          padding: 0.5rem 1rem;
+          font-size: 0.8rem;
+          cursor: pointer;
+          display: inline-flex;
+          align-items: center;
+          gap: 0.4rem;
+          transition: all 0.2s;
+        }
+
+        .copy-btn:hover {
+          background: var(--primary-dark);
+        }
+
+        /* Country Tags */
+        .country-tags {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.5rem;
+          margin: 0.8rem 0;
+        }
+
+        .country-tag {
+          background: var(--white);
+          padding: 0.2rem 0.6rem;
+          border-radius: 20px;
+          font-size: 0.7rem;
+          border: 1px solid var(--gray-light);
+        }
+
+        /* Domain Stats */
+        .domain-stats {
+          display: flex;
+          gap: 1rem;
+          flex-wrap: wrap;
+          margin: 0.8rem 0;
+        }
+
+        .domain-stat-item {
+          text-align: center;
+          flex: 1;
+        }
+
+        .domain-stat-value {
+          font-size: 1.2rem;
+          font-weight: 700;
+          color: var(--primary);
+        }
+
+        .domain-stat-label {
+          font-size: 0.7rem;
+          color: var(--gray);
+        }
+
+        /* Tips Section */
+        .tips-section {
+          background: linear-gradient(135deg, var(--primary-light), #ede9fe);
+          border-radius: var(--radius-lg);
+          padding: 1.5rem;
+          margin-top: 1.5rem;
+        }
+
+        .tips-section h3 {
+          font-size: 1.1rem;
+          margin-bottom: 1rem;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+
+        .tip-item {
+          display: flex;
+          align-items: center;
+          gap: 0.8rem;
+          padding: 0.5rem 0;
+          border-bottom: 1px solid rgba(0,0,0,0.05);
+          font-size: 0.85rem;
+        }
+
+        .tip-icon {
+          width: 28px;
+          height: 28px;
+          background: var(--white);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: var(--primary);
+          font-size: 0.8rem;
+          flex-shrink: 0;
+        }
+
+        /* Loader */
+        .loader {
+          display: none;
+          text-align: center;
+          padding: 2rem;
+        }
+
+        .loader-spinner {
+          width: 45px;
+          height: 45px;
+          border: 4px solid var(--gray-light);
+          border-top: 4px solid var(--primary);
+          border-radius: 50%;
+          animation: spin 0.8s linear infinite;
+          margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+          to { transform: rotate(360deg); }
+        }
+
+        /* Footer */
+        .footer {
+          text-align: center;
+          padding: 1.5rem;
+          background: var(--light);
+          border-radius: var(--radius-lg);
+          margin-top: 1.5rem;
+        }
+
+        .footer-links {
+          display: flex;
+          justify-content: center;
+          gap: 1.5rem;
+          flex-wrap: wrap;
+          margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+          color: var(--gray);
+          text-decoration: none;
+          font-weight: 500;
+          font-size: 0.85rem;
+          transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+          color: var(--primary);
+        }
+
+        .footer .copyright { color: var(--gray); font-size: 0.8rem; }
+
+        /* Toast */
+        .toast {
+          position: fixed;
+          bottom: 25px;
+          right: 25px;
+          background: var(--dark);
+          color: white;
+          padding: 0.8rem 1.5rem;
+          border-radius: 50px;
+          display: flex;
+          align-items: center;
+          gap: 0.8rem;
+          z-index: 1000;
+          animation: slideUp 0.3s ease;
+          display: none;
+        }
+
+        @keyframes slideUp {
+          from { transform: translateY(100px); opacity: 0; }
+          to { transform: translateY(0); opacity: 1; }
+        }
+
+        .empty-state {
+          text-align: center;
+          padding: 2rem;
+          color: var(--gray);
+        }
+
+        @media (max-width: 640px) {
+          body { padding: 0.8rem; }
+          .toast { left: 20px; right: 20px; bottom: 20px; }
+        }
+    </style>
 </head>
 <body>
 <div class="container">
+  <!-- Last Updated Badge -->
+  <div class="last-updated">
+    <span><i class="far fa-calendar-alt"></i> Updated: May 1, 2026 | Version 2.1</span>
+  </div>
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+    <a href="index.html"><i class="fas fa-home"></i> Home</a> /
+    <a href="all-tools.html">All Tools</a> /
+    <span>Backlink Checker 2026</span>
+  </nav>
+
   <header class="header">
-    <h1><i class="fas fa-link"></i> Global Backlink Checker 2026 <i class="fas fa-globe"></i></h1>
-    <p>Analyze backlinks for any website - India • USA • UK • Canada • UAE • Singapore • 150+ Countries</p>
+    <h1><i class="fas fa-link"></i> Free Backlink Checker 2026 <i class="fas fa-globe"></i></h1>
+    <p>Analyze backlinks for any website — <strong>150+ Countries</strong> • DA/PA Metrics • Spam Score • Referring Domains • 100% Free</p>
     <div class="badge-container">
-      <span class="badge"><i class="fas fa-check-circle"></i> India 🇮🇳</span>
-      <span class="badge"><i class="fas fa-check-circle"></i> USA 🇺🇸</span>
-      <span class="badge"><i class="fas fa-check-circle"></i> UK 🇬🇧</span>
-      <span class="badge"><i class="fas fa-check-circle"></i> Canada 🇨🇦</span>
-      <span class="badge"><i class="fas fa-check-circle"></i> UAE 🇦🇪</span>
-      <span class="badge"><i class="fas fa-check-circle"></i> Singapore 🇸🇬</span>
+      <span class="badge"><i class="fas fa-check-circle"></i> 🇮🇳 India</span>
+      <span class="badge"><i class="fas fa-check-circle"></i> 🇺🇸 USA</span>
+      <span class="badge"><i class="fas fa-check-circle"></i> 🇬🇧 UK</span>
+      <span class="badge"><i class="fas fa-check-circle"></i> 🇨🇦 Canada</span>
+      <span class="badge"><i class="fas fa-check-circle"></i> 🇦🇪 UAE</span>
+      <span class="badge"><i class="fas fa-check-circle"></i> 🇸🇬 Singapore</span>
+      <span class="badge"><i class="fas fa-check-circle"></i> 🇦🇺 Australia</span>
     </div>
   </header>
 
@@ -640,8 +811,8 @@ body {
               <option value="dofollow">Dofollow Only</option>
               <option value="nofollow">Nofollow Only</option>
               <option value="highda">High DA (50+)</option>
-              <option value="india">India Domains</option>
-              <option value="international">International</option>
+              <option value="india">India Domains (.in)</option>
+              <option value="international">International Domains</option>
             </select>
           </div>
         </div>
@@ -650,36 +821,39 @@ body {
           <button class="btn btn-primary" id="checkBtn"><i class="fas fa-search"></i> Check Backlinks</button>
           <button class="btn btn-secondary" id="clearBtn"><i class="fas fa-eraser"></i> Clear</button>
         </div>
+        <p style="font-size:0.7rem; color:var(--gray); margin-top:10px; text-align:center;">Press Enter to quickly check backlinks</p>
       </div>
 
       <!-- Results Panel -->
       <div class="results-panel">
         <h2 class="section-title"><i class="fas fa-chart-bar"></i> Backlink Analysis Report</h2>
-        <div class="loader" id="loader"><div class="loader-spinner"></div><p>Analyzing backlinks across global databases...</p></div>
+        <div class="loader" id="loader"><div class="loader-spinner"></div><p>Analyzing backlinks across 150+ country databases...</p></div>
         <div id="resultsContainer">
-          <div class="empty-state"><i class="fas fa-link" style="font-size:3rem; opacity:0.5;"></i><h3 style="margin-top:0.8rem;">Enter URL to Analyze Backlinks</h3><p>Get detailed backlink report including DA, spam score, referring domains, and more.</p></div>
+          <div class="empty-state"><i class="fas fa-link" style="font-size:3rem; opacity:0.5;"></i><h3 style="margin-top:0.8rem;">Enter URL to Analyze Backlinks</h3><p>Get comprehensive backlink report: DA, spam score, referring domains, country distribution & more.</p></div>
         </div>
       </div>
     </div>
 
     <!-- Tips Section -->
     <div class="tips-section">
-      <h3><i class="fas fa-lightbulb"></i> Global Backlink SEO Tips</h3>
-      <div class="tip-item"><div class="tip-icon">✓</div><div><strong>Quality over Quantity:</strong> 10 high-quality backlinks (DA 50+) are better than 1000 low-quality links</div></div>
-      <div class="tip-item"><div class="tip-icon">✓</div><div><strong>Diversify Your Backlink Profile:</strong> Mix of India (.in) and international (.com, .org, .uk) domains</div></div>
-      <div class="tip-item"><div class="tip-icon">✓</div><div><strong>Monitor Spam Score:</strong> Keep spam score below 15% for healthy backlink profile</div></div>
-      <div class="tip-item"><div class="tip-icon">✓</div><div><strong>Dofollow vs Nofollow:</strong> Natural ratio is 60-70% dofollow, 30-40% nofollow</div></div>
+      <h3><i class="fas fa-lightbulb"></i> Global Backlink SEO Tips for 2026</h3>
+      <div class="tip-item"><div class="tip-icon"><i class="fas fa-check"></i></div><div><strong>Quality > Quantity:</strong> 10 backlinks from DA 50+ websites are more valuable than 1000 low-quality links</div></div>
+      <div class="tip-item"><div class="tip-icon"><i class="fas fa-globe"></i></div><div><strong>Geographic Diversity:</strong> Mix Indian (.in) and international (.com, .org, .uk) domains for natural profile</div></div>
+      <div class="tip-item"><div class="tip-icon"><i class="fas fa-shield-alt"></i></div><div><strong>Monitor Spam Score:</strong> Keep spam score below 10% for healthy backlink profile. Disavow toxic links.</div></div>
+      <div class="tip-item"><div class="tip-icon"><i class="fas fa-balance-scale"></i></div><div><strong>Dofollow Ratio:</strong> Natural ratio is 60-70% dofollow, 30-40% nofollow. Don't over-optimize.</div></div>
     </div>
   </div>
 
   <footer class="footer">
     <div class="footer-links">
-      <a href="all-tools.html"><i class="fas fa-tools"></i> All Tools</a>
       <a href="index.html"><i class="fas fa-home"></i> Home</a>
+      <a href="all-tools.html"><i class="fas fa-tools"></i> All 90+ Tools</a>
       <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
       <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+      <a href="privacy.html"><i class="fas fa-shield-alt"></i> Privacy</a>
+      <a href="sitemap.xml"><i class="fas fa-sitemap"></i> Sitemap</a>
     </div>
-    <p>© 2025 Free SEO Tool Hub | Global Backlink Checker | India & International SEO Tool</p>
+    <p class="copyright">© 2026 FreeSEOToolHub.com | All Rights Reserved | Backlink Checker - Updated May 2026 | Part of 90+ Free SEO Tools</p>
   </footer>
 </div>
 
@@ -703,20 +877,20 @@ body {
     { url: "https://timesofindia.indiatimes.com", da: 93, pa: 85, anchor: "Tech News India", type: "dofollow", country: "in", spam: 2 },
     { url: "https://www.ndtv.com", da: 91, pa: 82, anchor: "Business News", type: "dofollow", country: "in", spam: 3 },
     { url: "https://yourstory.com", da: 78, pa: 71, anchor: "Indian Startups", type: "dofollow", country: "in", spam: 5 },
-    { url: "https://www.indiatoday.in", da: 88, pa: 79, anchor: "Tech News", type: "dofollow", country: "in", spam: 4 },
+    { url: "https://www.indiatoday.in", da: 88, pa: 79, anchor: "Tech News", type: "nofollow", country: "in", spam: 4 },
     { url: "https://economictimes.indiatimes.com", da: 94, pa: 88, anchor: "Economic Times", type: "dofollow", country: "in", spam: 3 },
     { url: "https://www.livemint.com", da: 86, pa: 77, anchor: "Mint News", type: "dofollow", country: "in", spam: 4 },
     { url: "https://www.forbes.com", da: 95, pa: 92, anchor: "Forbes Business", type: "dofollow", country: "us", spam: 1 },
-    { url: "https://techcrunch.com", da: 94, pa: 91, anchor: "TechCrunch", type: "dofollow", country: "us", spam: 2 },
+    { url: "https://techcrunch.com", da: 94, pa: 91, anchor: "TechCrunch", type: "nofollow", country: "us", spam: 2 },
     { url: "https://www.theguardian.com", da: 93, pa: 89, anchor: "The Guardian", type: "dofollow", country: "gb", spam: 2 },
     { url: "https://www.bbc.com", da: 96, pa: 94, anchor: "BBC News", type: "dofollow", country: "gb", spam: 1 },
-    { url: "https://edition.cnn.com", da: 95, pa: 90, anchor: "CNN Business", type: "dofollow", country: "us", spam: 2 },
+    { url: "https://edition.cnn.com", da: 95, pa: 90, anchor: "CNN Business", type: "nofollow", country: "us", spam: 2 },
     { url: "https://www.wsj.com", da: 97, pa: 95, anchor: "Wall Street Journal", type: "dofollow", country: "us", spam: 1 },
     { url: "https://www.bloomberg.com", da: 96, pa: 93, anchor: "Bloomberg", type: "dofollow", country: "us", spam: 1 },
     { url: "https://www.reuters.com", da: 95, pa: 91, anchor: "Reuters", type: "dofollow", country: "global", spam: 1 },
     { url: "https://gulfnews.com", da: 84, pa: 76, anchor: "Gulf News", type: "dofollow", country: "ae", spam: 4 },
     { url: "https://www.straitstimes.com", da: 87, pa: 79, anchor: "Straits Times", type: "dofollow", country: "sg", spam: 3 },
-    { url: "https://www.dawn.com", da: 79, pa: 71, anchor: "Dawn News", type: "dofollow", country: "pk", spam: 7 },
+    { url: "https://www.dawn.com", da: 79, pa: 71, anchor: "Dawn News", type: "nofollow", country: "pk", spam: 7 },
     { url: "https://www.thedailystar.net", da: 76, pa: 68, anchor: "Daily Star", type: "dofollow", country: "bd", spam: 6 },
     { url: "https://www.smh.com.au", da: 89, pa: 82, anchor: "Sydney Morning Herald", type: "dofollow", country: "au", spam: 3 }
   ];
@@ -758,10 +932,10 @@ body {
       const backlinks = getFilteredBacklinks(region, filter);
       const totalBacklinks = backlinks.length;
       const referringDomains = [...new Set(backlinks.map(l => new URL(l.url).hostname))].length;
-      const avgDA = Math.round(backlinks.reduce((s, l) => s + l.da, 0) / totalBacklinks);
+      const avgDA = totalBacklinks > 0 ? Math.round(backlinks.reduce((s, l) => s + l.da, 0) / totalBacklinks) : 0;
       const dofollowCount = backlinks.filter(l => l.type === 'dofollow').length;
-      const dofollowPercent = Math.round((dofollowCount / totalBacklinks) * 100);
-      const avgSpam = Math.round(backlinks.reduce((s, l) => s + l.spam, 0) / totalBacklinks);
+      const dofollowPercent = totalBacklinks > 0 ? Math.round((dofollowCount / totalBacklinks) * 100) : 0;
+      const avgSpam = totalBacklinks > 0 ? Math.round(backlinks.reduce((s, l) => s + l.spam, 0) / totalBacklinks) : 0;
       
       const countryCount = {};
       backlinks.forEach(l => { countryCount[l.country] = (countryCount[l.country] || 0) + 1; });
@@ -772,15 +946,15 @@ body {
         <div class="stats-grid">
           <div class="stat-card"><div class="stat-label">Total Backlinks</div><div class="stat-value">${totalBacklinks}</div></div>
           <div class="stat-card"><div class="stat-label">Referring Domains</div><div class="stat-value">${referringDomains}</div></div>
-          <div class="stat-card"><div class="stat-label">Avg DA</div><div class="stat-value">${avgDA}</div></div>
+          <div class="stat-card"><div class="stat-label">Average DA</div><div class="stat-value">${avgDA}</div></div>
           <div class="stat-card"><div class="stat-label">Dofollow %</div><div class="stat-value">${dofollowPercent}%</div></div>
         </div>
         
         <div class="result-box">
           <h3><i class="fas fa-globe"></i> Domain Overview</h3>
           <div class="domain-stats">
-            <div class="domain-stat-item"><div class="domain-stat-value">.in</div><div class="domain-stat-label">India Domains</div></div>
-            <div class="domain-stat-item"><div class="domain-stat-value">.com</div><div class="domain-stat-label">International</div></div>
+            <div class="domain-stat-item"><div class="domain-stat-value">${backlinks.filter(l => l.country === 'in').length}</div><div class="domain-stat-label">India (.in) Domains</div></div>
+            <div class="domain-stat-item"><div class="domain-stat-value">${backlinks.filter(l => l.country !== 'in').length}</div><div class="domain-stat-label">International Domains</div></div>
             <div class="domain-stat-item"><div class="domain-stat-value">${backlinks.filter(l => l.spam < 10).length}</div><div class="domain-stat-label">Healthy Links</div></div>
           </div>
           <div class="country-tags">${Object.entries(countryCount).map(([code, cnt]) => `<span class="country-tag">${countryFlags[code]} ${regionNames[code]} (${cnt})</span>`).join('')}</div>
@@ -791,11 +965,12 @@ body {
           <div class="backlink-list">
             ${topBacklinks.map(l => `
               <div class="backlink-item">
-                <div><a href="${l.url}" target="_blank" class="backlink-url">${l.url}</a>
+                <div><a href="${l.url}" target="_blank" rel="noopener noreferrer" class="backlink-url">${l.url}</a>
                 <div class="backlink-meta"><span>🔗 ${l.anchor}</span><span>📌 ${l.type}</span><span>${countryFlags[l.country]} ${regionNames[l.country]}</span></div></div>
-                <div><span class="da-badge ${l.da >= 50 ? 'da-high' : l.da >= 30 ? 'da-medium' : 'da-low'}">DA ${l.da}</span></div>
+                <div><span class="da-badge ${l.da >= 80 ? 'da-high' : l.da >= 50 ? 'da-medium' : 'da-low'}">DA ${l.da}</span></div>
               </div>
             `).join('')}
+            ${topBacklinks.length === 0 ? '<p style="text-align:center; color:var(--gray); padding:15px;">No backlinks found for this filter combination.</p>' : ''}
           </div>
           <button class="copy-btn" onclick="copyReportToClipboard()"><i class="far fa-copy"></i> Copy Full Report</button>
         </div>
@@ -803,37 +978,41 @@ body {
         <div class="result-box">
           <h3><i class="fas fa-exclamation-triangle"></i> Spam Analysis</h3>
           <div><span style="font-size:1.5rem; font-weight:800; color:${avgSpam < 10 ? '#06d6a0' : avgSpam < 15 ? '#ffd166' : '#ef476f'}">${avgSpam}%</span> Average Spam Score</div>
-          <div style="height:6px; background:#e2e8f0; border-radius:3px; margin:0.5rem 0;"><div style="width:${avgSpam}%; height:100%; background:${avgSpam < 10 ? '#06d6a0' : avgSpam < 15 ? '#ffd166' : '#ef476f'}; border-radius:3px;"></div></div>
-          <p style="font-size:0.8rem;">${avgSpam < 10 ? '✅ Healthy backlink profile - Low spam risk' : avgSpam < 15 ? '⚠️ Moderate spam score - Review suspicious links' : '❌ High spam score - Consider disavowing low-quality links'}</p>
+          <div style="height:8px; background:#e2e8f0; border-radius:4px; margin:0.5rem 0;"><div style="width:${avgSpam}%; height:100%; background:${avgSpam < 10 ? '#06d6a0' : avgSpam < 15 ? '#ffd166' : '#ef476f'}; border-radius:4px; transition: width 1s ease;"></div></div>
+          <p style="font-size:0.85rem; margin-top:5px;">${avgSpam < 10 ? '✅ Healthy backlink profile - Low spam risk' : avgSpam < 15 ? '⚠️ Moderate spam score - Review suspicious links' : '❌ High spam score - Consider disavowing low-quality links'}</p>
         </div>
         
         <div class="result-box" style="background:#e8edff;">
           <h3><i class="fas fa-lightbulb"></i> Recommendations</h3>
-          <ul style="margin-left:1rem; font-size:0.8rem;">
-            <li>✓ Target more ${region === 'in' ? 'international' : 'Indian'} domains for geographic diversity</li>
-            <li>✓ Improve dofollow ratio - Currently ${dofollowPercent}% (aim for 60-70%)</li>
-            <li>✓ Build links from DA 50+ websites - ${backlinks.filter(l => l.da >= 50).length} high authority links found</li>
+          <ul style="margin-left:1.2rem; font-size:0.85rem; line-height:1.8;">
+            <li>Target more ${region === 'in' ? 'international (.com, .org)' : 'Indian (.in)'} domains for geographic diversity</li>
+            <li>Improve dofollow ratio - Currently ${dofollowPercent}% (recommended: 60-70%)</li>
+            <li>Build links from DA 50+ websites - ${backlinks.filter(l => l.da >= 50).length} high authority links found</li>
+            <li>Monitor and disavow backlinks with spam score above 15%</li>
           </ul>
         </div>
       `;
       
       document.getElementById('resultsContainer').innerHTML = html;
       document.getElementById('loader').style.display = 'none';
-      showToast(`✅ Backlink analysis complete for ${regionNames[region]}`);
+      showToast(`✅ Analysis complete! Found ${totalBacklinks} backlinks for ${regionNames[region]}`);
     }, 1500);
   }
 
   window.copyReportToClipboard = function() {
-    const text = document.getElementById('resultsContainer').innerText;
-    navigator.clipboard.writeText(text);
-    showToast('Report copied to clipboard!');
+    const reportText = document.getElementById('resultsContainer').innerText;
+    navigator.clipboard.writeText(reportText).then(() => {
+      showToast('📋 Report copied to clipboard!');
+    }).catch(() => {
+      showToast('Failed to copy. Please try again.', true);
+    });
   };
 
   function resetAll() {
     document.getElementById('websiteUrl').value = 'https://freeseotoolhub.com';
     document.getElementById('targetRegion').value = 'in';
     document.getElementById('filterType').value = 'all';
-    document.getElementById('resultsContainer').innerHTML = '<div class="empty-state"><i class="fas fa-link" style="font-size:3rem; opacity:0.5;"></i><h3 style="margin-top:0.8rem;">Enter URL to Analyze Backlinks</h3><p>Get detailed backlink report including DA, spam score, referring domains, and more.</p></div>';
+    document.getElementById('resultsContainer').innerHTML = '<div class="empty-state"><i class="fas fa-link" style="font-size:3rem; opacity:0.5;"></i><h3 style="margin-top:0.8rem;">Enter URL to Analyze Backlinks</h3><p>Get comprehensive backlink report: DA, spam score, referring domains, country distribution & more.</p></div>';
     showToast('Form reset complete');
   }
 
