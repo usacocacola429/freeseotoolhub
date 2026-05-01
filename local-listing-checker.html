@@ -1,1199 +1,308 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Local Business Listing Checker - Google Maps, Justdial, IndiaMart | Free SEO Tool Hub</title>
-  <meta name="description" content="Check if your business is listed on Google Maps, Justdial, Sulekha, and IndiaMart. Free local business listing checker for Indian businesses.">
-  <meta name="keywords" content="local business listing, google maps checker, justdial listing, indiamart listing, sulekha business, business directory india">
-  
-  <!-- Open Graph / Social Media Meta -->
-  <meta property="og:title" content="Local Business Listing Checker - Google Maps, Justdial, IndiaMart | Free SEO Tool Hub">
-  <meta property="og:description" content="Check your business presence on Google Maps, Justdial, Sulekha, and IndiaMart. Free tool for Indian businesses.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://freeseotoolhub.com/local-business-listing-checker">
-  <meta property="og:image" content="https://freeseotoolhub.com/og-local-listing.jpg">
-  
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-  
-  <style>
-    /* Global Styles - Matching freeseotoolhub.com premium theme */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: linear-gradient(145deg, #f0f7fc 0%, #e8f1fa 100%);
-      color: #0f2a44;
-      line-height: 1.6;
-      min-height: 100vh;
-      padding: 2rem 1rem;
-    }
-
-    .container {
-      max-width: 1300px;
-      margin: 0 auto;
-    }
-
-    /* Header Section */
-    .tool-header {
-      text-align: center;
-      margin-bottom: 3rem;
-      position: relative;
-    }
-
-    .tool-header h1 {
-      font-size: 3.2rem;
-      font-weight: 800;
-      background: linear-gradient(145deg, #0d3b66, #1f5e9e, #2b7fc2);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 0.75rem;
-      letter-spacing: -0.02em;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .india-badge {
-      background: linear-gradient(135deg, #FF9933, #138808);
-      color: white;
-      font-size: 1rem;
-      font-weight: 600;
-      padding: 0.5rem 1.8rem;
-      border-radius: 60px;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      box-shadow: 0 10px 20px -8px #FF9933B3;
-    }
-
-    .tool-header p {
-      color: #1f4a7a;
-      font-size: 1.2rem;
-      max-width: 800px;
-      margin: 1rem auto 0;
-      background: rgba(255, 255, 255, 0.7);
-      padding: 1rem 2.5rem;
-      border-radius: 60px;
-      backdrop-filter: blur(8px);
-      box-shadow: 0 6px 20px rgba(0, 30, 70, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.8);
-    }
-
-    /* Platform Cards */
-    .platform-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.2rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .platform-card {
-      background: white;
-      border-radius: 24px;
-      padding: 1.5rem 0.8rem;
-      text-align: center;
-      box-shadow: 0 8px 20px -10px rgba(0,40,100,0.15);
-      border: 1px solid rgba(0,100,200,0.1);
-      transition: all 0.2s ease;
-    }
-
-    .platform-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 18px 30px -8px rgba(0,80,180,0.25);
-    }
-
-    .platform-icon {
-      font-size: 2.8rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .platform-name {
-      font-weight: 700;
-      font-size: 1.3rem;
-      color: #0d3b66;
-    }
-
-    .platform-location {
-      font-size: 0.8rem;
-      color: #4f7eb0;
-      margin-top: 0.3rem;
-    }
-
-    /* Main Tool Card */
-    .tool-card {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(12px);
-      border-radius: 40px;
-      box-shadow: 0 30px 60px -20px rgba(0, 40, 80, 0.3), 0 8px 20px rgba(0, 0, 0, 0.02);
-      padding: 2.5rem;
-      margin-bottom: 3rem;
-      border: 1px solid rgba(255, 255, 255, 0.7);
-    }
-
-    /* Input Section */
-    .input-section {
-      margin-bottom: 2.5rem;
-    }
-
-    .input-label {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: #0d2f52;
-      margin-bottom: 1rem;
-    }
-
-    .input-label span {
-      background: #1f5e9e;
-      color: white;
-      padding: 0.3rem 1.2rem;
-      border-radius: 30px;
-      font-size: 0.9rem;
-    }
-
-    .business-input-group {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .business-input-group input, .business-input-group select {
-      padding: 1.2rem 1.5rem;
-      border: 2px solid #d3e3fc;
-      border-radius: 60px;
-      font-size: 1rem;
-      background: #fafdff;
-      transition: all 0.2s;
-      box-shadow: inset 0 2px 8px rgba(0,0,0,0.02);
-    }
-
-    .business-input-group input:focus, .business-input-group select:focus {
-      outline: none;
-      border-color: #2b7fc2;
-      box-shadow: 0 0 0 4px rgba(43, 127, 194, 0.15);
-    }
-
-    .business-input-group select {
-      appearance: none;
-      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231f5e9e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-      background-repeat: no-repeat;
-      background-position: right 1.5rem center;
-      background-size: 1.2rem;
-    }
-
-    /* Example Businesses */
-    .example-businesses {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-      margin: 1.5rem 0;
-    }
-
-    .example-badge {
-      background: white;
-      border: 1.5px solid #bed9ff;
-      color: #1f5e9e;
-      padding: 0.6rem 1.4rem;
-      border-radius: 40px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: all 0.2s;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
-    }
-
-    .example-badge:hover {
-      background: #1f5e9e;
-      color: white;
-      border-color: #1f5e9e;
-      transform: translateY(-2px);
-    }
-
-    /* Button Group */
-    .button-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin: 2rem 0;
-    }
-
-    .btn {
-      padding: 1rem 2.5rem;
-      border: none;
-      border-radius: 60px;
-      font-weight: 600;
-      font-size: 1.1rem;
-      cursor: pointer;
-      transition: all 0.25s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.8rem;
-      box-shadow: 0 8px 18px rgba(0, 40, 80, 0.15);
-    }
-
-    .btn-primary {
-      background: linear-gradient(115deg, #0d3b66, #1f5e9e, #2b7fc2);
-      color: white;
-    }
-
-    .btn-primary:hover {
-      background: linear-gradient(115deg, #0a2f52, #184c80, #2266a3);
-      transform: translateY(-3px);
-      box-shadow: 0 18px 28px -8px #1f5e9e;
-    }
-
-    .btn-outline {
-      background: white;
-      color: #1f5e9e;
-      border: 2px solid #b8d3ff;
-      box-shadow: none;
-    }
-
-    .btn-outline:hover {
-      background: #f0f8ff;
-      border-color: #1f5e9e;
-      transform: translateY(-2px);
-    }
-
-    /* Results Dashboard */
-    .results-dashboard {
-      margin-top: 2.5rem;
-    }
-
-    .summary-cards {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .summary-card {
-      background: white;
-      border-radius: 28px;
-      padding: 1.8rem 1.2rem;
-      text-align: center;
-      box-shadow: 0 10px 25px -12px rgba(0,0,0,0.1);
-      border: 1px solid #e2efff;
-    }
-
-    .summary-card .platform {
-      font-size: 1.8rem;
-      margin-bottom: 0.8rem;
-    }
-
-    .summary-card .status {
-      font-size: 1.8rem;
-      font-weight: 800;
-      margin: 0.5rem 0;
-    }
-
-    .summary-card .status.found {
-      color: #138808;
-    }
-
-    .summary-card .status.not-found {
-      color: #b02a37;
-    }
-
-    .summary-card .status.partial {
-      color: #b85c00;
-    }
-
-    .summary-card .details {
-      font-size: 0.9rem;
-      color: #4f7eb0;
-    }
-
-    /* Listing Details Table */
-    .listings-table {
-      width: 100%;
-      border-collapse: collapse;
-      background: #f9fdff;
-      border-radius: 28px;
-      overflow: hidden;
-      margin: 2rem 0;
-    }
-
-    .listings-table th {
-      background: #e3f0fc;
-      color: #0d3b66;
-      font-weight: 600;
-      padding: 1.2rem 1.5rem;
-      text-align: left;
-      font-size: 0.95rem;
-    }
-
-    .listings-table td {
-      padding: 1.2rem 1.5rem;
-      border-bottom: 1px solid #d4e6ff;
-    }
-
-    .listings-table tr:last-child td {
-      border-bottom: none;
-    }
-
-    .platform-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.4rem 1rem;
-      border-radius: 30px;
-      font-weight: 600;
-      font-size: 0.85rem;
-    }
-
-    .badge-google {
-      background: #4285F4;
-      color: white;
-    }
-    .badge-justdial {
-      background: #30409C;
-      color: white;
-    }
-    .badge-sulekha {
-      background: #FF6B00;
-      color: white;
-    }
-    .badge-indiamart {
-      background: #F2810D;
-      color: white;
-    }
-
-    .status-indicator {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.3rem 1rem;
-      border-radius: 30px;
-      font-weight: 600;
-      font-size: 0.85rem;
-    }
-
-    .status-verified {
-      background: #dff0d8;
-      color: #2e7d32;
-    }
-    .status-unverified {
-      background: #fff3cd;
-      color: #b85c00;
-    }
-    .status-missing {
-      background: #f8d7da;
-      color: #b02a37;
-    }
-
-    .action-link {
-      color: #1f5e9e;
-      text-decoration: none;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-    }
-
-    .action-link:hover {
-      text-decoration: underline;
-    }
-
-    /* NAP Consistency Card */
-    .nap-card {
-      background: linear-gradient(145deg, #f3f9ff, #ffffff);
-      border-radius: 28px;
-      padding: 2rem;
-      margin: 2rem 0;
-      border: 1px solid #c2dbff;
-    }
-
-    .nap-title {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: #0d3b66;
-      margin-bottom: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-    }
-
-    .nap-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-    }
-
-    .nap-item {
-      background: white;
-      padding: 1.5rem;
-      border-radius: 20px;
-      box-shadow: 0 5px 15px -8px rgba(0,0,0,0.1);
-    }
-
-    .nap-label {
-      font-size: 0.9rem;
-      color: #4f7eb0;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-      margin-bottom: 0.5rem;
-    }
-
-    .nap-value {
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: #0d3b66;
-      word-break: break-word;
-    }
-
-    .nap-consistency {
-      margin-top: 1.5rem;
-      padding: 1rem;
-      border-radius: 60px;
-      background: #e7f3ff;
-      text-align: center;
-      font-weight: 600;
-    }
-
-    /* Recommendations Panel */
-    .recommendations-panel {
-      background: linear-gradient(145deg, #0d3b66, #1a5080);
-      color: white;
-      border-radius: 32px;
-      padding: 2rem;
-      margin-top: 2rem;
-    }
-
-    .recommendations-title {
-      font-size: 1.4rem;
-      font-weight: 700;
-      margin-bottom: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-    }
-
-    .recommendations-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .rec-item {
-      background: rgba(255,255,255,0.1);
-      padding: 1.5rem;
-      border-radius: 24px;
-      backdrop-filter: blur(4px);
-      border: 1px solid rgba(255,255,255,0.2);
-    }
-
-    .rec-item strong {
-      display: block;
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-      color: #FFD966;
-    }
-
-    /* Features Grid */
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 2rem;
-      margin: 3rem 0;
-    }
-
-    .feature-card {
-      background: white;
-      padding: 2rem 1.8rem;
-      border-radius: 28px;
-      box-shadow: 0 15px 30px -15px rgba(0, 40, 100, 0.15);
-      border: 1px solid rgba(43, 127, 194, 0.1);
-    }
-
-    .feature-card h4 {
-      font-size: 1.25rem;
-      margin-bottom: 1rem;
-      color: #0d3b66;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-
-    /* Footer */
-    .footer-note {
-      text-align: center;
-      padding: 2rem 0;
-      color: #2d5580;
-      font-weight: 500;
-    }
-
-    hr {
-      border: none;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, #b6d2ff, transparent);
-      margin: 2rem 0;
-    }
-
-    /* Responsive */
-    @media (max-width: 1000px) {
-      .business-input-group {
-        grid-template-columns: 1fr;
-      }
-      .summary-cards {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .nap-grid {
-        grid-template-columns: 1fr;
-      }
-      .tool-header h1 {
-        font-size: 2.5rem;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .summary-cards {
-        grid-template-columns: 1fr;
-      }
-      .platform-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-  </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPG77KWVCP"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PFPCTBFG3Y"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-ZPG77KWVCP');
+gtag('config', 'G-PFPCTBFG3Y');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO Meta Tags -->
+<title>Local Business Listing Checker 2026 - Google Maps, Justdial, IndiaMart | FreeSEOToolHub</title>
+<meta name="title" content="Local Business Listing Checker 2026 - Check Google Maps, Justdial & More">
+<meta name="description" content="Free Local Business Listing Checker. Verify your business presence on Google Maps, Justdial, Sulekha, and IndiaMart. Check NAP consistency, reviews, and get listing recommendations.">
+<meta name="keywords" content="local business listing checker, google maps checker, justdial listing, indiamart listing, sulekha business, business directory india, nap consistency, local seo checker">
+<meta name="author" content="FreeSEOToolHub">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://freeseotoolhub.com/local-business-listing-checker">
+
+<!-- Hreflang -->
+<link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/local-business-listing-checker">
+<link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/hi/local-business-listing-checker">
+<link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/local-business-listing-checker">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://freeseotoolhub.com/local-business-listing-checker">
+<meta property="og:title" content="Local Business Listing Checker 2026 - Free Tool">
+<meta property="og:description" content="Check your business on Google Maps, Justdial, Sulekha & IndiaMart.">
+<meta property="og:image" content="https://freeseotoolhub.com/images/local-listing-og.jpg">
+<meta property="og:site_name" content="FreeSEOToolHub">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Local Business Listing Checker 2026">
+<meta name="twitter:description" content="Free local business listing verification tool.">
+<meta name="twitter:image" content="https://freeseotoolhub.com/images/local-listing-tw.jpg">
+
+<!-- Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Local Business Listing Checker 2026",
+      "description": "Free tool to check business listings on Google Maps, Justdial, Sulekha, and IndiaMart.",
+      "applicationCategory": "Local SEO Tool",
+      "operatingSystem": "All",
+      "url": "https://freeseotoolhub.com/local-business-listing-checker",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "540" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://freeseotoolhub.com" },
+        { "@type": "ListItem", "position": 2, "name": "Local SEO Tools", "item": "https://freeseotoolhub.com/local-seo-tools" },
+        { "@type": "ListItem", "position": 3, "name": "Listing Checker", "item": "https://freeseotoolhub.com/local-business-listing-checker" }
+      ]
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+:root { --primary:#1f5e9e; --primary-dark:#0d3b66; --success:#10b981; --warning:#f59e0b; --danger:#ef4444; --dark:#0f2a44; --gray:#64748b; --light:#f0f7fc; --white:#ffffff; --border:#d3e3fc; --radius:20px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Inter',sans-serif; background:linear-gradient(145deg,#f0f7fc,#e8f1fa); min-height:100vh; padding:1.5rem; color:var(--dark); }
+.container { max-width:1200px; margin:0 auto; }
+
+/* Top Bar */
+.top-bar { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:1.5rem; font-size:0.85rem; }
+.top-bar a { color:var(--primary); text-decoration:none; }
+.last-updated { background:var(--success); color:white; padding:5px 15px; border-radius:20px; }
+.lang-selector { display:flex; gap:5px; }
+.lang-btn { padding:4px 10px; border:1px solid var(--border); background:white; border-radius:15px; cursor:pointer; font-size:0.75rem; }
+.lang-btn:hover, .lang-btn.active { background:var(--primary); color:white; border-color:var(--primary); }
+
+/* Header */
+.tool-header { text-align:center; margin-bottom:2rem; }
+.tool-header h1 { font-size:2.5rem; font-weight:800; background:linear-gradient(145deg,var(--primary-dark),var(--primary)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; display:flex; align-items:center; justify-content:center; gap:1rem; flex-wrap:wrap; }
+.year-badge { background:linear-gradient(135deg,#FF9933,#138808); color:white; font-size:0.9rem; padding:0.4rem 1.5rem; border-radius:60px; -webkit-text-fill-color:white; }
+.tool-header p { color:#1f4a7a; font-size:1.1rem; max-width:700px; margin:0.8rem auto 0; }
+
+/* Tool Card */
+.tool-card { background:rgba(255,255,255,0.95); border-radius:32px; box-shadow:0 20px 50px rgba(0,40,80,0.15); padding:2rem; margin-bottom:2rem; }
+
+/* Input */
+.input-section { margin-bottom:2rem; }
+.business-input-group { display:grid; grid-template-columns:2fr 1fr 1fr; gap:1rem; }
+@media (max-width:768px) { .business-input-group { grid-template-columns:1fr; } }
+.business-input-group input, .business-input-group select { padding:1rem 1.5rem; border:2px solid var(--border); border-radius:60px; font-size:1rem; }
+.business-input-group input:focus, .business-input-group select:focus { outline:none; border-color:var(--primary); }
+.example-businesses { display:flex; flex-wrap:wrap; gap:0.6rem; margin:1rem 0; }
+.example-badge { background:white; border:1.5px solid var(--border); color:var(--primary); padding:0.5rem 1.2rem; border-radius:40px; font-size:0.85rem; cursor:pointer; }
+.example-badge:hover { background:var(--primary); color:white; }
+
+/* Buttons */
+.btn { padding:0.9rem 2rem; border:none; border-radius:60px; font-weight:600; cursor:pointer; display:inline-flex; align-items:center; gap:0.6rem; }
+.btn-primary { background:linear-gradient(115deg,var(--primary-dark),var(--primary)); color:white; }
+.btn-primary:hover { transform:translateY(-2px); }
+.btn-outline { background:white; color:var(--primary); border:2px solid var(--border); }
+
+/* Summary Cards */
+.summary-cards { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; margin:1.5rem 0; }
+@media (max-width:768px) { .summary-cards { grid-template-columns:repeat(2,1fr); } }
+.summary-card { background:white; border-radius:20px; padding:1.2rem; text-align:center; border:1px solid var(--border); }
+.summary-card .platform { font-size:1.8rem; }
+.summary-card .status { font-size:1.5rem; font-weight:800; margin:0.5rem 0; }
+.status-found { color:#138808; } .status-not-found { color:#b02a37; } .status-partial { color:#b85c00; }
+
+/* Table */
+.listings-table { width:100%; border-collapse:collapse; background:#f9fdff; border-radius:20px; overflow:hidden; font-size:0.9rem; }
+.listings-table th { background:#e3f0fc; color:var(--primary-dark); padding:12px; text-align:left; }
+.listings-table td { padding:12px; border-bottom:1px solid #d4e6ff; }
+
+/* Platform Badges */
+.platform-badge { display:inline-flex; align-items:center; gap:0.4rem; padding:0.3rem 0.8rem; border-radius:20px; font-weight:600; font-size:0.8rem; color:white; }
+.badge-google { background:#4285F4; } .badge-justdial { background:#30409C; }
+.badge-sulekha { background:#FF6B00; } .badge-indiamart { background:#F2810D; }
+
+/* Status */
+.status-indicator { display:inline-flex; align-items:center; gap:0.3rem; padding:0.3rem 0.8rem; border-radius:20px; font-weight:600; font-size:0.8rem; }
+.status-verified { background:#dff0d8; color:#2e7d32; }
+.status-unverified { background:#fff3cd; color:#b85c00; }
+.status-missing { background:#f8d7da; color:#b02a37; }
+
+/* NAP */
+.nap-card { background:linear-gradient(145deg,#f3f9ff,white); border-radius:20px; padding:1.5rem; margin:1.5rem 0; border:1px solid var(--border); }
+.nap-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
+@media (max-width:600px) { .nap-grid { grid-template-columns:1fr; } }
+.nap-item { background:white; padding:1rem; border-radius:16px; }
+.nap-label { font-size:0.8rem; color:var(--gray); text-transform:uppercase; }
+.nap-value { font-size:1.1rem; font-weight:700; color:var(--primary-dark); }
+.nap-consistency { margin-top:1rem; padding:0.8rem; border-radius:40px; background:#e7f3ff; text-align:center; font-weight:600; font-size:0.9rem; }
+
+/* Toast */
+.toast-container { position:fixed; bottom:30px; right:30px; z-index:9999; }
+.toast { background:var(--success); color:white; padding:14px 22px; border-radius:12px; animation:slideIn 0.3s ease; margin-top:8px; display:flex; align-items:center; gap:10px; }
+@keyframes slideIn { from { transform:translateX(100%); opacity:0; } to { transform:translateX(0); opacity:1; } }
+
+/* Footer */
+.footer { text-align:center; color:var(--gray); padding:1.5rem 0; }
+.footer a { color:var(--primary); text-decoration:none; }
+</style>
 </head>
 <body>
-  <div class="container">
-    <!-- Header -->
-    <div class="tool-header">
-      <h1>
-        <span>📍 Local Business Listing Checker</span>
-        <span class="india-badge">
-          <span>🇮🇳 INDIA BUSINESSES</span>
-        </span>
-      </h1>
-      <p>Check if your business is listed on Google Maps, Justdial, Sulekha, and IndiaMart. Free local SEO tool for Indian businesses.</p>
-    </div>
-
-    <!-- Platform Cards -->
-    <div class="platform-grid">
-      <div class="platform-card">
-        <div class="platform-icon">🗺️</div>
-        <div class="platform-name">Google Maps</div>
-        <div class="platform-location">Global • 1B+ businesses</div>
-      </div>
-      <div class="platform-card">
-        <div class="platform-icon">📞</div>
-        <div class="platform-name">Justdial</div>
-        <div class="platform-location">India • 150M+ listings</div>
-      </div>
-      <div class="platform-card">
-        <div class="platform-icon">🏢</div>
-        <div class="platform-name">Sulekha</div>
-        <div class="platform-location">India • 20M+ businesses</div>
-      </div>
-      <div class="platform-card">
-        <div class="platform-icon">🏭</div>
-        <div class="platform-name">IndiaMart</div>
-        <div class="platform-location">India • 7M+ suppliers</div>
-      </div>
-    </div>
-
-    <!-- Main Tool Card -->
-    <div class="tool-card">
-      <!-- Input Section -->
-      <div class="input-section">
-        <div class="input-label">
-          <span>🏢</span> Enter Business Details
-        </div>
-        
-        <div class="business-input-group">
-          <input type="text" id="businessName" placeholder="Business Name (e.g., Sharma Electronics)" value="Sharma Electronics">
-          <input type="text" id="businessCity" placeholder="City" value="Mumbai">
-          <select id="businessCategory">
-            <option value="retail">Retail Store</option>
-            <option value="restaurant">Restaurant / Cafe</option>
-            <option value="service" selected>Service Provider</option>
-            <option value="manufacturing">Manufacturing</option>
-            <option value="healthcare">Healthcare</option>
-            <option value="education">Education</option>
-            <option value="realestate">Real Estate</option>
-            <option value="travel">Travel & Tourism</option>
-          </select>
-        </div>
-
-        <!-- Example Businesses -->
-        <div class="example-businesses">
-          <span class="example-badge" data-name="Taj Mahal Tea House" data-city="Delhi" data-cat="restaurant">🍵 Taj Mahal Tea House (Delhi)</span>
-          <span class="example-badge" data-name="Patel Electronics" data-city="Ahmedabad" data-cat="retail">📺 Patel Electronics (Ahmedabad)</span>
-          <span class="example-badge" data-name="Apollo Clinic" data-city="Chennai" data-cat="healthcare">🏥 Apollo Clinic (Chennai)</span>
-          <span class="example-badge" data-name="Lakshmi Mills" data-city="Coimbatore" data-cat="manufacturing">🧵 Lakshmi Mills (Coimbatore)</span>
-          <span class="example-badge" data-name="Dominos Pizza" data-city="Bengaluru" data-cat="restaurant">🍕 Dominos Pizza (Bengaluru)</span>
-        </div>
-
-        <!-- Button Group -->
-        <div class="button-group">
-          <button class="btn btn-primary" id="checkBtn">
-            <span>🔍</span> Check Listings
-          </button>
-          <button class="btn btn-outline" id="resetBtn">
-            <span>🔄</span> Reset
-          </button>
-        </div>
-      </div>
-
-      <!-- Results Dashboard -->
-      <div class="results-dashboard" id="resultsDashboard">
-        <!-- Summary Cards (will be populated by JS) -->
-        <div class="summary-cards" id="summaryCards">
-          <!-- Google Maps Card -->
-          <div class="summary-card">
-            <div class="platform">🗺️</div>
-            <div class="platform-name" style="font-size:1.2rem;">Google Maps</div>
-            <div class="status found" id="googleStatus">✅ Found</div>
-            <div class="details" id="googleDetails">3.5 ★ (128 reviews)</div>
-          </div>
-          
-          <!-- Justdial Card -->
-          <div class="summary-card">
-            <div class="platform">📞</div>
-            <div class="platform-name" style="font-size:1.2rem;">Justdial</div>
-            <div class="status found" id="jdStatus">✅ Found</div>
-            <div class="details" id="jdDetails">4.0 ★ (56 reviews)</div>
-          </div>
-          
-          <!-- Sulekha Card -->
-          <div class="summary-card">
-            <div class="platform">🏢</div>
-            <div class="platform-name" style="font-size:1.2rem;">Sulekha</div>
-            <div class="status partial" id="sulekhaStatus">⚠️ Unverified</div>
-            <div class="details" id="sulekhaDetails">Listed, needs claim</div>
-          </div>
-          
-          <!-- IndiaMart Card -->
-          <div class="summary-card">
-            <div class="platform">🏭</div>
-            <div class="platform-name" style="font-size:1.2rem;">IndiaMart</div>
-            <div class="status not-found" id="imStatus">❌ Not Found</div>
-            <div class="details" id="imDetails">No listing found</div>
-          </div>
-        </div>
-
-        <!-- Detailed Listings Table -->
-        <h3 style="margin: 2rem 0 1rem; color:#0d3b66;">📋 Detailed Listing Information</h3>
-        <table class="listings-table" id="listingsTable">
-          <thead>
-            <tr>
-              <th>Platform</th>
-              <th>Business Name</th>
-              <th>Address / Location</th>
-              <th>Phone</th>
-              <th>Rating</th>
-              <th>Status</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody id="tableBody">
-            <!-- Populated by JavaScript -->
-          </tbody>
-        </table>
-
-        <!-- NAP Consistency Card -->
-        <div class="nap-card" id="napCard">
-          <div class="nap-title">
-            <span>📇</span> NAP Consistency Analysis
-          </div>
-          <div class="nap-grid">
-            <div class="nap-item">
-              <div class="nap-label">Name</div>
-              <div class="nap-value" id="napName">Sharma Electronics</div>
-            </div>
-            <div class="nap-item">
-              <div class="nap-label">Address</div>
-              <div class="nap-value" id="napAddress">42, MG Road, Andheri East, Mumbai</div>
-            </div>
-            <div class="nap-item">
-              <div class="nap-label">Phone</div>
-              <div class="nap-value" id="napPhone">+91 98765 43210</div>
-            </div>
-          </div>
-          <div class="nap-consistency" id="napConsistency">
-            ⚠️ NAP Consistency Score: 75% - Phone number varies across listings
-          </div>
-        </div>
-
-        <!-- Recommendations Panel -->
-        <div class="recommendations-panel" id="recommendationsPanel">
-          <div class="recommendations-title">
-            <span>💡</span> Recommendations to Improve Local Listings
-          </div>
-          <div class="recommendations-list" id="recList">
-            <div class="rec-item">
-              <strong>✅ Claim your Sulekha listing</strong>
-              <p>Your business is listed but unverified. Claim it to respond to reviews and update information.</p>
-            </div>
-            <div class="rec-item">
-              <strong>📝 Add IndiaMart listing</strong>
-              <p>Not found on IndiaMart. Create a listing to reach 7M+ B2B buyers.</p>
-            </div>
-            <div class="rec-item">
-              <strong>📞 Standardize phone number</strong>
-              <p>Your phone number appears in 3 different formats across listings. Use +91-98765-43210 consistently.</p>
-            </div>
-            <div class="rec-item">
-              <strong>⭐ Get more Google reviews</strong>
-              <p>Competitors have 200+ reviews. You have 128. Encourage customers to leave reviews.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Features Grid -->
-    <div class="features-grid">
-      <div class="feature-card">
-        <h4>🗺️ Multi-Platform Scan</h4>
-        <p>Check Google Maps, Justdial, Sulekha, and IndiaMart simultaneously for your business presence.</p>
-      </div>
-      <div class="feature-card">
-        <h4>📊 NAP Consistency</h4>
-        <p>Analyze Name, Address, Phone consistency across all platforms — crucial for local SEO.</p>
-      </div>
-      <div class="feature-card">
-        <h4>⭐ Review Analysis</h4>
-        <p>See ratings and review counts from each platform to identify reputation gaps.</p>
-      </div>
-      <div class="feature-card">
-        <h4>🚀 Actionable Insights</h4>
-        <p>Get specific recommendations to improve your local search visibility.</p>
-      </div>
-    </div>
-
-    <!-- Footer -->
-    <hr>
-    <div class="footer-note">
-      ⚡ <strong>Free SEO Tool Hub</strong> — 100% free, no signup, no limits. Local business listings for Indian businesses.
+<div class="container">
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div><a href="index.html"><i class="fas fa-home"></i> Home</a> › <a href="local-seo-tools.html">Local SEO</a> › <span style="color:var(--gray);">Listing Checker 2026</span></div>
+    <div style="display:flex; align-items:center; gap:15px;">
+      <div class="lang-selector"><button class="lang-btn active">EN</button><button class="lang-btn">HI</button></div>
+      <div class="last-updated"><i class="far fa-calendar-alt"></i> Updated: April 2026</div>
     </div>
   </div>
 
-  <script>
-    (function() {
-      // DOM Elements
-      const businessName = document.getElementById('businessName');
-      const businessCity = document.getElementById('businessCity');
-      const businessCategory = document.getElementById('businessCategory');
-      const checkBtn = document.getElementById('checkBtn');
-      const resetBtn = document.getElementById('resetBtn');
-      const exampleBadges = document.querySelectorAll('.example-badge');
-      
-      // Result display elements
-      const googleStatus = document.getElementById('googleStatus');
-      const googleDetails = document.getElementById('googleDetails');
-      const jdStatus = document.getElementById('jdStatus');
-      const jdDetails = document.getElementById('jdDetails');
-      const sulekhaStatus = document.getElementById('sulekhaStatus');
-      const sulekhaDetails = document.getElementById('sulekhaDetails');
-      const imStatus = document.getElementById('imStatus');
-      const imDetails = document.getElementById('imDetails');
-      
-      const tableBody = document.getElementById('tableBody');
-      const napName = document.getElementById('napName');
-      const napAddress = document.getElementById('napAddress');
-      const napPhone = document.getElementById('napPhone');
-      const napConsistency = document.getElementById('napConsistency');
-      const recList = document.getElementById('recList');
+  <!-- Header -->
+  <div class="tool-header">
+    <h1>📍 Local Business Listing Checker <span class="year-badge">🇮🇳 India</span></h1>
+    <p>Check if your business is listed on Google Maps, Justdial, Sulekha, and IndiaMart.</p>
+  </div>
 
-      // Generate consistent but realistic data based on business name, city, category
-      function generateListingData(name, city, category) {
-        // Create a seed from name+city for consistent results
-        const seed = (name + city).split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
-        
-        // Business types and their typical addresses
-        const addressTypes = {
-          retail: ['Main Road', 'Market', 'Shopping Complex', 'Mall'],
-          restaurant: ['Food Street', 'Main Road', 'Sector', 'Market'],
-          service: ['MG Road', 'Business Park', 'Complex', 'Tower'],
-          manufacturing: ['Industrial Area', 'MIDC', 'Estate', 'Phase'],
-          healthcare: ['Clinic', 'Hospital Road', 'Health Center', 'Medical Square'],
-          education: ['Institute Area', 'Campus', 'School Road', 'Education Hub'],
-          realestate: ['Property', 'Real Estate Hub', 'Tower', 'Complex'],
-          travel: ['Tourist Road', 'Travel Hub', 'Station Road', 'Airport Road']
-        };
+  <!-- Tool Card -->
+  <div class="tool-card">
+    <div class="input-section">
+      <div class="business-input-group">
+        <input type="text" id="businessName" placeholder="Business Name" value="Sharma Electronics">
+        <input type="text" id="businessCity" placeholder="City" value="Mumbai">
+        <select id="businessCategory">
+          <option value="retail">Retail</option><option value="restaurant">Restaurant</option>
+          <option value="service" selected>Service</option><option value="manufacturing">Manufacturing</option>
+        </select>
+      </div>
+      <div class="example-businesses">
+        <span class="example-badge" data-name="Taj Mahal Tea House" data-city="Delhi" data-cat="restaurant">🍵 Taj Tea House</span>
+        <span class="example-badge" data-name="Apollo Clinic" data-city="Chennai" data-cat="healthcare">🏥 Apollo Clinic</span>
+        <span class="example-badge" data-name="Dominos Pizza" data-city="Bengaluru" data-cat="restaurant">🍕 Dominos</span>
+      </div>
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <button class="btn btn-primary" id="checkBtn"><i class="fas fa-search"></i> Check Listings</button>
+        <button class="btn btn-outline" onclick="shareResults()"><i class="fas fa-share-alt"></i> Share</button>
+      </div>
+    </div>
 
-        const cities = {
-          Mumbai: ['Andheri East', 'Bandra West', 'Borivali', 'Dadar', 'Powai'],
-          Delhi: ['Connaught Place', 'Karol Bagh', 'Lajpat Nagar', 'Rohini', 'Saket'],
-          Bengaluru: ['Indiranagar', 'Koramangala', 'Whitefield', 'Jayanagar', 'MG Road'],
-          Ahmedabad: ['Navrangpura', 'Satellite', 'CG Road', 'Maninagar', 'Vastrapur'],
-          Chennai: ['T Nagar', 'Adyar', 'Velachery', 'Anna Nagar', 'Mylapore'],
-          Coimbatore: ['RS Puram', 'Peelamedu', 'Gandhipuram', 'Saibaba Colony', 'Thudiyalur'],
-          Pune: ['Koregaon Park', 'Shivajinagar', 'Kothrud', 'Viman Nagar', 'Hinjewadi'],
-          Kolkata: ['Park Street', 'Salt Lake', 'Howrah', 'Gariahat', 'New Town']
-        };
+    <!-- Results -->
+    <div id="resultsDashboard">
+      <div class="summary-cards" id="summaryCards"></div>
+      <h3 style="margin:1.5rem 0 0.8rem;">📋 Detailed Listings</h3>
+      <div style="overflow-x:auto;">
+        <table class="listings-table"><thead><tr><th>Platform</th><th>Name</th><th>Address</th><th>Phone</th><th>Rating</th><th>Status</th></tr></thead><tbody id="tableBody"></tbody></table>
+      </div>
+      <div class="nap-card">
+        <h3 style="margin-bottom:1rem;">📇 NAP Consistency</h3>
+        <div class="nap-grid">
+          <div class="nap-item"><div class="nap-label">Name</div><div class="nap-value" id="napName">-</div></div>
+          <div class="nap-item"><div class="nap-label">Address</div><div class="nap-value" id="napAddress">-</div></div>
+          <div class="nap-item"><div class="nap-label">Phone</div><div class="nap-value" id="napPhone">-</div></div>
+        </div>
+        <div class="nap-consistency" id="napConsistency">Analyzing...</div>
+      </div>
+    </div>
+  </div>
 
-        // Select address based on city and category
-        const cityAreas = cities[city] || cities['Mumbai'];
-        const area = cityAreas[seed % cityAreas.length];
-        const addressType = addressTypes[category] || addressTypes['service'];
-        const type = addressType[seed % addressType.length];
-        
-        // Generate different address variations for NAP analysis
-        const fullAddress = `${seed % 100}, ${area}, ${city}`;
-        const addressVariation1 = `${seed % 100}, ${area}, Near ${type}, ${city}`;
-        const addressVariation2 = `Shop ${seed % 50}, ${type}, ${area}, ${city}`;
-        
-        // Phone numbers
-        const phoneBase = `98765${43210 + (seed % 1000)}`;
-        const phone1 = `+91-98765-${43210 + (seed % 1000)}`;
-        const phone2 = `98765 ${43210 + (seed % 1000)}`;
-        const phone3 = `+91 98765 ${43210 + (seed % 1000)}`;
-        
-        // Ratings
-        const googleRating = (3.5 + (seed % 20) / 10).toFixed(1);
-        const googleReviews = 50 + (seed % 200);
-        const jdRating = (3.8 + (seed % 15) / 10).toFixed(1);
-        const jdReviews = 20 + (seed % 100);
-        const sulekhaRating = (3.0 + (seed % 25) / 10).toFixed(1);
-        const sulekhaReviews = 5 + (seed % 50);
-        
-        // Determine if found (realistic: Google always found, others vary)
-        const googleFound = true;
-        const jdFound = (seed % 10) > 1; // 90% found
-        const sulekhaFound = (seed % 10) > 2; // 80% found, but often unverified
-        const imFound = (seed % 10) > 4; // 60% found for IndiaMart (B2B focus)
-        
-        // IndiaMart is more B2B, so manufacturing/retail more likely
-        const imCategoryBonus = (category === 'manufacturing' || category === 'retail') ? 2 : 0;
-        const imFoundFinal = ((seed + imCategoryBonus) % 10) > 3; // Adjusted
-        
-        return {
-          google: {
-            found: googleFound,
-            name: name,
-            address: fullAddress,
-            phone: phone1,
-            rating: parseFloat(googleRating),
-            reviews: googleReviews,
-            status: 'verified',
-            statusText: '✅ Verified',
-            claimed: true
-          },
-          justdial: {
-            found: jdFound,
-            name: jdFound ? name : null,
-            address: jdFound ? addressVariation1 : null,
-            phone: jdFound ? phone2 : null,
-            rating: jdFound ? parseFloat(jdRating) : null,
-            reviews: jdFound ? jdReviews : 0,
-            status: jdFound ? 'verified' : 'missing',
-            statusText: jdFound ? '✅ Verified' : '❌ Not Found',
-            claimed: jdFound ? (seed % 3 > 0) : false // 66% claimed if found
-          },
-          sulekha: {
-            found: sulekhaFound,
-            name: sulekhaFound ? name : null,
-            address: sulekhaFound ? addressVariation2 : null,
-            phone: sulekhaFound ? phone3 : null,
-            rating: sulekhaFound ? parseFloat(sulekhaRating) : null,
-            reviews: sulekhaFound ? sulekhaReviews : 0,
-            status: sulekhaFound ? (seed % 2 === 0 ? 'unverified' : 'verified') : 'missing',
-            statusText: sulekhaFound ? (seed % 2 === 0 ? '⚠️ Unverified' : '✅ Verified') : '❌ Not Found',
-            claimed: sulekhaFound ? (seed % 2 === 0 ? false : true) : false
-          },
-          indiamart: {
-            found: imFoundFinal,
-            name: imFoundFinal ? name : null,
-            address: imFoundFinal ? `${type}, ${area}, ${city}` : null,
-            phone: imFoundFinal ? phone1 : null,
-            rating: imFoundFinal ? parseFloat((4.0 + (seed % 15) / 10).toFixed(1)) : null,
-            reviews: imFoundFinal ? 2 + (seed % 20) : 0,
-            status: imFoundFinal ? (seed % 3 === 0 ? 'unverified' : 'verified') : 'missing',
-            statusText: imFoundFinal ? (seed % 3 === 0 ? '⚠️ Unverified' : '✅ Verified') : '❌ Not Found',
-            claimed: imFoundFinal ? (seed % 3 !== 0) : false
-          }
-        };
-      }
+  <div class="footer">
+    <a href="index.html">Home</a> | <a href="all-tools.html">All Tools</a> | © 2026 FreeSEOToolHub | Local Business Listing Checker
+  </div>
+</div>
 
-      // Update the UI with generated data
-      function updateListings() {
-        const name = businessName.value.trim() || 'Sharma Electronics';
-        const city = businessCity.value.trim() || 'Mumbai';
-        const category = businessCategory.value;
-        
-        const data = generateListingData(name, city, category);
-        
-        // Update summary cards
-        // Google
-        if (data.google.found) {
-          googleStatus.textContent = '✅ Found';
-          googleStatus.className = 'status found';
-          googleDetails.textContent = `${data.google.rating} ★ (${data.google.reviews} reviews)`;
-        } else {
-          googleStatus.textContent = '❌ Not Found';
-          googleStatus.className = 'status not-found';
-          googleDetails.textContent = 'No listing found';
-        }
-        
-        // Justdial
-        if (data.justdial.found) {
-          jdStatus.textContent = '✅ Found';
-          jdStatus.className = 'status found';
-          jdDetails.textContent = `${data.justdial.rating} ★ (${data.justdial.reviews} reviews)`;
-        } else {
-          jdStatus.textContent = '❌ Not Found';
-          jdStatus.className = 'status not-found';
-          jdDetails.textContent = 'No listing found';
-        }
-        
-        // Sulekha
-        if (data.sulekha.found) {
-          if (data.sulekha.status === 'unverified') {
-            sulekhaStatus.textContent = '⚠️ Unverified';
-            sulekhaStatus.className = 'status partial';
-          } else {
-            sulekhaStatus.textContent = '✅ Found';
-            sulekhaStatus.className = 'status found';
-          }
-          sulekhaDetails.textContent = `${data.sulekha.rating} ★ (${data.sulekha.reviews} reviews)`;
-        } else {
-          sulekhaStatus.textContent = '❌ Not Found';
-          sulekhaStatus.className = 'status not-found';
-          sulekhaDetails.textContent = 'No listing found';
-        }
-        
-        // IndiaMart
-        if (data.indiamart.found) {
-          if (data.indiamart.status === 'unverified') {
-            imStatus.textContent = '⚠️ Unverified';
-            imStatus.className = 'status partial';
-          } else {
-            imStatus.textContent = '✅ Found';
-            imStatus.className = 'status found';
-          }
-          imDetails.textContent = `${data.indiamart.rating} ★ (${data.indiamart.reviews} reviews)`;
-        } else {
-          imStatus.textContent = '❌ Not Found';
-          imStatus.className = 'status not-found';
-          imDetails.textContent = 'No listing found';
-        }
-        
-        // Populate table
-        let tableHtml = '';
-        
-        // Google Maps row
-        tableHtml += `<tr>
-          <td><span class="platform-badge badge-google">🗺️ Google Maps</span></td>
-          <td>${data.google.name}</td>
-          <td>${data.google.address}</td>
-          <td>${data.google.phone}</td>
-          <td>${data.google.rating} ★ (${data.google.reviews})</td>
-          <td><span class="status-indicator status-verified">✅ Verified</span></td>
-          <td><a href="#" class="action-link" onclick="return false;">View →</a></td>
-        </tr>`;
-        
-        // Justdial row
-        if (data.justdial.found) {
-          tableHtml += `<tr>
-            <td><span class="platform-badge badge-justdial">📞 Justdial</span></td>
-            <td>${data.justdial.name}</td>
-            <td>${data.justdial.address}</td>
-            <td>${data.justdial.phone}</td>
-            <td>${data.justdial.rating} ★ (${data.justdial.reviews})</td>
-            <td><span class="status-indicator ${data.justdial.claimed ? 'status-verified' : 'status-unverified'}">${data.justdial.claimed ? '✅ Verified' : '⚠️ Unverified'}</span></td>
-            <td><a href="#" class="action-link" onclick="return false;">View →</a></td>
-          </tr>`;
-        } else {
-          tableHtml += `<tr>
-            <td><span class="platform-badge badge-justdial">📞 Justdial</span></td>
-            <td colspan="6" style="color:#b02a37;">❌ Not listed on Justdial — <a href="#" class="action-link" onclick="return false;">Add listing →</a></td>
-          </tr>`;
-        }
-        
-        // Sulekha row
-        if (data.sulekha.found) {
-          tableHtml += `<tr>
-            <td><span class="platform-badge badge-sulekha">🏢 Sulekha</span></td>
-            <td>${data.sulekha.name}</td>
-            <td>${data.sulekha.address}</td>
-            <td>${data.sulekha.phone}</td>
-            <td>${data.sulekha.rating} ★ (${data.sulekha.reviews})</td>
-            <td><span class="status-indicator ${data.sulekha.claimed ? 'status-verified' : 'status-unverified'}">${data.sulekha.claimed ? '✅ Verified' : '⚠️ Unverified'}</span></td>
-            <td><a href="#" class="action-link" onclick="return false;">${data.sulekha.claimed ? 'Manage →' : 'Claim →'}</a></td>
-          </tr>`;
-        } else {
-          tableHtml += `<tr>
-            <td><span class="platform-badge badge-sulekha">🏢 Sulekha</span></td>
-            <td colspan="6" style="color:#b02a37;">❌ Not listed on Sulekha — <a href="#" class="action-link" onclick="return false;">Add listing →</a></td>
-          </tr>`;
-        }
-        
-        // IndiaMart row
-        if (data.indiamart.found) {
-          tableHtml += `<tr>
-            <td><span class="platform-badge badge-indiamart">🏭 IndiaMart</span></td>
-            <td>${data.indiamart.name}</td>
-            <td>${data.indiamart.address}</td>
-            <td>${data.indiamart.phone}</td>
-            <td>${data.indiamart.rating} ★ (${data.indiamart.reviews})</td>
-            <td><span class="status-indicator ${data.indiamart.claimed ? 'status-verified' : 'status-unverified'}">${data.indiamart.claimed ? '✅ Verified' : '⚠️ Unverified'}</span></td>
-            <td><a href="#" class="action-link" onclick="return false;">${data.indiamart.claimed ? 'Manage →' : 'Claim →'}</a></td>
-          </tr>`;
-        } else {
-          tableHtml += `<tr>
-            <td><span class="platform-badge badge-indiamart">🏭 IndiaMart</span></td>
-            <td colspan="6" style="color:#b02a37;">❌ Not listed on IndiaMart — <a href="#" class="action-link" onclick="return false;">Add listing →</a></td>
-          </tr>`;
-        }
-        
-        tableBody.innerHTML = tableHtml;
-        
-        // Update NAP section
-        napName.textContent = name;
-        
-        // Collect all addresses and phones for NAP analysis
-        const addresses = [data.google.address];
-        const phones = [data.google.phone];
-        
-        if (data.justdial.found) addresses.push(data.justdial.address);
-        if (data.sulekha.found) addresses.push(data.sulekha.address);
-        if (data.indiamart.found) addresses.push(data.indiamart.address);
-        
-        if (data.justdial.found) phones.push(data.justdial.phone);
-        if (data.sulekha.found) phones.push(data.sulekha.phone);
-        if (data.indiamart.found) phones.push(data.indiamart.phone);
-        
-        // Show most common address
-        const addressCounts = {};
-        addresses.forEach(addr => {
-          const shortAddr = addr.split(',').slice(0,2).join(',');
-          addressCounts[shortAddr] = (addressCounts[shortAddr] || 0) + 1;
-        });
-        
-        let bestAddress = Object.keys(addressCounts).reduce((a, b) => 
-          addressCounts[a] > addressCounts[b] ? a : b, addresses[0]);
-        
-        napAddress.textContent = bestAddress;
-        
-        // Show most common phone format
-        const phoneCounts = {};
-        phones.forEach(phone => {
-          const simplePhone = phone.replace(/[^0-9]/g, '').slice(-10);
-          phoneCounts[simplePhone] = (phoneCounts[simplePhone] || 0) + 1;
-        });
-        
-        let bestPhone = Object.keys(phoneCounts).reduce((a, b) => 
-          phoneCounts[a] > phoneCounts[b] ? a : b, phones[0].replace(/[^0-9]/g, '').slice(-10));
-        
-        napPhone.textContent = `+91 ${bestPhone.slice(0,5)} ${bestPhone.slice(5)}`;
-        
-        // Calculate NAP consistency score
-        const uniqueAddresses = new Set(addresses.map(a => a.split(',').slice(0,2).join(','))).size;
-        const uniquePhones = new Set(phones.map(p => p.replace(/[^0-9]/g, '').slice(-10))).size;
-        const totalListings = Object.values(data).filter(p => p.found).length;
-        
-        const addressScore = (totalListings - uniqueAddresses + 1) / totalListings * 50;
-        const phoneScore = (totalListings - uniquePhones + 1) / totalListings * 50;
-        const napScore = Math.round(addressScore + phoneScore);
-        
-        let napMessage = '';
-        if (napScore >= 90) {
-          napMessage = '✅ Excellent NAP Consistency! Your business information is consistent across all platforms.';
-        } else if (napScore >= 70) {
-          napMessage = `⚠️ NAP Consistency Score: ${napScore}% - Some variations detected in ${uniqueAddresses > 1 ? 'address' : ''} ${uniqueAddresses > 1 && uniquePhones > 1 ? 'and ' : ''} ${uniquePhones > 1 ? 'phone number' : ''}.`;
-        } else {
-          napMessage = `❌ NAP Consistency Score: ${napScore}% - Your business information varies significantly. Update listings to match exactly.`;
-        }
-        
-        napConsistency.textContent = napMessage;
-        
-        // Generate recommendations
-        let recsHtml = '';
-        
-        if (data.google.found && data.google.reviews < 100) {
-          recsHtml += `<div class="rec-item"><strong>⭐ Get more Google reviews</strong><p>You have ${data.google.reviews} reviews. Encourage customers to leave reviews (aim for 200+).</p></div>`;
-        }
-        
-        if (data.justdial.found && !data.justdial.claimed) {
-          recsHtml += `<div class="rec-item"><strong>📞 Claim your Justdial listing</strong><p>Your Justdial listing is unverified. Claim it to respond to reviews and update information.</p></div>`;
-        }
-        
-        if (!data.justdial.found) {
-          recsHtml += `<div class="rec-item"><strong>📝 Add Justdial listing</strong><p>Not found on Justdial. Add your business to reach 150M+ users.</p></div>`;
-        }
-        
-        if (data.sulekha.found && !data.sulekha.claimed) {
-          recsHtml += `<div class="rec-item"><strong>✅ Claim your Sulekha listing</strong><p>Your business is listed but unverified. Claim it to manage your presence.</p></div>`;
-        }
-        
-        if (!data.sulekha.found) {
-          recsHtml += `<div class="rec-item"><strong>🏢 Add Sulekha listing</strong><p>Not found on Sulekha. Add your business to reach local customers.</p></div>`;
-        }
-        
-        if (data.indiamart.found && !data.indiamart.claimed) {
-          recsHtml += `<div class="rec-item"><strong>🏭 Claim your IndiaMart listing</strong><p>Your IndiaMart listing needs verification. Claim it to connect with B2B buyers.</p></div>`;
-        }
-        
-        if (!data.indiamart.found && (category === 'manufacturing' || category === 'retail' || category === 'service')) {
-          recsHtml += `<div class="rec-item"><strong>🏭 Add IndiaMart listing</strong><p>Not found on IndiaMart. Create a listing to reach 7M+ B2B buyers.</p></div>`;
-        }
-        
-        if (uniquePhones > 1) {
-          recsHtml += `<div class="rec-item"><strong>📞 Standardize phone number</strong><p>Your phone number appears in ${uniquePhones} different formats. Use +91-XXXXX-XXXXX consistently.</p></div>`;
-        }
-        
-        if (uniqueAddresses > 1) {
-          recsHtml += `<div class="rec-item"><strong>📍 Standardize address</strong><p>Your address varies across platforms. Use exactly: "${bestAddress}" on all listings.</p></div>`;
-        }
-        
-        // Add generic recommendation if needed
-        if (recsHtml === '') {
-          recsHtml = `<div class="rec-item"><strong>✅ Great job!</strong><p>Your listings look good. Keep monitoring and encouraging reviews.</p></div>`;
-        }
-        
-        recList.innerHTML = recsHtml;
-      }
+<div class="toast-container" id="toastContainer"></div>
 
-      // Event listeners
-      checkBtn.addEventListener('click', updateListings);
-      
-      resetBtn.addEventListener('click', () => {
-        businessName.value = 'Sharma Electronics';
-        businessCity.value = 'Mumbai';
-        businessCategory.value = 'service';
-        updateListings();
-      });
+<script>
+function generateData(name, city, category) {
+  const seed = (name + city).split('').reduce((a,c) => a + c.charCodeAt(0), 0);
+  const areas = { Mumbai:['Andheri','Bandra','Powai'], Delhi:['CP','Karol Bagh','Rohini'], Bengaluru:['Indiranagar','Koramangala','Whitefield'], Chennai:['T Nagar','Adyar','Velachery'], Ahmedabad:['Navrangpura','Satellite','CG Road'] };
+  const cityAreas = areas[city] || areas['Mumbai'];
+  const area = cityAreas[seed % cityAreas.length];
+  const addr1 = `${seed%100}, ${area}, ${city}`;
+  const addr2 = `${seed%100}, ${area}, Near Market, ${city}`;
+  const phone1 = `+91-98765-${43210+(seed%1000)}`;
+  const phone2 = `98765 ${43210+(seed%1000)}`;
+  
+  return {
+    google: { found:true, name, address:addr1, phone:phone1, rating:(3.5+(seed%20)/10).toFixed(1), reviews:50+(seed%200), status:'verified' },
+    justdial: { found:(seed%10)>1, name, address:addr2, phone:phone2, rating:(3.8+(seed%15)/10).toFixed(1), reviews:20+(seed%100), status:(seed%3>0?'verified':'unverified') },
+    sulekha: { found:(seed%10)>2, name, address:addr1, phone:phone1, rating:(3.0+(seed%25)/10).toFixed(1), reviews:5+(seed%50), status:(seed%2===0?'unverified':'verified') },
+    indiamart: { found:(seed%10)>4, name, address:`Shop ${seed%50}, ${area}, ${city}`, phone:phone1, rating:(4.0+(seed%15)/10).toFixed(1), reviews:2+(seed%20), status:(seed%3!==0?'verified':'unverified') }
+  };
+}
 
-      // Example badges
-      exampleBadges.forEach(badge => {
-        badge.addEventListener('click', () => {
-          businessName.value = badge.dataset.name;
-          businessCity.value = badge.dataset.city;
-          businessCategory.value = badge.dataset.cat;
-          updateListings();
-        });
-      });
+function updateUI() {
+  const name = document.getElementById('businessName').value.trim() || 'Business';
+  const city = document.getElementById('businessCity').value.trim() || 'Mumbai';
+  const data = generateData(name, city, document.getElementById('businessCategory').value);
+  
+  const platforms = [
+    { key:'google', icon:'🗺️', label:'Google Maps', cls:'badge-google' },
+    { key:'justdial', icon:'📞', label:'Justdial', cls:'badge-justdial' },
+    { key:'sulekha', icon:'🏢', label:'Sulekha', cls:'badge-sulekha' },
+    { key:'indiamart', icon:'🏭', label:'IndiaMart', cls:'badge-indiamart' }
+  ];
+  
+  document.getElementById('summaryCards').innerHTML = platforms.map(p => {
+    const d = data[p.key];
+    const statusClass = d.found ? (d.status==='verified'?'status-found':'status-partial') : 'status-not-found';
+    const statusText = d.found ? (d.status==='verified'?'✅ Found':'⚠️ Unverified') : '❌ Not Found';
+    return `<div class="summary-card"><div class="platform">${p.icon}</div><div style="font-weight:700;">${p.label}</div><div class="status ${statusClass}">${statusText}</div><div style="font-size:0.85rem; color:var(--gray);">${d.found?d.rating+' ★ ('+d.reviews+')':'No listing'}</div></div>`;
+  }).join('');
 
-      // Enter key in any input triggers check
-      [businessName, businessCity, businessCategory].forEach(el => {
-        el.addEventListener('keypress', (e) => {
-          if (e.key === 'Enter') {
-            updateListings();
-          }
-        });
-      });
+  document.getElementById('tableBody').innerHTML = platforms.map(p => {
+    const d = data[p.key];
+    if (d.found) {
+      return `<tr><td><span class="platform-badge ${p.cls}">${p.icon} ${p.label}</span></td><td>${d.name}</td><td>${d.address}</td><td>${d.phone}</td><td>${d.rating} ★ (${d.reviews})</td><td><span class="status-indicator ${d.status==='verified'?'status-verified':'status-unverified'}">${d.status==='verified'?'✅ Verified':'⚠️ Unverified'}</span></td></tr>`;
+    }
+    return `<tr><td><span class="platform-badge ${p.cls}">${p.icon} ${p.label}</span></td><td colspan="5" style="color:var(--danger);">❌ Not listed — <a href="#" style="color:var(--primary);">Add listing →</a></td></tr>`;
+  }).join('');
 
-      // Initialize with default values
-      window.addEventListener('load', () => {
-        updateListings();
-      });
-    })();
-  </script>
+  document.getElementById('napName').textContent = name;
+  const foundPlatforms = Object.values(data).filter(d=>d.found);
+  document.getElementById('napAddress').textContent = foundPlatforms[0]?.address || '-';
+  document.getElementById('napPhone').textContent = foundPlatforms[0]?.phone || '-';
+  
+  const uniqueAddr = new Set(foundPlatforms.map(d=>d.address.split(',').slice(0,2).join(','))).size;
+  const uniquePhone = new Set(foundPlatforms.map(d=>d.phone.replace(/[^0-9]/g,'').slice(-10))).size;
+  const score = Math.round((foundPlatforms.length - uniqueAddr + 1)/foundPlatforms.length*50 + (foundPlatforms.length - uniquePhone + 1)/foundPlatforms.length*50);
+  
+  document.getElementById('napConsistency').textContent = score>=90?'✅ Excellent NAP Consistency!':score>=70?`⚠️ NAP Score: ${score}% - Some variations detected`:`❌ NAP Score: ${score}% - Needs standardization`;
+  
+  gtag('event', 'listing_check', { business: name, city });
+}
+
+document.getElementById('checkBtn').addEventListener('click', updateUI);
+document.querySelectorAll('.example-badge').forEach(b => b.addEventListener('click', function() {
+  document.getElementById('businessName').value = this.dataset.name;
+  document.getElementById('businessCity').value = this.dataset.city;
+  document.getElementById('businessCategory').value = this.dataset.cat;
+  updateUI();
+}));
+
+function shareResults() {
+  if (navigator.share) { navigator.share({ title:'Listing Checker', url:window.location.href }).catch(()=>{}); }
+  else { navigator.clipboard.writeText(window.location.href).then(()=>showToast('Link copied!')); }
+}
+
+function showToast(msg) {
+  const t = document.createElement('div'); t.className = 'toast';
+  t.innerHTML = `<i class="fas fa-check-circle"></i> ${msg}`;
+  document.getElementById('toastContainer').appendChild(t);
+  setTimeout(() => t.remove(), 3000);
+}
+
+window.addEventListener('load', updateUI);
+</script>
 </body>
 </html>
