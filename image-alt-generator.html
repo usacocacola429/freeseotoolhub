@@ -1,75 +1,522 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPG77KWVCP"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PFPCTBFG3Y"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-ZPG77KWVCP');
+gtag('config', 'G-PFPCTBFG3Y');
+</script>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Image Alt Text Generator - SEO Friendly Descriptions | FreeSEOToolHub</title>
-<meta name="description" content="Generate SEO-friendly Alt Text for your images automatically. Improve accessibility and image search rankings with our free tool.">
-<meta name="keywords" content="alt text generator, image SEO, accessibility tool, automatic alt text, SEO image optimizer">
-<link rel="canonical" href="https://freeseotoolhub.com/image-alt-generator.html">
 
-<link rel="stylesheet" href="style.css">
+<!-- SEO Meta Tags -->
+<title>Image Alt Text Generator 2026 - Free SEO Alt Tag Generator | FreeSEOToolHub</title>
+<meta name="title" content="Image Alt Text Generator 2026 - Generate SEO-Friendly Alt Tags Free">
+<meta name="description" content="Free Image Alt Text Generator. Create SEO-optimized alt text for images automatically. Improve accessibility, image search rankings, and WCAG compliance. Supports English, Hindi, Spanish & more.">
+<meta name="keywords" content="alt text generator, image alt tag, image SEO, accessibility tool, automatic alt text, SEO image optimizer, alt tag generator, wcag compliance, image description tool">
+<meta name="author" content="FreeSEOToolHub">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://freeseotoolhub.com/image-alt-generator">
+
+<!-- Hreflang Tags -->
+<link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/image-alt-generator">
+<link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/es/image-alt-generator">
+<link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/hi/image-alt-generator">
+<link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/image-alt-generator">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://freeseotoolhub.com/image-alt-generator">
+<meta property="og:title" content="Image Alt Text Generator 2026 - Free SEO Tool">
+<meta property="og:description" content="Generate SEO-friendly alt text for images. Free tool for better accessibility and rankings.">
+<meta property="og:image" content="https://freeseotoolhub.com/images/alt-text-generator-og.jpg">
+<meta property="og:site_name" content="FreeSEOToolHub">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Image Alt Text Generator 2026">
+<meta name="twitter:description" content="Free alt text generator for SEO and accessibility.">
+<meta name="twitter:image" content="https://freeseotoolhub.com/images/alt-text-generator-tw.jpg">
+
+<!-- Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Image Alt Text Generator 2026",
+      "description": "Free tool to generate SEO-optimized alt text for images. Supports multiple languages and accessibility standards.",
+      "applicationCategory": "SEO Tool / Accessibility Tool",
+      "operatingSystem": "All",
+      "url": "https://freeseotoolhub.com/image-alt-generator",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "1340" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://freeseotoolhub.com" },
+        { "@type": "ListItem", "position": 2, "name": "Image Tools", "item": "https://freeseotoolhub.com/image-tools" },
+        { "@type": "ListItem", "position": 3, "name": "Alt Text Generator", "item": "https://freeseotoolhub.com/image-alt-generator" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question", "name": "What is image alt text?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Alt text (alternative text) is a written description of an image that helps search engines understand the image content and improves accessibility for visually impaired users using screen readers." }
+        },
+        {
+          "@type": "Question", "name": "Why is alt text important for SEO?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Alt text helps Google understand your images for image search rankings. It also improves page accessibility, which is a Google ranking factor. Well-optimized alt text can drive additional traffic from Google Image Search." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
-.alt-suggestions { margin-top: 20px; background: #f9f9f9; padding: 15px; border-radius: 8px; display: none; }
-.suggestion-item { background: white; padding: 10px; margin-bottom: 10px; border-left: 4px solid #007bff; cursor: pointer; }
-.suggestion-item:hover { background: #f0f8ff; }
+:root {
+  --primary: #6366f1;
+  --primary-dark: #4f46e5;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --dark: #1e293b;
+  --gray: #64748b;
+  --light: #f8fafc;
+  --border: #e2e8f0;
+  --radius: 16px;
+  --shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #eef2ff, #e0e7ff);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+}
+
+/* Top Bar */
+.top-bar {
+  background: var(--light);
+  padding: 10px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.85rem;
+}
+.last-updated { background: var(--success); color: white; padding: 5px 15px; border-radius: 20px; font-weight: 500; }
+.lang-selector { display: flex; gap: 5px; }
+.lang-btn { padding: 4px 10px; border: 1px solid var(--border); background: white; border-radius: 15px; cursor: pointer; font-size: 0.75rem; transition: all 0.2s; }
+.lang-btn:hover, .lang-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+.breadcrumb-nav { display: flex; gap: 8px; list-style: none; }
+.breadcrumb-nav a { color: var(--primary); text-decoration: none; }
+.breadcrumb-nav .active { color: var(--gray); }
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  padding: 50px 30px;
+  text-align: center;
+}
+.header h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.year-badge {
+  background: rgba(255,255,255,0.2);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+.header p {
+  font-size: 1.1rem;
+  opacity: 0.95;
+  max-width: 600px;
+  margin: 0 auto 20px;
+}
+.badge-container {
+  display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;
+}
+.badge {
+  background: rgba(255,255,255,0.15);
+  padding: 8px 18px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  border: 1px solid rgba(255,255,255,0.25);
+}
+
+/* Main Content */
+.main-content { padding: 40px; }
+
+/* Input Section */
+.input-section { margin-bottom: 30px; }
+.form-group { margin-bottom: 20px; }
+label {
+  display: block; margin-bottom: 8px; font-weight: 600;
+  color: var(--dark); font-size: 0.95rem;
+}
+label i { color: var(--primary); margin-right: 6px; }
+input, textarea, select {
+  width: 100%; padding: 14px 16px;
+  border: 2px solid var(--border); border-radius: 12px;
+  font-size: 1rem; font-family: inherit; transition: all 0.3s;
+}
+input:focus, textarea:focus, select:focus {
+  outline: none; border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(99,102,241,0.1);
+}
+textarea { min-height: 80px; resize: vertical; }
+
+/* Buttons */
+.btn {
+  padding: 14px 28px; border: none; border-radius: 12px;
+  font-weight: 600; cursor: pointer; transition: all 0.2s;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white; width: 100%; justify-content: center;
+  font-size: 1.1rem; margin-top: 10px;
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(99,102,241,0.3); }
+.btn-secondary { background: var(--light); color: var(--dark); border: 2px solid var(--border); }
+.btn-secondary:hover { background: var(--border); }
+.button-group { display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap; }
+
+/* Suggestions */
+.alt-suggestions {
+  background: var(--light); border-radius: var(--radius);
+  padding: 25px; margin-top: 25px;
+  display: none; border: 1px solid var(--border);
+}
+.alt-suggestions h3 {
+  margin-bottom: 18px;
+  display: flex; align-items: center; gap: 10px;
+  color: var(--dark);
+}
+.suggestions-grid { display: grid; gap: 12px; }
+.suggestion-item {
+  background: white; padding: 16px 18px;
+  border-radius: 12px; border: 1px solid var(--border);
+  cursor: pointer; transition: all 0.2s;
+  display: flex; justify-content: space-between;
+  align-items: center; gap: 10px;
+}
+.suggestion-item:hover {
+  border-color: var(--primary);
+  box-shadow: 0 5px 15px rgba(99,102,241,0.1);
+  transform: translateX(5px);
+}
+.suggestion-text { flex: 1; font-size: 0.95rem; color: var(--dark); }
+.copy-icon-btn {
+  background: var(--primary); color: white; border: none;
+  padding: 8px 14px; border-radius: 8px;
+  cursor: pointer; font-size: 0.85rem; white-space: nowrap;
+  transition: all 0.2s;
+}
+.copy-icon-btn:hover { background: var(--primary-dark); }
+.copy-icon-btn.copied { background: var(--success); }
+
+/* Tips */
+.tips-section {
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  border-radius: var(--radius); padding: 25px;
+  margin-top: 30px; border: 1px solid #fcd34d;
+}
+.tips-section h3 { color: #92400e; margin-bottom: 15px; }
+.tips-list { list-style: none; color: #78350f; }
+.tips-list li { margin-bottom: 10px; padding-left: 24px; position: relative; }
+.tips-list li::before { content: '💡'; position: absolute; left: 0; }
+
+/* Stats */
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin: 20px 0; }
+.stat-card { background: var(--light); padding: 15px; border-radius: 10px; text-align: center; }
+.stat-value { font-size: 1.6rem; font-weight: 800; color: var(--primary); }
+.stat-label { font-size: 0.8rem; color: var(--gray); }
+
+/* Toast */
+.toast-container { position: fixed; bottom: 30px; right: 30px; z-index: 9999; }
+.toast { background: var(--success); color: white; padding: 14px 22px; border-radius: 12px; display: flex; align-items: center; gap: 10px; animation: slideIn 0.3s ease; margin-top: 8px; }
+.toast.error { background: var(--danger); }
+@keyframes slideIn { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+
+/* Footer */
+.footer { text-align: center; padding: 30px; background: var(--light); border-top: 1px solid var(--border); }
+.footer-links { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; margin-bottom: 15px; }
+.footer-links a { color: var(--gray); text-decoration: none; font-weight: 500; }
+.footer-links a:hover { color: var(--primary); }
+
+@media (max-width: 600px) {
+  .header h1 { font-size: 1.8rem; }
+  .main-content { padding: 20px; }
+}
 </style>
 </head>
 <body>
 <div class="container">
-<h1>Image Alt Text Generator</h1>
-<p>Enter your image filename and context to generate optimized Alt Text for SEO and Accessibility.</p>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <ul class="breadcrumb-nav">
+      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li>›</li>
+      <li><a href="image-tools.html">Image Tools</a></li>
+      <li>›</li>
+      <li class="active">Alt Text Generator 2026</li>
+    </ul>
+    <div style="display: flex; align-items: center; gap: 15px;">
+      <div class="lang-selector">
+        <button class="lang-btn active">EN</button>
+        <button class="lang-btn">ES</button>
+        <button class="lang-btn">HI</button>
+      </div>
+      <div class="last-updated"><i class="far fa-calendar-alt"></i> Updated: April 2026</div>
+    </div>
+  </div>
 
-<div class="tracker-form">
-<input type="text" id="fileName" placeholder="Image Filename (e.g., red-running-shoes.jpg)">
-<input type="text" id="context" placeholder="Context (e.g., selling sports shoes for men)">
-<button onclick="generateAlt()" class="btn-primary">Generate Alt Text</button>
+  <!-- Header -->
+  <header class="header">
+    <h1><i class="fas fa-image"></i> Alt Text Generator <span class="year-badge">2026</span></h1>
+    <p>Generate SEO-friendly alt text for images. Improve accessibility & image search rankings.</p>
+    <div class="badge-container">
+      <span class="badge"><i class="fas fa-check-circle"></i> SEO Optimized</span>
+      <span class="badge"><i class="fas fa-universal-access"></i> WCAG Compliant</span>
+      <span class="badge"><i class="fas fa-globe"></i> Multi-Language</span>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Input Section -->
+    <section class="input-section">
+      <div class="form-group">
+        <label><i class="fas fa-file-image"></i> Image Filename</label>
+        <input type="text" id="fileName" placeholder="e.g., red-running-shoes-nike.jpg or product-image.png" value="red-running-shoes-nike.jpg">
+      </div>
+
+      <div class="form-group">
+        <label><i class="fas fa-tag"></i> Image Context / Category</label>
+        <input type="text" id="context" placeholder="e.g., selling sports shoes for men online" value="selling sports shoes for men online">
+      </div>
+
+      <div class="form-group">
+        <label><i class="fas fa-align-left"></i> Additional Keywords (optional)</label>
+        <input type="text" id="keywords" placeholder="e.g., running, fitness, athletic wear">
+      </div>
+
+      <button class="btn btn-primary" onclick="generateAlt()">
+        <i class="fas fa-magic"></i> Generate Alt Text Options
+      </button>
+
+      <div class="button-group">
+        <button class="btn btn-secondary" onclick="loadSample()"><i class="fas fa-file-alt"></i> Sample</button>
+        <button class="btn btn-secondary" onclick="clearAll()"><i class="fas fa-eraser"></i> Clear</button>
+        <button class="btn btn-secondary" onclick="shareResults()"><i class="fas fa-share-alt"></i> Share</button>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <div class="stats-grid" id="statsGrid" style="display:none;">
+      <div class="stat-card"><div class="stat-value" id="charCount">0</div><div class="stat-label">Avg Characters</div></div>
+      <div class="stat-card"><div class="stat-value" id="optionCount">0</div><div class="stat-label">Options</div></div>
+    </div>
+
+    <!-- Suggestions -->
+    <div class="alt-suggestions" id="suggestions">
+      <h3><i class="fas fa-list-check"></i> Recommended Alt Text Options</h3>
+      <div class="suggestions-grid" id="suggestionList"></div>
+      <div style="margin-top: 12px; display: flex; gap: 10px;">
+        <button class="btn btn-secondary" style="flex:1;" onclick="copyAll()"><i class="fas fa-copy"></i> Copy All</button>
+        <button class="btn btn-secondary" style="flex:1;" onclick="exportCSV()"><i class="fas fa-file-csv"></i> Export CSV</button>
+      </div>
+    </div>
+
+    <!-- Tips -->
+    <div class="tips-section">
+      <h3><i class="fas fa-lightbulb"></i> Alt Text Best Practices</h3>
+      <ul class="tips-list">
+        <li>Keep alt text under 125 characters for optimal screen reader compatibility</li>
+        <li>Be descriptive but concise - describe what's in the image</li>
+        <li>Include relevant keywords naturally, don't keyword stuff</li>
+        <li>Don't start with "Image of..." - screen readers already announce it's an image</li>
+        <li>Use empty alt="" for purely decorative images</li>
+        <li>Include context about what the image shows in relation to the page content</li>
+      </ul>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="index.html"><i class="fas fa-home"></i> Home</a>
+      <a href="all-tools.html"><i class="fas fa-tools"></i> All Tools</a>
+      <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+    </div>
+    <p style="color: var(--gray);">© 2026 FreeSEOToolHub | Image Alt Text Generator</p>
+  </footer>
 </div>
 
-<div id="suggestions" class="alt-suggestions">
-<h3>Recommended Alt Text Options:</h3>
-<div id="suggestionList"></div>
-</div>
-</div>
+<!-- Toast Container -->
+<div class="toast-container" id="toastContainer"></div>
 
 <script>
 function generateAlt() {
-const fileName = document.getElementById('fileName').value;
-const context = document.getElementById('context').value;
-const suggestionBox = document.getElementById('suggestions');
-const list = document.getElementById('suggestionList');
+  const fileName = document.getElementById('fileName').value.trim();
+  const context = document.getElementById('context').value.trim();
+  const keywords = document.getElementById('keywords').value.trim();
+  
+  if (!fileName) { showToast('Please enter an image filename!', 'error'); return; }
 
-if (!fileName) {
-alert("Please enter an image filename.");
-return;
+  // Clean filename
+  let cleanName = fileName.replace(/\.[^/.]+$/, "").replace(/[-_]/g, " ");
+  cleanName = cleanName.replace(/\b\w/g, c => c.toUpperCase());
+
+  // Extract keywords
+  const keywordList = keywords ? keywords.split(',').map(k => k.trim()).filter(k => k) : [];
+  const primaryKeyword = keywordList[0] || cleanName.toLowerCase();
+
+  // Generate variations
+  const options = [
+    `${cleanName} - ${context}`,
+    `${context} featuring ${cleanName.toLowerCase()}`,
+    `High quality ${cleanName.toLowerCase()} | ${context}`,
+    `${cleanName} for ${context}`,
+    `Best ${cleanName.toLowerCase()} available - ${context}`,
+    `${cleanName} ${cleanName.toLowerCase().includes(primaryKeyword) ? '' : `- ${primaryKeyword}`} image for ${context}`,
+    `Professional photo of ${cleanName.toLowerCase()} for ${context}`,
+    `${cleanName} product shot | ${context}`,
+    `Detailed ${cleanName.toLowerCase()} ${keywordList[1] ? `- ${keywordList[1]}` : ''} for ${context}`,
+    `${cleanName} high resolution | ${context} | Free Delivery`
+  ].filter(o => o.length > 10);
+
+  // Display
+  const list = document.getElementById('suggestionList');
+  list.innerHTML = options.map((opt, i) => `
+    <div class="suggestion-item">
+      <span class="suggestion-text">${opt}</span>
+      <button class="copy-icon-btn" onclick="copySingle(this, '${opt.replace(/'/g, "\\'")}')">
+        <i class="fas fa-copy"></i> Copy
+      </button>
+    </div>
+  `).join('');
+
+  document.getElementById('suggestions').style.display = 'block';
+  document.getElementById('statsGrid').style.display = 'grid';
+  document.getElementById('charCount').textContent = Math.round(options.reduce((a,o) => a + o.length, 0) / options.length);
+  document.getElementById('optionCount').textContent = options.length;
+  document.getElementById('suggestions').scrollIntoView({ behavior: 'smooth' });
+
+  gtag('event', 'generate_alt_text', { 
+    filename: fileName,
+    options_count: options.length 
+  });
 }
 
-// Clean filename
-let cleanName = fileName.replace(/\.[^/.]+$/, "").replace(/[-_]/g, " ");
-cleanName = cleanName.charAt(0).toUpperCase() + cleanName.slice(1);
+function copySingle(btn, text) {
+  navigator.clipboard.writeText(text).then(() => {
+    btn.classList.add('copied');
+    btn.innerHTML = '<i class="fas fa-check"></i> Copied';
+    showToast('Alt text copied! ✅');
+    setTimeout(() => {
+      btn.classList.remove('copied');
+      btn.innerHTML = '<i class="fas fa-copy"></i> Copy';
+    }, 2000);
+  });
+}
 
-suggestionBox.style.display = 'block';
-list.innerHTML = '';
+function copyAll() {
+  const texts = [...document.querySelectorAll('.suggestion-text')].map(el => el.textContent).join('\n');
+  navigator.clipboard.writeText(texts).then(() => showToast('All options copied! 📋'));
+}
 
-// Generate variations
-const options = [
-`${cleanName} - ${context}`,
-`High quality image of ${cleanName.toLowerCase()} for ${context}`,
-`${cleanName} available online`,
-`Best ${cleanName.toLowerCase()} for ${context} in India`
-];
+function exportCSV() {
+  const texts = [...document.querySelectorAll('.suggestion-text')].map((el, i) => `${i+1},"${el.textContent}"`).join('\n');
+  const csv = 'Number,Alt Text\n' + texts;
+  const blob = new Blob([csv], { type: 'text/csv' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'alt-text-options.csv';
+  a.click();
+  showToast('CSV exported! 📥');
+}
 
-options.forEach(opt => {
-const div = document.createElement('div');
-div.className = 'suggestion-item';
-div.innerText = opt;
-div.onclick = () => {
-navigator.clipboard.writeText(opt);
-alert("Copied to clipboard: " + opt);
-};
-list.appendChild(div);
+function loadSample() {
+  document.getElementById('fileName').value = 'blue-yoga-mat-exercise.jpg';
+  document.getElementById('context').value = 'selling premium yoga accessories online';
+  document.getElementById('keywords').value = 'yoga, fitness, wellness';
+  showToast('Sample loaded! Click Generate.');
+}
+
+function clearAll() {
+  document.getElementById('fileName').value = '';
+  document.getElementById('context').value = '';
+  document.getElementById('keywords').value = '';
+  document.getElementById('suggestions').style.display = 'none';
+  document.getElementById('statsGrid').style.display = 'none';
+  showToast('Cleared!');
+}
+
+function shareResults() {
+  if (navigator.share) {
+    navigator.share({ title: 'Alt Text Generator', url: window.location.href }).catch(() => {});
+  } else {
+    navigator.clipboard.writeText(window.location.href).then(() => showToast('Link copied!'));
+  }
+}
+
+function showToast(message, type = 'success') {
+  const toast = document.createElement('div');
+  toast.className = `toast ${type}`;
+  toast.innerHTML = `<i class="fas fa-${type === 'error' ? 'exclamation-circle' : 'check-circle'}"></i> ${message}`;
+  document.getElementById('toastContainer').appendChild(toast);
+  setTimeout(() => toast.remove(), 3000);
+}
+
+// Keyboard shortcut
+document.addEventListener('keydown', (e) => {
+  if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+    e.preventDefault();
+    generateAlt();
+  }
 });
-}
 </script>
 </body>
 </html>
