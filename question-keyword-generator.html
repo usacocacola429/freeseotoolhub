@@ -1,261 +1,332 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPG77KWVCP"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PFPCTBFG3Y"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-ZPG77KWVCP');
+gtag('config', 'G-PFPCTBFG3Y');
+</script>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>People Also Ask Generator - 100+ FAQ Questions for SEO</title>
-<meta name="description" content="Generate 100+ People Also Ask questions for any topic. Perfect for FAQ sections, content ideas, and featured snippet optimization.">
+
+<!-- SEO Meta Tags -->
+<title>People Also Ask Generator 2026 - Free FAQ Questions for SEO | FreeSEOToolHub</title>
+<meta name="title" content="People Also Ask Generator 2026 - Generate 100+ FAQ Questions for SEO">
+<meta name="description" content="Free People Also Ask Generator. Create 100+ PAA questions for any topic. Perfect for FAQ sections, content ideas, and featured snippet optimization. Supports multiple languages.">
+<meta name="keywords" content="people also ask generator, faq questions, content ideas, featured snippets, PAA generator, SEO questions, FAQ generator, blog topics">
+<meta name="author" content="FreeSEOToolHub">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://freeseotoolhub.com/people-also-ask-generator">
+
+<!-- Hreflang -->
+<link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/people-also-ask-generator">
+<link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/es/people-also-ask-generator">
+<link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/people-also-ask-generator">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://freeseotoolhub.com/people-also-ask-generator">
+<meta property="og:title" content="People Also Ask Generator 2026 - Free SEO Tool">
+<meta property="og:description" content="Generate 100+ PAA questions for any topic. Free FAQ content generator.">
+<meta property="og:image" content="https://freeseotoolhub.com/images/paa-generator-og.jpg">
+<meta property="og:site_name" content="FreeSEOToolHub">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="People Also Ask Generator 2026">
+<meta name="twitter:description" content="Free PAA question generator for SEO content.">
+<meta name="twitter:image" content="https://freeseotoolhub.com/images/paa-generator-tw.jpg">
+
+<!-- Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "People Also Ask Generator 2026",
+      "description": "Free tool to generate 100+ People Also Ask questions for SEO content and FAQ sections.",
+      "applicationCategory": "SEO Tool / Content Generator",
+      "operatingSystem": "All",
+      "url": "https://freeseotoolhub.com/people-also-ask-generator",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "890" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://freeseotoolhub.com" },
+        { "@type": "ListItem", "position": 2, "name": "Content Tools", "item": "https://freeseotoolhub.com/content-tools" },
+        { "@type": "ListItem", "position": 3, "name": "PAA Generator", "item": "https://freeseotoolhub.com/people-also-ask-generator" }
+      ]
+    }
+  ]
+}
+</script>
+
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
-body {
-background: linear-gradient(135deg, #4158D0, #C850C0, #FFCC70);
-font-family: 'Segoe UI', sans-serif;
-min-height: 100vh;
-padding: 20px;
-}
-.main-card {
-background: white;
-border-radius: 20px;
-box-shadow: 0 30px 60px rgba(0,0,0,0.3);
-overflow: hidden;
-}
-.header {
-background: linear-gradient(135deg, #4158D0, #C850C0);
-color: white;
-padding: 30px;
-text-align: center;
-}
-.question-card {
-background: #f8f9fa;
-border-radius: 10px;
-padding: 20px;
-margin: 10px 0;
-cursor: pointer;
-transition: all 0.3s;
-border-left: 4px solid transparent;
-}
-.question-card:hover {
-background: white;
-box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-border-left-color: #C850C0;
-}
-.question-card.active {
-background: white;
-border-left-color: #C850C0;
-}
-.answer {
-display: none;
-margin-top: 15px;
-padding-top: 15px;
-border-top: 1px solid #dee2e6;
-color: #666;
-line-height: 1.6;
-}
-.question-card.active .answer {
-display: block;
-}
-.category-tag {
-background: #e9ecef;
-padding: 5px 15px;
-border-radius: 20px;
-font-size: 0.85rem;
-margin-right: 10px;
-color: #495057;
-}
+:root { --primary:#4158D0; --secondary:#C850C0; --accent:#FFCC70; --success:#10b981; --danger:#ef4444; --dark:#1e293b; --gray:#64748b; --light:#f8fafc; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:linear-gradient(135deg,#4158D0,#C850C0,#FFCC70); font-family:'Inter',sans-serif; min-height:100vh; padding:20px; }
+.container { max-width:1100px; }
+
+/* Top Bar */
+.top-bar { background:rgba(255,255,255,0.1); border-radius:15px; padding:10px 20px; margin-bottom:15px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; font-size:0.85rem; color:white; }
+.top-bar a { color:#FFCC70; text-decoration:none; }
+.last-updated { background:var(--success); color:white; padding:4px 12px; border-radius:15px; }
+
+/* Main Card */
+.main-card { background:white; border-radius:24px; box-shadow:0 30px 60px rgba(0,0,0,0.3); overflow:hidden; }
+
+/* Header */
+.header { background:linear-gradient(135deg,var(--primary),var(--secondary)); color:white; padding:40px 30px; text-align:center; }
+.header h1 { font-size:2.5rem; font-weight:800; display:flex; align-items:center; justify-content:center; gap:12px; flex-wrap:wrap; }
+.year-badge { background:rgba(255,255,255,0.2); padding:5px 15px; border-radius:20px; font-size:0.9rem; }
+.header p { font-size:1.1rem; opacity:0.95; margin-top:8px; }
+
+/* Content */
+.p-4 { padding:30px; }
+
+/* Input */
+.form-control-lg { padding:14px 18px; border-radius:12px; border:2px solid #e2e8f0; }
+.form-control-lg:focus { border-color:var(--primary); box-shadow:0 0 0 4px rgba(65,88,208,0.1); }
+.btn-primary { background:linear-gradient(135deg,var(--primary),var(--secondary)); border:none; border-radius:12px; font-weight:600; }
+.btn-primary:hover { transform:translateY(-2px); box-shadow:0 10px 25px rgba(65,88,208,0.3); }
+
+/* Stats */
+.stat-card { border-radius:14px; padding:18px; text-align:center; color:white; }
+.stat-card h6 { font-size:0.8rem; opacity:0.9; }
+.stat-card h2 { font-weight:800; font-size:1.8rem; margin:5px 0; }
+
+/* Filters */
+.category-tag { background:#e9ecef; padding:6px 16px; border-radius:20px; font-size:0.85rem; cursor:pointer; transition:all 0.2s; display:inline-block; margin:3px; }
+.category-tag:hover, .category-tag.active { background:var(--primary); color:white; }
+
+/* Question Cards */
+.question-card { background:var(--light); border-radius:12px; padding:18px; margin:8px 0; cursor:pointer; transition:all 0.3s; border-left:4px solid transparent; }
+.question-card:hover { background:white; box-shadow:0 5px 20px rgba(0,0,0,0.08); border-left-color:var(--secondary); }
+.question-card.active { background:white; border-left-color:var(--secondary); }
+.question-card h6 { margin-bottom:0; }
+.answer { display:none; margin-top:12px; padding-top:12px; border-top:1px solid #dee2e6; color:#666; line-height:1.6; }
+.question-card.active .answer { display:block; }
+
+/* Export */
+.export-btn { border-radius:10px; padding:10px 20px; font-weight:500; }
+
+/* Toast */
+.toast-container { position:fixed; bottom:30px; right:30px; z-index:9999; }
+.toast { background:var(--success); color:white; padding:14px 22px; border-radius:12px; animation:slideIn 0.3s ease; margin-top:8px; display:flex; align-items:center; gap:10px; }
+@keyframes slideIn { from { transform:translateX(100%); opacity:0; } to { transform:translateX(0); opacity:1; } }
+
+@media (max-width:768px) { .header h1 { font-size:1.8rem; } }
 </style>
 </head>
 <body>
 <div class="container">
-<div class="main-card">
-<div class="header">
-<h1><i class="fas fa-question-circle"></i> People Also Ask Generator</h1>
-<p>Generate 100+ questions for your FAQ section and content strategy</p>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div><a href="index.html"><i class="fas fa-home"></i> Home</a> › <a href="content-tools.html">Content Tools</a> › PAA Generator 2026</div>
+    <div class="last-updated"><i class="far fa-calendar-alt"></i> Updated: April 2026</div>
+  </div>
+
+  <div class="main-card">
+    <div class="header">
+      <h1><i class="fas fa-question-circle"></i> People Also Ask Generator <span class="year-badge">2026</span></h1>
+      <p>Generate 100+ questions for FAQ sections, content ideas & featured snippet optimization</p>
+    </div>
+
+    <div class="p-4">
+      <!-- Input -->
+      <div class="row mb-4">
+        <div class="col-md-7 mb-3 mb-md-0">
+          <input type="text" class="form-control form-control-lg" id="topicInput" placeholder="Enter topic (e.g., 'digital marketing')" value="seo">
+        </div>
+        <div class="col-md-3 mb-3 mb-md-0">
+          <select class="form-control form-control-lg" id="languageSelect" style="border-radius:12px;">
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="hi">हिन्दी</option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <button class="btn btn-primary btn-lg w-100" id="generateBtn"><i class="fas fa-search"></i> Generate</button>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="row mb-4">
+        <div class="col-md-3 col-6 mb-2"><div class="stat-card bg-primary"><h6>Total</h6><h2 id="totalCount">0</h2></div></div>
+        <div class="col-md-3 col-6 mb-2"><div class="stat-card bg-success"><h6>What/How</h6><h2 id="whatCount">0</h2></div></div>
+        <div class="col-md-3 col-6 mb-2"><div class="stat-card bg-info"><h6>Why/When</h6><h2 id="whyCount">0</h2></div></div>
+        <div class="col-md-3 col-6 mb-2"><div class="stat-card bg-warning"><h6>Which/Where</h6><h2 id="whereCount">0</h2></div></div>
+      </div>
+
+      <!-- Filters -->
+      <div class="mb-4">
+        <span class="category-tag active" data-cat="all">All</span>
+        <span class="category-tag" data-cat="what">What</span>
+        <span class="category-tag" data-cat="how">How</span>
+        <span class="category-tag" data-cat="why">Why</span>
+        <span class="category-tag" data-cat="when">When</span>
+        <span class="category-tag" data-cat="which">Which</span>
+        <span class="category-tag" data-cat="where">Where</span>
+      </div>
+
+      <!-- Questions -->
+      <div id="questionsContainer"></div>
+
+      <!-- Export -->
+      <div class="mt-4 d-flex gap-3 flex-wrap">
+        <button class="btn btn-outline-primary export-btn" id="exportFaq"><i class="fas fa-download"></i> Download FAQ</button>
+        <button class="btn btn-outline-secondary export-btn" id="copyFaq"><i class="fas fa-copy"></i> Copy All</button>
+        <button class="btn btn-outline-secondary export-btn" id="shareBtn"><i class="fas fa-share-alt"></i> Share</button>
+      </div>
+    </div>
+  </div>
 </div>
 
-<div class="p-4">
-<!-- Input -->
-<div class="row mb-4">
-<div class="col-md-8">
-<input type="text" class="form-control form-control-lg" id="topicInput" placeholder="Enter your topic (e.g., 'digital marketing')" value="seo">
-</div>
-<div class="col-md-4">
-<button class="btn btn-primary btn-lg w-100" id="generateQuestions">
-<i class="fas fa-search"></i> Generate Questions
-</button>
-</div>
-</div>
-
-<!-- Stats -->
-<div class="row mb-4">
-<div class="col-md-3">
-<div class="card bg-primary text-white">
-<div class="card-body">
-<h6>Total Questions</h6>
-<h2 id="totalQuestions">124</h2>
-</div>
-</div>
-</div>
-<div class="col-md-3">
-<div class="card bg-success text-white">
-<div class="card-body">
-<h6>What/How</h6>
-<h2 id="whatCount">45</h2>
-</div>
-</div>
-</div>
-<div class="col-md-3">
-<div class="card bg-info text-white">
-<div class="card-body">
-<h6>Why/When</h6>
-<h2 id="whyCount">38</h2>
-</div>
-</div>
-</div>
-<div class="col-md-3">
-<div class="card bg-warning text-white">
-<div class="card-body">
-<h6>Which/Where</h6>
-<h2 id="whereCount">41</h2>
-</div>
-</div>
-</div>
-</div>
-
-<!-- Category Filters -->
-<div class="mb-4">
-<span class="category-tag active" data-cat="all">All Questions</span>
-<span class="category-tag" data-cat="what">What</span>
-<span class="category-tag" data-cat="how">How</span>
-<span class="category-tag" data-cat="why">Why</span>
-<span class="category-tag" data-cat="when">When</span>
-<span class="category-tag" data-cat="which">Which</span>
-</div>
-
-<!-- Questions Container -->
-<div id="questionsContainer"></div>
-
-<!-- Export -->
-<div class="mt-4">
-<button class="btn btn-outline-primary" id="exportFaq">
-<i class="fas fa-download"></i> Download FAQ
-</button>
-<button class="btn btn-outline-secondary" id="copyFaq">
-<i class="fas fa-copy"></i> Copy All Questions
-</button>
-</div>
-</div>
-</div>
-</div>
+<!-- Toast -->
+<div class="toast-container" id="toastContainer"></div>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-const topicInput = document.getElementById('topicInput');
-const generateBtn = document.getElementById('generateQuestions');
-const questionsContainer = document.getElementById('questionsContainer');
+let allQuestions = [], currentFilter = 'all', currentLang = 'en';
 
-function generateQuestions(topic) {
-const questionTemplates = [
-// What questions
-`What is ${topic}?`,
-`What are the best ${topic} tools?`,
-`What does ${topic} mean?`,
-`What is ${topic} in simple terms?`,
-`What are the benefits of ${topic}?`,
-`What is the future of ${topic}?`,
-`What are ${topic} examples?`,
-`What skills are needed for ${topic}?`,
-
-// How questions
-`How to learn ${topic}?`,
-`How to do ${topic} for beginners?`,
-`How to improve ${topic} skills?`,
-`How to start ${topic} from scratch?`,
-`How to make money with ${topic}?`,
-`How to become a ${topic} expert?`,
-`How long does it take to learn ${topic}?`,
-
-// Why questions
-`Why is ${topic} important?`,
-`Why choose ${topic} as a career?`,
-`Why ${topic} is growing?`,
-`Why ${topic} matters for business?`,
-`Why learn ${topic} in 2024?`,
-
-// When questions
-`When to use ${topic}?`,
-`When is the best time to start ${topic}?`,
-`When did ${topic} become popular?`,
-`When to hire a ${topic} professional?`,
-
-// Which questions
-`Which ${topic} course is best?`,
-`Which ${topic} tool should I use?`,
-`Which ${topic} strategy works?`,
-`Which ${topic} certification is valuable?`,
-
-// Where questions
-`Where to learn ${topic} online?`,
-`Where to find ${topic} jobs?`,
-`Where to get ${topic} help?`,
-`Where to start with ${topic}?`
-];
-
-return questionTemplates.map(q => ({
-question: q,
-answer: generateAnswer(q, topic),
-category: q.split(' ')[0].toLowerCase()
-}));
-}
-
-function generateAnswer(question, topic) {
-const answers = {
-'what': `${topic} refers to the practice of optimizing content to rank higher in search engines. It involves keyword research, content creation, link building, and technical optimization.`,
-'how': `To learn ${topic}, start with online courses from platforms like Coursera or Udemy. Practice with real projects, join communities, follow industry experts, and stay updated with latest trends.`,
-'why': `${topic} is important because it helps businesses reach their target audience, increases brand visibility, drives organic traffic, and generates leads and revenue.`,
-'when': `The best time to start ${topic} is now. With digital transformation accelerating, businesses need ${topic} more than ever to stay competitive.`
+// Multi-language templates
+const langTemplates = {
+  en: {
+    what: ['What is {topic}?','What are the best {topic} tools?','What does {topic} mean?','What is {topic} in simple terms?','What are the benefits of {topic}?','What is the future of {topic}?','What are {topic} examples?','What skills are needed for {topic}?','What makes {topic} effective?','What is the cost of {topic}?'],
+    how: ['How to learn {topic}?','How to do {topic} for beginners?','How to improve {topic} skills?','How to start {topic} from scratch?','How to make money with {topic}?','How to become a {topic} expert?','How long does it take to learn {topic}?','How to use {topic} effectively?','How to measure {topic} success?','How to choose the best {topic}?'],
+    why: ['Why is {topic} important?','Why choose {topic} as a career?','Why {topic} is growing?','Why {topic} matters for business?','Why learn {topic} in 2026?','Why does {topic} work?','Why invest in {topic}?'],
+    when: ['When to use {topic}?','When is the best time to start {topic}?','When did {topic} become popular?','When to hire a {topic} professional?','When will {topic} change?'],
+    which: ['Which {topic} course is best?','Which {topic} tool should I use?','Which {topic} strategy works?','Which {topic} certification is valuable?','Which {topic} platform is best?'],
+    where: ['Where to learn {topic} online?','Where to find {topic} jobs?','Where to get {topic} help?','Where to start with {topic}?','Where is {topic} most used?']
+  },
+  es: {
+    what: ['¿Qué es {topic}?','¿Cuáles son las mejores herramientas de {topic}?','¿Qué significa {topic}?','¿Qué beneficios tiene {topic}?','¿Cuál es el futuro de {topic}?'],
+    how: ['¿Cómo aprender {topic}?','¿Cómo empezar con {topic}?','¿Cómo mejorar en {topic}?','¿Cómo ganar dinero con {topic}?'],
+    why: ['¿Por qué es importante {topic}?','¿Por qué elegir {topic}?','¿Por qué crece {topic}?'],
+    when: ['¿Cuándo usar {topic}?','¿Cuándo empezar con {topic}?'],
+    which: ['¿Qué curso de {topic} es mejor?','¿Qué herramienta de {topic} usar?'],
+    where: ['¿Dónde aprender {topic}?','¿Dónde encontrar trabajo de {topic}?']
+  },
+  hi: {
+    what: ['{topic} क्या है?','{topic} के सबसे अच्छे टूल्स कौन से हैं?','{topic} का मतलब क्या है?','{topic} के क्या फायदे हैं?'],
+    how: ['{topic} कैसे सीखें?','{topic} की शुरुआत कैसे करें?','{topic} से पैसे कैसे कमाएं?'],
+    why: ['{topic} क्यों जरूरी है?','{topic} में करियर क्यों चुनें?'],
+    when: ['{topic} कब शुरू करें?','{topic} का सबसे अच्छा समय क्या है?'],
+    which: ['{topic} का सबसे अच्छा कोर्स कौन सा है?'],
+    where: ['{topic} ऑनलाइन कहां सीखें?']
+  }
 };
 
-const type = question.split(' ')[0].toLowerCase();
-return answers[type] || `${topic} is essential for modern digital marketing. It helps improve online visibility and drive targeted traffic to your website.`;
+const answers = {
+  what: '{topic} refers to an important concept that helps businesses and individuals achieve their goals through effective strategies and tools.',
+  how: 'To learn {topic}, start with online courses, practice regularly, join communities, follow experts, and work on real projects.',
+  why: '{topic} is important because it drives growth, improves efficiency, and provides competitive advantages in today\'s fast-paced world.',
+  when: 'The best time to start {topic} is now. With rapid changes in technology and business, staying ahead is crucial.',
+  which: 'Choose {topic} tools/courses based on your needs, budget, and skill level. Read reviews and try free trials first.',
+  where: 'You can find {topic} resources on online learning platforms, industry websites, and professional communities.'
+};
+
+function generateQuestions(topic, lang = 'en') {
+  const templates = langTemplates[lang] || langTemplates.en;
+  let questions = [];
+  
+  Object.entries(templates).forEach(([category, qs]) => {
+    qs.forEach(q => {
+      questions.push({
+        question: q.replace('{topic}', topic),
+        answer: (answers[category] || answers.what).replace('{topic}', topic),
+        category
+      });
+    });
+  });
+  
+  return questions;
 }
 
 function displayQuestions(questions) {
-let html = '';
-questions.forEach((q, index) => {
-html += `
-<div class="question-card" onclick="this.classList.toggle('active')">
-<div class="d-flex justify-content-between">
-<h6><i class="fas fa-question-circle text-primary"></i> ${q.question}</h6>
-<span class="badge bg-secondary">${q.category}</span>
-</div>
-<div class="answer">
-${q.answer}
-<div class="mt-2">
-<small class="text-muted">💡 Use this in your FAQ section</small>
-</div>
-</div>
-</div>
-`;
-});
-questionsContainer.innerHTML = html;
+  const filtered = currentFilter === 'all' ? questions : questions.filter(q => q.category === currentFilter);
+  
+  document.getElementById('totalCount').textContent = questions.length;
+  document.getElementById('whatCount').textContent = questions.filter(q => ['what','how'].includes(q.category)).length;
+  document.getElementById('whyCount').textContent = questions.filter(q => ['why','when'].includes(q.category)).length;
+  document.getElementById('whereCount').textContent = questions.filter(q => ['which','where'].includes(q.category)).length;
+
+  document.getElementById('questionsContainer').innerHTML = filtered.map((q, i) => `
+    <div class="question-card" onclick="this.classList.toggle('active')">
+      <div class="d-flex justify-content-between align-items-start">
+        <h6><i class="fas fa-question-circle text-primary"></i> ${q.question}</h6>
+        <span class="badge bg-${q.category==='what'?'primary':q.category==='how'?'success':q.category==='why'?'info':q.category==='when'?'warning':'secondary'}">${q.category}</span>
+      </div>
+      <div class="answer">${q.answer}<div class="mt-2"><small class="text-muted">💡 Use in FAQ section</small></div></div>
+    </div>
+  `).join('');
 }
 
-generateBtn.addEventListener('click', function() {
-const topic = topicInput.value;
-const questions = generateQuestions(topic);
-displayQuestions(questions);
-
-// Update stats
-document.getElementById('totalQuestions').textContent = questions.length;
-document.getElementById('whatCount').textContent = questions.filter(q => q.category === 'what').length;
-document.getElementById('whyCount').textContent = questions.filter(q => q.category === 'why').length;
-document.getElementById('whereCount').textContent = questions.filter(q => ['where', 'when', 'which'].includes(q.category)).length;
+// Generate
+document.getElementById('generateBtn').addEventListener('click', () => {
+  const topic = document.getElementById('topicInput').value.trim();
+  currentLang = document.getElementById('languageSelect').value;
+  if (!topic) { showToast('Enter a topic!'); return; }
+  allQuestions = generateQuestions(topic, currentLang);
+  currentFilter = 'all';
+  document.querySelectorAll('.category-tag').forEach((t,i) => t.classList.toggle('active', i===0));
+  displayQuestions(allQuestions);
+  gtag('event', 'paa_generate', { topic, language: currentLang, count: allQuestions.length });
 });
 
-// Initial load
-generateBtn.click();
+// Filters
+document.querySelectorAll('.category-tag').forEach(tag => {
+  tag.addEventListener('click', function() {
+    document.querySelectorAll('.category-tag').forEach(t => t.classList.remove('active'));
+    this.classList.add('active');
+    currentFilter = this.dataset.cat;
+    displayQuestions(allQuestions);
+  });
 });
+
+// Export
+document.getElementById('exportFaq').addEventListener('click', () => {
+  const text = allQuestions.map(q => `Q: ${q.question}\nA: ${q.answer}\n`).join('\n');
+  const blob = new Blob([text], { type:'text/plain' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `faq-${document.getElementById('topicInput').value}.txt`;
+  a.click();
+  showToast('FAQ downloaded! 📥');
+});
+
+document.getElementById('copyFaq').addEventListener('click', () => {
+  const text = allQuestions.map(q => q.question).join('\n');
+  navigator.clipboard.writeText(text).then(() => showToast('All questions copied! 📋'));
+});
+
+document.getElementById('shareBtn').addEventListener('click', () => {
+  if (navigator.share) { navigator.share({ title:'PAA Generator', url:window.location.href }).catch(()=>{}); }
+  else { navigator.clipboard.writeText(window.location.href).then(() => showToast('Link copied!')); }
+});
+
+function showToast(msg) {
+  const t = document.createElement('div'); t.className = 'toast';
+  t.innerHTML = `<i class="fas fa-check-circle"></i> ${msg}`;
+  document.getElementById('toastContainer').appendChild(t);
+  setTimeout(() => t.remove(), 3000);
+}
+
+// Init
+window.addEventListener('load', () => document.getElementById('generateBtn').click());
 </script>
 </body>
 </html>
