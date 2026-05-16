@@ -1,343 +1,506 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPG77KWVCP"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PFPCTBFG3Y"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-ZPG77KWVCP');
+gtag('config', 'G-PFPCTBFG3Y');
+</script>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SCHEMA Structured Data Tester - Free SEO Tool Hub</title>
+
+<!-- Primary SEO Meta Tags -->
+<title>Schema Structured Data Tester | Validate JSON-LD & Microdata | Free 2026</title>
+<meta name="description" content="Free schema markup validator. Test JSON-LD, microdata, and structured data for Google rich snippets. Supports Article, Product, FAQ, Breadcrumb, Event & more. Instant validation, 100% client-side.">
+<meta name="keywords" content="schema tester, structured data validator, JSON-LD tester, rich snippet test, schema markup checker, google structured data tool, microdata validator, schema.org tester">
+<meta name="author" content="FreeSEOToolHub">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://freeseotoolhub.com/schema-structured-data-tester.html">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://freeseotoolhub.com/schema-structured-data-tester.html">
+<meta property="og:title" content="Schema Structured Data Tester | Free Validation Tool 2026">
+<meta property="og:description" content="Validate JSON-LD and microdata schema markup. Test for Google rich snippets. Supports all schema.org types. 100% free, no signup.">
+<meta property="og:image" content="https://freeseotoolhub.com/images/schema-tester-og.jpg">
+<meta property="og:site_name" content="Free SEO Tool Hub">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Schema Structured Data Tester | Free SEO Tool">
+<meta name="twitter:description" content="Validate schema markup instantly. Test JSON-LD for rich snippets. Free and client-side.">
+<meta name="twitter:image" content="https://freeseotoolhub.com/images/schema-tester-twitter.jpg">
+
+<!-- Schema.org Structured Data -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@graph": [
+{
+"@type": "SoftwareApplication",
+"name": "Schema Structured Data Tester",
+"description": "Free online tool to validate JSON-LD and microdata schema markup for Google rich snippets.",
+"applicationCategory": "SEO Tool",
+"operatingSystem": "All",
+"offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+"featureList": ["JSON-LD Validation", "Syntax Checking", "Required Field Detection", "Pretty Print", "Bilingual Support", "Privacy Focused"],
+"softwareVersion": "2.1",
+"dateModified": "2026-05-16",
+"url": "https://freeseotoolhub.com/schema-structured-data-tester.html"
+},
+{
+"@type": "FAQPage",
+"mainEntity": [
+{"@type": "Question", "name": "What types of schema can I test?", "acceptedAnswer": {"@type": "Answer", "text": "You can test any schema.org type — Article, Product, FAQ, BreadcrumbList, Event, LocalBusiness, Organization, and more. The tool validates JSON-LD syntax and checks required fields."}},
+{"@type": "Question", "name": "Is my data safe when testing?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, 100% safe. All validation happens in your browser (client-side). No data is ever uploaded, stored, or logged on any server."}},
+{"@type": "Question", "name": "Does this tool support Hindi content?", "acceptedAnswer": {"@type": "Answer", "text": "Yes! The tool has full bilingual support (English & Hindi). You can test schema markup with Hindi content for Indian websites targeting Hindi-speaking audiences."}}
+]
+},
+{
+"@type": "BreadcrumbList",
+"itemListElement": [
+{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://freeseotoolhub.com/"},
+{"@type": "ListItem", "position": 2, "name": "All Tools", "item": "https://freeseotoolhub.com/all-tools.html"},
+{"@type": "ListItem", "position": 3, "name": "Schema Structured Data Tester", "item": "https://freeseotoolhub.com/schema-structured-data-tester.html"}
+]
+}
+]
+}
+</script>
+
+<!-- Stylesheets -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
 <style>
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+:root {
+--primary: #2563eb;
+--primary-dark: #1d4ed8;
+--purple: #7c3aed;
+--success: #10b981;
+--danger: #ef4444;
+--warning: #f59e0b;
+--bg: #f8fafc;
+--card: #ffffff;
+--text: #111827;
+--text-light: #64748b;
+--border: #e5e7eb;
+--radius: 20px;
+--shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+--shadow: 0 10px 25px -10px rgba(0,0,0,0.08);
+--shadow-lg: 0 25px 50px -12px rgba(0,0,0,0.15);
 }
 
+* { margin: 0; padding: 0; box-sizing: border-box; }
 body {
-font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-background: #f9fafc;
-color: #111827;
+font-family: 'Inter', system-ui, -apple-system, sans-serif;
+background: linear-gradient(135deg, #eef2ff 0%, #f0f4ff 50%, #faf5ff 100%);
+min-height: 100vh;
+padding: 100px 16px 40px;
+color: var(--text);
 line-height: 1.6;
-padding: 2rem 1rem;
 }
+.container { max-width: 1100px; margin: 0 auto; }
 
-.container {
-max-width: 1200px;
-margin: 0 auto;
+/* Breadcrumb */
+.breadcrumb-nav {
+display: inline-flex;
+align-items: center;
+flex-wrap: wrap;
+gap: 8px;
+background: var(--card);
+padding: 10px 22px;
+border-radius: 50px;
+margin-bottom: 24px;
+box-shadow: var(--shadow-sm);
+font-size: 0.9rem;
+}
+.breadcrumb-nav a { color: var(--primary); text-decoration: none; font-weight: 500; }
+.breadcrumb-nav a:hover { text-decoration: underline; }
+.breadcrumb-nav .separator { color: var(--text-light); }
+.breadcrumb-nav .current { font-weight: 600; color: var(--text); }
+.update-badge {
+background: var(--primary);
+color: #fff;
+padding: 4px 14px;
+border-radius: 40px;
+font-size: 0.8rem;
+font-weight: 500;
 }
 
 /* Header */
 .tool-header {
 text-align: center;
-margin-bottom: 2.5rem;
+margin-bottom: 32px;
 }
-
 .tool-header h1 {
-font-size: 2.5rem;
-font-weight: 700;
-background: linear-gradient(135deg, #2563eb, #7c3aed);
+font-size: clamp(1.8rem, 4vw, 2.5rem);
+font-weight: 800;
+background: linear-gradient(135deg, var(--primary), var(--purple));
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
-margin-bottom: 0.5rem;
+background-clip: text;
+margin-bottom: 8px;
 }
-
-.tool-header p {
-color: #4b5563;
+.tool-header .subtitle {
+color: var(--text-light);
 font-size: 1.1rem;
 }
+.badge-row {
+display: flex;
+gap: 12px;
+justify-content: center;
+flex-wrap: wrap;
+margin-top: 16px;
+}
+.badge-pill {
+background: var(--card);
+padding: 8px 20px;
+border-radius: 50px;
+font-size: 0.85rem;
+font-weight: 500;
+border: 1px solid var(--border);
+color: var(--text);
+}
 
-/* Language toggle (matching your site's bilingual style) */
+/* Language Toggle */
 .lang-toggle {
 display: flex;
 justify-content: center;
-gap: 0.5rem;
-margin-bottom: 2rem;
+gap: 8px;
+margin-bottom: 28px;
 }
-
 .lang-btn {
-background: white;
-border: 1px solid #d1d5db;
-padding: 0.5rem 1.5rem;
-border-radius: 9999px;
-font-weight: 500;
+background: var(--card);
+border: 1px solid var(--border);
+padding: 10px 22px;
+border-radius: 50px;
+font-weight: 600;
 cursor: pointer;
 transition: all 0.2s;
-color: #374151;
+color: var(--text);
+font-size: 0.9rem;
 }
-
 .lang-btn.active {
-background: #2563eb;
-color: white;
-border-color: #2563eb;
+background: var(--primary);
+color: #fff;
+border-color: var(--primary);
+}
+.lang-btn:hover:not(.active) {
+background: #f1f5f9;
 }
 
-/* Main tool card */
+/* Main Card */
 .tool-card {
-background: white;
-border-radius: 24px;
-box-shadow: 0 20px 35px -8px rgba(0, 0, 0, 0.1), 0 4px 8px -2px rgba(0, 0, 0, 0.05);
-padding: 2rem;
-margin-bottom: 2.5rem;
-border: 1px solid rgba(255, 255, 255, 0.5);
-backdrop-filter: blur(4px);
+background: var(--card);
+border-radius: var(--radius);
+box-shadow: var(--shadow-lg);
+padding: 32px;
+margin-bottom: 32px;
+border: 1px solid var(--border);
 }
-
-.tool-card h2 {
-font-size: 1.5rem;
-margin-bottom: 1.5rem;
+.tool-card .section-title {
+font-size: 1.3rem;
+font-weight: 700;
+margin-bottom: 20px;
 display: flex;
 align-items: center;
-gap: 0.5rem;
-color: #1f2937;
+gap: 10px;
+color: #1e293b;
 }
-
-.tool-card h2 span {
+.tool-card .section-title .type-badge {
 background: #dbeafe;
 color: #1e40af;
-font-size: 0.875rem;
+font-size: 0.8rem;
 font-weight: 600;
-padding: 0.25rem 0.75rem;
-border-radius: 9999px;
+padding: 4px 14px;
+border-radius: 50px;
 }
 
 /* Textarea */
-.input-group {
-margin-bottom: 1.5rem;
-}
-
 textarea {
 width: 100%;
 padding: 1.25rem;
-border: 2px solid #e5e7eb;
-border-radius: 20px;
+border: 2px solid var(--border);
+border-radius: 16px;
 font-family: 'Fira Code', 'Courier New', monospace;
-font-size: 0.95rem;
-line-height: 1.5;
+font-size: 0.9rem;
+line-height: 1.6;
 resize: vertical;
-min-height: 250px;
-background: #f8fafc;
+min-height: 260px;
+background: #1e293b;
+color: #e2e8f0;
 transition: border 0.2s;
 }
-
 textarea:focus {
 outline: none;
-border-color: #2563eb;
-box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+border-color: var(--primary);
+box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
 }
+textarea::placeholder { color: #94a3b8; }
 
 /* Buttons */
 .button-group {
 display: flex;
 flex-wrap: wrap;
-gap: 1rem;
-margin: 1.5rem 0;
+gap: 12px;
+margin: 20px 0;
 }
-
 .btn {
-padding: 0.75rem 2rem;
-border: none;
-border-radius: 9999px;
+padding: 12px 24px;
+border-radius: 50px;
 font-weight: 600;
-font-size: 1rem;
+font-size: 0.95rem;
 cursor: pointer;
-transition: all 0.2s;
+transition: all 0.25s;
 display: inline-flex;
 align-items: center;
-gap: 0.5rem;
-box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+gap: 8px;
+border: none;
+font-family: inherit;
 }
-
 .btn-primary {
-background: #2563eb;
-color: white;
+background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+color: #fff;
+box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
 }
-
 .btn-primary:hover {
-background: #1d4ed8;
 transform: translateY(-2px);
-box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
+box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
 }
-
 .btn-outline {
-background: white;
-color: #374151;
-border: 1px solid #d1d5db;
+background: var(--card);
+color: var(--text);
+border: 1px solid var(--border);
 }
+.btn-outline:hover { background: #f9fafb; border-color: #94a3b8; }
 
-.btn-outline:hover {
-background: #f9fafb;
-border-color: #9ca3af;
-}
-
-/* Example badges */
+/* Example Badges */
 .examples {
 display: flex;
 flex-wrap: wrap;
-gap: 0.75rem;
-margin: 1.5rem 0;
-padding: 1rem 0;
-border-top: 1px dashed #e2e8f0;
-border-bottom: 1px dashed #e2e8f0;
+gap: 10px;
+padding: 18px 0;
+margin: 8px 0 20px;
+border-top: 1px dashed var(--border);
+border-bottom: 1px dashed var(--border);
 }
-
+.examples .label {
+color: var(--text-light);
+font-size: 0.85rem;
+font-weight: 500;
+display: flex;
+align-items: center;
+margin-right: 4px;
+}
 .example-badge {
 background: #f1f5f9;
 color: #334155;
-padding: 0.4rem 1rem;
-border-radius: 9999px;
+padding: 8px 18px;
+border-radius: 50px;
 font-size: 0.85rem;
 font-weight: 500;
 cursor: pointer;
-border: 1px solid #e2e8f0;
+border: 1px solid var(--border);
 transition: all 0.15s;
 }
-
 .example-badge:hover {
 background: #e2e8f0;
 border-color: #94a3b8;
 }
 
-/* Results area */
+/* Results Panel */
 .results {
-margin-top: 2rem;
-border-radius: 20px;
+border-radius: 16px;
 overflow: hidden;
-border: 1px solid #e5e7eb;
+border: 1px solid var(--border);
+margin-top: 24px;
 }
-
 .results-header {
 display: flex;
 justify-content: space-between;
 align-items: center;
 background: #f1f5f9;
-padding: 1rem 1.5rem;
-border-bottom: 1px solid #e2e8f0;
+padding: 14px 22px;
+border-bottom: 1px solid var(--border);
 }
-
-.results-header h3 {
-font-weight: 600;
-color: #0f172a;
-}
-
+.results-header h3 { font-weight: 700; font-size: 1rem; color: #0f172a; }
 .validation-badge {
-padding: 0.25rem 0.75rem;
-border-radius: 9999px;
-font-size: 0.75rem;
-font-weight: 600;
+padding: 5px 16px;
+border-radius: 50px;
+font-size: 0.78rem;
+font-weight: 700;
 text-transform: uppercase;
+letter-spacing: 0.3px;
 }
-
-.badge-valid {
-background: #d1fae5;
-color: #065f46;
-}
-
-.badge-invalid {
-background: #fee2e2;
-color: #991b1b;
-}
+.badge-valid { background: #d1fae5; color: #065f46; }
+.badge-invalid { background: #fee2e2; color: #991b1b; }
+.badge-ready { background: #f1f5f9; color: #64748b; }
 
 .results-content {
 background: #0f172a;
-color: #e2e8f0;
-padding: 1.5rem;
-max-height: 400px;
+color: #cbd5e1;
+padding: 22px;
+max-height: 420px;
 overflow: auto;
 font-family: 'Fira Code', 'Courier New', monospace;
-font-size: 0.85rem;
+font-size: 0.84rem;
 line-height: 1.7;
 white-space: pre-wrap;
 word-break: break-word;
 }
 
-.error-message {
-color: #fecaca;
-background: #7f1d1d;
-padding: 1rem;
-border-radius: 12px;
-margin-bottom: 1rem;
-border-left: 4px solid #ef4444;
-}
-
-/* Features grid (like your site's style) */
+/* Features Grid */
 .features-grid {
 display: grid;
-grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-gap: 1.5rem;
-margin-top: 2.5rem;
+grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+gap: 20px;
+margin-top: 8px;
+margin-bottom: 32px;
 }
-
 .feature-card {
-background: white;
-padding: 1.5rem;
-border-radius: 20px;
-box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.05);
-border: 1px solid #f0f2f5;
+background: var(--card);
+padding: 22px;
+border-radius: 18px;
+box-shadow: var(--shadow);
+border: 1px solid var(--border);
 }
-
 .feature-card h4 {
-font-size: 1.1rem;
-margin-bottom: 0.5rem;
+font-size: 1rem;
+font-weight: 700;
+margin-bottom: 8px;
 color: #1e293b;
 display: flex;
 align-items: center;
-gap: 0.5rem;
+gap: 8px;
 }
+.feature-card p { color: var(--text-light); font-size: 0.9rem; }
 
-.feature-card p {
-color: #475569;
-font-size: 0.95rem;
+/* Pros & Cons */
+.pros-cons-row {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 20px;
+margin-bottom: 32px;
 }
+.pros-box, .cons-box {
+padding: 24px;
+border-radius: 18px;
+background: var(--card);
+}
+.pros-box { border: 2px solid var(--success); }
+.cons-box { border: 2px solid var(--danger); }
+.pros-box h3 { color: var(--success); font-weight: 700; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+.cons-box h3 { color: var(--danger); font-weight: 700; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+.pros-list, .cons-list { list-style: none; }
+.pros-list li, .cons-list li { margin-bottom: 8px; font-size: 0.9rem; color: #475569; display: flex; align-items: flex-start; gap: 8px; }
 
-/* Footer note */
-.note {
+/* FAQ */
+.faq-section { margin-bottom: 32px; }
+.faq-section h2 { font-size: 1.4rem; font-weight: 800; margin-bottom: 18px; }
+.faq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+.faq-item {
+background: var(--card);
+padding: 20px;
+border-radius: 16px;
+border: 1px solid var(--border);
+}
+.faq-item h4 { color: var(--primary); font-weight: 700; margin-bottom: 6px; font-size: 0.95rem; }
+.faq-item p { color: var(--text-light); font-size: 0.88rem; }
+
+/* Related Tools */
+.related-section { margin-bottom: 32px; }
+.related-section h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 16px; }
+.related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px; }
+.related-card {
+background: var(--card);
+padding: 18px;
+border-radius: 16px;
+text-decoration: none;
+color: var(--text);
+border: 1px solid var(--border);
+transition: all 0.2s;
+display: block;
+}
+.related-card:hover { transform: translateY(-3px); border-color: var(--primary); box-shadow: var(--shadow); }
+.related-card i { font-size: 1.4rem; color: var(--primary); margin-bottom: 8px; }
+.related-card h4 { font-size: 0.9rem; font-weight: 700; }
+.related-card p { font-size: 0.78rem; color: var(--text-light); }
+
+/* Footer */
+.page-footer {
 text-align: center;
+color: var(--text-light);
+padding: 32px 0 16px;
 font-size: 0.9rem;
-color: #64748b;
-margin-top: 3rem;
-padding-top: 1.5rem;
-border-top: 1px solid #e2e8f0;
+border-top: 1px solid var(--border);
+margin-top: 32px;
+}
+.page-footer a { color: var(--primary); text-decoration: none; }
+.page-footer a:hover { text-decoration: underline; }
+
+@media (max-width: 768px) {
+.tool-card { padding: 20px; }
+.button-group { flex-direction: column; }
+.btn { width: 100%; justify-content: center; }
 }
 </style>
 </head>
 <body>
+
 <div class="container">
-<!-- Header with language toggle (matching your site's theme) -->
+<!-- Breadcrumb -->
+<nav class="breadcrumb-nav" aria-label="Breadcrumb">
+<a href="index.html"><i class="fas fa-home"></i> Home</a>
+<span class="separator"><i class="fas fa-chevron-right"></i></span>
+<a href="all-tools.html">All Tools</a>
+<span class="separator"><i class="fas fa-chevron-right"></i></span>
+<span class="current">Schema Structured Data Tester</span>
+<span class="update-badge"><i class="fas fa-sync-alt"></i> Updated May 2026</span>
+</nav>
+
+<!-- Header -->
 <div class="tool-header">
-<h1>🔍 SCHEMA Structured Data Tester</h1>
-<p>Validate schema markup. Test for rich snippets.</p>
+<h1><i class="fas fa-code"></i> Schema Structured Data Tester</h1>
+<p class="subtitle">Validate JSON-LD & Microdata markup. Test for Google rich snippets.</p>
+<div class="badge-row">
+<span class="badge-pill"><i class="fas fa-check-circle"></i> JSON-LD Validator</span>
+<span class="badge-pill"><i class="fas fa-shield-alt"></i> 100% Client-Side</span>
+<span class="badge-pill"><i class="fas fa-language"></i> Bilingual (EN/HI)</span>
+</div>
 </div>
 
+<!-- Language Toggle -->
 <div class="lang-toggle" id="languageToggle">
 <button class="lang-btn active" data-lang="en">🇬🇧 English</button>
 <button class="lang-btn" data-lang="hi">🇮🇳 हिंदी</button>
 </div>
 
 <!-- Main Tool Card -->
-<div class="tool-card">
-<h2>
-📝 Enter Your Schema Markup
-<span>JSON-LD / Microdata</span>
-</h2>
-
-<!-- Textarea for schema input -->
-<div class="input-group">
-<textarea id="schemaInput" placeholder='{\n "@context": "https://schema.org",\n "@type": "Article",\n "headline": "SEO Guide 2026",\n "description": "Complete structured data tutorial"\n}'></textarea>
+<main class="tool-card">
+<div class="section-title">
+📝 Enter Schema Markup
+<span class="type-badge">JSON-LD / Microdata</span>
 </div>
 
-<!-- Action Buttons -->
+<textarea id="schemaInput" placeholder='{\n  "@context": "https://schema.org",\n  "@type": "Article",\n  "headline": "SEO Guide 2026",\n  "description": "Complete structured data tutorial"\n}' aria-label="Schema markup input"></textarea>
+
 <div class="button-group">
-<button class="btn btn-primary" id="validateBtn">
-<span>✅</span> Validate Schema
-</button>
-<button class="btn btn-outline" id="clearBtn">
-<span>🗑️</span> Clear
-</button>
-<button class="btn btn-outline" id="formatBtn">
-<span>✨</span> Pretty Print
-</button>
+<button class="btn btn-primary" id="validateBtn"><i class="fas fa-check-circle"></i> <span>Validate Schema</span></button>
+<button class="btn btn-outline" id="formatBtn"><i class="fas fa-magic"></i> <span>Pretty Print</span></button>
+<button class="btn btn-outline" id="clearBtn"><i class="fas fa-trash-alt"></i> <span>Clear</span></button>
 </div>
 
-<!-- Example quick-load badges -->
-<div class="examples" id="exampleContainer">
+<div class="examples">
+<span class="label">Quick load:</span>
 <span class="example-badge" data-example="article">📄 Article</span>
 <span class="example-badge" data-example="product">🛒 Product</span>
 <span class="example-badge" data-example="faq">❓ FAQ</span>
@@ -345,19 +508,16 @@ border-top: 1px solid #e2e8f0;
 <span class="example-badge" data-example="event">📅 Event</span>
 </div>
 
-<!-- Results Panel -->
 <div class="results" id="results">
 <div class="results-header">
-<h3>📋 Validation Result</h3>
-<span class="validation-badge" id="validationBadge">Ready</span>
+<h3><i class="fas fa-clipboard-check"></i> Validation Result</h3>
+<span class="validation-badge badge-ready" id="validationBadge">Ready</span>
 </div>
-<div class="results-content" id="resultContent">
-Click "Validate Schema" to test your structured data.
+<div class="results-content" id="resultContent">Click "Validate Schema" to test your structured data.</div>
 </div>
-</div>
-</div>
+</main>
 
-<!-- Information / Features Grid (similar to your site's tool cards) -->
+<!-- Features Grid -->
 <div class="features-grid">
 <div class="feature-card">
 <h4>🧪 Syntax Validation</h4>
@@ -369,7 +529,7 @@ Click "Validate Schema" to test your structured data.
 </div>
 <div class="feature-card">
 <h4>🌐 Bilingual Support</h4>
-<p>Test schema in both English and Hindi — हिंदी में भी टेस्ट करें।</p>
+<p>Test schema in English & Hindi — हिंदी में भी टेस्ट करें।</p>
 </div>
 <div class="feature-card">
 <h4>⚡ Zero Storage</h4>
@@ -377,14 +537,64 @@ Click "Validate Schema" to test your structured data.
 </div>
 </div>
 
-<div class="note">
-🇮🇳 <strong>Free SEO Tool Hub</strong> — 100% मुफ्त, बिना साइनअप के। Supports all schema.org types.
+<!-- Pros & Cons -->
+<section class="pros-cons-row">
+<div class="pros-box">
+<h3><i class="fas fa-check-circle"></i> Why Use Schema Markup?</h3>
+<ul class="pros-list">
+<li><i class="fas fa-check" style="color:#10b981;"></i> <strong>Rich Snippets:</strong> Star ratings, prices, FAQs in search results</li>
+<li><i class="fas fa-check" style="color:#10b981;"></i> <strong>Higher CTR:</strong> Enhanced listings get 5-30% more clicks</li>
+<li><i class="fas fa-check" style="color:#10b981;"></i> <strong>Voice Search:</strong> Structured data powers Google Assistant answers</li>
+<li><i class="fas fa-check" style="color:#10b981;"></i> <strong>Knowledge Graph:</strong> Your brand can appear in Knowledge panels</li>
+</ul>
 </div>
+<div class="cons-box">
+<h3><i class="fas fa-exclamation-triangle"></i> Common Schema Errors</h3>
+<ul class="cons-list">
+<li><i class="fas fa-times" style="color:#ef4444;"></i> <strong>Missing @context:</strong> Always include schema.org context</li>
+<li><i class="fas fa-times" style="color:#ef4444;"></i> <strong>Invalid JSON:</strong> Trailing commas, unquoted keys</li>
+<li><i class="fas fa-times" style="color:#ef4444;"></i> <strong>Wrong types:</strong> Using string instead of number for price</li>
+<li><i class="fas fa-times" style="color:#ef4444;"></i> <strong>Nested errors:</strong> Incorrect nesting in complex schemas</li>
+</ul>
+</div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+<h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+<div class="faq-grid">
+<div class="faq-item"><h4>What schema types can I test?</h4><p>Any schema.org type — Article, Product, FAQ, BreadcrumbList, Event, LocalBusiness, Organization, and more.</p></div>
+<div class="faq-item"><h4>Is my data safe when testing?</h4><p>Yes, 100% safe. All validation happens in your browser. No data is ever uploaded or stored.</p></div>
+<div class="faq-item"><h4>Does this support Hindi content?</h4><p>Yes! Full bilingual support. Test schema with Hindi content for Indian audiences.</p></div>
+<div class="faq-item"><h4>How is this different from Google's tool?</h4><p>This tool is privacy-focused (client-side), supports Hindi, and validates JSON-LD syntax with helpful warnings.</p></div>
+</div>
+</section>
+
+<!-- Related Tools -->
+<section class="related-section">
+<h2><i class="fas fa-link"></i> Related Schema & SEO Tools</h2>
+<div class="related-grid">
+<a href="schema-markup-generator.html" class="related-card"><i class="fas fa-code"></i><h4>Schema Markup Generator</h4><p>Create JSON-LD schema</p></a>
+<a href="meta-tag-generator.html" class="related-card"><i class="fas fa-tags"></i><h4>Meta Tag Generator</h4><p>SEO meta & OG tags</p></a>
+<a href="canonical-url-checker.html" class="related-card"><i class="fas fa-link"></i><h4>Canonical URL Checker</h4><p>Check canonical tags</p></a>
+<a href="hreflang-generator.html" class="related-card"><i class="fas fa-globe"></i><h4>Hreflang Generator</h4><p>Multilingual SEO tags</p></a>
+<a href="heading-structure-validator.html" class="related-card"><i class="fas fa-heading"></i><h4>Heading Validator</h4><p>H1-H6 structure check</p></a>
+<a href="broken-link-checker.html" class="related-card"><i class="fas fa-unlink"></i><h4>Broken Link Checker</h4><p>Find 404 errors</p></a>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="page-footer">
+<p>© 2026 <strong>FreeSEOToolHub</strong> — Schema Structured Data Tester. 100% Free & Private.</p>
+<div style="margin-top: 10px;">
+<a href="index.html">Home</a> · <a href="all-tools.html">All Tools</a> · <a href="about.html">About</a> · <a href="privacy.html">Privacy</a> · <a href="sitemap.xml">Sitemap</a>
+</div>
+</footer>
 </div>
 
 <script>
 (function() {
-// ----- DOM elements -----
+// ============ DOM Elements ============
 const schemaInput = document.getElementById('schemaInput');
 const validateBtn = document.getElementById('validateBtn');
 const clearBtn = document.getElementById('clearBtn');
@@ -394,99 +604,98 @@ const validationBadge = document.getElementById('validationBadge');
 const exampleBadges = document.querySelectorAll('.example-badge');
 const langBtns = document.querySelectorAll('.lang-btn');
 
-// ----- Language translations (matching your site's bilingual nature) -----
+// ============ Translations ============
 const translations = {
 en: {
-placeholder: '{\n "@context": "https://schema.org",\n "@type": "Article",\n "headline": "SEO Guide 2026",\n "description": "Complete structured data tutorial"\n}',
+placeholder: '{\n  "@context": "https://schema.org",\n  "@type": "Article",\n  "headline": "SEO Guide 2026",\n  "description": "Complete structured data tutorial"\n}',
 badgeReady: 'Ready',
-badgeValid: 'Valid Schema',
-badgeInvalid: 'Invalid Schema',
+badgeValid: '✅ Valid Schema',
+badgeInvalid: '❌ Invalid Schema',
 resultPlaceholder: 'Click "Validate Schema" to test your structured data.',
-validateBtn: '✅ Validate Schema',
-clearBtn: '🗑️ Clear',
-formatBtn: '✨ Pretty Print',
-feature1: 'Syntax Validation',
-feature1Desc: 'Checks JSON-LD syntax, required fields, and schema.org compatibility.',
-feature2: 'Rich Snippet Preview',
-feature2Desc: 'See how Google might display your markup in search results.',
-feature3: 'Bilingual Support',
-feature3Desc: 'Test schema in both English and Hindi — हिंदी में भी टेस्ट करें।',
-feature4: 'Zero Storage',
-feature4Desc: 'Your data stays private. No uploads, no logs, 100% client-side.'
+validateText: 'Validate Schema',
+clearText: 'Clear',
+formatText: 'Pretty Print',
+emptyWarning: '⚠️ Please enter some schema markup.',
+cannotFormat: 'Cannot format invalid JSON.'
 },
 hi: {
-placeholder: '{\n "@context": "https://schema.org",\n "@type": "Article",\n "headline": "SEO गाइड 2026",\n "description": "संपूर्ण स्ट्रक्चर्ड डेटा ट्यूटोरियल"\n}',
+placeholder: '{\n  "@context": "https://schema.org",\n  "@type": "Article",\n  "headline": "SEO गाइड 2026",\n  "description": "संपूर्ण स्ट्रक्चर्ड डेटा ट्यूटोरियल"\n}',
 badgeReady: 'तैयार',
-badgeValid: 'मान्य स्कीमा',
-badgeInvalid: 'अमान्य स्कीमा',
-resultPlaceholder: 'स्ट्रक्चर्ड डेटा टेस्ट करने के लिए "Validate Schema" बटन दबाएं।',
-validateBtn: '✅ स्कीमा जांचें',
-clearBtn: '🗑️ साफ करें',
-formatBtn: '✨ फॉर्मेट करें',
-feature1: 'सिंटैक्स जांच',
-feature1Desc: 'JSON-LD सिंटैक्स, आवश्यक फ़ील्ड और schema.org संगतता की जांच करता है।',
-feature2: 'रिच स्निपेट पूर्वावलोकन',
-feature2Desc: 'देखें कि Google आपके मार्कअप को खोज परिणामों में कैसे दिखा सकता है।',
-feature3: 'द्विभाषी समर्थन',
-feature3Desc: 'अंग्रेजी और हिंदी दोनों में स्कीमा टेस्ट करें।',
-feature4: 'निजता सुरक्षित',
-feature4Desc: 'आपका डेटा प्राइवेट रहता है। कोई सर्वर नहीं, 100% क्लाइंट-साइड।'
+badgeValid: '✅ मान्य स्कीमा',
+badgeInvalid: '❌ अमान्य स्कीमा',
+resultPlaceholder: 'स्ट्रक्चर्ड डेटा टेस्ट करने के लिए "Validate Schema" पर क्लिक करें।',
+validateText: '✅ स्कीमा जांचें',
+clearText: '🗑️ साफ करें',
+formatText: '✨ फॉर्मेट करें',
+emptyWarning: '⚠️ कृपया स्कीमा मार्कअप दर्ज करें।',
+cannotFormat: 'अमान्य JSON को फॉर्मेट नहीं कर सकते।'
 }
 };
 
 let currentLang = 'en';
 
-// ----- Update UI language -----
+// ============ Language Functions ============
 function setLanguage(lang) {
 currentLang = lang;
 const t = translations[lang];
 
 schemaInput.placeholder = t.placeholder;
-validateBtn.innerHTML = t.validateBtn;
-clearBtn.innerHTML = t.clearBtn;
-formatBtn.innerHTML = t.formatBtn;
 validationBadge.textContent = t.badgeReady;
+validationBadge.className = 'validation-badge badge-ready';
+
+// Update button texts
+validateBtn.querySelector('span').textContent = t.validateText;
+clearBtn.querySelector('span').textContent = t.clearText;
+formatBtn.querySelector('span').textContent = t.formatText;
+
+// Update result if placeholder
+const currentResult = resultContent.textContent;
+const enPlaceholder = translations.en.resultPlaceholder;
+const hiPlaceholder = translations.hi.resultPlaceholder;
+if (currentResult === enPlaceholder || currentResult === hiPlaceholder) {
+resultContent.textContent = t.resultPlaceholder;
+}
 
 // Update feature cards
 const features = document.querySelectorAll('.feature-card');
 if (features.length >= 4) {
-features[0].querySelector('h4').innerHTML = '🧪 ' + t.feature1;
-features[0].querySelector('p').textContent = t.feature1Desc;
-features[1].querySelector('h4').innerHTML = '🔎 ' + t.feature2;
-features[1].querySelector('p').textContent = t.feature2Desc;
-features[2].querySelector('h4').innerHTML = '🌐 ' + t.feature3;
-features[2].querySelector('p').textContent = t.feature3Desc;
-features[3].querySelector('h4').innerHTML = '⚡ ' + t.feature4;
-features[3].querySelector('p').textContent = t.feature4Desc;
+const featureTexts = {
+en: [
+['🧪 Syntax Validation', 'Checks JSON-LD syntax, required fields, and schema.org compatibility.'],
+['🔎 Rich Snippet Preview', 'See how Google might display your markup in search results.'],
+['🌐 Bilingual Support', 'Test schema in English & Hindi — हिंदी में भी टेस्ट करें।'],
+['⚡ Zero Storage', 'Your data stays private. No uploads, no logs, 100% client-side.']
+],
+hi: [
+['🧪 सिंटैक्स जांच', 'JSON-LD सिंटैक्स, आवश्यक फ़ील्ड और schema.org संगतता की जांच करता है।'],
+['🔎 रिच स्निपेट पूर्वावलोकन', 'देखें कि Google आपके मार्कअप को खोज परिणामों में कैसे दिखा सकता है।'],
+['🌐 द्विभाषी समर्थन', 'अंग्रेजी और हिंदी दोनों में स्कीमा टेस्ट करें।'],
+['⚡ निजता सुरक्षित', 'आपका डेटा प्राइवेट रहता है। कोई सर्वर नहीं, 100% क्लाइंट-साइड।']
+]
+};
+features.forEach((card, i) => {
+if (featureTexts[lang][i]) {
+card.querySelector('h4').innerHTML = featureTexts[lang][i][0];
+card.querySelector('p').textContent = featureTexts[lang][i][1];
 }
-
-// If result is placeholder, update it
-if (resultContent.innerText.includes('Click "Validate Schema"') || resultContent.innerText.includes('स्ट्रक्चर्ड डेटा टेस्ट')) {
-resultContent.innerText = t.resultPlaceholder;
+});
 }
 
 // Update active button
 langBtns.forEach(btn => {
-btn.classList.remove('active');
-if (btn.dataset.lang === lang) btn.classList.add('active');
+btn.classList.toggle('active', btn.dataset.lang === lang);
 });
 }
 
-// ----- Language toggle event -----
 langBtns.forEach(btn => {
-btn.addEventListener('click', () => {
-setLanguage(btn.dataset.lang);
-});
+btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
 });
 
-// ----- Validation logic (core functionality) -----
+// ============ Validation Logic ============
 function validateSchema(jsonString) {
-const t = translations[currentLang];
 try {
-// 1. Parse JSON
 const parsed = JSON.parse(jsonString);
 
-// 2. Check basic schema.org required fields
 if (!parsed['@context'] || !parsed['@type']) {
 return {
 valid: false,
@@ -501,16 +710,25 @@ message: '⚠️ "@context" should be "https://schema.org" (or http).'
 };
 }
 
-// 3. Additional helpful checks (optional)
 const warnings = [];
-if (parsed['@type'] === 'Article' && !parsed.headline) {
-warnings.push('ℹ️ Article type usually benefits from a "headline" field.');
+const type = parsed['@type'];
+
+if (type === 'Article' && !parsed.headline) {
+warnings.push('ℹ️ Article usually benefits from a "headline" field.');
 }
-if (parsed['@type'] === 'Product' && !parsed.name && !parsed.description) {
-warnings.push('ℹ️ Product type should have at least "name" or "description".');
+if (type === 'Product' && !parsed.name && !parsed.description) {
+warnings.push('ℹ️ Product should have at least "name" or "description".');
+}
+if (type === 'FAQPage' && (!parsed.mainEntity || !Array.isArray(parsed.mainEntity))) {
+warnings.push('ℹ️ FAQPage should have a "mainEntity" array of Questions.');
+}
+if (type === 'BreadcrumbList' && (!parsed.itemListElement || !Array.isArray(parsed.itemListElement))) {
+warnings.push('ℹ️ BreadcrumbList should have an "itemListElement" array.');
+}
+if (type === 'Event' && !parsed.startDate) {
+warnings.push('ℹ️ Event should include a "startDate" field.');
 }
 
-// 4. Pretty print for success
 const prettyJson = JSON.stringify(parsed, null, 2);
 return {
 valid: true,
@@ -527,58 +745,57 @@ message: `❌ Invalid JSON: ${error.message}`
 }
 }
 
-// ----- Update result display -----
 function displayResult(validation) {
 const t = translations[currentLang];
 
 if (validation.valid) {
 validationBadge.textContent = t.badgeValid;
 validationBadge.className = 'validation-badge badge-valid';
-
 let output = validation.pretty || schemaInput.value;
 if (validation.warnings) {
-output = '⚠️ Warnings:\n' + validation.warnings.map(w => ' ' + w).join('\n') + '\n\n' + output;
+output = '⚠️ Suggestions:\n' + validation.warnings.map(w => '  ' + w).join('\n') + '\n\n' + output;
 }
-resultContent.innerText = output;
+resultContent.textContent = output;
 } else {
 validationBadge.textContent = t.badgeInvalid;
 validationBadge.className = 'validation-badge badge-invalid';
-resultContent.innerText = validation.message;
+resultContent.textContent = validation.message;
 }
 }
 
-// ----- Validate button click -----
+// ============ Event Listeners ============
 validateBtn.addEventListener('click', () => {
 const rawInput = schemaInput.value.trim();
-if (rawInput === '') {
-resultContent.innerText = currentLang === 'en' ? '⚠️ Please enter some schema markup.' : '⚠️ कृपया स्कीमा मार्कअप दर्ज करें।';
-validationBadge.textContent = translations[currentLang].badgeReady;
-validationBadge.className = 'validation-badge';
+const t = translations[currentLang];
+if (!rawInput) {
+resultContent.textContent = t.emptyWarning;
+validationBadge.textContent = t.badgeReady;
+validationBadge.className = 'validation-badge badge-ready';
 return;
 }
 const validation = validateSchema(rawInput);
 displayResult(validation);
 });
 
-// ----- Clear button -----
 clearBtn.addEventListener('click', () => {
+const t = translations[currentLang];
 schemaInput.value = '';
-resultContent.innerText = translations[currentLang].resultPlaceholder;
-validationBadge.textContent = translations[currentLang].badgeReady;
-validationBadge.className = 'validation-badge';
+resultContent.textContent = t.resultPlaceholder;
+validationBadge.textContent = t.badgeReady;
+validationBadge.className = 'validation-badge badge-ready';
 });
 
-// ----- Format (Pretty Print) button -----
 formatBtn.addEventListener('click', () => {
+const t = translations[currentLang];
 try {
 const parsed = JSON.parse(schemaInput.value);
 schemaInput.value = JSON.stringify(parsed, null, 2);
 } catch (e) {
-alert(currentLang === 'en' ? 'Cannot format invalid JSON.' : 'अमान्य JSON को फॉर्मेट नहीं कर सकते।');
+alert(t.cannotFormat);
 }
 });
 
-// ----- Example badges -----
+// ============ Example Data ============
 const examples = {
 article: `{
 "@context": "https://schema.org",
@@ -618,17 +835,20 @@ faq: `{
 breadcrumb: `{
 "@context": "https://schema.org",
 "@type": "BreadcrumbList",
-"itemListElement": [{
+"itemListElement": [
+{
 "@type": "ListItem",
 "position": 1,
 "name": "Home",
 "item": "https://freeseotoolhub.com"
-},{
+},
+{
 "@type": "ListItem",
 "position": 2,
 "name": "Tools",
-"item": "https://freeseotoolhub.com/tools"
-}]
+"item": "https://freeseotoolhub.com/all-tools.html"
+}
+]
 }`,
 event: `{
 "@context": "https://schema.org",
@@ -648,14 +868,17 @@ badge.addEventListener('click', () => {
 const ex = badge.dataset.example;
 if (examples[ex]) {
 schemaInput.value = examples[ex];
-// Optionally auto-validate? For better UX, we just fill, user can click validate.
+resultContent.textContent = translations[currentLang].resultPlaceholder;
+validationBadge.textContent = translations[currentLang].badgeReady;
+validationBadge.className = 'validation-badge badge-ready';
 }
 });
 });
 
-// ----- Initial language set -----
+// ============ Initialize ============
 setLanguage('en');
 })();
 </script>
+
 </body>
 </html>
