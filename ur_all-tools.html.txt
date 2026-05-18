@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPG77KWVCP"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PFPCTBFG3Y"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-ZPG77KWVCP');
+gtag('config', 'G-PFPCTBFG3Y');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Primary Meta Tags - Urdu -->
+<title>60+ بین الاقوامی اور پرو SEO ٹولز 2026 | عالمی اور ایڈوانسڈ</title>
+<meta name="title" content="60+ بین الاقوامی اور پرو SEO ٹولز 2026 | عالمی اور ایڈوانسڈ">
+<meta name="description" content="دنیا بھر کے صارفین کے لیے 60+ مفت بین الاقوامی SEO ٹولز۔ میٹا ٹیگس، پلیجیارزم چیکر، QR کوڈ، SERP تجزیہ، بیک لنک چیکر۔ 2 زمرہ جات۔ 100% مفت، بغیر سائن اپ۔">
+<meta name="keywords" content="بین الاقوامی seo ٹولز, عالمی seo ٹولز, پروفیشنل seo ٹولز, ایڈوانسڈ seo ٹولز, میٹا ٹیگ جنریٹر, پلیجیارزم چیکر, qr کوڈ جنریٹر, بیک لنک چیکر, serp چیکر">
+<meta name="author" content="FreeSEOToolHub">
+<meta name="robots" content="index, follow, max-image-preview:large">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://freeseotoolhub.com/ur/all-tools.html">
+<meta property="og:title" content="60+ بین الاقوامی اور پرو SEO ٹولز 2026 | FreeSEOToolHub">
+<meta property="og:description" content="2 زمرہ جات میں 60+ مفت SEO ٹولز۔ دنیا بھر کے لیے بین الاقوامی ٹولز اور SEO ماہرین کے لیے پروفیشنل ٹولز۔">
+<meta property="og:image" content="https://freeseotoolhub.com/images/og-alltools-2026.jpg">
+<meta property="og:locale" content="ur_PK">
+<meta property="og:site_name" content="Free SEO Tool Hub">
+
+<!-- Canonical & Hreflang -->
+<link rel="canonical" href="https://freeseotoolhub.com/ur/all-tools.html">
+<link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/hi/all-tools.html">
+<link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/en/all-tools.html">
+<link rel="alternate" hreflang="ur" href="https://freeseotoolhub.com/ur/all-tools.html">
+<link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/de/all-tools.html">
+<link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/es/all-tools.html">
+<link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/en/all-tools.html">
+
+<!-- Bootstrap & Fonts -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins','Noto Nastaliq Urdu',sans-serif; }
+body { background:linear-gradient(135deg,#f8fafc 0%,#f1f5f9 100%); color:#333; padding-top:80px; direction:rtl; }
+
+.navbar { background:linear-gradient(135deg,#1e2b4f 0%,#2d3b68 100%); box-shadow:0 4px 20px rgba(0,0,0,0.15); }
+.navbar-brand { font-weight:700; font-size:1.4rem; color:white!important; }
+.nav-link { color:rgba(255,255,255,0.9)!important; font-weight:500; padding:10px 18px!important; border-radius:8px; transition:all 0.3s; }
+.nav-link:hover, .nav-link.active { background:rgba(255,255,255,0.15); color:white!important; }
+
+.lang-switch { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 8px 16px; border-radius: 25px; cursor: pointer; font-size: 0.9rem; font-weight: 500; transition: all 0.3s; }
+.lang-switch:hover { background: rgba(255,255,255,0.2); }
+.dropdown-menu { background: #1e2b4f; border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 8px 0; margin-top: 10px; min-width: 180px; text-align:right; }
+.dropdown-item { color: rgba(255,255,255,0.9); padding: 10px 20px; font-weight: 500; transition: all 0.2s; }
+.dropdown-item:hover { background: rgba(255,255,255,0.1); color: white; }
+.dropdown-item.active { background: rgba(255,153,51,0.25); color: #ff9933; font-weight: 600; }
+
+.header {
+background:linear-gradient(145deg,#1e2b4f 0%,#2d3b68 100%);
+color:white; padding:50px 30px; border-radius:30px; margin-bottom:40px;
+text-align:center; box-shadow:0 20px 40px rgba(0,20,50,0.3); position:relative; overflow:hidden;
+}
+.header::before { content:''; position:absolute; top:-50%; left:-10%; width:400px; height:400px; background:rgba(255,153,0,0.1); border-radius:50%; }
+.header h1 { font-size:2.2rem; margin-bottom:15px; font-weight:800; position:relative; z-index:1; }
+.header p { font-size:1.1rem; opacity:0.95; max-width:800px; margin:0 auto 20px; position:relative; z-index:1; }
+
+.search-section { max-width:800px; margin:0 auto 40px; }
+.search-box { position:relative; }
+.search-box i { position:absolute; right:20px; top:50%; transform:translateY(-50%); color:#94a3b8; z-index:10; font-size:1.2rem; }
+.search-box input {
+border-radius:50px; padding:18px 55px 18px 25px; font-size:1.1rem;
+border:2px solid #e2e8f0; width:100%; box-shadow:0 5px 20px rgba(0,0,0,0.05); text-align:right;
+}
+.search-box input:focus { border-color:#4361ee; box-shadow:0 0 0 4px rgba(67,97,238,0.1); outline:none; }
+
+.filter-section { margin-bottom:30px; }
+.filter-btn {
+margin:5px; padding:12px 24px; border-radius:50px; font-weight:600;
+border:2px solid #e2e8f0; background:white; transition:all 0.3s; cursor:pointer; font-size:0.95rem;
+}
+.filter-btn:hover { transform:translateY(-2px); box-shadow:0 5px 15px rgba(0,0,0,0.1); }
+.filter-btn.active { background:linear-gradient(135deg,#4361ee 0%,#3a0ca3 100%); color:white; border-color:transparent; }
+.filter-btn[data-filter="global"]:hover, .filter-btn[data-filter="global"].active { background:linear-gradient(135deg,#3b82f6,#2563eb); }
+.filter-btn[data-filter="pro"]:hover, .filter-btn[data-filter="pro"].active { background:linear-gradient(135deg,#8b5cf6,#7c3aed); }
+
+.tool-card {
+background:white; border-radius:20px; padding:25px; height:100%;
+box-shadow:0 10px 25px rgba(0,0,0,0.03); border:1px solid #eef2f6;
+transition:all 0.25s; position:relative; overflow:hidden; cursor:pointer; text-align:right;
+}
+.tool-card:hover { transform:translateY(-6px); box-shadow:0 20px 35px rgba(30,43,79,0.15); }
+.tool-card.global { border-top:4px solid #3b82f6; }
+.tool-card.pro { border-top:4px solid #8b5cf6; }
+
+.tool-badge { position:absolute; top:15px; left:15px; z-index:10; }
+.tool-icon {
+width:60px; height:60px; background:linear-gradient(135deg,#4361ee 0%,#3a0ca3 100%);
+border-radius:16px; display:flex; align-items:center; justify-content:center;
+color:white; font-size:1.8rem; margin-bottom:20px;
+}
+.tool-card.global .tool-icon { background:linear-gradient(135deg,#3b82f6,#2563eb); }
+.tool-card.pro .tool-icon { background:linear-gradient(135deg,#8b5cf6,#7c3aed); }
+
+.tool-card h3 { font-size:1.15rem; margin-bottom:10px; color:#0b1a33; font-weight:700; line-height:1.4; }
+.tool-card p { color:#4a5a72; font-size:0.9rem; margin-bottom:15px; line-height:1.5; }
+.tool-tags { margin:12px 0; }
+.tool-tags .badge { margin-left:5px; margin-bottom:5px; padding:6px 12px; font-size:0.75rem; font-weight:500; }
+.btn-primary {
+background:linear-gradient(135deg,#4361ee 0%,#3a0ca3 100%);
+border:none; border-radius:50px; padding:10px 25px; font-weight:600; width:100%; transition:all 0.3s;
+}
+.btn-primary:hover { transform:translateY(-2px); box-shadow:0 8px 20px rgba(67,97,238,0.3); }
+
+.category-header {
+margin:45px 0 25px; padding-bottom:12px; position:relative;
+color:#0b1a33; font-weight:800; font-size:1.8rem;
+display:flex; align-items:center; gap:12px; flex-wrap:wrap;
+}
+.category-header::after { content:''; position:absolute; bottom:0; right:0; height:4px; border-radius:2px; width:80px; }
+.category-header.global-border::after { background:#3b82f6; width:120px; }
+.category-header.pro-border::after { background:#8b5cf6; width:120px; }
+
+.category-badge { font-size:0.85rem; padding:6px 18px; border-radius:25px; color:white; font-weight:600; white-space:nowrap; }
+.category-badge.global-badge { background:#3b82f6; }
+.category-badge.pro-badge { background:#8b5cf6; }
+
+.status-badge { display:inline-block; padding:5px 12px; border-radius:20px; font-size:0.72rem; font-weight:600; margin-bottom:10px; }
+.status-new { background:#dbeafe; color:#1e40af; }
+.status-hot { background:#fee2e2; color:#991b1b; }
+.status-live { background:#d1fae5; color:#065f46; }
+
+.stats-container {
+display:flex; justify-content:center; gap:30px; flex-wrap:wrap; margin:30px 0; position:relative; z-index:1;
+}
+.stat-item {
+text-align:center; background:rgba(255,255,255,0.1); padding:20px;
+border-radius:16px; min-width:140px; backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,0.15);
+}
+.stat-item h3 { font-size:2rem; color:#ff9933; margin-bottom:5px; font-weight:700; }
+.stat-item p { font-size:0.85rem; opacity:0.9; }
+
+.no-results { text-align:center; padding:60px; background:white; border-radius:30px; display:none; margin:30px 0; }
+
+.category-desc {
+background:white; padding:20px 25px; border-radius:16px; margin-bottom:25px;
+border-right:5px solid #4361ee; display:flex; align-items:center; gap:15px;
+box-shadow:0 5px 15px rgba(0,0,0,0.03); text-align:right;
+}
+.category-desc p { margin:0; color:#4a5a72; font-size:0.95rem; line-height:1.6; }
+.category-desc i { font-size:2rem; }
+
+footer { background:#0f1a2f; color:white; margin-top:60px; padding:50px 0 20px; text-align:right; }
+footer a { color:#b0c4de; text-decoration:none; transition:color 0.3s; }
+footer a:hover { color:#ff9933; }
+footer h5 { color:white; font-weight:700; margin-bottom:15px; }
+
+@media (max-width:768px) {
+.header h1 { font-size:1.6rem; }
+.category-header { font-size:1.3rem; }
+.stats-container { gap:15px; }
+.stat-item { min-width:100px; padding:15px; }
+.filter-btn { padding:10px 18px; font-size:0.85rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- Navigation with Language Switcher -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+<div class="container">
+<a class="navbar-brand" href="/ur/"><i class="fas fa-tools me-2"></i>FreeSEOToolHub</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="ٹوگل نیویگیشن">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav ms-auto align-items-lg-center">
+<li class="nav-item"><a class="nav-link" href="/ur/"><i class="fas fa-home me-1"></i> ہوم</a></li>
+<li class="nav-item"><a class="nav-link active" href="/ur/all-tools.html"><i class="fas fa-th-large me-1"></i> تمام ٹولز</a></li>
+<li class="nav-item"><a class="nav-link" href="/ur/about.html"><i class="fas fa-info-circle me-1"></i> ہمارے بارے میں</a></li>
+<li class="nav-item"><a class="nav-link" href="/ur/blog/"><i class="fas fa-blog me-1"></i> بلاگ</a></li>
+<li class="nav-item"><a class="nav-link" href="/ur/contact.html"><i class="fas fa-envelope me-1"></i> رابطہ</a></li>
+<li class="nav-item dropdown ms-2">
+<button class="lang-switch dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">🌐 اردو</button>
+<ul class="dropdown-menu dropdown-menu-end">
+<li><a class="dropdown-item" href="/hi/all-tools.html">🇮🇳 हिन्दी</a></li>
+<li><a class="dropdown-item" href="/en/all-tools.html">🇺🇸 English</a></li>
+<li><a class="dropdown-item active" href="/ur/all-tools.html">🇵🇰 اردو</a></li>
+<li><a class="dropdown-item" href="/de/all-tools.html">🇩🇪 Deutsch</a></li>
+<li><a class="dropdown-item" href="/es/all-tools.html">🇪🇸 Español</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+
+<div class="container">
+<!-- Header -->
+<div class="header">
+<h1>🚀 بین الاقوامی اور پروفیشنل SEO ٹولز (2026)</h1>
+<p>دنیا بھر کے صارفین، بلاگرز، ڈویلپرز اور SEO ماہرین کے لیے 2 پروفیشنل زمرہ جات میں 60+ مفت SEO ٹولز۔ تمام ٹولز 100% مفت، کوئی رجسٹریشن ضروری نہیں۔</p>
+
+<div class="stats-container">
+<div class="stat-item"><h3 id="totalToolCount">60</h3><p>کل ٹولز</p></div>
+<div class="stat-item"><h3 id="globalToolCount">42</h3><p>🌍 بین الاقوامی SEO ٹولز</p></div>
+<div class="stat-item"><h3 id="proToolCount">18</h3><p>🚀 پروفیشنل SEO ٹولز</p></div>
+</div>
+</div>
+
+<!-- Search -->
+<div class="search-section">
+<div class="search-box">
+<i class="fas fa-search"></i>
+<input type="text" id="toolSearch" placeholder="🔍 ٹولز تلاش کریں... (میٹا ٹیگ، پلیجیارزم، QR کوڈ، بیک لنک، SERP، کیورڈ)...">
+</div>
+</div>
+
+<!-- Filter Buttons -->
+<div class="filter-section text-center">
+<button class="filter-btn active" data-filter="all">📋 تمام ٹولز (60+)</button>
+<button class="filter-btn" data-filter="global">🌍 بین الاقوامی SEO ٹولز (42)</button>
+<button class="filter-btn" data-filter="pro">🚀 پروفیشنل SEO ٹولز (18)</button>
+<button class="filter-btn" data-filter="hot">🔥 ٹرینڈنگ 2026</button>
+</div>
+
+<div class="no-results" id="noResults">
+<i class="fas fa-search fa-3x mb-3" style="color:#94a3b8;"></i>
+<h3>کوئی ٹول نہیں ملا</h3>
+<p>مختلف کلیدی الفاظ آزمائیں یا اوپر دیے گئے فلٹرز استعمال کریں</p>
+</div>
+
+<!-- ========================================== -->
+<!-- 🌍 CATEGORY 1: بین الاقوامی SEO ٹولز -->
+<!-- ========================================== -->
+<div class="category-header global-border">
+<span class="category-badge global-badge">🌍 بین الاقوامی SEO ٹولز</span> عالمی ٹولز - کوئی علاقائی حد نہیں
+</div>
+<div class="category-desc" style="border-right-color:#3b82f6;">
+<i class="fas fa-globe" style="color:#3b82f6;"></i>
+<p><strong>دنیا بھر کے صارفین کے لیے:</strong> یہ عالمی SEO ٹولز عالمگیر طور پر کام کرتے ہیں — کوئی علاقائی پابندی نہیں۔ بلاگرز، ویب ماسٹرز، ڈویلپرز اور US، UK، یورپ اور پوری دنیا کے SEO پروفیشنلز کے لیے بہترین۔ میٹا ٹیگ جنریٹر، پلیجیارزم چیکر اور QR کوڈ جنریٹر جیسے اعلیٰ مانگ والے ٹولز شامل ہیں۔</p>
+</div>
+
+<div class="row g-4 mb-5">
+<!-- 42 Global Tools in Urdu -->
+<div class="col-md-4 col-lg-3">
+<div class="tool-card global hot">
+<div class="tool-badge"><span class="badge bg-danger text-white">🔥 #1</span></div>
+<div class="tool-icon"><i class="fas fa-code"></i></div>
+<span class="status-badge status-hot">50K+ سرچ</span>
+<h3>میٹا ٹیگ جنریٹر</h3>
+<p>SEO میٹا ٹیگس، اوپن گراف اور ٹوئٹر کارڈز جنریٹ کریں۔ 2026 اپڈیٹڈ۔</p>
+<div class="tool-tags"><span class="badge bg-primary">SEO</span><span class="badge bg-info">سوشل</span></div>
+<a href="/ur/meta-tag-generator.html" class="btn btn-primary mt-3">ٹیگس جنریٹ کریں</a>
+</div>
+</div>
+<div class="col-md-4 col-lg-3">
+<div class="tool-card global hot">
+<div class="tool-badge"><span class="badge bg-danger text-white">🔥 #2</span></div>
+<div class="tool-icon"><i class="fas fa-copy"></i></div>
+<span class="status-badge status-hot">80K+ سرچ</span>
+<h3>پلیجیارزم چیکر</h3>
+<p>مواد کی اصلیت چیک کریں۔ رائٹرز اور طلباء کے لیے ضروری۔</p>
+<div class="tool-tags"><span class="badge bg-success">مواد</span><span class="badge bg-warning text-dark">تعلیمی</span></div>
+<a href="/ur/plagiarism-checker.html" class="btn btn-primary mt-3">ابھی چیک کریں</a>
+</div>
+</div>
+<div class="col-md-4 col-lg-3">
+<div class="tool-card global hot">
+<div class="tool-badge"><span class="badge bg-danger text-white">🔥 #3</span></div>
+<div class="tool-icon"><i class="fas fa-qrcode"></i></div>
+<span class="status-badge status-hot">200K+ سرچ</span>
+<h3>QR کوڈ جنریٹر</h3>
+<p>URLs، ٹیکسٹ، WiFi، vCards اور مزید کے لیے حسب ضرورت QR کوڈ بنائیں۔</p>
+<div class="tool-tags"><span class="badge bg-dark">QR</span><span class="badge bg-primary">مارکیٹنگ</span></div>
+<a href="/ur/qr-code-generator.html" class="btn btn-primary mt-3">QR جنریٹ کریں</a>
+</div>
+</div>
+<div class="col-md-4 col-lg-3">
+<div class="tool-card global">
+<div class="tool-icon"><i class="fas fa-crown"></i></div>
+<span class="status-badge status-live">مقبول</span>
+<h3>ڈومین اتھارٹی چیکر</h3>
+<p>DA/PA اسکور چیک کریں۔ Moz-بیسڈ ڈومین طاقت کا تجزیہ۔</p>
+<div class="tool-tags"><span class="badge bg-info">DA PA</span></div>
+<a href="/ur/domain-authority-checker.html" class="btn btn-primary mt-3">DA چیک کریں</a>
+</div>
+</div>
+
+<div class="col-md-4 col-lg-3">
+<div class="tool-card global"><div class="tool-icon"><i class="fas fa-link"></i></div><span class="status-badge status-live">SEO</span><h3>بیک لنک چیکر</h3><p>بیک لنک پروفائل کا تجزیہ کریں۔ جانیں کون آپ کی سائٹ سے لنک کر رہا ہے۔</p><a href="/ur/backlink-checker.html" class="btn btn-primary mt-3">بیک لنکس چیک کریں</a></div>
+</div>
+<div class="col-md-4 col-lg-3">
+<div class="tool-card global"><div class="tool-icon"><i class="fas fa-unlink"></i></div><span class="status-badge status-live">سائٹ آڈٹ</span><h3>ٹوٹے لنک چیکر</h3><p>کسی بھی ویب سائٹ پر 404 ایررز اور ڈیڈ لنکس تلاش کریں۔</p><a href="/ur/broken-link-checker.html" class="btn btn-primary mt-3">ٹوٹے لنک تلاش کریں</a></div>
+</div>
+<div class="col-md-4 col-lg-3">
+<div class="tool-card global"><div class="tool-icon"><i class="fas fa-compress-alt"></i></div><span class="status-badge status-live">تصاویر</span><h3>تصویر کمپریسر</h3><p>JPG، PNG، WebP تصاویر کمپریس کریں۔ فائل سائز گھٹائیں، کوالٹی برقرار رکھیں۔</p><a href="/ur/image-compressor.html" class="btn btn-primary mt-3">تصاویر کمپریس کریں</a></div>
+</div>
+<div class="col-md-4 col-lg-3">
+<div class="tool-card global"><div class="tool-icon"><i class="fas fa-shield-alt"></i></div><span class="status-badge status-live">سیکیورٹی</span><h3>SSL چیکر</h3><p>SSL سرٹیفکیٹ کی میعاد اور معیاد ختم ہونے کی تاریخ چیک کریں۔</p><a href="/ur/ssl-checker.html" class="btn btn-primary mt-3">SSL چیک کریں</a></div>
+</div>
+
+<div class="col-md-4 col-lg-3">
+<div class="tool-card global"><div class="tool-icon"><i class="fas fa-link"></i></div><span class="status-badge status-live">URL</span><h3>URL انکوڈر/ڈیکوڈر</h3><p>URL کو انکوڈ اور ڈیکوڈ کریں۔ ڈویلپرز کے لیے ضروری ٹول۔</p><a href="/ur/url-encoder.html" class="btn btn-primary mt-3">URL انکوڈ کریں</a></div>
+</div>
+<div class="col-md-4 col-lg-3">
+<div class="tool-card global"><div class="tool-icon"><i class="fas fa-globe"></i></div><span class="status-badge status-live">ڈومین</span><h3>ڈومین چیکر</h3><p>ڈومین کی دستیابی اور رجسٹریشن کی تفصیلات چیک کریں۔</p><a href="/ur/domain-checker.html" class="btn btn-primary mt-3">ڈومین چیک کریں</a></div>
+</div>
+<div class="col-md-4 col-lg-3">
+<div class="tool-card global"><div class="tool-icon"><i class="fas fa-code"></i></div><span class="status-badge status-new">سکیما</span><h3>سکیما مارک اپ جنریٹر</h3><p>رچ اسنیپٹس کے لیے JSON-LD اسٹرکچرڈ ڈیٹا بنائیں۔</p><a href="/ur/schema-markup-generator.html" class="btn btn-primary mt-3">سکیما جنریٹ کریں</a></div>
+</div>
+<div class="col-md-4 col-lg-3">
+<div class="tool-card global"><div class="tool-icon"><i class="fas fa-spell-check"></i></div><span class="status-badge status-live">رائٹنگ</span><h3>گرامر اور سپیل چیکر</h3><p>گرامر، اسپیلنگ اور اوقاف کی غلطیاں چیک کریں۔</p><a href="/ur/grammar-spell-checker.html" class="btn btn-primary mt-3">گرامر چیک کریں</a></div>
+</div>
+
+<div class="col-md-4 col-lg-3">
+<div class="tool-card global"><div class="tool-icon"><i class="fas fa-pen-fancy"></i></div><span class="status-badge status-new">AI</span><h3>پیرافریزنگ ٹول</h3><p>AI کے ساتھ مواد دوبارہ لکھیں۔ پلیجیارزم سے بچیں، پڑھنے کی صلاحیت بہتر بنائیں۔</p><a href="/ur/paraphrasing-tool.html" class="btn btn-primary mt-3">پیرافریز کریں</a></div>
+</div>
+<div class="col-md-4 col-lg-3">
+<div class="tool-card global"><div class="tool-icon"><i class="fas fa-heading"></i></div><span class="status-badge status-new">مواد</span><h3>ہیڈنگ ہیڈلائن اینالائزر</h3><p>اپنی ہیڈلائنز کو اسکور کریں۔ بہتر CTR کے لیے ٹائٹل بہتر بنائیں۔</p><a href="/ur/heading-headline-analyzer.html" class="btn btn-primary mt-3">ہیڈلائن اینالائز کریں</a></div>
+</div>
+<div class="col-md-4 col-lg-3">
+<div class="tool-card global"><div class="tool-icon"><i class="fas fa-chart-bar"></i></div><span class="status-badge status-live">کلیدی الفاظ</span><h3>کلیدی الفاظ کی کثافت چیکر</h3><p>کسی بھی صفحے پر کلیدی الفاظ کی کثافت اور تعدد کا تجزیہ کریں۔</p><a href="/ur/keyword-density.html" class="btn btn-primary mt-3">کثافت چیک کریں</a></div>
+</div>
+<div class="col-md-4 col-lg-3">
+<div class="tool-card global"><div class="tool-icon"><i class="fas fa-tachometer-alt"></i></div><span class="status-badge status-live">اسپیڈ</span><h3>ویب سائٹ اسپیڈ ٹیسٹ</h3><p>صفحہ لوڈ ٹائم اور کارکردگی میٹرکس ٹیسٹ کریں۔</p><a href="/ur/website-speed-test.html" class="btn btn-primary mt-3">اسپیڈ ٹیسٹ کریں</a></div>
+</div>
+
+<div class="col-md-4 col-lg-3">
+<div class="tool-card global"><div class="tool-icon"><i class="fas fa-sitemap"></i></div><span class="status-badge status-new">XML</span><h3>XML سائٹ میپ جنریٹر</h3><p>بہتر انڈیکسنگ کے لیے XML سائٹ میپ جنریٹ کریں۔</p><a href="/ur/sitemap-generator.html" class="btn btn-primary mt-3">سائٹ میپ جنریٹ کریں</a></div>
+</div>
+<div class="col-md-4 col-lg-3">
+<div class="tool-card global"><div class="tool-icon"><i class="fas fa-redo-alt"></i></div><span class="status-badge status-new">تکنیکی</span><h3>ری ڈائریکٹ چین چیکر</h3><p>ری ڈائریکٹ چینز اور لوپس تلاش کریں۔ SEO مسائل ٹھیک کریں۔</p><a href="/ur/redirect-chain-checker.html" class="btn btn-primary mt-3">ری ڈائریکٹ چیک کریں</a></div>
+</div>
+<div class="col-md-4 col-lg-3">
+<div class="tool-card global"><div class="tool-icon"><i class="fas fa-book-reader"></i></div><span class="status-badge status-new">پڑھائی</span><h3>پڑھنے کی اہلیت اسکور چیکر</h3><p>Flesch-Kincaid پڑھنے کی آسانی۔ مواد کی پڑھنے کی صلاحیت بہتر بنائیں۔</p><a href="/ur/readability-score-checker.html" class="btn btn-primary mt-3">اسکور چیک کریں</a></div>
+</div>
+<div class="col-md-4 col-lg-3">
+<div class="tool-card global"><div class="tool-icon"><i class="fas fa-image"></i></div><span class="status-badge status-new">تصاویر</span><h3>تصویر آلٹ جنریٹر</h3><p>تصاویر کے لیے SEO-فرینڈلی آلٹ ٹیکسٹ جنریٹ کریں۔</p><a href="/ur/image-alt-generator.html" class="btn btn-primary mt-3">آلٹ ٹیکسٹ جنریٹ کریں</a></div>
+</div>
+
+<div class="col-md-4 col-lg-3">
+<div class="tool-card global"><div class="tool-icon"><i class="fas fa-redo"></i></div><span class="status-badge status-new">کینونیکل</span><h3>کینونیکل URL چیکر</h3><p>کینونیکل ٹیگس چیک کریں۔ ڈپلیکیٹ مواد کے مسائل روکیں۔</p><a href="/ur/canonical-url-checker.html" class="btn btn-primary mt-3">کینونیکل چیک کریں</a></div>
+</div>
+<div class="col-md-4 col-lg-3">
+<div class="tool-card global"><div class="tool-icon"><i class="fas fa-code"></i></div><span class="status-badge status-new">HREFLANG</span><h3>Hreflang جنریٹر</h3><p>کثیر لسانی سائٹس کے لیے hreflang ٹیگس جنریٹ کریں۔</p><a href="/ur/hreflang-generator.html" class="btn btn-primary mt-3">Hreflang جنریٹ کریں</a></div>
+</div>
+<div class="col-md-4 col-lg-3">
+<div class="tool-card global"><div class="tool-icon"><i class="fas fa-mobile-alt"></i></div><span class="status-badge status-new">موبائل</span><h3>ریسپانسیو ٹیسٹر</h3><p>مختلف اسکرین سائز پر ویب سائٹ ٹیسٹ کریں۔</p><a href="/ur/responsive-tester.html" class="btn btn-primary mt-3">ریسپانسیو ٹیسٹ کریں</a></div>
+</div>
+<div class="col-md-4 col-lg-3">
+<div class="tool-card global"><div class="tool-icon"><i class="fas fa-file-csv"></i></div><span class="status-badge status-new">ڈیٹا</span><h3>CSV سارٹر</h3><p>CSV فائلوں کو آن لائن سارٹ، فلٹر اور منظم کریں۔</p><a href="/ur/csv-sorter.html" class="btn btn-primary mt-3">CSV سارٹ کریں</a></div>
+</div>
+
+<div class="col-md-4 col-lg-3">
+<div class="tool-card global"><div class="tool-icon"><i class="fas fa-heading"></i></div><span class="status-badge status-new">اسٹرکچر</span><h3>ہیڈنگ اسٹرکچر ویلیڈیٹر</h3><p>SEO کے لیے H1-H6 ہیڈنگ کی درجہ بندی کی تصدیق کریں۔</p><a href="/ur/heading-structure-validator.html" class="btn btn-primary mt-3">تصدیق کریں</a></div>
+</div>
+<div class="col-md-4 col-lg-3">
+<div class="tool-card global"><div class="tool-icon"><i class="fas fa-code"></i></div><span class="status-badge status-new">ٹیسٹ</span><h3>سکیما اسٹرکچرڈ ڈیٹا ٹیسٹر</h3><p>سکیما مارک اپ کوڈ ٹیسٹ اور تصدیق کریں۔</p><a href="/ur/schema-structured-data-tester.html" class="btn btn-primary mt-3">سکیما ٹیسٹ کریں</a></div>
+</div>
+<div class="col-md-4 col-lg-3">
+<div class="tool-card global"><div class="tool-icon"><i class="fas fa-hashtag"></i></div><span class="status-badge status-new">سوشل</span><h3>ہیش ٹیگ جنریٹر</h3><p>سوشل میڈیا کے لیے ٹرینڈنگ ہیش ٹیگ جنریٹ کریں۔</p><a href="/ur/hashtag-generator.html" class="btn btn-primary mt-3">ہیش ٹیگ جنریٹ کریں</a></div>
+</div>
+</div>
+
+<!-- ========================================== -->
+<!-- 🚀 CATEGORY 2: پروفیشنل SEO ٹولز -->
+<!-- ========================================== -->
+<div class="category-header pro-border">
+<span class="category-badge pro-badge">🚀 پروفیشنل SEO ٹولز</span> ماہرین کے لیے ایڈوانسڈ ٹولز
+</div>
+<div class="category-desc" style="border-right-color:#8b5cf6;">
+<i class="fas fa-chart-line" style="color:#8b5cf6;"></i>
+<p><strong>SEO پروفیشنلز اور ایجنسیوں کے لیے:</strong> حریف تجزیہ، SERP ٹریکنگ، کور ویب وائٹلز مانیٹرنگ، INP ٹریکنگ اور مواد کے فرق کے تجزیے کے لیے ایڈوانسڈ پروفیشنل SEO ٹولز۔ یہ مفت پروفیشنل-گریڈ ٹولز کی تلاش میں بین الاقوامی SEO ماہرین کے لیے "سونا" ہیں۔</p>
+</div>
+
+<div class="row g-4 mb-5">
+<!-- 18 Pro Tools in Urdu -->
+<div class="col-md-4 col-lg-3">
+<div class="tool-card pro hot">
+<div class="tool-badge"><span class="badge bg-danger text-white">🔥 PRO</span></div>
+<div class="tool-icon"><i class="fas fa-star"></i></div>
+<span class="status-badge status-hot">ضروری</span>
+<h3>SERP فیچر چیکر</h3>
+<p>SERP فیچرز کا تجزیہ کریں۔ فیچرڈ اسنیپٹس، PAA، نالج پینل۔</p>
+<div class="tool-tags"><span class="badge bg-warning text-dark">SERP</span></div>
+<a href="/ur/serp-feature-checker.html" class="btn btn-primary mt-3">SERP چیک کریں</a>
+</div>
+</div>
+<div class="col-md-4 col-lg-3">
+<div class="tool-card pro hot">
+<div class="tool-icon"><i class="fas fa-chart-pie"></i></div>
+<span class="status-badge status-hot">حکمت عملی</span>
+<h3>مواد کے فرق کا تجزیہ کار</h3>
+<p>حریفوں کے مقابلے میں مواد کے فرق تلاش کریں۔ تزویراتی مواقع۔</p>
+<div class="tool-tags"><span class="badge bg-info">فرق تجزیہ</span></div>
+<a href="/ur/content-gap-analyzer.html" class="btn btn-primary mt-3">فرق تلاش کریں</a>
+</div>
+</div>
+<div class="col-md-4 col-lg-3">
+<div class="tool-card pro hot">
+<div class="tool-icon"><i class="fas fa-tachometer-alt"></i></div>
+<span class="status-badge status-hot">CWV 2026</span>
+<h3>کور ویب وائٹلز مانیٹر</h3>
+<p>LCP، INP، CLS ٹریک کریں۔ گوگل رینکنگ کے لیے ضروری۔</p>
+<div class="tool-tags"><span class="badge bg-success">CWV</span></div>
+<a href="/ur/core-web-vitals-monitor.html" class="btn btn-primary mt-3">CWV مانیٹر کریں</a>
+</div>
+</div>
+<div class="col-md-4 col-lg-3">
+<div class="tool-card pro">
+<div class="tool-icon"><i class="fas fa-bolt"></i></div>
+<span class="status-badge status-hot">INP 2026</span>
+<h3>INP مانیٹر</h3>
+<p>انٹریکشن ٹو نیکسٹ پینٹ مانیٹرنگ۔ نیا کور ویب وائٹل 2026۔</p>
+<div class="tool-tags"><span class="badge bg-danger">INP</span></div>
+<a href="/ur/inp-monitor.html" class="btn btn-primary mt-3">INP ٹریک کریں</a>
+</div>
+</div>
+
+<div class="col-md-4 col-lg-3">
+<div class="tool-card pro"><div class="tool-icon"><i class="fas fa-chart-line"></i></div><span class="status-badge status-live">اینالیٹکس</span><h3>ٹریفک اینالائزر</h3><p>ویب سائٹ ٹریفک کا تجزیہ کریں۔ حریف ٹریفک کا تخمینہ۔</p><a href="/ur/traffic-analyzer.html" class="btn btn-primary mt-3">ٹریفک اینالائز کریں</a></div>
+</div>
+<div class="col-md-4 col-lg-3">
+<div class="tool-card pro"><div class="tool-icon"><i class="fas fa-search"></i></div><span class="status-badge status-live">حریف</span><h3>حریف SERP اینالائزر</h3><p>ٹاپ 10 رینکنگ صفحات کا تجزیہ۔ کامیابی کو ریورس انجینئر کریں۔</p><a href="/ur/competitor-serp-analyzer.html" class="btn btn-primary mt-3">حریف اینالائز کریں</a></div>
+</div>
+<div class="col-md-4 col-lg-3">
+<div class="tool-card pro"><div class="tool-icon"><i class="fas fa-chart-pie"></i></div><span class="status-badge status-hot">نیا 2026</span><h3>GSC ڈیٹا ویژولائزر</h3><p>انٹرایکٹو چارٹس کے ساتھ گوگل سرچ کنسول ڈیٹا ویژولائز کریں۔</p><a href="/ur/gsc-visualizer.html" class="btn btn-primary mt-3">GSC ویژولائز کریں</a></div>
+</div>
+<div class="col-md-4 col-lg-3">
+<div class="tool-card pro"><div class="tool-icon"><i class="fas fa-tachometer-alt"></i></div><span class="status-badge status-live">کلیدی الفاظ</span><h3>کلیدی الفاظ کی مشکل چیکر</h3><p>رینکنگ کی مشکل چیک کریں۔ آسان رینک والے کلیدی الفاظ تلاش کریں۔</p><a href="/ur/keyword-difficulty-checker.html" class="btn btn-primary mt-3">مشکل چیک کریں</a></div>
+</div>
+
+<div class="col-md-4 col-lg-3">
+<div class="tool-card pro"><div class="tool-icon"><i class="fas fa-chart-bar"></i></div><span class="status-badge status-live">فرق</span><h3>کلیدی الفاظ کا فرق اینالائزر</h3><p>حریفوں سے کلیدی الفاظ کا موازنہ کریں۔ گمشدہ کلیدی الفاظ تلاش کریں۔</p><a href="/ur/keyword-gap-analyzer.html" class="btn btn-primary mt-3">کلیدی الفاظ موازنہ کریں</a></div>
+</div>
+<div class="col-md-4 col-lg-3">
+<div class="tool-card pro"><div class="tool-icon"><i class="fas fa-star"></i></div><span class="status-badge status-live">SERP</span><h3>SERP فیچرز اینالائزر</h3><p>کسی بھی کلیدی لفظ کے لیے تفصیلی SERP فیچر تجزیہ۔</p><a href="/ur/serp-features.html" class="btn btn-primary mt-3">SERP اینالائز کریں</a></div>
+</div>
+<div class="col-md-4 col-lg-3">
+<div class="tool-card pro"><div class="tool-icon"><i class="fas fa-wave-square"></i></div><span class="status-badge status-new">اتار چڑھاؤ</span><h3>SERP اتار چڑھاؤ چیکر</h3><p>SERP تبدیلیاں ٹریک کریں۔ گوگل الگورتھم اپڈیٹس کا پتہ لگائیں۔</p><a href="/ur/serp-volatility.html" class="btn btn-primary mt-3">اتار چڑھاؤ چیک کریں</a></div>
+</div>
+<div class="col-md-4 col-lg-3">
+<div class="tool-card pro"><div class="tool-icon"><i class="fas fa-file-alt"></i></div><span class="status-badge status-new">لاگز</span><h3>لاگ اینالائزر</h3><p>سرور لاگز کا تجزیہ کریں۔ گوگل بوٹ کرال رویے کو سمجھیں۔</p><a href="/ur/log-analyzer.html" class="btn btn-primary mt-3">لاگ اینالائز کریں</a></div>
+</div>
+
+<div class="col-md-4 col-lg-3">
+<div class="tool-card pro"><div class="tool-icon"><i class="fas fa-link"></i></div><span class="status-badge status-new">انٹرنل</span><h3>انٹرنل لنک تجویز کنندہ</h3><p>SEO کے لیے سمارٹ انٹرنل لنکنگ تجاویز۔</p><a href="/ur/internal-link-suggester.html" class="btn btn-primary mt-3">تجاویز حاصل کریں</a></div>
+</div>
+<div class="col-md-4 col-lg-3">
+<div class="tool-card pro"><div class="tool-icon"><i class="fas fa-share-alt"></i></div><span class="status-badge status-new">سوشل</span><h3>شیئر آف وائس کیلکولیٹر</h3><p>تلاش میں حریفوں کے مقابلے برانڈ ویزیبلٹی کیلکولیٹ کریں۔</p><a href="/ur/share-of-voice-calculator.html" class="btn btn-primary mt-3">SOV کیلکولیٹ کریں</a></div>
+</div>
+<div class="col-md-4 col-lg-3">
+<div class="tool-card pro"><div class="tool-icon"><i class="fas fa-chart-simple"></i></div><span class="status-badge status-new">مارکیٹ</span><h3>مارکیٹ سیچوریشن چیکر</h3><p>کسی بھی niche کے لیے مارکیٹ سیچوریشن چیک کریں۔</p><a href="/ur/market-saturation-checker.html" class="btn btn-primary mt-3">مارکیٹ چیک کریں</a></div>
+</div>
+<div class="col-md-4 col-lg-3">
+<div class="tool-card pro"><div class="tool-icon"><i class="fas fa-mobile-alt"></i></div><span class="status-badge status-new">رینک</span><h3>موبائل ڈیسک ٹاپ رینک ٹریکر</h3><p>موبائل بمقابلہ ڈیسک ٹاپ رینکنگ کا موازنہ کریں۔</p><a href="/ur/mobile-desktop-rank.html" class="btn btn-primary mt-3">رینک ٹریک کریں</a></div>
+</div>
+</div>
+
+<!-- Total Count Badge -->
+<div class="text-center mb-5">
+<div class="badge bg-dark p-3 fs-5" style="background:linear-gradient(135deg,#4361ee,#3a0ca3)!important;">
+<i class="fas fa-check-circle me-2"></i> 60+ مفت SEO ٹولز | 2 زمرہ جات | 100% مفت | کوئی سائن اپ نہیں | 2026 اپڈیٹڈ
+</div>
+</div>
+</div>
+
+<!-- Footer -->
+<footer>
+<div class="container">
+<div class="row">
+<div class="col-md-4 mb-4">
+<h5><i class="fas fa-tools me-2"></i>FreeSEOToolHub</h5>
+<p style="color:#b0c4de; font-size:0.9rem;">60+ مفت بین الاقوامی اور پروفیشنل SEO ٹولز۔ 2024 سے 100% مفت۔ 2026 کے لیے اپڈیٹڈ۔</p>
+<div class="mt-3">
+<small style="color:#94a3b8;">دوسری زبانوں میں بھی دستیاب:</small><br>
+<a href="/hi/all-tools.html" class="me-2" style="font-size:0.85rem;">🇮🇳 हिन्दी</a>
+<a href="/en/all-tools.html" class="me-2" style="font-size:0.85rem;">🇺🇸 English</a>
+<a href="/ur/all-tools.html" class="me-2" style="font-size:0.85rem;">🇵🇰 اردو</a>
+<a href="/de/all-tools.html" class="me-2" style="font-size:0.85rem;">🇩🇪 Deutsch</a>
+<a href="/es/all-tools.html" style="font-size:0.85rem;">🇪🇸 Español</a>
+</div>
+</div>
+<div class="col-md-4 mb-3">
+<h5>فوری لنکس</h5>
+<ul class="list-unstyled">
+<li><a href="/ur/">ہوم</a></li>
+<li><a href="/ur/all-tools.html">تمام ٹولز</a></li>
+<li><a href="/ur/about.html">ہمارے بارے میں</a></li>
+<li><a href="/ur/contact.html">رابطہ</a></li>
+<li><a href="/ur/privacy.html">پرائیویسی</a></li>
+<li><a href="/sitemap.xml">سائٹ میپ</a></li>
+</ul>
+</div>
+<div class="col-md-4 mb-3">
+<h5>مقبول ٹولز</h5>
+<ul class="list-unstyled">
+<li><a href="/ur/meta-tag-generator.html">میٹا ٹیگ جنریٹر</a></li>
+<li><a href="/ur/plagiarism-checker.html">پلیجیارزم چیکر</a></li>
+<li><a href="/ur/qr-code-generator.html">QR کوڈ جنریٹر</a></li>
+<li><a href="/ur/backlink-checker.html">بیک لنک چیکر</a></li>
+<li><a href="/ur/serp-feature-checker.html">SERP فیچر چیکر</a></li>
+</ul>
+</div>
+</div>
+<hr style="border-color:rgba(255,255,255,0.1);">
+<div class="row">
+<div class="col-md-6"><p style="color:#94a3b8; font-size:0.9rem;">© 2026 FreeSEOToolHub.com | جملہ حقوق محفوظ</p></div>
+<div class="col-md-6 text-md-start"><small style="color:#64748b;">🇮🇳 عالمی SEO کمیونٹی کے لیے بنایا گیا | 2026 اپڈیٹڈ</small></div>
+</div>
+</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+const toolCards = document.querySelectorAll('.tool-card');
+const searchInput = document.getElementById('toolSearch');
+const noResults = document.getElementById('noResults');
+const filterBtns = document.querySelectorAll('.filter-btn');
+const categories = document.querySelectorAll('.category-header');
+const categoryDescs = document.querySelectorAll('.category-desc');
+
+document.getElementById('totalToolCount').textContent = toolCards.length;
+document.getElementById('globalToolCount').textContent = document.querySelectorAll('.tool-card.global').length;
+document.getElementById('proToolCount').textContent = document.querySelectorAll('.tool-card.pro').length;
+
+const langLinks = document.querySelectorAll('.dropdown-item');
+langLinks.forEach(link => {
+link.addEventListener('click', function(e) {
+const href = this.getAttribute('href');
+const lang = href.split('/')[1];
+localStorage.setItem('preferredLanguage', lang);
+window.location.href = href;
+});
+});
+
+function filterTools(searchTerm) {
+let visible = 0;
+toolCards.forEach(card => {
+const title = card.querySelector('h3')?.textContent.toLowerCase() || '';
+const desc = card.querySelector('p')?.textContent.toLowerCase() || '';
+const tags = card.querySelector('.tool-tags')?.textContent.toLowerCase() || '';
+const match = title.includes(searchTerm) || desc.includes(searchTerm) || tags.includes(searchTerm);
+card.closest('.col-md-4, .col-lg-3').style.display = match ? 'block' : 'none';
+if(match) visible++;
+});
+categories.forEach((cat, index) => {
+let anyVisible = false;
+let next = cat.nextElementSibling;
+if(next && next.classList.contains('category-desc')) next = next.nextElementSibling;
+while(next && next.classList.contains('row')) {
+if(next.querySelector('.col-md-4[style*="block"], .col-lg-3[style*="block"]')) anyVisible = true;
+next = next.nextElementSibling;
+}
+cat.style.display = anyVisible ? 'flex' : 'none';
+if(categoryDescs[index]) categoryDescs[index].style.display = anyVisible ? 'flex' : 'none';
+});
+noResults.style.display = (visible === 0 && searchTerm !== '') ? 'block' : 'none';
+}
+
+searchInput.addEventListener('input', () => filterTools(searchInput.value.toLowerCase().trim()));
+
+filterBtns.forEach(btn => {
+btn.addEventListener('click', function() {
+filterBtns.forEach(b => b.classList.remove('active'));
+this.classList.add('active');
+const filter = this.dataset.filter;
+toolCards.forEach(card => {
+const col = card.closest('.col-md-4, .col-lg-3');
+if(filter === 'all') col.style.display = 'block';
+else if(filter === 'global') col.style.display = card.classList.contains('global') ? 'block' : 'none';
+else if(filter === 'pro') col.style.display = card.classList.contains('pro') ? 'block' : 'none';
+else if(filter === 'hot') {
+const isHot = card.classList.contains('hot') || card.querySelector('.status-hot');
+col.style.display = isHot ? 'block' : 'none';
+}
+});
+categories.forEach((cat, index) => {
+let anyVisible = false;
+let next = cat.nextElementSibling;
+if(next && next.classList.contains('category-desc')) next = next.nextElementSibling;
+while(next && next.classList.contains('row')) {
+if(next.querySelector('.col-md-4[style*="block"], .col-lg-3[style*="block"]')) anyVisible = true;
+next = next.nextElementSibling;
+}
+cat.style.display = anyVisible ? 'flex' : 'none';
+if(categoryDescs[index]) categoryDescs[index].style.display = anyVisible ? 'flex' : 'none';
+});
+});
+});
+
+toolCards.forEach(card => {
+card.addEventListener('click', function(e) {
+if(e.target.tagName !== 'A' && !e.target.closest('a') && !e.target.closest('button')) {
+const link = this.querySelector('a');
+if(link) window.location = link.href;
+}
+});
+});
+});
+</script>
+</body>
+</html>

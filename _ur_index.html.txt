@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPG77KWVCP"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PFPCTBFG3Y"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-ZPG77KWVCP');
+gtag('config', 'G-PFPCTBFG3Y');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Primary SEO Meta Tags (Urdu - Audit Optimized) -->
+<title>90+ مفت SEO ٹولز 2026 | بھارت اور عالمی صارفین کے لیے</title>
+<meta name="title" content="90+ مفت SEO ٹولز 2026 | بھارت اور عالمی صارفین کے لیے">
+<meta name="description" content="بھارتی کاروباروں اور ای کامرس بیچنے والوں کے لیے 90+ مفت SEO ٹولز۔ GST کیلکولیٹر، UPI QR جنریٹر، ہنگلش SEO، ایمیزون FBA اور پروفیشنل ٹولز۔ 100% مفت، بغیر سائن اپ۔">
+<meta name="keywords" content="مفت seo ٹولز, بھارت seo ٹولز, gst کیلکولیٹر, upi qr جنریٹر, ایمیزون seo, عالمی seo ٹولز, آدھار ماسک, pan والیڈیٹر, ادیم چیکر, ہنگلش seo">
+<meta name="author" content="FreeSEOToolHub">
+<meta name="robots" content="index, follow, max-image-preview:large">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://freeseotoolhub.com/ur/">
+<meta property="og:title" content="90+ مفت SEO ٹولز 2026 | بھارت اور عالمی">
+<meta property="og:description" content="بھارتی کاروباروں اور ای کامرس کے لیے 90+ مفت SEO ٹولز۔ GST، UPI، ایمیزون FBA اور بہت کچھ۔ 100% مفت۔">
+<meta property="og:image" content="https://freeseotoolhub.com/images/og-home-2026.jpg">
+<meta property="og:locale" content="ur_PK">
+<meta property="og:site_name" content="Free SEO Tool Hub">
+
+<!-- Canonical & Hreflang -->
+<link rel="canonical" href="https://freeseotoolhub.com/ur/">
+<link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/hi/">
+<link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/en/">
+<link rel="alternate" hreflang="ur" href="https://freeseotoolhub.com/ur/">
+<link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/de/">
+<link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/es/">
+<link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/en/">
+
+<!-- Bootstrap & Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins','Noto Nastaliq Urdu',sans-serif; }
+body { background:linear-gradient(135deg,#f8fafc 0%,#f1f5f9 100%); color:#333; padding-top:80px; direction:rtl; }
+
+.navbar { background: linear-gradient(135deg, #1e2b4f 0%, #2d3b68 100%); box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
+.navbar-brand { font-weight:700; font-size:1.4rem; letter-spacing:-0.5px; color:white!important; }
+.nav-link { color:rgba(255,255,255,0.9)!important; font-weight:500; padding:10px 18px!important; border-radius:8px; transition:all 0.3s; }
+.nav-link:hover, .nav-link.active { background:rgba(255,255,255,0.15); color:white!important; }
+
+.lang-switch { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 8px 16px; border-radius: 25px; cursor: pointer; font-size: 0.9rem; font-weight: 500; transition: all 0.3s; }
+.lang-switch:hover { background: rgba(255,255,255,0.2); }
+.dropdown-menu { background: #1e2b4f; border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 8px 0; margin-top: 10px; min-width: 180px; text-align:right; }
+.dropdown-item { color: rgba(255,255,255,0.9); padding: 10px 20px; font-weight: 500; transition: all 0.2s; }
+.dropdown-item:hover { background: rgba(255,255,255,0.1); color: white; }
+.dropdown-item.active { background: rgba(255,153,51,0.25); color: #ff9933; font-weight: 600; }
+
+.hero-section { background: linear-gradient(145deg, #1e2b4f 0%, #2d3b68 50%, #4361ee 100%); color: white; padding: 70px 40px; border-radius: 30px; margin-bottom: 40px; box-shadow: 0 25px 50px rgba(30,43,79,0.3); position: relative; overflow: hidden; text-align:right; }
+.hero-section::before { content: ''; position: absolute; top: -50%; left: -10%; width: 500px; height: 500px; background: rgba(255,153,0,0.1); border-radius: 50%; }
+.hero-section h1 { font-size:3rem; font-weight:800; line-height:1.3; position: relative; z-index: 1; }
+.hero-section .highlight { color:#ff9933; }
+.hero-section .lead { font-size:1.3rem; opacity:0.95; position: relative; z-index: 1; max-width: 700px; margin-right:auto; }
+.btn-hero-primary { background:linear-gradient(135deg,#ff9933 0%,#ff6b00 100%); color:white; border:none; font-weight:700; padding:16px 45px; border-radius:50px; font-size:1.2rem; transition:all 0.3s; position: relative; z-index: 1; text-decoration:none; display:inline-block; }
+.btn-hero-primary:hover { transform:translateY(-3px); box-shadow:0 15px 30px rgba(255,107,0,0.4); }
+.btn-hero-outline { background:transparent; border:2px solid rgba(255,255,255,0.5); color:white; font-weight:600; padding:14px 35px; border-radius:50px; font-size:1.1rem; transition:all 0.3s; position: relative; z-index: 1; text-decoration:none; display:inline-block; }
+.btn-hero-outline:hover { background:rgba(255,255,255,0.1); border-color:white; }
+
+.category-quick-links { display: flex; gap: 12px; flex-wrap: wrap; margin: 30px 0; position: relative; z-index: 1; justify-content:flex-end; }
+.category-quick-link { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); color: white; padding: 10px 22px; border-radius: 50px; text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: all 0.3s; border: 1px solid rgba(255,255,255,0.2); }
+.category-quick-link:hover { background: rgba(255,255,255,0.25); color: white; transform: translateY(-2px); }
+
+.feature-highlights { background: white; border-radius: 20px; padding: 40px; margin: 40px 0; box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
+.feature-highlights h2 { font-weight: 800; color: #0b1a33; text-align: center; margin-bottom: 30px; }
+.feature-item { text-align: center; padding: 20px; }
+.feature-icon { width: 80px; height: 80px; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 2rem; color: white; }
+.fi-global { background: linear-gradient(135deg,#3b82f6,#2563eb); }
+.fi-pro { background: linear-gradient(135deg,#8b5cf6,#7c3aed); }
+.fi-platform { background: linear-gradient(135deg,#f59e0b,#d97706); }
+.fi-india { background: linear-gradient(135deg,#ff9933,#ff6b00); }
+.feature-item h5 { font-weight: 700; color: #0b1a33; margin-bottom: 8px; }
+.feature-item p { color: #4a5a72; font-size: 0.9rem; }
+
+.search-section { max-width:700px; margin:0 auto 40px; position:relative; }
+.search-section input { border-radius:60px; padding:18px 60px 18px 25px; font-size:1.1rem; border:2px solid #e2e8f0; width:100%; box-shadow:0 5px 20px rgba(0,0,0,0.05); text-align:right; }
+.search-section input:focus { border-color:#4361ee; box-shadow:0 0 0 4px rgba(67,97,238,0.1); outline:none; }
+.search-section i { position:absolute; right:25px; top:50%; transform:translateY(-50%); z-index:10; font-size:1.2rem; color:#94a3b8; }
+
+.category-header { margin:45px 0 20px; padding-bottom:12px; position:relative; font-weight:800; font-size:1.9rem; color:#0b1a33; display: flex; align-items: center; gap: 12px; }
+.category-header::after { content: ''; position: absolute; bottom: 0; right: 0; height: 4px; border-radius: 2px; width: 100px; }
+.cat-india { color: #ff6b00; }
+.cat-semilocal { color: #d97706; }
+.cat-india::after { background: #ff9933; }
+.cat-semilocal::after { background: #f59e0b; }
+
+.category-badge { font-size: 0.85rem; padding: 6px 18px; border-radius: 25px; color: white; font-weight: 600; white-space: nowrap; }
+.badge-india { background: #ff9933; }
+.badge-semilocal { background: #f59e0b; }
+
+.category-desc { background: white; padding: 18px 22px; border-radius: 14px; margin-bottom: 25px; display: flex; align-items: center; gap: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.03); text-align:right; }
+.category-desc p { margin: 0; color: #4a5a72; font-size: 0.95rem; }
+.category-desc i { font-size: 1.8rem; }
+
+.tool-card { background: white; border-radius:20px; padding:25px; height:100%; box-shadow:0 10px 25px rgba(0,0,0,0.03); border:1px solid #eef2f6; transition: all 0.25s; position:relative; cursor:pointer; text-align:right; }
+.tool-card:hover { transform:translateY(-6px); box-shadow:0 20px 40px rgba(30,43,79,0.12); }
+.tool-card.india { border-top: 4px solid #ff9933; }
+.tool-card.semilocal { border-top: 4px solid #f59e0b; }
+
+.tool-icon { width:60px; height:60px; background:linear-gradient(135deg,#4361ee 0%,#3a0ca3 100%); border-radius:16px; display:flex; align-items:center; justify-content:center; color:white; font-size:1.6rem; margin-bottom:18px; }
+.tool-card.india .tool-icon { background:linear-gradient(135deg,#ff9933,#ff6b00); }
+.tool-card.semilocal .tool-icon { background:linear-gradient(135deg,#f59e0b,#d97706); }
+
+.tool-card h3 { font-size:1.15rem; font-weight:700; margin-bottom:8px; color:#0b1a33; line-height:1.4; }
+.tool-card p { color:#4a5a72; font-size:0.9rem; margin-bottom:15px; line-height:1.5; }
+
+.tool-badge { position:absolute; top:15px; left:15px; z-index:5; }
+.tool-badge .badge { padding: 6px 14px; font-size: 0.75rem; font-weight: 600; }
+
+.status-badge { display:inline-block; padding:4px 12px; border-radius:40px; font-size:0.72rem; font-weight:600; margin-bottom:10px; }
+.status-new { background:#dbeafe; color:#1e40af; }
+.status-hot { background:#fee2e2; color:#991b1b; }
+.status-live { background:#d1fae5; color:#065f46; }
+
+.tool-btn { background:linear-gradient(135deg,#4361ee 0%,#3a0ca3 100%); color:white; border:none; padding:10px 20px; border-radius:40px; font-weight:600; width:100%; margin-top:10px; transition:all 0.3s; }
+.tool-btn:hover { transform:translateY(-2px); box-shadow:0 8px 20px rgba(67,97,238,0.3); }
+
+.cta-section { background: linear-gradient(145deg, #ff9933 0%, #ff6b00 100%); color: white; padding: 50px 40px; border-radius: 25px; text-align: center; margin: 40px 0; box-shadow: 0 20px 40px rgba(255,107,0,0.3); }
+.cta-section h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 10px; }
+.cta-btn { background: #1e2b4f; color: white; padding: 15px 45px; border-radius: 50px; font-size: 1.2rem; font-weight: 700; text-decoration: none; display: inline-block; transition: all 0.3s; margin-top: 20px; }
+.cta-btn:hover { background: #0f172a; transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.3); color: white; }
+
+.no-results { text-align:center; padding:60px; background:white; border-radius:30px; display:none; margin: 30px 0; }
+
+footer { background: #0f1a2f; color:white; margin-top:60px; padding:50px 0 20px; text-align:right; }
+footer a { color:#b0c4de; text-decoration:none; transition:color 0.3s; }
+footer a:hover { color:#ff9933; }
+footer h5, footer h6 { color: white; font-weight: 600; }
+
+@media (max-width:768px){
+.hero-section { padding: 40px 25px; }
+.hero-section h1 { font-size:2rem; }
+.category-header { font-size:1.4rem; }
+.btn-hero-primary, .btn-hero-outline { display:block; width:100%; margin:10px 0; text-align: center; }
+}
+</style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+<div class="container">
+<a class="navbar-brand" href="/ur/"><i class="fas fa-tools me-2"></i>FreeSEOToolHub</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item"><a class="nav-link active" href="/ur/">ہوم</a></li>
+<li class="nav-item"><a class="nav-link" href="/ur/all-tools.html">تمام ٹولز</a></li>
+<li class="nav-item"><a class="nav-link" href="/ur/blog/">بلاگ</a></li>
+<li class="nav-item"><a class="nav-link" href="/ur/about.html">ہمارے بارے میں</a></li>
+<li class="nav-item"><a class="nav-link" href="/ur/contact.html">رابطہ</a></li>
+<li class="nav-item dropdown ms-2">
+<button class="lang-switch dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">🌐 اردو</button>
+<ul class="dropdown-menu dropdown-menu-end">
+<li><a class="dropdown-item" href="/hi/">🇮🇳 हिन्दी</a></li>
+<li><a class="dropdown-item" href="/en/">🇺🇸 English</a></li>
+<li><a class="dropdown-item active" href="/ur/">🇵🇰 اردو</a></li>
+<li><a class="dropdown-item" href="/de/">🇩🇪 Deutsch</a></li>
+<li><a class="dropdown-item" href="/es/">🇪🇸 Español</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+
+<div class="container">
+<div class="hero-section">
+<div class="row align-items-center">
+<div class="col-lg-7">
+<h1><span class="highlight">مفت SEO</span> ٹولز<br>
+<span style="font-size:1.6rem;">بھارتی صارفین 🇮🇳 اور ای کامرس بیچنے والوں کے لیے</span></h1>
+<p class="lead mt-3"><strong>بھارتی کاروباروں اور ای کامرس بیچنے والوں کے لیے 90+ مفت SEO ٹولز۔</strong> GST کیلکولیٹر، UPI QR جنریٹر، ہنگلش SEO، ایمیزون FBA کیلکولیٹر اور پروفیشنل ٹولز۔ تمام ٹولز 100% مفت، بغیر سائن اپ، 2026 کے لیے اپڈیٹڈ۔</p>
+
+<div class="category-quick-links">
+<a href="#india-tools" class="category-quick-link">🇮🇳 بھارتی صارفین کے لیے ٹولز</a>
+<a href="#semilocal-tools" class="category-quick-link">🛒 ایمیزون اور ای کامرس SEO</a>
+</div>
+
+<div class="mt-4 d-flex flex-wrap gap-3" style="justify-content:flex-end;">
+<a href="/ur/all-tools.html" class="btn-hero-primary"><i class="fas fa-rocket me-2"></i>تمام 90+ ٹولز دیکھیں</a>
+<a href="#why-choose" class="btn-hero-outline"><i class="fas fa-layer-group me-2"></i>زمرہ جات براؤز کریں</a>
+</div>
+</div>
+</div>
+</div>
+
+<div class="feature-highlights" id="why-choose">
+<h2>ہمارے ٹولز کیوں منتخب کریں؟</h2>
+<p style="text-align:center; color:#4a5a72; max-width:800px; margin:0 auto 25px;">ہم بھارتی کاروباروں، ای کامرس بیچنے والوں اور عالمی صارفین کے لیے ڈیزائن کیے گئے 90+ پروفیشنل SEO ٹولز فراہم کرتے ہیں۔ ہر ٹول 100% مفت ہے اور بغیر رجسٹریشن کے فوری استعمال کیا جا سکتا ہے۔</p>
+<div class="row">
+<div class="col-md-3 col-6"><div class="feature-item"><div class="feature-icon fi-global"><i class="fas fa-globe"></i></div><h5>🌍 عالمی یونیورسل</h5><p>دنیا بھر کے صارفین کے لیے 35+ ٹولز۔ میٹا ٹیگس، پلیجیارزم، QR کوڈ، بیک لنکس۔</p></div></div>
+<div class="col-md-3 col-6"><div class="feature-item"><div class="feature-icon fi-pro"><i class="fas fa-chart-line"></i></div><h5>🚀 ایڈوانسڈ پرو</h5><p>18+ پروفیشنل ٹولز۔ SERP تجزیہ، CWV مانیٹرنگ، مواد کا فرق۔</p></div></div>
+<div class="col-md-3 col-6"><div class="feature-item"><div class="feature-icon fi-platform"><i class="fab fa-amazon"></i></div><h5>🛒 پلیٹ فارم ٹولز</h5><p>ایمیزون SEO، FBA کیلکولیٹر، ای کامرس اور پروڈکٹ ریسرچ ٹولز۔</p></div></div>
+<div class="col-md-3 col-6"><div class="feature-item"><div class="feature-icon fi-india"><i class="fas fa-rupee-sign"></i></div><h5>🇮🇳 بھارت مخصوص</h5><p>GST، UPI، PAN، آدھار، ادیم، ہنگلش اور 12+ بھارتی زبان SEO ٹولز۔</p></div></div>
+</div>
+</div>
+
+<div class="search-section">
+<i class="fas fa-search"></i>
+<input type="text" id="toolSearch" placeholder="🔍 ٹولز تلاش کریں... (GST، UPI، ایمیزون، QR، آدھار، ہنگلش)...">
+</div>
+<div class="no-results" id="noResults"><i class="fas fa-search fa-3x text-muted mb-3"></i><h3>کوئی ٹول نہیں ملا</h3><p>مختلف کلیدی الفاظ آزمائیں یا نیچے زمرہ جات براؤز کریں</p></div>
+
+<div id="india-tools"></div>
+<h2 class="category-header cat-india"><span class="category-badge badge-india">🇮🇳 انڈیا اسپیشل</span> بھارتی صارفین کے لیے ٹولز</h2>
+<div class="category-desc" style="border-right: 5px solid #ff9933;"><i class="fas fa-rupee-sign" style="color:#ff9933;"></i><p><strong>بھارتی کاروباروں اور صارفین کے لیے:</strong> GST کیلکولیٹر، UPI QR جنریٹر، PAN والیڈیٹر، ادیم چیکر، آدھار ماسک، ہنگلش SEO اور 12+ بھارتی زبان کے ٹولز۔ بھارت کے 50 کروڑ+ انٹرنیٹ صارفین کی خدمت میں۔</p></div>
+<div class="row g-4 mb-5">
+<div class="col-md-4 col-lg-3"><div class="tool-card india"><div class="tool-badge"><span class="badge bg-danger">🔥 ہاٹ</span></div><div class="tool-icon"><i class="fas fa-qrcode"></i></div><span class="status-badge status-hot">ادائیگی</span><h3>UPI QR جنریٹر</h3><p>UPI ادائیگی QR کوڈز بنائیں۔ GPay، PhonePe، Paytm۔</p><a href="/ur/upi-qr-generator.html" class="btn tool-btn">UPI QR بنائیں</a></div></div>
+<div class="col-md-4 col-lg-3"><div class="tool-card india"><div class="tool-icon"><i class="fas fa-calculator"></i></div><span class="status-badge status-hot">ٹیکس</span><h3>GST کیلکولیٹر</h3><p>CGST، SGST، IGST حساب۔ GST انوائس تیار۔</p><a href="/ur/gst-calculator.html" class="btn tool-btn">GST کیلکولیٹ کریں</a></div></div>
+<div class="col-md-4 col-lg-3"><div class="tool-card india"><div class="tool-icon"><i class="fas fa-language"></i></div><span class="status-badge status-hot">ہنگلش</span><h3>ہنگلش کنورٹر</h3><p>ہنگلش کو انگریزی کلیدی الفاظ میں تبدیل کریں۔</p><a href="/ur/hinglish-converter.html" class="btn tool-btn">ہنگلش کنورٹ کریں</a></div></div>
+<div class="col-md-4 col-lg-3"><div class="tool-card india"><div class="tool-icon"><i class="fas fa-building"></i></div><span class="status-badge status-hot">MSME</span><h3>ادیم چیکر</h3><p>ادیم رجسٹریشن کی تصدیق کریں۔ MSME کاروبار چیک۔</p><a href="/ur/udyam-checker.html" class="btn tool-btn">ادیم چیک کریں</a></div></div>
+<div class="col-md-4 col-lg-3"><div class="tool-card india"><div class="tool-icon"><i class="fas fa-id-card"></i></div><span class="status-badge status-new">سیکیورٹی</span><h3>PAN والیڈیٹر</h3><p>PAN کارڈ فارمیٹ کی تصدیق کریں۔ ٹیکس کمپلائنس ٹول۔</p><a href="/ur/pan-validator.html" class="btn tool-btn">PAN چیک کریں</a></div></div>
+<div class="col-md-4 col-lg-3"><div class="tool-card india"><div class="tool-icon"><i class="fas fa-id-card"></i></div><span class="status-badge status-live">پرائیویسی</span><h3>آدھار ماسک ٹول</h3><p>آدھار نمبر محفوظ طریقے سے ماسک کریں۔ صرف آخری 4 ہندسے۔</p><a href="/ur/aadhaar-mask.html" class="btn tool-btn">آدھار ماسک کریں</a></div></div>
+<div class="col-md-4 col-lg-3"><div class="tool-card india"><div class="tool-icon"><i class="fas fa-share-alt"></i></div><span class="status-badge status-hot">سوشل</span><h3>سوشل میڈیا آپٹیمائزر</h3><p>Facebook، Instagram، Twitter کے لیے پوسٹس بہتر بنائیں۔</p><a href="/ur/social-media-optimizer.html" class="btn tool-btn">پوسٹس بہتر بنائیں</a></div></div>
+<div class="col-md-4 col-lg-3"><div class="tool-card india"><div class="tool-icon"><i class="fas fa-language"></i></div><span class="status-badge status-new">بھاشنی</span><h3>بھاشنی SEO</h3><p>12+ بھارتی زبانوں میں SEO۔ ہندی، تامل، تیلگو۔</p><a href="/ur/bhashini-seo.html" class="btn tool-btn">بھاشنی SEO</a></div></div>
+</div>
+<div class="text-center mb-4"><a href="/ur/all-tools.html" class="btn btn-outline-primary btn-lg rounded-pill px-4" style="border-color:#ff9933; color:#ff9933;">تمام 18+ بھارت ٹولز دیکھیں <i class="fas fa-arrow-left ms-2"></i></a></div>
+
+<div id="semilocal-tools"></div>
+<h2 class="category-header cat-semilocal"><span class="category-badge badge-semilocal">🛒 پلیٹ فارم ٹولز</span> ایمیزون اور ای کامرس SEO</h2>
+<div class="category-desc" style="border-right: 5px solid #f59e0b;"><i class="fab fa-amazon" style="color:#f59e0b;"></i><p><strong>بیچنے والوں اور ای کامرس کے لیے:</strong> ایمیزون SEO ٹولز، FBA کیلکولیٹر، پروڈکٹ ریسرچ اور ای کامرس آپٹیمائزیشن۔ دنیا بھر کے ایمیزون بیچنے والے ان مفت ٹولز سے فائدہ اٹھا سکتے ہیں۔</p></div>
+<div class="row g-4 mb-5">
+<div class="col-md-4 col-lg-3"><div class="tool-card semilocal"><div class="tool-badge"><span class="badge bg-warning text-dark">🔥 ہاٹ</span></div><div class="tool-icon"><i class="fab fa-amazon"></i></div><span class="status-badge status-hot">ایمیزون FBA</span><h3>ایمیزون SEO ٹول مفت</h3><p>لائیو ڈیٹا API کے ساتھ مکمل ایمیزون آپٹیمائزیشن سوٹ۔</p><a href="/ur/amazon-seo-tool-free.html" class="btn tool-btn">ایمیزون بہتر بنائیں</a></div></div>
+<div class="col-md-4 col-lg-3"><div class="tool-card semilocal"><div class="tool-icon"><i class="fas fa-calculator"></i></div><span class="status-badge status-live">FBA</span><h3>ایمیزون FBA کیلکولیٹر</h3><p>ایمیزون FBA فیس اور منافع کا مارجن فوری کیلکولیٹ کریں۔</p><a href="/ur/amazon-fba-calculator.html" class="btn tool-btn">FBA کیلکولیٹ کریں</a></div></div>
+<div class="col-md-4 col-lg-3"><div class="tool-card semilocal"><div class="tool-icon"><i class="fas fa-store"></i></div><span class="status-badge status-new">ای کامرس</span><h3>ای کامرس SEO ٹول</h3><p>Shopify، WooCommerce اور Magento اسٹورز بہتر بنائیں۔</p><a href="/ur/ecommerce-seo-tool.html" class="btn tool-btn">ای کامرس SEO</a></div></div>
+<div class="col-md-4 col-lg-3"><div class="tool-card semilocal"><div class="tool-icon"><i class="fas fa-tag"></i></div><span class="status-badge status-live">قیمت</span><h3>قیمت موازنہ ٹول</h3><p>ایمیزون اور ای کامرس پلیٹ فارمز پر قیمتوں کا موازنہ کریں۔</p><a href="/ur/price-comparison-tool.html" class="btn tool-btn">قیمتیں موازنہ کریں</a></div></div>
+</div>
+<div class="text-center mb-4"><a href="/ur/all-tools.html" class="btn btn-outline-primary btn-lg rounded-pill px-4" style="border-color:#f59e0b; color:#f59e0b;">تمام 10+ پلیٹ فارم ٹولز دیکھیں <i class="fas fa-arrow-left ms-2"></i></a></div>
+
+<div class="cta-section">
+<h2>🚀 تمام 90+ مفت SEO ٹولز دیکھنے کے لیے تیار ہیں؟</h2>
+<p style="font-size:1.2rem; opacity:0.95;">4 زمرہ جات۔ 90+ ٹولز۔ 100% مفت۔ کوئی سائن اپ نہیں۔ 2026 اپڈیٹڈ۔</p>
+<a href="/ur/all-tools.html" class="cta-btn"><i class="fas fa-th-large me-2"></i>تمام زمرہ جات براؤز کریں</a>
+</div>
+</div>
+
+<footer>
+<div class="container">
+<div class="row">
+<div class="col-md-4 mb-4">
+<h5><i class="fas fa-tools me-2"></i>FreeSEOToolHub</h5>
+<p style="color:#b0c4de; font-size:0.9rem;">بھارتی صارفین اور ایمیزون ای کامرس SEO کے لیے 90+ مفت SEO ٹولز۔ 2024 سے 100% مفت۔ 2026 اپڈیٹڈ۔</p>
+<div class="mt-3">
+<small style="color:#94a3b8;">دوسری زبانوں میں بھی دستیاب:</small><br>
+<a href="/hi/" class="me-2" style="font-size:0.85rem;">🇮🇳 हिन्दी</a>
+<a href="/en/" class="me-2" style="font-size:0.85rem;">🇺🇸 English</a>
+<a href="/ur/" class="me-2" style="font-size:0.85rem;">🇵🇰 اردو</a>
+<a href="/de/" class="me-2" style="font-size:0.85rem;">🇩🇪 Deutsch</a>
+<a href="/es/" style="font-size:0.85rem;">🇪🇸 Español</a>
+</div>
+</div>
+<div class="col-md-2 mb-3"><h6>فوری لنکس</h6><ul class="list-unstyled"><li><a href="/ur/">ہوم</a></li><li><a href="/ur/blog/">بلاگ</a></li><li><a href="/ur/all-tools.html">تمام ٹولز</a></li><li><a href="/ur/about.html">ہمارے بارے میں</a></li><li><a href="/ur/contact.html">رابطہ</a></li></ul></div>
+<div class="col-md-3 mb-3"><h6>بھارت ٹولز</h6><ul class="list-unstyled"><li><a href="/ur/upi-qr-generator.html">UPI QR جنریٹر</a></li><li><a href="/ur/udyam-checker.html">ادیم چیکر</a></li><li><a href="/ur/aadhaar-mask.html">آدھار ماسک</a></li><li><a href="/ur/pan-validator.html">PAN والیڈیٹر</a></li></ul></div>
+<div class="col-md-3 mb-3"><h6>ای کامرس ٹولز</h6><ul class="list-unstyled"><li><a href="/ur/amazon-seo-tool-free.html">ایمیزون SEO ٹول</a></li><li><a href="/ur/amazon-fba-calculator.html">ایمیزون FBA کیلکولیٹر</a></li><li><a href="/ur/ecommerce-seo-tool.html">ای کامرس SEO</a></li><li><a href="/ur/price-comparison-tool.html">قیمت موازنہ</a></li></ul></div>
+</div>
+<hr style="border-color:rgba(255,255,255,0.1);">
+<div class="row"><div class="col-md-6"><p style="color:#94a3b8; font-size:0.9rem;">© 2026 FreeSEOToolHub.com | جملہ حقوق محفوظ</p></div><div class="col-md-6 text-md-start"><a href="/ur/privacy.html" class="me-3">پرائیویسی</a><a href="/sitemap.xml" class="me-3">سائٹ میپ</a><a href="/ur/contact.html">رابطہ</a></div></div>
+</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+const cards = document.querySelectorAll('.tool-card');
+const searchBox = document.getElementById('toolSearch');
+const noResults = document.getElementById('noResults');
+
+const langLinks = document.querySelectorAll('.dropdown-item');
+langLinks.forEach(link => {
+link.addEventListener('click', function(e) {
+const href = this.getAttribute('href');
+const lang = href.replace(/\//g, '');
+localStorage.setItem('preferredLanguage', lang);
+window.location.href = href;
+});
+});
+
+searchBox.addEventListener('input', function(e) {
+const term = e.target.value.toLowerCase().trim();
+let visible = 0;
+cards.forEach(card => {
+const title = card.querySelector('h3')?.innerText.toLowerCase() || '';
+const desc = card.querySelector('p')?.innerText.toLowerCase() || '';
+const match = title.includes(term) || desc.includes(term);
+card.closest('.col-md-4, .col-lg-3').style.display = match ? 'block' : 'none';
+if(match) visible++;
+});
+noResults.style.display = (visible === 0 && term !== '') ? 'block' : 'none';
+});
+
+cards.forEach(card => {
+card.addEventListener('click', function(e) {
+if(e.target.tagName !== 'A' && !e.target.closest('a') && !e.target.closest('button')) {
+const link = this.querySelector('a');
+if(link) window.location = link.href;
+}
+});
+});
+});
+</script>
+</body>
+</html>
