@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPG77KWVCP"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PFPCTBFG3Y"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-ZPG77KWVCP');
+gtag('config', 'G-PFPCTBFG3Y');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Primary SEO Meta Tags (German - Audit Optimized) -->
+<title>90+ Kostenlose SEO-Tools 2026 | Indien & Globale Tools</title>
+<meta name="title" content="90+ Kostenlose SEO-Tools 2026 | Indien & Globale Zielgruppe">
+<meta name="description" content="90+ kostenlose SEO-Tools für indische Unternehmen & E-Commerce-Verkäufer. GST-Rechner, UPI-QR-Generator, Hinglish SEO, Amazon FBA & Profi-Tools. 100% kostenlos, keine Anmeldung.">
+<meta name="keywords" content="kostenlose seo tools, indien seo tools, gst rechner, upi qr generator, amazon seo, globale seo tools, aadhaar mask, pan validator, udyam checker, hinglish seo">
+<meta name="author" content="FreeSEOToolHub">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="language" content="Deutsch, Hindi, Englisch">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://freeseotoolhub.com/de/">
+<meta property="og:title" content="90+ Kostenlose SEO-Tools 2026 | Indien & Global">
+<meta property="og:description" content="90+ kostenlose SEO-Tools für Indien & E-Commerce. GST, UPI, Amazon FBA & mehr. 100% kostenlos.">
+<meta property="og:image" content="https://freeseotoolhub.com/images/og-home-2026.jpg">
+<meta property="og:locale" content="de_DE">
+<meta property="og:site_name" content="Free SEO Tool Hub">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@FreeSEOToolHub">
+<meta name="twitter:title" content="90+ Kostenlose SEO-Tools 2026 | Indien & Global">
+<meta name="twitter:description" content="90+ kostenlose SEO-Tools. GST-Rechner, UPI QR, Hinglish SEO & mehr. 100% kostenlos.">
+<meta name="twitter:image" content="https://freeseotoolhub.com/images/twitter-card-home.jpg">
+
+<!-- Canonical & Hreflang -->
+<link rel="canonical" href="https://freeseotoolhub.com/de/">
+<link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/hi/">
+<link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/en/">
+<link rel="alternate" hreflang="ur" href="https://freeseotoolhub.com/ur/">
+<link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/de/">
+<link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/es/">
+<link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/en/">
+
+<!-- Schema.org -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "WebSite",
+"name": "Free SEO Tool Hub",
+"url": "https://freeseotoolhub.com/de/",
+"description": "90+ kostenlose SEO-Tools für indische Unternehmen und E-Commerce-Verkäufer. 100% kostenlos, keine Anmeldung.",
+"inLanguage": ["de", "hi", "en"],
+"potentialAction": {
+"@type": "SearchAction",
+"target": "https://freeseotoolhub.com/de/search?q={search_term_string}",
+"query-input": "required name=search_term_string"
+}
+}
+</script>
+
+<!-- Bootstrap & Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins','Segoe UI',sans-serif; }
+body { background:linear-gradient(135deg,#f8fafc 0%,#f1f5f9 100%); color:#333; padding-top:80px; }
+
+.navbar { background: linear-gradient(135deg, #1e2b4f 0%, #2d3b68 100%); box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
+.navbar-brand { font-weight:700; font-size:1.4rem; letter-spacing:-0.5px; color:white!important; }
+.nav-link { color:rgba(255,255,255,0.9)!important; font-weight:500; padding:10px 18px!important; border-radius:8px; transition:all 0.3s; }
+.nav-link:hover, .nav-link.active { background:rgba(255,255,255,0.15); color:white!important; }
+
+.lang-switch { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 8px 16px; border-radius: 25px; cursor: pointer; font-size: 0.9rem; font-weight: 500; transition: all 0.3s; }
+.lang-switch:hover { background: rgba(255,255,255,0.2); }
+.dropdown-menu { background: #1e2b4f; border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 8px 0; margin-top: 10px; min-width: 180px; }
+.dropdown-item { color: rgba(255,255,255,0.9); padding: 10px 20px; font-weight: 500; transition: all 0.2s; }
+.dropdown-item:hover { background: rgba(255,255,255,0.1); color: white; }
+.dropdown-item.active { background: rgba(255,153,51,0.25); color: #ff9933; font-weight: 600; }
+
+.hero-section { background: linear-gradient(145deg, #1e2b4f 0%, #2d3b68 50%, #4361ee 100%); color: white; padding: 70px 40px; border-radius: 30px; margin-bottom: 40px; box-shadow: 0 25px 50px rgba(30,43,79,0.3); position: relative; overflow: hidden; }
+.hero-section::before { content: ''; position: absolute; top: -50%; right: -10%; width: 500px; height: 500px; background: rgba(255,153,0,0.1); border-radius: 50%; }
+.hero-section h1 { font-size:3.2rem; font-weight:800; line-height:1.2; position: relative; z-index: 1; }
+.hero-section .highlight { color:#ff9933; }
+.hero-section .lead { font-size:1.3rem; opacity:0.95; position: relative; z-index: 1; max-width: 700px; }
+.btn-hero-primary { background:linear-gradient(135deg,#ff9933 0%,#ff6b00 100%); color:white; border:none; font-weight:700; padding:16px 45px; border-radius:50px; font-size:1.2rem; transition:all 0.3s; position: relative; z-index: 1; text-decoration:none; display:inline-block; }
+.btn-hero-primary:hover { transform:translateY(-3px); box-shadow:0 15px 30px rgba(255,107,0,0.4); }
+.btn-hero-outline { background:transparent; border:2px solid rgba(255,255,255,0.5); color:white; font-weight:600; padding:14px 35px; border-radius:50px; font-size:1.1rem; transition:all 0.3s; position: relative; z-index: 1; text-decoration:none; display:inline-block; }
+.btn-hero-outline:hover { background:rgba(255,255,255,0.1); border-color:white; }
+
+.category-quick-links { display: flex; gap: 12px; flex-wrap: wrap; margin: 30px 0; position: relative; z-index: 1; }
+.category-quick-link { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); color: white; padding: 10px 22px; border-radius: 50px; text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: all 0.3s; border: 1px solid rgba(255,255,255,0.2); }
+.category-quick-link:hover { background: rgba(255,255,255,0.25); color: white; transform: translateY(-2px); }
+
+.feature-highlights { background: white; border-radius: 20px; padding: 40px; margin: 40px 0; box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
+.feature-highlights h2 { font-weight: 800; color: #0b1a33; text-align: center; margin-bottom: 30px; }
+.feature-item { text-align: center; padding: 20px; }
+.feature-icon { width: 80px; height: 80px; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 2rem; color: white; }
+.fi-global { background: linear-gradient(135deg,#3b82f6,#2563eb); }
+.fi-pro { background: linear-gradient(135deg,#8b5cf6,#7c3aed); }
+.fi-platform { background: linear-gradient(135deg,#f59e0b,#d97706); }
+.fi-india { background: linear-gradient(135deg,#ff9933,#ff6b00); }
+.feature-item h5 { font-weight: 700; color: #0b1a33; margin-bottom: 8px; }
+.feature-item p { color: #4a5a72; font-size: 0.9rem; }
+
+.search-section { max-width:700px; margin:0 auto 40px; position:relative; }
+.search-section input { border-radius:60px; padding:18px 25px 18px 60px; font-size:1.1rem; border:2px solid #e2e8f0; width:100%; box-shadow:0 5px 20px rgba(0,0,0,0.05); }
+.search-section input:focus { border-color:#4361ee; box-shadow:0 0 0 4px rgba(67,97,238,0.1); outline:none; }
+.search-section i { position:absolute; left:25px; top:50%; transform:translateY(-50%); z-index:10; font-size:1.2rem; color:#94a3b8; }
+
+.category-header { margin:45px 0 20px; padding-bottom:12px; position:relative; font-weight:800; font-size:1.9rem; color:#0b1a33; display: flex; align-items: center; gap: 12px; }
+.category-header::after { content: ''; position: absolute; bottom: 0; left: 0; height: 4px; border-radius: 2px; width: 100px; }
+.cat-india { color: #ff6b00; }
+.cat-semilocal { color: #d97706; }
+.cat-india::after { background: #ff9933; }
+.cat-semilocal::after { background: #f59e0b; }
+
+.category-badge { font-size: 0.85rem; padding: 6px 18px; border-radius: 25px; color: white; font-weight: 600; white-space: nowrap; }
+.badge-india { background: #ff9933; }
+.badge-semilocal { background: #f59e0b; }
+
+.category-desc { background: white; padding: 18px 22px; border-radius: 14px; margin-bottom: 25px; display: flex; align-items: center; gap: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.03); }
+.category-desc p { margin: 0; color: #4a5a72; font-size: 0.95rem; }
+.category-desc i { font-size: 1.8rem; }
+
+.tool-card { background: white; border-radius:20px; padding:25px; height:100%; box-shadow:0 10px 25px rgba(0,0,0,0.03); border:1px solid #eef2f6; transition: all 0.25s; position:relative; cursor:pointer; }
+.tool-card:hover { transform:translateY(-6px); box-shadow:0 20px 40px rgba(30,43,79,0.12); }
+.tool-card.india { border-top: 4px solid #ff9933; }
+.tool-card.semilocal { border-top: 4px solid #f59e0b; }
+
+.tool-icon { width:60px; height:60px; background:linear-gradient(135deg,#4361ee 0%,#3a0ca3 100%); border-radius:16px; display:flex; align-items:center; justify-content:center; color:white; font-size:1.6rem; margin-bottom:18px; }
+.tool-card.india .tool-icon { background:linear-gradient(135deg,#ff9933,#ff6b00); }
+.tool-card.semilocal .tool-icon { background:linear-gradient(135deg,#f59e0b,#d97706); }
+
+.tool-card h3 { font-size:1.15rem; font-weight:700; margin-bottom:8px; color:#0b1a33; line-height:1.4; }
+.tool-card p { color:#4a5a72; font-size:0.9rem; margin-bottom:15px; line-height:1.5; }
+
+.tool-badge { position:absolute; top:15px; right:15px; z-index:5; }
+.tool-badge .badge { padding: 6px 14px; font-size: 0.75rem; font-weight: 600; }
+
+.status-badge { display:inline-block; padding:4px 12px; border-radius:40px; font-size:0.72rem; font-weight:600; margin-bottom:10px; }
+.status-new { background:#dbeafe; color:#1e40af; }
+.status-hot { background:#fee2e2; color:#991b1b; }
+.status-live { background:#d1fae5; color:#065f46; }
+
+.tool-btn { background:linear-gradient(135deg,#4361ee 0%,#3a0ca3 100%); color:white; border:none; padding:10px 20px; border-radius:40px; font-weight:600; width:100%; margin-top:10px; transition:all 0.3s; }
+.tool-btn:hover { transform:translateY(-2px); box-shadow:0 8px 20px rgba(67,97,238,0.3); }
+
+.cta-section { background: linear-gradient(145deg, #ff9933 0%, #ff6b00 100%); color: white; padding: 50px 40px; border-radius: 25px; text-align: center; margin: 40px 0; box-shadow: 0 20px 40px rgba(255,107,0,0.3); }
+.cta-section h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 10px; }
+.cta-btn { background: #1e2b4f; color: white; padding: 15px 45px; border-radius: 50px; font-size: 1.2rem; font-weight: 700; text-decoration: none; display: inline-block; transition: all 0.3s; margin-top: 20px; }
+.cta-btn:hover { background: #0f172a; transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.3); color: white; }
+
+.no-results { text-align:center; padding:60px; background:white; border-radius:30px; display:none; margin: 30px 0; }
+
+footer { background: #0f1a2f; color:white; margin-top:60px; padding:50px 0 20px; }
+footer a { color:#b0c4de; text-decoration:none; transition:color 0.3s; }
+footer a:hover { color:#ff9933; }
+footer h5, footer h6 { color: white; font-weight: 600; }
+
+@media (max-width:768px){
+.hero-section { padding: 40px 25px; }
+.hero-section h1 { font-size:2rem; }
+.category-header { font-size:1.4rem; }
+.btn-hero-primary, .btn-hero-outline { display:block; width:100%; margin:10px 0; text-align: center; }
+}
+</style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+<div class="container">
+<a class="navbar-brand" href="/de/"><i class="fas fa-tools me-2"></i>FreeSEOToolHub</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Navigation umschalten">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item"><a class="nav-link active" href="/de/">Start</a></li>
+<li class="nav-item"><a class="nav-link" href="/de/all-tools.html">Alle Tools</a></li>
+<li class="nav-item"><a class="nav-link" href="/de/blog/">Blog</a></li>
+<li class="nav-item"><a class="nav-link" href="/de/about.html">Über uns</a></li>
+<li class="nav-item"><a class="nav-link" href="/de/contact.html">Kontakt</a></li>
+<li class="nav-item dropdown ms-2">
+<button class="lang-switch dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">🌐 Deutsch</button>
+<ul class="dropdown-menu dropdown-menu-end">
+<li><a class="dropdown-item" href="/hi/">🇮🇳 हिन्दी</a></li>
+<li><a class="dropdown-item" href="/en/">🇺🇸 English</a></li>
+<li><a class="dropdown-item" href="/ur/">🇵🇰 اردو</a></li>
+<li><a class="dropdown-item active" href="/de/">🇩🇪 Deutsch</a></li>
+<li><a class="dropdown-item" href="/es/">🇪🇸 Español</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+
+<div class="container">
+<div class="hero-section">
+<div class="row align-items-center">
+<div class="col-lg-7">
+<h1><span class="highlight">Kostenlose SEO</span> Tools<br>
+<span style="font-size:1.8rem;">Für indische Nutzer 🇮🇳 & E-Commerce-Verkäufer</span></h1>
+<p class="lead mt-3"><strong>90+ kostenlose SEO-Tools für indische Unternehmen und E-Commerce-Verkäufer.</strong> GST-Rechner, UPI-QR-Generator, Hinglish SEO, Amazon FBA-Rechner und professionelle Tools. Alle Tools 100% kostenlos, keine Anmeldung, aktualisiert für 2026.</p>
+
+<div class="category-quick-links">
+<a href="#india-tools" class="category-quick-link">🇮🇳 Tools für indische Nutzer</a>
+<a href="#semilocal-tools" class="category-quick-link">🛒 Amazon & E-Commerce SEO</a>
+</div>
+
+<div class="mt-4 d-flex flex-wrap gap-3">
+<a href="/de/all-tools.html" class="btn-hero-primary"><i class="fas fa-rocket me-2"></i>Alle 90+ Tools erkunden</a>
+<a href="#why-choose" class="btn-hero-outline"><i class="fas fa-layer-group me-2"></i>Kategorien durchsuchen</a>
+</div>
+</div>
+</div>
+</div>
+
+<div class="feature-highlights" id="why-choose">
+<h2>Warum unsere Tools wählen?</h2>
+<p style="text-align:center; color:#4a5a72; max-width:800px; margin:0 auto 25px;">Wir bieten 90+ professionelle SEO-Tools, entwickelt für indische Unternehmen, E-Commerce-Verkäufer und globale Nutzer. Jedes Tool ist 100% kostenlos und kann ohne Registrierung sofort verwendet werden.</p>
+<div class="row">
+<div class="col-md-3 col-6"><div class="feature-item"><div class="feature-icon fi-global"><i class="fas fa-globe"></i></div><h5>🌍 Global Universal</h5><p>35+ Tools für weltweite Nutzer. Meta-Tags, Plagiat, QR-Codes, Backlinks & mehr.</p></div></div>
+<div class="col-md-3 col-6"><div class="feature-item"><div class="feature-icon fi-pro"><i class="fas fa-chart-line"></i></div><h5>🚀 Advanced Pro</h5><p>18+ professionelle Tools. SERP-Analyse, CWV-Überwachung, Content-Gap & Log-Analyse.</p></div></div>
+<div class="col-md-3 col-6"><div class="feature-item"><div class="feature-icon fi-platform"><i class="fab fa-amazon"></i></div><h5>🛒 Plattform-Tools</h5><p>Amazon SEO, FBA-Rechner, E-Commerce & Produktrecherche-Tools für Verkäufer.</p></div></div>
+<div class="col-md-3 col-6"><div class="feature-item"><div class="feature-icon fi-india"><i class="fas fa-rupee-sign"></i></div><h5>🇮🇳 Indien Spezifisch</h5><p>GST, UPI, PAN, Aadhaar, Udyam, Hinglish & 12+ indische Sprach-SEO-Tools.</p></div></div>
+</div>
+</div>
+
+<div class="search-section">
+<i class="fas fa-search"></i>
+<input type="text" id="toolSearch" placeholder="🔍 Tools suchen... (GST, UPI, Amazon, QR, Aadhaar, Hinglish)...">
+</div>
+<div class="no-results" id="noResults"><i class="fas fa-search fa-3x text-muted mb-3"></i><h3>Keine Tools gefunden</h3><p>Versuchen Sie andere Schlüsselwörter oder durchsuchen Sie die Kategorien unten</p></div>
+
+<div id="india-tools"></div>
+<h2 class="category-header cat-india"><span class="category-badge badge-india">🇮🇳 Indien Spezial</span> Tools für indische Nutzer</h2>
+<div class="category-desc" style="border-left: 5px solid #ff9933;"><i class="fas fa-rupee-sign" style="color:#ff9933;"></i><p><strong>Für indische Unternehmen & Nutzer:</strong> GST-Rechner, UPI-QR-Generator, PAN-Validator, Udyam-Checker, Aadhaar-Maske, Hinglish SEO und 12+ indische Sprach-Tools. Für Indiens 500M+ Internetnutzer.</p></div>
+<div class="row g-4 mb-5">
+<div class="col-md-4 col-lg-3"><div class="tool-card india"><div class="tool-badge"><span class="badge bg-danger">🔥 HOT</span></div><div class="tool-icon"><i class="fas fa-qrcode"></i></div><span class="status-badge status-hot">ZAHLUNG</span><h3>UPI QR Generator</h3><p>UPI-Zahlungs-QR-Codes generieren. GPay, PhonePe, Paytm.</p><a href="/de/upi-qr-generator.html" class="btn tool-btn">UPI QR generieren</a></div></div>
+<div class="col-md-4 col-lg-3"><div class="tool-card india"><div class="tool-icon"><i class="fas fa-calculator"></i></div><span class="status-badge status-hot">STEUER</span><h3>GST Rechner</h3><p>CGST, SGST, IGST Berechnung. GST-Rechnung bereit.</p><a href="/de/gst-calculator.html" class="btn tool-btn">GST berechnen</a></div></div>
+<div class="col-md-4 col-lg-3"><div class="tool-card india"><div class="tool-icon"><i class="fas fa-language"></i></div><span class="status-badge status-hot">HINGLISH</span><h3>Hinglish Konverter</h3><p>Hinglish in englische Keywords umwandeln. Bereit für Sprachsuche.</p><a href="/de/hinglish-converter.html" class="btn tool-btn">Hinglish konvertieren</a></div></div>
+<div class="col-md-4 col-lg-3"><div class="tool-card india"><div class="tool-icon"><i class="fas fa-building"></i></div><span class="status-badge status-hot">MSME</span><h3>Udyam Checker</h3><p>Udyam-Registrierung überprüfen. MSME-Geschäftsprüfung.</p><a href="/de/udyam-checker.html" class="btn tool-btn">Udyam prüfen</a></div></div>
+<div class="col-md-4 col-lg-3"><div class="tool-card india"><div class="tool-icon"><i class="fas fa-id-card"></i></div><span class="status-badge status-new">SICHERHEIT</span><h3>PAN Validator</h3><p>PAN-Kartenformat validieren. Steuer-Compliance-Tool.</p><a href="/de/pan-validator.html" class="btn tool-btn">PAN validieren</a></div></div>
+<div class="col-md-4 col-lg-3"><div class="tool-card india"><div class="tool-icon"><i class="fas fa-id-card"></i></div><span class="status-badge status-live">DATENSCHUTZ</span><h3>Aadhaar Mask Tool</h3><p>Aadhaar-Nummer sicher maskieren. Nur letzte 4 Ziffern zeigen.</p><a href="/de/aadhaar-mask.html" class="btn tool-btn">Aadhaar maskieren</a></div></div>
+<div class="col-md-4 col-lg-3"><div class="tool-card india"><div class="tool-icon"><i class="fas fa-share-alt"></i></div><span class="status-badge status-hot">SOCIAL</span><h3>Social Media Optimierer</h3><p>Beiträge für Facebook, Instagram, Twitter & mehr optimieren.</p><a href="/de/social-media-optimizer.html" class="btn tool-btn">Beiträge optimieren</a></div></div>
+<div class="col-md-4 col-lg-3"><div class="tool-card india"><div class="tool-icon"><i class="fas fa-language"></i></div><span class="status-badge status-new">BHASHINI</span><h3>Bhashini SEO</h3><p>SEO in 12+ indischen Sprachen. Hindi, Tamil, Telugu & mehr.</p><a href="/de/bhashini-seo.html" class="btn tool-btn">Bhashini SEO</a></div></div>
+</div>
+<div class="text-center mb-4"><a href="/de/all-tools.html" class="btn btn-outline-primary btn-lg rounded-pill px-4" style="border-color:#ff9933; color:#ff9933;">Alle 18+ Indien-Tools ansehen <i class="fas fa-arrow-right ms-2"></i></a></div>
+
+<div id="semilocal-tools"></div>
+<h2 class="category-header cat-semilocal"><span class="category-badge badge-semilocal">🛒 Plattform-Tools</span> Amazon & E-Commerce SEO</h2>
+<div class="category-desc" style="border-left: 5px solid #f59e0b;"><i class="fab fa-amazon" style="color:#f59e0b;"></i><p><strong>Für Verkäufer & E-Commerce:</strong> Amazon SEO-Tools, FBA-Rechner, Produktrecherche und E-Commerce-Optimierung. Amazon-Verkäufer weltweit profitieren von diesen kostenlosen Tools.</p></div>
+<div class="row g-4 mb-5">
+<div class="col-md-4 col-lg-3"><div class="tool-card semilocal"><div class="tool-badge"><span class="badge bg-warning text-dark">🔥 HOT</span></div><div class="tool-icon"><i class="fab fa-amazon"></i></div><span class="status-badge status-hot">AMAZON FBA</span><h3>Amazon SEO Tool Kostenlos</h3><p>Komplette Amazon-Optimierungssuite mit Live-Daten-API.</p><a href="/de/amazon-seo-tool-free.html" class="btn tool-btn">Amazon optimieren</a></div></div>
+<div class="col-md-4 col-lg-3"><div class="tool-card semilocal"><div class="tool-icon"><i class="fas fa-calculator"></i></div><span class="status-badge status-live">FBA</span><h3>Amazon FBA Rechner</h3><p>Amazon FBA-Gebühren & Gewinnmargen sofort berechnen.</p><a href="/de/amazon-fba-calculator.html" class="btn tool-btn">FBA berechnen</a></div></div>
+<div class="col-md-4 col-lg-3"><div class="tool-card semilocal"><div class="tool-icon"><i class="fas fa-store"></i></div><span class="status-badge status-new">E-COMMERCE</span><h3>E-Commerce SEO Tool</h3><p>Shopify, WooCommerce & Magento Stores optimieren.</p><a href="/de/ecommerce-seo-tool.html" class="btn tool-btn">E-Commerce SEO</a></div></div>
+<div class="col-md-4 col-lg-3"><div class="tool-card semilocal"><div class="tool-icon"><i class="fas fa-tag"></i></div><span class="status-badge status-live">PREISE</span><h3>Preisvergleichs-Tool</h3><p>Preise auf Amazon & E-Commerce-Plattformen vergleichen.</p><a href="/de/price-comparison-tool.html" class="btn tool-btn">Preise vergleichen</a></div></div>
+</div>
+<div class="text-center mb-4"><a href="/de/all-tools.html" class="btn btn-outline-primary btn-lg rounded-pill px-4" style="border-color:#f59e0b; color:#f59e0b;">Alle 10+ Plattform-Tools ansehen <i class="fas fa-arrow-right ms-2"></i></a></div>
+
+<div class="cta-section">
+<h2>🚀 Bereit, alle 90+ kostenlosen SEO-Tools zu erkunden?</h2>
+<p style="font-size:1.2rem; opacity:0.95;">4 Kategorien. 90+ Tools. 100% Kostenlos. Keine Anmeldung. Aktualisiert 2026.</p>
+<a href="/de/all-tools.html" class="cta-btn"><i class="fas fa-th-large me-2"></i>Alle Kategorien durchsuchen</a>
+</div>
+</div>
+
+<footer>
+<div class="container">
+<div class="row">
+<div class="col-md-4 mb-4">
+<h5><i class="fas fa-tools me-2"></i>FreeSEOToolHub</h5>
+<p style="color:#b0c4de; font-size:0.9rem;">90+ kostenlose SEO-Tools für indische Nutzer und Amazon & E-Commerce SEO. 100% kostenlos seit 2024. Aktualisiert für 2026.</p>
+<div class="mt-3"><small style="color:#94a3b8;">Auch verfügbar in:</small><br>
+<a href="/hi/" class="me-2" style="font-size:0.85rem;">🇮🇳 हिन्दी</a>
+<a href="/en/" class="me-2" style="font-size:0.85rem;">🇺🇸 English</a>
+<a href="/ur/" class="me-2" style="font-size:0.85rem;">🇵🇰 اردو</a>
+<a href="/de/" class="me-2" style="font-size:0.85rem;">🇩🇪 Deutsch</a>
+<a href="/es/" style="font-size:0.85rem;">🇪🇸 Español</a>
+</div>
+</div>
+<div class="col-md-2 mb-3"><h6>Schnelllinks</h6><ul class="list-unstyled"><li><a href="/de/">Start</a></li><li><a href="/de/blog/">Blog</a></li><li><a href="/de/all-tools.html">Alle Tools</a></li><li><a href="/de/about.html">Über uns</a></li><li><a href="/de/contact.html">Kontakt</a></li></ul></div>
+<div class="col-md-3 mb-3"><h6>Indien Tools</h6><ul class="list-unstyled"><li><a href="/de/upi-qr-generator.html">UPI QR Generator</a></li><li><a href="/de/udyam-checker.html">Udyam Checker</a></li><li><a href="/de/aadhaar-mask.html">Aadhaar Maske</a></li><li><a href="/de/pan-validator.html">PAN Validator</a></li></ul></div>
+<div class="col-md-3 mb-3"><h6>E-Commerce Tools</h6><ul class="list-unstyled"><li><a href="/de/amazon-seo-tool-free.html">Amazon SEO Tool</a></li><li><a href="/de/amazon-fba-calculator.html">Amazon FBA Rechner</a></li><li><a href="/de/ecommerce-seo-tool.html">E-Commerce SEO</a></li><li><a href="/de/price-comparison-tool.html">Preisvergleich</a></li></ul></div>
+</div>
+<hr style="border-color:rgba(255,255,255,0.1);">
+<div class="row"><div class="col-md-6"><p style="color:#94a3b8; font-size:0.9rem;">© 2026 FreeSEOToolHub.com | Alle Rechte vorbehalten</p></div><div class="col-md-6 text-md-end"><a href="/de/privacy.html" class="me-3">Datenschutz</a><a href="/sitemap.xml" class="me-3">Sitemap</a><a href="/de/contact.html">Kontakt</a></div></div>
+</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+const cards = document.querySelectorAll('.tool-card');
+const searchBox = document.getElementById('toolSearch');
+const noResults = document.getElementById('noResults');
+const langLinks = document.querySelectorAll('.dropdown-item');
+langLinks.forEach(link => {
+link.addEventListener('click', function(e) {
+const href = this.getAttribute('href');
+const lang = href.replace(/\//g, '');
+localStorage.setItem('preferredLanguage', lang);
+window.location.href = href;
+});
+});
+searchBox.addEventListener('input', function(e) {
+const term = e.target.value.toLowerCase().trim();
+let visible = 0;
+cards.forEach(card => {
+const title = card.querySelector('h3')?.innerText.toLowerCase() || '';
+const desc = card.querySelector('p')?.innerText.toLowerCase() || '';
+const match = title.includes(term) || desc.includes(term);
+card.closest('.col-md-4, .col-lg-3').style.display = match ? 'block' : 'none';
+if(match) visible++;
+});
+noResults.style.display = (visible === 0 && term !== '') ? 'block' : 'none';
+});
+cards.forEach(card => {
+card.addEventListener('click', function(e) {
+if(e.target.tagName !== 'A' && !e.target.closest('a') && !e.target.closest('button')) {
+const link = this.querySelector('a');
+if(link) window.location = link.href;
+}
+});
+});
+});
+</script>
+</body>
+</html>
