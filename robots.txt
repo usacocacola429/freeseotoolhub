@@ -1,12 +1,27 @@
 # robots.txt for Free SEO Tool Hub
 # https://freeseotoolhub.com/
-# Last Updated: 2026-04-13
+# Last Updated: 2026-05-21
+# Multi-Language System Active (URL Parameter: ?lang=)
 
 User-agent: *
 Allow: /
 Disallow: /private/
 Disallow: /temp/
 Disallow: /drafts/
+
+# Block old language folders to prevent duplicate content
+Disallow: /hi/
+Disallow: /en/
+Disallow: /ur/
+Disallow: /de/
+Disallow: /es/
+
+# Allow language URL parameters for crawling
+Allow: /*?lang=hi$
+Allow: /*?lang=en$
+Allow: /*?lang=ur$
+Allow: /*?lang=es$
+Allow: /*?lang=de$
 
 Sitemap: https://freeseotoolhub.com/sitemap.xml
 
@@ -22,3 +37,10 @@ Disallow: /
 
 User-agent: Amazonbot
 Disallow: /
+
+# Crawl-Delay for heavy bots
+User-agent: AhrefsBot
+Crawl-Delay: 10
+
+User-agent: SemrushBot
+Crawl-Delay: 8
