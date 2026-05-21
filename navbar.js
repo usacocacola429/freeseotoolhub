@@ -1,5 +1,6 @@
 // navbar.js - SEO Optimized Mega Menu 2026
 // Google Bot Friendly - No document.write()
+// Multi-Language Ready - 5 Languages
 
 (function() {
     // Tool Database - Only tools that actually exist on your site
@@ -26,7 +27,6 @@
         {name: "Schema Markup", link: "schema-markup-generator.html", icon: "fa-code", cat: "SEO", desc: "JSON-LD structured data"},
         {name: "Broken Link Checker", link: "broken-link-checker.html", icon: "fa-unlink", cat: "SEO", desc: "Find 404 errors"},
         {name: "Canonical URL Checker", link: "canonical-url-checker.html", icon: "fa-link", cat: "SEO", desc: "Check canonical tags"},
-        {name: "Robots.txt", link: "robots.txt", icon: "fa-robot", cat: "SEO", desc: "View robots.txt file"},
         
         // ===== AMAZON & E-COMMERCE =====
         {name: "Amazon SEO Tool", link: "amazon-seo-tool-free.html", icon: "fa-amazon", cat: "Amazon", desc: "Amazon optimization suite"},
@@ -87,13 +87,29 @@
         "More": "#64748b"
     };
 
+    // 🌐 Get current language from URL
+    function getCurrentLang() {
+        const params = new URLSearchParams(window.location.search);
+        return params.get('lang') || 'en';
+    }
+
+    // 🌐 Add language parameter to URL
+    function addLangToUrl(url) {
+        const lang = getCurrentLang();
+        if (lang && lang !== 'en') {
+            const separator = url.includes('?') ? '&' : '?';
+            return url + separator + 'lang=' + lang;
+        }
+        return url;
+    }
+
     // Build Navbar HTML
     const navbarHTML = `
     <nav class="navbar" itemscope itemtype="https://schema.org/SiteNavigationElement" aria-label="Main navigation">
         <div class="nav-container">
-            <a href="index.html" class="logo" itemprop="url" aria-label="Free SEO Tool Hub Home">
+            <a href="${addLangToUrl('index.html')}" class="logo" itemprop="url" aria-label="Free SEO Tool Hub Home">
                 <i class="fas fa-tools" aria-hidden="true"></i> 
-                <span itemprop="name">FreeSEOToolHub</span><span class="logo-dot">.com</span>
+                <span itemprop="name" data-translate="brand">FreeSEOToolHub</span><span class="logo-dot">.com</span>
             </a>
             
             <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mainNav">
@@ -101,27 +117,36 @@
             </button>
             
             <div class="nav-links" id="mainNav" role="menubar">
-                <a href="index.html" class="nav-link active" itemprop="url" role="menuitem">
-                    <i class="fas fa-home" aria-hidden="true"></i> <span itemprop="name">Home</span>
+                <a href="${addLangToUrl('index.html')}" class="nav-link active" itemprop="url" role="menuitem">
+                    <i class="fas fa-home" aria-hidden="true"></i> <span itemprop="name" data-translate="home">Home</span>
                 </a>
                 
                 <div class="mega-menu-container" role="menuitem">
-                    <a href="all-tools.html" class="nav-link mega-menu-btn" itemprop="url" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-th" aria-hidden="true"></i> <span itemprop="name">Tools</span> 
+                    <a href="${addLangToUrl('all-tools.html')}" class="nav-link mega-menu-btn" itemprop="url" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-th" aria-hidden="true"></i> <span itemprop="name" data-translate="allTools">All Tools</span> 
                         <i class="fas fa-chevron-down arrow-icon" aria-hidden="true"></i>
                     </a>
                     <div class="mega-menu" id="megaMenu" role="menu" aria-label="Tools mega menu"></div>
                 </div>
                 
-                <a href="blog/" class="nav-link" itemprop="url" role="menuitem">
-                    <i class="fas fa-blog" aria-hidden="true"></i> <span itemprop="name">Blog</span>
+                <a href="${addLangToUrl('blog/')}" class="nav-link" itemprop="url" role="menuitem">
+                    <i class="fas fa-blog" aria-hidden="true"></i> <span itemprop="name" data-translate="blog">Blog</span>
                 </a>
-                <a href="about.html" class="nav-link" itemprop="url" role="menuitem">
-                    <i class="fas fa-info-circle" aria-hidden="true"></i> <span itemprop="name">About</span>
+                <a href="${addLangToUrl('about.html')}" class="nav-link" itemprop="url" role="menuitem">
+                    <i class="fas fa-info-circle" aria-hidden="true"></i> <span itemprop="name" data-translate="about">About</span>
                 </a>
-                <a href="contact.html" class="nav-link" itemprop="url" role="menuitem">
-                    <i class="fas fa-envelope" aria-hidden="true"></i> <span itemprop="name">Contact</span>
+                <a href="${addLangToUrl('contact.html')}" class="nav-link" itemprop="url" role="menuitem">
+                    <i class="fas fa-envelope" aria-hidden="true"></i> <span itemprop="name" data-translate="contact">Contact</span>
                 </a>
+                
+                <!-- 🌐 Language Switcher in Navbar -->
+                <div class="nav-lang-switcher" style="display:flex; align-items:center; gap:4px; margin-left:8px;">
+                    <button onclick="switchLanguage('en')" class="nav-lang-btn" title="English" style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); color:white; padding:6px 10px; border-radius:6px; cursor:pointer; font-size:0.8rem; transition:all 0.2s;">🇬🇧</button>
+                    <button onclick="switchLanguage('hi')" class="nav-lang-btn" title="हिन्दी" style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); color:white; padding:6px 10px; border-radius:6px; cursor:pointer; font-size:0.8rem; transition:all 0.2s;">🇮🇳</button>
+                    <button onclick="switchLanguage('ur')" class="nav-lang-btn" title="اردو" style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); color:white; padding:6px 10px; border-radius:6px; cursor:pointer; font-size:0.8rem; transition:all 0.2s;">🇵🇰</button>
+                    <button onclick="switchLanguage('es')" class="nav-lang-btn" title="Español" style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); color:white; padding:6px 10px; border-radius:6px; cursor:pointer; font-size:0.8rem; transition:all 0.2s;">🇪🇸</button>
+                    <button onclick="switchLanguage('de')" class="nav-lang-btn" title="Deutsch" style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); color:white; padding:6px 10px; border-radius:6px; cursor:pointer; font-size:0.8rem; transition:all 0.2s;">🇩🇪</button>
+                </div>
             </div>
         </div>
     </nav>`;
@@ -183,6 +208,12 @@
     }
     .nav-link i { font-size: 0.9rem; }
     .arrow-icon { font-size: 0.65rem !important; margin-left: 2px; transition: transform 0.3s; }
+    
+    /* Language buttons hover */
+    .nav-lang-btn:hover {
+        background: rgba(255,255,255,0.25) !important;
+        transform: translateY(-1px);
+    }
     
     /* === HAMBURGER === */
     .hamburger {
@@ -320,6 +351,13 @@
         .mega-menu-content { grid-template-columns: repeat(2, 1fr); gap: 12px; }
         .mega-menu-container:hover .mega-menu { display: none; }
         .mega-menu-container.active .mega-menu { display: block; }
+        .nav-lang-switcher { 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            margin: 10px 0 !important;
+            gap: 6px !important;
+        }
+        .nav-lang-btn { padding: 8px 12px !important; font-size: 0.9rem !important; }
     }
     @media (max-width: 480px) {
         .mega-menu-content { grid-template-columns: 1fr; }
@@ -331,7 +369,7 @@
     document.body.insertAdjacentHTML('afterbegin', navbarHTML);
     document.head.insertAdjacentHTML('beforeend', navbarCSS);
 
-    // Generate mega menu
+    // Generate mega menu with language-aware links
     function buildMegaMenu() {
         const menu = document.getElementById('megaMenu');
         if (!menu) return;
@@ -359,7 +397,9 @@
                 </h4>`;
             
             tools.forEach(t => {
-                html += `<a href="${t.link}" title="${t.desc}" role="menuitem">
+                // Add language parameter to each tool link
+                const langUrl = addLangToUrl(t.link);
+                html += `<a href="${langUrl}" title="${t.desc}" role="menuitem">
                     <i class="fas ${t.icon}" style="color:${color};"></i> ${t.name}
                 </a>`;
             });
@@ -367,8 +407,10 @@
             html += '</div>';
         });
         
+        // All tools button with language parameter
+        const allToolsUrl = addLangToUrl('all-tools.html');
         html += `<div class="mega-menu-footer">
-            <a href="all-tools.html" class="all-tools-btn">
+            <a href="${allToolsUrl}" class="all-tools-btn">
                 <i class="fas fa-th-large"></i> View All ${TOOLS.length}+ Tools
             </a>
         </div></div>`;
@@ -421,13 +463,13 @@
         links.forEach(link => {
             link.classList.remove('active');
             const href = link.getAttribute('href');
-            if (href && path.includes(href.replace('/','')) && href !== 'index.html' && href !== '#') {
+            if (href && path.includes(href.replace('/','').split('?')[0]) && href !== 'index.html' && href !== '#') {
                 link.classList.add('active');
             }
         });
         // Default home active
         if (path === '/' || path.endsWith('index.html')) {
-            const homeLink = document.querySelector('.nav-link[href="index.html"]');
+            const homeLink = document.querySelector('.nav-link[href*="index.html"]');
             if (homeLink) homeLink.classList.add('active');
         }
     }
@@ -437,5 +479,5 @@
     initMobile();
     setActiveLink();
     
-    console.log('✅ FreeSEOToolHub Navbar Loaded | ' + TOOLS.length + ' Tools | SEO Optimized 2026');
+    console.log('✅ FreeSEOToolHub Navbar Loaded | ' + TOOLS.length + ' Tools | 5 Languages | SEO Optimized 2026');
 })();
