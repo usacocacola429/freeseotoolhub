@@ -1,0 +1,317 @@
+// =============================================
+// Free SEO Tools Hub - Multi-Language System
+// =============================================
+
+const translations = {
+hi: {
+// Navbar
+brand: "फ्री SEO टूल्स हब",
+home: "होम",
+allTools: "सभी टूल्स",
+about: "हमारे बारे में",
+contact: "संपर्क",
+blog: "ब्लॉग",
+
+// Hero Section
+heroTitle: "फ्री SEO टूल्स - भारतीय यूज़र्स के लिए 🇮🇳",
+heroSubtitle: "90+ फ्री SEO टूल्स भारतीय बिज़नेस और ई-कॉमर्स सेलर्स के लिए। GST कैलकुलेटर, UPI QR जनरेटर, हिंग्लिश SEO, Amazon FBA कैलकुलेटर। सब 100% फ्री, कोई साइनअप नहीं।",
+
+// Why Choose
+whyTitle: "हमारे टूल्स क्यों चुनें?",
+whyDesc: "हम भारतीय बिज़नेस, ई-कॉमर्स सेलर्स और ग्लोबल यूज़र्स के लिए 90+ प्रोफेशनल SEO टूल्स देते हैं। हर टूल बिना रजिस्ट्रेशन के इस्तेमाल करें।",
+
+// Categories
+catGlobal: "🌍 ग्लोबल यूनिवर्सल",
+catGlobalDesc: "35+ टूल्स। मेटा टैग्स, प्लेजरिज़्म, QR कोड, बैकलिंक।",
+catPro: "🚀 एडवांस्ड प्रो",
+catProDesc: "18+ प्रोफेशनल टूल्स। SERP, CWV, कंटेंट गैप, लॉग एनालिसिस।",
+catPlatform: "🛒 प्लेटफॉर्म टूल्स",
+catPlatformDesc: "Amazon SEO, FBA कैलकुलेटर, ई-कॉमर्स टूल्स।",
+catIndia: "🇮🇳 भारत स्पेशल",
+catIndiaDesc: "GST, UPI, PAN, आधार, उद्यम, हिंग्लिश और 12+ भाषा टूल्स।",
+
+// Search
+searchPlaceholder: "90+ टूल्स खोजें...",
+noToolsFound: "कोई टूल नहीं मिला",
+tryDifferent: "दूसरे कीवर्ड से खोजें या नीचे कैटेगरी देखें",
+
+// India Special
+indiaTitle: "🇮🇳 भारतीय यूज़र्स के लिए स्पेशल टूल्स",
+indiaDesc: "भारतीय बिज़नेस के लिए: GST कैलकुलेटर, UPI QR जनरेटर, PAN वैलिडेटर, उद्यम चेकर, आधार मास्क, हिंग्लिश SEO। भारत के 50 करोड़+ इंटरनेट यूज़र्स के लिए।",
+
+// Platform Tools
+platformTitle: "🛒 Amazon और ई-कॉमर्स SEO टूल्स",
+platformDesc: "सेलर्स के लिए: Amazon SEO टूल्स, FBA कैलकुलेटर, प्रोडक्ट रिसर्च, ई-कॉमर्स ऑप्टिमाइज़ेशन।",
+
+// CTA
+ctaTitle: "सभी 90+ फ्री SEO टूल्स एक्सप्लोर करें",
+ctaDesc: "4 कैटेगरी। 90+ टूल्स। 100% फ्री। कोई साइनअप नहीं। 2026 अपडेटेड।",
+browseAll: "सभी कैटेगरी देखें →",
+
+// Tool Cards (कुछ ज़रूरी)
+gstTitle: "GST कैलकुलेटर",
+gstDesc: "CGST, SGST, IGST तुरंत कैलकुलेट करें।",
+upiTitle: "UPI QR जनरेटर",
+upiDesc: "GPay, PhonePe, Paytm के लिए UPI QR कोड बनाएं।",
+panTitle: "PAN वैलिडेटर",
+panDesc: "PAN कार्ड फॉर्मेट चेक करें।",
+udyamTitle: "उद्यम चेकर",
+udyamDesc: "उद्यम रजिस्ट्रेशन वेरिफाई करें।",
+aadhaarTitle: "आधार मास्क टूल",
+aadhaarDesc: "आधार नंबर सुरक्षित छिपाएं।",
+
+// Footer
+footerDesc: "90+ फ्री SEO टूल्स। भारतीय बिज़नेस और ग्लोबल यूज़र्स के लिए।",
+privacy: "प्राइवेसी पॉलिसी",
+rights: "सर्वाधिकार सुरक्षित।"
+},
+
+ur: {
+brand: "مفت SEO ٹولز ہب",
+home: "ہوم",
+allTools: "تمام ٹولز",
+about: "ہمارے بارے میں",
+contact: "رابطہ",
+blog: "بلاگ",
+
+heroTitle: "مفت SEO ٹولز - بھارتی صارفین کے لیے 🇮🇳",
+heroSubtitle: "بھارتی کاروبار اور ای کامرس سیلرز کے لیے 90+ مفت SEO ٹولز۔ GST کیلکولیٹر، UPI QR جنریٹر، ہنگلش SEO، Amazon FBA کیلکولیٹر۔",
+
+whyTitle: "ہمارے ٹولز کیوں منتخب کریں؟",
+whyDesc: "ہم بھارتی کاروبار اور عالمی صارفین کے لیے 90+ پروفیشنل SEO ٹولز فراہم کرتے ہیں۔",
+
+catGlobal: "🌍 عالمی یونیورسل",
+catGlobalDesc: "35+ ٹولز۔ میٹا ٹیگز، پلیجرزم، QR کوڈ، بیک لنک۔",
+catPro: "🚀 ایڈوانسڈ پرو",
+catProDesc: "18+ پروفیشنل ٹولز۔ SERP، CWV، کنٹینٹ گیپ۔",
+catPlatform: "🛒 پلیٹ فارم ٹولز",
+catPlatformDesc: "Amazon SEO، FBA کیلکولیٹر، ای کامرس ٹولز۔",
+catIndia: "🇮🇳 بھارت اسپیشل",
+catIndiaDesc: "GST، UPI، PAN، آدھار، ادیم، ہنگلش SEO۔",
+
+searchPlaceholder: "90+ ٹولز تلاش کریں...",
+noToolsFound: "کوئی ٹول نہیں ملا",
+tryDifferent: "دوسرے الفاظ سے تلاش کریں",
+
+indiaTitle: "🇮🇳 بھارتی صارفین کے لیے اسپیشل ٹولز",
+indiaDesc: "بھارتی کاروبار کے لیے: GST، UPI QR، PAN، آدھار، ادیم، ہنگلش SEO۔",
+
+platformTitle: "🛒 Amazon اور ای کامرس SEO ٹولز",
+platformDesc: "سیلرز کے لیے: Amazon SEO، FBA، پروڈکٹ ریسرچ۔",
+
+ctaTitle: "تمام 90+ مفت SEO ٹولز دیکھیں",
+browseAll: "تمام کیٹگریز دیکھیں →",
+
+gstTitle: "GST کیلکولیٹر",
+upiTitle: "UPI QR جنریٹر",
+panTitle: "PAN ویلڈیٹر",
+udyamTitle: "ادیم چیکر",
+aadhaarTitle: "آدھار ماسک ٹول",
+
+footerDesc: "90+ مفت SEO ٹولز۔ بھارتی کاروبار کے لیے۔",
+privacy: "پرائیویسی پالیسی",
+rights: "جملہ حقوق محفوظ ہیں۔"
+},
+
+de: {
+brand: "Kostenlose SEO-Tools Hub",
+home: "Startseite",
+allTools: "Alle Tools",
+about: "Über uns",
+contact: "Kontakt",
+blog: "Blog",
+
+heroTitle: "Kostenlose SEO-Tools - Für globale Nutzer 🌍",
+heroSubtitle: "90+ kostenlose SEO-Tools. Meta-Tags, Plagiatprüfung, QR-Codes, Backlinks. 100% kostenlos, keine Anmeldung.",
+
+whyTitle: "Warum unsere Tools?",
+whyDesc: "90+ professionelle SEO-Tools für Unternehmen und E-Commerce-Verkäufer weltweit.",
+
+catGlobal: "🌍 Global Universal",
+catGlobalDesc: "35+ Tools. Meta-Tags, Plagiat, QR-Codes, Backlinks.",
+catPro: "🚀 Advanced Pro",
+catProDesc: "18+ professionelle Tools. SERP, CWV, Content Gap.",
+catPlatform: "🛒 Plattform-Tools",
+catPlatformDesc: "Amazon SEO, FBA-Rechner, E-Commerce-Tools.",
+catIndia: "🇮🇳 Indien Spezial",
+catIndiaDesc: "GST, UPI, PAN, Aadhaar, Udyam, Hinglish SEO.",
+
+searchPlaceholder: "90+ Tools durchsuchen...",
+noToolsFound: "Keine Tools gefunden",
+tryDifferent: "Andere Keywords versuchen",
+
+ctaTitle: "Alle 90+ kostenlosen SEO-Tools erkunden",
+browseAll: "Alle Kategorien →",
+
+gstTitle: "GST-Rechner",
+upiTitle: "UPI QR-Generator",
+panTitle: "PAN-Validator",
+udyamTitle: "Udyam-Checker",
+aadhaarTitle: "Aadhaar-Maskierung",
+
+footerDesc: "90+ kostenlose SEO-Tools.",
+privacy: "Datenschutz",
+rights: "Alle Rechte vorbehalten."
+},
+
+es: {
+brand: "Herramientas SEO Gratis Hub",
+home: "Inicio",
+allTools: "Todas",
+about: "Acerca de",
+contact: "Contacto",
+blog: "Blog",
+
+heroTitle: "Herramientas SEO Gratis - Para Usuarios Globales 🌍",
+heroSubtitle: "90+ herramientas SEO gratis. Meta tags, plagio, QR, backlinks. 100% gratis, sin registro.",
+
+whyTitle: "¿Por qué elegirnos?",
+whyDesc: "90+ herramientas SEO profesionales para negocios globales.",
+
+catGlobal: "🌍 Global Universal",
+catGlobalDesc: "35+ herramientas. Meta tags, plagio, QR, backlinks.",
+catPro: "🚀 Pro Avanzado",
+catProDesc: "18+ herramientas. SERP, CWV, content gap.",
+catPlatform: "🛒 Plataformas",
+catPlatformDesc: "Amazon SEO, FBA, e-commerce.",
+catIndia: "🇮🇳 India Especial",
+catIndiaDesc: "GST, UPI, PAN, Aadhaar, Hinglish SEO.",
+
+searchPlaceholder: "Buscar 90+ herramientas...",
+noToolsFound: "Sin resultados",
+tryDifferent: "Prueba otras palabras",
+
+ctaTitle: "Explora las 90+ Herramientas SEO Gratis",
+browseAll: "Ver Categorías →",
+
+gstTitle: "Calculadora GST",
+upiTitle: "Generador UPI QR",
+panTitle: "Validador PAN",
+udyamTitle: "Verificador Udyam",
+aadhaarTitle: "Enmascarar Aadhaar",
+
+footerDesc: "90+ herramientas SEO gratis.",
+privacy: "Privacidad",
+rights: "Todos los derechos reservados."
+},
+
+en: {
+brand: "Free SEO Tools Hub",
+home: "Home",
+allTools: "All Tools",
+about: "About",
+contact: "Contact",
+blog: "Blog",
+
+heroTitle: "Free SEO Tools - For Indian Users 🇮🇳 & Global",
+heroSubtitle: "90+ free SEO tools. GST, UPI QR, Hinglish SEO, Amazon FBA. 100% free, no signup.",
+
+whyTitle: "Why Choose Our Tools?",
+whyDesc: "90+ professional SEO tools for Indian businesses & global users.",
+
+catGlobal: "🌍 Global Universal",
+catGlobalDesc: "35+ tools. Meta tags, plagiarism, QR, backlinks.",
+catPro: "🚀 Advanced Pro",
+catProDesc: "18+ professional tools. SERP, CWV, content gap.",
+catPlatform: "🛒 Platform Tools",
+catPlatformDesc: "Amazon SEO, FBA calculator, e-commerce.",
+catIndia: "🇮🇳 India Specific",
+catIndiaDesc: "GST, UPI, PAN, Aadhaar, Udyam, Hinglish SEO.",
+
+searchPlaceholder: "Search 90+ tools...",
+noToolsFound: "No Tools Found",
+tryDifferent: "Try different keywords or browse by category",
+
+indiaTitle: "🇮🇳 India Special Tools",
+indiaDesc: "GST, UPI QR, PAN, Aadhaar, Udyam, Hinglish SEO for India's 500M+ users.",
+
+platformTitle: "🛒 Amazon & E-Commerce SEO",
+platformDesc: "Amazon SEO, FBA calculator, product research tools.",
+
+ctaTitle: "Explore All 90+ Free SEO Tools",
+ctaDesc: "4 Categories. 90+ Tools. 100% Free. Updated 2026.",
+browseAll: "Browse All Categories →",
+
+gstTitle: "GST Calculator",
+gstDesc: "Calculate CGST, SGST, IGST instantly.",
+upiTitle: "UPI QR Generator",
+upiDesc: "Generate UPI QR codes for GPay, PhonePe, Paytm.",
+panTitle: "PAN Validator",
+panDesc: "Validate PAN card format.",
+udyamTitle: "Udyam Checker",
+udyamDesc: "Verify Udyam Registration.",
+aadhaarTitle: "Aadhaar Mask Tool",
+aadhaarDesc: "Mask Aadhaar number securely.",
+
+footerDesc: "90+ free SEO tools for Indian businesses.",
+privacy: "Privacy Policy",
+rights: "All rights reserved."
+}
+};
+
+// =============================================
+// Language Functions
+// =============================================
+
+function getLang() {
+const params = new URLSearchParams(window.location.search);
+return params.get('lang') || 'en';
+}
+
+function applyLanguage(lang) {
+const t = translations[lang];
+if (!t) return;
+
+// Apply all data-translate elements
+document.querySelectorAll('[data-translate]').forEach(el => {
+const key = el.getAttribute('data-translate');
+if (t[key]) {
+// अगर placeholder है तो placeholder बदलो, नहीं तो text
+if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+el.placeholder = t[key];
+} else {
+el.textContent = t[key];
+}
+}
+});
+
+// Update HTML lang
+document.documentElement.lang = lang;
+if (t.brand) document.title = t.brand;
+
+// Save preference
+localStorage.setItem('preferredLang', lang);
+}
+
+// भाषा बदलने का फंक्शन
+function switchLanguage(lang) {
+const url = new URL(window.location);
+url.searchParams.set('lang', lang);
+window.location = url.toString();
+}
+
+// Page Load
+document.addEventListener('DOMContentLoaded', () => {
+// Check saved preference first, then URL
+const savedLang = localStorage.getItem('preferredLang');
+const urlLang = new URLSearchParams(window.location.search).get('lang');
+const lang = urlLang || savedLang || 'en';
+applyLanguage(lang);
+});
+
+// सारे लिंक्स में lang पैरामीटर जोड़ो
+document.addEventListener('DOMContentLoaded', function() {
+const lang = getLang();
+if (lang !== 'en') {
+document.querySelectorAll('a').forEach(link => {
+try {
+const url = new URL(link.href, window.location.origin);
+// सिर्फ अपनी साइट के लिंक्स में जोड़ो
+if (url.hostname === window.location.hostname) {
+url.searchParams.set('lang', lang);
+link.href = url.pathname + url.search;
+}
+} catch(e) {}
+});
+}
+});
