@@ -195,12 +195,15 @@
         .category-header::after { content: ''; position: absolute; bottom: 0; left: 0; height: 4px; border-radius: 2px; width: 100px; }
         .cat-india { color: #ff6b00; }
         .cat-semilocal { color: #d97706; }
+        .cat-global { color: #2563eb; }
         .cat-india::after { background: #ff9933; }
         .cat-semilocal::after { background: #f59e0b; }
+        .cat-global::after { background: #3b82f6; }
 
         .category-badge { font-size: 0.85rem; padding: 6px 18px; border-radius: 25px; color: white; font-weight: 600; white-space: nowrap; }
         .badge-india { background: #ff9933; }
         .badge-semilocal { background: #f59e0b; }
+        .badge-global { background: #3b82f6; }
 
         .category-desc { background: white; padding: 18px 22px; border-radius: 14px; margin-bottom: 25px; display: flex; align-items: center; gap: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.03); }
         .category-desc p { margin: 0; color: #4a5a72; font-size: 0.95rem; }
@@ -211,10 +214,12 @@
         .tool-card:hover { transform:translateY(-6px); box-shadow:0 20px 40px rgba(30,43,79,0.12); }
         .tool-card.india { border-top: 4px solid #ff9933; }
         .tool-card.semilocal { border-top: 4px solid #f59e0b; }
+        .tool-card.global { border-top: 4px solid #3b82f6; }
 
         .tool-icon { width:60px; height:60px; background:linear-gradient(135deg,#4361ee 0%,#3a0ca3 100%); border-radius:16px; display:flex; align-items:center; justify-content:center; color:white; font-size:1.6rem; margin-bottom:18px; }
         .tool-card.india .tool-icon { background:linear-gradient(135deg,#ff9933,#ff6b00); }
         .tool-card.semilocal .tool-icon { background:linear-gradient(135deg,#f59e0b,#d97706); }
+        .tool-card.global .tool-icon { background:linear-gradient(135deg,#3b82f6,#2563eb); }
 
         .tool-card h3 { font-size:1.15rem; font-weight:700; margin-bottom:8px; color:#0b1a33; line-height:1.4; }
         .tool-card p { color:#4a5a72; font-size:0.9rem; margin-bottom:15px; line-height:1.5; }
@@ -229,6 +234,9 @@
 
         .tool-btn { background:linear-gradient(135deg,#4361ee 0%,#3a0ca3 100%); color:white; border:none; padding:10px 20px; border-radius:40px; font-weight:600; width:100%; margin-top:10px; transition:all 0.3s; }
         .tool-btn:hover { transform:translateY(-2px); box-shadow:0 8px 20px rgba(67,97,238,0.3); }
+        .tool-card.india .tool-btn { background:linear-gradient(135deg,#ff9933,#ff6b00); }
+        .tool-card.semilocal .tool-btn { background:linear-gradient(135deg,#f59e0b,#d97706); }
+        .tool-card.global .tool-btn { background:linear-gradient(135deg,#3b82f6,#2563eb); }
 
         /* ====== CTA ====== */
         .cta-section { background: linear-gradient(145deg, #ff9933 0%, #ff6b00 100%); color: white; padding: 50px 40px; border-radius: 25px; text-align: center; margin: 40px 0; box-shadow: 0 20px 40px rgba(255,107,0,0.3); }
@@ -274,7 +282,7 @@
                     <li class="nav-item"><a class="nav-link" href="/blog/" data-translate="blog"><i class="fas fa-blog me-1"></i> Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="/about.html" data-translate="about"><i class="fas fa-info-circle me-1"></i> About</a></li>
                     <li class="nav-item"><a class="nav-link" href="/contact.html" data-translate="contact"><i class="fas fa-envelope me-1"></i> Contact</a></li>
-                    <!-- Language Switcher - Updated to use switchLanguage function -->
+                    <!-- Language Switcher -->
                     <li class="nav-item dropdown ms-2">
                         <button class="lang-switch dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                             🌐 <span data-translate="language">Language</span>
@@ -311,15 +319,16 @@
                 <div class="col-lg-7">
                     <h1>
                         <span class="highlight" data-translate="heroHighlight">Free SEO</span> <span data-translate="heroTools">Tools</span><br>
-                        <span style="font-size:1.8rem;" data-translate="heroSubtitle">For Indian Users 🇮🇳 & E-Commerce Sellers</span>
+                        <span style="font-size:1.8rem;" data-translate="heroSubtitle">For India 🇮🇳 & Global Users 🌍</span>
                     </h1>
                     <p class="lead mt-3" data-translate="heroDesc">
-                        <strong>90+ free SEO tools for Indian businesses and e-commerce sellers.</strong> GST Calculator, UPI QR Generator, Hinglish SEO, Amazon FBA Calculator, and professional SEO tools. All tools 100% free, no signup required, updated for 2026.
+                        <strong>90+ free SEO tools for Indian businesses, e-commerce sellers, and global SEO professionals.</strong> GST Calculator, UPI QR Generator, Hinglish SEO, Amazon FBA Calculator, Meta Tags, Plagiarism Checker, and professional SEO tools. All tools 100% free, no signup required, updated for 2026.
                     </p>
                     
                     <div class="category-quick-links">
-                        <a href="#india-tools" class="category-quick-link" data-translate="quickIndia">🇮🇳 Tools for Indian Users</a>
-                        <a href="#semilocal-tools" class="category-quick-link" data-translate="quickEcom">🛒 Amazon & E-Commerce SEO</a>
+                        <a href="#india-tools" class="category-quick-link" data-translate="quickIndia">🇮🇳 India Tools</a>
+                        <a href="#semilocal-tools" class="category-quick-link" data-translate="quickEcom">🛒 Amazon & E-Commerce</a>
+                        <a href="#global-tools" class="category-quick-link" data-translate="quickGlobal">🌍 Global SEO Tools</a>
                     </div>
                     
                     <div class="mt-4 d-flex flex-wrap gap-3">
@@ -383,6 +392,8 @@
             <div class="col-md-4 col-lg-3"><div class="tool-card india"><div class="tool-icon"><i class="fas fa-share-alt"></i></div><span class="status-badge status-hot">SOCIAL</span><h3 data-translate="socialTitle">Social Media Optimizer</h3><p data-translate="socialDesc">Optimize posts for Facebook, Instagram, Twitter & more.</p><a href="/social-media-optimizer.html" class="btn tool-btn" data-translate="socialBtn">Optimize Posts</a></div></div>
             <!-- Bhashini SEO -->
             <div class="col-md-4 col-lg-3"><div class="tool-card india"><div class="tool-icon"><i class="fas fa-language"></i></div><span class="status-badge status-new">BHASHINI</span><h3 data-translate="bhashiniTitle">Bhashini SEO</h3><p data-translate="bhashiniDesc">12+ Indian languages SEO. Hindi, Tamil, Telugu & more.</p><a href="/bhashini-seo.html" class="btn tool-btn" data-translate="bhashiniBtn">Bhashini SEO</a></div></div>
+            <!-- 🆕 Voice Search Optimizer -->
+            <div class="col-md-4 col-lg-3"><div class="tool-card india"><div class="tool-icon"><i class="fas fa-microphone"></i></div><span class="status-badge status-hot">🎤 VOICE SEO</span><h3 data-translate="voiceSearchTitle">Voice Search Optimizer</h3><p data-translate="voiceSearchDesc">Optimize content for Google Voice, Alexa & Siri. Voice search ready.</p><a href="/voice-search-optimizer.html" class="btn tool-btn" data-translate="voiceSearchBtn">Optimize Voice</a></div></div>
         </div>
         <div class="text-center mb-4"><a href="/all-tools.html" class="btn btn-outline-primary btn-lg rounded-pill px-4" style="border-color:#ff9933; color:#ff9933;" data-translate="viewAllIndia">View All 18+ India Tools <i class="fas fa-arrow-right ms-2"></i></a></div>
 
@@ -407,6 +418,27 @@
         </div>
         <div class="text-center mb-4"><a href="/all-tools.html" class="btn btn-outline-primary btn-lg rounded-pill px-4" style="border-color:#f59e0b; color:#f59e0b;" data-translate="viewAllPlatform">View All 10+ Platform Tools <i class="fas fa-arrow-right ms-2"></i></a></div>
 
+        <!-- ====== 🆕 GLOBAL SEO TOOLS ====== -->
+        <div id="global-tools"></div>
+        <h2 class="category-header cat-global">
+            <span class="category-badge badge-global" data-translate="globalBadge">🌍 Global SEO</span> <span data-translate="globalTitle">Essential Global SEO Tools</span>
+        </h2>
+        <div class="category-desc" style="border-left: 5px solid #3b82f6;">
+            <i class="fas fa-globe" style="color:#3b82f6;"></i>
+            <p data-translate="globalDesc"><strong>For Webmasters & SEOs Worldwide:</strong> Professional SEO tools that work universally. Meta tags, plagiarism checking, backlink analysis, and more. Used by bloggers, agencies, and businesses globally.</p>
+        </div>
+        <div class="row g-4 mb-5">
+            <!-- 🆕 Plagiarism Checker -->
+            <div class="col-md-4 col-lg-3"><div class="tool-card global"><div class="tool-badge"><span class="badge bg-danger">🔥 #2</span></div><div class="tool-icon"><i class="fas fa-copy"></i></div><span class="status-badge status-hot">ACADEMIC</span><h3 data-translate="plagiarismTitle">Plagiarism Checker</h3><p data-translate="plagiarismDesc">Check content originality. 80K+ monthly searches. Essential for writers & students worldwide.</p><a href="/plagiarism-checker.html" class="btn tool-btn">Check Plagiarism</a></div></div>
+            <!-- 🆕 Backlink Checker -->
+            <div class="col-md-4 col-lg-3"><div class="tool-card global"><div class="tool-icon"><i class="fas fa-link"></i></div><span class="status-badge status-live">SEO</span><h3 data-translate="backlinkTitle">Backlink Checker</h3><p data-translate="backlinkDesc">Analyze backlink profile. Find who's linking to any website. Competitor research tool.</p><a href="/backlink-checker.html" class="btn tool-btn">Check Backlinks</a></div></div>
+            <!-- 🆕 Domain Authority Checker -->
+            <div class="col-md-4 col-lg-3"><div class="tool-card global"><div class="tool-icon"><i class="fas fa-chart-bar"></i></div><span class="status-badge status-live">DA PA</span><h3 data-translate="daTitle">Domain Authority Checker</h3><p data-translate="daDesc">Check DA/PA scores. Moz-based domain strength analysis. Compare with competitors.</p><a href="/domain-authority-checker.html" class="btn tool-btn">Check DA PA</a></div></div>
+            <!-- 🆕 Meta Tag Generator -->
+            <div class="col-md-4 col-lg-3"><div class="tool-card global"><div class="tool-badge"><span class="badge bg-danger">🔥 #1</span></div><div class="tool-icon"><i class="fas fa-code"></i></div><span class="status-badge status-hot">SEO</span><h3 data-translate="metaTitle">Meta Tag Generator</h3><p data-translate="metaDesc">Generate SEO meta tags, Open Graph & Twitter Cards. 50K+ monthly searches.</p><a href="/meta-tag-generator.html" class="btn tool-btn">Generate Meta Tags</a></div></div>
+        </div>
+        <div class="text-center mb-4"><a href="/all-tools.html" class="btn btn-outline-primary btn-lg rounded-pill px-4" style="border-color:#3b82f6; color:#3b82f6;" data-translate="viewAllGlobal">View All 35+ Global SEO Tools <i class="fas fa-arrow-right ms-2"></i></a></div>
+
         <!-- ====== CTA ====== -->
         <div class="cta-section">
             <h2 data-translate="ctaTitle">🚀 Ready to Explore All 90+ Free SEO Tools?</h2>
@@ -421,7 +453,7 @@
             <div class="row">
                 <div class="col-md-4 mb-4">
                     <h5><i class="fas fa-tools me-2"></i><span data-translate="brand">FreeSEOToolHub</span></h5>
-                    <p style="color:#b0c4de; font-size:0.9rem;" data-translate="footerDesc">90+ free SEO tools for Indian users and Amazon & E-Commerce SEO. 100% free since 2024. Updated for 2026.</p>
+                    <p style="color:#b0c4de; font-size:0.9rem;" data-translate="footerDesc">90+ free SEO tools for Indian users, Amazon & E-Commerce SEO, and global SEO professionals. 100% free since 2024. Updated for 2026.</p>
                     <div class="mt-3"><small style="color:#94a3b8;" data-translate="alsoAvailable">Also available in:</small><br>
                         <a onclick="switchLanguage('hi')" class="me-2" style="font-size:0.85rem; cursor:pointer;">🇮🇳 हिन्दी</a>
                         <a onclick="switchLanguage('en')" class="me-2" style="font-size:0.85rem; cursor:pointer;">🇺🇸 English</a>
@@ -431,12 +463,13 @@
                     </div>
                 </div>
                 <div class="col-md-2 mb-3"><h6 data-translate="quickLinks">Quick Links</h6><ul class="list-unstyled"><li><a href="/" data-translate="home">Home</a></li><li><a href="/blog/" data-translate="blog">Blog</a></li><li><a href="/all-tools.html" data-translate="allTools">All Tools</a></li><li><a href="/about.html" data-translate="about">About</a></li><li><a href="/contact.html" data-translate="contact">Contact</a></li></ul></div>
-                <div class="col-md-3 mb-3"><h6 data-translate="indiaToolsFooter">India Tools</h6><ul class="list-unstyled"><li><a href="/upi-qr-generator.html" data-translate="upiTitle">UPI QR Generator</a></li><li><a href="/udyam-checker.html" data-translate="udyamTitle">Udyam Checker</a></li><li><a href="/aadhaar-mask.html" data-translate="aadhaarTitle">Aadhaar Mask</a></li><li><a href="/pan-validator.html" data-translate="panTitle">PAN Validator</a></li></ul></div>
-                <div class="col-md-3 mb-3"><h6 data-translate="ecomToolsFooter">E-Commerce Tools</h6><ul class="list-unstyled"><li><a href="/amazon-seo-tool-free.html" data-translate="amazonSeoTitle">Amazon SEO Tool</a></li><li><a href="/amazon-fba-calculator.html" data-translate="fbaTitle">Amazon FBA Calculator</a></li><li><a href="/ecommerce-seo-tool.html" data-translate="ecomTitle">E-Commerce SEO</a></li><li><a href="/price-comparison-tool.html" data-translate="priceTitle">Price Comparison</a></li></ul></div>
+                <div class="col-md-2 mb-3"><h6 data-translate="globalToolsFooter">Global SEO</h6><ul class="list-unstyled"><li><a href="/plagiarism-checker.html" data-translate="plagiarismTitle">Plagiarism Checker</a></li><li><a href="/backlink-checker.html" data-translate="backlinkTitle">Backlink Checker</a></li><li><a href="/domain-authority-checker.html" data-translate="daTitle">Domain Authority</a></li><li><a href="/meta-tag-generator.html" data-translate="metaTitle">Meta Tag Generator</a></li></ul></div>
+                <div class="col-md-2 mb-3"><h6 data-translate="indiaToolsFooter">India Tools</h6><ul class="list-unstyled"><li><a href="/upi-qr-generator.html" data-translate="upiTitle">UPI QR Generator</a></li><li><a href="/gst-calculator.html" data-translate="gstTitle">GST Calculator</a></li><li><a href="/udyam-checker.html" data-translate="udyamTitle">Udyam Checker</a></li><li><a href="/aadhaar-mask.html" data-translate="aadhaarTitle">Aadhaar Mask</a></li></ul></div>
+                <div class="col-md-2 mb-3"><h6 data-translate="ecomToolsFooter">E-Commerce</h6><ul class="list-unstyled"><li><a href="/amazon-seo-tool-free.html" data-translate="amazonSeoTitle">Amazon SEO Tool</a></li><li><a href="/amazon-fba-calculator.html" data-translate="fbaTitle">FBA Calculator</a></li><li><a href="/ecommerce-seo-tool.html" data-translate="ecomTitle">E-Commerce SEO</a></li><li><a href="/price-comparison-tool.html" data-translate="priceTitle">Price Compare</a></li></ul></div>
             </div>
             <hr style="border-color:rgba(255,255,255,0.1);">
             <div class="row"><div class="col-md-6"><p style="color:#94a3b8; font-size:0.9rem;" data-translate="copyright">© 2026 FreeSEOToolHub.com | All Rights Reserved</p></div><div class="col-md-6 text-md-end"><a href="/privacy.html" class="me-3" data-translate="privacy">Privacy</a><a href="/sitemap.xml" class="me-3">Sitemap</a><a href="/contact.html" data-translate="contact">Contact</a></div></div>
-            <div class="text-center mt-3"><small style="color:#64748b;" data-translate="madeIn">🇮🇳 Made for Indian & Global E-Commerce SEO Community | Updated April 2026</small></div>
+            <div class="text-center mt-3"><small style="color:#64748b;" data-translate="madeIn">🇮🇳 Made for Indian & Global SEO Community | Updated May 2026</small></div>
         </div>
     </footer>
 
@@ -462,7 +495,6 @@
                 document.querySelectorAll('.lang-link').forEach(link => {
                     link.classList.remove('active-lang');
                 });
-                // Find and highlight the current language
                 const langLinks = document.querySelectorAll('.lang-link');
                 const langMap = { 'hi': 0, 'en': 1, 'ur': 2, 'de': 3, 'es': 4 };
                 if (langLinks[langMap[currentLang]]) {
@@ -506,7 +538,6 @@
                     if(e.target.tagName !== 'A' && !e.target.closest('a') && !e.target.closest('button')) {
                         const link = this.querySelector('a');
                         if(link) {
-                            // Preserve language parameter
                             const lang = getLang();
                             const url = new URL(link.href, window.location.origin);
                             if (lang !== 'en') url.searchParams.set('lang', lang);
