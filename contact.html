@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
   <!-- Google Analytics (GA4) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PFPCTBFG3Y"></script>
@@ -11,10 +11,12 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>हमसे संपर्क करें - FreeSEOToolHub.com</title>
-<meta name="description" content="FreeSEOToolHub.com से संपर्क करें। टूल सुझाव, सहायता, या सहयोग के लिए हमें ईमेल करें या फॉर्म भरें।">
+<title>Contact Us - FreeSEOToolHub | Get in Touch for Support, Suggestions & Partnerships</title>
+<meta name="description" content="Contact the FreeSEOToolHub team. Reach out for tool suggestions, technical support, bug reports, or partnership opportunities. We respond within 24-48 hours.">
+<link rel="canonical" href="https://freeseotoolhub.com/contact.html">
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 /* ===== REUSABLE STYLES ===== */
 :root {
@@ -40,7 +42,7 @@ box-sizing: border-box;
 }
 
 body {
-font-family: 'Inter', 'Hind Siliguri', sans-serif;
+font-family: 'Inter', sans-serif;
 background-color: #f5f7ff;
 color: var(--dark);
 line-height: 1.6;
@@ -305,6 +307,20 @@ margin-top: 5px;
 text-decoration: underline;
 }
 
+/* ===== RESOURCE BOX ===== */
+.resource-box {
+background: #fef9e7;
+border: 1px solid #f9e79f;
+padding: 25px;
+border-radius: var(--radius);
+margin: 30px 0;
+text-align: center;
+}
+.resource-box h3 { color: #d4ac0d; margin-bottom: 15px; font-weight: 700; }
+.resource-box p { color: var(--gray); margin-bottom: 15px; }
+.resource-box .btn-resource { background:#d4ac0d; color:#000; padding:12px 30px; border-radius: 50px; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; }
+.resource-box .btn-resource:hover { background:#b38a00; }
+
 /* ===== FAQ SECTION ===== */
 .faq-section {
 background: var(--light);
@@ -516,14 +532,25 @@ to { opacity: 1; }
 </head>
 <body>
 <!-- नेविगेशन बार -->
-<!-- नेविगेशन बार यहाँ लोड होगा -->
-<script src="navbar.js"></script>
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="/" class="logo"><i class="fas fa-tools"></i> Free<span>SEO</span>ToolHub</a>
+    <div class="nav-links">
+      <a href="/" class="nav-link"><i class="fas fa-home"></i> Home</a>
+      <a href="/all-tools.html" class="nav-link"><i class="fas fa-th-large"></i> All Tools</a>
+      <a href="/blog/" class="nav-link"><i class="fas fa-blog"></i> Blog</a>
+      <a href="/about.html" class="nav-link"><i class="fas fa-info-circle"></i> About</a>
+      <a href="/contact.html" class="nav-link active"><i class="fas fa-envelope"></i> Contact</a>
+    </div>
+    <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+  </div>
+</nav>
 
 <!-- पेज हेडर -->
 <header class="page-header">
 <div class="container">
-<h1 class="page-title hindi">हमसे संपर्क करें</h1>
-<p class="page-subtitle">हमें आपकी आवाज़ सुनना अच्छा लगता है! टूल सुझाव, सहायता, या सहयोग के लिए संपर्क करें।</p>
+<h1 class="page-title">Contact Us</h1>
+<p class="page-subtitle">We'd love to hear from you! Reach out for tool suggestions, support, or partnership opportunities. We respond to every message within 24-48 hours.</p>
 </div>
 </header>
 
@@ -531,70 +558,70 @@ to { opacity: 1; }
 <main class="container">
 <!-- सफलता संदेश -->
 <div id="successMessage" class="success-message">
-<h4><i class="fas fa-check-circle"></i> धन्यवाद! आपका संदेश भेज दिया गया है।</h4>
-<p>हम जल्द ही आपको जवाब देंगे। इस बीच, आप हमारे <a href="tools.html">मुफ्त SEO टूल्स</a> आज़मा सकते हैं।</p>
+<h4><i class="fas fa-check-circle"></i> Thank You! Your Message Has Been Sent.</h4>
+<p>We'll get back to you shortly. In the meantime, feel free to explore our <a href="/all-tools.html">free SEO tools</a>.</p>
 </div>
 
 <!-- संपर्क ग्रिड -->
 <div class="contact-grid">
 <!-- संपर्क फॉर्म -->
 <div class="contact-form-container">
-<h2 class="section-title"><i class="fas fa-paper-plane"></i> संदेश भेजें</h2>
-<p style="margin-bottom: 30px; color: var(--gray);">सीधे हमें संदेश भेजने के लिए इस फॉर्म का उपयोग करें। हम 24-48 घंटों के भीतर जवाब देने का प्रयास करेंगे।</p>
+<h2 class="section-title"><i class="fas fa-paper-plane"></i> Send a Message</h2>
+<p style="margin-bottom: 30px; color: var(--gray);">Use this form to send us a direct message. We respond to every inquiry.</p>
 
 <form id="contactForm" class="contact-form">
 <div class="form-row">
 <div class="form-group">
-<label for="name">आपका नाम *</label>
-<input type="text" id="name" name="name" required placeholder="जैसे: राजेश कुमार">
+<label for="name">Your Name *</label>
+<input type="text" id="name" name="name" required placeholder="e.g., John Doe">
 </div>
 
 <div class="form-group">
-<label for="email">ईमेल पता *</label>
-<input type="email" id="email" name="email" required placeholder="जैसे: rajes@example.com">
+<label for="email">Email Address *</label>
+<input type="email" id="email" name="email" required placeholder="e.g., john@example.com">
 </div>
 </div>
 
 <div class="form-group">
-<label for="subject">विषय *</label>
+<label for="subject">Subject *</label>
 <select id="subject" name="subject" required>
-<option value="" disabled selected>विषय चुनें</option>
-<option value="tool-suggestion">नए टूल का सुझाव</option>
-<option value="bug-report">टूल में समस्या/बग रिपोर्ट</option>
-<option value="feature-request">मौजूदा टूल में नया फीचर</option>
-<option value="partnership">साझेदारी/सहयोग</option>
-<option value="general">सामान्य प्रश्न</option>
-<option value="other">अन्य</option>
+<option value="" disabled selected>Choose a subject</option>
+<option value="tool-suggestion">New Tool Suggestion</option>
+<option value="bug-report">Bug Report / Technical Issue</option>
+<option value="feature-request">Feature Request for Existing Tool</option>
+<option value="partnership">Partnership / Collaboration</option>
+<option value="general">General Inquiry</option>
+<option value="other">Other</option>
 </select>
 </div>
 
 <div class="form-group">
-<label for="message">आपका संदेश *</label>
-<textarea id="message" name="message" required placeholder="अपना संदेश यहाँ लिखें..."></textarea>
+<label for="message">Your Message *</label>
+<textarea id="message" name="message" required placeholder="Write your message here..."></textarea>
 </div>
 
 <button type="submit" class="btn-submit" id="submitBtn">
-<i class="fas fa-paper-plane"></i> संदेश भेजें
+<i class="fas fa-paper-plane"></i> Send Message
 </button>
 </form>
 </div>
 
 <!-- संपर्क जानकारी -->
 <div class="contact-info-container">
-<h2 class="section-title"><i class="fas fa-address-card"></i> संपर्क जानकारी</h2>
-<p style="margin-bottom: 40px; color: var(--gray);">हमसे सीधे संपर्क करने के लिए नीचे दी गई जानकारी का उपयोग करें।</p>
+<h2 class="section-title"><i class="fas fa-address-card"></i> Contact Information</h2>
+<p style="margin-bottom: 40px; color: var(--gray);">Use the information below to get in touch directly.</p>
 
 <div class="contact-method">
 <div class="contact-icon">
 <i class="fas fa-envelope"></i>
 </div>
 <div class="contact-details">
-<h3>ईमेल से संपर्क करें</h3>
-<p>सामान्य प्रश्नों और सुझावों के लिए</p>
+<h3>Email Us</h3>
+<p>For general questions and suggestions</p>
 <a href="mailto:contact@freeseotoolhub.com" class="contact-link">
 <i class="fas fa-external-link-alt"></i> contact@freeseotoolhub.com
 </a>
-<p style="margin-top: 10px; font-size: 0.9rem; color: var(--gray);">उत्तर: 24-48 घंटों के भीतर</p>
+<p style="margin-top: 10px; font-size: 0.9rem; color: var(--gray);">Response: Within 24-48 hours</p>
 </div>
 </div>
 
@@ -603,12 +630,12 @@ to { opacity: 1; }
 <i class="fas fa-tools"></i>
 </div>
 <div class="contact-details">
-<h3>टूल सुझाव</h3>
-<p>नए टूल्स के आइडियाज और सुझाव</p>
+<h3>Tool Suggestions</h3>
+<p>Ideas and suggestions for new tools</p>
 <a href="mailto:suggestions@freeseotoolhub.com" class="contact-link">
 <i class="fas fa-external-link-alt"></i> suggestions@freeseotoolhub.com
 </a>
-<p style="margin-top: 10px; font-size: 0.9rem; color: var(--gray);">हम नए टूल्स यूजर्स के सुझाव पर बनाते हैं</p>
+<p style="margin-top: 10px; font-size: 0.9rem; color: var(--gray);">We build new tools based on user suggestions</p>
 </div>
 </div>
 
@@ -617,12 +644,12 @@ to { opacity: 1; }
 <i class="fas fa-bug"></i>
 </div>
 <div class="contact-details">
-<h3>बग रिपोर्ट</h3>
-<p>टूल्स में तकनीकी समस्याओं की रिपोर्ट</p>
+<h3>Bug Report</h3>
+<p>Report technical problems with tools</p>
 <a href="mailto:bugs@freeseotoolhub.com" class="contact-link">
 <i class="fas fa-external-link-alt"></i> bugs@freeseotoolhub.com
 </a>
-<p style="margin-top: 10px; font-size: 0.9rem; color: var(--gray);">समस्या का स्क्रीनशॉट अटैच करना न भूलें</p>
+<p style="margin-top: 10px; font-size: 0.9rem; color: var(--gray);">Don't forget to attach a screenshot</p>
 </div>
 </div>
 
@@ -631,110 +658,117 @@ to { opacity: 1; }
 <i class="fas fa-clock"></i>
 </div>
 <div class="contact-details">
-<h3>प्रतिक्रिया समय</h3>
-<p>हम प्रयास करते हैं कि सभी प्रश्नों का उत्तर 48 घंटों के भीतर दें।</p>
+<h3>Response Time</h3>
+<p>We strive to answer all questions within 48 hours.</p>
 <p style="margin-top: 10px; color: var(--gray); font-size: 0.9rem;">
-<i class="fas fa-info-circle"></i> सप्ताहांत और छुट्टियों में प्रतिक्रिया में देरी हो सकती है।
+<i class="fas fa-info-circle"></i> Responses may be delayed on weekends and holidays.
 </p>
 </div>
 </div>
 </div>
 </div>
 
+<!-- Sister Site Cross-Promotion -->
+<div class="resource-box">
+<h3><i class="fas fa-lightbulb me-2"></i>Looking for Honest Software Reviews?</h3>
+<p>While you're here, check out our sister site for in-depth, expert reviews of the best digital marketing tools, AI writers, and business software. Make informed decisions with our side-by-side comparisons and exclusive deals.</p>
+<a href="https://softwaretoolguide.com" target="_blank" rel="noopener" class="btn-resource"><i class="fas fa-external-link-alt"></i> Explore SoftwareToolGuide.com →</a>
+</div>
+
 <!-- अक्सर पूछे जाने वाले प्रश्न -->
 <section class="faq-section">
 <div class="container">
-<h2 class="faq-title hindi"><i class="fas fa-question-circle"></i> अक्सर पूछे जाने वाले प्रश्न</h2>
-<p class="faq-subtitle">हमसे अक्सर पूछे जाने वाले प्रश्नों के उत्तर यहाँ खोजें।</p>
+<h2 class="faq-title"><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+<p class="faq-subtitle">Find answers to common questions here.</p>
 
 <div class="faq-container">
 <!-- FAQ 1 -->
 <div class="faq-item">
 <div class="faq-question" onclick="toggleFAQ(1)">
-<span>मैं नए टूल का सुझाव कैसे दे सकता हूँ?</span>
+<span>How can I suggest a new tool?</span>
 <span class="faq-toggle">+</span>
 </div>
 <div class="faq-answer" id="faq-answer-1">
-<p>आप नए टूल के सुझाव निम्नलिखित तरीकों से दे सकते हैं:</p>
+<p>You can suggest a new tool by:</p>
 <ul style="margin: 15px 0 15px 20px;">
-<li>ऊपर दिए गए फॉर्म का उपयोग करके "नए टूल का सुझाव" विकल्प चुनें</li>
-<li>सीधे ईमेल करें: suggestions@freeseotoolhub.com</li>
-<li>टूल के बारे में विस्तृत जानकारी दें: उद्देश्य, मुख्य फीचर्स, लक्षित यूजर्स</li>
+<li>Using the form above and selecting "New Tool Suggestion"</li>
+<li>Emailing us directly at: suggestions@freeseotoolhub.com</li>
+<li>Providing detailed info: the tool's purpose, key features, and target audience</li>
 </ul>
-<p>हम सभी सुझावों को ध्यान से देखते हैं और लोकप्रिय सुझावों को प्राथमिकता देते हैं।</p>
+<p>We carefully review all suggestions and prioritize the most popular ones.</p>
 </div>
 </div>
 
 <!-- FAQ 2 -->
 <div class="faq-item">
 <div class="faq-question" onclick="toggleFAQ(2)">
-<span>टूल में कोई बग/समस्या मिलने पर क्या करें?</span>
+<span>What should I do if I find a bug?</span>
 <span class="faq-toggle">+</span>
 </div>
 <div class="faq-answer" id="faq-answer-2">
-<p>यदि आपको किसी टूल में कोई समस्या या बग मिलता है, तो कृपया:</p>
+<p>If you find a bug or issue with a tool, please:</p>
 <ol style="margin: 15px 0 15px 20px;">
-<li>समस्या का स्क्रीनशॉट या वीडियो रिकॉर्डिंग लें</li>
-<li>ब्राउज़र का नाम और वर्जन नोट करें</li>
-<li>यह बताएं कि समस्या कब और कैसे हुई</li>
-<li>फॉर्म या ईमेल के माध्यम से bugs@freeseotoolhub.com पर रिपोर्ट करें</li>
+<li>Take a screenshot or video recording of the issue</li>
+<li>Note your browser name and version</li>
+<li>Describe when and how the issue occurred</li>
+<li>Report it via the form or by emailing bugs@freeseotoolhub.com</li>
 </ol>
-<p>हम जल्द से जल्द समस्या को ठीक करने का प्रयास करेंगे।</p>
+<p>We'll work to fix it as quickly as possible.</p>
 </div>
 </div>
 
 <!-- FAQ 3 -->
 <div class="faq-item">
 <div class="faq-question" onclick="toggleFAQ(3)">
-<span>क्या आपके टूल्स वास्तव में हमेशा मुफ्त रहेंगे?</span>
+<span>Will your tools always be free?</span>
 <span class="faq-toggle">+</span>
 </div>
 <div class="faq-answer" id="faq-answer-3">
-<p><strong>हाँ, हमारे सभी बेसिक टूल्स हमेशा के लिए मुफ्त रहेंगे।</strong> यह हमारे मिशन का मुख्य हिस्सा है।</p>
-<p>हम वेबसाइट को चलाने के लिए निम्नलिखित तरीकों से फंड जुटाते हैं:</p>
+<p><strong>Yes, all our core tools will remain free forever.</strong> This is the central part of our mission.</p>
+<p>We fund the site through:</p>
 <ul style="margin: 15px 0 15px 20px;">
-<li>Google AdSense विज्ञापन</li>
-<li>वैकल्पिक प्रीमियम फीचर्स (भविष्य में)</li>
-<li>स्पॉन्सरशिप और सहयोग</li>
+<li>Google AdSense advertising</li>
+<li>Optional premium features (in the future)</li>
+<li>Sponsorships and collaborations</li>
 </ul>
-<p>लेकिन बेसिक टूल्स कभी भुगतान-आधारित नहीं होंगे।</p>
+<p>But the basic toolkit will never be locked behind a paywall.</p>
 </div>
 </div>
 
 <!-- FAQ 4 -->
 <div class="faq-item">
 <div class="faq-question" onclick="toggleFAQ(4)">
-<span>मैं FreeSEOToolHub के साथ सहयोग कैसे कर सकता हूँ?</span>
+<span>How can I partner with FreeSEOToolHub?</span>
 <span class="faq-toggle">+</span>
 </div>
 <div class="faq-answer" id="faq-answer-4">
-<p>हम निम्नलिखित क्षेत्रों में सहयोग के लिए खुले हैं:</p>
+<p>We are open to collaboration in the following areas:</p>
 <ul style="margin: 15px 0 15px 20px;">
-<li><strong>कंटेंट क्रिएशन:</strong> SEO गाइड्स, ट्यूटोरियल्स, केस स्टडीज</li>
-<li><strong>टेक्निकल डेवलपमेंट:</strong> नए टूल्स बनाना, मौजूदा टूल्स में सुधार</li>
-<li><strong>मार्केटिंग:</strong> सोशल मीडिया, SEO, कंटेंट मार्केटिंग</li>
-<li><strong>भाषा अनुवाद:</strong> टूल्स को अन्य भारतीय भाषाओं में अनुवाद</li>
+<li><strong>Content Creation:</strong> SEO guides, tutorials, case studies</li>
+<li><strong>Technical Development:</strong> Building new tools, improving existing ones</li>
+<li><strong>Marketing:</strong> Social media, SEO, content marketing</li>
+<li><strong>Language Translation:</strong> Translating tools into other global languages</li>
 </ul>
-<p>सहयोग के लिए contact@freeseotoolhub.com पर अपना पोर्टफोलियो और प्रस्ताव भेजें।</p>
+<p>For partnerships, send your portfolio and proposal to contact@freeseotoolhub.com.</p>
 </div>
 </div>
 
 <!-- FAQ 5 -->
 <div class="faq-item">
 <div class="faq-question" onclick="toggleFAQ(5)">
-<span>मैं FreeSEOToolHub को कैसे सपोर्ट कर सकता हूँ?</span>
+<span>How can I support FreeSEOToolHub?</span>
 <span class="faq-toggle">+</span>
 </div>
 <div class="faq-answer" id="faq-answer-5">
-<p>आप निम्नलिखित तरीकों से हमें सपोर्ट कर सकते हैं:</p>
+<p>You can support us in the following ways:</p>
 <ul style="margin: 15px 0 15px 20px;">
-<li><strong>टूल्स का उपयोग करके:</strong> हमारे टूल्स इस्तेमाल करें और फीडबैक दें</li>
-<li><strong>शेयर करके:</strong> अपने दोस्तों और कॉलेग्स के साथ शेयर करें</li>
-<li><strong>सोशल मीडिया पर:</strong> हमें फॉलो करें और पोस्ट्स लाइक/शेयर करें</li>
-<li><strong>फीडबैक देकर:</strong> टूल्स के बारे में अपने विचार बताएं</li>
-<li><strong>विज्ञापन देखकर:</strong> वेबसाइट पर AdSense विज्ञापन देखें</li>
+<li><strong>Use the tools:</strong> Use our tools and provide feedback</li>
+<li><strong>Share:</strong> Share our site with your friends and colleagues</li>
+<li><strong>Social Media:</strong> Follow us and like/share our posts</li>
+<li><strong>Give Feedback:</strong> Share your thoughts about the tools</li>
+<li><strong>View Ads:</strong> Seeing AdSense ads on the site helps us</li>
 </ul>
-<p>आपका हर छोटा सपोर्ट हमारे लिए महत्वपूर्ण है।</p>
+<p>Every little bit of support is incredibly important to us.</p>
 </div>
 </div>
 </div>
@@ -743,17 +777,17 @@ to { opacity: 1; }
 
 <!-- CTA सेक्शन -->
 <section class="cta-section">
-<h2 style="font-size: 2.5rem; margin-bottom: 20px;">आइए, मिलकर कुछ बेहतरीन बनाएँ</h2>
+<h2 style="font-size: 2.5rem; margin-bottom: 20px;">Let's Build Something Great Together</h2>
 <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto; opacity: 0.9;">
-आपके सुझाव और फीडबैक से ही हम बेहतर टूल्स बना सकते हैं। भारत के लिए बने बेहतरीन SEO टूल्स बनाने में हमारी मदद करें।
+Your suggestions and feedback allow us to build better, more powerful SEO tools for the global community. Help us shape the future of free digital marketing.
 </p>
 
 <div class="cta-buttons">
-<a href="tools.html" class="btn-primary">
-<i class="fas fa-tools"></i> टूल्स आज़माएं
+<a href="/all-tools.html" class="btn-primary">
+<i class="fas fa-tools"></i> Explore Free Tools
 </a>
 <a href="/" class="btn-secondary">
-<i class="fas fa-home"></i> होमपेज पर जाएं
+<i class="fas fa-home"></i> Go to Homepage
 </a>
 </div>
 </section>
@@ -764,8 +798,8 @@ to { opacity: 1; }
 <div class="container">
 <div class="footer-content">
 <div class="footer-brand">
-<h3><i class="fas fa-tools"></i> FreeSEOToolHub.com</h3>
-<p>भारत में बना, पूरी दुनिया के लिए। शक्तिशाली, मुफ्त SEO टूल्स जो वाकई काम करते हैं।</p>
+<h3><i class="fas fa-tools"></i> FreeSEOToolHub</h3>
+<p>100+ powerful, free SEO tools built for the world. Empowering marketers, bloggers, and businesses everywhere.</p>
 <div style="margin-top: 20px; display: flex; gap: 15px;">
 <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-twitter"></i></a>
 <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-facebook"></i></a>
@@ -775,26 +809,27 @@ to { opacity: 1; }
 </div>
 
 <div class="footer-links">
-<h4>त्वरित लिंक</h4>
-<a href="/">होम</a>
-<a href="tools.html">सभी टूल्स</a>
-<a href="about.html">हमारे बारे में</a>
-<a href="contact.html">संपर्क करें</a>
-<a href="privacy.html">गोपनीयता नीति</a>
+<h4>Quick Links</h4>
+<a href="/">Home</a>
+<a href="/all-tools.html">All Tools</a>
+<a href="/blog/">Blog</a>
+<a href="/about.html">About</a>
+<a href="https://softwaretoolguide.com" target="_blank" rel="noopener">Software Reviews</a>
+<a href="/privacy.html">Privacy Policy</a>
 </div>
 
 <div class="footer-newsletter">
-<h4>अपडेट रहें</h4>
-<p>नए टूल्स और अपडेट्स की सूचना सबसे पहले पाएं।</p>
-<a href="#newsletter" class="btn-secondary" style="margin-top: 15px; display: inline-flex;">
-<i class="fas fa-bell"></i> नोटिफिकेशन चाहिए
+<h4>Stay Updated</h4>
+<p>Be the first to know about new tools and updates.</p>
+<a href="#" class="btn-secondary" style="margin-top: 15px; display: inline-flex;">
+<i class="fas fa-bell"></i> Get Notifications
 </a>
 </div>
 </div>
 
 <div class="footer-bottom">
-<p>© <span id="currentYear">2023</span> FreeSEOToolHub.com | सभी अधिकार सुरक्षित।</p>
-<p class="footer-note"><i class="fas fa-heart"></i> गर्व से भारत में निर्मित | Made with ❤️ in India</p>
+<p>© <span id="currentYear">2023</span> FreeSEOToolHub.com | All Rights Reserved.</p>
+<p class="footer-note"><i class="fas fa-heart"></i> Made for the global SEO community</p>
 </div>
 </div>
 </footer>
@@ -819,7 +854,7 @@ const successMessage = document.getElementById('successMessage');
 
 // Disable submit button
 submitBtn.disabled = true;
-submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> भेज रहे हैं...';
+submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
 
 // Simulate form submission (In future, connect to backend)
 setTimeout(() => {
@@ -831,7 +866,7 @@ document.getElementById('contactForm').reset();
 
 // Re-enable button
 submitBtn.disabled = false;
-submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> संदेश भेजें';
+submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
 
 // Scroll to success message
 successMessage.scrollIntoView({ behavior: 'smooth' });
@@ -874,16 +909,5 @@ document.querySelector('.nav-links').style.display = 'flex';
 }
 });
 </script>
-  <script>
-fetch('footer.html')
-  .then(response => response.text())
-  .then(data => {
-    document.body.insertAdjacentHTML('beforeend', data);
-  });
-</script>
 </body>
 </html>
-
-
-
-
