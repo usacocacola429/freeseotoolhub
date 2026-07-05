@@ -75,13 +75,19 @@
     <link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/hi/backlink-checker.html">
     <link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/backlink-checker.html">
 
-    <!-- Font Awesome -->
+    <!-- ========================================== -->
+    <!-- FONT AWESOME -->
+    <!-- ========================================== -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Google Fonts -->
+    <!-- ========================================== -->
+    <!-- GOOGLE FONTS -->
+    <!-- ========================================== -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
 
+    <!-- ========================================== -->
     <!-- ✅ ENHANCED SCHEMA MARKUP (International) -->
+    <!-- ========================================== -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -282,48 +288,49 @@
 <div class="container">
   <!-- Last Updated Badge -->
   <div class="last-updated">
-    <span><i class="far fa-calendar-alt"></i> Updated: May 26, 2026 | Version 3.0 International</span>
+    <span><i class="far fa-calendar-alt" aria-hidden="true"></i> Updated: May 26, 2026 | Version 3.0 International</span>
   </div>
 
   <!-- Breadcrumb -->
   <nav class="breadcrumb-nav" aria-label="Breadcrumb">
-    <a href="index.html"><i class="fas fa-home"></i> Home</a> /
-    <a href="all-tools.html">USA & UK SEO Tools</a> /
+    <a href="index.html" aria-label="Home"><i class="fas fa-home" aria-hidden="true"></i> Home</a> /
+    <a href="all-tools.html" aria-label="USA and UK SEO Tools">USA & UK SEO Tools</a> /
     <span>Backlink Checker 2026</span>
   </nav>
 
-  <header class="header">
-    <h1><i class="fas fa-link"></i> Free Backlink Checker 2026 <i class="fas fa-globe"></i></h1>
+  <header class="header" role="banner">
+    <h1><i class="fas fa-link" aria-hidden="true"></i> Free Backlink Checker 2026 <i class="fas fa-globe" aria-hidden="true"></i></h1>
     <p>Analyze backlinks for any website — <strong>USA, UK, India & 150+ Countries</strong> • DA/PA • Spam Score • Referring Domains • 100% Free International SEO Tool</p>
     <div class="badge-container">
-      <span class="badge"><i class="fas fa-check-circle"></i> 🇺🇸 USA</span>
-      <span class="badge"><i class="fas fa-check-circle"></i> 🇬🇧 UK</span>
-      <span class="badge"><i class="fas fa-check-circle"></i> 🇮🇳 India</span>
-      <span class="badge"><i class="fas fa-check-circle"></i> 🇨🇦 Canada</span>
-      <span class="badge"><i class="fas fa-check-circle"></i> 🇦🇺 Australia</span>
-      <span class="badge"><i class="fas fa-check-circle"></i> 🇦🇪 UAE</span>
-      <span class="badge"><i class="fas fa-check-circle"></i> 🌍 150+ Countries</span>
+      <span class="badge"><i class="fas fa-check-circle" aria-hidden="true"></i> 🇺🇸 USA</span>
+      <span class="badge"><i class="fas fa-check-circle" aria-hidden="true"></i> 🇬🇧 UK</span>
+      <span class="badge"><i class="fas fa-check-circle" aria-hidden="true"></i> 🇮🇳 India</span>
+      <span class="badge"><i class="fas fa-check-circle" aria-hidden="true"></i> 🇨🇦 Canada</span>
+      <span class="badge"><i class="fas fa-check-circle" aria-hidden="true"></i> 🇦🇺 Australia</span>
+      <span class="badge"><i class="fas fa-check-circle" aria-hidden="true"></i> 🇦🇪 UAE</span>
+      <span class="badge"><i class="fas fa-check-circle" aria-hidden="true"></i> 🌍 150+ Countries</span>
     </div>
   </header>
 
-  <div class="main-content">
+  <div class="main-content" role="main">
     <div class="tool-layout">
       <!-- Input Panel -->
-      <div class="input-panel">
-        <h2 class="section-title"><i class="fas fa-search"></i> Analyze International Backlinks</h2>
+      <div class="input-panel" role="form" aria-label="Backlink analysis input">
+        <h2 class="section-title"><i class="fas fa-search" aria-hidden="true"></i> Analyze International Backlinks</h2>
 
         <div class="form-group">
-          <label><i class="fas fa-globe"></i> Website URL (USA, UK, or Any Domain)</label>
+          <label for="websiteUrl"><i class="fas fa-globe" aria-hidden="true"></i> Website URL (USA, UK, or Any Domain)</label>
           <div class="input-wrapper">
-            <i class="fas fa-link"></i>
-            <input type="url" id="websiteUrl" placeholder="https://example.com or https://example.co.uk" value="https://freeseotoolhub.com">
+            <i class="fas fa-link" aria-hidden="true"></i>
+            <input type="url" id="websiteUrl" placeholder="https://example.com or https://example.co.uk" value="https://freeseotoolhub.com" aria-describedby="urlHelp">
+            <span id="urlHelp" style="font-size:0.75rem; color:var(--gray); display:block; margin-top:4px;">Enter full URL with http:// or https://</span>
           </div>
         </div>
 
         <div class="form-group">
-          <label><i class="fas fa-map-marker-alt"></i> Target Region / Market</label>
+          <label for="targetRegion"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Target Region / Market</label>
           <div class="input-wrapper">
-            <i class="fas fa-globe-asia"></i>
+            <i class="fas fa-globe-asia" aria-hidden="true"></i>
             <select id="targetRegion">
               <option value="global">🌍 Global (All Countries)</option>
               <option value="us">🇺🇸 United States (.com)</option>
@@ -343,9 +350,9 @@
         </div>
 
         <div class="form-group">
-          <label><i class="fas fa-filter"></i> Filter By Link Type</label>
+          <label for="filterType"><i class="fas fa-filter" aria-hidden="true"></i> Filter By Link Type</label>
           <div class="input-wrapper">
-            <i class="fas fa-tags"></i>
+            <i class="fas fa-tags" aria-hidden="true"></i>
             <select id="filterType">
               <option value="all">All Backlinks</option>
               <option value="dofollow">Dofollow Only</option>
@@ -359,46 +366,46 @@
         </div>
 
         <div class="btn-group">
-          <button class="btn btn-primary" id="checkBtn"><i class="fas fa-search"></i> Check Backlinks</button>
-          <button class="btn btn-secondary" id="clearBtn"><i class="fas fa-eraser"></i> Clear</button>
+          <button class="btn btn-primary" id="checkBtn" aria-label="Check backlinks"><i class="fas fa-search" aria-hidden="true"></i> Check Backlinks</button>
+          <button class="btn btn-secondary" id="clearBtn" aria-label="Clear all fields"><i class="fas fa-eraser" aria-hidden="true"></i> Clear</button>
         </div>
         <p style="font-size:0.7rem; color:var(--gray); margin-top:10px; text-align:center;">Press Enter to analyze backlinks for USA, UK & global websites</p>
       </div>
 
       <!-- Results Panel -->
-      <div class="results-panel">
-        <h2 class="section-title"><i class="fas fa-chart-bar"></i> International Backlink Report</h2>
-        <div class="loader" id="loader"><div class="loader-spinner"></div><p>Analyzing backlinks across USA, UK & 150+ country databases...</p></div>
+      <div class="results-panel" role="region" aria-label="Backlink analysis results">
+        <h2 class="section-title"><i class="fas fa-chart-bar" aria-hidden="true"></i> International Backlink Report</h2>
+        <div class="loader" id="loader" role="status" aria-live="polite"><div class="loader-spinner"></div><p>Analyzing backlinks across USA, UK & 150+ country databases...</p></div>
         <div id="resultsContainer">
-          <div class="empty-state"><i class="fas fa-link" style="font-size:3rem; opacity:0.5;"></i><h3 style="margin-top:0.8rem;">Enter URL to Analyze International Backlinks</h3><p>Get comprehensive backlink report: DA, spam score, referring domains, USA/UK country distribution & more.</p></div>
+          <div class="empty-state"><i class="fas fa-link" style="font-size:3rem; opacity:0.5;" aria-hidden="true"></i><h3 style="margin-top:0.8rem;">Enter URL to Analyze International Backlinks</h3><p>Get comprehensive backlink report: DA, spam score, referring domains, USA/UK country distribution & more.</p></div>
         </div>
       </div>
     </div>
 
     <!-- Tips Section -->
-    <div class="tips-section">
-      <h3><i class="fas fa-lightbulb"></i> International Backlink SEO Tips for 2026</h3>
-      <div class="tip-item"><div class="tip-icon"><i class="fas fa-check"></i></div><div><strong>Quality Over Quantity:</strong> 10 backlinks from DA 50+ USA/UK websites are more valuable than 1000 low-quality links</div></div>
-      <div class="tip-item"><div class="tip-icon"><i class="fas fa-globe"></i></div><div><strong>Geographic Diversity:</strong> Mix USA (.com), UK (.co.uk), and regional domains for natural international profile</div></div>
-      <div class="tip-item"><div class="tip-icon"><i class="fas fa-shield-alt"></i></div><div><strong>Monitor Spam Score:</strong> Keep spam score below 10% for healthy backlink profile. Use our recommendations to disavow toxic links.</div></div>
-      <div class="tip-item"><div class="tip-icon"><i class="fas fa-balance-scale"></i></div><div><strong>Dofollow Ratio by Country:</strong> USA/UK sites typically have 60-70% dofollow. Don't over-optimize for any single market.</div></div>
+    <div class="tips-section" role="region" aria-label="International backlink SEO tips">
+      <h3><i class="fas fa-lightbulb" aria-hidden="true"></i> International Backlink SEO Tips for 2026</h3>
+      <div class="tip-item"><div class="tip-icon"><i class="fas fa-check" aria-hidden="true"></i></div><div><strong>Quality Over Quantity:</strong> 10 backlinks from DA 50+ USA/UK websites are more valuable than 1000 low-quality links</div></div>
+      <div class="tip-item"><div class="tip-icon"><i class="fas fa-globe" aria-hidden="true"></i></div><div><strong>Geographic Diversity:</strong> Mix USA (.com), UK (.co.uk), and regional domains for natural international profile</div></div>
+      <div class="tip-item"><div class="tip-icon"><i class="fas fa-shield-alt" aria-hidden="true"></i></div><div><strong>Monitor Spam Score:</strong> Keep spam score below 10% for healthy backlink profile. Use our recommendations to disavow toxic links.</div></div>
+      <div class="tip-item"><div class="tip-icon"><i class="fas fa-balance-scale" aria-hidden="true"></i></div><div><strong>Dofollow Ratio by Country:</strong> USA/UK sites typically have 60-70% dofollow. Don't over-optimize for any single market.</div></div>
     </div>
   </div>
 
-  <footer class="footer">
+  <footer class="footer" role="contentinfo">
     <div class="footer-links">
-      <a href="index.html"><i class="fas fa-home"></i> Home</a>
-      <a href="all-tools.html"><i class="fas fa-tools"></i> All 90+ Tools</a>
-      <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
-      <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
-      <a href="privacy.html"><i class="fas fa-shield-alt"></i> Privacy</a>
-      <a href="sitemap.xml"><i class="fas fa-sitemap"></i> Sitemap</a>
+      <a href="index.html" aria-label="Home"><i class="fas fa-home" aria-hidden="true"></i> Home</a>
+      <a href="all-tools.html" aria-label="All tools"><i class="fas fa-tools" aria-hidden="true"></i> All 90+ Tools</a>
+      <a href="about.html" aria-label="About"><i class="fas fa-info-circle" aria-hidden="true"></i> About</a>
+      <a href="contact.html" aria-label="Contact"><i class="fas fa-envelope" aria-hidden="true"></i> Contact</a>
+      <a href="privacy.html" aria-label="Privacy"><i class="fas fa-shield-alt" aria-hidden="true"></i> Privacy</a>
+      <a href="sitemap.xml" aria-label="Sitemap"><i class="fas fa-sitemap" aria-hidden="true"></i> Sitemap</a>
     </div>
     <p class="copyright">© 2026 FreeSEOToolHub.com | All Rights Reserved | Backlink Checker International - Updated May 2026 | Serving USA, UK & Global SEO Community</p>
   </footer>
 </div>
 
-<div class="toast" id="toastMsg"><i class="fas fa-check-circle"></i> <span id="toastText"></span></div>
+<div class="toast" id="toastMsg" role="alert" aria-live="polite"><i class="fas fa-check-circle" aria-hidden="true"></i> <span id="toastText"></span></div>
 
 <script>
   // Region names mapping with USA/UK emphasis
@@ -497,7 +504,7 @@
         </div>
         
         <div class="result-box">
-          <h3><i class="fas fa-globe"></i> International Domain Overview</h3>
+          <h3><i class="fas fa-globe" aria-hidden="true"></i> International Domain Overview</h3>
           <div class="domain-stats">
             <div class="domain-stat-item"><div class="domain-stat-value">${usaCount}</div><div class="domain-stat-label">🇺🇸 USA Domains</div></div>
             <div class="domain-stat-item"><div class="domain-stat-value">${ukCount}</div><div class="domain-stat-label">🇬🇧 UK Domains</div></div>
@@ -507,7 +514,7 @@
         </div>
         
         <div class="result-box">
-          <h3><i class="fas fa-link"></i> Top Backlinks (USA & UK Highlighted)</h3>
+          <h3><i class="fas fa-link" aria-hidden="true"></i> Top Backlinks (USA & UK Highlighted)</h3>
           <div class="backlink-list">
             ${topBacklinks.map(l => `
               <div class="backlink-item" style="border-left-color: ${l.country === 'us' ? '#3b82f6' : l.country === 'gb' ? '#ef4444' : '#06d6a0'}">
@@ -518,18 +525,18 @@
             `).join('')}
             ${topBacklinks.length === 0 ? '<p style="text-align:center; color:var(--gray); padding:15px;">No backlinks found for this filter combination.</p>' : ''}
           </div>
-          <button class="copy-btn" onclick="copyReportToClipboard()"><i class="far fa-copy"></i> Copy Full Report</button>
+          <button class="copy-btn" onclick="copyReportToClipboard()" aria-label="Copy full report"><i class="far fa-copy" aria-hidden="true"></i> Copy Full Report</button>
         </div>
         
         <div class="result-box">
-          <h3><i class="fas fa-exclamation-triangle"></i> International Spam Analysis</h3>
+          <h3><i class="fas fa-exclamation-triangle" aria-hidden="true"></i> International Spam Analysis</h3>
           <div><span style="font-size:1.5rem; font-weight:800; color:${avgSpam < 10 ? '#06d6a0' : avgSpam < 15 ? '#ffd166' : '#ef476f'}">${avgSpam}%</span> Average Spam Score</div>
           <div style="height:8px; background:#e2e8f0; border-radius:4px; margin:0.5rem 0;"><div style="width:${avgSpam}%; height:100%; background:${avgSpam < 10 ? '#06d6a0' : avgSpam < 15 ? '#ffd166' : '#ef476f'}; border-radius:4px; transition: width 1s ease;"></div></div>
           <p style="font-size:0.85rem; margin-top:5px;">${avgSpam < 10 ? '✅ Healthy international backlink profile' : avgSpam < 15 ? '⚠️ Moderate spam score - Review suspicious links' : '❌ High spam score - Consider disavowing'}</p>
         </div>
         
         <div class="result-box" style="background:#e8edff;">
-          <h3><i class="fas fa-lightbulb"></i> Recommendations for ${regionNames[region]} Market</h3>
+          <h3><i class="fas fa-lightbulb" aria-hidden="true"></i> Recommendations for ${regionNames[region]} Market</h3>
           <ul style="margin-left:1.2rem; font-size:0.85rem; line-height:1.8;">
             <li>Target more ${region === 'us' ? 'UK (.co.uk) and international' : region === 'gb' ? 'USA (.com) and international' : 'USA and UK'} domains for diversity</li>
             <li>Improve dofollow ratio - Currently ${dofollowPercent}% (recommended: 60-70%)</li>
@@ -558,7 +565,7 @@
     document.getElementById('websiteUrl').value = 'https://freeseotoolhub.com';
     document.getElementById('targetRegion').value = 'gb';
     document.getElementById('filterType').value = 'all';
-    document.getElementById('resultsContainer').innerHTML = '<div class="empty-state"><i class="fas fa-link" style="font-size:3rem; opacity:0.5;"></i><h3 style="margin-top:0.8rem;">Enter URL to Analyze International Backlinks</h3><p>Get comprehensive report for USA, UK & global backlinks.</p></div>';
+    document.getElementById('resultsContainer').innerHTML = '<div class="empty-state"><i class="fas fa-link" style="font-size:3rem; opacity:0.5;" aria-hidden="true"></i><h3 style="margin-top:0.8rem;">Enter URL to Analyze International Backlinks</h3><p>Get comprehensive report for USA, UK & global backlinks.</p></div>';
     showToast('Form reset to UK market defaults');
   }
 
@@ -567,6 +574,6 @@
   document.getElementById('websiteUrl').addEventListener('keypress', (e) => { if (e.key === 'Enter') generateReport(); });
 </script>
 <!-- AI Chat Assistant - Gemini Powered -->
-<script src="ai-assistant.js"></script>
+<script src="ai-assistant.js" defer></script>
 </body>
 </html>
