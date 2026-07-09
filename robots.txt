@@ -1,31 +1,33 @@
 # robots.txt for Free SEO Tool Hub
 # https://freeseotoolhub.com/
-# Last Updated: 2026-05-21
+# Last Updated: 2026-07-09
+# Site Structure: 15 Global SEO Tools + Main Pages
 # Multi-Language System Active (URL Parameter: ?lang=)
 
 User-agent: *
 Allow: /
+
+# --- BLOCKED SECTIONS ---
+# No private/temp/draft folders exist in the new structure
 Disallow: /private/
 Disallow: /temp/
 Disallow: /drafts/
 
-# Block old language folders to prevent duplicate content
-Disallow: /hi/
-Disallow: /en/
-Disallow: /ur/
-Disallow: /de/
-Disallow: /es/
-
-# Allow language URL parameters for crawling
+# --- MULTI-LANGUAGE HANDLING ---
+# All language versions are served via URL parameter (?lang=)
+# No separate folders exist, so no need to block /hi/, /en/, etc.
+# Allow Google to crawl all language variations
 Allow: /*?lang=hi$
 Allow: /*?lang=en$
 Allow: /*?lang=ur$
 Allow: /*?lang=es$
 Allow: /*?lang=de$
 
+# --- SITEMAP ---
 Sitemap: https://freeseotoolhub.com/sitemap.xml
 
-# AI Crawler Restrictions
+# --- AI CRAWLER RESTRICTIONS ---
+# Block AI bots from scraping content (optional - keep as you prefer)
 User-agent: GPTBot
 Disallow: /
 
@@ -38,9 +40,31 @@ Disallow: /
 User-agent: Amazonbot
 Disallow: /
 
-# Crawl-Delay for heavy bots
+# --- CRAWL-DELAY FOR HEAVY BOTS ---
+# Give heavy bots some breathing room
 User-agent: AhrefsBot
 Crawl-Delay: 10
 
 User-agent: SemrushBot
 Crawl-Delay: 8
+
+# --- ADDITIONAL RECOMMENDATIONS FOR 15-TOOL SITE ---
+
+# Block old deleted pages if they still exist (optional)
+Disallow: /gst-calculator.html
+Disallow: /upi-qr-generator.html
+Disallow: /pan-validator.html
+Disallow: /aadhaar-mask.html
+Disallow: /udyam-checker.html
+Disallow: /hinglish-converter.html
+Disallow: /hinglish-volume-estimator.html
+Disallow: /bhashini-seo.html
+Disallow: /amazon-fba-calculator.html
+Disallow: /amazon-seo-tool-free.html
+Disallow: /amazon-seo-tool-api.html
+Disallow: /amazon-product-research.html
+Disallow: /ecommerce-seo-tool.html
+Disallow: /price-comparison-tool.html
+Disallow: /profit-margin-calculator.html
+Disallow: /all-tools.html
+Disallow: /free-tools.html
