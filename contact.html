@@ -20,9 +20,9 @@
 <style>
 /* ===== REUSABLE STYLES ===== */
 :root {
---primary: #4361ee;
---primary-dark: #3a56d4;
---secondary: #7209b7;
+--primary: #ff9933;
+--primary-dark: #e68a2e;
+--secondary: #0b1a33;
 --success: #06d6a0;
 --warning: #ffd166;
 --danger: #ef476f;
@@ -77,14 +77,15 @@ padding: 0 20px;
 .logo {
 font-size: 1.8rem;
 font-weight: 700;
-color: var(--primary);
+color: var(--secondary);
 text-decoration: none;
 display: flex;
 align-items: center;
 gap: 10px;
 }
 
-.logo span { color: var(--secondary); }
+.logo i { color: var(--primary); }
+.logo span { color: var(--primary); }
 
 .nav-links {
 display: flex;
@@ -121,7 +122,7 @@ cursor: pointer;
 
 /* ===== PAGE HEADER ===== */
 .page-header {
-background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+background: linear-gradient(135deg, var(--secondary) 0%, #1e2b4f 100%);
 color: white;
 padding: 100px 20px 70px;
 text-align: center;
@@ -134,6 +135,8 @@ font-size: 3.2rem;
 margin-bottom: 20px;
 font-weight: 800;
 }
+
+.page-title .highlight { color: var(--primary); }
 
 @media (max-width: 768px) {
 .page-title { font-size: 2.5rem; }
@@ -172,11 +175,13 @@ padding: 50px;
 .section-title {
 font-size: 2rem;
 margin-bottom: 30px;
-color: var(--primary);
+color: var(--secondary);
 display: flex;
 align-items: center;
 gap: 15px;
 }
+
+.section-title i { color: var(--primary); }
 
 /* ===== CONTACT FORM ===== */
 .contact-form .form-group {
@@ -207,7 +212,7 @@ transition: var(--transition);
 .contact-form textarea:focus {
 outline: none;
 border-color: var(--primary);
-box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+box-shadow: 0 0 0 3px rgba(255, 153, 51, 0.2);
 }
 
 .contact-form textarea {
@@ -246,7 +251,7 @@ margin-top: 10px;
 .btn-submit:hover {
 background: var(--primary-dark);
 transform: translateY(-3px);
-box-shadow: 0 10px 20px rgba(67, 97, 238, 0.3);
+box-shadow: 0 10px 20px rgba(255, 153, 51, 0.3);
 }
 
 .btn-submit:disabled {
@@ -273,7 +278,7 @@ border-bottom: none;
 .contact-icon {
 width: 60px;
 height: 60px;
-background: rgba(67, 97, 238, 0.1);
+background: rgba(255, 153, 51, 0.1);
 border-radius: 50%;
 display: flex;
 align-items: center;
@@ -309,17 +314,17 @@ text-decoration: underline;
 
 /* ===== RESOURCE BOX ===== */
 .resource-box {
-background: #fef9e7;
-border: 1px solid #f9e79f;
+background: #f0fdf4;
+border: 2px dashed #22c55e;
 padding: 25px;
 border-radius: var(--radius);
 margin: 30px 0;
 text-align: center;
 }
-.resource-box h3 { color: #d4ac0d; margin-bottom: 15px; font-weight: 700; }
+.resource-box h3 { color: #166534; margin-bottom: 15px; font-weight: 700; }
 .resource-box p { color: var(--gray); margin-bottom: 15px; }
-.resource-box .btn-resource { background:#d4ac0d; color:#000; padding:12px 30px; border-radius: 50px; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; }
-.resource-box .btn-resource:hover { background:#b38a00; }
+.resource-box .btn-resource { background:#166534; color:#fff; padding:12px 30px; border-radius: 50px; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; }
+.resource-box .btn-resource:hover { background:#15803d; }
 
 /* ===== FAQ SECTION ===== */
 .faq-section {
@@ -340,6 +345,8 @@ font-size: 2.5rem;
 margin-bottom: 20px;
 color: var(--dark);
 }
+
+.faq-title i { color: var(--primary); }
 
 .faq-subtitle {
 text-align: center;
@@ -396,7 +403,7 @@ transform: rotate(45deg);
 
 /* ===== CTA SECTION ===== */
 .cta-section {
-background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+background: linear-gradient(135deg, var(--secondary) 0%, #1e2b4f 100%);
 color: white;
 padding: 80px 20px;
 text-align: center;
@@ -428,8 +435,8 @@ font-size: 1.1rem;
 }
 
 .btn-primary {
-background: white;
-color: var(--primary);
+background: var(--primary);
+color: white;
 box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
@@ -452,7 +459,7 @@ transform: translateY(-3px);
 
 /* ===== FOOTER ===== */
 .footer {
-background: #1a1a2e;
+background: #0b1a33;
 color: white;
 padding: 60px 20px 30px;
 margin-top: 80px;
@@ -473,6 +480,8 @@ align-items: center;
 gap: 10px;
 }
 
+.footer-brand h3 i { color: var(--primary); }
+
 .footer-links h4, .footer-newsletter h4 {
 margin-bottom: 20px;
 font-size: 1.3rem;
@@ -487,7 +496,7 @@ transition: var(--transition);
 }
 
 .footer-links a:hover {
-color: white;
+color: var(--primary);
 padding-left: 5px;
 }
 
@@ -501,7 +510,7 @@ font-size: 0.9rem;
 
 .footer-note {
 margin-top: 10px;
-color: var(--warning);
+color: var(--primary);
 display: flex;
 align-items: center;
 justify-content: center;
@@ -534,10 +543,9 @@ to { opacity: 1; }
 <!-- नेविगेशन बार -->
 <nav class="navbar">
   <div class="nav-container">
-    <a href="/" class="logo"><i class="fas fa-tools"></i> Free<span>SEO</span>ToolHub</a>
+    <a href="/" class="logo"><i class="fas fa-rocket"></i> Free<span>SEO</span>ToolHub</a>
     <div class="nav-links">
       <a href="/" class="nav-link"><i class="fas fa-home"></i> Home</a>
-      <a href="/all-tools.html" class="nav-link"><i class="fas fa-th-large"></i> All Tools</a>
       <a href="/blog/" class="nav-link"><i class="fas fa-blog"></i> Blog</a>
       <a href="/about.html" class="nav-link"><i class="fas fa-info-circle"></i> About</a>
       <a href="/contact.html" class="nav-link active"><i class="fas fa-envelope"></i> Contact</a>
@@ -549,7 +557,7 @@ to { opacity: 1; }
 <!-- पेज हेडर -->
 <header class="page-header">
 <div class="container">
-<h1 class="page-title">Contact Us</h1>
+<h1 class="page-title">Contact <span class="highlight">Us</span></h1>
 <p class="page-subtitle">We'd love to hear from you! Reach out for tool suggestions, support, or partnership opportunities. We respond to every message within 24-48 hours.</p>
 </div>
 </header>
@@ -559,7 +567,7 @@ to { opacity: 1; }
 <!-- सफलता संदेश -->
 <div id="successMessage" class="success-message">
 <h4><i class="fas fa-check-circle"></i> Thank You! Your Message Has Been Sent.</h4>
-<p>We'll get back to you shortly. In the meantime, feel free to explore our <a href="/all-tools.html">free SEO tools</a>.</p>
+<p>We'll get back to you shortly. In the meantime, feel free to explore our <a href="/">free SEO tools</a>.</p>
 </div>
 
 <!-- संपर्क ग्रिड -->
@@ -783,11 +791,11 @@ Your suggestions and feedback allow us to build better, more powerful SEO tools 
 </p>
 
 <div class="cta-buttons">
-<a href="/all-tools.html" class="btn-primary">
-<i class="fas fa-tools"></i> Explore Free Tools
+<a href="/" class="btn-primary">
+<i class="fas fa-home"></i> Explore Free Tools
 </a>
-<a href="/" class="btn-secondary">
-<i class="fas fa-home"></i> Go to Homepage
+<a href="/blog/" class="btn-secondary">
+<i class="fas fa-blog"></i> Read Our Blog
 </a>
 </div>
 </section>
@@ -798,8 +806,8 @@ Your suggestions and feedback allow us to build better, more powerful SEO tools 
 <div class="container">
 <div class="footer-content">
 <div class="footer-brand">
-<h3><i class="fas fa-tools"></i> FreeSEOToolHub</h3>
-<p>100+ powerful, free SEO tools built for the world. Empowering marketers, bloggers, and businesses everywhere.</p>
+<h3><i class="fas fa-rocket"></i> FreeSEOToolHub</h3>
+<p>15 essential, free SEO tools built for the global community. Empowering marketers, bloggers, and businesses everywhere.</p>
 <div style="margin-top: 20px; display: flex; gap: 15px;">
 <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-twitter"></i></a>
 <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-facebook"></i></a>
@@ -811,7 +819,6 @@ Your suggestions and feedback allow us to build better, more powerful SEO tools 
 <div class="footer-links">
 <h4>Quick Links</h4>
 <a href="/">Home</a>
-<a href="/all-tools.html">All Tools</a>
 <a href="/blog/">Blog</a>
 <a href="/about.html">About</a>
 <a href="https://softwaretoolguide.com" target="_blank" rel="noopener">Software Reviews</a>
@@ -821,8 +828,8 @@ Your suggestions and feedback allow us to build better, more powerful SEO tools 
 <div class="footer-newsletter">
 <h4>Stay Updated</h4>
 <p>Be the first to know about new tools and updates.</p>
-<a href="#" class="btn-secondary" style="margin-top: 15px; display: inline-flex;">
-<i class="fas fa-bell"></i> Get Notifications
+<a href="/contact.html" class="btn-secondary" style="margin-top: 15px; display: inline-flex;">
+<i class="fas fa-envelope"></i> Email Us
 </a>
 </div>
 </div>
