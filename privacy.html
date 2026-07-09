@@ -20,9 +20,9 @@
 <style>
 /* ===== REUSABLE STYLES ===== */
 :root {
---primary: #4361ee;
---primary-dark: #3a56d4;
---secondary: #7209b7;
+--primary: #ff9933;
+--primary-dark: #e68a2e;
+--secondary: #0b1a33;
 --success: #06d6a0;
 --warning: #ffd166;
 --danger: #ef476f;
@@ -77,14 +77,15 @@ padding: 0 20px;
 .logo {
 font-size: 1.8rem;
 font-weight: 700;
-color: var(--primary);
+color: var(--secondary);
 text-decoration: none;
 display: flex;
 align-items: center;
 gap: 10px;
 }
 
-.logo span { color: var(--secondary); }
+.logo i { color: var(--primary); }
+.logo span { color: var(--primary); }
 
 .nav-links {
 display: flex;
@@ -121,7 +122,7 @@ cursor: pointer;
 
 /* ===== PAGE HEADER ===== */
 .page-header {
-background: linear-gradient(135deg, #2c3e50 0%, #4a6491 100%);
+background: linear-gradient(135deg, #0b1a33 0%, #1e2b4f 100%);
 color: white;
 padding: 100px 20px 70px;
 text-align: center;
@@ -134,6 +135,8 @@ font-size: 3.2rem;
 margin-bottom: 20px;
 font-weight: 800;
 }
+
+.page-title .highlight { color: var(--primary); }
 
 @media (max-width: 768px) {
 .page-title { font-size: 2.5rem; }
@@ -170,13 +173,15 @@ margin-bottom: 0;
 .section-title {
 font-size: 1.8rem;
 margin-bottom: 25px;
-color: var(--primary);
+color: var(--secondary);
 padding-bottom: 15px;
 border-bottom: 2px solid var(--gray-light);
 display: flex;
 align-items: center;
 gap: 15px;
 }
+
+.section-title i { color: var(--primary); }
 
 .privacy-content {
 font-size: 1.05rem;
@@ -224,7 +229,7 @@ box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
 .info-table th {
-background: var(--primary);
+background: var(--secondary);
 color: white;
 padding: 20px;
 text-align: left;
@@ -245,20 +250,20 @@ background: var(--light);
 }
 
 .resource-box {
-background: #fef9e7;
-border: 1px solid #f9e79f;
+background: #f0fdf4;
+border: 2px dashed #22c55e;
 padding: 25px;
 border-radius: var(--radius);
 margin: 30px 0;
 text-align: center;
 }
-.resource-box h3 { color: #d4ac0d; margin-bottom: 15px; font-weight: 700; }
-.resource-box .btn-resource { background:#d4ac0d; color:#000; padding:12px 30px; border-radius: 50px; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; }
-.resource-box .btn-resource:hover { background:#b38a00; }
+.resource-box h3 { color: #166534; margin-bottom: 15px; font-weight: 700; }
+.resource-box .btn-resource { background:#166534; color:#fff; padding:12px 30px; border-radius: 50px; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; }
+.resource-box .btn-resource:hover { background:#15803d; }
 
 /* ===== CTA SECTION ===== */
 .cta-section {
-background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+background: linear-gradient(135deg, var(--secondary) 0%, #1e2b4f 100%);
 color: white;
 padding: 80px 20px;
 text-align: center;
@@ -290,8 +295,8 @@ font-size: 1.1rem;
 }
 
 .btn-primary {
-background: white;
-color: var(--primary);
+background: var(--primary);
+color: var(--secondary);
 box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
@@ -314,7 +319,7 @@ transform: translateY(-3px);
 
 /* ===== FOOTER ===== */
 .footer {
-background: #1a1a2e;
+background: #0b1a33;
 color: white;
 padding: 60px 20px 30px;
 margin-top: 80px;
@@ -335,6 +340,8 @@ align-items: center;
 gap: 10px;
 }
 
+.footer-brand h3 i { color: var(--primary); }
+
 .footer-links h4, .footer-newsletter h4 {
 margin-bottom: 20px;
 font-size: 1.3rem;
@@ -349,7 +356,7 @@ transition: var(--transition);
 }
 
 .footer-links a:hover {
-color: white;
+color: var(--primary);
 padding-left: 5px;
 }
 
@@ -363,7 +370,7 @@ font-size: 0.9rem;
 
 .footer-note {
 margin-top: 10px;
-color: var(--warning);
+color: var(--primary);
 display: flex;
 align-items: center;
 justify-content: center;
@@ -375,10 +382,9 @@ gap: 8px;
 <!-- नेविगेशन बार -->
 <nav class="navbar">
   <div class="nav-container">
-    <a href="/" class="logo"><i class="fas fa-tools"></i> Free<span>SEO</span>ToolHub</a>
+    <a href="/" class="logo"><i class="fas fa-rocket"></i> Free<span>SEO</span>ToolHub</a>
     <div class="nav-links">
       <a href="/" class="nav-link"><i class="fas fa-home"></i> Home</a>
-      <a href="/all-tools.html" class="nav-link"><i class="fas fa-th-large"></i> All Tools</a>
       <a href="/blog/" class="nav-link"><i class="fas fa-blog"></i> Blog</a>
       <a href="/about.html" class="nav-link"><i class="fas fa-info-circle"></i> About</a>
       <a href="/contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a>
@@ -390,9 +396,9 @@ gap: 8px;
 <!-- पेज हेडर -->
 <header class="page-header">
 <div class="container">
-<h1 class="page-title">Privacy Policy</h1>
+<h1 class="page-title">Privacy <span class="highlight">Policy</span></h1>
 <p class="page-subtitle">We take your privacy seriously. Learn how we collect, use, and protect your personal data.</p>
-<p style="margin-top: 15px; opacity: 0.8;"><strong>Last Updated:</strong> May 31, 2026 | <strong>Effective:</strong> November 1, 2023</p>
+<p style="margin-top: 15px; opacity: 0.8;"><strong>Last Updated:</strong> July 9, 2026 | <strong>Effective:</strong> November 1, 2023</p>
 </div>
 </header>
 
@@ -570,8 +576,8 @@ If you have any concerns or questions about our privacy practices or your data, 
 <div class="container">
 <div class="footer-content">
 <div class="footer-brand">
-<h3><i class="fas fa-tools"></i> FreeSEOToolHub</h3>
-<p>100+ powerful, free SEO tools built for the global community. Empowering marketers, bloggers, and businesses everywhere.</p>
+<h3><i class="fas fa-rocket"></i> FreeSEOToolHub</h3>
+<p>15 essential, free SEO tools built for the global community. Empowering marketers, bloggers, and businesses everywhere.</p>
 <div style="margin-top: 20px; display: flex; gap: 15px;">
 <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-twitter"></i></a>
 <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-facebook"></i></a>
@@ -583,7 +589,6 @@ If you have any concerns or questions about our privacy practices or your data, 
 <div class="footer-links">
 <h4>Quick Links</h4>
 <a href="/">Home</a>
-<a href="/all-tools.html">All Tools</a>
 <a href="/blog/">Blog</a>
 <a href="/about.html">About</a>
 <a href="/contact.html">Contact</a>
