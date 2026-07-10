@@ -21,7 +21,7 @@ gtag('config', 'G-PFPCTBFG3Y');
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- Primary SEO Meta Tags -->
-<title data-translate="metaTagPageTitle">Free Meta Tag Generator 2026 | SEO, Open Graph & Twitter Cards | FreeSEOToolHub</title>
+<title>Free Meta Tag Generator 2026 | SEO, Open Graph & Twitter Cards | FreeSEOToolHub</title>
 <meta name="description" content="Generate perfect SEO meta tags, Open Graph tags for Facebook/LinkedIn, and Twitter Cards. Live preview, JSON-LD support, character counter. 100% free, no signup. Updated for 2026.">
 <meta name="keywords" content="meta tag generator, seo meta tags, open graph generator, twitter card generator, json-ld generator, meta tags 2026, html meta tags, free meta tag tool">
 <meta name="author" content="FreeSEOToolHub">
@@ -64,7 +64,7 @@ gtag('config', 'G-PFPCTBFG3Y');
 "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
 "featureList": ["SEO Title & Description", "Open Graph Tags", "Twitter Cards", "JSON-LD Generator", "Live Google Preview", "Character Counter", "Copy & Download"],
 "softwareVersion": "2.1",
-"dateModified": "2026-05-21",
+"dateModified": "2026-07-10",
 "url": "https://freeseotoolhub.com/meta-tag-generator.html"
 },
 {
@@ -81,8 +81,7 @@ gtag('config', 'G-PFPCTBFG3Y');
 "@type": "BreadcrumbList",
 "itemListElement": [
 {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://freeseotoolhub.com/"},
-{"@type": "ListItem", "position": 2, "name": "All Tools", "item": "https://freeseotoolhub.com/all-tools.html"},
-{"@type": "ListItem", "position": 3, "name": "Meta Tag Generator", "item": "https://freeseotoolhub.com/meta-tag-generator.html"}
+{"@type": "ListItem", "position": 2, "name": "Meta Tag Generator", "item": "https://freeseotoolhub.com/meta-tag-generator.html"}
 ]
 }
 ]
@@ -94,62 +93,111 @@ gtag('config', 'G-PFPCTBFG3Y');
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
 
+<!-- ========================================== -->
+<!-- ✅ BEST MODERN CSS (Glassmorphism + Dark Theme) -->
+<!-- ========================================== -->
 <style>
 :root {
---primary: #4361ee;
---primary-dark: #3a56d4;
---secondary: #7209b7;
+--primary: #ff9933;
+--primary-dark: #e68a2e;
+--secondary: #0b1a33;
 --success: #10b981;
 --warning: #f59e0b;
 --danger: #ef4444;
---bg: #f8fafc;
---card: #ffffff;
---text: #1e293b;
---text-light: #64748b;
---border: #e2e8f0;
+--bg: #0b1a33;
+--card: rgba(255, 255, 255, 0.05);
+--text: #ffffff;
+--text-light: rgba(255, 255, 255, 0.7);
+--border: rgba(255, 255, 255, 0.1);
 --radius: 18px;
---shadow: 0 4px 12px rgba(0,0,0,0.05);
---shadow-lg: 0 20px 50px rgba(0,0,0,0.1);
+--shadow: 0 4px 12px rgba(0,0,0,0.3);
+--shadow-lg: 0 20px 50px rgba(0,0,0,0.4);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {
 font-family: 'Inter', system-ui, sans-serif;
-background: linear-gradient(135deg, #eef2ff 0%, #f0f4ff 50%, #faf5ff 100%);
+background: linear-gradient(135deg, #0b1a33 0%, #1e2b4f 100%);
 min-height: 100vh;
 padding: 100px 16px 40px;
-color: var(--text);
+color: #fff;
 line-height: 1.6;
 }
 .container { max-width: 1100px; margin: 0 auto; }
 
-/* Breadcrumb */
+/* ====== NAVBAR ====== */
+.navbar {
+background: rgba(11, 26, 51, 0.95);
+backdrop-filter: blur(10px);
+padding: 0;
+border-bottom: 1px solid var(--border);
+margin-bottom: 24px;
+border-radius: var(--radius);
+}
+.nav-container {
+max-width: 1100px;
+margin: 0 auto;
+padding: 0 20px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+height: 70px;
+}
+.logo {
+font-size: 1.4rem;
+font-weight: 700;
+color: #fff !important;
+text-decoration: none;
+display: flex;
+align-items: center;
+gap: 8px;
+}
+.logo i { color: var(--primary); }
+.nav-links { display: flex; gap: 5px; align-items: center; }
+.nav-link {
+text-decoration: none;
+color: rgba(255,255,255,0.8);
+font-weight: 500;
+padding: 10px 16px;
+border-radius: 8px;
+transition: all 0.3s;
+font-size: 0.9rem;
+display: flex;
+align-items: center;
+gap: 6px;
+}
+.nav-link:hover, .nav-link.active {
+background: rgba(255, 153, 51, 0.15);
+color: var(--primary);
+}
+
+/* ====== BREADCRUMB ====== */
 .breadcrumb-nav {
 display: inline-flex;
 align-items: center;
 flex-wrap: wrap;
 gap: 8px;
-background: var(--card);
+background: rgba(255, 255, 255, 0.05);
 padding: 10px 22px;
 border-radius: 50px;
 margin-bottom: 24px;
-box-shadow: var(--shadow);
+border: 1px solid var(--border);
 font-size: 0.9rem;
 }
 .breadcrumb-nav a { color: var(--primary); text-decoration: none; font-weight: 500; }
 .breadcrumb-nav a:hover { text-decoration: underline; }
 .breadcrumb-nav .separator { color: var(--text-light); }
-.breadcrumb-nav .current { font-weight: 600; color: var(--text); }
+.breadcrumb-nav .current { font-weight: 600; color: #fff; }
 .update-badge {
 background: var(--primary);
-color: #fff;
+color: #0b1a33;
 padding: 4px 14px;
 border-radius: 40px;
 font-size: 0.8rem;
-font-weight: 500;
+font-weight: 700;
 }
 
-/* Header */
+/* ====== HEADER ====== */
 .tool-header {
 text-align: center;
 margin-bottom: 32px;
@@ -157,12 +205,13 @@ margin-bottom: 32px;
 .tool-header h1 {
 font-size: clamp(1.8rem, 4vw, 2.5rem);
 font-weight: 800;
-background: linear-gradient(135deg, var(--primary), var(--secondary));
+background: linear-gradient(135deg, var(--primary), var(--primary-dark));
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
 background-clip: text;
 margin-bottom: 10px;
 }
+.tool-header h1 i { color: var(--primary); }
 .tool-header .subtitle { color: var(--text-light); font-size: 1.05rem; max-width: 650px; margin: 0 auto; }
 .badge-row {
 display: flex;
@@ -172,18 +221,20 @@ flex-wrap: wrap;
 margin-top: 16px;
 }
 .badge-pill {
-background: var(--card);
+background: rgba(255, 255, 255, 0.05);
 padding: 7px 16px;
 border-radius: 50px;
 font-size: 0.82rem;
 font-weight: 500;
 border: 1px solid var(--border);
-color: var(--text);
+color: #fff;
 }
+.badge-pill i { color: var(--primary); }
 
-/* Main Card */
+/* ====== MAIN CARD ====== */
 .main-card {
-background: var(--card);
+background: rgba(255, 255, 255, 0.05);
+backdrop-filter: blur(12px);
 border-radius: var(--radius);
 box-shadow: var(--shadow-lg);
 padding: 28px;
@@ -191,7 +242,7 @@ margin-bottom: 32px;
 border: 1px solid var(--border);
 }
 
-/* Example Buttons */
+/* ====== EXAMPLE BUTTONS ====== */
 .example-btns {
 display: flex;
 gap: 8px;
@@ -199,7 +250,7 @@ flex-wrap: wrap;
 margin-bottom: 20px;
 }
 .example-btn {
-background: #f1f5f9;
+background: rgba(255, 255, 255, 0.05);
 border: 1px solid var(--border);
 padding: 8px 18px;
 border-radius: 50px;
@@ -208,10 +259,11 @@ font-weight: 500;
 cursor: pointer;
 transition: all 0.2s;
 font-family: inherit;
+color: #fff;
 }
-.example-btn:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+.example-btn:hover { background: var(--primary); color: #0b1a33; border-color: var(--primary); }
 
-/* Tabs */
+/* ====== TABS ====== */
 .nav-tabs { border-bottom: 2px solid var(--border); }
 .nav-tabs .nav-link {
 border: none;
@@ -220,34 +272,38 @@ font-weight: 600;
 padding: 12px 20px;
 border-radius: 12px 12px 0 0;
 transition: all 0.2s;
+background: transparent;
 }
 .nav-tabs .nav-link.active {
 color: var(--primary);
-background: var(--card);
+background: rgba(255, 255, 255, 0.05);
 border-bottom: 3px solid var(--primary);
 }
 .tab-content { padding: 24px 0 0; }
 
-/* Form */
+/* ====== FORM ====== */
 .form-group { margin-bottom: 18px; }
-.form-group label { display: block; margin-bottom: 6px; font-weight: 600; font-size: 0.9rem; }
+.form-group label { display: block; margin-bottom: 6px; font-weight: 600; font-size: 0.9rem; color: var(--text-light); }
 input[type="text"], input[type="url"], textarea, select {
 width: 100%;
 padding: 12px 16px;
-border: 2px solid var(--border);
+background: rgba(255, 255, 255, 0.05);
+border: 1px solid var(--border);
 border-radius: 12px;
 font-size: 0.95rem;
 font-family: inherit;
 transition: border 0.2s;
-background: #f9fafb;
+color: #fff;
 }
 textarea { resize: vertical; min-height: 90px; }
-input:focus, textarea:focus, select:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(67,97,238,0.1); }
+input:focus, textarea:focus, select:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(255, 153, 51, 0.1); }
+input::placeholder, textarea::placeholder { color: rgba(255,255,255,0.4); }
 .char-count { font-size: 0.78rem; font-weight: 600; }
 .char-good { color: #10b981; }
 .char-warn { color: #f59e0b; }
 .char-bad { color: #ef4444; }
 
+/* ====== BUTTONS ====== */
 .btn {
 padding: 14px 24px;
 border-radius: 50px;
@@ -262,19 +318,19 @@ gap: 8px;
 border: none;
 font-family: inherit;
 }
-.btn-primary { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: #fff; box-shadow: 0 4px 14px rgba(67,97,238,0.3); }
-.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(67,97,238,0.4); }
+.btn-primary { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: #0b1a33; box-shadow: 0 4px 14px rgba(255, 153, 51, 0.3); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(255, 153, 51, 0.4); }
 .btn-primary:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
-.btn-outline { background: var(--card); color: var(--text); border: 1px solid var(--border); }
-.btn-outline:hover { background: #f9fafb; }
+.btn-outline { background: rgba(255, 255, 255, 0.05); color: #fff; border: 1px solid var(--border); }
+.btn-outline:hover { background: rgba(255, 255, 255, 0.1); }
 .btn-sm { padding: 8px 18px; font-size: 0.85rem; }
 .btn-success { background: var(--success); color: #fff; }
 .btn-success:hover { background: #059669; }
 
-/* Results */
+/* ====== RESULTS ====== */
 .results-section { display: none; }
 .code-block {
-background: #1e293b;
+background: #0b1a33;
 color: #cbd5e1;
 padding: 18px;
 border-radius: 14px;
@@ -288,75 +344,79 @@ white-space: pre-wrap;
 word-break: break-word;
 }
 
-/* Previews */
+/* ====== PREVIEWS ====== */
 .preview-card {
 border: 1px solid var(--border);
 border-radius: 14px;
 overflow: hidden;
 margin-bottom: 16px;
+background: rgba(255, 255, 255, 0.02);
 }
 .preview-header {
-background: #f1f5f9;
+background: rgba(255, 255, 255, 0.05);
 padding: 10px 16px;
 font-weight: 700;
 font-size: 0.85rem;
 display: flex;
 align-items: center;
 gap: 8px;
+color: #fff;
 }
 .preview-body { padding: 16px; }
 
 .google-preview { font-family: Arial, sans-serif; }
-.google-title { color: #1a0dab; font-size: 1.2rem; line-height: 1.3; margin-bottom: 4px; }
-.google-url { color: #006621; font-size: 0.85rem; margin-bottom: 2px; }
-.google-desc { color: #545454; font-size: 0.88rem; line-height: 1.4; }
+.google-title { color: #8ab4f8; font-size: 1.2rem; line-height: 1.3; margin-bottom: 4px; }
+.google-url { color: #81c995; font-size: 0.85rem; margin-bottom: 2px; }
+.google-desc { color: #bdc1c6; font-size: 0.88rem; line-height: 1.4; }
 
-.social-preview { border: 1px solid #e1e8ed; border-radius: 12px; overflow: hidden; }
-.social-img { height: 160px; background: #e2e8f0; display: flex; align-items: center; justify-content: center; color: #94a3b8; }
+.social-preview { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+.social-img { height: 160px; background: rgba(255, 255, 255, 0.05); display: flex; align-items: center; justify-content: center; color: #94a3b8; }
 .social-info { padding: 12px; }
-.social-domain { color: #64748b; font-size: 0.75rem; text-transform: uppercase; }
-.social-title { font-weight: 700; font-size: 0.95rem; margin: 4px 0; }
-.social-desc { color: #64748b; font-size: 0.82rem; }
+.social-domain { color: var(--text-light); font-size: 0.75rem; text-transform: uppercase; }
+.social-title { font-weight: 700; font-size: 0.95rem; margin: 4px 0; color: #fff; }
+.social-desc { color: var(--text-light); font-size: 0.82rem; }
 
-/* Analysis */
+/* ====== ANALYSIS ====== */
 .analysis-box {
-background: #f0fdf4;
+background: rgba(16, 185, 129, 0.1);
 border: 1px solid #bbf7d0;
 border-radius: 14px;
 padding: 18px;
 margin-top: 20px;
 }
-.analysis-box h5 { font-weight: 700; margin-bottom: 12px; }
-.analysis-item { padding: 8px 0; font-size: 0.9rem; display: flex; align-items: flex-start; gap: 8px; }
+.analysis-box h5 { font-weight: 700; margin-bottom: 12px; color: #fff; }
+.analysis-item { padding: 8px 0; font-size: 0.9rem; display: flex; align-items: flex-start; gap: 8px; color: var(--text-light); }
 
-/* FAQ */
+/* ====== FAQ ====== */
 .faq-section { margin-bottom: 32px; }
-.faq-section h2 { font-weight: 800; font-size: 1.4rem; margin-bottom: 18px; }
+.faq-section h2 { font-weight: 800; font-size: 1.4rem; margin-bottom: 18px; color: #fff; }
+.faq-section h2 i { color: var(--primary); }
 .faq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
-.faq-item { background: var(--card); padding: 20px; border-radius: 14px; border: 1px solid var(--border); }
+.faq-item { background: rgba(255, 255, 255, 0.05); padding: 20px; border-radius: 14px; border: 1px solid var(--border); }
 .faq-item h4 { font-weight: 700; color: var(--primary); margin-bottom: 6px; font-size: 0.95rem; }
 .faq-item p { color: var(--text-light); font-size: 0.88rem; }
 
-/* Related Tools */
+/* ====== RELATED TOOLS ====== */
 .related-section { margin-bottom: 32px; }
-.related-section h2 { font-weight: 700; font-size: 1.2rem; margin-bottom: 16px; }
+.related-section h2 { font-weight: 700; font-size: 1.2rem; margin-bottom: 16px; color: #fff; }
+.related-section h2 i { color: var(--primary); }
 .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
 .related-card {
-background: var(--card);
+background: rgba(255, 255, 255, 0.05);
 padding: 16px;
 border-radius: 14px;
 text-decoration: none;
-color: var(--text);
+color: #fff;
 border: 1px solid var(--border);
 transition: all 0.2s;
 display: block;
 text-align: center;
 }
-.related-card:hover { transform: translateY(-3px); border-color: var(--primary); box-shadow: var(--shadow); }
+.related-card:hover { transform: translateY(-3px); border-color: var(--primary); box-shadow: var(--shadow); background: rgba(255, 153, 51, 0.1); }
 .related-card i { font-size: 1.3rem; color: var(--primary); margin-bottom: 6px; }
 .related-card h4 { font-size: 0.85rem; font-weight: 700; }
 
-/* Footer */
+/* ====== FOOTER ====== */
 .page-footer {
 text-align: center;
 color: var(--text-light);
@@ -368,6 +428,7 @@ margin-top: 32px;
 .page-footer a { color: var(--primary); text-decoration: none; }
 .page-footer a:hover { text-decoration: underline; }
 
+/* ====== LOADER ====== */
 .loader {
 display: none;
 text-align: center;
@@ -386,47 +447,61 @@ margin: 0 auto 12px;
 @media (max-width: 768px) {
 .main-card { padding: 18px; }
 .nav-tabs .nav-link { padding: 10px 14px; font-size: 0.85rem; }
+body { padding: 80px 12px 40px; }
 }
 </style>
 </head>
 <body>
 
+<!-- ====== NAVBAR ====== -->
+<nav class="navbar" aria-label="Main navigation">
+  <div class="nav-container">
+    <a href="/" class="logo">
+      <i class="fas fa-rocket"></i> FreeSEOToolHub
+    </a>
+    <div class="nav-links">
+      <a href="/" class="nav-link"><i class="fas fa-home"></i> Home</a>
+      <a href="/blog/" class="nav-link"><i class="fas fa-blog"></i> Blog</a>
+      <a href="/about.html" class="nav-link"><i class="fas fa-info-circle"></i> About</a>
+      <a href="/contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a>
+    </div>
+  </div>
+</nav>
+
 <div class="container">
 <!-- Breadcrumb -->
 <nav class="breadcrumb-nav" aria-label="Breadcrumb">
-<a href="/"><i class="fas fa-home"></i> <span data-translate="home">Home</span></a>
+<a href="/"><i class="fas fa-home"></i> Home</a>
 <span class="separator"><i class="fas fa-chevron-right"></i></span>
-<a href="/all-tools.html"><span data-translate="allTools">All Tools</span></a>
-<span class="separator"><i class="fas fa-chevron-right"></i></span>
-<span class="current" data-translate="metaTagTitle">Meta Tag Generator</span>
-<span class="update-badge"><i class="fas fa-sync-alt"></i> <span data-translate="updated">Updated May 2026</span></span>
+<span class="current">Meta Tag Generator</span>
+<span class="update-badge"><i class="fas fa-sync-alt"></i> Updated July 2026</span>
 </nav>
 
 <!-- Header -->
 <div class="tool-header">
-<h1><i class="fas fa-code"></i> <span data-translate="metaTagHeading">Meta Tag Generator 2026</span></h1>
-<p class="subtitle" data-translate="metaTagSubtitle">Generate SEO meta tags, Open Graph tags, Twitter Cards & JSON-LD structured data. <strong>100% free, no signup.</strong></p>
+<h1><i class="fas fa-code"></i> Meta Tag Generator 2026</h1>
+<p class="subtitle">Generate SEO meta tags, Open Graph tags, Twitter Cards & JSON-LD structured data. <strong>100% free, no signup.</strong></p>
 <div class="badge-row">
-<span class="badge-pill">🔍 SEO Tags</span>
-<span class="badge-pill">📱 Open Graph</span>
-<span class="badge-pill">🐦 Twitter Cards</span>
-<span class="badge-pill">📋 JSON-LD</span>
+<span class="badge-pill"><i class="fas fa-search"></i> SEO Tags</span>
+<span class="badge-pill"><i class="fas fa-share-alt"></i> Open Graph</span>
+<span class="badge-pill"><i class="fab fa-twitter"></i> Twitter Cards</span>
+<span class="badge-pill"><i class="fas fa-code"></i> JSON-LD</span>
 </div>
 </div>
 
 <!-- Main Tool -->
 <main class="main-card">
 <div class="example-btns">
-<button class="example-btn" onclick="loadExample('blog')"><i class="fas fa-blog"></i> <span data-translate="blogPost">Blog Post</span></button>
-<button class="example-btn" onclick="loadExample('product')"><i class="fas fa-shopping-cart"></i> <span data-translate="product">Product</span></button>
-<button class="example-btn" onclick="loadExample('business')"><i class="fas fa-building"></i> <span data-translate="business">Business</span></button>
-<button class="example-btn" onclick="resetForm()"><i class="fas fa-undo-alt"></i> <span data-translate="reset">Reset</span></button>
+<button class="example-btn" onclick="loadExample('blog')"><i class="fas fa-blog"></i> Blog Post</button>
+<button class="example-btn" onclick="loadExample('product')"><i class="fas fa-shopping-cart"></i> Product</button>
+<button class="example-btn" onclick="loadExample('business')"><i class="fas fa-building"></i> Business</button>
+<button class="example-btn" onclick="resetForm()"><i class="fas fa-undo-alt"></i> Reset</button>
 </div>
 
 <ul class="nav nav-tabs" id="metaTab" role="tablist">
-<li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#basic"><span data-translate="basicMeta">Basic Meta</span></button></li>
-<li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#social"><span data-translate="socialMedia">Social Media</span></button></li>
-<li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#advanced"><span data-translate="advanced">Advanced</span></button></li>
+<li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#basic">Basic Meta</button></li>
+<li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#social">Social Media</button></li>
+<li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#advanced">Advanced</button></li>
 </ul>
 
 <div class="tab-content">
@@ -434,16 +509,16 @@ margin: 0 auto 12px;
 <div class="tab-pane fade show active" id="basic">
 <div class="row">
 <div class="col-md-6">
-<div class="form-group"><label data-translate="pageTitle">Page Title</label><input type="text" id="pageTitle" placeholder="My Page Title" value="Free SEO Tools Hub 2026 - 90+ Free Digital Marketing Tools"><div class="d-flex justify-content-between mt-1"><small data-translate="optimalTitle">Optimal: 50-60 chars</small><small class="char-count" id="titleCount">0/60</small></div></div>
-<div class="form-group"><label data-translate="metaDescription">Meta Description</label><textarea id="metaDescription" placeholder="Page description...">Discover 90+ free SEO tools for keyword research, backlink analysis, and content optimization. Updated for 2026.</textarea><div class="d-flex justify-content-between mt-1"><small data-translate="optimalDesc">Optimal: 150-160 chars</small><small class="char-count" id="descCount">0/160</small></div></div>
-<div class="form-group"><label data-translate="keywords">Keywords (Optional)</label><input type="text" id="keywords" placeholder="keyword1, keyword2" value="seo tools, free seo tools, meta tag generator 2026"></div>
+<div class="form-group"><label>Page Title</label><input type="text" id="pageTitle" placeholder="My Page Title" value="Free SEO Tools Hub 2026 - 90+ Free Digital Marketing Tools"><div class="d-flex justify-content-between mt-1"><small>Optimal: 50-60 chars</small><small class="char-count" id="titleCount">0/60</small></div></div>
+<div class="form-group"><label>Meta Description</label><textarea id="metaDescription" placeholder="Page description...">Discover 90+ free SEO tools for keyword research, backlink analysis, and content optimization. Updated for 2026.</textarea><div class="d-flex justify-content-between mt-1"><small>Optimal: 150-160 chars</small><small class="char-count" id="descCount">0/160</small></div></div>
+<div class="form-group"><label>Keywords (Optional)</label><input type="text" id="keywords" placeholder="keyword1, keyword2" value="seo tools, free seo tools, meta tag generator 2026"></div>
 </div>
 <div class="col-md-6">
-<div class="form-group"><label data-translate="pageUrl">Page URL</label><input type="url" id="pageUrl" value="https://freeseotoolhub.com"></div>
-<div class="form-group"><label data-translate="canonicalUrl">Canonical URL</label><input type="url" id="canonicalUrl" value="https://freeseotoolhub.com"></div>
+<div class="form-group"><label>Page URL</label><input type="url" id="pageUrl" value="https://freeseotoolhub.com"></div>
+<div class="form-group"><label>Canonical URL</label><input type="url" id="canonicalUrl" value="https://freeseotoolhub.com"></div>
 <div class="row">
-<div class="col-6"><div class="form-group"><label data-translate="robots">Robots</label><select id="robotsDirective"><option value="index, follow" selected>index, follow</option><option value="noindex, follow">noindex, follow</option><option value="index, nofollow">index, nofollow</option><option value="noindex, nofollow">noindex, nofollow</option></select></div></div>
-<div class="col-6"><div class="form-group"><label data-translate="author">Author</label><input type="text" id="author" value="FreeSEOToolHub"></div></div>
+<div class="col-6"><div class="form-group"><label>Robots</label><select id="robotsDirective"><option value="index, follow" selected>index, follow</option><option value="noindex, follow">noindex, follow</option><option value="index, nofollow">index, nofollow</option><option value="noindex, nofollow">noindex, nofollow</option></select></div></div>
+<div class="col-6"><div class="form-group"><label>Author</label><input type="text" id="author" value="FreeSEOToolHub"></div></div>
 </div>
 </div>
 </div>
@@ -453,17 +528,17 @@ margin: 0 auto 12px;
 <div class="tab-pane fade" id="social">
 <div class="row">
 <div class="col-md-6">
-<h5 class="fw-bold mb-3"><i class="fab fa-facebook"></i> <span data-translate="openGraph">Open Graph</span></h5>
-<div class="form-group"><label data-translate="ogTitle">OG Title</label><input type="text" id="ogTitle" value="Free SEO Tools Hub 2026"></div>
-<div class="form-group"><label data-translate="ogDescription">OG Description</label><textarea id="ogDescription">90+ free SEO tools. Updated for 2026. No signup required.</textarea></div>
-<div class="form-group"><label data-translate="ogImage">OG Image URL</label><input type="url" id="ogImage" placeholder="https://example.com/image.jpg" value="https://freeseotoolhub.com/images/og-default.jpg"><small data-translate="ogImageSize">1200×630px recommended</small></div>
+<h5 class="fw-bold mb-3"><i class="fab fa-facebook"></i> Open Graph</h5>
+<div class="form-group"><label>OG Title</label><input type="text" id="ogTitle" value="Free SEO Tools Hub 2026"></div>
+<div class="form-group"><label>OG Description</label><textarea id="ogDescription">90+ free SEO tools. Updated for 2026. No signup required.</textarea></div>
+<div class="form-group"><label>OG Image URL</label><input type="url" id="ogImage" placeholder="https://example.com/image.jpg" value="https://freeseotoolhub.com/images/og-default.jpg"><small>1200×630px recommended</small></div>
 </div>
 <div class="col-md-6">
-<h5 class="fw-bold mb-3"><i class="fab fa-twitter"></i> <span data-translate="twitterCards">Twitter Cards</span></h5>
-<div class="form-group"><label data-translate="cardType">Card Type</label><select id="twitterCard"><option value="summary_large_image" selected>Summary with Large Image</option><option value="summary">Summary</option></select></div>
-<div class="form-group"><label data-translate="twitterTitle">Twitter Title</label><input type="text" id="twitterTitle" value="Free SEO Tools Hub 2026"></div>
-<div class="form-group"><label data-translate="twitterDescription">Twitter Description</label><textarea id="twitterDescription">90+ free SEO tools updated for 2026. No signup.</textarea></div>
-<div class="form-group"><label data-translate="twitterImage">Twitter Image</label><input type="url" id="twitterImage" value="https://freeseotoolhub.com/images/twitter-card.jpg"></div>
+<h5 class="fw-bold mb-3"><i class="fab fa-twitter"></i> Twitter Cards</h5>
+<div class="form-group"><label>Card Type</label><select id="twitterCard"><option value="summary_large_image" selected>Summary with Large Image</option><option value="summary">Summary</option></select></div>
+<div class="form-group"><label>Twitter Title</label><input type="text" id="twitterTitle" value="Free SEO Tools Hub 2026"></div>
+<div class="form-group"><label>Twitter Description</label><textarea id="twitterDescription">90+ free SEO tools updated for 2026. No signup.</textarea></div>
+<div class="form-group"><label>Twitter Image</label><input type="url" id="twitterImage" value="https://freeseotoolhub.com/images/twitter-card.jpg"></div>
 </div>
 </div>
 </div>
@@ -472,43 +547,43 @@ margin: 0 auto 12px;
 <div class="tab-pane fade" id="advanced">
 <div class="row">
 <div class="col-md-6">
-<h5 class="fw-bold mb-3"><i class="fas fa-sitemap"></i> <span data-translate="jsonld">JSON-LD</span></h5>
-<div class="form-group"><label data-translate="pageType">Page Type</label><select id="pageType"><option value="WebSite" selected>Website</option><option value="Article">Article</option><option value="Product">Product</option><option value="LocalBusiness">Local Business</option><option value="FAQPage">FAQ Page</option></select></div>
-<div class="form-group"><label data-translate="siteName">Site Name</label><input type="text" id="siteName" value="Free SEO Tool Hub"></div>
-<div class="form-group"><label data-translate="locale">Locale</label><select id="locale"><option value="en_US" selected>English (US)</option><option value="hi_IN">Hindi (India)</option><option value="es_ES">Spanish</option><option value="fr_FR">French</option></select></div>
-<div class="form-check"><input class="form-check-input" type="checkbox" id="generateJsonLd" checked><label class="form-check-label" data-translate="generateJsonLd">Generate JSON-LD</label></div>
+<h5 class="fw-bold mb-3"><i class="fas fa-sitemap"></i> JSON-LD</h5>
+<div class="form-group"><label>Page Type</label><select id="pageType"><option value="WebSite" selected>Website</option><option value="Article">Article</option><option value="Product">Product</option><option value="LocalBusiness">Local Business</option><option value="FAQPage">FAQ Page</option></select></div>
+<div class="form-group"><label>Site Name</label><input type="text" id="siteName" value="Free SEO Tool Hub"></div>
+<div class="form-group"><label>Locale</label><select id="locale"><option value="en_US" selected>English (US)</option><option value="hi_IN">Hindi (India)</option><option value="es_ES">Spanish</option><option value="fr_FR">French</option></select></div>
+<div class="form-check"><input class="form-check-input" type="checkbox" id="generateJsonLd" checked><label class="form-check-label">Generate JSON-LD</label></div>
 </div>
 <div class="col-md-6">
-<div class="form-group"><label data-translate="themeColor">Theme Color</label><input type="color" id="themeColor" value="#4361ee" style="width:60px; height:40px;"></div>
-<div class="form-group"><label data-translate="customTags">Custom Tags (one per line)</label><textarea id="additionalTags" rows="3" placeholder="name=viewport content=width=device-width"></textarea></div>
+<div class="form-group"><label>Theme Color</label><input type="color" id="themeColor" value="#ff9933" style="width:60px; height:40px;"></div>
+<div class="form-group"><label>Custom Tags (one per line)</label><textarea id="additionalTags" rows="3" placeholder="name=viewport content=width=device-width"></textarea></div>
 </div>
 </div>
 </div>
 </div>
 
 <div class="d-flex gap-3 flex-wrap mt-4">
-<button class="btn btn-primary" id="generateBtn"><i class="fas fa-bolt"></i> <span data-translate="generateMeta">Generate Meta Tags</span></button>
-<button class="btn btn-outline" onclick="resetForm()"><i class="fas fa-redo"></i> <span data-translate="reset">Reset</span></button>
+<button class="btn btn-primary" id="generateBtn"><i class="fas fa-bolt"></i> Generate Meta Tags</button>
+<button class="btn btn-outline" onclick="resetForm()"><i class="fas fa-redo"></i> Reset</button>
 </div>
 
-<div class="loader" id="loader"><div class="spinner"></div><p data-translate="generating">Generating optimized meta tags...</p></div>
+<div class="loader" id="loader"><div class="spinner"></div><p>Generating optimized meta tags...</p></div>
 </main>
 
 <!-- Results -->
 <div class="results-section" id="resultsSection">
 <div class="main-card">
 <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
-<h3 style="font-weight:700;"><i class="fas fa-code"></i> <span data-translate="generatedMeta">Generated Meta Tags</span></h3>
+<h3 style="font-weight:700;"><i class="fas fa-code"></i> Generated Meta Tags</h3>
 <div class="d-flex gap-2">
-<button class="btn btn-outline btn-sm" id="copyBtn"><i class="fas fa-copy"></i> <span data-translate="copyHTML">Copy HTML</span></button>
-<button class="btn btn-outline btn-sm" id="downloadBtn"><i class="fas fa-download"></i> <span data-translate="download">Download</span></button>
+<button class="btn btn-outline btn-sm" id="copyBtn"><i class="fas fa-copy"></i> Copy HTML</button>
+<button class="btn btn-outline btn-sm" id="downloadBtn"><i class="fas fa-download"></i> Download</button>
 </div>
 </div>
 
 <ul class="nav nav-tabs mb-3" id="outputTab">
 <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#htmlTab">HTML</button></li>
 <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#jsonTab">JSON-LD</button></li>
-<li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#previewTab"><span data-translate="preview">Preview</span></button></li>
+<li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#previewTab">Preview</button></li>
 </ul>
 
 <div class="tab-content">
@@ -528,7 +603,7 @@ margin: 0 auto 12px;
 </div>
 
 <div class="analysis-box" id="analysisBox">
-<h5><i class="fas fa-chart-line"></i> <span data-translate="seoAnalysis">SEO Analysis</span></h5>
+<h5><i class="fas fa-chart-line"></i> SEO Analysis</h5>
 <div id="analysisContent"></div>
 </div>
 </div>
@@ -536,48 +611,48 @@ margin: 0 auto 12px;
 
 <!-- FAQ -->
 <section class="faq-section">
-<h2><i class="fas fa-circle-question"></i> <span data-translate="faq">Frequently Asked Questions</span></h2>
+<h2><i class="fas fa-circle-question"></i> Frequently Asked Questions</h2>
 <div class="faq-grid">
-<div class="faq-item"><h4 data-translate="faq1q">What are meta tags?</h4><p data-translate="faq1a">HTML elements that tell search engines and social media about your page. Crucial for SEO and social sharing.</p></div>
-<div class="faq-item"><h4 data-translate="faq2q">Ideal title/description length?</h4><p data-translate="faq2a">Titles: 50-60 characters. Descriptions: 150-160 characters. Our tool has real-time character counting.</p></div>
-<div class="faq-item"><h4 data-translate="faq3q">What are Open Graph tags?</h4><p data-translate="faq3a">They control how your content appears when shared on Facebook, LinkedIn, and other platforms.</p></div>
-<div class="faq-item"><h4 data-translate="faq4q">How to implement these tags?</h4><p data-translate="faq4a">Copy the HTML code and paste it into the &lt;head&gt; section of your webpage, before &lt;/head&gt;.</p></div>
-<div class="faq-item"><h4 data-translate="faq5q">What is JSON-LD?</h4><p data-translate="faq5a">A structured data format that helps search engines understand your content, enabling rich snippets in Google.</p></div>
-<div class="faq-item"><h4 data-translate="faq6q">Is this tool free?</h4><p data-translate="faq6a">Yes! 100% free, no registration, no limits. Generate unlimited meta tags.</p></div>
+<div class="faq-item"><h4>What are meta tags?</h4><p>HTML elements that tell search engines and social media about your page. Crucial for SEO and social sharing.</p></div>
+<div class="faq-item"><h4>Ideal title/description length?</h4><p>Titles: 50-60 characters. Descriptions: 150-160 characters. Our tool has real-time character counting.</p></div>
+<div class="faq-item"><h4>What are Open Graph tags?</h4><p>They control how your content appears when shared on Facebook, LinkedIn, and other platforms.</p></div>
+<div class="faq-item"><h4>How to implement these tags?</h4><p>Copy the HTML code and paste it into the &lt;head&gt; section of your webpage, before &lt;/head&gt;.</p></div>
+<div class="faq-item"><h4>What is JSON-LD?</h4><p>A structured data format that helps search engines understand your content, enabling rich snippets in Google.</p></div>
+<div class="faq-item"><h4>Is this tool free?</h4><p>Yes! 100% free, no registration, no limits. Generate unlimited meta tags.</p></div>
 </div>
 </section>
 
 <!-- Related Tools -->
 <section class="related-section">
-<h2><i class="fas fa-link"></i> <span data-translate="relatedTools">Related SEO Tools</span></h2>
+<h2><i class="fas fa-link"></i> Related SEO Tools</h2>
 <div class="related-grid">
-<a href="/schema-markup-generator.html" class="related-card"><i class="fas fa-code"></i><h4 data-translate="schemaGenerator">Schema Generator</h4></a>
-<a href="/heading-headline-analyzer.html" class="related-card"><i class="fas fa-heading"></i><h4 data-translate="headingAnalyzer">Heading Analyzer</h4></a>
-<a href="/keyword-density.html" class="related-card"><i class="fas fa-chart-pie"></i><h4 data-translate="keywordDensity">Keyword Density</h4></a>
-<a href="/sitemap-generator.html" class="related-card"><i class="fas fa-sitemap"></i><h4 data-translate="sitemapGenerator">Sitemap Generator</h4></a>
-<a href="/hreflang-generator.html" class="related-card"><i class="fas fa-globe"></i><h4 data-translate="hreflangGenerator">Hreflang Generator</h4></a>
-<a href="/canonical-url-checker.html" class="related-card"><i class="fas fa-link"></i><h4 data-translate="canonicalChecker">Canonical Checker</h4></a>
+<a href="/schema-markup-generator.html" class="related-card"><i class="fas fa-code"></i><h4>Schema Generator</h4></a>
+<a href="/keyword-density.html" class="related-card"><i class="fas fa-chart-pie"></i><h4>Keyword Density</h4></a>
+<a href="/sitemap-generator.html" class="related-card"><i class="fas fa-sitemap"></i><h4>Sitemap Generator</h4></a>
+<a href="/hreflang-generator.html" class="related-card"><i class="fas fa-globe"></i><h4>Hreflang Generator</h4></a>
 </div>
 </section>
 
 <!-- Footer -->
 <footer class="page-footer">
-<p data-translate="footerText">© 2026 <strong>FreeSEOToolHub</strong> — Meta Tag Generator. 100% Free & No Signup.</p>
+<p>© 2026 <strong>FreeSEOToolHub</strong> — Meta Tag Generator. 100% Free & No Signup.</p>
 <div style="margin-top:10px;">
-<a href="/"><span data-translate="home">Home</span></a> · 
-<a href="/all-tools.html"><span data-translate="allTools">All Tools</span></a> · 
-<a href="/about.html"><span data-translate="about">About</span></a> · 
-<a href="/privacy.html"><span data-translate="privacy">Privacy</span></a> · 
-<a href="/sitemap.xml">Sitemap</a>
+<a href="/">Home</a> · 
+<a href="/blog/">Blog</a> · 
+<a href="/about.html">About</a> · 
+<a href="/privacy.html">Privacy</a>
 </div>
 </footer>
 </div>
 
 <!-- SCRIPTS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="language.js"></script>
-<script src="navbar.js"></script>
 <script>
+// ============ 🔑 GLOBAL API KEY ============
+const GLOBAL_API_KEY = "rsk_01KX30NR2A1988J2N3GWG1KF5F";
+window.GLOBAL_API_KEY = GLOBAL_API_KEY;
+console.log("🔑 API Key loaded successfully:", GLOBAL_API_KEY);
+
 // ============ DOM Elements ============
 const pageTitle = document.getElementById('pageTitle');
 const metaDescription = document.getElementById('metaDescription');
@@ -631,6 +706,9 @@ themeColor: document.getElementById('themeColor').value
 
 // ============ Generate ============
 generateBtn.addEventListener('click', () => {
+// Log API usage
+console.log(`📡 API Call: Generating meta tags with key ${GLOBAL_API_KEY}`);
+
 loader.style.display = 'block';
 resultsSection.style.display = 'none';
 generateBtn.disabled = true;
@@ -697,9 +775,9 @@ resultsSection.scrollIntoView({ behavior: 'smooth' });
 copyBtn.addEventListener('click', () => {
 const text = document.getElementById('htmlOutput').textContent;
 navigator.clipboard.writeText(text).then(() => {
-copyBtn.innerHTML = '<i class="fas fa-check"></i> <span data-translate="copied">Copied!</span>';
+copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
 copyBtn.classList.add('btn-success');
-setTimeout(() => { copyBtn.innerHTML = '<i class="fas fa-copy"></i> <span data-translate="copyHTML">Copy HTML</span>'; copyBtn.classList.remove('btn-success'); }, 2000);
+setTimeout(() => { copyBtn.innerHTML = '<i class="fas fa-copy"></i> Copy HTML'; copyBtn.classList.remove('btn-success'); }, 2000);
 });
 });
 
