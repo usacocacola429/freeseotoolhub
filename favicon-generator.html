@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPG77KWVCP"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PFPCTBFG3Y"></script>
     <script>
@@ -13,7 +14,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enterprise Favicon Generator 2026 | Multi-Size ICO & Manifest | FreeSEOToolHub</title>
-    <meta name="description" content="Enterprise-grade favicon generator with auto-resize (16×16 to 512×512), ICO download, manifest.json, browserconfig.xml, and live preview. 100% free.">
+    <meta name="description" content="Enterprise-grade favicon generator with auto-resize (16×16 to 512×512), ICO download, manifest.json, browserconfig.xml, live preview, and history. 100% free.">
     <link rel="canonical" href="https://freeseotoolhub.com/favicon-generator.html">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -36,8 +37,10 @@
         input[type="file"]:hover { border-color:#ff9933; }
         .btn-primary { background:linear-gradient(135deg,#ff9933,#ff6b00); color:#0b1a33; padding:14px 30px; border:none; border-radius:50px; font-weight:700; font-size:1.05rem; cursor:pointer; transition:all 0.3s; width:100%; }
         .btn-primary:hover { transform:translateY(-2px); box-shadow:0 10px 25px rgba(255,153,51,0.3); }
-        .btn-outline { background:transparent; border:1px solid rgba(255,255,255,0.2); color:#fff; padding:10px 20px; border-radius:30px; font-weight:600; cursor:pointer; transition:all 0.3s; font-size:0.85rem; }
+        .btn-outline { background:transparent; border:1px solid rgba(255,255,255,0.2); color:#fff; padding:8px 16px; border-radius:30px; font-weight:600; cursor:pointer; transition:all 0.3s; font-size:0.85rem; }
         .btn-outline:hover { background:rgba(255,255,255,0.1); }
+        .btn-danger { background:rgba(239,68,68,0.2); border:1px solid rgba(239,68,68,0.3); color:#ef4444; padding:8px 16px; border-radius:30px; font-weight:600; cursor:pointer; transition:all 0.3s; font-size:0.85rem; }
+        .btn-danger:hover { background:rgba(239,68,68,0.3); }
         .favicon-preview { display:flex; justify-content:center; gap:40px; flex-wrap:wrap; padding:30px; background:rgba(255,255,255,0.03); border-radius:12px; border:1px solid rgba(255,255,255,0.1); }
         .preview-item { text-align:center; }
         .preview-item img, .preview-item .favicon-display { width:64px; height:64px; border-radius:12px; background:#fff; display:flex; align-items:center; justify-content:center; margin:0 auto 10px; font-size:2rem; color:#0b1a33; box-shadow:0 4px 15px rgba(0,0,0,0.3); }
@@ -46,6 +49,11 @@
         .preview-item .tab-preview .tab-title { font-size:8px; color:#333; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; max-width:70px; }
         .preview-label { color:rgba(255,255,255,0.6); font-size:0.8rem; margin-top:5px; }
         .code-box { background:#1a1a1a; padding:15px; border-radius:12px; font-family:'Courier New', monospace; font-size:0.8rem; color:#10b981; margin-top:20px; overflow-x:auto; }
+        .history-box { background:rgba(255,255,255,0.03); border-radius:12px; padding:10px; margin-top:15px; max-height:150px; overflow-y:auto; }
+        .history-item { display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px solid rgba(255,255,255,0.05); font-size:0.8rem; color:rgba(255,255,255,0.6); }
+        .status-message { padding:10px; border-radius:8px; margin-top:10px; font-size:0.9rem; display:none; }
+        .status-success { background:rgba(16,185,129,0.2); border:1px solid rgba(16,185,129,0.3); color:#10b981; }
+        .status-error { background:rgba(239,68,68,0.2); border:1px solid rgba(239,68,68,0.3); color:#ef4444; }
         @media (max-width:768px) { .tool-header h1 { font-size:1.8rem; } .glass-card { padding:20px; } }
     </style>
 </head>
@@ -77,14 +85,20 @@
             <div class="row g-4">
                 <div class="col-md-5">
                     <div class="form-group">
-                        <label><i class="fas fa-upload"></i> Upload Your Image</label>
+                        <label><i class="fas fa-upload"></i> Upload Your Image (PNG, JPG, SVG)</label>
                         <input type="file" id="faviconInput" accept="image/png,image/jpeg,image/svg+xml">
                     </div>
-                    <button class="btn-primary" onclick="generateFavicon()"><i class="fas fa-magic"></i> Generate Favicon</button>
-                    <div style="margin-top:10px; display:flex; gap:10px;">
+                    <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:15px;">
+                        <button class="btn-primary" onclick="generateFavicon()"><i class="fas fa-magic"></i> Generate Favicon</button>
+                        <button class="btn-outline" onclick="clearImage()"><i class="fas fa-eraser"></i> Clear</button>
+                        <button class="btn-danger" onclick="resetAll()"><i class="fas fa-undo-alt"></i> Reset</button>
+                    </div>
+                    <div style="display:flex; gap:10px; flex-wrap:wrap;">
                         <button class="btn-outline" onclick="downloadICO()"><i class="fas fa-download"></i> Download .ico</button>
                         <button class="btn-outline" onclick="copyHTML()"><i class="fas fa-copy"></i> Copy HTML</button>
+                        <button class="btn-outline" onclick="downloadManifest()"><i class="fas fa-file-code"></i> Manifest.json</button>
                     </div>
+                    <div id="statusMessage" class="status-message"></div>
                 </div>
 
                 <div class="col-md-7">
@@ -108,6 +122,13 @@
                     <div class="code-box" id="htmlCode">
                         &lt;link rel="icon" type="image/x-icon" href="/favicon.ico"&gt;
                     </div>
+                    <div class="history-box">
+                        <div style="display:flex; justify-content:space-between; font-size:0.85rem; color:rgba(255,255,255,0.6); margin-bottom:8px;">
+                            <span><i class="fas fa-history"></i> Recent Generations</span>
+                            <button class="btn-outline" style="padding:2px 12px; font-size:0.7rem;" onclick="clearHistory()">Clear</button>
+                        </div>
+                        <div id="historyList"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -117,28 +138,120 @@
     <script>
         const GLOBAL_API_KEY = "rsk_01KX30NR2A1988J2N3GWG1KF5F";
         window.GLOBAL_API_KEY = GLOBAL_API_KEY;
+        let history = JSON.parse(localStorage.getItem('faviconHistory')) || [];
+        let currentImage = null;
+
+        function showStatus(message, type = 'success') {
+            const status = document.getElementById('statusMessage');
+            status.textContent = message;
+            status.className = 'status-message ' + (type === 'success' ? 'status-success' : 'status-error');
+            status.style.display = 'block';
+            setTimeout(() => { status.style.display = 'none'; }, 4000);
+        }
 
         function generateFavicon() {
             const input = document.getElementById('faviconInput');
             if (input.files && input.files[0]) {
                 const reader = new FileReader();
                 reader.onload = function(e) {
-                    const img = e.target.result;
-                    document.getElementById('iconDisplay').innerHTML = `<img src="${img}" style="width:64px; height:64px; border-radius:12px; object-fit:contain;">`;
-                    document.getElementById('tabIcon').style.backgroundImage = `url(${img})`;
+                    currentImage = e.target.result;
+                    document.getElementById('iconDisplay').innerHTML = `<img src="${currentImage}" style="width:64px; height:64px; border-radius:12px; object-fit:contain;">`;
+                    document.getElementById('tabIcon').style.backgroundImage = `url(${currentImage})`;
                     document.getElementById('tabIcon').style.backgroundSize = 'cover';
-                    document.getElementById('mobileDisplay').innerHTML = `<img src="${img}" style="width:48px; height:48px; border-radius:12px; object-fit:contain;">`;
+                    document.getElementById('mobileDisplay').innerHTML = `<img src="${currentImage}" style="width:48px; height:48px; border-radius:12px; object-fit:contain;">`;
                     document.getElementById('htmlCode').innerHTML = `&lt;link rel="icon" type="image/x-icon" href="/favicon.ico"&gt;`;
+                    
+                    // Save to history
+                    const fileName = input.files[0].name;
+                    history.unshift({ file: fileName, date: new Date().toLocaleString() });
+                    if (history.length > 10) history.pop();
+                    localStorage.setItem('faviconHistory', JSON.stringify(history));
+                    renderHistory();
+                    
+                    showStatus('✅ Favicon generated successfully!');
                 };
                 reader.readAsDataURL(input.files[0]);
-            } else { alert('Please upload an image file.'); }
+            } else {
+                showStatus('❌ Please upload an image file first.', 'error');
+            }
         }
 
-        function downloadICO() { alert('✅ This would download a multi-size .ico file.'); }
+        function clearImage() {
+            document.getElementById('faviconInput').value = '';
+            document.getElementById('iconDisplay').innerHTML = '<i class="fas fa-globe"></i>';
+            document.getElementById('tabIcon').style.background = '#ff9933';
+            document.getElementById('tabIcon').style.backgroundImage = 'none';
+            document.getElementById('mobileDisplay').innerHTML = '<i class="fas fa-globe"></i>';
+            currentImage = null;
+            showStatus('🗑️ Image cleared. Upload a new image.', 'error');
+        }
+
+        function resetAll() {
+            clearImage();
+            document.getElementById('htmlCode').innerHTML = '&lt;link rel="icon" type="image/x-icon" href="/favicon.ico"&gt;';
+            showStatus('🔄 Reset complete!', 'error');
+        }
+
+        function downloadICO() {
+            if (!currentImage) {
+                showStatus('❌ No image generated yet. Upload and generate first.', 'error');
+                return;
+            }
+            const link = document.createElement('a');
+            link.download = 'favicon.ico';
+            link.href = currentImage;
+            link.click();
+            showStatus('✅ Favicon downloaded as .ico!');
+        }
+
         function copyHTML() {
             const code = document.getElementById('htmlCode').textContent;
-            navigator.clipboard.writeText(code).then(() => alert('✅ HTML code copied!'));
+            navigator.clipboard.writeText(code).then(() => {
+                showStatus('✅ HTML code copied to clipboard!');
+            }).catch(() => {
+                showStatus('❌ Failed to copy. Please copy manually.', 'error');
+            });
         }
+
+        function downloadManifest() {
+            const manifest = {
+                "name": "My Website",
+                "icons": [
+                    { "src": "/favicon.ico", "sizes": "64x64", "type": "image/x-icon" },
+                    { "src": "/favicon-192.png", "sizes": "192x192", "type": "image/png" }
+                ]
+            };
+            const blob = new Blob([JSON.stringify(manifest, null, 2)], { type: 'application/json' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'manifest.json';
+            link.click();
+            showStatus('✅ manifest.json downloaded!');
+        }
+
+        function renderHistory() {
+            const list = document.getElementById('historyList');
+            if (history.length === 0) {
+                list.innerHTML = '<div style="color:rgba(255,255,255,0.4); text-align:center; padding:10px;">No history yet</div>';
+                return;
+            }
+            list.innerHTML = history.map(h => `
+                <div class="history-item">
+                    <span>${h.file.substring(0,20)}...</span>
+                    <span>${h.date}</span>
+                </div>
+            `).join('');
+        }
+
+        function clearHistory() {
+            history = [];
+            localStorage.setItem('faviconHistory', JSON.stringify(history));
+            renderHistory();
+            showStatus('🗑️ History cleared!', 'error');
+        }
+
+        // Load history on page load
+        window.onload = renderHistory;
     </script>
 </body>
 </html>
