@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPG77KWVCP"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PFPCTBFG3Y"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ZPG77KWVCP');
+        gtag('config', 'G-PFPCTBFG3Y');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Color Palette Generator 2026 | Professional UI Color Schemes | FreeSEOToolHub</title>
+    <meta name="description" content="Generate beautiful color palettes for your website or design project. Get hex codes, RGB values, and preview color combinations. Free UI color tool 2026.">
+    <link rel="canonical" href="https://freeseotoolhub.com/color-palette-generator.html">
+    
+    <!-- Fonts & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #ff9933;
+            --primary-dark: #e68a2e;
+            --secondary: #0b1a33;
+            --border: rgba(255,255,255,0.1);
+            --radius: 16px;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; font-family:'Inter', sans-serif; }
+        body { background:linear-gradient(135deg,#0b1a33 0%,#1e2b4f 100%); min-height:100vh; padding:80px 16px 40px; color:#fff; }
+        .container { max-width:900px; margin:0 auto; }
+        
+        .navbar { background:rgba(11,26,51,0.95); backdrop-filter:blur(10px); border-bottom:1px solid var(--border); }
+        .navbar-brand { font-weight:700; font-size:1.4rem; color:#fff!important; }
+        .navbar-brand i { color:#ff9933; }
+        .nav-link { color:rgba(255,255,255,0.8)!important; font-weight:500; }
+        .nav-link:hover { color:#ff9933!important; }
+        
+        .tool-header { text-align:center; margin-bottom:30px; }
+        .tool-header h1 { font-size:2.2rem; font-weight:800; background:linear-gradient(135deg,#ff9933,#ff6b00); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+        .tool-header p { color:rgba(255,255,255,0.7); font-size:1.05rem; max-width:600px; margin:0 auto; }
+        
+        .glass-card {
+            background:rgba(255,255,255,0.05);
+            backdrop-filter:blur(12px);
+            border:1px solid var(--border);
+            border-radius:var(--radius);
+            padding:30px;
+            box-shadow:0 20px 50px rgba(0,0,0,0.4);
+        }
+        
+        .form-group { margin-bottom:20px; }
+        .form-group label { display:block; margin-bottom:6px; font-weight:600; font-size:0.9rem; color:rgba(255,255,255,0.7); }
+        input[type="text"] {
+            width:100%;
+            padding:14px 16px;
+            background:rgba(255,255,255,0.05);
+            border:1px solid var(--border);
+            border-radius:12px;
+            font-size:1rem;
+            color:#fff;
+            transition:all 0.3s;
+        }
+        input:focus { outline:none; border-color:#ff9933; box-shadow:0 0 0 3px rgba(255,153,51,0.15); }
+        
+        .btn-primary {
+            background:linear-gradient(135deg,#ff9933,#ff6b00);
+            color:#0b1a33;
+            padding:14px 30px;
+            border:none;
+            border-radius:50px;
+            font-weight:700;
+            font-size:1.05rem;
+            cursor:pointer;
+            transition:all 0.3s;
+            width:100%;
+        }
+        .btn-primary:hover { transform:translateY(-2px); box-shadow:0 10px 25px rgba(255,153,51,0.3); }
+        
+        .palette-container {
+            display:flex;
+            gap:15px;
+            flex-wrap:wrap;
+            justify-content:center;
+            margin:20px 0;
+        }
+        .color-box {
+            width:80px;
+            height:120px;
+            border-radius:12px;
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:flex-end;
+            padding:10px;
+            font-size:0.7rem;
+            font-weight:600;
+            text-shadow:0 1px 3px rgba(0,0,0,0.3);
+            cursor:pointer;
+            transition:transform 0.3s;
+        }
+        .color-box:hover { transform:scale(1.05); }
+        .color-box .hex { background:rgba(0,0,0,0.3); padding:2px 8px; border-radius:4px; }
+        
+        .btn-copy {
+            background:rgba(255,255,255,0.1);
+            border:1px solid var(--border);
+            border-radius:8px;
+            padding:8px 16px;
+            color:#fff;
+            cursor:pointer;
+            font-size:0.8rem;
+            transition:all 0.3s;
+        }
+        .btn-copy:hover { background:rgba(255,255,255,0.2); }
+        
+        @media (max-width:768px) {
+            .tool-header h1 { font-size:1.8rem; }
+            .glass-card { padding:20px; }
+            .color-box { width:60px; height:90px; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/"><i class="fas fa-rocket me-2"></i>FreeSEOToolHub</a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="nav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/blog/">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="tool-header">
+            <h1><i class="fas fa-palette"></i> Color Palette Generator</h1>
+            <p>Generate beautiful color schemes for your website or design projects. Click any color to copy hex code.</p>
+            <div class="badge-container">
+                <span class="badge"><i class="fas fa-palette"></i> 5 Colors</span>
+                <span class="badge"><i class="fas fa-copy"></i> Copy Hex</span>
+                <span class="badge"><i class="fas fa-sync-alt"></i> Randomize</span>
+            </div>
+        </div>
+
+        <div class="glass-card">
+            <div class="form-group">
+                <label><i class="fas fa-search"></i> Enter a Keyword (optional)</label>
+                <input type="text" id="keywordInput" placeholder="e.g., sunset, ocean, modern, vintage" value="modern">
+            </div>
+            <button class="btn-primary" onclick="generatePalette()"><i class="fas fa-magic"></i> Generate Palette</button>
+
+            <div id="paletteArea" style="margin-top:25px;">
+                <div class="palette-container" id="paletteContainer"></div>
+                <div style="text-align:center; margin-top:15px;">
+                    <button class="btn-copy" onclick="generatePalette()"><i class="fas fa-sync-alt"></i> Generate New</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const GLOBAL_API_KEY = "rsk_01KX30NR2A1988J2N3GWG1KF5F";
+        window.GLOBAL_API_KEY = GLOBAL_API_KEY;
+        console.log("🔑 API Key loaded:", GLOBAL_API_KEY);
+
+        function generatePalette() {
+            const keyword = document.getElementById('keywordInput').value.trim() || 'modern';
+            const baseHue = Math.floor(Math.random() * 360);
+            
+            // Generate 5 harmonious colors
+            const colors = [
+                hslToHex(baseHue, 70, 50),      // Primary
+                hslToHex(baseHue + 30, 60, 40),  // Secondary
+                hslToHex(baseHue - 30, 50, 60),  // Accent
+                hslToHex(baseHue + 60, 40, 30),  // Dark
+                hslToHex(baseHue + 120, 80, 70)  // Light
+            ];
+
+            const container = document.getElementById('paletteContainer');
+            container.innerHTML = colors.map(c => `
+                <div class="color-box" style="background:${c};" onclick="copyColor('${c}')">
+                    <span class="hex">${c}</span>
+                </div>
+            `).join('');
+        }
+
+        function hslToHex(h, s, l) {
+            h /= 360; s /= 100; l /= 100;
+            let r, g, b;
+            if (s === 0) { r = g = b = l; }
+            else {
+                const hue2rgb = (p, q, t) => {
+                    if (t < 0) t += 1;
+                    if (t > 1) t -= 1;
+                    if (t < 1/6) return p + (q - p) * 6 * t;
+                    if (t < 1/2) return q;
+                    if (t < 2/3) return p + (q - p) * (2/3 - t) * 6;
+                    return p;
+                };
+                const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+                const p = 2 * l - q;
+                r = hue2rgb(p, q, h + 1/3);
+                g = hue2rgb(p, q, h);
+                b = hue2rgb(p, q, h - 1/3);
+            }
+            const toHex = x => Math.round(x * 255).toString(16).padStart(2, '0');
+            return '#' + toHex(r) + toHex(g) + toHex(b);
+        }
+
+        function copyColor(hex) {
+            navigator.clipboard.writeText(hex).then(() => {
+                showToast('Copied: ' + hex);
+            });
+        }
+
+        function showToast(msg) {
+            const toast = document.createElement('div');
+            toast.style.cssText = `
+                position:fixed; bottom:24px; right:24px; background:rgba(30,41,59,0.95);
+                backdrop-filter:blur(10px); color:#fff; padding:14px 22px; border-radius:12px;
+                border:1px solid rgba(255,255,255,0.1); z-index:9999; animation:slideIn 0.3s ease;
+            `;
+            toast.textContent = msg;
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 3000);
+        }
+
+        // Generate initial palette on load
+        window.onload = generatePalette;
+    </script>
+</body>
+</html>
