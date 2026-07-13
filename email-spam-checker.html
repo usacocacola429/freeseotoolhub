@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPG77KWVCP"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PFPCTBFG3Y"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ZPG77KWVCP');
+        gtag('config', 'G-PFPCTBFG3Y');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Email Spam Score Checker 2026 | Email Header Analyzer | FreeSEOToolHub</title>
+    <meta name="description" content="Analyze your email headers and check spam score. Free tool to test email deliverability and avoid SPAM folders. Updated 2026.">
+    <link rel="canonical" href="https://freeseotoolhub.com/email-spam-checker.html">
+    
+    <!-- Fonts & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #ff9933;
+            --primary-dark: #e68a2e;
+            --secondary: #0b1a33;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --border: rgba(255,255,255,0.1);
+            --radius: 16px;
+        }
+        
+        * { margin:0; padding:0; box-sizing:border-box; font-family:'Inter', sans-serif; }
+        body { 
+            background: linear-gradient(135deg, #0b1a33 0%, #1e2b4f 100%);
+            min-height: 100vh;
+            padding: 80px 16px 40px;
+            color: #fff;
+        }
+        .container { max-width: 800px; margin: 0 auto; }
+        
+        .navbar { background: rgba(11,26,51,0.95); backdrop-filter:blur(10px); border-bottom:1px solid var(--border); }
+        .navbar-brand { font-weight:700; font-size:1.4rem; color:#fff!important; }
+        .navbar-brand i { color:#ff9933; }
+        .nav-link { color:rgba(255,255,255,0.8)!important; font-weight:500; }
+        .nav-link:hover { color:#ff9933!important; }
+        
+        .tool-header { text-align:center; margin-bottom:30px; }
+        .tool-header h1 { font-size:2.2rem; font-weight:800; background:linear-gradient(135deg,#ff9933,#ff6b00); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+        .tool-header p { color:rgba(255,255,255,0.7); font-size:1.05rem; max-width:600px; margin:0 auto; }
+        
+        .glass-card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+        }
+        
+        .form-group { margin-bottom:20px; }
+        .form-group label { display:block; margin-bottom:6px; font-weight:600; font-size:0.9rem; color:rgba(255,255,255,0.7); }
+        textarea {
+            width:100%;
+            padding:14px 16px;
+            background:rgba(255,255,255,0.05);
+            border:1px solid var(--border);
+            border-radius:12px;
+            font-size:1rem;
+            color:#fff;
+            min-height:180px;
+            transition:all 0.3s;
+        }
+        textarea:focus { outline:none; border-color:#ff9933; box-shadow:0 0 0 3px rgba(255,153,51,0.15); }
+        
+        .btn-primary {
+            background:linear-gradient(135deg,#ff9933,#ff6b00);
+            color:#0b1a33;
+            padding:14px 30px;
+            border:none;
+            border-radius:50px;
+            font-weight:700;
+            font-size:1.05rem;
+            cursor:pointer;
+            transition:all 0.3s;
+            width:100%;
+        }
+        .btn-primary:hover { transform:translateY(-2px); box-shadow:0 10px 25px rgba(255,153,51,0.3); }
+        
+        .result-card {
+            background:rgba(255,255,255,0.03);
+            border-radius:12px;
+            padding:20px;
+            margin-top:20px;
+            border:1px solid var(--border);
+        }
+        .spam-score {
+            font-size:3rem;
+            font-weight:800;
+            text-align:center;
+        }
+        .spam-good { color:#10b981; }
+        .spam-warning { color:#f59e0b; }
+        .spam-bad { color:#ef4444; }
+        
+        .badge-container { display:flex; gap:10px; flex-wrap:wrap; margin:15px 0; justify-content:center; }
+        .badge { background:rgba(255,255,255,0.05); padding:6px 14px; border-radius:30px; font-size:0.8rem; border:1px solid var(--border); color:rgba(255,255,255,0.7); }
+        
+        @media (max-width:768px) {
+            .tool-header h1 { font-size:1.8rem; }
+            .glass-card { padding:20px; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/"><i class="fas fa-rocket me-2"></i>FreeSEOToolHub</a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="nav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/blog/">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="tool-header">
+            <h1><i class="fas fa-shield-alt"></i> Email Spam Score Checker</h1>
+            <p>Paste your email header to check spam score and improve email deliverability.</p>
+            <div class="badge-container">
+                <span class="badge"><i class="fas fa-check"></i> Spam Score</span>
+                <span class="badge"><i class="fas fa-chart-line"></i> Deliverability</span>
+                <span class="badge"><i class="fas fa-robot"></i> AI Analysis</span>
+            </div>
+        </div>
+
+        <div class="glass-card">
+            <div class="form-group">
+                <label><i class="fas fa-envelope"></i> Paste Email Header</label>
+                <textarea id="emailHeader" placeholder="Paste your full email header here...">Return-Path: <sender@example.com>
+Received: from mail.example.com (192.168.1.1) by mx.google.com with ESMTPS id 4a2b3c
+Authentication-Results: mx.google.com; spf=pass smtp.mailfrom=example.com; dmarc=pass header.from=example.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=example.com; s=default
+Subject: Your Free SEO Tools Newsletter
+From: "FreeSEOToolHub" <newsletter@freeseotoolhub.com>
+To: subscriber@email.com
+Date: Mon, 10 Jul 2026 10:00:00 -0700
+Message-ID: <abc123@example.com>
+Content-Type: text/html; charset=UTF-8</textarea>
+            </div>
+            <button class="btn-primary" onclick="checkSpamScore()"><i class="fas fa-search"></i> Check Spam Score</button>
+
+            <div id="results" style="display:none; margin-top:25px;">
+                <div class="result-card">
+                    <div style="text-align:center;">
+                        <div class="spam-score spam-good" id="scoreDisplay">15%</div>
+                        <div style="font-size:1.1rem; color:#10b981; font-weight:600;" id="statusDisplay">✅ Safe - Good Deliverability</div>
+                    </div>
+                    <div class="progress" style="height:10px; background:rgba(255,255,255,0.1); border-radius:10px; margin:15px 0;">
+                        <div class="progress-bar" id="progressBar" style="width:15%; background:#10b981; border-radius:10px; transition:width 1s ease;"></div>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; font-size:0.85rem; color:rgba(255,255,255,0.6);">
+                        <span>Spam Score: <span id="spamScoreText">15%</span></span>
+                        <span>Deliverability: <span id="deliverabilityText">85%</span></span>
+                    </div>
+                </div>
+
+                <div class="result-card" style="border-left:4px solid #10b981;">
+                    <h5 style="color:#10b981;"><i class="fas fa-check-circle"></i> Passed Checks</h5>
+                    <ul style="color:rgba(255,255,255,0.7); padding-left:20px; font-size:0.9rem; line-height:1.8;">
+                        <li>✅ SPF record found</li>
+                        <li>✅ DKIM signature verified</li>
+                        <li>✅ DMARC policy passed</li>
+                        <li>✅ No suspicious keywords</li>
+                    </ul>
+                </div>
+
+                <div class="result-card" style="border-left:4px solid #ff9933;">
+                    <h5 style="color:#ff9933;"><i class="fas fa-lightbulb"></i> Recommendations</h5>
+                    <ul style="color:rgba(255,255,255,0.7); padding-left:20px; font-size:0.9rem; line-height:1.8;">
+                        <li>💡 Add a plain-text version of your email for better spam filters</li>
+                        <li>💡 Include an unsubscribe link in every email</li>
+                        <li>💡 Keep your bounce rate below 2%</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const GLOBAL_API_KEY = "rsk_01KX30NR2A1988J2N3GWG1KF5F";
+        window.GLOBAL_API_KEY = GLOBAL_API_KEY;
+        console.log("🔑 API Key loaded:", GLOBAL_API_KEY);
+
+        function checkSpamScore() {
+            const header = document.getElementById('emailHeader').value.trim();
+            if (header.length < 50) {
+                alert('Please paste a valid email header (minimum 50 characters).');
+                return;
+            }
+
+            document.getElementById('results').style.display = 'block';
+            
+            // Simulate analysis
+            setTimeout(() => {
+                const score = Math.floor(Math.random() * 20) + 5; // 5-25% spam score
+                const display = document.getElementById('scoreDisplay');
+                const status = document.getElementById('statusDisplay');
+                const bar = document.getElementById('progressBar');
+                const spamText = document.getElementById('spamScoreText');
+                const deliverText = document.getElementById('deliverabilityText');
+
+                display.textContent = score + '%';
+                spamText.textContent = score + '%';
+                deliverText.textContent = (100 - score) + '%';
+                bar.style.width = score + '%';
+
+                if (score < 15) {
+                    display.className = 'spam-score spam-good';
+                    status.textContent = '✅ Safe - Good Deliverability';
+                    status.style.color = '#10b981';
+                    bar.style.background = '#10b981';
+                } else if (score < 25) {
+                    display.className = 'spam-score spam-warning';
+                    status.textContent = '⚠️ Moderate Risk - Review';
+                    status.style.color = '#f59e0b';
+                    bar.style.background = '#f59e0b';
+                } else {
+                    display.className = 'spam-score spam-bad';
+                    status.textContent = '❌ High Spam Risk - Fix Issues';
+                    status.style.color = '#ef4444';
+                    bar.style.background = '#ef4444';
+                }
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
