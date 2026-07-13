@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPG77KWVCP"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PFPCTBFG3Y"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ZPG77KWVCP');
+        gtag('config', 'G-PFPCTBFG3Y');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google SERP Simulator 2026 | Free Search Preview Tool | FreeSEOToolHub</title>
+    <meta name="description" content="See how your website looks in Google search results. Free SERP preview tool. Check meta title, description, URL, and rich snippets. Updated 2026.">
+    <link rel="canonical" href="https://freeseotoolhub.com/google-serp-simulator.html">
+    
+    <!-- Fonts & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #ff9933;
+            --primary-dark: #e68a2e;
+            --secondary: #0b1a33;
+            --success: #10b981;
+            --border: rgba(255,255,255,0.1);
+            --radius: 16px;
+        }
+        
+        * { margin:0; padding:0; box-sizing:border-box; font-family:'Inter', sans-serif; }
+        body { 
+            background: linear-gradient(135deg, #0b1a33 0%, #1e2b4f 100%);
+            min-height: 100vh;
+            padding: 80px 16px 40px;
+            color: #fff;
+        }
+        .container { max-width: 1000px; margin: 0 auto; }
+        
+        /* Navbar */
+        .navbar { background: rgba(11,26,51,0.95); backdrop-filter:blur(10px); border-bottom:1px solid var(--border); }
+        .navbar-brand { font-weight:700; font-size:1.4rem; color:#fff!important; }
+        .navbar-brand i { color:#ff9933; }
+        .nav-link { color:rgba(255,255,255,0.8)!important; font-weight:500; }
+        .nav-link:hover { color:#ff9933!important; }
+        
+        /* Header */
+        .tool-header { text-align:center; margin-bottom:30px; }
+        .tool-header h1 { font-size:2.4rem; font-weight:800; background:linear-gradient(135deg,#ff9933,#ff6b00); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+        .tool-header p { color:rgba(255,255,255,0.7); font-size:1.05rem; max-width:600px; margin:0 auto; }
+        
+        /* Cards */
+        .glass-card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+        }
+        
+        /* Form */
+        .form-group { margin-bottom:20px; }
+        .form-group label { display:block; margin-bottom:6px; font-weight:600; font-size:0.9rem; color:rgba(255,255,255,0.7); }
+        input[type="text"], input[type="url"], textarea {
+            width:100%;
+            padding:14px 16px;
+            background:rgba(255,255,255,0.05);
+            border:1px solid var(--border);
+            border-radius:12px;
+            font-size:1rem;
+            color:#fff;
+            transition:all 0.3s;
+        }
+        input:focus, textarea:focus { outline:none; border-color:#ff9933; box-shadow:0 0 0 3px rgba(255,153,51,0.15); }
+        
+        /* Buttons */
+        .btn-primary {
+            background:linear-gradient(135deg,#ff9933,#ff6b00);
+            color:#0b1a33;
+            padding:14px 30px;
+            border:none;
+            border-radius:50px;
+            font-weight:700;
+            font-size:1.05rem;
+            cursor:pointer;
+            transition:all 0.3s;
+            width:100%;
+        }
+        .btn-primary:hover { transform:translateY(-2px); box-shadow:0 10px 25px rgba(255,153,51,0.3); }
+        
+        /* Google Preview */
+        .google-preview {
+            background:#fff;
+            border-radius:12px;
+            padding:20px;
+            margin-top:25px;
+            color:#222;
+        }
+        .google-title { color:#1a0dab; font-size:1.3rem; font-weight:500; text-decoration:underline; cursor:pointer; margin-bottom:2px; }
+        .google-url { color:#006621; font-size:0.85rem; margin-bottom:2px; }
+        .google-desc { color:#545454; font-size:0.9rem; line-height:1.5; }
+        .google-date { color:#70757a; font-size:0.8rem; margin-top:4px; }
+        .google-star { color:#f9ab00; font-size:0.85rem; margin-right:2px; }
+        
+        .badge-container { display:flex; gap:10px; flex-wrap:wrap; margin:15px 0; }
+        .badge { background:rgba(255,255,255,0.05); padding:6px 14px; border-radius:30px; font-size:0.8rem; border:1px solid var(--border); color:rgba(255,255,255,0.7); }
+        
+        /* Toast */
+        .toast-container { position:fixed; bottom:24px; right:24px; z-index:9999; }
+        .toast {
+            background:rgba(30,41,59,0.95);
+            backdrop-filter:blur(10px);
+            color:#fff;
+            padding:14px 22px;
+            border-radius:12px;
+            border:1px solid var(--border);
+            animation:slideIn 0.3s ease;
+        }
+        @keyframes slideIn { from { transform:translateX(100%); opacity:0; } to { transform:translateX(0); opacity:1; } }
+        
+        @media (max-width:768px) {
+            .tool-header h1 { font-size:1.8rem; }
+            .glass-card { padding:20px; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/"><i class="fas fa-rocket me-2"></i>FreeSEOToolHub</a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="nav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/blog/">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="tool-header">
+            <h1><i class="fas fa-search"></i> Google SERP Simulator 2026</h1>
+            <p>Preview how your website looks in Google search results. Optimize your title & description for higher CTR.</p>
+            <div class="badge-container">
+                <span class="badge"><i class="fas fa-check"></i> Live Preview</span>
+                <span class="badge"><i class="fas fa-chart-line"></i> CTR Optimizer</span>
+                <span class="badge"><i class="fas fa-mobile-alt"></i> Mobile & Desktop</span>
+            </div>
+        </div>
+
+        <div class="glass-card">
+            <div class="row g-4">
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label><i class="fas fa-heading"></i> Meta Title (60 chars max)</label>
+                        <input type="text" id="metaTitle" placeholder="Enter your page title..." value="Free SEO Tools 2026 - 15 Essential Tools for Global SEO">
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-align-left"></i> Meta Description (160 chars max)</label>
+                        <textarea id="metaDesc" rows="3" placeholder="Enter your meta description...">Discover 15 free SEO tools for 2026. Meta tags, plagiarism checker, backlink analyzer, speed test & more. 100% free, no signup.</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-link"></i> Display URL</label>
+                        <input type="text" id="displayUrl" placeholder="example.com" value="freeseotoolhub.com">
+                    </div>
+                    <button class="btn-primary" onclick="updatePreview()"><i class="fas fa-sync-alt"></i> Update Preview</button>
+                </div>
+
+                <div class="col-md-7">
+                    <div style="background:rgba(255,255,255,0.03); border-radius:12px; padding:15px; border:1px solid var(--border);">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                            <span style="color:rgba(255,255,255,0.5); font-size:0.8rem;"><i class="fas fa-info-circle"></i> Google Search Preview</span>
+                            <div>
+                                <span class="badge" style="background:rgba(255,255,255,0.1); font-size:0.7rem;">Desktop</span>
+                            </div>
+                        </div>
+                        <div class="google-preview" id="googlePreview">
+                            <div class="google-title" id="previewTitle">Free SEO Tools 2026 - 15 Essential Tools for Global SEO</div>
+                            <div class="google-url" id="previewUrl">freeseotoolhub.com › seo-tools</div>
+                            <div class="google-desc" id="previewDesc">Discover 15 free SEO tools for 2026. Meta tags, plagiarism checker, backlink analyzer, speed test & more. 100% free, no signup.</div>
+                            <div class="google-date" id="previewDate"><span class="google-star">★</span> 4.5 (1,200 reviews) · Updated July 2026</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const GLOBAL_API_KEY = "rsk_01KX30NR2A1988J2N3GWG1KF5F";
+        window.GLOBAL_API_KEY = GLOBAL_API_KEY;
+        console.log("🔑 API Key loaded:", GLOBAL_API_KEY);
+
+        function updatePreview() {
+            const title = document.getElementById('metaTitle').value;
+            const desc = document.getElementById('metaDesc').value;
+            const url = document.getElementById('displayUrl').value;
+            
+            document.getElementById('previewTitle').textContent = title;
+            document.getElementById('previewDesc').textContent = desc;
+            document.getElementById('previewUrl').textContent = url + ' › seo-tools';
+            
+            showToast('Preview updated! ✅');
+        }
+
+        function showToast(msg) {
+            const container = document.getElementById('toastContainer');
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.textContent = msg;
+            container.appendChild(toast);
+            setTimeout(() => toast.remove(), 3000);
+        }
+    </script>
+</body>
+</html>
