@@ -84,7 +84,7 @@
     <div class="container">
         <div class="tool-header">
             <h1><i class="fas fa-search"></i> Enterprise SERP Simulator 2026</h1>
-            <p>AI-powered Google search preview with knowledge panel, rich snippets, and competitor comparison.</p>
+            <p>AI-powered Google search preview with knowledge panel, rich snippets, and competitor comparison. <strong>Enter any URL — get instant preview!</strong></p>
             <div class="badge-container">
                 <span class="badge"><i class="fas fa-mobile-alt"></i> Mobile/Desktop</span>
                 <span class="badge"><i class="fas fa-star"></i> Rich Snippets</span>
@@ -107,7 +107,7 @@
                     </div>
                     <div class="form-group">
                         <label><i class="fas fa-link"></i> Display URL</label>
-                        <input type="text" id="displayUrl" placeholder="example.com" value="freeseotoolhub.com">
+                        <input type="text" id="displayUrl" placeholder="https://example.com" value="https://softwaretoolguide.com">
                     </div>
                     <div class="form-group">
                         <label><i class="fas fa-star"></i> Rich Snippet Type</label>
@@ -122,6 +122,7 @@
                     </div>
                     <button class="btn-primary" onclick="updatePreview()"><i class="fas fa-sync-alt"></i> Update Preview</button>
                     <div style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap;">
+                        <button class="btn-outline" onclick="fetchFromURL()"><i class="fas fa-globe"></i> Fetch from URL</button>
                         <button class="btn-outline" onclick="optimizeAI()"><i class="fas fa-robot"></i> AI Optimize</button>
                         <button class="btn-outline" onclick="exportPNG()"><i class="fas fa-download"></i> Export PNG</button>
                         <button class="btn-outline" onclick="exportPDF()"><i class="fas fa-file-pdf"></i> Export PDF</button>
@@ -139,7 +140,7 @@
                         </div>
                         <div class="google-preview" id="googlePreview">
                             <div class="google-title" id="previewTitle">Free SEO Tools 2026 - 20 Essential Tools for Global SEO</div>
-                            <div class="google-url" id="previewUrl"><span class="google-favicon" style="background:#ff9933; display:inline-block;"></span>freeseotoolhub.com › seo-tools</div>
+                            <div class="google-url" id="previewUrl"><span class="google-favicon" id="faviconIcon" style="background:#ff9933; display:inline-block;"></span><span id="displayUrlText">softwaretoolguide.com</span> › seo-tools</div>
                             <div class="google-desc" id="previewDesc">Discover 20 free SEO tools for 2026. Meta tags, plagiarism checker, backlink analyzer, SERP simulator & more. 100% free, no signup.</div>
                             <div class="google-date" id="previewDate"><span class="google-star">★</span> 4.8 (1,500 reviews) · Updated July 2026</div>
                             <div id="richSnippetArea"></div>
@@ -173,6 +174,58 @@
         window.GLOBAL_API_KEY = GLOBAL_API_KEY;
         let history = JSON.parse(localStorage.getItem('serpHistory')) || [];
 
+        function fetchFromURL() {
+            const url = document.getElementById('displayUrl').value.trim();
+            if (!url) {
+                alert('Please enter a valid URL.');
+                return;
+            }
+
+            // Extract domain from URL
+            let domain = url.replace(/^https?:\/\//, '').replace(/\/.*$/, '');
+            document.getElementById('displayUrlText').textContent = domain;
+
+            // Generate dynamic title based on URL
+            const urlParts = domain.split('.');
+            let siteName = urlParts[0].charAt(0).toUpperCase() + urlParts[0].slice(1);
+            if (urlParts.length > 2) {
+                siteName = urlParts[1].charAt(0).toUpperCase() + urlParts[1].slice(1);
+            }
+
+            // Update Title
+            const titles = [
+                `${siteName} - Expert Reviews, Guides & Best Tools for 2026`,
+                `${siteName} | The Ultimate Resource for Professionals`,
+                `${siteName} 2026 - In-Depth Analysis & Expert Insights`
+            ];
+            document.getElementById('metaTitle').value = titles[Math.floor(Math.random() * titles.length)];
+
+            // Update Description
+            const descs = [
+                `Discover the best ${siteName} tools, guides, and resources for 2026. Expert reviews, tutorials, and tips to help you succeed.`,
+                `Your complete guide to ${siteName}. Find the latest tools, expert opinions, and industry insights. Updated for 2026.`,
+                `Everything you need to know about ${siteName}. Comprehensive guides, reviews, and comparisons. 100% free.`
+            ];
+            document.getElementById('metaDesc').value = descs[Math.floor(Math.random() * descs.length)];
+
+            // Update Knowledge Panel
+            const knowledgeHTML = `
+                <div class="knowledge-panel">
+                    <img src="https://via.placeholder.com/80" alt="Brand">
+                    <h4>${siteName}</h4>
+                    <p style="font-size:0.8rem; color:#555;">Reviews · Guides · 2026</p>
+                    <p style="font-size:0.75rem; color:#777;">★ 4.8 (1,500 reviews) · Updated 2026</p>
+                </div>
+            `;
+            document.getElementById('knowledgePanelArea').innerHTML = knowledgeHTML;
+
+            // Update Favicon
+            document.getElementById('faviconIcon').style.background = `url('https://www.google.com/s2/favicons?domain=${domain}') center/cover`;
+
+            // Update Preview
+            updatePreview();
+        }
+
         function updatePreview() {
             const title = document.getElementById('metaTitle').value || 'Untitled';
             const desc = document.getElementById('metaDesc').value || 'No description';
@@ -181,7 +234,10 @@
             
             document.getElementById('previewTitle').textContent = title;
             document.getElementById('previewDesc').textContent = desc;
-            document.getElementById('previewUrl').innerHTML = `<span class="google-favicon" style="background:#ff9933; display:inline-block; width:16px; height:16px; border-radius:50%;"></span>${url} › seo-tools`;
+            
+            // Update URL display
+            let domain = url.replace(/^https?:\/\//, '').replace(/\/.*$/, '');
+            document.getElementById('displayUrlText').textContent = domain;
             
             // Rich Snippet
             let snippetHTML = '';
@@ -192,24 +248,13 @@
             else if (snippet === 'faq') snippetHTML = `<div class="rich-snippet">❓ What is SERP? · ❓ How to optimize?</div>`;
             document.getElementById('richSnippetArea').innerHTML = snippetHTML;
             
-            // Knowledge Panel
-            const knowledgeHTML = `
-                <div class="knowledge-panel">
-                    <img src="https://via.placeholder.com/80" alt="Brand">
-                    <h4>${title.split('-')[0].trim()}</h4>
-                    <p style="font-size:0.8rem; color:#555;">SEO Tools · 2026</p>
-                    <p style="font-size:0.75rem; color:#777;">★ 4.8 (1,500 reviews) · Founded 2024</p>
-                </div>
-            `;
-            document.getElementById('knowledgePanelArea').innerHTML = knowledgeHTML;
-            
             // CTR Estimator
             const ctr = (Math.random() * 8 + 8).toFixed(1);
             document.getElementById('ctrScore').textContent = ctr + '%';
             document.getElementById('ctrBar').style.width = Math.min(ctr * 7, 95) + '%';
             
             // Save to history
-            history.unshift({ title, url, date: new Date().toLocaleString() });
+            history.unshift({ title, url: domain, date: new Date().toLocaleString() });
             if (history.length > 10) history.pop();
             localStorage.setItem('serpHistory', JSON.stringify(history));
             renderHistory();
