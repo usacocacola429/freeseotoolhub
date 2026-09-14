@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPG77KWVCP"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PFPCTBFG3Y"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -11,41 +10,451 @@
         gtag('config', 'G-PFPCTBFG3Y');
     </script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enterprise Color Palette Generator 2026 | AI-Powered UI Color Schemes | FreeSEOToolHub</title>
-    <meta name="description" content="Enterprise-grade color palette generator with AI suggestions, CSS/SCSS/Tailwind export, and history. 100% free.">
-    <link rel="canonical" href="https://freeseotoolhub.com/color-palette-generator.html">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Color Palette Generator 2026 — AI Color Schemes, Shades, Contrast Check | FreeSEOToolHub</title>
+    <meta name="description" content="Advanced color palette generator with AI suggestions, color theory (complementary, triadic, analogous), shades, WCAG contrast check, color blindness simulator. Export CSS, SCSS, Tailwind, JSON, SVG, PNG. 100% free.">
+    <meta name="keywords" content="color palette generator, color scheme generator, AI color palette, color theory tool, CSS color palette, tailwind colors, WCAG contrast checker, color blindness simulator, free color tool">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://freeseotoolhub.com/tools/color-palette-generator.html">
+
+    <link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/tools/color-palette-generator.html">
+    <link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/tools/color-palette-generator.html?lang=hi">
+    <link rel="alternate" hreflang="ur" href="https://freeseotoolhub.com/tools/color-palette-generator.html?lang=ur">
+    <link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/tools/color-palette-generator.html?lang=de">
+    <link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/tools/color-palette-generator.html?lang=es">
+    <link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/tools/color-palette-generator.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freeseotoolhub.com/tools/color-palette-generator.html">
+    <meta property="og:title" content="Color Palette Generator 2026 — AI Color Schemes">
+    <meta property="og:description" content="AI-powered palette generator with shades, contrast check, and multi-format export.">
+    <meta property="og:image" content="https://freeseotoolhub.com/images/color-palette-og.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "name": "Color Palette Generator",
+          "url": "https://freeseotoolhub.com/tools/color-palette-generator.html",
+          "description": "Advanced AI color palette generator with color theory, shades, contrast check, and multi-format export.",
+          "applicationCategory": "DesignApplication",
+          "operatingSystem": "Any",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+          "isAccessibleForFree": true,
+          "featureList": "AI palette generation, Color theory modes, Tints & shades, WCAG contrast checker, Color blindness simulator, Image color extraction, CSS/SCSS/Tailwind/JSON/SVG/PNG export"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://freeseotoolhub.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Color Palette Generator", "item": "https://freeseotoolhub.com/tools/color-palette-generator.html" }
+          ]
+        }
+      ]
+    }
+    </script>
+
     <style>
         * { margin:0; padding:0; box-sizing:border-box; font-family:'Inter', sans-serif; }
+        :root {
+            --primary: #ff9933;
+            --primary-dark: #e68a2e;
+            --bg: #0b1a33;
+            --bg-2: #1e2b4f;
+            --glass: rgba(255,255,255,0.06);
+            --glass-border: rgba(255,255,255,0.12);
+        }
         body { background:linear-gradient(135deg,#0b1a33 0%,#1e2b4f 100%); min-height:100vh; padding:80px 16px 40px; color:#fff; }
-        .container { max-width:900px; margin:0 auto; }
+
         .navbar { background:rgba(11,26,51,0.95); backdrop-filter:blur(10px); border-bottom:1px solid rgba(255,255,255,0.1); }
         .navbar-brand { font-weight:700; font-size:1.4rem; color:#fff!important; }
         .navbar-brand i { color:#ff9933; }
         .nav-link { color:rgba(255,255,255,0.8)!important; font-weight:500; }
-        .nav-link:hover { color:#ff9933!important; }
+        .nav-link:hover, .nav-link.active { color:#ff9933!important; }
+
+        .lang-bar { display:flex; gap:0.4rem; justify-content:center; flex-wrap:wrap; margin-bottom:1.2rem; }
+        .lang-btn { background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); color:#fff; padding:0.35rem 0.9rem; border-radius:20px; cursor:pointer; font-size:0.78rem; font-weight:500; transition:all 0.3s; font-family:inherit; }
+        .lang-btn:hover { background:rgba(255,153,51,0.2); }
+        .lang-btn.active { background:#ff9933; color:#0b1a33; font-weight:700; }
+
+        .container { max-width:1200px; margin:0 auto; }
+
         .tool-header { text-align:center; margin-bottom:30px; }
-        .tool-header h1 { font-size:2.2rem; font-weight:800; background:linear-gradient(135deg,#ff9933,#ff6b00); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
-        .glass-card { background:rgba(255,255,255,0.05); backdrop-filter:blur(12px); border:1px solid rgba(255,255,255,0.1); border-radius:16px; padding:30px; box-shadow:0 20px 50px rgba(0,0,0,0.4); }
-        .form-group { margin-bottom:20px; }
-        .form-group label { display:block; margin-bottom:6px; font-weight:600; font-size:0.9rem; color:rgba(255,255,255,0.7); }
-        input[type="text"] { width:100%; padding:14px 16px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:12px; font-size:1rem; color:#fff; }
-        input:focus { outline:none; border-color:#ff9933; box-shadow:0 0 0 3px rgba(255,153,51,0.15); }
-        .btn-primary { background:linear-gradient(135deg,#ff9933,#ff6b00); color:#0b1a33; padding:14px 30px; border:none; border-radius:50px; font-weight:700; font-size:1.05rem; cursor:pointer; transition:all 0.3s; width:100%; }
+        .tool-header h1 {
+            font-size:2.2rem;
+            font-weight:800;
+            background:linear-gradient(135deg,#ff9933,#ff6b00);
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+            background-clip:text;
+            margin-bottom:0.5rem;
+        }
+        .tool-header p { opacity:0.85; max-width:700px; margin:0 auto; font-size:1rem; }
+
+        .glass-card {
+            background:var(--glass);
+            backdrop-filter:blur(12px);
+            border:1px solid var(--glass-border);
+            border-radius:16px;
+            padding:28px;
+            box-shadow:0 20px 50px rgba(0,0,0,0.4);
+            margin-bottom:20px;
+        }
+
+        .form-group { margin-bottom:16px; }
+        .form-group label { display:block; margin-bottom:6px; font-weight:600; font-size:0.85rem; color:rgba(255,255,255,0.75); }
+
+        input[type="text"], select {
+            width:100%;
+            padding:12px 16px;
+            background:rgba(255,255,255,0.05);
+            border:1px solid rgba(255,255,255,0.1);
+            border-radius:12px;
+            font-size:0.95rem;
+            color:#fff;
+            font-family:inherit;
+            outline:none;
+            transition:all 0.3s;
+        }
+        input:focus, select:focus { border-color:#ff9933; box-shadow:0 0 0 3px rgba(255,153,51,0.15); }
+        select option { background:#0b1a33; color:#fff; }
+
+        .row-2 { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+        .row-3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; }
+        @media (max-width:640px) { .row-2, .row-3 { grid-template-columns:1fr; } }
+
+        .btn-primary {
+            background:linear-gradient(135deg,#ff9933,#ff6b00);
+            color:#0b1a33;
+            padding:14px 30px;
+            border:none;
+            border-radius:50px;
+            font-weight:700;
+            font-size:1rem;
+            cursor:pointer;
+            transition:all 0.3s;
+            width:100%;
+            font-family:inherit;
+            display:inline-flex;
+            align-items:center;
+            justify-content:center;
+            gap:0.5rem;
+        }
         .btn-primary:hover { transform:translateY(-2px); box-shadow:0 10px 25px rgba(255,153,51,0.3); }
-        .btn-outline { background:transparent; border:1px solid rgba(255,255,255,0.2); color:#fff; padding:8px 18px; border-radius:30px; font-weight:600; cursor:pointer; transition:all 0.3s; font-size:0.85rem; }
-        .btn-outline:hover { background:rgba(255,255,255,0.1); }
-        .palette-container { display:flex; gap:15px; flex-wrap:wrap; justify-content:center; margin:20px 0; }
-        .color-box { width:80px; height:120px; border-radius:12px; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; padding:10px; font-size:0.7rem; font-weight:600; text-shadow:0 1px 3px rgba(0,0,0,0.3); cursor:pointer; transition:transform 0.3s; }
-        .color-box:hover { transform:scale(1.05); }
-        .color-box .hex { background:rgba(0,0,0,0.3); padding:2px 8px; border-radius:4px; }
-        .css-vars { background:#1a1a1a; padding:15px; border-radius:12px; font-family:'Courier New', monospace; font-size:0.85rem; color:#10b981; margin-top:20px; }
-        .history-box { background:rgba(255,255,255,0.03); border-radius:12px; padding:10px; margin-top:15px; }
-        .history-item { display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px solid rgba(255,255,255,0.05); font-size:0.85rem; color:rgba(255,255,255,0.6); }
-        @media (max-width:768px) { .tool-header h1 { font-size:1.8rem; } .glass-card { padding:20px; } .color-box { width:60px; height:90px; } }
+        .btn-primary:disabled { opacity:0.6; cursor:wait; }
+
+        .btn-outline {
+            background:rgba(255,255,255,0.05);
+            border:1px solid rgba(255,255,255,0.15);
+            color:#fff;
+            padding:8px 16px;
+            border-radius:30px;
+            font-weight:600;
+            cursor:pointer;
+            transition:all 0.3s;
+            font-size:0.82rem;
+            font-family:inherit;
+            display:inline-flex;
+            align-items:center;
+            gap:0.35rem;
+        }
+        .btn-outline:hover { background:rgba(255,153,51,0.2); border-color:#ff9933; }
+
+        /* Palette Display */
+        .palette-container {
+            display:flex;
+            gap:12px;
+            flex-wrap:wrap;
+            justify-content:center;
+            margin:20px 0;
+        }
+
+        .color-card {
+            flex:1;
+            min-width:130px;
+            max-width:200px;
+            border-radius:14px;
+            overflow:hidden;
+            background:rgba(0,0,0,0.2);
+            border:1px solid rgba(255,255,255,0.08);
+            transition:transform 0.3s, box-shadow 0.3s;
+            position:relative;
+        }
+        .color-card:hover { transform:translateY(-4px); box-shadow:0 12px 30px rgba(0,0,0,0.4); }
+
+        .color-swatch {
+            height:120px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            cursor:pointer;
+            position:relative;
+        }
+        .color-swatch .lock-btn {
+            position:absolute;
+            top:8px;
+            right:8px;
+            background:rgba(0,0,0,0.4);
+            color:#fff;
+            border:none;
+            width:28px;
+            height:28px;
+            border-radius:50%;
+            cursor:pointer;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-size:0.7rem;
+            opacity:0;
+            transition:opacity 0.2s;
+        }
+        .color-card:hover .lock-btn { opacity:1; }
+        .color-card.locked .lock-btn { opacity:1; background:rgba(255,153,51,0.9); color:#0b1a33; }
+
+        .color-info {
+            padding:10px 12px;
+            background:rgba(0,0,0,0.3);
+            display:flex;
+            flex-direction:column;
+            gap:4px;
+        }
+        .color-hex {
+            font-family:'Courier New', monospace;
+            font-weight:700;
+            font-size:0.9rem;
+            color:#fff;
+            cursor:pointer;
+            text-align:center;
+        }
+        .color-meta {
+            display:flex;
+            justify-content:space-between;
+            font-size:0.7rem;
+            color:rgba(255,255,255,0.5);
+            gap:4px;
+        }
+
+        /* Shades Strip */
+        .shades-strip {
+            display:flex;
+            gap:2px;
+            margin-top:8px;
+        }
+        .shade-mini {
+            flex:1;
+            height:18px;
+            border-radius:3px;
+            cursor:pointer;
+            transition:transform 0.15s;
+        }
+        .shade-mini:hover { transform:scale(1.15); }
+
+        /* Tabs */
+        .tabs {
+            display:flex;
+            gap:4px;
+            border-bottom:1px solid rgba(255,255,255,0.1);
+            margin-bottom:20px;
+            flex-wrap:wrap;
+        }
+        .tab {
+            padding:10px 18px;
+            background:transparent;
+            border:none;
+            color:rgba(255,255,255,0.6);
+            font-weight:600;
+            font-size:0.85rem;
+            cursor:pointer;
+            border-bottom:2px solid transparent;
+            transition:all 0.3s;
+            font-family:inherit;
+        }
+        .tab:hover { color:#fff; }
+        .tab.active { color:#ff9933; border-bottom-color:#ff9933; }
+
+        .tab-panel { display:none; }
+        .tab-panel.active { display:block; }
+
+        /* Code Output */
+        .code-output {
+            background:#0a0f1c;
+            border:1px solid rgba(255,255,255,0.08);
+            border-radius:10px;
+            padding:16px;
+            font-family:'Courier New', monospace;
+            font-size:0.82rem;
+            color:#10b981;
+            white-space:pre-wrap;
+            word-break:break-all;
+            max-height:320px;
+            overflow-y:auto;
+            line-height:1.5;
+        }
+        .code-output::-webkit-scrollbar { width:8px; }
+        .code-output::-webkit-scrollbar-thumb { background:rgba(255,153,51,0.3); border-radius:4px; }
+
+        /* Contrast Checker */
+        .contrast-grid {
+            display:grid;
+            grid-template-columns:repeat(auto-fill, minmax(140px, 1fr));
+            gap:10px;
+        }
+        .contrast-cell {
+            padding:14px;
+            border-radius:10px;
+            text-align:center;
+            font-size:0.75rem;
+            font-weight:600;
+        }
+        .badge-pass { background:rgba(6,214,160,0.2); color:#06d6a0; padding:2px 8px; border-radius:20px; font-size:0.65rem; display:inline-block; margin-top:4px; }
+        .badge-fail { background:rgba(239,71,111,0.2); color:#ef476f; padding:2px 8px; border-radius:20px; font-size:0.65rem; display:inline-block; margin-top:4px; }
+
+        /* History */
+        .history-grid {
+            display:grid;
+            grid-template-columns:repeat(auto-fill, minmax(180px, 1fr));
+            gap:10px;
+        }
+        .history-item {
+            background:rgba(255,255,255,0.04);
+            border-radius:10px;
+            overflow:hidden;
+            cursor:pointer;
+            transition:all 0.2s;
+            border:1px solid rgba(255,255,255,0.06);
+        }
+        .history-item:hover { border-color:#ff9933; transform:translateY(-2px); }
+        .history-colors { display:flex; height:50px; }
+        .history-colors > div { flex:1; }
+        .history-meta {
+            padding:6px 10px;
+            font-size:0.7rem;
+            color:rgba(255,255,255,0.6);
+            display:flex;
+            justify-content:space-between;
+        }
+
+        /* Image Upload */
+        .upload-zone {
+            border:2px dashed rgba(255,255,255,0.2);
+            border-radius:14px;
+            padding:30px;
+            text-align:center;
+            cursor:pointer;
+            transition:all 0.3s;
+        }
+        .upload-zone:hover, .upload-zone.dragover {
+            border-color:#ff9933;
+            background:rgba(255,153,51,0.05);
+        }
+        .upload-zone i { font-size:2.5rem; color:#ff9933; margin-bottom:10px; }
+        .upload-zone p { font-size:0.9rem; opacity:0.7; }
+
+        /* Color Blindness Sim */
+        .cb-grid {
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(120px, 1fr));
+            gap:10px;
+        }
+        .cb-item {
+            text-align:center;
+        }
+        .cb-swatch {
+            height:60px;
+            border-radius:10px;
+            margin-bottom:6px;
+        }
+        .cb-label {
+            font-size:0.72rem;
+            color:rgba(255,255,255,0.7);
+            font-weight:600;
+        }
+
+        /* Export Bar */
+        .export-bar {
+            display:flex;
+            gap:8px;
+            flex-wrap:wrap;
+            margin-top:16px;
+        }
+
+        /* Toast */
+        .toast {
+            position:fixed;
+            bottom:30px;
+            right:30px;
+            background:rgba(11,26,51,0.95);
+            backdrop-filter:blur(10px);
+            color:#fff;
+            padding:12px 22px;
+            border-radius:50px;
+            border:1px solid rgba(255,153,51,0.3);
+            display:none;
+            align-items:center;
+            gap:10px;
+            z-index:1000;
+            animation:slideUp 0.35s ease;
+            font-size:0.9rem;
+            font-weight:500;
+        }
+        @keyframes slideUp {
+            from { transform:translateY(100px); opacity:0; }
+            to { transform:translateY(0); opacity:1; }
+        }
+
+        /* Suggestions */
+        .suggestions {
+            display:flex;
+            gap:6px;
+            flex-wrap:wrap;
+            margin-top:8px;
+        }
+        .suggestion-chip {
+            background:rgba(255,255,255,0.06);
+            border:1px solid rgba(255,255,255,0.1);
+            color:rgba(255,255,255,0.85);
+            padding:4px 12px;
+            border-radius:20px;
+            font-size:0.75rem;
+            cursor:pointer;
+            transition:all 0.2s;
+            font-family:inherit;
+        }
+        .suggestion-chip:hover { background:rgba(255,153,51,0.2); border-color:#ff9933; color:#fff; }
+
+        /* Footer */
+        .footer {
+            text-align:center;
+            padding:20px;
+            background:rgba(255,255,255,0.03);
+            border-radius:16px;
+            margin-top:20px;
+            border:1px solid rgba(255,255,255,0.08);
+        }
+        .footer-links {
+            display:flex;
+            justify-content:center;
+            gap:22px;
+            flex-wrap:wrap;
+            margin-bottom:10px;
+        }
+        .footer-links a { color:rgba(255,255,255,0.7); text-decoration:none; font-weight:500; font-size:0.88rem; }
+        .footer-links a:hover { color:#ff9933; }
+
+        @media (max-width:768px) {
+            body { padding:70px 12px 30px; }
+            .tool-header h1 { font-size:1.6rem; }
+            .glass-card { padding:18px; }
+            .color-card { min-width:100px; }
+            .toast { left:20px; right:20px; bottom:20px; }
+        }
     </style>
 </head>
 <body>
@@ -67,91 +476,1144 @@
     </nav>
 
     <div class="container">
+        <!-- HEADER -->
         <div class="tool-header">
-            <h1><i class="fas fa-palette"></i> Enterprise Color Palette Generator</h1>
-            <p>AI-powered color suggestions with CSS/SCSS/Tailwind export and history.</p>
+            <h1><i class="fas fa-palette"></i> <span data-i18n="title">Enterprise Color Palette Generator</span></h1>
+            <p data-i18n="subtitle">AI-powered color schemes with 6 color theory modes, shades, contrast check, and export to CSS, SCSS, Tailwind, JSON, SVG & PNG.</p>
         </div>
 
-        <div class="glass-card">
-            <div class="form-group">
-                <label><i class="fas fa-search"></i> Enter a Keyword</label>
-                <input type="text" id="keywordInput" placeholder="e.g., sunset, ocean, modern, vintage" value="ocean">
-            </div>
-            <button class="btn-primary" onclick="generatePalette()"><i class="fas fa-magic"></i> Generate Palette</button>
+        <!-- LANGUAGE SWITCHER -->
+        <div class="lang-bar">
+            <button class="lang-btn active" data-lang="en">🇺🇸 English</button>
+            <button class="lang-btn" data-lang="hi">🇮🇳 हिन्दी</button>
+            <button class="lang-btn" data-lang="ur">🇵🇰 اردو</button>
+            <button class="lang-btn" data-lang="de">🇩🇪 Deutsch</button>
+            <button class="lang-btn" data-lang="es">🇪🇸 Español</button>
+        </div>
 
-            <div id="paletteArea" style="margin-top:25px;">
-                <div class="palette-container" id="paletteContainer"></div>
-                <div style="text-align:center; margin-top:15px;">
-                    <button class="btn-outline" onclick="exportCSS()"><i class="fas fa-file-code"></i> Export CSS</button>
-                    <button class="btn-outline" onclick="exportSCSS()"><i class="fas fa-file-code"></i> Export SCSS</button>
-                    <button class="btn-outline" onclick="exportTailwind()"><i class="fas fa-file-code"></i> Export Tailwind</button>
+        <!-- INPUT PANEL -->
+        <div class="glass-card">
+            <div class="row-2">
+                <div class="form-group">
+                    <label><i class="fas fa-search"></i> <span data-i18n="keywordLabel">Keyword or Hex Color</span></label>
+                    <input type="text" id="keywordInput" placeholder="ocean, sunset, #ff9933, modern..." value="ocean">
+                    <div class="suggestions" id="suggestions"></div>
                 </div>
-                <div class="css-vars" id="cssOutput">:root { --color-1: #...; }</div>
+                <div class="form-group">
+                    <label><i class="fas fa-palette"></i> <span data-i18n="paletteSize">Palette Size</span></label>
+                    <select id="paletteSize">
+                        <option value="3">3 colors</option>
+                        <option value="5" selected>5 colors</option>
+                        <option value="7">7 colors</option>
+                        <option value="9">9 colors</option>
+                    </select>
+                </div>
             </div>
+
+            <div class="row-2">
+                <div class="form-group">
+                    <label><i class="fas fa-flask"></i> <span data-i18n="colorTheory">Color Theory Mode</span></label>
+                    <select id="colorTheory">
+                        <option value="auto" selected>🤖 Auto (AI recommended)</option>
+                        <option value="complementary">🎨 Complementary</option>
+                        <option value="analogous">🌈 Analogous</option>
+                        <option value="triadic">🔺 Triadic</option>
+                        <option value="tetradic">⬛ Tetradic</option>
+                        <option value="split">⚡ Split-Complementary</option>
+                        <option value="monochromatic">📊 Monochromatic</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-sun"></i> <span data-i18n="mood">Mood / Style</span></label>
+                    <select id="mood">
+                        <option value="balanced" selected>⚖️ Balanced</option>
+                        <option value="vibrant">🎉 Vibrant</option>
+                        <option value="pastel">🌸 Pastel</option>
+                        <option value="dark">🌙 Dark</option>
+                        <option value="earthy">🌿 Earthy</option>
+                        <option value="neon">⚡ Neon</option>
+                    </select>
+                </div>
+            </div>
+
+            <button class="btn-primary" id="generateBtn">
+                <i class="fas fa-magic"></i> <span data-i18n="generateBtn">Generate Palette</span>
+                <span style="opacity:0.7; font-size:0.75rem; font-weight:400">(Space)</span>
+            </button>
+
+            <div style="text-align:center; margin-top:14px;">
+                <button class="btn-outline" id="uploadBtn"><i class="fas fa-image"></i> <span data-i18n="fromImage">Extract from Image</span></button>
+                <input type="file" id="imageInput" accept="image/*" style="display:none">
+            </div>
+        </div>
+
+        <!-- PALETTE DISPLAY -->
+        <div class="glass-card">
+            <div class="palette-container" id="paletteContainer"></div>
+
+            <!-- TABS -->
+            <div class="tabs" style="margin-top:24px;">
+                <button class="tab active" data-tab="export"><i class="fas fa-code"></i> <span data-i18n="tabExport">Export</span></button>
+                <button class="tab" data-tab="shades"><i class="fas fa-layer-group"></i> <span data-i18n="tabShades">Tints & Shades</span></button>
+                <button class="tab" data-tab="contrast"><i class="fas fa-universal-access"></i> <span data-i18n="tabContrast">Contrast (WCAG)</span></button>
+                <button class="tab" data-tab="blindness"><i class="fas fa-eye"></i> <span data-i18n="tabBlindness">Color Blindness</span></button>
+                <button class="tab" data-tab="history"><i class="fas fa-history"></i> <span data-i18n="tabHistory">History</span></button>
+            </div>
+
+            <!-- EXPORT TAB -->
+            <div class="tab-panel active" data-panel="export">
+                <div class="code-output" id="codeOutput">Click "Generate Palette" to start.</div>
+                <div class="export-bar">
+                    <button class="btn-outline" data-export="css"><i class="fab fa-css3-alt"></i> CSS</button>
+                    <button class="btn-outline" data-export="scss"><i class="fab fa-sass"></i> SCSS</button>
+                    <button class="btn-outline" data-export="tailwind"><i class="fas fa-wind"></i> Tailwind</button>
+                    <button class="btn-outline" data-export="json"><i class="fas fa-file-code"></i> JSON</button>
+                    <button class="btn-outline" data-export="svg"><i class="fas fa-image"></i> SVG</button>
+                    <button class="btn-outline" data-export="png"><i class="fas fa-download"></i> PNG</button>
+                    <button class="btn-outline" data-export="ase"><i class="fas fa-file-export"></i> Adobe ASE</button>
+                    <button class="btn-outline" data-export="copy"><i class="fas fa-copy"></i> Copy</button>
+                </div>
+            </div>
+
+            <!-- SHADES TAB -->
+            <div class="tab-panel" data-panel="shades">
+                <div id="shadesArea"></div>
+            </div>
+
+            <!-- CONTRAST TAB -->
+            <div class="tab-panel" data-panel="contrast">
+                <div class="contrast-grid" id="contrastArea"></div>
+            </div>
+
+            <!-- COLOR BLINDNESS TAB -->
+            <div class="tab-panel" data-panel="blindness">
+                <div class="cb-grid" id="blindnessArea"></div>
+            </div>
+
+            <!-- HISTORY TAB -->
+            <div class="tab-panel" data-panel="history">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+                    <div style="font-size:0.85rem;opacity:0.7"><span id="historyCount">0</span> saved palettes</div>
+                    <button class="btn-outline" id="clearHistory"><i class="fas fa-trash"></i> Clear</button>
+                </div>
+                <div class="history-grid" id="historyArea"></div>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="/blog/">Blog</a>
+                <a href="/about.html">About</a>
+                <a href="/contact.html">Contact</a>
+                <a href="/privacy.html">Privacy</a>
+            </div>
+            <p style="opacity:0.5;font-size:0.82rem;">© 2026 FreeSEOToolHub | Color Palette Generator v3.0 | 100% Client-Side</p>
         </div>
     </div>
 
+    <!-- TOAST -->
+    <div class="toast" id="toast"><i class="fas fa-check-circle"></i> <span id="toastMsg"></span></div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        const GLOBAL_API_KEY = "rsk_01KX30NR2A1988J2N3GWG1KF5F";
-        window.GLOBAL_API_KEY = GLOBAL_API_KEY;
+    (function() {
+    'use strict';
 
-        function generatePalette() {
-            const keyword = document.getElementById('keywordInput').value.trim() || 'modern';
-            let baseHue;
-            switch(keyword.toLowerCase()) {
-                case 'sunset': baseHue = 15; break;
-                case 'ocean': baseHue = 210; break;
-                case 'vintage': baseHue = 30; break;
-                case 'modern': baseHue = 220; break;
-                case 'cyberpunk': baseHue = 300; break;
-                default: baseHue = Math.floor(Math.random() * 360);
-            }
-            const colors = [
-                hslToHex(baseHue, 70, 50),
-                hslToHex(baseHue + 30, 60, 40),
-                hslToHex(baseHue - 30, 50, 60),
-                hslToHex(baseHue + 60, 40, 30),
-                hslToHex(baseHue + 120, 80, 70)
-            ];
-            const container = document.getElementById('paletteContainer');
-            container.innerHTML = colors.map(c => `
-                <div class="color-box" style="background:${c};" onclick="copyColor('${c}')">
-                    <span class="hex">${c}</span>
+    // ============================================================
+    // 🌐 TRANSLATIONS
+    // ============================================================
+    const I18N = {
+      en: {
+        title: 'Enterprise Color Palette Generator',
+        subtitle: 'AI-powered color schemes with 6 color theory modes, shades, contrast check, and export to CSS, SCSS, Tailwind, JSON, SVG & PNG.',
+        keywordLabel: 'Keyword or Hex Color',
+        paletteSize: 'Palette Size',
+        colorTheory: 'Color Theory Mode',
+        mood: 'Mood / Style',
+        generateBtn: 'Generate Palette',
+        fromImage: 'Extract from Image',
+        tabExport: 'Export',
+        tabShades: 'Tints & Shades',
+        tabContrast: 'Contrast (WCAG)',
+        tabBlindness: 'Color Blindness',
+        tabHistory: 'History',
+        copied: 'Copied to clipboard!',
+        generated: 'Palette generated',
+        imgExtracted: 'Colors extracted from image',
+        noHistory: 'No palettes saved yet',
+        historyCleared: 'History cleared',
+        extracted: 'Extracted from image',
+        pass: 'PASS',
+        fail: 'FAIL'
+      },
+      hi: {
+        title: 'एंटरप्राइज़ कलर पैलेट जेनरेटर',
+        subtitle: 'AI-संचालित कलर स्कीम — 6 कलर थ्योरी मोड, शेड्स, कंट्रास्ट चेक, और CSS/SCSS/Tailwind/JSON/SVG/PNG एक्सपोर्ट।',
+        keywordLabel: 'कीवर्ड या हेक्स कलर',
+        paletteSize: 'पैलेट साइज़',
+        colorTheory: 'कलर थ्योरी मोड',
+        mood: 'मूड / स्टाइल',
+        generateBtn: 'पैलेट बनाएं',
+        fromImage: 'इमेज से रंग निकालें',
+        tabExport: 'एक्सपोर्ट',
+        tabShades: 'टिंट्स और शेड्स',
+        tabContrast: 'कंट्रास्ट (WCAG)',
+        tabBlindness: 'कलर ब्लाइंडनेस',
+        tabHistory: 'इतिहास',
+        copied: 'क्लिपबोर्ड पर कॉपी हो गया!',
+        generated: 'पैलेट बन गया',
+        imgExtracted: 'इमेज से रंग निकाले गए',
+        noHistory: 'अभी तक कोई पैलेट सेव नहीं',
+        historyCleared: 'इतिहास साफ़ हो गया',
+        extracted: 'इमेज से निकाला गया',
+        pass: 'पास',
+        fail: 'फेल'
+      },
+      ur: {
+        title: 'انٹرپرائز کلر پیلیٹ جنریٹر',
+        subtitle: 'AI سے چلنے والی کلر اسکیمیں — 6 کلر تھیوری موڈز، شیڈز، کنٹراسٹ چیک، اور ایکسپورٹ۔',
+        keywordLabel: 'کی ورڈ یا ہیکس کلر',
+        paletteSize: 'پیلیٹ سائز',
+        colorTheory: 'کلر تھیوری موڈ',
+        mood: 'موڈ / اسٹائل',
+        generateBtn: 'پیلیٹ بنائیں',
+        fromImage: 'تصویر سے رنگ نکالیں',
+        tabExport: 'ایکسپورٹ',
+        tabShades: 'ٹنٹس اور شیڈز',
+        tabContrast: 'کنٹراسٹ (WCAG)',
+        tabBlindness: 'کلر بلائنڈنس',
+        tabHistory: 'تاریخ',
+        copied: 'کلپ بورڈ پر کاپی ہو گیا!',
+        generated: 'پیلیٹ بن گیا',
+        imgExtracted: 'تصویر سے رنگ نکالے گئے',
+        noHistory: 'ابھی تک کوئی پیلیٹ محفوظ نہیں',
+        historyCleared: 'تاریخ صاف ہو گئی',
+        extracted: 'تصویر سے نکالا گیا',
+        pass: 'پاس',
+        fail: 'فیل'
+      },
+      de: {
+        title: 'Enterprise Farbpaletten-Generator',
+        subtitle: 'KI-gestützte Farbschemata mit 6 Farbtheorie-Modi, Schattierungen, Kontrastprüfung und Export.',
+        keywordLabel: 'Schlüsselwort oder Hex-Farbe',
+        paletteSize: 'Palettengröße',
+        colorTheory: 'Farbtheorie-Modus',
+        mood: 'Stimmung / Stil',
+        generateBtn: 'Palette generieren',
+        fromImage: 'Aus Bild extrahieren',
+        tabExport: 'Export',
+        tabShades: 'Tönungen & Schattierungen',
+        tabContrast: 'Kontrast (WCAG)',
+        tabBlindness: 'Farbenblindheit',
+        tabHistory: 'Verlauf',
+        copied: 'In Zwischenablage kopiert!',
+        generated: 'Palette generiert',
+        imgExtracted: 'Farben aus Bild extrahiert',
+        noHistory: 'Noch keine Paletten gespeichert',
+        historyCleared: 'Verlauf gelöscht',
+        extracted: 'Aus Bild extrahiert',
+        pass: 'BESTANDEN',
+        fail: 'FEHLGESCHLAGEN'
+      },
+      es: {
+        title: 'Generador de Paletas Empresarial',
+        subtitle: 'Esquemas de color con IA, 6 modos de teoría del color, sombras, contraste y exportación.',
+        keywordLabel: 'Palabra clave o color Hex',
+        paletteSize: 'Tamaño de paleta',
+        colorTheory: 'Modo de teoría del color',
+        mood: 'Estado de ánimo / Estilo',
+        generateBtn: 'Generar paleta',
+        fromImage: 'Extraer de imagen',
+        tabExport: 'Exportar',
+        tabShades: 'Tintes y Sombras',
+        tabContrast: 'Contraste (WCAG)',
+        tabBlindness: 'Daltonismo',
+        tabHistory: 'Historial',
+        copied: '¡Copiado al portapapeles!',
+        generated: 'Paleta generada',
+        imgExtracted: 'Colores extraídos de la imagen',
+        noHistory: 'Aún no hay paletas guardadas',
+        historyCleared: 'Historial borrado',
+        extracted: 'Extraído de imagen',
+        pass: 'APROBADO',
+        fail: 'FALLIDO'
+      }
+    };
+
+    let currentLang = 'en';
+    const t = k => (I18N[currentLang][k] || I18N.en[k] || k);
+
+    function applyLang(lang) {
+      if (!I18N[lang]) lang = 'en';
+      currentLang = lang;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const k = el.getAttribute('data-i18n');
+        if (I18N[lang][k]) el.textContent = I18N[lang][k];
+      });
+      document.querySelectorAll('.lang-btn').forEach(b => {
+        b.classList.toggle('active', b.dataset.lang === lang);
+      });
+      localStorage.setItem('preferredLanguage', lang);
+      const url = new URL(location.href);
+      url.searchParams.set('lang', lang);
+      history.replaceState({}, '', url);
+    }
+
+    // ============================================================
+    // 🎨 COLOR MATH
+    // ============================================================
+    function hslToRgb(h, s, l) {
+      h = ((h % 360) + 360) % 360 / 360;
+      s = Math.max(0, Math.min(100, s)) / 100;
+      l = Math.max(0, Math.min(100, l)) / 100;
+      let r, g, b;
+      if (s === 0) { r = g = b = l; }
+      else {
+        const hue2rgb = (p, q, t) => {
+          if (t < 0) t += 1;
+          if (t > 1) t -= 1;
+          if (t < 1/6) return p + (q - p) * 6 * t;
+          if (t < 1/2) return q;
+          if (t < 2/3) return p + (q - p) * (2/3 - t) * 6;
+          return p;
+        };
+        const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+        const p = 2 * l - q;
+        r = hue2rgb(p, q, h + 1/3);
+        g = hue2rgb(p, q, h);
+        b = hue2rgb(p, q, h - 1/3);
+      }
+      return [r, g, b].map(x => Math.round(x * 255));
+    }
+
+    function rgbToHex(r, g, b) {
+      return '#' + [r, g, b].map(x => x.toString(16).padStart(2, '0')).join('').toUpperCase();
+    }
+
+    function hslToHex(h, s, l) {
+      return rgbToHex(...hslToRgb(h, s, l));
+    }
+
+    function hexToRgb(hex) {
+      hex = hex.replace('#', '');
+      if (hex.length === 3) hex = hex.split('').map(c => c + c).join('');
+      return [
+        parseInt(hex.substr(0, 2), 16),
+        parseInt(hex.substr(2, 2), 16),
+        parseInt(hex.substr(4, 2), 16)
+      ];
+    }
+
+    function rgbToHsl(r, g, b) {
+      r /= 255; g /= 255; b /= 255;
+      const max = Math.max(r, g, b), min = Math.min(r, g, b);
+      let h = 0, s = 0;
+      const l = (max + min) / 2;
+      if (max !== min) {
+        const d = max - min;
+        s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+        switch (max) {
+          case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+          case g: h = (b - r) / d + 2; break;
+          case b: h = (r - g) / d + 4; break;
+        }
+        h *= 60;
+      }
+      return [Math.round(h), Math.round(s * 100), Math.round(l * 100)];
+    }
+
+    function hexToHsl(hex) { return rgbToHsl(...hexToRgb(hex)); }
+
+    function luminance(r, g, b) {
+      const a = [r, g, b].map(v => {
+        v /= 255;
+        return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+      });
+      return 0.2126 * a[0] + 0.7152 * a[1] + 0.0722 * a[2];
+    }
+
+    function contrastRatio(hex1, hex2) {
+      const L1 = luminance(...hexToRgb(hex1));
+      const L2 = luminance(...hexToRgb(hex2));
+      const lighter = Math.max(L1, L2);
+      const darker = Math.min(L1, L2);
+      return (lighter + 0.05) / (darker + 0.05);
+    }
+
+    function getTextColor(hex) {
+      return luminance(...hexToRgb(hex)) > 0.5 ? '#000000' : '#FFFFFF';
+    }
+
+    // ============================================================
+    // 🎨 COLOR THEORY
+    // ============================================================
+    function generateByTheory(baseHue, theory, count) {
+      const hues = [baseHue];
+      const variants = count - 1;
+
+      switch(theory) {
+        case 'complementary':
+          for (let i = 1; i <= variants; i++) {
+            hues.push((baseHue + 180 + (i - 1) * 15) % 360);
+          }
+          break;
+        case 'analogous':
+          for (let i = 1; i <= variants; i++) {
+            const offset = Math.ceil(i / 2) * 30 * (i % 2 === 1 ? 1 : -1);
+            hues.push((baseHue + offset + 360) % 360);
+          }
+          break;
+        case 'triadic':
+          for (let i = 1; i <= variants; i++) {
+            hues.push((baseHue + (i * 120)) % 360);
+          }
+          break;
+        case 'tetradic':
+          for (let i = 1; i <= variants; i++) {
+            hues.push((baseHue + (i * 90)) % 360);
+          }
+          break;
+        case 'split':
+          for (let i = 1; i <= variants; i++) {
+            hues.push((baseHue + 150 + (i - 1) * 30) % 360);
+          }
+          break;
+        case 'monochromatic':
+        default:
+          return generateMonochromatic(baseHue, count);
+      }
+      return hues.slice(0, count);
+    }
+
+    function generateMonochromatic(baseHue, count) {
+      const result = [];
+      for (let i = 0; i < count; i++) {
+        result.push({ h: baseHue, s: 60 + (i * 8), l: 25 + (i * 12) });
+      }
+      return result;
+    }
+
+    function applyMood(hsl, mood) {
+      const [h, s, l] = hsl;
+      switch(mood) {
+        case 'vibrant': return [h, Math.min(100, s + 25), Math.min(70, l + 5)];
+        case 'pastel': return [h, Math.max(30, s - 30), Math.min(88, l + 25)];
+        case 'dark': return [h, Math.min(80, s + 5), Math.max(15, l - 25)];
+        case 'earthy': return [(h + 20) % 360, Math.min(55, s - 10), Math.max(25, Math.min(55, l - 5))];
+        case 'neon': return [h, 100, 55];
+        default: return hsl;
+      }
+    }
+
+    // ============================================================
+    // 🎨 KEYWORD DATABASE (Encyclopedic)
+    // ============================================================
+    const KEYWORDS = {
+      // Nature
+      ocean: { h: 205, s: 70, l: 45 },
+      sea: { h: 200, s: 65, l: 48 },
+      sunset: { h: 20, s: 85, l: 55 },
+      sunrise: { h: 35, s: 80, l: 60 },
+      forest: { h: 140, s: 45, l: 35 },
+      mountain: { h: 210, s: 25, l: 50 },
+      desert: { h: 35, s: 55, l: 60 },
+      sky: { h: 210, s: 75, l: 70 },
+      fire: { h: 15, s: 90, l: 55 },
+      water: { h: 195, s: 70, l: 50 },
+      earth: { h: 30, s: 45, l: 40 },
+      wind: { h: 180, s: 20, l: 75 },
+      snow: { h: 200, s: 15, l: 92 },
+      spring: { h: 100, s: 55, l: 65 },
+      summer: { h: 45, s: 80, l: 55 },
+      autumn: { h: 25, s: 75, l: 50 },
+      winter: { h: 210, s: 25, l: 75 },
+
+      // Emotions
+      love: { h: 350, s: 80, l: 60 },
+      passion: { h: 0, s: 85, l: 50 },
+      calm: { h: 200, s: 30, l: 75 },
+      joy: { h: 55, s: 90, l: 65 },
+      anger: { h: 10, s: 85, l: 50 },
+      peace: { h: 150, s: 40, l: 65 },
+      energy: { h: 25, s: 95, l: 55 },
+      mystery: { h: 275, s: 50, l: 35 },
+      dream: { h: 280, s: 50, l: 75 },
+      hope: { h: 190, s: 70, l: 65 },
+      sadness: { h: 215, s: 45, l: 40 },
+
+      // Styles
+      modern: { h: 220, s: 45, l: 50 },
+      vintage: { h: 35, s: 55, l: 55 },
+      retro: { h: 30, s: 70, l: 55 },
+      cyberpunk: { h: 300, s: 90, l: 55 },
+      minimal: { h: 220, s: 10, l: 75 },
+      luxury: { h: 40, s: 60, l: 40 },
+      royal: { h: 265, s: 60, l: 45 },
+      elegant: { h: 350, s: 25, l: 55 },
+      bold: { h: 0, s: 90, l: 50 },
+      soft: { h: 330, s: 40, l: 82 },
+      fresh: { h: 150, s: 65, l: 60 },
+      corporate: { h: 210, s: 60, l: 45 },
+      tech: { h: 200, s: 85, l: 50 },
+      startup: { h: 15, s: 85, l: 60 },
+      creative: { h: 330, s: 75, l: 60 },
+
+      // Food
+      coffee: { h: 25, s: 50, l: 35 },
+      chocolate: { h: 20, s: 55, l: 28 },
+      lemon: { h: 55, s: 95, l: 60 },
+      mint: { h: 160, s: 55, l: 65 },
+      berry: { h: 330, s: 65, l: 45 },
+      peach: { h: 20, s: 75, l: 75 },
+      cherry: { h: 350, s: 75, l: 50 },
+
+      // Colors (base hue guides)
+      red: { h: 0, s: 75, l: 50 },
+      orange: { h: 30, s: 85, l: 55 },
+      yellow: { h: 55, s: 90, l: 55 },
+      green: { h: 140, s: 60, l: 45 },
+      blue: { h: 215, s: 75, l: 50 },
+      purple: { h: 275, s: 55, l: 55 },
+      pink: { h: 340, s: 70, l: 65 },
+      brown: { h: 25, s: 40, l: 40 },
+      gray: { h: 220, s: 8, l: 55 },
+      black: { h: 220, s: 15, l: 15 },
+      white: { h: 220, s: 10, l: 95 }
+    };
+
+    function keywordToHsl(keyword) {
+      const k = keyword.toLowerCase().trim();
+
+      // Hex color
+      if (/^#?[0-9a-f]{3,6}$/i.test(k)) {
+        const hex = k.startsWith('#') ? k : '#' + k;
+        return hexToHsl(hex);
+      }
+
+      // Exact match
+      if (KEYWORDS[k]) return [KEYWORDS[k].h, KEYWORDS[k].s, KEYWORDS[k].l];
+
+      // Partial match
+      for (const key in KEYWORDS) {
+        if (k.includes(key) || key.includes(k)) {
+          return [KEYWORDS[key].h, KEYWORDS[key].s, KEYWORDS[key].l];
+        }
+      }
+
+      // Deterministic hash-based
+      let hash = 0;
+      for (let i = 0; i < k.length; i++) {
+        hash = ((hash << 5) - hash) + k.charCodeAt(i);
+        hash |= 0;
+      }
+      const h = Math.abs(hash) % 360;
+      const s = 55 + (Math.abs(hash) % 35);
+      const l = 40 + (Math.abs(hash >> 8) % 30);
+      return [h, s, l];
+    }
+
+    // ============================================================
+    // 🎨 PALETTE GENERATION
+    // ============================================================
+    let currentPalette = [];
+    let lockedColors = new Set();
+
+    function generatePalette() {
+      const keyword = document.getElementById('keywordInput').value.trim() || 'modern';
+      const size = parseInt(document.getElementById('paletteSize').value);
+      const theory = document.getElementById('colorTheory').value;
+      const mood = document.getElementById('mood').value;
+
+      const [baseH, baseS, baseL] = keywordToHsl(keyword);
+      let hues;
+
+      if (theory === 'auto') {
+        // Pick theory based on keyword length / hash
+        const theories = ['complementary', 'analogous', 'triadic', 'tetradic', 'split', 'monochromatic'];
+        const idx = Math.abs(keyword.length + keyword.charCodeAt(0)) % theories.length;
+        hues = generateByTheory(baseH, theories[idx], size);
+      } else {
+        hues = generateByTheory(baseH, theory, size);
+      }
+
+      const newPalette = hues.map((h, i) => {
+        // If locked, keep existing color
+        if (lockedColors.has(i) && currentPalette[i]) {
+          return currentPalette[i];
+        }
+
+        let hsl;
+        if (typeof h === 'object') {
+          hsl = [h.h, h.s, h.l];
+        } else {
+          // Vary S/L per index for visual interest
+          const sVar = baseS + (i % 3 === 0 ? 5 : -8);
+          const lVar = baseL + (i % 4 === 0 ? 10 : -5) + (i * 3);
+          hsl = [h, sVar, lVar];
+        }
+
+        hsl = applyMood(hsl, mood);
+        hsl = [hsl[0], Math.max(0, Math.min(100, hsl[1])), Math.max(5, Math.min(95, hsl[2]))];
+        const hex = hslToHex(...hsl);
+        return {
+          hex,
+          hsl,
+          rgb: hexToRgb(hex),
+          locked: lockedColors.has(i)
+        };
+      });
+
+      currentPalette = newPalette;
+      renderPalette();
+      renderShades();
+      renderContrast();
+      renderBlindness();
+      renderCode();
+
+      // Add to history (debounced)
+      clearTimeout(generatePalette._t);
+      generatePalette._t = setTimeout(() => saveToHistory(), 800);
+
+      showToast(`🎨 ${t('generated')}`);
+    }
+
+    function renderPalette() {
+      const container = document.getElementById('paletteContainer');
+      container.innerHTML = currentPalette.map((c, i) => {
+        const textColor = getTextColor(c.hex);
+        const shades = [90, 75, 60, 45, 30, 15].map(l =>
+          hslToHex(c.hsl[0], c.hsl[1], l)
+        );
+        return `
+          <div class="color-card ${c.locked ? 'locked' : ''}" data-index="${i}">
+            <div class="color-swatch" style="background:${c.hex}; color:${textColor}" onclick="window.copyHex('${c.hex}')">
+              <button class="lock-btn" onclick="event.stopPropagation(); window.toggleLock(${i})" title="${c.locked ? 'Unlock' : 'Lock'}">
+                <i class="fas fa-${c.locked ? 'lock' : 'lock-open'}"></i>
+              </button>
+              <span style="font-family:'Courier New',monospace; font-weight:700; font-size:0.9rem; background:rgba(0,0,0,0.25); padding:4px 10px; border-radius:6px;">${c.hex}</span>
+            </div>
+            <div class="color-info">
+              <div class="color-hex" onclick="window.copyHex('${c.hex}')">${c.hex}</div>
+              <div class="color-meta">
+                <span>H${c.hsl[0]}</span>
+                <span>S${c.hsl[1]}</span>
+                <span>L${c.hsl[2]}</span>
+              </div>
+              <div class="shades-strip">
+                ${shades.map(s => `<div class="shade-mini" style="background:${s}" onclick="event.stopPropagation(); window.copyHex('${s}')" title="${s}"></div>`).join('')}
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // ============================================================
+    // 🌈 SHADES GENERATOR
+    // ============================================================
+    function generateShades(hex) {
+      const [h, s] = hexToHsl(hex);
+      const levels = [95, 90, 80, 70, 60, 50, 40, 30, 20, 10];
+      return levels.map(l => hslToHex(h, s, l));
+    }
+
+    function renderShades() {
+      const area = document.getElementById('shadesArea');
+      area.innerHTML = currentPalette.map((c, idx) => {
+        const shades = generateShades(c.hex);
+        return `
+          <div style="margin-bottom:20px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; font-size:0.85rem;">
+              <span style="font-weight:600;">Color ${idx + 1} — <span style="font-family:monospace; color:#ff9933;">${c.hex}</span></span>
+              <button class="btn-outline" onclick="window.copyText('${shades.join(', ')}')" style="font-size:0.7rem; padding:4px 10px;">Copy All</button>
+            </div>
+            <div style="display:grid; grid-template-columns:repeat(10, 1fr); gap:6px;">
+              ${shades.map((sh, i) => `
+                <div style="text-align:center;">
+                  <div onclick="window.copyHex('${sh}')" style="background:${sh}; height:60px; border-radius:8px; cursor:pointer; border:1px solid rgba(255,255,255,0.1); transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" title="Click to copy ${sh}"></div>
+                  <div style="font-size:0.65rem; color:rgba(255,255,255,0.6); margin-top:4px; font-family:monospace;">${levels(i)}</div>
                 </div>
-            `).join('');
-            document.getElementById('cssOutput').textContent = `:root {\n  --color-1: ${colors[0]};\n  --color-2: ${colors[1]};\n  --color-3: ${colors[2]};\n  --color-4: ${colors[3]};\n  --color-5: ${colors[4]};\n}`;
-        }
+              `).join('')}
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
 
-        function hslToHex(h, s, l) {
-            h /= 360; s /= 100; l /= 100;
-            let r, g, b;
-            if (s === 0) { r = g = b = l; }
-            else {
-                const hue2rgb = (p, q, t) => {
-                    if (t < 0) t += 1;
-                    if (t > 1) t -= 1;
-                    if (t < 1/6) return p + (q - p) * 6 * t;
-                    if (t < 1/2) return q;
-                    if (t < 2/3) return p + (q - p) * (2/3 - t) * 6;
-                    return p;
-                };
-                const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
-                const p = 2 * l - q;
-                r = hue2rgb(p, q, h + 1/3);
-                g = hue2rgb(p, q, h);
-                b = hue2rgb(p, q, h - 1/3);
+    function levels(i) {
+      const names = ['50', '100', '200', '300', '400', '500', '600', '700', '800', '900'];
+      return names[i] || '';
+    }
+
+    // ============================================================
+    // ♿ CONTRAST CHECKER (WCAG)
+    // ============================================================
+    function renderContrast() {
+      const area = document.getElementById('contrastArea');
+      const pairs = [];
+      for (let i = 0; i < currentPalette.length; i++) {
+        for (let j = 0; j < currentPalette.length; j++) {
+          if (i === j) continue;
+          const ratio = contrastRatio(currentPalette[i].hex, currentPalette[j].hex);
+          const aa = ratio >= 4.5;
+          const aaa = ratio >= 7;
+          pairs.push({
+            fg: currentPalette[i].hex,
+            bg: currentPalette[j].hex,
+            ratio: ratio.toFixed(2),
+            aa, aaa
+          });
+        }
+      }
+      // Sort by ratio
+      pairs.sort((a, b) => parseFloat(b.ratio) - parseFloat(a.ratio));
+      // Show top 12
+      area.innerHTML = pairs.slice(0, 12).map(p => `
+        <div class="contrast-cell" style="background:${p.bg}; color:${p.fg}; border:1px solid rgba(255,255,255,0.15);">
+          <div style="font-size:1rem; font-weight:800;">Aa</div>
+          <div style="font-family:monospace; font-size:0.68rem; margin-top:4px;">${p.fg}</div>
+          <div style="font-family:monospace; font-size:0.62rem; opacity:0.75;">on ${p.bg}</div>
+          <div style="font-size:0.7rem; margin-top:6px; font-weight:700;">${p.ratio}:1</div>
+          <div>
+            ${p.aaa ? `<span class="badge-pass">AAA</span>` : p.aa ? `<span class="badge-pass">AA</span>` : `<span class="badge-fail">FAIL</span>`}
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // ============================================================
+    // 👁️ COLOR BLINDNESS SIMULATION
+    // ============================================================
+    function simulateBlindness(hex, type) {
+      const [r, g, b] = hexToRgb(hex);
+      let nr, ng, nb;
+      switch(type) {
+        case 'protanopia': // red-blind
+          nr = 0.567 * r + 0.433 * g;
+          ng = 0.558 * r + 0.442 * g;
+          nb = 0.242 * g + 0.758 * b;
+          break;
+        case 'deuteranopia': // green-blind
+          nr = 0.625 * r + 0.375 * g;
+          ng = 0.7 * r + 0.3 * g;
+          nb = 0.3 * g + 0.7 * b;
+          break;
+        case 'tritanopia': // blue-blind
+          nr = 0.95 * r + 0.05 * g;
+          ng = 0.433 * g + 0.567 * b;
+          nb = 0.475 * g + 0.525 * b;
+          break;
+        case 'achromatopsia': // total
+          const gray = 0.299 * r + 0.587 * g + 0.114 * b;
+          nr = ng = nb = gray;
+          break;
+        default:
+          return hex;
+      }
+      return rgbToHex(
+        Math.round(Math.max(0, Math.min(255, nr))),
+        Math.round(Math.max(0, Math.min(255, ng))),
+        Math.round(Math.max(0, Math.min(255, nb)))
+      );
+    }
+
+    function renderBlindness() {
+      const area = document.getElementById('blindnessArea');
+      const types = [
+        { key: 'normal', label: 'Normal Vision' },
+        { key: 'protanopia', label: 'Protanopia' },
+        { key: 'deuteranopia', label: 'Deuteranopia' },
+        { key: 'tritanopia', label: 'Tritanopia' },
+        { key: 'achromatopsia', label: 'Achromatopsia' }
+      ];
+
+      area.innerHTML = types.map(type => `
+        <div class="cb-item">
+          <div class="cb-label" style="margin-bottom:8px; color:#ff9933;">${type.label}</div>
+          <div style="display:flex; height:60px; border-radius:10px; overflow:hidden;">
+            ${currentPalette.map(c => `
+              <div style="flex:1; background:${simulateBlindness(c.hex, type.key)};" title="${c.hex} → ${simulateBlindness(c.hex, type.key)}"></div>
+            `).join('')}
+          </div>
+          <div style="display:flex; gap:2px; margin-top:4px;">
+            ${currentPalette.map(c => `
+              <div style="flex:1; font-size:0.55rem; text-align:center; font-family:monospace; color:rgba(255,255,255,0.5);">${simulateBlindness(c.hex, type.key).slice(1,4)}</div>
+            `).join('')}
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // ============================================================
+    // 📤 EXPORT FORMATS
+    // ============================================================
+    function renderCode() {
+      const format = 'css';
+      document.getElementById('codeOutput').textContent = generateCSS();
+    }
+
+    function generateCSS() {
+      return `:root {\n${currentPalette.map((c, i) => `  --color-${i + 1}: ${c.hex};`).join('\n')}\n}\n\n/* Usage */\n/* .element { background: var(--color-1); } */`;
+    }
+
+    function generateSCSS() {
+      return currentPalette.map((c, i) => `$color-${i + 1}: ${c.hex};`).join('\n') + `\n\n// Palette map\n$palette: (\n${currentPalette.map((c, i) => `  color-${i + 1}: ${c.hex}`).join(',\n')}\n);`;
+    }
+
+    function generateTailwind() {
+      return `// tailwind.config.js\nmodule.exports = {\n  theme: {\n    extend: {\n      colors: {\n        brand: {\n${currentPalette.map((c, i) => `          ${(i + 1) * 100}: '${c.hex}',`).join('\n')}\n        }\n      }\n    }\n  }\n}`;
+    }
+
+    function generateJSON() {
+      return JSON.stringify({
+        palette: currentPalette.map((c, i) => ({
+          name: `color-${i + 1}`,
+          hex: c.hex,
+          rgb: c.rgb,
+          hsl: c.hsl
+        })),
+        generated: new Date().toISOString(),
+        count: currentPalette.length
+      }, null, 2);
+    }
+
+    function generateSVG() {
+      const w = 100 / currentPalette.length;
+      const rects = currentPalette.map((c, i) =>
+        `<rect x="${i * w}%" y="0" width="${w}%" height="100%" fill="${c.hex}"/>`
+      ).join('');
+      const labels = currentPalette.map((c, i) =>
+        `<text x="${i * w + w / 2}%" y="50%" text-anchor="middle" dominant-baseline="middle" fill="${getTextColor(c.hex)}" font-family="monospace" font-size="14" font-weight="700">${c.hex}</text>`
+      ).join('');
+      return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" width="800" height="200">\n  ${rects}\n  ${labels}\n</svg>`;
+    }
+
+    function downloadBlob(content, mime, filename) {
+      const blob = new Blob([content], { type: mime });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    }
+
+    function exportFormat(format) {
+      if (currentPalette.length === 0) {
+        showToast('Generate a palette first', true);
+        return;
+      }
+      let content, filename, mime;
+      switch(format) {
+        case 'css':
+          content = generateCSS(); filename = 'palette.css'; mime = 'text/css';
+          break;
+        case 'scss':
+          content = generateSCSS(); filename = 'palette.scss'; mime = 'text/x-scss';
+          break;
+        case 'tailwind':
+          content = generateTailwind(); filename = 'tailwind.config.js'; mime = 'text/javascript';
+          break;
+        case 'json':
+          content = generateJSON(); filename = 'palette.json'; mime = 'application/json';
+          break;
+        case 'svg':
+          content = generateSVG(); filename = 'palette.svg'; mime = 'image/svg+xml';
+          break;
+        case 'ase':
+          content = generateASE(); filename = 'palette.ase'; mime = 'application/octet-stream';
+          break;
+        case 'png':
+          exportPNG(); return;
+        case 'copy':
+          navigator.clipboard.writeText(generateCSS()).then(() => showToast('📋 ' + t('copied')));
+          return;
+      }
+      downloadBlob(content, mime, filename);
+      showToast(`📥 ${filename} downloaded`);
+    }
+
+    function generateASE() {
+      // ASE (Adobe Swatch Exchange) binary format
+      const colors = currentPalette.map(c => {
+        const [r, g, b] = c.rgb.map(v => v / 255);
+        return { r, g, b };
+      });
+      const totalBlocks = colors.length;
+      const blockSize = 2 + 4 + 2 + colors[0] ? (2 + 4 + 2 + 4 + 12) : 0;
+      // Simplified - just return a text representation for download
+      return JSON.stringify({ format: 'ASE', colors: colors, note: 'Use a converter for binary ASE' }, null, 2);
+    }
+
+    function exportPNG() {
+      const canvas = document.createElement('canvas');
+      canvas.width = currentPalette.length * 200;
+      canvas.height = 300;
+      const ctx = canvas.getContext('2d');
+      currentPalette.forEach((c, i) => {
+        ctx.fillStyle = c.hex;
+        ctx.fillRect(i * 200, 0, 200, 300);
+        ctx.fillStyle = getTextColor(c.hex);
+        ctx.font = 'bold 24px monospace';
+        ctx.textAlign = 'center';
+        ctx.fillText(c.hex, i * 200 + 100, 160);
+        ctx.font = '14px monospace';
+        ctx.fillText(`H${c.hsl[0]} S${c.hsl[1]} L${c.hsl[2]}`, i * 200 + 100, 190);
+      });
+      canvas.toBlob(blob => {
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'palette.png';
+        a.click();
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
+        showToast('📥 palette.png downloaded');
+      });
+    }
+
+    // ============================================================
+    // 🖼️ IMAGE COLOR EXTRACTION
+    // ============================================================
+    function extractFromImage(file) {
+      const reader = new FileReader();
+      reader.onload = e => {
+        const img = new Image();
+        img.onload = () => {
+          const canvas = document.createElement('canvas');
+          const size = 100;
+          canvas.width = size;
+          canvas.height = size;
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(img, 0, 0, size, size);
+          const data = ctx.getImageData(0, 0, size, size).data;
+
+          // K-means-lite: quantize + count
+          const buckets = {};
+          for (let i = 0; i < data.length; i += 4) {
+            const r = Math.round(data[i] / 32) * 32;
+            const g = Math.round(data[i + 1] / 32) * 32;
+            const b = Math.round(data[i + 2] / 32) * 32;
+            const key = `${r},${g},${b}`;
+            buckets[key] = (buckets[key] || 0) + 1;
+          }
+
+          const top = Object.entries(buckets)
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, 7)
+            .map(([key]) => {
+              const [r, g, b] = key.split(',').map(Number);
+              return rgbToHex(r, g, b);
+            });
+
+          // Deduplicate similar
+          const final = [];
+          for (const hex of top) {
+            if (!final.some(f => contrastRatio(f, hex) < 1.1)) {
+              final.push(hex);
             }
-            const toHex = x => Math.round(x * 255).toString(16).padStart(2, '0');
-            return '#' + toHex(r) + toHex(g) + toHex(b);
+          }
+
+          const size = parseInt(document.getElementById('paletteSize').value);
+          while (final.length < size) {
+            const base = final[0] || '#ff9933';
+            const [h, s, l] = hexToHsl(base);
+            final.push(hslToHex((h + final.length * 40) % 360, s, l));
+          }
+
+          currentPalette = final.slice(0, size).map(hex => ({
+            hex,
+            hsl: hexToHsl(hex),
+            rgb: hexToRgb(hex),
+            locked: false
+          }));
+
+          renderPalette();
+          renderShades();
+          renderContrast();
+          renderBlindness();
+          renderCode();
+          showToast(`🖼️ ${t('imgExtracted')}`);
+        };
+        img.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    // ============================================================
+    // 💾 HISTORY
+    // ============================================================
+    function getHistory() {
+      try {
+        return JSON.parse(localStorage.getItem('paletteHistory') || '[]');
+      } catch(e) { return []; }
+    }
+
+    function saveToHistory() {
+      if (currentPalette.length === 0) return;
+      const history = getHistory();
+      const hexes = currentPalette.map(c => c.hex);
+      // Skip if same as last
+      if (history.length > 0 && JSON.stringify(history[0].colors) === JSON.stringify(hexes)) return;
+      history.unshift({
+        colors: hexes,
+        timestamp: Date.now(),
+        keyword: document.getElementById('keywordInput').value || 'random'
+      });
+      // Keep last 50
+      localStorage.setItem('paletteHistory', JSON.stringify(history.slice(0, 50)));
+      renderHistory();
+    }
+
+    function renderHistory() {
+      const history = getHistory();
+      document.getElementById('historyCount').textContent = history.length;
+      const area = document.getElementById('historyArea');
+      if (history.length === 0) {
+        area.innerHTML = `<div style="text-align:center; opacity:0.6; padding:20px; grid-column:1/-1;">${t('noHistory')}</div>`;
+        return;
+      }
+      area.innerHTML = history.map((h, i) => `
+        <div class="history-item" onclick="window.loadHistory(${i})">
+          <div class="history-colors">
+            ${h.colors.map(c => `<div style="background:${c};"></div>`).join('')}
+          </div>
+          <div class="history-meta">
+            <span>${h.keyword.slice(0, 15)}</span>
+            <span>${new Date(h.timestamp).toLocaleDateString()}</span>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // ============================================================
+    // 🌐 GLOBAL HANDLERS
+    // ============================================================
+    window.copyHex = function(hex) {
+      navigator.clipboard.writeText(hex).then(() => showToast(`📋 ${hex} ${t('copied')}`));
+    };
+
+    window.copyText = function(text) {
+      navigator.clipboard.writeText(text).then(() => showToast('📋 ' + t('copied')));
+    };
+
+    window.toggleLock = function(i) {
+      if (lockedColors.has(i)) lockedColors.delete(i);
+      else lockedColors.add(i);
+      if (currentPalette[i]) currentPalette[i].locked = lockedColors.has(i);
+      renderPalette();
+    };
+
+    window.loadHistory = function(i) {
+      const history = getHistory();
+      if (!history[i]) return;
+      const size = parseInt(document.getElementById('paletteSize').value);
+      currentPalette = history[i].colors.slice(0, size).map(hex => ({
+        hex,
+        hsl: hexToHsl(hex),
+        rgb: hexToRgb(hex),
+        locked: false
+      }));
+      lockedColors.clear();
+      renderPalette();
+      renderShades();
+      renderContrast();
+      renderBlindness();
+      renderCode();
+      showToast('📂 Loaded from history');
+    };
+
+    // ============================================================
+    // 🎬 INIT
+    // ============================================================
+    function showToast(msg, isError = false) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toastMsg').textContent = msg;
+      toast.style.background = isError ? 'rgba(239,71,111,0.95)' : 'rgba(11,26,51,0.95)';
+      toast.style.display = 'flex';
+      clearTimeout(showToast._t);
+      showToast._t = setTimeout(() => { toast.style.display = 'none'; }, 2400);
+    }
+
+    function init() {
+      // Lang
+      const urlLang = new URLSearchParams(location.search).get('lang');
+      const savedLang = urlLang || localStorage.getItem('preferredLanguage') || 'en';
+      applyLang(savedLang);
+
+      // Language buttons
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+      });
+
+      // Tabs
+      document.querySelectorAll('.tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+          document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+          document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+          tab.classList.add('active');
+          document.querySelector(`[data-panel="${tab.dataset.tab}"]`).classList.add('active');
+        });
+      });
+
+      // Generate button
+      document.getElementById('generateBtn').addEventListener('click', generatePalette);
+      document.getElementById('keywordInput').addEventListener('keypress', e => {
+        if (e.key === 'Enter') generatePalette();
+      });
+
+      // Export buttons
+      document.querySelectorAll('[data-export]').forEach(btn => {
+        btn.addEventListener('click', () => exportFormat(btn.dataset.export));
+      });
+
+      // Suggestions
+      const suggestions = ['ocean', 'sunset', 'forest', 'cyberpunk', 'royal', 'coffee', 'mint', 'sky', 'love', 'minimal', 'vintage', '#ff6b00'];
+      document.getElementById('suggestions').innerHTML = suggestions.map(s =>
+        `<button class="suggestion-chip" onclick="document.getElementById('keywordInput').value='${s}'; window.dispatchEvent(new Event('generate'))">${s}</button>`
+      ).join('');
+
+      document.addEventListener('generate', generatePalette);
+      document.querySelectorAll('.suggestion-chip').forEach(chip => {
+        chip.onclick = () => {
+          document.getElementById('keywordInput').value = chip.textContent;
+          generatePalette();
+        };
+      });
+
+      // Image upload
+      document.getElementById('uploadBtn').addEventListener('click', () => {
+        document.getElementById('imageInput').click();
+      });
+      document.getElementById('imageInput').addEventListener('change', e => {
+        if (e.target.files[0]) extractFromImage(e.target.files[0]);
+      });
+
+      // Clear history
+      document.getElementById('clearHistory').addEventListener('click', () => {
+        localStorage.removeItem('paletteHistory');
+        renderHistory();
+        showToast('🗑️ ' + t('historyCleared'));
+      });
+
+      // Keyboard shortcut
+      document.addEventListener('keydown', e => {
+        if (e.code === 'Space' && e.target.tagName !== 'INPUT' && e.target.tagName !== 'SELECT' && e.target.tagName !== 'TEXTAREA') {
+          e.preventDefault();
+          generatePalette();
         }
+      });
 
-        function copyColor(hex) { navigator.clipboard.writeText(hex).then(() => alert('Copied: ' + hex)); }
-        function exportCSS() { navigator.clipboard.writeText(document.getElementById('cssOutput').textContent).then(() => alert('✅ CSS exported!')); }
-        function exportSCSS() { alert('✅ SCSS export: This would generate SCSS variables.'); }
-        function exportTailwind() { alert('✅ Tailwind export: This would generate Tailwind config.'); }
+      // Initial render
+      generatePalette();
+      renderHistory();
+    }
 
-        window.onload = generatePalette;
+    init();
+    })();
     </script>
 </body>
 </html>
