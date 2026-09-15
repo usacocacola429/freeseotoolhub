@@ -1,307 +1,1431 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPG77KWVCP"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PFPCTBFG3Y"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-ZPG77KWVCP');
-        gtag('config', 'G-PFPCTBFG3Y');
-    </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enterprise SERP Simulator 2026 | AI-Powered Google Preview & CTR Optimizer | FreeSEOToolHub</title>
-    <meta name="description" content="Enterprise-grade Google SERP simulator with knowledge panel, rich snippets, AI optimization, CTR estimation, mobile/desktop, and export. 100% free.">
-    <link rel="canonical" href="https://freeseotoolhub.com/google-serp-simulator.html">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        * { margin:0; padding:0; box-sizing:border-box; font-family:'Inter', sans-serif; }
-        body { background:linear-gradient(135deg,#0b1a33 0%,#1e2b4f 100%); min-height:100vh; padding:80px 16px 40px; color:#fff; }
-        .container { max-width:1100px; margin:0 auto; }
-        .navbar { background:rgba(11,26,51,0.95); backdrop-filter:blur(10px); border-bottom:1px solid rgba(255,255,255,0.1); }
-        .navbar-brand { font-weight:700; font-size:1.4rem; color:#fff!important; }
-        .navbar-brand i { color:#ff9933; }
-        .nav-link { color:rgba(255,255,255,0.8)!important; font-weight:500; }
-        .nav-link:hover { color:#ff9933!important; }
-        .tool-header { text-align:center; margin-bottom:30px; }
-        .tool-header h1 { font-size:2.2rem; font-weight:800; background:linear-gradient(135deg,#ff9933,#ff6b00); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
-        .glass-card { background:rgba(255,255,255,0.05); backdrop-filter:blur(12px); border:1px solid rgba(255,255,255,0.1); border-radius:16px; padding:30px; box-shadow:0 20px 50px rgba(0,0,0,0.4); }
-        .form-group { margin-bottom:20px; }
-        .form-group label { display:block; margin-bottom:6px; font-weight:600; font-size:0.9rem; color:rgba(255,255,255,0.7); }
-        input, textarea, select { width:100%; padding:14px 16px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:12px; font-size:1rem; color:#fff; }
-        input:focus, textarea:focus, select:focus { outline:none; border-color:#ff9933; box-shadow:0 0 0 3px rgba(255,153,51,0.15); }
-        textarea { resize:vertical; min-height:80px; }
-        .btn-primary { background:linear-gradient(135deg,#ff9933,#ff6b00); color:#0b1a33; padding:14px 30px; border:none; border-radius:50px; font-weight:700; font-size:1.05rem; cursor:pointer; transition:all 0.3s; width:100%; }
-        .btn-primary:hover { transform:translateY(-2px); box-shadow:0 10px 25px rgba(255,153,51,0.3); }
-        .btn-outline { background:transparent; border:1px solid rgba(255,255,255,0.2); color:#fff; padding:12px 24px; border-radius:50px; font-weight:600; cursor:pointer; transition:all 0.3s; }
-        .btn-outline:hover { background:rgba(255,255,255,0.1); }
-        .google-preview { background:#fff; border-radius:12px; padding:20px; margin-top:20px; color:#222; position:relative; }
-        .google-title { color:#1a0dab; font-size:1.3rem; font-weight:500; text-decoration:underline; cursor:pointer; margin-bottom:2px; }
-        .google-url { color:#006621; font-size:0.85rem; margin-bottom:2px; }
-        .google-desc { color:#545454; font-size:0.9rem; line-height:1.5; }
-        .google-date { color:#70757a; font-size:0.8rem; margin-top:4px; }
-        .google-favicon { width:16px; height:16px; border-radius:50%; vertical-align:middle; margin-right:6px; }
-        .rich-snippet { background:#f8f9fa; border:1px solid #e9ecef; border-radius:8px; padding:12px; margin-top:10px; }
-        .rich-snippet .star { color:#f9ab00; font-size:0.85rem; }
-        .rich-snippet .price { color:#b12704; font-weight:600; }
-        .knowledge-panel { background:#fff; border:1px solid #dadce0; border-radius:8px; padding:16px; margin-top:15px; text-align:center; }
-        .knowledge-panel img { width:80px; height:80px; border-radius:50%; margin-bottom:10px; }
-        .device-toggle { display:flex; gap:10px; margin:15px 0; }
-        .device-btn { padding:8px 20px; border:1px solid rgba(255,255,255,0.2); border-radius:30px; background:transparent; color:#fff; cursor:pointer; transition:all 0.3s; }
-        .device-btn.active { background:#ff9933; color:#0b1a33; border-color:#ff9933; }
-        .ctr-estimator { background:rgba(255,255,255,0.05); border-radius:12px; padding:15px; margin:15px 0; }
-        .ctr-score { font-size:2.5rem; font-weight:800; color:#10b981; }
-        .history-box { background:rgba(255,255,255,0.03); border-radius:12px; padding:10px; margin-top:15px; }
-        .history-item { display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px solid rgba(255,255,255,0.05); font-size:0.85rem; color:rgba(255,255,255,0.6); }
-        .badge-container { display:flex; gap:10px; flex-wrap:wrap; margin:15px 0; justify-content:center; }
-        .badge { background:rgba(255,255,255,0.05); padding:6px 14px; border-radius:30px; font-size:0.8rem; border:1px solid rgba(255,255,255,0.1); color:rgba(255,255,255,0.7); }
-        @media (max-width:768px) { .tool-header h1 { font-size:1.8rem; } .glass-card { padding:20px; } }
-    </style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPG77KWVCP"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-ZPG77KWVCP');
+gtag('config', 'G-PFPCTBFG3Y');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<title>SERP Simulator 2026 — Real Google Preview & CTR Optimizer | FreeSEOToolHub</title>
+<meta name="description" content="Free SERP simulator with real pixel-width truncation, CTR estimation, URL fetch, AI optimization, and PNG/PDF export. Mobile + desktop. 100% client-side.">
+<meta name="keywords" content="serp simulator, google preview, serp preview tool, ctr estimator, meta title preview, meta description preview, google search preview">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://freeseotoolhub.com/tools/google-serp-simulator.html">
+
+<link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/tools/google-serp-simulator.html">
+<link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/tools/google-serp-simulator.html?lang=hi">
+<link rel="alternate" hreflang="ur" href="https://freeseotoolhub.com/tools/google-serp-simulator.html?lang=ur">
+<link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/tools/google-serp-simulator.html?lang=de">
+<link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/tools/google-serp-simulator.html?lang=es">
+<link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/tools/google-serp-simulator.html">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://freeseotoolhub.com/tools/google-serp-simulator.html">
+<meta property="og:title" content="SERP Simulator 2026 — Real Google Preview">
+<meta property="og:description" content="Real pixel-width truncation + CTR estimation + AI optimization.">
+<meta property="og:image" content="https://freeseotoolhub.com/images/serp-og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@graph": [
+{
+"@type": "WebApplication",
+"name": "SERP Simulator",
+"url": "https://freeseotoolhub.com/tools/google-serp-simulator.html",
+"description": "Real Google SERP preview with pixel-width truncation, CTR estimation, and AI optimization.",
+"applicationCategory": "SEOApplication",
+"operatingSystem": "Any",
+"offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+"isAccessibleForFree": true
+},
+{
+"@type": "BreadcrumbList",
+"itemListElement": [
+{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://freeseotoolhub.com/"},
+{"@type": "ListItem", "position": 2, "name": "SERP Simulator", "item": "https://freeseotoolhub.com/tools/google-serp-simulator.html"}
+]
+}
+]
+}
+</script>
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Inter', sans-serif; }
+:root {
+  --primary:#ff9933; --primary-dark:#e68a2e;
+  --success:#10b981; --warning:#f59e0b; --danger:#ef4444; --info:#3b82f6;
+  --glass:rgba(255,255,255,0.06);
+  --border:rgba(255,255,255,0.12);
+}
+body { background:linear-gradient(135deg,#0b1a33 0%,#1e2b4f 100%); min-height:100vh; padding:80px 16px 40px; color:#fff; }
+.container { max-width:1300px; margin:0 auto; }
+
+.navbar { background:rgba(11,26,51,0.95); backdrop-filter:blur(10px); border-bottom:1px solid var(--border); position:fixed; top:0; left:0; right:0; z-index:100; }
+.nav-container { max-width:1300px; margin:0 auto; padding:0 20px; display:flex; justify-content:space-between; align-items:center; height:70px; }
+.navbar-brand { font-weight:700; font-size:1.4rem; color:#fff!important; text-decoration:none; display:flex; align-items:center; gap:8px; }
+.navbar-brand i { color:var(--primary); }
+.nav-links { display:flex; gap:5px; }
+.nav-link { color:rgba(255,255,255,0.8)!important; text-decoration:none; font-weight:500; padding:8px 14px; border-radius:8px; font-size:0.9rem; transition:all 0.3s; }
+.nav-link:hover, .nav-link.active { background:rgba(255,153,51,0.15); color:var(--primary)!important; }
+
+.tool-header { text-align:center; margin-bottom:24px; }
+.tool-header h1 {
+  font-size:clamp(1.8rem, 4vw, 2.5rem); font-weight:800;
+  background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+  margin-bottom:10px;
+}
+.tool-header p { opacity:0.85; max-width:800px; margin:0 auto; }
+
+.lang-bar { display:flex; gap:0.4rem; justify-content:center; flex-wrap:wrap; margin-bottom:1.2rem; }
+.lang-btn { background:rgba(255,255,255,0.06); border:1px solid var(--border); color:#fff; padding:0.35rem 0.9rem; border-radius:20px; cursor:pointer; font-size:0.78rem; font-weight:500; transition:all 0.3s; font-family:inherit; }
+.lang-btn:hover { background:rgba(255,153,51,0.2); }
+.lang-btn.active { background:var(--primary); color:#0b1a33; font-weight:700; }
+
+.glass-card {
+  background:var(--glass); backdrop-filter:blur(12px);
+  border:1px solid var(--border); border-radius:16px;
+  padding:24px; box-shadow:0 20px 50px rgba(0,0,0,0.4);
+  margin-bottom:20px;
+}
+
+.layout { display:grid; grid-template-columns:400px 1fr; gap:20px; }
+@media (max-width:1000px) { .layout { grid-template-columns:1fr; } }
+
+.form-group { margin-bottom:16px; }
+.form-group label {
+  display:flex; justify-content:space-between; align-items:center;
+  margin-bottom:6px; font-weight:600; font-size:0.82rem; color:rgba(255,255,255,0.75);
+}
+.form-group label .counter {
+  font-family:'Courier New', monospace; font-size:0.75rem;
+  padding:2px 8px; border-radius:12px; background:rgba(255,255,255,0.05);
+}
+.counter.good { background:rgba(16,185,129,0.15); color:var(--success); }
+.counter.warn { background:rgba(245,158,11,0.15); color:var(--warning); }
+.counter.bad { background:rgba(239,68,68,0.15); color:var(--danger); }
+
+.form-group input, .form-group textarea, .form-group select {
+  width:100%; padding:11px 14px;
+  background:rgba(255,255,255,0.05); border:1px solid var(--border);
+  border-radius:10px; font-size:0.9rem; color:#fff;
+  font-family:inherit; outline:none; transition:all 0.3s;
+}
+textarea { resize:vertical; min-height:80px; line-height:1.55; }
+.form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+  border-color:var(--primary); box-shadow:0 0 0 3px rgba(255,153,51,0.15);
+}
+select option { background:#0b1a33; color:#fff; }
+
+.row-2 { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+@media (max-width:500px) { .row-2 { grid-template-columns:1fr; } }
+
+.btn-primary {
+  background:linear-gradient(135deg,var(--primary),var(--primary-dark)); color:#0b1a33;
+  padding:13px 24px; border:none; border-radius:50px;
+  font-weight:700; font-size:0.95rem; cursor:pointer; transition:all 0.3s;
+  width:100%; font-family:inherit;
+  display:inline-flex; align-items:center; justify-content:center; gap:0.5rem;
+}
+.btn-primary:hover:not(:disabled) { transform:translateY(-2px); box-shadow:0 10px 25px rgba(255,153,51,0.3); }
+.btn-primary:disabled { opacity:0.6; cursor:wait; }
+
+.btn-outline {
+  background:rgba(255,255,255,0.05); border:1px solid var(--border);
+  color:#fff; padding:9px 16px; border-radius:50px;
+  font-weight:600; cursor:pointer; transition:all 0.3s;
+  font-size:0.82rem; font-family:inherit;
+  display:inline-flex; align-items:center; gap:0.4rem;
+}
+.btn-outline:hover:not(:disabled) { background:rgba(255,153,51,0.2); border-color:var(--primary); }
+.btn-outline:disabled { opacity:0.5; cursor:not-allowed; }
+
+.actions-row { display:flex; gap:8px; flex-wrap:wrap; margin-top:14px; }
+
+/* PREVIEW */
+.preview-wrapper {
+  background:rgba(255,255,255,0.03);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:18px;
+  position:sticky; top:90px;
+}
+
+.preview-toolbar {
+  display:flex; justify-content:space-between; align-items:center;
+  margin-bottom:14px; flex-wrap:wrap; gap:10px;
+}
+.preview-toolbar .label {
+  font-size:0.78rem; color:rgba(255,255,255,0.55);
+  display:flex; align-items:center; gap:6px;
+}
+
+.device-toggle { display:flex; gap:4px; }
+.device-btn {
+  padding:6px 14px; background:rgba(255,255,255,0.05);
+  border:1px solid var(--border); border-radius:20px;
+  cursor:pointer; font-weight:600; transition:all 0.3s;
+  color:rgba(255,255,255,0.8); font-family:inherit; font-size:0.78rem;
+}
+.device-btn:hover { border-color:var(--primary); }
+.device-btn.active { background:var(--primary); color:#0b1a33; border-color:var(--primary); }
+
+.theme-toggle { display:flex; gap:4px; }
+.theme-btn {
+  padding:6px 14px; background:rgba(255,255,255,0.05);
+  border:1px solid var(--border); border-radius:20px;
+  cursor:pointer; font-weight:600; transition:all 0.3s;
+  color:rgba(255,255,255,0.8); font-family:inherit; font-size:0.78rem;
+}
+.theme-btn.active { background:var(--primary); color:#0b1a33; border-color:var(--primary); }
+
+.device-frame {
+  margin:0 auto;
+  transition:all 0.3s;
+}
+
+/* GOOGLE PREVIEW */
+.google-preview {
+  background:#fff;
+  border-radius:12px;
+  padding:20px;
+  color:#202124;
+  font-family:arial,sans-serif;
+  transition:all 0.3s;
+  border:1px solid #dfe1e5;
+}
+.google-preview.dark {
+  background:#202124;
+  color:#e8eaed;
+  border-color:#5f6368;
+}
+
+.g-url-row {
+  display:flex; align-items:center; gap:8px;
+  margin-bottom:6px;
+  font-size:0.78rem;
+  color:#4d5156;
+}
+.google-preview.dark .g-url-row { color:#bdc1c6; }
+
+.g-favicon {
+  width:20px; height:20px; border-radius:50%;
+  background:#ff9933; display:inline-flex; align-items:center; justify-content:center;
+  color:#fff; font-size:0.7rem; font-weight:700;
+  background-size:cover; background-position:center;
+  flex-shrink:0;
+}
+
+.g-domain { font-weight:400; }
+.g-breadcrumb { color:#5f6368; }
+.google-preview.dark .g-breadcrumb { color:#9aa0a6; }
+
+.g-title {
+  font-size:1.15rem; color:#1a0dab; line-height:1.3;
+  margin-bottom:4px;
+  word-break:break-word;
+}
+.google-preview.dark .g-title { color:#8ab4f8; }
+.g-title:hover { text-decoration:underline; cursor:pointer; }
+
+.g-desc {
+  font-size:0.85rem; color:#4d5156; line-height:1.55;
+  word-break:break-word;
+}
+.google-preview.dark .g-desc { color:#bdc1c6; }
+
+.g-date {
+  font-size:0.78rem; color:#70757a; margin-top:6px;
+}
+.google-preview.dark .g-date { color:#9aa0a6; }
+
+.g-stars { color:#f9ab00; letter-spacing:1px; }
+
+/* RICH SNIPPETS */
+.rich-snippet {
+  background:#f8f9fa;
+  border:1px solid #e9ecef;
+  border-radius:8px;
+  padding:12px 14px;
+  margin-top:12px;
+  font-size:0.85rem;
+}
+.google-preview.dark .rich-snippet {
+  background:#303134; border-color:#5f6368; color:#e8eaed;
+}
+.rich-snippet .price { color:#b12704; font-weight:700; }
+.google-preview.dark .rich-snippet .price { color:#f28b82; }
+
+.rich-snippet .faq-item {
+  padding:6px 0;
+  border-bottom:1px solid #e9ecef;
+  display:flex; align-items:flex-start; gap:8px;
+}
+.rich-snippet .faq-item:last-child { border-bottom:none; }
+
+/* KNOWLEDGE PANEL */
+.knowledge-panel {
+  background:#fff;
+  border:1px solid #dadce0;
+  border-radius:12px;
+  padding:16px;
+  margin-top:14px;
+  text-align:center;
+}
+.google-preview.dark .knowledge-panel {
+  background:#303134; border-color:#5f6368;
+}
+.knowledge-panel .logo {
+  width:64px; height:64px; border-radius:50%;
+  background:#ff9933; display:inline-flex; align-items:center; justify-content:center;
+  color:#fff; font-size:1.5rem; font-weight:700;
+  margin-bottom:8px;
+  background-size:cover; background-position:center;
+}
+.knowledge-panel h4 { font-size:1rem; font-weight:700; margin-bottom:4px; }
+.knowledge-panel p { font-size:0.78rem; color:#5f6368; }
+.google-preview.dark .knowledge-panel p { color:#9aa0a6; }
+
+/* TRUNCATION ALERT */
+.truncation-alert {
+  background:rgba(245,158,11,0.1);
+  border-left:3px solid var(--warning);
+  border-radius:6px;
+  padding:8px 12px;
+  font-size:0.75rem;
+  margin-top:8px;
+  color:var(--warning);
+  display:none;
+}
+.truncation-alert.show { display:block; }
+
+/* CTR BOX */
+.ctr-box {
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:12px;
+  padding:16px;
+  margin-top:16px;
+}
+.ctr-header {
+  display:flex; justify-content:space-between; align-items:center;
+  margin-bottom:8px;
+}
+.ctr-label {
+  font-size:0.8rem; color:rgba(255,255,255,0.65); font-weight:600;
+}
+.ctr-value {
+  font-size:1.8rem; font-weight:800; line-height:1;
+}
+.ctr-bar-track {
+  height:8px; background:rgba(255,255,255,0.1); border-radius:8px; overflow:hidden;
+  margin-bottom:8px;
+}
+.ctr-bar-fill {
+  height:100%; border-radius:8px; transition:width 0.6s;
+}
+.ctr-note {
+  font-size:0.72rem; color:rgba(255,255,255,0.5);
+}
+
+/* SCORE GRID */
+.score-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(120px, 1fr));
+  gap:10px;
+  margin-top:14px;
+}
+.score-item {
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.06);
+  border-radius:10px;
+  padding:10px;
+  text-align:center;
+}
+.score-item .label {
+  font-size:0.68rem; text-transform:uppercase; letter-spacing:0.5px;
+  color:rgba(255,255,255,0.55); margin-bottom:4px; font-weight:600;
+}
+.score-item .value {
+  font-size:1.05rem; font-weight:800;
+}
+
+/* HISTORY */
+.history-list { max-height:220px; overflow-y:auto; }
+.history-item {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:8px 12px; background:rgba(255,255,255,0.03);
+  border-radius:8px; margin-bottom:6px; font-size:0.78rem;
+  border-left:3px solid var(--primary); cursor:pointer;
+  transition:all 0.2s;
+  gap:8px;
+}
+.history-item:hover { background:rgba(255,153,51,0.1); }
+.history-item .h-title {
+  flex:1; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+}
+.history-item .h-date {
+  font-size:0.68rem; opacity:0.5;
+}
+
+/* TOAST */
+.toast-container { position:fixed; bottom:24px; right:24px; z-index:9999; display:flex; flex-direction:column; gap:8px; }
+.toast {
+  background:rgba(30,41,59,0.95); backdrop-filter:blur(10px);
+  color:#fff; padding:12px 20px; border-radius:12px;
+  border:1px solid var(--border); font-size:0.88rem;
+  font-weight:500; animation:slideIn 0.3s ease;
+  display:flex; align-items:center; gap:10px;
+  max-width:360px;
+}
+.toast.success { background:rgba(16,185,129,0.95); }
+.toast.error { background:rgba(239,68,68,0.95); }
+.toast.warning { background:rgba(245,158,11,0.95); }
+@keyframes slideIn { from { transform:translateX(120%); opacity:0; } to { transform:translateX(0); opacity:1; } }
+
+/* FOOTER */
+.footer {
+  text-align:center; padding:20px;
+  background:rgba(255,255,255,0.03); border-radius:16px;
+  margin-top:20px; border:1px solid var(--border);
+}
+.footer-links { display:flex; justify-content:center; gap:22px; flex-wrap:wrap; margin-bottom:10px; }
+.footer-links a { color:rgba(255,255,255,0.7); text-decoration:none; font-weight:500; font-size:0.88rem; }
+.footer-links a:hover { color:var(--primary); }
+
+/* FAQ */
+.faq-section {
+  background:rgba(255,255,255,0.03);
+  border:1px solid var(--border);
+  border-radius:16px; padding:24px; margin-top:20px;
+}
+.faq-section h2 { font-size:1.2rem; margin-bottom:16px; display:flex; align-items:center; gap:10px; }
+.faq-section h2 i { color:var(--primary); }
+.faq-item { margin-bottom:16px; }
+.faq-q { font-weight:700; color:#fff; margin-bottom:6px; display:flex; align-items:flex-start; gap:8px; font-size:0.92rem; }
+.faq-q i { color:var(--primary); margin-top:4px; }
+.faq-a { color:rgba(255,255,255,0.7); font-size:0.86rem; line-height:1.6; padding-left:22px; }
+
+@media (max-width:768px) {
+  body { padding:70px 12px 30px; }
+  .tool-header h1 { font-size:1.6rem; }
+  .glass-card { padding:16px; }
+  .preview-wrapper { position:static; }
+  .toast-container { left:16px; right:16px; bottom:16px; }
+}
+</style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="/"><i class="fas fa-rocket me-2"></i>FreeSEOToolHub</a>
-            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="nav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/blog/">Blog</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
 
-    <div class="container">
-        <div class="tool-header">
-            <h1><i class="fas fa-search"></i> Enterprise SERP Simulator 2026</h1>
-            <p>AI-powered Google search preview with knowledge panel, rich snippets, and competitor comparison. <strong>Enter any URL — get instant preview!</strong></p>
-            <div class="badge-container">
-                <span class="badge"><i class="fas fa-mobile-alt"></i> Mobile/Desktop</span>
-                <span class="badge"><i class="fas fa-star"></i> Rich Snippets</span>
-                <span class="badge"><i class="fas fa-chart-line"></i> CTR Estimator</span>
-                <span class="badge"><i class="fas fa-robot"></i> AI Optimizer</span>
-                <span class="badge"><i class="fas fa-flag"></i> Competitor Comparison</span>
-            </div>
-        </div>
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="/" class="navbar-brand"><i class="fas fa-rocket"></i> FreeSEOToolHub</a>
+    <div class="nav-links">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/blog/" class="nav-link">Blog</a>
+      <a href="/about.html" class="nav-link">About</a>
+      <a href="/contact.html" class="nav-link">Contact</a>
+    </div>
+  </div>
+</nav>
 
-        <div class="glass-card">
-            <div class="row g-4">
-                <div class="col-md-5">
-                    <div class="form-group">
-                        <label><i class="fas fa-heading"></i> Meta Title (60 chars max)</label>
-                        <input type="text" id="metaTitle" placeholder="Enter your page title..." value="Free SEO Tools 2026 - 20 Essential Tools for Global SEO">
-                    </div>
-                    <div class="form-group">
-                        <label><i class="fas fa-align-left"></i> Meta Description (160 chars max)</label>
-                        <textarea id="metaDesc" placeholder="Enter your meta description...">Discover 20 free SEO tools for 2026. Meta tags, plagiarism checker, backlink analyzer, SERP simulator & more. 100% free, no signup.</textarea>
-                    </div>
-                    <div class="form-group">
-                        <label><i class="fas fa-link"></i> Display URL</label>
-                        <input type="text" id="displayUrl" placeholder="https://example.com" value="https://softwaretoolguide.com">
-                    </div>
-                    <div class="form-group">
-                        <label><i class="fas fa-star"></i> Rich Snippet Type</label>
-                        <select id="snippetType">
-                            <option value="none">None</option>
-                            <option value="review">Review (Star Rating)</option>
-                            <option value="product">Product (Price + Rating)</option>
-                            <option value="recipe">Recipe (Time + Calories)</option>
-                            <option value="event">Event (Date + Location)</option>
-                            <option value="faq">FAQ (Questions + Answers)</option>
-                        </select>
-                    </div>
-                    <button class="btn-primary" onclick="updatePreview()"><i class="fas fa-sync-alt"></i> Update Preview</button>
-                    <div style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap;">
-                        <button class="btn-outline" onclick="fetchFromURL()"><i class="fas fa-globe"></i> Fetch from URL</button>
-                        <button class="btn-outline" onclick="optimizeAI()"><i class="fas fa-robot"></i> AI Optimize</button>
-                        <button class="btn-outline" onclick="exportPNG()"><i class="fas fa-download"></i> Export PNG</button>
-                        <button class="btn-outline" onclick="exportPDF()"><i class="fas fa-file-pdf"></i> Export PDF</button>
-                    </div>
-                </div>
+<div class="container">
+  <div class="tool-header">
+    <h1><i class="fas fa-search"></i> <span data-i18n="title">SERP Simulator 2026</span></h1>
+    <p data-i18n="subtitle">Real Google preview with pixel-width truncation, real CTR estimation, URL fetch, and rule-based AI optimization. 100% client-side.</p>
+  </div>
 
-                <div class="col-md-7">
-                    <div style="background:rgba(255,255,255,0.03); border-radius:12px; padding:15px; border:1px solid rgba(255,255,255,0.1);">
-                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
-                            <span style="color:rgba(255,255,255,0.5); font-size:0.8rem;"><i class="fas fa-info-circle"></i> Google Search Preview</span>
-                            <div class="device-toggle">
-                                <button class="device-btn active" onclick="toggleDevice('desktop')">💻 Desktop</button>
-                                <button class="device-btn" onclick="toggleDevice('mobile')">📱 Mobile</button>
-                            </div>
-                        </div>
-                        <div class="google-preview" id="googlePreview">
-                            <div class="google-title" id="previewTitle">Free SEO Tools 2026 - 20 Essential Tools for Global SEO</div>
-                            <div class="google-url" id="previewUrl"><span class="google-favicon" id="faviconIcon" style="background:#ff9933; display:inline-block;"></span><span id="displayUrlText">softwaretoolguide.com</span> › seo-tools</div>
-                            <div class="google-desc" id="previewDesc">Discover 20 free SEO tools for 2026. Meta tags, plagiarism checker, backlink analyzer, SERP simulator & more. 100% free, no signup.</div>
-                            <div class="google-date" id="previewDate"><span class="google-star">★</span> 4.8 (1,500 reviews) · Updated July 2026</div>
-                            <div id="richSnippetArea"></div>
-                            <div id="knowledgePanelArea"></div>
-                        </div>
-                        <div class="ctr-estimator">
-                            <div style="display:flex; justify-content:space-between; align-items:center;">
-                                <span style="color:rgba(255,255,255,0.7);">Estimated CTR (Click-Through Rate)</span>
-                                <div><span class="ctr-score" id="ctrScore">12.5%</span> <span style="font-size:0.8rem; color:rgba(255,255,255,0.5);">(Top 3 position)</span></div>
-                            </div>
-                            <div class="progress" style="height:8px; background:rgba(255,255,255,0.1); border-radius:10px; margin-top:8px;">
-                                <div class="progress-bar" id="ctrBar" style="width:75%; background:#10b981; border-radius:10px;"></div>
-                            </div>
-                        </div>
-                        <div class="history-box">
-                            <div style="display:flex; justify-content:space-between; font-size:0.85rem; color:rgba(255,255,255,0.6); margin-bottom:8px;">
-                                <span><i class="fas fa-history"></i> Recent Previews</span>
-                                <button class="btn-outline" style="padding:2px 12px; font-size:0.7rem;" onclick="clearHistory()">Clear</button>
-                            </div>
-                            <div id="historyList"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <div class="lang-bar">
+    <button class="lang-btn active" data-lang="en">🇺🇸 English</button>
+    <button class="lang-btn" data-lang="hi">🇮🇳 हिन्दी</button>
+    <button class="lang-btn" data-lang="ur">🇵🇰 اردو</button>
+    <button class="lang-btn" data-lang="de">🇩🇪 Deutsch</button>
+    <button class="lang-btn" data-lang="es">🇪🇸 Español</button>
+  </div>
+
+  <div class="layout">
+    <!-- LEFT: INPUT -->
+    <div class="glass-card">
+      <h3 style="margin-bottom:14px; font-size:1rem; display:flex; align-items:center; gap:8px;">
+        <i class="fas fa-pen" style="color:var(--primary);"></i> <span data-i18n="inputTitle">Your Meta Data</span>
+      </h3>
+
+      <div class="form-group">
+        <label>
+          <span><i class="fas fa-heading"></i> <span data-i18n="metaTitle">Meta Title</span></span>
+          <span class="counter" id="titleCounter">0 / 60</span>
+        </label>
+        <input type="text" id="metaTitle" placeholder="Free SEO Tools 2026 — 20 Essential Tools" maxlength="200" value="Free SEO Tools 2026 — 20 Essential Tools for Global SEO">
+      </div>
+
+      <div class="form-group">
+        <label>
+          <span><i class="fas fa-align-left"></i> <span data-i18n="metaDesc">Meta Description</span></span>
+          <span class="counter" id="descCounter">0 / 160</span>
+        </label>
+        <textarea id="metaDesc" placeholder="Discover 20 free SEO tools..." maxlength="500">Discover 20 free SEO tools for 2026. Meta tags, plagiarism checker, backlink analyzer, SERP simulator & more. 100% free, no signup.</textarea>
+      </div>
+
+      <div class="form-group">
+        <label>
+          <span><i class="fas fa-link"></i> <span data-i18n="url">Display URL</span></span>
+        </label>
+        <input type="text" id="displayUrl" placeholder="https://example.com/page" value="https://freeseotoolhub.com/tools/seo-tools">
+      </div>
+
+      <div class="row-2">
+        <div class="form-group">
+          <span style="display:block; margin-bottom:6px; font-weight:600; font-size:0.82rem; color:rgba(255,255,255,0.75);">
+            <i class="fas fa-star"></i> <span data-i18n="snippetType">Snippet Type</span>
+          </span>
+          <select id="snippetType">
+            <option value="none">None</option>
+            <option value="review">⭐ Review (Stars)</option>
+            <option value="product">🛒 Product (Price)</option>
+            <option value="recipe">🍳 Recipe (Time + Calories)</option>
+            <option value="event">📅 Event (Date)</option>
+            <option value="faq">❓ FAQ</option>
+            <option value="video">🎥 Video</option>
+          </select>
         </div>
+        <div class="form-group">
+          <span style="display:block; margin-bottom:6px; font-weight:600; font-size:0.82rem; color:rgba(255,255,255,0.75);">
+            <i class="fas fa-robot"></i> <span data-i18n="siteName">Site Name</span>
+          </span>
+          <input type="text" id="siteName" value="FreeSEOToolHub" placeholder="Site name">
+        </div>
+      </div>
+
+      <button class="btn-primary" id="updateBtn">
+        <i class="fas fa-sync-alt"></i> <span data-i18n="updateBtn">Update Preview</span>
+      </button>
+
+      <div class="actions-row">
+        <button class="btn-outline" id="fetchBtn"><i class="fas fa-globe"></i> <span data-i18n="fetchBtn">Fetch URL</span></button>
+        <button class="btn-outline" id="optimizeBtn"><i class="fas fa-magic"></i> <span data-i18n="optimizeBtn">AI Optimize</span></button>
+        <button class="btn-outline" id="exportPngBtn"><i class="fas fa-image"></i> PNG</button>
+        <button class="btn-outline" id="exportPdfBtn"><i class="fas fa-file-pdf"></i> PDF</button>
+        <button class="btn-outline" id="exportJsonBtn"><i class="fas fa-file-code"></i> JSON</button>
+        <button class="btn-outline" id="clearBtn"><i class="fas fa-eraser"></i> <span data-i18n="clear">Clear</span></button>
+      </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        const GLOBAL_API_KEY = "rsk_01KX30NR2A1988J2N3GWG1KF5F";
-        window.GLOBAL_API_KEY = GLOBAL_API_KEY;
-        let history = JSON.parse(localStorage.getItem('serpHistory')) || [];
+    <!-- RIGHT: PREVIEW -->
+    <div>
+      <div class="preview-wrapper">
+        <div class="preview-toolbar">
+          <div class="label">
+            <i class="fas fa-eye"></i> <span data-i18n="preview">Live Preview</span>
+          </div>
+          <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            <div class="device-toggle">
+              <button class="device-btn active" data-device="desktop"><i class="fas fa-desktop"></i> Desktop</button>
+              <button class="device-btn" data-device="mobile"><i class="fas fa-mobile-alt"></i> Mobile</button>
+            </div>
+            <div class="theme-toggle">
+              <button class="theme-btn active" data-theme="light"><i class="fas fa-sun"></i></button>
+              <button class="theme-btn" data-theme="dark"><i class="fas fa-moon"></i></button>
+            </div>
+          </div>
+        </div>
 
-        function fetchFromURL() {
-            const url = document.getElementById('displayUrl').value.trim();
-            if (!url) {
-                alert('Please enter a valid URL.');
-                return;
-            }
+        <div class="device-frame" id="deviceFrame" style="max-width:100%;">
+          <div class="google-preview" id="googlePreview">
+            <div class="g-url-row">
+              <span class="g-favicon" id="gFavicon">F</span>
+              <div>
+                <div class="g-domain" id="gDomain">freeseotoolhub.com</div>
+                <div class="g-breadcrumb" id="gBreadcrumb">https://freeseotoolhub.com › tools › seo-tools</div>
+              </div>
+            </div>
+            <div class="g-title" id="gTitle">Free SEO Tools 2026 — 20 Essential Tools for Global SEO</div>
+            <div class="g-desc" id="gDesc">Discover 20 free SEO tools for 2026...</div>
+            <div class="g-date" id="gDate"></div>
+            <div id="richSnippetArea"></div>
+            <div id="knowledgePanelArea"></div>
+          </div>
+        </div>
 
-            // Extract domain from URL
-            let domain = url.replace(/^https?:\/\//, '').replace(/\/.*$/, '');
-            document.getElementById('displayUrlText').textContent = domain;
+        <div class="truncation-alert" id="truncationAlert"></div>
+      </div>
 
-            // Generate dynamic title based on URL
-            const urlParts = domain.split('.');
-            let siteName = urlParts[0].charAt(0).toUpperCase() + urlParts[0].slice(1);
-            if (urlParts.length > 2) {
-                siteName = urlParts[1].charAt(0).toUpperCase() + urlParts[1].slice(1);
-            }
+      <!-- CTR + SCORES -->
+      <div class="ctr-box">
+        <div class="ctr-header">
+          <div class="ctr-label"><i class="fas fa-mouse-pointer"></i> <span data-i18n="ctrEst">Estimated CTR (Position 1)</span></div>
+          <div class="ctr-value" id="ctrValue">—</div>
+        </div>
+        <div class="ctr-bar-track"><div class="ctr-bar-fill" id="ctrBar" style="width:0%"></div></div>
+        <div class="ctr-note" id="ctrNote"></div>
 
-            // Update Title
-            const titles = [
-                `${siteName} - Expert Reviews, Guides & Best Tools for 2026`,
-                `${siteName} | The Ultimate Resource for Professionals`,
-                `${siteName} 2026 - In-Depth Analysis & Expert Insights`
-            ];
-            document.getElementById('metaTitle').value = titles[Math.floor(Math.random() * titles.length)];
+        <div class="score-grid">
+          <div class="score-item">
+            <div class="label"><i class="fas fa-heading"></i> Title Width</div>
+            <div class="value" id="titlePxValue">—</div>
+          </div>
+          <div class="score-item">
+            <div class="label"><i class="fas fa-align-left"></i> Desc Width</div>
+            <div class="value" id="descPxValue">—</div>
+          </div>
+          <div class="score-item">
+            <div class="label"><i class="fas fa-star"></i> Snippet</div>
+            <div class="value" id="snippetScore">—</div>
+          </div>
+          <div class="score-item">
+            <div class="label"><i class="fas fa-check-circle"></i> Overall</div>
+            <div class="value" id="overallScore">—</div>
+          </div>
+        </div>
+      </div>
 
-            // Update Description
-            const descs = [
-                `Discover the best ${siteName} tools, guides, and resources for 2026. Expert reviews, tutorials, and tips to help you succeed.`,
-                `Your complete guide to ${siteName}. Find the latest tools, expert opinions, and industry insights. Updated for 2026.`,
-                `Everything you need to know about ${siteName}. Comprehensive guides, reviews, and comparisons. 100% free.`
-            ];
-            document.getElementById('metaDesc').value = descs[Math.floor(Math.random() * descs.length)];
+      <!-- HISTORY -->
+      <div class="glass-card" style="margin-top:20px;">
+        <h3 style="margin-bottom:12px; font-size:0.95rem; display:flex; align-items:center; gap:8px;">
+          <i class="fas fa-history" style="color:var(--primary);"></i> <span data-i18n="historyTitle">Recent Previews</span>
+          <button class="btn-outline" id="clearHistory" style="margin-left:auto; font-size:0.7rem; padding:4px 10px;"><i class="fas fa-trash"></i></button>
+        </h3>
+        <div class="history-list" id="historyList"></div>
+      </div>
+    </div>
+  </div>
 
-            // Update Knowledge Panel
-            const knowledgeHTML = `
-                <div class="knowledge-panel">
-                    <img src="https://via.placeholder.com/80" alt="Brand">
-                    <h4>${siteName}</h4>
-                    <p style="font-size:0.8rem; color:#555;">Reviews · Guides · 2026</p>
-                    <p style="font-size:0.75rem; color:#777;">★ 4.8 (1,500 reviews) · Updated 2026</p>
-                </div>
-            `;
-            document.getElementById('knowledgePanelArea').innerHTML = knowledgeHTML;
+  <!-- FAQ -->
+  <div class="faq-section">
+    <h2><i class="fas fa-circle-question"></i> <span data-i18n="faqTitle">Frequently Asked Questions</span></h2>
+    <div class="faq-item">
+      <div class="faq-q"><i class="fas fa-question-circle"></i> Why is pixel-width more accurate than character count?</div>
+      <div class="faq-a" data-i18n="faq1">Google truncates titles at ~580px and descriptions at ~990px, not by character count. "iiiiiiii" takes fewer pixels than "MMMMMMMM" — our tool measures real pixels via Canvas API.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><i class="fas fa-question-circle"></i> How is CTR estimated?</div>
+      <div class="faq-a" data-i18n="faq2">CTR is estimated from real-world industry data: position 1 average 27-31%, with adjustments for title length, description quality, snippet presence, and mobile vs desktop.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><i class="fas fa-question-circle"></i> Is the AI optimization real AI?</div>
+      <div class="faq-a" data-i18n="faq3">It's rule-based optimization, not LLM. It applies proven SEO techniques: removes filler words, adds power words, ensures proper length, and improves structure.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><i class="fas fa-question-circle"></i> Can I fetch data from my URL?</div>
+      <div class="faq-a" data-i18n="faq4">Yes! Click "Fetch URL" to pull your real page title and meta description via CORS proxy. Works for most sites.</div>
+    </div>
+  </div>
 
-            // Update Favicon
-            document.getElementById('faviconIcon').style.background = `url('https://www.google.com/s2/favicons?domain=${domain}') center/cover`;
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/blog/">Blog</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/privacy.html">Privacy</a>
+    </div>
+    <p style="opacity:0.5; font-size:0.82rem;">© 2026 FreeSEOToolHub | SERP Simulator v3.0 | 100% Client-Side</p>
+  </div>
+</div>
 
-            // Update Preview
-            updatePreview();
-        }
+<div class="toast-container" id="toastContainer"></div>
 
-        function updatePreview() {
-            const title = document.getElementById('metaTitle').value || 'Untitled';
-            const desc = document.getElementById('metaDesc').value || 'No description';
-            const url = document.getElementById('displayUrl').value || 'example.com';
-            const snippet = document.getElementById('snippetType').value;
-            
-            document.getElementById('previewTitle').textContent = title;
-            document.getElementById('previewDesc').textContent = desc;
-            
-            // Update URL display
-            let domain = url.replace(/^https?:\/\//, '').replace(/\/.*$/, '');
-            document.getElementById('displayUrlText').textContent = domain;
-            
-            // Rich Snippet
-            let snippetHTML = '';
-            if (snippet === 'review') snippetHTML = `<div class="rich-snippet"><span class="star">★★★★★</span> 4.8 (1,500 reviews)</div>`;
-            else if (snippet === 'product') snippetHTML = `<div class="rich-snippet"><span class="price">$29.99</span> · <span class="star">★★★★★</span> 4.8 (1,500 reviews)</div>`;
-            else if (snippet === 'recipe') snippetHTML = `<div class="rich-snippet">⏱ 25 min · 350 calories · <span class="star">★★★★★</span> 4.9 (800 reviews)</div>`;
-            else if (snippet === 'event') snippetHTML = `<div class="rich-snippet">📅 July 20, 2026 · 6:00 PM · New York</div>`;
-            else if (snippet === 'faq') snippetHTML = `<div class="rich-snippet">❓ What is SERP? · ❓ How to optimize?</div>`;
-            document.getElementById('richSnippetArea').innerHTML = snippetHTML;
-            
-            // CTR Estimator
-            const ctr = (Math.random() * 8 + 8).toFixed(1);
-            document.getElementById('ctrScore').textContent = ctr + '%';
-            document.getElementById('ctrBar').style.width = Math.min(ctr * 7, 95) + '%';
-            
-            // Save to history
-            history.unshift({ title, url: domain, date: new Date().toLocaleString() });
-            if (history.length > 10) history.pop();
-            localStorage.setItem('serpHistory', JSON.stringify(history));
-            renderHistory();
-        }
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+(function() {
+'use strict';
 
-        function toggleDevice(device) {
-            document.querySelectorAll('.device-btn').forEach(b => b.classList.remove('active'));
-            event.target.classList.add('active');
-            const preview = document.getElementById('googlePreview');
-            if (device === 'mobile') { preview.style.maxWidth = '375px'; preview.style.margin = '0 auto'; }
-            else { preview.style.maxWidth = '100%'; preview.style.margin = '0'; }
-        }
+// ============================================================
+// 🌐 I18N
+// ============================================================
+const I18N = {
+  en: {
+    title: 'SERP Simulator 2026',
+    subtitle: 'Real Google preview with pixel-width truncation, real CTR estimation, URL fetch, and rule-based AI optimization. 100% client-side.',
+    inputTitle: 'Your Meta Data',
+    metaTitle: 'Meta Title', metaDesc: 'Meta Description', url: 'Display URL',
+    snippetType: 'Snippet Type', siteName: 'Site Name',
+    updateBtn: 'Update Preview', fetchBtn: 'Fetch URL', optimizeBtn: 'AI Optimize', clear: 'Clear',
+    preview: 'Live Preview', ctrEst: 'Estimated CTR (Position 1)', historyTitle: 'Recent Previews',
+    faqTitle: 'Frequently Asked Questions',
+    faq1: 'Google truncates at ~580px (title) and ~990px (description). We measure real pixels via Canvas.',
+    faq2: 'CTR estimated from industry data: position 1 avg 27-31%, adjusted for title, description, snippet.',
+    faq3: 'Rule-based optimization — not LLM. Applies proven SEO techniques.',
+    faq4: 'Yes! Click Fetch URL to pull real title and description from your page.',
+    copied: 'Copied!', cleared: 'Cleared',
+    fetchError: 'Could not fetch URL. CORS proxy may be blocked.',
+    fetched: 'Fetched from URL!',
+    optimized: 'AI Optimized!',
+    truncTitle: '⚠️ Title will be truncated in Google (over 580px)',
+    truncDesc: '⚠️ Description will be truncated (over 990px)',
+    perfect: '✅ No truncation — fits perfectly',
+    ctrNoteHigh: 'Excellent CTR potential',
+    ctrNoteMed: 'Good CTR potential',
+    ctrNoteLow: 'Room for improvement',
+    exported: 'Downloaded!',
+    noHistory: 'No history yet'
+  },
+  hi: {
+    title: 'SERP सिम्युलेटर 2026',
+    subtitle: 'पिक्सेल-चौड़ाई ट्रंकेशन, CTR अनुमान, URL फ़ेच और AI ऑप्टिमाइज़ेशन के साथ असली Google पूर्वावलोकन।',
+    inputTitle: 'आपका मेटा डेटा',
+    metaTitle: 'मेटा शीर्षक', metaDesc: 'मेटा विवरण', url: 'प्रदर्शन URL',
+    snippetType: 'स्निपेट प्रकार', siteName: 'साइट नाम',
+    updateBtn: 'पूर्वावलोकन अपडेट करें', fetchBtn: 'URL फ़ेच करें', optimizeBtn: 'AI ऑप्टिमाइज़', clear: 'साफ़',
+    preview: 'लाइव पूर्वावलोकन', ctrEst: 'अनुमानित CTR (स्थान 1)', historyTitle: 'हाल के पूर्वावलोकन',
+    faqTitle: 'अक्सर पूछे जाने वाले प्रश्न',
+    faq1: 'Google ~580px (शीर्षक) और ~990px (विवरण) पर काटता है। हम Canvas से असली पिक्सेल मापते हैं।',
+    faq2: 'CTR उद्योग डेटा से अनुमानित।',
+    faq3: 'नियम-आधारित अनुकूलन।',
+    faq4: 'हाँ! Fetch URL पर क्लिक करें।',
+    copied: 'कॉपी!', cleared: 'साफ़ किया',
+    fetchError: 'URL नहीं मिला।',
+    fetched: 'URL से लाया गया!',
+    optimized: 'AI ऑप्टिमाइज़!',
+    truncTitle: '⚠️ शीर्षक Google में काटा जाएगा',
+    truncDesc: '⚠️ विवरण काटा जाएगा',
+    perfect: '✅ कोई कटाव नहीं',
+    ctrNoteHigh: 'बेहतरीन CTR क्षमता',
+    ctrNoteMed: 'अच्छी CTR क्षमता',
+    ctrNoteLow: 'सुधार की गुंजाइश',
+    exported: 'डाउनलोड!',
+    noHistory: 'अभी कोई इतिहास नहीं'
+  },
+  ur: {
+    title: 'SERP سمیلیٹر 2026',
+    subtitle: 'پکسل چوڑائی، CTR تخمینہ، URL فیچ اور AI آپٹیمائزیشن کے ساتھ حقیقی Google پیش نظارہ۔',
+    inputTitle: 'آپ کا میٹا ڈیٹا',
+    metaTitle: 'میٹا عنوان', metaDesc: 'میٹا تفصیل', url: 'ڈسپلے URL',
+    snippetType: 'سنیپٹ قسم', siteName: 'سائٹ کا نام',
+    updateBtn: 'پیش نظارہ اپ ڈیٹ', fetchBtn: 'URL لائیں', optimizeBtn: 'AI آپٹیمائز', clear: 'صاف کریں',
+    preview: 'لائیو پیش نظارہ', ctrEst: 'تخمینی CTR', historyTitle: 'حالیہ پیش نظارے',
+    faqTitle: 'اکثر پوچھے گئے سوالات',
+    faq1: 'Google ~580px پر کاٹتا ہے۔',
+    faq2: 'CTR صنعت کے ڈیٹا سے۔',
+    faq3: 'اصول پر مبنی آپٹیمائزیشن۔',
+    faq4: 'جی ہاں! Fetch URL پر کلک کریں۔',
+    copied: 'کاپی!', cleared: 'صاف',
+    fetchError: 'URL نہیں ملا۔',
+    fetched: 'URL سے!',
+    optimized: 'AI!',
+    truncTitle: '⚠️ عنوان کاٹا جائے گا',
+    truncDesc: '⚠️ تفصیل کاٹی جائے گی',
+    perfect: '✅ کوئی کٹاؤ نہیں',
+    ctrNoteHigh: 'بہترین', ctrNoteMed: 'اچھا', ctrNoteLow: 'بہتری',
+    exported: 'ڈاؤن لوڈ!', noHistory: 'کوئی تاریخ نہیں'
+  },
+  de: {
+    title: 'SERP-Simulator 2026',
+    subtitle: 'Echte Google-Vorschau mit Pixel-Truncation, CTR-Schätzung, URL-Abruf und KI-Optimierung.',
+    inputTitle: 'Ihre Meta-Daten',
+    metaTitle: 'Meta-Titel', metaDesc: 'Meta-Beschreibung', url: 'Anzeige-URL',
+    snippetType: 'Snippet-Typ', siteName: 'Seitenname',
+    updateBtn: 'Vorschau aktualisieren', fetchBtn: 'URL abrufen', optimizeBtn: 'KI optimieren', clear: 'Löschen',
+    preview: 'Live-Vorschau', ctrEst: 'Geschätzte CTR', historyTitle: 'Letzte Vorschauen',
+    faqTitle: 'Häufige Fragen',
+    faq1: 'Google kürzt bei ~580px (Titel) und ~990px (Beschreibung).',
+    faq2: 'CTR aus Branchendaten geschätzt.',
+    faq3: 'Regelbasierte Optimierung.',
+    faq4: 'Ja! Klicken Sie auf URL abrufen.',
+    copied: 'Kopiert!', cleared: 'Gelöscht',
+    fetchError: 'URL konnte nicht geladen werden.',
+    fetched: 'Von URL geladen!',
+    optimized: 'KI optimiert!',
+    truncTitle: '⚠️ Titel wird abgeschnitten',
+    truncDesc: '⚠️ Beschreibung wird abgeschnitten',
+    perfect: '✅ Keine Kürzung',
+    ctrNoteHigh: 'Ausgezeichnet', ctrNoteMed: 'Gut', ctrNoteLow: 'Verbesserung',
+    exported: 'Heruntergeladen!', noHistory: 'Noch kein Verlauf'
+  },
+  es: {
+    title: 'Simulador SERP 2026',
+    subtitle: 'Vista previa real de Google con truncado por píxeles, estimación de CTR, obtención de URL y optimización con IA.',
+    inputTitle: 'Tus Meta Datos',
+    metaTitle: 'Meta Título', metaDesc: 'Meta Descripción', url: 'URL de Visualización',
+    snippetType: 'Tipo de Fragmento', siteName: 'Nombre del Sitio',
+    updateBtn: 'Actualizar Vista', fetchBtn: 'Obtener URL', optimizeBtn: 'Optimizar IA', clear: 'Limpiar',
+    preview: 'Vista Previa', ctrEst: 'CTR Estimado', historyTitle: 'Vistas Recientes',
+    faqTitle: 'Preguntas Frecuentes',
+    faq1: 'Google trunca a ~580px (título) y ~990px (descripción).',
+    faq2: 'CTR estimado de datos de la industria.',
+    faq3: 'Optimización basada en reglas.',
+    faq4: '¡Sí! Haz clic en Obtener URL.',
+    copied: '¡Copiado!', cleared: 'Limpiado',
+    fetchError: 'No se pudo obtener URL.',
+    fetched: '¡Obtenido!',
+    optimized: '¡Optimizado!',
+    truncTitle: '⚠️ El título se truncará',
+    truncDesc: '⚠️ La descripción se truncará',
+    perfect: '✅ Sin truncado',
+    ctrNoteHigh: 'Excelente', ctrNoteMed: 'Bueno', ctrNoteLow: 'Mejorable',
+    exported: '¡Descargado!', noHistory: 'Sin historial aún'
+  }
+};
 
-        function optimizeAI() {
-            const title = document.getElementById('metaTitle');
-            const desc = document.getElementById('metaDesc');
-            const aiTitles = [
-                "2026 SEO Tools: 20 Free Must-Have Tools for Global Success",
-                "Top 20 Free SEO Tools 2026 - Boost Rankings Instantly",
-                "Free SEO Tools 2026 - 20 Powerful Tools for Professionals"
-            ];
-            const aiDescs = [
-                "Discover the best free SEO tools for 2026. Includes SERP simulator, spam checker, favicon generator, and more. 100% free.",
-                "Boost your Google rankings with these 20 free SEO tools. AI-powered insights, rich snippets, and mobile testing included.",
-                "Complete SEO toolkit for 2026. 20 free tools including meta tags, plagiarism checker, backlink analyzer, and SERP simulator."
-            ];
-            title.value = aiTitles[Math.floor(Math.random() * aiTitles.length)];
-            desc.value = aiDescs[Math.floor(Math.random() * aiDescs.length)];
-            updatePreview();
-        }
+let currentLang = 'en';
+const t = k => I18N[currentLang][k] || I18N.en[k] || k;
 
-        function exportPNG() { alert('✅ PNG Export: This would download the preview as a PNG image.'); }
-        function exportPDF() { alert('✅ PDF Export: This would download a detailed report as PDF.'); }
+function applyLang(lang) {
+  if (!I18N[lang]) lang = 'en';
+  currentLang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const k = el.getAttribute('data-i18n');
+    el.textContent = t(k);
+  });
+  document.querySelectorAll('.lang-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.lang === lang);
+  });
+  localStorage.setItem('preferredLanguage', lang);
+  const url = new URL(location.href);
+  url.searchParams.set('lang', lang);
+  history.replaceState({}, '', url);
+  if (typeof refreshAll === 'function') refreshAll();
+}
 
-        function renderHistory() {
-            const list = document.getElementById('historyList');
-            list.innerHTML = history.map(h => `<div class="history-item"><span>${h.title.substring(0,30)}...</span><span>${h.date}</span></div>`).join('');
-        }
+// ============================================================
+// 🔧 HELPERS
+// ============================================================
+const $ = id => document.getElementById(id);
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+function showToast(msg, type = 'success') {
+  const container = $('toastContainer');
+  const toast = document.createElement('div');
+  toast.className = 'toast ' + type;
+  const icon = type === 'error' ? 'fa-times-circle' : type === 'warning' ? 'fa-exclamation-triangle' : 'fa-check-circle';
+  toast.innerHTML = `<i class="fas ${icon}"></i> <span>${escapeHtml(msg)}</span>`;
+  container.appendChild(toast);
+  setTimeout(() => {
+    toast.style.opacity = '0';
+    toast.style.transition = 'opacity 0.3s';
+    setTimeout(() => toast.remove(), 300);
+  }, 2800);
+}
 
-        function clearHistory() {
-            history = [];
-            localStorage.setItem('serpHistory', JSON.stringify(history));
-            renderHistory();
-        }
+// ============================================================
+// 📏 PIXEL MEASUREMENT
+// ============================================================
+let measureCanvas = null;
+function measurePixels(text, font) {
+  if (!measureCanvas) measureCanvas = document.createElement('canvas');
+  const ctx = measureCanvas.getContext('2d');
+  ctx.font = font;
+  return Math.round(ctx.measureText(text).width);
+}
 
-        // Initial load
-        window.onload = () => { updatePreview(); renderHistory(); };
-    </script>
+const TITLE_FONT_DESKTOP = '20px arial, sans-serif';
+const TITLE_FONT_MOBILE = '18px arial, sans-serif';
+const DESC_FONT_DESKTOP = '14px arial, sans-serif';
+const DESC_FONT_MOBILE = '13px arial, sans-serif';
+const TITLE_MAX_PX = 580;
+const DESC_MAX_PX = 990;
+const TITLE_MAX_PX_MOBILE = 600;
+const DESC_MAX_PX_MOBILE = 680;
+
+function truncateByPixels(text, maxPx, font) {
+  if (measurePixels(text, font) <= maxPx) return { text, truncated: false };
+  let lo = 0, hi = text.length;
+  while (lo < hi) {
+    const mid = Math.floor((lo + hi) / 2);
+    if (measurePixels(text.slice(0, mid) + '…', font) <= maxPx) lo = mid + 1;
+    else hi = mid;
+  }
+  return { text: text.slice(0, Math.max(0, lo - 1)) + '…', truncated: true };
+}
+
+// ============================================================
+// 🎯 STATE
+// ============================================================
+let state = {
+  device: 'desktop',
+  theme: 'light',
+  history: []
+};
+
+try {
+  state.history = JSON.parse(localStorage.getItem('serpHistoryV3') || '[]');
+} catch(e) { state.history = []; }
+
+// ============================================================
+// 🎨 RENDER PREVIEW
+// ============================================================
+function refreshAll() {
+  const title = $('metaTitle').value.trim();
+  const desc = $('metaDesc').value.trim();
+  const url = $('displayUrl').value.trim();
+  const snippetType = $('snippetType').value;
+  const siteName = $('siteName').value.trim() || 'My Site';
+
+  // Update counters
+  updateCounter('titleCounter', title.length, 60);
+  updateCounter('descCounter', desc.length, 160);
+
+  // Parse URL
+  let domain = 'example.com';
+  let breadcrumb = 'https://example.com';
+  try {
+    const u = new URL(url.startsWith('http') ? url : 'https://' + url);
+    domain = u.hostname.replace(/^www\./, '');
+    const pathParts = u.pathname.split('/').filter(Boolean);
+    breadcrumb = u.hostname + (pathParts.length ? ' › ' + pathParts.slice(0, 3).join(' › ') : '');
+  } catch(e) {
+    domain = url.replace(/^https?:\/\//, '').split('/')[0] || 'example.com';
+    breadcrumb = url;
+  }
+
+  // Measure pixel widths
+  const titleFont = state.device === 'mobile' ? TITLE_FONT_MOBILE : TITLE_FONT_DESKTOP;
+  const descFont = state.device === 'mobile' ? DESC_FONT_MOBILE : DESC_FONT_DESKTOP;
+  const titleMax = state.device === 'mobile' ? TITLE_MAX_PX_MOBILE : TITLE_MAX_PX;
+  const descMax = state.device === 'mobile' ? DESC_MAX_PX_MOBILE : DESC_MAX_PX;
+
+  const titlePx = measurePixels(title, titleFont);
+  const descPx = measurePixels(desc, descFont);
+
+  const titleTrunc = truncateByPixels(title, titleMax, titleFont);
+  const descTrunc = truncateByPixels(desc, descMax, descFont);
+
+  // Update preview DOM
+  $('gTitle').textContent = titleTrunc.text || 'Untitled';
+  $('gDesc').textContent = descTrunc.text || 'No description';
+  $('gDomain').textContent = domain;
+  $('gBreadcrumb').textContent = breadcrumb;
+
+  // Favicon
+  const favicon = $('gFavicon');
+  const initial = siteName.charAt(0).toUpperCase() || 'S';
+  favicon.textContent = initial;
+  favicon.style.background = `linear-gradient(135deg, #ff9933, #e68a2e)`;
+  favicon.style.color = '#fff';
+  favicon.style.fontSize = '0.75rem';
+  favicon.style.fontWeight = '700';
+
+  // Date / rating line
+  const dateEl = $('gDate');
+  let dateHtml = '';
+  if (snippetType === 'review') {
+    dateHtml = `<span class="g-stars">★★★★★</span> 4.8 (1,500 reviews) · Updated ${new Date().getFullYear()}`;
+  } else if (snippetType === 'product') {
+    dateHtml = `<span class="g-stars">★★★★★</span> 4.8 · In Stock`;
+  } else {
+    dateHtml = `Updated ${new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}`;
+  }
+  dateEl.innerHTML = dateHtml;
+
+  // Rich snippet
+  renderRichSnippet(snippetType);
+
+  // Knowledge panel
+  renderKnowledgePanel(siteName, domain, snippetType);
+
+  // Update scores
+  $('titlePxValue').textContent = titlePx + 'px';
+  $('titlePxValue').style.color = titlePx <= titleMax ? '#10b981' : '#ef4444';
+  $('descPxValue').textContent = descPx + 'px';
+  $('descPxValue').style.color = descPx <= descMax ? '#10b981' : '#ef4444';
+  $('snippetScore').textContent = snippetType === 'none' ? '✗' : '✓';
+  $('snippetScore').style.color = snippetType === 'none' ? 'rgba(255,255,255,0.5)' : '#10b981';
+
+  // Compute overall
+  const overall = computeOverallScore(titlePx, titleMax, descPx, descMax, snippetType);
+  $('overallScore').textContent = overall.score + '/100';
+  $('overallScore').style.color = overall.score >= 80 ? '#10b981' : overall.score >= 60 ? '#3b82f6' : overall.score >= 40 ? '#f59e0b' : '#ef4444';
+
+  // Truncation alert
+  const alertEl = $('truncationAlert');
+  if (titleTrunc.truncated || descTrunc.truncated) {
+    alertEl.classList.add('show');
+    const msgs = [];
+    if (titleTrunc.truncated) msgs.push(t('truncTitle'));
+    if (descTrunc.truncated) msgs.push(t('truncDesc'));
+    alertEl.innerHTML = msgs.join('<br>');
+  } else {
+    alertEl.classList.add('show');
+    alertEl.style.background = 'rgba(16,185,129,0.1)';
+    alertEl.style.borderLeftColor = '#10b981';
+    alertEl.style.color = '#10b981';
+    alertEl.innerHTML = t('perfect');
+  }
+
+  // CTR estimation
+  updateCTR(titlePx, titleMax, descPx, descMax, snippetType);
+}
+
+function updateCounter(id, len, max) {
+  const el = $(id);
+  el.textContent = `${len} / ${max}`;
+  el.classList.remove('good', 'warn', 'bad');
+  if (len === 0) el.classList.add('bad');
+  else if (len <= max) el.classList.add('good');
+  else if (len <= max * 1.15) el.classList.add('warn');
+  else el.classList.add('bad');
+}
+
+function renderRichSnippet(type) {
+  const area = $('richSnippetArea');
+  if (type === 'none') { area.innerHTML = ''; return; }
+  let html = '';
+  if (type === 'review') {
+    html = `<div class="rich-snippet"><span class="g-stars">★★★★★</span> <strong>4.8</strong> (1,500 reviews) · 8 photos</div>`;
+  } else if (type === 'product') {
+    html = `<div class="rich-snippet"><span class="price">$29.99</span> · <span class="g-stars">★★★★☆</span> 4.5 (320) · Free shipping</div>`;
+  } else if (type === 'recipe') {
+    html = `<div class="rich-snippet">⏱️ 25 min · 🍽️ 350 cal · <span class="g-stars">★★★★★</span> 4.9 (800 reviews)</div>`;
+  } else if (type === 'event') {
+    html = `<div class="rich-snippet">📅 Sat, Jul 20 · 6:00 PM · 🎫 from $25</div>`;
+  } else if (type === 'faq') {
+    html = `<div class="rich-snippet">
+      <div class="faq-item"><i class="fas fa-chevron-down" style="color:#5f6368; margin-top:3px; font-size:0.7rem;"></i> <span>What is SERP simulator?</span></div>
+      <div class="faq-item"><i class="fas fa-chevron-down" style="color:#5f6368; margin-top:3px; font-size:0.7rem;"></i> <span>How to optimize meta tags?</span></div>
+      <div class="faq-item"><i class="fas fa-chevron-down" style="color:#5f6368; margin-top:3px; font-size:0.7rem;"></i> <span>Why is pixel-width important?</span></div>
+    </div>`;
+  } else if (type === 'video') {
+    html = `<div class="rich-snippet">🎥 Video · 8:24 · 125K views · 2 days ago</div>`;
+  }
+  area.innerHTML = html;
+}
+
+function renderKnowledgePanel(siteName, domain, snippetType) {
+  const area = $('knowledgePanelArea');
+  if (snippetType !== 'review' && snippetType !== 'product') {
+    area.innerHTML = '';
+    return;
+  }
+  const initial = siteName.charAt(0).toUpperCase() || 'S';
+  area.innerHTML = `
+    <div class="knowledge-panel">
+      <div class="logo">${escapeHtml(initial)}</div>
+      <h4>${escapeHtml(siteName)}</h4>
+      <p>${escapeHtml(domain)}</p>
+      <p style="margin-top:6px;"><span class="g-stars">★★★★★</span> 4.8 · 1,500 reviews</p>
+    </div>
+  `;
+}
+
+function computeOverallScore(titlePx, titleMax, descPx, descMax, snippetType) {
+  let score = 0;
+  // Title 40%
+  if (titlePx <= titleMax * 0.95 && titlePx >= titleMax * 0.6) score += 40;
+  else if (titlePx <= titleMax) score += 30;
+  else score += 10;
+  // Desc 30%
+  if (descPx <= descMax * 0.95 && descPx >= descMax * 0.6) score += 30;
+  else if (descPx <= descMax) score += 20;
+  else score += 5;
+  // Snippet 30%
+  if (snippetType !== 'none') score += 30;
+  else score += 10;
+  return { score };
+}
+
+// ============================================================
+// 🎯 CTR ESTIMATION (Real Industry Data)
+// ============================================================
+function updateCTR(titlePx, titleMax, descPx, descMax, snippetType) {
+  // Base CTR for position 1 (industry avg ~28.5%)
+  let ctr = 28.5;
+
+  // Title adjustment
+  if (titlePx > titleMax) ctr -= 6; // truncated hurts badly
+  else if (titlePx < titleMax * 0.5) ctr -= 3; // too short
+  else if (titlePx >= titleMax * 0.7) ctr += 2; // ideal range
+
+  // Desc adjustment
+  if (descPx > descMax) ctr -= 4;
+  else if (descPx < descMax * 0.5) ctr -= 2;
+  else if (descPx >= descMax * 0.7) ctr += 1.5;
+
+  // Snippet bonus
+  if (snippetType !== 'none') ctr += 4;
+
+  // Mobile penalty (industry avg is lower)
+  if (state.device === 'mobile') ctr *= 0.85;
+
+  ctr = Math.max(1, Math.min(45, ctr));
+
+  const color = ctr >= 25 ? '#10b981' : ctr >= 15 ? '#3b82f6' : ctr >= 8 ? '#f59e0b' : '#ef4444';
+  $('ctrValue').textContent = ctr.toFixed(1) + '%';
+  $('ctrValue').style.color = color;
+  $('ctrBar').style.width = Math.min(100, (ctr / 40) * 100) + '%';
+  $('ctrBar').style.background = color;
+
+  const note = ctr >= 25 ? t('ctrNoteHigh') : ctr >= 15 ? t('ctrNoteMed') : t('ctrNoteLow');
+  $('ctrNote').textContent = note + ' · Industry avg for #1 is ~28.5%';
+}
+
+// ============================================================
+// 🌐 FETCH URL (Real)
+// ============================================================
+const PROXIES = [
+  { name: 'allorigins-raw', url: u => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}` },
+  { name: 'corsproxy.io', url: u => `https://corsproxy.io/?${encodeURIComponent(u)}` },
+  { name: 'allorigins-get', url: u => `https://api.allorigins.win/get?url=${encodeURIComponent(u)}` }
+];
+
+async function fetchHtml(url) {
+  for (const proxy of PROXIES) {
+    try {
+      const res = await fetch(proxy.url(url), { method: 'GET' });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      let text = await res.text();
+      if (proxy.name === 'allorigins-get') {
+        try {
+          const parsed = JSON.parse(text);
+          text = parsed.contents || '';
+        } catch(e) {}
+      }
+      if (text && text.length > 100) return text;
+    } catch(e) {
+      console.warn(`Proxy ${proxy.name} failed:`, e.message);
+    }
+  }
+  return null;
+}
+
+async function fetchFromUrl() {
+  const url = $('displayUrl').value.trim();
+  if (!url) { showToast('Enter a URL first', 'error'); return; }
+
+  const btn = $('fetchBtn');
+  btn.disabled = true;
+  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Fetching...';
+
+  try {
+    const fullUrl = url.startsWith('http') ? url : 'https://' + url;
+    const html = await fetchHtml(fullUrl);
+    if (!html) throw new Error('Fetch failed');
+
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+    const title = doc.querySelector('title')?.textContent?.trim() || '';
+    const desc = doc.querySelector('meta[name="description"]')?.getAttribute('content')?.trim() || '';
+    const siteName = doc.querySelector('meta[property="og:site_name"]')?.getAttribute('content')?.trim() || '';
+
+    if (title) $('metaTitle').value = title;
+    if (desc) $('metaDesc').value = desc;
+    if (siteName) $('siteName').value = siteName;
+
+    refreshAll();
+    showToast('✅ ' + t('fetched'));
+  } catch(e) {
+    console.error(e);
+    showToast(t('fetchError'), 'error');
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = '<i class="fas fa-globe"></i> <span data-i18n="fetchBtn">Fetch URL</span>';
+    // reapply translation
+    btn.querySelector('[data-i18n]') && (btn.querySelector('[data-i18n]').textContent = t('fetchBtn'));
+  }
+}
+
+// ============================================================
+// 🤖 AI OPTIMIZE (Rule-based)
+// ============================================================
+function optimizeAI() {
+  let title = $('metaTitle').value.trim();
+  let desc = $('metaDesc').value.trim();
+
+  // Remove filler words
+  const fillers = ['very', 'really', 'just', 'actually', 'basically', 'simply', 'quite', 'literally', 'definitely'];
+  fillers.forEach(w => {
+    title = title.replace(new RegExp(`\\b${w}\\b\\s*`, 'gi'), '');
+    desc = desc.replace(new RegExp(`\\b${w}\\b\\s*`, 'gi'), '');
+  });
+
+  // Title optimization
+  if (title.length < 30) {
+    const year = new Date().getFullYear();
+    if (!/\d{4}/.test(title)) title = `${title} ${year}`;
+    if (!/[—\-:|]/.test(title)) title = `${title} — Complete Guide`;
+  }
+  // Add power word if missing
+  const powerWords = ['free', 'best', 'top', 'ultimate', 'complete', 'essential', 'proven'];
+  const hasPower = powerWords.some(w => title.toLowerCase().includes(w));
+  if (!hasPower) title = `Best ${title}`;
+
+  // Description optimization
+  if (desc.length < 120) {
+    if (!/[.!?]$/.test(desc)) desc += '.';
+    desc += ' 100% free, no signup required.';
+  }
+  // Add CTA if missing
+  const ctas = ['learn more', 'discover', 'get started', 'try now', 'explore', 'download'];
+  const hasCta = ctas.some(c => desc.toLowerCase().includes(c));
+  if (!hasCta) desc += ' Get started today.';
+
+  // Cap lengths
+  if (title.length > 65) title = title.slice(0, 62) + '...';
+  if (desc.length > 165) desc = desc.slice(0, 162) + '...';
+
+  $('metaTitle').value = title;
+  $('metaDesc').value = desc;
+
+  refreshAll();
+  showToast('🤖 ' + t('optimized'));
+}
+
+// ============================================================
+// 📤 EXPORTS
+// ============================================================
+function exportPng() {
+  // Use html2canvas-free approach: draw preview manually
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+  const width = 800;
+  const titleH = 120;
+  const descH = 100;
+  const urlH = 40;
+  canvas.width = width;
+  canvas.height = titleH + descH + urlH + 60;
+
+  // Background
+  ctx.fillStyle = '#ffffff';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  // URL
+  ctx.fillStyle = '#4d5156';
+  ctx.font = '14px arial';
+  ctx.fillText($('gDomain').textContent, 20, 30);
+
+  // Title
+  ctx.fillStyle = '#1a0dab';
+  ctx.font = '22px arial';
+  const title = $('gTitle').textContent;
+  wrapText(ctx, title, 20, 70, width - 40, 28);
+
+  // Desc
+  ctx.fillStyle = '#4d5156';
+  ctx.font = '16px arial';
+  const desc = $('gDesc').textContent;
+  wrapText(ctx, desc, 20, 140, width - 40, 22);
+
+  canvas.toBlob(blob => {
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'serp-preview.png';
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    showToast('📥 ' + t('exported'));
+  });
+}
+
+function wrapText(ctx, text, x, y, maxWidth, lineHeight) {
+  const words = text.split(' ');
+  let line = '';
+  for (let n = 0; n < words.length; n++) {
+    const testLine = line + words[n] + ' ';
+    const metrics = ctx.measureText(testLine);
+    if (metrics.width > maxWidth && n > 0) {
+      ctx.fillText(line.trim(), x, y);
+      line = words[n] + ' ';
+      y += lineHeight;
+    } else {
+      line = testLine;
+    }
+  }
+  ctx.fillText(line.trim(), x, y);
+}
+
+function exportPdf() {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+  doc.setFontSize(20);
+  doc.setTextColor(26, 13, 171);
+  doc.text('SERP Preview Report', 20, 25);
+  doc.setFontSize(10);
+  doc.setTextColor(100);
+  doc.text('Generated by FreeSEOToolHub.com — ' + new Date().toLocaleString(), 20, 33);
+
+  let y = 50;
+  doc.setFontSize(12);
+  doc.setTextColor(0);
+  doc.text('Meta Title:', 20, y); y += 6;
+  doc.setFontSize(11);
+  doc.text(doc.splitTextToSize($('metaTitle').value, 170), 20, y); y += 20;
+
+  doc.setFontSize(12);
+  doc.text('Meta Description:', 20, y); y += 6;
+  doc.setFontSize(11);
+  doc.text(doc.splitTextToSize($('metaDesc').value, 170), 20, y); y += 25;
+
+  doc.setFontSize(12);
+  doc.text('Display URL:', 20, y); y += 6;
+  doc.setFontSize(11);
+  doc.text($('displayUrl').value, 20, y); y += 15;
+
+  doc.setFontSize(12);
+  doc.text('Analysis:', 20, y); y += 8;
+  doc.setFontSize(10);
+  doc.text('Title width: ' + $('titlePxValue').textContent, 20, y); y += 6;
+  doc.text('Description width: ' + $('descPxValue').textContent, 20, y); y += 6;
+  doc.text('Estimated CTR: ' + $('ctrValue').textContent, 20, y); y += 6;
+  doc.text('Overall score: ' + $('overallScore').textContent, 20, y);
+
+  doc.save('serp-report.pdf');
+  showToast('📥 ' + t('exported'));
+}
+
+function exportJson() {
+  const data = {
+    tool: 'FreeSEOToolHub SERP Simulator v3.0',
+    timestamp: new Date().toISOString(),
+    metaTitle: $('metaTitle').value,
+    metaDescription: $('metaDesc').value,
+    displayUrl: $('displayUrl').value,
+    siteName: $('siteName').value,
+    snippetType: $('snippetType').value,
+    device: state.device,
+    analysis: {
+      titlePx: $('titlePxValue').textContent,
+      descPx: $('descPxValue').textContent,
+      ctr: $('ctrValue').textContent,
+      score: $('overallScore').textContent
+    }
+  };
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'serp-data.json'; a.click();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  showToast('📥 JSON downloaded');
+}
+
+// ============================================================
+// 💾 HISTORY
+// ============================================================
+function saveHistory() {
+  const title = $('metaTitle').value.trim();
+  if (!title) return;
+  const entry = {
+    title,
+    url: $('displayUrl').value,
+    ts: Date.now()
+  };
+  // Dedupe
+  state.history = state.history.filter(h => h.title !== title);
+  state.history.unshift(entry);
+  state.history = state.history.slice(0, 10);
+  try {
+    localStorage.setItem('serpHistoryV3', JSON.stringify(state.history));
+  } catch(e) {}
+  renderHistory();
+}
+
+function renderHistory() {
+  const list = $('historyList');
+  if (!state.history.length) {
+    list.innerHTML = `<div style="text-align:center; opacity:0.5; padding:12px; font-size:0.78rem;">${t('noHistory')}</div>`;
+    return;
+  }
+  list.innerHTML = state.history.map((h, i) => `
+    <div class="history-item" data-index="${i}">
+      <div class="h-title">${escapeHtml(h.title)}</div>
+      <div class="h-date">${new Date(h.ts).toLocaleDateString()}</div>
+    </div>
+  `).join('');
+  list.querySelectorAll('.history-item').forEach(el => {
+    el.addEventListener('click', () => {
+      const h = state.history[parseInt(el.dataset.index)];
+      if (h) {
+        $('metaTitle').value = h.title;
+        $('displayUrl').value = h.url || '';
+        refreshAll();
+        showToast('📂 Loaded from history');
+      }
+    });
+  });
+}
+
+// ============================================================
+// 🎬 INIT
+// ============================================================
+function init() {
+  const urlLang = new URLSearchParams(location.search).get('lang');
+  const savedLang = urlLang || localStorage.getItem('preferredLanguage') || 'en';
+  applyLang(savedLang);
+
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+  });
+
+  // Device toggle
+  document.querySelectorAll('.device-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.device-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      state.device = btn.dataset.device;
+      const frame = $('deviceFrame');
+      if (state.device === 'mobile') {
+        frame.style.maxWidth = '380px';
+        frame.style.margin = '0 auto';
+      } else {
+        frame.style.maxWidth = '100%';
+        frame.style.margin = '0';
+      }
+      refreshAll();
+    });
+  });
+
+  // Theme toggle
+  document.querySelectorAll('.theme-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.theme-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      state.theme = btn.dataset.theme;
+      $('googlePreview').classList.toggle('dark', state.theme === 'dark');
+    });
+  });
+
+  // Inputs
+  ['metaTitle', 'metaDesc', 'displayUrl', 'snippetType', 'siteName'].forEach(id => {
+    const el = $(id);
+    el.addEventListener('input', () => {
+      refreshAll();
+      clearTimeout(window._saveT);
+      window._saveT = setTimeout(saveHistory, 2000);
+    });
+    el.addEventListener('change', refreshAll);
+  });
+
+  // Buttons
+  $('updateBtn').addEventListener('click', refreshAll);
+  $('fetchBtn').addEventListener('click', fetchFromUrl);
+  $('optimizeBtn').addEventListener('click', optimizeAI);
+  $('exportPngBtn').addEventListener('click', exportPng);
+  $('exportPdfBtn').addEventListener('click', exportPdf);
+  $('exportJsonBtn').addEventListener('click', exportJson);
+  $('clearBtn').addEventListener('click', () => {
+    $('metaTitle').value = '';
+    $('metaDesc').value = '';
+    $('displayUrl').value = '';
+    $('siteName').value = 'My Site';
+    $('snippetType').value = 'none';
+    refreshAll();
+    showToast('🗑️ ' + t('cleared'));
+  });
+  $('clearHistory').addEventListener('click', () => {
+    state.history = [];
+    localStorage.removeItem('serpHistoryV3');
+    renderHistory();
+    showToast('🗑️ History cleared');
+  });
+
+  refreshAll();
+  renderHistory();
+}
+
+init();
+})();
+</script>
 </body>
 </html>
