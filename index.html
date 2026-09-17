@@ -56,7 +56,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Hind:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Structured Data: WebSite + ItemList -->
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -67,12 +67,7 @@
         "url": "https://freeseotoolhub.com/",
         "name": "FreeSEOToolHub",
         "description": "20 free SEO tools for global users. 100% free, no signup.",
-        "inLanguage": ["en", "hi", "ur", "de", "es"],
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://freeseotoolhub.com/?s={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
+        "inLanguage": ["en", "hi", "ur", "de", "es"]
       },
       {
         "@type": "Organization",
@@ -84,29 +79,7 @@
       {
         "@type": "ItemList",
         "name": "Free SEO Tools",
-        "numberOfItems": 20,
-        "itemListElement": [
-          {"@type": "ListItem", "position": 1, "name": "Meta Tag Generator", "url": "https://freeseotoolhub.com/tools/meta-tag-generator.html"},
-          {"@type": "ListItem", "position": 2, "name": "Plagiarism Checker", "url": "https://freeseotoolhub.com/tools/plagiarism-checker.html"},
-          {"@type": "ListItem", "position": 3, "name": "QR Code Generator", "url": "https://freeseotoolhub.com/tools/qr-code-generator.html"},
-          {"@type": "ListItem", "position": 4, "name": "Backlink Checker", "url": "https://freeseotoolhub.com/tools/backlink-checker.html"},
-          {"@type": "ListItem", "position": 5, "name": "Keyword Density Checker", "url": "https://freeseotoolhub.com/tools/keyword-density.html"},
-          {"@type": "ListItem", "position": 6, "name": "Website Speed Test", "url": "https://freeseotoolhub.com/tools/website-speed-test.html"},
-          {"@type": "ListItem", "position": 7, "name": "SSL Checker", "url": "https://freeseotoolhub.com/tools/ssl-checker.html"},
-          {"@type": "ListItem", "position": 8, "name": "AI Content Detector", "url": "https://freeseotoolhub.com/tools/ai-content-detector.html"},
-          {"@type": "ListItem", "position": 9, "name": "PageSpeed Insights", "url": "https://freeseotoolhub.com/tools/pagespeed-insights.html"},
-          {"@type": "ListItem", "position": 10, "name": "Schema Markup Generator", "url": "https://freeseotoolhub.com/tools/schema-markup-generator.html"},
-          {"@type": "ListItem", "position": 11, "name": "GSC Visualizer", "url": "https://freeseotoolhub.com/tools/gsc-visualizer.html"},
-          {"@type": "ListItem", "position": 12, "name": "Internal Link Suggester", "url": "https://freeseotoolhub.com/tools/internal-link-suggester.html"},
-          {"@type": "ListItem", "position": 13, "name": "Trending Keywords Finder", "url": "https://freeseotoolhub.com/tools/trending-keywords-finder.html"},
-          {"@type": "ListItem", "position": 14, "name": "Voice Search Optimizer", "url": "https://freeseotoolhub.com/tools/voice-search-optimizer.html"},
-          {"@type": "ListItem", "position": 15, "name": "Website Crawler", "url": "https://freeseotoolhub.com/tools/website-crawler.html"},
-          {"@type": "ListItem", "position": 16, "name": "SERP Simulator", "url": "https://freeseotoolhub.com/tools/google-serp-simulator.html"},
-          {"@type": "ListItem", "position": 17, "name": "Spam Score Checker", "url": "https://freeseotoolhub.com/tools/email-spam-checker.html"},
-          {"@type": "ListItem", "position": 18, "name": "Favicon Generator", "url": "https://freeseotoolhub.com/tools/favicon-generator.html"},
-          {"@type": "ListItem", "position": 19, "name": "Mobile-Friendly Test", "url": "https://freeseotoolhub.com/tools/mobile-friendly-test.html"},
-          {"@type": "ListItem", "position": 20, "name": "Color Palette Generator", "url": "https://freeseotoolhub.com/tools/color-palette-generator.html"}
-        ]
+        "numberOfItems": 20
       }
     ]
   }
@@ -116,14 +89,11 @@
     * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins','Hind','Noto Naskh Arabic',sans-serif; }
     body { background:#f0f4f8; padding-top:80px; color:#0b1a33; }
 
-    /* RTL Support */
     html[dir="rtl"] body { direction:rtl; text-align:right; }
     html[dir="rtl"] .navbar-nav { flex-direction:row-reverse; }
     html[dir="rtl"] .tool-card { text-align:right; }
-    html[dir="rtl"] .hero h1 { direction:rtl; }
     html[dir="rtl"] footer { text-align:right; }
 
-    /* NAVBAR */
     .navbar { background:linear-gradient(135deg,#0b1a33,#1e2b4f); box-shadow:0 4px 20px rgba(0,0,0,0.2); }
     .navbar-brand { font-weight:800; font-size:1.5rem; color:white!important; letter-spacing:0.5px; }
     .navbar-brand i { color:#ff9933; }
@@ -136,7 +106,6 @@
     .dropdown-item { color:rgba(255,255,255,0.9); padding:10px 18px; border-radius:8px; font-weight:500; }
     .dropdown-item:hover, .dropdown-item.active { background:rgba(255,153,51,0.2); color:#ff9933; }
 
-    /* HERO */
     .hero {
       background:linear-gradient(145deg,#0b1a33,#1e2b4f);
       color:white;
@@ -158,25 +127,21 @@
     .hero h1 { font-size:clamp(1.8rem, 4vw, 3rem); font-weight:800; position:relative; z-index:1; margin-bottom:16px; }
     .hero .highlight { color:#ff9933; }
     .hero p { max-width:750px; margin:15px auto; font-size:1.15rem; opacity:0.9; position:relative; z-index:1; }
-
     .hero-actions { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:24px; position:relative; z-index:1; }
     .btn-hero { background:linear-gradient(135deg,#ff9933,#ff6b00); color:white; border:none; padding:14px 36px; border-radius:50px; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:8px; transition:all 0.3s; }
     .btn-hero:hover { transform:translateY(-2px); box-shadow:0 10px 25px rgba(255,153,51,0.4); color:white; }
     .btn-hero-outline { background:transparent; color:#fff; border:2px solid rgba(255,255,255,0.3); padding:12px 34px; border-radius:50px; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:8px; transition:all 0.3s; }
     .btn-hero-outline:hover { background:rgba(255,255,255,0.1); color:#fff; border-color:#ff9933; }
 
-    /* STATS */
     .stats-section { background:white; border-radius:20px; padding:36px; margin:40px 0; box-shadow:0 10px 30px rgba(0,0,0,0.03); text-align:center; }
     .stat-item { padding:12px; }
     .stat-number { font-size:2.4rem; font-weight:800; color:#0b1a33; line-height:1; margin-bottom:6px; }
     .stat-label { color:#4a5a72; font-weight:500; font-size:0.9rem; }
 
-    /* SECTION HEADER */
     .section-header { text-align:center; margin:50px 0 30px; }
     .section-header h2 { font-size:2rem; font-weight:800; color:#0b1a33; margin-bottom:8px; }
     .section-header p { color:#4a5a72; font-size:1rem; }
 
-    /* TOOL CARDS */
     .tool-card {
       background:white;
       border-radius:20px;
@@ -220,7 +185,6 @@
     }
     .btn-tool:hover { background:linear-gradient(135deg,#ff9933,#ff6b00); color:white; transform:translateY(-2px); box-shadow:0 8px 20px rgba(255,153,51,0.3); }
 
-    /* FAQ SECTION */
     .faq-section { margin:60px 0; }
     .faq-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; margin-top:24px; }
     .faq-card {
@@ -232,7 +196,6 @@
     .faq-card h4 i { color:#ff9933; }
     .faq-card p { font-size:0.87rem; color:#4a5a72; line-height:1.6; }
 
-    /* FOOTER */
     footer { background:#0b1a33; color:white; padding:50px 0 20px; margin-top:60px; }
     footer h5, footer h6 { font-weight:700; color:#ff9933; margin-bottom:16px; }
     footer a { color:#b0c4de; text-decoration:none; transition:all 0.3s; font-size:0.9rem; }
@@ -240,7 +203,6 @@
     footer ul { list-style:none; padding:0; }
     footer li { margin-bottom:8px; }
 
-    /* WHATS NEW BADGE */
     .new-badge {
       position:absolute; top:12px; right:12px;
       background:linear-gradient(135deg,#10b981,#059669);
@@ -248,16 +210,6 @@
       padding:3px 8px; border-radius:20px;
       text-transform:uppercase; letter-spacing:0.5px;
     }
-
-    /* TOAST */
-    .toast-custom {
-      position:fixed; bottom:24px; right:24px;
-      background:rgba(30,41,59,0.95); backdrop-filter:blur(10px);
-      color:#fff; padding:14px 20px; border-radius:12px;
-      font-size:0.9rem; z-index:9999;
-      display:none; animation:slideIn 0.3s ease;
-    }
-    @keyframes slideIn { from { transform:translateX(120%); opacity:0; } to { transform:translateX(0); opacity:1; } }
 
     @media (max-width:768px) {
       .hero { padding:50px 20px; }
@@ -288,7 +240,6 @@
         <li class="nav-item"><a class="nav-link" href="/privacy.html"><i class="fas fa-shield-alt me-1"></i><span data-translate="privacy">Privacy</span></a></li>
         <li class="nav-item"><a class="nav-link" href="/blog/"><i class="fas fa-blog me-1"></i><span data-translate="blog">Blog</span></a></li>
 
-        <!-- Language Dropdown -->
         <li class="nav-item dropdown ms-2">
           <button class="lang-btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
             🌐 <span id="currentLangLabel">English</span>
@@ -354,7 +305,7 @@
           <div class="tool-icon"><i class="fas fa-code"></i></div>
           <h3 data-translate="tool1Title">Meta Tag Generator</h3>
           <p data-translate="tool1Desc">SEO meta tags, Open Graph, Twitter Cards.</p>
-          <a href="/tools/meta-tag-generator.html" class="btn-tool" data-translate="tool1Btn">Generate Tags</a>
+          <a href="/meta-tag-generator.html" class="btn-tool" data-translate="tool1Btn">Generate Tags</a>
         </div>
       </div>
 
@@ -364,7 +315,7 @@
           <div class="tool-icon"><i class="fas fa-copy"></i></div>
           <h3 data-translate="tool2Title">Plagiarism Checker</h3>
           <p data-translate="tool2Desc">Check content originality instantly.</p>
-          <a href="/tools/plagiarism-checker.html" class="btn-tool" data-translate="tool2Btn">Check Now</a>
+          <a href="/plagiarism-checker.html" class="btn-tool" data-translate="tool2Btn">Check Now</a>
         </div>
       </div>
 
@@ -374,7 +325,7 @@
           <div class="tool-icon"><i class="fas fa-qrcode"></i></div>
           <h3 data-translate="tool3Title">QR Code Generator</h3>
           <p data-translate="tool3Desc">URL, text, WiFi, vCards QR codes.</p>
-          <a href="/tools/qr-code-generator.html" class="btn-tool" data-translate="tool3Btn">Generate QR</a>
+          <a href="/qr-code-generator.html" class="btn-tool" data-translate="tool3Btn">Generate QR</a>
         </div>
       </div>
 
@@ -384,7 +335,7 @@
           <div class="tool-icon"><i class="fas fa-link"></i></div>
           <h3 data-translate="tool4Title">Backlink Checker</h3>
           <p data-translate="tool4Desc">Analyze backlink profile of any domain.</p>
-          <a href="/tools/backlink-checker.html" class="btn-tool" data-translate="tool4Btn">Check Backlinks</a>
+          <a href="/backlink-checker.html" class="btn-tool" data-translate="tool4Btn">Check Backlinks</a>
         </div>
       </div>
 
@@ -394,7 +345,7 @@
           <div class="tool-icon"><i class="fas fa-chart-bar"></i></div>
           <h3 data-translate="tool5Title">Keyword Density</h3>
           <p data-translate="tool5Desc">Analyze keyword frequency in content.</p>
-          <a href="/tools/keyword-density.html" class="btn-tool" data-translate="tool5Btn">Check Density</a>
+          <a href="/keyword-density.html" class="btn-tool" data-translate="tool5Btn">Check Density</a>
         </div>
       </div>
 
@@ -404,7 +355,7 @@
           <div class="tool-icon"><i class="fas fa-tachometer-alt"></i></div>
           <h3 data-translate="tool6Title">Website Speed Test</h3>
           <p data-translate="tool6Desc">Page load time & Core Web Vitals.</p>
-          <a href="/tools/website-speed-test.html" class="btn-tool" data-translate="tool6Btn">Test Speed</a>
+          <a href="/website-speed-test.html" class="btn-tool" data-translate="tool6Btn">Test Speed</a>
         </div>
       </div>
 
@@ -414,7 +365,7 @@
           <div class="tool-icon"><i class="fas fa-lock"></i></div>
           <h3 data-translate="tool7Title">SSL Checker</h3>
           <p data-translate="tool7Desc">Verify SSL certificate and security.</p>
-          <a href="/tools/ssl-checker.html" class="btn-tool" data-translate="tool7Btn">Check SSL</a>
+          <a href="/ssl-checker.html" class="btn-tool" data-translate="tool7Btn">Check SSL</a>
         </div>
       </div>
 
@@ -424,7 +375,7 @@
           <div class="tool-icon"><i class="fas fa-robot"></i></div>
           <h3 data-translate="tool8Title">AI Content Detector</h3>
           <p data-translate="tool8Desc">Detect AI-generated content instantly.</p>
-          <a href="/tools/ai-content-detector.html" class="btn-tool" data-translate="tool8Btn">Detect AI</a>
+          <a href="/ai-content-detector.html" class="btn-tool" data-translate="tool8Btn">Detect AI</a>
         </div>
       </div>
 
@@ -434,7 +385,7 @@
           <div class="tool-icon"><i class="fas fa-gauge-high"></i></div>
           <h3 data-translate="tool9Title">PageSpeed Insights</h3>
           <p data-translate="tool9Desc">Google's official speed & performance test.</p>
-          <a href="/tools/pagespeed-insights.html" class="btn-tool" data-translate="tool9Btn">Run Test</a>
+          <a href="/pagespeed-insights.html" class="btn-tool" data-translate="tool9Btn">Run Test</a>
         </div>
       </div>
 
@@ -444,7 +395,7 @@
           <div class="tool-icon"><i class="fas fa-database"></i></div>
           <h3 data-translate="tool10Title">Schema Markup</h3>
           <p data-translate="tool10Desc">Generate structured data for rich snippets.</p>
-          <a href="/tools/schema-markup-generator.html" class="btn-tool" data-translate="tool10Btn">Generate Schema</a>
+          <a href="/schema-markup-generator.html" class="btn-tool" data-translate="tool10Btn">Generate Schema</a>
         </div>
       </div>
 
@@ -454,7 +405,7 @@
           <div class="tool-icon"><i class="fas fa-chart-pie"></i></div>
           <h3 data-translate="tool11Title">GSC Visualizer</h3>
           <p data-translate="tool11Desc">Visualize Google Search Console data.</p>
-          <a href="/tools/gsc-visualizer.html" class="btn-tool" data-translate="tool11Btn">Visualize GSC</a>
+          <a href="/gsc-visualizer.html" class="btn-tool" data-translate="tool11Btn">Visualize GSC</a>
         </div>
       </div>
 
@@ -464,7 +415,7 @@
           <div class="tool-icon"><i class="fas fa-sitemap"></i></div>
           <h3 data-translate="tool12Title">Internal Link Suggester</h3>
           <p data-translate="tool12Desc">Find internal linking opportunities.</p>
-          <a href="/tools/internal-link-suggester.html" class="btn-tool" data-translate="tool12Btn">Suggest Links</a>
+          <a href="/internal-link-suggester.html" class="btn-tool" data-translate="tool12Btn">Suggest Links</a>
         </div>
       </div>
 
@@ -474,7 +425,7 @@
           <div class="tool-icon"><i class="fas fa-arrow-trend-up"></i></div>
           <h3 data-translate="tool13Title">Trending Keywords</h3>
           <p data-translate="tool13Desc">Find trending keywords in your niche.</p>
-          <a href="/tools/trending-keywords-finder.html" class="btn-tool" data-translate="tool13Btn">Find Trends</a>
+          <a href="/trending-keywords-finder.html" class="btn-tool" data-translate="tool13Btn">Find Trends</a>
         </div>
       </div>
 
@@ -484,7 +435,7 @@
           <div class="tool-icon"><i class="fas fa-microphone"></i></div>
           <h3 data-translate="tool14Title">Voice Search Optimizer</h3>
           <p data-translate="tool14Desc">Optimize content for voice search.</p>
-          <a href="/tools/voice-search-optimizer.html" class="btn-tool" data-translate="tool14Btn">Optimize Voice</a>
+          <a href="/voice-search-optimizer.html" class="btn-tool" data-translate="tool14Btn">Optimize Voice</a>
         </div>
       </div>
 
@@ -494,7 +445,7 @@
           <div class="tool-icon"><i class="fas fa-spider"></i></div>
           <h3 data-translate="tool15Title">Website Crawler</h3>
           <p data-translate="tool15Desc">Complete SEO site audit & crawl.</p>
-          <a href="/tools/website-crawler.html" class="btn-tool" data-translate="tool15Btn">Start Crawl</a>
+          <a href="/website-crawler.html" class="btn-tool" data-translate="tool15Btn">Start Crawl</a>
         </div>
       </div>
 
@@ -505,7 +456,7 @@
           <div class="tool-icon"><i class="fas fa-search"></i></div>
           <h3 data-translate="tool16Title">SERP Simulator</h3>
           <p data-translate="tool16Desc">Preview Google search results instantly.</p>
-          <a href="/tools/google-serp-simulator.html" class="btn-tool" data-translate="tool16Btn">Preview SERP</a>
+          <a href="/google-serp-simulator.html" class="btn-tool" data-translate="tool16Btn">Preview SERP</a>
         </div>
       </div>
 
@@ -516,7 +467,7 @@
           <div class="tool-icon"><i class="fas fa-shield-alt"></i></div>
           <h3 data-translate="tool17Title">Spam Score Checker</h3>
           <p data-translate="tool17Desc">Check email deliverability & spam score.</p>
-          <a href="/tools/email-spam-checker.html" class="btn-tool" data-translate="tool17Btn">Check Spam</a>
+          <a href="/email-spam-checker.html" class="btn-tool" data-translate="tool17Btn">Check Spam</a>
         </div>
       </div>
 
@@ -527,7 +478,7 @@
           <div class="tool-icon"><i class="fas fa-image"></i></div>
           <h3 data-translate="tool18Title">Favicon Generator</h3>
           <p data-translate="tool18Desc">Create & preview website icons.</p>
-          <a href="/tools/favicon-generator.html" class="btn-tool" data-translate="tool18Btn">Generate Favicon</a>
+          <a href="/favicon-generator.html" class="btn-tool" data-translate="tool18Btn">Generate Favicon</a>
         </div>
       </div>
 
@@ -538,7 +489,7 @@
           <div class="tool-icon"><i class="fas fa-mobile-alt"></i></div>
           <h3 data-translate="tool19Title">Mobile-Friendly Test</h3>
           <p data-translate="tool19Desc">Check mobile responsiveness & viewport.</p>
-          <a href="/tools/mobile-friendly-test.html" class="btn-tool" data-translate="tool19Btn">Test Mobile</a>
+          <a href="/mobile-friendly-test.html" class="btn-tool" data-translate="tool19Btn">Test Mobile</a>
         </div>
       </div>
 
@@ -549,7 +500,7 @@
           <div class="tool-icon"><i class="fas fa-palette"></i></div>
           <h3 data-translate="tool20Title">Color Palette</h3>
           <p data-translate="tool20Desc">Generate UI color schemes & hex codes.</p>
-          <a href="/tools/color-palette-generator.html" class="btn-tool" data-translate="tool20Btn">Generate Palette</a>
+          <a href="/color-palette-generator.html" class="btn-tool" data-translate="tool20Btn">Generate Palette</a>
         </div>
       </div>
 
@@ -565,27 +516,27 @@
     <div class="faq-grid">
       <div class="faq-card">
         <h4><i class="fas fa-question-circle"></i> <span data-translate="faq1Q">Are these tools really free?</span></h4>
-        <p data-translate="faq1A">Yes, 100% free forever. No signup, no hidden costs, no limits. Every tool is client-side and runs in your browser.</p>
+        <p data-translate="faq1A">Yes, 100% free forever. No signup, no hidden costs, no limits.</p>
       </div>
       <div class="faq-card">
         <h4><i class="fas fa-question-circle"></i> <span data-translate="faq2Q">Do I need to create an account?</span></h4>
-        <p data-translate="faq2A">No account needed. Just open any tool and start using it. Everything works instantly without registration.</p>
+        <p data-translate="faq2A">No account needed. Just open any tool and start using it.</p>
       </div>
       <div class="faq-card">
         <h4><i class="fas fa-question-circle"></i> <span data-translate="faq3Q">Is my data private?</span></h4>
-        <p data-translate="faq3A">Absolutely. Most tools run 100% in your browser — your content never leaves your device. No tracking, no storage.</p>
+        <p data-translate="faq3A">Absolutely. Most tools run 100% in your browser — your content never leaves your device.</p>
       </div>
       <div class="faq-card">
         <h4><i class="fas fa-question-circle"></i> <span data-translate="faq4Q">Which languages are supported?</span></h4>
-        <p data-translate="faq4A">The interface supports English, Hindi, Urdu, German, and Spanish. Some tools also support content analysis in these languages.</p>
+        <p data-translate="faq4A">The interface supports English, Hindi, Urdu, German, and Spanish.</p>
       </div>
       <div class="faq-card">
-        <h4><i class="fas fa-question-circle"></i> <span data-translate="faq5Q">Can I use these tools for commercial projects?</span></h4>
-        <p data-translate="faq5A">Yes! All tools are free for personal and commercial use. No attribution required.</p>
+        <h4><i class="fas fa-question-circle"></i> <span data-translate="faq5Q">Can I use these tools commercially?</span></h4>
+        <p data-translate="faq5A">Yes! All tools are free for personal and commercial use.</p>
       </div>
       <div class="faq-card">
         <h4><i class="fas fa-question-circle"></i> <span data-translate="faq6Q">How often are tools updated?</span></h4>
-        <p data-translate="faq6A">We update tools regularly to match the latest SEO standards and search engine changes — most recently in 2026.</p>
+        <p data-translate="faq6A">We update tools regularly to match the latest SEO standards — most recently in 2026.</p>
       </div>
     </div>
   </section>
@@ -612,19 +563,19 @@
       <div class="col-md-2 col-6 mb-4">
         <h6 data-translate="popularTools">Top Tools</h6>
         <ul>
-          <li><a href="/tools/meta-tag-generator.html">Meta Tags</a></li>
-          <li><a href="/tools/plagiarism-checker.html">Plagiarism</a></li>
-          <li><a href="/tools/backlink-checker.html">Backlinks</a></li>
-          <li><a href="/tools/ssl-checker.html">SSL Checker</a></li>
+          <li><a href="/meta-tag-generator.html">Meta Tags</a></li>
+          <li><a href="/plagiarism-checker.html">Plagiarism</a></li>
+          <li><a href="/backlink-checker.html">Backlinks</a></li>
+          <li><a href="/ssl-checker.html">SSL Checker</a></li>
         </ul>
       </div>
       <div class="col-md-2 col-6 mb-4">
         <h6 data-translate="moreTools">More Tools</h6>
         <ul>
-          <li><a href="/tools/qr-code-generator.html">QR Code</a></li>
-          <li><a href="/tools/pagespeed-insights.html">PageSpeed</a></li>
-          <li><a href="/tools/gsc-visualizer.html">GSC Visualizer</a></li>
-          <li><a href="/tools/website-crawler.html">Crawler</a></li>
+          <li><a href="/qr-code-generator.html">QR Code</a></li>
+          <li><a href="/pagespeed-insights.html">PageSpeed</a></li>
+          <li><a href="/gsc-visualizer.html">GSC Visualizer</a></li>
+          <li><a href="/website-crawler.html">Crawler</a></li>
         </ul>
       </div>
       <div class="col-md-2 col-6 mb-4">
@@ -641,32 +592,14 @@
   </div>
 </footer>
 
-<!-- Toast for messages -->
-<div class="toast-custom" id="toast"></div>
-
 <!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="/js/multi-language.js"></script>
+
+<!-- ⚠️ Language system is OPTIONAL — remove if causing issues -->
+<!-- <script src="/js/multi-language.js"></script> -->
+
 <script>
-// ============================================================
-// ⚠️ SECURITY NOTE: API keys should NEVER be in client-side JS!
-// If you need an API key, use a backend proxy.
-// The old code had `rsk_01KX...` exposed — this has been REMOVED.
-// ============================================================
-
-// ============================================================
-// TOAST HELPER
-// ============================================================
-function showToast(msg) {
-  const toast = document.getElementById('toast');
-  toast.textContent = msg;
-  toast.style.display = 'block';
-  setTimeout(() => { toast.style.display = 'none'; }, 2500);
-}
-
-// ============================================================
-// SMOOTH SCROLL FOR HERO ANCHORS
-// ============================================================
+// Smooth scroll for hero anchors
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', e => {
     const target = document.querySelector(link.getAttribute('href'));
@@ -677,31 +610,13 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   });
 });
 
-// ============================================================
-// UPDATE CANONICAL & HREFLANG ON LANGUAGE CHANGE
-// ============================================================
-window.addEventListener('languageChanged', e => {
-  const lang = e.detail.lang;
-  const canonical = document.getElementById('canonicalLink');
-  if (canonical) {
-    const base = 'https://freeseotoolhub.com/';
-    canonical.href = lang === 'en' ? base : base + '?lang=' + lang;
-  }
-  // Update language label in dropdown
+// Update current language label in dropdown
+document.addEventListener('DOMContentLoaded', () => {
+  const url = new URLSearchParams(location.search);
+  const lang = url.get('lang') || localStorage.getItem('preferredLang') || 'en';
   const langNames = { en:'English', hi:'हिन्दी', ur:'اردو', de:'Deutsch', es:'Español' };
   const label = document.getElementById('currentLangLabel');
   if (label) label.textContent = langNames[lang] || 'English';
-});
-
-// ============================================================
-// COUNT ACTIVE TOOLS (dynamically)
-// ============================================================
-document.addEventListener('DOMContentLoaded', () => {
-  const toolCards = document.querySelectorAll('.tool-card');
-  const counters = document.querySelectorAll('.stat-number');
-  if (counters[0] && toolCards.length) {
-    counters[0].textContent = toolCards.length;
-  }
 });
 </script>
 
