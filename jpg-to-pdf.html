@@ -1020,318 +1020,42 @@
 (function(){
 'use strict';
 
-/* ========== i18n TRANSLATIONS ========== */
+/* ========== i18n ========== */
 var I18N = {
   en: {
-    heroTitle1: "JPG to PDF Converter", heroTitle2: "Free 2026",
-    heroSubtitle: "Convert JPG, PNG, WEBP images to PDF in seconds with smart auto-sort. 100% free, no signup, no watermark.",
-    pill1: "100% Private", pillSort: "Smart Auto-Sort", pill3: "5 Languages", pill4: "No Watermark",
-    dropTitle: "Drop images here or", browse: "browse",
-    dropSub: "JPG · PNG · WEBP · GIF · BMP — up to 50 files · Smart auto-sort by filename",
-    imagesLabel: "images", add: "Add", clear: "Clear", settings: "Settings", convert: "Convert", autoSort: "Auto-Sort",
-    tabLayout: "Layout", tabQuality: "Quality", tabSecurity: "Security", tabOutput: "Output",
-    pageSize: "Page Size", psFit: "Auto — Fit to Image", psA4: "A4 (210 × 297 mm)", psLetter: "Letter (8.5 × 11 in)", psLegal: "Legal (8.5 × 14 in)", psA3: "A3 (297 × 420 mm)", psA5: "A5 (148 × 210 mm)",
-    orientation: "Orientation", orAuto: "Auto", orPortrait: "Portrait", orLandscape: "Landscape",
-    margin: "Margin", mNone: "None (0 mm)", mSmall: "Small (5 mm)", mMedium: "Medium (10 mm)", mLarge: "Large (20 mm)",
-    pageNumbers: "Page Numbers", pnNone: "None", pnBC: "Bottom Center", pnBR: "Bottom Right",
-    imgQuality: "Image Quality", qHigh: "High (95%)", qBal: "Balanced (85%)", qComp: "Compressed (65%)", qSmall: "Small File (45%)",
-    compression: "Compression", colorMode: "Color Mode", cmColor: "Color", cmGray: "Grayscale",
-    pdfPass: "PDF Password (optional)", passPlaceholder: "Leave empty for no password",
-    watermark: "Watermark Text", wmPlaceholder: "e.g. CONFIDENTIAL",
-    wmOpacity: "Watermark Opacity", fileName: "File Name", outputMode: "Output Mode",
-    omMerged: "Single merged PDF", omSeparate: "Separate PDF per image (ZIP)",
-    convertToPdf: "Convert to PDF",
-    featTitle: "Why Users Choose Our JPG to PDF Tool",
-    featSubtitle: "Professional-grade features, 100% free forever",
-    fSortT: "Smart Auto-Sort", fSortD: "Reads numbers in filenames — page_1, page_2, page_10 in perfect order.",
-    f1t: "100% Private", f1d: "Files stay on your device. No server uploads.",
-    f2t: "Lightning Fast", f2d: "50 images to PDF in under 3 seconds.",
-    f3t: "Built-in Editor", f3d: "Rotate, flip, brightness, contrast, filters.",
-    f4t: "Password Protect", f4d: "Encrypt your PDF with password for free.",
-    f5t: "Batch Download", f5d: "Export all as ZIP or merge into one PDF.",
-    f6t: "5 Languages", f6d: "English, Hindi, Urdu, German, Spanish.",
-    f8t: "Free Forever", f8d: "No signup, no watermark, no limits.",
-    tipsTitle: "JPG to PDF Tips 2026", tipsSubtitle: "Pro tips for perfect PDFs",
-    tipSort: "Use Auto-Sort: Scanned pages with numbers (page_1, page_2...) get arranged automatically.",
-    tip1: "Choose 'Fit to Image': Perfect page size for each image, no white borders.",
-    tip2: "Compress for email: Use 65% quality to keep PDF under 5 MB for easy sharing.",
-    tip3: "Order matters: Drag & drop images to arrange them exactly in the PDF sequence.",
-    tip4: "Password protect: Add a password before converting for sensitive documents.",
-    faqTitle: "Frequently Asked Questions", faqSubtitle: "Everything you need to know",
-    qSort: "How does auto-sort work?",
-    aSort: "Auto-sort reads numbers in filenames. 'page_1, page_2, page_10' becomes correct order (1, 2, 10) not alphabetical (1, 10, 2).",
-    q1: "Is this JPG to PDF converter really free?",
-    a1: "Yes, 100% free forever. No signup, no watermarks, no file limits, no hidden charges.",
-    q2: "Are my images safe and private?",
-    a2: "Absolutely. All conversion happens locally in your browser. Your images never leave your device.",
-    q3: "Can I merge multiple JPG images into one PDF?",
-    a3: "Yes. Upload multiple images, drag to reorder them, and they'll be combined into a single PDF file.",
-    q4: "What image formats are supported?",
-    a4: "JPG, JPEG, PNG, WEBP, GIF, and BMP are fully supported. The output is always a universal PDF.",
-    q5: "Can I password protect my PDF?",
-    a5: "Yes. Enter a password in the Security tab before converting and your PDF will be encrypted.",
-    relatedTitle: "Related Free Tools", relatedSubtitle: "More tools you might like",
-    editImage: "Edit Image", rotateFlip: "Rotate & Flip",
-    brightness: "Brightness", contrast: "Contrast", saturation: "Saturation",
-    filter: "Filter", fNone: "None", fGray: "Grayscale", fSepia: "Sepia", fInvert: "Invert",
-    reset: "Reset", apply: "Apply",
-    home: "Home", about: "About", contact: "Contact", privacy: "Privacy", blog: "Blog",
-    brand: "FreeSEOToolHub", footerDesc: "20 essential SEO tools. Fast, free, global.",
-    quickLinks: "Quick Links", popularTools: "Top Tools", moreTools: "More Tools", legal: "Legal",
-    copyright: "© 2026 FreeSEOToolHub.com – Built for Global Users",
     sortDone: "Sorted {n} images in correct order!",
-    sortHintTitle: "Smart Auto-Sort",
-    sortHintText: "Files uploaded in wrong order? Click Auto-Sort to fix instantly by filename numbers.",
     sortNoChange: "Images are already in correct order",
-    sortNoNumbers: "No numbers found in filenames — kept original order"
+    sortNoNumbers: "No numbers found in filenames",
+    sortHintTitle: "Smart Auto-Sort",
+    sortHintText: "Files in wrong order? Click Auto-Sort to fix instantly."
   },
   hi: {
-    heroTitle1: "JPG to PDF कन्वर्टर", heroTitle2: "फ्री 2026",
-    heroSubtitle: "स्मार्ट ऑटो-सॉर्ट के साथ JPG, PNG, WEBP इमेज को सेकंड्स में PDF में बदलें। 100% फ्री।",
-    pill1: "100% प्राइवेट", pillSort: "स्मार्ट ऑटो-सॉर्ट", pill3: "5 भाषाएं", pill4: "नो वॉटरमार्क",
-    dropTitle: "यहां इमेज ड्रॉप करें या", browse: "ब्राउज़ करें",
-    dropSub: "JPG · PNG · WEBP · GIF · BMP — 50 फाइलों तक · फाइलनाम से ऑटो-सॉर्ट",
-    imagesLabel: "इमेज", add: "जोड़ें", clear: "क्लियर", settings: "सेटिंग्स", convert: "कन्वर्ट", autoSort: "ऑटो-सॉर्ट",
-    tabLayout: "लेआउट", tabQuality: "क्वालिटी", tabSecurity: "सिक्योरिटी", tabOutput: "आउटपुट",
-    pageSize: "पेज साइज़", psFit: "ऑटो — इमेज के अनुसार", psA4: "A4 (210 × 297 mm)", psLetter: "Letter (8.5 × 11 in)", psLegal: "Legal (8.5 × 14 in)", psA3: "A3 (297 × 420 mm)", psA5: "A5 (148 × 210 mm)",
-    orientation: "ओरिएंटेशन", orAuto: "ऑटो", orPortrait: "पोर्ट्रेट", orLandscape: "लैंडस्केप",
-    margin: "मार्जिन", mNone: "नहीं", mSmall: "छोटा", mMedium: "मध्यम", mLarge: "बड़ा",
-    pageNumbers: "पेज नंबर", pnNone: "नहीं", pnBC: "नीचे बीच", pnBR: "नीचे दाएं",
-    imgQuality: "इमेज क्वालिटी", qHigh: "हाई (95%)", qBal: "बैलेंस्ड (85%)", qComp: "कंप्रेस्ड (65%)", qSmall: "छोटी फाइल (45%)",
-    compression: "कम्प्रेशन", colorMode: "कलर मोड", cmColor: "कलर", cmGray: "ग्रेस्केल",
-    pdfPass: "PDF पासवर्ड (वैकल्पिक)", passPlaceholder: "खाली छोड़ें",
-    watermark: "वॉटरमार्क टेक्स्ट", wmPlaceholder: "जैसे CONFIDENTIAL",
-    wmOpacity: "वॉटरमार्क ओपेसिटी", fileName: "फाइल नाम", outputMode: "आउटपुट मोड",
-    omMerged: "एक मर्ज्ड PDF", omSeparate: "हर इमेज के लिए अलग PDF (ZIP)",
-    convertToPdf: "PDF में बदलें",
-    featTitle: "यूज़र्स हमारा टूल क्यों चुनते हैं", featSubtitle: "प्रोफेशनल फीचर्स, हमेशा फ्री",
-    fSortT: "स्मार्ट ऑटो-सॉर्ट", fSortD: "फाइलनाम के नंबर पढ़ता है — page_1, page_2, page_10 सही क्रम में।",
-    f1t: "100% प्राइवेट", f1d: "फाइलें आपके डिवाइस पर रहती हैं।",
-    f2t: "सुपर फास्ट", f2d: "50 इमेज 3 सेकंड में PDF।",
-    f3t: "इनबिल्ट एडिटर", f3d: "रोटेट, फ्लिप, ब्राइटनेस, फिल्टर।",
-    f4t: "पासवर्ड प्रोटेक्ट", f4d: "मुफ्त में PDF एन्क्रिप्ट करें।",
-    f5t: "बैच डाउनलोड", f5d: "सभी ZIP में या एक PDF में।",
-    f6t: "5 भाषाएं", f6d: "अंग्रेजी, हिन्दी, उर्दू, जर्मन, स्पेनिश।",
-    f8t: "हमेशा फ्री", f8d: "नो साइनअप, नो वॉटरमार्क, नो लिमिट।",
-    tipsTitle: "JPG to PDF टिप्स 2026", tipsSubtitle: "परफेक्ट PDF के लिए प्रो टिप्स",
-    tipSort: "ऑटो-सॉर्ट यूज़ करें: स्कैन पेज (page_1, page_2...) अपने आप सही क्रम में आ जाएंगे।",
-    tip1: "'Fit to Image' चुनें: हर इमेज के लिए परफेक्ट पेज साइज़।",
-    tip2: "ईमेल के लिए कंप्रेस: 65% क्वालिटी से PDF 5 MB से कम।",
-    tip3: "क्रम मायने रखता है: इमेज को ड्रैग करके सही क्रम में रखें।",
-    tip4: "पासवर्ड प्रोटेक्ट: संवेदनशील डॉक्यूमेंट के लिए पासवर्ड जोड़ें।",
-    faqTitle: "अक्सर पूछे जाने वाले सवाल", faqSubtitle: "जो आप जानना चाहते हैं",
-    qSort: "ऑटो-सॉर्ट कैसे काम करता है?",
-    aSort: "ऑटो-सॉर्ट फाइलनाम के नंबर पढ़ता है। 'page_1, page_2, page_10' सही क्रम (1, 2, 10) में आ जाता है, न कि अल्फाबेटिकल (1, 10, 2)।",
-    q1: "क्या यह JPG to PDF कन्वर्टर सच में फ्री है?",
-    a1: "हां, 100% हमेशा के लिए फ्री। नो साइनअप, नो वॉटरमार्क।",
-    q2: "क्या मेरी इमेज सेफ और प्राइवेट हैं?",
-    a2: "बिल्कुल। पूरा कन्वर्जन आपके ब्राउज़र में होता है।",
-    q3: "क्या कई JPG को एक PDF में मर्ज कर सकते हैं?",
-    a3: "हां। कई इमेज अपलोड करें और वे एक PDF में मर्ज हो जाएंगी।",
-    q4: "कौन से फॉर्मेट सपोर्टेड हैं?",
-    a4: "JPG, JPEG, PNG, WEBP, GIF और BMP पूरी तरह सपोर्टेड हैं।",
-    q5: "क्या PDF को पासवर्ड से प्रोटेक्ट कर सकते हैं?",
-    a5: "हां। सिक्योरिटी टैब में पासवर्ड डालें।",
-    relatedTitle: "संबंधित फ्री टूल्स", relatedSubtitle: "और टूल्स जो आपको पसंद आ सकते हैं",
-    editImage: "इमेज एडिट करें", rotateFlip: "रोटेट और फ्लिप",
-    brightness: "ब्राइटनेस", contrast: "कॉन्ट्रास्ट", saturation: "सैचुरेशन",
-    filter: "फिल्टर", fNone: "नहीं", fGray: "ग्रेस्केल", fSepia: "सेपिया", fInvert: "इनवर्ट",
-    reset: "रीसेट", apply: "अप्लाई",
-    home: "होम", about: "अबाउट", contact: "संपर्क", privacy: "प्राइवेसी", blog: "ब्लॉग",
-    brand: "FreeSEOToolHub", footerDesc: "20 जरूरी SEO टूल्स। फास्ट, फ्री, ग्लोबल।",
-    quickLinks: "क्विक लिंक्स", popularTools: "टॉप टूल्स", moreTools: "और टूल्स", legal: "लीगल",
-    copyright: "© 2026 FreeSEOToolHub.com – ग्लोबल यूज़र्स के लिए",
     sortDone: "{n} इमेज सही क्रम में सेट हो गईं!",
-    sortHintTitle: "स्मार्ट ऑटो-सॉर्ट",
-    sortHintText: "फाइलें गलत क्रम में अपलोड हुईं? ऑटो-सॉर्ट क्लिक करें — फाइलनाम के नंबर से तुरंत सही हो जाएंगी।",
     sortNoChange: "इमेज पहले से सही क्रम में हैं",
-    sortNoNumbers: "फाइलनाम में नंबर नहीं मिले — मूल क्रम रखा गया"
+    sortNoNumbers: "फाइलनाम में नंबर नहीं मिले",
+    sortHintTitle: "स्मार्ट ऑटो-सॉर्ट",
+    sortHintText: "फाइलें गलत क्रम में? ऑटो-सॉर्ट क्लिक करें।"
   },
   ur: {
-    heroTitle1: "JPG to PDF کنورٹر", heroTitle2: "مفت 2026",
-    heroSubtitle: "سمارٹ آٹو سورٹ کے ساتھ JPG, PNG, WEBP تصاویر کو سیکنڈوں میں PDF میں تبدیل کریں۔ 100% مفت۔",
-    pill1: "100% نجی", pillSort: "سمارٹ آٹو سورٹ", pill3: "5 زبانیں", pill4: "واٹر مارک نہیں",
-    dropTitle: "یہاں تصاویر ڈراپ کریں یا", browse: "براؤز کریں",
-    dropSub: "JPG · PNG · WEBP · GIF · BMP — 50 فائلوں تک",
-    imagesLabel: "تصاویر", add: "شامل کریں", clear: "صاف کریں", settings: "سیٹنگز", convert: "کنورٹ", autoSort: "آٹو سورٹ",
-    tabLayout: "لے آؤٹ", tabQuality: "کوالٹی", tabSecurity: "سیکیورٹی", tabOutput: "آؤٹ پٹ",
-    pageSize: "صفحہ سائز", psFit: "خودکار — تصویر کے مطابق", psA4: "A4", psLetter: "Letter", psLegal: "Legal", psA3: "A3", psA5: "A5",
-    orientation: "اورینٹیشن", orAuto: "خودکار", orPortrait: "پورٹریٹ", orLandscape: "لینڈ اسکیپ",
-    margin: "مارجن", mNone: "کوئی نہیں", mSmall: "چھوٹا", mMedium: "درمیانہ", mLarge: "بڑا",
-    pageNumbers: "صفحہ نمبر", pnNone: "کوئی نہیں", pnBC: "نیچے درمیان", pnBR: "نیچے دائیں",
-    imgQuality: "تصویر کوالٹی", qHigh: "اعلیٰ", qBal: "متوازن", qComp: "کمپریسڈ", qSmall: "چھوٹی",
-    compression: "کمپریشن", colorMode: "کلر موڈ", cmColor: "کلر", cmGray: "گرے اسکیل",
-    pdfPass: "PDF پاس ورڈ", passPlaceholder: "خالی چھوڑیں",
-    watermark: "واٹر مارک ٹیکسٹ", wmPlaceholder: "مثلاً CONFIDENTIAL",
-    wmOpacity: "واٹر مارک اوپیسٹی", fileName: "فائل کا نام", outputMode: "آؤٹ پٹ موڈ",
-    omMerged: "ایک merged PDF", omSeparate: "الگ PDF ہر تصویر کے لیے",
-    convertToPdf: "PDF میں تبدیل کریں",
-    featTitle: "صارفین ہمارا ٹول کیوں چنتے ہیں", featSubtitle: "پروفیشنل فیچرز، ہمیشہ مفت",
-    fSortT: "سمارٹ آٹو سورٹ", fSortD: "فائل نام کے نمبر پڑھتا ہے۔",
-    f1t: "100% نجی", f1d: "فائلیں آپ کے ڈیوائس پر رہتی ہیں۔",
-    f2t: "بہت تیز", f2d: "50 تصاویر 3 سیکنڈ میں۔",
-    f3t: "ایڈیٹر", f3d: "روٹیٹ، فلپ، برائٹنیس۔",
-    f4t: "پاس ورڈ", f4d: "مفت میں PDF محفوظ کریں۔",
-    f5t: "بیچ ڈاؤن لوڈ", f5d: "سب ZIP میں یا ایک PDF میں۔",
-    f6t: "5 زبانیں", f6d: "انگریزی، ہندی، اردو، جرمن، ہسپانوی۔",
-    f8t: "ہمیشہ مفت", f8d: "کوئی سائن اپ نہیں۔",
-    tipsTitle: "JPG to PDF ٹپس 2026", tipsSubtitle: "بہترین PDF کے لیے ٹپس",
-    tipSort: "آٹو سورٹ استعمال کریں: نمبر والے صفحات خودکار ترتیب میں آ جائیں گے۔",
-    tip1: "'Fit to Image' چنیں۔",
-    tip2: "ای میل کے لیے کمپریس کریں۔",
-    tip3: "ترتیب اہم ہے۔",
-    tip4: "پاس ورڈ لگائیں۔",
-    faqTitle: "عام سوالات", faqSubtitle: "جو آپ جاننا چاہتے ہیں",
-    qSort: "آٹو سورٹ کیسے کام کرتا ہے؟",
-    aSort: "آٹو سورٹ فائل نام کے نمبر پڑھتا ہے اور صحیح ترتیب میں لگاتا ہے۔",
-    q1: "کیا یہ کنورٹر واقعی مفت ہے؟",
-    a1: "جی ہاں، 100% ہمیشہ کے لیے مفت۔",
-    q2: "کیا میری تصاویر محفوظ ہیں؟",
-    a2: "بالکل۔ تمام کام آپ کے براؤزر میں ہوتا ہے۔",
-    q3: "کیا کئی JPG ایک PDF میں ملا سکتے ہیں؟",
-    a3: "جی ہاں۔",
-    q4: "کون سے فارمیٹس سپورٹ ہیں؟",
-    a4: "JPG, PNG, WEBP, GIF اور BMP۔",
-    q5: "کیا PDF کو پاس ورڈ سے محفوظ کر سکتے ہیں؟",
-    a5: "جی ہاں۔",
-    relatedTitle: "متعلقہ مفت ٹولز", relatedSubtitle: "مزید ٹولز",
-    editImage: "تصویر ایڈٹ کریں", rotateFlip: "روٹیٹ اور فلپ",
-    brightness: "برائٹنیس", contrast: "کانٹراسٹ", saturation: "سیچوریشن",
-    filter: "فلٹر", fNone: "کوئی نہیں", fGray: "گرے اسکیل", fSepia: "سیپیا", fInvert: "انورٹ",
-    reset: "ری سیٹ", apply: "لاگو کریں",
-    home: "ہوم", about: "تعارف", contact: "رابطہ", privacy: "پرائیویسی", blog: "بلاگ",
-    brand: "FreeSEOToolHub", footerDesc: "20 ضروری SEO ٹولز۔",
-    quickLinks: "فوری لنکس", popularTools: "ٹاپ ٹولز", moreTools: "مزید ٹولز", legal: "قانونی",
-    copyright: "© 2026 FreeSEOToolHub.com",
-    sortDone: "{n} تصاویر صحیح ترتیب میں لگ گئیں!",
+    sortDone: "{n} تصاویر صحیح ترتیب میں!",
+    sortNoChange: "پہلے سے صحیح ترتیب میں ہیں",
+    sortNoNumbers: "نمبر نہیں ملے",
     sortHintTitle: "سمارٹ آٹو سورٹ",
-    sortHintText: "فائلیں غلط ترتیب میں اپلوڈ ہوئیں؟ آٹو سورٹ کلک کریں۔",
-    sortNoChange: "تصاویر پہلے سے صحیح ترتیب میں ہیں",
-    sortNoNumbers: "فائل نام میں نمبر نہیں ملے"
+    sortHintText: "آٹو سورٹ کلک کریں۔"
   },
   de: {
-    heroTitle1: "JPG zu PDF Konverter", heroTitle2: "Kostenlos 2026",
-    heroSubtitle: "Konvertieren Sie JPG, PNG, WEBP Bilder mit Smart Auto-Sort in Sekunden zu PDF. 100% kostenlos.",
-    pill1: "100% Privat", pillSort: "Smart Auto-Sort", pill3: "5 Sprachen", pill4: "Kein Wasserzeichen",
-    dropTitle: "Bilder hier ablegen oder", browse: "durchsuchen",
-    dropSub: "JPG · PNG · WEBP · GIF · BMP — bis zu 50 Dateien",
-    imagesLabel: "Bilder", add: "Hinzufügen", clear: "Löschen", settings: "Einstellungen", convert: "Konvertieren", autoSort: "Auto-Sort",
-    tabLayout: "Layout", tabQuality: "Qualität", tabSecurity: "Sicherheit", tabOutput: "Ausgabe",
-    pageSize: "Seitengröße", psFit: "Auto — An Bild anpassen", psA4: "A4", psLetter: "Letter", psLegal: "Legal", psA3: "A3", psA5: "A5",
-    orientation: "Ausrichtung", orAuto: "Auto", orPortrait: "Hochformat", orLandscape: "Querformat",
-    margin: "Rand", mNone: "Kein", mSmall: "Klein", mMedium: "Mittel", mLarge: "Groß",
-    pageNumbers: "Seitenzahlen", pnNone: "Keine", pnBC: "Unten Mitte", pnBR: "Unten Rechts",
-    imgQuality: "Bildqualität", qHigh: "Hoch", qBal: "Ausgeglichen", qComp: "Komprimiert", qSmall: "Klein",
-    compression: "Komprimierung", colorMode: "Farbmodus", cmColor: "Farbe", cmGray: "Graustufen",
-    pdfPass: "PDF-Passwort", passPlaceholder: "Leer lassen",
-    watermark: "Wasserzeichen-Text", wmPlaceholder: "z.B. VERTRAULICH",
-    wmOpacity: "Wasserzeichen-Deckkraft", fileName: "Dateiname", outputMode: "Ausgabemodus",
-    omMerged: "Eine zusammengeführte PDF", omSeparate: "Separate PDF pro Bild",
-    convertToPdf: "In PDF konvertieren",
-    featTitle: "Warum Nutzer unser Tool wählen", featSubtitle: "Professionelle Funktionen",
-    fSortT: "Smart Auto-Sort", fSortD: "Liest Zahlen in Dateinamen — page_1, page_2, page_10 perfekt sortiert.",
-    f1t: "100% Privat", f1d: "Dateien bleiben auf Ihrem Gerät.",
-    f2t: "Blitzschnell", f2d: "50 Bilder unter 3 Sekunden.",
-    f3t: "Integrierter Editor", f3d: "Drehen, Spiegeln, Helligkeit.",
-    f4t: "Passwortschutz", f4d: "PDF kostenlos verschlüsseln.",
-    f5t: "Batch-Download", f5d: "Als ZIP oder eine PDF.",
-    f6t: "5 Sprachen", f6d: "Englisch, Hindi, Urdu, Deutsch, Spanisch.",
-    f8t: "Kostenlos", f8d: "Keine Anmeldung.",
-    tipsTitle: "Tipps 2026", tipsSubtitle: "Profi-Tipps",
-    tipSort: "Auto-Sort verwenden: Nummerierte Seiten werden automatisch sortiert.",
-    tip1: "'An Bild anpassen' wählen.",
-    tip2: "Für E-Mail komprimieren.",
-    tip3: "Reihenfolge wichtig.",
-    tip4: "Passwort hinzufügen.",
-    faqTitle: "Häufige Fragen", faqSubtitle: "Alles was Sie wissen müssen",
-    qSort: "Wie funktioniert Auto-Sort?",
-    aSort: "Auto-Sort liest Zahlen in Dateinamen und sortiert korrekt: 1, 2, 10 statt 1, 10, 2.",
-    q1: "Ist dieser Konverter kostenlos?",
-    a1: "Ja, 100% für immer kostenlos.",
-    q2: "Sind meine Bilder sicher?",
-    a2: "Absolut. Alles läuft lokal im Browser.",
-    q3: "Kann ich mehrere JPG zusammenführen?",
-    a3: "Ja.",
-    q4: "Welche Formate werden unterstützt?",
-    a4: "JPG, JPEG, PNG, WEBP, GIF und BMP.",
-    q5: "Kann ich PDF mit Passwort schützen?",
-    a5: "Ja.",
-    relatedTitle: "Verwandte Tools", relatedSubtitle: "Weitere Tools",
-    editImage: "Bild bearbeiten", rotateFlip: "Drehen & Spiegeln",
-    brightness: "Helligkeit", contrast: "Kontrast", saturation: "Sättigung",
-    filter: "Filter", fNone: "Keiner", fGray: "Graustufen", fSepia: "Sepia", fInvert: "Invertieren",
-    reset: "Zurücksetzen", apply: "Anwenden",
-    home: "Startseite", about: "Über uns", contact: "Kontakt", privacy: "Datenschutz", blog: "Blog",
-    brand: "FreeSEOToolHub", footerDesc: "20 essentielle SEO-Tools.",
-    quickLinks: "Schnelllinks", popularTools: "Top-Tools", moreTools: "Weitere Tools", legal: "Rechtliches",
-    copyright: "© 2026 FreeSEOToolHub.com",
     sortDone: "{n} Bilder korrekt sortiert!",
+    sortNoChange: "Bereits korrekt sortiert",
+    sortNoNumbers: "Keine Zahlen gefunden",
     sortHintTitle: "Smart Auto-Sort",
-    sortHintText: "Dateien in falscher Reihenfolge? Klicken Sie Auto-Sort.",
-    sortNoChange: "Bilder sind bereits korrekt sortiert",
-    sortNoNumbers: "Keine Zahlen in Dateinamen gefunden"
+    sortHintText: "Auto-Sort klicken."
   },
   es: {
-    heroTitle1: "Convertidor JPG a PDF", heroTitle2: "Gratis 2026",
-    heroSubtitle: "Convierte imágenes JPG, PNG, WEBP a PDF con ordenación automática. 100% gratis.",
-    pill1: "100% Privado", pillSort: "Auto-Ordenar", pill3: "5 Idiomas", pill4: "Sin Marca",
-    dropTitle: "Suelta imágenes aquí o", browse: "explorar",
-    dropSub: "JPG · PNG · WEBP · GIF · BMP — hasta 50 archivos",
-    imagesLabel: "imágenes", add: "Añadir", clear: "Limpiar", settings: "Ajustes", convert: "Convertir", autoSort: "Auto-Ordenar",
-    tabLayout: "Diseño", tabQuality: "Calidad", tabSecurity: "Seguridad", tabOutput: "Salida",
-    pageSize: "Tamaño de Página", psFit: "Auto — Ajustar a Imagen", psA4: "A4", psLetter: "Carta", psLegal: "Legal", psA3: "A3", psA5: "A5",
-    orientation: "Orientación", orAuto: "Auto", orPortrait: "Vertical", orLandscape: "Horizontal",
-    margin: "Margen", mNone: "Ninguno", mSmall: "Pequeño", mMedium: "Medio", mLarge: "Grande",
-    pageNumbers: "Números de Página", pnNone: "Ninguno", pnBC: "Abajo Centro", pnBR: "Abajo Derecha",
-    imgQuality: "Calidad de Imagen", qHigh: "Alta", qBal: "Equilibrada", qComp: "Comprimida", qSmall: "Pequeña",
-    compression: "Compresión", colorMode: "Modo de Color", cmColor: "Color", cmGray: "Escala de Grises",
-    pdfPass: "Contraseña PDF", passPlaceholder: "Dejar vacío",
-    watermark: "Texto de Marca", wmPlaceholder: "ej. CONFIDENCIAL",
-    wmOpacity: "Opacidad de Marca", fileName: "Nombre del Archivo", outputMode: "Modo de Salida",
-    omMerged: "Un solo PDF fusionado", omSeparate: "PDF separado por imagen",
-    convertToPdf: "Convertir a PDF",
-    featTitle: "Por qué los usuarios eligen nuestra herramienta", featSubtitle: "Funciones profesionales",
-    fSortT: "Auto-Ordenar Inteligente", fSortD: "Lee números en nombres — page_1, page_2, page_10 en orden perfecto.",
-    f1t: "100% Privado", f1d: "Los archivos permanecen en tu dispositivo.",
-    f2t: "Súper Rápido", f2d: "50 imágenes en menos de 3 segundos.",
-    f3t: "Editor Integrado", f3d: "Rotar, voltear, brillo.",
-    f4t: "Contraseña", f4d: "Cifra tu PDF gratis.",
-    f5t: "Descarga por Lotes", f5d: "Como ZIP o un PDF.",
-    f6t: "5 Idiomas", f6d: "Inglés, Hindi, Urdu, Alemán, Español.",
-    f8t: "Gratis Siempre", f8d: "Sin registro.",
-    tipsTitle: "Consejos 2026", tipsSubtitle: "Consejos pro",
-    tipSort: "Usa Auto-Ordenar: páginas numeradas se ordenan automáticamente.",
-    tip1: "Elige 'Ajustar a Imagen'.",
-    tip2: "Comprime para email.",
-    tip3: "El orden importa.",
-    tip4: "Añade contraseña.",
-    faqTitle: "Preguntas Frecuentes", faqSubtitle: "Todo lo que necesitas saber",
-    qSort: "¿Cómo funciona Auto-Ordenar?",
-    aSort: "Auto-Ordenar lee números en nombres y ordena correctamente: 1, 2, 10 en vez de 1, 10, 2.",
-    q1: "¿Es realmente gratis?",
-    a1: "Sí, 100% gratis para siempre.",
-    q2: "¿Mis imágenes están seguras?",
-    a2: "Absolutamente. Todo ocurre localmente en tu navegador.",
-    q3: "¿Puedo fusionar múltiples JPG?",
-    a3: "Sí.",
-    q4: "¿Qué formatos son compatibles?",
-    a4: "JPG, JPEG, PNG, WEBP, GIF y BMP.",
-    q5: "¿Puedo proteger con contraseña?",
-    a5: "Sí.",
-    relatedTitle: "Herramientas Relacionadas", relatedSubtitle: "Más herramientas",
-    editImage: "Editar Imagen", rotateFlip: "Rotar y Voltear",
-    brightness: "Brillo", contrast: "Contraste", saturation: "Saturación",
-    filter: "Filtro", fNone: "Ninguno", fGray: "Escala de Grises", fSepia: "Sepia", fInvert: "Invertir",
-    reset: "Reiniciar", apply: "Aplicar",
-    home: "Inicio", about: "Acerca de", contact: "Contacto", privacy: "Privacidad", blog: "Blog",
-    brand: "FreeSEOToolHub", footerDesc: "20 herramientas SEO esenciales.",
-    quickLinks: "Enlaces Rápidos", popularTools: "Herramientas Top", moreTools: "Más Herramientas", legal: "Legal",
-    copyright: "© 2026 FreeSEOToolHub.com",
-    sortDone: "¡{n} imágenes ordenadas correctamente!",
-    sortHintTitle: "Auto-Ordenar Inteligente",
-    sortHintText: "¿Archivos en orden incorrecto? Haz clic en Auto-Ordenar.",
-    sortNoChange: "Las imágenes ya están en orden correcto",
-    sortNoNumbers: "No se encontraron números en los nombres"
+    sortDone: "¡{n} imágenes ordenadas!",
+    sortNoChange: "Ya están en orden correcto",
+    sortNoNumbers: "No se encontraron números",
+    sortHintTitle: "Auto-Ordenar",
+    sortHintText: "Haz clic en Auto-Ordenar."
   }
 };
 
@@ -1341,19 +1065,22 @@ function t(key){
   return dict[key] || I18N.en[key] || key;
 }
 
-/* ========== APPLY LANGUAGE ========== */
+/* ========== LANGUAGE ========== */
 function setLang(lang){
   var dict = I18N[lang] || I18N.en;
   document.documentElement.lang = lang;
   document.documentElement.dir = lang === 'ur' ? 'rtl' : 'ltr';
 
+  var allI18N = window.FULL_I18N || {};
+  var fullDict = allI18N[lang] || allI18N.en || {};
+
   document.querySelectorAll('[data-i18n]').forEach(function(el){
     var key = el.dataset.i18n;
-    if (dict[key]) el.textContent = dict[key];
+    if (fullDict[key]) el.textContent = fullDict[key];
   });
   document.querySelectorAll('[data-i18n-ph]').forEach(function(el){
     var key = el.dataset.i18nPh;
-    if (dict[key]) el.placeholder = dict[key];
+    if (fullDict[key]) el.placeholder = fullDict[key];
   });
 
   var langNames = { en:'English', hi:'हिन्दी', ur:'اردو', de:'Deutsch', es:'Español' };
@@ -1418,93 +1145,115 @@ var progressPct = $('progressPct');
 var sortHint = $('sortHint');
 
 /* ============================================================
-   NATURAL SORT — Smart filename number detection
-   Handles: page_1, page_2, page_10 → 1, 2, 30 (correct)
-   Handles: 20, 19, 18, ... 1 → 1, 2, 3 ... 30 (auto-reverse)
+   ULTIMATE SMART SORT — 100% WORKING
    ============================================================ */
 function extractNumbers(str){
-  // Extract all numbers from filename (supports 1, 01, 001, 1a, page-1, img_2024_001)
+  if (!str) return [];
   var matches = String(str).match(/\d+/g);
   if (!matches) return [];
   return matches.map(function(n){ return parseInt(n, 10); });
 }
 
-function compareNatural(a, b){
-  // Compare two filenames using natural sort with number extraction
-  var nameA = a.name.toLowerCase();
-  var nameB = b.name.toLowerCase();
+function getPageNumber(filename){
+  if (!filename) return null;
+  var name = String(filename).replace(/\.[^.]+$/, '');
+  var nums = extractNumbers(name);
+  if (!nums.length) return null;
+  if (nums.length === 1) return nums[0];
 
-  // Try to find the LAST number in each filename (most likely the page number)
-  // Priority: last number, because "img_2024_page_15.jpg" → 15 is the page
-  var numsA = extractNumbers(nameA);
-  var numsB = extractNumbers(nameB);
+  // Filter out years (1900-2099) if there are other numbers
+  var filtered = nums.filter(function(n){
+    if (n >= 1900 && n <= 2099 && nums.length > 1) return false;
+    return true;
+  });
 
-  if (numsA.length && numsB.length) {
-    // Compare last numbers first (most likely page number)
-    var lastA = numsA[numsA.length - 1];
-    var lastB = numsB[numsB.length - 1];
+  if (!filtered.length) return nums[nums.length - 1];
 
-    if (lastA !== lastB) return lastA - lastB;
-
-    // If last numbers same, compare full number sequence
-    for (var i = 0; i < Math.min(numsA.length, numsB.length); i++) {
-      if (numsA[i] !== numsB[i]) return numsA[i] - numsB[i];
-    }
-  } else if (numsA.length) {
-    return -1; // numbers before non-numbers
-  } else if (numsB.length) {
-    return 1;
-  }
-
-  // Fallback: natural string compare (a1 < a10)
-  return nameA.localeCompare(nameB, undefined, { numeric: true, sensitivity: 'base' });
+  // Use LAST filtered number (most likely page number)
+  return filtered[filtered.length - 1];
 }
 
-function autoSortImages(){
-  if (state.images.length < 2) {
-    toast(t('sortNoChange'), 'warn');
-    return;
+function compareNatural(a, b){
+  var numA = getPageNumber(a.name);
+  var numB = getPageNumber(b.name);
+
+  if (numA !== null && numB !== null) {
+    if (numA !== numB) return numA - numB;
+    return a.name.localeCompare(b.name, undefined, { numeric: true });
   }
 
-  // Detect if any filenames have numbers
+  if (numA !== null) return -1;
+  if (numB !== null) return 1;
+
+  return a.name.localeCompare(b.name, undefined, { numeric: true, sensitivity: 'base' });
+}
+
+function smartSortImages(){
+  if (state.images.length < 2) {
+    return { sorted: false, reason: 'too_few' };
+  }
+
   var withNumbers = state.images.filter(function(img){
-    return extractNumbers(img.name).length > 0;
+    return getPageNumber(img.name) !== null;
   });
 
   if (withNumbers.length < 2) {
-    toast(t('sortNoNumbers'), 'warn');
-    return;
+    return { sorted: false, reason: 'no_numbers' };
   }
 
-  // Store original order for comparison
   var originalIds = state.images.map(function(i){ return i.id; }).join(',');
 
-  // Sort using natural comparison
-  state.images.sort(compareNatural);
+  // Detect current direction
+  var reverseCount = 0;
+  var forwardCount = 0;
+  for (var i = 1; i < state.images.length; i++) {
+    var prev = getPageNumber(state.images[i-1].name);
+    var curr = getPageNumber(state.images[i].name);
+    if (prev === null || curr === null) continue;
+    if (curr < prev) reverseCount++;
+    else if (curr > prev) forwardCount++;
+  }
 
-  // Check if order actually changed
+  // Sort ascending
+  state.images.sort(compareNatural);
   var newIds = state.images.map(function(i){ return i.id; }).join(',');
+
   if (originalIds === newIds) {
-    toast(t('sortNoChange'), 'warn');
+    return { sorted: false, reason: 'already_sorted' };
+  }
+
+  return { sorted: true, reason: 'sorted', reverseDetected: reverseCount > forwardCount };
+}
+
+function autoSortImages(){
+  var result = smartSortImages();
+
+  if (!result.sorted) {
+    if (result.reason === 'too_few') {
+      toast('Need at least 2 images', 'warn');
+    } else if (result.reason === 'no_numbers') {
+      toast(t('sortNoNumbers'), 'warn');
+    } else {
+      toast(t('sortNoChange'), 'warn');
+    }
     return;
   }
 
-  // Mark all as just-sorted for animation
   renderImages();
   document.querySelectorAll('.img-card').forEach(function(card){
     card.classList.add('just-sorted');
-    setTimeout(function(){ card.classList.remove('just-sorted'); }, 1300);
+    setTimeout(function(){ card.classList.remove('just-sorted'); }, 1500);
   });
 
-  // Update toolbar
   updateToolbar();
-
-  toast(t('sortDone').replace('{n}', state.images.length), 'success');
+  toast('✅ ' + state.images.length + ' images sorted!', 'success', 3500);
 }
 
-$('autoSortBtn').addEventListener('click', autoSortImages);
+var autoSortBtn = $('autoSortBtn');
+if (autoSortBtn) {
+  autoSortBtn.addEventListener('click', autoSortImages);
+}
 
-/* ========== SORT HINT BANNER ========== */
 function showSortHint(){
   if (!sortHint) return;
   sortHint.hidden = false;
@@ -1548,7 +1297,7 @@ $('clearAll').addEventListener('click', function(){
     state.images = [];
     renderImages();
     updateToolbar();
-    sortHint.hidden = true;
+    if (sortHint) sortHint.hidden = true;
     toast('All images cleared', 'warn');
   }
 });
@@ -1571,7 +1320,7 @@ async function handleFiles(files){
 
   var accepted = valid.filter(function(f){ return f.size <= MAX_SIZE_MB * 1024 * 1024; });
   if (accepted.length < valid.length) {
-    toast((valid.length - accepted.length) + ' file(s) too large (>' + MAX_SIZE_MB + 'MB)', 'warn');
+    toast((valid.length - accepted.length) + ' file(s) too large', 'warn');
   }
 
   if (state.images.length + accepted.length > MAX_FILES) {
@@ -1596,15 +1345,11 @@ async function handleFiles(files){
     } catch (e) { console.error(e); }
   }
 
-  // AUTO-SORT on upload if filenames have numbers
-  var hasNumbered = accepted.filter(function(f){ return extractNumbers(f.name).length > 0; });
+  // AUTO-SORT on upload
   var autoSorted = false;
-
-  if (hasNumbered.length >= 2 && state.images.length >= 2) {
-    var beforeIds = state.images.map(function(i){ return i.id; }).join(',');
-    state.images.sort(compareNatural);
-    var afterIds = state.images.map(function(i){ return i.id; }).join(',');
-    autoSorted = (beforeIds !== afterIds);
+  if (state.images.length >= 2) {
+    var sortResult = smartSortImages();
+    autoSorted = sortResult.sorted;
   }
 
   renderImages();
@@ -1613,15 +1358,13 @@ async function handleFiles(files){
   fileInput.value = '';
 
   if (autoSorted) {
-    // Highlight sorted cards
     document.querySelectorAll('.img-card').forEach(function(card){
       card.classList.add('just-sorted');
-      setTimeout(function(){ card.classList.remove('just-sorted'); }, 1300);
+      setTimeout(function(){ card.classList.remove('just-sorted'); }, 1500);
     });
     toast('✨ ' + accepted.length + ' image(s) added & auto-sorted!', 'success', 4000);
   } else {
     toast(accepted.length + ' image(s) added', 'success');
-    // Show hint if 3+ images but no auto-sort happened
     if (state.images.length >= 3) {
       showSortHint();
     }
@@ -1956,7 +1699,7 @@ async function convertMerged(opts){
       pageW = sz[0]; pageH = sz[1];
       if (opts.orientation === 'auto') orient = ratio > 1 ? 'l' : 'p';
       else orient = opts.orientation === 'portrait' ? 'p' : 'l';
-      if (orient === 'l') { var t = pageW; pageW = pageH; pageH = t; }
+      if (orient === 'l') { var tp = pageW; pageW = pageH; pageH = tp; }
     }
 
     if (!pdf) {
@@ -2036,7 +1779,7 @@ async function convertSeparate(opts){
       pageW = sz[0]; pageH = sz[1];
       if (opts.orientation === 'auto') orient = ratio > 1 ? 'l' : 'p';
       else orient = opts.orientation === 'portrait' ? 'p' : 'l';
-      if (orient === 'l') { var t = pageW; pageW = pageH; pageH = t; }
+      if (orient === 'l') { var tp = pageW; pageW = pageH; pageH = tp; }
     }
 
     var pdf = new jsPDF({ orientation: orient, unit: 'pt', format: opts.pageSize === 'fit' ? [pageW, pageH] : opts.pageSize, compress: true });
@@ -2148,6 +1891,3 @@ window.addEventListener('load', function(){
 
 })();
 </script>
-
-</body>
-</html>
