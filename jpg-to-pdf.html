@@ -15,7 +15,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
   <title>JPG to PDF Converter Free 2026 – Merge Images to PDF Online | FreeSEOToolHub</title>
-  <meta name="description" content="Free JPG to PDF converter 2026. Convert JPG, PNG, WEBP images to PDF with smart page number sort, editor, batch download, password protection. 100% free.">
+  <meta name="description" content="Free JPG to PDF converter 2026. Convert JPG, PNG, WEBP images to PDF with smart page number sort, drag & drop reorder, editor, batch download, password protection.">
   <meta name="keywords" content="jpg to pdf, image to pdf, png to pdf, jpeg to pdf converter, free jpg to pdf, merge images to pdf, batch image to pdf, sort pdf pages">
   <meta name="author" content="FreeSEOToolHub">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
@@ -31,13 +31,13 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://freeseotoolhub.com/jpg-to-pdf.html">
   <meta property="og:title" content="JPG to PDF Converter Free 2026 – Merge Images to PDF Online">
-  <meta property="og:description" content="Convert JPG, PNG, WEBP to PDF with smart page sort, editor, batch download & password protection. 100% free.">
+  <meta property="og:description" content="Convert JPG, PNG, WEBP to PDF with drag & drop reorder, page number sort, editor, batch download & password protection. 100% free.">
   <meta property="og:image" content="https://freeseotoolhub.com/images/og-jpg-to-pdf.jpg">
   <meta property="og:site_name" content="FreeSEOToolHub">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="JPG to PDF Converter Free 2026 – Merge Images to PDF">
-  <meta name="twitter:description" content="Convert JPG, PNG, WEBP to PDF with smart page sort, editor, batch download & password protection.">
+  <meta name="twitter:description" content="Convert JPG, PNG, WEBP to PDF with drag & drop reorder, page number sort, editor, batch download & password protection.">
   <meta name="twitter:image" content="https://freeseotoolhub.com/images/twitter-jpg-to-pdf.jpg">
 
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
@@ -65,7 +65,7 @@
         "operatingSystem": "Web, iOS, Android, Windows, macOS, Linux",
         "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
         "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "12437"},
-        "description": "Free online JPG to PDF converter with smart page number sort, image editor, batch download, password protection."
+        "description": "Free online JPG to PDF converter with drag & drop reorder, smart page number sort, image editor, batch download, password protection."
       },
       {
         "@type": "HowTo",
@@ -73,15 +73,15 @@
         "totalTime": "PT2M",
         "step": [
           {"@type": "HowToStep", "name": "Upload images", "text": "Drag & drop your JPG, PNG or WEBP images."},
-          {"@type": "HowToStep", "name": "Enter page numbers", "text": "Type the page number visible in each image (e.g. 24, 1, 15)."},
-          {"@type": "HowToStep", "name": "Click Sort", "text": "Auto-arrange images by the page numbers you entered."},
-          {"@type": "HowToStep", "name": "Download", "text": "Click Convert to download your perfectly ordered PDF."}
+          {"@type": "HowToStep", "name": "Arrange", "text": "Drag cards to reorder, or type page numbers + click Sort."},
+          {"@type": "HowToStep", "name": "Configure", "text": "Choose page size, quality, watermark."},
+          {"@type": "HowToStep", "name": "Download", "text": "Click Convert to get your PDF."}
         ]
       },
       {
         "@type": "FAQPage",
         "mainEntity": [
-          {"@type": "Question", "name": "How does the page number sort work?", "acceptedAnswer": {"@type": "Answer", "text": "Enter the page number visible in each image, then click Sort. Images are arranged in numeric order."}},
+          {"@type": "Question", "name": "How do I reorder images?", "acceptedAnswer": {"@type": "Answer", "text": "Drag & drop any card to move it, or type page numbers then click Sort by Page #."}},
           {"@type": "Question", "name": "Is this converter free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, 100% free forever. No signup required."}},
           {"@type": "Question", "name": "Are my images safe?", "acceptedAnswer": {"@type": "Answer", "text": "All processing happens in your browser. Files never leave your device."}}
         ]
@@ -114,7 +114,7 @@
     .hero-pills { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:22px; position:relative; z-index:1; }
     .hero-pill { background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); padding:8px 18px; border-radius:50px; font-size:0.85rem; font-weight:500; }
 
-    /* ===== FIXED DROP ZONE ===== */
+    /* ===== DROP ZONE (upload area) ===== */
     .drop-zone {
       display: block;
       cursor: pointer;
@@ -142,7 +142,6 @@
     .drop-zone h3 { font-size:1.3rem; font-weight:700; color:#0b1a33; margin-bottom:8px; }
     .drop-zone h3 .link { color:#ff9933; text-decoration:underline; cursor:pointer; }
     .drop-zone p { color:#4a5a72; font-size:0.9rem; }
-    /* Hidden but accessible file input */
     .drop-zone input[type="file"] {
       position: absolute;
       left: -9999px;
@@ -217,22 +216,75 @@
     .sort-hint .close-hint:hover { background:rgba(16,185,129,0.15); }
     @keyframes slideDown { from{opacity:0;transform:translateY(-10px)} to{opacity:1;transform:translateY(0)} }
 
+    /* ===== IMAGES GRID ===== */
     .images-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:16px; margin-bottom:30px; }
+
+    /* ===== IMG CARD WITH DRAG SUPPORT ===== */
     .img-card {
       background:white;
       border-radius:18px;
       overflow:hidden;
       box-shadow:0 10px 30px rgba(0,0,0,0.05);
       border:2px solid #eef2f6;
-      transition:all 0.3s;
+      transition:transform 0.2s, box-shadow 0.2s, border-color 0.2s;
       cursor:grab;
       position:relative;
       display:flex;
       flex-direction:column;
+      user-select:none;
+      -webkit-user-select:none;
+      -webkit-tap-highlight-color:transparent;
     }
     .img-card:hover { transform:translateY(-4px); box-shadow:0 20px 40px rgba(11,26,51,0.15); border-color:#ff9933; }
-    .img-card.dragging { opacity:0.4; cursor:grabbing; }
-    .img-card.drop-target { border-color:#ff9933; }
+    .img-card:active { cursor:grabbing; }
+
+    .img-card.dragging {
+      opacity: 0.4;
+      transform: scale(0.95) rotate(2deg);
+      cursor: grabbing;
+      border-color: #ff9933;
+      box-shadow: 0 20px 60px rgba(255,153,51,0.4);
+    }
+
+    .img-card.drop-target {
+      border-color: #10b981 !important;
+      border-width: 3px !important;
+      background: linear-gradient(180deg, #f0fdf4 0%, #ffffff 100%);
+      transform: scale(1.03);
+      box-shadow: 0 20px 50px rgba(16,185,129,0.35);
+    }
+
+    .img-card.drop-before::before {
+      content: '';
+      position: absolute;
+      left: -10px;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: #10b981;
+      border-radius: 4px;
+      box-shadow: 0 0 12px rgba(16,185,129,0.8);
+      animation: pulseLine 1s ease-in-out infinite;
+      z-index: 10;
+    }
+    .img-card.drop-after::after {
+      content: '';
+      position: absolute;
+      right: -10px;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: #10b981;
+      border-radius: 4px;
+      box-shadow: 0 0 12px rgba(16,185,129,0.8);
+      animation: pulseLine 1s ease-in-out infinite;
+      z-index: 10;
+    }
+    @keyframes pulseLine {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
     .img-card.has-page-num { border-color:#10b981; background:linear-gradient(180deg, #ffffff 0%, #f0fdf4 100%); }
     .img-card.just-sorted { animation:sortFlash 1.2s ease; }
     @keyframes sortFlash {
@@ -241,8 +293,33 @@
       100% { box-shadow:0 10px 30px rgba(0,0,0,0.05); }
     }
 
+    .drag-handle {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(11,26,51,0.75);
+      color: #fff;
+      padding: 4px 12px;
+      border-radius: 100px;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      opacity: 0;
+      transition: opacity 0.2s;
+      pointer-events: none;
+      z-index: 5;
+      backdrop-filter: blur(8px);
+    }
+    .img-card:hover .drag-handle { opacity: 1; }
+    .drag-handle i { font-size: 0.7rem; }
+
     .img-thumb-wrap { position:relative; }
-    .img-thumb { width:100%; height:180px; object-fit:cover; display:block; background:#f0f4f8; }
+    .img-thumb { width:100%; height:180px; object-fit:cover; display:block; background:#f0f4f8; pointer-events:none; }
     .img-num-badge {
       position:absolute; top:10px; left:10px;
       background:linear-gradient(135deg,#0b1a33,#2d3b68);
@@ -476,16 +553,15 @@
       <span data-i18n="heroTitle1">JPG to PDF Converter</span>
       <span class="highlight" data-i18n="heroTitle2">Free 2026</span>
     </h1>
-    <p data-i18n="heroSubtitle">Convert JPG, PNG, WEBP images to PDF with smart page number sort. Type the page number visible in each image and sort instantly!</p>
+    <p data-i18n="heroSubtitle">Convert JPG, PNG, WEBP images to PDF with drag & drop reorder. Type page numbers or drag cards — sort instantly!</p>
     <div class="hero-pills">
       <span class="hero-pill">🔒 <span data-i18n="pill1">100% Private</span></span>
-      <span class="hero-pill">🔢 <span data-i18n="pillSort">Page Number Sort</span></span>
+      <span class="hero-pill">🖱️ <span data-i18n="pillSort">Drag & Drop Reorder</span></span>
       <span class="hero-pill">🌍 <span data-i18n="pill3">5 Languages</span></span>
       <span class="hero-pill">💎 <span data-i18n="pill4">No Watermark</span></span>
     </div>
   </section>
 
-  <!-- ✅ FIXED DROP ZONE — using <label> for guaranteed click -->
   <label class="drop-zone" id="dropZone" for="fileInput" aria-label="Upload images" tabindex="0">
     <input type="file" id="fileInput" accept="image/jpeg,image/jpg,image/png,image/webp,image/gif,image/bmp" multiple>
     <div class="drop-icon"><i class="fas fa-cloud-upload-alt"></i></div>
@@ -639,7 +715,7 @@
       <p data-i18n="featSubtitle">Professional-grade features, 100% free forever</p>
     </div>
     <div class="feature-grid">
-      <div class="feature-card"><div class="fc-icon"><i class="fas fa-sort-numeric-down"></i></div><h3 data-i18n="fSortT">Smart Page Sort</h3><p data-i18n="fSortD">Type page numbers visible in images. Sort 25 pages in 10 seconds.</p></div>
+      <div class="feature-card"><div class="fc-icon"><i class="fas fa-hand-pointer"></i></div><h3 data-i18n="fSortT">Drag & Drop Reorder</h3><p data-i18n="fSortD">Drag any card to rearrange. Or type page numbers for auto-sort.</p></div>
       <div class="feature-card"><div class="fc-icon"><i class="fas fa-shield-alt"></i></div><h3 data-i18n="f1t">100% Private</h3><p data-i18n="f1d">Files stay on your device. No server uploads.</p></div>
       <div class="feature-card"><div class="fc-icon"><i class="fas fa-bolt"></i></div><h3 data-i18n="f2t">Lightning Fast</h3><p data-i18n="f2d">100 images to PDF in under 5 seconds.</p></div>
       <div class="feature-card"><div class="fc-icon"><i class="fas fa-crop-alt"></i></div><h3 data-i18n="f3t">Built-in Editor</h3><p data-i18n="f3d">Rotate, flip, brightness, contrast, filters.</p></div>
@@ -656,10 +732,10 @@
       <p data-i18n="tipsSubtitle">Pro tips for perfect PDFs</p>
     </div>
     <ul class="tips">
-      <li data-i18n="tipSort"><b>Use Page Sort:</b> Type the page number visible in each image, then click "Sort by Page #" to arrange instantly.</li>
+      <li data-i18n="tipSort"><b>Two ways to order:</b> 1) Drag & drop cards to reorder. 2) Type page number in each card + click "Sort by Page #".</li>
       <li data-i18n="tip1"><b>Choose "Fit to Image":</b> Perfect page size for each image, no white borders.</li>
       <li data-i18n="tip2"><b>Compress for email:</b> Use 65% quality to keep PDF under 5 MB.</li>
-      <li data-i18n="tip3"><b>Order matters:</b> Drag & drop images to arrange manually if needed.</li>
+      <li data-i18n="tip3"><b>Order matters:</b> First card becomes Page 1, second becomes Page 2, etc.</li>
       <li data-i18n="tip4"><b>Password protect:</b> Add a password before converting for sensitive documents.</li>
     </ul>
   </section>
@@ -671,8 +747,8 @@
     </div>
     <div class="faq-grid">
       <div class="faq-card">
-        <h4><i class="fas fa-question-circle"></i> <span data-i18n="qSort">How does page number sort work?</span></h4>
-        <p data-i18n="aSort">Each image card has a small input box. Type the page number visible in that image (e.g. 24, 1, 15). Then click "Sort by Page #" — images arrange in numeric order automatically.</p>
+        <h4><i class="fas fa-question-circle"></i> <span data-i18n="qSort">How do I reorder images?</span></h4>
+        <p data-i18n="aSort">Two ways: 1) Drag & drop any card to move it anywhere. 2) Type page numbers in each card and click "Sort by Page #" for auto-arrange.</p>
       </div>
       <div class="faq-card">
         <h4><i class="fas fa-question-circle"></i> <span data-i18n="q1">Is this converter really free?</span></h4>
@@ -821,8 +897,8 @@ var I18N = {
   en: {
     brand: "FreeSEOToolHub", home: "Home", about: "About", contact: "Contact", privacy: "Privacy", blog: "Blog",
     heroTitle1: "JPG to PDF Converter", heroTitle2: "Free 2026",
-    heroSubtitle: "Convert JPG, PNG, WEBP images to PDF with smart page number sort. Type the page number visible in each image and sort instantly!",
-    pill1: "100% Private", pillSort: "Page Number Sort", pill3: "5 Languages", pill4: "No Watermark",
+    heroSubtitle: "Convert JPG, PNG, WEBP images to PDF with drag & drop reorder. Type page numbers or drag cards — sort instantly!",
+    pill1: "100% Private", pillSort: "Drag & Drop Reorder", pill3: "5 Languages", pill4: "No Watermark",
     dropTitle: "Drop images here or", browse: "browse",
     dropSub: "JPG · PNG · WEBP · GIF · BMP — up to 100 files",
     imagesLabel: "images", numberedLabel: "numbered", add: "Add", clear: "Clear", settings: "Settings", convert: "Convert",
@@ -840,7 +916,7 @@ var I18N = {
     omMerged: "Single merged PDF", omSeparate: "Separate PDF per image (ZIP)",
     convertToPdf: "Convert to PDF",
     featTitle: "Why Users Choose Our Tool", featSubtitle: "Professional-grade features, 100% free forever",
-    fSortT: "Smart Page Sort", fSortD: "Type page numbers visible in images. Sort 25 pages in 10 seconds.",
+    fSortT: "Drag & Drop Reorder", fSortD: "Drag any card to rearrange. Or type page numbers for auto-sort.",
     f1t: "100% Private", f1d: "Files stay on your device. No server uploads.",
     f2t: "Lightning Fast", f2d: "100 images to PDF in under 5 seconds.",
     f3t: "Built-in Editor", f3d: "Rotate, flip, brightness, contrast, filters.",
@@ -849,20 +925,20 @@ var I18N = {
     f6t: "5 Languages", f6d: "English, Hindi, Urdu, German, Spanish.",
     f8t: "Free Forever", f8d: "No signup, no watermark, no limits.",
     tipsTitle: "JPG to PDF Tips 2026", tipsSubtitle: "Pro tips for perfect PDFs",
-    tipSort: "Use Page Sort: Type the page number visible in each image, then click 'Sort by Page #' to arrange instantly.",
-    tip1: "Choose 'Fit to Image': Perfect page size for each image, no white borders.",
+    tipSort: "Two ways to order: 1) Drag & drop cards to reorder. 2) Type page number + click Sort.",
+    tip1: "Choose 'Fit to Image': Perfect page size for each image.",
     tip2: "Compress for email: Use 65% quality to keep PDF under 5 MB.",
-    tip3: "Order matters: Drag & drop images to arrange manually if needed.",
+    tip3: "Order matters: First card becomes Page 1, second Page 2, etc.",
     tip4: "Password protect: Add a password before converting for sensitive documents.",
     faqTitle: "Frequently Asked Questions", faqSubtitle: "Everything you need to know",
-    qSort: "How does page number sort work?",
-    aSort: "Each image card has a small input box. Type the page number visible in that image (e.g. 24, 1, 15). Then click 'Sort by Page #' — images arrange in numeric order automatically.",
+    qSort: "How do I reorder images?",
+    aSort: "Two ways: 1) Drag & drop any card to move it anywhere. 2) Type page numbers in each card and click 'Sort by Page #' for auto-arrange.",
     q1: "Is this converter really free?",
     a1: "Yes, 100% free forever. No signup, no watermarks, no file limits, no hidden charges.",
     q2: "Are my images safe and private?",
-    a2: "Absolutely. All conversion happens locally in your browser. Your images never leave your device.",
+    a2: "Absolutely. All conversion happens locally in your browser.",
     q3: "Can I merge multiple JPG into one PDF?",
-    a3: "Yes. Upload multiple images, sort them, and they'll be combined into a single PDF file.",
+    a3: "Yes. Upload multiple images, sort them, and they'll be combined into a single PDF.",
     q4: "What image formats are supported?",
     a4: "JPG, JPEG, PNG, WEBP, GIF, and BMP are fully supported.",
     q5: "Can I password protect my PDF?",
@@ -880,27 +956,27 @@ var I18N = {
     sortDone: "{n} images sorted by page number!",
     sortNoNumbers: "Please enter page numbers first",
     sortAlready: "Images are already in correct order",
-    sortPartial: "Sorted {sorted} of {total} images (others have no page number)",
-    hintTitle: "Smart Page Sort",
-    hintText: "Type the page number visible in each image, then click 'Sort by Page #' — they arrange instantly!",
-    toastAdded: "{n} image(s) added. Enter page numbers to sort.",
+    sortPartial: "Sorted {sorted} of {total} images",
+    hintTitle: "Two ways to order",
+    hintText: "1) Type page number + click 'Sort by Page #'. 2) Or drag & drop cards to reorder manually.",
+    toastAdded: "{n} image(s) added. Drag to reorder or enter page numbers.",
     toastEdited: "Image edited ✨",
     toastCleared: "All images cleared",
-    toastConvert: "Converting...",
     toastPdfDone: "✅ PDF created successfully!",
-    toastError: "Error: "
+    toastError: "Error: ",
+    toastMoved: "✅ Moved to position {n}"
   },
   hi: {
     brand: "FreeSEOToolHub", home: "होम", about: "अबाउट", contact: "संपर्क", privacy: "प्राइवेसी", blog: "ब्लॉग",
     heroTitle1: "JPG to PDF कन्वर्टर", heroTitle2: "फ्री 2026",
-    heroSubtitle: "स्मार्ट पेज नंबर सॉर्ट के साथ JPG, PNG, WEBP को PDF में बदलें। हर इमेज में दिखने वाला पेज नंबर टाइप करें और तुरंत सॉर्ट करें!",
-    pill1: "100% प्राइवेट", pillSort: "पेज नंबर सॉर्ट", pill3: "5 भाषाएं", pill4: "नो वॉटरमार्क",
+    heroSubtitle: "ड्रैग और ड्रॉप से इमेज री-ऑर्डर करें। पेज नंबर टाइप करें या कार्ड ड्रैग करें!",
+    pill1: "100% प्राइवेट", pillSort: "ड्रैग और ड्रॉप", pill3: "5 भाषाएं", pill4: "नो वॉटरमार्क",
     dropTitle: "यहां इमेज ड्रॉप करें या", browse: "ब्राउज़ करें",
     dropSub: "JPG · PNG · WEBP · GIF · BMP — 100 फाइलों तक",
     imagesLabel: "इमेज", numberedLabel: "नंबर वाली", add: "जोड़ें", clear: "क्लियर", settings: "सेटिंग्स", convert: "कन्वर्ट",
     autoSort: "पेज # से सॉर्ट",
     tabLayout: "लेआउट", tabQuality: "क्वालिटी", tabSecurity: "सिक्योरिटी", tabOutput: "आउटपुट",
-    pageSize: "पेज साइज़", psFit: "ऑटो — इमेज के अनुसार", psA4: "A4", psLetter: "Letter", psLegal: "Legal", psA3: "A3", psA5: "A5",
+    pageSize: "पेज साइज़", psFit: "ऑटो", psA4: "A4", psLetter: "Letter", psLegal: "Legal", psA3: "A3", psA5: "A5",
     orientation: "ओरिएंटेशन", orAuto: "ऑटो", orPortrait: "पोर्ट्रेट", orLandscape: "लैंडस्केप",
     margin: "मार्जिन", mNone: "नहीं", mSmall: "छोटा", mMedium: "मध्यम", mLarge: "बड़ा",
     pageNumbers: "पेज नंबर", pnNone: "नहीं", pnBC: "नीचे बीच", pnBR: "नीचे दाएं",
@@ -912,39 +988,39 @@ var I18N = {
     omMerged: "एक PDF", omSeparate: "अलग PDF (ZIP)",
     convertToPdf: "PDF में बदलें",
     featTitle: "यूज़र्स हमारा टूल क्यों चुनते हैं", featSubtitle: "प्रोफेशनल फीचर्स, हमेशा फ्री",
-    fSortT: "स्मार्ट पेज सॉर्ट", fSortD: "इमेज में दिखने वाला पेज नंबर टाइप करें। 25 पेज 10 सेकंड में सॉर्ट।",
+    fSortT: "ड्रैग और ड्रॉप", fSortD: "कार्ड ड्रैग करें या पेज नंबर टाइप करके सॉर्ट करें।",
     f1t: "100% प्राइवेट", f1d: "फाइलें आपके डिवाइस पर रहती हैं।",
     f2t: "सुपर फास्ट", f2d: "100 इमेज 5 सेकंड में PDF।",
-    f3t: "इनबिल्ट एडिटर", f3d: "रोटेट, फ्लिप, ब्राइटनेस, फिल्टर।",
+    f3t: "इनबिल्ट एडिटर", f3d: "रोटेट, फ्लिप, ब्राइटनेस।",
     f4t: "पासवर्ड", f4d: "मुफ्त में PDF एन्क्रिप्ट करें।",
     f5t: "बैच डाउनलोड", f5d: "ZIP में या एक PDF में।",
     f6t: "5 भाषाएं", f6d: "अंग्रेजी, हिन्दी, उर्दू, जर्मन, स्पेनिश।",
-    f8t: "हमेशा फ्री", f8d: "नो साइनअप, नो वॉटरमार्क।",
+    f8t: "हमेशा फ्री", f8d: "नो साइनअप।",
     tipsTitle: "JPG to PDF टिप्स 2026", tipsSubtitle: "परफेक्ट PDF के लिए टिप्स",
-    tipSort: "पेज सॉर्ट यूज़ करें: हर इमेज में दिखने वाला पेज नंबर टाइप करें, फिर 'पेज # से सॉर्ट' क्लिक करें।",
-    tip1: "'Fit to Image' चुनें: हर इमेज के लिए परफेक्ट साइज़।",
+    tipSort: "2 तरीके: 1) कार्ड ड्रैग करें। 2) पेज नंबर टाइप करके सॉर्ट करें।",
+    tip1: "'Fit to Image' चुनें।",
     tip2: "ईमेल के लिए कंप्रेस: 65% क्वालिटी।",
-    tip3: "क्रम मायने रखता है: ड्रैग करके मैन्युअल अरेंज करें।",
-    tip4: "पासवर्ड प्रोटेक्ट: संवेदनशील डॉक्यूमेंट के लिए पासवर्ड।",
+    tip3: "क्रम मायने रखता है: पहला कार्ड पेज 1 बनेगा।",
+    tip4: "पासवर्ड जोड़ें संवेदनशील डॉक्यूमेंट के लिए।",
     faqTitle: "अक्सर पूछे जाने वाले सवाल", faqSubtitle: "जो आप जानना चाहते हैं",
-    qSort: "पेज नंबर सॉर्ट कैसे काम करता है?",
-    aSort: "हर इमेज कार्ड में एक छोटा इनपुट बॉक्स है। उस इमेज में दिखने वाला पेज नंबर टाइप करें (जैसे 24, 1, 15)। फिर 'पेज # से सॉर्ट' क्लिक करें।",
-    q1: "क्या यह कन्वर्टर सच में फ्री है?",
+    qSort: "इमेज कैसे री-ऑर्डर करें?",
+    aSort: "2 तरीके: 1) कार्ड को ड्रैग करके। 2) पेज नंबर टाइप करके 'सॉर्ट' क्लिक करें।",
+    q1: "क्या यह फ्री है?",
     a1: "हां, 100% हमेशा के लिए फ्री।",
     q2: "क्या मेरी इमेज सेफ हैं?",
-    a2: "बिल्कुल। पूरा कन्वर्जन आपके ब्राउज़र में होता है।",
-    q3: "क्या कई JPG को एक PDF में मर्ज कर सकते हैं?",
-    a3: "हां। कई इमेज अपलोड करें और वे एक PDF में मर्ज हो जाएंगी।",
+    a2: "बिल्कुल। सब कुछ आपके ब्राउज़र में होता है।",
+    q3: "कई JPG एक PDF में मर्ज कर सकते हैं?",
+    a3: "हां।",
     q4: "कौन से फॉर्मेट सपोर्टेड हैं?",
     a4: "JPG, JPEG, PNG, WEBP, GIF और BMP।",
-    q5: "क्या PDF को पासवर्ड से प्रोटेक्ट कर सकते हैं?",
-    a5: "हां। सिक्योरिटी टैब में पासवर्ड डालें।",
+    q5: "पासवर्ड प्रोटेक्ट कर सकते हैं?",
+    a5: "हां, सिक्योरिटी टैब में।",
     relatedTitle: "संबंधित फ्री टूल्स", relatedSubtitle: "और टूल्स",
     editImage: "इमेज एडिट करें", rotateFlip: "रोटेट और फ्लिप",
     brightness: "ब्राइटनेस", contrast: "कॉन्ट्रास्ट", saturation: "सैचुरेशन",
     filter: "फिल्टर", fNone: "नहीं", fGray: "ग्रेस्केल", fSepia: "सेपिया", fInvert: "इनवर्ट",
     reset: "रीसेट", apply: "अप्लाई",
-    footerDesc: "20 जरूरी SEO टूल्स। फास्ट, फ्री।",
+    footerDesc: "20 जरूरी SEO टूल्स।",
     quickLinks: "क्विक लिंक्स", popularTools: "टॉप टूल्स", moreTools: "और टूल्स", legal: "लीगल",
     copyright: "© 2026 FreeSEOToolHub.com",
     pageNumLabel: "पेज #",
@@ -952,21 +1028,21 @@ var I18N = {
     sortDone: "{n} इमेज पेज नंबर से सॉर्ट हो गईं!",
     sortNoNumbers: "पहले पेज नंबर डालें",
     sortAlready: "इमेज पहले से सही क्रम में हैं",
-    sortPartial: "{total} में से {sorted} इमेज सॉर्ट हुईं",
-    hintTitle: "स्मार्ट पेज सॉर्ट",
-    hintText: "हर इमेज में दिखने वाला पेज नंबर टाइप करें, फिर 'पेज # से सॉर्ट' क्लिक करें!",
-    toastAdded: "{n} इमेज जुड़ीं। पेज नंबर डालें।",
+    sortPartial: "{total} में से {sorted} सॉर्ट हुईं",
+    hintTitle: "2 तरीके",
+    hintText: "1) पेज नंबर टाइप करें + 'सॉर्ट' क्लिक करें। 2) कार्ड ड्रैग करके मैन्युअल अरेंज करें।",
+    toastAdded: "{n} इमेज जुड़ीं। ड्रैग करें या पेज नंबर डालें।",
     toastEdited: "इमेज एडिट हो गई ✨",
     toastCleared: "सभी इमेज क्लियर",
-    toastConvert: "कन्वर्ट हो रहा है...",
     toastPdfDone: "✅ PDF बन गई!",
-    toastError: "एरर: "
+    toastError: "एरर: ",
+    toastMoved: "✅ पोज़िशन {n} पर मूव हुई"
   },
   ur: {
     brand: "FreeSEOToolHub", home: "ہوم", about: "تعارف", contact: "رابطہ", privacy: "پرائیویسی", blog: "بلاگ",
     heroTitle1: "JPG to PDF کنورٹر", heroTitle2: "مفت 2026",
-    heroSubtitle: "سمارٹ پیج نمبر سورٹ کے ساتھ JPG, PNG, WEBP کو PDF میں تبدیل کریں۔",
-    pill1: "100% نجی", pillSort: "پیج نمبر سورٹ", pill3: "5 زبانیں", pill4: "واٹر مارک نہیں",
+    heroSubtitle: "ڈریگ اور ڈراپ سے تصاویر ری آرڈر کریں۔",
+    pill1: "100% نجی", pillSort: "ڈریگ اینڈ ڈراپ", pill3: "5 زبانیں", pill4: "واٹر مارک نہیں",
     dropTitle: "یہاں تصاویر ڈراپ کریں یا", browse: "براؤز کریں",
     dropSub: "JPG · PNG · WEBP · GIF · BMP",
     imagesLabel: "تصاویر", numberedLabel: "نمبر والی", add: "شامل", clear: "صاف", settings: "سیٹنگز", convert: "کنورٹ",
@@ -979,72 +1055,72 @@ var I18N = {
     imgQuality: "تصویر کوالٹی", qHigh: "اعلیٰ", qBal: "متوازن", qComp: "کمپریسڈ", qSmall: "چھوٹی",
     compression: "کمپریشن", colorMode: "کلر موڈ", cmColor: "کلر", cmGray: "گرے اسکیل",
     pdfPass: "PDF پاس ورڈ", passPlaceholder: "خالی چھوڑیں",
-    watermark: "واٹر مارک", wmPlaceholder: "مثلاً CONFIDENTIAL",
+    watermark: "واٹر مارک", wmPlaceholder: "CONFIDENTIAL",
     wmOpacity: "واٹر مارک اوپیسٹی", fileName: "فائل کا نام", outputMode: "آؤٹ پٹ موڈ",
     omMerged: "ایک PDF", omSeparate: "الگ PDF",
     convertToPdf: "PDF میں تبدیل کریں",
-    featTitle: "صارفین ہمارا ٹول کیوں چنتے ہیں", featSubtitle: "پروفیشنل فیچرز، ہمیشہ مفت",
-    fSortT: "سمارٹ پیج سورٹ", fSortD: "تصویر میں دکھنے والا پیج نمبر ٹائپ کریں۔",
-    f1t: "100% نجی", f1d: "فائلیں آپ کے ڈیوائس پر رہتی ہیں۔",
+    featTitle: "صارفین ہمارا ٹول کیوں چنتے ہیں", featSubtitle: "پروفیشنل فیچرز",
+    fSortT: "ڈریگ اینڈ ڈراپ", fSortD: "کارڈ ڈریگ کریں یا پیج نمبر لکھیں۔",
+    f1t: "100% نجی", f1d: "فائلیں آپ کے ڈیوائس پر۔",
     f2t: "بہت تیز", f2d: "100 تصاویر 5 سیکنڈ میں۔",
-    f3t: "ایڈیٹر", f3d: "روٹیٹ، فلپ، برائٹنیس۔",
-    f4t: "پاس ورڈ", f4d: "مفت میں PDF محفوظ کریں۔",
-    f5t: "بیچ ڈاؤن لوڈ", f5d: "ZIP میں یا ایک PDF میں۔",
-    f6t: "5 زبانیں", f6d: "انگریزی، ہندی، اردو، جرمن، ہسپانوی۔",
+    f3t: "ایڈیٹر", f3d: "روٹیٹ، فلپ۔",
+    f4t: "پاس ورڈ", f4d: "مفت میں محفوظ کریں۔",
+    f5t: "بیچ ڈاؤن لوڈ", f5d: "ZIP یا ایک PDF۔",
+    f6t: "5 زبانیں", f6d: "انگریزی، ہندی، اردو۔",
     f8t: "ہمیشہ مفت", f8d: "کوئی سائن اپ نہیں۔",
-    tipsTitle: "JPG to PDF ٹپس 2026", tipsSubtitle: "بہترین PDF کے لیے ٹپس",
-    tipSort: "پیج سورٹ استعمال کریں۔",
+    tipsTitle: "ٹپس 2026", tipsSubtitle: "بہترین PDF کے لیے",
+    tipSort: "2 طریقے: 1) کارڈ ڈریگ کریں۔ 2) پیج نمبر لکھ کر سورٹ کریں۔",
     tip1: "'Fit to Image' چنیں۔",
     tip2: "ای میل کے لیے کمپریس کریں۔",
     tip3: "ترتیب اہم ہے۔",
     tip4: "پاس ورڈ لگائیں۔",
     faqTitle: "عام سوالات", faqSubtitle: "جو آپ جاننا چاہتے ہیں",
-    qSort: "پیج نمبر سورٹ کیسے کام کرتا ہے؟",
-    aSort: "ہر تصویر کارڈ میں چھوٹا انپٹ باکس ہے۔ اس میں دکھنے والا پیج نمبر ٹائپ کریں۔",
-    q1: "کیا یہ کنورٹر مفت ہے؟",
+    qSort: "تصاویر کیسے ری آرڈر کریں؟",
+    aSort: "2 طریقے: کارڈ ڈریگ کریں یا پیج نمبر لکھ کر سورٹ کریں۔",
+    q1: "کیا یہ مفت ہے؟",
     a1: "جی ہاں، 100% مفت۔",
-    q2: "کیا میری تصاویر محفوظ ہیں؟",
+    q2: "تصاویر محفوظ ہیں؟",
     a2: "بالکل۔",
-    q3: "کیا کئی JPG ایک PDF میں ملا سکتے ہیں؟",
+    q3: "کئی JPG ایک PDF میں؟",
     a3: "جی ہاں۔",
-    q4: "کون سے فارمیٹس سپورٹ ہیں؟",
-    a4: "JPG, PNG, WEBP, GIF اور BMP۔",
-    q5: "کیا PDF کو پاس ورڈ سے محفوظ کر سکتے ہیں؟",
+    q4: "کون سے فارمیٹس؟",
+    a4: "JPG, PNG, WEBP, GIF, BMP۔",
+    q5: "پاس ورڈ لگا سکتے ہیں؟",
     a5: "جی ہاں۔",
-    relatedTitle: "متعلقہ ٹولز", relatedSubtitle: "مزید ٹولز",
+    relatedTitle: "متعلقہ ٹولز", relatedSubtitle: "مزید",
     editImage: "تصویر ایڈٹ", rotateFlip: "روٹیٹ اور فلپ",
     brightness: "برائٹنیس", contrast: "کانٹراسٹ", saturation: "سیچوریشن",
     filter: "فلٹر", fNone: "کوئی نہیں", fGray: "گرے اسکیل", fSepia: "سیپیا", fInvert: "انورٹ",
     reset: "ری سیٹ", apply: "لاگو",
     footerDesc: "20 ضروری SEO ٹولز۔",
-    quickLinks: "فوری لنکس", popularTools: "ٹاپ ٹولز", moreTools: "مزید ٹولز", legal: "قانونی",
+    quickLinks: "فوری لنکس", popularTools: "ٹاپ", moreTools: "مزید", legal: "قانونی",
     copyright: "© 2026 FreeSEOToolHub.com",
     pageNumLabel: "پیج #",
-    pageNumPlaceholder: "مثلاً 24",
-    sortDone: "{n} تصاویر پیج نمبر سے سورٹ ہو گئیں!",
+    pageNumPlaceholder: "24",
+    sortDone: "{n} تصاویر سورٹ ہو گئیں!",
     sortNoNumbers: "پہلے پیج نمبر ڈالیں",
-    sortAlready: "پہلے سے صحیح ترتیب میں ہیں",
-    sortPartial: "{total} میں سے {sorted} سورٹ ہوئیں",
-    hintTitle: "سمارٹ پیج سورٹ",
-    hintText: "ہر تصویر میں دکھنے والا پیج نمبر ٹائپ کریں!",
+    sortAlready: "پہلے سے صحیح ترتیب میں",
+    sortPartial: "{total} میں سے {sorted}",
+    hintTitle: "2 طریقے",
+    hintText: "1) پیج نمبر لکھ کر سورٹ کریں۔ 2) کارڈ ڈریگ کریں۔",
     toastAdded: "{n} تصاویر شامل ہوئیں۔",
-    toastEdited: "تصویر ایڈٹ ہو گئی ✨",
+    toastEdited: "تصویر ایڈٹ ✨",
     toastCleared: "سب صاف",
-    toastConvert: "کنورٹ ہو رہا ہے...",
     toastPdfDone: "✅ PDF بن گئی!",
-    toastError: "ایرر: "
+    toastError: "ایرر: ",
+    toastMoved: "✅ پوزیشن {n} پر"
   },
   de: {
     brand: "FreeSEOToolHub", home: "Startseite", about: "Über uns", contact: "Kontakt", privacy: "Datenschutz", blog: "Blog",
     heroTitle1: "JPG zu PDF Konverter", heroTitle2: "Kostenlos 2026",
-    heroSubtitle: "Konvertieren Sie JPG, PNG, WEBP mit intelligenter Seitennummer-Sortierung zu PDF.",
-    pill1: "100% Privat", pillSort: "Seitennummer-Sortierung", pill3: "5 Sprachen", pill4: "Kein Wasserzeichen",
+    heroSubtitle: "Konvertieren Sie JPG, PNG, WEBP mit Drag & Drop Neuordnung zu PDF.",
+    pill1: "100% Privat", pillSort: "Drag & Drop", pill3: "5 Sprachen", pill4: "Kein Wasserzeichen",
     dropTitle: "Bilder hier ablegen oder", browse: "durchsuchen",
     dropSub: "JPG · PNG · WEBP · GIF · BMP — bis zu 100 Dateien",
     imagesLabel: "Bilder", numberedLabel: "nummeriert", add: "Hinzufügen", clear: "Löschen", settings: "Einstellungen", convert: "Konvertieren",
     autoSort: "Nach Seite # sortieren",
     tabLayout: "Layout", tabQuality: "Qualität", tabSecurity: "Sicherheit", tabOutput: "Ausgabe",
-    pageSize: "Seitengröße", psFit: "Auto — An Bild anpassen", psA4: "A4", psLetter: "Letter", psLegal: "Legal", psA3: "A3", psA5: "A5",
+    pageSize: "Seitengröße", psFit: "Auto", psA4: "A4", psLetter: "Letter", psLegal: "Legal", psA3: "A3", psA5: "A5",
     orientation: "Ausrichtung", orAuto: "Auto", orPortrait: "Hochformat", orLandscape: "Querformat",
     margin: "Rand", mNone: "Kein", mSmall: "Klein", mMedium: "Mittel", mLarge: "Groß",
     pageNumbers: "Seitenzahlen", pnNone: "Keine", pnBC: "Unten Mitte", pnBR: "Unten Rechts",
@@ -1055,32 +1131,32 @@ var I18N = {
     wmOpacity: "Wasserzeichen-Deckkraft", fileName: "Dateiname", outputMode: "Ausgabemodus",
     omMerged: "Eine PDF", omSeparate: "Separate PDF (ZIP)",
     convertToPdf: "In PDF konvertieren",
-    featTitle: "Warum Nutzer unser Tool wählen", featSubtitle: "Professionelle Funktionen, kostenlos",
-    fSortT: "Intelligente Seitensortierung", fSortD: "Seitennummer eingeben, 25 Seiten in 10 Sekunden sortiert.",
+    featTitle: "Warum Nutzer unser Tool wählen", featSubtitle: "Professionelle Funktionen",
+    fSortT: "Drag & Drop", fSortD: "Karten ziehen oder Seitennummern eingeben.",
     f1t: "100% Privat", f1d: "Dateien bleiben auf Ihrem Gerät.",
     f2t: "Blitzschnell", f2d: "100 Bilder unter 5 Sekunden.",
     f3t: "Integrierter Editor", f3d: "Drehen, Spiegeln, Helligkeit.",
     f4t: "Passwortschutz", f4d: "PDF kostenlos verschlüsseln.",
-    f5t: "Batch-Download", f5d: "Als ZIP oder eine PDF.",
+    f5t: "Batch-Download", f5d: "ZIP oder eine PDF.",
     f6t: "5 Sprachen", f6d: "Englisch, Hindi, Urdu, Deutsch, Spanisch.",
     f8t: "Kostenlos", f8d: "Keine Anmeldung.",
     tipsTitle: "Tipps 2026", tipsSubtitle: "Profi-Tipps",
-    tipSort: "Seitensortierung verwenden: Seitennummer eingeben, dann klicken.",
+    tipSort: "2 Wege: 1) Karten ziehen. 2) Seitennummer eingeben + Sortieren.",
     tip1: "'An Bild anpassen' wählen.",
     tip2: "Für E-Mail komprimieren.",
     tip3: "Reihenfolge wichtig.",
     tip4: "Passwort hinzufügen.",
     faqTitle: "Häufige Fragen", faqSubtitle: "Alles was Sie wissen müssen",
-    qSort: "Wie funktioniert die Seitennummer-Sortierung?",
-    aSort: "Jede Bildkarte hat ein Eingabefeld. Geben Sie die sichtbare Seitennummer ein.",
+    qSort: "Wie ordne ich Bilder neu?",
+    aSort: "2 Wege: Karten ziehen oder Seitennummern eingeben und sortieren.",
     q1: "Ist dieser Konverter kostenlos?",
-    a1: "Ja, 100% für immer kostenlos.",
+    a1: "Ja, 100% kostenlos.",
     q2: "Sind meine Bilder sicher?",
-    a2: "Absolut.",
+    a2: "Absolut. Alles läuft lokal.",
     q3: "Kann ich mehrere JPG zusammenführen?",
     a3: "Ja.",
     q4: "Welche Formate werden unterstützt?",
-    a4: "JPG, JPEG, PNG, WEBP, GIF und BMP.",
+    a4: "JPG, JPEG, PNG, WEBP, GIF, BMP.",
     q5: "Kann ich PDF mit Passwort schützen?",
     a5: "Ja.",
     relatedTitle: "Verwandte Tools", relatedSubtitle: "Weitere Tools",
@@ -1089,46 +1165,46 @@ var I18N = {
     filter: "Filter", fNone: "Keiner", fGray: "Graustufen", fSepia: "Sepia", fInvert: "Invertieren",
     reset: "Zurücksetzen", apply: "Anwenden",
     footerDesc: "20 essentielle SEO-Tools.",
-    quickLinks: "Schnelllinks", popularTools: "Top-Tools", moreTools: "Weitere Tools", legal: "Rechtliches",
+    quickLinks: "Schnelllinks", popularTools: "Top-Tools", moreTools: "Weitere", legal: "Rechtliches",
     copyright: "© 2026 FreeSEOToolHub.com",
     pageNumLabel: "Seite #",
     pageNumPlaceholder: "z.B. 24",
-    sortDone: "{n} Bilder nach Seitennummer sortiert!",
-    sortNoNumbers: "Bitte zuerst Seitennummern eingeben",
+    sortDone: "{n} Bilder sortiert!",
+    sortNoNumbers: "Bitte Seitennummern eingeben",
     sortAlready: "Bereits korrekt sortiert",
-    sortPartial: "{sorted} von {total} Bildern sortiert",
-    hintTitle: "Intelligente Seitensortierung",
-    hintText: "Seitennummer eingeben, dann 'Nach Seite # sortieren' klicken!",
+    sortPartial: "{sorted} von {total} sortiert",
+    hintTitle: "2 Wege",
+    hintText: "1) Seitennummer eingeben + sortieren. 2) Oder Karten ziehen.",
     toastAdded: "{n} Bild(er) hinzugefügt.",
     toastEdited: "Bild bearbeitet ✨",
     toastCleared: "Alle Bilder gelöscht",
-    toastConvert: "Konvertierung...",
     toastPdfDone: "✅ PDF erstellt!",
-    toastError: "Fehler: "
+    toastError: "Fehler: ",
+    toastMoved: "✅ Verschoben zu Position {n}"
   },
   es: {
     brand: "FreeSEOToolHub", home: "Inicio", about: "Acerca de", contact: "Contacto", privacy: "Privacidad", blog: "Blog",
     heroTitle1: "Convertidor JPG a PDF", heroTitle2: "Gratis 2026",
-    heroSubtitle: "Convierte imágenes JPG, PNG, WEBP a PDF con ordenación inteligente por número de página.",
-    pill1: "100% Privado", pillSort: "Ordenar por Página", pill3: "5 Idiomas", pill4: "Sin Marca",
+    heroSubtitle: "Convierte JPG, PNG, WEBP a PDF con arrastrar y soltar para reordenar.",
+    pill1: "100% Privado", pillSort: "Arrastrar y Soltar", pill3: "5 Idiomas", pill4: "Sin Marca",
     dropTitle: "Suelta imágenes aquí o", browse: "explorar",
     dropSub: "JPG · PNG · WEBP · GIF · BMP — hasta 100 archivos",
     imagesLabel: "imágenes", numberedLabel: "numeradas", add: "Añadir", clear: "Limpiar", settings: "Ajustes", convert: "Convertir",
     autoSort: "Ordenar por #",
     tabLayout: "Diseño", tabQuality: "Calidad", tabSecurity: "Seguridad", tabOutput: "Salida",
-    pageSize: "Tamaño de Página", psFit: "Auto — Ajustar", psA4: "A4", psLetter: "Carta", psLegal: "Legal", psA3: "A3", psA5: "A5",
+    pageSize: "Tamaño de Página", psFit: "Auto", psA4: "A4", psLetter: "Carta", psLegal: "Legal", psA3: "A3", psA5: "A5",
     orientation: "Orientación", orAuto: "Auto", orPortrait: "Vertical", orLandscape: "Horizontal",
     margin: "Margen", mNone: "Ninguno", mSmall: "Pequeño", mMedium: "Medio", mLarge: "Grande",
     pageNumbers: "Números de Página", pnNone: "Ninguno", pnBC: "Abajo Centro", pnBR: "Abajo Derecha",
-    imgQuality: "Calidad de Imagen", qHigh: "Alta", qBal: "Equilibrada", qComp: "Comprimida", qSmall: "Pequeña",
+    imgQuality: "Calidad", qHigh: "Alta", qBal: "Equilibrada", qComp: "Comprimida", qSmall: "Pequeña",
     compression: "Compresión", colorMode: "Modo de Color", cmColor: "Color", cmGray: "Escala de Grises",
     pdfPass: "Contraseña PDF", passPlaceholder: "Dejar vacío",
-    watermark: "Texto de Marca", wmPlaceholder: "ej. CONFIDENCIAL",
+    watermark: "Texto de Marca", wmPlaceholder: "CONFIDENCIAL",
     wmOpacity: "Opacidad de Marca", fileName: "Nombre del Archivo", outputMode: "Modo de Salida",
     omMerged: "Un solo PDF", omSeparate: "PDF separado (ZIP)",
     convertToPdf: "Convertir a PDF",
-    featTitle: "Por qué los usuarios eligen nuestra herramienta", featSubtitle: "Funciones profesionales, gratis",
-    fSortT: "Ordenar por Página", fSortD: "Escribe el número visible en cada imagen. Ordena 25 páginas en 10 segundos.",
+    featTitle: "Por qué los usuarios eligen nuestra herramienta", featSubtitle: "Funciones profesionales",
+    fSortT: "Arrastrar y Soltar", fSortD: "Arrastra tarjetas o escribe números de página.",
     f1t: "100% Privado", f1d: "Los archivos permanecen en tu dispositivo.",
     f2t: "Súper Rápido", f2d: "100 imágenes en menos de 5 segundos.",
     f3t: "Editor Integrado", f3d: "Rotar, voltear, brillo, contraste.",
@@ -1137,18 +1213,18 @@ var I18N = {
     f6t: "5 Idiomas", f6d: "Inglés, Hindi, Urdu, Alemán, Español.",
     f8t: "Gratis Siempre", f8d: "Sin registro.",
     tipsTitle: "Consejos 2026", tipsSubtitle: "Consejos pro",
-    tipSort: "Usa Ordenar por Página: escribe el número visible, luego haz clic.",
+    tipSort: "2 formas: 1) Arrastra tarjetas. 2) Escribe números y ordena.",
     tip1: "Elige 'Ajustar a Imagen'.",
     tip2: "Comprime para email.",
-    tip3: "El orden importa.",
+    tip3: "El orden importa: primera tarjeta = Página 1.",
     tip4: "Añade contraseña.",
     faqTitle: "Preguntas Frecuentes", faqSubtitle: "Todo lo que necesitas saber",
-    qSort: "¿Cómo funciona la ordenación por página?",
-    aSort: "Cada tarjeta tiene un campo. Escribe el número visible en la imagen.",
+    qSort: "¿Cómo reordeno las imágenes?",
+    aSort: "2 formas: arrastrar y soltar tarjetas, o escribir números de página y ordenar.",
     q1: "¿Es realmente gratis?",
     a1: "Sí, 100% gratis para siempre.",
     q2: "¿Mis imágenes están seguras?",
-    a2: "Absolutamente.",
+    a2: "Absolutamente. Todo ocurre localmente.",
     q3: "¿Puedo fusionar múltiples JPG?",
     a3: "Sí.",
     q4: "¿Qué formatos son compatibles?",
@@ -1165,18 +1241,18 @@ var I18N = {
     copyright: "© 2026 FreeSEOToolHub.com",
     pageNumLabel: "Pág #",
     pageNumPlaceholder: "ej. 24",
-    sortDone: "¡{n} imágenes ordenadas por número de página!",
-    sortNoNumbers: "Ingresa los números de página primero",
-    sortAlready: "Las imágenes ya están en orden correcto",
-    sortPartial: "{sorted} de {total} imágenes ordenadas",
-    hintTitle: "Ordenar por Página",
-    hintText: "Escribe el número visible en cada imagen, luego haz clic en 'Ordenar por #'.",
+    sortDone: "¡{n} imágenes ordenadas!",
+    sortNoNumbers: "Ingresa los números primero",
+    sortAlready: "Ya están en orden correcto",
+    sortPartial: "{sorted} de {total} ordenadas",
+    hintTitle: "2 formas",
+    hintText: "1) Escribe número de página + ordena. 2) O arrastra tarjetas.",
     toastAdded: "{n} imagen(es) añadidas.",
     toastEdited: "Imagen editada ✨",
-    toastCleared: "Todas las imágenes limpiadas",
-    toastConvert: "Convirtiendo...",
+    toastCleared: "Todas limpiadas",
     toastPdfDone: "✅ ¡PDF creado!",
-    toastError: "Error: "
+    toastError: "Error: ",
+    toastMoved: "✅ Movida a posición {n}"
   }
 };
 
@@ -1287,30 +1363,24 @@ function autoSortByPage(){
     toast(t('sortNoNumbers'), 'warn');
     return;
   }
-
   var numbered = state.images.filter(function(img){ return getPageNum(img) !== null; });
   if (numbered.length < 2) {
     toast(t('sortNoNumbers'), 'warn');
     return;
   }
-
   var beforeOrder = state.images.map(function(i){ return i.id; }).join(',');
   state.images.sort(compareByPageNum);
   var afterOrder = state.images.map(function(i){ return i.id; }).join(',');
-
   if (beforeOrder === afterOrder) {
     toast(t('sortAlready'), 'warn');
     return;
   }
-
   renderImages();
   document.querySelectorAll('.img-card').forEach(function(card){
     card.classList.add('just-sorted');
     setTimeout(function(){ card.classList.remove('just-sorted'); }, 1300);
   });
-
   updateToolbar();
-
   if (numbered.length === state.images.length) {
     toast(t('sortDone').replace('{n}', numbered.length), 'success', 3500);
   } else {
@@ -1326,7 +1396,7 @@ function showSortHint(){
   sortHint.hidden = false;
   sortHint.className = 'sort-hint';
   sortHint.innerHTML =
-    '<i class="fas fa-lightbulb"></i>' +
+    '<i class="fas fa-hand-pointer"></i>' +
     '<div><b>' + t('hintTitle') + ':</b> ' + t('hintText') + '</div>' +
     '<button class="close-hint" aria-label="Close">✕</button>';
   sortHint.querySelector('.close-hint').addEventListener('click', function(){
@@ -1334,21 +1404,17 @@ function showSortHint(){
   });
 }
 
-/* ============================================================
-   FILE HANDLING — FIXED FOR <label> + DRAG & DROP
-   ============================================================ */
+/* ========== FILE HANDLING ========== */
 var VALID_TYPES = ['image/jpeg','image/jpg','image/png','image/webp','image/gif','image/bmp'];
 var MAX_FILES = 100;
 var MAX_SIZE_MB = 25;
 
-// 1. File input change (triggered by <label for="fileInput">)
 fileInput.addEventListener('change', function(e){
   if (e.target.files && e.target.files.length > 0) {
     handleFiles(e.target.files);
   }
 });
 
-// 2. Drag & drop on drop zone
 ['dragenter','dragover'].forEach(function(ev){
   dropZone.addEventListener(ev, function(e){
     e.preventDefault();
@@ -1372,17 +1438,14 @@ dropZone.addEventListener('drop', function(e){
   }
 });
 
-// 3. Global drag prevention (avoid opening image in browser)
 document.addEventListener('dragover', function(e){ e.preventDefault(); });
 document.addEventListener('drop', function(e){ e.preventDefault(); });
 
-// 4. Add More button
 $('addMore').addEventListener('click', function(e){
   e.preventDefault();
   fileInput.click();
 });
 
-// 5. Clear All
 $('clearAll').addEventListener('click', function(){
   if (!state.images.length) return;
   if (confirm('Clear all images?')) {
@@ -1394,7 +1457,6 @@ $('clearAll').addEventListener('click', function(){
   }
 });
 
-// 6. Toggle settings
 $('toggleSettings').addEventListener('click', function(){
   if (settingsPanel.hasAttribute('hidden')) {
     settingsPanel.removeAttribute('hidden');
@@ -1459,7 +1521,9 @@ function readAsDataURL(file){
   });
 }
 
-/* ========== RENDER ========== */
+/* ============================================================
+   RENDER WITH DRAG & DROP
+   ============================================================ */
 function renderImages(){
   imagesGrid.innerHTML = '';
   state.images.forEach(function(img, idx){
@@ -1468,11 +1532,13 @@ function renderImages(){
     if (img.pageNum && img.pageNum !== '') card.classList.add('has-page-num');
     card.draggable = true;
     card.dataset.id = img.id;
+    card.dataset.index = idx;
 
     var filterCss = buildFilterCss(img.filters);
     var pageNumVal = img.pageNum || '';
 
     card.innerHTML =
+      '<div class="drag-handle"><i class="fas fa-grip-vertical"></i> Drag</div>' +
       '<div class="img-thumb-wrap">' +
         '<span class="img-num-badge">' + (idx + 1) + '</span>' +
         '<span class="page-num-badge"><i class="fas fa-bookmark"></i> Page ' + (pageNumVal || '?') + '</span>' +
@@ -1480,7 +1546,7 @@ function renderImages(){
           '<button class="icon-btn edit" title="Edit"><i class="fas fa-crop-alt"></i></button>' +
           '<button class="icon-btn del" title="Remove">✕</button>' +
         '</div>' +
-        '<img class="img-thumb" src="' + img.dataUrl + '" alt="" style="transform:rotate(' + img.rotation + 'deg);filter:' + filterCss + '">' +
+        '<img class="img-thumb" src="' + img.dataUrl + '" alt="" draggable="false" style="transform:rotate(' + img.rotation + 'deg);filter:' + filterCss + '">' +
       '</div>' +
       '<div class="page-input-wrap">' +
         '<label><i class="fas fa-hashtag"></i> ' + t('pageNumLabel') + '</label>' +
@@ -1493,11 +1559,13 @@ function renderImages(){
 
     card.querySelector('.edit').addEventListener('click', function(e){
       e.stopPropagation();
+      e.preventDefault();
       openEditor(img.id);
     });
 
     card.querySelector('.del').addEventListener('click', function(e){
       e.stopPropagation();
+      e.preventDefault();
       state.images = state.images.filter(function(i){ return i.id !== img.id; });
       renderImages();
       updateToolbar();
@@ -1510,47 +1578,99 @@ function renderImages(){
       if (val) {
         card.classList.add('has-page-num');
         pageInput.classList.add('filled');
-        var badge = card.querySelector('.page-num-badge');
-        badge.innerHTML = '<i class="fas fa-bookmark"></i> Page ' + val;
+        card.querySelector('.page-num-badge').innerHTML = '<i class="fas fa-bookmark"></i> Page ' + val;
       } else {
         card.classList.remove('has-page-num');
         pageInput.classList.remove('filled');
-        var badge2 = card.querySelector('.page-num-badge');
-        badge2.innerHTML = '<i class="fas fa-bookmark"></i> Page ?';
+        card.querySelector('.page-num-badge').innerHTML = '<i class="fas fa-bookmark"></i> Page ?';
       }
       updateToolbar();
     });
 
     pageInput.addEventListener('mousedown', function(e){ e.stopPropagation(); });
-    pageInput.addEventListener('dragstart', function(e){ e.preventDefault(); });
+    pageInput.addEventListener('dragstart', function(e){ e.preventDefault(); e.stopPropagation(); });
 
+    /* ===== DRAG START ===== */
     card.addEventListener('dragstart', function(e){
-      if (e.target.tagName === 'INPUT') {
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'BUTTON' || e.target.tagName === 'LABEL') {
         e.preventDefault();
         return;
       }
       state.dragSrcId = img.id;
       card.classList.add('dragging');
       e.dataTransfer.effectAllowed = 'move';
+      e.dataTransfer.setData('text/plain', String(img.id));
+      setTimeout(function(){ card.style.opacity = '0.4'; }, 0);
     });
-    card.addEventListener('dragend', function(){
+
+    /* ===== DRAG END ===== */
+    card.addEventListener('dragend', function(e){
       card.classList.remove('dragging');
-      document.querySelectorAll('.drop-target').forEach(function(c){ c.classList.remove('drop-target'); });
+      card.style.opacity = '';
+      document.querySelectorAll('.img-card').forEach(function(c){
+        c.classList.remove('drop-target', 'drop-before', 'drop-after');
+      });
+      state.dragSrcId = null;
     });
+
+    /* ===== DRAG OVER ===== */
     card.addEventListener('dragover', function(e){
       e.preventDefault();
+      e.stopPropagation();
+      if (!state.dragSrcId || state.dragSrcId === img.id) return;
+
+      e.dataTransfer.dropEffect = 'move';
+
+      var rect = card.getBoundingClientRect();
+      var midX = rect.left + rect.width / 2;
+      var isBefore = e.clientX < midX;
+
+      card.classList.remove('drop-before', 'drop-after');
+      if (isBefore) card.classList.add('drop-before');
+      else card.classList.add('drop-after');
       card.classList.add('drop-target');
     });
-    card.addEventListener('dragleave', function(){ card.classList.remove('drop-target'); });
+
+    /* ===== DRAG LEAVE ===== */
+    card.addEventListener('dragleave', function(e){
+      if (!card.contains(e.relatedTarget)) {
+        card.classList.remove('drop-target', 'drop-before', 'drop-after');
+      }
+    });
+
+    /* ===== DROP ===== */
     card.addEventListener('drop', function(e){
       e.preventDefault();
-      card.classList.remove('drop-target');
-      if (state.dragSrcId === null || state.dragSrcId === img.id) return;
+      e.stopPropagation();
+
+      if (!state.dragSrcId || state.dragSrcId === img.id) return;
+
+      var rect = card.getBoundingClientRect();
+      var midX = rect.left + rect.width / 2;
+      var isBefore = e.clientX < midX;
+
       var fromIdx = state.images.findIndex(function(i){ return i.id === state.dragSrcId; });
-      var toIdx = state.images.findIndex(function(i){ return i.id === img.id; });
+      if (fromIdx === -1) return;
+
       var moved = state.images.splice(fromIdx, 1)[0];
-      state.images.splice(toIdx, 0, moved);
+      var toIdx = state.images.findIndex(function(i){ return i.id === img.id; });
+
+      if (isBefore) {
+        state.images.splice(toIdx, 0, moved);
+      } else {
+        state.images.splice(toIdx + 1, 0, moved);
+      }
+
+      document.querySelectorAll('.img-card').forEach(function(c){
+        c.classList.remove('drop-target', 'drop-before', 'drop-after', 'dragging');
+      });
+
+      var newIdx = state.images.findIndex(function(i){ return i.id === moved.id; });
+
       renderImages();
+      updateToolbar();
+
+      toast(t('toastMoved').replace('{n}', newIdx + 1), 'success', 2000);
     });
 
     imagesGrid.appendChild(card);
