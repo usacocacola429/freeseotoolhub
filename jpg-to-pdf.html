@@ -114,13 +114,43 @@
     .hero-pills { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:22px; position:relative; z-index:1; }
     .hero-pill { background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); padding:8px 18px; border-radius:50px; font-size:0.85rem; font-weight:500; }
 
-    .drop-zone { background:white; border:3px dashed #cbd5e0; border-radius:24px; padding:50px 30px; text-align:center; transition:all 0.3s; cursor:pointer; margin-bottom:30px; box-shadow:0 10px 30px rgba(0,0,0,0.03); }
-    .drop-zone:hover, .drop-zone.dragover { border-color:#ff9933; background:linear-gradient(135deg, rgba(255,153,51,0.03), rgba(255,107,0,0.03)); transform:translateY(-3px); box-shadow:0 15px 40px rgba(255,153,51,0.15); }
+    /* ===== FIXED DROP ZONE ===== */
+    .drop-zone {
+      display: block;
+      cursor: pointer;
+      background: white;
+      border: 3px dashed #cbd5e0;
+      border-radius: 24px;
+      padding: 50px 30px;
+      text-align: center;
+      transition: all 0.3s;
+      margin-bottom: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+      position: relative;
+      outline: none;
+    }
+    .drop-zone:hover, .drop-zone:focus-visible, .drop-zone.dragover {
+      border-color: #ff9933;
+      background: linear-gradient(135deg, rgba(255,153,51,0.03), rgba(255,107,0,0.03));
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(255,153,51,0.15);
+    }
     .drop-zone .drop-icon { width:80px; height:80px; background:linear-gradient(135deg,#0b1a33,#2d3b68); border-radius:22px; display:flex; align-items:center; justify-content:center; color:white; font-size:2rem; margin:0 auto 20px; box-shadow:0 8px 20px rgba(11,26,51,0.2); transition:all 0.3s; }
     .drop-zone:hover .drop-icon { background:linear-gradient(135deg,#ff9933,#ff6b00); transform:scale(1.05); }
     .drop-zone h3 { font-size:1.3rem; font-weight:700; color:#0b1a33; margin-bottom:8px; }
     .drop-zone h3 .link { color:#ff9933; text-decoration:underline; cursor:pointer; }
     .drop-zone p { color:#4a5a72; font-size:0.9rem; }
+    /* Hidden but accessible file input */
+    .drop-zone input[type="file"] {
+      position: absolute;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+      overflow: hidden;
+    }
 
     .toolbar { background:white; border-radius:18px; padding:16px 22px; margin-bottom:22px; box-shadow:0 6px 20px rgba(0,0,0,0.04); display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; align-items:center; }
     .chip { background:#f0f4f8; padding:8px 16px; border-radius:50px; font-size:0.85rem; font-weight:600; color:#4a5a72; }
@@ -168,7 +198,6 @@
     .progress-fill { height:100%; background:linear-gradient(90deg,#ff9933,#ff6b00,#ff9933); width:0%; transition:width 0.3s ease; border-radius:100px; background-size:200% 100%; animation:shimmer 2s linear infinite; }
     @keyframes shimmer { 0%{background-position:0% 0%} 100%{background-position:200% 0%} }
 
-    /* SORT HINT BANNER */
     .sort-hint {
       background:linear-gradient(135deg, rgba(16,185,129,0.1), rgba(5,150,105,0.05));
       border:1px solid rgba(16,185,129,0.3);
@@ -188,7 +217,6 @@
     .sort-hint .close-hint:hover { background:rgba(16,185,129,0.15); }
     @keyframes slideDown { from{opacity:0;transform:translateY(-10px)} to{opacity:1;transform:translateY(0)} }
 
-    /* IMAGES GRID WITH PAGE NUMBER INPUT */
     .images-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:16px; margin-bottom:30px; }
     .img-card {
       background:white;
@@ -259,7 +287,6 @@
     .icon-btn.edit:hover { background:#ff9933; color:#fff; }
     .icon-btn.del:hover { background:#ef4444; color:#fff; }
 
-    /* PAGE NUMBER INPUT AREA */
     .page-input-wrap {
       padding:10px 12px;
       background:#f8fafc;
@@ -458,12 +485,13 @@
     </div>
   </section>
 
-  <section class="drop-zone" id="dropZone" tabindex="0" role="button" aria-label="Upload images">
-    <input type="file" id="fileInput" accept="image/jpeg,image/jpg,image/png,image/webp,image/gif,image/bmp" multiple hidden>
+  <!-- ✅ FIXED DROP ZONE — using <label> for guaranteed click -->
+  <label class="drop-zone" id="dropZone" for="fileInput" aria-label="Upload images" tabindex="0">
+    <input type="file" id="fileInput" accept="image/jpeg,image/jpg,image/png,image/webp,image/gif,image/bmp" multiple>
     <div class="drop-icon"><i class="fas fa-cloud-upload-alt"></i></div>
     <h3><span data-i18n="dropTitle">Drop images here or</span> <span class="link" data-i18n="browse">browse</span></h3>
     <p data-i18n="dropSub">JPG · PNG · WEBP · GIF · BMP — up to 100 files</p>
-  </section>
+  </label>
 
   <section class="toolbar" id="toolbar" hidden>
     <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
@@ -900,9 +928,9 @@ var I18N = {
     tip4: "पासवर्ड प्रोटेक्ट: संवेदनशील डॉक्यूमेंट के लिए पासवर्ड।",
     faqTitle: "अक्सर पूछे जाने वाले सवाल", faqSubtitle: "जो आप जानना चाहते हैं",
     qSort: "पेज नंबर सॉर्ट कैसे काम करता है?",
-    aSort: "हर इमेज कार्ड में एक छोटा इनपुट बॉक्स है। उस इमेज में दिखने वाला पेज नंबर टाइप करें (जैसे 24, 1, 15)। फिर 'पेज # से सॉर्ट' क्लिक करें — इमेज अपने आप सही क्रम में लग जाएंगी।",
+    aSort: "हर इमेज कार्ड में एक छोटा इनपुट बॉक्स है। उस इमेज में दिखने वाला पेज नंबर टाइप करें (जैसे 24, 1, 15)। फिर 'पेज # से सॉर्ट' क्लिक करें।",
     q1: "क्या यह कन्वर्टर सच में फ्री है?",
-    a1: "हां, 100% हमेशा के लिए फ्री। नो साइनअप, नो वॉटरमार्क।",
+    a1: "हां, 100% हमेशा के लिए फ्री।",
     q2: "क्या मेरी इमेज सेफ हैं?",
     a2: "बिल्कुल। पूरा कन्वर्जन आपके ब्राउज़र में होता है।",
     q3: "क्या कई JPG को एक PDF में मर्ज कर सकते हैं?",
@@ -972,11 +1000,11 @@ var I18N = {
     tip4: "پاس ورڈ لگائیں۔",
     faqTitle: "عام سوالات", faqSubtitle: "جو آپ جاننا چاہتے ہیں",
     qSort: "پیج نمبر سورٹ کیسے کام کرتا ہے؟",
-    aSort: "ہر تصویر کارڈ میں چھوٹا انپٹ باکس ہے۔ اس میں دکھنے والا پیج نمبر ٹائپ کریں، پھر 'پیج # سے سورٹ' کلک کریں۔",
+    aSort: "ہر تصویر کارڈ میں چھوٹا انپٹ باکس ہے۔ اس میں دکھنے والا پیج نمبر ٹائپ کریں۔",
     q1: "کیا یہ کنورٹر مفت ہے؟",
     a1: "جی ہاں، 100% مفت۔",
     q2: "کیا میری تصاویر محفوظ ہیں؟",
-    a2: "بالکل۔ تمام کام آپ کے براؤزر میں ہوتا ہے۔",
+    a2: "بالکل۔",
     q3: "کیا کئی JPG ایک PDF میں ملا سکتے ہیں؟",
     a3: "جی ہاں۔",
     q4: "کون سے فارمیٹس سپورٹ ہیں؟",
@@ -1044,11 +1072,11 @@ var I18N = {
     tip4: "Passwort hinzufügen.",
     faqTitle: "Häufige Fragen", faqSubtitle: "Alles was Sie wissen müssen",
     qSort: "Wie funktioniert die Seitennummer-Sortierung?",
-    aSort: "Jede Bildkarte hat ein Eingabefeld. Geben Sie die sichtbare Seitennummer ein, dann klicken Sie auf 'Nach Seite # sortieren'.",
+    aSort: "Jede Bildkarte hat ein Eingabefeld. Geben Sie die sichtbare Seitennummer ein.",
     q1: "Ist dieser Konverter kostenlos?",
     a1: "Ja, 100% für immer kostenlos.",
     q2: "Sind meine Bilder sicher?",
-    a2: "Absolut. Alles läuft lokal im Browser.",
+    a2: "Absolut.",
     q3: "Kann ich mehrere JPG zusammenführen?",
     a3: "Ja.",
     q4: "Welche Formate werden unterstützt?",
@@ -1116,11 +1144,11 @@ var I18N = {
     tip4: "Añade contraseña.",
     faqTitle: "Preguntas Frecuentes", faqSubtitle: "Todo lo que necesitas saber",
     qSort: "¿Cómo funciona la ordenación por página?",
-    aSort: "Cada tarjeta tiene un campo. Escribe el número visible en la imagen, luego haz clic en 'Ordenar por #'.",
+    aSort: "Cada tarjeta tiene un campo. Escribe el número visible en la imagen.",
     q1: "¿Es realmente gratis?",
     a1: "Sí, 100% gratis para siempre.",
     q2: "¿Mis imágenes están seguras?",
-    a2: "Absolutamente. Todo ocurre localmente en tu navegador.",
+    a2: "Absolutamente.",
     q3: "¿Puedo fusionar múltiples JPG?",
     a3: "Sí.",
     q4: "¿Qué formatos son compatibles?",
@@ -1183,8 +1211,7 @@ function setLang(lang){
 
   try { localStorage.setItem('preferredLang', lang); } catch(e){}
 
-  // Refresh dynamic content
-  if (typeof renderImages === 'function' && state.images.length) renderImages();
+  if (typeof renderImages === 'function' && typeof state !== 'undefined' && state.images.length) renderImages();
 }
 
 document.querySelectorAll('.lang-opt').forEach(function(a){
@@ -1249,15 +1276,9 @@ function getPageNum(img) {
 function compareByPageNum(a, b) {
   var numA = getPageNum(a);
   var numB = getPageNum(b);
-
-  // Both have numbers
   if (numA !== null && numB !== null) return numA - numB;
-
-  // Only one has number
   if (numA !== null) return -1;
   if (numB !== null) return 1;
-
-  // Neither has number - keep original order
   return 0;
 }
 
@@ -1267,7 +1288,6 @@ function autoSortByPage(){
     return;
   }
 
-  // Count numbered images
   var numbered = state.images.filter(function(img){ return getPageNum(img) !== null; });
   if (numbered.length < 2) {
     toast(t('sortNoNumbers'), 'warn');
@@ -1314,30 +1334,55 @@ function showSortHint(){
   });
 }
 
-/* ========== FILE HANDLING ========== */
+/* ============================================================
+   FILE HANDLING — FIXED FOR <label> + DRAG & DROP
+   ============================================================ */
 var VALID_TYPES = ['image/jpeg','image/jpg','image/png','image/webp','image/gif','image/bmp'];
 var MAX_FILES = 100;
 var MAX_SIZE_MB = 25;
 
-dropZone.addEventListener('click', function(){ fileInput.click(); });
-dropZone.addEventListener('keydown', function(e){
-  if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); fileInput.click(); }
+// 1. File input change (triggered by <label for="fileInput">)
+fileInput.addEventListener('change', function(e){
+  if (e.target.files && e.target.files.length > 0) {
+    handleFiles(e.target.files);
+  }
 });
 
-fileInput.addEventListener('change', function(e){ handleFiles(e.target.files); });
-
+// 2. Drag & drop on drop zone
 ['dragenter','dragover'].forEach(function(ev){
-  dropZone.addEventListener(ev, function(e){ e.preventDefault(); dropZone.classList.add('dragover'); });
+  dropZone.addEventListener(ev, function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    dropZone.classList.add('dragover');
+  });
 });
 ['dragleave','drop'].forEach(function(ev){
-  dropZone.addEventListener(ev, function(e){ e.preventDefault(); dropZone.classList.remove('dragover'); });
+  dropZone.addEventListener(ev, function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    dropZone.classList.remove('dragover');
+  });
 });
 dropZone.addEventListener('drop', function(e){
   e.preventDefault();
-  handleFiles(e.dataTransfer.files);
+  e.stopPropagation();
+  var files = e.dataTransfer && e.dataTransfer.files;
+  if (files && files.length > 0) {
+    handleFiles(files);
+  }
 });
 
-$('addMore').addEventListener('click', function(){ fileInput.click(); });
+// 3. Global drag prevention (avoid opening image in browser)
+document.addEventListener('dragover', function(e){ e.preventDefault(); });
+document.addEventListener('drop', function(e){ e.preventDefault(); });
+
+// 4. Add More button
+$('addMore').addEventListener('click', function(e){
+  e.preventDefault();
+  fileInput.click();
+});
+
+// 5. Clear All
 $('clearAll').addEventListener('click', function(){
   if (!state.images.length) return;
   if (confirm('Clear all images?')) {
@@ -1349,6 +1394,7 @@ $('clearAll').addEventListener('click', function(){
   }
 });
 
+// 6. Toggle settings
 $('toggleSettings').addEventListener('click', function(){
   if (settingsPanel.hasAttribute('hidden')) {
     settingsPanel.removeAttribute('hidden');
@@ -1388,7 +1434,7 @@ async function handleFiles(files){
         filters: { brightness: 100, contrast: 100, saturation: 100, filter: 'none' },
         edited: false,
         name: file.name,
-        pageNum: '' // User will type page number
+        pageNum: ''
       });
     } catch (e) { console.error(e); }
   }
@@ -1445,13 +1491,11 @@ function renderImages(){
         '<span class="size">' + formatBytes(img.file.size) + '</span>' +
       '</div>';
 
-    // Edit button
     card.querySelector('.edit').addEventListener('click', function(e){
       e.stopPropagation();
       openEditor(img.id);
     });
 
-    // Delete button
     card.querySelector('.del').addEventListener('click', function(e){
       e.stopPropagation();
       state.images = state.images.filter(function(i){ return i.id !== img.id; });
@@ -1459,7 +1503,6 @@ function renderImages(){
       updateToolbar();
     });
 
-    // Page number input
     var pageInput = card.querySelector('.page-input');
     pageInput.addEventListener('input', function(e){
       var val = e.target.value.trim();
@@ -1478,13 +1521,10 @@ function renderImages(){
       updateToolbar();
     });
 
-    // Stop drag when typing in input
     pageInput.addEventListener('mousedown', function(e){ e.stopPropagation(); });
     pageInput.addEventListener('dragstart', function(e){ e.preventDefault(); });
 
-    // Drag events
     card.addEventListener('dragstart', function(e){
-      // Don't drag if target is input
       if (e.target.tagName === 'INPUT') {
         e.preventDefault();
         return;
