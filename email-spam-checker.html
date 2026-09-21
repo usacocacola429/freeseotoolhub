@@ -129,12 +129,11 @@
             font-size:0.82rem; font-family:inherit;
             display:inline-flex; align-items:center; gap:0.35rem;
         }
-        .btn-outline:hover { background:rgba(255,153,51,0.2); border-color:#ff9933; }
+        .btn-outline:hover:not(:disabled) { background:rgba(255,153,51,0.2); border-color:#ff9933; }
         .btn-outline:disabled { opacity:0.5; cursor:not-allowed; }
 
         .actions-row { display:flex; gap:8px; flex-wrap:wrap; margin-top:12px; }
 
-        /* SCORE GAUGE */
         .score-section { text-align:center; padding:20px 0; }
         .gauge {
             width:220px; height:220px; margin:0 auto 16px;
@@ -155,7 +154,6 @@
         .status-text { font-size:1.15rem; font-weight:700; margin-top:8px; }
         .status-sub { font-size:0.85rem; opacity:0.7; margin-top:4px; }
 
-        /* METRICS ROW */
         .metrics-row {
             display:grid;
             grid-template-columns:repeat(auto-fit, minmax(140px, 1fr));
@@ -172,7 +170,6 @@
         .metric-value { font-size:1.6rem; font-weight:800; line-height:1; }
         .metric-label { font-size:0.7rem; color:rgba(255,255,255,0.6); text-transform:uppercase; letter-spacing:0.5px; margin-top:6px; font-weight:600; }
 
-        /* CHECK LISTS */
         .check-category {
             background:rgba(255,255,255,0.03);
             border-radius:12px;
@@ -191,21 +188,21 @@
         .check-item {
             display:flex;
             justify-content:space-between;
-            align-items:center;
-            padding:8px 0;
+            align-items:flex-start;
+            padding:10px 0;
             border-bottom:1px solid rgba(255,255,255,0.05);
             font-size:0.85rem;
             gap:10px;
         }
         .check-item:last-child { border-bottom:none; }
         .check-name { flex:1; color:rgba(255,255,255,0.85); }
-        .check-status { font-weight:600; font-size:0.8rem; padding:2px 10px; border-radius:20px; white-space:nowrap; }
+        .check-name small { display:block; opacity:0.6; font-size:0.72rem; margin-top:3px; line-height:1.4; }
+        .check-status { font-weight:600; font-size:0.8rem; padding:3px 12px; border-radius:20px; white-space:nowrap; }
         .pass { background:rgba(16,185,129,0.15); color:#10b981; }
         .fail { background:rgba(239,68,68,0.15); color:#ef4444; }
         .warn { background:rgba(245,158,11,0.15); color:#f59e0b; }
         .info { background:rgba(59,130,246,0.15); color:#3b82f6; }
 
-        /* TABS */
         .tabs { display:flex; gap:4px; border-bottom:1px solid rgba(255,255,255,0.1); margin-bottom:18px; flex-wrap:wrap; }
         .tab {
             padding:10px 18px; background:transparent; border:none;
@@ -218,7 +215,6 @@
         .tab-panel { display:none; }
         .tab-panel.active { display:block; }
 
-        /* SPAM WORDS */
         .spam-word {
             display:inline-block;
             background:rgba(239,68,68,0.15);
@@ -232,7 +228,6 @@
         }
         .spam-word.medium { background:rgba(245,158,11,0.15); color:#f59e0b; }
 
-        /* SUBJECT OPTIMIZER */
         .subject-box {
             background:rgba(255,255,255,0.04);
             border-radius:12px;
@@ -250,7 +245,23 @@
             font-size:0.9rem;
         }
 
-        /* HISTORY */
+        .recommendation-box {
+            background:rgba(255,153,51,0.06);
+            border-left:4px solid #ff9933;
+            padding:14px 18px;
+            border-radius:10px;
+            margin-bottom:10px;
+        }
+        .recommendation-box h5 {
+            font-weight:700; margin-bottom:8px;
+            display:flex; align-items:center; gap:8px;
+            font-size:0.9rem;
+        }
+        .recommendation-box ul {
+            margin-left:18px; font-size:0.85rem;
+            line-height:1.8; opacity:0.9;
+        }
+
         .history-list { max-height:300px; overflow-y:auto; }
         .history-item {
             display:flex;
@@ -262,10 +273,12 @@
             margin-bottom:6px;
             font-size:0.82rem;
             border-left:3px solid #ff9933;
+            cursor:pointer;
+            transition:background 0.2s;
         }
+        .history-item:hover { background:rgba(255,153,51,0.1); }
         .history-score { font-weight:700; }
 
-        /* TOAST */
         .toast {
             position:fixed; bottom:30px; right:30px;
             background:rgba(11,26,51,0.95);
@@ -281,7 +294,6 @@
             to { transform:translateY(0); opacity:1; }
         }
 
-        /* EXAMPLES */
         .examples-row { display:flex; gap:8px; flex-wrap:wrap; margin-top:10px; }
         .example-btn {
             background:rgba(255,255,255,0.05);
@@ -334,13 +346,11 @@
     </nav>
 
     <div class="container">
-        <!-- HEADER -->
         <div class="tool-header">
             <h1><i class="fas fa-shield-alt"></i> <span data-i18n="title">Enterprise Email Spam Checker</span></h1>
             <p data-i18n="subtitle">Real SPF/DKIM/DMARC parsing • 200+ spam trigger words • HTML/text ratio • Link analysis • Subject line optimizer. 100% client-side.</p>
         </div>
 
-        <!-- LANGUAGE -->
         <div class="lang-bar">
             <button class="lang-btn active" data-lang="en">🇺🇸 English</button>
             <button class="lang-btn" data-lang="hi">🇮🇳 हिन्दी</button>
@@ -349,7 +359,6 @@
             <button class="lang-btn" data-lang="es">🇪🇸 Español</button>
         </div>
 
-        <!-- INPUT -->
         <div class="glass-card">
             <div class="form-group">
                 <label><i class="fas fa-envelope"></i> <span data-i18n="headerLabel">Email Header (paste full raw header)</span></label>
@@ -369,17 +378,14 @@
 
             <button class="btn-primary" id="analyzeBtn"><i class="fas fa-search"></i> <span data-i18n="analyzeBtn">Analyze Email</span></button>
             <div class="actions-row">
-                <button class="btn-outline" id="exportJson"><i class="fas fa-file-code"></i> <span data-i18n="exportJson">Export JSON</span></button>
-                <button class="btn-outline" id="exportCsv"><i class="fas fa-file-csv"></i> <span data-i18n="exportCsv">Export CSV</span></button>
-                <button class="btn-outline" id="copyReport"><i class="fas fa-copy"></i> <span data-i18n="copyReport">Copy Report</span></button>
+                <button class="btn-outline" id="exportJson" disabled><i class="fas fa-file-code"></i> <span data-i18n="exportJson">Export JSON</span></button>
+                <button class="btn-outline" id="exportCsv" disabled><i class="fas fa-file-csv"></i> <span data-i18n="exportCsv">Export CSV</span></button>
+                <button class="btn-outline" id="copyReport" disabled><i class="fas fa-copy"></i> <span data-i18n="copyReport">Copy Report</span></button>
                 <button class="btn-outline" id="clearBtn"><i class="fas fa-eraser"></i> <span data-i18n="clearBtn">Clear</span></button>
             </div>
         </div>
 
-        <!-- RESULTS -->
         <div id="results" style="display:none;">
-
-            <!-- SCORE GAUGE -->
             <div class="glass-card">
                 <div class="score-section">
                     <div class="gauge" id="gauge">
@@ -391,47 +397,34 @@
                     <div class="status-text" id="statusText"></div>
                     <div class="status-sub" id="statusSub"></div>
                 </div>
-
                 <div class="metrics-row" id="metricsRow"></div>
             </div>
 
-            <!-- TABS -->
             <div class="glass-card">
                 <div class="tabs">
-                    <button class="tab active" data-tab="auth"><i class="fas fa-lock"></i> <span data-i18n="tabAuth">Authentication</span></button>
+                    <button class="tab active" data-tab="recommendations"><i class="fas fa-lightbulb"></i> <span data-i18n="tabRec">Recommendations</span></button>
+                    <button class="tab" data-tab="auth"><i class="fas fa-lock"></i> <span data-i18n="tabAuth">Authentication</span></button>
                     <button class="tab" data-tab="content"><i class="fas fa-file-lines"></i> <span data-i18n="tabContent">Content</span></button>
                     <button class="tab" data-tab="technical"><i class="fas fa-cog"></i> <span data-i18n="tabTechnical">Technical</span></button>
                     <button class="tab" data-tab="subject"><i class="fas fa-heading"></i> <span data-i18n="tabSubject">Subject Optimizer</span></button>
                     <button class="tab" data-tab="history"><i class="fas fa-history"></i> <span data-i18n="tabHistory">History</span></button>
                 </div>
 
-                <div class="tab-panel active" data-panel="auth">
-                    <div id="authChecks"></div>
-                </div>
-
-                <div class="tab-panel" data-panel="content">
-                    <div id="contentChecks"></div>
-                </div>
-
-                <div class="tab-panel" data-panel="technical">
-                    <div id="technicalChecks"></div>
-                </div>
-
-                <div class="tab-panel" data-panel="subject">
-                    <div id="subjectAnalysis"></div>
-                </div>
-
+                <div class="tab-panel active" data-panel="recommendations"><div id="recommendationsContent"></div></div>
+                <div class="tab-panel" data-panel="auth"><div id="authChecks"></div></div>
+                <div class="tab-panel" data-panel="content"><div id="contentChecks"></div></div>
+                <div class="tab-panel" data-panel="technical"><div id="technicalChecks"></div></div>
+                <div class="tab-panel" data-panel="subject"><div id="subjectAnalysis"></div></div>
                 <div class="tab-panel" data-panel="history">
                     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
                         <span style="font-size:0.85rem;opacity:0.7"><span id="historyCount">0</span> <span data-i18n="savedChecks">saved checks</span></span>
-                        <button class="btn-outline" id="clearHistory" style="font-size:0.72rem;padding:4px 12px;"><i class="fas fa-trash"></i> <span data-i18n="clearHistory">Clear</span></button>
+                        <button class="btn-outline" id="clearHistory" style="font-size:0.72rem;padding:4px 12px;"><i class="fas fa-trash"></i></button>
                     </div>
                     <div class="history-list" id="historyList"></div>
                 </div>
             </div>
         </div>
 
-        <!-- FOOTER -->
         <div class="footer">
             <div class="footer-links">
                 <a href="/">Home</a>
@@ -440,7 +433,7 @@
                 <a href="/contact.html">Contact</a>
                 <a href="/privacy.html">Privacy</a>
             </div>
-            <p style="opacity:0.5;font-size:0.82rem;">© 2026 FreeSEOToolHub | Email Spam Checker v3.0 | 100% Client-Side</p>
+            <p style="opacity:0.5;font-size:0.82rem;">© 2026 FreeSEOToolHub | Email Spam Checker v4.0 | 100% Client-Side</p>
         </div>
     </div>
 
@@ -463,10 +456,9 @@
         analyzeBtn: 'Analyze Email',
         exportJson: 'Export JSON', exportCsv: 'Export CSV', copyReport: 'Copy Report', clearBtn: 'Clear',
         exGood: '✅ Healthy Email', exSpam: '🚨 Spam Email', exBulk: '📧 Newsletter', exAuthFail: '❌ Auth Fail',
-        spamScore: 'Spam Score', tabAuth: 'Authentication', tabContent: 'Content', tabTechnical: 'Technical',
+        spamScore: 'Spam Score', tabRec: 'Recommendations', tabAuth: 'Authentication', tabContent: 'Content', tabTechnical: 'Technical',
         tabSubject: 'Subject Optimizer', tabHistory: 'History',
-        savedChecks: 'saved checks', clearHistory: 'Clear',
-        pass: 'PASS', fail: 'FAIL', warn: 'WARN', info: 'INFO',
+        savedChecks: 'saved checks',
         excellent: 'Excellent — Inbox Ready', good: 'Good — Minor Issues', moderate: 'Moderate Risk — Review',
         high: 'High Risk — Fix Required', critical: 'Critical — Will Likely Be Blocked',
         authTitle: 'Authentication Checks', contentTitle: 'Content Analysis',
@@ -477,25 +469,22 @@
         copied: 'Report copied to clipboard!',
         analyzed: 'Analysis complete',
         emptyError: 'Please paste an email header (min 50 characters).',
-        recommendations: 'Recommendations',
+        recommendationsTitle: 'Recommendations',
         optimizedSubject: 'Optimized Subject Lines',
         currentSubject: 'Current Subject',
-        metrics: {
-          total: 'Total Checks', passed: 'Passed', warnings: 'Warnings', failed: 'Failed'
-        }
+        metrics: { total: 'Total Checks', passed: 'Passed', warnings: 'Warnings', failed: 'Failed' }
       },
       hi: {
         title: 'एंटरप्राइज़ ईमेल स्पैम चेकर',
-        subtitle: 'असली SPF/DKIM/DMARC पार्सिंग • 200+ स्पैम शब्द • HTML/टेक्स्ट अनुपात • लिंक विश्लेषण।',
+        subtitle: 'असली SPF/DKIM/DMARC पार्सिंग • 200+ स्पैम शब्द • HTML/टेक्स्ट अनुपात।',
         headerLabel: 'ईमेल हेडर (पूरा हेडर पेस्ट करें)',
         bodyLabel: 'ईमेल बॉडी (वैकल्पिक)',
         analyzeBtn: 'ईमेल जांचें',
         exportJson: 'JSON निर्यात', exportCsv: 'CSV निर्यात', copyReport: 'रिपोर्ट कॉपी', clearBtn: 'साफ़',
         exGood: '✅ स्वस्थ ईमेल', exSpam: '🚨 स्पैम ईमेल', exBulk: '📧 न्यूज़लेटर', exAuthFail: '❌ प्रमाणीकरण विफल',
-        spamScore: 'स्पैम स्कोर', tabAuth: 'प्रमाणीकरण', tabContent: 'सामग्री', tabTechnical: 'तकनीकी',
+        spamScore: 'स्पैम स्कोर', tabRec: 'सिफ़ारिशें', tabAuth: 'प्रमाणीकरण', tabContent: 'सामग्री', tabTechnical: 'तकनीकी',
         tabSubject: 'विषय विश्लेषण', tabHistory: 'इतिहास',
-        savedChecks: 'सहेजी जांच', clearHistory: 'साफ़ करें',
-        pass: 'पास', fail: 'फेल', warn: 'चेतावनी', info: 'जानकारी',
+        savedChecks: 'सहेजी जांच',
         excellent: 'बेहतरीन — इनबॉक्स तैयार', good: 'अच्छा — छोटी समस्याएं', moderate: 'मध्यम जोखिम',
         high: 'उच्च जोखिम — सुधारें', critical: 'गंभीर — ब्लॉक हो सकता है',
         authTitle: 'प्रमाणीकरण जांच', contentTitle: 'सामग्री विश्लेषण',
@@ -506,7 +495,7 @@
         copied: 'रिपोर्ट कॉपी हो गई!',
         analyzed: 'विश्लेषण पूर्ण',
         emptyError: 'कृपया ईमेल हेडर पेस्ट करें (कम से कम 50 अक्षर)।',
-        recommendations: 'सिफ़ारिशें',
+        recommendationsTitle: 'सिफ़ारिशें',
         optimizedSubject: 'अनुकूलित विषय पंक्तियाँ',
         currentSubject: 'वर्तमान विषय',
         metrics: { total: 'कुल जांच', passed: 'पास', warnings: 'चेतावनी', failed: 'फेल' }
@@ -519,10 +508,9 @@
         analyzeBtn: 'ای میل چیک کریں',
         exportJson: 'JSON ایکسپورٹ', exportCsv: 'CSV ایکسپورٹ', copyReport: 'رپورٹ کاپی', clearBtn: 'صاف کریں',
         exGood: '✅ صحت مند ای میل', exSpam: '🚨 اسپام ای میل', exBulk: '📧 نیوز لیٹر', exAuthFail: '❌ تصدیق ناکام',
-        spamScore: 'اسپام اسکور', tabAuth: 'تصدیق', tabContent: 'مواد', tabTechnical: 'تکنیکی',
+        spamScore: 'اسپام اسکور', tabRec: 'سفارشات', tabAuth: 'تصدیق', tabContent: 'مواد', tabTechnical: 'تکنیکی',
         tabSubject: 'موضوع تجزیہ', tabHistory: 'تاریخ',
-        savedChecks: 'محفوظ چیکس', clearHistory: 'صاف کریں',
-        pass: 'پاس', fail: 'فیل', warn: 'انتباہ', info: 'معلومات',
+        savedChecks: 'محفوظ چیکس',
         excellent: 'بہترین — ان باکس تیار', good: 'اچھا — معمولی مسائل', moderate: 'درمیانہ خطرہ',
         high: 'زیادہ خطرہ — درست کریں', critical: 'شدید — بلاک ہو سکتا ہے',
         authTitle: 'تصدیق کی جانچ', contentTitle: 'مواد کا تجزیہ',
@@ -532,9 +520,9 @@
         noHistory: 'ابھی کوئی تاریخ نہیں',
         copied: 'رپورٹ کاپی ہو گئی!',
         analyzed: 'تجزیہ مکمل',
-        emptyError: 'براہ کرم ای میل ہیڈر پیسٹ کریں (کم از کم 50 حروف)۔',
-        recommendations: 'سفارشات',
-        optimizedSubject: 'بہتر موضوع کی تجاویز',
+        emptyError: 'براہ کرم ای میل ہیڈر پیسٹ کریں۔',
+        recommendationsTitle: 'سفارشات',
+        optimizedSubject: 'بہتر موضوع',
         currentSubject: 'موجودہ موضوع',
         metrics: { total: 'کل چیکس', passed: 'پاس', warnings: 'انتباہات', failed: 'فیل' }
       },
@@ -546,10 +534,9 @@
         analyzeBtn: 'E-Mail analysieren',
         exportJson: 'JSON exportieren', exportCsv: 'CSV exportieren', copyReport: 'Bericht kopieren', clearBtn: 'Löschen',
         exGood: '✅ Gesunde E-Mail', exSpam: '🚨 Spam-E-Mail', exBulk: '📧 Newsletter', exAuthFail: '❌ Auth-Fehler',
-        spamScore: 'Spam-Score', tabAuth: 'Authentifizierung', tabContent: 'Inhalt', tabTechnical: 'Technisch',
+        spamScore: 'Spam-Score', tabRec: 'Empfehlungen', tabAuth: 'Authentifizierung', tabContent: 'Inhalt', tabTechnical: 'Technisch',
         tabSubject: 'Betreff-Optimierer', tabHistory: 'Verlauf',
-        savedChecks: 'gespeicherte Prüfungen', clearHistory: 'Löschen',
-        pass: 'BESTANDEN', fail: 'FEHLER', warn: 'WARNUNG', info: 'INFO',
+        savedChecks: 'gespeicherte Prüfungen',
         excellent: 'Ausgezeichnet — Posteingang bereit', good: 'Gut — kleinere Probleme', moderate: 'Mittleres Risiko',
         high: 'Hohes Risiko — beheben', critical: 'Kritisch — wird blockiert',
         authTitle: 'Authentifizierungsprüfungen', contentTitle: 'Inhaltsanalyse',
@@ -560,7 +547,7 @@
         copied: 'Bericht kopiert!',
         analyzed: 'Analyse abgeschlossen',
         emptyError: 'Bitte E-Mail-Header einfügen (min. 50 Zeichen).',
-        recommendations: 'Empfehlungen',
+        recommendationsTitle: 'Empfehlungen',
         optimizedSubject: 'Optimierte Betreffzeilen',
         currentSubject: 'Aktueller Betreff',
         metrics: { total: 'Prüfungen gesamt', passed: 'Bestanden', warnings: 'Warnungen', failed: 'Fehler' }
@@ -573,10 +560,9 @@
         analyzeBtn: 'Analizar Correo',
         exportJson: 'Exportar JSON', exportCsv: 'Exportar CSV', copyReport: 'Copiar Informe', clearBtn: 'Limpiar',
         exGood: '✅ Correo Sano', exSpam: '🚨 Correo Spam', exBulk: '📧 Newsletter', exAuthFail: '❌ Fallo Auth',
-        spamScore: 'Puntuación Spam', tabAuth: 'Autenticación', tabContent: 'Contenido', tabTechnical: 'Técnico',
+        spamScore: 'Puntuación Spam', tabRec: 'Recomendaciones', tabAuth: 'Autenticación', tabContent: 'Contenido', tabTechnical: 'Técnico',
         tabSubject: 'Optimizador Asunto', tabHistory: 'Historial',
-        savedChecks: 'análisis guardados', clearHistory: 'Limpiar',
-        pass: 'PASA', fail: 'FALLA', warn: 'ALERTA', info: 'INFO',
+        savedChecks: 'análisis guardados',
         excellent: 'Excelente — Listo para Bandeja', good: 'Bueno — Problemas Menores', moderate: 'Riesgo Moderado',
         high: 'Riesgo Alto — Corregir', critical: 'Crítico — Será Bloqueado',
         authTitle: 'Verificaciones de Autenticación', contentTitle: 'Análisis de Contenido',
@@ -587,7 +573,7 @@
         copied: '¡Informe copiado!',
         analyzed: 'Análisis completo',
         emptyError: 'Por favor pega una cabecera (mín 50 caracteres).',
-        recommendations: 'Recomendaciones',
+        recommendationsTitle: 'Recomendaciones',
         optimizedSubject: 'Asuntos Optimizados',
         currentSubject: 'Asunto Actual',
         metrics: { total: 'Verificaciones', passed: 'Aprobadas', warnings: 'Alertas', failed: 'Fallidas' }
@@ -649,19 +635,15 @@
         'opportunity','investment','profit','income','earn','money','cash',
         'credit','loan','mortgage','insurance','refinance','debt','bill',
         'weight loss','diet','pill','medication','pharmacy','viagra','cialis'
-      ],
-      low: [
-        'free','new','now','here','info','news','update','alert','hello','hi',
-        'dear','friend','customer','member','user','valued','welcome','thanks'
       ]
     };
 
     // ============================================================
-    // 🔍 HEADER PARSER
+    // 🔍 HEADER PARSER (Robust)
     // ============================================================
     function parseHeader(raw) {
       // Handle folded headers (continuation lines starting with whitespace)
-      const unfolded = raw.replace(/\r?\n[ \t]+/g, ' ');
+      const unfolded = String(raw).replace(/\r\n[ \t]+/g, ' ').replace(/\n[ \t]+/g, ' ');
       const lines = unfolded.split(/\r?\n/);
       const headers = {};
       let currentKey = null;
@@ -682,7 +664,13 @@
 
     function getHeader(headers, name) {
       const v = headers[name.toLowerCase()];
-      return v && v.length ? v.join(' | ') : null;
+      return v && v.length ? v.join(' ') : null;
+    }
+
+    function extractDomain(str) {
+      if (!str) return null;
+      const m = String(str).match(/@([A-Za-z0-9.-]+)/) || String(str).match(/([A-Za-z0-9-]+\.[A-Za-z0-9.-]+)/);
+      return m ? m[1].toLowerCase() : null;
     }
 
     // ============================================================
@@ -690,42 +678,49 @@
     // ============================================================
     function checkAuthentication(headers) {
       const checks = [];
-
-      // SPF
       const authResults = getHeader(headers, 'authentication-results') || '';
       const receivedSpf = getHeader(headers, 'received-spf') || '';
-      const spfMatch = (authResults + ' ' + receivedSpf).match(/spf=(\w+)/i);
-      const spfValue = spfMatch ? spfMatch[1].toLowerCase() : null;
+      const combined = authResults + ' ' + receivedSpf;
 
+      // SPF
+      const spfMatch = combined.match(/spf=(\w+)/i);
+      const spfValue = spfMatch ? spfMatch[1].toLowerCase() : null;
       checks.push({
         name: 'SPF (Sender Policy Framework)',
-        status: spfValue === 'pass' ? 'pass' : spfValue === 'fail' || spfValue === 'softfail' ? 'fail' : spfValue === 'neutral' || spfValue === 'none' ? 'warn' : 'warn',
+        status: spfValue === 'pass' ? 'pass' : (spfValue === 'fail' || spfValue === 'softfail') ? 'fail' : 'warn',
         value: spfValue ? spfValue.toUpperCase() : 'Not found',
-        detail: spfValue === 'pass' ? 'Sender IP is authorized.' : spfValue === 'fail' ? 'Sender IP NOT authorized — emails will be blocked.' : spfValue ? 'Status: ' + spfValue : 'No SPF result in header.'
+        detail: spfValue === 'pass' ? 'Sender IP is authorized by domain SPF record.' :
+                spfValue === 'fail' ? 'Sender IP NOT authorized — emails will be blocked.' :
+                spfValue === 'softfail' ? 'SPF softfail — high risk of blocking.' :
+                spfValue === 'neutral' ? 'SPF neutral — no policy set.' :
+                spfValue === 'none' ? 'No SPF record — domain has no policy.' :
+                'No SPF result in header. Add SPF to DNS.'
       });
 
       // DKIM
       const dkimSig = getHeader(headers, 'dkim-signature');
-      const dkimMatch = authResults.match(/dkim=(\w+)/i);
+      const dkimMatch = combined.match(/dkim=(\w+)/i);
       const dkimValue = dkimMatch ? dkimMatch[1].toLowerCase() : null;
       const hasDkimSig = !!dkimSig;
-
       checks.push({
         name: 'DKIM Signature',
-        status: (dkimValue === 'pass' || hasDkimSig) ? 'pass' : 'fail',
-        value: hasDkimSig ? (dkimValue ? dkimValue.toUpperCase() : 'Signature present') : 'Missing',
-        detail: hasDkimSig ? 'Email is cryptographically signed.' : 'No DKIM signature — spoofing risk.'
+        status: dkimValue === 'pass' ? 'pass' : (hasDkimSig && !dkimValue) ? 'warn' : (dkimValue === 'fail') ? 'fail' : 'warn',
+        value: dkimValue ? dkimValue.toUpperCase() : (hasDkimSig ? 'Signature present' : 'Missing'),
+        detail: dkimValue === 'pass' ? 'Email is cryptographically signed and verified.' :
+                hasDkimSig ? 'DKIM-Signature header present but no verification result.' :
+                'No DKIM signature — spoofing risk. Configure DKIM in DNS.'
       });
 
       // DMARC
-      const dmarcMatch = authResults.match(/dmarc=(\w+)/i);
+      const dmarcMatch = combined.match(/dmarc=(\w+)/i);
       const dmarcValue = dmarcMatch ? dmarcMatch[1].toLowerCase() : null;
-
       checks.push({
         name: 'DMARC Policy',
-        status: dmarcValue === 'pass' ? 'pass' : dmarcValue === 'fail' ? 'fail' : 'warn',
+        status: dmarcValue === 'pass' ? 'pass' : (dmarcValue === 'fail') ? 'fail' : 'warn',
         value: dmarcValue ? dmarcValue.toUpperCase() : 'Not found',
-        detail: dmarcValue === 'pass' ? 'Domain-aligned authentication passed.' : dmarcValue === 'fail' ? 'DMARC failed — high risk of blocking.' : 'No DMARC result found.'
+        detail: dmarcValue === 'pass' ? 'Domain-aligned authentication passed.' :
+                dmarcValue === 'fail' ? 'DMARC failed — high risk of blocking. Fix SPF/DKIM alignment.' :
+                'No DMARC result found. Add DMARC record in DNS.'
       });
 
       // From / Return-Path alignment
@@ -733,85 +728,85 @@
       const returnPath = getHeader(headers, 'return-path') || '';
       const fromDomain = extractDomain(fromHeader);
       const returnDomain = extractDomain(returnPath);
-      const aligned = fromDomain && returnDomain && (fromDomain === returnDomain || returnDomain.endsWith('.' + fromDomain) || fromDomain.endsWith('.' + returnDomain));
-
+      const aligned = fromDomain && returnDomain &&
+        (fromDomain === returnDomain || returnDomain.endsWith('.' + fromDomain) || fromDomain.endsWith('.' + returnDomain));
       checks.push({
         name: 'From / Return-Path Alignment',
         status: aligned ? 'pass' : (fromDomain && returnDomain) ? 'warn' : 'info',
-        value: aligned ? 'Aligned' : (fromDomain && returnDomain ? `${fromDomain} ≠ ${returnDomain}` : 'Unknown'),
-        detail: aligned ? 'Sender domains match.' : 'Mismatch can trigger spam filters.'
+        value: aligned ? 'Aligned ✓' : (fromDomain && returnDomain ? `${fromDomain} ≠ ${returnDomain}` : 'Unknown'),
+        detail: aligned ? 'Sender domains match — good for DMARC.' :
+                'Mismatch can trigger spam filters. Ensure From domain matches envelope sender.'
       });
 
-      // Reply-To mismatch
+      // Reply-To
       const replyTo = getHeader(headers, 'reply-to');
       const replyDomain = replyTo ? extractDomain(replyTo) : null;
       const replyAligned = !replyDomain || replyDomain === fromDomain;
       checks.push({
         name: 'Reply-To Alignment',
         status: replyAligned ? 'pass' : 'warn',
-        value: replyAligned ? (replyTo ? 'Aligned' : 'Not set') : `${replyDomain} ≠ ${fromDomain}`,
-        detail: replyAligned ? 'Reply-To is safe.' : 'Reply-To differs from From — spam signal.'
+        value: replyAligned ? (replyTo ? 'Aligned ✓' : 'Not set (ok)') : `${replyDomain} ≠ ${fromDomain}`,
+        detail: replyAligned ? 'Reply-To is safe.' :
+                'Reply-To differs from From — common phishing signal. Use same domain.'
       });
 
       // Message-ID
       const messageId = getHeader(headers, 'message-id');
-      const msgIdValid = messageId && /<[^@]+@[^>]+>/.test(messageId);
+      const msgIdValid = messageId && /<[^@\s]+@[^>\s]+>/.test(messageId);
       checks.push({
         name: 'Message-ID Format',
         status: msgIdValid ? 'pass' : 'warn',
-        value: msgIdValid ? 'Valid' : (messageId ? 'Malformed' : 'Missing'),
-        detail: msgIdValid ? 'Proper format.' : 'Missing/malformed Message-ID is a spam signal.'
+        value: msgIdValid ? 'Valid ✓' : (messageId ? 'Malformed' : 'Missing'),
+        detail: msgIdValid ? 'Proper RFC-compliant format.' :
+                'Use format: <unique-id@yourdomain.com>'
       });
 
       // Received chain
       const receivedCount = (headers['received'] || []).length;
       checks.push({
         name: 'Received Chain',
-        status: receivedCount >= 1 && receivedCount <= 8 ? 'pass' : receivedCount === 0 ? 'warn' : 'warn',
+        status: receivedCount >= 1 && receivedCount <= 8 ? 'pass' : 'warn',
         value: receivedCount + ' hop' + (receivedCount !== 1 ? 's' : ''),
-        detail: receivedCount === 0 ? 'No Received headers — suspicious.' : receivedCount > 8 ? 'Too many hops — may indicate relay abuse.' : 'Normal routing.'
+        detail: receivedCount === 0 ? 'No Received headers — suspicious.' :
+                receivedCount > 8 ? 'Too many hops — may indicate relay abuse.' :
+                'Normal routing through mail servers.'
       });
 
       return checks;
     }
 
-    function extractDomain(str) {
-      if (!str) return null;
-      const m = str.match(/@([A-Za-z0-9.-]+)/) || str.match(/([A-Za-z0-9-]+\.[A-Za-z0-9.-]+)/);
-      return m ? m[1].toLowerCase() : null;
-    }
-
     // ============================================================
     // 📝 CONTENT ANALYSIS
     // ============================================================
-    function checkContent(header, body) {
+    function checkContent(headers, rawHeader, body) {
       const checks = [];
-      const combined = (header + '\n' + body).toLowerCase();
+      const combined = (rawHeader + '\n' + body).toLowerCase();
 
       // Spam words
       const foundHigh = SPAM_WORDS.high.filter(w => combined.includes(w.toLowerCase()));
       const foundMedium = SPAM_WORDS.medium.filter(w => combined.includes(w.toLowerCase()));
-      const spamWordCount = foundHigh.length * 3 + foundMedium.length;
 
       checks.push({
         name: 'Spam Trigger Words',
         status: foundHigh.length === 0 && foundMedium.length <= 2 ? 'pass' : foundHigh.length > 0 ? 'fail' : 'warn',
-        value: foundHigh.length > 0 ? `${foundHigh.length} high, ${foundMedium.length} medium` : foundMedium.length > 0 ? `${foundMedium.length} medium` : 'None',
-        detail: foundHigh.length > 0 ? 'High-risk words: ' + foundHigh.slice(0, 5).join(', ') : foundMedium.length > 0 ? 'Medium words: ' + foundMedium.slice(0, 5).join(', ') : 'Clean content.',
-        extra: { foundHigh, foundMedium }
+        value: foundHigh.length > 0 ? `${foundHigh.length} high, ${foundMedium.length} medium` : foundMedium.length > 0 ? `${foundMedium.length} medium` : 'None ✓',
+        detail: foundHigh.length > 0 ? 'High-risk: ' + foundHigh.slice(0, 5).join(', ') :
+                foundMedium.length > 0 ? 'Medium: ' + foundMedium.slice(0, 5).join(', ') :
+                'Clean content.'
       });
 
       // Subject analysis
-      const subject = getHeader({ subject: header.match(/^Subject:\s*(.+)$/im) ? [header.match(/^Subject:\s*(.+)$/im)[1]] : [] }, 'subject') || '';
-      const subjectCaps = subject ? (subject.replace(/[^A-Z]/g, '').length / Math.max(1, subject.replace(/\s/g, '').length)) : 0;
+      const subject = getHeader(headers, 'subject') || '';
+      const subjectNoSpaces = subject.replace(/\s/g, '');
+      const subjectCaps = subjectNoSpaces ? (subject.match(/[A-Z]/g) || []).length / subjectNoSpaces.length : 0;
       checks.push({
         name: 'Subject: ALL CAPS Ratio',
         status: subjectCaps < 0.3 ? 'pass' : subjectCaps < 0.6 ? 'warn' : 'fail',
         value: Math.round(subjectCaps * 100) + '%',
-        detail: subjectCaps < 0.3 ? 'Normal capitalization.' : 'Too many CAPS — common spam signal.'
+        detail: subjectCaps < 0.3 ? 'Normal capitalization.' :
+                'Too many CAPS — common spam signal.'
       });
 
-      // Exclamation marks
       const exclaims = (subject.match(/!/g) || []).length;
       checks.push({
         name: 'Exclamation Marks in Subject',
@@ -820,31 +815,35 @@
         detail: exclaims <= 1 ? 'Normal.' : 'Multiple "!" is a strong spam signal.'
       });
 
-      // Subject length
       const subjLen = subject.length;
       checks.push({
         name: 'Subject Length',
-        status: subjLen >= 20 && subjLen <= 65 ? 'pass' : subjLen > 0 ? 'warn' : 'info',
+        status: subjLen >= 20 && subjLen <= 65 ? 'pass' : (subjLen > 0 && subjLen < 20) ? 'warn' : subjLen > 65 ? 'warn' : 'info',
         value: subjLen + ' chars',
-        detail: subjLen > 65 ? 'Too long — will be truncated in most clients.' : subjLen < 20 ? 'Too short — low engagement.' : 'Optimal (20-65 chars).'
+        detail: subjLen > 65 ? 'Too long — will be truncated.' :
+                subjLen < 20 && subjLen > 0 ? 'Too short — low engagement.' :
+                subjLen === 0 ? 'No subject.' : 'Optimal (20-65 chars).'
       });
 
       // HTML/Text ratio
-      const hasHtml = /<html|<body|<div|<p>/i.test(body);
-      const hasText = body.replace(/<[^>]*>/g, '').trim().length > 50;
+      const hasHtml = /<html|<body|<div|<p|<table/i.test(body);
+      const textOnly = body.replace(/<[^>]*>/g, '').trim();
+      const hasText = textOnly.length > 50;
       checks.push({
         name: 'HTML / Plain Text Ratio',
-        status: hasHtml && hasText ? 'pass' : hasHtml && !hasText ? 'fail' : 'warn',
-        value: hasHtml ? (hasText ? 'Both present' : 'HTML only') : 'Text only',
-        detail: hasHtml && !hasText ? 'HTML-only emails are heavily penalized.' : 'Good — multipart recommended.'
+        status: hasHtml && hasText ? 'pass' : (hasHtml && !hasText) ? 'fail' : body.length > 0 ? 'warn' : 'info',
+        value: !body ? 'No body provided' : hasHtml ? (hasText ? 'Both present ✓' : 'HTML only') : 'Text only',
+        detail: hasHtml && !hasText ? 'HTML-only emails are heavily penalized.' :
+                hasHtml && hasText ? 'Multipart — best practice.' :
+                body ? 'Consider adding multipart/alternative.' : 'Paste body for content analysis.'
       });
 
-      // Link count
+      // Links
       const links = (body.match(/https?:\/\/[^\s"'<>]+/g) || []);
       checks.push({
         name: 'Link Count',
-        status: links.length <= 5 ? 'pass' : links.length <= 10 ? 'warn' : 'fail',
-        value: links.length + ' link' + (links.length !== 1 ? 's' : ''),
+        status: body ? (links.length <= 5 ? 'pass' : links.length <= 10 ? 'warn' : 'fail') : 'info',
+        value: body ? (links.length + ' link' + (links.length !== 1 ? 's' : '')) : 'No body',
         detail: links.length > 10 ? 'Too many links — spam signal.' : 'Reasonable link count.'
       });
 
@@ -854,34 +853,31 @@
         name: 'URL Shorteners',
         status: shorteners.length === 0 ? 'pass' : shorteners.length <= 1 ? 'warn' : 'fail',
         value: shorteners.length + ' found',
-        detail: shorteners.length > 0 ? 'Shortened URLs trigger spam filters: ' + shorteners.slice(0, 3).join(', ') : 'No shortened URLs.'
+        detail: shorteners.length > 0 ? 'Shortened URLs: ' + shorteners.slice(0, 3).join(', ') : 'No shortened URLs.'
       });
 
       // Unsubscribe
-      const hasUnsub = /unsubscribe/i.test(body) || headers_has(headers_global, 'list-unsubscribe');
+      const hasUnsubHeader = !!getHeader(headers, 'list-unsubscribe');
+      const hasUnsubBody = /unsubscribe/i.test(body);
+      const hasUnsub = hasUnsubHeader || hasUnsubBody;
       checks.push({
-        name: 'Unsubscribe Link / Header',
+        name: 'Unsubscribe Option',
         status: hasUnsub ? 'pass' : 'fail',
-        value: hasUnsub ? 'Present' : 'Missing',
-        detail: hasUnsub ? 'Compliant with CAN-SPAM.' : 'Missing unsubscribe — legal risk + spam signal.'
+        value: hasUnsubHeader ? 'List-Unsubscribe header ✓' : hasUnsubBody ? 'Body link ✓' : 'Missing',
+        detail: hasUnsub ? 'CAN-SPAM compliant.' : 'Missing unsubscribe — legal risk + spam signal.'
       });
 
-      // Image-only
+      // Image/Text balance
       const imgCount = (body.match(/<img/gi) || []).length;
-      const textLen = body.replace(/<[^>]*>/g, '').trim().length;
+      const textLen = textOnly.length;
       checks.push({
         name: 'Image/Text Balance',
         status: imgCount === 0 ? 'pass' : textLen > 100 ? 'pass' : 'warn',
-        value: imgCount + ' images, ' + textLen + ' chars text',
-        detail: imgCount > 0 && textLen < 100 ? 'Mostly images — spam filters dislike this.' : 'Good balance.'
+        value: imgCount + ' images, ' + textLen + ' chars',
+        detail: imgCount > 0 && textLen < 100 ? 'Mostly images — spam filters dislike.' : 'Good balance.'
       });
 
-      return { checks, foundHigh, foundMedium, spamWordCount };
-    }
-
-    let headers_global = {};
-    function headers_has(headers, name) {
-      return !!(headers && headers[name.toLowerCase()]);
+      return { checks, foundHigh, foundMedium };
     }
 
     // ============================================================
@@ -890,7 +886,6 @@
     function checkTechnical(headers) {
       const checks = [];
 
-      // MIME version
       const mime = getHeader(headers, 'mime-version');
       checks.push({
         name: 'MIME-Version',
@@ -899,7 +894,6 @@
         detail: mime ? 'Proper MIME version declared.' : 'Missing MIME-Version — deliverability risk.'
       });
 
-      // Content-Type
       const ct = getHeader(headers, 'content-type');
       const isMultipart = ct && /multipart\/alternative/i.test(ct);
       const hasCharset = ct && /charset=/i.test(ct);
@@ -907,49 +901,50 @@
         name: 'Content-Type & Charset',
         status: isMultipart && hasCharset ? 'pass' : ct ? 'warn' : 'fail',
         value: ct ? ct.split(';')[0] : 'Missing',
-        detail: isMultipart ? 'multipart/alternative — best practice.' : ct ? 'Consider multipart/alternative with UTF-8.' : 'No Content-Type — spam risk.'
+        detail: isMultipart ? 'multipart/alternative with charset — best practice.' :
+                ct ? 'Consider multipart/alternative with UTF-8.' :
+                'No Content-Type — spam risk.'
       });
 
-      // Date header
       const date = getHeader(headers, 'date');
       const dateValid = date && !isNaN(new Date(date).getTime());
       const dateAge = dateValid ? (Date.now() - new Date(date).getTime()) / 3600000 : null;
       checks.push({
         name: 'Date Header',
-        status: dateValid && (dateAge === null || Math.abs(dateAge) < 168) ? 'pass' : 'warn',
+        status: dateValid && (dateAge === null || Math.abs(dateAge) < 168) ? 'pass' : dateValid ? 'warn' : 'warn',
         value: dateValid ? new Date(date).toLocaleString() : 'Missing/Invalid',
-        detail: dateValid ? (Math.abs(dateAge) > 168 ? 'Date is over a week old or in future.' : 'Valid and recent.') : 'Invalid date format.'
+        detail: !dateValid ? 'Invalid date format.' :
+                Math.abs(dateAge) > 168 ? 'Date over a week old or in future.' :
+                'Valid and recent.'
       });
 
-      // List-Unsubscribe
       const listUnsub = getHeader(headers, 'list-unsubscribe');
       checks.push({
         name: 'List-Unsubscribe Header',
         status: listUnsub ? 'pass' : 'warn',
-        value: listUnsub ? 'Present' : 'Not found',
-        detail: listUnsub ? 'Enables one-click unsubscribe.' : 'Recommended for bulk emails.'
+        value: listUnsub ? 'Present ✓' : 'Not found',
+        detail: listUnsub ? 'One-click unsubscribe supported.' : 'Recommended for bulk emails.'
       });
 
-      // Precedence
       const precedence = getHeader(headers, 'precedence');
       checks.push({
         name: 'Precedence Header',
         status: precedence ? 'info' : 'pass',
         value: precedence || 'Not set',
-        detail: precedence ? `Set to "${precedence}".` : 'No precedence header (fine for transactional).'
+        detail: precedence ? `Set to "${precedence}".` : 'Fine for transactional emails.'
       });
 
-      // X-Mailer
       const mailer = getHeader(headers, 'x-mailer') || getHeader(headers, 'user-agent');
       const suspiciousMailer = mailer && /phpmailer|python|ruby|perl|unknown/i.test(mailer);
       checks.push({
         name: 'X-Mailer / User-Agent',
         status: mailer && !suspiciousMailer ? 'pass' : mailer ? 'warn' : 'info',
         value: mailer || 'Not set',
-        detail: suspiciousMailer ? 'Script-based mailer detected — may trigger filters.' : mailer ? 'Standard mailer.' : 'Not set (fine for most ESPs).'
+        detail: suspiciousMailer ? 'Script-based mailer detected.' :
+                mailer ? 'Standard mailer.' :
+                'Not set (fine for most ESPs).'
       });
 
-      // Header size
       const rawHeaderSize = JSON.stringify(headers).length;
       checks.push({
         name: 'Header Size',
@@ -958,13 +953,19 @@
         detail: rawHeaderSize > 8000 ? 'Large header — may be truncated.' : 'Normal size.'
       });
 
-      // Received delay
+      // Received delay (fixed parsing)
       const receivedList = headers['received'] || [];
       if (receivedList.length >= 2) {
         const times = receivedList.map(r => {
-          const m = r.match(/;\s*(.+)$/);
-          return m ? new Date(m[1]).getTime() : null;
-        }).filter(x => x && !isNaN(x));
+          // Match ";" followed by date
+          const m = r.match(/;\s*(.+?)$/);
+          if (m) {
+            const d = new Date(m[1]);
+            return isNaN(d.getTime()) ? null : d.getTime();
+          }
+          return null;
+        }).filter(x => x !== null);
+
         if (times.length >= 2) {
           const delays = [];
           for (let i = 0; i < times.length - 1; i++) {
@@ -988,35 +989,30 @@
     // ============================================================
     function analyzeSubject(headers, body) {
       const subject = getHeader(headers, 'subject') || '(no subject)';
-      const analysis = {
-        subject,
-        score: 100,
-        issues: [],
-        suggestions: []
-      };
+      const analysis = { subject, score: 70, issues: [], suggestions: [] };
 
       // Length
-      if (subject.length < 20) {
+      if (subject.length >= 20 && subject.length <= 65) {
+        analysis.score += 10;
+      } else if (subject.length > 0 && subject.length < 20) {
         analysis.score -= 10;
         analysis.issues.push('Too short (< 20 chars) — low engagement');
       } else if (subject.length > 65) {
         analysis.score -= 10;
         analysis.issues.push('Too long (> 65 chars) — will be truncated');
-      } else {
-        analysis.score += 5;
       }
 
       // CAPS
-      const capsRatio = subject.replace(/[^A-Z]/g, '').length / Math.max(1, subject.replace(/\s/g, '').length);
+      const capsRatio = subject.replace(/\s/g, '').length ? (subject.match(/[A-Z]/g) || []).length / subject.replace(/\s/g, '').length : 0;
       if (capsRatio > 0.5) {
-        analysis.score -= 20;
+        analysis.score -= 15;
         analysis.issues.push('Too many CAPS — spam signal');
       }
 
       // Exclamations
       const excl = (subject.match(/!/g) || []).length;
       if (excl > 2) {
-        analysis.score -= 15;
+        analysis.score -= 10;
         analysis.issues.push('Multiple exclamation marks');
       } else if (excl >= 1) {
         analysis.score += 3;
@@ -1026,7 +1022,7 @@
       const emoji = subject.match(/[\u{1F300}-\u{1F9FF}\u{2600}-\u{27BF}]/gu) || [];
       if (emoji.length === 1) analysis.score += 5;
       else if (emoji.length > 2) {
-        analysis.score -= 10;
+        analysis.score -= 8;
         analysis.issues.push('Too many emojis');
       }
 
@@ -1039,63 +1035,130 @@
       if (powerFound.length > 0) analysis.score += 6;
 
       // Personalization
-      if (/\{\{|\[name\]|%name%/i.test(subject)) {
-        analysis.score += 5;
-        analysis.issues.push('Personalization placeholder detected — good!');
-      }
+      if (/\{\{|\[name\]|%name%/i.test(subject)) analysis.score += 5;
 
-      // Spam words in subject
+      // Spam in subject
       const spamInSubj = SPAM_WORDS.high.filter(w => subject.toLowerCase().includes(w));
       if (spamInSubj.length > 0) {
-        analysis.score -= 25;
+        analysis.score -= 20;
         analysis.issues.push('Spam words: ' + spamInSubj.join(', '));
       }
 
       analysis.score = Math.max(0, Math.min(100, analysis.score));
 
-      // Generate suggestions
-      const base = subject.replace(/[!]{2,}/g, '!').replace(/\b(FREE|FREE!!|MONEY|WINNER|CLICK)\b/gi, '').trim();
+      // Suggestions
+      const base = subject.replace(/!{2,}/g, '!').replace(/\b(FREE|MONEY|WINNER|CLICK|ACT NOW|GUARANTEED)\b/gi, '').trim();
       analysis.suggestions = [
         `🚀 ${base || 'New Update'} — Inside Now`,
         `${base || 'New'} (2026 Edition)`,
-        `How to ${base || 'Get Started'} in 5 Minutes`,
-        `${base || 'Your Update'} — Don't Miss This`,
-        `Quick Guide: ${base || 'New Feature'}`
-      ].filter(s => s.length <= 65).slice(0, 3);
+        `How to ${base || 'Get Started'} in 5 Minutes`
+      ].filter(s => s.length <= 65 && s.length >= 15).slice(0, 3);
 
       return analysis;
     }
 
     // ============================================================
-    // 📊 SCORING
+    // 📊 SCORING (0 = best, 100 = worst)
     // ============================================================
-    function calculateSpamScore(authChecks, contentChecks, techChecks, spamWordCount) {
+    function calculateSpamScore(authChecks, contentChecks, techChecks) {
       let score = 0;
-      const weights = {
-        pass: 0,
-        info: 0,
-        warn: 3,
-        fail: 8
-      };
+      const weights = { pass: 0, info: 0, warn: 2, fail: 6 };
 
       authChecks.forEach(c => score += weights[c.status] || 0);
       contentChecks.forEach(c => score += weights[c.status] || 0);
       techChecks.forEach(c => score += weights[c.status] || 0);
 
-      // Spam word penalty
-      score += Math.min(30, spamWordCount * 2);
-
-      // Text length bonus (longer = more legitimate)
-      const bodyLen = document.getElementById('emailBody').value.length;
-      if (bodyLen > 500) score -= 5;
-      if (bodyLen > 1500) score -= 5;
-
       return Math.max(0, Math.min(100, Math.round(score)));
     }
 
     // ============================================================
-    // 🎨 RENDER
+    // 💡 RECOMMENDATIONS ENGINE
     // ============================================================
+    function buildRecommendations(authChecks, contentChecks, techChecks, score) {
+      const recs = [];
+
+      // Auth recommendations
+      const failedAuth = authChecks.filter(c => c.status === 'fail');
+      const warnedAuth = authChecks.filter(c => c.status === 'warn');
+
+      if (failedAuth.length > 0 || warnedAuth.length > 0) {
+        const items = [];
+        authChecks.forEach(c => {
+          if (c.status === 'fail') items.push(`<strong>${c.name}</strong> — ${c.detail}`);
+          else if (c.status === 'warn') items.push(`<strong>${c.name}</strong> — ${c.detail}`);
+        });
+        recs.push({
+          priority: 'high',
+          title: 'Authentication Issues',
+          items
+        });
+      } else {
+        recs.push({
+          priority: 'ok',
+          title: 'Authentication',
+          items: ['✅ All authentication checks passed.']
+        });
+      }
+
+      // Content recommendations
+      const contentIssues = contentChecks.filter(c => c.status === 'fail' || c.status === 'warn');
+      if (contentIssues.length > 0) {
+        const items = contentIssues.map(c => `<strong>${c.name}</strong> — ${c.detail}`);
+        recs.push({
+          priority: contentIssues.some(c => c.status === 'fail') ? 'high' : 'medium',
+          title: 'Content Issues',
+          items
+        });
+      }
+
+      // Technical recommendations
+      const techIssues = techChecks.filter(c => c.status === 'fail' || c.status === 'warn');
+      if (techIssues.length > 0) {
+        const items = techIssues.map(c => `<strong>${c.name}</strong> — ${c.detail}`);
+        recs.push({
+          priority: 'medium',
+          title: 'Technical Improvements',
+          items
+        });
+      }
+
+      // Overall guidance
+      if (score < 15) {
+        recs.push({
+          priority: 'ok',
+          title: 'Overall Assessment',
+          items: ['✅ Excellent deliverability. This email should reach the inbox.']
+        });
+      } else if (score < 30) {
+        recs.push({
+          priority: 'low',
+          title: 'Overall Assessment',
+          items: ['Minor issues found. Fix above items for optimal deliverability.']
+        });
+      } else if (score < 50) {
+        recs.push({
+          priority: 'medium',
+          title: 'Overall Assessment',
+          items: ['Moderate risk. Fix authentication and content issues before sending.']
+        });
+      } else {
+        recs.push({
+          priority: 'high',
+          title: 'Overall Assessment',
+          items: ['⚠️ High risk of being flagged as spam. Major fixes needed before sending.']
+        });
+      }
+
+      return recs;
+    }
+
+    // ============================================================
+    // 🎨 RENDER HELPERS
+    // ============================================================
+    function escapeHtml(s) {
+      return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    }
+
     function renderCheckCategory(title, icon, checks) {
       return `
         <div class="check-category">
@@ -1104,7 +1167,7 @@
             <div class="check-item">
               <div class="check-name">
                 <div>${escapeHtml(c.name)}</div>
-                <div style="font-size:0.72rem; opacity:0.6; margin-top:2px;">${escapeHtml(c.detail)}</div>
+                <small>${escapeHtml(c.detail)}</small>
               </div>
               <div class="check-status ${c.status}">${escapeHtml(c.value)}</div>
             </div>
@@ -1113,24 +1176,22 @@
       `;
     }
 
-    function escapeHtml(s) {
-      return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-    }
-
+    // ============================================================
+    // 🎨 RENDER RESULTS
+    // ============================================================
     function renderResults(data) {
-      const { score, authChecks, contentChecks, techChecks, subjectAnalysis, foundHigh, foundMedium } = data;
+      const { score, authChecks, contentChecks, techChecks, subjectAnalysis, foundHigh, foundMedium, recommendations } = data;
 
-      // Gauge
+      // Gauge (lower = better)
       const deg = (score / 100) * 360;
       let color, statusKey, statusSub;
-      if (score < 15) { color = '#10b981'; statusKey = 'excellent'; statusSub = 'Deliverability: ' + (100 - score) + '%'; }
-      else if (score < 30) { color = '#3b82f6'; statusKey = 'good'; statusSub = 'Deliverability: ' + (100 - score) + '%'; }
-      else if (score < 50) { color = '#f59e0b'; statusKey = 'moderate'; statusSub = 'Deliverability: ' + (100 - score) + '%'; }
-      else if (score < 70) { color = '#f97316'; statusKey = 'high'; statusSub = 'Deliverability: ' + (100 - score) + '%'; }
-      else { color = '#ef4444'; statusKey = 'critical'; statusSub = 'Deliverability: ' + Math.max(0, 100 - score) + '%'; }
+      if (score < 15) { color = '#10b981'; statusKey = 'excellent'; statusSub = `Deliverability: ${100 - score}%`; }
+      else if (score < 30) { color = '#3b82f6'; statusKey = 'good'; statusSub = `Deliverability: ${100 - score}%`; }
+      else if (score < 50) { color = '#f59e0b'; statusKey = 'moderate'; statusSub = `Deliverability: ${100 - score}%`; }
+      else if (score < 70) { color = '#f97316'; statusKey = 'high'; statusSub = `Deliverability: ${100 - score}%`; }
+      else { color = '#ef4444'; statusKey = 'critical'; statusSub = `Deliverability: ${Math.max(0, 100 - score)}%`; }
 
-      const gauge = document.getElementById('gauge');
-      gauge.style.background = `conic-gradient(${color} 0deg, ${color} ${deg}deg, rgba(255,255,255,0.08) ${deg}deg)`;
+      document.getElementById('gauge').style.background = `conic-gradient(${color} 0deg, ${color} ${deg}deg, rgba(255,255,255,0.08) ${deg}deg)`;
       document.getElementById('gaugeValue').textContent = score + '%';
       document.getElementById('gaugeValue').style.color = color;
       document.getElementById('statusText').textContent = t(statusKey);
@@ -1150,9 +1211,22 @@
         <div class="metric-box"><div class="metric-value" style="color:#ef4444">${failed}</div><div class="metric-label">${t('metrics.failed')}</div></div>
       `;
 
+      // Recommendations tab
+      const priorityColors = { high: '#ef4444', medium: '#f59e0b', low: '#3b82f6', ok: '#10b981' };
+      document.getElementById('recommendationsContent').innerHTML = recommendations.map(r => `
+        <div class="recommendation-box" style="border-left-color:${priorityColors[r.priority]}">
+          <h5 style="color:${priorityColors[r.priority]}">
+            <i class="fas ${r.priority === 'ok' ? 'fa-check-circle' : r.priority === 'high' ? 'fa-exclamation-triangle' : 'fa-info-circle'}"></i>
+            ${escapeHtml(r.title)}
+          </h5>
+          <ul>
+            ${r.items.map(i => `<li>${i}</li>`).join('')}
+          </ul>
+        </div>
+      `).join('');
+
       // Auth tab
-      document.getElementById('authChecks').innerHTML =
-        renderCheckCategory(t('authTitle'), 'fa-lock', authChecks);
+      document.getElementById('authChecks').innerHTML = renderCheckCategory(t('authTitle'), 'fa-lock', authChecks);
 
       // Content tab
       let contentHtml = renderCheckCategory(t('contentTitle'), 'fa-file-lines', contentChecks);
@@ -1170,8 +1244,7 @@
       document.getElementById('contentChecks').innerHTML = contentHtml;
 
       // Technical tab
-      document.getElementById('technicalChecks').innerHTML =
-        renderCheckCategory(t('techTitle'), 'fa-cog', techChecks);
+      document.getElementById('technicalChecks').innerHTML = renderCheckCategory(t('techTitle'), 'fa-cog', techChecks);
 
       // Subject tab
       const sa = subjectAnalysis;
@@ -1179,22 +1252,21 @@
       document.getElementById('subjectAnalysis').innerHTML = `
         <div class="subject-box">
           <div style="font-size:0.8rem; opacity:0.7; margin-bottom:4px;">${t('currentSubject')}</div>
-          <div style="font-size:1rem; font-weight:600;">${escapeHtml(sa.subject)}</div>
-          <div style="display:flex; justify-content:space-between; margin-top:12px;">
+          <div style="font-size:1rem; font-weight:600; word-break:break-word;">${escapeHtml(sa.subject)}</div>
+          <div style="display:flex; justify-content:space-between; margin-top:12px; align-items:end;">
             <div class="subject-score" style="color:${subjectColor}">${sa.score}/100</div>
-            <div style="font-size:0.8rem; opacity:0.7; align-self:end;">Subject Score</div>
+            <div style="font-size:0.8rem; opacity:0.7;">Subject Score</div>
           </div>
         </div>
         ${sa.issues.length ? `<div class="check-category"><h4><i class="fas fa-exclamation-circle"></i> Issues Found</h4>
           ${sa.issues.map(i => `<div class="check-item"><span class="check-name">${escapeHtml(i)}</span></div>`).join('')}
         </div>` : ''}
-        <div class="subject-suggestion">
+        ${sa.suggestions.length ? `<div class="subject-suggestion">
           <div style="font-weight:700; margin-bottom:8px;"><i class="fas fa-magic"></i> ${t('optimizedSubject')}</div>
-          ${sa.suggestions.map(s => `<div style="padding:6px 0; border-bottom:1px solid rgba(255,255,255,0.08); font-size:0.9rem;">• ${escapeHtml(s)}</div>`).join('')}
-        </div>
+          ${sa.suggestions.map(s => `<div style="padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.08); font-size:0.9rem;"><i class="fas fa-arrow-right" style="color:#10b981; margin-right:8px;"></i>${escapeHtml(s)}</div>`).join('')}
+        </div>` : ''}
       `;
 
-      // History
       renderHistory();
     }
 
@@ -1202,18 +1274,14 @@
     // 💾 HISTORY
     // ============================================================
     function getHistory() {
-      try { return JSON.parse(localStorage.getItem('spamCheckerHistory') || '[]'); }
+      try { return JSON.parse(localStorage.getItem('spamCheckerHistoryV4') || '[]'); }
       catch(e) { return []; }
     }
 
-    function saveToHistory(score, subject) {
+    function saveToHistory(score, subject, url) {
       const history = getHistory();
-      history.unshift({
-        score,
-        subject: subject ? subject.slice(0, 50) : 'No subject',
-        timestamp: Date.now()
-      });
-      localStorage.setItem('spamCheckerHistory', JSON.stringify(history.slice(0, 20)));
+      history.unshift({ score, subject: (subject || 'No subject').slice(0, 50), ts: Date.now() });
+      localStorage.setItem('spamCheckerHistoryV4', JSON.stringify(history.slice(0, 20)));
       renderHistory();
     }
 
@@ -1231,7 +1299,7 @@
           <div class="history-item" style="border-left-color:${color}">
             <div style="flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${escapeHtml(h.subject)}</div>
             <div class="history-score" style="color:${color}">${h.score}%</div>
-            <div style="font-size:0.72rem; opacity:0.5; margin-left:8px;">${new Date(h.timestamp).toLocaleDateString()}</div>
+            <div style="font-size:0.72rem; opacity:0.5; margin-left:8px;">${new Date(h.ts).toLocaleDateString()}</div>
           </div>
         `;
       }).join('');
@@ -1252,19 +1320,18 @@
       }
 
       const headers = parseHeader(rawHeader);
-      headers_global = headers;
 
       const authChecks = checkAuthentication(headers);
-      const { checks: contentChecks, foundHigh, foundMedium, spamWordCount } = checkContent(rawHeader, body);
+      const { checks: contentChecks, foundHigh, foundMedium } = checkContent(headers, rawHeader, body);
       const techChecks = checkTechnical(headers);
       const subjectAnalysis = analyzeSubject(headers, body);
 
-      const score = calculateSpamScore(authChecks, contentChecks, techChecks, spamWordCount);
+      const score = calculateSpamScore(authChecks, contentChecks, techChecks);
+      const recommendations = buildRecommendations(authChecks, contentChecks, techChecks, score);
 
       lastResult = {
         score, authChecks, contentChecks, techChecks, subjectAnalysis,
-        foundHigh, foundMedium, spamWordCount,
-        headers, body,
+        foundHigh, foundMedium, recommendations,
         timestamp: new Date().toISOString()
       };
 
@@ -1272,6 +1339,11 @@
       renderResults(lastResult);
       saveToHistory(score, subjectAnalysis.subject);
 
+      document.getElementById('exportJson').disabled = false;
+      document.getElementById('exportCsv').disabled = false;
+      document.getElementById('copyReport').disabled = false;
+
+      document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
       showToast(`✅ ${t('analyzed')} — Score: ${score}%`);
     }
 
@@ -1290,16 +1362,19 @@
 
     function exportJSON() {
       if (!lastResult) return;
+      const r = lastResult;
       const payload = {
-        tool: 'FreeSEOToolHub Email Spam Checker v3.0',
-        timestamp: lastResult.timestamp,
-        spamScore: lastResult.score,
-        authChecks: lastResult.authChecks,
-        contentChecks: lastResult.contentChecks,
-        techChecks: lastResult.techChecks,
-        subjectAnalysis: lastResult.subjectAnalysis,
-        spamWordsHigh: lastResult.foundHigh,
-        spamWordsMedium: lastResult.foundMedium
+        tool: 'FreeSEOToolHub Email Spam Checker v4.0',
+        timestamp: r.timestamp,
+        spamScore: r.score,
+        deliverability: 100 - r.score,
+        authChecks: r.authChecks.map(c => ({ name: c.name, status: c.status, value: c.value, detail: c.detail })),
+        contentChecks: r.contentChecks.map(c => ({ name: c.name, status: c.status, value: c.value, detail: c.detail })),
+        techChecks: r.techChecks.map(c => ({ name: c.name, status: c.status, value: c.value, detail: c.detail })),
+        subjectScore: r.subjectAnalysis.score,
+        subject: r.subjectAnalysis.subject,
+        spamWordsHigh: r.foundHigh,
+        spamWordsMedium: r.foundMedium
       };
       downloadBlob(JSON.stringify(payload, null, 2), 'application/json', `spam-report-${Date.now()}.json`);
       showToast('📥 JSON downloaded');
@@ -1307,18 +1382,15 @@
 
     function exportCSV() {
       if (!lastResult) return;
-      const rows = [
-        ['Category', 'Check', 'Status', 'Value', 'Detail']
-      ];
-      const allChecks = [
-        ...lastResult.authChecks.map(c => ['Authentication', ...Object.values({ name: c.name, status: c.status, value: c.value, detail: c.detail })]),
-        ...lastResult.contentChecks.map(c => ['Content', c.name, c.status, c.value, c.detail]),
-        ...lastResult.techChecks.map(c => ['Technical', c.name, c.status, c.value, c.detail])
-      ];
-      allChecks.forEach(r => rows.push(r));
+      const r = lastResult;
+      const rows = [['Category', 'Check', 'Status', 'Value', 'Detail']];
+      r.authChecks.forEach(c => rows.push(['Authentication', c.name, c.status, c.value, c.detail]));
+      r.contentChecks.forEach(c => rows.push(['Content', c.name, c.status, c.value, c.detail]));
+      r.techChecks.forEach(c => rows.push(['Technical', c.name, c.status, c.value, c.detail]));
       rows.push([]);
-      rows.push(['Overall Spam Score', lastResult.score + '%']);
-      const csv = rows.map(r => r.map(v => `"${String(v).replace(/"/g, '""')}"`).join(',')).join('\n');
+      rows.push(['Overall Spam Score', r.score + '%']);
+      rows.push(['Deliverability', (100 - r.score) + '%']);
+      const csv = rows.map(row => row.map(v => `"${String(v ?? '').replace(/"/g, '""')}"`).join(',')).join('\n');
       downloadBlob(csv, 'text/csv', `spam-report-${Date.now()}.csv`);
       showToast('📥 CSV downloaded');
     }
@@ -1327,18 +1399,19 @@
       if (!lastResult) return;
       const r = lastResult;
       let txt = `Email Spam Analysis Report\n${'='.repeat(40)}\n`;
-      txt += `Spam Score: ${r.score}%\n`;
+      txt += `Spam Score: ${r.score}%  (lower is better)\n`;
+      txt += `Deliverability: ${100 - r.score}%\n`;
       txt += `Timestamp: ${new Date(r.timestamp).toLocaleString()}\n\n`;
-      txt += `AUTHENTICATION:\n${r.authChecks.map(c => `  ${c.status.toUpperCase().padEnd(6)} ${c.name}: ${c.value}`).join('\n')}\n\n`;
-      txt += `CONTENT:\n${r.contentChecks.map(c => `  ${c.status.toUpperCase().padEnd(6)} ${c.name}: ${c.value}`).join('\n')}\n\n`;
-      txt += `TECHNICAL:\n${r.techChecks.map(c => `  ${c.status.toUpperCase().padEnd(6)} ${c.name}: ${c.value}`).join('\n')}\n\n`;
+      txt += `AUTHENTICATION:\n${r.authChecks.map(c => `  [${c.status.toUpperCase()}] ${c.name}: ${c.value}`).join('\n')}\n\n`;
+      txt += `CONTENT:\n${r.contentChecks.map(c => `  [${c.status.toUpperCase()}] ${c.name}: ${c.value}`).join('\n')}\n\n`;
+      txt += `TECHNICAL:\n${r.techChecks.map(c => `  [${c.status.toUpperCase()}] ${c.name}: ${c.value}`).join('\n')}\n\n`;
       if (r.foundHigh.length) txt += `High-risk words: ${r.foundHigh.join(', ')}\n`;
       txt += `\nGenerated by FreeSEOToolHub.com`;
       navigator.clipboard.writeText(txt).then(() => showToast('📋 ' + t('copied')));
     }
 
     // ============================================================
-    // 🎬 INIT & EVENTS
+    // 🎬 INIT
     // ============================================================
     function showToast(msg, isError = false) {
       const toast = document.getElementById('toast');
@@ -1346,31 +1419,23 @@
       toast.style.background = isError ? 'rgba(239,68,68,0.95)' : 'rgba(11,26,51,0.95)';
       toast.style.display = 'flex';
       clearTimeout(showToast._t);
-      showToast._t = setTimeout(() => { toast.style.display = 'none'; }, 2600);
+      showToast._t = setTimeout(() => { toast.style.display = 'none'; }, 2800);
     }
 
-    // Example headers
     const EXAMPLES = {
       good: `Return-Path: <newsletter@freeseotoolhub.com>
-Received: from mail.freeseotoolhub.com (mail.freeseotoolhub.com [192.168.1.1])
-    by mx.google.com with ESMTPS id abc123
-    for <user@gmail.com>; Mon, 10 Jul 2026 10:00:00 -0700
-Authentication-Results: mx.google.com;
-    spf=pass (google.com: domain of newsletter@freeseotoolhub.com designates 192.168.1.1 as permitted sender) smtp.mailfrom=newsletter@freeseotoolhub.com;
-    dkim=pass header.i=@freeseotoolhub.com;
-    dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=freeseotoolhub.com
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=freeseotoolhub.com; s=default; h=from:to:subject:date:message-id;
-    bh=abc123def456ghi789=;
-    b=xyz789abc123def456=
+Received: from mail.freeseotoolhub.com (mail.freeseotoolhub.com [192.168.1.1]) by mx.google.com with ESMTPS id abc123 for <user@gmail.com>; Mon, 10 Jul 2026 10:00:00 -0700
+Authentication-Results: mx.google.com; spf=pass smtp.mailfrom=newsletter@freeseotoolhub.com; dkim=pass header.i=@freeseotoolhub.com; dmarc=pass (p=REJECT) header.from=freeseotoolhub.com
+DKIM-Signature: v=1; a=rsa-sha256; d=freeseotoolhub.com; s=default
 Subject: Your 2026 SEO Toolkit — 20 Free Tools Inside
 From: "FreeSEOToolHub" <newsletter@freeseotoolhub.com>
 To: user@gmail.com
 Reply-To: support@freeseotoolhub.com
 Date: Mon, 10 Jul 2026 10:00:00 -0700
-Message-ID: <abc123def@freeseotoolhub.com>
+Message-ID: <abc123@freeseotoolhub.com>
 MIME-Version: 1.0
-Content-Type: multipart/alternative; boundary="----=_Part_123"; charset=UTF-8
-List-Unsubscribe: <mailto:unsubscribe@freeseotoolhub.com>, <https://freeseotoolhub.com/unsub>`,
+Content-Type: multipart/alternative; boundary="xxx"; charset=UTF-8
+List-Unsubscribe: <mailto:unsubscribe@freeseotoolhub.com>`,
       spam: `Return-Path: <spammer@unknown.tk>
 Received: from unknown (unknown [10.0.0.1]) by mx.example.com
 Authentication-Results: mx.example.com; spf=fail smtp.mailfrom=unknown.tk; dmarc=fail
@@ -1381,13 +1446,8 @@ Message-ID: <12345>
 Content-Type: text/html
 X-Mailer: PHP/7.4`,
       bulk: `Return-Path: <bounce@mailchimp.com>
-Received: from mail.mailchimp.com (mail.mailchimp.com [198.2.180.1])
-    by mx.google.com with ESMTPS id xyz789
-    for <user@gmail.com>; Mon, 10 Jul 2026 10:00:00 -0700
-Authentication-Results: mx.google.com;
-    spf=pass smtp.mailfrom=mailchimp.com;
-    dkim=pass header.i=@mailchimp.com;
-    dmarc=pass header.from=mailchimp.com
+Received: from mail.mailchimp.com (mail.mailchimp.com [198.2.180.1]) by mx.google.com with ESMTPS id xyz789 for <user@gmail.com>; Mon, 10 Jul 2026 10:00:00 -0700
+Authentication-Results: mx.google.com; spf=pass smtp.mailfrom=mailchimp.com; dkim=pass header.i=@mailchimp.com; dmarc=pass header.from=mailchimp.com
 Subject: Weekly Newsletter: 5 SEO Tips for This Week
 From: "SEO Weekly" <news@seoweekly.com>
 To: user@gmail.com
@@ -1398,12 +1458,8 @@ Content-Type: multipart/alternative; charset=UTF-8
 List-Unsubscribe: <mailto:unsub@mailchimp.com>
 Precedence: bulk`,
       authfail: `Return-Path: <sender@example.com>
-Received: from mail.example.com (mail.example.com [192.168.1.1])
-    by mx.google.com with ESMTPS id abc123
-Authentication-Results: mx.google.com;
-    spf=softfail (google.com: domain of transitioning sender@example.com does not designate 192.168.1.1 as permitted sender) smtp.mailfrom=sender@example.com;
-    dkim=none;
-    dmarc=fail (p=NONE sp=NONE) header.from=example.com
+Received: from mail.example.com (mail.example.com [192.168.1.1]) by mx.google.com with ESMTPS id abc123
+Authentication-Results: mx.google.com; spf=softfail smtp.mailfrom=sender@example.com; dkim=none; dmarc=fail (p=NONE) header.from=example.com
 Subject: Test Email
 From: "Test" <sender@example.com>
 To: user@gmail.com
@@ -1414,17 +1470,14 @@ Content-Type: text/plain; charset=UTF-8`
     };
 
     function init() {
-      // Lang
       const urlLang = new URLSearchParams(location.search).get('lang');
       const savedLang = urlLang || localStorage.getItem('preferredLanguage') || 'en';
       applyLang(savedLang);
 
-      // Language buttons
       document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.addEventListener('click', () => applyLang(btn.dataset.lang));
       });
 
-      // Tabs
       document.querySelectorAll('.tab').forEach(tab => {
         tab.addEventListener('click', () => {
           document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
@@ -1434,10 +1487,8 @@ Content-Type: text/plain; charset=UTF-8`
         });
       });
 
-      // Analyze
       document.getElementById('analyzeBtn').addEventListener('click', analyze);
 
-      // Examples
       document.querySelectorAll('.example-btn').forEach(btn => {
         btn.addEventListener('click', () => {
           document.getElementById('emailHeader').value = EXAMPLES[btn.dataset.example] || '';
@@ -1446,7 +1497,6 @@ Content-Type: text/plain; charset=UTF-8`
         });
       });
 
-      // Export buttons
       document.getElementById('exportJson').addEventListener('click', exportJSON);
       document.getElementById('exportCsv').addEventListener('click', exportCSV);
       document.getElementById('copyReport').addEventListener('click', copyReport);
@@ -1455,17 +1505,20 @@ Content-Type: text/plain; charset=UTF-8`
         document.getElementById('emailBody').value = '';
         document.getElementById('results').style.display = 'none';
         lastResult = null;
+        document.getElementById('exportJson').disabled = true;
+        document.getElementById('exportCsv').disabled = true;
+        document.getElementById('copyReport').disabled = true;
         showToast('🗑️ Cleared');
       });
 
-      // Clear history
       document.getElementById('clearHistory').addEventListener('click', () => {
-        localStorage.removeItem('spamCheckerHistory');
+        localStorage.removeItem('spamCheckerHistoryV4');
         renderHistory();
         showToast('🗑️ History cleared');
       });
 
       renderHistory();
+      console.log('✅ Email Spam Checker v4.0 ready');
     }
 
     init();
