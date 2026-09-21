@@ -14,7 +14,7 @@ gtag('config', 'G-PFPCTBFG3Y');
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <title>Schema Markup Generator 2026 — JSON-LD with Live Preview | FreeSEOToolHub</title>
-<meta name="description" content="Free Schema markup generator with live Google SERP preview, real validation, 20+ schema types, and rich snippet simulator. No signup. 100% client-side.">
+<meta name="description" content="Free Schema markup generator with live Google SERP preview, real validation, 15+ schema types, and rich snippet simulator. No signup. 100% client-side.">
 <meta name="keywords" content="schema markup generator, json-ld generator, structured data tool, rich snippets generator, faq schema, product schema, article schema, localbusiness schema">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://freeseotoolhub.com/tools/schema-markup-generator.html">
@@ -29,12 +29,11 @@ gtag('config', 'G-PFPCTBFG3Y');
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://freeseotoolhub.com/tools/schema-markup-generator.html">
 <meta property="og:title" content="Schema Markup Generator 2026 — Live Preview">
-<meta property="og:description" content="20+ schema types with live Google SERP preview and real validation.">
+<meta property="og:description" content="15+ schema types with live Google SERP preview and real validation.">
 <meta property="og:image" content="https://freeseotoolhub.com/images/schema-og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
 
 <script type="application/ld+json">
@@ -102,7 +101,6 @@ body { background:linear-gradient(135deg,#0b1a33 0%,#1e2b4f 100%); min-height:10
   margin-bottom:20px;
 }
 
-/* SCHEMA PICKER */
 .schema-picker { display:grid; grid-template-columns:repeat(auto-fill, minmax(140px, 1fr)); gap:10px; }
 .schema-btn {
   background:rgba(255,255,255,0.04); border:1px solid var(--border);
@@ -114,13 +112,10 @@ body { background:linear-gradient(135deg,#0b1a33 0%,#1e2b4f 100%); min-height:10
 .schema-btn.active { border-color:var(--primary); background:rgba(255,153,51,0.15); color:#fff; }
 .schema-btn i { font-size:1.4rem; color:var(--primary); margin-bottom:6px; display:block; }
 .schema-btn .name { font-size:0.78rem; font-weight:700; }
-.schema-btn .type { font-size:0.62rem; opacity:0.5; margin-top:2px; }
 
-/* LAYOUT */
 .layout { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
 @media (max-width:1000px) { .layout { grid-template-columns:1fr; } }
 
-/* INPUTS */
 .form-group { margin-bottom:14px; }
 .form-group label { display:block; margin-bottom:6px; font-weight:600; font-size:0.82rem; color:rgba(255,255,255,0.75); }
 .form-group label .req { color:var(--danger); margin-left:4px; }
@@ -139,13 +134,9 @@ textarea { resize:vertical; min-height:70px; }
 .form-group input.error, .form-group textarea.error { border-color:var(--danger); }
 select option { background:#0b1a33; color:#fff; }
 
-.row-2 { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
-@media (max-width:600px) { .row-2 { grid-template-columns:1fr; } }
-
 .field-error { color:var(--danger); font-size:0.72rem; margin-top:4px; display:none; }
 .field-error.show { display:block; }
 
-/* ACTION BAR */
 .action-bar { display:flex; gap:8px; flex-wrap:wrap; margin-top:16px; }
 .btn-primary {
   background:linear-gradient(135deg,var(--primary),var(--primary-dark)); color:#0b1a33;
@@ -166,7 +157,6 @@ select option { background:#0b1a33; color:#fff; }
 .btn-outline.danger { color:var(--danger); border-color:rgba(239,68,68,0.3); }
 .btn-outline.danger:hover { background:rgba(239,68,68,0.2); }
 
-/* TABS */
 .tabs { display:flex; gap:4px; border-bottom:1px solid var(--border); margin-bottom:18px; flex-wrap:wrap; }
 .tab {
   padding:10px 16px; background:transparent; border:none;
@@ -180,7 +170,6 @@ select option { background:#0b1a33; color:#fff; }
 .tab-panel { display:none; }
 .tab-panel.active { display:block; }
 
-/* CODE BLOCK */
 .code-block {
   background:#0a0f1c; color:#cbd5e1;
   padding:16px; border-radius:12px;
@@ -192,7 +181,6 @@ select option { background:#0b1a33; color:#fff; }
 .code-block::-webkit-scrollbar { width:8px; }
 .code-block::-webkit-scrollbar-thumb { background:rgba(255,153,51,0.3); border-radius:4px; }
 
-/* GOOGLE PREVIEW */
 .google-preview {
   background:#fff; border-radius:12px; padding:16px;
   font-family:arial,sans-serif; color:#202124;
@@ -230,7 +218,6 @@ select option { background:#0b1a33; color:#fff; }
 .faq-preview .faq-item-preview { padding:6px 0; font-size:0.85rem; color:#202124; display:flex; align-items:flex-start; gap:6px; }
 .faq-preview .faq-item-preview i { color:#5f6368; margin-top:3px; font-size:0.7rem; }
 
-/* VALIDATION PANEL */
 .validation-panel { margin-top:16px; }
 .validation-item {
   display:flex; align-items:flex-start; gap:10px;
@@ -245,7 +232,6 @@ select option { background:#0b1a33; color:#fff; }
 .validation-item.success { border-left-color:var(--success); background:rgba(16,185,129,0.08); }
 .validation-item i { margin-top:3px; }
 
-/* HISTORY */
 .history-list { max-height:300px; overflow-y:auto; }
 .history-item {
   display:flex; justify-content:space-between; align-items:center;
@@ -256,7 +242,6 @@ select option { background:#0b1a33; color:#fff; }
 }
 .history-item:hover { background:rgba(255,153,51,0.1); }
 
-/* TEMPLATES */
 .template-grid {
   display:grid; grid-template-columns:repeat(auto-fill, minmax(140px, 1fr));
   gap:10px;
@@ -266,12 +251,11 @@ select option { background:#0b1a33; color:#fff; }
   border-radius:10px; padding:12px; text-align:center;
   cursor:pointer; transition:all 0.2s;
 }
-.template-card:hover { border-color:var(--primary); background:rgba(255,153,51,0.08); }
+.template-card:hover { border-color:var(--primary); background:rgba(255,153,51,0.08); transform:translateY(-2px); }
 .template-card i { font-size:1.3rem; color:var(--primary); margin-bottom:6px; display:block; }
 .template-card .t-name { font-size:0.78rem; font-weight:700; }
 .template-card .t-desc { font-size:0.68rem; opacity:0.6; margin-top:2px; }
 
-/* TOAST */
 .toast-container { position:fixed; bottom:24px; right:24px; z-index:9999; display:flex; flex-direction:column; gap:8px; }
 .toast {
   background:rgba(30,41,59,0.95); backdrop-filter:blur(10px);
@@ -286,7 +270,6 @@ select option { background:#0b1a33; color:#fff; }
 .toast.warning { background:rgba(245,158,11,0.95); }
 @keyframes slideIn { from { transform:translateX(120%); opacity:0; } to { transform:translateX(0); opacity:1; } }
 
-/* FOOTER */
 .footer {
   text-align:center; padding:20px;
   background:rgba(255,255,255,0.03); border-radius:16px;
@@ -296,7 +279,6 @@ select option { background:#0b1a33; color:#fff; }
 .footer-links a { color:rgba(255,255,255,0.7); text-decoration:none; font-weight:500; font-size:0.88rem; }
 .footer-links a:hover { color:var(--primary); }
 
-/* FAQ */
 .faq-section {
   background:rgba(255,255,255,0.03);
   border:1px solid var(--border);
@@ -308,6 +290,8 @@ select option { background:#0b1a33; color:#fff; }
 .faq-q { font-weight:700; color:#fff; margin-bottom:6px; display:flex; align-items:flex-start; gap:8px; font-size:0.92rem; }
 .faq-q i { color:var(--primary); margin-top:4px; }
 .faq-a { color:rgba(255,255,255,0.7); font-size:0.86rem; line-height:1.6; padding-left:22px; }
+
+.help-text { font-size:0.72rem; opacity:0.5; margin-top:4px; }
 
 @media (max-width:768px) {
   body { padding:70px 12px 30px; }
@@ -335,7 +319,7 @@ select option { background:#0b1a33; color:#fff; }
 <div class="container">
   <div class="tool-header">
     <h1><i class="fas fa-code"></i> <span data-i18n="title">Schema Markup Generator 2026</span></h1>
-    <p data-i18n="subtitle">Generate JSON-LD structured data with live Google SERP preview and real validation. 20+ schema types. 100% client-side.</p>
+    <p data-i18n="subtitle">Generate JSON-LD structured data with live Google SERP preview and real validation. 15+ schema types. 100% client-side.</p>
   </div>
 
   <div class="lang-bar">
@@ -358,7 +342,7 @@ select option { background:#0b1a33; color:#fff; }
   <div class="layout">
     <!-- LEFT: FORM -->
     <div class="glass-card">
-      <div class="tabs">
+      <div class="tabs" id="leftTabs">
         <button class="tab active" data-tab="form"><i class="fas fa-edit"></i> <span data-i18n="tabForm">Form</span></button>
         <button class="tab" data-tab="jsonEdit"><i class="fas fa-code"></i> <span data-i18n="tabJson">JSON Editor</span></button>
         <button class="tab" data-tab="templates"><i class="fas fa-file"></i> <span data-i18n="tabTemplates">Templates</span></button>
@@ -366,7 +350,7 @@ select option { background:#0b1a33; color:#fff; }
       </div>
 
       <!-- FORM TAB -->
-      <div class="tab-panel active" data-panel="form">
+      <div class="tab-panel active" data-panel="form" id="formPanel">
         <div id="dynamicForm"></div>
         <div class="action-bar">
           <button class="btn-primary" id="generateBtn"><i class="fas fa-bolt"></i> <span data-i18n="generate">Generate</span></button>
@@ -376,7 +360,7 @@ select option { background:#0b1a33; color:#fff; }
       </div>
 
       <!-- JSON EDITOR TAB -->
-      <div class="tab-panel" data-panel="jsonEdit">
+      <div class="tab-panel" data-panel="jsonEdit" id="jsonPanel">
         <div class="form-group">
           <label><span data-i18n="pasteJson">Paste or edit JSON-LD directly</span></label>
           <textarea id="jsonInput" rows="16" style="font-family:'Fira Code',monospace; font-size:0.78rem;" placeholder='{"@context": "https://schema.org", "@type": "Article", ...}'></textarea>
@@ -388,12 +372,12 @@ select option { background:#0b1a33; color:#fff; }
       </div>
 
       <!-- TEMPLATES TAB -->
-      <div class="tab-panel" data-panel="templates">
+      <div class="tab-panel" data-panel="templates" id="templatesPanel">
         <div class="template-grid" id="templatesGrid"></div>
       </div>
 
       <!-- HISTORY TAB -->
-      <div class="tab-panel" data-panel="history">
+      <div class="tab-panel" data-panel="history" id="historyPanel">
         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
           <span style="font-size:0.82rem; opacity:0.7;"><span id="historyCount">0</span> <span data-i18n="savedSchemas">saved schemas</span></span>
           <button class="btn-outline" id="clearHistory" style="font-size:0.72rem; padding:5px 12px;"><i class="fas fa-trash"></i></button>
@@ -404,14 +388,14 @@ select option { background:#0b1a33; color:#fff; }
 
     <!-- RIGHT: PREVIEW + OUTPUT -->
     <div class="glass-card">
-      <div class="tabs">
+      <div class="tabs" id="rightTabs">
         <button class="tab active" data-tab="code"><i class="fas fa-code"></i> <span data-i18n="tabCode">JSON-LD</span></button>
         <button class="tab" data-tab="preview"><i class="fas fa-eye"></i> <span data-i18n="tabPreview">Google Preview</span></button>
         <button class="tab" data-tab="validation"><i class="fas fa-shield-alt"></i> <span data-i18n="tabValidation">Validation</span></button>
       </div>
 
       <!-- CODE TAB -->
-      <div class="tab-panel active" data-panel="code">
+      <div class="tab-panel active" data-panel="code" id="codePanel">
         <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px;">
           <button class="btn-outline" id="copyJson"><i class="fas fa-copy"></i> <span data-i18n="copy">Copy</span></button>
           <button class="btn-outline" id="downloadJson"><i class="fas fa-download"></i> JSON</button>
@@ -422,7 +406,7 @@ select option { background:#0b1a33; color:#fff; }
       </div>
 
       <!-- PREVIEW TAB -->
-      <div class="tab-panel" data-panel="preview">
+      <div class="tab-panel" data-panel="preview" id="previewPanel">
         <div class="google-preview" id="googlePreview">
           <div class="url">
             <div class="favicon">E</div>
@@ -434,7 +418,7 @@ select option { background:#0b1a33; color:#fff; }
       </div>
 
       <!-- VALIDATION TAB -->
-      <div class="tab-panel" data-panel="validation">
+      <div class="tab-panel" data-panel="validation" id="validationPanelContainer">
         <div class="validation-panel" id="validationPanel">
           <div class="validation-item success">
             <i class="fas fa-info-circle" style="color:var(--info);"></i>
@@ -458,7 +442,7 @@ select option { background:#0b1a33; color:#fff; }
     </div>
     <div class="faq-item">
       <div class="faq-q"><i class="fas fa-question-circle"></i> Where do I paste the generated JSON-LD?</div>
-      <div class="faq-a" data-i18n="faq3">Paste the code inside a <code>&lt;script type="application/ld+json"&gt;...&lt;/script&gt;</code> tag in the <code>&lt;head&gt;</code> or <code>&lt;body&gt;</code> section of your HTML page. It can also be injected via Google Tag Manager.</div>
+      <div class="faq-a" data-i18n="faq3">Paste the code inside a script tag with type="application/ld+json" in the head or body section of your HTML page. It can also be injected via Google Tag Manager.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q"><i class="fas fa-question-circle"></i> How do I test if my schema works?</div>
@@ -479,7 +463,7 @@ select option { background:#0b1a33; color:#fff; }
       <a href="/contact.html">Contact</a>
       <a href="/privacy.html">Privacy</a>
     </div>
-    <p style="opacity:0.5; font-size:0.82rem;">© 2026 FreeSEOToolHub | Schema Markup Generator v3.0 | 100% Client-Side</p>
+    <p style="opacity:0.5; font-size:0.82rem;">© 2026 FreeSEOToolHub | Schema Markup Generator v4.0 | 100% Client-Side</p>
   </div>
 </div>
 
@@ -495,7 +479,7 @@ select option { background:#0b1a33; color:#fff; }
 const I18N = {
   en: {
     title: 'Schema Markup Generator 2026',
-    subtitle: 'Generate JSON-LD structured data with live Google SERP preview and real validation. 20+ schema types. 100% client-side.',
+    subtitle: 'Generate JSON-LD structured data with live Google SERP preview and real validation. 15+ schema types. 100% client-side.',
     chooseType: 'Choose Schema Type',
     tabForm: 'Form', tabJson: 'JSON Editor', tabTemplates: 'Templates', tabHistory: 'History',
     generate: 'Generate', validate: 'Validate', reset: 'Reset',
@@ -505,7 +489,7 @@ const I18N = {
     copy: 'Copy',
     faqTitle: 'Frequently Asked Questions',
     faq1: 'JSON-LD is Google\'s recommended format for structured data. It enables rich snippets like stars, prices, and FAQs.',
-    faq2: 'Schema doesn\'t directly boost rankings, but rich snippets increase CTR by 20-30%, indirectly helping SEO.',
+    faq2: 'Schema doesn\'t directly boost rankings, but rich snippets increase CTR by 20-30%.',
     faq3: 'Paste the code inside a script tag with type="application/ld+json" in the head or body section.',
     faq4: 'Use Google\'s Rich Results Test or Schema Markup Validator to verify.',
     faq5: 'Yes, 100% free with no signup. Everything runs in your browser.',
@@ -516,11 +500,13 @@ const I18N = {
     formReset: 'Form reset',
     historyCleared: 'History cleared',
     noHistory: 'No history yet',
-    saved: 'Saved to history'
+    saved: 'Saved to history',
+    loaded: 'Loaded from history',
+    itemRemoved: 'Item removed'
   },
   hi: {
     title: 'स्कीमा मार्कअप जेनरेटर 2026',
-    subtitle: 'लाइव Google SERP प्रीव्यू और असली सत्यापन के साथ JSON-LD बनाएं। 20+ स्कीमा प्रकार।',
+    subtitle: 'लाइव Google SERP प्रीव्यू और असली सत्यापन के साथ JSON-LD बनाएं। 15+ स्कीमा प्रकार।',
     chooseType: 'स्कीमा प्रकार चुनें',
     tabForm: 'फ़ॉर्म', tabJson: 'JSON एडिटर', tabTemplates: 'टेम्पलेट', tabHistory: 'इतिहास',
     generate: 'जेनरेट', validate: 'सत्यापित', reset: 'रीसेट',
@@ -541,7 +527,9 @@ const I18N = {
     formReset: 'फ़ॉर्म रीसेट',
     historyCleared: 'इतिहास साफ़',
     noHistory: 'अभी कोई इतिहास नहीं',
-    saved: 'इतिहास में सहेजा'
+    saved: 'इतिहास में सहेजा',
+    loaded: 'इतिहास से लोड',
+    itemRemoved: 'आइटम हटाया'
   },
   ur: {
     title: 'اسکیما مارک اپ جنریٹر 2026',
@@ -566,11 +554,13 @@ const I18N = {
     formReset: 'فارم ری سیٹ',
     historyCleared: 'تاریخ صاف',
     noHistory: 'ابھی کوئی تاریخ نہیں',
-    saved: 'تاریخ میں محفوظ'
+    saved: 'تاریخ میں محفوظ',
+    loaded: 'تاریخ سے لوڈ',
+    itemRemoved: 'آئٹم ہٹا'
   },
   de: {
     title: 'Schema-Markup-Generator 2026',
-    subtitle: 'JSON-LD mit Live-Vorschau und Validierung. 20+ Schema-Typen.',
+    subtitle: 'JSON-LD mit Live-Vorschau und Validierung. 15+ Schema-Typen.',
     chooseType: 'Schema-Typ wählen',
     tabForm: 'Formular', tabJson: 'JSON-Editor', tabTemplates: 'Vorlagen', tabHistory: 'Verlauf',
     generate: 'Generieren', validate: 'Validieren', reset: 'Zurücksetzen',
@@ -591,12 +581,14 @@ const I18N = {
     formReset: 'Formular zurückgesetzt',
     historyCleared: 'Verlauf gelöscht',
     noHistory: 'Noch kein Verlauf',
-    saved: 'Im Verlauf gespeichert'
+    saved: 'Im Verlauf gespeichert',
+    loaded: 'Aus Verlauf geladen',
+    itemRemoved: 'Element entfernt'
   },
   es: {
     title: 'Generador de Schema Markup 2026',
-    subtitle: 'Genera JSON-LD con vista previa en vivo y validación. 20+ tipos de schema.',
-    chooseType: 'Elegir Tipo de Schema',
+    subtitle: 'Genera JSON-LD con vista previa en vivo y validación. 15+ tipos.',
+    chooseType: 'Elegir Tipo',
     tabForm: 'Formulario', tabJson: 'Editor JSON', tabTemplates: 'Plantillas', tabHistory: 'Historial',
     generate: 'Generar', validate: 'Validar', reset: 'Reiniciar',
     pasteJson: 'Pega o edita JSON-LD', parseJson: 'Parsear', formatJson: 'Formatear',
@@ -616,7 +608,9 @@ const I18N = {
     formReset: 'Formulario reiniciado',
     historyCleared: 'Historial borrado',
     noHistory: 'Sin historial aún',
-    saved: 'Guardado en historial'
+    saved: 'Guardado',
+    loaded: 'Cargado del historial',
+    itemRemoved: 'Elemento eliminado'
   }
 };
 
@@ -640,7 +634,7 @@ function applyLang(lang) {
 }
 
 // ============================================================
-// 📋 SCHEMA DEFINITIONS (Fields per type)
+// 📋 SCHEMA DEFINITIONS
 // ============================================================
 const SCHEMA_TYPES = {
   Article: {
@@ -704,8 +698,7 @@ const SCHEMA_TYPES = {
   FAQPage: {
     icon: 'fa-question-circle', label: 'FAQ Page', category: 'Content',
     isMulti: true,
-    fields: [],
-    multiTemplate: { q: '', a: '' }
+    fields: []
   },
   Recipe: {
     icon: 'fa-utensils', label: 'Recipe', category: 'Content',
@@ -771,8 +764,7 @@ const SCHEMA_TYPES = {
   BreadcrumbList: {
     icon: 'fa-shoe-prints', label: 'Breadcrumb', category: 'Navigation',
     isMulti: true,
-    fields: [],
-    multiTemplate: { name: '', url: '' }
+    fields: []
   },
   HowTo: {
     icon: 'fa-list-ol', label: 'HowTo', category: 'Content',
@@ -790,16 +782,6 @@ const SCHEMA_TYPES = {
       { id: 'description', label: 'Description', type: 'textarea', required: true },
       { id: 'provider', label: 'Provider', type: 'text', required: true },
       { id: 'url', label: 'Course URL', type: 'url', required: false }
-    ]
-  },
-  Movie: {
-    icon: 'fa-film', label: 'Movie', category: 'Entertainment',
-    fields: [
-      { id: 'name', label: 'Movie Title', type: 'text', required: true },
-      { id: 'description', label: 'Description', type: 'textarea', required: true },
-      { id: 'director', label: 'Director', type: 'text', required: false },
-      { id: 'datePublished', label: 'Release Date', type: 'date', required: false },
-      { id: 'image', label: 'Poster URL', type: 'url', required: false }
     ]
   },
   VideoObject: {
@@ -857,6 +839,10 @@ function isValidDate(str) {
   return !isNaN(Date.parse(str));
 }
 
+function todayISO() {
+  return new Date().toISOString().split('T')[0];
+}
+
 // ============================================================
 // 🎨 BUILD SCHEMA PICKER
 // ============================================================
@@ -873,7 +859,7 @@ function buildSchemaPicker() {
       ${cat}
     </div>
     ${items.map(s => `
-      <button class="schema-btn ${s.key === currentType ? 'active' : ''}" data-schema="${s.key}">
+      <button class="schema-btn ${s.key === currentType ? 'active' : ''}" data-schema="${s.key}" type="button">
         <i class="fas ${s.icon}"></i>
         <div class="name">${s.label}</div>
       </button>
@@ -886,7 +872,24 @@ function buildSchemaPicker() {
       currentMultiItems = [];
       picker.querySelectorAll('.schema-btn').forEach(b => b.classList.toggle('active', b.dataset.schema === currentType));
       buildForm();
+      // Switch to Form tab
+      activateTab('leftTabs', 'form');
     });
+  });
+}
+
+// ============================================================
+// 🎨 TAB ACTIVATION
+// ============================================================
+function activateTab(tabsContainerId, tabName) {
+  const tabsContainer = $(tabsContainerId);
+  if (!tabsContainer) return;
+  const card = tabsContainer.closest('.glass-card');
+  tabsContainer.querySelectorAll('.tab').forEach(x => {
+    x.classList.toggle('active', x.dataset.tab === tabName);
+  });
+  card.querySelectorAll(':scope > .tab-panel').forEach(p => {
+    p.classList.toggle('active', p.dataset.panel === tabName);
   });
 }
 
@@ -898,10 +901,12 @@ function buildForm() {
   const container = $('dynamicForm');
 
   if (def.isMulti) {
-    // Multi-item schema (FAQ, Breadcrumb)
     if (currentMultiItems.length === 0) {
       if (currentType === 'FAQPage') {
-        currentMultiItems = [{ q: 'What is JSON-LD?', a: 'JSON-LD is a structured data format recommended by Google.' }];
+        currentMultiItems = [
+          { q: 'What is JSON-LD?', a: 'JSON-LD is a structured data format recommended by Google.' },
+          { q: 'Does schema improve SEO?', a: 'Schema enables rich snippets which increase CTR by 20-30%.' }
+        ];
       } else if (currentType === 'BreadcrumbList') {
         currentMultiItems = [
           { name: 'Home', url: 'https://example.com/' },
@@ -923,13 +928,14 @@ function buildSingleForm(def) {
     </div>
     ${def.fields.map(f => {
       const req = f.required ? '<span class="req">*</span>' : '<span class="opt">(optional)</span>';
+      const defaultVal = (f.type === 'date') ? `value="${todayISO()}"` : '';
       let input = '';
       if (f.type === 'textarea') {
         input = `<textarea id="f_${f.id}" rows="2" placeholder="${escapeHtml(f.placeholder || '')}"></textarea>`;
       } else if (f.type === 'select') {
         input = `<select id="f_${f.id}">${(f.options || []).map(o => `<option value="${o}">${o}</option>`).join('')}</select>`;
       } else {
-        input = `<input type="${f.type}" id="f_${f.id}" placeholder="${escapeHtml(f.placeholder || '')}">`;
+        input = `<input type="${f.type}" id="f_${f.id}" placeholder="${escapeHtml(f.placeholder || '')}" ${defaultVal}>`;
       }
       return `
         <div class="form-group">
@@ -950,17 +956,17 @@ function buildMultiForm(def) {
       </div>
       <div id="multiItems">
         ${currentMultiItems.map((item, i) => `
-          <div class="form-group" style="background:rgba(255,255,255,0.02); padding:12px; border-radius:10px; margin-bottom:10px; border:1px solid var(--border);" data-index="${i}">
+          <div class="form-group" style="background:rgba(255,255,255,0.02); padding:12px; border-radius:10px; margin-bottom:10px; border:1px solid var(--border);">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
               <span style="font-weight:700; font-size:0.82rem; color:var(--primary);">Q${i + 1}</span>
-              <button class="btn-outline danger" onclick="window.removeMulti(${i})" style="padding:3px 8px; font-size:0.7rem;"><i class="fas fa-trash"></i></button>
+              <button type="button" class="btn-outline danger remove-multi" data-index="${i}" style="padding:3px 8px; font-size:0.7rem;"><i class="fas fa-trash"></i></button>
             </div>
-            <input type="text" class="multi-q" data-index="${i}" placeholder="Question" value="${escapeHtml(item.q)}" style="margin-bottom:8px;">
-            <textarea class="multi-a" data-index="${i}" rows="2" placeholder="Answer">${escapeHtml(item.a)}</textarea>
+            <input type="text" class="multi-q" data-index="${i}" placeholder="Question" value="${escapeHtml(item.q || '')}" style="margin-bottom:8px;">
+            <textarea class="multi-a" data-index="${i}" rows="2" placeholder="Answer">${escapeHtml(item.a || '')}</textarea>
           </div>
         `).join('')}
       </div>
-      <button class="btn-outline" onclick="window.addMulti()" style="width:100%; justify-content:center; margin-top:8px;"><i class="fas fa-plus"></i> Add Question</button>
+      <button type="button" class="btn-outline add-multi" style="width:100%; justify-content:center; margin-top:8px;"><i class="fas fa-plus"></i> Add Question</button>
     `;
   }
   if (currentType === 'BreadcrumbList') {
@@ -973,14 +979,14 @@ function buildMultiForm(def) {
           <div class="form-group" style="background:rgba(255,255,255,0.02); padding:12px; border-radius:10px; margin-bottom:10px; border:1px solid var(--border);">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
               <span style="font-weight:700; font-size:0.82rem; color:var(--primary);">Level ${i + 1}</span>
-              <button class="btn-outline danger" onclick="window.removeMulti(${i})" style="padding:3px 8px; font-size:0.7rem;"><i class="fas fa-trash"></i></button>
+              <button type="button" class="btn-outline danger remove-multi" data-index="${i}" style="padding:3px 8px; font-size:0.7rem;"><i class="fas fa-trash"></i></button>
             </div>
-            <input type="text" class="multi-name" data-index="${i}" placeholder="Name (e.g., Home)" value="${escapeHtml(item.name)}" style="margin-bottom:8px;">
-            <input type="url" class="multi-url" data-index="${i}" placeholder="URL" value="${escapeHtml(item.url)}">
+            <input type="text" class="multi-name" data-index="${i}" placeholder="Name (e.g., Home)" value="${escapeHtml(item.name || '')}" style="margin-bottom:8px;">
+            <input type="url" class="multi-url" data-index="${i}" placeholder="URL" value="${escapeHtml(item.url || '')}">
           </div>
         `).join('')}
       </div>
-      <button class="btn-outline" onclick="window.addMulti()" style="width:100%; justify-content:center; margin-top:8px;"><i class="fas fa-plus"></i> Add Level</button>
+      <button type="button" class="btn-outline add-multi" style="width:100%; justify-content:center; margin-top:8px;"><i class="fas fa-plus"></i> Add Level</button>
     `;
   }
   return '';
@@ -998,22 +1004,31 @@ function attachMultiHandlers() {
       else if (el.classList.contains('multi-url')) item.url = el.value;
     });
   });
+
+  document.querySelectorAll('.add-multi').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (currentType === 'FAQPage') {
+        currentMultiItems.push({ q: '', a: '' });
+      } else if (currentType === 'BreadcrumbList') {
+        currentMultiItems.push({ name: '', url: '' });
+      }
+      buildForm();
+    });
+  });
+
+  document.querySelectorAll('.remove-multi').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const i = parseInt(btn.dataset.index);
+      if (currentMultiItems.length <= 1) {
+        showToast('At least 1 item required', 'warning');
+        return;
+      }
+      currentMultiItems.splice(i, 1);
+      buildForm();
+      showToast('🗑️ ' + t('itemRemoved'));
+    });
+  });
 }
-
-window.addMulti = function() {
-  if (currentType === 'FAQPage') {
-    currentMultiItems.push({ q: '', a: '' });
-  } else if (currentType === 'BreadcrumbList') {
-    currentMultiItems.push({ name: '', url: '' });
-  }
-  buildForm();
-};
-
-window.removeMulti = function(i) {
-  if (currentMultiItems.length <= 1) { showToast('At least 1 item required', 'warning'); return; }
-  currentMultiItems.splice(i, 1);
-  buildForm();
-};
 
 // ============================================================
 // 🔨 BUILD SCHEMA FROM FORM
@@ -1025,12 +1040,18 @@ function buildSchemaFromForm() {
 
   if (def.isMulti) {
     if (currentType === 'FAQPage') {
+      if (!currentMultiItems.length) {
+        errors.push('Add at least one Q&A pair');
+      }
       schema.mainEntity = currentMultiItems.map(item => ({
         "@type": "Question",
         "name": item.q,
         "acceptedAnswer": { "@type": "Answer", "text": item.a }
       }));
     } else if (currentType === 'BreadcrumbList') {
+      if (!currentMultiItems.length) {
+        errors.push('Add at least one breadcrumb');
+      }
       schema.itemListElement = currentMultiItems.map((item, i) => ({
         "@type": "ListItem",
         "position": i + 1,
@@ -1041,7 +1062,6 @@ function buildSchemaFromForm() {
     return { schema, errors };
   }
 
-  // Single form
   const vals = {};
   def.fields.forEach(f => {
     const el = $(`f_${f.id}`);
@@ -1049,7 +1069,6 @@ function buildSchemaFromForm() {
     const val = el.value.trim();
     vals[f.id] = val;
 
-    // Validation
     const errEl = $(`err_${f.id}`);
     if (errEl) { errEl.classList.remove('show'); errEl.textContent = ''; }
     el.classList.remove('error');
@@ -1061,23 +1080,17 @@ function buildSchemaFromForm() {
       return;
     }
     if (val && f.type === 'url' && !isValidUrl(val)) {
-      errors.push(`${f.label} has invalid URL format`);
+      errors.push(`${f.label} has invalid URL`);
       if (errEl) { errEl.textContent = 'Invalid URL (must start with https://)'; errEl.classList.add('show'); }
       el.classList.add('error');
     }
     if (val && f.type === 'email' && !isValidEmail(val)) {
       errors.push(`${f.label} has invalid email`);
-      if (errEl) { errEl.textContent = 'Invalid email format'; errEl.classList.add('show'); }
-      el.classList.add('error');
-    }
-    if (val && (f.type === 'date' || f.type === 'datetime-local') && !isValidDate(val)) {
-      errors.push(`${f.label} has invalid date`);
-      if (errEl) { errEl.textContent = 'Invalid date'; errEl.classList.add('show'); }
+      if (errEl) { errEl.textContent = 'Invalid email'; errEl.classList.add('show'); }
       el.classList.add('error');
     }
   });
 
-  // Build schema per type
   switch (currentType) {
     case 'Article':
     case 'BlogPosting':
@@ -1085,11 +1098,13 @@ function buildSchemaFromForm() {
       schema.description = vals.description;
       schema.author = { "@type": "Person", "name": vals.author_name };
       if (vals.author_url) schema.author.url = vals.author_url;
-      schema.publisher = {
-        "@type": "Organization",
-        "name": vals.publisher_name,
-        "logo": { "@type": "ImageObject", "url": vals.publisher_logo }
-      };
+      if (vals.publisher_name) {
+        schema.publisher = {
+          "@type": "Organization",
+          "name": vals.publisher_name,
+          "logo": { "@type": "ImageObject", "url": vals.publisher_logo }
+        };
+      }
       schema.datePublished = vals.datePublished;
       if (vals.dateModified) schema.dateModified = vals.dateModified;
       schema.image = vals.image;
@@ -1211,13 +1226,6 @@ function buildSchemaFromForm() {
       schema.provider = { "@type": "Organization", "name": vals.provider };
       if (vals.url) schema.url = vals.url;
       break;
-    case 'Movie':
-      schema.name = vals.name;
-      schema.description = vals.description;
-      if (vals.director) schema.director = { "@type": "Person", "name": vals.director };
-      if (vals.datePublished) schema.datePublished = vals.datePublished;
-      if (vals.image) schema.image = vals.image;
-      break;
     case 'VideoObject':
       schema.name = vals.name;
       schema.description = vals.description;
@@ -1237,20 +1245,18 @@ function buildSchemaFromForm() {
 function validateSchema(schema) {
   const issues = [];
 
-  // Basic
-  if (!schema['@context']) issues.push({ type: 'error', text: 'Missing @context (should be "https://schema.org")' });
+  if (!schema['@context']) issues.push({ type: 'error', text: 'Missing @context' });
   if (!schema['@type']) issues.push({ type: 'error', text: 'Missing @type' });
 
-  // Type-specific
   const type = schema['@type'];
   if (type === 'Article' || type === 'BlogPosting') {
-    if (!schema.author) issues.push({ type: 'error', text: 'Missing author — Google requires this for articles' });
-    if (!schema.datePublished) issues.push({ type: 'error', text: 'Missing datePublished — required by Google' });
-    if (!schema.image) issues.push({ type: 'warning', text: 'Missing image — recommended for rich snippets' });
-    if (!schema.publisher) issues.push({ type: 'warning', text: 'Missing publisher — recommended by Google' });
+    if (!schema.author) issues.push({ type: 'error', text: 'Missing author — Google requires this' });
+    if (!schema.datePublished) issues.push({ type: 'error', text: 'Missing datePublished — required' });
+    if (!schema.image) issues.push({ type: 'warning', text: 'Missing image — recommended' });
+    if (!schema.publisher) issues.push({ type: 'warning', text: 'Missing publisher — recommended' });
   }
   if (type === 'Product') {
-    if (!schema.offers) issues.push({ type: 'error', text: 'Missing offers — Google requires price and availability' });
+    if (!schema.offers) issues.push({ type: 'error', text: 'Missing offers — Google requires price' });
     if (schema.aggregateRating && !schema.aggregateRating.reviewCount) {
       issues.push({ type: 'warning', text: 'aggregateRating without reviewCount may not display' });
     }
@@ -1266,26 +1272,26 @@ function validateSchema(schema) {
     }
   }
   if (type === 'Recipe') {
-    if (!schema.image) issues.push({ type: 'error', text: 'Missing image — Google requires this for recipes' });
+    if (!schema.image) issues.push({ type: 'error', text: 'Missing image — Google requires this' });
   }
 
-  if (issues.length === 0) issues.push({ type: 'success', text: 'Schema looks valid! No issues detected.' });
+  if (issues.length === 0) issues.push({ type: 'success', text: '✅ Schema is valid! No issues detected.' });
   return issues;
 }
 
 // ============================================================
-// 🎨 PREVIEW (Google SERP Simulation)
+// 🎨 PREVIEW
 // ============================================================
 function renderGooglePreview(schema) {
   const preview = $('googlePreview');
-  const domain = (schema.url || 'https://example.com').replace(/^https?:\/\//, '').split('/')[0];
+  const url = schema.url || schema.mainEntityOfPage?.['@id'] || 'https://example.com';
+  const domain = url.replace(/^https?:\/\//, '').split('/')[0];
   const title = schema.headline || schema.name || 'Page Title';
   const description = schema.description || 'No description provided';
   const type = schema['@type'];
 
   let richSnippet = '';
 
-  // Rating stars
   if (schema.aggregateRating) {
     const rating = parseFloat(schema.aggregateRating.ratingValue || 0);
     const count = schema.aggregateRating.reviewCount || 0;
@@ -1294,29 +1300,25 @@ function renderGooglePreview(schema) {
     richSnippet += `<div class="rich-snippet"><span class="stars">${stars}</span> <span class="rating-text">${rating} (${count} reviews)</span></div>`;
   }
 
-  // Price
   if (schema.offers && schema.offers.price) {
-    richSnippet += `<div class="rich-snippet"><span class="price-tag">${schema.offers.priceCurrency || '$'}${schema.offers.price}</span> · ${schema.offers.availability?.replace('https://schema.org/', '') || 'In Stock'}</div>`;
+    richSnippet += `<div class="rich-snippet"><span class="price-tag">${schema.offers.priceCurrency || '$'}${schema.offers.price}</span> · ${(schema.offers.availability || '').replace('https://schema.org/', '') || 'In Stock'}</div>`;
   }
 
-  // FAQ preview
   if (type === 'FAQPage' && schema.mainEntity) {
     richSnippet += `<div class="faq-preview">${schema.mainEntity.slice(0, 3).map(q => `<div class="faq-item-preview"><i class="fas fa-chevron-right"></i> <span>${escapeHtml(q.name || '')}</span></div>`).join('')}</div>`;
   }
 
-  // Recipe
   if (type === 'Recipe') {
     richSnippet += `<div class="rich-snippet">⏱️ ${schema.totalTime || 'N/A'} · 🍽️ ${schema.recipeYield || 'N/A'}</div>`;
   }
 
-  // Event
-  if (type === 'Event') {
+  if (type === 'Event' && schema.startDate) {
     richSnippet += `<div class="rich-snippet">📅 ${new Date(schema.startDate).toLocaleDateString()} · 📍 ${schema.location?.name || ''}</div>`;
   }
 
   preview.innerHTML = `
     <div class="url">
-      <div class="favicon">${domain[0]?.toUpperCase() || 'E'}</div>
+      <div class="favicon">${(domain[0] || 'E').toUpperCase()}</div>
       <div>${escapeHtml(domain)}</div>
     </div>
     <div class="title">${escapeHtml(title)}</div>
@@ -1332,12 +1334,8 @@ function generate() {
   const { schema, errors } = buildSchemaFromForm();
 
   if (errors.length) {
-    showToast(`${errors.length} validation error(s) — check highlighted fields`, 'error');
-    // Show validation panel
-    document.querySelectorAll('.tab').forEach(x => x.classList.remove('active'));
-    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-    document.querySelector('[data-tab="validation"]').classList.add('active');
-    document.querySelector('[data-panel="validation"]').classList.add('active');
+    showToast(`${errors.length} validation error(s)`, 'error');
+    activateTab('rightTabs', 'validation');
     const panel = $('validationPanel');
     panel.innerHTML = errors.map(e => `<div class="validation-item error"><i class="fas fa-times-circle" style="color:var(--danger);"></i> <span>${escapeHtml(e)}</span></div>`).join('');
     return;
@@ -1348,10 +1346,8 @@ function generate() {
   $('codeOutput').textContent = json;
   $('jsonInput').value = json;
 
-  // Preview
   renderGooglePreview(schema);
 
-  // Validation
   const issues = validateSchema(schema);
   const panel = $('validationPanel');
   panel.innerHTML = issues.map(i => {
@@ -1360,15 +1356,9 @@ function generate() {
     return `<div class="validation-item ${i.type}"><i class="fas ${icon}" style="color:${color};"></i> <span>${escapeHtml(i.text)}</span></div>`;
   }).join('');
 
-  // Save history
   saveHistory(schema);
 
-  // Show code tab
-  document.querySelectorAll('.tab').forEach(x => x.classList.remove('active'));
-  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-  document.querySelector('[data-tab="code"]').classList.add('active');
-  document.querySelector('[data-panel="code"]').classList.add('active');
-
+  activateTab('rightTabs', 'code');
   showToast('✅ ' + t('generated'));
 }
 
@@ -1376,7 +1366,7 @@ function generate() {
 // 💾 HISTORY
 // ============================================================
 function getHistory() {
-  try { return JSON.parse(localStorage.getItem('schemaHistoryV3') || '[]'); }
+  try { return JSON.parse(localStorage.getItem('schemaHistoryV4') || '[]'); }
   catch(e) { return []; }
 }
 
@@ -1386,10 +1376,10 @@ function saveHistory(schema) {
   history.unshift({
     type: schema['@type'],
     title,
-    schema: JSON.stringify(schema).slice(0, 500),
+    schema: JSON.stringify(schema),
     ts: Date.now()
   });
-  localStorage.setItem('schemaHistoryV3', JSON.stringify(history.slice(0, 20)));
+  localStorage.setItem('schemaHistoryV4', JSON.stringify(history.slice(0, 20)));
   renderHistory();
 }
 
@@ -1416,14 +1406,12 @@ function renderHistory() {
       if (h && h.schema) {
         try {
           const schema = JSON.parse(h.schema);
+          lastSchema = schema;
           $('jsonInput').value = JSON.stringify(schema, null, 2);
           $('codeOutput').textContent = JSON.stringify(schema, null, 2);
           renderGooglePreview(schema);
-          document.querySelectorAll('.tab').forEach(x => x.classList.remove('active'));
-          document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-          document.querySelector('[data-tab="code"]').classList.add('active');
-          document.querySelector('[data-panel="code"]').classList.add('active');
-          showToast('📂 Loaded from history');
+          activateTab('rightTabs', 'code');
+          showToast('📂 ' + t('loaded'));
         } catch(e) {}
       }
     });
@@ -1434,7 +1422,6 @@ function renderHistory() {
 // 🎬 INIT
 // ============================================================
 function init() {
-  // Language
   const urlLang = new URLSearchParams(location.search).get('lang');
   const savedLang = urlLang || localStorage.getItem('preferredLanguage') || 'en';
   applyLang(savedLang);
@@ -1443,33 +1430,29 @@ function init() {
     btn.addEventListener('click', () => applyLang(btn.dataset.lang));
   });
 
-  // Tabs
-  document.querySelectorAll('.tab').forEach(tab => {
-    tab.addEventListener('click', () => {
-      const parent = tab.parentElement;
-      parent.querySelectorAll('.tab').forEach(x => x.classList.remove('active'));
-      tab.classList.add('active');
-      const panelName = tab.dataset.tab;
-      // Find container
-      let container = tab.closest('.glass-card');
-      container.querySelectorAll(':scope > .tab-panel').forEach(p => {
-        p.classList.toggle('active', p.dataset.panel === panelName);
+  // Tabs (both left and right)
+  ['leftTabs', 'rightTabs'].forEach(containerId => {
+    const container = $(containerId);
+    if (!container) return;
+    container.querySelectorAll('.tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        activateTab(containerId, tab.dataset.tab);
       });
     });
   });
 
-  // Build picker + form
   buildSchemaPicker();
   buildForm();
 
-  // Generate
   $('generateBtn').addEventListener('click', generate);
 
-  // Validate
   $('validateBtn').addEventListener('click', () => {
     const { schema, errors } = buildSchemaFromForm();
     if (errors.length) {
       showToast(`${errors.length} errors`, 'error');
+      activateTab('rightTabs', 'validation');
+      const panel = $('validationPanel');
+      panel.innerHTML = errors.map(e => `<div class="validation-item error"><i class="fas fa-times-circle" style="color:var(--danger);"></i> <span>${escapeHtml(e)}</span></div>`).join('');
       return;
     }
     const issues = validateSchema(schema);
@@ -1479,14 +1462,10 @@ function init() {
       const color = i.type === 'error' ? 'var(--danger)' : i.type === 'warning' ? 'var(--warning)' : 'var(--success)';
       return `<div class="validation-item ${i.type}"><i class="fas ${icon}" style="color:${color};"></i> <span>${escapeHtml(i.text)}</span></div>`;
     }).join('');
-    document.querySelectorAll('.tab').forEach(x => x.classList.remove('active'));
-    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-    document.querySelector('[data-tab="validation"]').classList.add('active');
-    document.querySelector('[data-panel="validation"]').classList.add('active');
+    activateTab('rightTabs', 'validation');
     showToast('✅ ' + t('validated'));
   });
 
-  // Reset
   $('resetBtn').addEventListener('click', () => {
     if (!confirm('Reset all fields?')) return;
     buildForm();
@@ -1494,13 +1473,11 @@ function init() {
     showToast('🔄 ' + t('formReset'));
   });
 
-  // Copy
   $('copyJson').addEventListener('click', () => {
     if (!lastSchema) { showToast('Generate first', 'error'); return; }
     navigator.clipboard.writeText(JSON.stringify(lastSchema, null, 2)).then(() => showToast('📋 ' + t('copied')));
   });
 
-  // Downloads
   function downloadBlob(content, mime, filename) {
     const blob = new Blob([content], { type: mime });
     const url = URL.createObjectURL(blob);
@@ -1527,7 +1504,6 @@ function init() {
     downloadBlob(JSON.stringify(lastSchema, null, 2), 'text/plain', `schema-${currentType}-${Date.now()}.txt`);
   });
 
-  // JSON Editor
   $('parseJsonBtn').addEventListener('click', () => {
     try {
       const schema = JSON.parse($('jsonInput').value);
@@ -1557,17 +1533,17 @@ function init() {
     }
   });
 
-  // Clear history
   $('clearHistory').addEventListener('click', () => {
-    localStorage.removeItem('schemaHistoryV3');
+    localStorage.removeItem('schemaHistoryV4');
     renderHistory();
     showToast('🗑️ ' + t('historyCleared'));
   });
 
-  // Templates
+  // TEMPLATES
   const TEMPLATES = {
     article: () => {
       currentType = 'Article';
+      currentMultiItems = [];
       buildSchemaPicker();
       buildForm();
       setTimeout(() => {
@@ -1576,14 +1552,15 @@ function init() {
         $('f_author_name').value = 'John Doe';
         $('f_publisher_name').value = 'FreeSEOToolHub';
         $('f_publisher_logo').value = 'https://freeseotoolhub.com/logo.png';
-        $('f_datePublished').value = new Date().toISOString().split('T')[0];
+        $('f_datePublished').value = todayISO();
         $('f_image').value = 'https://freeseotoolhub.com/images/og.jpg';
         $('f_url').value = 'https://freeseotoolhub.com/seo-guide';
         generate();
-      }, 50);
+      }, 80);
     },
     product: () => {
       currentType = 'Product';
+      currentMultiItems = [];
       buildSchemaPicker();
       buildForm();
       setTimeout(() => {
@@ -1598,10 +1575,11 @@ function init() {
         $('f_image').value = 'https://freeseotoolhub.com/images/product.jpg';
         $('f_url').value = 'https://freeseotoolhub.com/product';
         generate();
-      }, 50);
+      }, 80);
     },
     localbusiness: () => {
       currentType = 'LocalBusiness';
+      currentMultiItems = [];
       buildSchemaPicker();
       buildForm();
       setTimeout(() => {
@@ -1615,7 +1593,7 @@ function init() {
         $('f_phone').value = '+1-888-555-0100';
         $('f_url').value = 'https://freeseotoolhub.com';
         generate();
-      }, 50);
+      }, 80);
     },
     faq: () => {
       currentType = 'FAQPage';
@@ -1630,6 +1608,7 @@ function init() {
     },
     recipe: () => {
       currentType = 'Recipe';
+      currentMultiItems = [];
       buildSchemaPicker();
       buildForm();
       setTimeout(() => {
@@ -1641,10 +1620,11 @@ function init() {
         $('f_recipeYield').value = '4';
         $('f_image').value = 'https://freeseotoolhub.com/images/carbonara.jpg';
         generate();
-      }, 50);
+      }, 80);
     },
     event: () => {
       currentType = 'Event';
+      currentMultiItems = [];
       buildSchemaPicker();
       buildForm();
       setTimeout(() => {
@@ -1656,10 +1636,11 @@ function init() {
         $('f_location_address').value = '123 Main St, New York, NY';
         $('f_url').value = 'https://freeseotoolhub.com/event';
         generate();
-      }, 50);
+      }, 80);
     },
     website: () => {
       currentType = 'WebSite';
+      currentMultiItems = [];
       buildSchemaPicker();
       buildForm();
       setTimeout(() => {
@@ -1668,7 +1649,7 @@ function init() {
         $('f_description').value = '15 essential free SEO tools.';
         $('f_searchUrl').value = 'https://freeseotoolhub.com/?s={search_term_string}';
         generate();
-      }, 50);
+      }, 80);
     },
     breadcrumb: () => {
       currentType = 'BreadcrumbList';
