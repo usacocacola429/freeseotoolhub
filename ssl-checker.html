@@ -15,7 +15,7 @@ gtag('config', 'G-PFPCTBFG3Y');
 
 <title>SSL Checker 2026 — Real Grade, TLS & Security Headers | FreeSEOToolHub</title>
 <meta name="description" content="Free SSL certificate checker with real SSL Labs grade, TLS version, cipher suite, security headers, and vulnerabilities. No signup. 100% client-side.">
-<meta name="keywords" content="ssl checker, ssl certificate checker, https checker, ssl grade, tls checker, ssl labs alternative, security headers checker, hsts checker, ssl expiry check">
+<meta name="keywords" content="ssl checker, ssl certificate checker, https checker, ssl grade, tls checker, ssl labs alternative, security headers checker, hsts checker">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://freeseotoolhub.com/tools/ssl-checker.html">
 
@@ -132,11 +132,11 @@ input:focus { border-color:var(--primary); box-shadow:0 0 0 3px rgba(255,153,51,
   font-size:0.82rem; font-family:inherit;
   display:inline-flex; align-items:center; gap:0.4rem;
 }
-.btn-outline:hover { background:rgba(255,153,51,0.2); border-color:var(--primary); }
+.btn-outline:hover:not(:disabled) { background:rgba(255,153,51,0.2); border-color:var(--primary); }
+.btn-outline:disabled { opacity:0.4; cursor:not-allowed; }
 
 .actions-row { display:flex; gap:8px; flex-wrap:wrap; margin-top:14px; }
 
-/* LOADING */
 .loading-progress { margin-top:20px; display:none; }
 .loading-bar { height:4px; background:rgba(255,255,255,0.1); border-radius:4px; overflow:hidden; }
 .loading-fill {
@@ -145,7 +145,6 @@ input:focus { border-color:var(--primary); box-shadow:0 0 0 3px rgba(255,153,51,
 }
 .loading-text { font-size:0.82rem; color:rgba(255,255,255,0.6); margin-top:8px; text-align:center; }
 
-/* SCORE */
 .score-section { text-align:center; padding:16px 0; }
 .score-gauge {
   width:200px; height:200px; margin:0 auto 16px;
@@ -164,7 +163,6 @@ input:focus { border-color:var(--primary); box-shadow:0 0 0 3px rgba(255,153,51,
 .status-text { font-size:1.15rem; font-weight:700; text-align:center; margin-top:8px; }
 .status-sub { font-size:0.85rem; opacity:0.7; text-align:center; margin-top:6px; }
 
-/* METRICS */
 .metrics-row {
   display:grid;
   grid-template-columns:repeat(auto-fit, minmax(140px, 1fr));
@@ -177,7 +175,6 @@ input:focus { border-color:var(--primary); box-shadow:0 0 0 3px rgba(255,153,51,
 .metric-value { font-size:1.5rem; font-weight:800; line-height:1; }
 .metric-label { font-size:0.68rem; color:rgba(255,255,255,0.6); text-transform:uppercase; letter-spacing:0.5px; margin-top:6px; font-weight:600; }
 
-/* TABS */
 .tabs { display:flex; gap:4px; border-bottom:1px solid var(--border); margin-bottom:18px; flex-wrap:wrap; }
 .tab {
   padding:10px 16px; background:transparent; border:none;
@@ -191,7 +188,6 @@ input:focus { border-color:var(--primary); box-shadow:0 0 0 3px rgba(255,153,51,
 .tab-panel { display:none; }
 .tab-panel.active { display:block; }
 
-/* CHECK LISTS */
 .check-category {
   background:rgba(255,255,255,0.03); border-radius:12px;
   padding:14px; margin-bottom:12px;
@@ -218,11 +214,10 @@ input:focus { border-color:var(--primary); box-shadow:0 0 0 3px rgba(255,153,51,
 .warn { background:rgba(245,158,11,0.15); color:var(--warning); }
 .info { background:rgba(59,130,246,0.15); color:var(--info); }
 
-/* GRADE BADGE */
 .grade-badge {
   display:inline-flex; align-items:center; justify-content:center;
-  min-width:60px; height:60px; border-radius:14px;
-  font-weight:800; font-size:1.6rem;
+  min-width:60px; height:50px; border-radius:12px;
+  font-weight:800; font-size:1.4rem;
   padding:0 16px;
 }
 .grade-Aplus, .grade-A { background:rgba(16,185,129,0.2); color:#10b981; }
@@ -231,7 +226,6 @@ input:focus { border-color:var(--primary); box-shadow:0 0 0 3px rgba(255,153,51,
 .grade-D, .grade-E, .grade-F { background:rgba(239,68,68,0.2); color:#ef4444; }
 .grade-T, .grade-M { background:rgba(148,163,184,0.2); color:#94a3b8; }
 
-/* HISTORY */
 .history-list { max-height:300px; overflow-y:auto; }
 .history-item {
   display:flex; justify-content:space-between; align-items:center;
@@ -242,7 +236,6 @@ input:focus { border-color:var(--primary); box-shadow:0 0 0 3px rgba(255,153,51,
 }
 .history-item:hover { background:rgba(255,153,51,0.1); }
 
-/* TOAST */
 .toast-container { position:fixed; bottom:24px; right:24px; z-index:9999; display:flex; flex-direction:column; gap:8px; }
 .toast {
   background:rgba(30,41,59,0.95); backdrop-filter:blur(10px);
@@ -257,7 +250,6 @@ input:focus { border-color:var(--primary); box-shadow:0 0 0 3px rgba(255,153,51,
 .toast.warning { background:rgba(245,158,11,0.95); }
 @keyframes slideIn { from { transform:translateX(120%); opacity:0; } to { transform:translateX(0); opacity:1; } }
 
-/* FOOTER */
 .footer {
   text-align:center; padding:20px;
   background:rgba(255,255,255,0.03); border-radius:16px;
@@ -267,7 +259,6 @@ input:focus { border-color:var(--primary); box-shadow:0 0 0 3px rgba(255,153,51,
 .footer-links a { color:rgba(255,255,255,0.7); text-decoration:none; font-weight:500; font-size:0.88rem; }
 .footer-links a:hover { color:var(--primary); }
 
-/* FAQ */
 .faq-section {
   background:rgba(255,255,255,0.03);
   border:1px solid var(--border);
@@ -319,7 +310,6 @@ input:focus { border-color:var(--primary); box-shadow:0 0 0 3px rgba(255,153,51,
     <button class="lang-btn" data-lang="es">🇪🇸 Español</button>
   </div>
 
-  <!-- INPUT -->
   <div class="glass-card">
     <div class="row-2">
       <div class="form-group">
@@ -337,9 +327,9 @@ input:focus { border-color:var(--primary); box-shadow:0 0 0 3px rgba(255,153,51,
     </button>
 
     <div class="actions-row">
-      <button class="btn-outline" id="exportJson"><i class="fas fa-file-code"></i> JSON</button>
-      <button class="btn-outline" id="exportCsv"><i class="fas fa-file-csv"></i> CSV</button>
-      <button class="btn-outline" id="copyReport"><i class="fas fa-copy"></i> <span data-i18n="copyReport">Copy</span></button>
+      <button class="btn-outline" id="exportJson" disabled><i class="fas fa-file-code"></i> JSON</button>
+      <button class="btn-outline" id="exportCsv" disabled><i class="fas fa-file-csv"></i> CSV</button>
+      <button class="btn-outline" id="copyReport" disabled><i class="fas fa-copy"></i> <span data-i18n="copyReport">Copy</span></button>
       <button class="btn-outline" id="clearBtn"><i class="fas fa-eraser"></i> <span data-i18n="clearBtn">Clear</span></button>
     </div>
 
@@ -349,7 +339,6 @@ input:focus { border-color:var(--primary); box-shadow:0 0 0 3px rgba(255,153,51,
     </div>
   </div>
 
-  <!-- RESULTS -->
   <div id="results" style="display:none;">
     <div class="glass-card">
       <div class="score-section">
@@ -369,28 +358,16 @@ input:focus { border-color:var(--primary); box-shadow:0 0 0 3px rgba(255,153,51,
     <div class="glass-card">
       <div class="tabs">
         <button class="tab active" data-tab="cert"><i class="fas fa-certificate"></i> <span data-i18n="tabCert">Certificate</span></button>
-        <button class="tab" data-tab="protocol"><i class="fas fa-shield-halved"></i> <span data-i18n="tabProtocol">Protocols & Ciphers</span></button>
-        <button class="tab" data-tab="headers"><i class="fas fa-heading"></i> <span data-i18n="tabHeaders">Security Headers</span></button>
+        <button class="tab" data-tab="protocol"><i class="fas fa-shield-halved"></i> <span data-i18n="tabProtocol">Protocols</span></button>
+        <button class="tab" data-tab="headers"><i class="fas fa-heading"></i> <span data-i18n="tabHeaders">Headers</span></button>
         <button class="tab" data-tab="vuln"><i class="fas fa-bug"></i> <span data-i18n="tabVuln">Vulnerabilities</span></button>
         <button class="tab" data-tab="history"><i class="fas fa-history"></i> <span data-i18n="tabHistory">History</span></button>
       </div>
 
-      <div class="tab-panel active" data-panel="cert">
-        <div id="certContent"></div>
-      </div>
-
-      <div class="tab-panel" data-panel="protocol">
-        <div id="protocolContent"></div>
-      </div>
-
-      <div class="tab-panel" data-panel="headers">
-        <div id="headersContent"></div>
-      </div>
-
-      <div class="tab-panel" data-panel="vuln">
-        <div id="vulnContent"></div>
-      </div>
-
+      <div class="tab-panel active" data-panel="cert"><div id="certContent"></div></div>
+      <div class="tab-panel" data-panel="protocol"><div id="protocolContent"></div></div>
+      <div class="tab-panel" data-panel="headers"><div id="headersContent"></div></div>
+      <div class="tab-panel" data-panel="vuln"><div id="vulnContent"></div></div>
       <div class="tab-panel" data-panel="history">
         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
           <span style="font-size:0.85rem; opacity:0.7;"><span id="historyCount">0</span> <span data-i18n="savedChecks">saved checks</span></span>
@@ -401,28 +378,26 @@ input:focus { border-color:var(--primary); box-shadow:0 0 0 3px rgba(255,153,51,
     </div>
   </div>
 
-  <!-- FAQ -->
   <div class="faq-section">
     <h2><i class="fas fa-circle-question"></i> <span data-i18n="faqTitle">Frequently Asked Questions</span></h2>
     <div class="faq-item">
       <div class="faq-q"><i class="fas fa-question-circle"></i> How does this SSL checker work?</div>
-      <div class="faq-a" data-i18n="faq1">This tool uses the public SSL Labs API (no key required) to get real SSL/TLS grades, protocols, ciphers, and vulnerabilities. It also fetches real security headers via CORS proxy.</div>
+      <div class="faq-a" data-i18n="faq1">This tool uses the public SSL Labs API (no key required) via CORS proxy to get real SSL/TLS grades, protocols, ciphers, and vulnerabilities. It also fetches real security headers.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q"><i class="fas fa-question-circle"></i> What is an SSL Labs grade?</div>
-      <div class="faq-a" data-i18n="faq2">SSL Labs is the industry standard for SSL/TLS testing. Grades range from A+ (best) to F (failing). An A or A+ means your SSL is properly configured with modern protocols.</div>
+      <div class="faq-a" data-i18n="faq2">SSL Labs is the industry standard for SSL/TLS testing. Grades range from A+ (best) to F (failing). A or A+ means your SSL is properly configured.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q"><i class="fas fa-question-circle"></i> Why do some checks show "unknown"?</div>
-      <div class="faq-a" data-i18n="faq3">Some servers block CORS or SSL Labs is still scanning (first scan can take 30-60 seconds). We show what we can fetch and mark missing data as unknown.</div>
+      <div class="faq-a" data-i18n="faq3">Some servers block CORS or SSL Labs is still scanning (first scan can take 30-60 seconds). We show what we can fetch.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q"><i class="fas fa-question-circle"></i> Is my data private?</div>
-      <div class="faq-a" data-i18n="faq4">Yes. Your URL is sent to SSL Labs API (public service, no login). No personal data is collected or stored on our servers.</div>
+      <div class="faq-a" data-i18n="faq4">Yes. Your URL is sent to SSL Labs API (public service). No personal data is collected or stored on our servers.</div>
     </div>
   </div>
 
-  <!-- FOOTER -->
   <div class="footer">
     <div class="footer-links">
       <a href="/">Home</a>
@@ -431,7 +406,7 @@ input:focus { border-color:var(--primary); box-shadow:0 0 0 3px rgba(255,153,51,
       <a href="/contact.html">Contact</a>
       <a href="/privacy.html">Privacy</a>
     </div>
-    <p style="opacity:0.5; font-size:0.82rem;">© 2026 FreeSEOToolHub | SSL Checker v3.0 | 100% Client-Side</p>
+    <p style="opacity:0.5; font-size:0.82rem;">© 2026 FreeSEOToolHub | SSL Checker v4.0 | 100% Client-Side</p>
   </div>
 </div>
 
@@ -453,148 +428,117 @@ const I18N = {
     analyzeBtn: 'Check SSL Certificate',
     copyReport: 'Copy', clearBtn: 'Clear',
     securityScore: 'Security Score',
-    tabCert: 'Certificate', tabProtocol: 'Protocols & Ciphers', tabHeaders: 'Security Headers', tabVuln: 'Vulnerabilities', tabHistory: 'History',
+    tabCert: 'Certificate', tabProtocol: 'Protocols', tabHeaders: 'Headers', tabVuln: 'Vulnerabilities', tabHistory: 'History',
     savedChecks: 'saved checks',
     excellent: 'Excellent Security', good: 'Good Security', moderate: 'Moderate Security', poor: 'Poor Security', critical: 'Critical Issues',
-    metrics: { score: 'Score', grade: 'Grade', protocols: 'Protocols', headers: 'Headers' },
+    metrics: { score: 'Score', grade: 'Grade', tls13: 'TLS 1.3', headers: 'Headers' },
     loading: {
       init: 'Initializing SSL Labs scan...',
-      queued: 'Scan queued — SSL Labs can take 30-60s for first scan...',
+      queued: 'Scan queued — SSL Labs can take 30-60s...',
       polling: 'Fetching results from SSL Labs...',
       headers: 'Checking security headers...',
       complete: 'Analysis complete!'
     },
     cert: {
-      title: 'Certificate Details',
-      issuer: 'Issuer',
-      commonName: 'Common Name',
-      subjectAltNames: 'Subject Alt Names',
-      notBefore: 'Valid From',
-      notAfter: 'Valid Until',
-      daysRemaining: 'Days Remaining',
-      keyStrength: 'Key Strength',
-      signatureAlgorithm: 'Signature Algorithm'
+      title: 'Certificate Details', issuer: 'Issuer', commonName: 'Common Name',
+      subjectAltNames: 'Subject Alt Names', notBefore: 'Valid From', notAfter: 'Valid Until',
+      daysRemaining: 'Days Remaining', keyStrength: 'Key Strength', signatureAlgorithm: 'Signature Algorithm',
+      unavailable: 'SSL Labs data unavailable', unavailableMsg: 'SSL Labs API was unreachable. Try again in a minute.'
     },
-    protocols: {
-      title: 'Supported Protocols',
-      tls10: 'TLS 1.0',
-      tls11: 'TLS 1.1',
-      tls12: 'TLS 1.2',
-      tls13: 'TLS 1.3',
-      cipherStrength: 'Cipher Strength',
-      forwardSecrecy: 'Forward Secrecy',
-      hsts: 'HSTS'
-    },
-    headers: {
-      title: 'Security Headers',
-      hsts: 'Strict-Transport-Security',
-      csp: 'Content-Security-Policy',
-      xframe: 'X-Frame-Options',
-      xcontent: 'X-Content-Type-Options',
-      referrer: 'Referrer-Policy',
-      permissions: 'Permissions-Policy',
-      present: 'Present',
-      missing: 'Missing',
-      weak: 'Weak'
-    },
-    vuln: {
-      title: 'Vulnerabilities & Issues',
-      heartbleed: 'Heartbleed (CVE-2014-0160)',
-      poodle: 'POODLE (CVE-2014-3566)',
-      freak: 'FREAK (CVE-2015-0204)',
-      logjam: 'Logjam (CVE-2015-4000)',
-      drown: 'DROWN (CVE-2016-0800)',
-      beast: 'BEAST',
-      crime: 'CRIME',
-      ticketbleed: 'Ticketbleed',
-      robot: 'ROBOT',
-      secure: 'Secure',
-      vulnerable: 'Vulnerable'
-    },
-    noHistory: 'No history yet',
-    copied: 'Report copied!',
-    noUrl: 'Please enter a website URL',
-    error: 'Analysis failed. Try again.',
-    complete: 'SSL analysis complete!'
+    protocols: { title: 'Supported Protocols' },
+    headers: { title: 'Security Headers', present: 'Present', missing: 'Missing', blocked: 'Headers fetch blocked', blockedMsg: 'The website blocked CORS proxies. Some header checks may be incomplete.' },
+    vuln: { title: 'Vulnerabilities & Issues', secure: 'Secure', vulnerable: 'Vulnerable', unknown: 'Unknown' },
+    noHistory: 'No history yet', copied: 'Report copied!', noUrl: 'Please enter a website URL',
+    error: 'Analysis failed. Try again.', complete: 'SSL analysis complete!', cleared: 'Cleared', historyCleared: 'History cleared',
+    faqTitle: 'Frequently Asked Questions',
+    faq1: 'Real SSL Labs data via public API. No key required.',
+    faq2: 'Grades range from A+ (best) to F (failing).',
+    faq3: 'Some servers block CORS. First scan can take 30-60s.',
+    faq4: 'No personal data stored. Public APIs only.'
   },
   hi: {
     title: 'SSL सर्टिफिकेट चेकर 2026',
-    subtitle: 'असली SSL Labs ग्रेड, TLS वर्जन, सिफर, सुरक्षा हेडर और कमजोरियां। 100% क्लाइंट-साइड।',
+    subtitle: 'असली SSL Labs ग्रेड, TLS वर्जन, सिफर, सुरक्षा हेडर और कमजोरियां।',
     urlLabel: 'वेबसाइट URL या डोमेन', portLabel: 'पोर्ट',
-    analyzeBtn: 'SSL सर्टिफिकेट जांचें',
-    copyReport: 'कॉपी', clearBtn: 'साफ़',
+    analyzeBtn: 'SSL जांचें', copyReport: 'कॉपी', clearBtn: 'साफ़',
     securityScore: 'सुरक्षा स्कोर',
-    tabCert: 'सर्टिफिकेट', tabProtocol: 'प्रोटोकॉल और सिफर', tabHeaders: 'सुरक्षा हेडर', tabVuln: 'कमजोरियां', tabHistory: 'इतिहास',
+    tabCert: 'सर्टिफिकेट', tabProtocol: 'प्रोटोकॉल', tabHeaders: 'हेडर', tabVuln: 'कमजोरियां', tabHistory: 'इतिहास',
     savedChecks: 'सहेजी जांच',
     excellent: 'बेहतरीन सुरक्षा', good: 'अच्छी सुरक्षा', moderate: 'मध्यम सुरक्षा', poor: 'खराब सुरक्षा', critical: 'गंभीर समस्याएं',
-    metrics: { score: 'स्कोर', grade: 'ग्रेड', protocols: 'प्रोटोकॉल', headers: 'हेडर' },
-    loading: {
-      init: 'SSL Labs स्कैन शुरू...', queued: 'स्कैन कतार में (30-60 सेकंड)...',
-      polling: 'SSL Labs से परिणाम प्राप्त...', headers: 'सुरक्षा हेडर की जांच...', complete: 'विश्लेषण पूर्ण!'
-    },
-    cert: { title: 'सर्टिफिकेट विवरण', issuer: 'जारीकर्ता', commonName: 'सामान्य नाम', subjectAltNames: 'विषय वैकल्पिक नाम', notBefore: 'से मान्य', notAfter: 'तक मान्य', daysRemaining: 'शेष दिन', keyStrength: 'कुंजी शक्ति', signatureAlgorithm: 'हस्ताक्षर एल्गोरिदम' },
-    protocols: { title: 'समर्थित प्रोटोकॉल', tls10: 'TLS 1.0', tls11: 'TLS 1.1', tls12: 'TLS 1.2', tls13: 'TLS 1.3', cipherStrength: 'सिफर शक्ति', forwardSecrecy: 'फॉरवर्ड गोपनीयता', hsts: 'HSTS' },
-    headers: { title: 'सुरक्षा हेडर', hsts: 'HSTS', csp: 'CSP', xframe: 'X-Frame-Options', xcontent: 'X-Content-Type-Options', referrer: 'Referrer-Policy', permissions: 'Permissions-Policy', present: 'मौजूद', missing: 'गायब', weak: 'कमजोर' },
-    vuln: { title: 'कमजोरियां और समस्याएं', heartbleed: 'Heartbleed', poodle: 'POODLE', freak: 'FREAK', logjam: 'Logjam', drown: 'DROWN', beast: 'BEAST', crime: 'CRIME', ticketbleed: 'Ticketbleed', robot: 'ROBOT', secure: 'सुरक्षित', vulnerable: 'कमजोर' },
-    noHistory: 'अभी कोई इतिहास नहीं', copied: 'रिपोर्ट कॉपी!', noUrl: 'कृपया URL दर्ज करें',
-    error: 'विश्लेषण विफल।', complete: 'SSL विश्लेषण पूर्ण!'
+    metrics: { score: 'स्कोर', grade: 'ग्रेड', tls13: 'TLS 1.3', headers: 'हेडर' },
+    loading: { init: 'स्कैन शुरू...', queued: 'कतार में (30-60s)...', polling: 'परिणाम प्राप्त...', headers: 'हेडर जांच...', complete: 'विश्लेषण पूर्ण!' },
+    cert: { title: 'सर्टिफिकेट विवरण', issuer: 'जारीकर्ता', commonName: 'सामान्य नाम', subjectAltNames: 'वैकल्पिक नाम', notBefore: 'से मान्य', notAfter: 'तक मान्य', daysRemaining: 'शेष दिन', keyStrength: 'कुंजी शक्ति', signatureAlgorithm: 'हस्ताक्षर', unavailable: 'SSL Labs डेटा उपलब्ध नहीं', unavailableMsg: 'SSL Labs API अनुपलब्ध।' },
+    protocols: { title: 'समर्थित प्रोटोकॉल' },
+    headers: { title: 'सुरक्षा हेडर', present: 'मौजूद', missing: 'गायब', blocked: 'हेडर ब्लॉक', blockedMsg: 'वेबसाइट ने CORS ब्लॉक किया।' },
+    vuln: { title: 'कमजोरियां', secure: 'सुरक्षित', vulnerable: 'कमजोर', unknown: 'अज्ञात' },
+    noHistory: 'अभी कोई इतिहास नहीं', copied: 'कॉपी!', noUrl: 'URL दर्ज करें',
+    error: 'विफल।', complete: 'पूर्ण!', cleared: 'साफ़', historyCleared: 'इतिहास साफ़',
+    faqTitle: 'अक्सर पूछे जाने वाले प्रश्न',
+    faq1: 'SSL Labs API से असली डेटा।', faq2: 'A+ (सर्वश्रेष्ठ) से F तक।',
+    faq3: 'पहली स्कैन 30-60s ले सकती है।', faq4: 'कोई व्यक्तिगत डेटा संग्रहीत नहीं।'
   },
   ur: {
     title: 'SSL سرٹیفکیٹ چیکر 2026',
-    subtitle: 'حقیقی SSL Labs گریڈ، TLS ورژن، سائفر، سیکیورٹی ہیڈرز اور کمزوریاں۔',
-    urlLabel: 'ویب سائٹ URL یا ڈومین', portLabel: 'پورٹ',
-    analyzeBtn: 'SSL سرٹیفکیٹ چیک کریں',
-    copyReport: 'کاپی', clearBtn: 'صاف کریں',
+    subtitle: 'حقیقی SSL Labs گریڈ، TLS، سائفر، سیکیورٹی ہیڈرز۔',
+    urlLabel: 'URL یا ڈومین', portLabel: 'پورٹ',
+    analyzeBtn: 'SSL چیک کریں', copyReport: 'کاپی', clearBtn: 'صاف',
     securityScore: 'سیکیورٹی اسکور',
-    tabCert: 'سرٹیفکیٹ', tabProtocol: 'پروٹوکول اور سائفر', tabHeaders: 'سیکیورٹی ہیڈرز', tabVuln: 'کمزوریاں', tabHistory: 'تاریخ',
-    savedChecks: 'محفوظ چیکس',
-    excellent: 'بہترین سیکیورٹی', good: 'اچھی سیکیورٹی', moderate: 'درمیانی سیکیورٹی', poor: 'خراب سیکیورٹی', critical: 'شدید مسائل',
-    metrics: { score: 'اسکور', grade: 'گریڈ', protocols: 'پروٹوکول', headers: 'ہیڈرز' },
-    loading: { init: 'SSL Labs اسکین شروع...', queued: 'اسکین قطار میں...', polling: 'نتائج حاصل...', headers: 'ہیڈرز چیک...', complete: 'تجزیہ مکمل!' },
-    cert: { title: 'سرٹیفکیٹ تفصیلات', issuer: 'جاری کنندہ', commonName: 'عام نام', subjectAltNames: 'متبادل نام', notBefore: 'سے', notAfter: 'تک', daysRemaining: 'باقی دن', keyStrength: 'کلید کی طاقت', signatureAlgorithm: 'دستخط الگورتھم' },
-    protocols: { title: 'معاون پروٹوکول', tls10: 'TLS 1.0', tls11: 'TLS 1.1', tls12: 'TLS 1.2', tls13: 'TLS 1.3', cipherStrength: 'سائفر طاقت', forwardSecrecy: 'فارورڈ رازداری', hsts: 'HSTS' },
-    headers: { title: 'سیکیورٹی ہیڈرز', hsts: 'HSTS', csp: 'CSP', xframe: 'X-Frame', xcontent: 'X-Content', referrer: 'Referrer', permissions: 'Permissions', present: 'موجود', missing: 'غائب', weak: 'کمزور' },
-    vuln: { title: 'کمزوریاں', heartbleed: 'Heartbleed', poodle: 'POODLE', freak: 'FREAK', logjam: 'Logjam', drown: 'DROWN', beast: 'BEAST', crime: 'CRIME', ticketbleed: 'Ticketbleed', robot: 'ROBOT', secure: 'محفوظ', vulnerable: 'کمزور' },
-    noHistory: 'ابھی کوئی تاریخ نہیں', copied: 'رپورٹ کاپی!', noUrl: 'براہ کرم URL درج کریں',
-    error: 'تجزیہ ناکام۔', complete: 'SSL تجزیہ مکمل!'
+    tabCert: 'سرٹیفکیٹ', tabProtocol: 'پروٹوکول', tabHeaders: 'ہیڈرز', tabVuln: 'کمزوریاں', tabHistory: 'تاریخ',
+    savedChecks: 'محفوظ',
+    excellent: 'بہترین', good: 'اچھی', moderate: 'درمیانی', poor: 'خراب', critical: 'شدید',
+    metrics: { score: 'اسکور', grade: 'گریڈ', tls13: 'TLS 1.3', headers: 'ہیڈرز' },
+    loading: { init: 'شروع...', queued: 'قطار میں...', polling: 'نتائج...', headers: 'ہیڈرز...', complete: 'مکمل!' },
+    cert: { title: 'تفصیلات', issuer: 'جاری', commonName: 'نام', subjectAltNames: 'متبادل', notBefore: 'سے', notAfter: 'تک', daysRemaining: 'دن', keyStrength: 'کلید', signatureAlgorithm: 'دستخط', unavailable: 'ڈیٹا نہیں', unavailableMsg: 'API ناکام۔' },
+    protocols: { title: 'پروٹوکول' },
+    headers: { title: 'ہیڈرز', present: 'موجود', missing: 'غائب', blocked: 'بلاک', blockedMsg: 'CORS بلاک۔' },
+    vuln: { title: 'کمزوریاں', secure: 'محفوظ', vulnerable: 'کمزور', unknown: 'نامعلوم' },
+    noHistory: 'کوئی تاریخ نہیں', copied: 'کاپی!', noUrl: 'URL درج کریں',
+    error: 'ناکام۔', complete: 'مکمل!', cleared: 'صاف', historyCleared: 'تاریخ صاف',
+    faqTitle: 'عام سوالات',
+    faq1: 'SSL Labs API سے۔', faq2: 'A+ سے F تک۔',
+    faq3: 'پہلا اسکین 30-60s۔', faq4: 'کوئی ذاتی ڈیٹا نہیں۔'
   },
   de: {
     title: 'SSL-Zertifikat-Prüfer 2026',
-    subtitle: 'Echte SSL Labs-Note, TLS-Version, Cipher, Sicherheits-Header und Schwachstellen.',
-    urlLabel: 'Website-URL oder Domain', portLabel: 'Port',
-    analyzeBtn: 'SSL-Zertifikat prüfen',
-    copyReport: 'Kopieren', clearBtn: 'Löschen',
+    subtitle: 'Echte SSL Labs-Note, TLS-Version, Cipher, Header.',
+    urlLabel: 'URL oder Domain', portLabel: 'Port',
+    analyzeBtn: 'SSL prüfen', copyReport: 'Kopieren', clearBtn: 'Löschen',
     securityScore: 'Sicherheitsbewertung',
-    tabCert: 'Zertifikat', tabProtocol: 'Protokolle & Cipher', tabHeaders: 'Sicherheits-Header', tabVuln: 'Schwachstellen', tabHistory: 'Verlauf',
-    savedChecks: 'gespeicherte Prüfungen',
-    excellent: 'Ausgezeichnete Sicherheit', good: 'Gute Sicherheit', moderate: 'Mittlere Sicherheit', poor: 'Schlechte Sicherheit', critical: 'Kritische Probleme',
-    metrics: { score: 'Punkte', grade: 'Note', protocols: 'Protokolle', headers: 'Header' },
-    loading: { init: 'SSL Labs-Scan wird initialisiert...', queued: 'Scan in Warteschlange...', polling: 'Ergebnisse werden abgerufen...', headers: 'Header werden geprüft...', complete: 'Analyse abgeschlossen!' },
-    cert: { title: 'Zertifikatsdetails', issuer: 'Aussteller', commonName: 'Common Name', subjectAltNames: 'Alternative Namen', notBefore: 'Gültig ab', notAfter: 'Gültig bis', daysRemaining: 'Verbleibende Tage', keyStrength: 'Schlüsselstärke', signatureAlgorithm: 'Signaturalgorithmus' },
-    protocols: { title: 'Unterstützte Protokolle', tls10: 'TLS 1.0', tls11: 'TLS 1.1', tls12: 'TLS 1.2', tls13: 'TLS 1.3', cipherStrength: 'Cipher-Stärke', forwardSecrecy: 'Forward Secrecy', hsts: 'HSTS' },
-    headers: { title: 'Sicherheits-Header', hsts: 'HSTS', csp: 'CSP', xframe: 'X-Frame', xcontent: 'X-Content', referrer: 'Referrer', permissions: 'Permissions', present: 'Vorhanden', missing: 'Fehlt', weak: 'Schwach' },
-    vuln: { title: 'Schwachstellen', heartbleed: 'Heartbleed', poodle: 'POODLE', freak: 'FREAK', logjam: 'Logjam', drown: 'DROWN', beast: 'BEAST', crime: 'CRIME', ticketbleed: 'Ticketbleed', robot: 'ROBOT', secure: 'Sicher', vulnerable: 'Anfällig' },
-    noHistory: 'Noch kein Verlauf', copied: 'Bericht kopiert!', noUrl: 'Bitte URL eingeben',
-    error: 'Analyse fehlgeschlagen.', complete: 'SSL-Analyse abgeschlossen!'
+    tabCert: 'Zertifikat', tabProtocol: 'Protokolle', tabHeaders: 'Header', tabVuln: 'Schwachstellen', tabHistory: 'Verlauf',
+    savedChecks: 'Prüfungen',
+    excellent: 'Ausgezeichnet', good: 'Gut', moderate: 'Mittel', poor: 'Schlecht', critical: 'Kritisch',
+    metrics: { score: 'Punkte', grade: 'Note', tls13: 'TLS 1.3', headers: 'Header' },
+    loading: { init: 'Initialisierung...', queued: 'In Warteschlange...', polling: 'Ergebnisse...', headers: 'Header...', complete: 'Fertig!' },
+    cert: { title: 'Details', issuer: 'Aussteller', commonName: 'Name', subjectAltNames: 'Alternativ', notBefore: 'Gültig ab', notAfter: 'Gültig bis', daysRemaining: 'Tage', keyStrength: 'Schlüssel', signatureAlgorithm: 'Signatur', unavailable: 'Nicht verfügbar', unavailableMsg: 'API nicht erreichbar.' },
+    protocols: { title: 'Protokolle' },
+    headers: { title: 'Header', present: 'Vorhanden', missing: 'Fehlt', blocked: 'Blockiert', blockedMsg: 'CORS blockiert.' },
+    vuln: { title: 'Schwachstellen', secure: 'Sicher', vulnerable: 'Anfällig', unknown: 'Unbekannt' },
+    noHistory: 'Kein Verlauf', copied: 'Kopiert!', noUrl: 'URL eingeben',
+    error: 'Fehler.', complete: 'Fertig!', cleared: 'Gelöscht', historyCleared: 'Verlauf gelöscht',
+    faqTitle: 'Häufige Fragen',
+    faq1: 'SSL Labs API.', faq2: 'A+ bis F.',
+    faq3: 'Erster Scan 30-60s.', faq4: 'Keine persönlichen Daten.'
   },
   es: {
     title: 'Verificador SSL 2026',
-    subtitle: 'Calificación real SSL Labs, versión TLS, cifrado, cabeceras de seguridad y vulnerabilidades.',
+    subtitle: 'Calificación real SSL Labs, versión TLS, cifrado, cabeceras.',
     urlLabel: 'URL o Dominio', portLabel: 'Puerto',
-    analyzeBtn: 'Verificar Certificado SSL',
-    copyReport: 'Copiar', clearBtn: 'Limpiar',
+    analyzeBtn: 'Verificar SSL', copyReport: 'Copiar', clearBtn: 'Limpiar',
     securityScore: 'Puntuación de Seguridad',
-    tabCert: 'Certificado', tabProtocol: 'Protocolos y Cifrado', tabHeaders: 'Cabeceras de Seguridad', tabVuln: 'Vulnerabilidades', tabHistory: 'Historial',
-    savedChecks: 'verificaciones guardadas',
-    excellent: 'Seguridad Excelente', good: 'Buena Seguridad', moderate: 'Seguridad Moderada', poor: 'Seguridad Pobre', critical: 'Problemas Críticos',
-    metrics: { score: 'Puntos', grade: 'Nota', protocols: 'Protocolos', headers: 'Cabeceras' },
-    loading: { init: 'Iniciando escaneo SSL Labs...', queued: 'Escaneo en cola...', polling: 'Obteniendo resultados...', headers: 'Verificando cabeceras...', complete: '¡Análisis completo!' },
-    cert: { title: 'Detalles del Certificado', issuer: 'Emisor', commonName: 'Nombre Común', subjectAltNames: 'Nombres Alternativos', notBefore: 'Válido Desde', notAfter: 'Válido Hasta', daysRemaining: 'Días Restantes', keyStrength: 'Fuerza de Clave', signatureAlgorithm: 'Algoritmo de Firma' },
-    protocols: { title: 'Protocolos Soportados', tls10: 'TLS 1.0', tls11: 'TLS 1.1', tls12: 'TLS 1.2', tls13: 'TLS 1.3', cipherStrength: 'Fuerza de Cifrado', forwardSecrecy: 'Forward Secrecy', hsts: 'HSTS' },
-    headers: { title: 'Cabeceras de Seguridad', hsts: 'HSTS', csp: 'CSP', xframe: 'X-Frame', xcontent: 'X-Content', referrer: 'Referrer', permissions: 'Permissions', present: 'Presente', missing: 'Falta', weak: 'Débil' },
-    vuln: { title: 'Vulnerabilidades', heartbleed: 'Heartbleed', poodle: 'POODLE', freak: 'FREAK', logjam: 'Logjam', drown: 'DROWN', beast: 'BEAST', crime: 'CRIME', ticketbleed: 'Ticketbleed', robot: 'ROBOT', secure: 'Seguro', vulnerable: 'Vulnerable' },
-    noHistory: 'Sin historial aún', copied: '¡Informe copiado!', noUrl: 'Por favor ingresa URL',
-    error: 'Análisis fallido.', complete: '¡Análisis SSL completo!'
+    tabCert: 'Certificado', tabProtocol: 'Protocolos', tabHeaders: 'Cabeceras', tabVuln: 'Vulnerabilidades', tabHistory: 'Historial',
+    savedChecks: 'verificaciones',
+    excellent: 'Excelente', good: 'Bueno', moderate: 'Moderado', poor: 'Pobre', critical: 'Crítico',
+    metrics: { score: 'Puntos', grade: 'Nota', tls13: 'TLS 1.3', headers: 'Cabeceras' },
+    loading: { init: 'Iniciando...', queued: 'En cola...', polling: 'Resultados...', headers: 'Cabeceras...', complete: '¡Completo!' },
+    cert: { title: 'Detalles', issuer: 'Emisor', commonName: 'Nombre', subjectAltNames: 'Alternativos', notBefore: 'Válido desde', notAfter: 'Válido hasta', daysRemaining: 'Días', keyStrength: 'Clave', signatureAlgorithm: 'Firma', unavailable: 'No disponible', unavailableMsg: 'API no disponible.' },
+    protocols: { title: 'Protocolos' },
+    headers: { title: 'Cabeceras', present: 'Presente', missing: 'Falta', blocked: 'Bloqueado', blockedMsg: 'CORS bloqueado.' },
+    vuln: { title: 'Vulnerabilidades', secure: 'Seguro', vulnerable: 'Vulnerable', unknown: 'Desconocido' },
+    noHistory: 'Sin historial', copied: '¡Copiado!', noUrl: 'Ingresa URL',
+    error: 'Error.', complete: '¡Completo!', cleared: 'Limpiado', historyCleared: 'Historial borrado',
+    faqTitle: 'Preguntas Frecuentes',
+    faq1: 'SSL Labs API.', faq2: 'A+ a F.',
+    faq3: 'Primer escaneo 30-60s.', faq4: 'Sin datos personales.'
   }
 };
 
@@ -658,144 +602,143 @@ function extractDomain(input) {
 }
 
 // ============================================================
-// 🌐 SSL LABS API
+// 🌐 CORS PROXIES
 // ============================================================
-const SSLLABS_API = 'https://api.ssllabs.com/api/v3/analyze';
+const PROXIES = [
+  { name: 'allorigins-raw', url: u => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}` },
+  { name: 'corsproxy.io', url: u => `https://corsproxy.io/?${encodeURIComponent(u)}` },
+  { name: 'allorigins-get', url: u => `https://api.allorigins.win/get?url=${encodeURIComponent(u)}` }
+];
 
-async function fetchSSLLabs(host, onProgress) {
-  // Step 1: Start scan (or get cached)
-  let attempt = 0;
-  const maxAttempts = 30; // 30 * 5s = 150s max
-
-  while (attempt < maxAttempts) {
-    attempt++;
-    try {
-      const url = `${SSLLABS_API}?host=${encodeURIComponent(host)}&all=done&publish=off&startNew=off&fromCache=on&maxAge=24`;
-      const res = await fetch(url);
-      if (!res.ok) throw new Error(`SSL Labs HTTP ${res.status}`);
-      const data = await res.json();
-
-      if (data.status === 'READY') {
-        return data;
-      }
-      if (data.status === 'ERROR') {
-        throw new Error(data.statusMessage || 'SSL Labs error');
-      }
-      // Still scanning
-      if (onProgress) onProgress({ status: data.status, attempt });
-      await new Promise(r => setTimeout(r, 5000));
-    } catch (e) {
-      if (attempt >= 3) throw e;
-      await new Promise(r => setTimeout(r, 3000));
-    }
+async function fetchWithTimeout(url, timeout = 15000, options = {}) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeout);
+  try {
+    const res = await fetch(url, { ...options, signal: controller.signal });
+    clearTimeout(timer);
+    return res;
+  } catch (e) {
+    clearTimeout(timer);
+    throw e;
   }
-  throw new Error('SSL Labs scan timeout');
 }
 
 // ============================================================
-// 🛡️ SECURITY HEADERS (via CORS proxy)
+// 🔬 SSL LABS API (via CORS proxy)
 // ============================================================
-const PROXIES = [
-  { name: 'allorigins', url: u => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}` },
-  { name: 'corsproxy', url: u => `https://corsproxy.io/?${encodeURIComponent(u)}` }
-];
+const SSLLABS_API = 'https://api.ssllabs.com/api/v3/analyze';
 
+async function fetchSSLLabsViaProxy(host, onProgress) {
+  const apiUrl = `${SSLLABS_API}?host=${encodeURIComponent(host)}&all=done&publish=off&startNew=off&fromCache=on&maxAge=24`;
+
+  // Try each proxy
+  for (const proxy of PROXIES) {
+    try {
+      let attempt = 0;
+      const maxAttempts = 20; // 20 * 4s = 80s max per proxy
+
+      while (attempt < maxAttempts) {
+        attempt++;
+        try {
+          let res;
+          if (proxy.name === 'allorigins-get') {
+            res = await fetchWithTimeout(proxy.url(apiUrl), 15000);
+            if (!res.ok) throw new Error(`HTTP ${res.status}`);
+            const wrapper = await res.json();
+            if (!wrapper.contents) throw new Error('Empty');
+            const data = JSON.parse(wrapper.contents);
+            if (data.status === 'READY') return data;
+            if (data.status === 'ERROR') throw new Error(data.statusMessage || 'SSL Labs error');
+            if (onProgress) onProgress({ status: data.status, attempt, proxy: proxy.name });
+          } else {
+            res = await fetchWithTimeout(proxy.url(apiUrl), 15000);
+            if (!res.ok) throw new Error(`HTTP ${res.status}`);
+            const data = await res.json();
+            if (data.status === 'READY') return data;
+            if (data.status === 'ERROR') throw new Error(data.statusMessage || 'SSL Labs error');
+            if (onProgress) onProgress({ status: data.status, attempt, proxy: proxy.name });
+          }
+          await new Promise(r => setTimeout(r, 4000));
+        } catch (e) {
+          if (attempt >= 3) throw e;
+          await new Promise(r => setTimeout(r, 2000));
+        }
+      }
+      throw new Error('Timeout');
+    } catch (e) {
+      console.warn(`Proxy ${proxy.name} failed for SSL Labs:`, e.message);
+      // Try next proxy
+    }
+  }
+  throw new Error('All proxies failed for SSL Labs');
+}
+
+// ============================================================
+// 📜 crt.sh — Certificate Transparency fallback
+// ============================================================
+async function fetchCertFromCrtSh(host) {
+  try {
+    const url = `https://crt.sh/?q=${encodeURIComponent(host)}&output=json`;
+    const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`;
+    const res = await fetchWithTimeout(proxyUrl, 10000);
+    if (!res.ok) throw new Error('crt.sh failed');
+    const data = await res.json();
+    if (!data || !data.length) return null;
+    // Get most recent cert
+    data.sort((a, b) => new Date(b.not_before) - new Date(a.not_before));
+    const cert = data[0];
+    return {
+      issuer: cert.issuer_name,
+      commonName: cert.common_name,
+      altNames: (cert.name_value || '').split('\n').filter(Boolean).slice(0, 20),
+      notBefore: new Date(cert.not_before).getTime(),
+      notAfter: new Date(cert.not_after).getTime(),
+      daysRemaining: Math.floor((new Date(cert.not_after).getTime() - Date.now()) / 86400000)
+    };
+  } catch (e) {
+    console.warn('crt.sh failed:', e.message);
+    return null;
+  }
+}
+
+// ============================================================
+// 🛡️ SECURITY HEADERS
+// ============================================================
 async function fetchHeaders(host) {
   for (const proxy of PROXIES) {
     try {
-      const res = await fetch(proxy.url('https://' + host), {
+      const res = await fetchWithTimeout(proxy.url('https://' + host), 10000, {
         method: 'GET',
         headers: { 'Accept': 'text/html' }
       });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      // Extract headers from response
+
       const headers = {};
       res.headers.forEach((val, key) => {
         headers[key.toLowerCase()] = val;
       });
-      // Some proxies hide headers — try to read raw
-      const text = await res.text();
+
+      // If no headers exposed, try to fetch raw text
+      if (Object.keys(headers).length < 3) {
+        await res.text();
+      }
       return { headers, ok: true, proxy: proxy.name };
     } catch (e) {
-      console.warn(`Proxy ${proxy.name} failed:`, e.message);
+      console.warn(`Proxy ${proxy.name} failed for headers:`, e.message);
     }
   }
   return { headers: {}, ok: false };
 }
 
 // ============================================================
-// 📊 MAIN ANALYZE
+// 📊 STATE
 // ============================================================
-async function analyze() {
-  const rawInput = $('siteUrl').value.trim();
-  if (!rawInput) { showToast(t('noUrl'), 'error'); return; }
-
-  const host = extractDomain(rawInput);
-  if (!host) { showToast('Invalid URL', 'error'); return; }
-
-  const btn = $('analyzeBtn');
-  const progress = $('loadingProgress');
-  const fill = $('loadingFill');
-  const text = $('loadingText');
-
-  btn.disabled = true;
-  progress.style.display = 'block';
-  fill.style.width = '10%';
-  text.textContent = t('loading.init');
-
-  try {
-    // Step 1: SSL Labs API
-    fill.style.width = '25%';
-    text.textContent = t('loading.queued');
-
-    let sslLabsData = null;
-    try {
-      sslLabsData = await fetchSSLLabs(host, (info) => {
-        text.textContent = `${t('loading.polling')} (${info.status}, attempt ${info.attempt})`;
-        fill.style.width = Math.min(80, 25 + info.attempt * 2) + '%';
-      });
-    } catch (e) {
-      console.warn('SSL Labs failed:', e);
-    }
-
-    fill.style.width = '85%';
-    text.textContent = t('loading.headers');
-
-    // Step 2: Security headers
-    const headerData = await fetchHeaders(host);
-
-    fill.style.width = '100%';
-    text.textContent = t('loading.complete');
-
-    // Step 3: Process data
-    const result = processResult(host, sslLabsData, headerData);
-    renderResults(result);
-
-    // Save history
-    saveHistory(host, result);
-
-    document.getElementById('results').style.display = 'block';
-    document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
-
-    setTimeout(() => {
-      progress.style.display = 'none';
-      fill.style.width = '0%';
-    }, 800);
-
-    showToast('✅ ' + t('complete'));
-  } catch (e) {
-    console.error(e);
-    showToast(t('error') + ': ' + e.message, 'error');
-    progress.style.display = 'none';
-  } finally {
-    btn.disabled = false;
-  }
-}
+let lastResult = null;
 
 // ============================================================
 // 🔬 PROCESS RESULTS
 // ============================================================
-function processResult(host, sslLabs, headerData) {
+function processResult(host, sslLabs, headerData, crtShCert) {
   const result = {
     host,
     timestamp: new Date().toISOString(),
@@ -803,6 +746,7 @@ function processResult(host, sslLabs, headerData) {
     headers: headerData.headers,
     headerOk: headerData.ok,
     headerProxy: headerData.proxy,
+    crtSh: crtShCert,
     grade: null,
     score: 0,
     cert: {},
@@ -818,7 +762,6 @@ function processResult(host, sslLabs, headerData) {
     result.ipAddress = ep.ipAddress;
     result.serverName = ep.serverName;
 
-    // Certificate
     if (sslLabs.certs && sslLabs.certs.length > 0) {
       const cert = sslLabs.certs[0];
       result.cert = {
@@ -832,83 +775,98 @@ function processResult(host, sslLabs, headerData) {
         sigAlg: cert.sigAlg,
         keyAlg: cert.keyAlg
       };
-      // Days remaining
       if (cert.notAfter) {
-        const days = Math.floor((cert.notAfter - Date.now()) / 86400000);
-        result.cert.daysRemaining = days;
+        result.cert.daysRemaining = Math.floor((cert.notAfter - Date.now()) / 86400000);
       }
     }
 
-    // Protocols
     if (ep.details && ep.details.protocols) {
       ep.details.protocols.forEach(p => {
-        result.protocols[p.name] = p.version;
+        result.protocols[p.name + ' ' + p.version] = true;
       });
     }
-    result.protocols.supportsTLS13 = sslLabs.endpoints.some(e => e.details?.protocols?.some(p => p.name === 'TLS' && p.version === '1.3'));
+    result.protocols.supportsTLS13 = sslLabs.endpoints.some(e =>
+      e.details?.protocols?.some(p => p.name === 'TLS' && p.version === '1.3')
+    );
 
-    // Vulnerabilities
-    if (sslLabs.endpoints) {
-      const details = ep.details || {};
-      result.vulns = [
-        { name: 'Heartbleed', status: details.heartbleed === false ? 'safe' : (details.heartbleed ? 'vulnerable' : 'unknown') },
-        { name: 'POODLE', status: details.poodle === false ? 'safe' : (details.poodle ? 'vulnerable' : 'unknown') },
-        { name: 'FREAK', status: details.freak === false ? 'safe' : (details.freak ? 'vulnerable' : 'unknown') },
-        { name: 'Logjam', status: details.logjam === false ? 'safe' : (details.logjam ? 'vulnerable' : 'unknown') },
-        { name: 'DROWN', status: details.drownVulnerable === false ? 'safe' : (details.drownVulnerable ? 'vulnerable' : 'unknown') },
-        { name: 'BEAST', status: details.beastVulnerable === false ? 'safe' : 'unknown' },
-        { name: 'CRIME', status: details.crimeVulnerable === false ? 'safe' : 'unknown' },
-        { name: 'Ticketbleed', status: details.ticketbleed === false ? 'safe' : (details.ticketbleed ? 'vulnerable' : 'unknown') },
-        { name: 'ROBOT', status: details.robot === false ? 'safe' : 'unknown' }
-      ];
-    }
+    const details = ep.details || {};
+    result.vulns = [
+      { name: 'Heartbleed', status: details.heartbleed === false ? 'safe' : (details.heartbleed ? 'vulnerable' : 'unknown') },
+      { name: 'POODLE', status: details.poodle === false ? 'safe' : (details.poodle ? 'vulnerable' : 'unknown') },
+      { name: 'FREAK', status: details.freak === false ? 'safe' : (details.freak ? 'vulnerable' : 'unknown') },
+      { name: 'Logjam', status: details.logjam === false ? 'safe' : (details.logjam ? 'vulnerable' : 'unknown') },
+      { name: 'DROWN', status: details.drownVulnerable === false ? 'safe' : (details.drownVulnerable ? 'vulnerable' : 'unknown') },
+      { name: 'BEAST', status: details.beastVulnerable === false ? 'safe' : 'unknown' },
+      { name: 'CRIME', status: details.crimeVulnerable === false ? 'safe' : 'unknown' },
+      { name: 'Ticketbleed', status: details.ticketbleed === false ? 'safe' : (details.ticketbleed ? 'vulnerable' : 'unknown') }
+    ];
 
-    // HSTS
     result.hsts = ep.details?.hstsPolicy || null;
     result.hstsPreload = sslLabs.endpoints.some(e => e.details?.hstsPreloads?.length > 0);
+  }
+
+  // Fallback: crt.sh cert
+  if (!result.cert.issuer && crtShCert) {
+    result.cert = {
+      issuer: crtShCert.issuer,
+      commonName: crtShCert.commonName,
+      altNames: crtShCert.altNames,
+      notBefore: crtShCert.notBefore,
+      notAfter: crtShCert.notAfter,
+      daysRemaining: crtShCert.daysRemaining
+    };
   }
 
   // Security headers
   const h = result.headers || {};
   result.headerChecks = [
-    { name: 'Strict-Transport-Security (HSTS)', key: 'strict-transport-security', value: h['strict-transport-security'], status: h['strict-transport-security'] ? 'pass' : 'fail', detail: h['strict-transport-security'] ? 'HSTS enabled — forces HTTPS.' : 'Missing HSTS header — add to force HTTPS.' },
-    { name: 'Content-Security-Policy (CSP)', key: 'content-security-policy', value: h['content-security-policy'], status: h['content-security-policy'] ? 'pass' : 'warn', detail: h['content-security-policy'] ? 'CSP enabled — protects against XSS.' : 'Missing CSP — consider adding for XSS protection.' },
-    { name: 'X-Frame-Options', key: 'x-frame-options', value: h['x-frame-options'], status: h['x-frame-options'] ? 'pass' : 'warn', detail: h['x-frame-options'] ? 'Clickjacking protection enabled.' : 'Missing X-Frame-Options — vulnerable to clickjacking.' },
-    { name: 'X-Content-Type-Options', key: 'x-content-type-options', value: h['x-content-type-options'], status: h['x-content-type-options'] ? 'pass' : 'warn', detail: h['x-content-type-options'] ? 'MIME sniffing protection enabled.' : 'Missing X-Content-Type-Options.' },
+    { name: 'Strict-Transport-Security (HSTS)', key: 'strict-transport-security', value: h['strict-transport-security'], status: h['strict-transport-security'] ? 'pass' : 'fail', detail: h['strict-transport-security'] ? 'HSTS enabled — forces HTTPS.' : 'Missing HSTS — add to force HTTPS.' },
+    { name: 'Content-Security-Policy (CSP)', key: 'content-security-policy', value: h['content-security-policy'], status: h['content-security-policy'] ? 'pass' : 'warn', detail: h['content-security-policy'] ? 'CSP enabled — XSS protection.' : 'Missing CSP — consider adding.' },
+    { name: 'X-Frame-Options', key: 'x-frame-options', value: h['x-frame-options'], status: h['x-frame-options'] ? 'pass' : 'warn', detail: h['x-frame-options'] ? 'Clickjacking protection enabled.' : 'Missing X-Frame-Options.' },
+    { name: 'X-Content-Type-Options', key: 'x-content-type-options', value: h['x-content-type-options'], status: h['x-content-type-options'] ? 'pass' : 'warn', detail: h['x-content-type-options'] ? 'MIME sniffing protection.' : 'Missing X-Content-Type-Options.' },
     { name: 'Referrer-Policy', key: 'referrer-policy', value: h['referrer-policy'], status: h['referrer-policy'] ? 'pass' : 'warn', detail: h['referrer-policy'] ? 'Referrer policy set.' : 'Missing Referrer-Policy.' },
-    { name: 'Permissions-Policy', key: 'permissions-policy', value: h['permissions-policy'], status: h['permissions-policy'] ? 'pass' : 'info', detail: h['permissions-policy'] ? 'Permissions-Policy set.' : 'Optional — for feature control.' }
+    { name: 'Permissions-Policy', key: 'permissions-policy', value: h['permissions-policy'], status: h['permissions-policy'] ? 'pass' : 'info', detail: h['permissions-policy'] ? 'Permissions-Policy set.' : 'Optional — feature control.' }
   ];
 
   // Compute score
-  let score = 0;
-  let count = 0;
+  let weightedScore = 0;
+  let totalWeight = 0;
 
-  // Grade weight
+  // Grade = 60% weight
   if (result.grade) {
     const gradeScores = { 'A+': 100, 'A': 95, 'A-': 90, 'B': 80, 'C': 65, 'D': 50, 'E': 35, 'F': 20, 'T': 10, 'M': 10 };
-    score += gradeScores[result.grade] || 30;
-    count++;
+    weightedScore += (gradeScores[result.grade] || 30) * 0.6;
+    totalWeight += 0.6;
   }
 
-  // Header checks
+  // Header checks = 25% weight
+  let headerScore = 0;
   result.headerChecks.forEach(c => {
-    if (c.status === 'pass') score += 5;
-    else if (c.status === 'warn') score += 1;
-    count++;
+    if (c.status === 'pass') headerScore += 100;
+    else if (c.status === 'warn') headerScore += 30;
+    else if (c.status === 'fail') headerScore += 0;
+    else headerScore += 50; // info
   });
+  headerScore = headerScore / result.headerChecks.length;
+  weightedScore += headerScore * 0.25;
+  totalWeight += 0.25;
 
-  // Certificate days
+  // Certificate = 15% weight
+  let certScore = 50; // default
   if (result.cert.daysRemaining !== undefined) {
-    if (result.cert.daysRemaining > 60) score += 10;
-    else if (result.cert.daysRemaining > 30) score += 5;
-    count++;
+    if (result.cert.daysRemaining > 60) certScore = 100;
+    else if (result.cert.daysRemaining > 30) certScore = 70;
+    else if (result.cert.daysRemaining > 0) certScore = 30;
+    else certScore = 0;
   }
+  weightedScore += certScore * 0.15;
+  totalWeight += 0.15;
 
-  // Vulnerabilities
+  // Penalties: vulnerabilities
   const vulnCount = result.vulns.filter(v => v.status === 'vulnerable').length;
-  score -= vulnCount * 5;
+  const penalty = vulnCount * 8;
 
-  result.score = Math.max(0, Math.min(100, Math.round(score / Math.max(1, count) * 10) / 10));
+  result.score = Math.max(0, Math.min(100, Math.round((weightedScore / totalWeight) - penalty)));
 
   return result;
 }
@@ -917,7 +875,6 @@ function processResult(host, sslLabs, headerData) {
 // 🎨 RENDER
 // ============================================================
 function renderResults(r) {
-  // Score
   const score = r.score;
   const deg = (score / 100) * 360;
   let color, statusKey;
@@ -927,8 +884,7 @@ function renderResults(r) {
   else if (score >= 25) { color = '#ef4444'; statusKey = 'poor'; }
   else { color = '#ef4444'; statusKey = 'critical'; }
 
-  const gauge = $('scoreGauge');
-  gauge.style.background = `conic-gradient(${color} 0deg, ${color} ${deg}deg, rgba(255,255,255,0.08) ${deg}deg)`;
+  $('scoreGauge').style.background = `conic-gradient(${color} 0deg, ${color} ${deg}deg, rgba(255,255,255,0.08) ${deg}deg)`;
   $('scoreValue').textContent = score;
   $('scoreValue').style.color = color;
   const st = $('statusText');
@@ -937,11 +893,12 @@ function renderResults(r) {
   $('statusSub').textContent = `${r.host} — ${r.grade ? 'Grade ' + r.grade : 'Grade unavailable'}`;
 
   // Metrics
+  const gradeCls = (r.grade || 'T').replace('+', 'plus').replace('-', '');
   $('metricsRow').innerHTML = `
     <div class="metric-box"><div class="metric-value" style="color:${color}">${score}</div><div class="metric-label">${t('metrics.score')}</div></div>
-    <div class="metric-box"><div class="metric-value">${r.grade ? `<span class="grade-badge grade-${(r.grade || '').replace('+', 'plus').replace('-', '')}">${r.grade}</span>` : '—'}</div><div class="metric-label">${t('metrics.grade')}</div></div>
-    <div class="metric-box"><div class="metric-value" style="color:var(--success)">${r.protocols.supportsTLS13 ? '✓' : '✗'}</div><div class="metric-label">TLS 1.3</div></div>
-    <div class="metric-box"><div class="metric-value" style="color:var(--success)">${r.headerChecks.filter(c => c.status === 'pass').length}</div><div class="metric-label">${t('metrics.headers')}</div></div>
+    <div class="metric-box"><div class="metric-value">${r.grade ? `<span class="grade-badge grade-${gradeCls}">${r.grade}</span>` : '—'}</div><div class="metric-label">${t('metrics.grade')}</div></div>
+    <div class="metric-box"><div class="metric-value" style="color:${r.protocols.supportsTLS13 ? 'var(--success)' : 'var(--warning)'}">${r.protocols.supportsTLS13 ? '✓' : '✗'}</div><div class="metric-label">${t('metrics.tls13')}</div></div>
+    <div class="metric-box"><div class="metric-value" style="color:var(--success)">${r.headerChecks.filter(c => c.status === 'pass').length}/${r.headerChecks.length}</div><div class="metric-label">${t('metrics.headers')}</div></div>
   `;
 
   // Certificate tab
@@ -965,7 +922,7 @@ function renderResults(r) {
         </div>
       </div>
     ` : ''}
-    ${!r.sslLabs ? `<div class="check-category" style="border-left:4px solid var(--warning);"><h4><i class="fas fa-exclamation-triangle"></i> SSL Labs data unavailable</h4><p style="font-size:0.85rem; opacity:0.75;">SSL Labs API was unreachable. Try again in a minute.</p></div>` : ''}
+    ${!r.sslLabs && !r.crtSh ? `<div class="check-category" style="border-left:4px solid var(--warning);"><h4><i class="fas fa-exclamation-triangle"></i> ${t('cert.unavailable')}</h4><p style="font-size:0.85rem; opacity:0.75;">${t('cert.unavailableMsg')}</p></div>` : ''}
   `;
 
   // Protocol tab
@@ -974,7 +931,7 @@ function renderResults(r) {
       <h4><i class="fas fa-shield-halved"></i> ${t('protocols.title')}</h4>
       <div class="check-item"><div class="check-name">TLS 1.0</div><div class="check-status ${r.protocols['TLS 1.0'] ? 'warn' : 'pass'}">${r.protocols['TLS 1.0'] ? 'Supported (deprecated)' : 'Not supported'}</div></div>
       <div class="check-item"><div class="check-name">TLS 1.1</div><div class="check-status ${r.protocols['TLS 1.1'] ? 'warn' : 'pass'}">${r.protocols['TLS 1.1'] ? 'Supported (deprecated)' : 'Not supported'}</div></div>
-      <div class="check-item"><div class="check-name">TLS 1.2</div><div class="check-status ${r.protocols['TLS 1.2'] ? 'pass' : 'warn'}">${r.protocols['TLS 1.2'] ? 'Supported' : 'Not supported'}</div></div>
+      <div class="check-item"><div class="check-name">TLS 1.2</div><div class="check-status ${r.protocols['TLS 1.2'] ? 'pass' : 'warn'}">${r.protocols['TLS 1.2'] ? 'Supported ✓' : 'Not supported'}</div></div>
       <div class="check-item"><div class="check-name">TLS 1.3</div><div class="check-status ${r.protocols.supportsTLS13 ? 'pass' : 'warn'}">${r.protocols.supportsTLS13 ? 'Supported ✓' : 'Not supported'}</div></div>
     </div>
     ${r.hsts ? `
@@ -1000,8 +957,8 @@ function renderResults(r) {
     </div>
     ${!r.headerOk ? `
       <div class="check-category" style="border-left:4px solid var(--warning);">
-        <h4><i class="fas fa-exclamation-triangle"></i> Headers fetch blocked</h4>
-        <p style="font-size:0.85rem; opacity:0.75;">The website blocked CORS proxies. Some header checks may be incomplete.</p>
+        <h4><i class="fas fa-exclamation-triangle"></i> ${t('headers.blocked')}</h4>
+        <p style="font-size:0.85rem; opacity:0.75;">${t('headers.blockedMsg')}</p>
       </div>
     ` : ''}
   `;
@@ -1014,13 +971,12 @@ function renderResults(r) {
       ${r.vulns.map(v => `
         <div class="check-item">
           <div class="check-name">${escapeHtml(v.name)}</div>
-          <div class="check-status ${vulnColor(v.status)}">${v.status === 'safe' ? t('vuln.secure') : v.status === 'vulnerable' ? t('vuln.vulnerable') : 'UNKNOWN'}</div>
+          <div class="check-status ${vulnColor(v.status)}">${v.status === 'safe' ? t('vuln.secure') : v.status === 'vulnerable' ? t('vuln.vulnerable') : t('vuln.unknown')}</div>
         </div>
       `).join('')}
     </div>
   `;
 
-  // History render
   renderHistory();
 }
 
@@ -1028,19 +984,14 @@ function renderResults(r) {
 // 💾 HISTORY
 // ============================================================
 function getHistory() {
-  try { return JSON.parse(localStorage.getItem('sslHistoryV3') || '[]'); }
+  try { return JSON.parse(localStorage.getItem('sslHistoryV4') || '[]'); }
   catch(e) { return []; }
 }
 
 function saveHistory(host, result) {
   const history = getHistory();
-  history.unshift({
-    host,
-    grade: result.grade,
-    score: result.score,
-    ts: Date.now()
-  });
-  localStorage.setItem('sslHistoryV3', JSON.stringify(history.slice(0, 20)));
+  history.unshift({ host, grade: result.grade, score: result.score, ts: Date.now() });
+  localStorage.setItem('sslHistoryV4', JSON.stringify(history.slice(0, 20)));
   renderHistory();
 }
 
@@ -1079,8 +1030,6 @@ function renderHistory() {
 // ============================================================
 // 📤 EXPORTS
 // ============================================================
-let lastResult = null;
-
 function downloadBlob(content, mime, filename) {
   const blob = new Blob([content], { type: mime });
   const url = URL.createObjectURL(blob);
@@ -1094,7 +1043,7 @@ function downloadBlob(content, mime, filename) {
 function exportJSON() {
   if (!lastResult) { showToast('Run analysis first', 'error'); return; }
   downloadBlob(JSON.stringify({
-    tool: 'FreeSEOToolHub SSL Checker v3.0',
+    tool: 'FreeSEOToolHub SSL Checker v4.0',
     ...lastResult
   }, null, 2), 'application/json', `ssl-${lastResult.host}-${Date.now()}.json`);
   showToast('📥 JSON downloaded');
@@ -1102,25 +1051,26 @@ function exportJSON() {
 
 function exportCSV() {
   if (!lastResult) { showToast('Run analysis first', 'error'); return; }
+  const r = lastResult;
   const rows = [
     ['Field', 'Value'],
-    ['Host', lastResult.host],
-    ['Grade', lastResult.grade || 'N/A'],
-    ['Score', lastResult.score],
-    ['Issuer', lastResult.cert.issuer || 'N/A'],
-    ['Common Name', lastResult.cert.commonName || 'N/A'],
-    ['Valid From', lastResult.cert.notBefore ? new Date(lastResult.cert.notBefore).toLocaleString() : 'N/A'],
-    ['Valid Until', lastResult.cert.notAfter ? new Date(lastResult.cert.notAfter).toLocaleString() : 'N/A'],
-    ['Days Remaining', lastResult.cert.daysRemaining || 'N/A'],
+    ['Host', r.host],
+    ['Grade', r.grade || 'N/A'],
+    ['Score', r.score],
+    ['Issuer', r.cert.issuer || 'N/A'],
+    ['Common Name', r.cert.commonName || 'N/A'],
+    ['Valid From', r.cert.notBefore ? new Date(r.cert.notBefore).toLocaleString() : 'N/A'],
+    ['Valid Until', r.cert.notAfter ? new Date(r.cert.notAfter).toLocaleString() : 'N/A'],
+    ['Days Remaining', r.cert.daysRemaining ?? 'N/A'],
     []
   ];
   rows.push(['Header', 'Status', 'Detail']);
-  lastResult.headerChecks.forEach(c => rows.push([c.name, c.status, c.detail]));
+  r.headerChecks.forEach(c => rows.push([c.name, c.status, c.detail]));
   rows.push([]);
   rows.push(['Vulnerability', 'Status']);
-  lastResult.vulns.forEach(v => rows.push([v.name, v.status]));
-  const csv = rows.map(r => r.map(v => `"${String(v).replace(/"/g, '""')}"`).join(',')).join('\n');
-  downloadBlob(csv, 'text/csv', `ssl-${lastResult.host}-${Date.now()}.csv`);
+  r.vulns.forEach(v => rows.push([v.name, v.status]));
+  const csv = rows.map(row => row.map(v => `"${String(v).replace(/"/g, '""')}"`).join(',')).join('\n');
+  downloadBlob(csv, 'text/csv', `ssl-${r.host}-${Date.now()}.csv`);
   showToast('📥 CSV downloaded');
 }
 
@@ -1129,17 +1079,9 @@ function copyReport() {
   const r = lastResult;
   let txt = `SSL Report — ${r.host}\n${'='.repeat(40)}\n`;
   txt += `Grade: ${r.grade || 'N/A'}\nScore: ${r.score}/100\n\n`;
-  txt += `Certificate:\n`;
-  txt += `  Issuer: ${r.cert.issuer || 'N/A'}\n`;
-  txt += `  Common Name: ${r.cert.commonName || 'N/A'}\n`;
-  txt += `  Valid From: ${r.cert.notBefore ? new Date(r.cert.notBefore).toLocaleDateString() : 'N/A'}\n`;
+  txt += `Certificate:\n  Issuer: ${r.cert.issuer || 'N/A'}\n  Common Name: ${r.cert.commonName || 'N/A'}\n`;
   txt += `  Valid Until: ${r.cert.notAfter ? new Date(r.cert.notAfter).toLocaleDateString() : 'N/A'}\n`;
   txt += `  Days Remaining: ${r.cert.daysRemaining ?? 'N/A'}\n\n`;
-  txt += `Protocols:\n`;
-  Object.entries(r.protocols).forEach(([k, v]) => {
-    if (k !== 'supportsTLS13') txt += `  ${k}: ${v ? '✓' : '✗'}\n`;
-  });
-  txt += `  TLS 1.3: ${r.protocols.supportsTLS13 ? '✓' : '✗'}\n\n`;
   txt += `Security Headers:\n`;
   r.headerChecks.forEach(c => txt += `  [${c.status.toUpperCase()}] ${c.name}\n`);
   txt += `\nVulnerabilities:\n`;
@@ -1148,10 +1090,85 @@ function copyReport() {
 }
 
 // ============================================================
+// 🎬 MAIN ANALYZE
+// ============================================================
+async function analyze() {
+  const rawInput = $('siteUrl').value.trim();
+  if (!rawInput) { showToast(t('noUrl'), 'error'); return; }
+
+  const host = extractDomain(rawInput);
+  if (!host) { showToast('Invalid URL', 'error'); return; }
+
+  const btn = $('analyzeBtn');
+  const progress = $('loadingProgress');
+  const fill = $('loadingFill');
+  const text = $('loadingText');
+
+  btn.disabled = true;
+  progress.style.display = 'block';
+  fill.style.width = '10%';
+  text.textContent = t('loading.init');
+
+  try {
+    fill.style.width = '25%';
+    text.textContent = t('loading.queued');
+
+    let sslLabsData = null;
+    let crtShCert = null;
+
+    // Try SSL Labs first
+    try {
+      sslLabsData = await fetchSSLLabsViaProxy(host, (info) => {
+        text.textContent = `${t('loading.polling')} (${info.status}, attempt ${info.attempt})`;
+        fill.style.width = Math.min(70, 25 + info.attempt * 3) + '%';
+      });
+    } catch (e) {
+      console.warn('SSL Labs failed, trying crt.sh:', e.message);
+      fill.style.width = '60%';
+      text.textContent = 'Trying alternative certificate source...';
+      crtShCert = await fetchCertFromCrtSh(host);
+    }
+
+    fill.style.width = '80%';
+    text.textContent = t('loading.headers');
+
+    const headerData = await fetchHeaders(host);
+
+    fill.style.width = '100%';
+    text.textContent = t('loading.complete');
+
+    const result = processResult(host, sslLabsData, headerData, crtShCert);
+    lastResult = result;
+    renderResults(result);
+    saveHistory(host, result);
+
+    // Enable exports
+    $('exportJson').disabled = false;
+    $('exportCsv').disabled = false;
+    $('copyReport').disabled = false;
+
+    $('results').style.display = 'block';
+    $('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    setTimeout(() => {
+      progress.style.display = 'none';
+      fill.style.width = '0%';
+    }, 800);
+
+    showToast('✅ ' + t('complete'));
+  } catch (e) {
+    console.error(e);
+    showToast(t('error') + ': ' + e.message, 'error');
+    progress.style.display = 'none';
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+// ============================================================
 // 🎬 INIT
 // ============================================================
 function init() {
-  // Language
   const urlLang = new URLSearchParams(location.search).get('lang');
   const savedLang = urlLang || localStorage.getItem('preferredLanguage') || 'en';
   applyLang(savedLang);
@@ -1171,102 +1188,38 @@ function init() {
   });
 
   // Analyze
-  $('analyzeBtn').addEventListener('click', async () => {
-    // Wrap analyze to capture result
-    const originalRender = window.renderResults;
-    await analyze();
-  });
-
-  // Override analyze to save lastResult — need to capture
-  const originalAnalyze = analyze;
-  window.analyze = analyze;
+  $('analyzeBtn').addEventListener('click', analyze);
 
   // Exports
   $('exportJson').addEventListener('click', exportJSON);
   $('exportCsv').addEventListener('click', exportCSV);
   $('copyReport').addEventListener('click', copyReport);
+
+  // Clear
   $('clearBtn').addEventListener('click', () => {
     $('siteUrl').value = '';
     $('results').style.display = 'none';
     lastResult = null;
-    showToast('🗑️ Cleared');
-  });
-  $('clearHistory').addEventListener('click', () => {
-    localStorage.removeItem('sslHistoryV3');
-    renderHistory();
-    showToast('🗑️ History cleared');
+    $('exportJson').disabled = true;
+    $('exportCsv').disabled = true;
+    $('copyReport').disabled = true;
+    showToast('🗑️ ' + t('cleared'));
   });
 
-  // Enter to analyze
+  $('clearHistory').addEventListener('click', () => {
+    localStorage.removeItem('sslHistoryV4');
+    renderHistory();
+    showToast('🗑️ ' + t('historyCleared'));
+  });
+
+  // Enter
   $('siteUrl').addEventListener('keypress', e => {
-    if (e.key === 'Enter') $('analyzeBtn').click();
+    if (e.key === 'Enter') analyze();
   });
 
   renderHistory();
+  console.log('✅ SSL Checker v4.0 ready');
 }
-
-// Need to override analyze to store lastResult
-const originalAnalyze = analyze;
-analyze = async function() {
-  const rawInput = $('siteUrl').value.trim();
-  if (!rawInput) { showToast(t('noUrl'), 'error'); return; }
-  const host = extractDomain(rawInput);
-  if (!host) { showToast('Invalid URL', 'error'); return; }
-
-  const btn = $('analyzeBtn');
-  const progress = $('loadingProgress');
-  const fill = $('loadingFill');
-  const text = $('loadingText');
-
-  btn.disabled = true;
-  progress.style.display = 'block';
-  fill.style.width = '10%';
-  text.textContent = t('loading.init');
-
-  try {
-    fill.style.width = '25%';
-    text.textContent = t('loading.queued');
-
-    let sslLabsData = null;
-    try {
-      sslLabsData = await fetchSSLLabs(host, (info) => {
-        text.textContent = `${t('loading.polling')} (${info.status}, attempt ${info.attempt})`;
-        fill.style.width = Math.min(80, 25 + info.attempt * 2) + '%';
-      });
-    } catch (e) {
-      console.warn('SSL Labs failed:', e);
-    }
-
-    fill.style.width = '85%';
-    text.textContent = t('loading.headers');
-
-    const headerData = await fetchHeaders(host);
-
-    fill.style.width = '100%';
-    text.textContent = t('loading.complete');
-
-    const result = processResult(host, sslLabsData, headerData);
-    lastResult = result;
-    renderResults(result);
-    saveHistory(host, result);
-
-    document.getElementById('results').style.display = 'block';
-    document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
-
-    setTimeout(() => {
-      progress.style.display = 'none';
-      fill.style.width = '0%';
-    }, 800);
-
-    showToast('✅ ' + t('complete'));
-  } catch (e) {
-    console.error(e);
-    showToast(t('error') + ': ' + e.message, 'error');
-    progress.style.display = 'none';
-  } finally {
-    btn.disabled = false;
-  }
-};
 
 init();
 })();
