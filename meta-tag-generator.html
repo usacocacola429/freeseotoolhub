@@ -89,7 +89,6 @@ body {
 }
 .container { max-width:1200px; margin:0 auto; }
 
-/* NAVBAR */
 .navbar {
   background:rgba(11,26,51,0.95);
   backdrop-filter:blur(10px);
@@ -114,7 +113,6 @@ body {
 }
 .nav-link:hover, .nav-link.active { background:rgba(255,153,51,0.15); color:var(--primary); }
 
-/* HEADER */
 .tool-header { text-align:center; margin-bottom:24px; }
 .tool-header h1 {
   font-size:clamp(1.8rem, 4vw, 2.5rem); font-weight:800;
@@ -124,7 +122,6 @@ body {
 }
 .tool-header p { color:var(--text-light); max-width:750px; margin:0 auto; }
 
-/* LANGUAGE BAR */
 .lang-bar { display:flex; gap:0.4rem; justify-content:center; flex-wrap:wrap; margin-bottom:1.2rem; }
 .lang-btn {
   background:rgba(255,255,255,0.06); border:1px solid var(--border); color:#fff;
@@ -134,14 +131,12 @@ body {
 .lang-btn:hover { background:rgba(255,153,51,0.2); }
 .lang-btn.active { background:var(--primary); color:#0b1a33; font-weight:700; }
 
-/* MAIN CARD */
 .main-card {
   background:var(--card); backdrop-filter:blur(12px);
   border-radius:var(--radius); box-shadow:0 20px 50px rgba(0,0,0,0.4);
   padding:28px; margin-bottom:24px; border:1px solid var(--border);
 }
 
-/* EXAMPLE BUTTONS */
 .example-btns { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:18px; }
 .example-btn {
   background:rgba(255,255,255,0.05); border:1px solid var(--border);
@@ -151,7 +146,6 @@ body {
 }
 .example-btn:hover { background:var(--primary); color:#0b1a33; border-color:var(--primary); }
 
-/* TABS */
 .tabs { display:flex; gap:4px; border-bottom:2px solid var(--border); margin-bottom:20px; flex-wrap:wrap; }
 .tab {
   padding:11px 20px; background:transparent; border:none;
@@ -164,19 +158,19 @@ body {
 .tab-panel { display:none; }
 .tab-panel.active { display:block; }
 
-/* FORM */
 .form-group { margin-bottom:16px; }
 .form-group label {
   display:block; margin-bottom:6px; font-weight:600;
   font-size:0.88rem; color:var(--text-light);
 }
-input[type="text"], input[type="url"], input[type="number"], textarea, select {
+input[type="text"], input[type="url"], input[type="number"], input[type="date"], input[type="datetime-local"], textarea, select {
   width:100%; padding:11px 14px;
   background:rgba(255,255,255,0.05);
   border:1px solid var(--border); border-radius:10px;
   font-size:0.92rem; font-family:inherit; transition:border 0.2s;
   color:#fff; outline:none;
 }
+input[type="color"] { cursor:pointer; padding:4px; height:44px; }
 textarea { resize:vertical; min-height:80px; }
 input:focus, textarea:focus, select:focus {
   border-color:var(--primary);
@@ -199,7 +193,6 @@ select option { background:#0b1a33; color:#fff; }
 .char-warn { color:var(--warning); }
 .char-bad { color:var(--danger); }
 
-/* Pixel meter */
 .pixel-meter {
   background:rgba(255,255,255,0.05); border-radius:20px;
   height:6px; overflow:hidden; margin-top:6px;
@@ -212,7 +205,6 @@ select option { background:#0b1a33; color:#fff; }
 .pixel-fill.warn { background:linear-gradient(90deg, var(--warning), #fbbf24); }
 .pixel-fill.bad { background:linear-gradient(90deg, var(--danger), #f87171); }
 
-/* BUTTONS */
 .btn {
   padding:12px 22px; border-radius:50px; font-weight:600;
   font-size:0.92rem; cursor:pointer; transition:all 0.25s;
@@ -235,7 +227,6 @@ select option { background:#0b1a33; color:#fff; }
 .btn-outline:hover { background:rgba(255,153,51,0.15); border-color:var(--primary); }
 .btn-sm { padding:7px 14px; font-size:0.82rem; }
 
-/* CODE BLOCK */
 .code-block {
   background:#0a0f1c; color:#cbd5e1;
   padding:16px; border-radius:12px;
@@ -247,7 +238,6 @@ select option { background:#0b1a33; color:#fff; }
 .code-block::-webkit-scrollbar { width:8px; }
 .code-block::-webkit-scrollbar-thumb { background:rgba(255,153,51,0.3); border-radius:4px; }
 
-/* PREVIEW CARDS */
 .preview-card {
   border:1px solid var(--border); border-radius:14px;
   overflow:hidden; margin-bottom:14px;
@@ -260,7 +250,6 @@ select option { background:#0b1a33; color:#fff; }
 }
 .preview-body { padding:16px; }
 
-/* SERP PREVIEW - Desktop */
 .serp-desktop {
   font-family:Arial, sans-serif;
   background:#fff; padding:14px; border-radius:10px;
@@ -275,7 +264,6 @@ select option { background:#0b1a33; color:#fff; }
   color:#fff; font-size:0.65rem; font-weight:700;
 }
 .serp-desktop .url .domain { color:#202124; }
-.serp-desktop .url .breadcrumb { color:#5f6368; }
 .serp-desktop .title {
   font-size:1.1rem; color:#1a0dab; line-height:1.3;
   margin-bottom:3px; cursor:pointer;
@@ -284,9 +272,16 @@ select option { background:#0b1a33; color:#fff; }
 .serp-desktop .desc {
   font-size:0.85rem; color:#4d5156; line-height:1.4;
 }
-.serp-desktop .date { color:#70757a; }
 
-/* SERP PREVIEW - Mobile */
+/* RICH SNIPPET (stars) */
+.rich-snippet {
+  display:flex; align-items:center; gap:6px;
+  margin-top:6px; font-size:0.82rem; color:#4d5156;
+}
+.stars { color:#fbbc04; letter-spacing:1px; }
+.rating-text { font-size:0.78rem; color:#70757a; }
+.price-tag { font-weight:700; color:#0d652d; }
+
 .serp-mobile {
   font-family:Arial, sans-serif;
   background:#fff; padding:14px; border-radius:10px;
@@ -309,7 +304,6 @@ select option { background:#0b1a33; color:#fff; }
   font-size:0.78rem; color:#4d5156; line-height:1.4;
 }
 
-/* SOCIAL PREVIEW */
 .social-preview {
   background:#fff; border-radius:10px;
   overflow:hidden; color:#000;
@@ -320,7 +314,9 @@ select option { background:#0b1a33; color:#fff; }
   display:flex; align-items:center; justify-content:center;
   color:#94a3b8; font-size:2rem;
   background-size:cover; background-position:center;
+  position:relative;
 }
+.social-img.img-loaded::after { content:''; }
 .social-info {
   padding:12px 14px;
   border-top:1px solid #e5e7eb;
@@ -342,7 +338,6 @@ select option { background:#0b1a33; color:#fff; }
   -webkit-box-orient:vertical; overflow:hidden;
 }
 
-/* ANALYSIS */
 .analysis-box {
   background:rgba(16,185,129,0.06);
   border:1px solid rgba(16,185,129,0.2);
@@ -362,13 +357,13 @@ select option { background:#0b1a33; color:#fff; }
 .analysis-item .warn { color:var(--warning); }
 .analysis-item .err { color:var(--danger); }
 
-/* SCORE BADGE */
 .score-badge {
   display:inline-flex; align-items:center; justify-content:center;
   width:60px; height:60px; border-radius:50%;
   font-weight:800; font-size:1.3rem;
   background:conic-gradient(var(--success) 0deg, var(--success) 0deg, rgba(255,255,255,0.1) 0deg);
   position:relative;
+  transition:background 1s ease;
 }
 .score-badge::after {
   content:''; position:absolute;
@@ -378,7 +373,27 @@ select option { background:#0b1a33; color:#fff; }
   position:relative; z-index:2; font-size:1rem;
 }
 
-/* FAQ */
+/* History panel */
+.history-panel {
+  display:none;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:20px;
+  margin-bottom:20px;
+}
+.history-panel.show { display:block; }
+.history-item {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:12px 16px; background:rgba(255,255,255,0.03);
+  border-radius:10px; margin-bottom:8px;
+  border-left:3px solid var(--primary);
+  cursor:pointer; transition:all 0.2s;
+  font-size:0.85rem;
+}
+.history-item:hover { background:rgba(255,153,51,0.1); }
+.history-item .h-meta { font-size:0.72rem; opacity:0.6; }
+
 .faq-section { margin-bottom:24px; }
 .faq-section h2 {
   font-weight:700; font-size:1.3rem;
@@ -401,7 +416,6 @@ select option { background:#0b1a33; color:#fff; }
 }
 .faq-item p { color:var(--text-light); font-size:0.85rem; }
 
-/* TOAST */
 .toast {
   position:fixed; bottom:30px; right:30px;
   background:rgba(11,26,51,0.95);
@@ -418,7 +432,6 @@ select option { background:#0b1a33; color:#fff; }
   to { transform:translateY(0); opacity:1; }
 }
 
-/* FOOTER */
 .page-footer {
   text-align:center; color:var(--text-light);
   padding:24px 0; font-size:0.88rem;
@@ -461,6 +474,18 @@ select option { background:#0b1a33; color:#fff; }
     <button class="lang-btn" data-lang="ur">🇵🇰 اردو</button>
     <button class="lang-btn" data-lang="de">🇩🇪 Deutsch</button>
     <button class="lang-btn" data-lang="es">🇪🇸 Español</button>
+  </div>
+
+  <!-- HISTORY PANEL -->
+  <div class="history-panel" id="historyPanel">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+      <h3 style="font-size:1rem; font-weight:700;"><i class="fas fa-history" style="color:var(--primary);"></i> History</h3>
+      <div style="display:flex; gap:8px;">
+        <button class="btn btn-outline btn-sm" id="clearHistoryBtn"><i class="fas fa-trash"></i> Clear</button>
+        <button class="btn btn-outline btn-sm" id="closeHistoryBtn">✕</button>
+      </div>
+    </div>
+    <div id="historyList"></div>
   </div>
 
   <!-- MAIN TOOL -->
@@ -653,10 +678,7 @@ select option { background:#0b1a33; color:#fff; }
           <option value="Event">🎉 Event</option>
         </select>
       </div>
-
-      <div id="schemaFields">
-        <!-- Dynamic fields based on type -->
-      </div>
+      <div id="schemaFields"></div>
     </div>
 
     <!-- EXTRA TAB -->
@@ -668,7 +690,7 @@ select option { background:#0b1a33; color:#fff; }
           </h4>
           <div class="form-group">
             <label>Theme Color</label>
-            <input type="color" id="themeColor" value="#ff9933" style="width:100%; height:44px; cursor:pointer;">
+            <input type="color" id="themeColor" value="#ff9933">
           </div>
           <div class="form-group">
             <label>Favicon URL</label>
@@ -688,8 +710,12 @@ select option { background:#0b1a33; color:#fff; }
             <input type="text" id="viewport" value="width=device-width, initial-scale=1.0">
           </div>
           <div class="form-group">
+            <label>Preconnect URLs (one per line, optional)</label>
+            <textarea id="preconnectUrls" rows="2" placeholder="https://fonts.googleapis.com&#10;https://cdn.jsdelivr.net"></textarea>
+          </div>
+          <div class="form-group">
             <label>Custom Tags (one per line)</label>
-            <textarea id="customTags" rows="5" placeholder='name=googlebot content=index, follow&#10;property=fb:app_id content=123456789'></textarea>
+            <textarea id="customTags" rows="4" placeholder='name=googlebot content=index, follow&#10;property=fb:app_id content=123456789'></textarea>
           </div>
         </div>
       </div>
@@ -724,13 +750,12 @@ select option { background:#0b1a33; color:#fff; }
       <div class="tabs">
         <button class="tab active" data-tab="htmlOutput">HTML</button>
         <button class="tab" data-tab="jsonOutput">JSON-LD</button>
-        <button class="tab" data-tab="previewOutput">SERP Preview</button>
+        <button class="tab" data-tab="previewOutput">Google SERP</button>
         <button class="tab" data-tab="socialOutput">Social Preview</button>
         <button class="tab" data-tab="reactOutput">React/Next.js</button>
         <button class="tab" data-tab="vueOutput">Vue/Nuxt</button>
       </div>
 
-      <!-- HTML Output -->
       <div class="tab-panel active" data-panel="htmlOutput">
         <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px;">
           <button class="btn btn-outline btn-sm" data-copy="html"><i class="fas fa-copy"></i> <span data-i18n="copy">Copy HTML</span></button>
@@ -739,7 +764,6 @@ select option { background:#0b1a33; color:#fff; }
         <div class="code-block" id="htmlOutput"></div>
       </div>
 
-      <!-- JSON-LD -->
       <div class="tab-panel" data-panel="jsonOutput">
         <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px;">
           <button class="btn btn-outline btn-sm" data-copy="json"><i class="fas fa-copy"></i> Copy JSON</button>
@@ -748,7 +772,6 @@ select option { background:#0b1a33; color:#fff; }
         <div class="code-block" id="jsonOutput"></div>
       </div>
 
-      <!-- SERP -->
       <div class="tab-panel" data-panel="previewOutput">
         <div class="row-2">
           <div>
@@ -766,7 +789,6 @@ select option { background:#0b1a33; color:#fff; }
         </div>
       </div>
 
-      <!-- Social -->
       <div class="tab-panel" data-panel="socialOutput">
         <div class="row-2">
           <div>
@@ -784,7 +806,6 @@ select option { background:#0b1a33; color:#fff; }
         </div>
       </div>
 
-      <!-- React -->
       <div class="tab-panel" data-panel="reactOutput">
         <div style="display:flex; gap:8px; margin-bottom:12px;">
           <button class="btn btn-outline btn-sm" data-copy="react"><i class="fas fa-copy"></i> Copy</button>
@@ -792,7 +813,6 @@ select option { background:#0b1a33; color:#fff; }
         <div class="code-block" id="reactOutput"></div>
       </div>
 
-      <!-- Vue -->
       <div class="tab-panel" data-panel="vueOutput">
         <div style="display:flex; gap:8px; margin-bottom:12px;">
           <button class="btn btn-outline btn-sm" data-copy="vue"><i class="fas fa-copy"></i> Copy</button>
@@ -801,7 +821,6 @@ select option { background:#0b1a33; color:#fff; }
       </div>
     </div>
 
-    <!-- ANALYSIS -->
     <div class="main-card">
       <div class="analysis-box">
         <h5><i class="fas fa-chart-line" style="color:var(--success);"></i> <span data-i18n="analysis">SEO Analysis & Recommendations</span></h5>
@@ -810,7 +829,6 @@ select option { background:#0b1a33; color:#fff; }
     </div>
   </div>
 
-  <!-- FAQ -->
   <section class="faq-section">
     <h2><i class="fas fa-circle-question"></i> <span data-i18n="faqTitle">Frequently Asked Questions</span></h2>
     <div class="faq-grid">
@@ -842,7 +860,7 @@ select option { background:#0b1a33; color:#fff; }
   </section>
 
   <footer class="page-footer">
-    <p>© 2026 <strong>FreeSEOToolHub</strong> — Meta Tag Generator v3.0 | 100% Free & Client-Side</p>
+    <p>© 2026 <strong>FreeSEOToolHub</strong> — Meta Tag Generator v4.0 | 100% Free & Client-Side</p>
     <div style="margin-top:10px;">
       <a href="/">Home</a> · <a href="/blog/">Blog</a> · <a href="/about.html">About</a> · <a href="/privacy.html">Privacy</a>
     </div>
@@ -909,7 +927,7 @@ const I18N = {
     title: 'Meta-Tag-Generator 2026',
     subtitle: 'Erstellen Sie SEO-Meta-Tags, Open Graph, Twitter Cards & JSON-LD. Pixel-Breiten-Zähler, 8 Schemas, 6 Formate.',
     tabBasic: 'Basis-Meta', tabSocial: 'Soziale Medien', tabAdvanced: 'JSON-LD Schema', tabExtra: 'Extra-Tags',
-    pageTitle: 'Seitentitel', metaDesc: 'Meta-Beschreibung', keywords: 'Schlüsselwörter (Komma-getrennt)',
+    pageTitle: 'Seitentitel', metaDesc: 'Meta-Beschreibung', keywords: 'Schlüsselwörter',
     optimal60: 'Optimal: 50-60 Zeichen (580px)', optimal160: 'Optimal: 150-160 Zeichen (990px)',
     pageUrl: 'Seiten-URL', canonical: 'Kanonische URL', robots: 'Robots', author: 'Autor',
     langCode: 'Sprache', dir: 'Textrichtung',
@@ -957,12 +975,11 @@ function applyLang(lang) {
 }
 
 // ============================================================
-// 📏 PIXEL-WIDTH MEASUREMENT
+// 📏 PIXEL-WIDTH MEASUREMENT (per-call canvas, no global)
 // ============================================================
-let measureCanvas = null;
 function measurePixels(text, font) {
-  if (!measureCanvas) measureCanvas = document.createElement('canvas');
-  const ctx = measureCanvas.getContext('2d');
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
   ctx.font = font;
   return Math.round(ctx.measureText(text).width);
 }
@@ -973,42 +990,37 @@ const TITLE_MAX_PX = 580;
 const DESC_MAX_PX = 990;
 
 // ============================================================
-// 🎯 STATE
-// ============================================================
-let lastResult = null;
-
-// ============================================================
-// 📋 SCHEMA FIELD TEMPLATES
+// 📋 SCHEMA FIELD TEMPLATES (with default value clearing)
 // ============================================================
 const SCHEMA_FIELDS = {
   WebSite: `
     <div class="row-2">
-      <div class="form-group"><label>Site Name</label><input type="text" id="sc_siteName" value="Free SEO Tool Hub"></div>
-      <div class="form-group"><label>Site URL</label><input type="url" id="sc_url" value="https://freeseotoolhub.com/"></div>
+      <div class="form-group"><label>Site Name</label><input type="text" id="sc_siteName"></div>
+      <div class="form-group"><label>Site URL</label><input type="url" id="sc_url"></div>
     </div>
-    <div class="form-group"><label>Search Action URL (optional, for sitelinks searchbox)</label><input type="url" id="sc_searchUrl" value="https://freeseotoolhub.com/?s={search_term_string}"></div>
+    <div class="form-group"><label>Search Action URL (optional, for sitelinks searchbox)</label><input type="url" id="sc_searchUrl" placeholder="https://example.com/?s={search_term_string}"></div>
   `,
   Article: `
     <div class="row-2">
-      <div class="form-group"><label>Headline</label><input type="text" id="sc_headline" value="SEO Tips 2026"></div>
-      <div class="form-group"><label>Author Name</label><input type="text" id="sc_author" value="John Doe"></div>
+      <div class="form-group"><label>Headline</label><input type="text" id="sc_headline"></div>
+      <div class="form-group"><label>Author Name</label><input type="text" id="sc_author"></div>
     </div>
     <div class="row-3">
-      <div class="form-group"><label>Date Published</label><input type="date" id="sc_published" value="2026-07-10"></div>
-      <div class="form-group"><label>Date Modified</label><input type="date" id="sc_modified" value="2026-07-10"></div>
-      <div class="form-group"><label>Image URL</label><input type="url" id="sc_image" value="https://example.com/image.jpg"></div>
+      <div class="form-group"><label>Date Published</label><input type="date" id="sc_published"></div>
+      <div class="form-group"><label>Date Modified</label><input type="date" id="sc_modified"></div>
+      <div class="form-group"><label>Image URL</label><input type="url" id="sc_image"></div>
     </div>
     <div class="row-2">
-      <div class="form-group"><label>Publisher Name</label><input type="text" id="sc_publisher" value="Free SEO Tool Hub"></div>
-      <div class="form-group"><label>Publisher Logo</label><input type="url" id="sc_logo" value="https://freeseotoolhub.com/logo.png"></div>
+      <div class="form-group"><label>Publisher Name</label><input type="text" id="sc_publisher"></div>
+      <div class="form-group"><label>Publisher Logo URL</label><input type="url" id="sc_logo"></div>
     </div>
   `,
   Product: `
-    <div class="form-group"><label>Product Name</label><input type="text" id="sc_name" value="SEO Pro Tool"></div>
-    <div class="form-group"><label>Description</label><textarea id="sc_desc">Professional SEO tool for agencies.</textarea></div>
+    <div class="form-group"><label>Product Name</label><input type="text" id="sc_name"></div>
+    <div class="form-group"><label>Description</label><textarea id="sc_desc" rows="2"></textarea></div>
     <div class="row-3">
-      <div class="form-group"><label>Price</label><input type="number" id="sc_price" value="99" step="0.01"></div>
-      <div class="form-group"><label>Currency</label><input type="text" id="sc_currency" value="USD"></div>
+      <div class="form-group"><label>Price</label><input type="number" id="sc_price" step="0.01"></div>
+      <div class="form-group"><label>Currency</label><input type="text" id="sc_currency" placeholder="USD"></div>
       <div class="form-group"><label>Availability</label>
         <select id="sc_availability">
           <option value="InStock">In Stock</option>
@@ -1018,82 +1030,73 @@ const SCHEMA_FIELDS = {
       </div>
     </div>
     <div class="row-2">
-      <div class="form-group"><label>Brand</label><input type="text" id="sc_brand" value="FreeSEOToolHub"></div>
-      <div class="form-group"><label>Rating (1-5)</label><input type="number" id="sc_rating" value="4.8" min="1" max="5" step="0.1"></div>
+      <div class="form-group"><label>Brand</label><input type="text" id="sc_brand"></div>
+      <div class="form-group"><label>Rating (1-5)</label><input type="number" id="sc_rating" min="1" max="5" step="0.1"></div>
     </div>
   `,
   LocalBusiness: `
-    <div class="form-group"><label>Business Name</label><input type="text" id="sc_name" value="My Business"></div>
-    <div class="form-group"><label>Street Address</label><input type="text" id="sc_street" value="123 Main St"></div>
+    <div class="form-group"><label>Business Name</label><input type="text" id="sc_name"></div>
+    <div class="form-group"><label>Street Address</label><input type="text" id="sc_street"></div>
     <div class="row-3">
-      <div class="form-group"><label>City</label><input type="text" id="sc_city" value="New York"></div>
-      <div class="form-group"><label>State/Region</label><input type="text" id="sc_region" value="NY"></div>
-      <div class="form-group"><label>Postal Code</label><input type="text" id="sc_postal" value="10001"></div>
+      <div class="form-group"><label>City</label><input type="text" id="sc_city"></div>
+      <div class="form-group"><label>State/Region</label><input type="text" id="sc_region"></div>
+      <div class="form-group"><label>Postal Code</label><input type="text" id="sc_postal"></div>
     </div>
     <div class="row-2">
-      <div class="form-group"><label>Country Code</label><input type="text" id="sc_country" value="US"></div>
-      <div class="form-group"><label>Phone</label><input type="text" id="sc_phone" value="+1-555-0100"></div>
+      <div class="form-group"><label>Country Code</label><input type="text" id="sc_country" placeholder="US"></div>
+      <div class="form-group"><label>Phone</label><input type="text" id="sc_phone"></div>
     </div>
     <div class="row-2">
-      <div class="form-group"><label>Latitude</label><input type="number" id="sc_lat" value="40.7128" step="0.0001"></div>
-      <div class="form-group"><label>Longitude</label><input type="number" id="sc_lng" value="-74.0060" step="0.0001"></div>
+      <div class="form-group"><label>Latitude</label><input type="number" id="sc_lat" step="0.0001"></div>
+      <div class="form-group"><label>Longitude</label><input type="number" id="sc_lng" step="0.0001"></div>
     </div>
   `,
   Organization: `
-    <div class="form-group"><label>Organization Name</label><input type="text" id="sc_name" value="Free SEO Tool Hub"></div>
-    <div class="form-group"><label>URL</label><input type="url" id="sc_url" value="https://freeseotoolhub.com/"></div>
-    <div class="form-group"><label>Logo URL</label><input type="url" id="sc_logo" value="https://freeseotoolhub.com/logo.png"></div>
+    <div class="form-group"><label>Organization Name</label><input type="text" id="sc_name"></div>
+    <div class="form-group"><label>URL</label><input type="url" id="sc_url"></div>
+    <div class="form-group"><label>Logo URL</label><input type="url" id="sc_logo"></div>
     <div class="form-group"><label>Social Profiles (one per line)</label>
-      <textarea id="sc_sameAs" rows="3">https://twitter.com/FreeSEOToolHub
-https://facebook.com/FreeSEOToolHub
-https://linkedin.com/company/FreeSEOToolHub</textarea>
+      <textarea id="sc_sameAs" rows="3" placeholder="https://twitter.com/yourhandle&#10;https://facebook.com/yourpage"></textarea>
     </div>
   `,
   FAQPage: `
     <div class="form-group">
-      <label>FAQ Items (JSON format: [{"q":"Question","a":"Answer"}, ...])</label>
-      <textarea id="sc_faqs" rows="6">[
-  {"q": "What is SEO?", "a": "Search Engine Optimization is the practice of improving website visibility in search engines."},
-  {"q": "Is this tool free?", "a": "Yes, 100% free with no signup required."},
-  {"q": "Do you sell my data?", "a": "No, everything runs in your browser. We don't collect any data."}
-]</textarea>
+      <label>FAQ Items (JSON format)</label>
+      <textarea id="sc_faqs" rows="8" placeholder='[{"q":"Question?","a":"Answer"},{"q":"Q2?","a":"A2"}]'></textarea>
     </div>
   `,
   Recipe: `
-    <div class="form-group"><label>Recipe Name</label><input type="text" id="sc_name" value="Chocolate Cake"></div>
-    <div class="form-group"><label>Description</label><textarea id="sc_desc">Delicious homemade chocolate cake.</textarea></div>
+    <div class="form-group"><label>Recipe Name</label><input type="text" id="sc_name"></div>
+    <div class="form-group"><label>Description</label><textarea id="sc_desc" rows="2"></textarea></div>
     <div class="row-3">
-      <div class="form-group"><label>Prep Time (min)</label><input type="number" id="sc_prep" value="15"></div>
-      <div class="form-group"><label>Cook Time (min)</label><input type="number" id="sc_cook" value="30"></div>
-      <div class="form-group"><label>Servings</label><input type="number" id="sc_servings" value="8"></div>
+      <div class="form-group"><label>Prep Time (min)</label><input type="number" id="sc_prep"></div>
+      <div class="form-group"><label>Cook Time (min)</label><input type="number" id="sc_cook"></div>
+      <div class="form-group"><label>Servings</label><input type="number" id="sc_servings"></div>
     </div>
     <div class="form-group"><label>Ingredients (one per line)</label>
-      <textarea id="sc_ingredients" rows="4">2 cups flour
-1 cup sugar
-1/2 cup cocoa powder
-2 eggs</textarea>
+      <textarea id="sc_ingredients" rows="4"></textarea>
     </div>
     <div class="row-2">
-      <div class="form-group"><label>Calories</label><input type="number" id="sc_calories" value="350"></div>
-      <div class="form-group"><label>Image URL</label><input type="url" id="sc_image" value="https://example.com/cake.jpg"></div>
+      <div class="form-group"><label>Calories</label><input type="number" id="sc_calories"></div>
+      <div class="form-group"><label>Image URL</label><input type="url" id="sc_image"></div>
     </div>
   `,
   Event: `
-    <div class="form-group"><label>Event Name</label><input type="text" id="sc_name" value="SEO Conference 2026"></div>
-    <div class="form-group"><label>Description</label><textarea id="sc_desc">Annual SEO conference for professionals.</textarea></div>
+    <div class="form-group"><label>Event Name</label><input type="text" id="sc_name"></div>
+    <div class="form-group"><label>Description</label><textarea id="sc_desc" rows="2"></textarea></div>
     <div class="row-2">
-      <div class="form-group"><label>Start Date</label><input type="datetime-local" id="sc_start" value="2026-08-15T09:00"></div>
-      <div class="form-group"><label>End Date</label><input type="datetime-local" id="sc_end" value="2026-08-15T18:00"></div>
+      <div class="form-group"><label>Start Date</label><input type="datetime-local" id="sc_start"></div>
+      <div class="form-group"><label>End Date</label><input type="datetime-local" id="sc_end"></div>
     </div>
-    <div class="form-group"><label>Location Name</label><input type="text" id="sc_location" value="Convention Center"></div>
+    <div class="form-group"><label>Location Name</label><input type="text" id="sc_location"></div>
     <div class="row-3">
-      <div class="form-group"><label>Street</label><input type="text" id="sc_street" value="123 Main St"></div>
-      <div class="form-group"><label>City</label><input type="text" id="sc_city" value="New York"></div>
-      <div class="form-group"><label>Country</label><input type="text" id="sc_country" value="US"></div>
+      <div class="form-group"><label>Street</label><input type="text" id="sc_street"></div>
+      <div class="form-group"><label>City</label><input type="text" id="sc_city"></div>
+      <div class="form-group"><label>Country</label><input type="text" id="sc_country"></div>
     </div>
     <div class="row-2">
-      <div class="form-group"><label>Ticket Price</label><input type="number" id="sc_price" value="199" step="0.01"></div>
-      <div class="form-group"><label>Currency</label><input type="text" id="sc_currency" value="USD"></div>
+      <div class="form-group"><label>Ticket Price</label><input type="number" id="sc_price" step="0.01"></div>
+      <div class="form-group"><label>Currency</label><input type="text" id="sc_currency" placeholder="USD"></div>
     </div>
   `
 };
@@ -1135,6 +1138,7 @@ function gatherData() {
     favicon: getVal('favicon'),
     appleIcon: getVal('appleIcon'),
     viewport: getVal('viewport'),
+    preconnectUrls: getVal('preconnectUrls'),
     customTags: getVal('customTags')
   };
 }
@@ -1163,6 +1167,17 @@ function buildHtml(d) {
   if (d.favicon) lines.push(`<link rel="icon" href="${esc(d.favicon)}">`);
   if (d.appleIcon) lines.push(`<link rel="apple-touch-icon" href="${esc(d.appleIcon)}">`);
 
+  // Preconnect
+  if (d.preconnectUrls && d.preconnectUrls.trim()) {
+    lines.push('');
+    lines.push('<!-- Preconnect (performance) -->');
+    d.preconnectUrls.split('\n').forEach(u => {
+      u = u.trim();
+      if (u) lines.push(`<link rel="preconnect" href="${esc(u)}">`);
+    });
+  }
+
+  // Open Graph
   lines.push('');
   lines.push('<!-- Open Graph / Facebook / LinkedIn -->');
   lines.push(`<meta property="og:type" content="${esc(d.ogType)}">`);
@@ -1177,6 +1192,7 @@ function buildHtml(d) {
   if (d.ogSiteName) lines.push(`<meta property="og:site_name" content="${esc(d.ogSiteName)}">`);
   if (d.langCode) lines.push(`<meta property="og:locale" content="${esc(d.langCode)}_${d.langCode.toUpperCase()}">`);
 
+  // Twitter
   lines.push('');
   lines.push('<!-- Twitter Card -->');
   lines.push(`<meta name="twitter:card" content="${esc(d.twitterCard)}">`);
@@ -1187,7 +1203,7 @@ function buildHtml(d) {
   if (d.twitterImage) lines.push(`<meta name="twitter:image" content="${esc(d.twitterImage)}">`);
   lines.push(`<meta name="twitter:url" content="${esc(d.pageUrl)}">`);
 
-  // Custom tags
+  // Custom
   if (d.customTags && d.customTags.trim()) {
     lines.push('');
     lines.push('<!-- Custom Tags -->');
@@ -1197,16 +1213,19 @@ function buildHtml(d) {
       if (line.startsWith('<')) {
         lines.push(line);
       } else {
-        const parts = line.split(/\s+/);
-        const attrs = {};
-        parts.forEach(p => {
-          const [k, ...v] = p.split('=');
-          if (k && v.length) attrs[k] = v.join('=');
-        });
-        let tag = '<meta';
-        for (const [k, v] of Object.entries(attrs)) tag += ` ${k}="${esc(v)}"`;
-        tag += '>';
-        lines.push(tag);
+        // Parse: name=value content="..." or name=value content=value
+        const m = line.match(/^(\S+)=(\S+)\s+(.+)$/);
+        if (m) {
+          const attr1 = m[1]; // e.g., "name" or "property"
+          const val1 = m[2].replace(/^["']|["']$/g, '');
+          const rest = m[3];
+          const m2 = rest.match(/^(\S+)=["']?(.+?)["']?$/);
+          if (m2) {
+            lines.push(`<meta ${attr1}="${esc(val1)}" ${m2[1]}="${esc(m2[2])}">`);
+          } else {
+            lines.push(`<meta ${attr1}="${esc(val1)}" ${esc(rest)}>`);
+          }
+        }
       }
     });
   }
@@ -1214,7 +1233,7 @@ function buildHtml(d) {
   // JSON-LD
   if (d.schemaType) {
     const jsonLd = buildJsonLd(d);
-    if (jsonLd) {
+    if (jsonLd && Object.keys(jsonLd).length > 2) {
       lines.push('');
       lines.push('<!-- JSON-LD Structured Data -->');
       lines.push('<script type="application/ld+json">');
@@ -1239,8 +1258,8 @@ function buildJsonLd(d) {
   try {
     switch(type) {
       case 'WebSite':
-        base.name = getVal('sc_siteName');
-        base.url = getVal('sc_url');
+        base.name = getVal('sc_siteName') || d.ogSiteName;
+        base.url = getVal('sc_url') || d.pageUrl;
         const searchUrl = getVal('sc_searchUrl');
         if (searchUrl) {
           base.potentialAction = {
@@ -1252,14 +1271,14 @@ function buildJsonLd(d) {
         break;
 
       case 'Article':
-        base.headline = getVal('sc_headline');
-        base.author = { "@type": "Person", "name": getVal('sc_author') };
+        base.headline = getVal('sc_headline') || d.pageTitle;
+        base.author = { "@type": "Person", "name": getVal('sc_author') || d.author };
         base.datePublished = getVal('sc_published');
         base.dateModified = getVal('sc_modified') || getVal('sc_published');
         base.image = getVal('sc_image');
         base.publisher = {
           "@type": "Organization",
-          "name": getVal('sc_publisher'),
+          "name": getVal('sc_publisher') || d.ogSiteName,
           "logo": { "@type": "ImageObject", "url": getVal('sc_logo') }
         };
         break;
@@ -1267,15 +1286,17 @@ function buildJsonLd(d) {
       case 'Product':
         base.name = getVal('sc_name');
         base.description = getVal('sc_desc');
-        base.brand = { "@type": "Brand", "name": getVal('sc_brand') };
-        base.offers = {
-          "@type": "Offer",
-          "price": getVal('sc_price'),
-          "priceCurrency": getVal('sc_currency'),
-          "availability": `https://schema.org/${getVal('sc_availability')}`
-        };
+        if (getVal('sc_brand')) base.brand = { "@type": "Brand", "name": getVal('sc_brand') };
+        if (getVal('sc_price')) {
+          base.offers = {
+            "@type": "Offer",
+            "price": getVal('sc_price'),
+            "priceCurrency": getVal('sc_currency') || 'USD',
+            "availability": `https://schema.org/${getVal('sc_availability')}`
+          };
+        }
         const rating = parseFloat(getVal('sc_rating'));
-        if (rating) {
+        if (rating && rating > 0) {
           base.aggregateRating = {
             "@type": "AggregateRating",
             "ratingValue": rating,
@@ -1295,7 +1316,7 @@ function buildJsonLd(d) {
           "postalCode": getVal('sc_postal'),
           "addressCountry": getVal('sc_country')
         };
-        base.telephone = getVal('sc_phone');
+        if (getVal('sc_phone')) base.telephone = getVal('sc_phone');
         if (getVal('sc_lat') && getVal('sc_lng')) {
           base.geo = {
             "@type": "GeoCoordinates",
@@ -1316,11 +1337,13 @@ function buildJsonLd(d) {
       case 'FAQPage':
         try {
           const faqs = JSON.parse(getVal('sc_faqs'));
-          base.mainEntity = faqs.map(f => ({
-            "@type": "Question",
-            "name": f.q,
-            "acceptedAnswer": { "@type": "Answer", "text": f.a }
-          }));
+          if (Array.isArray(faqs)) {
+            base.mainEntity = faqs.map(f => ({
+              "@type": "Question",
+              "name": f.q,
+              "acceptedAnswer": { "@type": "Answer", "text": f.a }
+            }));
+          }
         } catch(e) {
           base.mainEntity = [];
         }
@@ -1329,12 +1352,14 @@ function buildJsonLd(d) {
       case 'Recipe':
         base.name = getVal('sc_name');
         base.description = getVal('sc_desc');
-        base.prepTime = `PT${getVal('sc_prep')}M`;
-        base.cookTime = `PT${getVal('sc_cook')}M`;
-        base.recipeYield = getVal('sc_servings');
+        if (getVal('sc_prep')) base.prepTime = `PT${getVal('sc_prep')}M`;
+        if (getVal('sc_cook')) base.cookTime = `PT${getVal('sc_cook')}M`;
+        if (getVal('sc_servings')) base.recipeYield = getVal('sc_servings');
         base.recipeIngredient = getVal('sc_ingredients').split('\n').filter(Boolean);
-        base.image = getVal('sc_image');
-        base.nutrition = { "@type": "NutritionInformation", "calories": getVal('sc_calories') + ' cal' };
+        if (getVal('sc_image')) base.image = getVal('sc_image');
+        if (getVal('sc_calories')) {
+          base.nutrition = { "@type": "NutritionInformation", "calories": getVal('sc_calories') + ' cal' };
+        }
         break;
 
       case 'Event':
@@ -1352,12 +1377,14 @@ function buildJsonLd(d) {
             "addressCountry": getVal('sc_country')
           }
         };
-        base.offers = {
-          "@type": "Offer",
-          "price": getVal('sc_price'),
-          "priceCurrency": getVal('sc_currency'),
-          "availability": "https://schema.org/InStock"
-        };
+        if (getVal('sc_price')) {
+          base.offers = {
+            "@type": "Offer",
+            "price": getVal('sc_price'),
+            "priceCurrency": getVal('sc_currency') || 'USD',
+            "availability": "https://schema.org/InStock"
+          };
+        }
         break;
     }
   } catch(e) {
@@ -1368,7 +1395,7 @@ function buildJsonLd(d) {
 }
 
 // ============================================================
-// 📱 BUILD REACT
+// 📱 BUILD REACT & VUE
 // ============================================================
 function buildReact(d) {
   return `import Head from 'next/head';
@@ -1382,7 +1409,6 @@ export default function Page() {
       <meta name="robots" content="${d.robots}" />
       ${d.canonicalUrl ? `<link rel="canonical" href="${d.canonicalUrl}" />` : ''}
 
-      {/* Open Graph */}
       <meta property="og:type" content="${d.ogType}" />
       <meta property="og:url" content="${d.pageUrl}" />
       <meta property="og:title" content="${d.ogTitle}" />
@@ -1390,7 +1416,6 @@ export default function Page() {
       ${d.ogImage ? `<meta property="og:image" content="${d.ogImage}" />` : ''}
       ${d.ogSiteName ? `<meta property="og:site_name" content="${d.ogSiteName}" />` : ''}
 
-      {/* Twitter */}
       <meta name="twitter:card" content="${d.twitterCard}" />
       ${d.twitterSite ? `<meta name="twitter:site" content="${d.twitterSite}" />` : ''}
       <meta name="twitter:title" content="${d.twitterTitle}" />
@@ -1401,9 +1426,6 @@ export default function Page() {
 }`;
 }
 
-// ============================================================
-// 🟢 BUILD VUE
-// ============================================================
 function buildVue(d) {
   return `<script setup>
 useHead({
@@ -1434,47 +1456,56 @@ useHead({
 // 🎨 RENDER
 // ============================================================
 function renderResults(d) {
-  // HTML
   const html = buildHtml(d);
   document.getElementById('htmlOutput').textContent = html;
 
-  // JSON-LD
   const jsonLd = buildJsonLd(d);
   document.getElementById('jsonOutput').textContent = JSON.stringify(jsonLd, null, 2);
 
-  // React
   document.getElementById('reactOutput').textContent = buildReact(d);
-
-  // Vue
   document.getElementById('vueOutput').textContent = buildVue(d);
 
-  // SERP Desktop
+  // SERP
   const domain = d.pageUrl.replace(/^https?:\/\//, '').replace(/\/$/, '');
-  const titleFont = '20px Arial';
-  const titlePixels = measurePixels(d.pageTitle, titleFont);
+  const titlePixels = measurePixels(d.pageTitle, TITLE_FONT);
   const titleTruncated = titlePixels > TITLE_MAX_PX
-    ? truncateByPixels(d.pageTitle, TITLE_MAX_PX, titleFont)
+    ? truncateByPixels(d.pageTitle, TITLE_MAX_PX, TITLE_FONT)
     : d.pageTitle;
 
-  const descFont = '14px Arial';
-  const descPixels = measurePixels(d.metaDescription, descFont);
+  const descPixels = measurePixels(d.metaDescription, DESC_FONT);
   const descTruncated = descPixels > DESC_MAX_PX
-    ? truncateByPixels(d.metaDescription, DESC_MAX_PX, descFont)
+    ? truncateByPixels(d.metaDescription, DESC_MAX_PX, DESC_FONT)
     : d.metaDescription;
+
+  // Build rich snippet from schema
+  let richSnippetHtml = '';
+  if (d.schemaType === 'Product') {
+    const rating = getVal('sc_rating');
+    const price = getVal('sc_price');
+    const curr = getVal('sc_currency') || 'USD';
+    if (rating) {
+      const num = parseFloat(rating);
+      const full = Math.round(num);
+      const stars = '★'.repeat(full) + '☆'.repeat(5 - full);
+      richSnippetHtml += `<div class="rich-snippet"><span class="stars">${stars}</span> <span class="rating-text">${rating} rating</span></div>`;
+    }
+    if (price) {
+      richSnippetHtml += `<div class="rich-snippet"><span class="price-tag">${curr} ${price}</span> · In Stock</div>`;
+    }
+  }
 
   document.getElementById('serpDesktop').innerHTML = `
     <div class="url">
       <div class="favicon">${domain[0].toUpperCase()}</div>
       <div>
         <div class="domain">${esc(domain)}</div>
-        <div class="breadcrumb">https://${esc(domain)}</div>
       </div>
     </div>
     <div class="title">${esc(titleTruncated)}</div>
     <div class="desc">${esc(descTruncated)}</div>
+    ${richSnippetHtml}
   `;
 
-  // SERP Mobile
   const titleMobileFont = '16px Arial';
   const titleMobilePx = measurePixels(d.pageTitle, titleMobileFont);
   const titleMobileTruncated = titleMobilePx > 600
@@ -1488,11 +1519,12 @@ function renderResults(d) {
     </div>
     <div class="title">${esc(titleMobileTruncated)}</div>
     <div class="desc">${esc(descTruncated)}</div>
+    ${richSnippetHtml}
   `;
 
-  // Social Previews
+  // Social previews with images
   document.getElementById('facebookPreview').innerHTML = `
-    <div class="social-img" ${d.ogImage ? `style="background-image:url('${esc(d.ogImage)}')"` : ''}>
+    <div class="social-img" style="${d.ogImage ? `background-image:url('${esc(d.ogImage)}')` : ''}">
       ${!d.ogImage ? '<i class="fas fa-image"></i>' : ''}
     </div>
     <div class="social-info">
@@ -1503,7 +1535,7 @@ function renderResults(d) {
   `;
 
   document.getElementById('twitterPreview').innerHTML = `
-    <div class="social-img" ${d.twitterImage ? `style="background-image:url('${esc(d.twitterImage)}')"` : ''}>
+    <div class="social-img" style="${d.twitterImage ? `background-image:url('${esc(d.twitterImage)}')` : ''}">
       ${!d.twitterImage ? '<i class="fas fa-image"></i>' : ''}
     </div>
     <div class="social-info">
@@ -1513,7 +1545,6 @@ function renderResults(d) {
     </div>
   `;
 
-  // Analysis + Score
   renderAnalysis(d, titlePixels, descPixels);
 }
 
@@ -1535,25 +1566,21 @@ function renderAnalysis(d, titlePx, descPx) {
   const items = [];
   let score = 100;
 
-  // Title
   const tLen = d.pageTitle.length;
   if (tLen === 0) { items.push({ type: 'err', text: 'Title is empty — critical SEO issue!' }); score -= 25; }
-  else if (tLen > 60) { items.push({ type: 'warn', text: `Title is ${tLen} chars (over 60 — will truncate)` }); score -= 8; }
-  else if (tLen < 30) { items.push({ type: 'warn', text: `Title is only ${tLen} chars — too short` }); score -= 5; }
-  else items.push({ type: 'ok', text: `Title length optimal (${tLen} chars, ${titlePx}px)` });
+  else if (titlePx > TITLE_MAX_PX) { items.push({ type: 'warn', text: `Title is ${titlePx}px (over 580px — will truncate)` }); score -= 8; }
+  else if (titlePx < 300) { items.push({ type: 'warn', text: `Title is only ${titlePx}px — too short` }); score -= 3; }
+  else items.push({ type: 'ok', text: `Title optimal (${tLen} chars, ${titlePx}px)` });
 
-  // Description
   const dLen = d.metaDescription.length;
   if (dLen === 0) { items.push({ type: 'err', text: 'Meta description is empty — critical!' }); score -= 25; }
-  else if (dLen > 160) { items.push({ type: 'warn', text: `Description is ${dLen} chars (over 160)` }); score -= 8; }
-  else if (dLen < 80) { items.push({ type: 'warn', text: `Description is only ${dLen} chars — aim 150-160` }); score -= 5; }
-  else items.push({ type: 'ok', text: `Description length optimal (${dLen} chars, ${descPx}px)` });
+  else if (descPx > DESC_MAX_PX) { items.push({ type: 'warn', text: `Description is ${descPx}px (over 990px)` }); score -= 8; }
+  else if (descPx < 500) { items.push({ type: 'warn', text: `Description is only ${descPx}px — aim 900-990px` }); score -= 3; }
+  else items.push({ type: 'ok', text: `Description optimal (${dLen} chars, ${descPx}px)` });
 
-  // Canonical
   if (d.canonicalUrl) items.push({ type: 'ok', text: 'Canonical URL set — prevents duplicate content' });
   else { items.push({ type: 'warn', text: 'No canonical URL — risk of duplicate content' }); score -= 5; }
 
-  // OG Image
   if (d.ogImage) {
     items.push({ type: 'ok', text: 'Open Graph image set' });
     if (d.ogImageWidth == 1200 && d.ogImageHeight == 630) {
@@ -1563,26 +1590,29 @@ function renderAnalysis(d, titlePx, descPx) {
       score -= 3;
     }
   } else {
-    items.push({ type: 'warn', text: 'No OG image — social shares will look plain' });
+    items.push({ type: 'warn', text: 'No OG image — social shares look plain' });
     score -= 8;
   }
 
-  // Twitter
   if (d.twitterImage) items.push({ type: 'ok', text: 'Twitter Card image set' });
-  else items.push({ type: 'warn', text: 'No Twitter image — card will look plain' });
+  else items.push({ type: 'warn', text: 'No Twitter image' });
 
-  if (d.twitterSite) items.push({ type: 'ok', text: 'Twitter site handle set' });
+  if (d.twitterSite) items.push({ type: 'ok', text: 'Twitter @site handle set' });
   else items.push({ type: 'warn', text: 'No Twitter @site — attribution missing' });
 
-  // JSON-LD
-  if (d.schemaType) items.push({ type: 'ok', text: `JSON-LD generated (${d.schemaType}) — rich snippets enabled` });
+  if (d.schemaType) items.push({ type: 'ok', text: `JSON-LD schema generated (${d.schemaType})` });
 
-  // Keywords (deprecated but still)
-  if (d.keywords) items.push({ type: 'ok', text: 'Keywords meta present (deprecated but harmless)' });
+  if (d.viewport) items.push({ type: 'ok', text: 'Viewport meta set (mobile-friendly)' });
+  else { items.push({ type: 'err', text: 'Missing viewport meta — breaks mobile!' }); score -= 10; }
+
+  if (d.langCode) items.push({ type: 'ok', text: `Language set (${d.langCode})` });
+
+  if (d.preconnectUrls && d.preconnectUrls.trim()) {
+    items.push({ type: 'ok', text: 'Preconnect hints set — improves performance' });
+  }
 
   score = Math.max(0, Math.min(100, score));
 
-  // Render score badge
   const badge = document.getElementById('scoreBadge');
   const deg = (score / 100) * 360;
   const color = score >= 85 ? '#10b981' : score >= 65 ? '#f59e0b' : '#ef4444';
@@ -1590,7 +1620,6 @@ function renderAnalysis(d, titlePx, descPx) {
   document.getElementById('scoreValue').textContent = score;
   document.getElementById('scoreValue').style.color = color;
 
-  // Render items
   document.getElementById('analysisContent').innerHTML = items.map(i => {
     const icon = i.type === 'ok' ? 'fa-check-circle' : i.type === 'warn' ? 'fa-exclamation-triangle' : 'fa-times-circle';
     const cls = i.type === 'ok' ? 'ok' : i.type === 'warn' ? 'warn' : 'err';
@@ -1609,7 +1638,8 @@ function updateCounters() {
   const tPx = measurePixels(title, TITLE_FONT);
   const tc = document.getElementById('titleCount');
   tc.textContent = `${tLen}/60 · ${tPx}px`;
-  tc.className = 'char-count ' + (tPx > TITLE_MAX_PX ? 'char-bad' : tLen > 60 ? 'char-warn' : 'char-good');
+  const tStatus = tPx > TITLE_MAX_PX ? 'char-bad' : tPx > TITLE_MAX_PX * 0.9 ? 'char-warn' : 'char-good';
+  tc.className = 'char-count ' + tStatus;
 
   const tp = document.getElementById('titlePixel');
   const tPct = Math.min(100, (tPx / TITLE_MAX_PX) * 100);
@@ -1620,7 +1650,8 @@ function updateCounters() {
   const dPx = measurePixels(desc, DESC_FONT);
   const dc = document.getElementById('descCount');
   dc.textContent = `${dLen}/160 · ${dPx}px`;
-  dc.className = 'char-count ' + (dPx > DESC_MAX_PX ? 'char-bad' : dLen > 160 ? 'char-warn' : 'char-good');
+  const dStatus = dPx > DESC_MAX_PX ? 'char-bad' : dPx > DESC_MAX_PX * 0.9 ? 'char-warn' : 'char-good';
+  dc.className = 'char-count ' + dStatus;
 
   const dp = document.getElementById('descPixel');
   const dPct = Math.min(100, (dPx / DESC_MAX_PX) * 100);
@@ -1632,45 +1663,55 @@ function updateCounters() {
 // 💾 HISTORY
 // ============================================================
 function getHistory() {
-  try { return JSON.parse(localStorage.getItem('metaTagHistory') || '[]'); }
+  try { return JSON.parse(localStorage.getItem('metaTagHistoryV4') || '[]'); }
   catch(e) { return []; }
 }
 
 function saveToHistory(data) {
   const history = getHistory();
-  history.unshift({ data, ts: Date.now(), title: data.pageTitle.slice(0, 40) });
-  localStorage.setItem('metaTagHistory', JSON.stringify(history.slice(0, 10)));
+  history.unshift({
+    data,
+    ts: Date.now(),
+    title: data.pageTitle.slice(0, 60) || '(no title)'
+  });
+  localStorage.setItem('metaTagHistoryV4', JSON.stringify(history.slice(0, 10)));
+  renderHistory();
 }
 
-function showHistory() {
+function renderHistory() {
   const history = getHistory();
-  if (history.length === 0) { showToast(t('historyEmpty'), true); return; }
-  const list = history.map((h, i) =>
-    `${i + 1}. ${h.title} — ${new Date(h.ts).toLocaleString()}`
-  ).join('\n');
-  if (confirm(`History (${history.length}):\n\n${list}\n\nLoad most recent?`)) {
-    loadFromHistory(0);
+  const list = document.getElementById('historyList');
+  if (!history.length) {
+    list.innerHTML = `<div style="text-align:center; opacity:0.5; padding:20px; font-size:0.85rem;">${t('historyEmpty')}</div>`;
+    return;
   }
-}
+  list.innerHTML = history.map((h, i) => `
+    <div class="history-item" data-index="${i}">
+      <div style="flex:1; min-width:0; overflow:hidden;">
+        <div style="font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${esc(h.title)}</div>
+        <div class="h-meta">${new Date(h.ts).toLocaleString()}</div>
+      </div>
+      <i class="fas fa-chevron-right" style="opacity:0.4;"></i>
+    </div>
+  `).join('');
 
-function loadFromHistory(index) {
-  const history = getHistory();
-  const item = history[index];
-  if (!item) return;
-  const d = item.data;
-  for (const [key, val] of Object.entries(d)) {
-    const el = document.getElementById(key);
-    if (el) el.value = val;
-  }
-  // Also handle remapped fields
-  if (d.pageTitle) document.getElementById('pageTitle').value = d.pageTitle;
-  if (d.metaDescription) document.getElementById('metaDescription').value = d.metaDescription;
-  showToast('📂 ' + t('historyLoaded'));
-  updateCounters();
+  list.querySelectorAll('.history-item').forEach(el => {
+    el.addEventListener('click', () => {
+      const h = history[parseInt(el.dataset.index)];
+      if (!h) return;
+      for (const [key, val] of Object.entries(h.data)) {
+        const field = document.getElementById(key);
+        if (field) field.value = val;
+      }
+      updateCounters();
+      showToast('📂 ' + t('historyLoaded'));
+      document.getElementById('historyPanel').classList.remove('show');
+    });
+  });
 }
 
 // ============================================================
-// 🎬 MAIN
+// 🎬 MAIN FUNCTIONS
 // ============================================================
 function showToast(msg, isError = false) {
   const toast = document.getElementById('toast');
@@ -1681,8 +1722,25 @@ function showToast(msg, isError = false) {
   showToast._t = setTimeout(() => { toast.style.display = 'none'; }, 2600);
 }
 
-function copyToClipboard(text, msg) {
-  navigator.clipboard.writeText(text).then(() => showToast('📋 ' + (msg || t('copied'))));
+function copyToClipboard(text) {
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text).then(() => showToast('📋 ' + t('copied')))
+      .catch(() => fallbackCopy(text));
+  } else {
+    fallbackCopy(text);
+  }
+}
+
+function fallbackCopy(text) {
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.position = 'fixed';
+  ta.style.left = '-9999px';
+  document.body.appendChild(ta);
+  ta.select();
+  try { document.execCommand('copy'); showToast('📋 ' + t('copied')); }
+  catch(e) { showToast('Copy failed', true); }
+  document.body.removeChild(ta);
 }
 
 function downloadFile(content, filename, mime) {
@@ -1694,6 +1752,62 @@ function downloadFile(content, filename, mime) {
   document.body.removeChild(a);
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
+
+// ============================================================
+// 🎯 EXAMPLES
+// ============================================================
+const EXAMPLES = {
+  blog: {
+    pageTitle: 'SEO Tips 2026: How to Rank #1 on Google — Complete Guide',
+    metaDescription: 'Discover the latest SEO strategies for 2026. Learn content optimization, backlink building, and the ranking factors that matter most.',
+    keywords: 'seo tips 2026, google ranking, seo strategies',
+    ogTitle: 'SEO Tips 2026: Complete Guide to Rank #1',
+    ogDescription: 'Master SEO in 2026 with proven strategies for content, backlinks, and technical optimization.',
+    twitterTitle: 'SEO Tips 2026: Complete Guide',
+    twitterDescription: 'Master SEO in 2026 with proven strategies.',
+    schemaType: 'Article'
+  },
+  product: {
+    pageTitle: 'Premium SEO Tool Suite 2026 | Professional SEO Software',
+    metaDescription: 'Professional SEO tools for keyword research, backlink analysis, and site audit. Trusted by 10,000+ agencies. Start optimizing today.',
+    keywords: 'seo tools, keyword research, backlink checker, seo software',
+    ogTitle: 'Premium SEO Tool Suite 2026',
+    ogDescription: 'Professional SEO tools for agencies. Keyword research, backlinks, audits.',
+    twitterTitle: 'Premium SEO Tool Suite 2026',
+    twitterDescription: 'Professional SEO tools for agencies.',
+    schemaType: 'Product'
+  },
+  business: {
+    pageTitle: 'Digital Marketing Agency New York | SEO & PPC Services 2026',
+    metaDescription: 'Full-service digital marketing agency in New York. Expert SEO, PPC, and social media management. Free consultation available.',
+    keywords: 'digital marketing agency, seo services, ppc management, new york',
+    ogTitle: 'Digital Marketing Agency New York',
+    ogDescription: 'Expert SEO, PPC, and social media services. Free consultation.',
+    twitterTitle: 'Digital Marketing Agency New York',
+    twitterDescription: 'Expert SEO, PPC, and social media services.',
+    schemaType: 'LocalBusiness'
+  },
+  recipe: {
+    pageTitle: 'Best Chocolate Cake Recipe — Moist & Easy (30 Min)',
+    metaDescription: 'The best homemade chocolate cake recipe. Moist, rich, and ready in 30 minutes. Perfect for birthdays and celebrations.',
+    keywords: 'chocolate cake recipe, easy cake, homemade cake',
+    ogTitle: 'Best Chocolate Cake Recipe',
+    ogDescription: 'Moist, rich, and easy. Ready in 30 minutes!',
+    twitterTitle: 'Best Chocolate Cake Recipe',
+    twitterDescription: 'Moist, rich, and easy. Ready in 30 minutes!',
+    schemaType: 'Recipe'
+  },
+  event: {
+    pageTitle: 'SEO Conference 2026 — New York | Register Now',
+    metaDescription: 'Join 500+ SEO professionals at SEO Conference 2026 in New York. Two days of workshops, networking, and expert talks. Early bird tickets available.',
+    keywords: 'seo conference 2026, seo event, marketing conference',
+    ogTitle: 'SEO Conference 2026 — New York',
+    ogDescription: 'Join 500+ SEO pros. Two days of workshops and networking.',
+    twitterTitle: 'SEO Conference 2026',
+    twitterDescription: 'Join 500+ SEO pros in New York.',
+    schemaType: 'Event'
+  }
+};
 
 // ============================================================
 // 🎯 INIT
@@ -1708,24 +1822,27 @@ function init() {
     btn.addEventListener('click', () => applyLang(btn.dataset.lang));
   });
 
-  // Tabs
-  document.querySelectorAll('.tab').forEach(tab => {
-    tab.addEventListener('click', () => {
-      const parent = tab.parentElement;
-      parent.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-      const panel = tab.dataset.tab;
-      // Find sibling panels
-      const container = parent.parentElement;
-      container.querySelectorAll('.tab-panel').forEach(p => {
-        p.classList.toggle('active', p.dataset.panel === panel);
+  // Tabs (scoped to their own tab container)
+  document.querySelectorAll('.tabs').forEach(tabsContainer => {
+    const parentCard = tabsContainer.parentElement;
+    tabsContainer.querySelectorAll('.tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabsContainer.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        const panelName = tab.dataset.tab;
+        parentCard.querySelectorAll(':scope > .tab-panel, :scope > .tab-panel, .tab-panel').forEach(p => {
+          if (p.dataset && p.dataset.panel) {
+            p.classList.toggle('active', p.dataset.panel === panelName);
+          }
+        });
       });
     });
   });
 
-  // Schema type change
+  // Schema type change — clear fields
   document.getElementById('schemaType').addEventListener('change', e => {
-    document.getElementById('schemaFields').innerHTML = SCHEMA_FIELDS[e.target.value] || '';
+    const fieldsContainer = document.getElementById('schemaFields');
+    fieldsContainer.innerHTML = SCHEMA_FIELDS[e.target.value] || '';
   });
   document.getElementById('schemaFields').innerHTML = SCHEMA_FIELDS['WebSite'];
 
@@ -1737,7 +1854,6 @@ function init() {
   // Generate
   document.getElementById('generateBtn').addEventListener('click', () => {
     const d = gatherData();
-    lastResult = d;
     renderResults(d);
     saveToHistory(d);
     document.getElementById('resultsSection').style.display = 'block';
@@ -1748,84 +1864,53 @@ function init() {
   // Reset
   document.getElementById('resetBtn').addEventListener('click', () => {
     if (!confirm('Reset all fields?')) return;
-    document.getElementById('pageTitle').value = '';
-    document.getElementById('metaDescription').value = '';
-    document.getElementById('keywords').value = '';
+    ['pageTitle','metaDescription','keywords','ogTitle','ogDescription','twitterTitle','twitterDescription','customTags','preconnectUrls'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.value = '';
+    });
     document.getElementById('resultsSection').style.display = 'none';
     updateCounters();
     showToast('🔄 ' + t('reset'));
   });
 
   // History
-  document.getElementById('historyBtn').addEventListener('click', showHistory);
+  document.getElementById('historyBtn').addEventListener('click', () => {
+    const panel = document.getElementById('historyPanel');
+    panel.classList.toggle('show');
+    if (panel.classList.contains('show')) renderHistory();
+  });
+  document.getElementById('closeHistoryBtn').addEventListener('click', () => {
+    document.getElementById('historyPanel').classList.remove('show');
+  });
+  document.getElementById('clearHistoryBtn').addEventListener('click', () => {
+    if (!confirm('Clear all history?')) return;
+    localStorage.removeItem('metaTagHistoryV4');
+    renderHistory();
+    showToast('🗑️ History cleared');
+  });
 
-  // Copy / Download buttons
+  // Copy buttons
   document.querySelectorAll('[data-copy]').forEach(btn => {
     btn.addEventListener('click', () => {
       const type = btn.dataset.copy;
-      const map = {
-        html: 'htmlOutput', json: 'jsonOutput', react: 'reactOutput', vue: 'vueOutput'
-      };
+      const map = { html: 'htmlOutput', json: 'jsonOutput', react: 'reactOutput', vue: 'vueOutput' };
       const el = document.getElementById(map[type]);
       if (el) copyToClipboard(el.textContent);
     });
   });
 
+  // Download buttons
   document.querySelectorAll('[data-download]').forEach(btn => {
     btn.addEventListener('click', () => {
       const type = btn.dataset.download;
-      const d = lastResult;
-      if (!d) return;
+      const d = gatherData();
       if (type === 'html') downloadFile(buildHtml(d), 'meta-tags.html', 'text/html');
       else if (type === 'json') downloadFile(JSON.stringify(buildJsonLd(d), null, 2), 'schema.json', 'application/json');
       showToast('📥 ' + t('downloaded'));
     });
   });
 
-  // Examples
-  const EXAMPLES = {
-    blog: {
-      pageTitle: 'SEO Tips 2026: How to Rank #1 on Google — Complete Guide',
-      metaDescription: 'Discover the latest SEO strategies for 2026. Learn content optimization, backlink building, and the ranking factors that matter most.',
-      keywords: 'seo tips 2026, google ranking, seo strategies',
-      ogTitle: 'SEO Tips 2026: Complete Guide to Rank #1',
-      ogDescription: 'Master SEO in 2026 with proven strategies for content, backlinks, and technical optimization.',
-      schemaType: 'Article'
-    },
-    product: {
-      pageTitle: 'Premium SEO Tool Suite 2026 | Professional SEO Software',
-      metaDescription: 'Professional SEO tools for keyword research, backlink analysis, and site audit. Trusted by 10,000+ agencies. Start optimizing today.',
-      keywords: 'seo tools, keyword research, backlink checker, seo software',
-      ogTitle: 'Premium SEO Tool Suite 2026',
-      ogDescription: 'Professional SEO tools for agencies. Keyword research, backlinks, audits.',
-      schemaType: 'Product'
-    },
-    business: {
-      pageTitle: 'Digital Marketing Agency New York | SEO & PPC Services 2026',
-      metaDescription: 'Full-service digital marketing agency in New York. Expert SEO, PPC, and social media management. Free consultation available.',
-      keywords: 'digital marketing agency, seo services, ppc management, new york',
-      ogTitle: 'Digital Marketing Agency New York',
-      ogDescription: 'Expert SEO, PPC, and social media services. Free consultation.',
-      schemaType: 'LocalBusiness'
-    },
-    recipe: {
-      pageTitle: 'Best Chocolate Cake Recipe — Moist & Easy (30 Min)',
-      metaDescription: 'The best homemade chocolate cake recipe. Moist, rich, and ready in 30 minutes. Perfect for birthdays and celebrations.',
-      keywords: 'chocolate cake recipe, easy cake, homemade cake',
-      ogTitle: 'Best Chocolate Cake Recipe',
-      ogDescription: 'Moist, rich, and easy. Ready in 30 minutes!',
-      schemaType: 'Recipe'
-    },
-    event: {
-      pageTitle: 'SEO Conference 2026 — New York | Register Now',
-      metaDescription: 'Join 500+ SEO professionals at SEO Conference 2026 in New York. Two days of workshops, networking, and expert talks. Early bird tickets available.',
-      keywords: 'seo conference 2026, seo event, marketing conference',
-      ogTitle: 'SEO Conference 2026 — New York',
-      ogDescription: 'Join 500+ SEO pros. Two days of workshops and networking.',
-      schemaType: 'Event'
-    }
-  };
-
+  // Example buttons
   document.querySelectorAll('.example-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const key = btn.dataset.example;
@@ -1836,10 +1921,10 @@ function init() {
       const ex = EXAMPLES[key];
       if (!ex) return;
       for (const [id, val] of Object.entries(ex)) {
+        if (id === 'schemaType') continue;
         const el = document.getElementById(id);
         if (el) el.value = val;
       }
-      // Change schema type
       if (ex.schemaType) {
         const sel = document.getElementById('schemaType');
         if (sel) {
