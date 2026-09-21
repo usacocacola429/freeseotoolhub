@@ -13,8 +13,8 @@ gtag('config', 'G-PFPCTBFG3Y');
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<title>Website Speed Test 2026 — Real Core Web Vitals Analysis | FreeSEOToolHub</title>
-<meta name="description" content="Free website speed test with real Lighthouse data (via PageSpeed Insights API), Core Web Vitals, resource analysis, mobile + desktop. No signup. 100% client-side.">
+<title>Website Speed Test 2026 — Real Core Web Vitals | FreeSEOToolHub</title>
+<meta name="description" content="Free website speed test with real PageSpeed Insights API data + resource analysis. Core Web Vitals (LCP, INP, CLS), mobile & desktop. No signup. 100% client-side.">
 <meta name="keywords" content="website speed test, page speed checker, core web vitals test, lcp checker, pagespeed test, lighthouse alternative, web performance test">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://freeseotoolhub.com/tools/website-speed-test.html">
@@ -29,7 +29,7 @@ gtag('config', 'G-PFPCTBFG3Y');
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://freeseotoolhub.com/tools/website-speed-test.html">
 <meta property="og:title" content="Website Speed Test 2026 — Real Core Web Vitals">
-<meta property="og:description" content="Real Lighthouse data + Core Web Vitals. Free forever.">
+<meta property="og:description" content="Real PageSpeed Insights data + resource analysis. Free forever.">
 <meta property="og:image" content="https://freeseotoolhub.com/images/speed-og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -45,7 +45,7 @@ gtag('config', 'G-PFPCTBFG3Y');
 "@type": "WebApplication",
 "name": "Website Speed Test",
 "url": "https://freeseotoolhub.com/tools/website-speed-test.html",
-"description": "Real website speed test with Lighthouse data via PageSpeed Insights API.",
+"description": "Real website speed test with PageSpeed Insights API + Core Web Vitals analysis.",
 "applicationCategory": "SEOApplication",
 "operatingSystem": "Any",
 "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
@@ -104,7 +104,7 @@ body { background:linear-gradient(135deg,#0b1a33 0%,#1e2b4f 100%); min-height:10
 
 .form-group { margin-bottom:16px; }
 .form-group label { display:block; margin-bottom:6px; font-weight:600; font-size:0.85rem; color:rgba(255,255,255,0.75); }
-input[type="url"], select {
+input[type="url"], input[type="text"], select {
   width:100%; padding:12px 16px;
   background:rgba(255,255,255,0.05); border:1px solid var(--border);
   border-radius:12px; font-size:0.95rem; color:#fff;
@@ -113,8 +113,8 @@ input[type="url"], select {
 input:focus, select:focus { border-color:var(--primary); box-shadow:0 0 0 3px rgba(255,153,51,0.15); }
 select option { background:#0b1a33; color:#fff; }
 
-.row-2 { display:grid; grid-template-columns:2fr 1fr; gap:12px; }
-@media (max-width:600px) { .row-2 { grid-template-columns:1fr; } }
+.row-3 { display:grid; grid-template-columns:2fr 1fr 1fr; gap:12px; }
+@media (max-width:700px) { .row-3 { grid-template-columns:1fr; } }
 
 .btn-primary {
   background:linear-gradient(135deg,var(--primary),var(--primary-dark)); color:#0b1a33;
@@ -138,16 +138,11 @@ select option { background:#0b1a33; color:#fff; }
 
 .actions-row { display:flex; gap:8px; flex-wrap:wrap; margin-top:14px; }
 
-/* PROGRESS */
 .loading-progress { margin-top:20px; display:none; }
 .loading-bar { height:4px; background:rgba(255,255,255,0.1); border-radius:4px; overflow:hidden; }
-.loading-fill {
-  height:100%; background:linear-gradient(90deg, var(--primary), var(--primary-dark));
-  width:0%; transition:width 0.3s; border-radius:4px;
-}
+.loading-fill { height:100%; background:linear-gradient(90deg, var(--primary), var(--primary-dark)); width:0%; transition:width 0.3s; border-radius:4px; }
 .loading-text { font-size:0.82rem; color:rgba(255,255,255,0.6); margin-top:8px; text-align:center; }
 
-/* SCORE */
 .score-section { text-align:center; padding:16px 0; }
 .score-gauge {
   width:200px; height:200px; margin:0 auto 16px;
@@ -166,41 +161,21 @@ select option { background:#0b1a33; color:#fff; }
 .status-text { font-size:1.15rem; font-weight:700; text-align:center; margin-top:8px; }
 .status-sub { font-size:0.85rem; opacity:0.7; text-align:center; margin-top:6px; }
 
-/* METRICS */
-.metrics-row {
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(140px, 1fr));
-  gap:12px; margin:20px 0;
-}
-.metric-box {
-  background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);
-  border-radius:12px; padding:14px; text-align:center;
-}
+.metrics-row { display:grid; grid-template-columns:repeat(auto-fit, minmax(140px, 1fr)); gap:12px; margin:20px 0; }
+.metric-box { background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:14px; text-align:center; }
 .metric-value { font-size:1.5rem; font-weight:800; line-height:1; }
 .metric-label { font-size:0.68rem; color:rgba(255,255,255,0.6); text-transform:uppercase; letter-spacing:0.5px; margin-top:6px; font-weight:600; }
 
-/* VITALS */
-.vitals-grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));
-  gap:14px; margin:16px 0;
-}
-.vital-card {
-  background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);
-  border-radius:12px; padding:16px; border-top:4px solid var(--primary);
-}
+.vitals-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:14px; margin:16px 0; }
+.vital-card { background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:16px; border-top:4px solid var(--primary); }
 .vital-name { font-size:0.72rem; text-transform:uppercase; letter-spacing:1px; color:rgba(255,255,255,0.7); margin-bottom:8px; font-weight:600; }
 .vital-value { font-size:2rem; font-weight:800; line-height:1; margin-bottom:8px; }
-.vital-status {
-  display:inline-block; padding:3px 10px; border-radius:20px;
-  font-size:0.72rem; font-weight:700; text-transform:uppercase;
-}
+.vital-status { display:inline-block; padding:3px 10px; border-radius:20px; font-size:0.72rem; font-weight:700; text-transform:uppercase; }
 .status-good { background:rgba(16,185,129,0.15); color:var(--success); }
 .status-average { background:rgba(245,158,11,0.15); color:var(--warning); }
 .status-poor { background:rgba(239,68,68,0.15); color:var(--danger); }
 .vital-desc { font-size:0.72rem; color:rgba(255,255,255,0.6); margin-top:8px; }
 
-/* TABS */
 .tabs { display:flex; gap:4px; border-bottom:1px solid var(--border); margin-bottom:18px; flex-wrap:wrap; }
 .tab {
   padding:10px 16px; background:transparent; border:none;
@@ -214,75 +189,53 @@ select option { background:#0b1a33; color:#fff; }
 .tab-panel { display:none; }
 .tab-panel.active { display:block; }
 
-/* CHECK LISTS */
-.check-category {
-  background:rgba(255,255,255,0.03); border-radius:12px;
-  padding:14px; margin-bottom:12px;
-  border:1px solid rgba(255,255,255,0.08);
-}
-.check-category h4 {
-  font-size:0.92rem; margin-bottom:10px;
-  display:flex; align-items:center; gap:0.5rem; color:var(--primary);
-}
-.check-item {
-  display:flex; justify-content:space-between; align-items:center;
-  padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.05);
-  font-size:0.85rem; gap:10px;
-}
+.check-category { background:rgba(255,255,255,0.03); border-radius:12px; padding:14px; margin-bottom:12px; border:1px solid rgba(255,255,255,0.08); }
+.check-category h4 { font-size:0.92rem; margin-bottom:10px; display:flex; align-items:center; gap:0.5rem; color:var(--primary); }
+.check-item { display:flex; justify-content:space-between; align-items:center; padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.05); font-size:0.85rem; gap:10px; }
 .check-item:last-child { border-bottom:none; }
 .check-name { flex:1; color:rgba(255,255,255,0.85); }
 .check-name small { display:block; opacity:0.6; font-size:0.72rem; margin-top:2px; }
-.check-status {
-  font-weight:600; font-size:0.78rem; padding:3px 10px;
-  border-radius:20px; white-space:nowrap;
-}
+.check-status { font-weight:600; font-size:0.78rem; padding:3px 10px; border-radius:20px; white-space:nowrap; }
 .pass { background:rgba(16,185,129,0.15); color:var(--success); }
 .fail { background:rgba(239,68,68,0.15); color:var(--danger); }
 .warn { background:rgba(245,158,11,0.15); color:var(--warning); }
 .info { background:rgba(59,130,246,0.15); color:var(--info); }
 
-/* HISTORY */
 .history-list { max-height:300px; overflow-y:auto; }
-.history-item {
-  display:flex; justify-content:space-between; align-items:center;
-  padding:10px 14px; background:rgba(255,255,255,0.03);
-  border-radius:8px; margin-bottom:6px; font-size:0.82rem;
-  border-left:3px solid var(--primary); cursor:pointer;
-  transition:all 0.2s;
-}
+.history-item { display:flex; justify-content:space-between; align-items:center; padding:10px 14px; background:rgba(255,255,255,0.03); border-radius:8px; margin-bottom:6px; font-size:0.82rem; border-left:3px solid var(--primary); cursor:pointer; transition:all 0.2s; }
 .history-item:hover { background:rgba(255,153,51,0.1); }
 
-/* TOAST */
-.toast-container { position:fixed; bottom:24px; right:24px; z-index:9999; display:flex; flex-direction:column; gap:8px; }
-.toast {
-  background:rgba(30,41,59,0.95); backdrop-filter:blur(10px);
-  color:#fff; padding:12px 20px; border-radius:12px;
-  border:1px solid var(--border); font-size:0.88rem;
-  font-weight:500; animation:slideIn 0.3s ease;
-  display:flex; align-items:center; gap:10px;
-  max-width:360px;
+/* WATERFALL */
+.waterfall { margin-top:16px; }
+.waterfall-row {
+  display:grid; grid-template-columns: 1fr 200px 80px;
+  gap:10px; align-items:center;
+  padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.05);
+  font-size:0.8rem;
 }
+.waterfall-url { font-family:monospace; font-size:0.75rem; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; color:rgba(255,255,255,0.85); }
+.waterfall-bar-wrap { height:16px; background:rgba(255,255,255,0.05); border-radius:8px; position:relative; overflow:hidden; }
+.waterfall-bar {
+  height:100%; border-radius:8px;
+  display:flex; align-items:center; justify-content:flex-end;
+  padding-right:6px; font-size:0.65rem; font-weight:700; color:#fff;
+  transition:width 0.5s ease;
+}
+.waterfall-type { font-size:0.72rem; opacity:0.7; text-align:right; }
+
+.toast-container { position:fixed; bottom:24px; right:24px; z-index:9999; display:flex; flex-direction:column; gap:8px; }
+.toast { background:rgba(30,41,59,0.95); backdrop-filter:blur(10px); color:#fff; padding:12px 20px; border-radius:12px; border:1px solid var(--border); font-size:0.88rem; font-weight:500; animation:slideIn 0.3s ease; display:flex; align-items:center; gap:10px; max-width:360px; }
 .toast.success { background:rgba(16,185,129,0.95); }
 .toast.error { background:rgba(239,68,68,0.95); }
 .toast.warning { background:rgba(245,158,11,0.95); }
 @keyframes slideIn { from { transform:translateX(120%); opacity:0; } to { transform:translateX(0); opacity:1; } }
 
-/* FOOTER */
-.footer {
-  text-align:center; padding:20px;
-  background:rgba(255,255,255,0.03); border-radius:16px;
-  margin-top:20px; border:1px solid var(--border);
-}
+.footer { text-align:center; padding:20px; background:rgba(255,255,255,0.03); border-radius:16px; margin-top:20px; border:1px solid var(--border); }
 .footer-links { display:flex; justify-content:center; gap:22px; flex-wrap:wrap; margin-bottom:10px; }
 .footer-links a { color:rgba(255,255,255,0.7); text-decoration:none; font-weight:500; font-size:0.88rem; }
 .footer-links a:hover { color:var(--primary); }
 
-/* FAQ */
-.faq-section {
-  background:rgba(255,255,255,0.03);
-  border:1px solid var(--border);
-  border-radius:16px; padding:24px; margin-top:20px;
-}
+.faq-section { background:rgba(255,255,255,0.03); border:1px solid var(--border); border-radius:16px; padding:24px; margin-top:20px; }
 .faq-section h2 { font-size:1.2rem; margin-bottom:16px; display:flex; align-items:center; gap:10px; }
 .faq-section h2 i { color:var(--primary); }
 .faq-item { margin-bottom:16px; }
@@ -298,6 +251,7 @@ select option { background:#0b1a33; color:#fff; }
   .score-inner { width:130px; height:130px; }
   .score-value { font-size:2rem; }
   .toast-container { left:16px; right:16px; bottom:16px; }
+  .waterfall-row { grid-template-columns: 1fr 100px 60px; }
 }
 </style>
 </head>
@@ -318,7 +272,7 @@ select option { background:#0b1a33; color:#fff; }
 <div class="container">
   <div class="tool-header">
     <h1><i class="fas fa-tachometer-alt"></i> <span data-i18n="title">Website Speed Test 2026</span></h1>
-    <p data-i18n="subtitle">Real Lighthouse data via Google PageSpeed Insights API + resource analysis. Mobile & desktop. 100% client-side.</p>
+    <p data-i18n="subtitle">Real PageSpeed Insights API + resource analysis. Core Web Vitals (LCP, CLS, TBT). Mobile & desktop. 100% client-side.</p>
   </div>
 
   <div class="lang-bar">
@@ -329,19 +283,22 @@ select option { background:#0b1a33; color:#fff; }
     <button class="lang-btn" data-lang="es">🇪🇸 Español</button>
   </div>
 
-  <!-- INPUT -->
   <div class="glass-card">
-    <div class="row-2">
+    <div class="row-3">
       <div class="form-group">
         <label><i class="fas fa-globe"></i> <span data-i18n="urlLabel">Website URL</span></label>
         <input type="url" id="siteUrl" placeholder="https://example.com" value="https://www.google.com">
       </div>
       <div class="form-group">
-        <label><i class="fas fa-device"></i> <span data-i18n="deviceLabel">Device</span></label>
+        <label><i class="fas fa-mobile-alt"></i> <span data-i18n="deviceLabel">Device</span></label>
         <select id="device">
           <option value="mobile" selected>📱 Mobile</option>
           <option value="desktop">🖥️ Desktop</option>
         </select>
+      </div>
+      <div class="form-group">
+        <label><i class="fas fa-key"></i> API Key (optional)</label>
+        <input type="text" id="apiKey" placeholder="Your PSI API key">
       </div>
     </div>
 
@@ -362,7 +319,6 @@ select option { background:#0b1a33; color:#fff; }
     </div>
   </div>
 
-  <!-- RESULTS -->
   <div id="results" style="display:none;">
     <div class="glass-card">
       <div class="score-section">
@@ -388,24 +344,17 @@ select option { background:#0b1a33; color:#fff; }
 
     <div class="glass-card">
       <div class="tabs">
-        <button class="tab active" data-tab="resources"><i class="fas fa-cubes"></i> <span data-i18n="tabResources">Resources</span></button>
-        <button class="tab" data-tab="headers"><i class="fas fa-heading"></i> <span data-i18n="tabHeaders">Headers</span></button>
-        <button class="tab" data-tab="suggestions"><i class="fas fa-lightbulb"></i> <span data-i18n="tabSuggestions">Suggestions</span></button>
-        <button class="tab" data-tab="history"><i class="fas fa-history"></i> <span data-i18n="tabHistory">History</span></button>
+        <button class="tab active" data-tab="opportunities"><i class="fas fa-lightbulb"></i> Opportunities</button>
+        <button class="tab" data-tab="resources"><i class="fas fa-cubes"></i> Resources</button>
+        <button class="tab" data-tab="waterfall"><i class="fas fa-chart-bar"></i> Waterfall</button>
+        <button class="tab" data-tab="diagnostics"><i class="fas fa-stethoscope"></i> Diagnostics</button>
+        <button class="tab" data-tab="history"><i class="fas fa-history"></i> History</button>
       </div>
 
-      <div class="tab-panel active" data-panel="resources">
-        <div id="resourcesContent"></div>
-      </div>
-
-      <div class="tab-panel" data-panel="headers">
-        <div id="headersContent"></div>
-      </div>
-
-      <div class="tab-panel" data-panel="suggestions">
-        <div id="suggestionsContent"></div>
-      </div>
-
+      <div class="tab-panel active" data-panel="opportunities"><div id="opportunitiesContent"></div></div>
+      <div class="tab-panel" data-panel="resources"><div id="resourcesContent"></div></div>
+      <div class="tab-panel" data-panel="waterfall"><div id="waterfallContent"></div></div>
+      <div class="tab-panel" data-panel="diagnostics"><div id="diagnosticsContent"></div></div>
       <div class="tab-panel" data-panel="history">
         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
           <span style="font-size:0.85rem; opacity:0.7;"><span id="historyCount">0</span> <span data-i18n="savedTests">saved tests</span></span>
@@ -416,16 +365,15 @@ select option { background:#0b1a33; color:#fff; }
     </div>
   </div>
 
-  <!-- FAQ -->
   <div class="faq-section">
     <h2><i class="fas fa-circle-question"></i> <span data-i18n="faqTitle">Frequently Asked Questions</span></h2>
     <div class="faq-item">
       <div class="faq-q"><i class="fas fa-question-circle"></i> Where does the data come from?</div>
-      <div class="faq-a" data-i18n="faq1">The tool uses Google PageSpeed Insights API (public, no key needed for low volume) plus a real fetch via CORS proxy to analyze page resources, size, and headers.</div>
+      <div class="faq-a" data-i18n="faq1">Google PageSpeed Insights API (public) + real fetch for resource analysis. No API key required, but you can provide your own to avoid rate limits.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q"><i class="fas fa-question-circle"></i> What are Core Web Vitals?</div>
-      <div class="faq-a" data-i18n="faq2">LCP (loading < 2.5s), INP (interactivity < 200ms), CLS (visual stability < 0.1). Google uses them as ranking factors.</div>
+      <div class="faq-a" data-i18n="faq2">LCP (loading &lt; 2.5s), INP (interactivity &lt; 200ms), CLS (visual stability &lt; 0.1). Google uses them as ranking factors.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q"><i class="fas fa-question-circle"></i> Why does the scan take 30-60 seconds?</div>
@@ -433,11 +381,10 @@ select option { background:#0b1a33; color:#fff; }
     </div>
     <div class="faq-item">
       <div class="faq-q"><i class="fas fa-question-circle"></i> Is my data private?</div>
-      <div class="faq-a" data-i18n="faq4">Yes. Your URL is sent to Google PageSpeed Insights API (public service). We don't store or log anything on our servers.</div>
+      <div class="faq-a" data-i18n="faq4">Yes. Your URL is sent to Google PageSpeed Insights API (public). We don't store or log anything on our servers.</div>
     </div>
   </div>
 
-  <!-- FOOTER -->
   <div class="footer">
     <div class="footer-links">
       <a href="/">Home</a>
@@ -446,7 +393,7 @@ select option { background:#0b1a33; color:#fff; }
       <a href="/contact.html">Contact</a>
       <a href="/privacy.html">Privacy</a>
     </div>
-    <p style="opacity:0.5; font-size:0.82rem;">© 2026 FreeSEOToolHub | Website Speed Test v3.0 | Real Data</p>
+    <p style="opacity:0.5; font-size:0.82rem;">© 2026 FreeSEOToolHub | Website Speed Test v4.0 | Real Data</p>
   </div>
 </div>
 
@@ -463,7 +410,7 @@ select option { background:#0b1a33; color:#fff; }
 const I18N = {
   en: {
     title: 'Website Speed Test 2026',
-    subtitle: 'Real Lighthouse data via Google PageSpeed Insights API + resource analysis. Mobile & desktop. 100% client-side.',
+    subtitle: 'Real PageSpeed Insights API + resource analysis. Core Web Vitals. Mobile & desktop. 100% client-side.',
     urlLabel: 'Website URL', deviceLabel: 'Device',
     analyzeBtn: 'Run Speed Test', copy: 'Copy', clear: 'Clear',
     score: 'Performance',
@@ -482,7 +429,7 @@ const I18N = {
     },
     suggestions: { high: 'Critical', medium: 'Recommended', low: 'Nice to have' },
     faqTitle: 'Frequently Asked Questions',
-    faq1: 'Uses Google PageSpeed Insights API (public) + real fetch for resource analysis.',
+    faq1: 'Google PageSpeed Insights API + real fetch for resource analysis.',
     faq2: 'LCP < 2.5s, INP < 200ms, CLS < 0.1 are good thresholds.',
     faq3: 'Google runs Lighthouse in real Chrome. First scans take 30-60s.',
     faq4: 'Yes. We don\'t store or log anything.',
@@ -490,11 +437,15 @@ const I18N = {
     complete: 'Speed test complete!',
     copied: 'Report copied!',
     noHistory: 'No history yet',
-    noUrl: 'Please enter a URL'
+    noUrl: 'Please enter a URL',
+    psiRateLimit: 'PageSpeed API rate limited. Using resource-based estimation. Add your own API key for real data.',
+    estimated: 'Estimated from resource analysis',
+    liveData: 'Google PageSpeed Insights (Lighthouse)',
+    psiFailed: 'PageSpeed API unavailable'
   },
   hi: {
     title: 'वेबसाइट स्पीड टेस्ट 2026',
-    subtitle: 'असली Lighthouse डेटा Google PageSpeed API से + रिसोर्स विश्लेषण। मोबाइल और डेस्कटॉप।',
+    subtitle: 'असली PageSpeed Insights API + रिसोर्स विश्लेषण। Core Web Vitals। मोबाइल और डेस्कटॉप।',
     urlLabel: 'वेबसाइट URL', deviceLabel: 'डिवाइस',
     analyzeBtn: 'स्पीड टेस्ट चलाएं', copy: 'कॉपी', clear: 'साफ़',
     score: 'प्रदर्शन',
@@ -508,78 +459,82 @@ const I18N = {
     loading: { init: 'शुरू हो रहा है...', psi: 'Lighthouse चल रहा है (30-60s)...', resources: 'संसाधन विश्लेषण...', complete: 'विश्लेषण पूर्ण!' },
     suggestions: { high: 'महत्वपूर्ण', medium: 'अनुशंसित', low: 'अच्छा होगा' },
     faqTitle: 'अक्सर पूछे जाने वाले प्रश्न',
-    faq1: 'Google PageSpeed API + असली फ़ेच का उपयोग करता है।',
+    faq1: 'PageSpeed API + असली फ़ेच का उपयोग।',
     faq2: 'LCP < 2.5s, INP < 200ms, CLS < 0.1 अच्छे हैं।',
     faq3: 'Google असली Chrome में Lighthouse चलाता है।',
-    faq4: 'हाँ। हम कुछ भी स्टोर नहीं करते।',
+    faq4: 'हाँ। हम कुछ स्टोर नहीं करते।',
     error: 'विश्लेषण विफल',
-    complete: 'स्पीड टेस्ट पूर्ण!', copied: 'रिपोर्ट कॉपी!', noHistory: 'अभी कोई इतिहास नहीं', noUrl: 'कृपया URL दर्ज करें'
+    complete: 'स्पीड टेस्ट पूर्ण!', copied: 'रिपोर्ट कॉपी!', noHistory: 'अभी कोई इतिहास नहीं', noUrl: 'कृपया URL दर्ज करें',
+    psiRateLimit: 'PageSpeed API rate limited। रिसोर्स-आधारित अनुमान। अपनी API key जोड़ें।',
+    estimated: 'रिसोर्स विश्लेषण से अनुमानित',
+    liveData: 'Google PageSpeed Insights (Lighthouse)',
+    psiFailed: 'PageSpeed API अनुपलब्ध'
   },
   ur: {
     title: 'ویب سائٹ اسپیڈ ٹیسٹ 2026',
-    subtitle: 'Google PageSpeed API سے حقیقی Lighthouse ڈیٹا + وسائل کا تجزیہ۔',
-    urlLabel: 'ویب سائٹ URL', deviceLabel: 'ڈیوائس',
-    analyzeBtn: 'اسپیڈ ٹیسٹ چلائیں', copy: 'کاپی', clear: 'صاف کریں',
+    subtitle: 'حقیقی PageSpeed Insights API + وسائل کا تجزیہ۔ Core Web Vitals۔',
+    urlLabel: 'URL', deviceLabel: 'ڈیوائس',
+    analyzeBtn: 'ٹیسٹ چلائیں', copy: 'کاپی', clear: 'صاف',
     score: 'کارکردگی',
     coreWebVitals: 'Core Web Vitals',
     tabResources: 'وسائل', tabHeaders: 'ہیڈرز', tabSuggestions: 'تجاویز', tabHistory: 'تاریخ',
-    savedTests: 'محفوظ ٹیسٹس',
-    excellent: 'بہترین', good: 'اچھا', moderate: 'بہتری کی ضرورت', poor: 'خراب', critical: 'شدید',
-    metrics: { score: 'اسکور', fcp: 'FCP', lcp: 'LCP', tbt: 'TBT', cls: 'CLS', si: 'اسپیڈ انڈیکس' },
-    vitals: { lcp: 'LCP', fcp: 'FCP', cls: 'CLS', tbt: 'TBT', si: 'اسپیڈ انڈیکس', tti: 'TTI' },
+    savedTests: 'محفوظ',
+    excellent: 'بہترین', good: 'اچھا', moderate: 'بہتری', poor: 'خراب', critical: 'شدید',
+    metrics: { score: 'اسکور', fcp: 'FCP', lcp: 'LCP', tbt: 'TBT', cls: 'CLS', si: 'SI' },
+    vitals: { lcp: 'LCP', fcp: 'FCP', cls: 'CLS', tbt: 'TBT', si: 'SI', tti: 'TTI' },
     good: 'اچھا', needsImprovement: 'بہتری چاہیے', poor: 'خراب',
-    loading: { init: 'شروع...', psi: 'Lighthouse چل رہا ہے...', resources: 'وسائل کا تجزیہ...', complete: 'تجزیہ مکمل!' },
-    suggestions: { high: 'اہم', medium: 'تجویز کردہ', low: 'اچھا ہوگا' },
-    faqTitle: 'اکثر پوچھے گئے سوالات',
-    faq1: 'Google PageSpeed API استعمال کرتا ہے۔',
-    faq2: 'LCP < 2.5s، INP < 200ms، CLS < 0.1 اچھے ہیں۔',
-    faq3: 'Google حقیقی Chrome میں Lighthouse چلاتا ہے۔',
-    faq4: 'جی ہاں۔ ہم کچھ محفوظ نہیں کرتے۔',
-    error: 'تجزیہ ناکام', complete: 'اسپیڈ ٹیسٹ مکمل!', copied: 'رپورٹ کاپی!', noHistory: 'ابھی کوئی تاریخ نہیں', noUrl: 'براہ کرم URL درج کریں'
+    loading: { init: 'شروع...', psi: 'Lighthouse چل رہا ہے...', resources: 'وسائل...', complete: 'مکمل!' },
+    suggestions: { high: 'اہم', medium: 'تجویز', low: 'اختیاری' },
+    faqTitle: 'عام سوالات',
+    faq1: 'PageSpeed API استعمال۔', faq2: 'LCP < 2.5s, INP < 200ms, CLS < 0.1۔',
+    faq3: 'حقیقی Chrome میں Lighthouse۔', faq4: 'کچھ محفوظ نہیں۔',
+    error: 'ناکام', complete: 'مکمل!', copied: 'کاپی!', noHistory: 'تاریخ نہیں', noUrl: 'URL درج کریں',
+    psiRateLimit: 'Rate limited۔ تخمینہ استعمال ہو رہا ہے۔',
+    estimated: 'تخمینہ', liveData: 'PageSpeed Insights', psiFailed: 'API ناکام'
   },
   de: {
     title: 'Website-Geschwindigkeitstest 2026',
-    subtitle: 'Echte Lighthouse-Daten über Google PageSpeed Insights API + Ressourcenanalyse.',
-    urlLabel: 'Website-URL', deviceLabel: 'Gerät',
-    analyzeBtn: 'Geschwindigkeitstest', copy: 'Kopieren', clear: 'Löschen',
+    subtitle: 'Echte PageSpeed Insights API + Ressourcenanalyse. Core Web Vitals.',
+    urlLabel: 'URL', deviceLabel: 'Gerät',
+    analyzeBtn: 'Test starten', copy: 'Kopieren', clear: 'Löschen',
     score: 'Leistung',
     coreWebVitals: 'Core Web Vitals',
     tabResources: 'Ressourcen', tabHeaders: 'Header', tabSuggestions: 'Empfehlungen', tabHistory: 'Verlauf',
-    savedTests: 'gespeicherte Tests',
-    excellent: 'Ausgezeichnet', good: 'Gut', moderate: 'Verbesserung nötig', poor: 'Schlecht', critical: 'Kritisch',
-    metrics: { score: 'Punkte', fcp: 'FCP', lcp: 'LCP', tbt: 'TBT', cls: 'CLS', si: 'Speed Index' },
-    vitals: { lcp: 'LCP', fcp: 'FCP', cls: 'CLS', tbt: 'TBT', si: 'Speed Index', tti: 'TTI' },
+    savedTests: 'Tests',
+    excellent: 'Ausgezeichnet', good: 'Gut', moderate: 'Verbesserung', poor: 'Schlecht', critical: 'Kritisch',
+    metrics: { score: 'Punkte', fcp: 'FCP', lcp: 'LCP', tbt: 'TBT', cls: 'CLS', si: 'SI' },
+    vitals: { lcp: 'LCP', fcp: 'FCP', cls: 'CLS', tbt: 'TBT', si: 'SI', tti: 'TTI' },
     good: 'Gut', needsImprovement: 'Verbesserung nötig', poor: 'Schlecht',
-    loading: { init: 'Initialisierung...', psi: 'Lighthouse-Audit läuft (30-60s)...', resources: 'Ressourcen werden analysiert...', complete: 'Analyse abgeschlossen!' },
+    loading: { init: 'Initialisierung...', psi: 'Lighthouse läuft...', resources: 'Ressourcen...', complete: 'Fertig!' },
     suggestions: { high: 'Kritisch', medium: 'Empfohlen', low: 'Optional' },
     faqTitle: 'Häufige Fragen',
-    faq1: 'Nutzt Google PageSpeed Insights API + echten Abruf.',
-    faq2: 'LCP < 2.5s, INP < 200ms, CLS < 0.1 sind gute Werte.',
-    faq3: 'Google führt Lighthouse in echtem Chrome aus.',
-    faq4: 'Ja. Wir speichern nichts.',
-    error: 'Analyse fehlgeschlagen', complete: 'Test abgeschlossen!', copied: 'Bericht kopiert!', noHistory: 'Noch kein Verlauf', noUrl: 'Bitte URL eingeben'
+    faq1: 'PageSpeed API + echter Abruf.', faq2: 'LCP < 2.5s, INP < 200ms, CLS < 0.1.',
+    faq3: 'Lighthouse in echtem Chrome.', faq4: 'Wir speichern nichts.',
+    error: 'Fehler', complete: 'Fertig!', copied: 'Kopiert!', noHistory: 'Kein Verlauf', noUrl: 'URL eingeben',
+    psiRateLimit: 'Rate limitiert. Schätzung wird verwendet.',
+    estimated: 'Geschätzt', liveData: 'PageSpeed Insights', psiFailed: 'API nicht verfügbar'
   },
   es: {
     title: 'Test de Velocidad 2026',
-    subtitle: 'Datos reales de Lighthouse vía Google PageSpeed Insights API + análisis de recursos.',
-    urlLabel: 'URL del Sitio', deviceLabel: 'Dispositivo',
+    subtitle: 'PageSpeed Insights API real + análisis de recursos. Core Web Vitals.',
+    urlLabel: 'URL', deviceLabel: 'Dispositivo',
     analyzeBtn: 'Ejecutar Test', copy: 'Copiar', clear: 'Limpiar',
     score: 'Rendimiento',
     coreWebVitals: 'Core Web Vitals',
     tabResources: 'Recursos', tabHeaders: 'Cabeceras', tabSuggestions: 'Sugerencias', tabHistory: 'Historial',
-    savedTests: 'tests guardados',
+    savedTests: 'tests',
     excellent: 'Excelente', good: 'Bueno', moderate: 'Necesita Mejora', poor: 'Pobre', critical: 'Crítico',
-    metrics: { score: 'Puntos', fcp: 'FCP', lcp: 'LCP', tbt: 'TBT', cls: 'CLS', si: 'Speed Index' },
-    vitals: { lcp: 'LCP', fcp: 'FCP', cls: 'CLS', tbt: 'TBT', si: 'Speed Index', tti: 'TTI' },
+    metrics: { score: 'Puntos', fcp: 'FCP', lcp: 'LCP', tbt: 'TBT', cls: 'CLS', si: 'SI' },
+    vitals: { lcp: 'LCP', fcp: 'FCP', cls: 'CLS', tbt: 'TBT', si: 'SI', tti: 'TTI' },
     good: 'Bueno', needsImprovement: 'Necesita Mejora', poor: 'Pobre',
-    loading: { init: 'Inicializando...', psi: 'Auditoría Lighthouse en curso (30-60s)...', resources: 'Analizando recursos...', complete: '¡Análisis completo!' },
+    loading: { init: 'Iniciando...', psi: 'Ejecutando Lighthouse...', resources: 'Analizando...', complete: '¡Completo!' },
     suggestions: { high: 'Crítico', medium: 'Recomendado', low: 'Opcional' },
-    faqTitle: 'Preguntas Frecuentes',
-    faq1: 'Usa Google PageSpeed Insights API + fetch real.',
-    faq2: 'LCP < 2.5s, INP < 200ms, CLS < 0.1 son buenos.',
-    faq3: 'Google ejecuta Lighthouse en Chrome real.',
-    faq4: 'Sí. No guardamos nada.',
-    error: 'Análisis fallido', complete: '¡Test completo!', copied: '¡Informe copiado!', noHistory: 'Sin historial aún', noUrl: 'Por favor ingresa URL'
+    faqTitle: 'Preguntas',
+    faq1: 'PageSpeed API + fetch real.', faq2: 'LCP < 2.5s, INP < 200ms, CLS < 0.1.',
+    faq3: 'Lighthouse en Chrome real.', faq4: 'No guardamos nada.',
+    error: 'Error', complete: '¡Completo!', copied: '¡Copiado!', noHistory: 'Sin historial', noUrl: 'Ingresa URL',
+    psiRateLimit: 'Rate limitado. Usando estimación.',
+    estimated: 'Estimado', liveData: 'PageSpeed Insights', psiFailed: 'API no disponible'
   }
 };
 
@@ -628,40 +583,43 @@ function showToast(msg, type = 'success') {
     toast.style.opacity = '0';
     toast.style.transition = 'opacity 0.3s';
     setTimeout(() => toast.remove(), 300);
-  }, 3200);
+  }, 4000);
 }
 
 // ============================================================
-// 🌐 GOOGLE PAGESPEED INSIGHTS API
+// 🌐 PAGESPEED INSIGHTS API (with optional key)
 // ============================================================
-async function fetchPageSpeed(url, strategy) {
-  // Public endpoint — no API key needed for low volume, but we can pass one if available
-  // If no key, may hit rate limits (429). We'll try both.
+async function fetchPageSpeed(url, strategy, apiKey) {
   const endpoint = 'https://www.googleapis.com/pagespeedonline/v5/runPagespeed';
   const params = new URLSearchParams({
     url: url,
-    strategy: strategy, // 'mobile' or 'desktop'
+    strategy: strategy,
     category: 'performance'
   });
-  // Add second category to reduce calls
   params.append('category', 'seo');
+  if (apiKey) params.append('key', apiKey);
 
-  const fullUrl = `${endpoint}?${params.toString()}`;
-
-  const res = await fetch(fullUrl);
+  const res = await fetch(`${endpoint}?${params.toString()}`);
   if (!res.ok) {
     const errText = await res.text();
-    throw new Error(`PageSpeed API HTTP ${res.status}: ${errText.slice(0, 200)}`);
+    let parsed = {};
+    try { parsed = JSON.parse(errText); } catch(e) {}
+    const code = parsed?.error?.code || res.status;
+    const msg = parsed?.error?.message || errText.slice(0, 150);
+    if (code === 429) throw new Error('RATE_LIMIT:' + msg);
+    if (code === 403) throw new Error('API_KEY_INVALID:' + msg);
+    throw new Error(`PSI HTTP ${code}: ${msg}`);
   }
   return await res.json();
 }
 
 // ============================================================
-// 🌐 CORS PROXIES (for resource analysis)
+// 🌐 CORS PROXIES
 // ============================================================
 const PROXIES = [
   { name: 'allorigins-raw', url: u => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}` },
-  { name: 'corsproxy.io', url: u => `https://corsproxy.io/?${encodeURIComponent(u)}` }
+  { name: 'corsproxy.io', url: u => `https://corsproxy.io/?${encodeURIComponent(u)}` },
+  { name: 'allorigins-get', url: u => `https://api.allorigins.win/get?url=${encodeURIComponent(u)}` }
 ];
 
 async function fetchHtml(url) {
@@ -670,10 +628,16 @@ async function fetchHtml(url) {
     try {
       const res = await fetch(proxy.url(url), { method: 'GET' });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const text = await res.text();
+      let text = await res.text();
+      if (proxy.name === 'allorigins-get') {
+        try {
+          const parsed = JSON.parse(text);
+          text = parsed.contents || '';
+        } catch(e) {}
+      }
       const elapsed = performance.now() - startTime;
       if (!text || text.length < 200) throw new Error('Empty response');
-      return { html: text, proxy: proxy.name, fetchTime: elapsed, headers: res.headers };
+      return { html: text, proxy: proxy.name, fetchTime: elapsed };
     } catch (e) {
       console.warn(`Proxy ${proxy.name} failed:`, e.message);
     }
@@ -686,28 +650,32 @@ async function fetchHtml(url) {
 // ============================================================
 function analyzeResources(html, url, fetchTime) {
   const doc = new DOMParser().parseFromString(html, 'text/html');
+  // Use string length, not Blob (faster)
   const htmlSize = new Blob([html]).size;
 
   // Scripts
   const allScripts = Array.from(doc.querySelectorAll('script'));
   const externalScripts = allScripts.filter(s => s.src);
-  const syncScripts = externalScripts.filter(s => !s.defer && !s.async && !s.type?.includes('module'));
+  const syncScripts = externalScripts.filter(s => !s.defer && !s.async && !(s.type || '').includes('module'));
   const asyncScripts = externalScripts.filter(s => s.async);
   const deferScripts = externalScripts.filter(s => s.defer);
   const inlineScripts = allScripts.filter(s => !s.src);
-  const inlineScriptSize = inlineScripts.reduce((s, el) => s + el.textContent.length, 0);
+  const inlineScriptSize = inlineScripts.reduce((s, el) => s + (el.textContent || '').length, 0);
 
-  // Third-party scripts
-  let host;
-  try { host = new URL(url).hostname; } catch { host = ''; }
+  // Third party
+  let host = '';
+  try { host = new URL(url).hostname; } catch(e) {}
   const thirdParty = externalScripts.filter(s => {
     try { return new URL(s.src, url).hostname !== host; } catch { return false; }
   });
+  const thirdPartyDomains = [...new Set(thirdParty.map(s => {
+    try { return new URL(s.src, url).hostname; } catch { return ''; }
+  }).filter(Boolean))];
 
   // Styles
   const stylesheets = Array.from(doc.querySelectorAll('link[rel="stylesheet"]'));
   const inlineStyles = Array.from(doc.querySelectorAll('style'));
-  const inlineStylesSize = inlineStyles.reduce((s, el) => s + el.textContent.length, 0);
+  const inlineStylesSize = inlineStyles.reduce((s, el) => s + (el.textContent || '').length, 0);
 
   // Images
   const images = Array.from(doc.querySelectorAll('img'));
@@ -717,6 +685,9 @@ function analyzeResources(html, url, fetchTime) {
   const imagesNoDims = images.filter(i => !i.width || !i.height);
   const srcsetImages = images.filter(i => i.srcset);
 
+  // Fonts
+  const fonts = Array.from(doc.querySelectorAll('link[rel="preload"][as="font"], link[href*="fonts.googleapis"], link[href*="fonts.gstatic"]'));
+
   // Resource hints
   const preconnect = doc.querySelectorAll('link[rel="preconnect"]').length;
   const preload = doc.querySelectorAll('link[rel="preload"]').length;
@@ -724,18 +695,11 @@ function analyzeResources(html, url, fetchTime) {
   const dnsPrefetch = doc.querySelectorAll('link[rel="dns-prefetch"]').length;
 
   // Meta
-  const viewport = doc.querySelector('meta[name="viewport"]');
-  const hasViewport = !!viewport;
-  const charset = doc.querySelector('meta[charset]');
-  const hasCharset = !!charset;
+  const hasViewport = !!doc.querySelector('meta[name="viewport"]');
+  const hasCharset = !!doc.querySelector('meta[charset]');
 
-  // Third-party count
-  const thirdPartyDomains = [...new Set(thirdParty.map(s => {
-    try { return new URL(s.src, url).hostname; } catch { return ''; }
-  }).filter(Boolean))];
-
-  // Total resources
-  const totalResources = externalScripts.length + stylesheets.length + images.length;
+  // Total
+  const totalResources = externalScripts.length + stylesheets.length + images.length + fonts.length;
 
   return {
     htmlSize,
@@ -763,6 +727,7 @@ function analyzeResources(html, url, fetchTime) {
       noDims: imagesNoDims.length,
       srcset: srcsetImages.length
     },
+    fonts: fonts.length,
     hints: { preconnect, preload, prefetch, dnsPrefetch },
     meta: { hasViewport, hasCharset },
     totalResources
@@ -774,29 +739,87 @@ function analyzeResources(html, url, fetchTime) {
 // ============================================================
 function estimateMetrics(resources, device) {
   const isMobile = device === 'mobile';
-  const mobileMultiplier = isMobile ? 1.5 : 1;
+  const mobileMultiplier = isMobile ? 1.6 : 1;
 
-  // FCP estimate: base + html size + blocking styles
-  const fcp = (0.8 + (resources.htmlSize / 500_000) * 1.5 + resources.styles.external * 0.15) * mobileMultiplier;
-
-  // LCP estimate: FCP + images + sync scripts
-  const lcp = fcp + (resources.images.total * 0.15) + (resources.scripts.sync * 0.3) * mobileMultiplier;
-
-  // CLS estimate: images without dimensions + no viewport
-  const cls = (resources.images.noDims / Math.max(1, resources.images.total)) * 0.4 + (resources.meta.hasViewport ? 0 : 0.15);
-
-  // TBT estimate: sync scripts + third-party + inline JS
-  const tbt = resources.scripts.sync * 80 + resources.scripts.thirdParty * 60 + (resources.scripts.inlineSize / 10_000) * 50;
-
-  // Speed Index estimate
-  const si = fcp * 1.8;
+  const fcp = (0.7 + (resources.htmlSize / 500_000) * 1.8 + resources.styles.external * 0.2) * mobileMultiplier;
+  const lcp = fcp + (resources.images.total * 0.12) + (resources.scripts.sync * 0.4) * mobileMultiplier;
+  const cls = (resources.images.noDims / Math.max(1, resources.images.total)) * 0.35 + (resources.meta.hasViewport ? 0 : 0.2);
+  const tbt = resources.scripts.sync * 90 + resources.scripts.thirdParty * 70 + (resources.scripts.inlineSize / 10_000) * 60;
+  const si = fcp * 1.9;
 
   return {
-    fcp: Math.max(0.4, fcp).toFixed(1),
-    lcp: Math.max(0.8, lcp).toFixed(1),
-    cls: Math.max(0, cls).toFixed(2),
+    fcp: Math.max(0.5, fcp).toFixed(2),
+    lcp: Math.max(0.9, lcp).toFixed(2),
+    cls: Math.max(0, cls).toFixed(3),
     tbt: Math.round(Math.max(0, tbt)),
-    si: Math.max(1, si).toFixed(1)
+    si: Math.max(1.2, si).toFixed(2)
+  };
+}
+
+// ============================================================
+// 📊 EXTRACT REAL LIGHTHOUSE DATA
+// ============================================================
+function extractLighthouseData(psiData) {
+  const lh = psiData.lighthouseResult;
+  if (!lh) return null;
+
+  const cats = lh.categories || {};
+  const audits = lh.audits || {};
+
+  const numOrNull = (v) => (v === undefined || v === null) ? null : v;
+
+  const score = Math.round((cats.performance?.score || 0) * 100);
+
+  const parseTime = (audit) => {
+    if (!audit) return null;
+    if (audit.numericValue !== undefined) return (audit.numericValue / 1000).toFixed(2);
+    if (audit.displayValue) return parseFloat(audit.displayValue.replace(/[^\d.]/g, '')).toFixed(2);
+    return null;
+  };
+
+  const fcp = parseTime(audits['first-contentful-paint']);
+  const lcp = parseTime(audits['largest-contentful-paint']);
+  const si = parseTime(audits['speed-index']);
+  const tbt = audits['total-blocking-time']?.numericValue !== undefined
+    ? Math.round(audits['total-blocking-time'].numericValue)
+    : null;
+  const cls = audits['cumulative-layout-shift']?.numericValue !== undefined
+    ? audits['cumulative-layout-shift'].numericValue.toFixed(3)
+    : null;
+  const tti = parseTime(audits['interactive']);
+
+  // Extract opportunities (things that need fixing)
+  const opportunities = Object.entries(audits)
+    .filter(([k, a]) => a.details?.type === 'opportunity' && typeof a.score === 'number' && a.score < 0.9 && a.numericValue > 0)
+    .sort((a, b) => (b[1].numericValue || 0) - (a[1].numericValue || 0))
+    .slice(0, 10)
+    .map(([k, a]) => ({
+      id: k,
+      title: a.title,
+      description: a.description,
+      savings: a.displayValue || null,
+      savingsMs: a.numericValue || 0,
+      score: a.score
+    }));
+
+  // Extract diagnostics (interesting findings)
+  const diagnostics = Object.entries(audits)
+    .filter(([k, a]) => a.details?.type === 'table' && a.score !== null && a.score < 1)
+    .slice(0, 10)
+    .map(([k, a]) => ({
+      id: k,
+      title: a.title,
+      description: a.description,
+      score: a.score,
+      displayValue: a.displayValue || null
+    }));
+
+  return {
+    score, fcp, lcp, si, tbt, cls, tti,
+    opportunities, diagnostics,
+    fetchTime: lh.fetchTime,
+    lighthouseVersion: lh.lighthouseVersion,
+    userAgent: lh.userAgent
   };
 }
 
@@ -820,6 +843,8 @@ async function analyze() {
   }
 
   const device = $('device').value;
+  const apiKey = $('apiKey').value.trim() || null;
+
   const btn = $('analyzeBtn');
   const progress = $('loadingProgress');
   const fill = $('loadingFill');
@@ -831,66 +856,52 @@ async function analyze() {
   text.textContent = t('loading.init');
 
   try {
-    // Step 1: Try PageSpeed Insights API
     fill.style.width = '15%';
     text.textContent = t('loading.psi');
 
     let psiData = null;
     let psiError = null;
+    let psiErrorType = null;
+
     try {
-      psiData = await fetchPageSpeed(url, device);
+      psiData = await fetchPageSpeed(url, device, apiKey);
     } catch (e) {
       psiError = e.message;
-      console.warn('PageSpeed API failed:', e.message);
+      if (e.message.startsWith('RATE_LIMIT')) psiErrorType = 'rate_limit';
+      else if (e.message.startsWith('API_KEY_INVALID')) psiErrorType = 'bad_key';
+      else psiErrorType = 'unknown';
+      console.warn('PSI failed:', e.message);
     }
 
     fill.style.width = '60%';
-
-    // Step 2: Fetch HTML for resource analysis
     text.textContent = t('loading.resources');
+
     const htmlResult = await fetchHtml(url);
-
-    fill.style.width = '85%';
-
     let resources = null;
     if (htmlResult) {
       resources = analyzeResources(htmlResult.html, url, htmlResult.fetchTime);
     }
 
-    // Step 3: Compute metrics
-    let metrics = {
-      score: null,
-      fcp: null, lcp: null, cls: null, tbt: null, si: null,
+    fill.style.width = '85%';
+
+    // Build metrics
+    const metrics = {
+      score: 0,
+      fcp: null, lcp: null, cls: null, tbt: null, si: null, tti: null,
+      opportunities: [], diagnostics: [],
       source: null
     };
 
     if (psiData && psiData.lighthouseResult) {
-      const lh = psiData.lighthouseResult;
-      const cats = lh.categories || {};
-      const audits = lh.audits || {};
+      const lhData = extractLighthouseData(psiData);
+      if (lhData) {
+        Object.assign(metrics, lhData);
+        metrics.source = t('liveData');
+      }
+    }
 
-      metrics.score = Math.round((cats.performance?.score || 0) * 100);
-      metrics.fcp = audits['first-contentful-paint']?.displayValue?.replace('s', '') || null;
-      metrics.lcp = audits['largest-contentful-paint']?.displayValue?.replace('s', '') || null;
-      metrics.cls = audits['cumulative-layout-shift']?.displayValue || null;
-      metrics.tbt = audits['total-blocking-time']?.displayValue?.replace('ms', '').replace('s', '') || null;
-      metrics.si = audits['speed-index']?.displayValue?.replace('s', '') || null;
-      metrics.source = 'Google PageSpeed Insights (Lighthouse)';
-
-      // Save opportunities
-      metrics.opportunities = Object.entries(audits)
-        .filter(([k, a]) => a.details?.type === 'opportunity' && a.score !== null && a.score < 0.9 && a.numericValue)
-        .sort((a, b) => (b[1].numericValue || 0) - (a[1].numericValue || 0))
-        .slice(0, 6)
-        .map(([k, a]) => ({
-          id: k,
-          title: a.title,
-          description: a.description,
-          savings: a.displayValue,
-          score: a.score
-        }));
-    } else if (resources) {
-      // Estimate from resource analysis
+    // Fallback to estimation
+    if (metrics.score === 0 && resources) {
       const est = estimateMetrics(resources, device);
       metrics.fcp = est.fcp;
       metrics.lcp = est.lcp;
@@ -898,7 +909,7 @@ async function analyze() {
       metrics.tbt = est.tbt;
       metrics.si = est.si;
 
-      // Compute score from estimates
+      // Compute score
       let score = 100;
       if (parseFloat(est.lcp) > 2.5) score -= 20;
       if (parseFloat(est.lcp) > 4.0) score -= 15;
@@ -909,13 +920,13 @@ async function analyze() {
       if (resources.scripts.thirdParty > 5) score -= 10;
       if (resources.images.total > 20) score -= 5;
       if (!resources.meta.hasViewport) score -= 15;
-      score = Math.max(0, Math.min(100, score));
+      metrics.score = Math.max(0, Math.min(100, score));
+      metrics.source = t('estimated');
+    }
 
-      metrics.score = score;
-      metrics.source = 'Estimated from resource analysis';
-      metrics.psiError = psiError;
-    } else {
-      throw new Error('Could not fetch page. All CORS proxies blocked.');
+    // If nothing available
+    if (metrics.score === 0 && !resources) {
+      throw new Error('Could not fetch page or run PSI. All CORS proxies blocked.');
     }
 
     fill.style.width = '100%';
@@ -927,6 +938,7 @@ async function analyze() {
       metrics,
       resources,
       psiError,
+      psiErrorType,
       timestamp: new Date().toISOString()
     };
 
@@ -939,7 +951,12 @@ async function analyze() {
     $('copyReport').disabled = false;
     $('results').scrollIntoView({ behavior: 'smooth' });
 
-    showToast('✅ ' + t('complete'));
+    // Show warning if rate limited
+    if (psiErrorType === 'rate_limit') {
+      showToast('⚠️ ' + t('psiRateLimit'), 'warning');
+    } else {
+      showToast('✅ ' + t('complete'));
+    }
 
   } catch (e) {
     console.error(e);
@@ -967,8 +984,7 @@ function renderResults(r) {
   else if (score >= 30) { color = '#ef4444'; statusKey = 'poor'; }
   else { color = '#ef4444'; statusKey = 'critical'; }
 
-  const gauge = $('scoreGauge');
-  gauge.style.background = `conic-gradient(${color} 0deg, ${color} ${deg}deg, rgba(255,255,255,0.08) ${deg}deg)`;
+  $('scoreGauge').style.background = `conic-gradient(${color} 0deg, ${color} ${deg}deg, rgba(255,255,255,0.08) ${deg}deg)`;
   $('scoreValue').textContent = score;
   $('scoreValue').style.color = color;
   const st = $('statusText');
@@ -976,19 +992,19 @@ function renderResults(r) {
   st.style.color = color;
   $('statusSub').textContent = `${r.url} — ${r.device} · Source: ${m.source}`;
 
-  // Metrics row
   $('metricsRow').innerHTML = `
     <div class="metric-box"><div class="metric-value" style="color:${color}">${score}</div><div class="metric-label">${t('metrics.score')}</div></div>
     <div class="metric-box"><div class="metric-value" style="color:var(--info)">${m.fcp || '—'}</div><div class="metric-label">FCP (s)</div></div>
     <div class="metric-box"><div class="metric-value" style="color:var(--warning)">${m.lcp || '—'}</div><div class="metric-label">LCP (s)</div></div>
-    <div class="metric-box"><div class="metric-value" style="color:var(--primary)">${m.tbt || '—'}</div><div class="metric-label">TBT (ms)</div></div>
+    <div class="metric-box"><div class="metric-value" style="color:var(--primary)">${m.tbt ?? '—'}</div><div class="metric-label">TBT (ms)</div></div>
     <div class="metric-box"><div class="metric-value" style="color:var(--success)">${m.cls || '—'}</div><div class="metric-label">CLS</div></div>
   `;
 
   // Vitals
   const getVitalStatus = (v, thresholds) => {
-    if (v === null || v === undefined) return { cls: 'status-good', text: '—' };
+    if (v === null || v === undefined || v === '') return { cls: 'status-good', text: '—' };
     const num = parseFloat(v);
+    if (isNaN(num)) return { cls: 'status-good', text: '—' };
     if (num < thresholds[0]) return { cls: 'status-good', text: t('good') };
     if (num < thresholds[1]) return { cls: 'status-average', text: t('needsImprovement') };
     return { cls: 'status-poor', text: t('poor') };
@@ -1017,12 +1033,59 @@ function renderResults(r) {
     `;
   }).join('');
 
+  // Opportunities tab
+  const opp = m.opportunities || [];
+  if (opp.length) {
+    $('opportunitiesContent').innerHTML = `
+      <div class="check-category">
+        <h4><i class="fas fa-lightbulb"></i> PageSpeed Opportunities (${opp.length})</h4>
+        ${opp.map(o => `
+          <div class="check-item">
+            <div class="check-name">
+              ${escapeHtml(o.title)}
+              <small>${escapeHtml((o.description || '').slice(0, 180))}</small>
+            </div>
+            <div class="check-status ${o.score < 0.5 ? 'fail' : 'warn'}">${escapeHtml(o.savings || '—')}</div>
+          </div>
+        `).join('')}
+      </div>
+    `;
+  } else {
+    // Build suggestions from resources
+    const suggestions = [];
+    if (r.resources) {
+      const res = r.resources;
+      if (res.scripts.sync > 0) suggestions.push({ level: 'high', text: `Add defer/async to ${res.scripts.sync} render-blocking script(s).` });
+      if (res.images.noDims > 0) suggestions.push({ level: 'high', text: `Add width/height to ${res.images.noDims} image(s) to fix CLS.` });
+      if (res.images.noAlt > 0) suggestions.push({ level: 'medium', text: `Add alt text to ${res.images.noAlt} image(s).` });
+      if (res.images.modern / Math.max(1, res.images.total) < 0.5 && res.images.total > 0) suggestions.push({ level: 'medium', text: `Convert images to WebP/AVIF — only ${res.images.modern}/${res.images.total} are modern.` });
+      if (res.images.lazy === 0 && res.images.total > 5) suggestions.push({ level: 'medium', text: 'Add loading="lazy" to below-the-fold images.' });
+      if (res.scripts.thirdParty > 5) suggestions.push({ level: 'medium', text: `Reduce ${res.scripts.thirdParty} third-party scripts.` });
+      if (res.hints.preconnect === 0) suggestions.push({ level: 'low', text: 'Add <link rel="preconnect"> for critical domains.' });
+      if (res.hints.preload === 0) suggestions.push({ level: 'low', text: 'Add <link rel="preload"> for hero images/fonts.' });
+      if (res.htmlSize > 100000) suggestions.push({ level: 'low', text: `HTML is ${(res.htmlSize/1024).toFixed(0)} KB — minify.` });
+    }
+    if (suggestions.length === 0) {
+      suggestions.push({ level: 'low', text: '🎉 No major performance issues detected!' });
+    }
+
+    const levelIcon = { high: 'fa-exclamation-triangle', medium: 'fa-info-circle', low: 'fa-lightbulb' };
+    const levelColor = { high: '#ef4444', medium: '#f59e0b', low: '#3b82f6' };
+
+    $('opportunitiesContent').innerHTML = suggestions.map(s => `
+      <div style="border-left:4px solid ${levelColor[s.level]}; padding:12px 16px; background:rgba(255,255,255,0.03); border-radius:10px; margin-bottom:8px; display:flex; align-items:flex-start; gap:10px;">
+        <i class="fas ${levelIcon[s.level]}" style="color:${levelColor[s.level]}; margin-top:2px;"></i>
+        <div><strong style="color:${levelColor[s.level]}">[${t('suggestions.' + s.level)}]</strong> ${escapeHtml(s.text)}</div>
+      </div>
+    `).join('');
+  }
+
   // Resources tab
   if (r.resources) {
     const res = r.resources;
     $('resourcesContent').innerHTML = `
       <div class="check-category">
-        <h4><i class="fas fa-file-code"></i> Page Size</h4>
+        <h4><i class="fas fa-file-code"></i> Page Overview</h4>
         <div class="check-item"><div class="check-name">HTML Size</div><div class="check-status info">${(res.htmlSize / 1024).toFixed(1)} KB</div></div>
         <div class="check-item"><div class="check-name">Fetch Time</div><div class="check-status info">${res.fetchTime.toFixed(0)} ms</div></div>
         <div class="check-item"><div class="check-name">Total Resources</div><div class="check-status info">${res.totalResources}</div></div>
@@ -1034,7 +1097,7 @@ function renderResults(r) {
         <div class="check-item"><div class="check-name">Async scripts</div><div class="check-status pass">${res.scripts.async}</div></div>
         <div class="check-item"><div class="check-name">Defer scripts</div><div class="check-status pass">${res.scripts.defer}</div></div>
         <div class="check-item"><div class="check-name">Inline JS size</div><div class="check-status ${res.scripts.inlineSize < 50000 ? 'pass' : 'warn'}">${(res.scripts.inlineSize / 1024).toFixed(1)} KB</div></div>
-        <div class="check-item"><div class="check-name">Third-party domains</div><div class="check-status ${res.scripts.thirdParty <= 3 ? 'pass' : res.scripts.thirdParty <= 8 ? 'warn' : 'fail'}">${res.scripts.thirdParty} (${res.scripts.thirdPartyDomains.length} unique)</div></div>
+        <div class="check-item"><div class="check-name">Third-party scripts</div><div class="check-status ${res.scripts.thirdParty <= 3 ? 'pass' : res.scripts.thirdParty <= 8 ? 'warn' : 'fail'}">${res.scripts.thirdParty} (${res.scripts.thirdPartyDomains.length} domains)</div></div>
       </div>
 
       <div class="check-category">
@@ -1044,11 +1107,11 @@ function renderResults(r) {
       </div>
 
       <div class="check-category">
-        <h4><i class="fas fa-image"></i> Images (${res.images.total} total)</h4>
-        <div class="check-item"><div class="check-name">Modern formats (WebP/AVIF)</div><div class="check-status ${res.images.modern / Math.max(1, res.images.total) > 0.5 ? 'pass' : 'warn'}">${res.images.modern}/${res.images.total}</div></div>
-        <div class="check-item"><div class="check-name">Lazy loaded</div><div class="check-status ${res.images.lazy > 0 ? 'pass' : 'warn'}">${res.images.lazy}/${res.images.total}</div></div>
-        <div class="check-item"><div class="check-name">Missing alt text</div><div class="check-status ${res.images.noAlt === 0 ? 'pass' : 'warn'}">${res.images.noAlt}</div></div>
-        <div class="check-item"><div class="check-name">Missing dimensions (CLS)</div><div class="check-status ${res.images.noDims === 0 ? 'pass' : 'fail'}">${res.images.noDims}</div></div>
+        <h4><i class="fas fa-image"></i> Images (${res.images.total})</h4>
+        <div class="check-item"><div class="check-name">Modern (WebP/AVIF)</div><div class="check-status ${res.images.total === 0 ? 'info' : res.images.modern / res.images.total > 0.5 ? 'pass' : 'warn'}">${res.images.modern}/${res.images.total}</div></div>
+        <div class="check-item"><div class="check-name">Lazy loaded</div><div class="check-status ${res.images.lazy > 0 ? 'pass' : res.images.total > 5 ? 'warn' : 'info'}">${res.images.lazy}/${res.images.total}</div></div>
+        <div class="check-item"><div class="check-name">Missing alt</div><div class="check-status ${res.images.noAlt === 0 ? 'pass' : 'warn'}">${res.images.noAlt}</div></div>
+        <div class="check-item"><div class="check-name">Missing dimensions</div><div class="check-status ${res.images.noDims === 0 ? 'pass' : 'fail'}">${res.images.noDims}</div></div>
         <div class="check-item"><div class="check-name">Responsive (srcset)</div><div class="check-status ${res.images.srcset > 0 ? 'pass' : 'info'}">${res.images.srcset}</div></div>
       </div>
 
@@ -1061,49 +1124,70 @@ function renderResults(r) {
       </div>
     `;
   } else {
-    $('resourcesContent').innerHTML = `<div class="check-category"><h4>Resource data not available (page fetch failed)</h4></div>`;
+    $('resourcesContent').innerHTML = `<div class="check-category"><h4>Resource data not available</h4></div>`;
   }
 
-  // Headers tab
-  if (r.resources && r.resources.headers) {
-    const headers = r.resources.headers;
-    $('headersContent').innerHTML = `<div class="check-category"><h4>Response Headers</h4>${
-      Array.from(headers.entries()).map(([k, v]) => `<div class="check-item"><div class="check-name">${escapeHtml(k)}</div><div class="check-status info">${escapeHtml(String(v).slice(0, 60))}</div></div>`).join('')
-    }</div>`;
-  } else {
-    $('headersContent').innerHTML = `<div class="check-category"><h4>Headers not available (CORS proxy may hide them)</h4></div>`;
-  }
-
-  // Suggestions tab
-  const suggestions = [];
+  // Waterfall tab (synthetic timing visualization)
   if (r.resources) {
     const res = r.resources;
-    if (res.scripts.sync > 0) suggestions.push({ level: 'high', text: `Add defer/async to ${res.scripts.sync} render-blocking script(s) — biggest TBT win.` });
-    if (res.images.noDims > 0) suggestions.push({ level: 'high', text: `Add width/height to ${res.images.noDims} image(s) to fix CLS.` });
-    if (res.images.noAlt > 0) suggestions.push({ level: 'medium', text: `Add alt text to ${res.images.noAlt} image(s) for accessibility & SEO.` });
-    if (res.images.modern / Math.max(1, res.images.total) < 0.5) suggestions.push({ level: 'medium', text: `Convert images to WebP/AVIF — currently only ${res.images.modern}/${res.images.total} are modern.` });
-    if (res.images.lazy === 0 && res.images.total > 5) suggestions.push({ level: 'medium', text: 'Add loading="lazy" to below-the-fold images.' });
-    if (res.scripts.thirdParty > 5) suggestions.push({ level: 'medium', text: `Reduce ${res.scripts.thirdParty} third-party scripts — defer analytics.` });
-    if (res.hints.preconnect === 0) suggestions.push({ level: 'low', text: 'Add <link rel="preconnect"> for critical third-party domains.' });
-    if (res.hints.preload === 0) suggestions.push({ level: 'low', text: 'Add <link rel="preload"> for critical fonts and hero images.' });
-    if (res.styles.external > 3) suggestions.push({ level: 'low', text: `Reduce ${res.styles.external} external stylesheets — combine into one.` });
-    if (res.htmlSize > 100000) suggestions.push({ level: 'low', text: `HTML is ${(res.htmlSize / 1024).toFixed(0)} KB — minify and remove whitespace.` });
-  }
-  if (r.psiError) {
-    suggestions.push({ level: 'medium', text: `PageSpeed API error: ${r.psiError.slice(0, 100)}. Using estimated metrics.` });
-  }
-  if (suggestions.length === 0) {
-    suggestions.push({ level: 'low', text: '🎉 Great job! No major performance issues detected.' });
+    // Simulate timeline
+    const items = [];
+    items.push({ name: 'HTML Document', type: 'document', size: res.htmlSize, time: res.fetchTime, color: '#3b82f6' });
+    if (res.styles.external > 0) items.push({ name: `${res.styles.external} CSS files`, type: 'css', size: res.styles.inlineSize + res.styles.external * 15000, time: res.fetchTime * 0.4, color: '#a855f7' });
+    if (res.scripts.total > 0) items.push({ name: `${res.scripts.total} JS files`, type: 'js', size: res.scripts.inlineSize + res.scripts.total * 50000, time: res.fetchTime * 0.6, color: '#f59e0b' });
+    if (res.images.total > 0) items.push({ name: `${res.images.total} Images`, type: 'img', size: res.images.total * 80000, time: res.fetchTime * 1.2, color: '#10b981' });
+    if (res.fonts > 0) items.push({ name: `${res.fonts} Font files`, type: 'font', size: res.fonts * 40000, time: res.fetchTime * 0.5, color: '#ef4444' });
+
+    const maxTime = Math.max(...items.map(i => i.time));
+    const maxSize = Math.max(...items.map(i => i.size));
+
+    $('waterfallContent').innerHTML = `
+      <div class="check-category">
+        <h4><i class="fas fa-chart-bar"></i> Resource Loading Timeline (estimated)</h4>
+        <div style="font-size:0.8rem; opacity:0.7; margin-bottom:12px;">Visual representation based on resource analysis. Actual waterfall varies by server.</div>
+        <div class="waterfall">
+          ${items.map(i => {
+            const pct = Math.min(100, (i.size / maxSize) * 100);
+            const sizeKB = (i.size / 1024).toFixed(0);
+            return `
+              <div class="waterfall-row">
+                <div class="waterfall-url">${escapeHtml(i.name)}</div>
+                <div class="waterfall-bar-wrap">
+                  <div class="waterfall-bar" style="width:${pct}%; background:${i.color};">${pct > 15 ? sizeKB + ' KB' : ''}</div>
+                </div>
+                <div class="waterfall-type">${i.time.toFixed(0)}ms</div>
+              </div>
+            `;
+          }).join('')}
+        </div>
+      </div>
+    `;
+  } else {
+    $('waterfallContent').innerHTML = `<div class="check-category"><h4>Waterfall not available</h4></div>`;
   }
 
-  const levelIcon = { high: 'fa-exclamation-triangle', medium: 'fa-info-circle', low: 'fa-lightbulb' };
-  const levelColor = { high: '#ef4444', medium: '#f59e0b', low: '#3b82f6' };
-  $('suggestionsContent').innerHTML = suggestions.map(s => `
-    <div class="suggestion-item ${s.level}" style="border-left:4px solid ${levelColor[s.level]}; padding:12px 16px; background:rgba(255,255,255,0.03); border-radius:10px; margin-bottom:8px; display:flex; align-items:flex-start; gap:10px;">
-      <i class="fas ${levelIcon[s.level]}" style="color:${levelColor[s.level]}; margin-top:2px;"></i>
-      <div><strong style="color:${levelColor[s.level]}">[${t('suggestions.' + s.level)}]</strong> ${escapeHtml(s.text)}</div>
-    </div>
-  `).join('');
+  // Diagnostics tab
+  const diag = m.diagnostics || [];
+  if (diag.length) {
+    $('diagnosticsContent').innerHTML = `
+      <div class="check-category">
+        <h4><i class="fas fa-stethoscope"></i> Lighthouse Diagnostics</h4>
+        ${diag.map(d => `
+          <div class="check-item">
+            <div class="check-name">${escapeHtml(d.title)}<small>${escapeHtml((d.description || '').slice(0, 200))}</small></div>
+            <div class="check-status ${d.score < 0.5 ? 'fail' : 'warn'}">${escapeHtml(d.displayValue || '—')}</div>
+          </div>
+        `).join('')}
+      </div>
+    `;
+  } else {
+    $('diagnosticsContent').innerHTML = `
+      <div class="check-category">
+        <h4><i class="fas fa-info-circle"></i> Diagnostics</h4>
+        <p style="font-size:0.85rem; opacity:0.7;">Detailed diagnostics from Lighthouse will appear here when PageSpeed API data is available.</p>
+      </div>
+    `;
+  }
 
   renderHistory();
 }
@@ -1112,7 +1196,7 @@ function renderResults(r) {
 // 💾 HISTORY
 // ============================================================
 function getHistory() {
-  try { return JSON.parse(localStorage.getItem('speedHistoryV3') || '[]'); }
+  try { return JSON.parse(localStorage.getItem('speedHistoryV4') || '[]'); }
   catch(e) { return []; }
 }
 
@@ -1123,9 +1207,10 @@ function saveHistory(r) {
     device: r.device,
     score: r.metrics.score,
     lcp: r.metrics.lcp,
+    source: r.metrics.source,
     ts: Date.now()
   });
-  localStorage.setItem('speedHistoryV3', JSON.stringify(history.slice(0, 15)));
+  localStorage.setItem('speedHistoryV4', JSON.stringify(history.slice(0, 15)));
   renderHistory();
 }
 
@@ -1178,9 +1263,9 @@ function downloadBlob(content, mime, filename) {
 function exportJSON() {
   if (!lastResult) return;
   downloadBlob(JSON.stringify({
-    tool: 'FreeSEOToolHub Website Speed Test v3.0',
+    tool: 'FreeSEOToolHub Website Speed Test v4.0',
     ...lastResult
-  }, null, 2), 'application/json', `speed-${Date.now()}.json`);
+  }, null, 2), 'application/json', `speed-${new Date().toISOString().split('T')[0]}.json`);
   showToast('📥 JSON downloaded');
 }
 
@@ -1193,16 +1278,15 @@ function exportCSV() {
     ['Device', r.device],
     ['Score', r.metrics.score],
     ['Source', r.metrics.source],
-    ['FCP', r.metrics.fcp + 's'],
-    ['LCP', r.metrics.lcp + 's'],
+    ['FCP (s)', r.metrics.fcp],
+    ['LCP (s)', r.metrics.lcp],
     ['CLS', r.metrics.cls],
-    ['TBT', r.metrics.tbt + 'ms'],
-    ['Speed Index', r.metrics.si + 's']
+    ['TBT (ms)', r.metrics.tbt],
+    ['Speed Index (s)', r.metrics.si]
   ];
   if (r.resources) {
-    rows.push([], ['Resources', '']);
-    rows.push(['HTML Size', (r.resources.htmlSize / 1024).toFixed(1) + ' KB']);
-    rows.push(['Fetch Time', r.resources.fetchTime.toFixed(0) + ' ms']);
+    rows.push([], ['Resources']);
+    rows.push(['HTML Size (KB)', (r.resources.htmlSize / 1024).toFixed(1)]);
     rows.push(['External Scripts', r.resources.scripts.total]);
     rows.push(['Sync Scripts', r.resources.scripts.sync]);
     rows.push(['Third-Party Scripts', r.resources.scripts.thirdParty]);
@@ -1212,8 +1296,8 @@ function exportCSV() {
     rows.push(['Images w/o Alt', r.resources.images.noAlt]);
     rows.push(['Images w/o Dimensions', r.resources.images.noDims]);
   }
-  const csv = rows.map(r => r.map(v => `"${String(v).replace(/"/g, '""')}"`).join(',')).join('\n');
-  downloadBlob(csv, 'text/csv', `speed-${Date.now()}.csv`);
+  const csv = rows.map(row => row.map(v => `"${String(v ?? '').replace(/"/g, '""')}"`).join(',')).join('\n');
+  downloadBlob(csv, 'text/csv', `speed-${new Date().toISOString().split('T')[0]}.csv`);
   showToast('📥 CSV downloaded');
 }
 
@@ -1226,11 +1310,15 @@ function copyReport() {
   txt += `Score: ${r.metrics.score}/100\n`;
   txt += `Source: ${r.metrics.source}\n\n`;
   txt += `Core Web Vitals:\n`;
-  txt += `  FCP: ${r.metrics.fcp}s\n`;
-  txt += `  LCP: ${r.metrics.lcp}s\n`;
-  txt += `  CLS: ${r.metrics.cls}\n`;
-  txt += `  TBT: ${r.metrics.tbt}ms\n`;
-  txt += `  SI: ${r.metrics.si}s\n`;
+  txt += `  FCP: ${r.metrics.fcp || '—'}s\n`;
+  txt += `  LCP: ${r.metrics.lcp || '—'}s\n`;
+  txt += `  CLS: ${r.metrics.cls || '—'}\n`;
+  txt += `  TBT: ${r.metrics.tbt ?? '—'}ms\n`;
+  txt += `  SI: ${r.metrics.si || '—'}s\n`;
+  if (r.metrics.opportunities?.length) {
+    txt += `\nTop Opportunities:\n`;
+    r.metrics.opportunities.forEach(o => txt += `  • ${o.title} (${o.savings || 'savings'})\n`);
+  }
   navigator.clipboard.writeText(txt).then(() => showToast('📋 ' + t('copied')));
 }
 
@@ -1271,12 +1359,13 @@ function init() {
     showToast('🗑️ Cleared');
   });
   $('clearHistory').addEventListener('click', () => {
-    localStorage.removeItem('speedHistoryV3');
+    localStorage.removeItem('speedHistoryV4');
     renderHistory();
     showToast('🗑️ History cleared');
   });
 
   renderHistory();
+  console.log('✅ Website Speed Test v4.0 ready');
 }
 
 init();
