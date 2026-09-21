@@ -130,10 +130,10 @@
             display:inline-flex; align-items:center; gap:0.4rem;
         }
         .btn-outline:hover:not(:disabled) { background:rgba(255,153,51,0.2); border-color:var(--primary); }
+        .btn-outline:disabled { opacity:0.5; cursor:not-allowed; }
 
         .actions-row { display:flex; gap:8px; flex-wrap:wrap; margin-top:14px; }
 
-        /* SCORE */
         .score-gauge {
             width:220px; height:220px; margin:0 auto 16px;
             position:relative; border-radius:50%;
@@ -149,8 +149,8 @@
         .score-value { font-size:3rem; font-weight:800; line-height:1; }
         .score-label { font-size:0.72rem; color:rgba(255,255,255,0.6); text-transform:uppercase; letter-spacing:1px; margin-top:6px; font-weight:600; }
         .status-text { font-size:1.15rem; font-weight:700; text-align:center; margin-top:8px; }
+        .status-sub { font-size:0.82rem; opacity:0.7; text-align:center; margin-top:6px; }
 
-        /* METRICS */
         .metrics-row {
             display:grid;
             grid-template-columns:repeat(auto-fit, minmax(140px, 1fr));
@@ -163,7 +163,6 @@
         .metric-value { font-size:1.6rem; font-weight:800; line-height:1; }
         .metric-label { font-size:0.7rem; color:rgba(255,255,255,0.6); text-transform:uppercase; letter-spacing:0.5px; margin-top:6px; font-weight:600; }
 
-        /* DEVICE PREVIEW */
         .device-tabs { display:flex; gap:6px; flex-wrap:wrap; justify-content:center; margin-bottom:16px; }
         .device-tab {
             background:rgba(255,255,255,0.05); border:1px solid var(--border);
@@ -188,17 +187,27 @@
         .device-frame .screen {
             background:#fff; border-radius:20px; overflow:hidden;
             position:relative;
+            display:flex; align-items:flex-start; justify-content:center;
         }
         .device-frame iframe {
-            width:100%; height:100%; border:none; display:block; background:#fff;
+            border:none; display:block; background:#fff;
+            transform-origin:top left;
         }
         .iframe-fallback {
-            background:#fff; color:#333; padding:30px; text-align:center;
-            font-size:0.9rem; line-height:1.6; min-height:100%;
+            background:#fff; color:#333; padding:40px 24px; text-align:center;
+            font-size:0.9rem; line-height:1.6; width:100%;
         }
         .iframe-fallback i { font-size:2.5rem; color:var(--primary); margin-bottom:12px; display:block; }
+        .iframe-fallback code { background:#f3f4f6; padding:2px 6px; border-radius:4px; font-size:0.8rem; }
 
-        /* CHECK LISTS */
+        .iframe-warning {
+            background:rgba(245,158,11,0.15);
+            border-left:3px solid var(--warning);
+            padding:10px 14px; border-radius:8px;
+            font-size:0.82rem; margin-top:12px;
+            color:#fbbf24;
+        }
+
         .check-category {
             background:rgba(255,255,255,0.03); border-radius:12px;
             padding:16px; margin-bottom:12px;
@@ -225,7 +234,6 @@
         .warn { background:rgba(245,158,11,0.15); color:var(--warning); }
         .info { background:rgba(59,130,246,0.15); color:var(--info); }
 
-        /* TABS */
         .tabs { display:flex; gap:4px; border-bottom:1px solid var(--border); margin-bottom:18px; flex-wrap:wrap; }
         .tab {
             padding:10px 18px; background:transparent; border:none;
@@ -238,7 +246,6 @@
         .tab-panel { display:none; }
         .tab-panel.active { display:block; }
 
-        /* HISTORY */
         .history-list { max-height:320px; overflow-y:auto; }
         .history-item {
             display:flex; justify-content:space-between; align-items:center;
@@ -250,7 +257,6 @@
         .history-item:hover { background:rgba(255,153,51,0.1); }
         .history-score { font-weight:700; }
 
-        /* PROGRESS */
         .loading-progress {
             margin-top:20px;
             display:none;
@@ -266,19 +272,20 @@
         }
         .loading-text { font-size:0.82rem; color:rgba(255,255,255,0.6); margin-top:8px; text-align:center; }
 
-        /* TOAST */
+        .toast-container { position:fixed; bottom:24px; right:24px; z-index:9999; display:flex; flex-direction:column; gap:8px; }
         .toast {
-            position:fixed; bottom:30px; right:30px;
-            background:rgba(11,26,51,0.95); backdrop-filter:blur(10px);
-            color:#fff; padding:12px 22px; border-radius:50px;
-            border:1px solid rgba(255,153,51,0.3);
-            display:none; align-items:center; gap:10px;
-            z-index:1000; animation:slideUp 0.35s ease;
-            font-size:0.9rem; font-weight:500;
+            background:rgba(30,41,59,0.95); backdrop-filter:blur(10px);
+            color:#fff; padding:12px 20px; border-radius:12px;
+            border:1px solid var(--border); font-size:0.88rem;
+            font-weight:500; animation:slideIn 0.3s ease;
+            display:flex; align-items:center; gap:10px;
+            max-width:360px;
         }
-        @keyframes slideUp { from { transform:translateY(100px); opacity:0; } to { transform:translateY(0); opacity:1; } }
+        .toast.success { background:rgba(16,185,129,0.95); }
+        .toast.error { background:rgba(239,68,68,0.95); }
+        .toast.warning { background:rgba(245,158,11,0.95); }
+        @keyframes slideIn { from { transform:translateX(120%); opacity:0; } to { transform:translateX(0); opacity:1; } }
 
-        /* FOOTER */
         .footer {
             text-align:center; padding:20px;
             background:rgba(255,255,255,0.03); border-radius:16px;
@@ -288,6 +295,18 @@
         .footer-links a { color:rgba(255,255,255,0.7); text-decoration:none; font-weight:500; font-size:0.88rem; }
         .footer-links a:hover { color:var(--primary); }
 
+        .faq-section {
+            background:rgba(255,255,255,0.03);
+            border:1px solid var(--border);
+            border-radius:16px; padding:24px; margin-top:20px;
+        }
+        .faq-section h2 { font-size:1.2rem; margin-bottom:16px; display:flex; align-items:center; gap:10px; }
+        .faq-section h2 i { color:var(--primary); }
+        .faq-item { margin-bottom:16px; }
+        .faq-q { font-weight:700; color:#fff; margin-bottom:6px; display:flex; align-items:flex-start; gap:8px; font-size:0.92rem; }
+        .faq-q i { color:var(--primary); margin-top:4px; }
+        .faq-a { color:rgba(255,255,255,0.7); font-size:0.86rem; line-height:1.6; padding-left:22px; }
+
         @media (max-width:768px) {
             body { padding:70px 12px 30px; }
             .tool-header h1 { font-size:1.6rem; }
@@ -295,7 +314,7 @@
             .score-gauge { width:180px; height:180px; }
             .score-inner { width:145px; height:145px; }
             .score-value { font-size:2.3rem; }
-            .toast { left:20px; right:20px; bottom:20px; }
+            .toast-container { left:16px; right:16px; bottom:16px; }
         }
     </style>
 </head>
@@ -327,7 +346,6 @@
         <button class="lang-btn" data-lang="es">🇪🇸 Español</button>
     </div>
 
-    <!-- INPUT -->
     <div class="glass-card">
         <div class="row-2">
             <div class="form-group">
@@ -348,10 +366,10 @@
             <i class="fas fa-search"></i> <span data-i18n="analyzeBtn">Analyze Mobile-Friendliness</span>
         </button>
         <div class="actions-row">
-            <button class="btn-outline" id="exportJson"><i class="fas fa-file-code"></i> <span data-i18n="exportJson">Export JSON</span></button>
-            <button class="btn-outline" id="exportCsv"><i class="fas fa-file-csv"></i> <span data-i18n="exportCsv">Export CSV</span></button>
-            <button class="btn-outline" id="copyReport"><i class="fas fa-copy"></i> <span data-i18n="copyReport">Copy Report</span></button>
-            <button class="btn-outline" id="clearBtn"><i class="fas fa-eraser"></i> <span data-i18n="clearBtn">Clear</span></button>
+            <button class="btn-outline" id="exportJson" disabled><i class="fas fa-file-code"></i> JSON</button>
+            <button class="btn-outline" id="exportCsv" disabled><i class="fas fa-file-csv"></i> CSV</button>
+            <button class="btn-outline" id="copyReport" disabled><i class="fas fa-copy"></i> Copy</button>
+            <button class="btn-outline" id="clearBtn"><i class="fas fa-eraser"></i> Clear</button>
         </div>
 
         <div class="loading-progress" id="loadingProgress">
@@ -360,9 +378,7 @@
         </div>
     </div>
 
-    <!-- RESULTS -->
     <div id="results" style="display:none;">
-        <!-- SCORE -->
         <div class="glass-card">
             <div class="score-gauge" id="scoreGauge">
                 <div class="score-inner">
@@ -371,11 +387,11 @@
                 </div>
             </div>
             <div class="status-text" id="statusText"></div>
+            <div class="status-sub" id="statusSub"></div>
 
             <div class="metrics-row" id="metricsRow"></div>
         </div>
 
-        <!-- TABS -->
         <div class="glass-card">
             <div class="tabs">
                 <button class="tab active" data-tab="preview"><i class="fas fa-mobile-alt"></i> <span data-i18n="tabPreview">Live Preview</span></button>
@@ -384,50 +400,58 @@
                 <button class="tab" data-tab="history"><i class="fas fa-history"></i> <span data-i18n="tabHistory">History</span></button>
             </div>
 
-            <!-- LIVE PREVIEW TAB -->
             <div class="tab-panel active" data-panel="preview">
                 <div class="device-tabs">
-                    <button class="device-tab active" data-device="iphone-se">📱 iPhone SE</button>
-                    <button class="device-tab" data-device="iphone-15">📱 iPhone 15</button>
+                    <button class="device-tab" data-device="iphone-se">📱 iPhone SE</button>
+                    <button class="device-tab active" data-device="iphone-15">📱 iPhone 15</button>
                     <button class="device-tab" data-device="android">🤖 Android</button>
                     <button class="device-tab" data-device="tablet">📟 iPad</button>
                 </div>
-                <div class="device-frame" id="deviceFrame">
-                    <div class="notch"></div>
-                    <div class="screen" id="deviceScreen">
-                        <div class="iframe-fallback">
-                            <i class="fas fa-mobile-alt"></i>
-                            <p>Click "Analyze Mobile-Friendliness" to load live preview.</p>
-                        </div>
-                    </div>
-                </div>
+                <div id="deviceFrameContainer"></div>
+                <div id="iframeWarning"></div>
                 <div style="text-align:center; margin-top:14px; font-size:0.8rem; opacity:0.6;">
                     <i class="fas fa-info-circle"></i> <span data-i18n="previewNote">Some websites may block iframe embedding. Analysis still works.</span>
                 </div>
             </div>
 
-            <!-- ANALYSIS TAB -->
             <div class="tab-panel" data-panel="analysis">
                 <div id="analysisChecks"></div>
             </div>
 
-            <!-- DETAILS TAB -->
             <div class="tab-panel" data-panel="details">
                 <div id="detailsContent"></div>
             </div>
 
-            <!-- HISTORY TAB -->
             <div class="tab-panel" data-panel="history">
                 <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
                     <span style="font-size:0.85rem; opacity:0.7;"><span id="historyCount">0</span> <span data-i18n="savedTests">saved tests</span></span>
-                    <button class="btn-outline" id="clearHistory" style="font-size:0.72rem; padding:4px 12px;"><i class="fas fa-trash"></i> <span data-i18n="clearHistory">Clear</span></button>
+                    <button class="btn-outline" id="clearHistory" style="font-size:0.72rem; padding:4px 12px;"><i class="fas fa-trash"></i></button>
                 </div>
                 <div class="history-list" id="historyList"></div>
             </div>
         </div>
     </div>
 
-    <!-- FOOTER -->
+    <div class="faq-section">
+        <h2><i class="fas fa-circle-question"></i> <span data-i18n="faqTitle">Frequently Asked Questions</span></h2>
+        <div class="faq-item">
+            <div class="faq-q"><i class="fas fa-question-circle"></i> How does this mobile-friendly test work?</div>
+            <div class="faq-a" data-i18n="faq1">Fetches your website's HTML via CORS proxy, then analyzes viewport meta tag, CSS media queries, tap target sizes, font readability, fixed-width elements, and 15+ other mobile SEO signals — all in your browser.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q"><i class="fas fa-question-circle"></i> Why does live preview sometimes show blank?</div>
+            <div class="faq-a" data-i18n="faq2">Some websites send X-Frame-Options: DENY or Content-Security-Policy headers that prevent iframe embedding. The analysis still works — only the visual preview is affected.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q"><i class="fas fa-question-circle"></i> What is a good mobile score?</div>
+            <div class="faq-a" data-i18n="faq3">Aim for 85+ for excellent mobile-friendliness. Google recommends: viewport meta tag, tap targets ≥48px, readable fonts (≥14px), and no horizontal scroll.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q"><i class="fas fa-question-circle"></i> Does Google use mobile-friendliness for ranking?</div>
+            <div class="faq-a" data-i18n="faq4">Yes — since 2021, Google uses mobile-first indexing. Your mobile experience directly impacts search rankings.</div>
+        </div>
+    </div>
+
     <div class="footer">
         <div class="footer-links">
             <a href="/">Home</a>
@@ -436,11 +460,11 @@
             <a href="/contact.html">Contact</a>
             <a href="/privacy.html">Privacy</a>
         </div>
-        <p style="opacity:0.5; font-size:0.82rem;">© 2026 FreeSEOToolHub | Mobile-Friendly Test v3.0 | 100% Client-Side</p>
+        <p style="opacity:0.5; font-size:0.82rem;">© 2026 FreeSEOToolHub | Mobile-Friendly Test v4.0 | 100% Client-Side</p>
     </div>
 </div>
 
-<div class="toast" id="toast"><i class="fas fa-check-circle"></i> <span id="toastMsg"></span></div>
+<div class="toast-container" id="toastContainer"></div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
@@ -456,15 +480,12 @@ const I18N = {
     subtitle: 'Real viewport detection, tap target analysis, font readability, horizontal scroll check, and live device preview. 100% client-side.',
     urlLabel: 'Website URL', deviceLabel: 'Preview Device',
     analyzeBtn: 'Analyze Mobile-Friendliness',
-    exportJson: 'Export JSON', exportCsv: 'Export CSV', copyReport: 'Copy Report', clearBtn: 'Clear',
     score: 'Mobile Score',
     tabPreview: 'Live Preview', tabAnalysis: 'Analysis', tabDetails: 'Details', tabHistory: 'History',
-    savedTests: 'saved tests', clearHistory: 'Clear',
+    savedTests: 'saved tests',
     previewNote: 'Some websites may block iframe embedding. Analysis still works.',
     excellent: 'Mobile-Friendly', good: 'Mostly Mobile-Friendly', moderate: 'Needs Improvement', poor: 'Not Mobile-Friendly',
-    metrics: {
-      checks: 'Total Checks', passed: 'Passed', warnings: 'Warnings', failed: 'Failed'
-    },
+    metrics: { checks: 'Total Checks', passed: 'Passed', warnings: 'Warnings', failed: 'Failed' },
     categories: {
       viewport: 'Viewport & Meta',
       layout: 'Layout & Responsive',
@@ -478,17 +499,22 @@ const I18N = {
     complete: 'Analysis complete!',
     emptyError: 'Please enter a valid URL',
     fetchError: 'Could not fetch website. Using heuristic analysis.',
-    noHistory: 'No history yet'
+    noHistory: 'No history yet',
+    iframeBlocked: 'This website blocks iframe embedding. Live preview unavailable, but analysis is complete.',
+    faqTitle: 'Frequently Asked Questions',
+    faq1: 'Fetches HTML via CORS proxy, analyzes viewport, media queries, tap targets, fonts, and 15+ mobile signals.',
+    faq2: 'Some sites send X-Frame-Options: DENY which blocks iframe embedding. Analysis still works.',
+    faq3: 'Aim for 85+. Google recommends viewport meta, tap targets ≥48px, readable fonts.',
+    faq4: 'Yes — Google uses mobile-first indexing since 2021.'
   },
   hi: {
     title: 'मोबाइल-फ्रेंडली टेस्ट 2026',
     subtitle: 'असली व्यूपोर्ट डिटेक्शन, टैप टारगेट विश्लेषण, फ़ॉन्ट पठनीयता, और लाइव डिवाइस प्रीव्यू।',
     urlLabel: 'वेबसाइट URL', deviceLabel: 'प्रीव्यू डिवाइस',
     analyzeBtn: 'मोबाइल-फ्रेंडलीनेस जांचें',
-    exportJson: 'JSON निर्यात', exportCsv: 'CSV निर्यात', copyReport: 'रिपोर्ट कॉपी', clearBtn: 'साफ़',
     score: 'मोबाइल स्कोर',
     tabPreview: 'लाइव प्रीव्यू', tabAnalysis: 'विश्लेषण', tabDetails: 'विवरण', tabHistory: 'इतिहास',
-    savedTests: 'सहेजे टेस्ट', clearHistory: 'साफ़ करें',
+    savedTests: 'सहेजे टेस्ट',
     previewNote: 'कुछ वेबसाइटें iframe एम्बेडिंग ब्लॉक करती हैं। विश्लेषण फिर भी काम करता है।',
     excellent: 'मोबाइल-फ्रेंडली', good: 'ज्यादातर मोबाइल-फ्रेंडली', moderate: 'सुधार की जरूरत', poor: 'मोबाइल-फ्रेंडली नहीं',
     metrics: { checks: 'कुल जांच', passed: 'पास', warnings: 'चेतावनी', failed: 'फेल' },
@@ -500,17 +526,22 @@ const I18N = {
     fetching: 'वेबसाइट लोड हो रही है...', analyzing: 'HTML और CSS का विश्लेषण...',
     scoring: 'स्कोर की गणना...', complete: 'विश्लेषण पूर्ण!',
     emptyError: 'कृपया मान्य URL दर्ज करें', fetchError: 'वेबसाइट नहीं मिली। अनुमानित विश्लेषण।',
-    noHistory: 'अभी कोई इतिहास नहीं'
+    noHistory: 'अभी कोई इतिहास नहीं',
+    iframeBlocked: 'यह वेबसाइट iframe एम्बेडिंग ब्लॉक करती है। लाइव प्रीव्यू उपलब्ध नहीं, लेकिन विश्लेषण पूरा है।',
+    faqTitle: 'अक्सर पूछे जाने वाले प्रश्न',
+    faq1: 'CORS प्रॉक्सी से HTML फ़ेच करता है, व्यूपोर्ट, मीडिया क्वेरी, टैप टारगेट, फ़ॉन्ट विश्लेषण करता है।',
+    faq2: 'कुछ साइटें iframe ब्लॉक करती हैं। विश्लेषण फिर भी काम करता है।',
+    faq3: '85+ का लक्ष्य रखें। Google व्यूपोर्ट मेटा, 48px+ टैप टारगेट की सिफारिश करता है।',
+    faq4: 'हां — Google 2021 से मोबाइल-फर्स्ट इंडेक्सिंग का उपयोग करता है।'
   },
   ur: {
     title: 'موبائل فرینڈلی ٹیسٹ 2026',
-    subtitle: 'حقیقی ویوپورٹ ڈیٹیکشن، ٹیپ ٹارگٹ تجزیہ، فونٹ پڑھنے کی اہلیت، اور لائیو ڈیوائس پیش نظارہ۔',
+    subtitle: 'حقیقی ویوپورٹ ڈیٹیکشن، ٹیپ ٹارگٹ تجزیہ، اور لائیو ڈیوائس پیش نظارہ۔',
     urlLabel: 'ویب سائٹ URL', deviceLabel: 'پیش نظارہ ڈیوائس',
     analyzeBtn: 'موبائل فرینڈلینس چیک کریں',
-    exportJson: 'JSON ایکسپورٹ', exportCsv: 'CSV ایکسپورٹ', copyReport: 'رپورٹ کاپی', clearBtn: 'صاف کریں',
     score: 'موبائل اسکور',
     tabPreview: 'لائیو پیش نظارہ', tabAnalysis: 'تجزیہ', tabDetails: 'تفصیلات', tabHistory: 'تاریخ',
-    savedTests: 'محفوظ ٹیسٹس', clearHistory: 'صاف کریں',
+    savedTests: 'محفوظ ٹیسٹس',
     previewNote: 'کچھ ویب سائٹس iframe ایمبیڈنگ بلاک کرتی ہیں۔',
     excellent: 'موبائل فرینڈلی', good: 'زیادہ تر موبائل فرینڈلی', moderate: 'بہتری کی ضرورت', poor: 'موبائل فرینڈلی نہیں',
     metrics: { checks: 'کل چیکس', passed: 'پاس', warnings: 'انتباہات', failed: 'فیل' },
@@ -519,20 +550,23 @@ const I18N = {
       touch: 'ٹچ اور تعامل', content: 'مواد اور پڑھنے کی اہلیت',
       performance: 'کارکردگی کے اشارے'
     },
-    fetching: 'ویب سائٹ لوڈ ہو رہی ہے...', analyzing: 'HTML اور CSS کا تجزیہ...',
-    scoring: 'اسکور کا حساب...', complete: 'تجزیہ مکمل!',
-    emptyError: 'براہ کرم درست URL درج کریں', fetchError: 'ویب سائٹ نہیں ملی۔ تخمینی تجزیہ۔',
-    noHistory: 'ابھی کوئی تاریخ نہیں'
+    fetching: 'لوڈ ہو رہی ہے...', analyzing: 'تجزیہ...',
+    scoring: 'حساب...', complete: 'مکمل!',
+    emptyError: 'درست URL درج کریں', fetchError: 'ویب سائٹ نہیں ملی۔',
+    noHistory: 'کوئی تاریخ نہیں',
+    iframeBlocked: 'یہ ویب سائٹ iframe بلاک کرتی ہے۔',
+    faqTitle: 'عام سوالات',
+    faq1: 'CORS سے HTML تجزیہ۔', faq2: 'کچھ سائٹس iframe بلاک کرتی ہیں۔',
+    faq3: '85+ کا مقصد۔', faq4: 'موبائل فرسٹ انڈیکسنگ۔'
   },
   de: {
     title: 'Mobile-Friendly Test 2026',
     subtitle: 'Echte Viewport-Erkennung, Tap-Target-Analyse, Schriftlesbarkeit und Live-Gerätevorschau.',
     urlLabel: 'Website-URL', deviceLabel: 'Vorschau-Gerät',
     analyzeBtn: 'Mobile-Freundlichkeit analysieren',
-    exportJson: 'JSON exportieren', exportCsv: 'CSV exportieren', copyReport: 'Bericht kopieren', clearBtn: 'Löschen',
     score: 'Mobile Score',
     tabPreview: 'Live-Vorschau', tabAnalysis: 'Analyse', tabDetails: 'Details', tabHistory: 'Verlauf',
-    savedTests: 'gespeicherte Tests', clearHistory: 'Löschen',
+    savedTests: 'gespeicherte Tests',
     previewNote: 'Einige Websites blockieren iframe-Einbettung. Analyse funktioniert trotzdem.',
     excellent: 'Mobilfreundlich', good: 'Meist mobilfreundlich', moderate: 'Verbesserung nötig', poor: 'Nicht mobilfreundlich',
     metrics: { checks: 'Prüfungen', passed: 'Bestanden', warnings: 'Warnungen', failed: 'Fehler' },
@@ -541,20 +575,25 @@ const I18N = {
       touch: 'Touch & Interaktion', content: 'Inhalt & Lesbarkeit',
       performance: 'Performance-Signale'
     },
-    fetching: 'Website wird geladen...', analyzing: 'HTML & CSS wird analysiert...',
-    scoring: 'Score wird berechnet...', complete: 'Analyse abgeschlossen!',
+    fetching: 'Lädt...', analyzing: 'Analysiere HTML & CSS...',
+    scoring: 'Berechne Score...', complete: 'Fertig!',
     emptyError: 'Bitte gültige URL eingeben', fetchError: 'Website konnte nicht geladen werden.',
-    noHistory: 'Noch kein Verlauf'
+    noHistory: 'Kein Verlauf',
+    iframeBlocked: 'Diese Website blockiert iframe-Einbettung.',
+    faqTitle: 'Häufige Fragen',
+    faq1: 'HTML via CORS-Proxy, analysiert Viewport, Media Queries, Tap-Targets, Schriften.',
+    faq2: 'Manche Seiten blockieren iframes.',
+    faq3: 'Ziel: 85+. Google empfiehlt Viewport, 48px+ Tap-Targets.',
+    faq4: 'Ja — Mobile-First-Indexing seit 2021.'
   },
   es: {
     title: 'Test de Móvil 2026',
     subtitle: 'Detección real de viewport, análisis de tap targets, legibilidad de fuentes y vista previa en vivo.',
     urlLabel: 'URL del Sitio', deviceLabel: 'Dispositivo de Vista Previa',
     analyzeBtn: 'Analizar Compatibilidad Móvil',
-    exportJson: 'Exportar JSON', exportCsv: 'Exportar CSV', copyReport: 'Copiar Informe', clearBtn: 'Limpiar',
     score: 'Puntuación Móvil',
     tabPreview: 'Vista Previa', tabAnalysis: 'Análisis', tabDetails: 'Detalles', tabHistory: 'Historial',
-    savedTests: 'tests guardados', clearHistory: 'Limpiar',
+    savedTests: 'tests guardados',
     previewNote: 'Algunos sitios bloquean iframe. El análisis sigue funcionando.',
     excellent: 'Compatible con Móvil', good: 'Mayormente Compatible', moderate: 'Necesita Mejoras', poor: 'No Compatible',
     metrics: { checks: 'Total', passed: 'Aprobadas', warnings: 'Alertas', failed: 'Fallidas' },
@@ -563,10 +602,16 @@ const I18N = {
       touch: 'Táctil e Interacción', content: 'Contenido y Legibilidad',
       performance: 'Señales de Rendimiento'
     },
-    fetching: 'Cargando sitio...', analyzing: 'Analizando HTML y CSS...',
-    scoring: 'Calculando puntuación...', complete: '¡Análisis completo!',
-    emptyError: 'Por favor ingresa URL válida', fetchError: 'No se pudo cargar. Análisis estimado.',
-    noHistory: 'Sin historial aún'
+    fetching: 'Cargando...', analyzing: 'Analizando HTML y CSS...',
+    scoring: 'Calculando...', complete: '¡Completo!',
+    emptyError: 'Por favor ingresa URL válida', fetchError: 'No se pudo cargar.',
+    noHistory: 'Sin historial',
+    iframeBlocked: 'Este sitio bloquea iframe.',
+    faqTitle: 'Preguntas',
+    faq1: 'HTML vía proxy CORS, analiza viewport, media queries, tap targets, fuentes.',
+    faq2: 'Algunos sitios bloquean iframes.',
+    faq3: 'Objetivo: 85+. Google recomienda viewport, tap targets 48px+.',
+    faq4: 'Sí — indexación mobile-first desde 2021.'
   }
 };
 
@@ -601,21 +646,46 @@ function applyLang(lang) {
 // 📱 DEVICE PRESETS
 // ============================================================
 const DEVICES = {
-  'iphone-se':   { name: 'iPhone SE',      width: 375,  height: 667,  scale: 1 },
-  'iphone-15':   { name: 'iPhone 15 Pro',  width: 393,  height: 852,  scale: 1 },
-  'android':     { name: 'Android Pixel',  width: 412,  height: 915,  scale: 1 },
-  'tablet':      { name: 'iPad Mini',      width: 768,  height: 1024, scale: 0.75 }
+  'iphone-se':   { name: 'iPhone SE',      width: 375,  height: 667  },
+  'iphone-15':   { name: 'iPhone 15 Pro',  width: 393,  height: 852  },
+  'android':     { name: 'Android Pixel',  width: 412,  height: 915  },
+  'tablet':      { name: 'iPad Mini',      width: 768,  height: 1024 }
 };
 
 let currentDevice = 'iphone-15';
+let lastResult = null;
+let currentIframeBlocked = false;
+
+// ============================================================
+// 🔧 HELPERS
+// ============================================================
+const $ = id => document.getElementById(id);
+
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+function showToast(msg, type = 'success') {
+  const container = $('toastContainer');
+  const toast = document.createElement('div');
+  toast.className = 'toast ' + type;
+  const icon = type === 'error' ? 'fa-times-circle' : type === 'warning' ? 'fa-exclamation-triangle' : 'fa-check-circle';
+  toast.innerHTML = `<i class="fas ${icon}"></i> <span>${escapeHtml(msg)}</span>`;
+  container.appendChild(toast);
+  setTimeout(() => {
+    toast.style.opacity = '0';
+    toast.style.transition = 'opacity 0.3s';
+    setTimeout(() => toast.remove(), 300);
+  }, 3200);
+}
 
 // ============================================================
 // 🌐 CORS PROXY FETCH (multi-fallback)
 // ============================================================
 const PROXIES = [
-  { name: 'allorigins', url: u => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}` },
-  { name: 'corsproxy',  url: u => `https://corsproxy.io/?${encodeURIComponent(u)}` },
-  { name: 'thingproxy', url: u => `https://thingproxy.freeboard.io/fetch/${u}` }
+  { name: 'allorigins-raw', url: u => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}` },
+  { name: 'corsproxy.io',  url: u => `https://corsproxy.io/?${encodeURIComponent(u)}` },
+  { name: 'allorigins-get', url: u => `https://api.allorigins.win/get?url=${encodeURIComponent(u)}` }
 ];
 
 async function fetchWebsite(url) {
@@ -626,12 +696,20 @@ async function fetchWebsite(url) {
         method: 'GET',
         headers: { 'Accept': 'text/html,application/xhtml+xml,*/*' }
       });
-      if (!res.ok) throw new Error(`${proxy.name}: HTTP ${res.status}`);
-      const html = await res.text();
-      if (!html || html.length < 100) throw new Error(`${proxy.name}: too short`);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+      let html = await res.text();
+      if (proxy.name === 'allorigins-get') {
+        try {
+          const parsed = JSON.parse(html);
+          html = parsed.contents || '';
+        } catch(e) {}
+      }
+
+      if (!html || html.length < 100) throw new Error('Too short');
       return { html, proxy: proxy.name };
     } catch(e) {
-      errors.push(e.message);
+      errors.push(`${proxy.name}: ${e.message}`);
       console.warn(`Proxy ${proxy.name} failed:`, e.message);
     }
   }
@@ -639,7 +717,7 @@ async function fetchWebsite(url) {
 }
 
 // ============================================================
-// 🔍 HTML ANALYSIS
+// 🔍 HTML ANALYSIS (Enhanced)
 // ============================================================
 function analyzeHTML(html, url) {
   const checks = [];
@@ -667,7 +745,7 @@ function analyzeHTML(html, url) {
       category: 'viewport',
       name: 'width=device-width',
       status: hasWidthDevice ? 'pass' : 'warn',
-      value: hasWidthDevice ? 'Set' : 'Missing',
+      value: hasWidthDevice ? 'Set ✓' : 'Missing',
       detail: hasWidthDevice ? 'Page adapts to device width.' : 'Add width=device-width for proper scaling.'
     });
 
@@ -675,7 +753,7 @@ function analyzeHTML(html, url) {
       category: 'viewport',
       name: 'initial-scale=1',
       status: hasInitialScale ? 'pass' : 'warn',
-      value: hasInitialScale ? 'Set' : 'Missing',
+      value: hasInitialScale ? 'Set ✓' : 'Missing',
       detail: hasInitialScale ? 'Initial zoom level is correct.' : 'Add initial-scale=1 to prevent zoom issues.'
     });
 
@@ -710,14 +788,29 @@ function analyzeHTML(html, url) {
     detail: charset ? 'Proper charset declared.' : 'Add <meta charset="UTF-8"> for proper text rendering.'
   });
 
-  // ---- MEDIA QUERIES ----
+  // ---- X-FRAME-OPTIONS / CSP ----
+  const xFrame = doc.querySelector('meta[http-equiv="X-Frame-Options"]');
+  const xFrameContent = xFrame ? (xFrame.getAttribute('content') || '').toUpperCase() : '';
+  const hasCspMeta = doc.querySelector('meta[http-equiv="Content-Security-Policy"]');
+  const blocksIframe = xFrameContent.includes('DENY') || xFrameContent.includes('SAMEORIGIN') || hasCspMeta;
+  checks.push({
+    category: 'performance',
+    name: 'Iframe Embedding',
+    status: blocksIframe ? 'warn' : 'pass',
+    value: blocksIframe ? 'May be blocked' : 'Likely allowed',
+    detail: blocksIframe ? 'X-Frame-Options or CSP may block live preview.' : 'No blocking headers detected in HTML.'
+  });
+
+  // ---- CSS MEDIA QUERIES ----
   const styles = Array.from(doc.querySelectorAll('style')).map(s => s.textContent).join('\n');
   const linkStyles = Array.from(doc.querySelectorAll('link[rel="stylesheet"]'));
   const inlineMediaQueries = (styles.match(/@media/g) || []).length;
+  const hasResponsive = inlineMediaQueries > 0 || linkStyles.length > 0;
+
   checks.push({
     category: 'layout',
     name: 'CSS Media Queries',
-    status: inlineMediaQueries > 0 || linkStyles.length > 0 ? 'pass' : 'warn',
+    status: hasResponsive ? 'pass' : 'warn',
     value: inlineMediaQueries > 0 ? `${inlineMediaQueries} in inline CSS` : `${linkStyles.length} external`,
     detail: inlineMediaQueries > 0 ? 'Responsive CSS detected.' : 'Media queries not visible in HTML — likely in external CSS.'
   });
@@ -734,8 +827,28 @@ function analyzeHTML(html, url) {
     category: 'layout',
     name: 'Fixed-Width Elements (>400px)',
     status: fixedWidths.length === 0 ? 'pass' : fixedWidths.length < 3 ? 'warn' : 'fail',
-    value: fixedWidths.length === 0 ? 'None' : `${fixedWidths.length} found`,
-    detail: fixedWidths.length === 0 ? 'No fixed-width issues.' : `Found widths: ${fixedWidths.slice(0, 5).join('px, ')}px — may cause horizontal scroll.`
+    value: fixedWidths.length === 0 ? 'None ✓' : `${fixedWidths.length} found`,
+    detail: fixedWidths.length === 0 ? 'No fixed-width issues.' : `Widths: ${fixedWidths.slice(0, 5).join('px, ')}px — may cause horizontal scroll.`
+  });
+
+  // ---- VIEWPORT HEIGHT ISSUE ----
+  const hasVh = /100vh/i.test(styles);
+  checks.push({
+    category: 'layout',
+    name: 'Mobile Viewport Height (100vh)',
+    status: !hasVh ? 'pass' : 'warn',
+    value: hasVh ? 'Uses 100vh' : 'Not used',
+    detail: hasVh ? '100vh can cause issues with mobile address bar. Use dvh/svh.' : 'No 100vh issues detected.'
+  });
+
+  // ---- SAFE AREA ----
+  const hasSafeArea = /env\(safe-area-inset/i.test(styles);
+  checks.push({
+    category: 'layout',
+    name: 'Safe Area Insets',
+    status: hasSafeArea ? 'pass' : 'info',
+    value: hasSafeArea ? 'Set ✓' : 'Not specified',
+    detail: hasSafeArea ? 'Handles iPhone notch correctly.' : 'Consider env(safe-area-inset-*) for notched devices.'
   });
 
   // ---- OVERFLOW ----
@@ -749,21 +862,20 @@ function analyzeHTML(html, url) {
   });
 
   // ---- TOUCH EVENTS ----
-  const hasTouch = /ontouchstart|touchstart|pointerdown|click/i.test(html);
+  const hasTouch = /ontouchstart|touchstart|pointerdown/i.test(html);
   checks.push({
     category: 'touch',
     name: 'Touch Event Handlers',
     status: hasTouch ? 'pass' : 'warn',
-    value: hasTouch ? 'Detected' : 'None found',
-    detail: hasTouch ? 'Interactive elements likely touch-optimized.' : 'No touch events in HTML — may be in JS.'
+    value: hasTouch ? 'Detected ✓' : 'None in HTML',
+    detail: hasTouch ? 'Interactive elements likely touch-optimized.' : 'No touch events in HTML — may be in external JS.'
   });
 
-  // ---- TAP TARGETS (buttons/links) ----
-  const buttons = Array.from(doc.querySelectorAll('button, a.btn, a[class*="button"], input[type="submit"]'));
+  // ---- TAP TARGETS ----
+  const buttons = Array.from(doc.querySelectorAll('button, a.btn, a[class*="button"], input[type="submit"], input[type="button"]'));
   const likelySmall = buttons.filter(b => {
     const style = (b.getAttribute('style') || '').toLowerCase();
     const cls = (b.className || '').toLowerCase();
-    // Heuristic: inline font-size < 14px OR padding absent
     const fontMatch = style.match(/font-size\s*:\s*(\d+)/);
     const hasSmallFont = fontMatch && parseInt(fontMatch[1]) < 14;
     const hasTinyClass = /btn-xs|btn-sm|tiny|mini/.test(cls);
@@ -774,29 +886,29 @@ function analyzeHTML(html, url) {
     category: 'touch',
     name: 'Tap Target Size',
     status: buttons.length === 0 ? 'info' : likelySmall.length === 0 ? 'pass' : likelySmall.length < 3 ? 'warn' : 'fail',
-    value: buttons.length === 0 ? 'No buttons in HTML' : `${buttons.length} buttons, ${likelySmall.length} potentially small`,
+    value: buttons.length === 0 ? 'No buttons in HTML' : `${buttons.length} buttons, ${likelySmall.length} small`,
     detail: likelySmall.length === 0 ? 'Interactive elements appear adequately sized.' : 'Some tap targets may be < 48×48px — Google recommends minimum 48px.'
   });
 
   // ---- FONT SIZE ----
-  const smallFonts = (styles.match(/font-size\s*:\s*(1[0-3]|9|[0-9])px/gi) || []).length;
+  const smallFonts = (styles.match(/font-size\s*:\s*(1[0-3]|[0-9])px/gi) || []).length;
   checks.push({
     category: 'content',
     name: 'Minimum Font Size',
     status: smallFonts === 0 ? 'pass' : smallFonts < 3 ? 'warn' : 'fail',
-    value: smallFonts === 0 ? 'OK (≥14px)' : `${smallFonts} elements < 14px`,
+    value: smallFonts === 0 ? 'OK (≥14px) ✓' : `${smallFonts} elements < 14px`,
     detail: smallFonts === 0 ? 'Text is readable on mobile.' : 'Text under 14px is hard to read on mobile.'
   });
 
   // ---- RESPONSIVE IMAGES ----
   const imgs = Array.from(doc.querySelectorAll('img'));
-  const responsiveImgs = imgs.filter(i => i.hasAttribute('srcset') || i.hasAttribute('sizes') || (i.closest('picture')));
+  const responsiveImgs = imgs.filter(i => i.hasAttribute('srcset') || i.hasAttribute('sizes') || i.closest('picture'));
   checks.push({
     category: 'content',
     name: 'Responsive Images',
     status: imgs.length === 0 ? 'info' : responsiveImgs.length / imgs.length > 0.5 ? 'pass' : 'warn',
     value: imgs.length === 0 ? 'No images' : `${responsiveImgs.length}/${imgs.length} responsive`,
-    detail: responsiveImgs.length === 0 ? 'Add srcset for responsive images.' : 'Good use of responsive images.'
+    detail: responsiveImgs.length === 0 && imgs.length > 0 ? 'Add srcset for responsive images.' : 'Good use of responsive images.'
   });
 
   // ---- IMAGE DIMENSIONS ----
@@ -805,18 +917,18 @@ function analyzeHTML(html, url) {
     category: 'content',
     name: 'Image Dimensions Set',
     status: imgs.length === 0 ? 'info' : imgsNoDim.length / imgs.length < 0.5 ? 'pass' : 'warn',
-    value: imgs.length === 0 ? 'No images' : `${imgsNoDim.length}/${imgs.length} missing dimensions`,
-    detail: imgsNoDim.length === 0 ? 'All images have width/height (prevents layout shift).' : 'Set width & height to avoid CLS issues.'
+    value: imgs.length === 0 ? 'No images' : `${imgsNoDim.length}/${imgs.length} missing dims`,
+    detail: imgsNoDim.length === 0 ? 'All images have dimensions (prevents CLS).' : 'Set width & height to avoid CLS issues.'
   });
 
   // ---- LEGACY TECH ----
-  const hasFlash = /\.swf|shockwave|flash/i.test(html);
+  const hasFlash = /\.swf|shockwave/i.test(html);
   const hasApplet = /<applet|<object[^>]+type=["']application\/x-java/i.test(html);
   checks.push({
     category: 'performance',
     name: 'Legacy Tech (Flash/Java)',
     status: hasFlash || hasApplet ? 'fail' : 'pass',
-    value: hasFlash ? 'Flash detected' : hasApplet ? 'Applet detected' : 'None',
+    value: hasFlash ? 'Flash detected' : hasApplet ? 'Applet detected' : 'None ✓',
     detail: hasFlash || hasApplet ? 'Legacy tech not supported on mobile.' : 'No legacy tech detected.'
   });
 
@@ -827,7 +939,7 @@ function analyzeHTML(html, url) {
     category: 'content',
     name: 'Intrusive Interstitials',
     status: interstitial ? 'fail' : 'pass',
-    value: interstitial ? 'Possible full-screen popup' : 'None detected',
+    value: interstitial ? 'Possible popup' : 'None ✓',
     detail: interstitial ? 'Google penalizes intrusive popups on mobile.' : 'No intrusive interstitials detected.'
   });
 
@@ -838,12 +950,11 @@ function analyzeHTML(html, url) {
     category: 'performance',
     name: 'Mobile-Specific Signals',
     status: hasMobileRedirect ? 'pass' : 'info',
-    value: hasMobileRedirect ? 'Detected' : 'Responsive design',
+    value: hasMobileRedirect ? 'Detected ✓' : 'Responsive design',
     detail: hasMobileRedirect ? 'Mobile-optimized version detected.' : 'Responsive design — modern best practice.'
   });
 
   // ---- HTTP/2 ----
-  const hasHttp2 = /http\/2|http2/i.test(html);
   checks.push({
     category: 'performance',
     name: 'Modern Protocol Hints',
@@ -852,51 +963,26 @@ function analyzeHTML(html, url) {
     detail: 'HTTP/2 or HTTP/3 improves mobile load times.'
   });
 
-  // ---- VIEWPORT HEIGHT ISSUE ----
-  const hasVh = /100vh/i.test(styles);
-  checks.push({
-    category: 'layout',
-    name: 'Mobile Viewport Height (100vh)',
-    status: !hasVh ? 'pass' : 'warn',
-    value: hasVh ? 'Uses 100vh' : 'Not used',
-    detail: hasVh ? '100vh can cause issues on mobile with address bar. Use dvh or svh.' : 'No 100vh issues detected.'
-  });
-
-  // ---- SAFE AREA ----
-  const hasSafeArea = /env\(safe-area-inset/i.test(styles);
-  checks.push({
-    category: 'layout',
-    name: 'Safe Area Insets',
-    status: hasSafeArea ? 'pass' : 'info',
-    value: hasSafeArea ? 'Set' : 'Not specified',
-    detail: hasSafeArea ? 'Handles iPhone notch correctly.' : 'Consider env(safe-area-inset-*) for notched devices.'
-  });
-
   return checks;
 }
 
 // ============================================================
-// 📊 SCORE CALCULATION
+// 📊 SCORE CALCULATION (Fixed)
 // ============================================================
 function calculateScore(checks) {
-  const weights = { pass: 0, info: 0, warn: 4, fail: 10 };
-  let penalty = 0;
-  let counted = 0;
+  // Filter only pass/warn/fail (ignore info)
+  const weighted = checks.filter(c => c.status === 'pass' || c.status === 'warn' || c.status === 'fail');
 
-  checks.forEach(c => {
-    if (c.status === 'pass' || c.status === 'warn' || c.status === 'fail') {
-      penalty += weights[c.status] || 0;
-      counted++;
-    }
+  if (!weighted.length) return 0;
+
+  let total = 0;
+  weighted.forEach(c => {
+    if (c.status === 'pass') total += 100;
+    else if (c.status === 'warn') total += 50;
+    else if (c.status === 'fail') total += 0;
   });
 
-  // Base score: 100 minus penalty, scaled
-  const maxPenalty = counted * 10;
-  const score = counted > 0
-    ? Math.max(0, Math.round(100 - (penalty / maxPenalty) * 100))
-    : 0;
-
-  return Math.min(100, Math.max(0, score));
+  return Math.round(total / weighted.length);
 }
 
 // ============================================================
@@ -905,7 +991,6 @@ function calculateScore(checks) {
 function renderResults(checks, url, source) {
   const score = calculateScore(checks);
 
-  // Gauge
   const deg = (score / 100) * 360;
   let color, statusKey;
   if (score >= 85) { color = '#10b981'; statusKey = 'excellent'; }
@@ -913,35 +998,32 @@ function renderResults(checks, url, source) {
   else if (score >= 45) { color = '#f59e0b'; statusKey = 'moderate'; }
   else { color = '#ef4444'; statusKey = 'poor'; }
 
-  const gauge = document.getElementById('scoreGauge');
+  const gauge = $('scoreGauge');
   gauge.style.background = `conic-gradient(${color} 0deg, ${color} ${deg}deg, rgba(255,255,255,0.08) ${deg}deg)`;
-  document.getElementById('scoreValue').textContent = score;
-  document.getElementById('scoreValue').style.color = color;
-  const st = document.getElementById('statusText');
+  $('scoreValue').textContent = score;
+  $('scoreValue').style.color = color;
+  const st = $('statusText');
   st.textContent = t(statusKey);
   st.style.color = color;
+  $('statusSub').textContent = `${escapeHtml(url)} · ${source}`;
 
-  // Metrics
   const passed = checks.filter(c => c.status === 'pass').length;
   const warned = checks.filter(c => c.status === 'warn').length;
   const failed = checks.filter(c => c.status === 'fail').length;
 
-  document.getElementById('metricsRow').innerHTML = `
+  $('metricsRow').innerHTML = `
     <div class="metric-box"><div class="metric-value" style="color:var(--primary)">${checks.length}</div><div class="metric-label">${t('metrics.checks')}</div></div>
     <div class="metric-box"><div class="metric-value" style="color:var(--success)">${passed}</div><div class="metric-label">${t('metrics.passed')}</div></div>
     <div class="metric-box"><div class="metric-value" style="color:var(--warning)">${warned}</div><div class="metric-label">${t('metrics.warnings')}</div></div>
     <div class="metric-box"><div class="metric-value" style="color:var(--danger)">${failed}</div><div class="metric-label">${t('metrics.failed')}</div></div>
   `;
 
-  // Group checks by category
-  const categories = {
-    viewport: [], layout: [], touch: [], content: [], performance: []
-  };
+  const categories = { viewport: [], layout: [], touch: [], content: [], performance: [] };
   checks.forEach(c => { if (categories[c.category]) categories[c.category].push(c); });
 
   const iconMap = { viewport:'fa-mobile-alt', layout:'fa-th-large', touch:'fa-hand-pointer', content:'fa-font', performance:'fa-bolt' };
 
-  document.getElementById('analysisChecks').innerHTML = Object.entries(categories).map(([cat, items]) => {
+  $('analysisChecks').innerHTML = Object.entries(categories).map(([cat, items]) => {
     if (items.length === 0) return '';
     return `
       <div class="check-category">
@@ -956,8 +1038,7 @@ function renderResults(checks, url, source) {
     `;
   }).join('');
 
-  // Details tab
-  document.getElementById('detailsContent').innerHTML = `
+  $('detailsContent').innerHTML = `
     <div class="check-category">
       <h4><i class="fas fa-info-circle"></i> Analysis Info</h4>
       <div class="check-item">
@@ -979,62 +1060,118 @@ function renderResults(checks, url, source) {
     </div>
   `;
 
-  // History
   saveToHistory(url, score, source);
 }
 
-function escapeHtml(s) {
-  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-}
-
 // ============================================================
-// 📱 DEVICE PREVIEW
+// 📱 DEVICE PREVIEW (Fixed iframe scaling)
 // ============================================================
-function updateDeviceFrame() {
+function renderDeviceFrame() {
   const dev = DEVICES[currentDevice];
-  const frame = document.getElementById('deviceFrame');
-  const screen = document.getElementById('deviceScreen');
-  const maxPreviewWidth = Math.min(window.innerWidth - 60, 500);
-  const scale = Math.min(1, maxPreviewWidth / dev.width);
+  const container = $('deviceFrameContainer');
+  const maxWidth = Math.min(window.innerWidth - 80, 480);
+  const scale = Math.min(1, maxWidth / dev.width);
+  const displayW = Math.round(dev.width * scale);
+  const displayH = Math.round(dev.height * scale);
 
-  frame.style.width = (dev.width * scale) + 'px';
-  frame.style.padding = '12px';
-  screen.style.height = Math.min(dev.height * scale, 700) + 'px';
+  // Frame wrapper
+  container.innerHTML = `
+    <div class="device-frame" style="width:${displayW + 24}px; max-width:100%;">
+      <div class="notch"></div>
+      <div class="screen" style="width:${displayW}px; height:${displayH}px;">
+        <div class="iframe-fallback">
+          <i class="fas fa-mobile-alt"></i>
+          <p>Click "Analyze Mobile-Friendliness" to load live preview.</p>
+        </div>
+      </div>
+    </div>
+  `;
 }
 
 function updateDevicePreview(url) {
-  const screen = document.getElementById('deviceScreen');
   const dev = DEVICES[currentDevice];
-  screen.innerHTML = `
-    <iframe
-      src="${escapeHtml(url)}"
-      style="width:${dev.width}px; height:${dev.height}px; transform-origin:top left; transform:scale(${Math.min(1, (screen.offsetWidth || 400) / dev.width)});"
-      sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
-      referrerpolicy="no-referrer"
-      loading="lazy"
-      title="Device preview">
-    </iframe>
+  const container = $('deviceFrameContainer');
+  const maxWidth = Math.min(window.innerWidth - 80, 480);
+  const scale = Math.min(1, maxWidth / dev.width);
+  const displayW = Math.round(dev.width * scale);
+  const displayH = Math.round(dev.height * scale);
+
+  // Use smaller scale for iframe inside
+  const iframeW = dev.width;
+  const iframeH = dev.height;
+
+  container.innerHTML = `
+    <div class="device-frame" style="width:${displayW + 24}px; max-width:100%;">
+      <div class="notch"></div>
+      <div class="screen" style="width:${displayW}px; height:${displayH}px;">
+        <iframe
+          id="previewIframe"
+          src="${escapeHtml(url)}"
+          width="${iframeW}"
+          height="${iframeH}"
+          style="transform:scale(${scale}); transform-origin:top left; width:${iframeW}px; height:${iframeH}px;"
+          sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+          referrerpolicy="no-referrer"
+          loading="lazy"
+          title="Mobile preview">
+        </iframe>
+      </div>
+    </div>
   `;
+
+  // Detect iframe block
+  currentIframeBlocked = false;
+  const iframe = $('previewIframe');
+  if (iframe) {
+    iframe.addEventListener('load', () => {
+      try {
+        // If we can access contentDocument, it loaded
+        const doc = iframe.contentDocument || iframe.contentWindow.document;
+        if (doc && doc.body && doc.body.innerHTML.length > 0) {
+          currentIframeBlocked = false;
+        } else {
+          currentIframeBlocked = true;
+        }
+      } catch(e) {
+        // Cross-origin loaded successfully (good sign)
+        currentIframeBlocked = false;
+      }
+    });
+
+    // Timeout check
+    setTimeout(() => {
+      if (iframe.srcdoc === '' && !iframe.contentWindow) {
+        currentIframeBlocked = true;
+      }
+      if (currentIframeBlocked) {
+        $('iframeWarning').innerHTML = `
+          <div class="iframe-warning">
+            <i class="fas fa-exclamation-triangle"></i> ${t('iframeBlocked')}
+          </div>
+        `;
+      } else {
+        $('iframeWarning').innerHTML = '';
+      }
+    }, 3000);
+  }
 }
 
 // ============================================================
 // 📊 MAIN ANALYZE
 // ============================================================
-let lastResult = null;
-
 async function analyze() {
-  const rawUrl = document.getElementById('siteUrl').value.trim();
-  if (!rawUrl) { showToast(t('emptyError'), true); return; }
+  const rawUrl = $('siteUrl').value.trim();
+  if (!rawUrl) { showToast(t('emptyError'), 'error'); return; }
 
   let url;
   try {
     url = new URL(rawUrl.startsWith('http') ? rawUrl : 'https://' + rawUrl).href;
-  } catch(e) { showToast(t('emptyError'), true); return; }
+  } catch(e) { showToast(t('emptyError'), 'error'); return; }
 
-  const btn = document.getElementById('analyzeBtn');
-  const progress = document.getElementById('loadingProgress');
-  const fill = document.getElementById('loadingFill');
-  const text = document.getElementById('loadingText');
+  const btn = $('analyzeBtn');
+  const progress = $('loadingProgress');
+  const fill = $('loadingFill');
+  const text = $('loadingText');
 
   btn.disabled = true;
   progress.style.display = 'block';
@@ -1043,7 +1180,6 @@ async function analyze() {
 
   setTimeout(() => { fill.style.width = '40%'; text.textContent = t('analyzing'); }, 400);
 
-  // Try fetch, fallback to heuristic
   const { html, proxy, errors } = await fetchWebsite(url);
 
   setTimeout(() => { fill.style.width = '80%'; text.textContent = t('scoring'); }, 200);
@@ -1054,22 +1190,31 @@ async function analyze() {
     checks = analyzeHTML(html, url);
     source = `Live fetch (${proxy})`;
   } else {
-    // Heuristic fallback based on URL
+    // Heuristic fallback — analyze URL structure only
     checks = analyzeHTML('', url);
-    source = 'Heuristic (fetch blocked by CORS)';
+    source = 'Heuristic (fetch blocked)';
   }
 
   setTimeout(() => {
     fill.style.width = '100%';
     text.textContent = t('complete');
 
-    lastResult = { url, checks, source, score: calculateScore(checks), timestamp: new Date().toISOString() };
+    lastResult = {
+      url,
+      checks,
+      source,
+      score: calculateScore(checks),
+      timestamp: new Date().toISOString()
+    };
 
     renderResults(checks, url, source);
     updateDevicePreview(url);
-    updateDeviceFrame();
 
-    document.getElementById('results').style.display = 'block';
+    $('results').style.display = 'block';
+    $('exportJson').disabled = false;
+    $('exportCsv').disabled = false;
+    $('copyReport').disabled = false;
+
     setTimeout(() => {
       progress.style.display = 'none';
       fill.style.width = '0%';
@@ -1077,7 +1222,7 @@ async function analyze() {
 
     btn.disabled = false;
     showToast('✅ ' + t('complete'));
-    document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    $('results').scrollIntoView({ behavior: 'smooth' });
   }, 400);
 }
 
@@ -1085,7 +1230,7 @@ async function analyze() {
 // 💾 HISTORY
 // ============================================================
 function getHistory() {
-  try { return JSON.parse(localStorage.getItem('mobileTestHistory') || '[]'); }
+  try { return JSON.parse(localStorage.getItem('mobileTestHistoryV4') || '[]'); }
   catch(e) { return []; }
 }
 
@@ -1094,14 +1239,14 @@ function saveToHistory(url, score, source) {
   const exists = history.findIndex(h => h.url === url);
   if (exists >= 0) history.splice(exists, 1);
   history.unshift({ url, score, source, ts: Date.now() });
-  localStorage.setItem('mobileTestHistory', JSON.stringify(history.slice(0, 15)));
+  localStorage.setItem('mobileTestHistoryV4', JSON.stringify(history.slice(0, 15)));
   renderHistory();
 }
 
 function renderHistory() {
   const history = getHistory();
-  document.getElementById('historyCount').textContent = history.length;
-  const list = document.getElementById('historyList');
+  $('historyCount').textContent = history.length;
+  const list = $('historyList');
   if (history.length === 0) {
     list.innerHTML = `<div style="text-align:center; opacity:0.5; padding:20px;">${t('noHistory')}</div>`;
     return;
@@ -1124,7 +1269,7 @@ function renderHistory() {
       const idx = parseInt(item.dataset.index);
       const h = getHistory()[idx];
       if (h) {
-        document.getElementById('siteUrl').value = h.url;
+        $('siteUrl').value = h.url;
         analyze();
       }
     });
@@ -1145,18 +1290,17 @@ function downloadBlob(content, mime, filename) {
 }
 
 function exportJSON() {
-  if (!lastResult) { showToast('Run analysis first', true); return; }
+  if (!lastResult) return;
   const payload = {
-    tool: 'FreeSEOToolHub Mobile-Friendly Test v3.0',
-    ...lastResult,
-    checks: lastResult.checks.map(c => ({ category: c.category, name: c.name, status: c.status, value: c.value, detail: c.detail }))
+    tool: 'FreeSEOToolHub Mobile-Friendly Test v4.0',
+    ...lastResult
   };
   downloadBlob(JSON.stringify(payload, null, 2), 'application/json', `mobile-test-${Date.now()}.json`);
   showToast('📥 JSON downloaded');
 }
 
 function exportCSV() {
-  if (!lastResult) { showToast('Run analysis first', true); return; }
+  if (!lastResult) return;
   const rows = [['Category', 'Check', 'Status', 'Value', 'Detail']];
   lastResult.checks.forEach(c => rows.push([c.category, c.name, c.status, c.value, c.detail]));
   rows.push([]);
@@ -1169,7 +1313,7 @@ function exportCSV() {
 }
 
 function copyReport() {
-  if (!lastResult) { showToast('Run analysis first', true); return; }
+  if (!lastResult) return;
   const r = lastResult;
   let txt = `Mobile-Friendly Test Report\n${'='.repeat(45)}\n`;
   txt += `URL: ${r.url}\n`;
@@ -1191,17 +1335,7 @@ function copyReport() {
 // ============================================================
 // 🎬 INIT
 // ============================================================
-function showToast(msg, isError = false) {
-  const toast = document.getElementById('toast');
-  document.getElementById('toastMsg').textContent = msg;
-  toast.style.background = isError ? 'rgba(239,68,68,0.95)' : 'rgba(11,26,51,0.95)';
-  toast.style.display = 'flex';
-  clearTimeout(showToast._t);
-  showToast._t = setTimeout(() => { toast.style.display = 'none'; }, 2800);
-}
-
 function init() {
-  // Language
   const urlLang = new URLSearchParams(location.search).get('lang');
   const savedLang = urlLang || localStorage.getItem('preferredLanguage') || 'en';
   applyLang(savedLang);
@@ -1210,13 +1344,9 @@ function init() {
     btn.addEventListener('click', () => applyLang(btn.dataset.lang));
   });
 
-  // Main analyze
-  document.getElementById('analyzeBtn').addEventListener('click', analyze);
-  document.getElementById('siteUrl').addEventListener('keypress', e => {
-    if (e.key === 'Enter') analyze();
-  });
+  $('analyzeBtn').addEventListener('click', analyze);
+  $('siteUrl').addEventListener('keypress', e => { if (e.key === 'Enter') analyze(); });
 
-  // Tabs
   document.querySelectorAll('.tab').forEach(tab => {
     tab.addEventListener('click', () => {
       document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
@@ -1226,52 +1356,50 @@ function init() {
     });
   });
 
-  // Device tabs
   document.querySelectorAll('.device-tab').forEach(t => {
     t.addEventListener('click', () => {
       document.querySelectorAll('.device-tab').forEach(x => x.classList.remove('active'));
       t.classList.add('active');
       currentDevice = t.dataset.device;
-      const dev = DEVICES[currentDevice];
-      document.getElementById('deviceSelect').value = currentDevice;
-      updateDeviceFrame();
+      $('deviceSelect').value = currentDevice;
+      renderDeviceFrame();
       if (lastResult) updateDevicePreview(lastResult.url);
     });
   });
 
-  // Device select
-  document.getElementById('deviceSelect').addEventListener('change', e => {
+  $('deviceSelect').addEventListener('change', e => {
     currentDevice = e.target.value;
     document.querySelectorAll('.device-tab').forEach(t => {
       t.classList.toggle('active', t.dataset.device === currentDevice);
     });
-    updateDeviceFrame();
+    renderDeviceFrame();
     if (lastResult) updateDevicePreview(lastResult.url);
   });
 
-  // Exports
-  document.getElementById('exportJson').addEventListener('click', exportJSON);
-  document.getElementById('exportCsv').addEventListener('click', exportCSV);
-  document.getElementById('copyReport').addEventListener('click', copyReport);
-  document.getElementById('clearBtn').addEventListener('click', () => {
-    document.getElementById('results').style.display = 'none';
-    document.getElementById('siteUrl').value = '';
+  $('exportJson').addEventListener('click', exportJSON);
+  $('exportCsv').addEventListener('click', exportCSV);
+  $('copyReport').addEventListener('click', copyReport);
+  $('clearBtn').addEventListener('click', () => {
+    $('results').style.display = 'none';
+    $('siteUrl').value = '';
     lastResult = null;
+    $('exportJson').disabled = true;
+    $('exportCsv').disabled = true;
+    $('copyReport').disabled = true;
     showToast('🗑️ Cleared');
   });
 
-  // Clear history
-  document.getElementById('clearHistory').addEventListener('click', () => {
-    localStorage.removeItem('mobileTestHistory');
+  $('clearHistory').addEventListener('click', () => {
+    localStorage.removeItem('mobileTestHistoryV4');
     renderHistory();
     showToast('🗑️ History cleared');
   });
 
-  // Window resize — update device frame
-  window.addEventListener('resize', () => { updateDeviceFrame(); });
+  window.addEventListener('resize', () => { renderDeviceFrame(); });
 
   renderHistory();
-  updateDeviceFrame();
+  renderDeviceFrame();
+  console.log('✅ Mobile-Friendly Test v4.0 ready');
 }
 
 init();
