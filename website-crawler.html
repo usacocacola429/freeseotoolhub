@@ -14,7 +14,7 @@ gtag('config', 'G-PFPCTBFG3Y');
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <title>Website Crawler 2026 — Real SEO Site Audit | FreeSEOToolHub</title>
-<meta name="description" content="Free website crawler with real multi-page SEO audit. Detects broken links, duplicate titles, missing meta tags, images without alt, H1 issues. No signup. 100% client-side.">
+<meta name="description" content="Free website crawler with real multi-page SEO audit. Detects broken links, duplicate titles, missing meta tags, images without alt, sitemap, robots.txt. No signup. 100% client-side.">
 <meta name="keywords" content="website crawler, seo site audit, website audit tool, broken link checker, seo crawler, site audit report, seo issues finder, free seo tool">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://freeseotoolhub.com/tools/website-crawler.html">
@@ -104,7 +104,7 @@ body { background:linear-gradient(135deg,#0b1a33 0%,#1e2b4f 100%); min-height:10
 
 .form-group { margin-bottom:16px; }
 .form-group label { display:block; margin-bottom:6px; font-weight:600; font-size:0.85rem; color:rgba(255,255,255,0.75); }
-input[type="url"], input[type="number"], select {
+input[type="url"], input[type="number"], input[type="text"], select {
   width:100%; padding:12px 16px;
   background:rgba(255,255,255,0.05); border:1px solid var(--border);
   border-radius:12px; font-size:0.95rem; color:#fff;
@@ -116,12 +116,17 @@ select option { background:#0b1a33; color:#fff; }
 .row-3 { display:grid; grid-template-columns:2fr 1fr 1fr; gap:12px; }
 @media (max-width:700px) { .row-3 { grid-template-columns:1fr; } }
 
+.checkbox-group { display:flex; align-items:center; gap:8px; margin-top:12px; font-size:0.85rem; color:rgba(255,255,255,0.75); flex-wrap:wrap; }
+.checkbox-group label { display:flex; align-items:center; gap:6px; cursor:pointer; }
+.checkbox-group input[type="checkbox"] { width:auto; }
+
 .btn-primary {
   background:linear-gradient(135deg,var(--primary),var(--primary-dark)); color:#0b1a33;
   padding:14px 30px; border:none; border-radius:50px;
   font-weight:700; font-size:1rem; cursor:pointer; transition:all 0.3s;
   width:100%; font-family:inherit;
   display:inline-flex; align-items:center; justify-content:center; gap:0.5rem;
+  margin-top:16px;
 }
 .btn-primary:hover:not(:disabled) { transform:translateY(-2px); box-shadow:0 10px 25px rgba(255,153,51,0.3); }
 .btn-primary:disabled { opacity:0.6; cursor:wait; }
@@ -138,33 +143,17 @@ select option { background:#0b1a33; color:#fff; }
 
 .actions-row { display:flex; gap:8px; flex-wrap:wrap; margin-top:14px; }
 
-/* PROGRESS */
-.crawl-progress {
-  display:none; margin-top:20px;
-}
-.crawl-bar {
-  height:6px; background:rgba(255,255,255,0.1); border-radius:6px; overflow:hidden;
-}
-.crawl-fill {
-  height:100%; background:linear-gradient(90deg, var(--primary), var(--primary-dark));
-  width:0%; transition:width 0.3s; border-radius:6px;
-}
-.crawl-status {
-  font-size:0.82rem; color:rgba(255,255,255,0.7); margin-top:8px;
-  text-align:center;
-}
-.crawl-log {
-  margin-top:12px; max-height:150px; overflow-y:auto;
-  background:rgba(0,0,0,0.2); border-radius:8px; padding:10px;
-  font-family:'Courier New', monospace; font-size:0.72rem;
-  color:rgba(255,255,255,0.7); line-height:1.6;
-}
+.crawl-progress { display:none; margin-top:20px; }
+.crawl-bar { height:6px; background:rgba(255,255,255,0.1); border-radius:6px; overflow:hidden; }
+.crawl-fill { height:100%; background:linear-gradient(90deg, var(--primary), var(--primary-dark)); width:0%; transition:width 0.3s; border-radius:6px; }
+.crawl-status { font-size:0.82rem; color:rgba(255,255,255,0.7); margin-top:8px; text-align:center; }
+.crawl-log { margin-top:12px; max-height:180px; overflow-y:auto; background:rgba(0,0,0,0.2); border-radius:8px; padding:10px; font-family:'Courier New', monospace; font-size:0.72rem; color:rgba(255,255,255,0.7); line-height:1.6; }
 .crawl-log div { padding:2px 0; }
 .crawl-log .ok { color:var(--success); }
 .crawl-log .warn { color:var(--warning); }
 .crawl-log .err { color:var(--danger); }
+.crawl-log .info { color:var(--info); }
 
-/* SCORE */
 .score-gauge {
   width:180px; height:180px; margin:0 auto 16px;
   position:relative; border-radius:50%;
@@ -182,20 +171,11 @@ select option { background:#0b1a33; color:#fff; }
 .status-text { font-size:1.1rem; font-weight:700; text-align:center; margin-top:8px; }
 .status-sub { font-size:0.82rem; opacity:0.7; text-align:center; margin-top:6px; }
 
-/* METRICS */
-.metrics-row {
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(120px, 1fr));
-  gap:12px; margin:20px 0;
-}
-.metric-box {
-  background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);
-  border-radius:12px; padding:14px; text-align:center;
-}
+.metrics-row { display:grid; grid-template-columns:repeat(auto-fit, minmax(120px, 1fr)); gap:12px; margin:20px 0; }
+.metric-box { background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:14px; text-align:center; }
 .metric-value { font-size:1.4rem; font-weight:800; line-height:1; }
 .metric-label { font-size:0.68rem; color:rgba(255,255,255,0.6); text-transform:uppercase; letter-spacing:0.5px; margin-top:6px; font-weight:600; }
 
-/* TABS */
 .tabs { display:flex; gap:4px; border-bottom:1px solid var(--border); margin-bottom:18px; flex-wrap:wrap; }
 .tab {
   padding:10px 16px; background:transparent; border:none;
@@ -209,97 +189,45 @@ select option { background:#0b1a33; color:#fff; }
 .tab-panel { display:none; }
 .tab-panel.active { display:block; }
 
-/* CHECK LISTS */
-.check-category {
-  background:rgba(255,255,255,0.03); border-radius:12px;
-  padding:14px; margin-bottom:12px;
-  border:1px solid rgba(255,255,255,0.08);
-}
-.check-category h4 {
-  font-size:0.92rem; margin-bottom:10px;
-  display:flex; align-items:center; gap:0.5rem; color:var(--primary);
-}
-.check-item {
-  display:flex; justify-content:space-between; align-items:center;
-  padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.05);
-  font-size:0.85rem; gap:10px;
-}
+.check-category { background:rgba(255,255,255,0.03); border-radius:12px; padding:14px; margin-bottom:12px; border:1px solid rgba(255,255,255,0.08); }
+.check-category h4 { font-size:0.92rem; margin-bottom:10px; display:flex; align-items:center; gap:0.5rem; color:var(--primary); }
+.check-item { display:flex; justify-content:space-between; align-items:center; padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.05); font-size:0.85rem; gap:10px; }
 .check-item:last-child { border-bottom:none; }
 .check-name { flex:1; color:rgba(255,255,255,0.85); }
 .check-name small { display:block; opacity:0.6; font-size:0.72rem; margin-top:2px; word-break:break-word; }
-.check-status {
-  font-weight:600; font-size:0.75rem; padding:3px 10px;
-  border-radius:20px; white-space:nowrap;
-}
+.check-status { font-weight:600; font-size:0.75rem; padding:3px 10px; border-radius:20px; white-space:nowrap; }
 .pass { background:rgba(16,185,129,0.15); color:var(--success); }
 .fail { background:rgba(239,68,68,0.15); color:var(--danger); }
 .warn { background:rgba(245,158,11,0.15); color:var(--warning); }
 .info { background:rgba(59,130,246,0.15); color:var(--info); }
 
-/* PAGE LIST */
 .page-list { max-height:500px; overflow-y:auto; }
-.page-item {
-  background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08);
-  border-radius:10px; padding:12px; margin-bottom:8px;
-  transition:all 0.2s;
-}
+.page-item { background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:12px; margin-bottom:8px; transition:all 0.2s; }
 .page-item:hover { border-color:var(--primary); background:rgba(255,153,51,0.05); }
-.page-url {
-  font-family:'Courier New', monospace; font-size:0.78rem;
-  color:var(--primary); word-break:break-all; margin-bottom:6px;
-  display:flex; align-items:flex-start; gap:6px;
-}
+.page-url { font-family:'Courier New', monospace; font-size:0.78rem; color:var(--primary); word-break:break-all; margin-bottom:6px; display:flex; align-items:flex-start; gap:6px; }
 .page-meta { display:flex; gap:8px; flex-wrap:wrap; font-size:0.72rem; }
-.page-badge {
-  background:rgba(255,255,255,0.05); padding:2px 8px;
-  border-radius:20px; color:rgba(255,255,255,0.75);
-}
+.page-badge { background:rgba(255,255,255,0.05); padding:2px 8px; border-radius:20px; color:rgba(255,255,255,0.75); }
 .page-badge.err { background:rgba(239,68,68,0.15); color:var(--danger); }
 .page-badge.warn { background:rgba(245,158,11,0.15); color:var(--warning); }
 .page-badge.ok { background:rgba(16,185,129,0.15); color:var(--success); }
 
-/* HISTORY */
 .history-list { max-height:300px; overflow-y:auto; }
-.history-item {
-  display:flex; justify-content:space-between; align-items:center;
-  padding:10px 14px; background:rgba(255,255,255,0.03);
-  border-radius:8px; margin-bottom:6px; font-size:0.82rem;
-  border-left:3px solid var(--primary); cursor:pointer;
-  transition:all 0.2s;
-}
+.history-item { display:flex; justify-content:space-between; align-items:center; padding:10px 14px; background:rgba(255,255,255,0.03); border-radius:8px; margin-bottom:6px; font-size:0.82rem; border-left:3px solid var(--primary); cursor:pointer; transition:all 0.2s; }
 .history-item:hover { background:rgba(255,153,51,0.1); }
 
-/* TOAST */
 .toast-container { position:fixed; bottom:24px; right:24px; z-index:9999; display:flex; flex-direction:column; gap:8px; }
-.toast {
-  background:rgba(30,41,59,0.95); backdrop-filter:blur(10px);
-  color:#fff; padding:12px 20px; border-radius:12px;
-  border:1px solid var(--border); font-size:0.88rem;
-  font-weight:500; animation:slideIn 0.3s ease;
-  display:flex; align-items:center; gap:10px;
-  max-width:360px;
-}
+.toast { background:rgba(30,41,59,0.95); backdrop-filter:blur(10px); color:#fff; padding:12px 20px; border-radius:12px; border:1px solid var(--border); font-size:0.88rem; font-weight:500; animation:slideIn 0.3s ease; display:flex; align-items:center; gap:10px; max-width:360px; }
 .toast.success { background:rgba(16,185,129,0.95); }
 .toast.error { background:rgba(239,68,68,0.95); }
 .toast.warning { background:rgba(245,158,11,0.95); }
 @keyframes slideIn { from { transform:translateX(120%); opacity:0; } to { transform:translateX(0); opacity:1; } }
 
-/* FOOTER */
-.footer {
-  text-align:center; padding:20px;
-  background:rgba(255,255,255,0.03); border-radius:16px;
-  margin-top:20px; border:1px solid var(--border);
-}
+.footer { text-align:center; padding:20px; background:rgba(255,255,255,0.03); border-radius:16px; margin-top:20px; border:1px solid var(--border); }
 .footer-links { display:flex; justify-content:center; gap:22px; flex-wrap:wrap; margin-bottom:10px; }
 .footer-links a { color:rgba(255,255,255,0.7); text-decoration:none; font-weight:500; font-size:0.88rem; }
 .footer-links a:hover { color:var(--primary); }
 
-/* FAQ */
-.faq-section {
-  background:rgba(255,255,255,0.03);
-  border:1px solid var(--border);
-  border-radius:16px; padding:24px; margin-top:20px;
-}
+.faq-section { background:rgba(255,255,255,0.03); border:1px solid var(--border); border-radius:16px; padding:24px; margin-top:20px; }
 .faq-section h2 { font-size:1.2rem; margin-bottom:16px; display:flex; align-items:center; gap:10px; }
 .faq-section h2 i { color:var(--primary); }
 .faq-item { margin-bottom:16px; }
@@ -346,7 +274,6 @@ select option { background:#0b1a33; color:#fff; }
     <button class="lang-btn" data-lang="es">🇪🇸 Español</button>
   </div>
 
-  <!-- INPUT -->
   <div class="glass-card">
     <div class="row-3">
       <div class="form-group">
@@ -372,6 +299,13 @@ select option { background:#0b1a33; color:#fff; }
       </div>
     </div>
 
+    <div class="checkbox-group">
+      <label><input type="checkbox" id="checkSitemap" checked> Check sitemap.xml</label>
+      <label><input type="checkbox" id="checkRobots" checked> Check robots.txt</label>
+      <label><input type="checkbox" id="checkBrokenLinks" checked> Check broken links</label>
+      <label><input type="checkbox" id="fastMode" checked> Fast mode (parallel)</label>
+    </div>
+
     <button class="btn-primary" id="crawlBtn">
       <i class="fas fa-play"></i> <span data-i18n="crawlBtn">Start Crawl</span>
     </button>
@@ -390,7 +324,6 @@ select option { background:#0b1a33; color:#fff; }
     </div>
   </div>
 
-  <!-- RESULTS -->
   <div id="results" style="display:none;">
     <div class="glass-card">
       <div class="score-gauge" id="scoreGauge">
@@ -409,22 +342,17 @@ select option { background:#0b1a33; color:#fff; }
       <div class="tabs">
         <button class="tab active" data-tab="issues"><i class="fas fa-exclamation-triangle"></i> <span data-i18n="tabIssues">Issues</span></button>
         <button class="tab" data-tab="pages"><i class="fas fa-file"></i> <span data-i18n="tabPages">Pages</span></button>
+        <button class="tab" data-tab="broken"><i class="fas fa-unlink"></i> Broken Links</button>
         <button class="tab" data-tab="duplicates"><i class="fas fa-clone"></i> <span data-i18n="tabDuplicates">Duplicates</span></button>
+        <button class="tab" data-tab="tech"><i class="fas fa-cog"></i> Technical</button>
         <button class="tab" data-tab="history"><i class="fas fa-history"></i> <span data-i18n="tabHistory">History</span></button>
       </div>
 
-      <div class="tab-panel active" data-panel="issues">
-        <div id="issuesContent"></div>
-      </div>
-
-      <div class="tab-panel" data-panel="pages">
-        <div class="page-list" id="pagesContent"></div>
-      </div>
-
-      <div class="tab-panel" data-panel="duplicates">
-        <div id="duplicatesContent"></div>
-      </div>
-
+      <div class="tab-panel active" data-panel="issues"><div id="issuesContent"></div></div>
+      <div class="tab-panel" data-panel="pages"><div class="page-list" id="pagesContent"></div></div>
+      <div class="tab-panel" data-panel="broken"><div id="brokenContent"></div></div>
+      <div class="tab-panel" data-panel="duplicates"><div id="duplicatesContent"></div></div>
+      <div class="tab-panel" data-panel="tech"><div id="techContent"></div></div>
       <div class="tab-panel" data-panel="history">
         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
           <span style="font-size:0.85rem; opacity:0.7;"><span id="historyCount">0</span> <span data-i18n="savedCrawls">saved crawls</span></span>
@@ -435,7 +363,6 @@ select option { background:#0b1a33; color:#fff; }
     </div>
   </div>
 
-  <!-- FAQ -->
   <div class="faq-section">
     <h2><i class="fas fa-circle-question"></i> <span data-i18n="faqTitle">Frequently Asked Questions</span></h2>
     <div class="faq-item">
@@ -444,7 +371,7 @@ select option { background:#0b1a33; color:#fff; }
     </div>
     <div class="faq-item">
       <div class="faq-q"><i class="fas fa-question-circle"></i> What issues are detected?</div>
-      <div class="faq-a" data-i18n="faq2">Missing titles/descriptions, duplicate content, missing H1s, multiple H1s, images without alt, missing canonical tags, noindex directives, broken internal links, missing Open Graph tags, and more.</div>
+      <div class="faq-a" data-i18n="faq2">Missing titles/descriptions, duplicate content, missing H1s, multiple H1s, images without alt, missing canonical tags, noindex directives, broken internal links, missing Open Graph tags, missing sitemap, robots.txt issues, and more.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q"><i class="fas fa-question-circle"></i> Why does crawl sometimes fail?</div>
@@ -456,7 +383,6 @@ select option { background:#0b1a33; color:#fff; }
     </div>
   </div>
 
-  <!-- FOOTER -->
   <div class="footer">
     <div class="footer-links">
       <a href="/">Home</a>
@@ -465,7 +391,7 @@ select option { background:#0b1a33; color:#fff; }
       <a href="/contact.html">Contact</a>
       <a href="/privacy.html">Privacy</a>
     </div>
-    <p style="opacity:0.5; font-size:0.82rem;">© 2026 FreeSEOToolHub | Website Crawler v3.0 | 100% Client-Side</p>
+    <p style="opacity:0.5; font-size:0.82rem;">© 2026 FreeSEOToolHub | Website Crawler v4.0 | 100% Client-Side</p>
   </div>
 </div>
 
@@ -501,107 +427,105 @@ const I18N = {
     copied: 'Report copied!',
     failedFetch: 'Could not fetch homepage. CORS proxy may be blocked. Try another URL.',
     noHistory: 'No history yet',
+    checkingSitemap: 'Checking sitemap.xml...',
+    checkingRobots: 'Checking robots.txt...',
+    checkingBroken: 'Checking broken links...',
+    sitemapFound: 'Sitemap found',
+    sitemapMissing: 'No sitemap.xml found',
+    robotsFound: 'robots.txt found',
+    robotsMissing: 'No robots.txt found',
+    brokenLinksFound: 'broken link(s) found',
+    noBrokenLinks: 'No broken links found',
     faqTitle: 'Frequently Asked Questions',
     faq1: 'Fetches homepage via CORS proxy, extracts internal links, crawls each page up to selected depth.',
-    faq2: 'Missing titles/descriptions, duplicate content, missing H1s, images without alt, canonical tags, broken links, Open Graph.',
+    faq2: 'Missing titles/descriptions, duplicate content, missing H1s, images without alt, canonical tags, broken links, Open Graph, sitemap, robots.txt.',
     faq3: 'Some sites block CORS proxies or have firewalls. We try 3 proxies. Try again or use a different site.',
     faq4: 'Yes. Everything runs 100% in your browser. No data stored.'
   },
   hi: {
     title: 'वेबसाइट क्रॉलर 2026',
-    subtitle: '20+ SEO जांच के साथ असली मल्टी-पेज क्रॉल। टूटे लिंक, डुप्लिकेट टाइटल, गायब मेटा टैग पहचानें।',
+    subtitle: '20+ SEO जांच के साथ असली मल्टी-पेज क्रॉल।',
     urlLabel: 'वेबसाइट URL', depthLabel: 'क्रॉल गहराई', maxPagesLabel: 'अधिकतम पेज',
     crawlBtn: 'क्रॉल शुरू करें', copy: 'कॉपी', clear: 'साफ़',
     seoScore: 'SEO स्कोर',
     tabIssues: 'समस्याएं', tabPages: 'पेज', tabDuplicates: 'डुप्लिकेट', tabHistory: 'इतिहास',
     savedCrawls: 'सहेजे क्रॉल',
-    excellent: 'बेहतरीन SEO स्वास्थ्य', good: 'अच्छा SEO स्वास्थ्य', moderate: 'ध्यान चाहिए', poor: 'गंभीर समस्याएं',
+    excellent: 'बेहतरीन', good: 'अच्छा', moderate: 'ध्यान चाहिए', poor: 'गंभीर',
     metrics: { pages: 'पेज', errors: 'त्रुटियां', warnings: 'चेतावनियां', avgWords: 'औसत शब्द' },
-    categories: { titles: 'शीर्षक', descriptions: 'मेटा विवरण', headings: 'हेडिंग', images: 'छवियां', links: 'लिंक', technical: 'तकनीकी SEO' },
-    invalidUrl: 'कृपया मान्य URL दर्ज करें',
-    crawling: 'क्रॉल हो रहा है',
-    complete: 'क्रॉल पूर्ण!',
-    noPages: 'क्रॉल करने के लिए कोई पेज नहीं',
-    copied: 'रिपोर्ट कॉपी!',
-    failedFetch: 'होमपेज नहीं मिला। CORS प्रॉक्सी ब्लॉक हो सकती है।',
-    noHistory: 'अभी कोई इतिहास नहीं',
+    categories: { titles: 'शीर्षक', descriptions: 'विवरण', headings: 'हेडिंग', images: 'छवियां', links: 'लिंक', technical: 'तकनीकी' },
+    invalidUrl: 'मान्य URL दर्ज करें', crawling: 'क्रॉल हो रहा है', complete: 'क्रॉल पूर्ण!',
+    noPages: 'कोई पेज नहीं मिला', copied: 'कॉपी!', failedFetch: 'होमपेज नहीं मिला।',
+    noHistory: 'कोई इतिहास नहीं',
+    checkingSitemap: 'साइटमैप जांच...', checkingRobots: 'robots.txt जांच...', checkingBroken: 'टूटे लिंक जांच...',
+    sitemapFound: 'साइटमैप मिला', sitemapMissing: 'साइटमैप नहीं मिला',
+    robotsFound: 'robots.txt मिला', robotsMissing: 'robots.txt नहीं मिला',
+    brokenLinksFound: 'टूटे लिंक मिले', noBrokenLinks: 'कोई टूटा लिंक नहीं',
     faqTitle: 'अक्सर पूछे जाने वाले प्रश्न',
     faq1: 'CORS प्रॉक्सी से होमपेज फ़ेच करता है, आंतरिक लिंक निकालता है।',
-    faq2: 'गायब शीर्षक/विवरण, डुप्लिकेट सामग्री, H1 समस्याएं, alt के बिना छवियां।',
-    faq3: 'कुछ साइटें CORS ब्लॉक करती हैं। 3 प्रॉक्सी आज़माते हैं।',
-    faq4: 'हाँ। सब कुछ आपके ब्राउज़र में चलता है।'
+    faq2: 'गायब शीर्षक/विवरण, डुप्लिकेट, H1, alt, canonical, टूटे लिंक।',
+    faq3: 'कुछ साइटें CORS ब्लॉक करती हैं।',
+    faq4: 'हाँ। सब ब्राउज़र में चलता है।'
   },
   ur: {
     title: 'ویب سائٹ کرالر 2026',
-    subtitle: '20+ SEO چیکس کے ساتھ حقیقی ملٹی پیج کرال۔',
-    urlLabel: 'ویب سائٹ URL', depthLabel: 'کرال گہرائی', maxPagesLabel: 'زیادہ سے زیادہ صفحات',
-    crawlBtn: 'کرال شروع کریں', copy: 'کاپی', clear: 'صاف کریں',
+    subtitle: '20+ SEO چیکس کے ساتھ ملٹی پیج کرال۔',
+    urlLabel: 'URL', depthLabel: 'گہرائی', maxPagesLabel: 'زیادہ سے زیادہ',
+    crawlBtn: 'شروع کریں', copy: 'کاپی', clear: 'صاف',
     seoScore: 'SEO اسکور',
-    tabIssues: 'مسائل', tabPages: 'صفحات', tabDuplicates: 'ڈپلیکیٹس', tabHistory: 'تاریخ',
-    savedCrawls: 'محفوظ کرالز',
-    excellent: 'بہترین SEO صحت', good: 'اچھی SEO صحت', moderate: 'توجہ درکار', poor: 'شدید مسائل',
+    tabIssues: 'مسائل', tabPages: 'صفحات', tabDuplicates: 'ڈپلیکیٹ', tabHistory: 'تاریخ',
+    savedCrawls: 'محفوظ',
+    excellent: 'بہترین', good: 'اچھی', moderate: 'توجہ', poor: 'شدید',
     metrics: { pages: 'صفحات', errors: 'غلطیاں', warnings: 'انتباہات', avgWords: 'اوسط الفاظ' },
-    categories: { titles: 'عناوین', descriptions: 'میٹا تفصیلات', headings: 'ہیڈنگز', images: 'تصاویر', links: 'لنکس', technical: 'تکنیکی SEO' },
-    invalidUrl: 'براہ کرم درست URL درج کریں',
-    crawling: 'کرال ہو رہا ہے',
-    complete: 'کرال مکمل!',
-    noPages: 'کرال کے لیے کوئی صفحہ نہیں',
-    copied: 'رپورٹ کاپی!',
-    failedFetch: 'ہوم پیج نہیں ملا۔',
-    noHistory: 'ابھی کوئی تاریخ نہیں',
-    faqTitle: 'اکثر پوچھے گئے سوالات',
-    faq1: 'ہوم پیج سے لنکس نکالتا ہے، پھر ہر صفحہ کرال کرتا ہے۔',
-    faq2: 'گمشدہ عنوانات، ڈپلیکیٹ مواد، H1 مسائل۔',
-    faq3: 'کچھ سائٹس CORS بلاک کرتی ہیں۔',
-    faq4: 'جی ہاں۔ سب کچھ براؤزر میں چلتا ہے۔'
+    categories: { titles: 'عنوان', descriptions: 'تفصیل', headings: 'ہیڈنگ', images: 'تصاویر', links: 'لنکس', technical: 'تکنیکی' },
+    invalidUrl: 'درست URL درج کریں', crawling: 'کرال...', complete: 'مکمل!',
+    noPages: 'کوئی صفحہ نہیں', copied: 'کاپی!', failedFetch: 'ناکام۔',
+    noHistory: 'تاریخ نہیں',
+    checkingSitemap: 'سائٹ میپ...', checkingRobots: 'robots.txt...', checkingBroken: 'ٹوٹے لنکس...',
+    sitemapFound: 'ملا', sitemapMissing: 'نہیں ملا',
+    robotsFound: 'ملا', robotsMissing: 'نہیں ملا',
+    brokenLinksFound: 'ٹوٹے لنکس', noBrokenLinks: 'کوئی نہیں',
+    faqTitle: 'عام سوالات',
+    faq1: 'CORS سے ہوم پیج۔', faq2: 'بہت سے چیکس۔', faq3: 'کچھ سائٹس بلاک کرتی ہیں۔', faq4: 'براؤزر میں۔'
   },
   de: {
     title: 'Website-Crawler 2026',
-    subtitle: 'Echter Multi-Page-Crawl mit 20+ SEO-Prüfungen. Erkennt tote Links, doppelte Titel, fehlende Meta-Tags.',
-    urlLabel: 'Website-URL', depthLabel: 'Crawl-Tiefe', maxPagesLabel: 'Max. Seiten',
+    subtitle: 'Echter Multi-Page-Crawl mit 20+ SEO-Prüfungen.',
+    urlLabel: 'URL', depthLabel: 'Tiefe', maxPagesLabel: 'Max. Seiten',
     crawlBtn: 'Crawl starten', copy: 'Kopieren', clear: 'Löschen',
     seoScore: 'SEO-Score',
     tabIssues: 'Probleme', tabPages: 'Seiten', tabDuplicates: 'Duplikate', tabHistory: 'Verlauf',
-    savedCrawls: 'gespeicherte Crawls',
-    excellent: 'Ausgezeichnet', good: 'Gut', moderate: 'Beachtung nötig', poor: 'Kritische Probleme',
+    savedCrawls: 'Crawls',
+    excellent: 'Ausgezeichnet', good: 'Gut', moderate: 'Achtung', poor: 'Kritisch',
     metrics: { pages: 'Seiten', errors: 'Fehler', warnings: 'Warnungen', avgWords: 'Ø Wörter' },
-    categories: { titles: 'Titel', descriptions: 'Meta-Beschreibungen', headings: 'Überschriften', images: 'Bilder', links: 'Links', technical: 'Technisches SEO' },
-    invalidUrl: 'Bitte gültige URL eingeben',
-    crawling: 'Crawle',
-    complete: 'Crawl abgeschlossen!',
-    noPages: 'Keine Seiten zum Crawlen gefunden',
-    copied: 'Bericht kopiert!',
-    failedFetch: 'Homepage konnte nicht geladen werden. CORS-Proxy blockiert.',
-    noHistory: 'Noch kein Verlauf',
-    faqTitle: 'Häufige Fragen',
-    faq1: 'Lädt Homepage über CORS-Proxy, extrahiert interne Links.',
-    faq2: 'Fehlende Titel, Duplikate, fehlende H1, Bilder ohne Alt.',
-    faq3: 'Manche Seiten blockieren CORS-Proxys.',
-    faq4: 'Ja. Alles läuft in Ihrem Browser.'
+    categories: { titles: 'Titel', descriptions: 'Meta', headings: 'Überschriften', images: 'Bilder', links: 'Links', technical: 'Technisch' },
+    invalidUrl: 'Gültige URL', crawling: 'Crawle...', complete: 'Fertig!',
+    noPages: 'Keine Seiten', copied: 'Kopiert!', failedFetch: 'Fehlgeschlagen.',
+    noHistory: 'Kein Verlauf',
+    checkingSitemap: 'Sitemap...', checkingRobots: 'robots.txt...', checkingBroken: 'Tote Links...',
+    sitemapFound: 'Gefunden', sitemapMissing: 'Nicht gefunden',
+    robotsFound: 'Gefunden', robotsMissing: 'Nicht gefunden',
+    brokenLinksFound: 'Tote Links', noBrokenLinks: 'Keine',
+    faqTitle: 'Häufige Fragen', faq1: 'CORS-Proxy.', faq2: 'Viele Prüfungen.', faq3: 'Manche blocken.', faq4: 'Im Browser.'
   },
   es: {
     title: 'Rastreador Web 2026',
-    subtitle: 'Rastreo real multi-página con más de 20 comprobaciones SEO.',
-    urlLabel: 'URL del Sitio', depthLabel: 'Profundidad', maxPagesLabel: 'Máx. Páginas',
-    crawlBtn: 'Iniciar Rastreo', copy: 'Copiar', clear: 'Limpiar',
+    subtitle: 'Rastreo real multi-página con 20+ comprobaciones SEO.',
+    urlLabel: 'URL', depthLabel: 'Profundidad', maxPagesLabel: 'Máx.',
+    crawlBtn: 'Iniciar', copy: 'Copiar', clear: 'Limpiar',
     seoScore: 'Puntuación SEO',
     tabIssues: 'Problemas', tabPages: 'Páginas', tabDuplicates: 'Duplicados', tabHistory: 'Historial',
-    savedCrawls: 'rastreos guardados',
-    excellent: 'Salud SEO Excelente', good: 'Buena Salud SEO', moderate: 'Necesita Atención', poor: 'Problemas Críticos',
+    savedCrawls: 'rastreos',
+    excellent: 'Excelente', good: 'Bueno', moderate: 'Atención', poor: 'Crítico',
     metrics: { pages: 'Páginas', errors: 'Errores', warnings: 'Alertas', avgWords: 'Palabras Prom' },
-    categories: { titles: 'Títulos', descriptions: 'Meta Descripciones', headings: 'Encabezados', images: 'Imágenes', links: 'Enlaces', technical: 'SEO Técnico' },
-    invalidUrl: 'Por favor ingresa URL válida',
-    crawling: 'Rastreando',
-    complete: '¡Rastreo completo!',
-    noPages: 'No se encontraron páginas',
-    copied: '¡Informe copiado!',
-    failedFetch: 'No se pudo cargar. Proxy CORS bloqueado.',
-    noHistory: 'Sin historial aún',
-    faqTitle: 'Preguntas Frecuentes',
-    faq1: 'Carga la página principal vía proxy CORS, extrae enlaces internos.',
-    faq2: 'Títulos faltantes, duplicados, H1 faltantes, imágenes sin alt.',
-    faq3: 'Algunos sitios bloquean proxies CORS.',
-    faq4: 'Sí. Todo funciona en tu navegador.'
+    categories: { titles: 'Títulos', descriptions: 'Meta', headings: 'Encabezados', images: 'Imágenes', links: 'Enlaces', technical: 'Técnico' },
+    invalidUrl: 'URL válida', crawling: 'Rastreando...', complete: '¡Completo!',
+    noPages: 'Sin páginas', copied: '¡Copiado!', failedFetch: 'Falló.',
+    noHistory: 'Sin historial',
+    checkingSitemap: 'Sitemap...', checkingRobots: 'robots.txt...', checkingBroken: 'Enlaces rotos...',
+    sitemapFound: 'Encontrado', sitemapMissing: 'No encontrado',
+    robotsFound: 'Encontrado', robotsMissing: 'No encontrado',
+    brokenLinksFound: 'Enlaces rotos', noBrokenLinks: 'Ninguno',
+    faqTitle: 'Preguntas', faq1: 'Proxy CORS.', faq2: 'Muchas comprobaciones.', faq3: 'Algunos bloquean.', faq4: 'En navegador.'
   }
 };
 
@@ -654,33 +578,49 @@ function showToast(msg, type = 'success') {
 }
 
 // ============================================================
-// 🌐 CORS PROXIES
+// 🌐 CORS PROXIES (with rotation for reliability)
 // ============================================================
 const PROXIES = [
   { name: 'allorigins-raw', url: u => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}` },
   { name: 'corsproxy.io', url: u => `https://corsproxy.io/?${encodeURIComponent(u)}` },
-  { name: 'allorigins-get', url: u => `https://api.allorigins.win/get?url=${encodeURIComponent(u)}` }
+  { name: 'allorigins-get', url: u => `https://api.allorigins.win/get?url=${encodeURIComponent(u)}` },
+  { name: 'thingproxy', url: u => `https://thingproxy.freeboard.io/fetch/${u}` }
 ];
 
-async function fetchHtml(url) {
-  for (const proxy of PROXIES) {
-    try {
-      const res = await fetch(proxy.url(url), { method: 'GET' });
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      let text = await res.text();
-      if (proxy.name === 'allorigins-get') {
-        try {
-          const parsed = JSON.parse(text);
-          text = parsed.contents || '';
-        } catch(e) {}
+let proxyIndex = 0; // Rotate to balance load
+
+async function fetchWithProxy(url, timeout = 12000) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeout);
+
+  try {
+    const startIdx = proxyIndex;
+    proxyIndex = (proxyIndex + 1) % PROXIES.length;
+
+    for (let i = 0; i < PROXIES.length; i++) {
+      const proxy = PROXIES[(startIdx + i) % PROXIES.length];
+      try {
+        const res = await fetch(proxy.url(url), { signal: controller.signal });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        let text = await res.text();
+        if (proxy.name === 'allorigins-get') {
+          try {
+            const parsed = JSON.parse(text);
+            text = parsed.contents || '';
+          } catch(e) {}
+        }
+        if (!text || text.length < 100) throw new Error('Empty response');
+        clearTimeout(timer);
+        return { html: text, proxy: proxy.name };
+      } catch (e) {
+        console.warn(`Proxy ${proxy.name} failed for ${url.slice(0, 50)}:`, e.message);
+        // Try next proxy
       }
-      if (!text || text.length < 100) throw new Error('Empty response');
-      return { html: text, proxy: proxy.name };
-    } catch (e) {
-      console.warn(`Proxy ${proxy.name} failed for ${url}:`, e.message);
     }
+    throw new Error('All proxies failed');
+  } finally {
+    clearTimeout(timer);
   }
-  return null;
 }
 
 // ============================================================
@@ -706,19 +646,22 @@ function isSameOrigin(url, baseUrl) {
   }
 }
 
-function isInternalLink(url, baseUrl) {
-  try {
-    const u = new URL(url);
-    const b = new URL(baseUrl);
-    return u.hostname === b.hostname;
-  } catch(e) {
-    return false;
-  }
+function shouldSkipUrl(url) {
+  const skipExtensions = /\.(pdf|jpg|jpeg|png|gif|svg|webp|ico|css|js|zip|rar|mp4|mp3|avi|mov|docx?|xlsx?|pptx?|woff2?|ttf|eot)$/i;
+  return skipExtensions.test(url) ||
+         url.startsWith('mailto:') ||
+         url.startsWith('tel:') ||
+         url.startsWith('javascript:') ||
+         url.startsWith('#');
 }
 
-function shouldSkipUrl(url) {
-  const skipExtensions = /\.(pdf|jpg|jpeg|png|gif|svg|webp|ico|css|js|zip|rar|mp4|mp3|avi|mov|docx?|xlsx?|pptx?)$/i;
-  return skipExtensions.test(url) || url.startsWith('mailto:') || url.startsWith('tel:') || url.startsWith('javascript:');
+function getPathDepth(url) {
+  try {
+    const u = new URL(url);
+    return u.pathname.split('/').filter(Boolean).length;
+  } catch(e) {
+    return 0;
+  }
 }
 
 // ============================================================
@@ -736,12 +679,17 @@ function analyzePage(html, url) {
     imagesWithoutAlt: 0,
     internalLinks: [],
     externalLinks: [],
+    allLinks: [],
     hasCanonical: false,
     canonical: '',
     robots: '',
     hasOg: false,
     hasTwitter: false,
     hasSchema: false,
+    hasFavicon: false,
+    hasViewport: false,
+    hasCharset: false,
+    hasLang: false,
     wordCount: 0,
     issues: []
   };
@@ -770,15 +718,16 @@ function analyzePage(html, url) {
     if (!href || shouldSkipUrl(href)) return;
     const abs = normalizeUrl(href, url);
     if (!abs) return;
-    if (isInternalLink(abs, url)) {
+    analysis.allLinks.push(abs);
+    if (isSameOrigin(abs, url)) {
       analysis.internalLinks.push(abs);
     } else {
       analysis.externalLinks.push(abs);
     }
   });
-  // Dedupe
   analysis.internalLinks = [...new Set(analysis.internalLinks)];
   analysis.externalLinks = [...new Set(analysis.externalLinks)];
+  analysis.allLinks = [...new Set(analysis.allLinks)];
 
   // Canonical
   const canonicalTag = doc.querySelector('link[rel="canonical"]');
@@ -789,25 +738,32 @@ function analyzePage(html, url) {
   const robotsTag = doc.querySelector('meta[name="robots"]');
   analysis.robots = robotsTag ? robotsTag.getAttribute('content') || '' : '';
 
-  // OG
+  // SEO Meta
   analysis.hasOg = !!doc.querySelector('meta[property^="og:"]');
   analysis.hasTwitter = !!doc.querySelector('meta[name^="twitter:"]');
   analysis.hasSchema = !!doc.querySelector('script[type="application/ld+json"]');
+  analysis.hasFavicon = !!doc.querySelector('link[rel*="icon"]');
+  analysis.hasViewport = !!doc.querySelector('meta[name="viewport"]');
+  analysis.hasCharset = !!doc.querySelector('meta[charset]');
+  analysis.hasLang = !!(doc.documentElement && doc.documentElement.getAttribute('lang'));
 
   // Word count
   const body = doc.body;
   if (body) {
-    const text = (body.textContent || '').replace(/\s+/g, ' ').trim();
+    const clone = body.cloneNode(true);
+    clone.querySelectorAll('script,style,noscript,iframe,svg').forEach(el => el.remove());
+    const text = (clone.textContent || '').replace(/\s+/g, ' ').trim();
     analysis.wordCount = text ? text.split(/\s+/).length : 0;
   }
 
-  // Issues per page
+  // Per-page issues
   if (!analysis.title) analysis.issues.push({ type: 'error', text: 'Missing title tag' });
   else if (analysis.title.length < 30) analysis.issues.push({ type: 'warn', text: `Title too short (${analysis.title.length} chars)` });
   else if (analysis.title.length > 65) analysis.issues.push({ type: 'warn', text: `Title too long (${analysis.title.length} chars)` });
 
   if (!analysis.description) analysis.issues.push({ type: 'warn', text: 'Missing meta description' });
   else if (analysis.description.length < 120) analysis.issues.push({ type: 'warn', text: `Description short (${analysis.description.length} chars)` });
+  else if (analysis.description.length > 160) analysis.issues.push({ type: 'warn', text: `Description long (${analysis.description.length} chars)` });
 
   if (analysis.h1s.length === 0) analysis.issues.push({ type: 'error', text: 'No H1 tag' });
   else if (analysis.h1s.length > 1) analysis.issues.push({ type: 'warn', text: `Multiple H1 tags (${analysis.h1s.length})` });
@@ -821,68 +777,169 @@ function analyzePage(html, url) {
   }
 
   if (!analysis.hasOg) analysis.issues.push({ type: 'info', text: 'Missing Open Graph tags' });
-
   if (!analysis.hasSchema) analysis.issues.push({ type: 'info', text: 'No JSON-LD schema' });
-
+  if (!analysis.hasViewport) analysis.issues.push({ type: 'warn', text: 'Missing viewport meta' });
+  if (!analysis.hasLang) analysis.issues.push({ type: 'warn', text: 'Missing html lang attribute' });
   if (analysis.wordCount < 300) analysis.issues.push({ type: 'warn', text: `Thin content (${analysis.wordCount} words)` });
 
   return analysis;
 }
 
 // ============================================================
-// 🎯 CRAWL
+// 🎯 CRAWL ENGINE (Parallel + Depth-aware)
 // ============================================================
-async function crawl(startUrl, depth, maxPages, logFn, progressFn) {
+async function crawl(startUrl, maxDepth, maxPages, logFn, progressFn, options) {
   const visited = new Set();
   const pages = [];
+  const startHost = new URL(startUrl).hostname;
+  const CONCURRENT = options.fastMode ? 3 : 1;
   const queue = [{ url: startUrl, level: 0 }];
-  const baseHost = new URL(startUrl).hostname;
-
   let processed = 0;
+  let active = 0;
 
-  while (queue.length && pages.length < maxPages) {
-    const { url, level } = queue.shift();
-    if (visited.has(url)) continue;
-    visited.add(url);
+  async function processUrl(item) {
+    if (visited.has(item.url)) return;
+    if (pages.length >= maxPages) return;
+    if (item.level > maxDepth) return;
 
-    if (level > parseInt(depth)) continue;
+    visited.add(item.url);
+    logFn(`🔍 [L${item.level}] ${item.url.slice(0, 70)}`, 'info');
 
-    logFn(`🔍 Fetching (L${level}): ${url.slice(0, 60)}...`, 'info');
-
-    const result = await fetchHtml(url);
+    const result = await fetchWithProxy(item.url);
     processed++;
     progressFn(processed, maxPages);
 
     if (!result) {
-      logFn(`❌ Failed: ${url.slice(0, 60)}`, 'err');
-      continue;
+      logFn(`   ❌ Failed (all proxies)`, 'err');
+      return null;
     }
 
-    logFn(`✅ Fetched via ${result.proxy} (${(result.html.length / 1024).toFixed(1)} KB)`, 'ok');
+    logFn(`   ✅ ${(result.html.length / 1024).toFixed(1)} KB via ${result.proxy}`, 'ok');
 
-    const analysis = analyzePage(result.html, url);
+    const analysis = analyzePage(result.html, item.url);
+    analysis.level = item.level;
+    analysis.status = 'ok';
     pages.push(analysis);
 
-    logFn(`   ${analysis.title ? '📄 "' + analysis.title.slice(0, 40) + '"' : '⚠️ No title'}`, 'info');
-    logFn(`   🔗 ${analysis.internalLinks.length} internal, ${analysis.externalLinks.length} external`, 'info');
-
-    // Add internal links to queue
-    if (level < parseInt(depth)) {
-      analysis.internalLinks.forEach(link => {
-        if (!visited.has(link) && isSameOrigin(link, startUrl) && !shouldSkipUrl(link)) {
-          queue.push({ url: link, level: level + 1 });
-        }
-      });
+    if (analysis.title) {
+      logFn(`   📄 "${analysis.title.slice(0, 50)}"`, 'info');
     }
+    logFn(`   🔗 ${analysis.internalLinks.length} internal | ${analysis.externalLinks.length} external | ${analysis.wordCount} words`, 'info');
+
+    return analysis;
+  }
+
+  // BFS with concurrency
+  while (queue.length && pages.length < maxPages) {
+    const batch = [];
+    while (queue.length && batch.length < CONCURRENT - active && pages.length + batch.length < maxPages) {
+      const item = queue.shift();
+      if (!visited.has(item.url) && item.level <= maxDepth) {
+        batch.push(item);
+      }
+    }
+
+    if (!batch.length) break;
+
+    active = batch.length;
+    const results = await Promise.all(batch.map(item => processUrl(item)));
+    active = 0;
+
+    // Add new links to queue
+    results.forEach(analysis => {
+      if (!analysis) return;
+      if (analysis.level < maxDepth) {
+        analysis.internalLinks.forEach(link => {
+          if (!visited.has(link) && isSameOrigin(link, startUrl) && !shouldSkipUrl(link)) {
+            queue.push({ url: link, level: analysis.level + 1 });
+          }
+        });
+      }
+    });
   }
 
   return pages;
 }
 
 // ============================================================
-// 📊 ANALYZE CROSS-PAGE
+// 🔗 BROKEN LINK CHECKER
 // ============================================================
-function crossPageAnalysis(pages) {
+async function checkBrokenLinks(pages, logFn, progressFn) {
+  const allLinks = new Set();
+  pages.forEach(p => p.allLinks.forEach(l => allLinks.add(l)));
+
+  const linksToCheck = [...allLinks];
+  logFn(`🔍 Checking ${linksToCheck.length} unique links for broken status...`, 'info');
+
+  const broken = [];
+  const checked = new Set();
+
+  // Check in batches of 5 for speed
+  for (let i = 0; i < linksToCheck.length; i += 5) {
+    const batch = linksToCheck.slice(i, i + 5);
+    const results = await Promise.all(batch.map(async (link) => {
+      if (checked.has(link)) return null;
+      checked.add(link);
+
+      try {
+        const result = await fetchWithProxy(link, 8000);
+        return { url: link, ok: !!result };
+      } catch (e) {
+        return { url: link, ok: false };
+      }
+    }));
+
+    results.forEach(r => {
+      if (r && !r.ok) broken.push(r.url);
+    });
+
+    progressFn(Math.min(i + 5, linksToCheck.length), linksToCheck.length);
+
+    // Limit total checks to avoid huge crawls
+    if (i >= 50) break;
+  }
+
+  return broken;
+}
+
+// ============================================================
+// 📄 SITEMAP & ROBOTS
+// ============================================================
+async function checkSitemap(startUrl) {
+  const sitemapUrl = new URL('/sitemap.xml', startUrl).href;
+  try {
+    const result = await fetchWithProxy(sitemapUrl, 8000);
+    if (!result) return { exists: false, url: sitemapUrl, count: 0 };
+
+    const doc = new DOMParser().parseFromString(result.html, 'application/xml');
+    const urls = doc.querySelectorAll('url > loc').length ||
+                 doc.querySelectorAll('sitemap > loc').length;
+    return { exists: true, url: sitemapUrl, count: urls };
+  } catch (e) {
+    return { exists: false, url: sitemapUrl, count: 0 };
+  }
+}
+
+async function checkRobots(startUrl) {
+  const robotsUrl = new URL('/robots.txt', startUrl).href;
+  try {
+    const result = await fetchWithProxy(robotsUrl, 8000);
+    if (!result) return { exists: false, url: robotsUrl, content: '' };
+
+    const text = result.html;
+    if (text.toLowerCase().includes('404') || text.toLowerCase().includes('not found') || text.length < 20) {
+      return { exists: false, url: robotsUrl, content: '' };
+    }
+    return { exists: true, url: robotsUrl, content: text.slice(0, 500) };
+  } catch (e) {
+    return { exists: false, url: robotsUrl, content: '' };
+  }
+}
+
+// ============================================================
+// 📊 CROSS-PAGE ANALYSIS
+// ============================================================
+function crossPageAnalysis(pages, brokenLinks, sitemap, robots) {
   const issues = [];
 
   // Duplicate titles
@@ -894,21 +951,47 @@ function crossPageAnalysis(pages) {
     }
   });
   const dupTitles = Object.entries(titleMap).filter(([, urls]) => urls.length > 1);
+
+  // Missing titles
+  const missingTitle = pages.filter(p => !p.title);
+
   if (dupTitles.length) {
     issues.push({
-      category: 'titles',
-      name: 'Duplicate Title Tags',
-      status: 'fail',
-      value: dupTitles.length + ' group(s)',
-      detail: dupTitles.map(([title, urls]) => `"${title.slice(0, 50)}" on ${urls.length} pages`).join(' | ').slice(0, 200)
+      category: 'titles', name: 'Duplicate Title Tags',
+      status: 'fail', value: dupTitles.length + ' group(s)',
+      detail: dupTitles.slice(0, 3).map(([title, urls]) => `"${title.slice(0, 50)}" × ${urls.length}`).join(' | ')
     });
-  } else {
+  }
+  if (missingTitle.length) {
     issues.push({
-      category: 'titles',
-      name: 'Unique Title Tags',
-      status: 'pass',
-      value: 'All unique',
-      detail: `${pages.filter(p => p.title).length} pages with unique titles`
+      category: 'titles', name: 'Missing Title Tags',
+      status: 'fail', value: missingTitle.length + ' pages',
+      detail: missingTitle.slice(0, 3).map(p => p.url.slice(0, 60)).join(' | ')
+    });
+  }
+  if (!dupTitles.length && !missingTitle.length) {
+    issues.push({
+      category: 'titles', name: 'Unique Title Tags',
+      status: 'pass', value: `${pages.length} pages`,
+      detail: 'All pages have unique titles'
+    });
+  }
+
+  // Title length
+  const shortTitles = pages.filter(p => p.title && p.title.length < 30);
+  const longTitles = pages.filter(p => p.title && p.title.length > 65);
+  if (shortTitles.length) {
+    issues.push({
+      category: 'titles', name: 'Short Titles (<30 chars)',
+      status: 'warn', value: shortTitles.length + ' pages',
+      detail: shortTitles.slice(0, 3).map(p => `"${p.title}" (${p.title.length})`).join(' | ')
+    });
+  }
+  if (longTitles.length) {
+    issues.push({
+      category: 'titles', name: 'Long Titles (>65 chars)',
+      status: 'warn', value: longTitles.length + ' pages',
+      detail: longTitles.slice(0, 3).map(p => `"${p.title.slice(0, 50)}" (${p.title.length})`).join(' | ')
     });
   }
 
@@ -921,55 +1004,37 @@ function crossPageAnalysis(pages) {
     }
   });
   const dupDescs = Object.entries(descMap).filter(([, urls]) => urls.length > 1);
+  const missingDesc = pages.filter(p => !p.description);
+
   if (dupDescs.length) {
     issues.push({
-      category: 'descriptions',
-      name: 'Duplicate Meta Descriptions',
-      status: 'fail',
-      value: dupDescs.length + ' group(s)',
-      detail: dupDescs.map(([d, urls]) => `${urls.length} pages share a description`).join(' | ')
-    });
-  } else {
-    issues.push({
-      category: 'descriptions',
-      name: 'Unique Meta Descriptions',
-      status: 'pass',
-      value: 'All unique',
-      detail: `${pages.filter(p => p.description).length} pages with unique descriptions`
+      category: 'descriptions', name: 'Duplicate Meta Descriptions',
+      status: 'fail', value: dupDescs.length + ' group(s)',
+      detail: dupDescs.slice(0, 3).map(([, urls]) => `${urls.length} pages share`).join(' | ')
     });
   }
-
-  // Missing descriptions
-  const missingDesc = pages.filter(p => !p.description);
   if (missingDesc.length) {
     issues.push({
-      category: 'descriptions',
-      name: 'Missing Meta Descriptions',
+      category: 'descriptions', name: 'Missing Meta Descriptions',
       status: missingDesc.length > 3 ? 'fail' : 'warn',
       value: missingDesc.length + ' pages',
       detail: missingDesc.slice(0, 3).map(p => p.url.slice(0, 60)).join(' | ')
     });
   }
-
-  // Missing titles
-  const missingTitle = pages.filter(p => !p.title);
-  if (missingTitle.length) {
+  if (!dupDescs.length && !missingDesc.length) {
     issues.push({
-      category: 'titles',
-      name: 'Missing Title Tags',
-      status: 'fail',
-      value: missingTitle.length + ' pages',
-      detail: missingTitle.slice(0, 3).map(p => p.url.slice(0, 60)).join(' | ')
+      category: 'descriptions', name: 'Unique Descriptions',
+      status: 'pass', value: `${pages.length} pages`,
+      detail: 'All pages have unique descriptions'
     });
   }
 
-  // H1 issues
+  // Headings
   const noH1 = pages.filter(p => p.h1s.length === 0);
   const multiH1 = pages.filter(p => p.h1s.length > 1);
   if (noH1.length) {
     issues.push({
-      category: 'headings',
-      name: 'Missing H1 Tags',
+      category: 'headings', name: 'Missing H1 Tags',
       status: noH1.length > 2 ? 'fail' : 'warn',
       value: noH1.length + ' pages',
       detail: noH1.slice(0, 3).map(p => p.url.slice(0, 60)).join(' | ')
@@ -977,41 +1042,49 @@ function crossPageAnalysis(pages) {
   }
   if (multiH1.length) {
     issues.push({
-      category: 'headings',
-      name: 'Multiple H1 Tags',
-      status: 'warn',
-      value: multiH1.length + ' pages',
+      category: 'headings', name: 'Multiple H1 Tags',
+      status: 'warn', value: multiH1.length + ' pages',
       detail: multiH1.slice(0, 3).map(p => `${p.url.slice(0, 40)} (${p.h1s.length} H1s)`).join(' | ')
     });
   }
   if (!noH1.length && !multiH1.length) {
     issues.push({
-      category: 'headings',
-      name: 'H1 Tags',
-      status: 'pass',
-      value: 'All pages OK',
+      category: 'headings', name: 'H1 Tags',
+      status: 'pass', value: 'All good',
       detail: 'Every page has exactly one H1'
     });
   }
 
-  // Images without alt
+  // Images
   const totalImages = pages.reduce((s, p) => s + p.images, 0);
   const imagesNoAlt = pages.reduce((s, p) => s + p.imagesWithoutAlt, 0);
   if (imagesNoAlt) {
     issues.push({
-      category: 'images',
-      name: 'Images Missing Alt Text',
+      category: 'images', name: 'Images Missing Alt Text',
       status: imagesNoAlt > 5 ? 'fail' : 'warn',
-      value: imagesNoAlt + ' images',
-      detail: `Out of ${totalImages} total images`
+      value: imagesNoAlt + ' / ' + totalImages,
+      detail: 'Add descriptive alt text for accessibility and SEO'
     });
   } else if (totalImages > 0) {
     issues.push({
-      category: 'images',
-      name: 'Image Alt Text',
-      status: 'pass',
-      value: 'All good',
-      detail: `${totalImages} images all have alt text`
+      category: 'images', name: 'Image Alt Text',
+      status: 'pass', value: totalImages + ' images',
+      detail: 'All images have alt text'
+    });
+  }
+
+  // Broken links
+  if (brokenLinks && brokenLinks.length) {
+    issues.push({
+      category: 'links', name: 'Broken Links',
+      status: 'fail', value: brokenLinks.length + ' broken',
+      detail: brokenLinks.slice(0, 3).map(l => l.slice(0, 60)).join(' | ')
+    });
+  } else if (brokenLinks) {
+    issues.push({
+      category: 'links', name: 'Broken Links',
+      status: 'pass', value: 'No broken',
+      detail: 'All checked links returned OK'
     });
   }
 
@@ -1019,54 +1092,60 @@ function crossPageAnalysis(pages) {
   const noCanonical = pages.filter(p => !p.hasCanonical);
   if (noCanonical.length) {
     issues.push({
-      category: 'technical',
-      name: 'Missing Canonical Tags',
-      status: 'warn',
-      value: noCanonical.length + ' pages',
+      category: 'technical', name: 'Missing Canonical Tags',
+      status: 'warn', value: noCanonical.length + ' pages',
       detail: noCanonical.slice(0, 3).map(p => p.url.slice(0, 60)).join(' | ')
     });
   } else {
     issues.push({
-      category: 'technical',
-      name: 'Canonical Tags',
-      status: 'pass',
-      value: 'All present',
+      category: 'technical', name: 'Canonical Tags',
+      status: 'pass', value: 'All present',
       detail: 'Every page has canonical tag'
     });
   }
 
-  // Noindex pages
+  // Noindex
   const noindexPages = pages.filter(p => p.robots && p.robots.toLowerCase().includes('noindex'));
   if (noindexPages.length) {
     issues.push({
-      category: 'technical',
-      name: 'Pages with noindex',
-      status: 'fail',
-      value: noindexPages.length + ' pages',
+      category: 'technical', name: 'Pages with noindex',
+      status: 'fail', value: noindexPages.length + ' pages',
       detail: noindexPages.slice(0, 3).map(p => p.url.slice(0, 60)).join(' | ')
     });
   }
 
-  // OG tags
-  const noOg = pages.filter(p => !p.hasOg);
-  if (noOg.length) {
+  // Viewport / lang
+  const noViewport = pages.filter(p => !p.hasViewport);
+  const noLang = pages.filter(p => !p.hasLang);
+  if (noViewport.length) {
     issues.push({
-      category: 'technical',
-      name: 'Missing Open Graph Tags',
-      status: 'info',
-      value: noOg.length + ' pages',
-      detail: 'Add OG tags for better social sharing'
+      category: 'technical', name: 'Missing Viewport Meta',
+      status: 'warn', value: noViewport.length + ' pages',
+      detail: 'Required for mobile responsiveness'
+    });
+  }
+  if (noLang.length) {
+    issues.push({
+      category: 'technical', name: 'Missing html lang Attribute',
+      status: 'warn', value: noLang.length + ' pages',
+      detail: 'Add lang="en" or appropriate language code'
     });
   }
 
-  // Schema
+  // OG / Schema
+  const noOg = pages.filter(p => !p.hasOg);
   const noSchema = pages.filter(p => !p.hasSchema);
+  if (noOg.length) {
+    issues.push({
+      category: 'technical', name: 'Missing Open Graph Tags',
+      status: 'info', value: noOg.length + ' pages',
+      detail: 'Add og:title, og:description, og:image for social sharing'
+    });
+  }
   if (noSchema.length) {
     issues.push({
-      category: 'technical',
-      name: 'Missing JSON-LD Schema',
-      status: 'info',
-      value: noSchema.length + ' pages',
+      category: 'technical', name: 'Missing JSON-LD Schema',
+      status: 'info', value: noSchema.length + ' pages',
       detail: 'Add schema markup for rich snippets'
     });
   }
@@ -1075,31 +1154,44 @@ function crossPageAnalysis(pages) {
   const thinPages = pages.filter(p => p.wordCount < 300);
   if (thinPages.length) {
     issues.push({
-      category: 'technical',
-      name: 'Thin Content (< 300 words)',
-      status: 'warn',
-      value: thinPages.length + ' pages',
+      category: 'technical', name: 'Thin Content (< 300 words)',
+      status: 'warn', value: thinPages.length + ' pages',
       detail: thinPages.slice(0, 3).map(p => `${p.url.slice(0, 40)} (${p.wordCount}w)`).join(' | ')
     });
   }
 
-  // Duplicate H1s (same H1 across pages)
-  const h1Map = {};
-  pages.forEach(p => {
-    p.h1s.forEach(h => {
-      if (!h1Map[h]) h1Map[h] = [];
-      h1Map[h].push(p.url);
-    });
-  });
-  const dupH1s = Object.entries(h1Map).filter(([, urls]) => urls.length > 1);
-  if (dupH1s.length) {
-    issues.push({
-      category: 'headings',
-      name: 'Duplicate H1 Across Pages',
-      status: 'warn',
-      value: dupH1s.length + ' H1s',
-      detail: dupH1s.slice(0, 3).map(([h, urls]) => `"${h.slice(0, 40)}" on ${urls.length} pages`).join(' | ')
-    });
+  // Sitemap
+  if (sitemap) {
+    if (sitemap.exists) {
+      issues.push({
+        category: 'technical', name: 'Sitemap.xml',
+        status: 'pass', value: sitemap.count + ' URLs',
+        detail: sitemap.url
+      });
+    } else {
+      issues.push({
+        category: 'technical', name: 'Sitemap.xml',
+        status: 'warn', value: 'Not found',
+        detail: 'Create /sitemap.xml for better indexing'
+      });
+    }
+  }
+
+  // Robots.txt
+  if (robots) {
+    if (robots.exists) {
+      issues.push({
+        category: 'technical', name: 'Robots.txt',
+        status: 'pass', value: 'Found',
+        detail: robots.url
+      });
+    } else {
+      issues.push({
+        category: 'technical', name: 'Robots.txt',
+        status: 'info', value: 'Not found',
+        detail: 'Create /robots.txt to guide crawlers'
+      });
+    }
   }
 
   return issues;
@@ -1124,8 +1216,14 @@ async function startCrawl() {
     return;
   }
 
-  const depth = $('crawlDepth').value;
+  const depth = parseInt($('crawlDepth').value);
   const maxPages = parseInt($('maxPages').value);
+  const options = {
+    fastMode: $('fastMode').checked,
+    checkSitemap: $('checkSitemap').checked,
+    checkRobots: $('checkRobots').checked,
+    checkBrokenLinks: $('checkBrokenLinks').checked
+  };
 
   const btn = $('crawlBtn');
   btn.disabled = true;
@@ -1146,15 +1244,31 @@ async function startCrawl() {
   const progressFn = (done, total) => {
     const pct = Math.min(100, (done / total) * 100);
     $('crawlFill').style.width = pct + '%';
-    $('crawlStatus').textContent = `${t('crawling')}: ${done}/${total} pages`;
+    $('crawlStatus').textContent = `${t('crawling')}: ${done}/${total}`;
   };
 
   try {
     logFn('🚀 Starting crawl...', 'ok');
     logFn(`   URL: ${startUrl}`, 'info');
-    logFn(`   Depth: ${depth} | Max pages: ${maxPages}`, 'info');
+    logFn(`   Depth: ${depth} | Max: ${maxPages} pages | Fast: ${options.fastMode ? 'ON' : 'OFF'}`, 'info');
 
-    const pages = await crawl(startUrl, depth, maxPages, logFn, progressFn);
+    // Sitemap & Robots in parallel
+    let sitemap = null, robots = null;
+    if (options.checkSitemap || options.checkRobots) {
+      logFn('', 'info');
+      logFn('📋 Checking technical files...', 'info');
+
+      const promises = [];
+      if (options.checkSitemap) promises.push(checkSitemap(startUrl).then(r => { sitemap = r; logFn(`   ${r.exists ? '✅' : '⚠️'} ${t('checkingSitemap')} ${r.exists ? t('sitemapFound') + ` (${r.count} URLs)` : t('sitemapMissing')}`, r.exists ? 'ok' : 'warn'); }));
+      if (options.checkRobots) promises.push(checkRobots(startUrl).then(r => { robots = r; logFn(`   ${r.exists ? '✅' : '⚠️'} ${t('checkingRobots')} ${r.exists ? t('robotsFound') : t('robotsMissing')}`, r.exists ? 'ok' : 'warn'); }));
+      await Promise.all(promises);
+    }
+
+    // Crawl
+    logFn('', 'info');
+    logFn('🕷️ Crawling pages...', 'info');
+
+    const pages = await crawl(startUrl, depth, maxPages, logFn, progressFn, options);
 
     if (!pages.length) {
       logFn('❌ ' + t('noPages'), 'err');
@@ -1163,29 +1277,39 @@ async function startCrawl() {
       return;
     }
 
-    logFn(`✅ Crawled ${pages.length} pages. Analyzing...`, 'ok');
+    logFn('', 'info');
+    logFn(`✅ Crawled ${pages.length} pages.`, 'ok');
 
-    const issues = crossPageAnalysis(pages);
+    // Broken links
+    let brokenLinks = [];
+    if (options.checkBrokenLinks) {
+      logFn('', 'info');
+      logFn('🔗 ' + t('checkingBroken'), 'info');
+      brokenLinks = await checkBrokenLinks(pages, logFn, (d, tot) => {
+        $('crawlFill').style.width = Math.min(100, 80 + (d / tot) * 20) + '%';
+      });
+      logFn(`   ${brokenLinks.length ? '❌ ' + brokenLinks.length + ' ' + t('brokenLinksFound') : '✅ ' + t('noBrokenLinks')}`, brokenLinks.length ? 'warn' : 'ok');
+    }
 
-    // Score calculation
+    logFn('', 'info');
+    logFn('📊 Analyzing SEO issues...', 'info');
+
+    const issues = crossPageAnalysis(pages, brokenLinks, sitemap, robots);
+
+    // Score
     let score = 100;
     let errors = 0, warnings = 0;
     issues.forEach(i => {
-      if (i.status === 'fail') { score -= 12; errors++; }
-      else if (i.status === 'warn') { score -= 5; warnings++; }
+      if (i.status === 'fail') { score -= 10; errors++; }
+      else if (i.status === 'warn') { score -= 4; warnings++; }
     });
     score = Math.max(0, Math.min(100, score));
 
     const avgWords = Math.round(pages.reduce((s, p) => s + p.wordCount, 0) / pages.length);
 
     lastResult = {
-      startUrl,
-      pages,
-      issues,
-      score,
-      errors,
-      warnings,
-      avgWords,
+      startUrl, pages, issues, brokenLinks, sitemap, robots,
+      score, errors, warnings, avgWords,
       crawledAt: new Date().toISOString()
     };
 
@@ -1198,6 +1322,7 @@ async function startCrawl() {
     $('copyReport').disabled = false;
     $('results').scrollIntoView({ behavior: 'smooth' });
 
+    logFn('', 'info');
     logFn(`🎉 ${t('complete')} Score: ${score}/100`, 'ok');
     showToast('✅ ' + t('complete'));
 
@@ -1222,14 +1347,13 @@ function renderResults(r) {
   else if (score >= 40) { color = '#f59e0b'; statusKey = 'moderate'; }
   else { color = '#ef4444'; statusKey = 'poor'; }
 
-  const gauge = $('scoreGauge');
-  gauge.style.background = `conic-gradient(${color} 0deg, ${color} ${deg}deg, rgba(255,255,255,0.08) ${deg}deg)`;
+  $('scoreGauge').style.background = `conic-gradient(${color} 0deg, ${color} ${deg}deg, rgba(255,255,255,0.08) ${deg}deg)`;
   $('scoreValue').textContent = score;
   $('scoreValue').style.color = color;
   const st = $('statusText');
   st.textContent = t(statusKey);
   st.style.color = color;
-  $('statusSub').textContent = `${r.pages.length} pages crawled · ${r.errors} errors · ${r.warnings} warnings`;
+  $('statusSub').textContent = `${r.pages.length} pages · ${r.errors} errors · ${r.warnings} warnings`;
 
   $('metricsRow').innerHTML = `
     <div class="metric-box"><div class="metric-value" style="color:${color}">${score}</div><div class="metric-label">${t('seoScore')}</div></div>
@@ -1239,14 +1363,17 @@ function renderResults(r) {
     <div class="metric-box"><div class="metric-value" style="color:var(--info)">${r.avgWords}</div><div class="metric-label">${t('metrics.avgWords')}</div></div>
   `;
 
-  // Issues grouped by category
+  // Issues
   const cats = {};
   r.issues.forEach(i => {
     if (!cats[i.category]) cats[i.category] = [];
     cats[i.category].push(i);
   });
 
-  const iconMap = { titles: 'fa-heading', descriptions: 'fa-align-left', headings: 'fa-h1', images: 'fa-image', links: 'fa-link', technical: 'fa-cog' };
+  const iconMap = {
+    titles: 'fa-heading', descriptions: 'fa-align-left', headings: 'fa-h1',
+    images: 'fa-image', links: 'fa-link', technical: 'fa-cog'
+  };
   const iconFallback = { headings: 'fa-heading' };
 
   $('issuesContent').innerHTML = Object.entries(cats).map(([cat, items]) => {
@@ -1264,11 +1391,11 @@ function renderResults(r) {
     `;
   }).join('');
 
-  // Pages tab
-  $('pagesContent').innerHTML = r.pages.map((p, i) => {
+  // Pages
+  $('pagesContent').innerHTML = r.pages.map(p => {
     const badges = [];
     if (!p.title) badges.push('<span class="page-badge err">No title</span>');
-    else badges.push(`<span class="page-badge ok">${escapeHtml(p.title.slice(0, 40))}${p.title.length > 40 ? '…' : ''}</span>`);
+    else badges.push(`<span class="page-badge ok" title="${escapeHtml(p.title)}">${escapeHtml(p.title.slice(0, 40))}${p.title.length > 40 ? '…' : ''}</span>`);
     if (!p.description) badges.push('<span class="page-badge warn">No description</span>');
     if (p.h1s.length === 0) badges.push('<span class="page-badge err">No H1</span>');
     else if (p.h1s.length > 1) badges.push(`<span class="page-badge warn">${p.h1s.length} H1s</span>`);
@@ -1281,13 +1408,35 @@ function renderResults(r) {
 
     return `
       <div class="page-item">
-        <div class="page-url"><i class="fas fa-link"></i> ${escapeHtml(p.url)}</div>
+        <div class="page-url"><i class="fas fa-link"></i> <span style="opacity:0.5">L${p.level}</span> ${escapeHtml(p.url)}</div>
         <div class="page-meta">${badges.join('')}</div>
       </div>
     `;
   }).join('');
 
-  // Duplicates tab
+  // Broken links
+  if (r.brokenLinks && r.brokenLinks.length) {
+    $('brokenContent').innerHTML = `
+      <div class="check-category" style="border-left:4px solid var(--danger);">
+        <h4><i class="fas fa-unlink"></i> ${r.brokenLinks.length} Broken Link(s) Found</h4>
+        ${r.brokenLinks.map(l => `
+          <div class="check-item">
+            <div class="check-name" style="word-break:break-all; font-family:monospace; font-size:0.78rem;">${escapeHtml(l)}</div>
+            <div class="check-status fail">BROKEN</div>
+          </div>
+        `).join('')}
+      </div>
+    `;
+  } else {
+    $('brokenContent').innerHTML = `
+      <div class="check-category" style="border-left:4px solid var(--success);">
+        <h4><i class="fas fa-check-circle"></i> No broken links detected</h4>
+        <p style="font-size:0.85rem; opacity:0.7;">All checked links returned a successful response.</p>
+      </div>
+    `;
+  }
+
+  // Duplicates
   const dupIssues = r.issues.filter(i => i.name.toLowerCase().includes('duplicate'));
   $('duplicatesContent').innerHTML = dupIssues.length
     ? dupIssues.map(i => `
@@ -1301,6 +1450,20 @@ function renderResults(r) {
     `).join('')
     : `<div class="check-category"><h4><i class="fas fa-check-circle"></i> No duplicates detected</h4></div>`;
 
+  // Technical
+  const techIssues = r.issues.filter(i => i.category === 'technical' || i.category === 'links');
+  $('techContent').innerHTML = `
+    <div class="check-category">
+      <h4><i class="fas fa-cog"></i> Technical SEO</h4>
+      ${techIssues.map(i => `
+        <div class="check-item">
+          <div class="check-name">${escapeHtml(i.name)}<small>${escapeHtml(i.detail)}</small></div>
+          <div class="check-status ${i.status}">${escapeHtml(i.value)}</div>
+        </div>
+      `).join('')}
+    </div>
+  `;
+
   renderHistory();
 }
 
@@ -1308,7 +1471,7 @@ function renderResults(r) {
 // 💾 HISTORY
 // ============================================================
 function getHistory() {
-  try { return JSON.parse(localStorage.getItem('crawlHistoryV3') || '[]'); }
+  try { return JSON.parse(localStorage.getItem('crawlHistoryV4') || '[]'); }
   catch(e) { return []; }
 }
 
@@ -1320,7 +1483,7 @@ function saveHistory(r) {
     pages: r.pages.length,
     ts: Date.now()
   });
-  localStorage.setItem('crawlHistoryV3', JSON.stringify(history.slice(0, 10)));
+  localStorage.setItem('crawlHistoryV4', JSON.stringify(history.slice(0, 10)));
   renderHistory();
 }
 
@@ -1372,24 +1535,20 @@ function downloadBlob(content, mime, filename) {
 function exportJSON() {
   if (!lastResult) return;
   downloadBlob(JSON.stringify({
-    tool: 'FreeSEOToolHub Website Crawler v3.0',
+    tool: 'FreeSEOToolHub Website Crawler v4.0',
     timestamp: lastResult.crawledAt,
     startUrl: lastResult.startUrl,
     score: lastResult.score,
     pagesCrawled: lastResult.pages.length,
+    brokenLinks: lastResult.brokenLinks,
+    sitemap: lastResult.sitemap,
+    robots: lastResult.robots,
     issues: lastResult.issues,
     pages: lastResult.pages.map(p => ({
-      url: p.url,
-      title: p.title,
-      description: p.description,
-      h1s: p.h1s,
-      images: p.images,
-      imagesWithoutAlt: p.imagesWithoutAlt,
-      internalLinks: p.internalLinks.length,
-      externalLinks: p.externalLinks.length,
-      wordCount: p.wordCount,
-      hasCanonical: p.hasCanonical,
-      issues: p.issues
+      url: p.url, level: p.level, title: p.title, description: p.description,
+      h1s: p.h1s, images: p.images, imagesWithoutAlt: p.imagesWithoutAlt,
+      internalLinks: p.internalLinks.length, externalLinks: p.externalLinks.length,
+      wordCount: p.wordCount, hasCanonical: p.hasCanonical, issues: p.issues
     }))
   }, null, 2), 'application/json', `crawl-${new Date().toISOString().split('T')[0]}.json`);
   showToast('📥 JSON downloaded');
@@ -1397,10 +1556,10 @@ function exportJSON() {
 
 function exportCSV() {
   if (!lastResult) return;
-  const rows = [['URL', 'Title', 'Description', 'H1s', 'Words', 'Images', 'Img No Alt', 'Internal Links', 'External Links', 'Canonical']];
+  const rows = [['URL', 'Level', 'Title', 'Description', 'H1s', 'Words', 'Images', 'Img No Alt', 'Internal Links', 'External Links', 'Canonical']];
   lastResult.pages.forEach(p => {
     rows.push([
-      p.url, p.title.slice(0, 100), p.description.slice(0, 150),
+      p.url, p.level, p.title.slice(0, 100), p.description.slice(0, 150),
       p.h1s.join(' | ').slice(0, 100), p.wordCount, p.images, p.imagesWithoutAlt,
       p.internalLinks.length, p.externalLinks.length, p.hasCanonical ? 'Yes' : 'No'
     ]);
@@ -1422,7 +1581,13 @@ function copyReport() {
   txt += `Score: ${r.score}/100\n`;
   txt += `Pages crawled: ${r.pages.length}\n`;
   txt += `Errors: ${r.errors} | Warnings: ${r.warnings}\n\n`;
-  txt += `ISSUES:\n`;
+  if (r.sitemap) txt += `Sitemap: ${r.sitemap.exists ? 'Found (' + r.sitemap.count + ' URLs)' : 'Missing'}\n`;
+  if (r.robots) txt += `Robots.txt: ${r.robots.exists ? 'Found' : 'Missing'}\n`;
+  if (r.brokenLinks.length) {
+    txt += `\nBROKEN LINKS (${r.brokenLinks.length}):\n`;
+    r.brokenLinks.forEach(l => txt += `  • ${l}\n`);
+  }
+  txt += `\nISSUES:\n`;
   r.issues.forEach(i => txt += `[${i.status.toUpperCase()}] ${i.name}: ${i.value}\n  ${i.detail}\n`);
   txt += `\nPAGES:\n`;
   r.pages.forEach(p => {
@@ -1473,12 +1638,13 @@ function init() {
     showToast('🗑️ Cleared');
   });
   $('clearHistory').addEventListener('click', () => {
-    localStorage.removeItem('crawlHistoryV3');
+    localStorage.removeItem('crawlHistoryV4');
     renderHistory();
     showToast('🗑️ History cleared');
   });
 
   renderHistory();
+  console.log('✅ Website Crawler v4.0 ready');
 }
 
 init();
