@@ -11,6 +11,7 @@
         <priority>1.0</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/"/>
         <xhtml:link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/?lang=hi"/>
+        <xhtml:link rel="alternate" hreflang="ur" href="https://freeseotoolhub.com/?lang=ur"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/?lang=es"/>
         <xhtml:link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/?lang=de"/>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/"/>
@@ -23,6 +24,7 @@
         <priority>0.7</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/about.html"/>
         <xhtml:link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/about.html?lang=hi"/>
+        <xhtml:link rel="alternate" hreflang="ur" href="https://freeseotoolhub.com/about.html?lang=ur"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/about.html?lang=es"/>
         <xhtml:link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/about.html?lang=de"/>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/about.html"/>
@@ -35,6 +37,7 @@
         <priority>0.7</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/contact.html"/>
         <xhtml:link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/contact.html?lang=hi"/>
+        <xhtml:link rel="alternate" hreflang="ur" href="https://freeseotoolhub.com/contact.html?lang=ur"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/contact.html?lang=es"/>
         <xhtml:link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/contact.html?lang=de"/>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/contact.html"/>
@@ -47,6 +50,7 @@
         <priority>0.5</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/privacy.html"/>
         <xhtml:link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/privacy.html?lang=hi"/>
+        <xhtml:link rel="alternate" hreflang="ur" href="https://freeseotoolhub.com/privacy.html?lang=ur"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/privacy.html?lang=es"/>
         <xhtml:link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/privacy.html?lang=de"/>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/privacy.html"/>
@@ -59,206 +63,322 @@
         <priority>0.9</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/blog/"/>
         <xhtml:link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/blog/?lang=hi"/>
+        <xhtml:link rel="alternate" hreflang="ur" href="https://freeseotoolhub.com/blog/?lang=ur"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/blog/?lang=es"/>
         <xhtml:link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/blog/?lang=de"/>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/blog/"/>
+    </url>
+
+    <!-- ==================== 🔥 PDF & IMAGE TOOLS (NEW) ==================== -->
+    
+    <!-- PDF to JPG -->
+    <url>
+        <loc>https://freeseotoolhub.com/tools/pdf-to-jpg.html</loc>
+        <lastmod>2026-07-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.95</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/tools/pdf-to-jpg.html"/>
+        <xhtml:link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/tools/pdf-to-jpg.html?lang=hi"/>
+        <xhtml:link rel="alternate" hreflang="ur" href="https://freeseotoolhub.com/tools/pdf-to-jpg.html?lang=ur"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/tools/pdf-to-jpg.html?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/tools/pdf-to-jpg.html?lang=de"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/tools/pdf-to-jpg.html"/>
+    </url>
+
+    <!-- JPG to PDF -->
+    <url>
+        <loc>https://freeseotoolhub.com/tools/jpg-to-pdf.html</loc>
+        <lastmod>2026-07-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.95</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/tools/jpg-to-pdf.html"/>
+        <xhtml:link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/tools/jpg-to-pdf.html?lang=hi"/>
+        <xhtml:link rel="alternate" hreflang="ur" href="https://freeseotoolhub.com/tools/jpg-to-pdf.html?lang=ur"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/tools/jpg-to-pdf.html?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/tools/jpg-to-pdf.html?lang=de"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/tools/jpg-to-pdf.html"/>
+    </url>
+
+    <!-- Favicon Generator -->
+    <url>
+        <loc>https://freeseotoolhub.com/tools/favicon-generator.html</loc>
+        <lastmod>2026-07-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/tools/favicon-generator.html"/>
+        <xhtml:link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/tools/favicon-generator.html?lang=hi"/>
+        <xhtml:link rel="alternate" hreflang="ur" href="https://freeseotoolhub.com/tools/favicon-generator.html?lang=ur"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/tools/favicon-generator.html?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/tools/favicon-generator.html?lang=de"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/tools/favicon-generator.html"/>
+    </url>
+
+    <!-- Color Palette Generator -->
+    <url>
+        <loc>https://freeseotoolhub.com/tools/color-palette-generator.html</loc>
+        <lastmod>2026-07-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/tools/color-palette-generator.html"/>
+        <xhtml:link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/tools/color-palette-generator.html?lang=hi"/>
+        <xhtml:link rel="alternate" hreflang="ur" href="https://freeseotoolhub.com/tools/color-palette-generator.html?lang=ur"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/tools/color-palette-generator.html?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/tools/color-palette-generator.html?lang=de"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/tools/color-palette-generator.html"/>
     </url>
 
     <!-- ==================== 🌍 15 GLOBAL SEO TOOLS ==================== -->
     
     <!-- 1. Meta Tag Generator -->
     <url>
-        <loc>https://freeseotoolhub.com/meta-tag-generator.html</loc>
+        <loc>https://freeseotoolhub.com/tools/meta-tag-generator.html</loc>
         <lastmod>2026-07-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.95</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/meta-tag-generator.html"/>
-        <xhtml:link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/meta-tag-generator.html?lang=hi"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/meta-tag-generator.html?lang=es"/>
-        <xhtml:link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/meta-tag-generator.html?lang=de"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/meta-tag-generator.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/tools/meta-tag-generator.html"/>
+        <xhtml:link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/tools/meta-tag-generator.html?lang=hi"/>
+        <xhtml:link rel="alternate" hreflang="ur" href="https://freeseotoolhub.com/tools/meta-tag-generator.html?lang=ur"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/tools/meta-tag-generator.html?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/tools/meta-tag-generator.html?lang=de"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/tools/meta-tag-generator.html"/>
     </url>
 
     <!-- 2. Plagiarism Checker -->
     <url>
-        <loc>https://freeseotoolhub.com/plagiarism-checker.html</loc>
+        <loc>https://freeseotoolhub.com/tools/plagiarism-checker.html</loc>
         <lastmod>2026-07-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.95</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/plagiarism-checker.html"/>
-        <xhtml:link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/plagiarism-checker.html?lang=hi"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/plagiarism-checker.html?lang=es"/>
-        <xhtml:link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/plagiarism-checker.html?lang=de"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/plagiarism-checker.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/tools/plagiarism-checker.html"/>
+        <xhtml:link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/tools/plagiarism-checker.html?lang=hi"/>
+        <xhtml:link rel="alternate" hreflang="ur" href="https://freeseotoolhub.com/tools/plagiarism-checker.html?lang=ur"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/tools/plagiarism-checker.html?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/tools/plagiarism-checker.html?lang=de"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/tools/plagiarism-checker.html"/>
     </url>
 
     <!-- 3. QR Code Generator -->
     <url>
-        <loc>https://freeseotoolhub.com/qr-code-generator.html</loc>
+        <loc>https://freeseotoolhub.com/tools/qr-code-generator.html</loc>
         <lastmod>2026-07-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.95</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/qr-code-generator.html"/>
-        <xhtml:link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/qr-code-generator.html?lang=hi"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/qr-code-generator.html?lang=es"/>
-        <xhtml:link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/qr-code-generator.html?lang=de"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/qr-code-generator.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/tools/qr-code-generator.html"/>
+        <xhtml:link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/tools/qr-code-generator.html?lang=hi"/>
+        <xhtml:link rel="alternate" hreflang="ur" href="https://freeseotoolhub.com/tools/qr-code-generator.html?lang=ur"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/tools/qr-code-generator.html?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/tools/qr-code-generator.html?lang=de"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/tools/qr-code-generator.html"/>
     </url>
 
     <!-- 4. Backlink Checker -->
     <url>
-        <loc>https://freeseotoolhub.com/backlink-checker.html</loc>
+        <loc>https://freeseotoolhub.com/tools/backlink-checker.html</loc>
         <lastmod>2026-07-09</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/backlink-checker.html"/>
-        <xhtml:link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/backlink-checker.html?lang=hi"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/backlink-checker.html?lang=es"/>
-        <xhtml:link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/backlink-checker.html?lang=de"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/backlink-checker.html"/>
+        <priority>0.90</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/tools/backlink-checker.html"/>
+        <xhtml:link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/tools/backlink-checker.html?lang=hi"/>
+        <xhtml:link rel="alternate" hreflang="ur" href="https://freeseotoolhub.com/tools/backlink-checker.html?lang=ur"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/tools/backlink-checker.html?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/tools/backlink-checker.html?lang=de"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/tools/backlink-checker.html"/>
     </url>
 
     <!-- 5. Keyword Density -->
     <url>
-        <loc>https://freeseotoolhub.com/keyword-density.html</loc>
+        <loc>https://freeseotoolhub.com/tools/keyword-density.html</loc>
         <lastmod>2026-07-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/keyword-density.html"/>
-        <xhtml:link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/keyword-density.html?lang=hi"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/keyword-density.html?lang=es"/>
-        <xhtml:link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/keyword-density.html?lang=de"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/keyword-density.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/tools/keyword-density.html"/>
+        <xhtml:link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/tools/keyword-density.html?lang=hi"/>
+        <xhtml:link rel="alternate" hreflang="ur" href="https://freeseotoolhub.com/tools/keyword-density.html?lang=ur"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/tools/keyword-density.html?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/tools/keyword-density.html?lang=de"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/tools/keyword-density.html"/>
     </url>
 
     <!-- 6. Website Speed Test -->
     <url>
-        <loc>https://freeseotoolhub.com/website-speed-test.html</loc>
+        <loc>https://freeseotoolhub.com/tools/website-speed-test.html</loc>
         <lastmod>2026-07-09</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/website-speed-test.html"/>
-        <xhtml:link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/website-speed-test.html?lang=hi"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/website-speed-test.html?lang=es"/>
-        <xhtml:link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/website-speed-test.html?lang=de"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/website-speed-test.html"/>
+        <priority>0.90</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/tools/website-speed-test.html"/>
+        <xhtml:link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/tools/website-speed-test.html?lang=hi"/>
+        <xhtml:link rel="alternate" hreflang="ur" href="https://freeseotoolhub.com/tools/website-speed-test.html?lang=ur"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/tools/website-speed-test.html?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/tools/website-speed-test.html?lang=de"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/tools/website-speed-test.html"/>
     </url>
 
     <!-- 7. SSL Checker -->
     <url>
-        <loc>https://freeseotoolhub.com/ssl-checker.html</loc>
+        <loc>https://freeseotoolhub.com/tools/ssl-checker.html</loc>
         <lastmod>2026-07-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/ssl-checker.html"/>
-        <xhtml:link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/ssl-checker.html?lang=hi"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/ssl-checker.html?lang=es"/>
-        <xhtml:link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/ssl-checker.html?lang=de"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/ssl-checker.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/tools/ssl-checker.html"/>
+        <xhtml:link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/tools/ssl-checker.html?lang=hi"/>
+        <xhtml:link rel="alternate" hreflang="ur" href="https://freeseotoolhub.com/tools/ssl-checker.html?lang=ur"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/tools/ssl-checker.html?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/tools/ssl-checker.html?lang=de"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/tools/ssl-checker.html"/>
     </url>
 
     <!-- 8. AI Content Detector -->
     <url>
-        <loc>https://freeseotoolhub.com/ai-content-detector.html</loc>
+        <loc>https://freeseotoolhub.com/tools/ai-content-detector.html</loc>
         <lastmod>2026-07-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/ai-content-detector.html"/>
-        <xhtml:link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/ai-content-detector.html?lang=hi"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/ai-content-detector.html?lang=es"/>
-        <xhtml:link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/ai-content-detector.html?lang=de"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/ai-content-detector.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/tools/ai-content-detector.html"/>
+        <xhtml:link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/tools/ai-content-detector.html?lang=hi"/>
+        <xhtml:link rel="alternate" hreflang="ur" href="https://freeseotoolhub.com/tools/ai-content-detector.html?lang=ur"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/tools/ai-content-detector.html?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/tools/ai-content-detector.html?lang=de"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/tools/ai-content-detector.html"/>
     </url>
 
     <!-- 9. PageSpeed Insights -->
     <url>
-        <loc>https://freeseotoolhub.com/pagespeed-insights.html</loc>
+        <loc>https://freeseotoolhub.com/tools/pagespeed-insights.html</loc>
         <lastmod>2026-07-09</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/pagespeed-insights.html"/>
-        <xhtml:link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/pagespeed-insights.html?lang=hi"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/pagespeed-insights.html?lang=es"/>
-        <xhtml:link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/pagespeed-insights.html?lang=de"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/pagespeed-insights.html"/>
+        <priority>0.90</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/tools/pagespeed-insights.html"/>
+        <xhtml:link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/tools/pagespeed-insights.html?lang=hi"/>
+        <xhtml:link rel="alternate" hreflang="ur" href="https://freeseotoolhub.com/tools/pagespeed-insights.html?lang=ur"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/tools/pagespeed-insights.html?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/tools/pagespeed-insights.html?lang=de"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/tools/pagespeed-insights.html"/>
     </url>
 
     <!-- 10. Schema Markup Generator -->
     <url>
-        <loc>https://freeseotoolhub.com/schema-markup-generator.html</loc>
+        <loc>https://freeseotoolhub.com/tools/schema-markup-generator.html</loc>
         <lastmod>2026-07-09</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/schema-markup-generator.html"/>
-        <xhtml:link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/schema-markup-generator.html?lang=hi"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/schema-markup-generator.html?lang=es"/>
-        <xhtml:link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/schema-markup-generator.html?lang=de"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/schema-markup-generator.html"/>
+        <priority>0.90</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/tools/schema-markup-generator.html"/>
+        <xhtml:link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/tools/schema-markup-generator.html?lang=hi"/>
+        <xhtml:link rel="alternate" hreflang="ur" href="https://freeseotoolhub.com/tools/schema-markup-generator.html?lang=ur"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/tools/schema-markup-generator.html?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/tools/schema-markup-generator.html?lang=de"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/tools/schema-markup-generator.html"/>
     </url>
 
     <!-- 11. GSC Visualizer -->
     <url>
-        <loc>https://freeseotoolhub.com/gsc-visualizer.html</loc>
+        <loc>https://freeseotoolhub.com/tools/gsc-visualizer.html</loc>
         <lastmod>2026-07-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/gsc-visualizer.html"/>
-        <xhtml:link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/gsc-visualizer.html?lang=hi"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/gsc-visualizer.html?lang=es"/>
-        <xhtml:link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/gsc-visualizer.html?lang=de"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/gsc-visualizer.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/tools/gsc-visualizer.html"/>
+        <xhtml:link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/tools/gsc-visualizer.html?lang=hi"/>
+        <xhtml:link rel="alternate" hreflang="ur" href="https://freeseotoolhub.com/tools/gsc-visualizer.html?lang=ur"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/tools/gsc-visualizer.html?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/tools/gsc-visualizer.html?lang=de"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/tools/gsc-visualizer.html"/>
     </url>
 
     <!-- 12. Internal Link Suggester -->
     <url>
-        <loc>https://freeseotoolhub.com/internal-link-suggester.html</loc>
+        <loc>https://freeseotoolhub.com/tools/internal-link-suggester.html</loc>
         <lastmod>2026-07-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/internal-link-suggester.html"/>
-        <xhtml:link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/internal-link-suggester.html?lang=hi"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/internal-link-suggester.html?lang=es"/>
-        <xhtml:link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/internal-link-suggester.html?lang=de"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/internal-link-suggester.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/tools/internal-link-suggester.html"/>
+        <xhtml:link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/tools/internal-link-suggester.html?lang=hi"/>
+        <xhtml:link rel="alternate" hreflang="ur" href="https://freeseotoolhub.com/tools/internal-link-suggester.html?lang=ur"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/tools/internal-link-suggester.html?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/tools/internal-link-suggester.html?lang=de"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/tools/internal-link-suggester.html"/>
     </url>
 
     <!-- 13. Trending Keywords Finder -->
     <url>
-        <loc>https://freeseotoolhub.com/trending-keywords-finder.html</loc>
+        <loc>https://freeseotoolhub.com/tools/trending-keywords-finder.html</loc>
         <lastmod>2026-07-09</lastmod>
         <changefreq>daily</changefreq>
-        <priority>0.9</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/trending-keywords-finder.html"/>
-        <xhtml:link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/trending-keywords-finder.html?lang=hi"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/trending-keywords-finder.html?lang=es"/>
-        <xhtml:link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/trending-keywords-finder.html?lang=de"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/trending-keywords-finder.html"/>
+        <priority>0.90</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/tools/trending-keywords-finder.html"/>
+        <xhtml:link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/tools/trending-keywords-finder.html?lang=hi"/>
+        <xhtml:link rel="alternate" hreflang="ur" href="https://freeseotoolhub.com/tools/trending-keywords-finder.html?lang=ur"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/tools/trending-keywords-finder.html?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/tools/trending-keywords-finder.html?lang=de"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/tools/trending-keywords-finder.html"/>
     </url>
 
     <!-- 14. Voice Search Optimizer -->
     <url>
-        <loc>https://freeseotoolhub.com/voice-search-optimizer.html</loc>
+        <loc>https://freeseotoolhub.com/tools/voice-search-optimizer.html</loc>
         <lastmod>2026-07-09</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/voice-search-optimizer.html"/>
-        <xhtml:link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/voice-search-optimizer.html?lang=hi"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/voice-search-optimizer.html?lang=es"/>
-        <xhtml:link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/voice-search-optimizer.html?lang=de"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/voice-search-optimizer.html"/>
+        <priority>0.90</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/tools/voice-search-optimizer.html"/>
+        <xhtml:link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/tools/voice-search-optimizer.html?lang=hi"/>
+        <xhtml:link rel="alternate" hreflang="ur" href="https://freeseotoolhub.com/tools/voice-search-optimizer.html?lang=ur"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/tools/voice-search-optimizer.html?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/tools/voice-search-optimizer.html?lang=de"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/tools/voice-search-optimizer.html"/>
     </url>
 
     <!-- 15. Website Crawler -->
     <url>
-        <loc>https://freeseotoolhub.com/website-crawler.html</loc>
+        <loc>https://freeseotoolhub.com/tools/website-crawler.html</loc>
         <lastmod>2026-07-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/website-crawler.html"/>
-        <xhtml:link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/website-crawler.html?lang=hi"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/website-crawler.html?lang=es"/>
-        <xhtml:link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/website-crawler.html?lang=de"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/website-crawler.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/tools/website-crawler.html"/>
+        <xhtml:link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/tools/website-crawler.html?lang=hi"/>
+        <xhtml:link rel="alternate" hreflang="ur" href="https://freeseotoolhub.com/tools/website-crawler.html?lang=ur"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/tools/website-crawler.html?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/tools/website-crawler.html?lang=de"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/tools/website-crawler.html"/>
+    </url>
+
+    <!-- 16. Mobile-Friendly Test -->
+    <url>
+        <loc>https://freeseotoolhub.com/tools/mobile-friendly-test.html</loc>
+        <lastmod>2026-07-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.90</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/tools/mobile-friendly-test.html"/>
+        <xhtml:link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/tools/mobile-friendly-test.html?lang=hi"/>
+        <xhtml:link rel="alternate" hreflang="ur" href="https://freeseotoolhub.com/tools/mobile-friendly-test.html?lang=ur"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/tools/mobile-friendly-test.html?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/tools/mobile-friendly-test.html?lang=de"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/tools/mobile-friendly-test.html"/>
+    </url>
+
+    <!-- 17. Email Spam Checker -->
+    <url>
+        <loc>https://freeseotoolhub.com/tools/email-spam-checker.html</loc>
+        <lastmod>2026-07-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/tools/email-spam-checker.html"/>
+        <xhtml:link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/tools/email-spam-checker.html?lang=hi"/>
+        <xhtml:link rel="alternate" hreflang="ur" href="https://freeseotoolhub.com/tools/email-spam-checker.html?lang=ur"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/tools/email-spam-checker.html?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/tools/email-spam-checker.html?lang=de"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/tools/email-spam-checker.html"/>
+    </url>
+
+    <!-- 18. Google SERP Simulator -->
+    <url>
+        <loc>https://freeseotoolhub.com/tools/google-serp-simulator.html</loc>
+        <lastmod>2026-07-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/tools/google-serp-simulator.html"/>
+        <xhtml:link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/tools/google-serp-simulator.html?lang=hi"/>
+        <xhtml:link rel="alternate" hreflang="ur" href="https://freeseotoolhub.com/tools/google-serp-simulator.html?lang=ur"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/tools/google-serp-simulator.html?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/tools/google-serp-simulator.html?lang=de"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/tools/google-serp-simulator.html"/>
     </url>
 
     <!-- ==================== 📦 SYSTEM FILES ==================== -->
