@@ -14,7 +14,7 @@ gtag('config', 'G-PFPCTBFG3Y');
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <title>Trending Keywords Finder 2026 — Real Google Trends Data | FreeSEOToolHub</title>
-<meta name="description" content="Free trending keywords finder with real Google Trends RSS data. Multi-country, multi-category, live trending searches. No signup. 100% client-side.">
+<meta name="description" content="Free trending keywords finder with real Google Trends RSS data. 40+ countries, 7 categories, live trending searches, related queries. No signup. 100% client-side.">
 <meta name="keywords" content="trending keywords, google trends live, trending searches now, keyword trends 2026, trending topics, real-time trends, seo trending keywords">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://freeseotoolhub.com/tools/trending-keywords-finder.html">
@@ -29,12 +29,11 @@ gtag('config', 'G-PFPCTBFG3Y');
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://freeseotoolhub.com/tools/trending-keywords-finder.html">
 <meta property="og:title" content="Trending Keywords Finder — Real Google Trends">
-<meta property="og:description" content="Real Google Trends RSS data. Multi-country live trending searches.">
+<meta property="og:description" content="Real Google Trends RSS data. 40+ countries live trending searches.">
 <meta property="og:image" content="https://freeseotoolhub.com/images/trending-og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <script type="application/ld+json">
@@ -45,7 +44,7 @@ gtag('config', 'G-PFPCTBFG3Y');
 "@type": "WebApplication",
 "name": "Trending Keywords Finder",
 "url": "https://freeseotoolhub.com/tools/trending-keywords-finder.html",
-"description": "Real Google Trends RSS data with multi-country and category support.",
+"description": "Real Google Trends RSS data with 40+ countries and 7 categories.",
 "applicationCategory": "SEOApplication",
 "operatingSystem": "Any",
 "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
@@ -90,7 +89,6 @@ body { background:linear-gradient(135deg,#0b1a33 0%,#1e2b4f 100%); min-height:10
 }
 .tool-header p { opacity:0.85; max-width:800px; margin:0 auto; }
 
-/* LIVE BADGE */
 .live-badge {
   display:inline-flex; align-items:center; gap:6px;
   background:var(--danger); color:#fff;
@@ -116,7 +114,6 @@ body { background:linear-gradient(135deg,#0b1a33 0%,#1e2b4f 100%); min-height:10
   margin-bottom:20px;
 }
 
-/* CONTROLS */
 .controls { display:grid; grid-template-columns:2fr 1fr 1fr; gap:12px; margin-bottom:16px; }
 @media (max-width:800px) { .controls { grid-template-columns:1fr; } }
 
@@ -150,8 +147,9 @@ select option { background:#0b1a33; color:#fff; }
   display:inline-flex; align-items:center; gap:0.4rem;
 }
 .btn-outline:hover:not(:disabled) { background:rgba(255,153,51,0.2); border-color:var(--primary); }
+.btn-outline:disabled { opacity:0.4; cursor:not-allowed; }
+.btn-outline.active { background:rgba(255,153,51,0.2); border-color:var(--primary); }
 
-/* CATEGORY TABS */
 .cat-tabs { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:16px; }
 .cat-btn {
   background:rgba(255,255,255,0.04); border:1px solid var(--border);
@@ -162,7 +160,6 @@ select option { background:#0b1a33; color:#fff; }
 .cat-btn:hover { border-color:var(--primary); }
 .cat-btn.active { background:var(--primary); color:#0b1a33; border-color:var(--primary); font-weight:700; }
 
-/* STATUS BAR */
 .status-bar {
   display:flex; justify-content:space-between; align-items:center;
   flex-wrap:wrap; gap:10px; margin-bottom:16px;
@@ -173,9 +170,8 @@ select option { background:#0b1a33; color:#fff; }
 .status-info { display:flex; align-items:center; gap:8px; opacity:0.8; }
 .status-info i { color:var(--primary); }
 
-/* RESULTS GRID */
 .results-grid {
-  display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));
+  display:grid; grid-template-columns:repeat(auto-fill, minmax(300px, 1fr));
   gap:12px;
 }
 .kw-card {
@@ -233,7 +229,21 @@ select option { background:#0b1a33; color:#fff; }
 }
 .kw-action:hover { background:rgba(255,153,51,0.2); border-color:var(--primary); color:#fff; }
 
-/* LOADING */
+.related-queries {
+  margin-top:10px; padding-top:10px;
+  border-top:1px solid rgba(255,255,255,0.05);
+}
+.related-label {
+  font-size:0.7rem; opacity:0.6; margin-bottom:6px;
+  text-transform:uppercase; letter-spacing:0.5px;
+}
+.related-tags { display:flex; flex-wrap:wrap; gap:4px; }
+.related-tag {
+  background:rgba(255,153,51,0.1); color:var(--primary);
+  padding:3px 8px; border-radius:12px;
+  font-size:0.68rem; font-weight:500;
+}
+
 .loading { display:none; text-align:center; padding:40px; }
 .spinner {
   width:50px; height:50px; margin:0 auto 16px;
@@ -246,7 +256,6 @@ select option { background:#0b1a33; color:#fff; }
 .loading-text { font-size:0.9rem; opacity:0.8; }
 .loading-sub { font-size:0.78rem; opacity:0.5; margin-top:4px; }
 
-/* EMPTY STATE */
 .empty-state {
   text-align:center; padding:60px 20px;
   background:rgba(255,255,255,0.02);
@@ -256,7 +265,6 @@ select option { background:#0b1a33; color:#fff; }
 .empty-state h3 { font-size:1.1rem; margin-bottom:8px; }
 .empty-state p { font-size:0.85rem; opacity:0.6; }
 
-/* SOURCE BADGE */
 .source-badge {
   display:inline-flex; align-items:center; gap:4px;
   background:rgba(59,130,246,0.15); color:var(--info);
@@ -264,7 +272,6 @@ select option { background:#0b1a33; color:#fff; }
   font-size:0.7rem; font-weight:600;
 }
 
-/* TOAST */
 .toast-container { position:fixed; bottom:24px; right:24px; z-index:9999; display:flex; flex-direction:column; gap:8px; }
 .toast {
   background:rgba(30,41,59,0.95); backdrop-filter:blur(10px);
@@ -279,7 +286,6 @@ select option { background:#0b1a33; color:#fff; }
 .toast.warning { background:rgba(245,158,11,0.95); }
 @keyframes slideIn { from { transform:translateX(120%); opacity:0; } to { transform:translateX(0); opacity:1; } }
 
-/* FOOTER */
 .footer {
   text-align:center; padding:20px;
   background:rgba(255,255,255,0.03); border-radius:16px;
@@ -289,7 +295,6 @@ select option { background:#0b1a33; color:#fff; }
 .footer-links a { color:rgba(255,255,255,0.7); text-decoration:none; font-weight:500; font-size:0.88rem; }
 .footer-links a:hover { color:var(--primary); }
 
-/* FAQ */
 .faq-section {
   background:rgba(255,255,255,0.03);
   border:1px solid var(--border);
@@ -301,6 +306,24 @@ select option { background:#0b1a33; color:#fff; }
 .faq-q { font-weight:700; color:#fff; margin-bottom:6px; display:flex; align-items:flex-start; gap:8px; font-size:0.92rem; }
 .faq-q i { color:var(--primary); margin-top:4px; }
 .faq-a { color:rgba(255,255,255,0.7); font-size:0.86rem; line-height:1.6; padding-left:22px; }
+
+/* AUTO REFRESH TOGGLE */
+.auto-refresh {
+  display:flex; align-items:center; gap:8px;
+  font-size:0.82rem; opacity:0.85;
+}
+.toggle-switch {
+  position:relative; width:40px; height:22px;
+  background:rgba(255,255,255,0.15); border-radius:11px;
+  cursor:pointer; transition:all 0.3s;
+}
+.toggle-switch.active { background:var(--success); }
+.toggle-switch::after {
+  content:''; position:absolute; top:2px; left:2px;
+  width:18px; height:18px; background:#fff; border-radius:50%;
+  transition:all 0.3s;
+}
+.toggle-switch.active::after { left:20px; }
 
 @media (max-width:768px) {
   body { padding:70px 12px 30px; }
@@ -329,7 +352,7 @@ select option { background:#0b1a33; color:#fff; }
   <div class="tool-header">
     <div class="live-badge"><span class="live-dot"></span> LIVE FEED</div>
     <h1><i class="fas fa-fire"></i> <span data-i18n="title">Trending Keywords Finder</span></h1>
-    <p data-i18n="subtitle">Real Google Trends RSS data with multi-country and category support. What's trending right now — 100% client-side.</p>
+    <p data-i18n="subtitle">Real Google Trends RSS data — 40+ countries, 7 categories, related queries. What's trending right now — 100% client-side.</p>
   </div>
 
   <div class="lang-bar">
@@ -340,7 +363,6 @@ select option { background:#0b1a33; color:#fff; }
     <button class="lang-btn" data-lang="es">🇪🇸 Español</button>
   </div>
 
-  <!-- CONTROLS -->
   <div class="glass-card">
     <div class="controls">
       <div class="control-group">
@@ -349,45 +371,19 @@ select option { background:#0b1a33; color:#fff; }
       </div>
       <div class="control-group">
         <label><i class="fas fa-globe"></i> <span data-i18n="countryLabel">Country</span></label>
-        <select id="countrySelect">
-          <option value="US">🇺🇸 United States</option>
-          <option value="GB">🇬🇧 United Kingdom</option>
-          <option value="IN">🇮🇳 India</option>
-          <option value="CA">🇨🇦 Canada</option>
-          <option value="AU">🇦🇺 Australia</option>
-          <option value="DE">🇩🇪 Germany</option>
-          <option value="FR">🇫🇷 France</option>
-          <option value="ES">🇪🇸 Spain</option>
-          <option value="IT">🇮🇹 Italy</option>
-          <option value="JP">🇯🇵 Japan</option>
-          <option value="KR">🇰🇷 South Korea</option>
-          <option value="BR">🇧🇷 Brazil</option>
-          <option value="MX">🇲🇽 Mexico</option>
-          <option value="RU">🇷🇺 Russia</option>
-          <option value="NL">🇳🇱 Netherlands</option>
-          <option value="SG">🇸🇬 Singapore</option>
-          <option value="AE">🇦🇪 UAE</option>
-          <option value="SA">🇸🇦 Saudi Arabia</option>
-          <option value="PK">🇵🇰 Pakistan</option>
-          <option value="NG">🇳🇬 Nigeria</option>
-          <option value="ZA">🇿🇦 South Africa</option>
-          <option value="AR">🇦🇷 Argentina</option>
-          <option value="TR">🇹🇷 Turkey</option>
-          <option value="ID">🇮🇩 Indonesia</option>
-          <option value="PH">🇵🇭 Philippines</option>
-        </select>
+        <select id="countrySelect"></select>
       </div>
       <div class="control-group">
         <label><i class="fas fa-tag"></i> <span data-i18n="categoryLabel">Category</span></label>
         <select id="categorySelect">
           <option value="all">🌍 All Categories</option>
-          <option value="b">💼 Business</option>
-          <option value="e">🎬 Entertainment</option>
-          <option value="m">🏥 Health</option>
-          <option value="s">🏋️ Sports</option>
-          <option value="t">💻 Technology</option>
-          <option value="h">🏠 Home</option>
-          <option value="v">🎮 Gaming</option>
+          <option value="news">📰 News</option>
+          <option value="tech">💻 Tech</option>
+          <option value="sports">⚽ Sports</option>
+          <option value="entertainment">🎬 Entertainment</option>
+          <option value="business">💼 Business</option>
+          <option value="health">🏥 Health</option>
+          <option value="gaming">🎮 Gaming</option>
         </select>
       </div>
     </div>
@@ -399,10 +395,13 @@ select option { background:#0b1a33; color:#fff; }
       <button class="btn-outline" id="exportJsonBtn" disabled><i class="fas fa-file-code"></i> JSON</button>
       <button class="btn-outline" id="exportCsvBtn" disabled><i class="fas fa-file-csv"></i> CSV</button>
       <button class="btn-outline" id="copyBtn" disabled><i class="fas fa-copy"></i> <span data-i18n="copy">Copy</span></button>
+      <label class="auto-refresh" style="margin-left:auto;">
+        <span class="toggle-switch" id="autoRefreshToggle"></span>
+        <span data-i18n="autoRefresh">Auto-refresh (5min)</span>
+      </label>
     </div>
   </div>
 
-  <!-- STATUS BAR -->
   <div class="status-bar">
     <div class="status-info">
       <i class="fas fa-info-circle"></i>
@@ -414,25 +413,22 @@ select option { background:#0b1a33; color:#fff; }
     </div>
   </div>
 
-  <!-- CATEGORY TABS -->
   <div class="cat-tabs" id="catTabs">
-    <button class="cat-btn active" data-cat="all" data-i18n="catAll">🌍 All</button>
-    <button class="cat-btn" data-cat="news" data-i18n="catNews">📰 News</button>
-    <button class="cat-btn" data-cat="tech" data-i18n="catTech">💻 Tech</button>
-    <button class="cat-btn" data-cat="sports" data-i18n="catSports">⚽ Sports</button>
-    <button class="cat-btn" data-cat="entertainment" data-i18n="catEntertainment">🎬 Entertainment</button>
-    <button class="cat-btn" data-cat="business" data-i18n="catBusiness">💼 Business</button>
-    <button class="cat-btn" data-cat="health" data-i18n="catHealth">🏥 Health</button>
+    <button class="cat-btn active" data-cat="all">🌍 <span data-i18n="catAll">All</span></button>
+    <button class="cat-btn" data-cat="news">📰 <span data-i18n="catNews">News</span></button>
+    <button class="cat-btn" data-cat="tech">💻 <span data-i18n="catTech">Tech</span></button>
+    <button class="cat-btn" data-cat="sports">⚽ <span data-i18n="catSports">Sports</span></button>
+    <button class="cat-btn" data-cat="entertainment">🎬 <span data-i18n="catEntertainment">Entertainment</span></button>
+    <button class="cat-btn" data-cat="business">💼 <span data-i18n="catBusiness">Business</span></button>
+    <button class="cat-btn" data-cat="health">🏥 <span data-i18n="catHealth">Health</span></button>
   </div>
 
-  <!-- LOADING -->
   <div class="loading glass-card" id="loading">
     <div class="spinner"></div>
     <div class="loading-text" id="loadingText" data-i18n="loadingText">Fetching live trends...</div>
     <div class="loading-sub" id="loadingSub" data-i18n="loadingSub">Connecting to Google Trends RSS</div>
   </div>
 
-  <!-- RESULTS -->
   <div id="resultsWrap">
     <div class="empty-state" id="emptyState">
       <i class="fas fa-fire"></i>
@@ -442,7 +438,6 @@ select option { background:#0b1a33; color:#fff; }
     <div class="results-grid" id="resultsGrid" style="display:none;"></div>
   </div>
 
-  <!-- FAQ -->
   <div class="faq-section">
     <h2><i class="fas fa-circle-question"></i> <span data-i18n="faqTitle">Frequently Asked Questions</span></h2>
     <div class="faq-item">
@@ -451,11 +446,11 @@ select option { background:#0b1a33; color:#fff; }
     </div>
     <div class="faq-item">
       <div class="faq-q"><i class="fas fa-question-circle"></i> Why do some fetches fail?</div>
-      <div class="faq-a" data-i18n="faq2">Google Trends RSS doesn't send CORS headers, so we use public CORS proxies. If a proxy is down or rate-limited, try again in a minute or switch countries.</div>
+      <div class="faq-a" data-i18n="faq2">Google Trends RSS doesn't send CORS headers, so we use multiple public CORS proxies with automatic retry. If all fail, try again in a minute or switch countries.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q"><i class="fas fa-question-circle"></i> How often is data updated?</div>
-      <div class="faq-a" data-i18n="faq3">Google Trends Daily RSS updates every few hours. Our tool always fetches the latest available snapshot. Click "Fetch Trending Now" to refresh.</div>
+      <div class="faq-a" data-i18n="faq3">Google Trends Daily RSS updates every few hours. Enable "Auto-refresh" to check every 5 minutes automatically.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q"><i class="fas fa-question-circle"></i> Is this really free?</div>
@@ -463,7 +458,6 @@ select option { background:#0b1a33; color:#fff; }
     </div>
   </div>
 
-  <!-- FOOTER -->
   <div class="footer">
     <div class="footer-links">
       <a href="/">Home</a>
@@ -472,13 +466,12 @@ select option { background:#0b1a33; color:#fff; }
       <a href="/contact.html">Contact</a>
       <a href="/privacy.html">Privacy</a>
     </div>
-    <p style="opacity:0.5; font-size:0.82rem;">© 2026 FreeSEOToolHub | Trending Keywords Finder v3.0 | 100% Client-Side</p>
+    <p style="opacity:0.5; font-size:0.82rem;">© 2026 FreeSEOToolHub | Trending Keywords Finder v4.0 | 100% Client-Side</p>
   </div>
 </div>
 
 <div class="toast-container" id="toastContainer"></div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
 (function() {
 'use strict';
@@ -489,56 +482,59 @@ select option { background:#0b1a33; color:#fff; }
 const I18N = {
   en: {
     title: 'Trending Keywords Finder',
-    subtitle: 'Real Google Trends RSS data with multi-country and category support. What\'s trending right now — 100% client-side.',
+    subtitle: 'Real Google Trends RSS data — 40+ countries, 7 categories, related queries. 100% client-side.',
     searchLabel: 'Search Keywords', countryLabel: 'Country', categoryLabel: 'Category',
     fetchBtn: 'Fetch Trending Now', copy: 'Copy',
+    autoRefresh: 'Auto-refresh (5min)',
     statusIdle: 'Click "Fetch Trending Now" to load live data',
     loadingText: 'Fetching live trends...', loadingSub: 'Connecting to Google Trends RSS',
     emptyTitle: 'Ready to see what\'s trending?', emptyText: 'Click "Fetch Trending Now" to load real-time trending searches from Google Trends.',
-    catAll: '🌍 All', catNews: '📰 News', catTech: '💻 Tech', catSports: '⚽ Sports',
-    catEntertainment: '🎬 Entertainment', catBusiness: '💼 Business', catHealth: '🏥 Health',
+    catAll: 'All', catNews: 'News', catTech: 'Tech', catSports: 'Sports',
+    catEntertainment: 'Entertainment', catBusiness: 'Business', catHealth: 'Health',
     faqTitle: 'Frequently Asked Questions',
-    faq1: 'Real data from Google Trends Daily RSS feed. Google publishes top 20 trending searches per country. No API key needed.',
-    faq2: 'Google Trends RSS doesn\'t send CORS headers, so we use public CORS proxies. Try again if a proxy is down.',
-    faq3: 'Google Trends Daily RSS updates every few hours. Click Fetch to refresh.',
+    faq1: 'Real data from Google Trends Daily RSS. No API key needed.',
+    faq2: 'Google Trends RSS doesn\'t send CORS headers, so we use multiple public CORS proxies.',
+    faq3: 'Google Trends Daily RSS updates every few hours.',
     faq4: 'Yes, 100% free using public Google Trends RSS.',
     copied: 'Copied to clipboard!', fetched: 'Fetched', keywords: 'keywords', from: 'from',
     noResults: 'No trending keywords found. Try another country.',
-    fetchError: 'Could not fetch trends. CORS proxies may be rate-limited. Try again in a minute.',
-    searchOnGoogle: 'Search on Google Trends',
-    viewNews: 'View Google News',
-    share: 'Share'
+    fetchError: 'Could not fetch trends. Try again in a minute.',
+    searchOnGoogle: 'Search on Google Trends', viewNews: 'View Google News',
+    relatedQueries: 'Related', showing: 'Showing', of: 'of', matchingFilters: 'matching your filters'
   },
   hi: {
     title: 'ट्रेंडिंग कीवर्ड फाइंडर',
-    subtitle: 'असली Google Trends RSS डेटा — कई देशों और श्रेणियों के साथ। 100% क्लाइंट-साइड।',
+    subtitle: 'असली Google Trends RSS डेटा — 40+ देश, 7 श्रेणियां। 100% क्लाइंट-साइड।',
     searchLabel: 'कीवर्ड खोजें', countryLabel: 'देश', categoryLabel: 'श्रेणी',
     fetchBtn: 'अभी ट्रेंडिंग लाएं', copy: 'कॉपी',
+    autoRefresh: 'ऑटो-रिफ्रेश (5 मिनट)',
     statusIdle: 'लाइव डेटा लोड करने के लिए क्लिक करें',
     loadingText: 'लाइव ट्रेंड लोड हो रहे हैं...', loadingSub: 'Google Trends RSS से कनेक्ट कर रहा है',
     emptyTitle: 'ट्रेंडिंग देखने के लिए तैयार?', emptyText: 'अभी ट्रेंडिंग सर्च लोड करने के लिए क्लिक करें।',
-    catAll: '🌍 सभी', catNews: '📰 समाचार', catTech: '💻 टेक', catSports: '⚽ खेल',
-    catEntertainment: '🎬 मनोरंजन', catBusiness: '💼 व्यापार', catHealth: '🏥 स्वास्थ्य',
+    catAll: 'सभी', catNews: 'समाचार', catTech: 'टेक', catSports: 'खेल',
+    catEntertainment: 'मनोरंजन', catBusiness: 'व्यापार', catHealth: 'स्वास्थ्य',
     faqTitle: 'अक्सर पूछे जाने वाले प्रश्न',
-    faq1: 'Google Trends Daily RSS से असली डेटा। कोई API key नहीं चाहिए।',
+    faq1: 'Google Trends Daily RSS से असली डेटा। कोई API key नहीं।',
     faq2: 'Google Trends RSS CORS headers नहीं भेजता, इसलिए हम proxies का उपयोग करते हैं।',
-    faq3: 'Google Trends Daily RSS हर कुछ घंटे में अपडेट होता है।',
+    faq3: 'डेटा हर कुछ घंटे में अपडेट होता है।',
     faq4: 'हाँ, 100% मुफ़्त।',
     copied: 'क्लिपबोर्ड पर कॉपी!', fetched: 'लाए गए', keywords: 'कीवर्ड', from: 'से',
     noResults: 'कोई ट्रेंडिंग कीवर्ड नहीं मिला।',
-    fetchError: 'ट्रेंड लोड नहीं हो सके। एक मिनट बाद पुनः प्रयास करें।',
-    searchOnGoogle: 'Google Trends पर खोजें', viewNews: 'Google News देखें', share: 'शेयर'
+    fetchError: 'ट्रेंड लोड नहीं हो सके। एक मिनट बाद प्रयास करें।',
+    searchOnGoogle: 'Google Trends पर खोजें', viewNews: 'Google News देखें',
+    relatedQueries: 'संबंधित', showing: 'दिखा रहे', of: 'में से', matchingFilters: 'फ़िल्टर से मेल'
   },
   ur: {
     title: 'ٹرینڈنگ کی ورڈ فائنڈر',
-    subtitle: 'حقیقی Google Trends RSS ڈیٹا — کئی ممالک اور اقسام کے ساتھ۔',
+    subtitle: 'حقیقی Google Trends RSS ڈیٹا — 40+ ممالک۔',
     searchLabel: 'کی ورڈ تلاش', countryLabel: 'ملک', categoryLabel: 'زمرہ',
-    fetchBtn: 'ابھی ٹرینڈنگ لائیں', copy: 'کاپی',
-    statusIdle: 'لائیو ڈیٹا لوڈ کرنے کے لیے کلک کریں',
-    loadingText: 'ٹرینڈ لوڈ ہو رہے ہیں...', loadingSub: 'Google Trends سے رابطہ',
-    emptyTitle: 'ٹرینڈنگ دیکھنے کے لیے تیار؟', emptyText: 'ابھی کلک کریں۔',
-    catAll: '🌍 سب', catNews: '📰 خبریں', catTech: '💻 ٹیک', catSports: '⚽ کھیل',
-    catEntertainment: '🎬 تفریح', catBusiness: '💼 کاروبار', catHealth: '🏥 صحت',
+    fetchBtn: 'ابھی لائیں', copy: 'کاپی',
+    autoRefresh: 'آٹو ریفریش (5 منٹ)',
+    statusIdle: 'ڈیٹا لوڈ کرنے کے لیے کلک کریں',
+    loadingText: 'لوڈ ہو رہے ہیں...', loadingSub: 'Google Trends سے رابطہ',
+    emptyTitle: 'دیکھنے کے لیے تیار؟', emptyText: 'ابھی کلک کریں۔',
+    catAll: 'سب', catNews: 'خبریں', catTech: 'ٹیک', catSports: 'کھیل',
+    catEntertainment: 'تفریح', catBusiness: 'کاروبار', catHealth: 'صحت',
     faqTitle: 'اکثر پوچھے گئے سوالات',
     faq1: 'Google Trends Daily RSS سے حقیقی ڈیٹا۔',
     faq2: 'Google Trends RSS CORS headers نہیں بھیجتا۔',
@@ -546,48 +542,53 @@ const I18N = {
     faq4: 'جی ہاں، 100% مفت۔',
     copied: 'کاپی ہو گیا!', fetched: 'لائے گئے', keywords: 'کی ورڈز', from: 'سے',
     noResults: 'کوئی ٹرینڈنگ کی ورڈ نہیں ملا۔',
-    fetchError: 'ٹرینڈ لوڈ نہیں ہو سکے۔',
-    searchOnGoogle: 'Google Trends پر تلاش', viewNews: 'Google News دیکھیں', share: 'شیئر'
+    fetchError: 'لوڈ نہیں ہو سکے۔',
+    searchOnGoogle: 'Google Trends پر تلاش', viewNews: 'Google News دیکھیں',
+    relatedQueries: 'متعلقہ', showing: 'دکھا رہے', of: 'میں سے', matchingFilters: 'فلٹر سے'
   },
   de: {
     title: 'Trending-Keywords-Finder',
-    subtitle: 'Echte Google Trends RSS-Daten — mehrere Länder und Kategorien. 100% clientseitig.',
+    subtitle: 'Echte Google Trends RSS-Daten — 40+ Länder. 100% clientseitig.',
     searchLabel: 'Keywords suchen', countryLabel: 'Land', categoryLabel: 'Kategorie',
     fetchBtn: 'Jetzt Trends laden', copy: 'Kopieren',
+    autoRefresh: 'Auto-Refresh (5min)',
     statusIdle: 'Klicken Sie, um Live-Daten zu laden',
     loadingText: 'Trends werden geladen...', loadingSub: 'Verbindung zu Google Trends RSS',
     emptyTitle: 'Bereit, Trends zu sehen?', emptyText: 'Klicken Sie, um aktuelle Trends zu laden.',
-    catAll: '🌍 Alle', catNews: '📰 News', catTech: '💻 Tech', catSports: '⚽ Sport',
-    catEntertainment: '🎬 Unterhaltung', catBusiness: '💼 Wirtschaft', catHealth: '🏥 Gesundheit',
+    catAll: 'Alle', catNews: 'News', catTech: 'Tech', catSports: 'Sport',
+    catEntertainment: 'Unterhaltung', catBusiness: 'Wirtschaft', catHealth: 'Gesundheit',
     faqTitle: 'Häufige Fragen',
-    faq1: 'Echte Daten aus Google Trends Daily RSS. Kein API-Schlüssel nötig.',
-    faq2: 'Google Trends RSS sendet keine CORS-Header, daher nutzen wir Proxies.',
-    faq3: 'Google Trends Daily RSS wird alle paar Stunden aktualisiert.',
+    faq1: 'Echte Daten aus Google Trends Daily RSS.',
+    faq2: 'Google Trends RSS sendet keine CORS-Header.',
+    faq3: 'Daten werden alle paar Stunden aktualisiert.',
     faq4: 'Ja, 100% kostenlos.',
     copied: 'Kopiert!', fetched: 'Geladen', keywords: 'Keywords', from: 'aus',
     noResults: 'Keine Trend-Keywords gefunden.',
-    fetchError: 'Trends konnten nicht geladen werden. Später erneut versuchen.',
-    searchOnGoogle: 'Auf Google Trends suchen', viewNews: 'Google News ansehen', share: 'Teilen'
+    fetchError: 'Trends konnten nicht geladen werden.',
+    searchOnGoogle: 'Auf Google Trends suchen', viewNews: 'Google News ansehen',
+    relatedQueries: 'Verwandt', showing: 'Zeige', of: 'von', matchingFilters: 'passend zu Filtern'
   },
   es: {
     title: 'Buscador de Keywords Tendencia',
-    subtitle: 'Datos reales de Google Trends RSS — multi país y categorías. 100% cliente.',
+    subtitle: 'Datos reales de Google Trends RSS — 40+ países.',
     searchLabel: 'Buscar keywords', countryLabel: 'País', categoryLabel: 'Categoría',
     fetchBtn: 'Cargar Tendencias', copy: 'Copiar',
-    statusIdle: 'Haz clic para cargar datos en vivo',
+    autoRefresh: 'Auto-refresh (5min)',
+    statusIdle: 'Haz clic para cargar datos',
     loadingText: 'Cargando tendencias...', loadingSub: 'Conectando a Google Trends RSS',
     emptyTitle: '¿Listo para ver tendencias?', emptyText: 'Haz clic para cargar búsquedas en tendencia.',
-    catAll: '🌍 Todo', catNews: '📰 Noticias', catTech: '💻 Tech', catSports: '⚽ Deportes',
-    catEntertainment: '🎬 Entretenimiento', catBusiness: '💼 Negocios', catHealth: '🏥 Salud',
+    catAll: 'Todo', catNews: 'Noticias', catTech: 'Tech', catSports: 'Deportes',
+    catEntertainment: 'Entretenimiento', catBusiness: 'Negocios', catHealth: 'Salud',
     faqTitle: 'Preguntas Frecuentes',
-    faq1: 'Datos reales de Google Trends Daily RSS. Sin API key.',
-    faq2: 'Google Trends RSS no envía CORS, usamos proxies.',
-    faq3: 'Google Trends Daily RSS se actualiza cada pocas horas.',
+    faq1: 'Datos reales de Google Trends Daily RSS.',
+    faq2: 'Google Trends RSS no envía CORS.',
+    faq3: 'Datos actualizados cada pocas horas.',
     faq4: 'Sí, 100% gratis.',
     copied: '¡Copiado!', fetched: 'Cargados', keywords: 'keywords', from: 'de',
-    noResults: 'No se encontraron keywords en tendencia.',
-    fetchError: 'No se pudieron cargar. Intenta de nuevo en un minuto.',
-    searchOnGoogle: 'Buscar en Google Trends', viewNews: 'Ver Google News', share: 'Compartir'
+    noResults: 'No se encontraron keywords.',
+    fetchError: 'No se pudieron cargar. Intenta de nuevo.',
+    searchOnGoogle: 'Buscar en Google Trends', viewNews: 'Ver Google News',
+    relatedQueries: 'Relacionado', showing: 'Mostrando', of: 'de', matchingFilters: 'coincidiendo'
   }
 };
 
@@ -611,12 +612,70 @@ function applyLang(lang) {
 }
 
 // ============================================================
+// 🌍 COUNTRIES (40+ with flags)
+// ============================================================
+const COUNTRIES = [
+  { code:'US', name:'United States', flag:'🇺🇸' },
+  { code:'GB', name:'United Kingdom', flag:'🇬🇧' },
+  { code:'IN', name:'India', flag:'🇮🇳' },
+  { code:'CA', name:'Canada', flag:'🇨🇦' },
+  { code:'AU', name:'Australia', flag:'🇦🇺' },
+  { code:'DE', name:'Germany', flag:'🇩🇪' },
+  { code:'FR', name:'France', flag:'🇫🇷' },
+  { code:'ES', name:'Spain', flag:'🇪🇸' },
+  { code:'IT', name:'Italy', flag:'🇮🇹' },
+  { code:'JP', name:'Japan', flag:'🇯🇵' },
+  { code:'KR', name:'South Korea', flag:'🇰🇷' },
+  { code:'BR', name:'Brazil', flag:'🇧🇷' },
+  { code:'MX', name:'Mexico', flag:'🇲🇽' },
+  { code:'RU', name:'Russia', flag:'🇷🇺' },
+  { code:'NL', name:'Netherlands', flag:'🇳🇱' },
+  { code:'SG', name:'Singapore', flag:'🇸🇬' },
+  { code:'AE', name:'UAE', flag:'🇦🇪' },
+  { code:'SA', name:'Saudi Arabia', flag:'🇸🇦' },
+  { code:'PK', name:'Pakistan', flag:'🇵🇰' },
+  { code:'NG', name:'Nigeria', flag:'🇳🇬' },
+  { code:'ZA', name:'South Africa', flag:'🇿🇦' },
+  { code:'AR', name:'Argentina', flag:'🇦🇷' },
+  { code:'TR', name:'Turkey', flag:'🇹🇷' },
+  { code:'ID', name:'Indonesia', flag:'🇮🇩' },
+  { code:'PH', name:'Philippines', flag:'🇵🇭' },
+  { code:'TH', name:'Thailand', flag:'🇹🇭' },
+  { code:'VN', name:'Vietnam', flag:'🇻🇳' },
+  { code:'MY', name:'Malaysia', flag:'🇲🇾' },
+  { code:'BD', name:'Bangladesh', flag:'🇧🇩' },
+  { code:'LK', name:'Sri Lanka', flag:'🇱🇰' },
+  { code:'NP', name:'Nepal', flag:'🇳🇵' },
+  { code:'EG', name:'Egypt', flag:'🇪🇬' },
+  { code:'IL', name:'Israel', flag:'🇮🇱' },
+  { code:'PL', name:'Poland', flag:'🇵🇱' },
+  { code:'SE', name:'Sweden', flag:'🇸🇪' },
+  { code:'NO', name:'Norway', flag:'🇳🇴' },
+  { code:'DK', name:'Denmark', flag:'🇩🇰' },
+  { code:'FI', name:'Finland', flag:'🇫🇮' },
+  { code:'IE', name:'Ireland', flag:'🇮🇪' },
+  { code:'PT', name:'Portugal', flag:'🇵🇹' },
+  { code:'GR', name:'Greece', flag:'🇬🇷' },
+  { code:'CH', name:'Switzerland', flag:'🇨🇭' },
+  { code:'AT', name:'Austria', flag:'🇦🇹' },
+  { code:'BE', name:'Belgium', flag:'🇧🇪' },
+  { code:'NZ', name:'New Zealand', flag:'🇳🇿' },
+  { code:'KE', name:'Kenya', flag:'🇰🇪' },
+  { code:'GH', name:'Ghana', flag:'🇬🇭' },
+  { code:'CO', name:'Colombia', flag:'🇨🇴' },
+  { code:'CL', name:'Chile', flag:'🇨🇱' },
+  { code:'PE', name:'Peru', flag:'🇵🇪' }
+];
+
+// ============================================================
 // 🔧 HELPERS
 // ============================================================
 const $ = id => document.getElementById(id);
+
 function escapeHtml(s) {
   return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 }
+
 function showToast(msg, type = 'success') {
   const container = $('toastContainer');
   const toast = document.createElement('div');
@@ -632,29 +691,47 @@ function showToast(msg, type = 'success') {
 }
 
 // ============================================================
-// 🌐 CORS PROXIES (for Google Trends RSS)
+// 🌐 MULTIPLE CORS PROXIES (Auto-retry)
 // ============================================================
 const PROXIES = [
   { name: 'allorigins-raw', url: u => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}` },
   { name: 'corsproxy.io', url: u => `https://corsproxy.io/?${encodeURIComponent(u)}` },
-  { name: 'allorigins-get', url: u => `https://api.allorigins.win/get?url=${encodeURIComponent(u)}` }
+  { name: 'allorigins-get', url: u => `https://api.allorigins.win/get?url=${encodeURIComponent(u)}` },
+  { name: 'thingproxy', url: u => `https://thingproxy.freeboard.io/fetch/${u}` },
+  { name: 'cors-anywhere', url: u => `https://cors-anywhere.herokuapp.com/${u}` }
 ];
+
+async function fetchWithTimeout(url, timeout = 12000) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeout);
+  try {
+    const res = await fetch(url, { signal: controller.signal });
+    clearTimeout(timer);
+    return res;
+  } catch (e) {
+    clearTimeout(timer);
+    throw e;
+  }
+}
 
 async function fetchViaProxy(url) {
   const errors = [];
   for (const proxy of PROXIES) {
     try {
-      const res = await fetch(proxy.url(url), { method: 'GET' });
+      const res = await fetchWithTimeout(proxy.url(url), 12000);
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       let text = await res.text();
-      // allorigins /get returns JSON with .contents
+      // Handle JSON wrapper (allorigins-get)
       if (proxy.name === 'allorigins-get') {
         try {
           const parsed = JSON.parse(text);
           text = parsed.contents || '';
         } catch(e) {}
       }
-      if (!text || text.length < 100) throw new Error('Empty response');
+      if (!text || text.length < 200) throw new Error('Empty/too short response');
+      if (!text.includes('<rss') && !text.includes('<feed') && !text.includes('<item')) {
+        throw new Error('Not RSS/XML');
+      }
       return { text, proxy: proxy.name };
     } catch (e) {
       console.warn(`Proxy ${proxy.name} failed:`, e.message);
@@ -675,7 +752,6 @@ function parseTrendsRSS(xmlText, country) {
   const parser = new DOMParser();
   const doc = parser.parseFromString(xmlText, 'application/xml');
 
-  // Check for parse errors
   const parseError = doc.querySelector('parsererror');
   if (parseError) throw new Error('Invalid RSS format');
 
@@ -687,25 +763,45 @@ function parseTrendsRSS(xmlText, country) {
     const link = item.querySelector('link')?.textContent || '';
     const pubDate = item.querySelector('pubDate')?.textContent || '';
     const description = item.querySelector('description')?.textContent || '';
-    const traffic = item.querySelector('ht\\:approx_traffic, approx_traffic')?.textContent || '';
-    const picture = item.querySelector('ht\\:picture, picture')?.textContent || '';
+
+    // Try both namespace-prefixed and plain tags
+    let traffic = '';
+    let picture = '';
+    const trafficEl = item.getElementsByTagName('ht:approx_traffic')[0] || item.getElementsByTagName('approx_traffic')[0];
+    if (trafficEl) traffic = trafficEl.textContent;
+
+    const picEl = item.getElementsByTagName('ht:picture')[0] || item.getElementsByTagName('picture')[0];
+    if (picEl) picture = picEl.textContent;
 
     // News items
-    const newsItems = Array.from(item.querySelectorAll('ht\\:news_item, news_item')).slice(0, 3).map(n => ({
-      title: n.querySelector('ht\\:news_item_title, news_item_title')?.textContent || '',
-      url: n.querySelector('ht\\:news_item_url, news_item_url')?.textContent || '',
-      source: n.querySelector('ht\\:news_item_source, news_item_source')?.textContent || ''
-    }));
+    const newsElements = [
+      ...Array.from(item.getElementsByTagName('ht:news_item')),
+      ...Array.from(item.getElementsByTagName('news_item'))
+    ];
+    const newsItems = newsElements.slice(0, 3).map(n => {
+      const titleEl = n.getElementsByTagName('ht:news_item_title')[0] || n.getElementsByTagName('news_item_title')[0];
+      const urlEl = n.getElementsByTagName('ht:news_item_url')[0] || n.getElementsByTagName('news_item_url')[0];
+      const sourceEl = n.getElementsByTagName('ht:news_item_source')[0] || n.getElementsByTagName('news_item_source')[0];
+      return {
+        title: titleEl?.textContent || '',
+        url: urlEl?.textContent || '',
+        source: sourceEl?.textContent || ''
+      };
+    });
+
+    // Extract related queries from description (if available)
+    const relatedQueries = extractRelatedQueries(description);
 
     return {
       rank: i + 1,
       title: title.trim(),
       link: link.trim(),
       pubDate,
-      description: description.trim(),
+      description: description.replace(/<[^>]*>/g, '').trim(),
       traffic,
       picture,
       newsItems,
+      relatedQueries,
       country,
       category: categorizeKeyword(title, description),
       fetchedAt: new Date().toISOString()
@@ -713,17 +809,22 @@ function parseTrendsRSS(xmlText, country) {
   });
 }
 
-// Auto-categorize keywords (heuristic)
+function extractRelatedQueries(description) {
+  // Try to extract comma-separated items after common patterns
+  const clean = description.replace(/<[^>]*>/g, ' ');
+  const matches = clean.match(/[A-Z][a-z]+(?:\s+[A-Z][a-z]+){0,2}/g) || [];
+  return [...new Set(matches)].slice(0, 4).filter(m => m.length > 3 && m.length < 30);
+}
+
 function categorizeKeyword(title, description) {
   const text = (title + ' ' + description).toLowerCase();
   const catMap = {
-    sports: ['nba','nfl','mlb','soccer','football','cricket','olympic','match','game','cup','league','team','player','tennis','golf','f1','formula'],
-    tech: ['ai','gpt','chatgpt','google','apple','microsoft','meta','tesla','iphone','android','crypto','bitcoin','blockchain','software','app','tech','robot'],
-    business: ['stock','market','economy','inflation','dollar','euro','business','startup','ipo','earnings','trade','finance','bank'],
-    entertainment: ['movie','film','actor','actress','netflix','disney','music','song','album','grammy','oscar','celebrity','tv','show','series'],
-    health: ['covid','health','vaccine','doctor','hospital','disease','virus','medical','treatment','drug','fda'],
-    news: ['election','president','government','war','police','arrest','court','law','minister','parliament','protest'],
-    gaming: ['game','gaming','playstation','xbox','nintendo','steam','esports','fortnite','minecraft']
+    sports: ['nba','nfl','mlb','soccer','football','cricket','olympic','match','cup','league','tennis','golf','f1','formula','fc','united','vs','score'],
+    tech: ['ai','gpt','chatgpt','google','apple','microsoft','meta','tesla','iphone','android','crypto','bitcoin','blockchain','software','app','tech','robot','openai','gemini'],
+    business: ['stock','market','economy','inflation','dollar','euro','business','startup','ipo','earnings','trade','finance','bank','nasdaq'],
+    entertainment: ['movie','film','actor','actress','netflix','disney','music','song','album','grammy','oscar','celebrity','tv','show','series','season','trailer'],
+    health: ['covid','health','vaccine','doctor','hospital','disease','virus','medical','treatment','drug','fda','flu','cold'],
+    gaming: ['game','gaming','playstation','xbox','nintendo','steam','esports','fortnite','minecraft','roblox','gta']
   };
   for (const [cat, keywords] of Object.entries(catMap)) {
     if (keywords.some(k => text.includes(k))) return cat;
@@ -737,23 +838,26 @@ function categorizeKeyword(title, description) {
 let allTrends = [];
 let currentFilter = { search: '', category: 'all', country: 'US' };
 let lastFetchTime = null;
+let autoRefreshTimer = null;
+let autoRefreshEnabled = false;
 
 // ============================================================
 // 🎬 FETCH TRENDING
 // ============================================================
-async function fetchTrending() {
+async function fetchTrending(silent = false) {
   const country = $('countrySelect').value;
   const category = $('categorySelect').value;
 
   currentFilter.country = country;
   currentFilter.category = category;
 
-  // UI
   $('loading').style.display = 'block';
   $('emptyState').style.display = 'none';
   $('resultsGrid').style.display = 'none';
   $('fetchBtn').disabled = true;
-  $('statusText').textContent = `Fetching trends for ${country}...`;
+
+  const countryName = COUNTRIES.find(c => c.code === country)?.name || country;
+  $('statusText').textContent = `Fetching trends for ${countryName}...`;
 
   const loadingText = $('loadingText');
   const loadingSub = $('loadingSub');
@@ -768,7 +872,7 @@ async function fetchTrending() {
     loadingText.textContent = 'Parsing RSS feed...';
     loadingSub.textContent = `Received ${(text.length / 1024).toFixed(1)} KB via ${proxy}`;
 
-    await new Promise(r => setTimeout(r, 300));
+    await new Promise(r => setTimeout(r, 200));
 
     const trends = parseTrendsRSS(text, country);
 
@@ -780,19 +884,19 @@ async function fetchTrending() {
     lastFetchTime = new Date();
 
     renderResults();
-    renderStatus(`Fetched ${trends.length} ${t('keywords')} ${t('from')} Google Trends · Source: ${proxy}`);
+    renderStatus(`${trends.length} ${t('keywords')} ${t('from')} Google Trends · Source: ${proxy}`);
 
     $('exportJsonBtn').disabled = false;
     $('exportCsvBtn').disabled = false;
     $('copyBtn').disabled = false;
 
-    showToast(`✅ ${t('fetched')} ${trends.length} ${t('keywords')}`);
+    if (!silent) showToast(`✅ ${t('fetched')} ${trends.length} ${t('keywords')}`);
 
   } catch (e) {
     console.error('Fetch error:', e);
     $('statusText').textContent = '⚠️ ' + t('fetchError');
-    $('emptyState').style.display = 'block';
-    showToast(t('fetchError'), 'error');
+    if (!allTrends.length) $('emptyState').style.display = 'block';
+    if (!silent) showToast(t('fetchError'), 'error');
   } finally {
     $('loading').style.display = 'none';
     $('fetchBtn').disabled = false;
@@ -818,7 +922,6 @@ function renderResults() {
 
   let filtered = allTrends;
 
-  // Apply search
   if (searchTerm) {
     filtered = filtered.filter(kw =>
       kw.title.toLowerCase().includes(searchTerm) ||
@@ -826,7 +929,6 @@ function renderResults() {
     );
   }
 
-  // Apply category (from dropdown + tabs)
   if (catFilter && catFilter !== 'all') {
     filtered = filtered.filter(kw => kw.category === catFilter);
   }
@@ -836,7 +938,7 @@ function renderResults() {
     empty.style.display = 'block';
     empty.querySelector('h3').textContent = t('noResults');
     empty.querySelector('p').textContent = 'Try a different category, search term, or country.';
-    renderStatus(`0 ${t('keywords')} match your filters`);
+    renderStatus(`0 ${t('keywords')} ${t('matchingFilters')}`);
     return;
   }
 
@@ -844,23 +946,33 @@ function renderResults() {
   grid.style.display = 'grid';
 
   grid.innerHTML = filtered.map(kw => {
-    const traffic = kw.traffic || 'N/A';
+    const traffic = kw.traffic || '';
     const catBadge = getCatBadge(kw.category);
     const newsLinks = kw.newsItems.slice(0, 2).map(n =>
       `<a href="${escapeHtml(n.url)}" target="_blank" rel="noopener noreferrer" class="kw-action" title="${escapeHtml(n.title)}">
-        <i class="fas fa-newspaper"></i> ${escapeHtml(n.source || 'News')}
+        <i class="fas fa-newspaper"></i> ${escapeHtml((n.source || 'News').slice(0, 15))}
       </a>`
     ).join('');
+
+    const relatedHTML = kw.relatedQueries.length
+      ? `<div class="related-queries">
+          <div class="related-label">${t('relatedQueries')}</div>
+          <div class="related-tags">
+            ${kw.relatedQueries.map(q => `<span class="related-tag">${escapeHtml(q)}</span>`).join('')}
+          </div>
+        </div>`
+      : '';
 
     return `
       <div class="kw-card">
         <div class="kw-rank">#${kw.rank}</div>
         <div class="kw-title">${escapeHtml(kw.title)}</div>
         <div class="kw-meta">
-          ${traffic !== 'N/A' ? `<span class="kw-traffic"><i class="fas fa-search"></i> ${escapeHtml(traffic)}</span>` : ''}
+          ${traffic ? `<span class="kw-traffic"><i class="fas fa-search"></i> ${escapeHtml(traffic)}</span>` : ''}
           ${catBadge}
           ${kw.pubDate ? `<span class="kw-meta-item"><i class="fas fa-clock"></i> ${formatDate(kw.pubDate)}</span>` : ''}
         </div>
+        ${relatedHTML}
         <div class="kw-actions">
           <a href="https://trends.google.com/trends/explore?q=${encodeURIComponent(kw.title)}" target="_blank" rel="noopener noreferrer" class="kw-action" title="${t('searchOnGoogle')}">
             <i class="fas fa-chart-line"></i> Trends
@@ -874,7 +986,7 @@ function renderResults() {
     `;
   }).join('');
 
-  renderStatus(`Showing ${filtered.length} of ${allTrends.length} ${t('keywords')} ${t('from')} ${currentFilter.country}`);
+  renderStatus(`${t('showing')} ${filtered.length} ${t('of')} ${allTrends.length} ${t('keywords')} ${t('from')} ${currentFilter.country}`);
 }
 
 function getCatBadge(cat) {
@@ -913,7 +1025,7 @@ function downloadBlob(content, mime, filename) {
 function exportJSON() {
   if (!allTrends.length) return;
   downloadBlob(JSON.stringify({
-    tool: 'FreeSEOToolHub Trending Keywords Finder v3.0',
+    tool: 'FreeSEOToolHub Trending Keywords Finder v4.0',
     country: currentFilter.country,
     fetchedAt: lastFetchTime?.toISOString(),
     count: allTrends.length,
@@ -941,6 +1053,23 @@ function copyReport() {
 }
 
 // ============================================================
+// 🔄 AUTO REFRESH
+// ============================================================
+function toggleAutoRefresh() {
+  autoRefreshEnabled = !autoRefreshEnabled;
+  $('autoRefreshToggle').classList.toggle('active', autoRefreshEnabled);
+  if (autoRefreshEnabled) {
+    autoRefreshTimer = setInterval(() => {
+      if (allTrends.length) fetchTrending(true);
+    }, 5 * 60 * 1000); // 5 minutes
+    showToast('🔄 Auto-refresh enabled (every 5 min)', 'success');
+  } else {
+    clearInterval(autoRefreshTimer);
+    showToast('Auto-refresh disabled', 'warning');
+  }
+}
+
+// ============================================================
 // 🎬 INIT
 // ============================================================
 function init() {
@@ -953,8 +1082,15 @@ function init() {
     btn.addEventListener('click', () => applyLang(btn.dataset.lang));
   });
 
+  // Populate countries
+  const countrySelect = $('countrySelect');
+  countrySelect.innerHTML = COUNTRIES.map(c =>
+    `<option value="${c.code}">${c.flag} ${c.name}</option>`
+  ).join('');
+  countrySelect.value = 'US';
+
   // Fetch button
-  $('fetchBtn').addEventListener('click', fetchTrending);
+  $('fetchBtn').addEventListener('click', () => fetchTrending());
 
   // Search (debounced)
   let searchDebounce;
@@ -963,19 +1099,18 @@ function init() {
     currentFilter.search = e.target.value;
     searchDebounce = setTimeout(() => {
       if (allTrends.length) renderResults();
-    }, 250);
+    }, 200);
   });
 
   // Country change
-  $('countrySelect').addEventListener('change', e => {
+  countrySelect.addEventListener('change', e => {
     currentFilter.country = e.target.value;
-    if (allTrends.length) fetchTrending(); // Auto-refetch
+    if (allTrends.length) fetchTrending();
   });
 
   // Category dropdown
   $('categorySelect').addEventListener('change', e => {
     currentFilter.category = e.target.value;
-    // Sync tabs
     document.querySelectorAll('.cat-btn').forEach(b => {
       b.classList.toggle('active', b.dataset.cat === e.target.value);
     });
@@ -998,10 +1133,15 @@ function init() {
   $('exportCsvBtn').addEventListener('click', exportCSV);
   $('copyBtn').addEventListener('click', copyReport);
 
-  // Keyboard: Enter on search triggers fetch
+  // Auto-refresh toggle
+  $('autoRefreshToggle').addEventListener('click', toggleAutoRefresh);
+
+  // Enter on search
   $('searchInput').addEventListener('keypress', e => {
     if (e.key === 'Enter' && !allTrends.length) fetchTrending();
   });
+
+  console.log('✅ Trending Keywords Finder v4.0 ready');
 }
 
 init();
