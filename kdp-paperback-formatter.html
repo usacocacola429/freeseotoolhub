@@ -1,185 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPG77KWVCP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZPG77KWVCP');
+    gtag('config', 'G-PFPCTBFG3Y');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+  <title>KDP Paperback Formatter 2026 — Amazon KDP Ready PDF | FreeSEOToolHub</title>
+  <meta name="description" content="Format PDF/images for Amazon KDP paperback. Auto trim size, bleed, margins. 100% free, no signup.">
+  <meta name="keywords" content="kdp formatter, amazon kdp pdf, paperback formatter, kdp bleed margins, kdp ready pdf">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://freeseotoolhub.com/tools/kdp-paperback-formatter.html">
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Hind:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "KDP Paperback Formatter",
+    "url": "https://freeseotoolhub.com/tools/kdp-paperback-formatter.html",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins','Hind','Noto Naskh Arabic',sans-serif; }
+    body { background:#f0f4f8; padding-top:80px; color:#0b1a33; }
+
+    html[dir="rtl"] body { direction:rtl; text-align:right; }
+    html[dir="rtl"] .navbar-nav { flex-direction:row-reverse; }
+
+    .navbar { background:linear-gradient(135deg,#0b1a33,#1e2b4f); box-shadow:0 4px 20px rgba(0,0,0,0.2); }
+    .navbar-brand { font-weight:800; font-size:1.5rem; color:white!important; letter-spacing:0.5px; }
+    .navbar-brand i { color:#ff9933; }
+    .nav-link { color:rgba(255,255,255,0.9)!important; font-weight:500; padding:10px 20px!important; border-radius:8px; transition:all 0.3s; }
+    .nav-link:hover, .nav-link.active { background:rgba(255,255,255,0.1); color:#ff9933!important; }
+
+    .lang-btn { background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); color:#fff; padding:8px 16px; border-radius:25px; font-size:0.9rem; font-weight:500; transition:all 0.3s; }
+    .dropdown-menu { background:#0b1a33; border:1px solid rgba(255,255,255,0.15); border-radius:12px; padding:8px; margin-top:10px; min-width:180px; }
+    .dropdown-item { color:rgba(255,255,255,0.9); padding:10px 18px; border-radius:8px; font-weight:500; }
+    .dropdown-item:hover, .dropdown-item.active { background:rgba(255,153,51,0.2); color:#ff9933; }
+
+    .hero { background:linear-gradient(145deg,#0b1a33,#1e2b4f); color:white; padding:60px 30px; border-radius:30px; margin-bottom:40px; text-align:center; position:relative; overflow:hidden; }
+    .hero::before { content:''; position:absolute; top:-50%; right:-50%; width:100%; height:100%; background:radial-gradient(circle,rgba(255,153,51,0.15) 0%,transparent 70%); pointer-events:none; }
+    .hero h1 { font-size:clamp(1.8rem, 4vw, 2.8rem); font-weight:800; position:relative; z-index:1; margin-bottom:14px; }
+    .hero .highlight { color:#ff9933; }
+    .hero p { max-width:750px; margin:15px auto; font-size:1.05rem; opacity:0.9; position:relative; z-index:1; }
+    .hero-pills { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:22px; position:relative; z-index:1; }
+    .hero-pill { background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); padding:8px 18px; border-radius:50px; font-size:0.85rem; font-weight:500; }
+
+    .container-narrow { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+    .tool-card { background: white; border-radius: 24px; padding: 32px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #eef2f6; margin-bottom: 30px; }
+
+    .drop-zone { display: block; cursor: pointer; background: #f8fafc; border: 3px dashed #cbd5e0; border-radius: 20px; padding: 50px 30px; text-align: center; transition: all 0.3s; user-select: none; }
+    .drop-zone:hover, .drop-zone.dragover { border-color: #ff9933; background: linear-gradient(135deg, rgba(255,153,51,0.05), rgba(255,107,0,0.05)); transform: translateY(-2px); }
+    .drop-zone .drop-icon { width: 80px; height: 80px; background: linear-gradient(135deg, #0b1a33, #2d3b68); border-radius: 22px; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; margin: 0 auto 20px; transition: all 0.3s; }
+    .drop-zone:hover .drop-icon { background: linear-gradient(135deg, #ff9933, #ff6b00); transform: scale(1.05); }
+    .drop-zone h3 { font-size: 1.25rem; font-weight: 700; color: #0b1a33; margin-bottom: 8px; }
+    .drop-zone h3 .link { color: #ff9933; text-decoration: underline; }
+    .drop-zone p { color: #4a5a72; font-size: 0.9rem; }
+    .drop-zone input[type="file"] { position: absolute; left: -9999px; }
+
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; font-weight: 600; margin-bottom: 8px; color: #0b1a33; font-size: 0.9rem; }
+    .form-group label i { color: #ff9933; margin-right: 6px; }
+    .form-group select { width: 100%; padding: 12px 16px; border: 2px solid #eef2f6; border-radius: 12px; font-size: 0.95rem; background: #f8fafc; color: #0b1a33; transition: all 0.3s; font-family: inherit; }
+    .form-group select:focus { border-color: #ff9933; outline: none; background: white; box-shadow: 0 0 0 4px rgba(255,153,51,0.1); }
+
+    .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+
+    .btn { border: none; padding: 12px 24px; border-radius: 50px; font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: all 0.3s; display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-family: inherit; }
+    .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    .btn-primary { background: linear-gradient(135deg, #ff9933, #ff6b00); color: white; box-shadow: 0 6px 20px rgba(255,153,51,0.3); }
+    .btn-primary:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(255,153,51,0.5); }
+    .btn-lg { padding: 16px 40px; font-size: 1.05rem; }
+    .btn-full { width: 100%; }
+
+    .progress { height: 8px; background: #f0f4f8; border-radius: 8px; overflow: hidden; margin: 24px 0 12px; display: none; }
+    .progress.active { display: block; }
+    .progress-fill { height: 100%; background: linear-gradient(90deg, #ff9933, #ff6b00); width: 0%; transition: width 0.3s; border-radius: 8px; }
+    .status-text { text-align: center; color: #4a5a72; font-size: 0.9rem; min-height: 20px; }
+
+    .file-list { display: none; margin-top: 16px; }
+    .file-list.active { display: block; }
+    .file-item { padding: 12px 16px; background: #f8fafc; border-radius: 10px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #eef2f6; font-size: 0.88rem; }
+
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 30px; }
+    .feature-item { text-align: center; padding: 20px; background: #f8fafc; border-radius: 16px; border: 1px solid #eef2f6; }
+    .feature-item i { font-size: 1.8rem; color: #ff9933; margin-bottom: 12px; }
+    .feature-item h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 6px; color: #0b1a33; }
+    .feature-item p { font-size: 0.82rem; color: #64748b; line-height: 1.5; }
+
+    .section-title { text-align: center; font-size: 1.6rem; font-weight: 800; color: #0b1a33; margin: 50px 0 30px; }
+
+    .faq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+    .faq-card { background: white; padding: 22px; border-radius: 16px; border: 1px solid #eef2f6; box-shadow: 0 4px 12px rgba(0,0,0,0.04); }
+    .faq-card h4 { font-size: 1rem; font-weight: 700; color: #0b1a33; margin-bottom: 8px; display: flex; align-items: flex-start; gap: 8px; }
+    .faq-card h4 i { color: #ff9933; margin-top: 3px; flex-shrink: 0; }
+    .faq-card p { font-size: 0.87rem; color: #4a5a72; line-height: 1.6; }
+
+    footer { background: #0b1a33; color: white; padding: 50px 0 20px; margin-top: 60px; }
+    footer h5, footer h6 { font-weight: 700; color: #ff9933; margin-bottom: 16px; }
+    footer a { color: #b0c4de; text-decoration: none; transition: all 0.3s; font-size: 0.9rem; }
+    footer a:hover { color: #ff9933; padding-left: 5px; }
+    footer ul { list-style: none; padding: 0; }
+    footer li { margin-bottom: 8px; }
+
+    .toast-container { position: fixed; bottom: 24px; right: 24px; z-index: 9999; display: flex; flex-direction: column; gap: 10px; }
+    .toast { background: white; color: #0b1a33; padding: 14px 22px; border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); border-left: 4px solid #ff9933; font-weight: 500; font-size: 0.9rem; min-width: 280px; display: flex; align-items: center; gap: 10px; animation: slideIn 0.3s ease; }
+    .toast.success { border-left-color: #10b981; }
+    .toast.error { border-left-color: #ef4444; }
+    @keyframes slideIn { from { transform: translateX(120%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+    @keyframes slideOut { to { transform: translateX(120%); opacity: 0; } }
+    .toast.removing { animation: slideOut 0.3s ease forwards; }
+
+    @media (max-width: 768px) {
+      body { padding-top: 70px; }
+      .hero { padding: 40px 20px; }
+      .tool-card { padding: 20px; }
+      .drop-zone { padding: 36px 20px; }
+      .toast-container { left: 16px; right: 16px; bottom: 16px; }
+      .toast { min-width: auto; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="/"><i class="fas fa-rocket me-2"></i><span data-i18n="brand">FreeSEOToolHub</span></a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="/"><i class="fas fa-home me-1"></i><span data-i18n="home">Home</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="/about.html"><i class="fas fa-info-circle me-1"></i><span data-i18n="about">About</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="/contact.html"><i class="fas fa-envelope me-1"></i><span data-i18n="contact">Contact</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="/privacy.html"><i class="fas fa-shield-alt me-1"></i><span data-i18n="privacy">Privacy</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="/blog/"><i class="fas fa-blog me-1"></i><span data-i18n="blog">Blog</span></a></li>
+        <li class="nav-item dropdown ms-2">
+          <button class="lang-btn dropdown-toggle" data-bs-toggle="dropdown">🌐 <span id="currentLangLabel">English</span></button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item lang-opt" href="?lang=en" data-lang="en">🇺🇸 English</a></li>
+            <li><a class="dropdown-item lang-opt" href="?lang=hi" data-lang="hi">🇮🇳 हिन्दी</a></li>
+            <li><a class="dropdown-item lang-opt" href="?lang=ur" data-lang="ur">🇵🇰 اردو</a></li>
+            <li><a class="dropdown-item lang-opt" href="?lang=de" data-lang="de">🇩🇪 Deutsch</a></li>
+            <li><a class="dropdown-item lang-opt" href="?lang=es" data-lang="es">🇪🇸 Español</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-narrow">
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1><i class="fas fa-print" style="color:#ff9933;"></i> <span data-i18n="heroTitle1">KDP Paperback Formatter</span> <span class="highlight" data-i18n="heroTitle2">Free 2026</span></h1>
+    <p data-i18n="heroSubtitle">Format PDF & images for Amazon KDP paperback with auto trim size, bleed, and margins. 100% free, no signup.</p>
+    <div class="hero-pills">
+      <span class="hero-pill">📐 <span data-i18n="pill1">Auto Trim Size</span></span>
+      <span class="hero-pill">🎯 <span data-i18n="pill2">Auto Bleed</span></span>
+      <span class="hero-pill">📏 <span data-i18n="pill3">Auto Margins</span></span>
+      <span class="hero-pill">💎 <span data-i18n="pill4">KDP Ready</span></span>
+    </div>
+  </section>
+
+  <!-- DROP ZONE -->
+  <label class="drop-zone" id="dropZone" for="fileInput">
+    <input type="file" id="fileInput" accept=".pdf,image/*" multiple>
+    <div class="drop-icon"><i class="fas fa-file-pdf"></i></div>
+    <h3><span data-i18n="dropTitle">Drop PDF or images here</span> <span class="link" data-i18n="browse">browse</span></h3>
+    <p data-i18n="dropSub">PDF, JPG, PNG · Multiple files · 100% local</p>
+  </label>
+
+  <div class="file-list" id="fileList"></div>
+
+  <!-- SETTINGS -->
+  <div class="tool-card" id="settings" style="display:none;">
+    <h3 style="font-size:1.15rem; font-weight:700; margin-bottom:20px; color:#0b1a33;">
+      <i class="fas fa-cog" style="color:#ff9933;"></i> <span data-i18n="settingsTitle">KDP Format Settings</span>
+    </h3>
+
+    <div class="form-grid">
+      <div class="form-group">
+        <label><i class="fas fa-ruler"></i> <span data-i18n="trimSize">Book Trim Size</span></label>
+        <select id="trimSize">
+          <option value="8.5x8.5">8.5" × 8.5" (Square — Kids)</option>
+          <option value="6x9">6" × 9" (Standard)</option>
+          <option value="5.5x8.5">5.5" × 8.5" (Digest)</option>
+          <option value="8.5x11">8.5" × 11" (Letter)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label><i class="fas fa-expand"></i> <span data-i18n="bleedOption">Bleed</span></label>
+        <select id="bleedOption">
+          <option value="yes">Yes — 0.125" bleed (for edge images)</option>
+          <option value="no">No — no bleed</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label><i class="fas fa-arrows-alt-h"></i> <span data-i18n="insideMargin">Inside Margin</span></label>
+        <select id="insideMargin">
+          <option value="0.375">0.375" (24-150 pages)</option>
+          <option value="0.5">0.5" (151-300 pages)</option>
+          <option value="0.625">0.625" (301-500 pages)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label><i class="fas fa-arrows-alt-h"></i> <span data-i18n="outsideMargin">Outside Margin</span></label>
+        <select id="outsideMargin">
+          <option value="0.25">0.25" (standard)</option>
+          <option value="0.375">0.375" (with bleed)</option>
+        </select>
+      </div>
+    </div>
+
+    <div style="margin-top: 24px;">
+      <button class="btn btn-primary btn-lg btn-full" id="formatBtn">
+        <i class="fas fa-magic"></i> <span data-i18n="formatBtn">Generate KDP-Ready PDF</span>
+      </button>
+    </div>
+
+    <div class="progress" id="progress"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="status-text" id="status"></div>
+  </div>
+
+  <!-- FEATURES -->
+  <div class="features-grid">
+    <div class="feature-item"><i class="fas fa-ruler-combined"></i><h4 data-i18n="feat1T">Auto Trim Size</h4><p data-i18n="feat1D">KDP-standard 8.5×8.5, 6×9, 5.5×8.5, 8.5×11</p></div>
+    <div class="feature-item"><i class="fas fa-magic"></i><h4 data-i18n="feat2T">Auto Bleed</h4><p data-i18n="feat2D">0.125" bleed auto-added on 3 outer edges</p></div>
+    <div class="feature-item"><i class="fas fa-arrows-alt"></i><h4 data-i18n="feat3T">Auto Margins</h4><p data-i18n="feat3D">Inside/outside margins calculated for KDP</p></div>
+    <div class="feature-item"><i class="fas fa-check-circle"></i><h4 data-i18n="feat4T">KDP Ready</h4><p data-i18n="feat4D">Direct upload to Amazon KDP paperback</p></div>
+  </div>
+
+  <!-- FAQ -->
+  <h2 class="section-title" data-i18n="faqTitle">Frequently Asked Questions</h2>
+  <div class="faq-grid">
+    <div class="faq-card"><h4><i class="fas fa-question-circle"></i> <span data-i18n="faq1Q">Is this free?</span></h4><p data-i18n="faq1A">Yes, 100% free forever. No signup, no watermarks, no limits.</p></div>
+    <div class="faq-card"><h4><i class="fas fa-question-circle"></i> <span data-i18n="faq2Q">What is bleed?</span></h4><p data-i18n="faq2A">Bleed is 0.125" extra space on outer edges so images can extend to the edge after trimming. Required by KDP if your images touch page edges.</p></div>
+    <div class="faq-card"><h4><i class="fas fa-question-circle"></i> <span data-i18n="faq3Q">Is my data safe?</span></h4><p data-i18n="faq3A">Absolutely. Everything happens locally in your browser. Files never leave your device.</p></div>
+    <div class="faq-card"><h4><i class="fas fa-question-circle"></i> <span data-i18n="faq4Q">What file formats can I upload?</span></h4><p data-i18n="faq4A">PDF, JPG, PNG. Multiple files combine into a single KDP-ready PDF.</p></div>
+    <div class="faq-card"><h4><i class="fas fa-question-circle"></i> <span data-i18n="faq5Q">What is the minimum page count?</span></h4><p data-i18n="faq5A">KDP requires minimum 24 pages for paperback. For kids books, we recommend 24-32 pages.</p></div>
+    <div class="faq-card"><h4><i class="fas fa-question-circle"></i> <span data-i18n="faq6Q">Can I use it for Kindle eBook too?</span></h4><p data-i18n="faq6A">No — this is for paperback. Use our PDF to EPUB Converter for Kindle eBook format.</p></div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 mb-4"><h5><i class="fas fa-rocket me-2"></i>FreeSEOToolHub</h5><p style="color:#b0c4de; font-size:0.9rem;" data-i18n="footerDesc">22 essential SEO tools. Fast, free, global.</p></div>
+      <div class="col-md-2 col-6 mb-4"><h6 data-i18n="quickLinks">Quick Links</h6><ul><li><a href="/" data-i18n="home">Home</a></li><li><a href="/about.html" data-i18n="about">About</a></li><li><a href="/contact.html" data-i18n="contact">Contact</a></li><li><a href="/blog/" data-i18n="blog">Blog</a></li></ul></div>
+      <div class="col-md-2 col-6 mb-4"><h6 data-i18n="popularTools">Top Tools</h6><ul><li><a href="/meta-tag-generator.html">Meta Tags</a></li><li><a href="/plagiarism-checker.html">Plagiarism</a></li><li><a href="/backlink-checker.html">Backlinks</a></li><li><a href="/ssl-checker.html">SSL Checker</a></li></ul></div>
+      <div class="col-md-2 col-6 mb-4"><h6 data-i18n="moreTools">More Tools</h6><ul><li><a href="/qr-code-generator.html">QR Code</a></li><li><a href="/pagespeed-insights.html">PageSpeed</a></li><li><a href="/gsc-visualizer.html">GSC Visualizer</a></li><li><a href="/website-crawler.html">Crawler</a></li></ul></div>
+      <div class="col-md-2 col-6 mb-4"><h6 data-i18n="legal">Legal</h6><ul><li><a href="/privacy.html" data-i18n="privacy">Privacy</a></li></ul></div>
+    </div>
+    <hr style="border-color:rgba(255,255,255,0.1);">
+    <div class="text-center"><p style="color:#94a3b8; font-size:0.9rem;" data-i18n="copyright">© 2026 FreeSEOToolHub.com – Built for Global Users</p></div>
+  </div>
+</footer>
+
+<div class="toast-container" id="toastContainer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
 (function() {
   'use strict';
 
-  // ============================================================
-  // CONFIG
-  // ============================================================
-  if (window.pdfjsLib) {
-    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-  }
-
+  const { PDFDocument } = PDFLib;
   const $ = id => document.getElementById(id);
-  let pdfFile = null;
-  let coverFile = null;
+  let uploadedFiles = [];
+
+  // KDP Constants
+  const POINTS_PER_INCH = 72;
+  const BLEED_INCH = 0.125;
+
+  const TRIM_SIZES = {
+    '8.5x8.5': { width: 8.5, height: 8.5 },
+    '6x9': { width: 6, height: 9 },
+    '5.5x8.5': { width: 5.5, height: 8.5 },
+    '8.5x11': { width: 8.5, height: 11 }
+  };
 
   // ============================================================
   // i18n TRANSLATIONS
   // ============================================================
   const I18N = {
     en: {
-      brand: 'FreeSEOToolHub',
-      home: 'Home', about: 'About', contact: 'Contact', privacy: 'Privacy', blog: 'Blog',
-      heroTitle1: 'PDF to EPUB Converter', heroTitle2: 'Free 2026',
-      heroSubtitle: 'Convert PDF to Kindle-ready EPUB 3 with auto TOC, cover & metadata. Amazon KDP compatible. 100% free, no signup.',
-      pill1: '100% Private', pill2: 'Kindle Ready', pill3: 'Auto TOC', pill4: 'No Watermark',
-      dropTitle: 'Drop PDF here or', browse: 'browse',
-      dropSub: 'Single PDF file · Max 50 MB · 100% processed locally',
-      settingsTitle: 'eBook Settings',
-      bookTitle: 'Book Title', bookAuthor: 'Author Name', bookLanguage: 'Language', coverImage: 'Cover Image (optional)',
-      convertBtn: 'Generate EPUB eBook',
-      feat1T: 'Auto TOC', feat1D: 'Clickable table of contents generated automatically',
-      feat2T: 'Cover Support', feat2D: 'Upload your own cover image for the eBook',
-      feat3T: 'KDP Ready', feat3D: 'Direct upload to Amazon Kindle Direct Publishing',
-      feat4T: '100% Private', feat4D: 'Files never leave your browser. Complete privacy.',
+      brand: 'FreeSEOToolHub', home: 'Home', about: 'About', contact: 'Contact', privacy: 'Privacy', blog: 'Blog',
+      heroTitle1: 'KDP Paperback Formatter', heroTitle2: 'Free 2026',
+      heroSubtitle: 'Format PDF & images for Amazon KDP paperback with auto trim size, bleed, and margins. 100% free, no signup.',
+      pill1: 'Auto Trim Size', pill2: 'Auto Bleed', pill3: 'Auto Margins', pill4: 'KDP Ready',
+      dropTitle: 'Drop PDF or images here', browse: 'browse',
+      dropSub: 'PDF, JPG, PNG · Multiple files · 100% local',
+      settingsTitle: 'KDP Format Settings',
+      trimSize: 'Book Trim Size', bleedOption: 'Bleed',
+      insideMargin: 'Inside Margin', outsideMargin: 'Outside Margin',
+      formatBtn: 'Generate KDP-Ready PDF',
+      feat1T: 'Auto Trim Size', feat1D: 'KDP-standard 8.5×8.5, 6×9, 5.5×8.5, 8.5×11',
+      feat2T: 'Auto Bleed', feat2D: '0.125" bleed auto-added on 3 outer edges',
+      feat3T: 'Auto Margins', feat3D: 'Inside/outside margins calculated for KDP',
+      feat4T: 'KDP Ready', feat4D: 'Direct upload to Amazon KDP paperback',
       faqTitle: 'Frequently Asked Questions',
-      faq1Q: 'Is this really free?', faq1A: 'Yes, 100% free forever. No signup, no watermarks, no limits.',
-      faq2Q: 'Will it work with Amazon KDP?', faq2A: 'Yes! EPUB 3 is KDP\'s recommended format. Just upload the generated file to KDP.',
-      faq3Q: 'Is my data safe?', faq3A: 'Absolutely. Everything happens locally in your browser.',
-      faq4Q: 'What kind of PDFs work best?', faq4A: 'Text-based PDFs work best. For scanned PDFs, use OCR-enabled PDF.',
-      faq5Q: 'Can I use it commercially?', faq5A: 'Yes! Sell eBooks on Amazon KDP, Payhip, Gumroad, or anywhere.',
-      faq6Q: 'What\'s the max file size?', faq6A: 'Up to 50 MB per PDF.',
+      faq1Q: 'Is this free?', faq1A: 'Yes, 100% free forever. No signup, no watermarks, no limits.',
+      faq2Q: 'What is bleed?', faq2A: 'Bleed is 0.125" extra space on outer edges so images can extend to the edge after trimming. Required by KDP if your images touch page edges.',
+      faq3Q: 'Is my data safe?', faq3A: 'Absolutely. Everything happens locally in your browser. Files never leave your device.',
+      faq4Q: 'What file formats can I upload?', faq4A: 'PDF, JPG, PNG. Multiple files combine into a single KDP-ready PDF.',
+      faq5Q: 'What is the minimum page count?', faq5A: 'KDP requires minimum 24 pages for paperback. For kids books, we recommend 24-32 pages.',
+      faq6Q: 'Can I use it for Kindle eBook too?', faq6A: 'No — this is for paperback. Use our PDF to EPUB Converter for Kindle eBook format.',
       footerDesc: '22 essential SEO tools. Fast, free, global.',
       quickLinks: 'Quick Links', popularTools: 'Top Tools', moreTools: 'More Tools', legal: 'Legal',
       copyright: '© 2026 FreeSEOToolHub.com – Built for Global Users',
-      toastLoading: 'Loading PDF...',
-      toastProcessing: 'Processing page {n} of {total}...',
-      toastGenerating: 'Generating EPUB...',
-      toastSuccess: '✅ EPUB created successfully!',
+      toastSuccess: '✅ KDP-ready PDF created!',
       toastError: 'Error: ',
-      toastInvalid: 'Please select a valid PDF file',
-      toastUpload: 'Please upload a PDF first'
+      toastNoFiles: 'Please upload files first',
+      toastInvalid: 'Please select PDF or image files',
+      toastProcessing: 'Processing',
+      toastInit: 'Initializing...',
+      toastSaving: 'Saving KDP-ready PDF...',
+      toastDone: 'Done! KDP-ready PDF created.'
     },
     hi: {
-      brand: 'FreeSEOToolHub',
-      home: 'होम', about: 'अबाउट', contact: 'संपर्क', privacy: 'प्राइवेसी', blog: 'ब्लॉग',
-      heroTitle1: 'PDF to EPUB कन्वर्टर', heroTitle2: 'फ्री 2026',
-      heroSubtitle: 'PDF को Kindle-रेडी EPUB 3 में बदलें — ऑटो TOC, कवर और मेटाडेटा के साथ। Amazon KDP के लिए। 100% फ्री।',
-      pill1: '100% प्राइवेट', pill2: 'Kindle रेडी', pill3: 'ऑटो TOC', pill4: 'नो वॉटरमार्क',
-      dropTitle: 'PDF यहां ड्रॉप करें या', browse: 'ब्राउज़ करें',
-      dropSub: 'एकल PDF फाइल · 50 MB तक · 100% लोकल',
-      settingsTitle: 'eBook सेटिंग्स',
-      bookTitle: 'बुक टाइटल', bookAuthor: 'लेखक का नाम', bookLanguage: 'भाषा', coverImage: 'कवर इमेज (वैकल्पिक)',
-      convertBtn: 'EPUB eBook बनाएं',
-      feat1T: 'ऑटो TOC', feat1D: 'क्लिक करने योग्य विषय-सूची',
-      feat2T: 'कवर सपोर्ट', feat2D: 'अपनी कवर इमेज अपलोड करें',
-      feat3T: 'KDP रेडी', feat3D: 'Amazon KDP पर सीधे अपलोड करें',
-      feat4T: '100% प्राइवेट', feat4D: 'फाइलें कभी ब्राउज़र नहीं छोड़तीं',
+      brand: 'FreeSEOToolHub', home: 'होम', about: 'अबाउट', contact: 'संपर्क', privacy: 'प्राइवेसी', blog: 'ब्लॉग',
+      heroTitle1: 'KDP पेपरबैक फॉर्मेटर', heroTitle2: 'फ्री 2026',
+      heroSubtitle: 'PDF और इमेज को Amazon KDP paperback के लिए फॉर्मेट करें — ऑटो ट्रिम साइज़, ब्लीड, मार्जिन। 100% फ्री।',
+      pill1: 'ऑटो ट्रिम', pill2: 'ऑटो ब्लीड', pill3: 'ऑटो मार्जिन', pill4: 'KDP रेडी',
+      dropTitle: 'PDF या इमेज यहां ड्रॉप करें', browse: 'ब्राउज़ करें',
+      dropSub: 'PDF, JPG, PNG · कई फाइलें · 100% लोकल',
+      settingsTitle: 'KDP फॉर्मेट सेटिंग्स',
+      trimSize: 'बुक ट्रिम साइज़', bleedOption: 'ब्लीड',
+      insideMargin: 'इनसाइड मार्जिन', outsideMargin: 'आउटसाइड मार्जिन',
+      formatBtn: 'KDP-रेडी PDF बनाएं',
+      feat1T: 'ऑटो ट्रिम', feat1D: 'KDP मानक 8.5×8.5, 6×9, 5.5×8.5, 8.5×11',
+      feat2T: 'ऑटो ब्लीड', feat2D: '3 किनारों पर 0.125" ब्लीड',
+      feat3T: 'ऑटो मार्जिन', feat3D: 'KDP के लिए मार्जिन',
+      feat4T: 'KDP रेडी', feat4D: 'Amazon KDP पर सीधे अपलोड',
       faqTitle: 'अक्सर पूछे जाने वाले प्रश्न',
-      faq1Q: 'क्या यह सच में फ्री है?', faq1A: 'हां, 100% हमेशा के लिए फ्री।',
-      faq2Q: 'Amazon KDP के साथ काम करेगा?', faq2A: 'हां! EPUB 3 KDP का अनुशंसित प्रारूप है।',
-      faq3Q: 'क्या मेरा डेटा सुरक्षित है?', faq3A: 'बिल्कुल। सब कुछ ब्राउज़र में होता है।',
-      faq4Q: 'कौन सी PDF बेहतर काम करती है?', faq4A: 'टेक्स्ट-बेस्ड PDF सबसे अच्छी।',
-      faq5Q: 'कमर्शियल इस्तेमाल कर सकते हैं?', faq5A: 'हां! Amazon KDP, Payhip, Gumroad पर बेच सकते हैं।',
-      faq6Q: 'अधिकतम फाइल साइज़?', faq6A: '50 MB तक प्रति PDF।',
+      faq1Q: 'क्या यह फ्री है?', faq1A: 'हां, 100% हमेशा के लिए फ्री।',
+      faq2Q: 'ब्लीड क्या है?', faq2A: 'ब्लीड बाहरी किनारों पर 0.125" अतिरिक्त जगह है।',
+      faq3Q: 'क्या डेटा सुरक्षित है?', faq3A: 'बिल्कुल। सब कुछ ब्राउज़र में होता है।',
+      faq4Q: 'कौन से फॉर्मेट?', faq4A: 'PDF, JPG, PNG।',
+      faq5Q: 'न्यूनतम पेज?', faq5A: 'KDP को 24 पेज चाहिए।',
+      faq6Q: 'Kindle eBook के लिए?', faq6A: 'नहीं — यह paperback के लिए है।',
       footerDesc: '22 जरूरी SEO टूल्स।',
       quickLinks: 'क्विक लिंक्स', popularTools: 'टॉप टूल्स', moreTools: 'और टूल्स', legal: 'लीगल',
       copyright: '© 2026 FreeSEOToolHub.com',
-      toastLoading: 'PDF लोड हो रही है...',
-      toastProcessing: 'पेज {n} / {total} प्रोसेस...',
-      toastGenerating: 'EPUB बना रहे हैं...',
-      toastSuccess: '✅ EPUB सफलतापूर्वक बनी!',
+      toastSuccess: '✅ KDP-रेडी PDF बन गई!',
       toastError: 'एरर: ',
-      toastInvalid: 'कृपया मान्य PDF चुनें',
-      toastUpload: 'पहले PDF अपलोड करें'
+      toastNoFiles: 'पहले फाइलें अपलोड करें',
+      toastInvalid: 'PDF या इमेज चुनें',
+      toastProcessing: 'प्रोसेस',
+      toastInit: 'शुरू...',
+      toastSaving: 'KDP-रेडी PDF सेव...',
+      toastDone: 'हो गया!'
     },
     ur: {
-      brand: 'FreeSEOToolHub',
-      home: 'ہوم', about: 'تعارف', contact: 'رابطہ', privacy: 'پرائیویسی', blog: 'بلاگ',
-      heroTitle1: 'PDF to EPUB کنورٹر', heroTitle2: 'مفت 2026',
-      heroSubtitle: 'PDF کو Kindle-ریڈی EPUB 3 میں تبدیل کریں — آٹو TOC، کور اور میٹاڈیٹا کے ساتھ۔',
-      pill1: '100% نجی', pill2: 'Kindle ریڈی', pill3: 'آٹو TOC', pill4: 'واٹر مارک نہیں',
-      dropTitle: 'PDF یہاں ڈراپ کریں یا', browse: 'براؤز کریں',
-      dropSub: 'ایک PDF فائل · 50 MB تک',
-      settingsTitle: 'eBook سیٹنگز',
-      bookTitle: 'کتاب کا عنوان', bookAuthor: 'مصنف کا نام', bookLanguage: 'زبان', coverImage: 'کور تصویر',
-      convertBtn: 'EPUB بنائیں',
-      feat1T: 'آٹو TOC', feat1D: 'خودکار فہرست',
-      feat2T: 'کور سپورٹ', feat2D: 'اپنی کور تصویر اپلوڈ کریں',
-      feat3T: 'KDP ریڈی', feat3D: 'Amazon KDP پر اپلوڈ کریں',
-      feat4T: '100% نجی', feat4D: 'فائلیں براؤزر نہیں چھوڑتیں',
+      brand: 'FreeSEOToolHub', home: 'ہوم', about: 'تعارف', contact: 'رابطہ', privacy: 'پرائیویسی', blog: 'بلاگ',
+      heroTitle1: 'KDP Paperback فارمیٹر', heroTitle2: 'مفت 2026',
+      heroSubtitle: 'PDF اور تصاویر کو Amazon KDP paperback کے لیے فارمیٹ کریں۔',
+      pill1: 'آٹو ٹرم', pill2: 'آٹو بلیڈ', pill3: 'آٹو مارجن', pill4: 'KDP ریڈی',
+      dropTitle: 'PDF یا تصاویر یہاں ڈراپ کریں', browse: 'براؤز کریں',
+      dropSub: 'PDF, JPG, PNG · متعدد فائلیں',
+      settingsTitle: 'KDP سیٹنگز',
+      trimSize: 'ٹرم سائز', bleedOption: 'بلیڈ',
+      insideMargin: 'اندرونی مارجن', outsideMargin: 'بیرونی مارجن',
+      formatBtn: 'KDP PDF بنائیں',
+      feat1T: 'آٹو ٹرم', feat1D: 'KDP معیاری سائز',
+      feat2T: 'آٹو بلیڈ', feat2D: '0.125" بلیڈ',
+      feat3T: 'آٹو مارجن', feat3D: 'KDP مارجن',
+      feat4T: 'KDP ریڈی', feat4D: 'Amazon KDP پر اپلوڈ',
       faqTitle: 'عام سوالات',
-      faq1Q: 'کیا واقعی مفت ہے؟', faq1A: 'جی ہاں، 100% مفت۔',
-      faq2Q: 'Amazon KDP کے ساتھ؟', faq2A: 'جی ہاں! EPUB 3 KDP کی سفارش کردہ فارمیٹ ہے۔',
-      faq3Q: 'کیا ڈیٹا محفوظ ہے؟', faq3A: 'بالکل۔',
-      faq4Q: 'کون سی PDF بہتر؟', faq4A: 'ٹیکسٹ-بیسڈ PDF۔',
-      faq5Q: 'تجارتی استعمال؟', faq5A: 'جی ہاں۔',
-      faq6Q: 'زیادہ سے زیادہ سائز؟', faq6A: '50 MB تک۔',
-      footerDesc: '22 ضروری SEO ٹولز۔',
-      quickLinks: 'فوری لنکس', popularTools: 'ٹاپ ٹولز', moreTools: 'مزید', legal: 'قانونی',
+      faq1Q: 'کیا مفت ہے؟', faq1A: 'جی ہاں، 100% مفت۔',
+      faq2Q: 'بلیڈ کیا ہے؟', faq2A: '0.125" اضافی جگہ۔',
+      faq3Q: 'ڈیٹا محفوظ؟', faq3A: 'بالکل۔',
+      faq4Q: 'کون سے فارمیٹ؟', faq4A: 'PDF, JPG, PNG۔',
+      faq5Q: 'کم سے کم صفحات؟', faq5A: '24 صفحات۔',
+      faq6Q: 'Kindle eBook؟', faq6A: 'نہیں — paperback کے لیے۔',
+      footerDesc: '22 ضروری ٹولز۔',
+      quickLinks: 'فوری لنکس', popularTools: 'ٹاپ', moreTools: 'مزید', legal: 'قانونی',
       copyright: '© 2026 FreeSEOToolHub.com',
-      toastLoading: 'لوڈ ہو رہی ہے...',
-      toastProcessing: 'صفحہ {n}/{total}...',
-      toastGenerating: 'EPUB...',
-      toastSuccess: '✅ EPUB بن گئی!',
+      toastSuccess: '✅ KDP PDF بن گئی!',
       toastError: 'ایرر: ',
-      toastInvalid: 'درست PDF چنیں',
-      toastUpload: 'پہلے PDF اپلوڈ کریں'
+      toastNoFiles: 'پہلے فائلیں اپلوڈ کریں',
+      toastInvalid: 'PDF یا تصاویر چنیں',
+      toastProcessing: 'پروسیسنگ',
+      toastInit: 'شروع...',
+      toastSaving: 'سیو...',
+      toastDone: 'ہو گیا!'
     },
     de: {
-      brand: 'FreeSEOToolHub',
-      home: 'Startseite', about: 'Über uns', contact: 'Kontakt', privacy: 'Datenschutz', blog: 'Blog',
-      heroTitle1: 'PDF zu EPUB Konverter', heroTitle2: 'Kostenlos 2026',
-      heroSubtitle: 'Konvertieren Sie PDF zu Kindle-bereitem EPUB 3 mit automatischem TOC, Cover und Metadaten.',
-      pill1: '100% Privat', pill2: 'Kindle-bereit', pill3: 'Auto TOC', pill4: 'Kein Wasserzeichen',
-      dropTitle: 'PDF hier ablegen oder', browse: 'durchsuchen',
-      dropSub: 'Einzelne PDF · Max 50 MB',
-      settingsTitle: 'eBook-Einstellungen',
-      bookTitle: 'Buchtitel', bookAuthor: 'Autor', bookLanguage: 'Sprache', coverImage: 'Cover-Bild',
-      convertBtn: 'EPUB erstellen',
-      feat1T: 'Auto TOC', feat1D: 'Klickbares Inhaltsverzeichnis',
-      feat2T: 'Cover-Support', feat2D: 'Eigenes Cover hochladen',
-      feat3T: 'KDP-bereit', feat3D: 'Direkt bei Amazon KDP hochladen',
-      feat4T: '100% Privat', feat4D: 'Dateien verlassen Ihren Browser nie',
+      brand: 'FreeSEOToolHub', home: 'Startseite', about: 'Über uns', contact: 'Kontakt', privacy: 'Datenschutz', blog: 'Blog',
+      heroTitle1: 'KDP Paperback Formatierer', heroTitle2: 'Kostenlos 2026',
+      heroSubtitle: 'Formatieren Sie PDF und Bilder für Amazon KDP Paperback mit automatischer Größe, Beschnitt und Rändern.',
+      pill1: 'Auto-Format', pill2: 'Auto-Beschnitt', pill3: 'Auto-Ränder', pill4: 'KDP-bereit',
+      dropTitle: 'PDF oder Bilder hier ablegen', browse: 'durchsuchen',
+      dropSub: 'PDF, JPG, PNG · Mehrere Dateien',
+      settingsTitle: 'KDP-Format-Einstellungen',
+      trimSize: 'Buchformat', bleedOption: 'Beschnitt',
+      insideMargin: 'Innenrand', outsideMargin: 'Außenrand',
+      formatBtn: 'KDP-bereite PDF erstellen',
+      feat1T: 'Auto-Format', feat1D: 'KDP-Standard 8.5×8.5, 6×9, 5.5×8.5, 8.5×11',
+      feat2T: 'Auto-Beschnitt', feat2D: '0.125" Beschnitt',
+      feat3T: 'Auto-Ränder', feat3D: 'KDP-Ränder',
+      feat4T: 'KDP-bereit', feat4D: 'Direkt bei Amazon KDP hochladen',
       faqTitle: 'Häufige Fragen',
-      faq1Q: 'Wirklich kostenlos?', faq1A: 'Ja, 100% für immer kostenlos.',
-      faq2Q: 'Mit Amazon KDP?', faq2A: 'Ja! EPUB 3 ist KDPs empfohlenes Format.',
-      faq3Q: 'Sind Daten sicher?', faq3A: 'Absolut. Alles im Browser.',
-      faq4Q: 'Welche PDFs funktionieren?', faq4A: 'Textbasierte PDFs.',
-      faq5Q: 'Kommerzielle Nutzung?', faq5A: 'Ja!',
-      faq6Q: 'Max. Dateigröße?', faq6A: '50 MB pro PDF.',
+      faq1Q: 'Kostenlos?', faq1A: 'Ja, 100% für immer kostenlos.',
+      faq2Q: 'Was ist Beschnitt?', faq2A: '0.125" zusätzlicher Raum an Außenkanten.',
+      faq3Q: 'Sind Daten sicher?', faq3A: 'Absolut.',
+      faq4Q: 'Welche Formate?', faq4A: 'PDF, JPG, PNG.',
+      faq5Q: 'Mindestseitenzahl?', faq5A: '24 Seiten.',
+      faq6Q: 'Für Kindle eBook?', faq6A: 'Nein — für Paperback.',
       footerDesc: '22 essentielle SEO-Tools.',
       quickLinks: 'Schnelllinks', popularTools: 'Top-Tools', moreTools: 'Weitere', legal: 'Rechtliches',
       copyright: '© 2026 FreeSEOToolHub.com',
-      toastLoading: 'Lädt PDF...',
-      toastProcessing: 'Seite {n} von {total}...',
-      toastGenerating: 'EPUB wird erstellt...',
-      toastSuccess: '✅ EPUB erfolgreich erstellt!',
+      toastSuccess: '✅ KDP-bereite PDF erstellt!',
       toastError: 'Fehler: ',
-      toastInvalid: 'Bitte gültige PDF wählen',
-      toastUpload: 'Bitte zuerst PDF hochladen'
+      toastNoFiles: 'Bitte Dateien hochladen',
+      toastInvalid: 'PDF oder Bilder wählen',
+      toastProcessing: 'Verarbeite',
+      toastInit: 'Initialisiere...',
+      toastSaving: 'Speichere...',
+      toastDone: 'Fertig!'
     },
     es: {
-      brand: 'FreeSEOToolHub',
-      home: 'Inicio', about: 'Acerca de', contact: 'Contacto', privacy: 'Privacidad', blog: 'Blog',
-      heroTitle1: 'Convertidor PDF a EPUB', heroTitle2: 'Gratis 2026',
-      heroSubtitle: 'Convierte PDF a EPUB 3 listo para Kindle con TOC automático, portada y metadatos.',
-      pill1: '100% Privado', pill2: 'Listo para Kindle', pill3: 'TOC automático', pill4: 'Sin marca',
-      dropTitle: 'Suelta PDF aquí o', browse: 'explorar',
-      dropSub: 'PDF único · Máx 50 MB',
-      settingsTitle: 'Configuración',
-      bookTitle: 'Título del libro', bookAuthor: 'Autor', bookLanguage: 'Idioma', coverImage: 'Imagen de portada',
-      convertBtn: 'Generar EPUB',
-      feat1T: 'TOC automático', feat1D: 'Tabla de contenidos clicable',
-      feat2T: 'Soporte de portada', feat2D: 'Sube tu propia portada',
-      feat3T: 'Listo para KDP', feat3D: 'Sube directamente a Amazon KDP',
-      feat4T: '100% Privado', feat4D: 'Los archivos nunca salen de tu navegador',
+      brand: 'FreeSEOToolHub', home: 'Inicio', about: 'Acerca de', contact: 'Contacto', privacy: 'Privacidad', blog: 'Blog',
+      heroTitle1: 'Formateador KDP Paperback', heroTitle2: 'Gratis 2026',
+      heroSubtitle: 'Formatea PDF e imágenes para Amazon KDP paperback con tamaño, sangrado y márgenes automáticos.',
+      pill1: 'Tamaño Auto', pill2: 'Sangrado Auto', pill3: 'Márgenes Auto', pill4: 'Listo KDP',
+      dropTitle: 'Suelta PDF o imágenes aquí', browse: 'explorar',
+      dropSub: 'PDF, JPG, PNG · Múltiples archivos',
+      settingsTitle: 'Configuración KDP',
+      trimSize: 'Tamaño del Libro', bleedOption: 'Sangrado',
+      insideMargin: 'Margen Interior', outsideMargin: 'Margen Exterior',
+      formatBtn: 'Generar PDF listo para KDP',
+      feat1T: 'Tamaño Auto', feat1D: 'Estándar KDP 8.5×8.5, 6×9, 5.5×8.5, 8.5×11',
+      feat2T: 'Sangrado Auto', feat2D: '0.125" sangrado automático',
+      feat3T: 'Márgenes Auto', feat3D: 'Márgenes calculados para KDP',
+      feat4T: 'Listo KDP', feat4D: 'Sube directamente a Amazon KDP',
       faqTitle: 'Preguntas Frecuentes',
-      faq1Q: '¿Realmente gratis?', faq1A: 'Sí, 100% gratis para siempre.',
-      faq2Q: '¿Funciona con Amazon KDP?', faq2A: '¡Sí! EPUB 3 es el formato recomendado por KDP.',
-      faq3Q: '¿Mis datos están seguros?', faq3A: 'Absolutamente. Todo en tu navegador.',
-      faq4Q: '¿Qué PDFs funcionan mejor?', faq4A: 'PDFs con texto.',
-      faq5Q: '¿Uso comercial?', faq5A: '¡Sí!',
-      faq6Q: '¿Tamaño máximo?', faq6A: '50 MB por PDF.',
+      faq1Q: '¿Es gratis?', faq1A: 'Sí, 100% gratis para siempre.',
+      faq2Q: '¿Qué es sangrado?', faq2A: '0.125" extra en los bordes exteriores.',
+      faq3Q: '¿Datos seguros?', faq3A: 'Absolutamente.',
+      faq4Q: '¿Qué formatos?', faq4A: 'PDF, JPG, PNG.',
+      faq5Q: '¿Mínimo de páginas?', faq5A: '24 páginas.',
+      faq6Q: '¿Para Kindle eBook?', faq6A: 'No — para paperback.',
       footerDesc: '22 herramientas SEO esenciales.',
-      quickLinks: 'Enlaces Rápidos', popularTools: 'Herramientas Top', moreTools: 'Más', legal: 'Legal',
+      quickLinks: 'Enlaces Rápidos', popularTools: 'Top', moreTools: 'Más', legal: 'Legal',
       copyright: '© 2026 FreeSEOToolHub.com',
-      toastLoading: 'Cargando PDF...',
-      toastProcessing: 'Página {n} de {total}...',
-      toastGenerating: 'Generando EPUB...',
-      toastSuccess: '✅ ¡EPUB creado!',
+      toastSuccess: '✅ ¡PDF listo para KDP creado!',
       toastError: 'Error: ',
-      toastInvalid: 'Selecciona un PDF válido',
-      toastUpload: 'Primero sube un PDF'
+      toastNoFiles: 'Primero sube archivos',
+      toastInvalid: 'Selecciona PDF o imágenes',
+      toastProcessing: 'Procesando',
+      toastInit: 'Iniciando...',
+      toastSaving: 'Guardando...',
+      toastDone: '¡Listo!'
     }
   };
 
@@ -225,12 +524,13 @@
   // ============================================================
   // TOAST
   // ============================================================
-  function showToast(msg, type = 'success') {
+  function showToast(msg, type) {
+    type = type || 'success';
     const container = $('toastContainer');
     const toast = document.createElement('div');
     toast.className = 'toast ' + type;
     const icon = type === 'error' ? 'fa-times-circle' : 'fa-check-circle';
-    toast.innerHTML = `<i class="fas ${icon}" style="color:${type === 'error' ? '#ef4444' : '#10b981'}"></i> <span>${msg}</span>`;
+    toast.innerHTML = '<i class="fas ' + icon + '" style="color:' + (type === 'error' ? '#ef4444' : '#10b981') + '"></i> <span>' + msg + '</span>';
     container.appendChild(toast);
     setTimeout(() => {
       toast.classList.add('removing');
@@ -241,9 +541,7 @@
   // ============================================================
   // FILE HANDLING
   // ============================================================
-  $('fileInput').addEventListener('change', e => {
-    if (e.target.files && e.target.files[0]) handleFile(e.target.files[0]);
-  });
+  $('fileInput').addEventListener('change', e => handleFiles(e.target.files));
 
   ['dragenter','dragover'].forEach(ev => {
     $('dropZone').addEventListener(ev, e => { e.preventDefault(); $('dropZone').classList.add('dragover'); });
@@ -252,203 +550,126 @@
     $('dropZone').addEventListener(ev, e => { e.preventDefault(); $('dropZone').classList.remove('dragover'); });
   });
   $('dropZone').addEventListener('drop', e => {
-    const files = e.dataTransfer.files;
-    if (files && files[0]) handleFile(files[0]);
-  });
-
-  $('removeFile').addEventListener('click', e => {
     e.preventDefault();
-    e.stopPropagation();
-    pdfFile = null;
-    $('fileInput').value = '';
-    $('fileInfo').classList.remove('active');
-    $('settings').style.display = 'none';
+    handleFiles(e.dataTransfer.files);
   });
 
-  function handleFile(file) {
-    if (!file || (file.type !== 'application/pdf' && !/\.pdf$/i.test(file.name))) {
+  function handleFiles(files) {
+    const valid = Array.from(files).filter(f =>
+      f.type === 'application/pdf' || f.type.startsWith('image/')
+    );
+
+    if (!valid.length) {
       showToast(t('toastInvalid'), 'error');
       return;
     }
-    if (file.size > 50 * 1024 * 1024) {
-      showToast('File too large. Max 50 MB.', 'error');
+
+    uploadedFiles = valid;
+    renderFileList();
+    $('settings').style.display = 'block';
+  }
+
+  function renderFileList() {
+    const list = $('fileList');
+    list.classList.add('active');
+    list.innerHTML = uploadedFiles.map(f =>
+      '<div class="file-item">' +
+        '<span><i class="fas fa-file" style="color:#ff9933; margin-right:8px;"></i>' + escapeHtml(f.name) + '</span>' +
+        '<span style="color:#64748b;">' + (f.size / 1024).toFixed(0) + ' KB</span>' +
+      '</div>').join('');
+  }
+
+  // ============================================================
+  // FORMAT FOR KDP
+  // ============================================================
+  $('formatBtn').addEventListener('click', async () => {
+    if (!uploadedFiles.length) {
+      showToast(t('toastNoFiles'), 'error');
       return;
     }
 
-    pdfFile = file;
-    $('fileName').textContent = file.name;
-    $('fileMeta').textContent = (file.size / 1024 / 1024).toFixed(2) + ' MB · Ready to convert';
-    $('fileInfo').classList.add('active');
-    $('settings').style.display = 'block';
-    $('bookTitle').value = file.name.replace(/\.pdf$/i, '');
-  }
-
-  $('coverInput').addEventListener('change', e => {
-    if (e.target.files && e.target.files[0]) coverFile = e.target.files[0];
-  });
-
-  // ============================================================
-  // CONVERT
-  // ============================================================
-  $('convertBtn').addEventListener('click', async () => {
-    if (!pdfFile) { showToast(t('toastUpload'), 'error'); return; }
-
-    const btn = $('convertBtn');
+    const btn = $('formatBtn');
     btn.disabled = true;
     $('progress').classList.add('active');
-    setProgress(5, t('toastLoading'));
+    setProgress(5, t('toastInit'));
 
     try {
-      const arrayBuffer = await pdfFile.arrayBuffer();
-      const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
-      const numPages = pdf.numPages;
+      const trim = TRIM_SIZES[$('trimSize').value];
+      const hasBleed = $('bleedOption').value === 'yes';
+      const insideMargin = parseFloat($('insideMargin').value);
+      const outsideMargin = parseFloat($('outsideMargin').value);
 
-      setProgress(15, `Processing ${numPages} pages...`);
+      const bleed = hasBleed ? BLEED_INCH : 0;
+      const pageWidth = (trim.width + bleed + outsideMargin) * POINTS_PER_INCH;
+      const pageHeight = (trim.height + bleed * 2) * POINTS_PER_INCH;
 
-      // Check epubit availability
-      if (!window.EBook && !window.epubit) {
-        throw new Error('EPUB library not loaded. Please refresh.');
+      const pdfDoc = await PDFDocument.create();
+
+      setProgress(15, t('toastProcessing') + ' files...');
+
+      for (let i = 0; i < uploadedFiles.length; i++) {
+        const file = uploadedFiles[i];
+        setProgress(15 + (i / uploadedFiles.length) * 70, t('toastProcessing') + ' ' + (i + 1) + '/' + uploadedFiles.length + '...');
+
+        if (file.type === 'application/pdf') {
+          const bytes = await file.arrayBuffer();
+          const srcDoc = await PDFDocument.load(bytes);
+          const pageCount = srcDoc.getPageCount();
+
+          for (let p = 0; p < pageCount; p++) {
+            const [copiedPage] = await pdfDoc.copyPages(srcDoc, [p]);
+            copiedPage.setSize(pageWidth, pageHeight);
+            pdfDoc.addPage(copiedPage);
+          }
+        } else {
+          const imgBytes = await file.arrayBuffer();
+          let image;
+          try {
+            image = file.type === 'image/png'
+              ? await pdfDoc.embedPng(imgBytes)
+              : await pdfDoc.embedJpg(imgBytes);
+          } catch (e) {
+            image = await pdfDoc.embedPng(imgBytes);
+          }
+
+          const page = pdfDoc.addPage([pageWidth, pageHeight]);
+
+          const availWidth = pageWidth - (insideMargin + outsideMargin) * POINTS_PER_INCH;
+          const availHeight = pageHeight - (outsideMargin * 2) * POINTS_PER_INCH;
+
+          const scale = Math.min(
+            availWidth / image.width,
+            availHeight / image.height,
+            1
+          );
+
+          const imgWidth = image.width * scale;
+          const imgHeight = image.height * scale;
+
+          page.drawImage(image, {
+            x: outsideMargin * POINTS_PER_INCH + (availWidth - imgWidth) / 2,
+            y: outsideMargin * POINTS_PER_INCH + (availHeight - imgHeight) / 2,
+            width: imgWidth,
+            height: imgHeight
+          });
+        }
       }
 
-      // Fallback: Build EPUB manually using JSZip
-      const JSZip = window.JSZip;
-      if (!JSZip) {
-        // Load JSZip dynamically
-        await loadScript('https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js');
-      }
+      setProgress(90, t('toastSaving'));
 
-      const zip = new JSZip();
-      const title = $('bookTitle').value || 'Untitled';
-      const author = $('bookAuthor').value || 'Unknown';
-      const lang = $('bookLanguage').value || 'en';
-      const bookId = 'urn:uuid:' + generateUUID();
+      const pdfBytes = await pdfDoc.save();
+      const blob = new Blob([pdfBytes], { type: 'application/pdf' });
 
-      // mimetype (must be first, uncompressed)
-      zip.file('mimetype', 'application/epub+zip', { compression: 'STORE' });
-
-      // META-INF/container.xml
-      zip.file('META-INF/container.xml', `<?xml version="1.0" encoding="UTF-8"?>
-<container version="1.0" xmlns="urn:oasis:names:tc:opendocument:xmlns:container">
-  <rootfiles>
-    <rootfile full-path="OEBPS/content.opf" media-type="application/oebps-package+xml"/>
-  </rootfiles>
-</container>`);
-
-      // Chapters - extract text from each PDF page
-      let chapterItems = '';
-      let spineItems = '';
-      const chapters = [];
-
-      for (let i = 1; i <= numPages; i++) {
-        setProgress(15 + (i / numPages) * 60, `Processing page ${i} of ${numPages}...`);
-
-        const page = await pdf.getPage(i);
-        const textContent = await page.getTextContent();
-        const text = textContent.items.map(item => item.str).join(' ').trim();
-        const pageTitle = `Page ${i}`;
-
-        const chapterHtml = `<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="${lang}">
-<head><title>${escapeXml(pageTitle)}</title></head>
-<body>
-  <h1>${escapeXml(pageTitle)}</h1>
-  <p>${escapeXml(text || '(No text)')}</p>
-</body>
-</html>`;
-
-        zip.file(`OEBPS/chapter${i}.xhtml`, chapterHtml);
-        chapters.push({ id: `chapter${i}`, title: pageTitle, file: `chapter${i}.xhtml` });
-
-        chapterItems += `<item id="chapter${i}" href="chapter${i}.xhtml" media-type="application/xhtml+xml"/>`;
-        spineItems += `<itemref idref="chapter${i}"/>`;
-      }
-
-      // Cover image
-      let coverItem = '';
-      let coverMeta = '';
-      if (coverFile) {
-        const coverData = await fileToArrayBuffer(coverFile);
-        const coverExt = coverFile.type === 'image/png' ? 'png' : 'jpg';
-        zip.file(`OEBPS/cover.${coverExt}`, coverData);
-        coverItem = `<item id="cover-image" href="cover.${coverExt}" media-type="${coverFile.type}" properties="cover-image"/>`;
-        coverMeta = `<meta name="cover" content="cover-image"/>`;
-      }
-
-      // Nav (TOC)
-      const navItems = chapters.map(c => `<li><a href="${c.file}">${escapeXml(c.title)}</a></li>`).join('\n');
-      zip.file('OEBPS/nav.xhtml', `<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="${lang}">
-<head><title>Table of Contents</title></head>
-<body>
-  <nav epub:type="toc" id="toc">
-    <h1>Table of Contents</h1>
-    <ol>
-${navItems}
-    </ol>
-  </nav>
-</body>
-</html>`);
-
-      // NCX (for EPUB 2 compatibility)
-      const navPoints = chapters.map((c, i) => `
-    <navPoint id="navPoint-${i + 1}" playOrder="${i + 1}">
-      <navLabel><text>${escapeXml(c.title)}</text></navLabel>
-      <content src="${c.file}"/>
-    </navPoint>`).join('');
-
-      zip.file('OEBPS/toc.ncx', `<?xml version="1.0" encoding="UTF-8"?>
-<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1">
-  <head>
-    <meta name="dtb:uid" content="${bookId}"/>
-    <meta name="dtb:depth" content="1"/>
-  </head>
-  <docTitle><text>${escapeXml(title)}</text></docTitle>
-  <navMap>${navPoints}</navMap>
-</ncx>`);
-
-      // content.opf
-      zip.file('OEBPS/content.opf', `<?xml version="1.0" encoding="UTF-8"?>
-<package xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="bookid">
-  <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
-    <dc:identifier id="bookid">${bookId}</dc:identifier>
-    <dc:title>${escapeXml(title)}</dc:title>
-    <dc:creator>${escapeXml(author)}</dc:creator>
-    <dc:language>${lang}</dc:language>
-    <meta property="dcterms:modified">${new Date().toISOString().split('.')[0]}Z</meta>
-    ${coverMeta}
-  </metadata>
-  <manifest>
-    <item id="nav" href="nav.xhtml" media-type="application/xhtml+xml" properties="nav"/>
-    <item id="ncx" href="toc.ncx" media-type="application/x-dtbncx+xml"/>
-    ${coverItem}
-    ${chapterItems}
-  </manifest>
-  <spine toc="ncx">
-    ${spineItems}
-  </spine>
-</package>`);
-
-      setProgress(90, t('toastGenerating'));
-
-      // Generate EPUB
-      const blob = await zip.generateAsync({ 
-        type: 'blob',
-        mimeType: 'application/epub+zip'
-      });
-
-      // Download
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = title.replace(/[^a-z0-9]/gi, '_') + '.epub';
+      a.download = 'kdp-ready-book.pdf';
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
       setTimeout(() => URL.revokeObjectURL(url), 2000);
 
-      setProgress(100, t('toastSuccess'));
+      setProgress(100, t('toastDone'));
       showToast(t('toastSuccess'), 'success');
 
     } catch (err) {
@@ -459,7 +680,7 @@ ${navItems}
       setTimeout(() => {
         $('progress').classList.remove('active');
         setProgress(0, '');
-      }, 2000);
+      }, 2500);
     }
   });
 
@@ -471,37 +692,14 @@ ${navItems}
     $('status').textContent = text || '';
   }
 
-  function fileToArrayBuffer(file) {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.onload = () => resolve(reader.result);
-      reader.onerror = reject;
-      reader.readAsArrayBuffer(file);
-    });
-  }
-
-  function escapeXml(s) {
-    return String(s).replace(/[<>&'"]/g, c => ({
-      '<': '&lt;', '>': '&gt;', '&': '&amp;', "'": '&apos;', '"': '&quot;'
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, c => ({
+      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
     }[c]));
   }
 
-  function generateUUID() {
-    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
-      const r = Math.random() * 16 | 0;
-      const v = c === 'x' ? r : (r & 0x3 | 0x8);
-      return v.toString(16);
-    });
-  }
-
-  function loadScript(src) {
-    return new Promise((resolve, reject) => {
-      const s = document.createElement('script');
-      s.src = src;
-      s.onload = resolve;
-      s.onerror = reject;
-      document.head.appendChild(s);
-    });
-  }
-
 })();
+</script>
+
+</body>
+</html>
