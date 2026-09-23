@@ -19,18 +19,6 @@
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="https://freeseotoolhub.com/tools/ebook-creator.html">
 
-  <link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/tools/ebook-creator.html">
-  <link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/tools/ebook-creator.html?lang=hi">
-  <link rel="alternate" hreflang="ur" href="https://freeseotoolhub.com/tools/ebook-creator.html?lang=ur">
-  <link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/tools/ebook-creator.html?lang=de">
-  <link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/tools/ebook-creator.html?lang=es">
-
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://freeseotoolhub.com/tools/ebook-creator.html">
-  <meta property="og:title" content="PDF to EPUB Converter — Kindle eBook Creator">
-  <meta property="og:description" content="Convert PDF to EPUB 3 with auto TOC & cover. Free forever.">
-  <meta property="og:image" content="https://freeseotoolhub.com/images/ebook-creator-og.jpg">
-
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,7 +28,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Hind:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <script src="https://cdn.jsdelivr.net/npm/epubit@latest/dist/epubit.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 
   <script type="application/ld+json">
@@ -74,24 +62,8 @@
     .dropdown-item { color:rgba(255,255,255,0.9); padding:10px 18px; border-radius:8px; font-weight:500; }
     .dropdown-item:hover, .dropdown-item.active { background:rgba(255,153,51,0.2); color:#ff9933; }
 
-    .hero {
-      background:linear-gradient(145deg,#0b1a33,#1e2b4f);
-      color:white;
-      padding:60px 30px;
-      border-radius:30px;
-      margin-bottom:40px;
-      text-align:center;
-      position:relative;
-      overflow:hidden;
-    }
-    .hero::before {
-      content:'';
-      position:absolute;
-      top:-50%; right:-50%;
-      width:100%; height:100%;
-      background:radial-gradient(circle,rgba(255,153,51,0.15) 0%,transparent 70%);
-      pointer-events:none;
-    }
+    .hero { background:linear-gradient(145deg,#0b1a33,#1e2b4f); color:white; padding:60px 30px; border-radius:30px; margin-bottom:40px; text-align:center; position:relative; overflow:hidden; }
+    .hero::before { content:''; position:absolute; top:-50%; right:-50%; width:100%; height:100%; background:radial-gradient(circle,rgba(255,153,51,0.15) 0%,transparent 70%); pointer-events:none; }
     .hero h1 { font-size:clamp(1.8rem, 4vw, 2.8rem); font-weight:800; position:relative; z-index:1; margin-bottom:14px; }
     .hero .highlight { color:#ff9933; }
     .hero p { max-width:750px; margin:15px auto; font-size:1.05rem; opacity:0.9; position:relative; z-index:1; }
@@ -100,197 +72,59 @@
 
     .container-narrow { max-width: 900px; margin: 0 auto; padding: 0 20px; }
 
-    .tool-card {
-      background: white;
-      border-radius: 24px;
-      padding: 32px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-      border: 1px solid #eef2f6;
-      margin-bottom: 30px;
-    }
+    .tool-card { background: white; border-radius: 24px; padding: 32px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #eef2f6; margin-bottom: 30px; }
 
-    .drop-zone {
-      display: block;
-      cursor: pointer;
-      background: #f8fafc;
-      border: 3px dashed #cbd5e0;
-      border-radius: 20px;
-      padding: 50px 30px;
-      text-align: center;
-      transition: all 0.3s;
-      user-select: none;
-    }
-    .drop-zone:hover, .drop-zone.dragover {
-      border-color: #ff9933;
-      background: linear-gradient(135deg, rgba(255,153,51,0.05), rgba(255,107,0,0.05));
-      transform: translateY(-2px);
-    }
-    .drop-zone .drop-icon {
-      width: 80px;
-      height: 80px;
-      background: linear-gradient(135deg, #0b1a33, #2d3b68);
-      border-radius: 22px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 2rem;
-      margin: 0 auto 20px;
-      transition: all 0.3s;
-    }
-    .drop-zone:hover .drop-icon {
-      background: linear-gradient(135deg, #ff9933, #ff6b00);
-      transform: scale(1.05);
-    }
+    .drop-zone { display: block; cursor: pointer; background: #f8fafc; border: 3px dashed #cbd5e0; border-radius: 20px; padding: 50px 30px; text-align: center; transition: all 0.3s; user-select: none; }
+    .drop-zone:hover, .drop-zone.dragover { border-color: #ff9933; background: linear-gradient(135deg, rgba(255,153,51,0.05), rgba(255,107,0,0.05)); transform: translateY(-2px); }
+    .drop-zone .drop-icon { width: 80px; height: 80px; background: linear-gradient(135deg, #0b1a33, #2d3b68); border-radius: 22px; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; margin: 0 auto 20px; transition: all 0.3s; }
+    .drop-zone:hover .drop-icon { background: linear-gradient(135deg, #ff9933, #ff6b00); transform: scale(1.05); }
     .drop-zone h3 { font-size: 1.25rem; font-weight: 700; color: #0b1a33; margin-bottom: 8px; }
     .drop-zone h3 .link { color: #ff9933; text-decoration: underline; }
     .drop-zone p { color: #4a5a72; font-size: 0.9rem; }
     .drop-zone input[type="file"] { position: absolute; left: -9999px; }
 
     .form-group { margin-bottom: 20px; }
-    .form-group label {
-      display: block;
-      font-weight: 600;
-      margin-bottom: 8px;
-      color: #0b1a33;
-      font-size: 0.9rem;
-    }
+    .form-group label { display: block; font-weight: 600; margin-bottom: 8px; color: #0b1a33; font-size: 0.9rem; }
     .form-group label i { color: #ff9933; margin-right: 6px; }
     .form-group input[type="text"], .form-group select, .form-group input[type="file"] {
-      width: 100%;
-      padding: 12px 16px;
-      border: 2px solid #eef2f6;
-      border-radius: 12px;
-      font-size: 0.95rem;
-      background: #f8fafc;
-      color: #0b1a33;
-      transition: all 0.3s;
-      font-family: inherit;
+      width: 100%; padding: 12px 16px; border: 2px solid #eef2f6; border-radius: 12px;
+      font-size: 0.95rem; background: #f8fafc; color: #0b1a33; transition: all 0.3s; font-family: inherit;
     }
-    .form-group input:focus, .form-group select:focus {
-      border-color: #ff9933;
-      outline: none;
-      background: white;
-      box-shadow: 0 0 0 4px rgba(255,153,51,0.1);
-    }
-    .form-group select option { background: white; color: #0b1a33; }
+    .form-group input:focus, .form-group select:focus { border-color: #ff9933; outline: none; background: white; box-shadow: 0 0 0 4px rgba(255,153,51,0.1); }
 
     .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
 
-    .btn {
-      border: none;
-      padding: 12px 24px;
-      border-radius: 50px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      font-family: inherit;
-    }
+    .btn { border: none; padding: 12px 24px; border-radius: 50px; font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: all 0.3s; display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-family: inherit; }
     .btn:disabled { opacity: 0.5; cursor: not-allowed; }
-    .btn-primary {
-      background: linear-gradient(135deg, #ff9933, #ff6b00);
-      color: white;
-      box-shadow: 0 6px 20px rgba(255,153,51,0.3);
-    }
-    .btn-primary:hover:not(:disabled) {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 28px rgba(255,153,51,0.5);
-    }
+    .btn-primary { background: linear-gradient(135deg, #ff9933, #ff6b00); color: white; box-shadow: 0 6px 20px rgba(255,153,51,0.3); }
+    .btn-primary:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(255,153,51,0.5); }
     .btn-lg { padding: 16px 40px; font-size: 1.05rem; }
     .btn-full { width: 100%; }
 
-    .progress {
-      height: 8px;
-      background: #f0f4f8;
-      border-radius: 8px;
-      overflow: hidden;
-      margin: 24px 0 12px;
-      display: none;
-    }
+    .progress { height: 8px; background: #f0f4f8; border-radius: 8px; overflow: hidden; margin: 24px 0 12px; display: none; }
     .progress.active { display: block; }
-    .progress-fill {
-      height: 100%;
-      background: linear-gradient(90deg, #ff9933, #ff6b00);
-      width: 0%;
-      transition: width 0.3s;
-      border-radius: 8px;
-    }
-    .status-text {
-      text-align: center;
-      color: #4a5a72;
-      font-size: 0.9rem;
-      min-height: 20px;
-    }
+    .progress-fill { height: 100%; background: linear-gradient(90deg, #ff9933, #ff6b00); width: 0%; transition: width 0.3s; border-radius: 8px; }
+    .status-text { text-align: center; color: #4a5a72; font-size: 0.9rem; min-height: 20px; }
 
-    .file-info {
-      display: none;
-      padding: 16px 20px;
-      background: #f8fafc;
-      border-radius: 12px;
-      margin-top: 16px;
-      border: 1px solid #eef2f6;
-      align-items: center;
-      gap: 12px;
-    }
+    .file-info { display: none; padding: 16px 20px; background: #f8fafc; border-radius: 12px; margin-top: 16px; border: 1px solid #eef2f6; align-items: center; gap: 12px; }
     .file-info.active { display: flex; }
-    .file-info .fi-icon {
-      width: 44px;
-      height: 44px;
-      background: linear-gradient(135deg, #ef4444, #dc2626);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 1.2rem;
-      flex-shrink: 0;
-    }
+    .file-info .fi-icon { width: 44px; height: 44px; background: linear-gradient(135deg, #ef4444, #dc2626); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; flex-shrink: 0; }
     .file-info .fi-details { flex: 1; min-width: 0; }
     .file-info .fi-name { font-weight: 700; font-size: 0.95rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .file-info .fi-meta { font-size: 0.8rem; color: #64748b; margin-top: 2px; }
+    .file-info .fi-remove { background: #f0f4f8; border: none; width: 36px; height: 36px; border-radius: 50%; cursor: pointer; color: #0b1a33; transition: all 0.2s; }
+    .file-info .fi-remove:hover { background: #ef4444; color: white; }
 
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
-    }
-    .feature-item {
-      text-align: center;
-      padding: 20px;
-      background: #f8fafc;
-      border-radius: 16px;
-      border: 1px solid #eef2f6;
-    }
-    .feature-item i {
-      font-size: 1.8rem;
-      color: #ff9933;
-      margin-bottom: 12px;
-    }
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 30px; }
+    .feature-item { text-align: center; padding: 20px; background: #f8fafc; border-radius: 16px; border: 1px solid #eef2f6; }
+    .feature-item i { font-size: 1.8rem; color: #ff9933; margin-bottom: 12px; }
     .feature-item h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 6px; color: #0b1a33; }
     .feature-item p { font-size: 0.82rem; color: #64748b; line-height: 1.5; }
 
-    .section-title {
-      text-align: center;
-      font-size: 1.6rem;
-      font-weight: 800;
-      color: #0b1a33;
-      margin: 50px 0 30px;
-    }
+    .section-title { text-align: center; font-size: 1.6rem; font-weight: 800; color: #0b1a33; margin: 50px 0 30px; }
 
     .faq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
-    .faq-card {
-      background: white;
-      padding: 22px;
-      border-radius: 16px;
-      border: 1px solid #eef2f6;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-    }
+    .faq-card { background: white; padding: 22px; border-radius: 16px; border: 1px solid #eef2f6; box-shadow: 0 4px 12px rgba(0,0,0,0.04); }
     .faq-card h4 { font-size: 1rem; font-weight: 700; color: #0b1a33; margin-bottom: 8px; display: flex; align-items: flex-start; gap: 8px; }
     .faq-card h4 i { color: #ff9933; margin-top: 3px; flex-shrink: 0; }
     .faq-card p { font-size: 0.87rem; color: #4a5a72; line-height: 1.6; }
@@ -303,21 +137,7 @@
     footer li { margin-bottom: 8px; }
 
     .toast-container { position: fixed; bottom: 24px; right: 24px; z-index: 9999; display: flex; flex-direction: column; gap: 10px; }
-    .toast {
-      background: white;
-      color: #0b1a33;
-      padding: 14px 22px;
-      border-radius: 14px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-      border-left: 4px solid #ff9933;
-      font-weight: 500;
-      font-size: 0.9rem;
-      min-width: 280px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      animation: slideIn 0.3s ease;
-    }
+    .toast { background: white; color: #0b1a33; padding: 14px 22px; border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); border-left: 4px solid #ff9933; font-weight: 500; font-size: 0.9rem; min-width: 280px; display: flex; align-items: center; gap: 10px; animation: slideIn 0.3s ease; }
     .toast.success { border-left-color: #10b981; }
     .toast.error { border-left-color: #ef4444; }
     @keyframes slideIn { from { transform: translateX(120%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
@@ -339,12 +159,8 @@
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
   <div class="container">
-    <a class="navbar-brand" href="/" aria-label="FreeSEOToolHub Home">
-      <i class="fas fa-rocket me-2"></i><span data-i18n="brand">FreeSEOToolHub</span>
-    </a>
-    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <a class="navbar-brand" href="/"><i class="fas fa-rocket me-2"></i><span data-i18n="brand">FreeSEOToolHub</span></a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto align-items-lg-center">
         <li class="nav-item"><a class="nav-link" href="/"><i class="fas fa-home me-1"></i><span data-i18n="home">Home</span></a></li>
@@ -353,9 +169,7 @@
         <li class="nav-item"><a class="nav-link" href="/privacy.html"><i class="fas fa-shield-alt me-1"></i><span data-i18n="privacy">Privacy</span></a></li>
         <li class="nav-item"><a class="nav-link" href="/blog/"><i class="fas fa-blog me-1"></i><span data-i18n="blog">Blog</span></a></li>
         <li class="nav-item dropdown ms-2">
-          <button class="lang-btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            🌐 <span id="currentLangLabel">English</span>
-          </button>
+          <button class="lang-btn dropdown-toggle" data-bs-toggle="dropdown">🌐 <span id="currentLangLabel">English</span></button>
           <ul class="dropdown-menu dropdown-menu-end">
             <li><a class="dropdown-item lang-opt" href="?lang=en" data-lang="en">🇺🇸 English</a></li>
             <li><a class="dropdown-item lang-opt" href="?lang=hi" data-lang="hi">🇮🇳 हिन्दी</a></li>
@@ -373,11 +187,7 @@
 
   <!-- HERO -->
   <section class="hero">
-    <h1>
-      <i class="fas fa-book" style="color:#ff9933;"></i>
-      <span data-i18n="heroTitle1">PDF to EPUB Converter</span>
-      <span class="highlight" data-i18n="heroTitle2">Free 2026</span>
-    </h1>
+    <h1><i class="fas fa-book" style="color:#ff9933;"></i> <span data-i18n="heroTitle1">PDF to EPUB Converter</span> <span class="highlight" data-i18n="heroTitle2">Free 2026</span></h1>
     <p data-i18n="heroSubtitle">Convert PDF to Kindle-ready EPUB 3 with auto TOC, cover & metadata. Amazon KDP compatible. 100% free, no signup.</p>
     <div class="hero-pills">
       <span class="hero-pill">🔒 <span data-i18n="pill1">100% Private</span></span>
@@ -395,13 +205,14 @@
     <p data-i18n="dropSub">Single PDF file · Max 50 MB · 100% processed locally</p>
   </label>
 
+  <!-- FILE INFO -->
   <div class="file-info" id="fileInfo">
     <div class="fi-icon"><i class="fas fa-file-pdf"></i></div>
     <div class="fi-details">
-      <div class="fi-name" id="fileName">document.pdf</div>
-      <div class="fi-meta" id="fileMeta">Loading...</div>
+      <div class="fi-name" id="fileName"></div>
+      <div class="fi-meta" id="fileMeta"></div>
     </div>
-    <button class="btn" style="background:#f0f4f8;color:#0b1a33;width:36px;height:36px;padding:0;border-radius:50%;" id="removeFile"><i class="fas fa-times"></i></button>
+    <button class="fi-remove" id="removeFile"><i class="fas fa-times"></i></button>
   </div>
 
   <!-- SETTINGS -->
@@ -443,63 +254,27 @@
       </button>
     </div>
 
-    <div class="progress" id="progress">
-      <div class="progress-fill" id="progressFill"></div>
-    </div>
+    <div class="progress" id="progress"><div class="progress-fill" id="progressFill"></div></div>
     <div class="status-text" id="status"></div>
   </div>
 
   <!-- FEATURES -->
   <div class="features-grid">
-    <div class="feature-item">
-      <i class="fas fa-magic"></i>
-      <h4 data-i18n="feat1T">Auto TOC</h4>
-      <p data-i18n="feat1D">Clickable table of contents generated automatically</p>
-    </div>
-    <div class="feature-item">
-      <i class="fas fa-image"></i>
-      <h4 data-i18n="feat2T">Cover Support</h4>
-      <p data-i18n="feat2D">Upload your own cover image for the eBook</p>
-    </div>
-    <div class="feature-item">
-      <i class="fas fa-book-open"></i>
-      <h4 data-i18n="feat3T">KDP Ready</h4>
-      <p data-i18n="feat3D">Direct upload to Amazon Kindle Direct Publishing</p>
-    </div>
-    <div class="feature-item">
-      <i class="fas fa-shield-alt"></i>
-      <h4 data-i18n="feat4T">100% Private</h4>
-      <p data-i18n="feat4D">Files never leave your browser. Complete privacy.</p>
-    </div>
+    <div class="feature-item"><i class="fas fa-magic"></i><h4 data-i18n="feat1T">Auto TOC</h4><p data-i18n="feat1D">Clickable table of contents generated automatically</p></div>
+    <div class="feature-item"><i class="fas fa-image"></i><h4 data-i18n="feat2T">Cover Support</h4><p data-i18n="feat2D">Upload your own cover image for the eBook</p></div>
+    <div class="feature-item"><i class="fas fa-book-open"></i><h4 data-i18n="feat3T">KDP Ready</h4><p data-i18n="feat3D">Direct upload to Amazon Kindle Direct Publishing</p></div>
+    <div class="feature-item"><i class="fas fa-shield-alt"></i><h4 data-i18n="feat4T">100% Private</h4><p data-i18n="feat4D">Files never leave your browser. Complete privacy.</p></div>
   </div>
 
   <!-- FAQ -->
   <h2 class="section-title" data-i18n="faqTitle">Frequently Asked Questions</h2>
   <div class="faq-grid">
-    <div class="faq-card">
-      <h4><i class="fas fa-question-circle"></i> <span data-i18n="faq1Q">Is this really free?</span></h4>
-      <p data-i18n="faq1A">Yes, 100% free forever. No signup, no watermarks, no limits. Everything runs in your browser.</p>
-    </div>
-    <div class="faq-card">
-      <h4><i class="fas fa-question-circle"></i> <span data-i18n="faq2Q">Will it work with Amazon KDP?</span></h4>
-      <p data-i18n="faq2A">Yes! The EPUB 3 format is Amazon KDP's recommended format. Just upload the generated file directly to KDP.</p>
-    </div>
-    <div class="faq-card">
-      <h4><i class="fas fa-question-circle"></i> <span data-i18n="faq3Q">Is my data safe?</span></h4>
-      <p data-i18n="faq3A">Absolutely. Everything happens locally in your browser. Your PDFs never touch any server.</p>
-    </div>
-    <div class="faq-card">
-      <h4><i class="fas fa-question-circle"></i> <span data-i18n="faq4Q">What kind of PDFs work best?</span></h4>
-      <p data-i18n="faq4A">Text-based PDFs work best. For scanned PDFs, use a PDF with OCR layer or upload as image.</p>
-    </div>
-    <div class="faq-card">
-      <h4><i class="fas fa-question-circle"></i> <span data-i18n="faq5Q">Can I use it commercially?</span></h4>
-      <p data-i18n="faq5A">Yes! Sell your eBooks on Amazon KDP, Payhip, Gumroad, or anywhere you want.</p>
-    </div>
-    <div class="faq-card">
-      <h4><i class="fas fa-question-circle"></i> <span data-i18n="faq6Q">What's the max file size?</span></h4>
-      <p data-i18n="faq6A">Up to 50 MB per PDF. For larger files, split them first or use the KDP Formatter tool.</p>
-    </div>
+    <div class="faq-card"><h4><i class="fas fa-question-circle"></i> <span data-i18n="faq1Q">Is this really free?</span></h4><p data-i18n="faq1A">Yes, 100% free forever. No signup, no watermarks, no limits.</p></div>
+    <div class="faq-card"><h4><i class="fas fa-question-circle"></i> <span data-i18n="faq2Q">Will it work with Amazon KDP?</span></h4><p data-i18n="faq2A">Yes! EPUB 3 is KDP's recommended format. Just upload the generated file to KDP.</p></div>
+    <div class="faq-card"><h4><i class="fas fa-question-circle"></i> <span data-i18n="faq3Q">Is my data safe?</span></h4><p data-i18n="faq3A">Absolutely. Everything happens locally in your browser.</p></div>
+    <div class="faq-card"><h4><i class="fas fa-question-circle"></i> <span data-i18n="faq4Q">What kind of PDFs work best?</span></h4><p data-i18n="faq4A">Text-based PDFs work best. For scanned PDFs, use OCR-enabled PDF.</p></div>
+    <div class="faq-card"><h4><i class="fas fa-question-circle"></i> <span data-i18n="faq5Q">Can I use it commercially?</span></h4><p data-i18n="faq5A">Yes! Sell eBooks on Amazon KDP, Payhip, Gumroad, or anywhere.</p></div>
+    <div class="faq-card"><h4><i class="fas fa-question-circle"></i> <span data-i18n="faq6Q">What's the max file size?</span></h4><p data-i18n="faq6A">Up to 50 MB per PDF.</p></div>
   </div>
 
 </div>
@@ -508,55 +283,491 @@
 <footer>
   <div class="container">
     <div class="row">
-      <div class="col-md-4 mb-4">
-        <h5><i class="fas fa-rocket me-2"></i>FreeSEOToolHub</h5>
-        <p style="color:#b0c4de; font-size:0.9rem;" data-i18n="footerDesc">22 essential SEO tools. Fast, free, global.</p>
-      </div>
-      <div class="col-md-2 col-6 mb-4">
-        <h6 data-i18n="quickLinks">Quick Links</h6>
-        <ul>
-          <li><a href="/" data-i18n="home">Home</a></li>
-          <li><a href="/about.html" data-i18n="about">About</a></li>
-          <li><a href="/contact.html" data-i18n="contact">Contact</a></li>
-          <li><a href="/blog/" data-i18n="blog">Blog</a></li>
-        </ul>
-      </div>
-      <div class="col-md-2 col-6 mb-4">
-        <h6 data-i18n="popularTools">Top Tools</h6>
-        <ul>
-          <li><a href="/meta-tag-generator.html">Meta Tags</a></li>
-          <li><a href="/plagiarism-checker.html">Plagiarism</a></li>
-          <li><a href="/backlink-checker.html">Backlinks</a></li>
-          <li><a href="/ssl-checker.html">SSL Checker</a></li>
-        </ul>
-      </div>
-      <div class="col-md-2 col-6 mb-4">
-        <h6 data-i18n="moreTools">More Tools</h6>
-        <ul>
-          <li><a href="/qr-code-generator.html">QR Code</a></li>
-          <li><a href="/pagespeed-insights.html">PageSpeed</a></li>
-          <li><a href="/gsc-visualizer.html">GSC Visualizer</a></li>
-          <li><a href="/website-crawler.html">Crawler</a></li>
-        </ul>
-      </div>
-      <div class="col-md-2 col-6 mb-4">
-        <h6 data-i18n="legal">Legal</h6>
-        <ul>
-          <li><a href="/privacy.html" data-i18n="privacy">Privacy</a></li>
-        </ul>
-      </div>
+      <div class="col-md-4 mb-4"><h5><i class="fas fa-rocket me-2"></i>FreeSEOToolHub</h5><p style="color:#b0c4de; font-size:0.9rem;" data-i18n="footerDesc">22 essential SEO tools. Fast, free, global.</p></div>
+      <div class="col-md-2 col-6 mb-4"><h6 data-i18n="quickLinks">Quick Links</h6><ul><li><a href="/" data-i18n="home">Home</a></li><li><a href="/about.html" data-i18n="about">About</a></li><li><a href="/contact.html" data-i18n="contact">Contact</a></li><li><a href="/blog/" data-i18n="blog">Blog</a></li></ul></div>
+      <div class="col-md-2 col-6 mb-4"><h6 data-i18n="popularTools">Top Tools</h6><ul><li><a href="/meta-tag-generator.html">Meta Tags</a></li><li><a href="/plagiarism-checker.html">Plagiarism</a></li><li><a href="/backlink-checker.html">Backlinks</a></li><li><a href="/ssl-checker.html">SSL Checker</a></li></ul></div>
+      <div class="col-md-2 col-6 mb-4"><h6 data-i18n="moreTools">More Tools</h6><ul><li><a href="/qr-code-generator.html">QR Code</a></li><li><a href="/pagespeed-insights.html">PageSpeed</a></li><li><a href="/gsc-visualizer.html">GSC Visualizer</a></li><li><a href="/website-crawler.html">Crawler</a></li></ul></div>
+      <div class="col-md-2 col-6 mb-4"><h6 data-i18n="legal">Legal</h6><ul><li><a href="/privacy.html" data-i18n="privacy">Privacy</a></li></ul></div>
     </div>
     <hr style="border-color:rgba(255,255,255,0.1);">
-    <div class="text-center">
-      <p style="color:#94a3b8; font-size:0.9rem;" data-i18n="copyright">© 2026 FreeSEOToolHub.com – Built for Global Users</p>
-    </div>
+    <div class="text-center"><p style="color:#94a3b8; font-size:0.9rem;" data-i18n="copyright">© 2026 FreeSEOToolHub.com – Built for Global Users</p></div>
   </div>
 </footer>
 
 <div class="toast-container" id="toastContainer"></div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="ebook-creator.js"></script>
+
+<script>
+(function() {
+  'use strict';
+
+  // ============================================================
+  // CONFIG
+  // ============================================================
+  if (window.pdfjsLib) {
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+  }
+
+  const $ = id => document.getElementById(id);
+  let pdfFile = null;
+  let coverFile = null;
+
+  // ============================================================
+  // i18n TRANSLATIONS
+  // ============================================================
+  const I18N = {
+    en: {
+      brand: 'FreeSEOToolHub', home: 'Home', about: 'About', contact: 'Contact', privacy: 'Privacy', blog: 'Blog',
+      heroTitle1: 'PDF to EPUB Converter', heroTitle2: 'Free 2026',
+      heroSubtitle: 'Convert PDF to Kindle-ready EPUB 3 with auto TOC, cover & metadata. Amazon KDP compatible. 100% free, no signup.',
+      pill1: '100% Private', pill2: 'Kindle Ready', pill3: 'Auto TOC', pill4: 'No Watermark',
+      dropTitle: 'Drop PDF here or', browse: 'browse',
+      dropSub: 'Single PDF file · Max 50 MB · 100% processed locally',
+      settingsTitle: 'eBook Settings',
+      bookTitle: 'Book Title', bookAuthor: 'Author Name', bookLanguage: 'Language', coverImage: 'Cover Image (optional)',
+      convertBtn: 'Generate EPUB eBook',
+      feat1T: 'Auto TOC', feat1D: 'Clickable table of contents generated automatically',
+      feat2T: 'Cover Support', feat2D: 'Upload your own cover image for the eBook',
+      feat3T: 'KDP Ready', feat3D: 'Direct upload to Amazon Kindle Direct Publishing',
+      feat4T: '100% Private', feat4D: 'Files never leave your browser. Complete privacy.',
+      faqTitle: 'Frequently Asked Questions',
+      faq1Q: 'Is this really free?', faq1A: 'Yes, 100% free forever. No signup, no watermarks, no limits.',
+      faq2Q: 'Will it work with Amazon KDP?', faq2A: "Yes! EPUB 3 is KDP's recommended format. Just upload the generated file to KDP.",
+      faq3Q: 'Is my data safe?', faq3A: 'Absolutely. Everything happens locally in your browser.',
+      faq4Q: 'What kind of PDFs work best?', faq4A: 'Text-based PDFs work best. For scanned PDFs, use OCR-enabled PDF.',
+      faq5Q: 'Can I use it commercially?', faq5A: 'Yes! Sell eBooks on Amazon KDP, Payhip, Gumroad, or anywhere.',
+      faq6Q: "What's the max file size?", faq6A: 'Up to 50 MB per PDF.',
+      footerDesc: '22 essential SEO tools. Fast, free, global.',
+      quickLinks: 'Quick Links', popularTools: 'Top Tools', moreTools: 'More Tools', legal: 'Legal',
+      copyright: '© 2026 FreeSEOToolHub.com – Built for Global Users',
+      toastSuccess: '✅ EPUB created successfully!',
+      toastError: 'Error: ',
+      toastInvalid: 'Please select a valid PDF file',
+      toastUpload: 'Please upload a PDF first',
+      toastTooBig: 'File too large. Max 50 MB.'
+    },
+    hi: {
+      brand: 'FreeSEOToolHub', home: 'होम', about: 'अबाउट', contact: 'संपर्क', privacy: 'प्राइवेसी', blog: 'ब्लॉग',
+      heroTitle1: 'PDF to EPUB कन्वर्टर', heroTitle2: 'फ्री 2026',
+      heroSubtitle: 'PDF को Kindle-रेडी EPUB 3 में बदलें — ऑटो TOC, कवर और मेटाडेटा के साथ। Amazon KDP के लिए। 100% फ्री।',
+      pill1: '100% प्राइवेट', pill2: 'Kindle रेडी', pill3: 'ऑटो TOC', pill4: 'नो वॉटरमार्क',
+      dropTitle: 'PDF यहां ड्रॉप करें या', browse: 'ब्राउज़ करें',
+      dropSub: 'एकल PDF फाइल · 50 MB तक · 100% लोकल',
+      settingsTitle: 'eBook सेटिंग्स',
+      bookTitle: 'बुक टाइटल', bookAuthor: 'लेखक का नाम', bookLanguage: 'भाषा', coverImage: 'कवर इमेज (वैकल्पिक)',
+      convertBtn: 'EPUB eBook बनाएं',
+      feat1T: 'ऑटो TOC', feat1D: 'क्लिक करने योग्य विषय-सूची',
+      feat2T: 'कवर सपोर्ट', feat2D: 'अपनी कवर इमेज अपलोड करें',
+      feat3T: 'KDP रेडी', feat3D: 'Amazon KDP पर सीधे अपलोड करें',
+      feat4T: '100% प्राइवेट', feat4D: 'फाइलें कभी ब्राउज़र नहीं छोड़तीं',
+      faqTitle: 'अक्सर पूछे जाने वाले प्रश्न',
+      faq1Q: 'क्या यह सच में फ्री है?', faq1A: 'हां, 100% हमेशा के लिए फ्री।',
+      faq2Q: 'Amazon KDP के साथ काम करेगा?', faq2A: 'हां! EPUB 3 KDP का अनुशंसित प्रारूप है।',
+      faq3Q: 'क्या मेरा डेटा सुरक्षित है?', faq3A: 'बिल्कुल। सब कुछ ब्राउज़र में होता है।',
+      faq4Q: 'कौन सी PDF बेहतर काम करती है?', faq4A: 'टेक्स्ट-बेस्ड PDF सबसे अच्छी।',
+      faq5Q: 'कमर्शियल इस्तेमाल कर सकते हैं?', faq5A: 'हां! Amazon KDP, Payhip, Gumroad पर बेच सकते हैं।',
+      faq6Q: 'अधिकतम फाइल साइज़?', faq6A: '50 MB तक प्रति PDF।',
+      footerDesc: '22 जरूरी SEO टूल्स।',
+      quickLinks: 'क्विक लिंक्स', popularTools: 'टॉप टूल्स', moreTools: 'और टूल्स', legal: 'लीगल',
+      copyright: '© 2026 FreeSEOToolHub.com',
+      toastSuccess: '✅ EPUB सफलतापूर्वक बनी!',
+      toastError: 'एरर: ',
+      toastInvalid: 'कृपया मान्य PDF चुनें',
+      toastUpload: 'पहले PDF अपलोड करें',
+      toastTooBig: 'फाइल बहुत बड़ी। 50 MB तक।'
+    },
+    ur: {
+      brand: 'FreeSEOToolHub', home: 'ہوم', about: 'تعارف', contact: 'رابطہ', privacy: 'پرائیویسی', blog: 'بلاگ',
+      heroTitle1: 'PDF to EPUB کنورٹر', heroTitle2: 'مفت 2026',
+      heroSubtitle: 'PDF کو Kindle-ریڈی EPUB 3 میں تبدیل کریں — آٹو TOC، کور اور میٹاڈیٹا کے ساتھ۔',
+      pill1: '100% نجی', pill2: 'Kindle ریڈی', pill3: 'آٹو TOC', pill4: 'واٹر مارک نہیں',
+      dropTitle: 'PDF یہاں ڈراپ کریں یا', browse: 'براؤز کریں',
+      dropSub: 'ایک PDF فائل · 50 MB تک',
+      settingsTitle: 'eBook سیٹنگز',
+      bookTitle: 'کتاب کا عنوان', bookAuthor: 'مصنف کا نام', bookLanguage: 'زبان', coverImage: 'کور تصویر',
+      convertBtn: 'EPUB بنائیں',
+      feat1T: 'آٹو TOC', feat1D: 'خودکار فہرست',
+      feat2T: 'کور سپورٹ', feat2D: 'اپنی کور تصویر اپلوڈ کریں',
+      feat3T: 'KDP ریڈی', feat3D: 'Amazon KDP پر اپلوڈ کریں',
+      feat4T: '100% نجی', feat4D: 'فائلیں براؤزر نہیں چھوڑتیں',
+      faqTitle: 'عام سوالات',
+      faq1Q: 'کیا واقعی مفت ہے؟', faq1A: 'جی ہاں، 100% مفت۔',
+      faq2Q: 'Amazon KDP کے ساتھ؟', faq2A: 'جی ہاں! EPUB 3 KDP کی سفارش کردہ فارمیٹ ہے۔',
+      faq3Q: 'کیا ڈیٹا محفوظ ہے؟', faq3A: 'بالکل۔',
+      faq4Q: 'کون سی PDF بہتر؟', faq4A: 'ٹیکسٹ-بیسڈ PDF۔',
+      faq5Q: 'تجارتی استعمال؟', faq5A: 'جی ہاں۔',
+      faq6Q: 'زیادہ سے زیادہ سائز؟', faq6A: '50 MB تک۔',
+      footerDesc: '22 ضروری SEO ٹولز۔',
+      quickLinks: 'فوری لنکس', popularTools: 'ٹاپ ٹولز', moreTools: 'مزید', legal: 'قانونی',
+      copyright: '© 2026 FreeSEOToolHub.com',
+      toastSuccess: '✅ EPUB بن گئی!',
+      toastError: 'ایرر: ',
+      toastInvalid: 'درست PDF چنیں',
+      toastUpload: 'پہلے PDF اپلوڈ کریں',
+      toastTooBig: 'بہت بڑی فائل۔'
+    },
+    de: {
+      brand: 'FreeSEOToolHub', home: 'Startseite', about: 'Über uns', contact: 'Kontakt', privacy: 'Datenschutz', blog: 'Blog',
+      heroTitle1: 'PDF zu EPUB Konverter', heroTitle2: 'Kostenlos 2026',
+      heroSubtitle: 'Konvertieren Sie PDF zu Kindle-bereitem EPUB 3 mit automatischem TOC, Cover und Metadaten.',
+      pill1: '100% Privat', pill2: 'Kindle-bereit', pill3: 'Auto TOC', pill4: 'Kein Wasserzeichen',
+      dropTitle: 'PDF hier ablegen oder', browse: 'durchsuchen',
+      dropSub: 'Einzelne PDF · Max 50 MB',
+      settingsTitle: 'eBook-Einstellungen',
+      bookTitle: 'Buchtitel', bookAuthor: 'Autor', bookLanguage: 'Sprache', coverImage: 'Cover-Bild',
+      convertBtn: 'EPUB erstellen',
+      feat1T: 'Auto TOC', feat1D: 'Klickbares Inhaltsverzeichnis',
+      feat2T: 'Cover-Support', feat2D: 'Eigenes Cover hochladen',
+      feat3T: 'KDP-bereit', feat3D: 'Direkt bei Amazon KDP hochladen',
+      feat4T: '100% Privat', feat4D: 'Dateien verlassen Ihren Browser nie',
+      faqTitle: 'Häufige Fragen',
+      faq1Q: 'Wirklich kostenlos?', faq1A: 'Ja, 100% für immer kostenlos.',
+      faq2Q: 'Mit Amazon KDP?', faq2A: 'Ja! EPUB 3 ist KDPs empfohlenes Format.',
+      faq3Q: 'Sind Daten sicher?', faq3A: 'Absolut. Alles im Browser.',
+      faq4Q: 'Welche PDFs funktionieren?', faq4A: 'Textbasierte PDFs.',
+      faq5Q: 'Kommerzielle Nutzung?', faq5A: 'Ja!',
+      faq6Q: 'Max. Dateigröße?', faq6A: '50 MB pro PDF.',
+      footerDesc: '22 essentielle SEO-Tools.',
+      quickLinks: 'Schnelllinks', popularTools: 'Top-Tools', moreTools: 'Weitere', legal: 'Rechtliches',
+      copyright: '© 2026 FreeSEOToolHub.com',
+      toastSuccess: '✅ EPUB erfolgreich erstellt!',
+      toastError: 'Fehler: ',
+      toastInvalid: 'Bitte gültige PDF wählen',
+      toastUpload: 'Bitte zuerst PDF hochladen',
+      toastTooBig: 'Datei zu groß.'
+    },
+    es: {
+      brand: 'FreeSEOToolHub', home: 'Inicio', about: 'Acerca de', contact: 'Contacto', privacy: 'Privacidad', blog: 'Blog',
+      heroTitle1: 'Convertidor PDF a EPUB', heroTitle2: 'Gratis 2026',
+      heroSubtitle: 'Convierte PDF a EPUB 3 listo para Kindle con TOC automático, portada y metadatos.',
+      pill1: '100% Privado', pill2: 'Listo para Kindle', pill3: 'TOC automático', pill4: 'Sin marca',
+      dropTitle: 'Suelta PDF aquí o', browse: 'explorar',
+      dropSub: 'PDF único · Máx 50 MB',
+      settingsTitle: 'Configuración',
+      bookTitle: 'Título del libro', bookAuthor: 'Autor', bookLanguage: 'Idioma', coverImage: 'Imagen de portada',
+      convertBtn: 'Generar EPUB',
+      feat1T: 'TOC automático', feat1D: 'Tabla de contenidos clicable',
+      feat2T: 'Soporte de portada', feat2D: 'Sube tu propia portada',
+      feat3T: 'Listo para KDP', feat3D: 'Sube directamente a Amazon KDP',
+      feat4T: '100% Privado', feat4D: 'Los archivos nunca salen de tu navegador',
+      faqTitle: 'Preguntas Frecuentes',
+      faq1Q: '¿Realmente gratis?', faq1A: 'Sí, 100% gratis para siempre.',
+      faq2Q: '¿Funciona con Amazon KDP?', faq2A: '¡Sí! EPUB 3 es el formato recomendado por KDP.',
+      faq3Q: '¿Mis datos están seguros?', faq3A: 'Absolutamente. Todo en tu navegador.',
+      faq4Q: '¿Qué PDFs funcionan mejor?', faq4A: 'PDFs con texto.',
+      faq5Q: '¿Uso comercial?', faq5A: '¡Sí!',
+      faq6Q: '¿Tamaño máximo?', faq6A: '50 MB por PDF.',
+      footerDesc: '22 herramientas SEO esenciales.',
+      quickLinks: 'Enlaces Rápidos', popularTools: 'Herramientas Top', moreTools: 'Más', legal: 'Legal',
+      copyright: '© 2026 FreeSEOToolHub.com',
+      toastSuccess: '✅ ¡EPUB creado!',
+      toastError: 'Error: ',
+      toastInvalid: 'Selecciona un PDF válido',
+      toastUpload: 'Primero sube un PDF',
+      toastTooBig: 'Archivo muy grande.'
+    }
+  };
+
+  let currentLang = 'en';
+  const t = k => I18N[currentLang][k] || I18N.en[k] || k;
+
+  function applyLang(lang) {
+    if (!I18N[lang]) lang = 'en';
+    currentLang = lang;
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'ur' ? 'rtl' : 'ltr';
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (I18N[lang][key]) el.textContent = I18N[lang][key];
+    });
+
+    const langNames = { en:'English', hi:'हिन्दी', ur:'اردو', de:'Deutsch', es:'Español' };
+    const label = document.getElementById('currentLangLabel');
+    if (label) label.textContent = langNames[lang] || 'English';
+
+    document.querySelectorAll('.lang-opt').forEach(a => {
+      a.classList.toggle('active', a.dataset.lang === lang);
+    });
+
+    try { localStorage.setItem('preferredLang', lang); } catch(e) {}
+  }
+
+  document.querySelectorAll('.lang-opt').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      applyLang(a.dataset.lang);
+      const url = new URL(window.location.href);
+      url.searchParams.set('lang', a.dataset.lang);
+      window.history.replaceState({}, '', url);
+    });
+  });
+
+  const urlParams = new URLSearchParams(location.search);
+  const initLang = urlParams.get('lang') || localStorage.getItem('preferredLang') || 'en';
+  applyLang(I18N[initLang] ? initLang : 'en');
+
+  // ============================================================
+  // TOAST
+  // ============================================================
+  function showToast(msg, type) {
+    type = type || 'success';
+    const container = $('toastContainer');
+    const toast = document.createElement('div');
+    toast.className = 'toast ' + type;
+    const icon = type === 'error' ? 'fa-times-circle' : 'fa-check-circle';
+    toast.innerHTML = '<i class="fas ' + icon + '" style="color:' + (type === 'error' ? '#ef4444' : '#10b981') + '"></i> <span>' + msg + '</span>';
+    container.appendChild(toast);
+    setTimeout(() => {
+      toast.classList.add('removing');
+      setTimeout(() => toast.remove(), 300);
+    }, 3500);
+  }
+
+  // ============================================================
+  // FILE HANDLING
+  // ============================================================
+  $('fileInput').addEventListener('change', e => {
+    if (e.target.files && e.target.files[0]) handleFile(e.target.files[0]);
+  });
+
+  ['dragenter','dragover'].forEach(ev => {
+    $('dropZone').addEventListener(ev, e => { e.preventDefault(); $('dropZone').classList.add('dragover'); });
+  });
+  ['dragleave','drop'].forEach(ev => {
+    $('dropZone').addEventListener(ev, e => { e.preventDefault(); $('dropZone').classList.remove('dragover'); });
+  });
+  $('dropZone').addEventListener('drop', e => {
+    const files = e.dataTransfer.files;
+    if (files && files[0]) handleFile(files[0]);
+  });
+
+  $('removeFile').addEventListener('click', e => {
+    e.preventDefault();
+    e.stopPropagation();
+    pdfFile = null;
+    $('fileInput').value = '';
+    $('fileInfo').classList.remove('active');
+    $('settings').style.display = 'none';
+  });
+
+  function handleFile(file) {
+    if (!file || (file.type !== 'application/pdf' && !/\.pdf$/i.test(file.name))) {
+      showToast(t('toastInvalid'), 'error');
+      return;
+    }
+    if (file.size > 50 * 1024 * 1024) {
+      showToast(t('toastTooBig'), 'error');
+      return;
+    }
+
+    pdfFile = file;
+    $('fileName').textContent = file.name;
+    $('fileMeta').textContent = (file.size / 1024 / 1024).toFixed(2) + ' MB · Ready to convert';
+    $('fileInfo').classList.add('active');
+    $('settings').style.display = 'block';
+    $('bookTitle').value = file.name.replace(/\.pdf$/i, '');
+  }
+
+  $('coverInput').addEventListener('change', e => {
+    if (e.target.files && e.target.files[0]) coverFile = e.target.files[0];
+  });
+
+  // ============================================================
+  // CONVERT
+  // ============================================================
+  $('convertBtn').addEventListener('click', async () => {
+    if (!pdfFile) { showToast(t('toastUpload'), 'error'); return; }
+
+    const btn = $('convertBtn');
+    btn.disabled = true;
+    $('progress').classList.add('active');
+    setProgress(5, 'Loading PDF...');
+
+    try {
+      const arrayBuffer = await pdfFile.arrayBuffer();
+      const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+      const numPages = pdf.numPages;
+
+      setProgress(15, 'Processing ' + numPages + ' pages...');
+
+      const JSZip = window.JSZip;
+      if (!JSZip) throw new Error('ZIP library not loaded');
+
+      const zip = new JSZip();
+      const title = $('bookTitle').value || 'Untitled';
+      const author = $('bookAuthor').value || 'Unknown';
+      const lang = $('bookLanguage').value || 'en';
+      const bookId = 'urn:uuid:' + generateUUID();
+
+      zip.file('mimetype', 'application/epub+zip', { compression: 'STORE' });
+
+      zip.file('META-INF/container.xml',
+        '<?xml version="1.0" encoding="UTF-8"?>\n' +
+        '<container version="1.0" xmlns="urn:oasis:names:tc:opendocument:xmlns:container">\n' +
+        '  <rootfiles>\n' +
+        '    <rootfile full-path="OEBPS/content.opf" media-type="application/oebps-package+xml"/>\n' +
+        '  </rootfiles>\n' +
+        '</container>');
+
+      let chapterItems = '';
+      let spineItems = '';
+      const chapters = [];
+
+      for (let i = 1; i <= numPages; i++) {
+        setProgress(15 + (i / numPages) * 60, 'Processing page ' + i + ' of ' + numPages + '...');
+
+        const page = await pdf.getPage(i);
+        const textContent = await page.getTextContent();
+        const text = textContent.items.map(item => item.str).join(' ').trim();
+        const pageTitle = 'Page ' + i;
+
+        const chapterHtml =
+          '<?xml version="1.0" encoding="UTF-8"?>\n' +
+          '<!DOCTYPE html>\n' +
+          '<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="' + lang + '">\n' +
+          '<head><title>' + escapeXml(pageTitle) + '</title></head>\n' +
+          '<body>\n' +
+          '  <h1>' + escapeXml(pageTitle) + '</h1>\n' +
+          '  <p>' + escapeXml(text || '(No text)') + '</p>\n' +
+          '</body>\n' +
+          '</html>';
+
+        zip.file('OEBPS/chapter' + i + '.xhtml', chapterHtml);
+        chapters.push({ id: 'chapter' + i, title: pageTitle, file: 'chapter' + i + '.xhtml' });
+
+        chapterItems += '<item id="chapter' + i + '" href="chapter' + i + '.xhtml" media-type="application/xhtml+xml"/>';
+        spineItems += '<itemref idref="chapter' + i + '"/>';
+      }
+
+      let coverItem = '';
+      let coverMeta = '';
+      if (coverFile) {
+        const coverData = await fileToArrayBuffer(coverFile);
+        const coverExt = coverFile.type === 'image/png' ? 'png' : 'jpg';
+        zip.file('OEBPS/cover.' + coverExt, coverData);
+        coverItem = '<item id="cover-image" href="cover.' + coverExt + '" media-type="' + coverFile.type + '" properties="cover-image"/>';
+        coverMeta = '<meta name="cover" content="cover-image"/>';
+      }
+
+      const navItems = chapters.map(c => '<li><a href="' + c.file + '">' + escapeXml(c.title) + '</a></li>').join('\n');
+      zip.file('OEBPS/nav.xhtml',
+        '<?xml version="1.0" encoding="UTF-8"?>\n' +
+        '<!DOCTYPE html>\n' +
+        '<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="' + lang + '">\n' +
+        '<head><title>Table of Contents</title></head>\n' +
+        '<body>\n' +
+        '  <nav epub:type="toc" id="toc">\n' +
+        '    <h1>Table of Contents</h1>\n' +
+        '    <ol>' + navItems + '</ol>\n' +
+        '  </nav>\n' +
+        '</body>\n' +
+        '</html>');
+
+      const navPoints = chapters.map((c, i) =>
+        '<navPoint id="navPoint-' + (i + 1) + '" playOrder="' + (i + 1) + '">\n' +
+        '  <navLabel><text>' + escapeXml(c.title) + '</text></navLabel>\n' +
+        '  <content src="' + c.file + '"/>\n' +
+        '</navPoint>').join('\n');
+
+      zip.file('OEBPS/toc.ncx',
+        '<?xml version="1.0" encoding="UTF-8"?>\n' +
+        '<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1">\n' +
+        '  <head>\n' +
+        '    <meta name="dtb:uid" content="' + bookId + '"/>\n' +
+        '    <meta name="dtb:depth" content="1"/>\n' +
+        '  </head>\n' +
+        '  <docTitle><text>' + escapeXml(title) + '</text></docTitle>\n' +
+        '  <navMap>' + navPoints + '</navMap>\n' +
+        '</ncx>');
+
+      zip.file('OEBPS/content.opf',
+        '<?xml version="1.0" encoding="UTF-8"?>\n' +
+        '<package xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="bookid">\n' +
+        '  <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">\n' +
+        '    <dc:identifier id="bookid">' + bookId + '</dc:identifier>\n' +
+        '    <dc:title>' + escapeXml(title) + '</dc:title>\n' +
+        '    <dc:creator>' + escapeXml(author) + '</dc:creator>\n' +
+        '    <dc:language>' + lang + '</dc:language>\n' +
+        '    <meta property="dcterms:modified">' + new Date().toISOString().split('.')[0] + 'Z</meta>\n' +
+        '    ' + coverMeta + '\n' +
+        '  </metadata>\n' +
+        '  <manifest>\n' +
+        '    <item id="nav" href="nav.xhtml" media-type="application/xhtml+xml" properties="nav"/>\n' +
+        '    <item id="ncx" href="toc.ncx" media-type="application/x-dtbncx+xml"/>\n' +
+        '    ' + coverItem + '\n' +
+        '    ' + chapterItems + '\n' +
+        '  </manifest>\n' +
+        '  <spine toc="ncx">\n' +
+        '    ' + spineItems + '\n' +
+        '  </spine>\n' +
+        '</package>');
+
+      setProgress(90, 'Generating EPUB...');
+
+      const blob = await zip.generateAsync({
+        type: 'blob',
+        mimeType: 'application/epub+zip'
+      });
+
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = title.replace(/[^a-z0-9]/gi, '_') + '.epub';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(() => URL.revokeObjectURL(url), 2000);
+
+      setProgress(100, t('toastSuccess'));
+      showToast(t('toastSuccess'), 'success');
+
+    } catch (err) {
+      console.error(err);
+      showToast(t('toastError') + err.message, 'error');
+    } finally {
+      btn.disabled = false;
+      setTimeout(() => {
+        $('progress').classList.remove('active');
+        setProgress(0, '');
+      }, 2000);
+    }
+  });
+
+  // ============================================================
+  // HELPERS
+  // ============================================================
+  function setProgress(pct, text) {
+    $('progressFill').style.width = pct + '%';
+    $('status').textContent = text || '';
+  }
+
+  function fileToArrayBuffer(file) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = reject;
+      reader.readAsArrayBuffer(file);
+    });
+  }
+
+  function escapeXml(s) {
+    return String(s).replace(/[<>&'"]/g, c => ({
+      '<': '&lt;', '>': '&gt;', '&': '&amp;', "'": '&apos;', '"': '&quot;'
+    }[c]));
+  }
+
+  function generateUUID() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
+      const r = Math.random() * 16 | 0;
+      const v = c === 'x' ? r : (r & 0x3 | 0x8);
+      return v.toString(16);
+    });
+  }
+
+})();
+</script>
 
 </body>
 </html>
