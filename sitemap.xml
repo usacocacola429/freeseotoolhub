@@ -69,7 +69,7 @@
         <xhtml:link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/blog/"/>
     </url>
 
-    <!-- ==================== 🔥 PDF & IMAGE TOOLS (NEW) ==================== -->
+    <!-- ==================== 🔥 PDF & IMAGE TOOLS ==================== -->
     
     <!-- PDF to JPG -->
     <url>
@@ -97,6 +97,34 @@
         <xhtml:link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/tools/jpg-to-pdf.html?lang=es"/>
         <xhtml:link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/tools/jpg-to-pdf.html?lang=de"/>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/tools/jpg-to-pdf.html"/>
+    </url>
+
+    <!-- PDF to EPUB (eBook Creator) - NEW -->
+    <url>
+        <loc>https://freeseotoolhub.com/tools/ebook-creator.html</loc>
+        <lastmod>2026-07-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.95</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/tools/ebook-creator.html"/>
+        <xhtml:link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/tools/ebook-creator.html?lang=hi"/>
+        <xhtml:link rel="alternate" hreflang="ur" href="https://freeseotoolhub.com/tools/ebook-creator.html?lang=ur"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/tools/ebook-creator.html?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/tools/ebook-creator.html?lang=de"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/tools/ebook-creator.html"/>
+    </url>
+
+    <!-- KDP Paperback Formatter - NEW -->
+    <url>
+        <loc>https://freeseotoolhub.com/tools/kdp-paperback-formatter.html</loc>
+        <lastmod>2026-07-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.95</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/tools/kdp-paperback-formatter.html"/>
+        <xhtml:link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/tools/kdp-paperback-formatter.html?lang=hi"/>
+        <xhtml:link rel="alternate" hreflang="ur" href="https://freeseotoolhub.com/tools/kdp-paperback-formatter.html?lang=ur"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/tools/kdp-paperback-formatter.html?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/tools/kdp-paperback-formatter.html?lang=de"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/tools/kdp-paperback-formatter.html"/>
     </url>
 
     <!-- Favicon Generator -->
@@ -127,7 +155,7 @@
         <xhtml:link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/tools/color-palette-generator.html"/>
     </url>
 
-    <!-- ==================== 🌍 15 GLOBAL SEO TOOLS ==================== -->
+    <!-- ==================== 🌍 GLOBAL SEO TOOLS ==================== -->
     
     <!-- 1. Meta Tag Generator -->
     <url>
