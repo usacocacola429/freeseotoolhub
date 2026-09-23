@@ -1,0 +1,507 @@
+(function() {
+  'use strict';
+
+  // ============================================================
+  // CONFIG
+  // ============================================================
+  if (window.pdfjsLib) {
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+  }
+
+  const $ = id => document.getElementById(id);
+  let pdfFile = null;
+  let coverFile = null;
+
+  // ============================================================
+  // i18n TRANSLATIONS
+  // ============================================================
+  const I18N = {
+    en: {
+      brand: 'FreeSEOToolHub',
+      home: 'Home', about: 'About', contact: 'Contact', privacy: 'Privacy', blog: 'Blog',
+      heroTitle1: 'PDF to EPUB Converter', heroTitle2: 'Free 2026',
+      heroSubtitle: 'Convert PDF to Kindle-ready EPUB 3 with auto TOC, cover & metadata. Amazon KDP compatible. 100% free, no signup.',
+      pill1: '100% Private', pill2: 'Kindle Ready', pill3: 'Auto TOC', pill4: 'No Watermark',
+      dropTitle: 'Drop PDF here or', browse: 'browse',
+      dropSub: 'Single PDF file · Max 50 MB · 100% processed locally',
+      settingsTitle: 'eBook Settings',
+      bookTitle: 'Book Title', bookAuthor: 'Author Name', bookLanguage: 'Language', coverImage: 'Cover Image (optional)',
+      convertBtn: 'Generate EPUB eBook',
+      feat1T: 'Auto TOC', feat1D: 'Clickable table of contents generated automatically',
+      feat2T: 'Cover Support', feat2D: 'Upload your own cover image for the eBook',
+      feat3T: 'KDP Ready', feat3D: 'Direct upload to Amazon Kindle Direct Publishing',
+      feat4T: '100% Private', feat4D: 'Files never leave your browser. Complete privacy.',
+      faqTitle: 'Frequently Asked Questions',
+      faq1Q: 'Is this really free?', faq1A: 'Yes, 100% free forever. No signup, no watermarks, no limits.',
+      faq2Q: 'Will it work with Amazon KDP?', faq2A: 'Yes! EPUB 3 is KDP\'s recommended format. Just upload the generated file to KDP.',
+      faq3Q: 'Is my data safe?', faq3A: 'Absolutely. Everything happens locally in your browser.',
+      faq4Q: 'What kind of PDFs work best?', faq4A: 'Text-based PDFs work best. For scanned PDFs, use OCR-enabled PDF.',
+      faq5Q: 'Can I use it commercially?', faq5A: 'Yes! Sell eBooks on Amazon KDP, Payhip, Gumroad, or anywhere.',
+      faq6Q: 'What\'s the max file size?', faq6A: 'Up to 50 MB per PDF.',
+      footerDesc: '22 essential SEO tools. Fast, free, global.',
+      quickLinks: 'Quick Links', popularTools: 'Top Tools', moreTools: 'More Tools', legal: 'Legal',
+      copyright: '© 2026 FreeSEOToolHub.com – Built for Global Users',
+      toastLoading: 'Loading PDF...',
+      toastProcessing: 'Processing page {n} of {total}...',
+      toastGenerating: 'Generating EPUB...',
+      toastSuccess: '✅ EPUB created successfully!',
+      toastError: 'Error: ',
+      toastInvalid: 'Please select a valid PDF file',
+      toastUpload: 'Please upload a PDF first'
+    },
+    hi: {
+      brand: 'FreeSEOToolHub',
+      home: 'होम', about: 'अबाउट', contact: 'संपर्क', privacy: 'प्राइवेसी', blog: 'ब्लॉग',
+      heroTitle1: 'PDF to EPUB कन्वर्टर', heroTitle2: 'फ्री 2026',
+      heroSubtitle: 'PDF को Kindle-रेडी EPUB 3 में बदलें — ऑटो TOC, कवर और मेटाडेटा के साथ। Amazon KDP के लिए। 100% फ्री।',
+      pill1: '100% प्राइवेट', pill2: 'Kindle रेडी', pill3: 'ऑटो TOC', pill4: 'नो वॉटरमार्क',
+      dropTitle: 'PDF यहां ड्रॉप करें या', browse: 'ब्राउज़ करें',
+      dropSub: 'एकल PDF फाइल · 50 MB तक · 100% लोकल',
+      settingsTitle: 'eBook सेटिंग्स',
+      bookTitle: 'बुक टाइटल', bookAuthor: 'लेखक का नाम', bookLanguage: 'भाषा', coverImage: 'कवर इमेज (वैकल्पिक)',
+      convertBtn: 'EPUB eBook बनाएं',
+      feat1T: 'ऑटो TOC', feat1D: 'क्लिक करने योग्य विषय-सूची',
+      feat2T: 'कवर सपोर्ट', feat2D: 'अपनी कवर इमेज अपलोड करें',
+      feat3T: 'KDP रेडी', feat3D: 'Amazon KDP पर सीधे अपलोड करें',
+      feat4T: '100% प्राइवेट', feat4D: 'फाइलें कभी ब्राउज़र नहीं छोड़तीं',
+      faqTitle: 'अक्सर पूछे जाने वाले प्रश्न',
+      faq1Q: 'क्या यह सच में फ्री है?', faq1A: 'हां, 100% हमेशा के लिए फ्री।',
+      faq2Q: 'Amazon KDP के साथ काम करेगा?', faq2A: 'हां! EPUB 3 KDP का अनुशंसित प्रारूप है।',
+      faq3Q: 'क्या मेरा डेटा सुरक्षित है?', faq3A: 'बिल्कुल। सब कुछ ब्राउज़र में होता है।',
+      faq4Q: 'कौन सी PDF बेहतर काम करती है?', faq4A: 'टेक्स्ट-बेस्ड PDF सबसे अच्छी।',
+      faq5Q: 'कमर्शियल इस्तेमाल कर सकते हैं?', faq5A: 'हां! Amazon KDP, Payhip, Gumroad पर बेच सकते हैं।',
+      faq6Q: 'अधिकतम फाइल साइज़?', faq6A: '50 MB तक प्रति PDF।',
+      footerDesc: '22 जरूरी SEO टूल्स।',
+      quickLinks: 'क्विक लिंक्स', popularTools: 'टॉप टूल्स', moreTools: 'और टूल्स', legal: 'लीगल',
+      copyright: '© 2026 FreeSEOToolHub.com',
+      toastLoading: 'PDF लोड हो रही है...',
+      toastProcessing: 'पेज {n} / {total} प्रोसेस...',
+      toastGenerating: 'EPUB बना रहे हैं...',
+      toastSuccess: '✅ EPUB सफलतापूर्वक बनी!',
+      toastError: 'एरर: ',
+      toastInvalid: 'कृपया मान्य PDF चुनें',
+      toastUpload: 'पहले PDF अपलोड करें'
+    },
+    ur: {
+      brand: 'FreeSEOToolHub',
+      home: 'ہوم', about: 'تعارف', contact: 'رابطہ', privacy: 'پرائیویسی', blog: 'بلاگ',
+      heroTitle1: 'PDF to EPUB کنورٹر', heroTitle2: 'مفت 2026',
+      heroSubtitle: 'PDF کو Kindle-ریڈی EPUB 3 میں تبدیل کریں — آٹو TOC، کور اور میٹاڈیٹا کے ساتھ۔',
+      pill1: '100% نجی', pill2: 'Kindle ریڈی', pill3: 'آٹو TOC', pill4: 'واٹر مارک نہیں',
+      dropTitle: 'PDF یہاں ڈراپ کریں یا', browse: 'براؤز کریں',
+      dropSub: 'ایک PDF فائل · 50 MB تک',
+      settingsTitle: 'eBook سیٹنگز',
+      bookTitle: 'کتاب کا عنوان', bookAuthor: 'مصنف کا نام', bookLanguage: 'زبان', coverImage: 'کور تصویر',
+      convertBtn: 'EPUB بنائیں',
+      feat1T: 'آٹو TOC', feat1D: 'خودکار فہرست',
+      feat2T: 'کور سپورٹ', feat2D: 'اپنی کور تصویر اپلوڈ کریں',
+      feat3T: 'KDP ریڈی', feat3D: 'Amazon KDP پر اپلوڈ کریں',
+      feat4T: '100% نجی', feat4D: 'فائلیں براؤزر نہیں چھوڑتیں',
+      faqTitle: 'عام سوالات',
+      faq1Q: 'کیا واقعی مفت ہے؟', faq1A: 'جی ہاں، 100% مفت۔',
+      faq2Q: 'Amazon KDP کے ساتھ؟', faq2A: 'جی ہاں! EPUB 3 KDP کی سفارش کردہ فارمیٹ ہے۔',
+      faq3Q: 'کیا ڈیٹا محفوظ ہے؟', faq3A: 'بالکل۔',
+      faq4Q: 'کون سی PDF بہتر؟', faq4A: 'ٹیکسٹ-بیسڈ PDF۔',
+      faq5Q: 'تجارتی استعمال؟', faq5A: 'جی ہاں۔',
+      faq6Q: 'زیادہ سے زیادہ سائز؟', faq6A: '50 MB تک۔',
+      footerDesc: '22 ضروری SEO ٹولز۔',
+      quickLinks: 'فوری لنکس', popularTools: 'ٹاپ ٹولز', moreTools: 'مزید', legal: 'قانونی',
+      copyright: '© 2026 FreeSEOToolHub.com',
+      toastLoading: 'لوڈ ہو رہی ہے...',
+      toastProcessing: 'صفحہ {n}/{total}...',
+      toastGenerating: 'EPUB...',
+      toastSuccess: '✅ EPUB بن گئی!',
+      toastError: 'ایرر: ',
+      toastInvalid: 'درست PDF چنیں',
+      toastUpload: 'پہلے PDF اپلوڈ کریں'
+    },
+    de: {
+      brand: 'FreeSEOToolHub',
+      home: 'Startseite', about: 'Über uns', contact: 'Kontakt', privacy: 'Datenschutz', blog: 'Blog',
+      heroTitle1: 'PDF zu EPUB Konverter', heroTitle2: 'Kostenlos 2026',
+      heroSubtitle: 'Konvertieren Sie PDF zu Kindle-bereitem EPUB 3 mit automatischem TOC, Cover und Metadaten.',
+      pill1: '100% Privat', pill2: 'Kindle-bereit', pill3: 'Auto TOC', pill4: 'Kein Wasserzeichen',
+      dropTitle: 'PDF hier ablegen oder', browse: 'durchsuchen',
+      dropSub: 'Einzelne PDF · Max 50 MB',
+      settingsTitle: 'eBook-Einstellungen',
+      bookTitle: 'Buchtitel', bookAuthor: 'Autor', bookLanguage: 'Sprache', coverImage: 'Cover-Bild',
+      convertBtn: 'EPUB erstellen',
+      feat1T: 'Auto TOC', feat1D: 'Klickbares Inhaltsverzeichnis',
+      feat2T: 'Cover-Support', feat2D: 'Eigenes Cover hochladen',
+      feat3T: 'KDP-bereit', feat3D: 'Direkt bei Amazon KDP hochladen',
+      feat4T: '100% Privat', feat4D: 'Dateien verlassen Ihren Browser nie',
+      faqTitle: 'Häufige Fragen',
+      faq1Q: 'Wirklich kostenlos?', faq1A: 'Ja, 100% für immer kostenlos.',
+      faq2Q: 'Mit Amazon KDP?', faq2A: 'Ja! EPUB 3 ist KDPs empfohlenes Format.',
+      faq3Q: 'Sind Daten sicher?', faq3A: 'Absolut. Alles im Browser.',
+      faq4Q: 'Welche PDFs funktionieren?', faq4A: 'Textbasierte PDFs.',
+      faq5Q: 'Kommerzielle Nutzung?', faq5A: 'Ja!',
+      faq6Q: 'Max. Dateigröße?', faq6A: '50 MB pro PDF.',
+      footerDesc: '22 essentielle SEO-Tools.',
+      quickLinks: 'Schnelllinks', popularTools: 'Top-Tools', moreTools: 'Weitere', legal: 'Rechtliches',
+      copyright: '© 2026 FreeSEOToolHub.com',
+      toastLoading: 'Lädt PDF...',
+      toastProcessing: 'Seite {n} von {total}...',
+      toastGenerating: 'EPUB wird erstellt...',
+      toastSuccess: '✅ EPUB erfolgreich erstellt!',
+      toastError: 'Fehler: ',
+      toastInvalid: 'Bitte gültige PDF wählen',
+      toastUpload: 'Bitte zuerst PDF hochladen'
+    },
+    es: {
+      brand: 'FreeSEOToolHub',
+      home: 'Inicio', about: 'Acerca de', contact: 'Contacto', privacy: 'Privacidad', blog: 'Blog',
+      heroTitle1: 'Convertidor PDF a EPUB', heroTitle2: 'Gratis 2026',
+      heroSubtitle: 'Convierte PDF a EPUB 3 listo para Kindle con TOC automático, portada y metadatos.',
+      pill1: '100% Privado', pill2: 'Listo para Kindle', pill3: 'TOC automático', pill4: 'Sin marca',
+      dropTitle: 'Suelta PDF aquí o', browse: 'explorar',
+      dropSub: 'PDF único · Máx 50 MB',
+      settingsTitle: 'Configuración',
+      bookTitle: 'Título del libro', bookAuthor: 'Autor', bookLanguage: 'Idioma', coverImage: 'Imagen de portada',
+      convertBtn: 'Generar EPUB',
+      feat1T: 'TOC automático', feat1D: 'Tabla de contenidos clicable',
+      feat2T: 'Soporte de portada', feat2D: 'Sube tu propia portada',
+      feat3T: 'Listo para KDP', feat3D: 'Sube directamente a Amazon KDP',
+      feat4T: '100% Privado', feat4D: 'Los archivos nunca salen de tu navegador',
+      faqTitle: 'Preguntas Frecuentes',
+      faq1Q: '¿Realmente gratis?', faq1A: 'Sí, 100% gratis para siempre.',
+      faq2Q: '¿Funciona con Amazon KDP?', faq2A: '¡Sí! EPUB 3 es el formato recomendado por KDP.',
+      faq3Q: '¿Mis datos están seguros?', faq3A: 'Absolutamente. Todo en tu navegador.',
+      faq4Q: '¿Qué PDFs funcionan mejor?', faq4A: 'PDFs con texto.',
+      faq5Q: '¿Uso comercial?', faq5A: '¡Sí!',
+      faq6Q: '¿Tamaño máximo?', faq6A: '50 MB por PDF.',
+      footerDesc: '22 herramientas SEO esenciales.',
+      quickLinks: 'Enlaces Rápidos', popularTools: 'Herramientas Top', moreTools: 'Más', legal: 'Legal',
+      copyright: '© 2026 FreeSEOToolHub.com',
+      toastLoading: 'Cargando PDF...',
+      toastProcessing: 'Página {n} de {total}...',
+      toastGenerating: 'Generando EPUB...',
+      toastSuccess: '✅ ¡EPUB creado!',
+      toastError: 'Error: ',
+      toastInvalid: 'Selecciona un PDF válido',
+      toastUpload: 'Primero sube un PDF'
+    }
+  };
+
+  let currentLang = 'en';
+  const t = k => I18N[currentLang][k] || I18N.en[k] || k;
+
+  function applyLang(lang) {
+    if (!I18N[lang]) lang = 'en';
+    currentLang = lang;
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'ur' ? 'rtl' : 'ltr';
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (I18N[lang][key]) el.textContent = I18N[lang][key];
+    });
+
+    const langNames = { en:'English', hi:'हिन्दी', ur:'اردو', de:'Deutsch', es:'Español' };
+    const label = document.getElementById('currentLangLabel');
+    if (label) label.textContent = langNames[lang] || 'English';
+
+    document.querySelectorAll('.lang-opt').forEach(a => {
+      a.classList.toggle('active', a.dataset.lang === lang);
+    });
+
+    try { localStorage.setItem('preferredLang', lang); } catch(e) {}
+  }
+
+  document.querySelectorAll('.lang-opt').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      applyLang(a.dataset.lang);
+      const url = new URL(window.location.href);
+      url.searchParams.set('lang', a.dataset.lang);
+      window.history.replaceState({}, '', url);
+    });
+  });
+
+  const urlParams = new URLSearchParams(location.search);
+  const initLang = urlParams.get('lang') || localStorage.getItem('preferredLang') || 'en';
+  applyLang(I18N[initLang] ? initLang : 'en');
+
+  // ============================================================
+  // TOAST
+  // ============================================================
+  function showToast(msg, type = 'success') {
+    const container = $('toastContainer');
+    const toast = document.createElement('div');
+    toast.className = 'toast ' + type;
+    const icon = type === 'error' ? 'fa-times-circle' : 'fa-check-circle';
+    toast.innerHTML = `<i class="fas ${icon}" style="color:${type === 'error' ? '#ef4444' : '#10b981'}"></i> <span>${msg}</span>`;
+    container.appendChild(toast);
+    setTimeout(() => {
+      toast.classList.add('removing');
+      setTimeout(() => toast.remove(), 300);
+    }, 3500);
+  }
+
+  // ============================================================
+  // FILE HANDLING
+  // ============================================================
+  $('fileInput').addEventListener('change', e => {
+    if (e.target.files && e.target.files[0]) handleFile(e.target.files[0]);
+  });
+
+  ['dragenter','dragover'].forEach(ev => {
+    $('dropZone').addEventListener(ev, e => { e.preventDefault(); $('dropZone').classList.add('dragover'); });
+  });
+  ['dragleave','drop'].forEach(ev => {
+    $('dropZone').addEventListener(ev, e => { e.preventDefault(); $('dropZone').classList.remove('dragover'); });
+  });
+  $('dropZone').addEventListener('drop', e => {
+    const files = e.dataTransfer.files;
+    if (files && files[0]) handleFile(files[0]);
+  });
+
+  $('removeFile').addEventListener('click', e => {
+    e.preventDefault();
+    e.stopPropagation();
+    pdfFile = null;
+    $('fileInput').value = '';
+    $('fileInfo').classList.remove('active');
+    $('settings').style.display = 'none';
+  });
+
+  function handleFile(file) {
+    if (!file || (file.type !== 'application/pdf' && !/\.pdf$/i.test(file.name))) {
+      showToast(t('toastInvalid'), 'error');
+      return;
+    }
+    if (file.size > 50 * 1024 * 1024) {
+      showToast('File too large. Max 50 MB.', 'error');
+      return;
+    }
+
+    pdfFile = file;
+    $('fileName').textContent = file.name;
+    $('fileMeta').textContent = (file.size / 1024 / 1024).toFixed(2) + ' MB · Ready to convert';
+    $('fileInfo').classList.add('active');
+    $('settings').style.display = 'block';
+    $('bookTitle').value = file.name.replace(/\.pdf$/i, '');
+  }
+
+  $('coverInput').addEventListener('change', e => {
+    if (e.target.files && e.target.files[0]) coverFile = e.target.files[0];
+  });
+
+  // ============================================================
+  // CONVERT
+  // ============================================================
+  $('convertBtn').addEventListener('click', async () => {
+    if (!pdfFile) { showToast(t('toastUpload'), 'error'); return; }
+
+    const btn = $('convertBtn');
+    btn.disabled = true;
+    $('progress').classList.add('active');
+    setProgress(5, t('toastLoading'));
+
+    try {
+      const arrayBuffer = await pdfFile.arrayBuffer();
+      const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+      const numPages = pdf.numPages;
+
+      setProgress(15, `Processing ${numPages} pages...`);
+
+      // Check epubit availability
+      if (!window.EBook && !window.epubit) {
+        throw new Error('EPUB library not loaded. Please refresh.');
+      }
+
+      // Fallback: Build EPUB manually using JSZip
+      const JSZip = window.JSZip;
+      if (!JSZip) {
+        // Load JSZip dynamically
+        await loadScript('https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js');
+      }
+
+      const zip = new JSZip();
+      const title = $('bookTitle').value || 'Untitled';
+      const author = $('bookAuthor').value || 'Unknown';
+      const lang = $('bookLanguage').value || 'en';
+      const bookId = 'urn:uuid:' + generateUUID();
+
+      // mimetype (must be first, uncompressed)
+      zip.file('mimetype', 'application/epub+zip', { compression: 'STORE' });
+
+      // META-INF/container.xml
+      zip.file('META-INF/container.xml', `<?xml version="1.0" encoding="UTF-8"?>
+<container version="1.0" xmlns="urn:oasis:names:tc:opendocument:xmlns:container">
+  <rootfiles>
+    <rootfile full-path="OEBPS/content.opf" media-type="application/oebps-package+xml"/>
+  </rootfiles>
+</container>`);
+
+      // Chapters - extract text from each PDF page
+      let chapterItems = '';
+      let spineItems = '';
+      const chapters = [];
+
+      for (let i = 1; i <= numPages; i++) {
+        setProgress(15 + (i / numPages) * 60, `Processing page ${i} of ${numPages}...`);
+
+        const page = await pdf.getPage(i);
+        const textContent = await page.getTextContent();
+        const text = textContent.items.map(item => item.str).join(' ').trim();
+        const pageTitle = `Page ${i}`;
+
+        const chapterHtml = `<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="${lang}">
+<head><title>${escapeXml(pageTitle)}</title></head>
+<body>
+  <h1>${escapeXml(pageTitle)}</h1>
+  <p>${escapeXml(text || '(No text)')}</p>
+</body>
+</html>`;
+
+        zip.file(`OEBPS/chapter${i}.xhtml`, chapterHtml);
+        chapters.push({ id: `chapter${i}`, title: pageTitle, file: `chapter${i}.xhtml` });
+
+        chapterItems += `<item id="chapter${i}" href="chapter${i}.xhtml" media-type="application/xhtml+xml"/>`;
+        spineItems += `<itemref idref="chapter${i}"/>`;
+      }
+
+      // Cover image
+      let coverItem = '';
+      let coverMeta = '';
+      if (coverFile) {
+        const coverData = await fileToArrayBuffer(coverFile);
+        const coverExt = coverFile.type === 'image/png' ? 'png' : 'jpg';
+        zip.file(`OEBPS/cover.${coverExt}`, coverData);
+        coverItem = `<item id="cover-image" href="cover.${coverExt}" media-type="${coverFile.type}" properties="cover-image"/>`;
+        coverMeta = `<meta name="cover" content="cover-image"/>`;
+      }
+
+      // Nav (TOC)
+      const navItems = chapters.map(c => `<li><a href="${c.file}">${escapeXml(c.title)}</a></li>`).join('\n');
+      zip.file('OEBPS/nav.xhtml', `<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="${lang}">
+<head><title>Table of Contents</title></head>
+<body>
+  <nav epub:type="toc" id="toc">
+    <h1>Table of Contents</h1>
+    <ol>
+${navItems}
+    </ol>
+  </nav>
+</body>
+</html>`);
+
+      // NCX (for EPUB 2 compatibility)
+      const navPoints = chapters.map((c, i) => `
+    <navPoint id="navPoint-${i + 1}" playOrder="${i + 1}">
+      <navLabel><text>${escapeXml(c.title)}</text></navLabel>
+      <content src="${c.file}"/>
+    </navPoint>`).join('');
+
+      zip.file('OEBPS/toc.ncx', `<?xml version="1.0" encoding="UTF-8"?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1">
+  <head>
+    <meta name="dtb:uid" content="${bookId}"/>
+    <meta name="dtb:depth" content="1"/>
+  </head>
+  <docTitle><text>${escapeXml(title)}</text></docTitle>
+  <navMap>${navPoints}</navMap>
+</ncx>`);
+
+      // content.opf
+      zip.file('OEBPS/content.opf', `<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="bookid">
+  <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:identifier id="bookid">${bookId}</dc:identifier>
+    <dc:title>${escapeXml(title)}</dc:title>
+    <dc:creator>${escapeXml(author)}</dc:creator>
+    <dc:language>${lang}</dc:language>
+    <meta property="dcterms:modified">${new Date().toISOString().split('.')[0]}Z</meta>
+    ${coverMeta}
+  </metadata>
+  <manifest>
+    <item id="nav" href="nav.xhtml" media-type="application/xhtml+xml" properties="nav"/>
+    <item id="ncx" href="toc.ncx" media-type="application/x-dtbncx+xml"/>
+    ${coverItem}
+    ${chapterItems}
+  </manifest>
+  <spine toc="ncx">
+    ${spineItems}
+  </spine>
+</package>`);
+
+      setProgress(90, t('toastGenerating'));
+
+      // Generate EPUB
+      const blob = await zip.generateAsync({ 
+        type: 'blob',
+        mimeType: 'application/epub+zip'
+      });
+
+      // Download
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = title.replace(/[^a-z0-9]/gi, '_') + '.epub';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(() => URL.revokeObjectURL(url), 2000);
+
+      setProgress(100, t('toastSuccess'));
+      showToast(t('toastSuccess'), 'success');
+
+    } catch (err) {
+      console.error(err);
+      showToast(t('toastError') + err.message, 'error');
+    } finally {
+      btn.disabled = false;
+      setTimeout(() => {
+        $('progress').classList.remove('active');
+        setProgress(0, '');
+      }, 2000);
+    }
+  });
+
+  // ============================================================
+  // HELPERS
+  // ============================================================
+  function setProgress(pct, text) {
+    $('progressFill').style.width = pct + '%';
+    $('status').textContent = text || '';
+  }
+
+  function fileToArrayBuffer(file) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = reject;
+      reader.readAsArrayBuffer(file);
+    });
+  }
+
+  function escapeXml(s) {
+    return String(s).replace(/[<>&'"]/g, c => ({
+      '<': '&lt;', '>': '&gt;', '&': '&amp;', "'": '&apos;', '"': '&quot;'
+    }[c]));
+  }
+
+  function generateUUID() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
+      const r = Math.random() * 16 | 0;
+      const v = c === 'x' ? r : (r & 0x3 | 0x8);
+      return v.toString(16);
+    });
+  }
+
+  function loadScript(src) {
+    return new Promise((resolve, reject) => {
+      const s = document.createElement('script');
+      s.src = src;
+      s.onload = resolve;
+      s.onerror = reject;
+      document.head.appendChild(s);
+    });
+  }
+
+})();
