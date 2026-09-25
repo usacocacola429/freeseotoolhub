@@ -127,6 +127,20 @@
         <xhtml:link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/tools/kdp-paperback-formatter.html"/>
     </url>
 
+    <!-- KDP Cover Designer - NEW -->
+    <url>
+        <loc>https://freeseotoolhub.com/tools/kdp-cover-designer.html</loc>
+        <lastmod>2026-07-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.95</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/tools/kdp-cover-designer.html"/>
+        <xhtml:link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/tools/kdp-cover-designer.html?lang=hi"/>
+        <xhtml:link rel="alternate" hreflang="ur" href="https://freeseotoolhub.com/tools/kdp-cover-designer.html?lang=ur"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/tools/kdp-cover-designer.html?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/tools/kdp-cover-designer.html?lang=de"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/tools/kdp-cover-designer.html"/>
+    </url>
+
     <!-- Favicon Generator -->
     <url>
         <loc>https://freeseotoolhub.com/tools/favicon-generator.html</loc>
