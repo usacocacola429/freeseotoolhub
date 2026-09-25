@@ -28,7 +28,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Hind:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+  <!-- PDF-lib for manipulation -->
   <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+  <!-- PDF.js for reading images from PDF pages -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 
   <script type="application/ld+json">
@@ -88,6 +90,9 @@
     .form-group select:focus { border-color: #ff9933; outline: none; background: white; box-shadow: 0 0 0 4px rgba(255,153,51,0.1); }
 
     .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+
+    .info-box { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 10px; margin-bottom: 20px; font-size: 0.85rem; color: #78350f; line-height: 1.6; }
+    .info-box strong { color: #92400e; }
 
     .btn { border: none; padding: 12px 24px; border-radius: 50px; font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: all 0.3s; display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-family: inherit; }
     .btn:disabled { opacity: 0.5; cursor: not-allowed; }
@@ -203,36 +208,49 @@
       <i class="fas fa-cog" style="color:#ff9933;"></i> <span data-i18n="settingsTitle">KDP Format Settings</span>
     </h3>
 
+    <div class="info-box">
+      <strong>📐 KDP Format Rules:</strong><br>
+      • <strong>With Bleed:</strong> Trim Size + 0.125" on top, bottom & outside edges<br>
+      • <strong>Without Bleed:</strong> Trim Size exactly as selected<br>
+      • <strong>Example (8.5×8.5 with bleed):</strong> Final page = 8.625" × 8.75"
+    </div>
+
     <div class="form-grid">
       <div class="form-group">
         <label><i class="fas fa-ruler"></i> <span data-i18n="trimSize">Book Trim Size</span></label>
         <select id="trimSize">
-          <option value="8.5x8.5">8.5" × 8.5" (Square — Kids)</option>
+          <option value="8.5x8.5" selected>8.5" × 8.5" (Square — Kids Books)</option>
           <option value="6x9">6" × 9" (Standard)</option>
           <option value="5.5x8.5">5.5" × 8.5" (Digest)</option>
           <option value="8.5x11">8.5" × 11" (Letter)</option>
+          <option value="7x10">7" × 10" (Textbook)</option>
+          <option value="5x8">5" × 8" (Small Novel)</option>
+          <option value="6.14x9.21">6.14" × 9.21" (UK Format)</option>
         </select>
       </div>
       <div class="form-group">
         <label><i class="fas fa-expand"></i> <span data-i18n="bleedOption">Bleed</span></label>
         <select id="bleedOption">
-          <option value="yes">Yes — 0.125" bleed (for edge images)</option>
+          <option value="yes" selected>Yes — 0.125" bleed (for edge images)</option>
           <option value="no">No — no bleed</option>
         </select>
       </div>
       <div class="form-group">
-        <label><i class="fas fa-arrows-alt-h"></i> <span data-i18n="insideMargin">Inside Margin</span></label>
+        <label><i class="fas fa-arrows-alt-h"></i> <span data-i18n="insideMargin">Inside Margin (Gutter)</span></label>
         <select id="insideMargin">
-          <option value="0.375">0.375" (24-150 pages)</option>
+          <option value="0.375" selected>0.375" (24-150 pages)</option>
           <option value="0.5">0.5" (151-300 pages)</option>
           <option value="0.625">0.625" (301-500 pages)</option>
+          <option value="0.75">0.75" (501-700 pages)</option>
+          <option value="0.875">0.875" (701+ pages)</option>
         </select>
       </div>
       <div class="form-group">
         <label><i class="fas fa-arrows-alt-h"></i> <span data-i18n="outsideMargin">Outside Margin</span></label>
         <select id="outsideMargin">
-          <option value="0.25">0.25" (standard)</option>
-          <option value="0.375">0.375" (with bleed)</option>
+          <option value="0.25">0.25" (minimum — no bleed)</option>
+          <option value="0.375" selected>0.375" (recommended with bleed)</option>
+          <option value="0.5">0.5" (extra safe zone)</option>
         </select>
       </div>
     </div>
@@ -295,15 +313,20 @@
   const $ = id => document.getElementById(id);
   let uploadedFiles = [];
 
-  // KDP Constants
+  // ============================================================
+  // KDP CONSTANTS — CORRECT VALUES
+  // ============================================================
   const POINTS_PER_INCH = 72;
-  const BLEED_INCH = 0.125;
+  const BLEED_INCH = 0.125; // KDP standard bleed on 3 outer edges
 
   const TRIM_SIZES = {
-    '8.5x8.5': { width: 8.5, height: 8.5 },
-    '6x9': { width: 6, height: 9 },
-    '5.5x8.5': { width: 5.5, height: 8.5 },
-    '8.5x11': { width: 8.5, height: 11 }
+    '8.5x8.5':  { width: 8.5,  height: 8.5  },
+    '6x9':      { width: 6,    height: 9    },
+    '5.5x8.5':  { width: 5.5,  height: 8.5  },
+    '8.5x11':   { width: 8.5,  height: 11   },
+    '7x10':     { width: 7,    height: 10   },
+    '5x8':      { width: 5,    height: 8    },
+    '6.14x9.21':{ width: 6.14, height: 9.21 }
   };
 
   // ============================================================
@@ -319,7 +342,7 @@
       dropSub: 'PDF, JPG, PNG · Multiple files · 100% local',
       settingsTitle: 'KDP Format Settings',
       trimSize: 'Book Trim Size', bleedOption: 'Bleed',
-      insideMargin: 'Inside Margin', outsideMargin: 'Outside Margin',
+      insideMargin: 'Inside Margin (Gutter)', outsideMargin: 'Outside Margin',
       formatBtn: 'Generate KDP-Ready PDF',
       feat1T: 'Auto Trim Size', feat1D: 'KDP-standard 8.5×8.5, 6×9, 5.5×8.5, 8.5×11',
       feat2T: 'Auto Bleed', feat2D: '0.125" bleed auto-added on 3 outer edges',
@@ -353,7 +376,7 @@
       dropSub: 'PDF, JPG, PNG · कई फाइलें · 100% लोकल',
       settingsTitle: 'KDP फॉर्मेट सेटिंग्स',
       trimSize: 'बुक ट्रिम साइज़', bleedOption: 'ब्लीड',
-      insideMargin: 'इनसाइड मार्जिन', outsideMargin: 'आउटसाइड मार्जिन',
+      insideMargin: 'इनसाइड मार्जिन (गटर)', outsideMargin: 'आउटसाइड मार्जिन',
       formatBtn: 'KDP-रेडी PDF बनाएं',
       feat1T: 'ऑटो ट्रिम', feat1D: 'KDP मानक 8.5×8.5, 6×9, 5.5×8.5, 8.5×11',
       feat2T: 'ऑटो ब्लीड', feat2D: '3 किनारों पर 0.125" ब्लीड',
@@ -580,7 +603,46 @@
   }
 
   // ============================================================
-  // FORMAT FOR KDP
+  // RENDER PDF PAGE AS IMAGE (to properly scale/center)
+  // ============================================================
+  async function renderPdfPageToImage(pdfDoc, pageNum, targetWidthPx) {
+    const page = await pdfDoc.getPage(pageNum);
+    const originalViewport = page.getViewport({ scale: 1 });
+    
+    // Calculate scale to fit target width
+    const scale = targetWidthPx / originalViewport.width;
+    const viewport = page.getViewport({ scale: scale });
+    
+    const canvas = document.createElement('canvas');
+    canvas.width = Math.ceil(viewport.width);
+    canvas.height = Math.ceil(viewport.height);
+    
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+    await page.render({ canvasContext: ctx, viewport: viewport }).promise;
+    
+    return {
+      dataUrl: canvas.toDataURL('image/jpeg', 0.95),
+      width: canvas.width,
+      height: canvas.height
+    };
+  }
+
+  function dataURLtoUint8Array(dataUrl) {
+    const base64 = dataUrl.split(',')[1];
+    const binary = atob(base64);
+    const len = binary.length;
+    const bytes = new Uint8Array(len);
+    for (let i = 0; i < len; i++) {
+      bytes[i] = binary.charCodeAt(i);
+    }
+    return bytes;
+  }
+
+  // ============================================================
+  // FORMAT FOR KDP — CORRECTED CALCULATION
   // ============================================================
   $('formatBtn').addEventListener('click', async () => {
     if (!uploadedFiles.length) {
@@ -594,16 +656,47 @@
     setProgress(5, t('toastInit'));
 
     try {
-      const trim = TRIM_SIZES[$('trimSize').value];
+      const trimKey = $('trimSize').value;
+      const trim = TRIM_SIZES[trimKey];
       const hasBleed = $('bleedOption').value === 'yes';
       const insideMargin = parseFloat($('insideMargin').value);
       const outsideMargin = parseFloat($('outsideMargin').value);
 
+      // =============================================
+      // ✅ CORRECTED KDP PAGE SIZE CALCULATION
+      // =============================================
+      // With Bleed: Trim Size + 0.125" on TOP, BOTTOM, OUTSIDE
+      // Width  = trim.width + bleed (outside edge only)
+      // Height = trim.height + (bleed × 2) (top + bottom)
+      // Margins are NOT added to page size — they're inside the safe zone
+      // =============================================
+      
       const bleed = hasBleed ? BLEED_INCH : 0;
-      const pageWidth = (trim.width + bleed + outsideMargin) * POINTS_PER_INCH;
-      const pageHeight = (trim.height + bleed * 2) * POINTS_PER_INCH;
+      
+      // Page dimensions in inches
+      const pageWidthIn = trim.width + bleed;
+      const pageHeightIn = trim.height + (bleed * 2);
+      
+      // Convert to points for PDF-lib
+      const pageWidth = pageWidthIn * POINTS_PER_INCH;
+      const pageHeight = pageHeightIn * POINTS_PER_INCH;
+
+      console.log('KDP Page Dimensions:', {
+        trimSize: trimKey,
+        withBleed: hasBleed,
+        pageWidthIn: pageWidthIn + 'in',
+        pageHeightIn: pageHeightIn + 'in',
+        pageWidthPt: pageWidth + 'pt',
+        pageHeightPt: pageHeight + 'pt'
+      });
+
+      // Initialize PDF.js for rendering PDF pages
+      if (window.pdfjsLib) {
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+      }
 
       const pdfDoc = await PDFDocument.create();
+      let totalPagesProcessed = 0;
 
       setProgress(15, t('toastProcessing') + ' files...');
 
@@ -612,47 +705,125 @@
         setProgress(15 + (i / uploadedFiles.length) * 70, t('toastProcessing') + ' ' + (i + 1) + '/' + uploadedFiles.length + '...');
 
         if (file.type === 'application/pdf') {
+          // PDF file: Render each page as image, then place on new page
           const bytes = await file.arrayBuffer();
-          const srcDoc = await PDFDocument.load(bytes);
-          const pageCount = srcDoc.getPageCount();
+          const srcPdf = await pdfjsLib.getDocument({ data: bytes }).promise;
+          const srcPageCount = srcPdf.numPages;
 
-          for (let p = 0; p < pageCount; p++) {
-            const [copiedPage] = await pdfDoc.copyPages(srcDoc, [p]);
-            copiedPage.setSize(pageWidth, pageHeight);
-            pdfDoc.addPage(copiedPage);
+          for (let p = 1; p <= srcPageCount; p++) {
+            // Target resolution for rendering (high quality)
+            // At 300 DPI, 8.5" = 2550px. We render at 2x for quality.
+            const targetWidthPx = Math.round(pageWidthIn * 150); // 150 DPI render
+            
+            const rendered = await renderPdfPageToImage(srcPdf, p, targetWidthPx);
+            const imgBytes = dataURLtoUint8Array(rendered.dataUrl);
+            const embeddedImg = await pdfDoc.embedJpg(imgBytes);
+
+            const page = pdfDoc.addPage([pageWidth, pageHeight]);
+
+            // Content area (safe zone inside margins)
+            const contentWidthPt = pageWidth - ((insideMargin + outsideMargin) * POINTS_PER_INCH);
+            const contentHeightPt = pageHeight - ((outsideMargin * 2 + (hasBleed ? bleed * 2 : 0)) * POINTS_PER_INCH);
+            
+            // Actually, for KDP, content goes INSIDE the bleed area, respecting margins
+            // Safe area for content:
+            const safeWidthPt = pageWidth - ((insideMargin + outsideMargin) * POINTS_PER_INCH) - (bleed * POINTS_PER_INCH);
+            const safeHeightPt = pageHeight - ((outsideMargin * 2) * POINTS_PER_INCH) - (bleed * 2 * POINTS_PER_INCH);
+
+            // Scale image to fit safe area
+            const imgRatio = embeddedImg.width / embeddedImg.height;
+            let drawWidth = safeWidthPt;
+            let drawHeight = safeWidthPt / imgRatio;
+            
+            if (drawHeight > safeHeightPt) {
+              drawHeight = safeHeightPt;
+              drawWidth = safeHeightPt * imgRatio;
+            }
+
+            // Center the image in the safe area
+            const xPos = bleed * POINTS_PER_INCH + insideMargin * POINTS_PER_INCH + (safeWidthPt - drawWidth) / 2;
+            const yPos = bleed * POINTS_PER_INCH + outsideMargin * POINTS_PER_INCH + (safeHeightPt - drawHeight) / 2;
+
+            page.drawImage(embeddedImg, {
+              x: xPos,
+              y: yPos,
+              width: drawWidth,
+              height: drawHeight
+            });
+
+            totalPagesProcessed++;
           }
         } else {
+          // Image file: Embed directly
           const imgBytes = await file.arrayBuffer();
           let image;
+          
           try {
-            image = file.type === 'image/png'
-              ? await pdfDoc.embedPng(imgBytes)
-              : await pdfDoc.embedJpg(imgBytes);
+            if (file.type === 'image/png') {
+              image = await pdfDoc.embedPng(imgBytes);
+            } else if (file.type === 'image/jpeg' || file.type === 'image/jpg') {
+              image = await pdfDoc.embedJpg(imgBytes);
+            } else {
+              // Convert other formats via canvas
+              const blob = new Blob([imgBytes], { type: file.type });
+              const imgUrl = URL.createObjectURL(blob);
+              const imgEl = await new Promise((resolve, reject) => {
+                const img = new Image();
+                img.onload = () => resolve(img);
+                img.onerror = reject;
+                img.src = imgUrl;
+              });
+              
+              const canvas = document.createElement('canvas');
+              canvas.width = imgEl.width;
+              canvas.height = imgEl.height;
+              const ctx = canvas.getContext('2d');
+              ctx.fillStyle = '#ffffff';
+              ctx.fillRect(0, 0, canvas.width, canvas.height);
+              ctx.drawImage(imgEl, 0, 0);
+              const pngDataUrl = canvas.toDataURL('image/png');
+              image = await pdfDoc.embedPng(dataURLtoUint8Array(pngDataUrl));
+              URL.revokeObjectURL(imgUrl);
+            }
           } catch (e) {
-            image = await pdfDoc.embedPng(imgBytes);
+            console.error('Image embed failed:', e);
+            continue;
           }
 
           const page = pdfDoc.addPage([pageWidth, pageHeight]);
 
-          const availWidth = pageWidth - (insideMargin + outsideMargin) * POINTS_PER_INCH;
-          const availHeight = pageHeight - (outsideMargin * 2) * POINTS_PER_INCH;
+          const safeWidthPt = pageWidth - ((insideMargin + outsideMargin) * POINTS_PER_INCH);
+          const safeHeightPt = pageHeight - ((outsideMargin * 2) * POINTS_PER_INCH);
 
-          const scale = Math.min(
-            availWidth / image.width,
-            availHeight / image.height,
-            1
-          );
+          const imgRatio = image.width / image.height;
+          let drawWidth = safeWidthPt;
+          let drawHeight = safeWidthPt / imgRatio;
+          
+          if (drawHeight > safeHeightPt) {
+            drawHeight = safeHeightPt;
+            drawWidth = safeHeightPt * imgRatio;
+          }
 
-          const imgWidth = image.width * scale;
-          const imgHeight = image.height * scale;
+          const xPos = outsideMargin * POINTS_PER_INCH + (safeWidthPt - drawWidth) / 2;
+          const yPos = outsideMargin * POINTS_PER_INCH + (safeHeightPt - drawHeight) / 2;
 
           page.drawImage(image, {
-            x: outsideMargin * POINTS_PER_INCH + (availWidth - imgWidth) / 2,
-            y: outsideMargin * POINTS_PER_INCH + (availHeight - imgHeight) / 2,
-            width: imgWidth,
-            height: imgHeight
+            x: xPos,
+            y: yPos,
+            width: drawWidth,
+            height: drawHeight
           });
+
+          totalPagesProcessed++;
         }
+      }
+
+      if (totalPagesProcessed === 0) {
+        throw new Error('No pages were processed. Please check your files.');
+      }
+
+      if (totalPagesProcessed < 24) {
+        showToast('Warning: KDP requires minimum 24 pages. You have ' + totalPagesProcessed + '.', 'error');
       }
 
       setProgress(90, t('toastSaving'));
@@ -669,8 +840,8 @@
       document.body.removeChild(a);
       setTimeout(() => URL.revokeObjectURL(url), 2000);
 
-      setProgress(100, t('toastDone'));
-      showToast(t('toastSuccess'), 'success');
+      setProgress(100, t('toastDone') + ' (' + totalPagesProcessed + ' pages)');
+      showToast(t('toastSuccess') + ' — ' + totalPagesProcessed + ' pages', 'success');
 
     } catch (err) {
       console.error(err);
