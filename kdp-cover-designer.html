@@ -211,36 +211,36 @@ footer { background:#0b1a33; color:#b0c4de; text-align:center; padding:20px; mar
     <div class="form-group">
       <label>Trim Size</label>
       <select id="trimSize">
-        <option value="6x9" selected>6" × 9" (Standard)</option>
+        <option value="6x9">6" × 9" (Standard)</option>
         <option value="5.5x8.5">5.5" × 8.5" (Digest)</option>
         <option value="5x8">5" × 8" (Small)</option>
         <option value="7x10">7" × 10" (Textbook)</option>
         <option value="8.5x11">8.5" × 11" (Letter)</option>
-        <option value="8.5x8.5">8.5" × 8.5" (Square Kids)</option>
+        <option value="8.5x8.5" selected>8.5" × 8.5" (Square Kids)</option>
       </select>
     </div>
 
     <div class="form-row">
       <div class="form-group">
         <label>Pages</label>
-        <input type="number" id="pageCount" value="100" min="24" max="800">
+        <input type="number" id="pageCount" value="25" min="24" max="800">
       </div>
       <div class="form-group">
         <label>Paper</label>
         <select id="paperType">
           <option value="0.002252" selected>White B&amp;W</option>
           <option value="0.0025">Cream B&amp;W</option>
-          <option value="0.002347">Color Std</option>
-          <option value="0.002252">Color Prem</option>
+          <option value="0.002347">Color Standard</option>
+          <option value="0.002252">Color Premium</option>
         </select>
       </div>
     </div>
 
     <div class="panel-title mt-2"><i class="fas fa-ruler-combined"></i> Dimensions</div>
     <div class="dims-box">
-      <div><b>Spine:</b> <span id="dimSpine">0.225"</span></div>
-      <div><b>Full Width:</b> <span id="dimWidth">12.48"</span></div>
-      <div><b>Full Height:</b> <span id="dimHeight">9.25"</span></div>
+      <div><b>Spine:</b> <span id="dimSpine">0.056"</span></div>
+      <div><b>Full Width:</b> <span id="dimWidth">17.31"</span></div>
+      <div><b>Full Height:</b> <span id="dimHeight">8.75"</span></div>
       <div><b>Bleed:</b> 0.125" each side</div>
     </div>
 
@@ -417,23 +417,37 @@ function toast(msg, type){
   setTimeout(() => { t.style.opacity = '0'; setTimeout(() => t.remove(), 300); }, 2500);
 }
 
-// ==================== DIMENSIONS ====================
+// ==================== DIMENSIONS (FIXED) ====================
 function getDims(){
   const trim = TRIMS[$('trimSize').value];
   const pages = parseInt($('pageCount').value) || 100;
   const paperT = parseFloat($('paperType').value);
-  const spine = Math.max(0.06, pages * paperT);
-  const totalW = (trim.w * 2) + spine + (BLEED * 2);
-  const totalH = trim.h + (BLEED * 2);
-  return { trimW: trim.w, trimH: trim.h, spine, totalW, totalH };
+  
+  // KDP spine width calculation
+  let spine = pages * paperT;
+  if (spine < 0.06) spine = 0.06; // Minimum spine for KDP
+  
+  // Total cover width = bleed + back cover + spine + front cover + bleed
+  const totalW = (BLEED * 2) + (trim.w * 2) + spine;
+  
+  // Total cover height = bleed + trim height + bleed
+  const totalH = (BLEED * 2) + trim.h;
+  
+  return { 
+    trimW: trim.w, 
+    trimH: trim.h, 
+    spine: spine, 
+    totalW: totalW, 
+    totalH: totalH 
+  };
 }
 
 function updateDims(){
   const d = getDims();
   $('dimSpine').textContent = d.spine.toFixed(3) + '"';
-  $('dimWidth').textContent = d.totalW.toFixed(2) + '"';
-  $('dimHeight').textContent = d.totalH.toFixed(2) + '"';
-  $('canvasInfo').textContent = `Full: ${d.totalW.toFixed(2)}" × ${d.totalH.toFixed(2)}" | Spine: ${d.spine.toFixed(3)}"`;
+  $('dimWidth').textContent = d.totalW.toFixed(3) + '"';
+  $('dimHeight').textContent = d.totalH.toFixed(3) + '"';
+  $('canvasInfo').textContent = `Full: ${d.totalW.toFixed(3)}" × ${d.totalH.toFixed(3)}" | Spine: ${d.spine.toFixed(3)}"`;
   resizeCanvas();
 }
 
@@ -443,7 +457,6 @@ const ctx = canvas.getContext('2d');
 
 function resizeCanvas(){
   const d = getDims();
-  // Base scale: fit in ~700px width
   const maxW = Math.min(700, window.innerWidth - 100);
   const scale = maxW / d.totalW;
   canvas.width = Math.round(d.totalW * scale);
@@ -462,7 +475,7 @@ async function render(){
   const H = canvas.height;
   ctx.clearRect(0, 0, W, H);
 
-  // -------- BACKGROUND --------
+  // BACKGROUND
   const bgType = $('bgType').value;
   const c1 = $('bgColor1').value;
   const c2 = $('bgColor2').value;
@@ -480,7 +493,7 @@ async function render(){
     ctx.fillRect(0, 0, W, H);
   }
 
-  // -------- FRONT COVER IMAGE --------
+  // FRONT COVER IMAGE
   if(state.frontImage){
     try {
       const img = await loadImg(state.frontImage);
@@ -491,11 +504,9 @@ async function render(){
         trimH:  d.trimH / d.totalH * H,
         bleedY: BLEED / d.totalH * H
       };
-      // Front cover rect (right side)
       const fx = px.bleed + px.trimW + px.spine;
       const fy = px.bleedY;
 
-      // Cover fit
       const s = state.frontImageSettings.scale;
       const imgRatio = img.width / img.height;
       const boxRatio = px.trimW / px.trimH;
@@ -517,16 +528,16 @@ async function render(){
     } catch(e){ console.warn('Image load error', e); }
   }
 
-  // -------- TEXT ELEMENTS --------
+  // TEXT ELEMENTS
   for(const el of state.elements){
     if(el.hidden) continue;
     drawElement(el, W, H, d);
   }
 
-  // -------- GUIDES (only for selected or always) --------
+  // GUIDES
   drawGuides(W, H, d);
 
-  // -------- SELECTION BOX --------
+  // SELECTION BOX
   const sel = state.elements.find(x => x.id === state.selectedId);
   if(sel){
     const b = elBounds(sel, W, H, d);
@@ -535,7 +546,6 @@ async function render(){
     ctx.setLineDash([6, 4]);
     ctx.strokeRect(b.x, b.y, b.w, b.h);
     ctx.setLineDash([]);
-    // Handles
     ctx.fillStyle = '#ff9933';
     [[b.x,b.y],[b.x+b.w,b.y],[b.x,b.y+b.h],[b.x+b.w,b.y+b.h]].forEach(([hx,hy])=>{
       ctx.fillRect(hx-4, hy-4, 8, 8);
@@ -552,10 +562,9 @@ function drawElement(el, W, H, d){
     ctx.fillStyle = el.color;
     ctx.textAlign = el.align || 'center';
     ctx.textBaseline = 'top';
-    const fs = (el.fontSize || 32) * (W / 700); // scale with canvas
+    const fs = (el.fontSize || 32) * (W / 700);
     ctx.font = `${el.weight || '700'} ${fs}px "${el.font}"`;
 
-    // Word wrap
     const maxW = b.w;
     const words = String(el.text || '').split(' ');
     let line = '';
@@ -574,7 +583,6 @@ function drawElement(el, W, H, d){
     }
     if(line.trim()) lines.push(line.trim());
 
-    // Horizontal position
     let x = b.x;
     if(el.align === 'center') x = b.x + b.w/2;
     else if(el.align === 'right') x = b.x + b.w;
@@ -604,17 +612,17 @@ function drawGuides(W, H, d){
   const spinePx = d.spine / d.totalW * W;
   const trimW = d.trimW / d.totalW * W;
 
-  // Bleed line (red dashed)
+  // Bleed line
   ctx.strokeStyle = 'rgba(239,68,68,0.45)';
   ctx.setLineDash([6, 6]);
   ctx.lineWidth = 1;
   ctx.strokeRect(bx, by, W - bx*2, H - by*2);
 
-  // Safe zone (green dashed)
+  // Safe zone
   ctx.strokeStyle = 'rgba(16,185,129,0.4)';
   ctx.strokeRect(sx, sy, W - sx*2, H - sy*2);
 
-  // Spine lines (blue)
+  // Spine lines
   ctx.strokeStyle = 'rgba(59,130,246,0.5)';
   ctx.setLineDash([3, 3]);
   const spineStart = bx + trimW;
@@ -628,8 +636,8 @@ function drawGuides(W, H, d){
   // Barcode box (bottom-right of back cover)
   const barcodeW = BARCODE_W / d.totalW * W;
   const barcodeH = BARCODE_H / d.totalH * H;
-  const barcodeX = sx + 0.1 / d.totalW * W;
-  const barcodeY = H - sy - barcodeH;
+  const barcodeX = bx + SAFE / d.totalW * W;
+  const barcodeY = H - by - sy - barcodeH;
   ctx.fillStyle = 'rgba(255,255,255,0.95)';
   ctx.fillRect(barcodeX, barcodeY, barcodeW, barcodeH);
   ctx.strokeStyle = 'rgba(0,0,0,0.2)';
@@ -663,7 +671,7 @@ function addText(type){
   };
   const p = presets[type] || presets.custom;
 
-  // Position on FRONT cover
+  // Position on FRONT cover (right side)
   const frontX = BLEED + d.trimW + d.spine;
   const el = {
     id: state.nextId++,
@@ -892,7 +900,7 @@ $('undoBtn').addEventListener('click', () => {
   toast('Undo');
 });
 
-// ==================== PDF EXPORT ====================
+// ==================== PDF EXPORT (FIXED) ====================
 $('downloadBtn').addEventListener('click', async () => {
   const btn = $('downloadBtn');
   btn.disabled = true;
@@ -939,7 +947,6 @@ $('downloadBtn').addEventListener('click', async () => {
       if(state.frontImage.includes('image/png')) img = await pdf.embedPng(bytes);
       else if(state.frontImage.includes('image/jpeg') || state.frontImage.includes('image/jpg')) img = await pdf.embedJpg(bytes);
       else {
-        // Convert other to PNG via canvas
         const tmp = await loadImg(state.frontImage);
         const tc = document.createElement('canvas');
         tc.width = tmp.width; tc.height = tmp.height;
@@ -962,8 +969,6 @@ $('downloadBtn').addEventListener('click', async () => {
       if(ratio > boxRatio){ dh = trimH; dw = dh * ratio; }
       else { dw = trimW; dh = dw / ratio; }
 
-      // Draw image clipped to front cover area (KDP-safe)
-      // pdf-lib doesn't support clip directly, so we compute exact rect
       const drawX = fx + (trimW - dw)/2;
       const drawY = fy + (trimH - dh)/2;
       page.drawImage(img, { x: drawX, y: drawY, width: dw, height: dh });
@@ -976,12 +981,11 @@ $('downloadBtn').addEventListener('click', async () => {
     for(const el of state.elements){
       if(el.hidden) continue;
       const col = hexToRgb(el.color);
-      const fs = (el.fontSize || 32) * 0.75; // pt to px conversion approx
+      const fs = (el.fontSize || 32) * 0.75;
       const elX = el.x * PPI;
       const elY = pageH - (el.y * PPI) - fs;
       const elW = el.w * PPI;
 
-      // Word wrap
       const words = String(el.text).split(' ');
       const lines = [];
       let line = '';
@@ -1050,7 +1054,6 @@ function b64ToBytes(b64){
 // ==================== INIT ====================
 function init(){
   updateDims();
-  // Add default title + author
   setTimeout(() => {
     addText('title');
     addText('author');
