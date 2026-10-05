@@ -738,7 +738,7 @@ function addText(type){
     },
     subtitle: {
       text:'A Bilingual Picture Book', fontSize:34, weight:'600', font:'Poppins',
-      x: isSquare ? BLEED + ART_BOX.subtitle.x0 * d.trimW : frontX + 0.6,
+      x: isSquare ? frontX + ART_BOX.subtitle.x0 * d.trimW : frontX + 0.6,
       y: isSquare ? BLEED + ART_BOX.subtitle.y0 * d.trimH : BLEED + 1.9,
       w: isSquare ? (ART_BOX.subtitle.x1 - ART_BOX.subtitle.x0) * d.trimW : d.trimW - 1.2,
       color:'#8a5a2b', align:'center'
