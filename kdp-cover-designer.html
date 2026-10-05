@@ -19,7 +19,6 @@
 * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; }
 body { background:#f0f4f8; color:#0b1a33; overflow-x:hidden; }
 
-/* NAVBAR */
 .navbar {
   background:linear-gradient(135deg,#0b1a33,#1e2b4f);
   color:white; padding:14px 20px;
@@ -33,103 +32,66 @@ body { background:#f0f4f8; color:#0b1a33; overflow-x:hidden; }
 .navbar .nav-links a { color:rgba(255,255,255,0.9); text-decoration:none; padding:8px 14px; border-radius:8px; font-size:0.85rem; font-weight:500; transition:all 0.2s; }
 .navbar .nav-links a:hover { background:rgba(255,255,255,0.1); color:#ff9933; }
 
-/* HERO */
-.hero {
-  background:linear-gradient(145deg,#0b1a33,#1e2b4f);
-  color:white; padding:30px 20px; text-align:center;
-}
+.hero { background:linear-gradient(145deg,#0b1a33,#1e2b4f); color:white; padding:30px 20px; text-align:center; }
 .hero h1 { font-size:clamp(1.4rem,4vw,2.2rem); font-weight:800; margin-bottom:8px; }
 .hero h1 span { color:#ff9933; }
 .hero p { opacity:0.9; font-size:0.9rem; max-width:700px; margin:0 auto; }
 
-/* LAYOUT */
-.layout {
-  display:grid;
-  grid-template-columns:280px 1fr 280px;
-  gap:14px;
-  padding:14px;
-  max-width:1700px;
-  margin:0 auto;
-}
-@media (max-width:1200px) {
-  .layout { grid-template-columns:1fr; }
-}
+.layout { display:grid; grid-template-columns:290px 1fr 290px; gap:14px; padding:14px; max-width:1700px; margin:0 auto; }
+@media (max-width:1200px) { .layout { grid-template-columns:1fr; } }
 
-/* PANEL */
-.panel {
-  background:white; border-radius:14px; padding:14px;
-  box-shadow:0 4px 16px rgba(0,0,0,0.06);
-  border:1px solid #eef2f6;
-}
+.panel { background:white; border-radius:14px; padding:14px; box-shadow:0 4px 16px rgba(0,0,0,0.06); border:1px solid #eef2f6; }
 .panel-title {
-  font-size:0.75rem; font-weight:700; color:#0b1a33;
-  text-transform:uppercase; letter-spacing:0.5px;
-  padding-bottom:8px; margin-bottom:12px;
-  border-bottom:2px solid #f0f4f8;
+  font-size:0.75rem; font-weight:700; color:#0b1a33; text-transform:uppercase; letter-spacing:0.5px;
+  padding-bottom:8px; margin-bottom:12px; border-bottom:2px solid #f0f4f8;
   display:flex; align-items:center; gap:6px;
 }
 .panel-title i { color:#ff9933; }
 
-/* FORM */
 .form-group { margin-bottom:10px; }
 .form-group label { display:block; font-size:0.72rem; font-weight:600; color:#4a5a72; margin-bottom:4px; text-transform:uppercase; letter-spacing:0.3px; }
 .form-group input, .form-group select, .form-group textarea {
   width:100%; padding:8px 10px; border:2px solid #eef2f6; border-radius:8px;
   font-size:0.82rem; background:#f8fafc; color:#0b1a33; transition:all 0.2s; font-family:inherit;
 }
-.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-  border-color:#ff9933; outline:none; background:white;
-}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color:#ff9933; outline:none; background:white; }
 .form-group input[type="color"] { height:38px; cursor:pointer; padding:2px; }
 .form-group input[type="range"] { padding:0; }
 .form-group textarea { resize:vertical; min-height:60px; font-size:0.78rem; }
-
 .form-row { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
 
-/* DIMENSIONS BOX */
 .dims-box {
   background:#f0fdf4; border-radius:8px; padding:10px;
-  font-family:'Courier New',monospace; font-size:0.72rem;
-  line-height:1.7; color:#065f46;
+  font-family:'Courier New',monospace; font-size:0.72rem; line-height:1.7; color:#065f46;
   border:1px solid #bbf7d0;
 }
 .dims-box b { color:#064e3b; }
 
-/* CANVAS AREA */
+.note { border-radius:8px; padding:9px 11px; font-size:0.7rem; line-height:1.6; margin-top:8px; }
+.note.warn { background:#fef3c7; color:#92400e; border:1px solid #fde68a; }
+.note.ok   { background:#dcfce7; color:#166534; border:1px solid #bbf7d0; }
+.note.info { background:#eff6ff; color:#1e40af; border:1px solid #bfdbfe; }
+
 .canvas-area {
   background:white; border-radius:14px; padding:14px;
-  box-shadow:0 4px 16px rgba(0,0,0,0.06);
-  border:1px solid #eef2f6;
-  display:flex; flex-direction:column; align-items:center;
-  min-height:500px;
+  box-shadow:0 4px 16px rgba(0,0,0,0.06); border:1px solid #eef2f6;
+  display:flex; flex-direction:column; align-items:center; min-height:500px;
 }
 .canvas-toolbar {
-  width:100%; display:flex; justify-content:space-between;
-  align-items:center; margin-bottom:10px; padding-bottom:10px;
-  border-bottom:1px solid #f0f4f8; flex-wrap:wrap; gap:8px;
+  width:100%; display:flex; justify-content:space-between; align-items:center;
+  margin-bottom:10px; padding-bottom:10px; border-bottom:1px solid #f0f4f8; flex-wrap:wrap; gap:8px;
 }
 .toolbar-info { font-size:0.72rem; color:#64748b; font-family:monospace; font-weight:600; }
 .toolbar-zoom { display:flex; align-items:center; gap:6px; font-size:0.75rem; color:#64748b; }
-
 .canvas-wrapper {
-  background:#f8fafc; border-radius:10px; padding:16px;
-  overflow:auto; width:100%; flex:1;
-  display:flex; align-items:center; justify-content:center;
-  min-height:400px;
+  background:#f8fafc; border-radius:10px; padding:16px; overflow:auto; width:100%;
+  flex:1; display:flex; align-items:center; justify-content:center; min-height:400px;
 }
-#coverCanvas {
-  border-radius:4px;
-  box-shadow:0 10px 40px rgba(0,0,0,0.15);
-  background:white;
-  cursor:crosshair;
-  max-width:100%;
-}
+#coverCanvas { border-radius:4px; box-shadow:0 10px 40px rgba(0,0,0,0.15); background:white; cursor:crosshair; max-width:100%; }
 
-/* BUTTONS */
 .btn {
-  border:none; padding:8px 14px; border-radius:8px;
-  font-size:0.78rem; font-weight:600; cursor:pointer;
-  transition:all 0.2s; display:inline-flex; align-items:center;
+  border:none; padding:8px 14px; border-radius:8px; font-size:0.78rem; font-weight:600;
+  cursor:pointer; transition:all 0.2s; display:inline-flex; align-items:center;
   justify-content:center; gap:6px; font-family:inherit;
 }
 .btn:disabled { opacity:0.5; cursor:not-allowed; }
@@ -144,40 +106,33 @@ body { background:#f0f4f8; color:#0b1a33; overflow-x:hidden; }
 .btn-sm { padding:5px 10px; font-size:0.7rem; }
 .btn-row { display:flex; gap:6px; flex-wrap:wrap; }
 
-/* ELEMENT LIST */
 .element-item {
-  display:flex; align-items:center; gap:8px;
-  padding:8px 10px; border-radius:8px;
-  cursor:pointer; font-size:0.78rem;
-  border:1px solid #f0f4f8; margin-bottom:5px;
-  transition:all 0.2s;
+  display:flex; align-items:center; gap:8px; padding:8px 10px; border-radius:8px;
+  cursor:pointer; font-size:0.78rem; border:1px solid #f0f4f8; margin-bottom:5px; transition:all 0.2s;
 }
 .element-item:hover { background:#f8fafc; }
 .element-item.active { background:#fff7ed; border-color:#ff9933; }
 .element-item .icon { color:#ff9933; width:16px; text-align:center; }
 .element-item .name { flex:1; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
-.element-item .del {
-  width:20px; height:20px; border:none; background:transparent;
-  color:#94a3b8; cursor:pointer; border-radius:4px; font-size:0.7rem;
-}
+.element-item .del { width:20px; height:20px; border:none; background:transparent; color:#94a3b8; cursor:pointer; border-radius:4px; font-size:0.7rem; }
 .element-item .del:hover { background:#fee2e2; color:#ef4444; }
 
-/* TOAST */
 .toast-container { position:fixed; bottom:20px; right:20px; z-index:9999; display:flex; flex-direction:column; gap:8px; }
 .toast {
   background:white; color:#0b1a33; padding:12px 18px; border-radius:12px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.15);
-  border-left:4px solid #ff9933; font-weight:500; font-size:0.85rem;
-  min-width:240px; animation:slideIn 0.3s ease;
+  box-shadow:0 10px 30px rgba(0,0,0,0.15); border-left:4px solid #ff9933;
+  font-weight:500; font-size:0.85rem; min-width:240px; animation:slideIn 0.3s ease;
 }
 .toast.success { border-left-color:#10b981; }
 .toast.error { border-left-color:#ef4444; }
 @keyframes slideIn { from { transform:translateX(120%); opacity:0; } to { transform:translateX(0); opacity:1; } }
 
-/* FOOTER */
 footer { background:#0b1a33; color:#b0c4de; text-align:center; padding:20px; margin-top:30px; font-size:0.8rem; }
+.seo { max-width:1100px; margin:30px auto 0; padding:0 20px; }
+.seo h2 { font-size:1.15rem; margin:22px 0 10px; }
+.seo p, .seo li { font-size:0.86rem; line-height:1.75; color:#475569; }
+.seo ul { margin-left:20px; }
 
-/* UTIL */
 .hidden { display:none !important; }
 .mt-1 { margin-top:6px; }
 .mt-2 { margin-top:12px; }
@@ -185,7 +140,6 @@ footer { background:#0b1a33; color:#b0c4de; text-align:center; padding:20px; mar
 </head>
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar">
   <a href="/" class="brand"><i class="fas fa-rocket"></i> FreeSEOToolHub</a>
   <div class="nav-links">
@@ -195,16 +149,13 @@ footer { background:#0b1a33; color:#b0c4de; text-align:center; padding:20px; mar
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <h1><i class="fas fa-book-open" style="color:#ff9933;"></i> KDP Cover Designer <span>PRO 2026</span></h1>
   <p>Professional Amazon KDP cover maker with auto spine calculator, bleed guides, safe zone &amp; 300 DPI PDF export.</p>
 </section>
 
-<!-- MAIN LAYOUT -->
 <div class="layout">
 
-  <!-- LEFT PANEL: Book Settings -->
   <aside class="panel">
     <div class="panel-title"><i class="fas fa-book"></i> Book Settings</div>
 
@@ -216,6 +167,9 @@ footer { background:#0b1a33; color:#b0c4de; text-align:center; padding:20px; mar
         <option value="5x8">5" × 8" (Small)</option>
         <option value="7x10">7" × 10" (Textbook)</option>
         <option value="8.5x11">8.5" × 11" (Letter)</option>
+        <option value="8x10">8" × 10"</option>
+        <option value="8.25x8.25">8.25" × 8.25"</option>
+        <option value="8x8">8" × 8"</option>
         <option value="8.5x8.5" selected>8.5" × 8.5" (Square Kids)</option>
       </select>
     </div>
@@ -223,7 +177,7 @@ footer { background:#0b1a33; color:#b0c4de; text-align:center; padding:20px; mar
     <div class="form-row">
       <div class="form-group">
         <label>Pages</label>
-        <input type="number" id="pageCount" value="25" min="24" max="800">
+        <input type="number" id="pageCount" value="34" min="24" max="828" step="2">
       </div>
       <div class="form-group">
         <label>Paper</label>
@@ -238,15 +192,28 @@ footer { background:#0b1a33; color:#b0c4de; text-align:center; padding:20px; mar
 
     <div class="panel-title mt-2"><i class="fas fa-ruler-combined"></i> Dimensions</div>
     <div class="dims-box">
-      <div><b>Spine:</b> <span id="dimSpine">0.056"</span></div>
-      <div><b>Full Width:</b> <span id="dimWidth">17.31"</span></div>
+      <div><b>Spine:</b> <span id="dimSpine">0.077"</span></div>
+      <div><b>Full Width:</b> <span id="dimWidth">17.327"</span></div>
       <div><b>Full Height:</b> <span id="dimHeight">8.75"</span></div>
       <div><b>Bleed:</b> 0.125" each side</div>
+      <div><b>Export:</b> 300 DPI</div>
     </div>
+    <div id="dimNotes"></div>
 
     <div class="panel-title mt-2"><i class="fas fa-image"></i> Front Cover Image</div>
     <input type="file" id="frontImageInput" accept="image/*" style="width:100%;padding:6px;border:2px solid #eef2f6;border-radius:8px;font-size:0.75rem;">
-    <button class="btn btn-ghost btn-full btn-sm mt-1" id="removeImage"><i class="fas fa-trash"></i> Remove Image</button>
+    <div class="form-group mt-1">
+      <label>Image fit</label>
+      <select id="imgFit">
+        <option value="contain" selected>Fit — show the whole picture</option>
+        <option value="cover">Fill — crop to the edges</option>
+        <option value="stretch">Stretch — match exactly</option>
+      </select>
+    </div>
+    <div class="btn-row">
+      <button class="btn btn-ghost btn-sm" id="removeImage" style="flex:1;"><i class="fas fa-trash"></i> Remove</button>
+      <button class="btn btn-ghost btn-sm" id="bleedFill" style="flex:1;" title="Use the picture's own edge colour across the whole cover"><i class="fas fa-expand"></i> Bleed fill</button>
+    </div>
 
     <div class="panel-title mt-2"><i class="fas fa-plus"></i> Add Text</div>
     <div class="btn-row">
@@ -255,6 +222,10 @@ footer { background:#0b1a33; color:#b0c4de; text-align:center; padding:20px; mar
     </div>
     <div class="btn-row mt-1">
       <button class="btn btn-primary btn-sm" data-add="author" style="flex:1;"><i class="fas fa-user"></i> Author</button>
+      <button class="btn btn-dark btn-sm" data-add="blurb" style="flex:1;"><i class="fas fa-align-left"></i> Back blurb</button>
+    </div>
+    <div class="btn-row mt-1">
+      <button class="btn btn-dark btn-sm" data-add="spine" style="flex:1;"><i class="fas fa-grip-lines-vertical"></i> Spine text</button>
       <button class="btn btn-primary btn-sm" data-add="custom" style="flex:1;"><i class="fas fa-plus"></i> Custom</button>
     </div>
 
@@ -262,7 +233,7 @@ footer { background:#0b1a33; color:#b0c4de; text-align:center; padding:20px; mar
     <div class="form-group">
       <label>Type</label>
       <select id="bgType">
-        <option value="solid">Solid Color</option>
+        <option value="solid" selected>Solid Color</option>
         <option value="gradient-v">Gradient Vertical</option>
         <option value="gradient-h">Gradient Horizontal</option>
       </select>
@@ -270,19 +241,25 @@ footer { background:#0b1a33; color:#b0c4de; text-align:center; padding:20px; mar
     <div class="form-row">
       <div class="form-group">
         <label>Color 1</label>
-        <input type="color" id="bgColor1" value="#ffffff">
+        <input type="color" id="bgColor1" value="#fdecc9">
       </div>
       <div class="form-group">
         <label>Color 2</label>
         <input type="color" id="bgColor2" value="#6366f1">
       </div>
     </div>
+    <button class="btn btn-ghost btn-full btn-sm" id="artPreset"><i class="fas fa-magic"></i> Preset for my cover art</button>
+
+    <div class="panel-title mt-2"><i class="fas fa-eye"></i> Guides</div>
+    <label style="display:flex;align-items:center;gap:8px;font-size:0.78rem;font-weight:600;color:#4a5a72;cursor:pointer;">
+      <input type="checkbox" id="showGuides" checked style="width:auto;"> Show trim, safe zone &amp; barcode
+    </label>
+    <div class="note info"><i class="fas fa-info-circle"></i> Guides are only on screen — they are <b>never</b> saved into the PDF.</div>
   </aside>
 
-  <!-- CENTER: Canvas -->
   <main class="canvas-area">
     <div class="canvas-toolbar">
-      <div class="toolbar-info" id="canvasInfo">Loading...</div>
+      <div class="toolbar-info" id="canvasInfo">Loading…</div>
       <div class="toolbar-zoom">
         <button class="btn btn-ghost btn-sm" id="zoomOut"><i class="fas fa-search-minus"></i></button>
         <span id="zoomLabel" style="min-width:45px;text-align:center;">100%</span>
@@ -295,18 +272,20 @@ footer { background:#0b1a33; color:#b0c4de; text-align:center; padding:20px; mar
       <canvas id="coverCanvas"></canvas>
     </div>
 
-    <div class="btn-row mt-2" style="justify-content:center; width:100%;">
+    <div class="btn-row mt-2" style="justify-content:center;width:100%;">
       <button class="btn btn-ghost btn-sm" id="undoBtn"><i class="fas fa-undo"></i> Undo</button>
-      <button class="btn btn-primary" id="downloadBtn"><i class="fas fa-download"></i> Download KDP PDF</button>
+      <button class="btn btn-primary" id="downloadBtn"><i class="fas fa-download"></i> Download KDP PDF (300 DPI)</button>
+    </div>
+    <div class="note info" style="width:100%;margin-top:10px;">
+      <i class="fas fa-lightbulb"></i> Drag any text to move it. Click the canvas to select, then use <b>Properties</b> on the right.
     </div>
   </main>
 
-  <!-- RIGHT PANEL: Properties + Elements -->
   <aside class="panel">
     <div class="panel-title"><i class="fas fa-sliders-h"></i> Properties</div>
 
-    <div id="noSelection" style="text-align:center; padding:16px; color:#94a3b8; font-size:0.8rem;">
-      <i class="fas fa-mouse-pointer" style="font-size:1.5rem; margin-bottom:6px; display:block;"></i>
+    <div id="noSelection" style="text-align:center;padding:16px;color:#94a3b8;font-size:0.8rem;">
+      <i class="fas fa-mouse-pointer" style="font-size:1.5rem;margin-bottom:6px;display:block;"></i>
       Click an element on the canvas
     </div>
 
@@ -329,7 +308,7 @@ footer { background:#0b1a33; color:#b0c4de; text-align:center; padding:20px; mar
       <div class="form-row">
         <div class="form-group">
           <label>Size: <span id="propSizeVal">32</span></label>
-          <input type="range" id="propSize" min="10" max="150" value="32">
+          <input type="range" id="propSize" min="10" max="200" value="32">
         </div>
         <div class="form-group">
           <label>Color</label>
@@ -353,7 +332,14 @@ footer { background:#0b1a33; color:#b0c4de; text-align:center; padding:20px; mar
           <option value="900">Black</option>
         </select>
       </div>
-      <button class="btn btn-danger btn-full btn-sm" id="deleteEl"><i class="fas fa-trash"></i> Delete</button>
+      <div class="form-group">
+        <label>Box width: <span id="propWVal">6.3</span>"</label>
+        <input type="range" id="propW" min="1" max="16" step="0.1" value="6.3">
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-ghost btn-sm" id="rotSpine" style="flex:1;"><i class="fas fa-sync"></i> Rotate 90°</button>
+        <button class="btn btn-danger btn-sm" id="deleteEl" style="flex:1;"><i class="fas fa-trash"></i> Delete</button>
+      </div>
     </div>
 
     <div class="panel-title mt-2"><i class="fas fa-layer-group"></i> Elements</div>
@@ -361,6 +347,24 @@ footer { background:#0b1a33; color:#b0c4de; text-align:center; padding:20px; mar
   </aside>
 
 </div>
+
+<section class="seo">
+  <h2>How the KDP cover size is calculated</h2>
+  <p>Amazon KDP builds a paperback cover as one single <b>wrap</b> file: back cover, spine and front cover side by side, with bleed all the way around.</p>
+  <ul>
+    <li><b>Width</b> = 0.125" bleed + back cover + spine + front cover + 0.125" bleed</li>
+    <li><b>Height</b> = 0.125" bleed + trim height + 0.125" bleed</li>
+    <li><b>Spine</b> = page count × paper thickness (white 0.002252", cream 0.0025")</li>
+  </ul>
+  <p>For an 8.5" × 8.5" book with 34 pages on white paper that gives a spine of <b>0.077"</b> and a full cover of <b>17.327" × 8.75"</b>.</p>
+  <h2>Keep these clear</h2>
+  <ul>
+    <li><b>Bleed</b> — 0.125" on every side. Art must reach it, nothing important may sit in it.</li>
+    <li><b>Safe zone</b> — keep every word at least 0.25" inside the trim edge.</li>
+    <li><b>Barcode</b> — KDP prints one in the bottom-right of the back cover. Leave a 2" × 1.2" box empty there.</li>
+    <li><b>Spine text</b> — KDP advises none below 79 pages. A thin spine looks cleaner left blank.</li>
+  </ul>
+</section>
 
 <footer>
   <p>© 2026 FreeSEOToolHub — KDP Cover Designer PRO</p>
@@ -372,15 +376,16 @@ footer { background:#0b1a33; color:#b0c4de; text-align:center; padding:20px; mar
 (function(){
 'use strict';
 
-const { PDFDocument, rgb, StandardFonts } = PDFLib;
+const { PDFDocument } = PDFLib;
 const $ = id => document.getElementById(id);
 
-// ==================== CONSTANTS ====================
-const PPI = 72;                // points per inch
-const BLEED = 0.125;           // inch
-const SAFE = 0.25;             // inch (from trim edge)
-const BARCODE_W = 2;           // inch
-const BARCODE_H = 1.2;         // inch
+/* ===================== CONSTANTS ===================== */
+const PPI = 72;
+const BLEED = 0.125;
+const SAFE = 0.25;
+const BARCODE_W = 2;
+const BARCODE_H = 1.2;
+const EXPORT_DPI = 300;
 
 const TRIMS = {
   '6x9':      { w: 6,   h: 9   },
@@ -388,211 +393,234 @@ const TRIMS = {
   '5x8':      { w: 5,   h: 8   },
   '7x10':     { w: 7,   h: 10  },
   '8.5x11':   { w: 8.5, h: 11  },
+  '8x10':     { w: 8,   h: 10  },
+  '8.25x8.25':{ w: 8.25,h: 8.25},
+  '8x8':      { w: 8,   h: 8   },
   '8.5x8.5':  { w: 8.5, h: 8.5 }
 };
 
-// ==================== STATE ====================
+/* the blank boxes baked into the supplied cover art, as fractions of the square */
+const ART_BOX = {
+  title:    { x0: 0.139, x1: 0.877, y0: 0.030, y1: 0.137 },
+  subtitle: { x0: 0.253, x1: 0.771, y0: 0.904, y1: 0.979 },
+  bg: '#fdecc9'
+};
+
+/* ===================== STATE ===================== */
 const state = {
   elements: [],
   selectedId: null,
   frontImage: null,
-  frontImageSettings: { scale: 1, offsetX: 0, offsetY: 0 },
+  imgFit: 'contain',
   nextId: 1,
   zoom: 1,
   history: [],
   historyIdx: -1,
   dragging: false,
   dragStart: { x:0, y:0 },
-  dragElStart: { x:0, y:0 }
+  dragElStart: { x:0, y:0 },
+  imgCache: null,
+  imgCacheSrc: null
 };
 
-// ==================== TOAST ====================
+/* ===================== TOAST ===================== */
 function toast(msg, type){
   type = type || 'success';
-  const c = $('toastContainer');
   const t = document.createElement('div');
   t.className = 'toast ' + type;
   t.textContent = msg;
-  c.appendChild(t);
-  setTimeout(() => { t.style.opacity = '0'; setTimeout(() => t.remove(), 300); }, 2500);
+  $('toastContainer').appendChild(t);
+  setTimeout(() => { t.style.opacity = '0'; setTimeout(() => t.remove(), 300); }, 2600);
 }
 
-// ==================== DIMENSIONS (FIXED) ====================
+/* ===================== DIMENSIONS ===================== */
 function getDims(){
-  const trim = TRIMS[$('trimSize').value];
-  const pages = parseInt($('pageCount').value) || 100;
+  const trim = TRIMS[$('trimSize').value] || TRIMS['8.5x8.5'];
+  const pages = Math.max(1, parseInt($('pageCount').value, 10) || 0);
   const paperT = parseFloat($('paperType').value);
-  
-  // KDP spine width calculation
-  let spine = pages * paperT;
-  if (spine < 0.06) spine = 0.06; // Minimum spine for KDP
-  
-  // Total cover width = bleed + back cover + spine + front cover + bleed
+
+  const spine  = pages * paperT;                 // KDP formula, no clamping
   const totalW = (BLEED * 2) + (trim.w * 2) + spine;
-  
-  // Total cover height = bleed + trim height + bleed
   const totalH = (BLEED * 2) + trim.h;
-  
-  return { 
-    trimW: trim.w, 
-    trimH: trim.h, 
-    spine: spine, 
-    totalW: totalW, 
-    totalH: totalH 
-  };
+
+  return { trimW: trim.w, trimH: trim.h, pages, spine, totalW, totalH };
 }
 
 function updateDims(){
   const d = getDims();
-  $('dimSpine').textContent = d.spine.toFixed(3) + '"';
-  $('dimWidth').textContent = d.totalW.toFixed(3) + '"';
+  $('dimSpine').textContent  = d.spine.toFixed(3) + '"';
+  $('dimWidth').textContent  = d.totalW.toFixed(3) + '"';
   $('dimHeight').textContent = d.totalH.toFixed(3) + '"';
-  $('canvasInfo').textContent = `Full: ${d.totalW.toFixed(3)}" × ${d.totalH.toFixed(3)}" | Spine: ${d.spine.toFixed(3)}"`;
+  $('canvasInfo').textContent =
+    'Full: ' + d.totalW.toFixed(3) + '" × ' + d.totalH.toFixed(3) + '"  |  Spine: ' + d.spine.toFixed(3) + '"';
+
+  const notes = [];
+  if (d.pages < 24)  notes.push('KDP needs at least 24 pages.');
+  if (d.pages > 828) notes.push('KDP allows at most 828 pages.');
+  if (d.pages % 2)   notes.push('Page count is odd — KDP rounds up to the next even number, which changes the spine.');
+  if (d.spine < 0.0625) notes.push('Spine is under 0.0625" — do not put text on it.');
+  else if (d.pages < 79) notes.push('KDP advises no spine text below 79 pages. Blank is safer and looks cleaner.');
+  $('dimNotes').innerHTML = notes.length
+    ? '<div class="note warn"><i class="fas fa-triangle-exclamation"></i> ' + notes.join('<br>') + '</div>'
+    : '<div class="note ok"><i class="fas fa-check"></i> Spine and page count look right for KDP.</div>';
+
   resizeCanvas();
 }
 
-// ==================== CANVAS SETUP ====================
+/* ===================== CANVAS ===================== */
 const canvas = $('coverCanvas');
 const ctx = canvas.getContext('2d');
 
 function resizeCanvas(){
   const d = getDims();
-  const maxW = Math.min(700, window.innerWidth - 100);
+  const wrapEl = canvas.parentElement;
+  const maxW = Math.max(360, Math.min(820, (wrapEl.clientWidth || 800) - 40));
   const scale = maxW / d.totalW;
-  canvas.width = Math.round(d.totalW * scale);
+  canvas.width  = Math.round(d.totalW * scale);
   canvas.height = Math.round(d.totalH * scale);
   canvas.dataset.scale = scale;
-  canvas.style.width = Math.round(d.totalW * scale * state.zoom) + 'px';
+  canvas.style.width  = Math.round(d.totalW * scale * state.zoom) + 'px';
   canvas.style.height = Math.round(d.totalH * scale * state.zoom) + 'px';
   $('zoomLabel').textContent = Math.round(state.zoom * 100) + '%';
-  render();
+  paint(ctx, canvas.width, canvas.height, d, $('showGuides').checked);
 }
 
-// ==================== RENDER ====================
-async function render(){
-  const d = getDims();
-  const W = canvas.width;
-  const H = canvas.height;
-  ctx.clearRect(0, 0, W, H);
+/* ---------- THE single painter used by BOTH preview and export ---------- */
+function paint(c, W, H, d, guides){
+  c.clearRect(0, 0, W, H);
 
-  // BACKGROUND
+  const px = perInch(W, H, d);
+  const fx = px.frontX, fy = px.top, fw = px.trimW, fh = px.trimH;
+
+  /* ---- background ---- */
   const bgType = $('bgType').value;
   const c1 = $('bgColor1').value;
   const c2 = $('bgColor2').value;
-
-  if(bgType === 'solid'){
-    ctx.fillStyle = c1;
-    ctx.fillRect(0, 0, W, H);
+  if (bgType === 'solid') {
+    c.fillStyle = c1;
+    c.fillRect(0, 0, W, H);
   } else {
-    let grad;
-    if(bgType === 'gradient-v') grad = ctx.createLinearGradient(0, 0, 0, H);
-    else grad = ctx.createLinearGradient(0, 0, W, 0);
-    grad.addColorStop(0, c1);
-    grad.addColorStop(1, c2);
-    ctx.fillStyle = grad;
-    ctx.fillRect(0, 0, W, H);
+    const g = bgType === 'gradient-v'
+      ? c.createLinearGradient(0, 0, 0, H)
+      : c.createLinearGradient(0, 0, W, 0);
+    g.addColorStop(0, c1);
+    g.addColorStop(1, c2);
+    c.fillStyle = g;
+    c.fillRect(0, 0, W, H);
   }
 
-  // FRONT COVER IMAGE
-  if(state.frontImage){
-    try {
-      const img = await loadImg(state.frontImage);
-      const px = {
-        bleed:  BLEED / d.totalW * W,
-        trimW:  d.trimW / d.totalW * W,
-        spine:  d.spine / d.totalW * W,
-        trimH:  d.trimH / d.totalH * H,
-        bleedY: BLEED / d.totalH * H
-      };
-      const fx = px.bleed + px.trimW + px.spine;
-      const fy = px.bleedY;
-
-      const s = state.frontImageSettings.scale;
+  /* ---- front image, drawn across trim + bleed ---- */
+  if (state.imgCache) {
+    const img = state.imgCache;
+    const ax = fx, ay = fy, aw = fw, ah = fh;
+    const fit = state.imgFit;
+    let dw, dh;
+    if (fit === 'stretch') {
+      dw = aw; dh = ah;
+    } else {
       const imgRatio = img.width / img.height;
-      const boxRatio = px.trimW / px.trimH;
-      let dw, dh;
-      if(imgRatio > boxRatio){ dh = px.trimH * s; dw = dh * imgRatio; }
-      else { dw = px.trimW * s; dh = dw / imgRatio; }
-
-      ctx.save();
-      ctx.beginPath();
-      ctx.rect(fx, fy, px.trimW, px.trimH);
-      ctx.clip();
-      ctx.drawImage(
-        img,
-        fx + (px.trimW - dw)/2 + state.frontImageSettings.offsetX,
-        fy + (px.trimH - dh)/2 + state.frontImageSettings.offsetY,
-        dw, dh
-      );
-      ctx.restore();
-    } catch(e){ console.warn('Image load error', e); }
-  }
-
-  // TEXT ELEMENTS
-  for(const el of state.elements){
-    if(el.hidden) continue;
-    drawElement(el, W, H, d);
-  }
-
-  // GUIDES
-  drawGuides(W, H, d);
-
-  // SELECTION BOX
-  const sel = state.elements.find(x => x.id === state.selectedId);
-  if(sel){
-    const b = elBounds(sel, W, H, d);
-    ctx.strokeStyle = '#ff9933';
-    ctx.lineWidth = 2;
-    ctx.setLineDash([6, 4]);
-    ctx.strokeRect(b.x, b.y, b.w, b.h);
-    ctx.setLineDash([]);
-    ctx.fillStyle = '#ff9933';
-    [[b.x,b.y],[b.x+b.w,b.y],[b.x,b.y+b.h],[b.x+b.w,b.y+b.h]].forEach(([hx,hy])=>{
-      ctx.fillRect(hx-4, hy-4, 8, 8);
-    });
-  }
-}
-
-function drawElement(el, W, H, d){
-  const b = elBounds(el, W, H, d);
-  ctx.save();
-  ctx.globalAlpha = el.opacity || 1;
-
-  if(el.type === 'text'){
-    ctx.fillStyle = el.color;
-    ctx.textAlign = el.align || 'center';
-    ctx.textBaseline = 'top';
-    const fs = (el.fontSize || 32) * (W / 700);
-    ctx.font = `${el.weight || '700'} ${fs}px "${el.font}"`;
-
-    const maxW = b.w;
-    const words = String(el.text || '').split(' ');
-    let line = '';
-    let y = b.y;
-    const lh = fs * 1.2;
-
-    const lines = [];
-    for(let i = 0; i < words.length; i++){
-      const test = line + words[i] + ' ';
-      if(ctx.measureText(test).width > maxW && line){
-        lines.push(line.trim());
-        line = words[i] + ' ';
+      const boxRatio = aw / ah;
+      const useCover = (fit === 'cover');
+      if (useCover ? (imgRatio > boxRatio) : (imgRatio < boxRatio)) {
+        dh = ah; dw = dh * imgRatio;
       } else {
-        line = test;
+        dw = aw; dh = dw / imgRatio;
       }
     }
-    if(line.trim()) lines.push(line.trim());
+    c.save();
+    c.beginPath();
+    c.rect(ax, ay, aw, ah);
+    c.clip();
+    c.drawImage(img, ax + (aw - dw) / 2, ay + (ah - dh) / 2, dw, dh);
+    c.restore();
+  }
 
-    let x = b.x;
-    if(el.align === 'center') x = b.x + b.w/2;
-    else if(el.align === 'right') x = b.x + b.w;
+  /* ---- text elements ---- */
+  for (const el of state.elements) {
+    if (el.hidden) continue;
+    drawElement(c, el, W, H, d);
+  }
 
-    lines.forEach((ln, i) => {
-      ctx.fillText(ln, x, y + i * lh);
+  /* ---- selection ---- */
+  const sel = state.elements.find(x => x.id === state.selectedId);
+  if (sel && guides) {
+    const b = elBounds(sel, W, H, d);
+    c.strokeStyle = '#ff9933';
+    c.lineWidth = 2;
+    c.setLineDash([6, 4]);
+    c.strokeRect(b.x, b.y, b.w, b.h);
+    c.setLineDash([]);
+    c.fillStyle = '#ff9933';
+    [[b.x,b.y],[b.x+b.w,b.y],[b.x,b.y+b.h],[b.x+b.w,b.y+b.h]].forEach(function(p){
+      c.fillRect(p[0]-4, p[1]-4, 8, 8);
     });
   }
 
-  ctx.restore();
+  /* ---- guides (screen only) ---- */
+  if (guides) drawGuides(c, W, H, d);
+}
+
+function perInch(W, H, d){
+  const bx = BLEED / d.totalW * W;
+  const by = BLEED / d.totalH * H;
+  const trimW = d.trimW / d.totalW * W;
+  const trimH = d.trimH / d.totalH * H;
+  const spine = d.spine / d.totalW * W;
+  return {
+    left: bx, top: by,
+    trimW: trimW, trimH: trimH, spine: spine,
+    backX: bx,
+    frontX: bx + trimW + spine,
+    safeX: SAFE / d.totalW * W,
+    safeY: SAFE / d.totalH * H
+  };
+}
+
+function drawElement(c, el, W, H, d){
+  const b = elBounds(el, W, H, d);
+  c.save();
+  c.globalAlpha = el.opacity == null ? 1 : el.opacity;
+  c.fillStyle = el.color;
+  c.textAlign = el.align || 'center';
+  c.textBaseline = 'top';
+
+  const fs = (el.fontSize || 32) * (W / 760);
+  c.font = (el.weight || '700') + ' ' + fs + 'px "' + el.font + '", Poppins, sans-serif';
+
+  const lines = wrapLines(c, String(el.text || ''), b.w);
+  const lh = fs * 1.18;
+
+  let x = b.x;
+  if (el.align === 'center') x = b.x + b.w / 2;
+  else if (el.align === 'right') x = b.x + b.w;
+
+  if (el.rotate) {
+    c.translate(x, b.y + (lines.length * lh) / 2);
+    c.rotate(-Math.PI / 2);
+    c.textAlign = 'center';
+    c.textBaseline = 'middle';
+    lines.forEach(function(ln, i){
+      c.fillText(ln, 0, (i - (lines.length - 1) / 2) * lh);
+    });
+  } else {
+    lines.forEach(function(ln, i){ c.fillText(ln, x, b.y + i * lh); });
+  }
+  c.restore();
+}
+
+function wrapLines(c, text, maxW){
+  const out = [];
+  text.split('\n').forEach(function(para){
+    const words = para.split(' ');
+    let line = '';
+    for (let i = 0; i < words.length; i++){
+      const test = line ? line + ' ' + words[i] : words[i];
+      if (c.measureText(test).width > maxW && line){ out.push(line); line = words[i]; }
+      else line = test;
+    }
+    out.push(line);
+  });
+  return out;
 }
 
 function elBounds(el, W, H, d){
@@ -600,147 +628,207 @@ function elBounds(el, W, H, d){
     x: el.x / d.totalW * W,
     y: el.y / d.totalH * H,
     w: el.w / d.totalW * W,
-    h: el.h / d.totalH * H
+    h: (el.h || 0.6) / d.totalH * H
   };
 }
 
-function drawGuides(W, H, d){
-  const bx = BLEED / d.totalW * W;
-  const by = BLEED / d.totalH * H;
-  const sx = SAFE / d.totalW * W;
-  const sy = SAFE / d.totalH * H;
-  const spinePx = d.spine / d.totalW * W;
-  const trimW = d.trimW / d.totalW * W;
+function drawGuides(c, W, H, d){
+  const px = perInch(W, H, d);
 
-  // Bleed line
-  ctx.strokeStyle = 'rgba(239,68,68,0.45)';
-  ctx.setLineDash([6, 6]);
-  ctx.lineWidth = 1;
-  ctx.strokeRect(bx, by, W - bx*2, H - by*2);
+  // trim outlines
+  c.strokeStyle = 'rgba(239,68,68,0.75)';
+  c.setLineDash([7, 5]);
+  c.lineWidth = 1.5;
+  c.strokeRect(px.left, px.top, px.trimW, px.trimH);
+  c.strokeRect(px.frontX, px.top, px.trimW, px.trimH);
 
-  // Safe zone
-  ctx.strokeStyle = 'rgba(16,185,129,0.4)';
-  ctx.strokeRect(sx, sy, W - sx*2, H - sy*2);
+  // safe zones
+  c.strokeStyle = 'rgba(59,130,246,0.7)';
+  c.strokeRect(px.left + px.safeX, px.top + px.safeY,
+               px.trimW - px.safeX * 2, px.trimH - px.safeY * 2);
+  c.strokeRect(px.frontX + px.safeX, px.top + px.safeY,
+               px.trimW - px.safeX * 2, px.trimH - px.safeY * 2);
 
-  // Spine lines
-  ctx.strokeStyle = 'rgba(59,130,246,0.5)';
-  ctx.setLineDash([3, 3]);
-  const spineStart = bx + trimW;
-  const spineEnd = spineStart + spinePx;
-  ctx.beginPath();
-  ctx.moveTo(spineStart, 0); ctx.lineTo(spineStart, H);
-  ctx.moveTo(spineEnd, 0);   ctx.lineTo(spineEnd, H);
-  ctx.stroke();
-  ctx.setLineDash([]);
+  // spine
+  c.strokeStyle = 'rgba(22,163,74,0.9)';
+  c.setLineDash([3, 3]);
+  c.beginPath();
+  c.moveTo(px.left + px.trimW, 0);        c.lineTo(px.left + px.trimW, H);
+  c.moveTo(px.left + px.trimW + px.spine, 0); c.lineTo(px.left + px.trimW + px.spine, H);
+  c.stroke();
+  c.setLineDash([]);
 
-  // Barcode box (bottom-right of back cover)
-  const barcodeW = BARCODE_W / d.totalW * W;
-  const barcodeH = BARCODE_H / d.totalH * H;
-  const barcodeX = bx + SAFE / d.totalW * W;
-  const barcodeY = H - by - sy - barcodeH;
-  ctx.fillStyle = 'rgba(255,255,255,0.95)';
-  ctx.fillRect(barcodeX, barcodeY, barcodeW, barcodeH);
-  ctx.strokeStyle = 'rgba(0,0,0,0.2)';
-  ctx.lineWidth = 1;
-  ctx.strokeRect(barcodeX, barcodeY, barcodeW, barcodeH);
-  ctx.fillStyle = 'rgba(0,0,0,0.35)';
-  ctx.font = '10px monospace';
-  ctx.textAlign = 'center';
-  ctx.fillText('BARCODE AREA', barcodeX + barcodeW/2, barcodeY + barcodeH/2 + 3);
+  // barcode — bottom-RIGHT of the BACK cover
+  const bw = BARCODE_W / d.totalW * W;
+  const bh = BARCODE_H / d.totalH * H;
+  const bx = px.left + px.trimW - px.safeX - bw;     // FIXED (was the left edge)
+  const by = H - px.top - px.safeY - bh;
+  c.fillStyle = 'rgba(255,255,255,0.9)';
+  c.fillRect(bx, by, bw, bh);
+  c.strokeStyle = 'rgba(124,58,237,0.95)';
+  c.lineWidth = 1.5;
+  c.setLineDash([4, 3]);
+  c.strokeRect(bx, by, bw, bh);
+  c.setLineDash([]);
+  c.fillStyle = 'rgba(109,40,217,0.85)';
+  c.font = 'bold 11px monospace';
+  c.textAlign = 'center';
+  c.textBaseline = 'middle';
+  c.fillText('BARCODE — KEEP CLEAR', bx + bw / 2, by + bh / 2);
+
+  // corner labels
+  c.font = 'bold 11px monospace';
+  c.fillStyle = 'rgba(239,68,68,0.9)';
+  c.textAlign = 'left';
+  c.textBaseline = 'top';
+  c.fillText('BACK', px.left + 6, px.top + 6);
+  c.fillText('FRONT', px.frontX + 6, px.top + 6);
+  if (d.spine > 0.09) c.fillText('SPINE', px.left + px.trimW + 3, px.top + 6);
 }
 
-// ==================== IMAGE LOADER ====================
+/* ===================== IMAGE ===================== */
 function loadImg(src){
-  return new Promise((res, rej) => {
+  return new Promise(function(res, rej){
     const i = new Image();
-    i.crossOrigin = 'anonymous';
-    i.onload = () => res(i);
+    i.onload = function(){ res(i); };
     i.onerror = rej;
     i.src = src;
   });
 }
 
-// ==================== ADD ELEMENTS ====================
+async function setFrontImage(dataUrl){
+  state.frontImage = dataUrl;
+  state.imgCache = await loadImg(dataUrl);
+  state.imgCacheSrc = dataUrl;
+  saveHistory();
+  resizeCanvas();
+}
+
+/* read the average colour of the outer ring so the bleed can match */
+function edgeColour(img){
+  const t = document.createElement('canvas');
+  t.width = 60; t.height = 60;
+  const tc = t.getContext('2d');
+  tc.drawImage(img, 0, 0, 60, 60);
+  const d = tc.getImageData(0, 0, 60, 60).data;
+  let r = 0, g = 0, b = 0, n = 0;
+  function add(x, y){
+    const i = (y * 60 + x) * 4;
+    r += d[i]; g += d[i+1]; b += d[i+2]; n++;
+  }
+  for (let x = 0; x < 60; x++){ add(x, 0); add(x, 1); add(x, 58); add(x, 59); }
+  for (let y = 0; y < 60; y++){ add(0, y); add(1, y); add(58, y); add(59, y); }
+  r = Math.round(r/n); g = Math.round(g/n); b = Math.round(b/n);
+  return '#' + [r,g,b].map(function(v){ return ('0' + v.toString(16)).slice(-2); }).join('');
+}
+
+/* ===================== ADD ELEMENTS ===================== */
 function addText(type){
   const d = getDims();
-  const presets = {
-    title:    { text:'MY BOOK TITLE',  fontSize:48, weight:'900', font:'Bebas Neue',       y: BLEED + 1.5, align:'center', color:'#0b1a33' },
-    subtitle: { text:'A Subtitle Here', fontSize:24, weight:'600', font:'Poppins',         y: BLEED + 3.5, align:'center', color:'#4a5a72' },
-    author:   { text:'AUTHOR NAME',    fontSize:28, weight:'700', font:'Montserrat',      y: BLEED + d.trimH - 1.8, align:'center', color:'#0b1a33' },
-    custom:   { text:'Custom Text',    fontSize:32, weight:'700', font:'Poppins',         y: BLEED + 4,   align:'center', color:'#0b1a33' }
-  };
-  const p = presets[type] || presets.custom;
-
-  // Position on FRONT cover (right side)
   const frontX = BLEED + d.trimW + d.spine;
+  const isSquare = Math.abs(d.trimW - d.trimH) < 0.01;
+
+  const presets = {
+    title: {
+      text:'My First\nSpanish Vegetables', fontSize:86, weight:'900', font:'Bebas Neue',
+      x: isSquare ? BLEED + ART_BOX.title.x0 * d.trimW : frontX + 0.5,
+      y: isSquare ? BLEED + ART_BOX.title.y0 * d.trimH : BLEED + 0.45,
+      w: isSquare ? (ART_BOX.title.x1 - ART_BOX.title.x0) * d.trimW : d.trimW - 1,
+      color:'#c2410c', align:'center'
+    },
+    subtitle: {
+      text:'A Bilingual Picture Book', fontSize:34, weight:'600', font:'Poppins',
+      x: isSquare ? BLEED + ART_BOX.subtitle.x0 * d.trimW : frontX + 0.6,
+      y: isSquare ? BLEED + ART_BOX.subtitle.y0 * d.trimH : BLEED + 1.9,
+      w: isSquare ? (ART_BOX.subtitle.x1 - ART_BOX.subtitle.x0) * d.trimW : d.trimW - 1.2,
+      color:'#8a5a2b', align:'center'
+    },
+    author: {
+      text:'YOUR NAME', fontSize:36, weight:'700', font:'Montserrat',
+      x: frontX + 0.6, y: BLEED + d.trimH - 1.15, w: d.trimW - 1.2,
+      color:'#0b1a33', align:'center'
+    },
+    blurb: {
+      text:'Bright, friendly pictures of 28 everyday vegetables — each one with its Spanish name, its English meaning, and an easy pronunciation guide.\n\nPoint at the picture, say the word, and let your little one repeat it.',
+      fontSize:26, weight:'400', font:'Poppins',
+      x: BLEED + 0.55, y: BLEED + 0.9, w: d.trimW - 1.1,
+      color:'#0b1a33', align:'left'
+    },
+    spine: {
+      text:'My First Spanish Vegetables', fontSize:30, weight:'600', font:'Poppins',
+      x: BLEED + d.trimW + d.spine / 2 - 0.02, y: BLEED + 0.6, w: d.trimH - 1.2,
+      color:'#ffffff', align:'center', rotate:true
+    },
+    custom: {
+      text:'Custom Text', fontSize:40, weight:'700', font:'Poppins',
+      x: frontX + 0.6, y: BLEED + 2.6, w: d.trimW - 1.2,
+      color:'#0b1a33', align:'center'
+    }
+  };
+
+  const p = presets[type] || presets.custom;
   const el = {
     id: state.nextId++,
     type: 'text',
     text: p.text,
-    x: frontX + 0.5,
-    y: p.y,
-    w: d.trimW - 1,
-    h: 0.6,
+    x: p.x, y: p.y, w: p.w, h: 0.7,
     fontSize: p.fontSize,
     font: p.font,
     weight: p.weight,
     color: p.color,
     align: p.align,
+    rotate: !!p.rotate,
     opacity: 1,
     hidden: false
   };
   state.elements.push(el);
   state.selectedId = el.id;
   saveHistory();
-  render();
+  resizeCanvas();
   renderElementList();
   renderProperties();
-  toast('Text added: ' + type);
+  toast('Added: ' + type);
 }
 
-// ==================== ELEMENT LIST ====================
+/* ===================== ELEMENT LIST ===================== */
 function renderElementList(){
   const list = $('elementList');
   list.innerHTML = '';
-  if(state.elements.length === 0){
+  if (!state.elements.length){
     list.innerHTML = '<div style="text-align:center;color:#94a3b8;font-size:0.75rem;padding:10px;">No elements yet</div>';
     return;
   }
-  state.elements.forEach(el => {
+  state.elements.forEach(function(el){
     const div = document.createElement('div');
     div.className = 'element-item' + (el.id === state.selectedId ? ' active' : '');
-    div.innerHTML = `
-      <span class="icon"><i class="fas fa-font"></i></span>
-      <span class="name">${el.text.substring(0, 20) || 'Text'}</span>
-      <button class="del"><i class="fas fa-times"></i></button>
-    `;
-    div.addEventListener('click', e => {
-      if(e.target.closest('.del')) return;
+    div.innerHTML =
+      '<span class="icon"><i class="fas fa-font"></i></span>' +
+      '<span class="name"></span>' +
+      '<button class="del"><i class="fas fa-times"></i></button>';
+    div.querySelector('.name').textContent = (el.text || 'Text').split('\n')[0].slice(0, 22);
+    div.addEventListener('click', function(e){
+      if (e.target.closest('.del')) return;
       state.selectedId = el.id;
-      render();
+      resizeCanvas();
       renderElementList();
       renderProperties();
     });
-    div.querySelector('.del').addEventListener('click', e => {
+    div.querySelector('.del').addEventListener('click', function(e){
       e.stopPropagation();
-      state.elements = state.elements.filter(x => x.id !== el.id);
-      if(state.selectedId === el.id) state.selectedId = null;
-      saveHistory();
-      render();
-      renderElementList();
-      renderProperties();
+      state.elements = state.elements.filter(function(x){ return x.id !== el.id; });
+      if (state.selectedId === el.id) state.selectedId = null;
+      saveHistory(); resizeCanvas(); renderElementList(); renderProperties();
     });
     list.appendChild(div);
   });
 }
 
-// ==================== PROPERTIES ====================
+/* ===================== PROPERTIES ===================== */
 function renderProperties(){
-  const el = state.elements.find(x => x.id === state.selectedId);
-  const no = $('noSelection');
-  const panel = $('selectedPanel');
-  if(!el){ panel.classList.add('hidden'); no.classList.remove('hidden'); return; }
-  panel.classList.remove('hidden'); no.classList.add('hidden');
+  const el = state.elements.find(function(x){ return x.id === state.selectedId; });
+  if (!el){ $('selectedPanel').classList.add('hidden'); $('noSelection').classList.remove('hidden'); return; }
+  $('selectedPanel').classList.remove('hidden');
+  $('noSelection').classList.add('hidden');
 
   $('propText').value = el.text;
   $('propFont').value = el.font;
@@ -749,321 +837,260 @@ function renderProperties(){
   $('propColor').value = el.color;
   $('propAlign').value = el.align;
   $('propWeight').value = el.weight;
+  $('propW').value = el.w.toFixed(1);
+  $('propWVal').textContent = el.w.toFixed(1);
 }
 
-// ==================== EVENT LISTENERS ====================
-$('trimSize').addEventListener('change', () => { updateDims(); saveHistory(); });
-$('pageCount').addEventListener('input', () => { updateDims(); });
-$('paperType').addEventListener('change', () => { updateDims(); });
-$('bgType').addEventListener('change', render);
-$('bgColor1').addEventListener('input', render);
-$('bgColor2').addEventListener('input', render);
+/* ===================== EVENTS ===================== */
+$('trimSize').addEventListener('change', function(){ updateDims(); saveHistory(); });
+$('pageCount').addEventListener('input', updateDims);
+$('paperType').addEventListener('change', updateDims);
+$('bgType').addEventListener('change', function(){ resizeCanvas(); });
+$('bgColor1').addEventListener('input', function(){ resizeCanvas(); });
+$('bgColor2').addEventListener('input', function(){ resizeCanvas(); });
+$('imgFit').addEventListener('change', function(){ state.imgFit = this.value; resizeCanvas(); saveHistory(); });
+$('showGuides').addEventListener('change', function(){ resizeCanvas(); });
 
-document.querySelectorAll('[data-add]').forEach(btn => {
-  btn.addEventListener('click', () => addText(btn.dataset.add));
+document.querySelectorAll('[data-add]').forEach(function(btn){
+  btn.addEventListener('click', function(){ addText(btn.dataset.add); });
 });
 
-$('frontImageInput').addEventListener('change', e => {
+$('frontImageInput').addEventListener('change', function(e){
   const f = e.target.files[0];
-  if(!f) return;
+  if (!f) return;
   const r = new FileReader();
-  r.onload = ev => {
-    state.frontImage = ev.target.result;
-    state.frontImageSettings = { scale: 1, offsetX: 0, offsetY: 0 };
-    saveHistory();
-    render();
-    toast('Front cover image added');
+  r.onload = async function(ev){
+    await setFrontImage(ev.target.result);
+    const edge = edgeColour(state.imgCache);
+    $('bgColor1').value = edge;
+    $('bgType').value = 'solid';
+    resizeCanvas();
+    toast('Cover image added — background matched to ' + edge);
   };
   r.readAsDataURL(f);
 });
 
-$('removeImage').addEventListener('click', () => {
-  state.frontImage = null;
-  saveHistory();
-  render();
-  toast('Image removed');
+$('removeImage').addEventListener('click', function(){
+  state.frontImage = null; state.imgCache = null;
+  saveHistory(); resizeCanvas(); toast('Image removed');
 });
 
-$('propText').addEventListener('input', e => {
-  const el = state.elements.find(x => x.id === state.selectedId);
-  if(el){ el.text = e.target.value; render(); renderElementList(); }
+$('bleedFill').addEventListener('click', function(){
+  if (!state.imgCache) return toast('Add a front image first', 'error');
+  const edge = edgeColour(state.imgCache);
+  $('bgColor1').value = edge;
+  $('bgType').value = 'solid';
+  resizeCanvas();
+  toast('Bleed filled with ' + edge);
 });
-$('propFont').addEventListener('change', e => {
-  const el = state.elements.find(x => x.id === state.selectedId);
-  if(el){ el.font = e.target.value; render(); }
-});
-$('propSize').addEventListener('input', e => {
-  const el = state.elements.find(x => x.id === state.selectedId);
-  if(el){ el.fontSize = parseInt(e.target.value); $('propSizeVal').textContent = e.target.value; render(); }
-});
-$('propColor').addEventListener('input', e => {
-  const el = state.elements.find(x => x.id === state.selectedId);
-  if(el){ el.color = e.target.value; render(); }
-});
-$('propAlign').addEventListener('change', e => {
-  const el = state.elements.find(x => x.id === state.selectedId);
-  if(el){ el.align = e.target.value; render(); }
-});
-$('propWeight').addEventListener('change', e => {
-  const el = state.elements.find(x => x.id === state.selectedId);
-  if(el){ el.weight = e.target.value; render(); }
-});
-$('deleteEl').addEventListener('click', () => {
-  state.elements = state.elements.filter(x => x.id !== state.selectedId);
+
+$('artPreset').addEventListener('click', function(){
+  $('trimSize').value = '8.5x8.5';
+  $('pageCount').value = 34;
+  $('paperType').value = '0.002252';
+  $('bgType').value = 'solid';
+  $('bgColor1').value = ART_BOX.bg;
+  state.elements = [];
   state.selectedId = null;
-  saveHistory();
-  render();
+  updateDims();
+  addText('title');
+  addText('subtitle');
+  updateDims();
   renderElementList();
   renderProperties();
+  saveHistory();
+  toast('Preset applied — title and subtitle placed in the blank boxes');
 });
 
-// ==================== CANVAS INTERACTION ====================
-canvas.addEventListener('mousedown', e => {
+$('propText').addEventListener('input', function(e){
+  const el = state.elements.find(function(x){ return x.id === state.selectedId; });
+  if (el){ el.text = e.target.value; resizeCanvas(); renderElementList(); }
+});
+$('propFont').addEventListener('change', function(e){
+  const el = state.elements.find(function(x){ return x.id === state.selectedId; });
+  if (el){ el.font = e.target.value; resizeCanvas(); }
+});
+$('propSize').addEventListener('input', function(e){
+  const el = state.elements.find(function(x){ return x.id === state.selectedId; });
+  if (el){ el.fontSize = parseInt(e.target.value, 10); $('propSizeVal').textContent = e.target.value; resizeCanvas(); }
+});
+$('propColor').addEventListener('input', function(e){
+  const el = state.elements.find(function(x){ return x.id === state.selectedId; });
+  if (el){ el.color = e.target.value; resizeCanvas(); }
+});
+$('propAlign').addEventListener('change', function(e){
+  const el = state.elements.find(function(x){ return x.id === state.selectedId; });
+  if (el){ el.align = e.target.value; resizeCanvas(); }
+});
+$('propWeight').addEventListener('change', function(e){
+  const el = state.elements.find(function(x){ return x.id === state.selectedId; });
+  if (el){ el.weight = e.target.value; resizeCanvas(); }
+});
+$('propW').addEventListener('input', function(e){
+  const el = state.elements.find(function(x){ return x.id === state.selectedId; });
+  if (el){ el.w = parseFloat(e.target.value); $('propWVal').textContent = el.w.toFixed(1); resizeCanvas(); }
+});
+$('rotSpine').addEventListener('click', function(){
+  const el = state.elements.find(function(x){ return x.id === state.selectedId; });
+  if (!el) return;
+  el.rotate = !el.rotate;
+  resizeCanvas(); saveHistory();
+  toast('Rotated');
+});
+$('deleteEl').addEventListener('click', function(){
+  state.elements = state.elements.filter(function(x){ return x.id !== state.selectedId; });
+  state.selectedId = null;
+  saveHistory(); resizeCanvas(); renderElementList(); renderProperties();
+});
+
+/* ---------- canvas interaction ---------- */
+canvas.addEventListener('mousedown', function(e){
   const r = canvas.getBoundingClientRect();
   const mx = (e.clientX - r.left) * (canvas.width / r.width);
   const my = (e.clientY - r.top) * (canvas.height / r.height);
   const d = getDims();
 
   let hit = null;
-  for(let i = state.elements.length - 1; i >= 0; i--){
+  for (let i = state.elements.length - 1; i >= 0; i--){
     const el = state.elements[i];
-    if(el.hidden) continue;
+    if (el.hidden) continue;
     const b = elBounds(el, canvas.width, canvas.height, d);
-    if(mx >= b.x && mx <= b.x + b.w && my >= b.y && my <= b.y + b.h){ hit = el; break; }
+    const h = Math.max(b.h, (el.fontSize || 32) * (canvas.width / 760) * 1.4);
+    if (mx >= b.x && mx <= b.x + b.w && my >= b.y - 6 && my <= b.y + h){ hit = el; break; }
   }
 
-  if(hit){
+  if (hit){
     state.selectedId = hit.id;
     state.dragging = true;
     state.dragStart = { x: mx, y: my };
     state.dragElStart = { x: hit.x, y: hit.y };
-    render();
-    renderElementList();
-    renderProperties();
   } else {
     state.selectedId = null;
-    render();
-    renderElementList();
-    renderProperties();
   }
+  resizeCanvas(); renderElementList(); renderProperties();
 });
 
-document.addEventListener('mousemove', e => {
-  if(!state.dragging || !state.selectedId) return;
+document.addEventListener('mousemove', function(e){
+  if (!state.dragging || !state.selectedId) return;
   const r = canvas.getBoundingClientRect();
   const mx = (e.clientX - r.left) * (canvas.width / r.width);
   const my = (e.clientY - r.top) * (canvas.height / r.height);
   const d = getDims();
-  const el = state.elements.find(x => x.id === state.selectedId);
-  if(!el) return;
-
-  const dx = (mx - state.dragStart.x) / canvas.width * d.totalW;
-  const dy = (my - state.dragStart.y) / canvas.height * d.totalH;
-  el.x = state.dragElStart.x + dx;
-  el.y = state.dragElStart.y + dy;
-  render();
+  const el = state.elements.find(function(x){ return x.id === state.selectedId; });
+  if (!el) return;
+  el.x = state.dragElStart.x + (mx - state.dragStart.x) / canvas.width * d.totalW;
+  el.y = state.dragElStart.y + (my - state.dragStart.y) / canvas.height * d.totalH;
+  resizeCanvas();
 });
 
-document.addEventListener('mouseup', () => {
-  if(state.dragging){ state.dragging = false; saveHistory(); }
+document.addEventListener('mouseup', function(){
+  if (state.dragging){ state.dragging = false; saveHistory(); }
 });
 
-// ==================== ZOOM ====================
-$('zoomIn').addEventListener('click', () => { state.zoom = Math.min(2, state.zoom + 0.1); resizeCanvas(); });
-$('zoomOut').addEventListener('click', () => { state.zoom = Math.max(0.5, state.zoom - 0.1); resizeCanvas(); });
-$('zoomReset').addEventListener('click', () => { state.zoom = 1; resizeCanvas(); });
+/* ---------- zoom ---------- */
+$('zoomIn').addEventListener('click', function(){ state.zoom = Math.min(2, state.zoom + 0.1); resizeCanvas(); });
+$('zoomOut').addEventListener('click', function(){ state.zoom = Math.max(0.5, state.zoom - 0.1); resizeCanvas(); });
+$('zoomReset').addEventListener('click', function(){ state.zoom = 1; resizeCanvas(); });
 
-// ==================== HISTORY ====================
+/* ---------- history ---------- */
 function saveHistory(){
-  const snap = JSON.stringify({
-    elements: state.elements,
-    frontImage: state.frontImage,
-    frontImageSettings: state.frontImageSettings
-  });
+  const snap = JSON.stringify({ elements: state.elements, frontImage: state.frontImage, imgFit: state.imgFit });
   state.history = state.history.slice(0, state.historyIdx + 1);
   state.history.push(snap);
   state.historyIdx = state.history.length - 1;
-  if(state.history.length > 40){ state.history.shift(); state.historyIdx--; }
+  if (state.history.length > 40){ state.history.shift(); state.historyIdx--; }
 }
 
-$('undoBtn').addEventListener('click', () => {
-  if(state.historyIdx <= 0) return toast('Nothing to undo','error');
+$('undoBtn').addEventListener('click', async function(){
+  if (state.historyIdx <= 0) return toast('Nothing to undo', 'error');
   state.historyIdx--;
   const s = JSON.parse(state.history[state.historyIdx]);
   state.elements = s.elements || [];
-  state.frontImage = s.frontImage;
-  state.frontImageSettings = s.frontImageSettings || { scale:1, offsetX:0, offsetY:0 };
+  state.imgFit = s.imgFit || 'contain';
+  $('imgFit').value = state.imgFit;
+  if (s.frontImage){ await setFrontImage(s.frontImage); }
+  else { state.frontImage = null; state.imgCache = null; }
   state.selectedId = null;
-  render();
-  renderElementList();
-  renderProperties();
+  resizeCanvas(); renderElementList(); renderProperties();
   toast('Undo');
 });
 
-// ==================== PDF EXPORT (FIXED) ====================
-$('downloadBtn').addEventListener('click', async () => {
-  const btn = $('downloadBtn');
+/* ===================== PDF EXPORT ===================== */
+$('downloadBtn').addEventListener('click', async function(){
+  const btn = this;
+  const oldHTML = btn.innerHTML;
   btn.disabled = true;
-  btn.textContent = 'Generating...';
+  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Rendering 300 DPI…';
+
   try {
     const d = getDims();
-    const pageW = d.totalW * PPI;
-    const pageH = d.totalH * PPI;
+    const W = Math.round(d.totalW * EXPORT_DPI);
+    const H = Math.round(d.totalH * EXPORT_DPI);
+
+    if (W * H > 268000000) throw new Error('Cover is too large to render at 300 DPI.');
+
+    if (document.fonts && document.fonts.ready) await document.fonts.ready;
+
+    const off = document.createElement('canvas');
+    off.width = W; off.height = H;
+    const octx = off.getContext('2d');
+
+    const remember = state.selectedId;
+    state.selectedId = null;
+    paint(octx, W, H, d, false);
+    state.selectedId = remember;
+
+    const blob = await new Promise(function(res){ off.toBlob(res, 'image/png'); });
+    if (!blob) throw new Error('Could not render the cover.');
+
+    const bytes = new Uint8Array(await blob.arrayBuffer());
 
     const pdf = await PDFDocument.create();
+    pdf.setTitle('KDP Cover');
+    pdf.setCreator('FreeSEOToolHub KDP Cover Designer');
+    const pageW = d.totalW * PPI;
+    const pageH = d.totalH * PPI;
     const page = pdf.addPage([pageW, pageH]);
 
-    // Background
-    const bgType = $('bgType').value;
-    const c1 = hexToRgb($('bgColor1').value);
-    const c2 = hexToRgb($('bgColor2').value);
+    const img = await pdf.embedPng(bytes);
+    page.drawImage(img, { x: 0, y: 0, width: pageW, height: pageH });
 
-    if(bgType === 'solid'){
-      page.drawRectangle({ x:0, y:0, width:pageW, height:pageH, color: rgb(c1.r/255, c1.g/255, c1.b/255) });
-    } else {
-      const steps = 60;
-      for(let i = 0; i < steps; i++){
-        const t = i / (steps - 1);
-        const r = c1.r + (c2.r - c1.r) * t;
-        const g = c1.g + (c2.g - c1.g) * t;
-        const b = c1.b + (c2.b - c1.b) * t;
-        let rx, ry, rw, rh;
-        if(bgType === 'gradient-v'){
-          rx = 0; ry = pageH - (i+1) * (pageH/steps);
-          rw = pageW; rh = pageH/steps + 1;
-        } else {
-          rx = i * (pageW/steps); ry = 0;
-          rw = pageW/steps + 1; rh = pageH;
-        }
-        page.drawRectangle({ x:rx, y:ry, width:rw, height:rh, color: rgb(r/255, g/255, b/255) });
-      }
-    }
-
-    // Front image
-    if(state.frontImage){
-      const b64 = state.frontImage.split(',')[1];
-      const bytes = b64ToBytes(b64);
-      let img;
-      if(state.frontImage.includes('image/png')) img = await pdf.embedPng(bytes);
-      else if(state.frontImage.includes('image/jpeg') || state.frontImage.includes('image/jpg')) img = await pdf.embedJpg(bytes);
-      else {
-        const tmp = await loadImg(state.frontImage);
-        const tc = document.createElement('canvas');
-        tc.width = tmp.width; tc.height = tmp.height;
-        tc.getContext('2d').drawImage(tmp, 0, 0);
-        const dataUrl = tc.toDataURL('image/png');
-        const newB64 = dataUrl.split(',')[1];
-        img = await pdf.embedPng(b64ToBytes(newB64));
-      }
-
-      const bx = BLEED * PPI;
-      const trimW = d.trimW * PPI;
-      const spinePx = d.spine * PPI;
-      const trimH = d.trimH * PPI;
-      const fx = bx + trimW + spinePx;
-      const fy = bx;
-
-      const ratio = img.width / img.height;
-      const boxRatio = trimW / trimH;
-      let dw, dh;
-      if(ratio > boxRatio){ dh = trimH; dw = dh * ratio; }
-      else { dw = trimW; dh = dw / ratio; }
-
-      const drawX = fx + (trimW - dw)/2;
-      const drawY = fy + (trimH - dh)/2;
-      page.drawImage(img, { x: drawX, y: drawY, width: dw, height: dh });
-    }
-
-    // Text elements
-    const fontBold = await pdf.embedFont(StandardFonts.HelveticaBold);
-    const fontReg = await pdf.embedFont(StandardFonts.Helvetica);
-
-    for(const el of state.elements){
-      if(el.hidden) continue;
-      const col = hexToRgb(el.color);
-      const fs = (el.fontSize || 32) * 0.75;
-      const elX = el.x * PPI;
-      const elY = pageH - (el.y * PPI) - fs;
-      const elW = el.w * PPI;
-
-      const words = String(el.text).split(' ');
-      const lines = [];
-      let line = '';
-      for(const w of words){
-        const test = line + w + ' ';
-        if(fontBold.widthOfTextAtSize(test, fs) > elW && line){
-          lines.push(line.trim());
-          line = w + ' ';
-        } else line = test;
-      }
-      if(line.trim()) lines.push(line.trim());
-
-      lines.forEach((ln, i) => {
-        const w = fontBold.widthOfTextAtSize(ln, fs);
-        let x = elX;
-        if(el.align === 'center') x = elX + (elW - w)/2;
-        else if(el.align === 'right') x = elX + elW - w;
-        page.drawText(ln, {
-          x, y: elY - i * fs * 1.2,
-          size: fs, font: fontBold,
-          color: rgb(col.r/255, col.g/255, col.b/255)
-        });
-      });
-    }
-
-    // Barcode white box (bottom-right of back cover)
-    const bcW = BARCODE_W * PPI;
-    const bcH = BARCODE_H * PPI;
-    const bcX = (BLEED + SAFE) * PPI;
-    const bcY = (BLEED + SAFE) * PPI;
-    page.drawRectangle({
-      x: bcX, y: bcY, width: bcW, height: bcH,
-      color: rgb(1, 1, 1),
-      borderColor: rgb(0.8, 0.8, 0.8), borderWidth: 1
-    });
-
-    const bytes = await pdf.save();
-    const blob = new Blob([bytes], { type: 'application/pdf' });
-    const url = URL.createObjectURL(blob);
+    const out = await pdf.save();
+    const url = URL.createObjectURL(new Blob([out], { type: 'application/pdf' }));
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'kdp-cover-' + $('trimSize').value.replace('x','x') + '.pdf';
+    a.download = 'kdp-cover-' + $('trimSize').value + '-' + d.pages + 'pg.pdf';
+    document.body.appendChild(a);
     a.click();
-    URL.revokeObjectURL(url);
-    toast('PDF downloaded successfully!');
-  } catch(err){
+    document.body.removeChild(a);
+    setTimeout(function(){ URL.revokeObjectURL(url); }, 10000);
+
+    toast('PDF saved — ' + d.totalW.toFixed(3) + '" × ' + d.totalH.toFixed(3) + '" at 300 DPI');
+    off.width = off.height = 0;
+  } catch (err) {
     console.error(err);
     toast('Error: ' + err.message, 'error');
   } finally {
     btn.disabled = false;
-    btn.innerHTML = '<i class="fas fa-download"></i> Download KDP PDF';
+    btn.innerHTML = oldHTML;
   }
 });
 
-function hexToRgb(hex){
-  const r = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-  return r ? { r:parseInt(r[1],16), g:parseInt(r[2],16), b:parseInt(r[3],16) } : { r:0, g:0, b:0 };
-}
-function b64ToBytes(b64){
-  const bin = atob(b64);
-  const arr = new Uint8Array(bin.length);
-  for(let i = 0; i < bin.length; i++) arr[i] = bin.charCodeAt(i);
-  return arr;
-}
-
-// ==================== INIT ====================
+/* ===================== INIT ===================== */
 function init(){
+  state.imgFit = $('imgFit').value;
   updateDims();
-  setTimeout(() => {
+  window.addEventListener('resize', function(){ resizeCanvas(); });
+
+  setTimeout(function(){
     addText('title');
-    addText('author');
+    addText('subtitle');
     state.selectedId = null;
-    render();
+    resizeCanvas();
     renderElementList();
     renderProperties();
     saveHistory();
-  }, 200);
-  window.addEventListener('resize', resizeCanvas);
+  }, 250);
 }
 
 window.addEventListener('load', init);
