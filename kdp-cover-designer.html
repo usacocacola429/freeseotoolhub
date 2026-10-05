@@ -578,16 +578,40 @@ function perInch(W, H, d){
 
 function drawElement(c, el, W, H, d){
   const b = elBounds(el, W, H, d);
+  const scale = W / 760;
+
   c.save();
   c.globalAlpha = el.opacity == null ? 1 : el.opacity;
   c.fillStyle = el.color;
   c.textAlign = el.align || 'center';
   c.textBaseline = 'top';
 
-  const fs = (el.fontSize || 32) * (W / 760);
-  c.font = (el.weight || '700') + ' ' + fs + 'px "' + el.font + '", Poppins, sans-serif';
+  let fs = (el.fontSize || 32) * scale;
+  const boxH = (el.h || 0.6) / d.totalH * H;
 
-  const lines = wrapLines(c, String(el.text || ''), b.w);
+  function setFont(size){
+    c.font = (el.weight || '700') + ' ' + size + 'px "' + el.font + '", Poppins, sans-serif';
+  }
+
+  setFont(fs);
+  let lines = wrapLines(c, String(el.text || ''), b.w);
+
+  /* if the box is fixed, shrink the text until it fits both ways */
+  if (el.autoFit) {
+    for (let i = 0; i < 16; i++) {
+      const need = lines.length * fs * 1.18;
+      let widest = 0;
+      lines.forEach(function(l){ widest = Math.max(widest, c.measureText(l).width); });
+      const k = Math.max(need / boxH, widest / b.w);
+      if (k <= 1.002 || fs < 4) break;
+      fs = fs / k;
+      setFont(fs);
+      lines = wrapLines(c, String(el.text || ''), b.w);
+    }
+    setFont(fs);
+    lines = wrapLines(c, String(el.text || ''), b.w);
+  }
+
   const lh = fs * 1.18;
 
   let x = b.x;
@@ -603,7 +627,9 @@ function drawElement(c, el, W, H, d){
       c.fillText(ln, 0, (i - (lines.length - 1) / 2) * lh);
     });
   } else {
-    lines.forEach(function(ln, i){ c.fillText(ln, x, b.y + i * lh); });
+    let y0 = b.y;
+    if (el.autoFit) y0 = b.y + Math.max(0, (boxH - lines.length * lh) / 2);
+    lines.forEach(function(ln, i){ c.fillText(ln, x, y0 + i * lh); });
   }
   c.restore();
 }
@@ -728,41 +754,55 @@ function addText(type){
   const frontX = BLEED + d.trimW + d.spine;
   const isSquare = Math.abs(d.trimW - d.trimH) < 0.01;
 
+  /* the blank boxes baked into the cover artwork, as a fraction of the square */
+  const T = { x0: 0.139, x1: 0.877, y0: 0.030, y1: 0.137 };
+  const S = { x0: 0.253, x1: 0.771, y0: 0.904, y1: 0.979 };
+
+  const titleBox = isSquare ? {
+    x: frontX + T.x0 * d.trimW,
+    y: BLEED + T.y0 * d.trimH,
+    w: (T.x1 - T.x0) * d.trimW,
+    h: (T.y1 - T.y0) * d.trimH
+  } : { x: frontX + 0.6, y: BLEED + 0.5, w: d.trimW - 1.2, h: 1.2 };
+
+  const subBox = isSquare ? {
+    x: frontX + S.x0 * d.trimW,
+    y: BLEED + S.y0 * d.trimH,
+    w: (S.x1 - S.x0) * d.trimW,
+    h: (S.y1 - S.y0) * d.trimH
+  } : { x: frontX + 0.9, y: BLEED + d.trimH - 2.0, w: d.trimW - 1.8, h: 0.9 };
+
   const presets = {
     title: {
-      text:'My First\nSpanish Vegetables', fontSize:86, weight:'900', font:'Bebas Neue',
-      x: isSquare ? BLEED + ART_BOX.title.x0 * d.trimW : frontX + 0.5,
-      y: isSquare ? BLEED + ART_BOX.title.y0 * d.trimH : BLEED + 0.45,
-      w: isSquare ? (ART_BOX.title.x1 - ART_BOX.title.x0) * d.trimW : d.trimW - 1,
-      color:'#c2410c', align:'center'
+      text:'My First Spanish Vegetables', fontSize:60, weight:'900', font:'Bebas Neue',
+      x: titleBox.x, y: titleBox.y, w: titleBox.w, h: titleBox.h,
+      color:'#c2410c', align:'center', autoFit:true
     },
     subtitle: {
-      text:'A Bilingual Picture Book', fontSize:34, weight:'600', font:'Poppins',
-      x: isSquare ? frontX + ART_BOX.subtitle.x0 * d.trimW : frontX + 0.6,
-      y: isSquare ? BLEED + ART_BOX.subtitle.y0 * d.trimH : BLEED + 1.9,
-      w: isSquare ? (ART_BOX.subtitle.x1 - ART_BOX.subtitle.x0) * d.trimW : d.trimW - 1.2,
-      color:'#8a5a2b', align:'center'
+      text:'A Bilingual Picture Book', fontSize:22, weight:'600', font:'Poppins',
+      x: subBox.x, y: subBox.y, w: subBox.w, h: subBox.h,
+      color:'#8a5a2b', align:'center', autoFit:true
     },
     author: {
-      text:'YOUR NAME', fontSize:36, weight:'700', font:'Montserrat',
-      x: frontX + 0.6, y: BLEED + d.trimH - 1.15, w: d.trimW - 1.2,
-      color:'#0b1a33', align:'center'
+      text:'YOUR NAME', fontSize:30, weight:'700', font:'Montserrat',
+      x: frontX + 0.6, y: BLEED + d.trimH - 0.95, w: d.trimW - 1.2, h: 0.6,
+      color:'#0b1a33', align:'center', autoFit:true
     },
     blurb: {
-      text:'Bright, friendly pictures of 28 everyday vegetables — each one with its Spanish name, its English meaning, and an easy pronunciation guide.\n\nPoint at the picture, say the word, and let your little one repeat it.',
-      fontSize:26, weight:'400', font:'Poppins',
-      x: BLEED + 0.55, y: BLEED + 0.9, w: d.trimW - 1.1,
-      color:'#0b1a33', align:'left'
+      text:'Bright, friendly pictures of 28 everyday vegetables — each one with its Spanish name, its English meaning, and an easy pronunciation guide.\n\nPoint at the picture, say the word, and let your little one repeat it. Simple, playful, and made for tiny hands.',
+      fontSize:22, weight:'400', font:'Poppins',
+      x: BLEED + 0.6, y: BLEED + 0.75, w: d.trimW - 1.2, h: d.trimH - 2.4,
+      color:'#0b1a33', align:'left', autoFit:false
     },
     spine: {
-      text:'My First Spanish Vegetables', fontSize:30, weight:'600', font:'Poppins',
-      x: BLEED + d.trimW + d.spine / 2 - 0.02, y: BLEED + 0.6, w: d.trimH - 1.2,
-      color:'#ffffff', align:'center', rotate:true
+      text:'My First Spanish Vegetables', fontSize:24, weight:'600', font:'Poppins',
+      x: BLEED + d.trimW + d.spine / 2 - 0.02, y: BLEED + 0.6, w: d.trimH - 1.2, h: d.spine,
+      color:'#ffffff', align:'center', rotate:true, autoFit:false
     },
     custom: {
-      text:'Custom Text', fontSize:40, weight:'700', font:'Poppins',
-      x: frontX + 0.6, y: BLEED + 2.6, w: d.trimW - 1.2,
-      color:'#0b1a33', align:'center'
+      text:'Custom Text', fontSize:30, weight:'700', font:'Poppins',
+      x: frontX + 0.6, y: BLEED + 2.6, w: d.trimW - 1.2, h: 1.0,
+      color:'#0b1a33', align:'center', autoFit:true
     }
   };
 
@@ -771,13 +811,14 @@ function addText(type){
     id: state.nextId++,
     type: 'text',
     text: p.text,
-    x: p.x, y: p.y, w: p.w, h: 0.7,
+    x: p.x, y: p.y, w: p.w, h: p.h,
     fontSize: p.fontSize,
     font: p.font,
     weight: p.weight,
     color: p.color,
     align: p.align,
     rotate: !!p.rotate,
+    autoFit: !!p.autoFit,
     opacity: 1,
     hidden: false
   };
