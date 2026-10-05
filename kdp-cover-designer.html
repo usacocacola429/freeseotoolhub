@@ -598,12 +598,12 @@ function drawElement(c, el, W, H, d){
 
   /* if the box is fixed, shrink the text until it fits both ways */
   if (el.autoFit) {
-    for (let i = 0; i < 16; i++) {
+      for (let i = 0; i < 24; i++) {
       const need = lines.length * fs * 1.18;
       let widest = 0;
       lines.forEach(function(l){ widest = Math.max(widest, c.measureText(l).width); });
       const k = Math.max(need / boxH, widest / b.w);
-      if (k <= 1.002 || fs < 4) break;
+      if (Math.abs(k - 1) < 0.02 || fs < 4) break;
       fs = fs / k;
       setFont(fs);
       lines = wrapLines(c, String(el.text || ''), b.w);
