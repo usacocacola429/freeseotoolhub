@@ -256,7 +256,8 @@
       <div class="form-group">
         <label><i class="fas fa-ruler"></i> <span data-i18n="trimSize">Book Trim Size</span></label>
         <select id="trimSize">
-          <option value="auto" selected data-i18n="trimAuto">Auto-detect (recommended)</option>
+          <!-- CHANGED: Default set to 8.5x8.5 for square picture books -->
+          <option value="auto" data-i18n="trimAuto">Auto-detect (recommended)</option>
           <option value="5x8">5" × 8"</option>
           <option value="5.06x7.81">5.06" × 7.81"</option>
           <option value="5.25x8">5.25" × 8"</option>
@@ -269,7 +270,7 @@
           <option value="7.5x9.25">7.5" × 9.25"</option>
           <option value="8x10">8" × 10"</option>
           <option value="8.25x8.25">8.25" × 8.25" (Square)</option>
-          <option value="8.5x8.5">8.5" × 8.5" (Square)</option>
+          <option value="8.5x8.5" selected>8.5" × 8.5" (Square)</option>
           <option value="8.25x11">8.25" × 11"</option>
           <option value="8.5x11">8.5" × 11" (Letter)</option>
           <option value="8.27x11.69">8.27" × 11.69" (A4)</option>
@@ -289,9 +290,10 @@
       <div class="form-group">
         <label><i class="fas fa-crop-alt"></i> <span data-i18n="fitMode">Content Scaling</span></label>
         <select id="fitMode">
-          <option value="auto" selected data-i18n="fitAuto">Auto (recommended)</option>
+          <!-- CHANGED: Default set to bleed for full page picture books -->
+          <option value="auto" data-i18n="fitAuto">Auto (recommended)</option>
           <option value="contain" data-i18n="fitContain">Fit inside margins — text books</option>
-          <option value="bleed" data-i18n="fitBleed">Fill page &amp; bleed — picture books</option>
+          <option value="bleed" selected data-i18n="fitBleed">Fill page &amp; bleed — picture books</option>
         </select>
       </div>
 
@@ -319,7 +321,7 @@
 
     <div class="form-group" style="margin-top:6px;">
       <label style="display:flex; align-items:center; gap:10px; font-weight:500; cursor:pointer;">
-        <input type="checkbox" id="padEven" style="width:18px;height:18px;accent-color:#ff9933;cursor:pointer;">
+        <input type="checkbox" id="padEven" style="width:18px;height:18px;accent-color:#ff9933;cursor:pointer;" checked>
         <span data-i18n="padEven">Pad to an even page count with blank pages (cleaner printing)</span>
       </label>
     </div>
@@ -1059,7 +1061,7 @@
   }
 
   /* ==========================================================================
-     6. SOURCE INSPECTION — pdf-lib only, so pdf.js stays unloaded for big books
+     6. SOURCE INSPECTION
      ========================================================================== */
 
   async function inspectPdf(file) {
@@ -1119,7 +1121,7 @@
   }
 
   /* ==========================================================================
-     7. FONT + IMAGE AUDIT (pdf-lib low level, no rendering needed)
+     7. FONT + IMAGE AUDIT
      ========================================================================== */
 
   const STANDARD_14 = /^(Helvetica|Times|Courier|Symbol|ZapfDingbats)/i;
@@ -1219,12 +1221,12 @@
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     await page.render({ canvasContext: ctx, viewport: vp }).promise;
     const out = dataUrlToBytes(canvas.toDataURL('image/jpeg', 0.95));
-    canvas.width = 0; canvas.height = 0;   // release the backing store
+    canvas.width = 0; canvas.height = 0;
     return out;
   }
 
   /* ==========================================================================
-     9. BLEED DETECTION (needs a render, so pdf.js only)
+     9. BLEED DETECTION
      ========================================================================== */
 
   async function detectBleed(pdfjsDoc, sizeIn) {
@@ -1266,7 +1268,7 @@
         }
         canvas.width = 0; canvas.height = 0;
         if (total > 0 && ink / total > 0.02) return true;
-      } catch (e) { /* a page we cannot render tells us nothing */ }
+      } catch (e) { /* ignore */ }
     }
     return false;
   }
@@ -1275,18 +1277,6 @@
      10. BUILDERS
      ========================================================================== */
 
-  /**
-   * VECTOR: copyPages() ONCE per source document, then
-   * setMediaBox + scaleContent + translateContent.
-   *
-   * A single copyPages call shares one object copier, so shared fonts and
-   * images are copied once instead of once per page. That is what keeps an
-   * 800-page book from exploding in memory and file size.
-   *
-   * pdf-lib PREPENDS "cm" operators. So the content stream ends up as
-   * [translate][scale][original], which maps  point p -> s*p + t.
-   * Therefore scaleContent MUST be called before translateContent.
-   */
   async function buildVector(sources, opt, onProgress) {
     const { PDFDocument, PDFName } = PDFLib;
     const out = await PDFDocument.create();
@@ -1338,7 +1328,6 @@
     return { ok: true, out, pages: done, structureProblems };
   }
 
-  /** RASTER: only sane for short books. */
   async function buildRaster(sources, opt, pdfjsMap, onProgress) {
     const { PDFDocument } = PDFLib;
     const out = await PDFDocument.create();
@@ -1388,12 +1377,6 @@
     return m;
   }
 
-  /**
-   * Loads one pdf.js document per PDF source, in the SAME order the PDF sources
-   * appear in `sources`, and returns that array. Keeping it separate from the
-   * cleanup list matters: mixing in the bleed-detection document would shift the
-   * indices and rasterise the wrong file.
-   */
   async function loadPdfjsFor(sources, cleanup) {
     if (!window.pdfjsLib) throw new Error(t('errLoad'));
     const docs = [];
@@ -1480,7 +1463,6 @@
     let pdfjsDocs = [];
 
     try {
-      /* -------- read sources -------- */
       const sources = [];
       for (let i = 0; i < uploadedFiles.length; i++) {
         const f = uploadedFiles[i];
@@ -1511,7 +1493,6 @@
         issues.push({ type: 'warn', text: t('warnCropBox') });
       }
 
-      /* -------- trim size -------- */
       setProgress(18, t('stepDetect'));
       await sleep(0);
 
@@ -1533,7 +1514,6 @@
 
       if (first.wIn > first.hIn) issues.push({ type: 'warn', text: t('warnLandscape') });
 
-      /* -------- page count -------- */
       if (srcPageCount < MIN_PAGES) {
         issues.push({ type: 'err', text: tf('warnMinPages', { n: MIN_PAGES, p: srcPageCount }) });
       }
@@ -1541,7 +1521,6 @@
         issues.push({ type: 'err', text: tf('warnMaxPages', { n: MAX_PAGES, p: srcPageCount }) });
       }
 
-      /* -------- bleed -------- */
       const bleedChoice = $('bleedOption').value;
       let hasBleed;
       const isBig = info.fileMB > BIG_FILE_MB;
@@ -1560,12 +1539,12 @@
           pdfjsDocs.push(d);
           hasBleed = await detectBleed(d, [first.wIn, first.hIn]);
         } else {
-          hasBleed = false;
+          // If it's an image, we assume bleed is needed because it fills the page
+          hasBleed = true; 
         }
         issues.push({ type: 'inf', text: hasBleed ? t('infoBleedAuto') : t('infoBleedNone') });
       }
 
-      /* -------- margins -------- */
       const gutterChoice = $('insideMargin').value;
       const gutter = gutterChoice === 'auto' ? gutterFor(srcPageCount) : parseFloat(gutterChoice);
       let outer = parseFloat($('outsideMargin').value);
@@ -1580,7 +1559,6 @@
       const fitChoice = $('fitMode').value;
       const fitMode = fitChoice === 'auto' ? (hasBleed ? 'bleed' : 'contain') : fitChoice;
 
-      /* -------- engine -------- */
       let engine = $('engine').value;
       const canVector = sources.every(s => s.kind === 'pdf' && s.doc &&
                                           s.pages.every(p => p.rot === 0));
@@ -1600,11 +1578,9 @@
 
       const opt = { trimW, trimH, hasBleed, gutter, outer, top, bottom, fitMode };
 
-      // rasterDocs stays aligned with `sources`; pdfjsDocs is only for cleanup
       let rasterDocs = [];
       if (engine === 'raster') rasterDocs = await loadPdfjsFor(sources, pdfjsDocs);
 
-      /* -------- build -------- */
       setProgress(32, t('stepBuild'));
       await sleep(0);
       checkCancel();
@@ -1628,7 +1604,6 @@
         result = await buildRaster(sources, opt, mapBySource(sources, rasterDocs), prog);
       }
 
-      /* -------- even-page padding -------- */
       if ($('padEven').checked && result.out.getPageCount() % 2 !== 0) {
         const geo = buildGeometry(result.out.getPageCount(), opt);
         result.out.addPage([geo.pageW * PT, geo.pageH * PT]);
@@ -1637,13 +1612,11 @@
         issues.push({ type: 'warn', text: tf('warnOddPages', { p: result.out.getPageCount() }) });
       }
 
-      /* -------- save -------- */
       setProgress(80, t('stepSave'));
       await sleep(0);
       checkCancel();
       let outBytes = await result.out.save();
 
-      /* -------- verify -------- */
       const canRaster = srcPageCount <= RASTER_MAX_PAGES;
       if ($('verifyOut').checked && window.pdfjsLib && result.out.getPageCount() <= 300) {
         setProgress(86, t('stepVerify'));
@@ -1671,7 +1644,6 @@
 
       const finalPages = result.out.getPageCount();
 
-      /* -------- font + image audit -------- */
       setProgress(93, t('stepAudit'));
       await sleep(0);
       const fontInfo = { count: 0, names: [], missing: [] };
@@ -1694,8 +1666,6 @@
         issues.push({ type: 'inf', text: tf('infoFontsOk', { n: fontInfo.count }) });
       }
 
-      // worst case: assume every image spans the full trim width. If even that
-      // clears 300 DPI the image is definitely fine.
       const lowDpi = imgList
         .map(im => ({ w: im.w, h: im.h, dpi: Math.min(im.w / trimW, im.h / trimH) }))
         .filter(im => im.dpi < 300)
@@ -1713,7 +1683,6 @@
         issues.push({ type: 'inf', text: tf('infoImagesOk', { n: imgList.length }) });
       }
 
-      /* -------- trim notes -------- */
       if (info.trimNote === 'kept') issues.push({ type: 'inf', text: t('infoKeptTrim') });
       if (info.trimNote === 'snapped') {
         issues.push({ type: 'inf', text: t('infoSnappedTrim') + ' (' + info.fromSize +
@@ -1727,7 +1696,6 @@
         issues.push({ type: 'warn', text: tf('warnScaleSmall', { s: Math.round(scaleGuess * 100) }) });
       }
 
-      /* -------- download -------- */
       const safeTrim = String(trimW).replace('.', '-') + 'x' + String(trimH).replace('.', '-');
       const fileName = 'kdp-interior-' + safeTrim + (hasBleed ? '-bleed' : '') + '.pdf';
 
