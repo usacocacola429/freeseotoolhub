@@ -2,10 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-    <!-- ==================== 🏠 MAIN PAGES ==================== -->
+    <!-- MAIN PAGES -->
     <url>
         <loc>https://freeseotoolhub.com/</loc>
-        <lastmod>2026-07-09</lastmod>
+        <lastmod>2026-11-11</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/"/>
@@ -17,133 +17,133 @@
     </url>
     <url>
         <loc>https://freeseotoolhub.com/about.html</loc>
-        <lastmod>2026-07-09</lastmod>
+        <lastmod>2026-11-11</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://freeseotoolhub.com/contact.html</loc>
-        <lastmod>2026-07-09</lastmod>
+        <lastmod>2026-11-11</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://freeseotoolhub.com/privacy.html</loc>
-        <lastmod>2026-07-09</lastmod>
+        <lastmod>2026-11-11</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>https://freeseotoolhub.com/blog/</loc>
-        <lastmod>2026-07-09</lastmod>
+        <lastmod>2026-11-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
 
-    <!-- ==================== 🔥 PDF & IMAGE TOOLS ==================== -->
+    <!-- PDF & IMAGE TOOLS -->
     <url>
         <loc>https://freeseotoolhub.com/pdf-to-jpg.html</loc>
-        <lastmod>2026-07-09</lastmod>
+        <lastmod>2026-11-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.95</priority>
     </url>
     <url>
         <loc>https://freeseotoolhub.com/jpg-to-pdf.html</loc>
-        <lastmod>2026-07-09</lastmod>
+        <lastmod>2026-11-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.95</priority>
     </url>
     <url>
         <loc>https://freeseotoolhub.com/ebook-creator.html</loc>
-        <lastmod>2026-07-09</lastmod>
+        <lastmod>2026-11-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.95</priority>
     </url>
     <url>
         <loc>https://freeseotoolhub.com/kdp-paperback-formatter.html</loc>
-        <lastmod>2026-07-09</lastmod>
+        <lastmod>2026-11-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.95</priority>
     </url>
     <url>
         <loc>https://freeseotoolhub.com/kdp-cover-designer.html</loc>
-        <lastmod>2026-07-09</lastmod>
+        <lastmod>2026-11-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.95</priority>
     </url>
     <url>
         <loc>https://freeseotoolhub.com/favicon-generator.html</loc>
-        <lastmod>2026-07-09</lastmod>
+        <lastmod>2026-11-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
         <loc>https://freeseotoolhub.com/color-palette-generator.html</loc>
-        <lastmod>2026-07-09</lastmod>
+        <lastmod>2026-11-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
 
-    <!-- ==================== 🌍 SEO TOOLS (सभी काम करने वाले) ==================== -->
+    <!-- SEO TOOLS -->
     <url>
         <loc>https://freeseotoolhub.com/meta-tag-generator.html</loc>
-        <lastmod>2026-07-09</lastmod>
+        <lastmod>2026-11-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.95</priority>
     </url>
     <url>
         <loc>https://freeseotoolhub.com/qr-code-generator.html</loc>
-        <lastmod>2026-07-09</lastmod>
+        <lastmod>2026-11-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.95</priority>
     </url>
     <url>
         <loc>https://freeseotoolhub.com/keyword-density.html</loc>
-        <lastmod>2026-07-09</lastmod>
+        <lastmod>2026-11-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.90</priority>
     </url>
     <url>
         <loc>https://freeseotoolhub.com/ai-content-detector.html</loc>
-        <lastmod>2026-07-09</lastmod>
+        <lastmod>2026-11-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
         <loc>https://freeseotoolhub.com/schema-markup-generator.html</loc>
-        <lastmod>2026-07-09</lastmod>
+        <lastmod>2026-11-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.90</priority>
     </url>
     <url>
         <loc>https://freeseotoolhub.com/internal-link-suggester.html</loc>
-        <lastmod>2026-07-09</lastmod>
+        <lastmod>2026-11-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
         <loc>https://freeseotoolhub.com/google-serp-simulator.html</loc>
-        <lastmod>2026-07-09</lastmod>
+        <lastmod>2026-11-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
         <loc>https://freeseotoolhub.com/voice-search-optimizer.html</loc>
-        <lastmod>2026-07-09</lastmod>
+        <lastmod>2026-11-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
         <loc>https://freeseotoolhub.com/html-code-runner.html</loc>
-        <lastmod>2026-07-09</lastmod>
+        <lastmod>2026-11-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
 
-    <!-- ==================== 📦 SYSTEM FILES ==================== -->
+    <!-- SYSTEM -->
     <url>
         <loc>https://freeseotoolhub.com/robots.txt</loc>
-        <lastmod>2026-07-09</lastmod>
+        <lastmod>2026-11-11</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.3</priority>
     </url>
