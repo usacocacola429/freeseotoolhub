@@ -1,30 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HTML Code Runner — Live HTML, CSS &amp; JS Preview with Console | FreeSEOToolHub</title>
-<meta name="description" content="Paste HTML, CSS and JavaScript and see the result instantly. Live preview, built-in error console, mobile view, download as .html. 100% free, no signup, runs in your browser.">
+<title data-page-title-key="pageTitle">HTML Code Runner — Live HTML, CSS & JS Preview with Console | FreeSEOToolHub</title>
+<meta name="description" content="Paste HTML, CSS and JavaScript and see the result instantly. Live preview, built-in error console, mobile view, download as .html. 100% free, no signup, runs in your browser." data-page-desc-key="pageDesc">
 <meta name="keywords" content="html runner, html code runner, html editor online, live html preview, html css js playground, run html online free, html tester, codepen alternative">
 <meta name="robots" content="index, follow, max-image-preview:large">
-<link rel="canonical" href="https://freeseotoolhub.com/tools/html-code-runner.html">
+
+<link rel="canonical" href="https://freeseotoolhub.com/html-code-runner.html">
+<link rel="alternate" hreflang="x-default" href="https://freeseotoolhub.com/html-code-runner.html">
+<link rel="alternate" hreflang="en" href="https://freeseotoolhub.com/html-code-runner.html">
+<link rel="alternate" hreflang="hi" href="https://freeseotoolhub.com/html-code-runner.html?lang=hi">
+<link rel="alternate" hreflang="ur" href="https://freeseotoolhub.com/html-code-runner.html?lang=ur">
+<link rel="alternate" hreflang="de" href="https://freeseotoolhub.com/html-code-runner.html?lang=de">
+<link rel="alternate" hreflang="es" href="https://freeseotoolhub.com/html-code-runner.html?lang=es">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://freeseotoolhub.com/html-code-runner.html">
+<meta property="og:title" content="HTML Code Runner — Live HTML, CSS & JS Preview">
+<meta property="og:description" content="Live HTML/CSS/JS preview with built-in error console. 100% browser-based.">
+<meta property="og:image" content="https://freeseotoolhub.com/images/html-runner-og.jpg">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="hi_IN">
+<meta property="og:locale:alternate" content="ur_PK">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="HTML Code Runner — Live Preview">
+<meta name="twitter:description" content="Live HTML/CSS/JS preview with error console.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/material-darker.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "HTML Code Runner",
-  "url": "https://freeseotoolhub.com/tools/html-code-runner.html",
-  "applicationCategory": "DeveloperApplication",
-  "operatingSystem": "Web",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "HTML Code Runner",
+      "url": "https://freeseotoolhub.com/html-code-runner.html",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Web",
+      "inLanguage": ["en","hi","ur","de","es"],
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "isAccessibleForFree": true
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://freeseotoolhub.com/" },
+        { "@type": "ListItem", "position": 2, "name": "HTML Code Runner", "item": "https://freeseotoolhub.com/html-code-runner.html" }
+      ]
+    }
+  ]
 }
 </script>
 
@@ -45,11 +80,21 @@
   }
 
   body{
-    font-family:'Poppins',system-ui,-apple-system,'Segoe UI',sans-serif;
+    font-family:'Poppins','Noto Sans Devanagari','Noto Naskh Arabic',system-ui,-apple-system,'Segoe UI',sans-serif;
     background:var(--bg);
     color:var(--ink);
     min-height:100vh;
   }
+
+  html[dir="rtl"] body { direction:rtl; }
+  html[dir="rtl"] .site-head p,
+  html[dir="rtl"] .card p,
+  html[dir="rtl"] .card h3,
+  html[dir="rtl"] .content h2 { text-align:right; }
+  html[dir="rtl"] .faq .card h3 i { margin-left:8px; margin-right:0; }
+  /* Keep editors and code LTR always */
+  .editor-side, .preview-side, .preview-stage, iframe { direction:ltr; }
+  .CodeMirror { direction:ltr !important; text-align:left; }
 
   /* ============ head ============ */
   .site-head{
@@ -205,6 +250,7 @@
   .console-body{
     flex:1 1 auto;overflow:auto;padding:6px 0;
     font-family:'JetBrains Mono','Consolas',monospace;font-size:12.5px;
+    direction:ltr;
   }
   .cline{
     display:flex;gap:10px;padding:4px 14px;border-bottom:1px solid #171d28;
@@ -219,7 +265,7 @@
   .cline.error .lv{color:#ef4444}
   .cline.sys .lv{color:#64748b}
   .cline.sys{color:#6b7688}
-  .console-empty{padding:14px;color:#4b5568;font-size:12.5px;font-family:'JetBrains Mono',monospace}
+  .console-empty{padding:14px;color:#4b5568;font-size:12.5px;font-family:'JetBrains Mono',monospace;direction:ltr;}
 
   /* -------- content below -------- */
   .content{max-width:1320px;margin:0 auto;padding:34px 20px 60px}
@@ -241,6 +287,11 @@
   .faq .card h3 i{color:var(--orange);font-style:normal}
   code{background:#f1f5f9;padding:2px 6px;border-radius:5px;font-family:'JetBrains Mono',monospace;font-size:.82em}
 
+  .footer-nav{max-width:1320px;margin:0 auto;padding:0 20px 20px;display:flex;justify-content:center;gap:22px;flex-wrap:wrap}
+  .footer-nav a{color:#64748b;text-decoration:none;font-size:.85rem;font-weight:500}
+  .footer-nav a:hover{color:var(--orange)}
+  .footer-copy{text-align:center;color:#94a3b8;font-size:.8rem;padding:10px 20px 30px}
+
   @media(max-width:820px){
     .work{flex-direction:column}
     .editor-side{flex:0 0 auto;height:45%}
@@ -256,15 +307,15 @@
 
 <header class="site-head">
   <div class="wrap">
-    <a class="brand" href="/">🚀 <b>FreeSEOToolHub</b> / tools</a>
-    <h1>HTML Code Runner — <span>Live Preview</span> with Error Console</h1>
-    <p>Paste HTML, CSS and JavaScript on the left and the result appears instantly on the right. If something breaks, the console below tells you exactly what went wrong — in plain English. Nothing is uploaded; everything runs inside your own browser.</p>
+    <a class="brand" href="/" data-translate-html="brandHtml">🚀 <b>FreeSEOToolHub</b> / tools</a>
+    <h1 data-translate-html="mainTitle">HTML Code Runner — <span>Live Preview</span> with Error Console</h1>
+    <p data-translate="mainDesc">Paste HTML, CSS and JavaScript on the left and the result appears instantly on the right. If something breaks, the console below tells you exactly what went wrong — in plain English. Nothing is uploaded; everything runs inside your own browser.</p>
     <div class="head-pills">
-      <span>⚡ Live preview</span>
-      <span>🐞 Error console</span>
-      <span>📱 Mobile view</span>
-      <span>💾 Download .html</span>
-      <span>🔒 100% private</span>
+      <span data-translate="pillLive">⚡ Live preview</span>
+      <span data-translate="pillConsole">🐞 Error console</span>
+      <span data-translate="pillMobile">📱 Mobile view</span>
+      <span data-translate="pillDownload">💾 Download .html</span>
+      <span data-translate="pillPrivate">🔒 100% private</span>
     </div>
   </div>
 </header>
@@ -272,42 +323,39 @@
 <div class="app">
   <div class="app-frame">
 
-    <!-- ================= toolbar ================= -->
     <div class="bar">
-      <button class="btn run" id="runBtn">▶ Run</button>
+      <button class="btn run" id="runBtn"><i class="fas fa-play"></i> <span data-translate="runBtn">Run</span></button>
 
-      <label class="toggle" title="Update the preview automatically as you type">
-        <input type="checkbox" id="autoRun" checked> Auto-run
+      <label class="toggle" data-translate-title="autoRunTitle" title="Update the preview automatically as you type">
+        <input type="checkbox" id="autoRun" checked> <span data-translate="autoRunLabel">Auto-run</span>
       </label>
 
       <div class="seg" id="deviceSeg">
-        <button data-w="100%" class="on">🖥 Desktop</button>
-        <button data-w="768">📱 Tablet</button>
-        <button data-w="375">📱 Mobile</button>
+        <button data-w="100%" class="on"><i class="fas fa-desktop"></i> <span data-translate="deviceDesktop">Desktop</span></button>
+        <button data-w="768"><i class="fas fa-tablet-alt"></i> <span data-translate="deviceTablet">Tablet</span></button>
+        <button data-w="375"><i class="fas fa-mobile-alt"></i> <span data-translate="deviceMobile">Mobile</span></button>
       </div>
 
       <div class="spacer"></div>
 
-      <select class="btn" id="tplSel" title="Start from an example">
-        <option value="">Examples…</option>
-        <option value="blank">Blank</option>
-        <option value="basic">Basic page</option>
-        <option value="card">Centered card</option>
-        <option value="button">Button + click</option>
-        <option value="flex">Flexbox gallery</option>
-        <option value="form">Simple form</option>
-        <option value="error">Show an error (demo)</option>
+      <select class="btn" id="tplSel" data-translate-title="examplesTitle" title="Start from an example">
+        <option value="" data-translate="examplesPlaceholder">Examples…</option>
+        <option value="blank" data-translate="tplBlank">Blank</option>
+        <option value="basic" data-translate="tplBasic">Basic page</option>
+        <option value="card" data-translate="tplCard">Centered card</option>
+        <option value="button" data-translate="tplButton">Button + click</option>
+        <option value="flex" data-translate="tplFlex">Flexbox gallery</option>
+        <option value="form" data-translate="tplForm">Simple form</option>
+        <option value="error" data-translate="tplError">Show an error (demo)</option>
       </select>
 
-      <button class="btn" id="formatBtn" title="Tidy up the indentation">⌘ Tidy</button>
-      <button class="btn" id="copyBtn">⧉ Copy</button>
-      <button class="btn" id="dlBtn">⬇ Download</button>
-      <button class="btn" id="clearBtn">🗑 Clear</button>
+      <button class="btn" id="formatBtn" data-translate-title="tidyTitle" title="Tidy up the indentation"><i class="fas fa-magic"></i> <span data-translate="tidyBtn">Tidy</span></button>
+      <button class="btn" id="copyBtn"><i class="fas fa-copy"></i> <span data-translate="copyBtn">Copy</span></button>
+      <button class="btn" id="dlBtn"><i class="fas fa-download"></i> <span data-translate="downloadBtn">Download</span></button>
+      <button class="btn" id="clearBtn"><i class="fas fa-trash"></i> <span data-translate="clearBtn">Clear</span></button>
     </div>
 
-    <!-- ================= workspace ================= -->
     <div class="work" id="work">
-
       <section class="editor-side" id="editorSide">
         <div class="tabs" id="tabs">
           <button data-pane="html" class="on">HTML</button>
@@ -325,11 +373,11 @@
 
       <section class="preview-side">
         <div class="preview-bar">
-          <span id="previewLabel">Preview</span>
+          <span id="previewLabel" data-translate="previewLabel">Preview</span>
           <div class="spacer"></div>
-          <button id="consoleToggle">▾ Console</button>
-          <button id="newTabBtn">↗ Open in new tab</button>
-          <button id="refreshBtn">⟳ Refresh</button>
+          <button id="consoleToggle" data-translate="consoleHide">▾ Console</button>
+          <button id="newTabBtn" data-translate="openNewTab">↗ Open in new tab</button>
+          <button id="refreshBtn" data-translate="refreshBtn">⟳ Refresh</button>
         </div>
         <div class="preview-stage" id="previewStage">
           <iframe id="frame"
@@ -339,72 +387,79 @@
       </section>
     </div>
 
-    <!-- ================= console ================= -->
     <div class="console" id="console">
       <div class="console-head">
-        <span>CONSOLE</span>
+        <span data-translate="consoleTitle">CONSOLE</span>
         <span class="badge" id="msgCount">0</span>
         <span class="badge err" id="errCount" style="display:none">0 errors</span>
         <div class="spacer"></div>
-        <button id="clearConsole">Clear</button>
+        <button id="clearConsole" data-translate="consoleClear">Clear</button>
       </div>
       <div class="console-body" id="consoleBody">
-        <div class="console-empty">Console output and JavaScript errors will appear here.</div>
+        <div class="console-empty" data-translate="consoleEmpty">Console output and JavaScript errors will appear here.</div>
       </div>
     </div>
 
   </div>
 </div>
 
-<!-- ================= SEO content ================= -->
 <section class="content">
-  <h2>How to use the HTML runner</h2>
+  <h2 data-translate="howToTitle">How to use the HTML runner</h2>
   <div class="grid3">
     <div class="card">
       <div class="num">1</div>
-      <h3>Paste your code</h3>
-      <p>Put your markup in the <b>HTML</b> tab, styles in <b>CSS</b> and scripts in <b>JS</b>. You can also paste a complete HTML document straight into the HTML tab — the runner detects it and uses it as-is.</p>
+      <h3 data-translate="howTo1Title">Paste your code</h3>
+      <p data-translate-html="howTo1Desc">Put your markup in the <b>HTML</b> tab, styles in <b>CSS</b> and scripts in <b>JS</b>. You can also paste a complete HTML document straight into the HTML tab — the runner detects it and uses it as-is.</p>
     </div>
     <div class="card">
       <div class="num">2</div>
-      <h3>Watch it run</h3>
-      <p>The preview updates as you type. Use the device buttons to check how your page looks on a tablet or a phone, and drag the middle bar to give the preview more room.</p>
+      <h3 data-translate="howTo2Title">Watch it run</h3>
+      <p data-translate-html="howTo2Desc">The preview updates as you type. Use the device buttons to check how your page looks on a tablet or a phone, and drag the middle bar to give the preview more room.</p>
     </div>
     <div class="card">
       <div class="num">3</div>
-      <h3>Read the console</h3>
-      <p>Errors, warnings and <code>console.log()</code> output show up at the bottom with the line number. Most "my page is blank" problems are explained right there.</p>
+      <h3 data-translate="howTo3Title">Read the console</h3>
+      <p data-translate-html="howTo3Desc">Errors, warnings and <code>console.log()</code> output show up at the bottom with the line number. Most "my page is blank" problems are explained right there.</p>
     </div>
   </div>
 
-  <h2>Frequently asked questions</h2>
+  <h2 data-translate="faqTitle">Frequently asked questions</h2>
   <div class="faq">
     <div class="card">
-      <h3><i>?</i> Is it really free?</h3>
-      <p>Yes — free, no signup, no limits and no watermark. There is nothing to install and nothing to pay.</p>
+      <h3><i>?</i> <span data-translate="faqQ1">Is it really free?</span></h3>
+      <p data-translate="faqA1">Yes — free, no signup, no limits and no watermark. There is nothing to install and nothing to pay.</p>
     </div>
     <div class="card">
-      <h3><i>?</i> Is my code uploaded anywhere?</h3>
-      <p>No. The editor and the preview both run inside your browser using an isolated frame. Your code never leaves your device.</p>
+      <h3><i>?</i> <span data-translate="faqQ2">Is my code uploaded anywhere?</span></h3>
+      <p data-translate="faqA2">No. The editor and the preview both run inside your browser using an isolated frame. Your code never leaves your device.</p>
     </div>
     <div class="card">
-      <h3><i>?</i> Why is my page blank?</h3>
-      <p>Almost always a JavaScript error. Look at the console panel — it shows the message and the line number. A missing <code>&lt;/div&gt;</code> or a typo in a variable name is the usual cause.</p>
+      <h3><i>?</i> <span data-translate="faqQ3">Why is my page blank?</span></h3>
+      <p data-translate-html="faqA3">Almost always a JavaScript error. Look at the console panel — it shows the message and the line number. A missing <code>&lt;/div&gt;</code> or a typo in a variable name is the usual cause.</p>
     </div>
     <div class="card">
-      <h3><i>?</i> Can I use external libraries?</h3>
-      <p>Yes. Add a normal <code>&lt;script src="..."&gt;</code> or <code>&lt;link&gt;</code> tag pointing at a CDN and it will load in the preview.</p>
+      <h3><i>?</i> <span data-translate="faqQ4">Can I use external libraries?</span></h3>
+      <p data-translate-html="faqA4">Yes. Add a normal <code>&lt;script src="..."&gt;</code> or <code>&lt;link&gt;</code> tag pointing at a CDN and it will load in the preview.</p>
     </div>
     <div class="card">
-      <h3><i>?</i> Does it save my work?</h3>
-      <p>Your code is kept in your browser's local storage, so a refresh will not lose it. Use <b>Download</b> to save a permanent copy as a <code>.html</code> file.</p>
+      <h3><i>?</i> <span data-translate="faqQ5">Does it save my work?</span></h3>
+      <p data-translate-html="faqA5">Your code is kept in your browser's local storage, so a refresh will not lose it. Use <b>Download</b> to save a permanent copy as a <code>.html</code> file.</p>
     </div>
     <div class="card">
-      <h3><i>?</i> Can I preview something I was sent?</h3>
-      <p>Yes — open this page in a private window, paste the code and hit Run. Nothing is saved to your account and the code is sandboxed, so it cannot touch this site.</p>
+      <h3><i>?</i> <span data-translate="faqQ6">Can I preview something I was sent?</span></h3>
+      <p data-translate="faqA6">Yes — open this page in a private window, paste the code and hit Run. Nothing is saved to your account and the code is sandboxed, so it cannot touch this site.</p>
     </div>
   </div>
 </section>
+
+<div class="footer-nav">
+  <a href="/" data-translate="home">Home</a>
+  <a href="/blog/" data-translate="blog">Blog</a>
+  <a href="/about.html" data-translate="about">About</a>
+  <a href="/contact.html" data-translate="contact">Contact</a>
+  <a href="/privacy.html" data-translate="privacy">Privacy</a>
+</div>
+<div class="footer-copy" data-translate="footerCopyright">© 2026 FreeSEOToolHub | HTML Code Runner | 100% Client-Side</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/xml/xml.min.js"></script>
@@ -414,17 +469,345 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/closebrackets.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/format/formatting.min.js"></script>
 
+<script src="language.js"></script>
 <script>
 (function () {
   'use strict';
 
+  var I18N = {
+    en: {
+      pageTitle: 'HTML Code Runner — Live HTML, CSS & JS Preview with Console | FreeSEOToolHub',
+      pageDesc: 'Paste HTML, CSS and JavaScript and see the result instantly. Live preview, built-in error console, mobile view, download as .html. 100% free, no signup, runs in your browser.',
+      brandHtml: '🚀 <b>FreeSEOToolHub</b> / tools',
+      mainTitle: 'HTML Code Runner — <span>Live Preview</span> with Error Console',
+      mainDesc: 'Paste HTML, CSS and JavaScript on the left and the result appears instantly on the right. If something breaks, the console below tells you exactly what went wrong — in plain English. Nothing is uploaded; everything runs inside your own browser.',
+      pillLive: '⚡ Live preview', pillConsole: '🐞 Error console', pillMobile: '📱 Mobile view',
+      pillDownload: '💾 Download .html', pillPrivate: '🔒 100% private',
+      runBtn: 'Run', autoRunLabel: 'Auto-run', autoRunTitle: 'Update the preview automatically as you type',
+      deviceDesktop: 'Desktop', deviceTablet: 'Tablet', deviceMobile: 'Mobile',
+      examplesTitle: 'Start from an example',
+      examplesPlaceholder: 'Examples…',
+      tplBlank: 'Blank', tplBasic: 'Basic page', tplCard: 'Centered card',
+      tplButton: 'Button + click', tplFlex: 'Flexbox gallery', tplForm: 'Simple form', tplError: 'Show an error (demo)',
+      tidyBtn: 'Tidy', tidyTitle: 'Tidy up the indentation',
+      copyBtn: 'Copy', downloadBtn: 'Download', clearBtn: 'Clear',
+      previewLabel: 'Preview', consoleHide: '▾ Console', consoleShow: '▴ Console',
+      openNewTab: '↗ Open in new tab', refreshBtn: '⟳ Refresh',
+      consoleTitle: 'CONSOLE', consoleClear: 'Clear',
+      consoleEmpty: 'Console output and JavaScript errors will appear here.',
+      consoleCleared: 'Console cleared.',
+      restored: 'Restored your last session from this browser.',
+      tidyNeedCM: 'Tidy needs the CodeMirror editor, which did not load. Your code still runs normally.',
+      confirmClear: 'Clear all three editors? This cannot be undone.',
+      copied: '✓ Copied',
+      previewPx: 'Preview · {w}px',
+      errors: 'errors', error: 'error',
+      howToTitle: 'How to use the HTML runner',
+      howTo1Title: 'Paste your code',
+      howTo1Desc: 'Put your markup in the <b>HTML</b> tab, styles in <b>CSS</b> and scripts in <b>JS</b>. You can also paste a complete HTML document straight into the HTML tab — the runner detects it and uses it as-is.',
+      howTo2Title: 'Watch it run',
+      howTo2Desc: 'The preview updates as you type. Use the device buttons to check how your page looks on a tablet or a phone, and drag the middle bar to give the preview more room.',
+      howTo3Title: 'Read the console',
+      howTo3Desc: 'Errors, warnings and <code>console.log()</code> output show up at the bottom with the line number. Most "my page is blank" problems are explained right there.',
+      faqTitle: 'Frequently asked questions',
+      faqQ1: 'Is it really free?',
+      faqA1: 'Yes — free, no signup, no limits and no watermark. There is nothing to install and nothing to pay.',
+      faqQ2: 'Is my code uploaded anywhere?',
+      faqA2: 'No. The editor and the preview both run inside your browser using an isolated frame. Your code never leaves your device.',
+      faqQ3: 'Why is my page blank?',
+      faqA3: 'Almost always a JavaScript error. Look at the console panel — it shows the message and the line number. A missing <code>&lt;/div&gt;</code> or a typo in a variable name is the usual cause.',
+      faqQ4: 'Can I use external libraries?',
+      faqA4: 'Yes. Add a normal <code>&lt;script src="..."&gt;</code> or <code>&lt;link&gt;</code> tag pointing at a CDN and it will load in the preview.',
+      faqQ5: 'Does it save my work?',
+      faqA5: 'Your code is kept in your browser\'s local storage, so a refresh will not lose it. Use <b>Download</b> to save a permanent copy as a <code>.html</code> file.',
+      faqQ6: 'Can I preview something I was sent?',
+      faqA6: 'Yes — open this page in a private window, paste the code and hit Run. Nothing is saved to your account and the code is sandboxed, so it cannot touch this site.',
+      home: 'Home', blog: 'Blog', about: 'About', contact: 'Contact', privacy: 'Privacy',
+      footerCopyright: '© 2026 FreeSEOToolHub | HTML Code Runner | 100% Client-Side'
+    },
+    hi: {
+      pageTitle: 'HTML कोड रनर — लाइव HTML, CSS और JS प्रीव्यू | FreeSEOToolHub',
+      pageDesc: 'HTML, CSS और JavaScript पेस्ट करें और तुरंत परिणाम देखें। लाइव प्रीव्यू, एरर कंसोल, मोबाइल व्यू, .html डाउनलोड। 100% फ्री।',
+      brandHtml: '🚀 <b>FreeSEOToolHub</b> / टूल्स',
+      mainTitle: 'HTML कोड रनर — <span>लाइव प्रीव्यू</span> एरर कंसोल के साथ',
+      mainDesc: 'बाईं ओर HTML, CSS और JavaScript पेस्ट करें और दाईं ओर तुरंत परिणाम देखें। अगर कुछ टूटता है, तो नीचे कंसोल बताता है क्या गलत हुआ। सब कुछ आपके ब्राउज़र में चलता है।',
+      pillLive: '⚡ लाइव प्रीव्यू', pillConsole: '🐞 एरर कंसोल', pillMobile: '📱 मोबाइल व्यू',
+      pillDownload: '💾 .html डाउनलोड', pillPrivate: '🔒 100% प्राइवेट',
+      runBtn: 'चलाएं', autoRunLabel: 'ऑटो-रन', autoRunTitle: 'टाइप करते ही प्रीव्यू अपडेट करें',
+      deviceDesktop: 'डेस्कटॉप', deviceTablet: 'टैबलेट', deviceMobile: 'मोबाइल',
+      examplesTitle: 'उदाहरण से शुरू करें',
+      examplesPlaceholder: 'उदाहरण…',
+      tplBlank: 'खाली', tplBasic: 'बेसिक पेज', tplCard: 'सेंटर्ड कार्ड',
+      tplButton: 'बटन + क्लिक', tplFlex: 'फ्लेक्स गैलरी', tplForm: 'सिंपल फॉर्म', tplError: 'एरर दिखाएं (डेमो)',
+      tidyBtn: 'सुधारें', tidyTitle: 'इंडेंटेशन साफ़ करें',
+      copyBtn: 'कॉपी', downloadBtn: 'डाउनलोड', clearBtn: 'साफ़ करें',
+      previewLabel: 'प्रीव्यू', consoleHide: '▾ कंसोल', consoleShow: '▴ कंसोल',
+      openNewTab: '↗ नए टैब में खोलें', refreshBtn: '⟳ रीफ़्रेश',
+      consoleTitle: 'कंसोल', consoleClear: 'साफ़',
+      consoleEmpty: 'कंसोल आउटपुट और JavaScript एरर यहां दिखेंगे।',
+      consoleCleared: 'कंसोल साफ़ किया।',
+      restored: 'इस ब्राउज़र से पिछला सेशन रिस्टोर किया।',
+      tidyNeedCM: 'Tidy के लिए CodeMirror ज़रूरी है जो लोड नहीं हुआ। आपका कोड अभी भी चलेगा।',
+      confirmClear: 'तीनों एडिटर साफ़ करें? यह वापस नहीं होगा।',
+      copied: '✓ कॉपी हुआ',
+      previewPx: 'प्रीव्यू · {w}px',
+      errors: 'एरर', error: 'एरर',
+      howToTitle: 'HTML रनर का उपयोग कैसे करें',
+      howTo1Title: 'अपना कोड पेस्ट करें',
+      howTo1Desc: 'मार्कअप <b>HTML</b> टैब में, स्टाइल <b>CSS</b> में और स्क्रिप्ट <b>JS</b> में डालें। पूरा HTML डॉक्यूमेंट भी सीधे HTML टैब में पेस्ट कर सकते हैं।',
+      howTo2Title: 'इसे चलते देखें',
+      howTo2Desc: 'टाइप करते ही प्रीव्यू अपडेट होता है। डिवाइस बटन से टैबलेट या फोन पर देखें, और बीच वाली बार खींचकर प्रीव्यू को ज़्यादा जगह दें।',
+      howTo3Title: 'कंसोल पढ़ें',
+      howTo3Desc: 'एरर, चेतावनियाँ और <code>console.log()</code> आउटपुट नीचे लाइन नंबर के साथ दिखते हैं।',
+      faqTitle: 'अक्सर पूछे जाने वाले प्रश्न',
+      faqQ1: 'क्या यह सच में फ्री है?',
+      faqA1: 'हाँ — फ्री, कोई साइनअप नहीं, कोई सीमा नहीं, कोई वॉटरमार्क नहीं।',
+      faqQ2: 'क्या मेरा कोड कहीं अपलोड होता है?',
+      faqA2: 'नहीं। एडिटर और प्रीव्यू दोनों आपके ब्राउज़र में चलते हैं। आपका कोड कभी आपका डिवाइस नहीं छोड़ता।',
+      faqQ3: 'मेरा पेज खाली क्यों है?',
+      faqA3: 'लगभग हमेशा JavaScript एरर की वजह से। कंसोल पैनल देखें — यह मैसेज और लाइन नंबर दिखाता है।',
+      faqQ4: 'क्या मैं बाहरी लाइब्रेरी उपयोग कर सकता हूं?',
+      faqA4: 'हाँ। सामान्य <code>&lt;script src="..."&gt;</code> या <code>&lt;link&gt;</code> टैग CDN की ओर इंगित करके जोड़ें।',
+      faqQ5: 'क्या यह मेरा काम सेव करता है?',
+      faqA5: 'आपका कोड ब्राउज़र के लोकल स्टोरेज में रहता है। <b>Download</b> से स्थायी <code>.html</code> फ़ाइल सेव करें।',
+      faqQ6: 'क्या मैं कोई भेजा गया कोड देख सकता हूं?',
+      faqA6: 'हाँ — प्राइवेट विंडो में खोलें, कोड पेस्ट करें और Run दबाएँ। कोड सैंडबॉक्स्ड है।',
+      home: 'होम', blog: 'ब्लॉग', about: 'हमारे बारे में', contact: 'संपर्क', privacy: 'प्राइवेसी',
+      footerCopyright: '© 2026 FreeSEOToolHub | HTML कोड रनर | 100% क्लाइंट-साइड'
+    },
+    ur: {
+      pageTitle: 'HTML کوڈ رنر — لائیو HTML, CSS اور JS پیش نظارہ | FreeSEOToolHub',
+      pageDesc: 'HTML, CSS اور JavaScript پیسٹ کریں اور فوری نتیجہ دیکھیں۔ لائیو پیش نظارہ، ایرر کنسول، موبائل ویو۔ 100% مفت۔',
+      brandHtml: '🚀 <b>FreeSEOToolHub</b> / ٹولز',
+      mainTitle: 'HTML کوڈ رنر — <span>لائیو پیش نظارہ</span> ایرر کنسول کے ساتھ',
+      mainDesc: 'بائیں طرف HTML, CSS اور JavaScript پیسٹ کریں اور دائیں طرف فوری نتیجہ دیکھیں۔ سب کچھ آپ کے براؤزر میں چلتا ہے۔',
+      pillLive: '⚡ لائیو پیش نظارہ', pillConsole: '🐞 ایرر کنسول', pillMobile: '📱 موبائل ویو',
+      pillDownload: '💾 .html ڈاؤن لوڈ', pillPrivate: '🔒 100% نجی',
+      runBtn: 'چلائیں', autoRunLabel: 'آٹو رن', autoRunTitle: 'ٹائپ کرتے ہی پیش نظارہ اپ ڈیٹ کریں',
+      deviceDesktop: 'ڈیسک ٹاپ', deviceTablet: 'ٹیبلٹ', deviceMobile: 'موبائل',
+      examplesTitle: 'مثال سے شروع کریں',
+      examplesPlaceholder: 'مثالیں…',
+      tplBlank: 'خالی', tplBasic: 'بنیادی صفحہ', tplCard: 'سنٹرڈ کارڈ',
+      tplButton: 'بٹن + کلک', tplFlex: 'فلیکس گیلری', tplForm: 'سادہ فارم', tplError: 'ایرر دکھائیں (ڈیمو)',
+      tidyBtn: 'ترتیب', tidyTitle: 'انڈینٹیشن ٹھیک کریں',
+      copyBtn: 'کاپی', downloadBtn: 'ڈاؤن لوڈ', clearBtn: 'صاف',
+      previewLabel: 'پیش نظارہ', consoleHide: '▾ کنسول', consoleShow: '▴ کنسول',
+      openNewTab: '↗ نئے ٹیب میں کھولیں', refreshBtn: '⟳ ریفریش',
+      consoleTitle: 'کنسول', consoleClear: 'صاف',
+      consoleEmpty: 'کنسول آؤٹ پٹ اور JavaScript ایرر یہاں دکھیں گے۔',
+      consoleCleared: 'کنسول صاف کیا۔',
+      restored: 'اس براؤزر سے پچھلا سیشن بحال کیا۔',
+      tidyNeedCM: 'Tidy کے لیے CodeMirror ضروری ہے جو لوڈ نہیں ہوا۔ آپ کا کوڈ اب بھی چلے گا۔',
+      confirmClear: 'تینوں ایڈیٹر صاف کریں؟ یہ واپس نہیں ہوگا۔',
+      copied: '✓ کاپی',
+      previewPx: 'پیش نظارہ · {w}px',
+      errors: 'ایررز', error: 'ایرر',
+      howToTitle: 'HTML رنر کیسے استعمال کریں',
+      howTo1Title: 'اپنا کوڈ پیسٹ کریں',
+      howTo1Desc: '<b>HTML</b> ٹیب میں مارک اپ، <b>CSS</b> میں اسٹائل اور <b>JS</b> میں اسکرپٹ رکھیں۔',
+      howTo2Title: 'اسے چلتے دیکھیں',
+      howTo2Desc: 'ٹائپ کرتے ہی پیش نظارہ اپ ڈیٹ ہوتا ہے۔ ڈیوائس بٹن سے ٹیبلٹ یا فون پر دیکھیں۔',
+      howTo3Title: 'کنسول پڑھیں',
+      howTo3Desc: 'ایرر، انتباہ اور <code>console.log()</code> آؤٹ پٹ نیچے لائن نمبر کے ساتھ دکھتے ہیں۔',
+      faqTitle: 'اکثر پوچھے گئے سوالات',
+      faqQ1: 'کیا یہ واقعی مفت ہے؟',
+      faqA1: 'جی ہاں — مفت، کوئی سائن اپ نہیں، کوئی حد نہیں، کوئی واٹر مارک نہیں۔',
+      faqQ2: 'کیا میرا کوڈ کہیں اپ لوڈ ہوتا ہے؟',
+      faqA2: 'نہیں۔ ایڈیٹر اور پیش نظارہ دونوں آپ کے براؤزر میں چلتے ہیں۔',
+      faqQ3: 'میرا صفحہ خالی کیوں ہے؟',
+      faqA3: 'تقریباً ہمیشہ JavaScript ایرر کی وجہ سے۔ کنسول پینل دیکھیں۔',
+      faqQ4: 'کیا میں بیرونی لائبریریاں استعمال کر سکتا ہوں؟',
+      faqA4: 'جی ہاں۔ عام <code>&lt;script src="..."&gt;</code> یا <code>&lt;link&gt;</code> ٹیگ CDN کی طرف اشارہ کر کے شامل کریں۔',
+      faqQ5: 'کیا یہ میرا کام محفوظ کرتا ہے؟',
+      faqA5: 'آپ کا کوڈ براؤزر کے لوکل اسٹوریج میں رہتا ہے۔ <b>Download</b> سے مستقل <code>.html</code> فائل محفوظ کریں۔',
+      faqQ6: 'کیا میں بھیجا گیا کوڈ دیکھ سکتا ہوں؟',
+      faqA6: 'جی ہاں — پرائیویٹ ونڈو میں کھولیں، کوڈ پیسٹ کریں اور Run دبائیں۔',
+      home: 'ہوم', blog: 'بلاگ', about: 'ہمارے بارے میں', contact: 'رابطہ', privacy: 'پرائیویسی',
+      footerCopyright: '© 2026 FreeSEOToolHub | HTML کوڈ رنر | 100% کلائنٹ سائیڈ'
+    },
+    de: {
+      pageTitle: 'HTML Code Runner — Live HTML, CSS & JS Vorschau | FreeSEOToolHub',
+      pageDesc: 'HTML, CSS und JavaScript einfügen und sofort das Ergebnis sehen. Live-Vorschau, Fehlerkonsole, Mobil-Ansicht, Download als .html. 100% kostenlos.',
+      brandHtml: '🚀 <b>FreeSEOToolHub</b> / Tools',
+      mainTitle: 'HTML Code Runner — <span>Live-Vorschau</span> mit Fehlerkonsole',
+      mainDesc: 'Fügen Sie HTML, CSS und JavaScript links ein — das Ergebnis erscheint sofort rechts. Bei Fehlern zeigt die Konsole unten genau, was schiefgelaufen ist. Alles läuft im Browser.',
+      pillLive: '⚡ Live-Vorschau', pillConsole: '🐞 Fehlerkonsole', pillMobile: '📱 Mobil-Ansicht',
+      pillDownload: '💾 .html herunterladen', pillPrivate: '🔒 100% privat',
+      runBtn: 'Ausführen', autoRunLabel: 'Auto-Run', autoRunTitle: 'Vorschau beim Tippen automatisch aktualisieren',
+      deviceDesktop: 'Desktop', deviceTablet: 'Tablet', deviceMobile: 'Mobil',
+      examplesTitle: 'Mit Beispiel starten',
+      examplesPlaceholder: 'Beispiele…',
+      tplBlank: 'Leer', tplBasic: 'Basis-Seite', tplCard: 'Zentrierte Karte',
+      tplButton: 'Button + Klick', tplFlex: 'Flexbox-Galerie', tplForm: 'Einfaches Formular', tplError: 'Fehler zeigen (Demo)',
+      tidyBtn: 'Aufräumen', tidyTitle: 'Einrückung bereinigen',
+      copyBtn: 'Kopieren', downloadBtn: 'Herunterladen', clearBtn: 'Löschen',
+      previewLabel: 'Vorschau', consoleHide: '▾ Konsole', consoleShow: '▴ Konsole',
+      openNewTab: '↗ In neuem Tab öffnen', refreshBtn: '⟳ Aktualisieren',
+      consoleTitle: 'KONSOLE', consoleClear: 'Löschen',
+      consoleEmpty: 'Konsolenausgabe und JavaScript-Fehler erscheinen hier.',
+      consoleCleared: 'Konsole geleert.',
+      restored: 'Letzte Sitzung aus diesem Browser wiederhergestellt.',
+      tidyNeedCM: 'Tidy benötigt CodeMirror, das nicht geladen wurde. Ihr Code läuft trotzdem.',
+      confirmClear: 'Alle drei Editoren löschen? Nicht umkehrbar.',
+      copied: '✓ Kopiert',
+      previewPx: 'Vorschau · {w}px',
+      errors: 'Fehler', error: 'Fehler',
+      howToTitle: 'So verwenden Sie den HTML-Runner',
+      howTo1Title: 'Code einfügen',
+      howTo1Desc: 'Markup in <b>HTML</b>, Styles in <b>CSS</b>, Skripte in <b>JS</b>. Ein komplettes HTML-Dokument kann direkt in den HTML-Tab eingefügt werden.',
+      howTo2Title: 'Laufen sehen',
+      howTo2Desc: 'Die Vorschau wird beim Tippen aktualisiert. Mit den Gerät-Buttons prüfen Sie Tablet oder Handy.',
+      howTo3Title: 'Konsole lesen',
+      howTo3Desc: 'Fehler, Warnungen und <code>console.log()</code>-Ausgaben erscheinen unten mit Zeilennummer.',
+      faqTitle: 'Häufige Fragen',
+      faqQ1: 'Ist es wirklich kostenlos?',
+      faqA1: 'Ja — kostenlos, keine Anmeldung, keine Limits, kein Wasserzeichen.',
+      faqQ2: 'Wird mein Code hochgeladen?',
+      faqA2: 'Nein. Editor und Vorschau laufen in Ihrem Browser in einem isolierten Frame.',
+      faqQ3: 'Warum ist meine Seite leer?',
+      faqA3: 'Fast immer ein JavaScript-Fehler. Sehen Sie in die Konsole.',
+      faqQ4: 'Kann ich externe Bibliotheken nutzen?',
+      faqA4: 'Ja. Fügen Sie einen normalen <code>&lt;script src="..."&gt;</code>- oder <code>&lt;link&gt;</code>-Tag zu einer CDN hinzu.',
+      faqQ5: 'Wird meine Arbeit gespeichert?',
+      faqA5: 'Ihr Code bleibt im Local Storage des Browsers. Nutzen Sie <b>Herunterladen</b> für eine dauerhafte <code>.html</code>-Datei.',
+      faqQ6: 'Kann ich fremden Code testen?',
+      faqA6: 'Ja — öffnen Sie die Seite in einem privaten Fenster, fügen Sie den Code ein und klicken Sie auf Ausführen.',
+      home: 'Startseite', blog: 'Blog', about: 'Über uns', contact: 'Kontakt', privacy: 'Datenschutz',
+      footerCopyright: '© 2026 FreeSEOToolHub | HTML Code Runner | 100% Client-Side'
+    },
+    es: {
+      pageTitle: 'HTML Code Runner — Vista Previa Live HTML, CSS y JS | FreeSEOToolHub',
+      pageDesc: 'Pega HTML, CSS y JavaScript y ve el resultado al instante. Vista previa en vivo, consola de errores, vista móvil, descarga .html. 100% gratis.',
+      brandHtml: '🚀 <b>FreeSEOToolHub</b> / herramientas',
+      mainTitle: 'HTML Code Runner — <span>Vista Previa</span> con Consola de Errores',
+      mainDesc: 'Pega HTML, CSS y JavaScript a la izquierda y el resultado aparece al instante a la derecha. Si algo falla, la consola de abajo te dice qué pasó. Todo corre en tu navegador.',
+      pillLive: '⚡ Vista previa en vivo', pillConsole: '🐞 Consola de errores', pillMobile: '📱 Vista móvil',
+      pillDownload: '💾 Descargar .html', pillPrivate: '🔒 100% privado',
+      runBtn: 'Ejecutar', autoRunLabel: 'Auto-ejecutar', autoRunTitle: 'Actualizar vista previa al escribir',
+      deviceDesktop: 'Escritorio', deviceTablet: 'Tablet', deviceMobile: 'Móvil',
+      examplesTitle: 'Empezar con un ejemplo',
+      examplesPlaceholder: 'Ejemplos…',
+      tplBlank: 'En blanco', tplBasic: 'Página básica', tplCard: 'Tarjeta centrada',
+      tplButton: 'Botón + clic', tplFlex: 'Galería flexbox', tplForm: 'Formulario simple', tplError: 'Mostrar error (demo)',
+      tidyBtn: 'Ordenar', tidyTitle: 'Limpiar indentación',
+      copyBtn: 'Copiar', downloadBtn: 'Descargar', clearBtn: 'Limpiar',
+      previewLabel: 'Vista previa', consoleHide: '▾ Consola', consoleShow: '▴ Consola',
+      openNewTab: '↗ Abrir en nueva pestaña', refreshBtn: '⟳ Actualizar',
+      consoleTitle: 'CONSOLA', consoleClear: 'Limpiar',
+      consoleEmpty: 'La salida de consola y errores JavaScript aparecerán aquí.',
+      consoleCleared: 'Consola limpiada.',
+      restored: 'Sesión anterior restaurada desde este navegador.',
+      tidyNeedCM: 'Tidy requiere CodeMirror, que no se cargó. Tu código sigue funcionando.',
+      confirmClear: '¿Limpiar los tres editores? No se puede deshacer.',
+      copied: '✓ Copiado',
+      previewPx: 'Vista previa · {w}px',
+      errors: 'errores', error: 'error',
+      howToTitle: 'Cómo usar el HTML runner',
+      howTo1Title: 'Pega tu código',
+      howTo1Desc: 'Pon tu marcado en la pestaña <b>HTML</b>, estilos en <b>CSS</b> y scripts en <b>JS</b>. También puedes pegar un documento HTML completo en la pestaña HTML.',
+      howTo2Title: 'Míralo correr',
+      howTo2Desc: 'La vista previa se actualiza al escribir. Usa los botones de dispositivo para ver en tablet o móvil.',
+      howTo3Title: 'Lee la consola',
+      howTo3Desc: 'Errores, advertencias y salida de <code>console.log()</code> aparecen abajo con el número de línea.',
+      faqTitle: 'Preguntas frecuentes',
+      faqQ1: '¿Realmente es gratis?',
+      faqA1: 'Sí — gratis, sin registro, sin límites y sin marca de agua.',
+      faqQ2: '¿Mi código se sube a algún sitio?',
+      faqA2: 'No. El editor y la vista previa corren en tu navegador en un frame aislado.',
+      faqQ3: '¿Por qué mi página está en blanco?',
+      faqA3: 'Casi siempre un error de JavaScript. Revisa el panel de consola.',
+      faqQ4: '¿Puedo usar librerías externas?',
+      faqA4: 'Sí. Añade una etiqueta <code>&lt;script src="..."&gt;</code> o <code>&lt;link&gt;</code> apuntando a un CDN.',
+      faqQ5: '¿Guarda mi trabajo?',
+      faqA5: 'Tu código se guarda en el almacenamiento local del navegador. Usa <b>Descargar</b> para guardar un archivo <code>.html</code> permanente.',
+      faqQ6: '¿Puedo previsualizar algo que me enviaron?',
+      faqA6: 'Sí — abre esta página en una ventana privada, pega el código y pulsa Ejecutar.',
+      home: 'Inicio', blog: 'Blog', about: 'Acerca de', contact: 'Contacto', privacy: 'Privacidad',
+      footerCopyright: '© 2026 FreeSEOToolHub | HTML Code Runner | 100% Client-Side'
+    }
+  };
+
+  var RTL_LANGS = ['ur'];
+  var SUPPORTED = ['en','hi','ur','de','es'];
+  var LANG_KEY = 'fstLang';
+  var currentLang = 'en';
+
+  function getNested(obj, path) {
+    if (!obj) return undefined;
+    var keys = path.split('.');
+    var v = obj;
+    for (var i = 0; i < keys.length; i++) v = v && v[keys[i]];
+    return v;
+  }
+
+  function t(k) {
+    var v = getNested(I18N[currentLang], k);
+    if (v !== undefined) return v;
+    var fb = getNested(I18N.en, k);
+    return fb !== undefined ? fb : k;
+  }
+
+  function detectLang() {
+    var urlLang = new URLSearchParams(location.search).get('lang');
+    if (SUPPORTED.indexOf(urlLang) !== -1) return urlLang;
+    try {
+      var stored = localStorage.getItem(LANG_KEY);
+      if (SUPPORTED.indexOf(stored) !== -1) return stored;
+      var pref = localStorage.getItem('preferredLanguage');
+      if (SUPPORTED.indexOf(pref) !== -1) return pref;
+    } catch(e) {}
+    var nav = (navigator.language || 'en').split('-')[0].toLowerCase();
+    return SUPPORTED.indexOf(nav) !== -1 ? nav : 'en';
+  }
+
+  function applyLang(lang) {
+    if (SUPPORTED.indexOf(lang) === -1) lang = 'en';
+    currentLang = lang;
+    document.documentElement.lang = lang;
+    document.documentElement.dir = RTL_LANGS.indexOf(lang) !== -1 ? 'rtl' : 'ltr';
+
+    document.querySelectorAll('[data-translate]').forEach(function(el) {
+      var k = el.getAttribute('data-translate');
+      var v = getNested(I18N[lang], k);
+      var fb = getNested(I18N.en, k);
+      var val = v !== undefined ? v : fb;
+      if (val !== undefined) el.textContent = val;
+    });
+
+    document.querySelectorAll('[data-translate-html]').forEach(function(el) {
+      var k = el.getAttribute('data-translate-html');
+      var v = getNested(I18N[lang], k);
+      var fb = getNested(I18N.en, k);
+      var val = v !== undefined ? v : fb;
+      if (val !== undefined) el.innerHTML = val;
+    });
+
+    document.querySelectorAll('[data-translate-title]').forEach(function(el) {
+      var k = el.getAttribute('data-translate-title');
+      var v = getNested(I18N[lang], k);
+      var fb = getNested(I18N.en, k);
+      var val = v !== undefined ? v : fb;
+      if (val !== undefined) el.setAttribute('title', val);
+    });
+
+    if (I18N[lang].pageTitle) document.title = I18N[lang].pageTitle;
+    var md = document.querySelector('meta[name="description"]');
+    if (md && I18N[lang].pageDesc) md.setAttribute('content', I18N[lang].pageDesc);
+
+    try {
+      localStorage.setItem(LANG_KEY, lang);
+      localStorage.setItem('preferredLanguage', lang);
+    } catch(e) {}
+
+    var url = new URL(location.href);
+    if (lang === 'en') url.searchParams.delete('lang');
+    else url.searchParams.set('lang', lang);
+    history.replaceState({}, '', url.toString());
+  }
+
   var STORE = 'fsrh_html_runner_v1';
   var $ = function (id) { return document.getElementById(id); };
 
-  /* =========================================================
-     Console shim — injected into the preview frame.
-     NOTE: the closing tag is escaped so it cannot end this script.
-     ========================================================= */
   var SHIM = [
     '<script>',
     '(function(){',
@@ -458,9 +841,6 @@
     '<' + '/script>'
   ].join('\n');
 
-  /* =========================================================
-     Editors  (CodeMirror when available, plain textarea otherwise)
-     ========================================================= */
   var CM = window.CodeMirror;
   var ed = {};
 
@@ -491,7 +871,6 @@
         refresh: function () { cm.refresh(); }
       };
     }
-    // ---- fallback: plain textarea, still fully usable ----
     ta.addEventListener('input', onEdit);
     ta.addEventListener('keydown', function (e) {
       if (e.key === 'Tab') {
@@ -515,9 +894,6 @@
   ed.css = makeEditor('taCss', 'css');
   ed.js = makeEditor('taJs', 'javascript');
 
-  /* =========================================================
-     Build the preview document
-     ========================================================= */
   function buildDoc(html, css, js, withShim) {
     var shim = withShim ? SHIM : '';
     var styleTag = css.trim() ? '<style>\n' + css + '\n</style>' : '';
@@ -527,8 +903,6 @@
 
     if (isFull) {
       var doc = html;
-
-      // shim must run before anything else in the page
       if (/<head[^>]*>/i.test(doc)) {
         doc = doc.replace(/<head[^>]*>/i, function (m) { return m + '\n' + shim; });
       } else if (/<html[^>]*>/i.test(doc)) {
@@ -536,7 +910,6 @@
       } else {
         doc = shim + '\n' + doc;
       }
-
       if (styleTag) {
         if (/<\/head>/i.test(doc)) doc = doc.replace(/<\/head>/i, styleTag + '\n</head>');
         else doc = styleTag + '\n' + doc;
@@ -555,9 +928,6 @@
            html + '\n' + scriptTag + '\n</body>\n</html>';
   }
 
-  /* =========================================================
-     Run
-     ========================================================= */
   var runTimer = null;
 
   function run() {
@@ -577,9 +947,6 @@
     scheduleRun();
   }
 
-  /* =========================================================
-     Console panel
-     ========================================================= */
   var msgTotal = 0, errTotal = 0;
 
   function addLine(level, text) {
@@ -612,7 +979,7 @@
     var ec = $('errCount');
     if (errTotal > 0) {
       ec.style.display = '';
-      ec.textContent = errTotal + (errTotal === 1 ? ' error' : ' errors');
+      ec.textContent = errTotal + ' ' + (errTotal === 1 ? t('error') : t('errors'));
     } else {
       ec.style.display = 'none';
     }
@@ -623,8 +990,7 @@
     msgTotal = 0; errTotal = 0;
     $('consoleBody').innerHTML =
       '<div class="console-empty">' +
-      (notify === false ? 'Console output and JavaScript errors will appear here.'
-                        : 'Console cleared.') +
+      (notify === false ? t('consoleEmpty') : t('consoleCleared')) +
       '</div>';
     updateBadges();
   }
@@ -636,16 +1002,13 @@
     addLine(lvl, String(d.text || ''));
   });
 
-  /* =========================================================
-     Toolbar actions
-     ========================================================= */
   $('runBtn').addEventListener('click', run);
   $('refreshBtn').addEventListener('click', run);
 
   $('consoleToggle').addEventListener('click', function () {
     var c = $('console');
     c.classList.toggle('hidden');
-    this.textContent = c.classList.contains('hidden') ? '▴ Console' : '▾ Console';
+    this.textContent = c.classList.contains('hidden') ? t('consoleShow') : t('consoleHide');
     setTimeout(function () { ed.html.refresh(); }, 30);
   });
 
@@ -674,7 +1037,7 @@
 
   $('copyBtn').addEventListener('click', function () {
     var txt = buildDoc(ed.html.get(), ed.css.get(), ed.js.get(), false);
-    var done = function () { flash($('copyBtn'), '✓ Copied'); };
+    var done = function () { flash($('copyBtn'), t('copied')); };
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(txt).then(done, function () { legacyCopy(txt, done); });
     } else {
@@ -694,13 +1057,19 @@
   }
 
   function flash(btn, text) {
-    var old = btn.textContent;
-    btn.textContent = text;
-    setTimeout(function () { btn.textContent = old; }, 1400);
+    var span = btn.querySelector('[data-translate="copyBtn"]');
+    var old = span ? span.textContent : btn.textContent;
+    if (span) span.textContent = text; else btn.textContent = text;
+    setTimeout(function () {
+      if (span) span.textContent = old; else btn.textContent = old;
+      // reapply translation
+      var k = span ? span.getAttribute('data-translate') : null;
+      if (span && k) span.textContent = t(k);
+    }, 1400);
   }
 
   $('clearBtn').addEventListener('click', function () {
-    if (!confirm('Clear all three editors? This cannot be undone.')) return;
+    if (!confirm(t('confirmClear'))) return;
     ed.html.set(''); ed.css.set(''); ed.js.set('');
     try { localStorage.removeItem(STORE); } catch (e) {}
     switchTab('html');
@@ -710,7 +1079,7 @@
 
   $('formatBtn').addEventListener('click', function () {
     if (!CM || !CM.commands || !CM.commands.autoFormatRange) {
-      addLine('sys', 'Tidy needs the CodeMirror editor, which did not load. Your code still runs normally.');
+      addLine('sys', t('tidyNeedCM'));
       return;
     }
     var active = document.querySelector('.pane.on');
@@ -725,9 +1094,6 @@
     onEdit();
   });
 
-  /* =========================================================
-     Tabs
-     ========================================================= */
   function switchTab(name) {
     [].forEach.call(document.querySelectorAll('#tabs button'), function (b) {
       b.classList.toggle('on', b.getAttribute('data-pane') === name);
@@ -743,9 +1109,6 @@
     b.addEventListener('click', function () { switchTab(b.getAttribute('data-pane')); });
   });
 
-  /* =========================================================
-     Device widths
-     ========================================================= */
   [].forEach.call(document.querySelectorAll('#deviceSeg button'), function (b) {
     b.addEventListener('click', function () {
       [].forEach.call(document.querySelectorAll('#deviceSeg button'), function (x) {
@@ -760,18 +1123,15 @@
       if (w === '100%') {
         stage.classList.remove('device');
         frame.style.maxWidth = '';
-        $('previewLabel').textContent = 'Preview';
+        $('previewLabel').textContent = t('previewLabel');
       } else {
         stage.classList.add('device');
         frame.style.maxWidth = w + 'px';
-        $('previewLabel').textContent = 'Preview · ' + w + 'px';
+        $('previewLabel').textContent = t('previewPx').replace('{w}', w);
       }
     });
   });
 
-  /* =========================================================
-     Draggable split
-     ========================================================= */
   (function () {
     var work = $('work'), side = $('editorSide'), bar = $('divider');
     var dragging = false;
@@ -792,7 +1152,6 @@
       ed.html.refresh(); ed.css.refresh(); ed.js.refresh();
     });
 
-    // touch
     bar.addEventListener('touchstart', function () { dragging = true; }, { passive: true });
     document.addEventListener('touchmove', function (e) {
       if (!dragging || !e.touches[0]) return;
@@ -805,221 +1164,43 @@
     document.addEventListener('touchend', function () { dragging = false; });
   })();
 
-  /* =========================================================
-     Examples
-     ========================================================= */
   var TEMPLATES = {
     blank: { html: '', css: '', js: '' },
 
     basic: {
-      html:
-'<h1>Hello, world!</h1>\n' +
-'<p>This is a paragraph. Edit the code on the left and the preview\n' +
-'updates automatically.</p>\n' +
-'\n' +
-'<ul>\n' +
-'  <li>First item</li>\n' +
-'  <li>Second item</li>\n' +
-'  <li>Third item</li>\n' +
-'</ul>\n',
-      css:
-'body {\n' +
-'  font-family: system-ui, sans-serif;\n' +
-'  max-width: 640px;\n' +
-'  margin: 40px auto;\n' +
-'  padding: 0 20px;\n' +
-'  line-height: 1.7;\n' +
-'  color: #1e293b;\n' +
-'}\n' +
-'\n' +
-'h1 { color: #c2410c; }\n',
+      html: '<h1>Hello, world!</h1>\n<p>This is a paragraph. Edit the code on the left and the preview\nupdates automatically.</p>\n\n<ul>\n  <li>First item</li>\n  <li>Second item</li>\n  <li>Third item</li>\n</ul>\n',
+      css: 'body {\n  font-family: system-ui, sans-serif;\n  max-width: 640px;\n  margin: 40px auto;\n  padding: 0 20px;\n  line-height: 1.7;\n  color: #1e293b;\n}\n\nh1 { color: #c2410c; }\n',
       js: ''
     },
 
     card: {
-      html:
-'<div class="card">\n' +
-'  <h2>Card title</h2>\n' +
-'  <p>A clean centered card. Try changing the colours in the CSS tab.</p>\n' +
-'  <button id="go">Click me</button>\n' +
-'</div>\n',
-      css:
-'body {\n' +
-'  margin: 0;\n' +
-'  min-height: 100vh;\n' +
-'  display: grid;\n' +
-'  place-items: center;\n' +
-'  background: #eef1f5;\n' +
-'  font-family: system-ui, sans-serif;\n' +
-'}\n' +
-'\n' +
-'.card {\n' +
-'  background: #fff;\n' +
-'  padding: 32px;\n' +
-'  border-radius: 16px;\n' +
-'  box-shadow: 0 10px 30px rgba(11, 26, 51, .12);\n' +
-'  max-width: 340px;\n' +
-'  text-align: center;\n' +
-'}\n' +
-'\n' +
-'.card h2 { margin: 0 0 10px; color: #0b1a33; }\n' +
-'.card p  { color: #64748b; line-height: 1.6; }\n' +
-'\n' +
-'button {\n' +
-'  margin-top: 12px;\n' +
-'  padding: 11px 26px;\n' +
-'  border: 0;\n' +
-'  border-radius: 30px;\n' +
-'  background: linear-gradient(135deg, #ff9933, #ff6b00);\n' +
-'  color: #fff;\n' +
-'  font-weight: 700;\n' +
-'  font-size: 15px;\n' +
-'  cursor: pointer;\n' +
-'}\n',
+      html: '<div class="card">\n  <h2>Card title</h2>\n  <p>A clean centered card. Try changing the colours in the CSS tab.</p>\n  <button id="go">Click me</button>\n</div>\n',
+      css: 'body {\n  margin: 0;\n  min-height: 100vh;\n  display: grid;\n  place-items: center;\n  background: #eef1f5;\n  font-family: system-ui, sans-serif;\n}\n\n.card {\n  background: #fff;\n  padding: 32px;\n  border-radius: 16px;\n  box-shadow: 0 10px 30px rgba(11, 26, 51, .12);\n  max-width: 340px;\n  text-align: center;\n}\n\n.card h2 { margin: 0 0 10px; color: #0b1a33; }\n.card p  { color: #64748b; line-height: 1.6; }\n\nbutton {\n  margin-top: 12px;\n  padding: 11px 26px;\n  border: 0;\n  border-radius: 30px;\n  background: linear-gradient(135deg, #ff9933, #ff6b00);\n  color: #fff;\n  font-weight: 700;\n  font-size: 15px;\n  cursor: pointer;\n}\n',
       js: ''
     },
 
     button: {
-      html:
-'<h1 id="count">0</h1>\n' +
-'<button id="plus">Add one</button>\n' +
-'<button id="reset">Reset</button>\n',
-      css:
-'body {\n' +
-'  font-family: system-ui, sans-serif;\n' +
-'  text-align: center;\n' +
-'  padding-top: 60px;\n' +
-'}\n' +
-'h1 { font-size: 64px; margin: 0 0 20px; color: #c2410c; }\n' +
-'button {\n' +
-'  padding: 10px 22px;\n' +
-'  margin: 0 4px;\n' +
-'  border: 0;\n' +
-'  border-radius: 24px;\n' +
-'  background: #0b1a33;\n' +
-'  color: #fff;\n' +
-'  font-size: 15px;\n' +
-'  cursor: pointer;\n' +
-'}\n',
-      js:
-'var n = 0;\n' +
-'var out = document.getElementById("count");\n' +
-'\n' +
-'document.getElementById("plus").onclick = function () {\n' +
-'  n++;\n' +
-'  out.textContent = n;\n' +
-'  console.log("Count is now", n);\n' +
-'};\n' +
-'\n' +
-'document.getElementById("reset").onclick = function () {\n' +
-'  n = 0;\n' +
-'  out.textContent = n;\n' +
-'  console.warn("Counter reset");\n' +
-'};\n'
+      html: '<h1 id="count">0</h1>\n<button id="plus">Add one</button>\n<button id="reset">Reset</button>\n',
+      css: 'body {\n  font-family: system-ui, sans-serif;\n  text-align: center;\n  padding-top: 60px;\n}\nh1 { font-size: 64px; margin: 0 0 20px; color: #c2410c; }\nbutton {\n  padding: 10px 22px;\n  margin: 0 4px;\n  border: 0;\n  border-radius: 24px;\n  background: #0b1a33;\n  color: #fff;\n  font-size: 15px;\n  cursor: pointer;\n}\n',
+      js: 'var n = 0;\nvar out = document.getElementById("count");\n\ndocument.getElementById("plus").onclick = function () {\n  n++;\n  out.textContent = n;\n  console.log("Count is now", n);\n};\n\ndocument.getElementById("reset").onclick = function () {\n  n = 0;\n  out.textContent = n;\n  console.warn("Counter reset");\n};\n'
     },
 
     flex: {
-      html:
-'<div class="grid">\n' +
-'  <div class="box">1</div>\n' +
-'  <div class="box">2</div>\n' +
-'  <div class="box">3</div>\n' +
-'  <div class="box">4</div>\n' +
-'  <div class="box">5</div>\n' +
-'  <div class="box">6</div>\n' +
-'</div>\n',
-      css:
-'body { margin: 0; padding: 20px; background: #f8fafc; }\n' +
-'\n' +
-'.grid {\n' +
-'  display: grid;\n' +
-'  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));\n' +
-'  gap: 14px;\n' +
-'}\n' +
-'\n' +
-'.box {\n' +
-'  aspect-ratio: 1 / 1;\n' +
-'  display: grid;\n' +
-'  place-items: center;\n' +
-'  border-radius: 14px;\n' +
-'  font: 700 26px system-ui, sans-serif;\n' +
-'  color: #fff;\n' +
-'  background: linear-gradient(135deg, #0b1a33, #2d3b68);\n' +
-'}\n' +
-'\n' +
-'.box:nth-child(even) {\n' +
-'  background: linear-gradient(135deg, #ff9933, #ff6b00);\n' +
-'}\n',
+      html: '<div class="grid">\n  <div class="box">1</div>\n  <div class="box">2</div>\n  <div class="box">3</div>\n  <div class="box">4</div>\n  <div class="box">5</div>\n  <div class="box">6</div>\n</div>\n',
+      css: 'body { margin: 0; padding: 20px; background: #f8fafc; }\n\n.grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));\n  gap: 14px;\n}\n\n.box {\n  aspect-ratio: 1 / 1;\n  display: grid;\n  place-items: center;\n  border-radius: 14px;\n  font: 700 26px system-ui, sans-serif;\n  color: #fff;\n  background: linear-gradient(135deg, #0b1a33, #2d3b68);\n}\n\n.box:nth-child(even) {\n  background: linear-gradient(135deg, #ff9933, #ff6b00);\n}\n',
       js: ''
     },
 
     form: {
-      html:
-'<form id="f">\n' +
-'  <label>Your name\n' +
-'    <input type="text" name="name" placeholder="Ali" required>\n' +
-'  </label>\n' +
-'  <label>Email\n' +
-'    <input type="email" name="email" placeholder="you@example.com" required>\n' +
-'  </label>\n' +
-'  <label>Message\n' +
-'    <textarea name="msg" rows="4"></textarea>\n' +
-'  </label>\n' +
-'  <button type="submit">Send</button>\n' +
-'</form>\n' +
-'<pre id="out"></pre>\n',
-      css:
-'body { font-family: system-ui, sans-serif; max-width: 460px; margin: 30px auto; padding: 0 18px; }\n' +
-'label { display: block; margin-bottom: 14px; font-weight: 600; font-size: 14px; color: #334155; }\n' +
-'input, textarea {\n' +
-'  width: 100%;\n' +
-'  margin-top: 6px;\n' +
-'  padding: 10px 12px;\n' +
-'  border: 2px solid #e2e8f0;\n' +
-'  border-radius: 10px;\n' +
-'  font: inherit;\n' +
-'  font-weight: 400;\n' +
-'  box-sizing: border-box;\n' +
-'}\n' +
-'input:focus, textarea:focus { outline: none; border-color: #ff9933; }\n' +
-'button {\n' +
-'  width: 100%;\n' +
-'  padding: 12px;\n' +
-'  border: 0;\n' +
-'  border-radius: 10px;\n' +
-'  background: #0b1a33;\n' +
-'  color: #fff;\n' +
-'  font: 700 15px inherit;\n' +
-'  cursor: pointer;\n' +
-'}\n' +
-'pre { background: #f1f5f9; padding: 12px; border-radius: 10px; font-size: 13px; overflow: auto; }\n',
-      js:
-'document.getElementById("f").onsubmit = function (e) {\n' +
-'  e.preventDefault();\n' +
-'  var d = new FormData(this);\n' +
-'  var o = {};\n' +
-'  d.forEach(function (v, k) { o[k] = v; });\n' +
-'  document.getElementById("out").textContent = JSON.stringify(o, null, 2);\n' +
-'  console.log("Form submitted", o);\n' +
-'};\n'
+      html: '<form id="f">\n  <label>Your name\n    <input type="text" name="name" placeholder="Ali" required>\n  </label>\n  <label>Email\n    <input type="email" name="email" placeholder="you@example.com" required>\n  </label>\n  <label>Message\n    <textarea name="msg" rows="4"></textarea>\n  </label>\n  <button type="submit">Send</button>\n</form>\n<pre id="out"></pre>\n',
+      css: 'body { font-family: system-ui, sans-serif; max-width: 460px; margin: 30px auto; padding: 0 18px; }\nlabel { display: block; margin-bottom: 14px; font-weight: 600; font-size: 14px; color: #334155; }\ninput, textarea {\n  width: 100%;\n  margin-top: 6px;\n  padding: 10px 12px;\n  border: 2px solid #e2e8f0;\n  border-radius: 10px;\n  font: inherit;\n  font-weight: 400;\n  box-sizing: border-box;\n}\ninput:focus, textarea:focus { outline: none; border-color: #ff9933; }\nbutton {\n  width: 100%;\n  padding: 12px;\n  border: 0;\n  border-radius: 10px;\n  background: #0b1a33;\n  color: #fff;\n  font: 700 15px inherit;\n  cursor: pointer;\n}\npre { background: #f1f5f9; padding: 12px; border-radius: 10px; font-size: 13px; overflow: auto; }\n',
+      js: 'document.getElementById("f").onsubmit = function (e) {\n  e.preventDefault();\n  var d = new FormData(this);\n  var o = {};\n  d.forEach(function (v, k) { o[k] = v; });\n  document.getElementById("out").textContent = JSON.stringify(o, null, 2);\n  console.log("Form submitted", o);\n};\n'
     },
 
     error: {
-      html:
-'<h1>Error demo</h1>\n' +
-'<p>Open the console at the bottom — it tells you exactly what broke.</p>\n' +
-'<button id="b">Click to cause an error</button>\n',
-      css:
-'body { font-family: system-ui, sans-serif; padding: 30px; }\n' +
-'h1 { color: #b91c1c; }\n' +
-'button { padding: 10px 20px; border: 0; border-radius: 24px; background: #0b1a33; color: #fff; cursor: pointer; }\n',
-      js:
-'console.log("Page loaded fine");\n' +
-'\n' +
-'document.getElementById("b").onclick = function () {\n' +
-'  var missing = document.getElementById("nothing-here");\n' +
-'  missing.textContent = "boom";   // this line throws\n' +
-'};\n'
+      html: '<h1>Error demo</h1>\n<p>Open the console at the bottom — it tells you exactly what broke.</p>\n<button id="b">Click to cause an error</button>\n',
+      css: 'body { font-family: system-ui, sans-serif; padding: 30px; }\nh1 { color: #b91c1c; }\nbutton { padding: 10px 20px; border: 0; border-radius: 24px; background: #0b1a33; color: #fff; cursor: pointer; }\n',
+      js: 'console.log("Page loaded fine");\n\ndocument.getElementById("b").onclick = function () {\n  var missing = document.getElementById("nothing-here");\n  missing.textContent = "boom";\n};\n'
     }
   };
 
@@ -1027,16 +1208,13 @@
     var key = this.value;
     this.value = '';
     if (!key || !TEMPLATES[key]) return;
-    var t = TEMPLATES[key];
-    ed.html.set(t.html); ed.css.set(t.css); ed.js.set(t.js);
+    var tpl = TEMPLATES[key];
+    ed.html.set(tpl.html); ed.css.set(tpl.css); ed.js.set(tpl.js);
     switchTab('html');
     clearConsole(false);
     run();
   });
 
-  /* =========================================================
-     Local storage
-     ========================================================= */
   var saveTimer = null;
 
   function saveLocal() {
@@ -1060,21 +1238,20 @@
     return null;
   }
 
-  /* =========================================================
-     Boot
-     ========================================================= */
+  applyLang(detectLang());
+
   (function boot() {
     var saved = loadLocal();
     if (saved) {
       ed.html.set(saved.html || '');
       ed.css.set(saved.css || '');
       ed.js.set(saved.js || '');
-      addLine('sys', 'Restored your last session from this browser.');
+      addLine('sys', t('restored'));
     } else {
-      var t = TEMPLATES.card;
-      ed.html.set(t.html);
-      ed.css.set(t.css);
-      ed.js.set(t.js);
+      var tpl = TEMPLATES.card;
+      ed.html.set(tpl.html);
+      ed.css.set(tpl.css);
+      ed.js.set(tpl.js);
     }
     run();
     setTimeout(function () { ed.html.refresh(); ed.css.refresh(); ed.js.refresh(); }, 60);
